@@ -1,0 +1,12 @@
+{
+  "timestamp": 1793706117.3015413,
+  "safety_tier": "THROTTLED",
+  "can_run_heavy_tasks": false,
+  "recommended_max_concurrency": 1,
+  "status_message": "উচ্চ সিস্টেম চাপ শনাক্ত হয়েছে। ভারী কাজ সাময়িকভাবে ধীর করা হচ্ছে।",
+  "cpu_percent": 68.0,
+  "ram_percent": 88.9,
+  "free_ram_gb": 0.86,
+  "total_ram_gb": 7.75,
+  "heavy_processes_count": 29
+}

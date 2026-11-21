@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large Media Files (Kept out of Git via BRF Lean Repository Policy)
+*.mp4
+*.webm
+*.mkv
+*.wav
+*.mp3
+*.aac
+*.flac
+*.m4a
+
+# Local downloads and temp build directories
+downloads/
+temp/
+temp_dub/
+temp_audio_chunks/
+output/
+*.m4a
+*.tmp
+
+# System and Environment
+.env
+.venv/
+env/
+venv/
+*.log

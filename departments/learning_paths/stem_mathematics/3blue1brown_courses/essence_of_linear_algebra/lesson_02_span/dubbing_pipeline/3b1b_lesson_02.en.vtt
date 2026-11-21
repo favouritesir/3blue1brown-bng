@@ -1,0 +1,2016 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.170 --> 00:00:12.190 align:start position:0%
+ 
+[Music]
+
+00:00:12.190 --> 00:00:12.200 align:start position:0%
+ 
+ 
+
+00:00:12.200 --> 00:00:13.829 align:start position:0%
+ 
+in<00:00:12.320><c> the</c><00:00:12.480><c> last</c><00:00:12.679><c> video</c><00:00:13.080><c> along</c><00:00:13.320><c> with</c><00:00:13.440><c> the</c><00:00:13.559><c> ideas</c>
+
+00:00:13.829 --> 00:00:13.839 align:start position:0%
+in the last video along with the ideas
+ 
+
+00:00:13.839 --> 00:00:15.150 align:start position:0%
+in the last video along with the ideas
+of<00:00:14.040><c> vector</c><00:00:14.320><c> addition</c><00:00:14.639><c> and</c><00:00:14.759><c> scalar</c>
+
+00:00:15.150 --> 00:00:15.160 align:start position:0%
+of vector addition and scalar
+ 
+
+00:00:15.160 --> 00:00:17.230 align:start position:0%
+of vector addition and scalar
+multiplication<00:00:16.160><c> I</c><00:00:16.279><c> described</c><00:00:16.840><c> Vector</c>
+
+00:00:17.230 --> 00:00:17.240 align:start position:0%
+multiplication I described Vector
+ 
+
+00:00:17.240 --> 00:00:18.910 align:start position:0%
+multiplication I described Vector
+coordinates<00:00:17.960><c> where</c><00:00:18.080><c> there's</c><00:00:18.359><c> this</c><00:00:18.560><c> back</c><00:00:18.720><c> and</c>
+
+00:00:18.910 --> 00:00:18.920 align:start position:0%
+coordinates where there's this back and
+ 
+
+00:00:18.920 --> 00:00:21.150 align:start position:0%
+coordinates where there's this back and
+forth<00:00:19.240><c> between</c><00:00:19.840><c> for</c><00:00:20.000><c> example</c><00:00:20.760><c> pairs</c><00:00:21.000><c> of</c>
+
+00:00:21.150 --> 00:00:21.160 align:start position:0%
+forth between for example pairs of
+ 
+
+00:00:21.160 --> 00:00:24.150 align:start position:0%
+forth between for example pairs of
+numbers<00:00:21.600><c> and</c><00:00:21.760><c> two-dimensional</c><00:00:22.760><c> vectors</c><00:00:23.760><c> now</c>
+
+00:00:24.150 --> 00:00:24.160 align:start position:0%
+numbers and two-dimensional vectors now
+ 
+
+00:00:24.160 --> 00:00:25.670 align:start position:0%
+numbers and two-dimensional vectors now
+I<00:00:24.279><c> imagine</c><00:00:24.560><c> the</c><00:00:24.680><c> vector</c><00:00:24.960><c> coordinates</c><00:00:25.359><c> were</c>
+
+00:00:25.670 --> 00:00:25.680 align:start position:0%
+I imagine the vector coordinates were
+ 
+
+00:00:25.680 --> 00:00:27.550 align:start position:0%
+I imagine the vector coordinates were
+already<00:00:25.960><c> familiar</c><00:00:26.359><c> to</c><00:00:26.519><c> a</c><00:00:26.599><c> lot</c><00:00:26.760><c> of</c><00:00:26.880><c> you</c><00:00:27.400><c> but</c>
+
+00:00:27.550 --> 00:00:27.560 align:start position:0%
+already familiar to a lot of you but
+ 
+
+00:00:27.560 --> 00:00:28.950 align:start position:0%
+already familiar to a lot of you but
+there's<00:00:27.800><c> another</c><00:00:28.119><c> kind</c><00:00:28.279><c> of</c><00:00:28.439><c> interesting</c><00:00:28.840><c> way</c>
+
+00:00:28.950 --> 00:00:28.960 align:start position:0%
+there's another kind of interesting way
+ 
+
+00:00:28.960 --> 00:00:30.509 align:start position:0%
+there's another kind of interesting way
+to<00:00:29.119><c> think</c><00:00:29.320><c> about</c><00:00:29.480><c> these</c><00:00:29.640><c> coordinates</c><00:00:30.400><c> which</c>
+
+00:00:30.509 --> 00:00:30.519 align:start position:0%
+to think about these coordinates which
+ 
+
+00:00:30.519 --> 00:00:32.870 align:start position:0%
+to think about these coordinates which
+is<00:00:30.640><c> pretty</c><00:00:30.880><c> Central</c><00:00:31.160><c> to</c><00:00:31.279><c> linear</c><00:00:31.759><c> algebra</c><00:00:32.759><c> when</c>
+
+00:00:32.870 --> 00:00:32.880 align:start position:0%
+is pretty Central to linear algebra when
+ 
+
+00:00:32.880 --> 00:00:34.350 align:start position:0%
+is pretty Central to linear algebra when
+you<00:00:33.040><c> have</c><00:00:33.160><c> a</c><00:00:33.280><c> pair</c><00:00:33.480><c> of</c><00:00:33.640><c> numbers</c><00:00:34.000><c> that's</c><00:00:34.160><c> meant</c>
+
+00:00:34.350 --> 00:00:34.360 align:start position:0%
+you have a pair of numbers that's meant
+ 
+
+00:00:34.360 --> 00:00:37.790 align:start position:0%
+you have a pair of numbers that's meant
+to<00:00:34.520><c> describe</c><00:00:34.800><c> a</c><00:00:34.920><c> vector</c><00:00:35.520><c> like</c><00:00:35.840><c> 3</c><00:00:36.559><c> -2</c><00:00:37.559><c> I</c><00:00:37.640><c> want</c>
+
+00:00:37.790 --> 00:00:37.800 align:start position:0%
+to describe a vector like 3 -2 I want
+ 
+
+00:00:37.800 --> 00:00:39.750 align:start position:0%
+to describe a vector like 3 -2 I want
+you<00:00:38.000><c> to</c><00:00:38.160><c> think</c><00:00:38.320><c> about</c><00:00:38.600><c> each</c><00:00:38.879><c> coordinate</c><00:00:39.440><c> as</c><00:00:39.520><c> a</c>
+
+00:00:39.750 --> 00:00:39.760 align:start position:0%
+you to think about each coordinate as a
+ 
+
+00:00:39.760 --> 00:00:42.470 align:start position:0%
+you to think about each coordinate as a
+scalar<00:00:40.600><c> meaning</c><00:00:41.239><c> think</c><00:00:41.480><c> about</c><00:00:41.719><c> how</c><00:00:41.960><c> each</c><00:00:42.160><c> one</c>
+
+00:00:42.470 --> 00:00:42.480 align:start position:0%
+scalar meaning think about how each one
+ 
+
+00:00:42.480 --> 00:00:45.630 align:start position:0%
+scalar meaning think about how each one
+stretches<00:00:43.000><c> or</c><00:00:43.200><c> squishes</c><00:00:44.000><c> vectors</c><00:00:45.000><c> in</c><00:00:45.120><c> the</c><00:00:45.280><c> XY</c>
+
+00:00:45.630 --> 00:00:45.640 align:start position:0%
+stretches or squishes vectors in the XY
+ 
+
+00:00:45.640 --> 00:00:47.709 align:start position:0%
+stretches or squishes vectors in the XY
+coordinate<00:00:46.160><c> system</c><00:00:46.800><c> there</c><00:00:46.879><c> are</c><00:00:47.079><c> two</c><00:00:47.399><c> very</c>
+
+00:00:47.709 --> 00:00:47.719 align:start position:0%
+coordinate system there are two very
+ 
+
+00:00:47.719 --> 00:00:49.790 align:start position:0%
+coordinate system there are two very
+special<00:00:48.079><c> vectors</c><00:00:48.840><c> the</c><00:00:48.960><c> one</c><00:00:49.160><c> pointing</c><00:00:49.480><c> to</c><00:00:49.640><c> the</c>
+
+00:00:49.790 --> 00:00:49.800 align:start position:0%
+special vectors the one pointing to the
+ 
+
+00:00:49.800 --> 00:00:51.830 align:start position:0%
+special vectors the one pointing to the
+right<00:00:50.000><c> with</c><00:00:50.199><c> length</c><00:00:50.480><c> one</c><00:00:51.039><c> commonly</c><00:00:51.440><c> called</c>
+
+00:00:51.830 --> 00:00:51.840 align:start position:0%
+right with length one commonly called
+ 
+
+00:00:51.840 --> 00:00:54.189 align:start position:0%
+right with length one commonly called
+ihat<00:00:52.559><c> or</c><00:00:52.960><c> the</c><00:00:53.120><c> unit</c><00:00:53.440><c> Vector</c><00:00:53.680><c> in</c><00:00:53.760><c> the</c><00:00:53.960><c> X</c>
+
+00:00:54.189 --> 00:00:54.199 align:start position:0%
+ihat or the unit Vector in the X
+ 
+
+00:00:54.199 --> 00:00:56.110 align:start position:0%
+ihat or the unit Vector in the X
+Direction<00:00:55.079><c> and</c><00:00:55.239><c> the</c><00:00:55.320><c> one</c><00:00:55.520><c> pointing</c><00:00:55.840><c> straight</c>
+
+00:00:56.110 --> 00:00:56.120 align:start position:0%
+Direction and the one pointing straight
+ 
+
+00:00:56.120 --> 00:00:59.069 align:start position:0%
+Direction and the one pointing straight
+up<00:00:56.399><c> with</c><00:00:56.559><c> length</c><00:00:56.840><c> one</c><00:00:57.440><c> commonly</c><00:00:57.879><c> called</c><00:00:58.320><c> J</c><00:00:58.719><c> hat</c>
+
+00:00:59.069 --> 00:00:59.079 align:start position:0%
+up with length one commonly called J hat
+ 
+
+00:00:59.079 --> 00:01:01.349 align:start position:0%
+up with length one commonly called J hat
+or<00:00:59.519><c> the</c><00:00:59.640><c> unit</c><00:01:00.120><c> Vector</c><00:01:00.320><c> in</c><00:01:00.399><c> the</c><00:01:00.559><c> y</c>
+
+00:01:01.349 --> 00:01:01.359 align:start position:0%
+or the unit Vector in the y
+ 
+
+00:01:01.359 --> 00:01:03.750 align:start position:0%
+or the unit Vector in the y
+direction<00:01:02.359><c> now</c><00:01:02.640><c> think</c><00:01:02.800><c> of</c><00:01:02.960><c> the</c><00:01:03.120><c> x</c><00:01:03.359><c> coordinate</c>
+
+00:01:03.750 --> 00:01:03.760 align:start position:0%
+direction now think of the x coordinate
+ 
+
+00:01:03.760 --> 00:01:06.429 align:start position:0%
+direction now think of the x coordinate
+of<00:01:03.879><c> our</c><00:01:04.080><c> Vector</c><00:01:04.640><c> as</c><00:01:04.720><c> a</c><00:01:04.960><c> scaler</c><00:01:05.479><c> that</c><00:01:05.640><c> scales</c><00:01:06.159><c> IH</c>
+
+00:01:06.429 --> 00:01:06.439 align:start position:0%
+of our Vector as a scaler that scales IH
+ 
+
+00:01:06.439 --> 00:01:08.910 align:start position:0%
+of our Vector as a scaler that scales IH
+hat<00:01:06.880><c> stretching</c><00:01:07.320><c> it</c><00:01:07.479><c> by</c><00:01:07.600><c> a</c><00:01:07.720><c> factor</c><00:01:08.080><c> of</c><00:01:08.240><c> three</c>
+
+00:01:08.910 --> 00:01:08.920 align:start position:0%
+hat stretching it by a factor of three
+ 
+
+00:01:08.920 --> 00:01:10.789 align:start position:0%
+hat stretching it by a factor of three
+and<00:01:09.040><c> the</c><00:01:09.200><c> y-coordinate</c><00:01:09.880><c> as</c><00:01:10.000><c> a</c><00:01:10.200><c> scaler</c><00:01:10.640><c> that</c>
+
+00:01:10.789 --> 00:01:10.799 align:start position:0%
+and the y-coordinate as a scaler that
+ 
+
+00:01:10.799 --> 00:01:13.070 align:start position:0%
+and the y-coordinate as a scaler that
+scales<00:01:11.280><c> J</c><00:01:11.640><c> hat</c><00:01:12.040><c> flipping</c><00:01:12.439><c> it</c><00:01:12.600><c> and</c><00:01:12.720><c> stretching</c>
+
+00:01:13.070 --> 00:01:13.080 align:start position:0%
+scales J hat flipping it and stretching
+ 
+
+00:01:13.080 --> 00:01:16.070 align:start position:0%
+scales J hat flipping it and stretching
+it<00:01:13.240><c> by</c><00:01:13.320><c> a</c><00:01:13.479><c> factor</c><00:01:13.759><c> of</c><00:01:13.920><c> two</c><00:01:14.840><c> in</c><00:01:15.040><c> this</c><00:01:15.200><c> sense</c><00:01:15.880><c> the</c>
+
+00:01:16.070 --> 00:01:16.080 align:start position:0%
+it by a factor of two in this sense the
+ 
+
+00:01:16.080 --> 00:01:18.109 align:start position:0%
+it by a factor of two in this sense the
+vector<00:01:16.360><c> that</c><00:01:16.560><c> these</c><00:01:16.759><c> coordinates</c><00:01:17.360><c> describe</c>
+
+00:01:18.109 --> 00:01:18.119 align:start position:0%
+vector that these coordinates describe
+ 
+
+00:01:18.119 --> 00:01:21.069 align:start position:0%
+vector that these coordinates describe
+is<00:01:18.320><c> the</c><00:01:18.560><c> sum</c><00:01:18.880><c> of</c><00:01:19.080><c> two</c><00:01:19.360><c> scaled</c><00:01:19.960><c> vectors</c><00:01:20.960><c> that's</c>
+
+00:01:21.069 --> 00:01:21.079 align:start position:0%
+is the sum of two scaled vectors that's
+ 
+
+00:01:21.079 --> 00:01:22.950 align:start position:0%
+is the sum of two scaled vectors that's
+a<00:01:21.320><c> surprisingly</c><00:01:21.920><c> important</c><00:01:22.320><c> concept</c><00:01:22.759><c> this</c>
+
+00:01:22.950 --> 00:01:22.960 align:start position:0%
+a surprisingly important concept this
+ 
+
+00:01:22.960 --> 00:01:26.270 align:start position:0%
+a surprisingly important concept this
+idea<00:01:23.240><c> of</c><00:01:23.439><c> adding</c><00:01:23.960><c> together</c><00:01:24.280><c> two</c><00:01:24.600><c> scaled</c>
+
+00:01:26.270 --> 00:01:26.280 align:start position:0%
+idea of adding together two scaled
+ 
+
+00:01:26.280 --> 00:01:28.910 align:start position:0%
+idea of adding together two scaled
+vectors<00:01:27.280><c> those</c><00:01:27.479><c> two</c><00:01:27.680><c> vectors</c><00:01:28.119><c> IH</c><00:01:28.360><c> hat</c><00:01:28.479><c> and</c><00:01:28.600><c> J</c>
+
+00:01:28.910 --> 00:01:28.920 align:start position:0%
+vectors those two vectors IH hat and J
+ 
+
+00:01:28.920 --> 00:01:30.950 align:start position:0%
+vectors those two vectors IH hat and J
+hat<00:01:29.159><c> have</c><00:01:29.280><c> a</c><00:01:29.400><c> special</c><00:01:29.640><c> name</c><00:01:30.000><c> by</c><00:01:30.119><c> the</c><00:01:30.240><c> way</c>
+
+00:01:30.950 --> 00:01:30.960 align:start position:0%
+hat have a special name by the way
+ 
+
+00:01:30.960 --> 00:01:32.710 align:start position:0%
+hat have a special name by the way
+together<00:01:31.240><c> they're</c><00:01:31.439><c> called</c><00:01:31.680><c> the</c><00:01:31.880><c> basis</c><00:01:32.439><c> of</c><00:01:32.560><c> a</c>
+
+00:01:32.710 --> 00:01:32.720 align:start position:0%
+together they're called the basis of a
+ 
+
+00:01:32.720 --> 00:01:34.950 align:start position:0%
+together they're called the basis of a
+coordinate<00:01:33.240><c> system</c><00:01:34.200><c> what</c><00:01:34.360><c> this</c><00:01:34.560><c> means</c>
+
+00:01:34.950 --> 00:01:34.960 align:start position:0%
+coordinate system what this means
+ 
+
+00:01:34.960 --> 00:01:36.670 align:start position:0%
+coordinate system what this means
+basically<00:01:35.680><c> is</c><00:01:35.840><c> that</c><00:01:36.000><c> when</c><00:01:36.079><c> you</c><00:01:36.240><c> think</c><00:01:36.439><c> about</c>
+
+00:01:36.670 --> 00:01:36.680 align:start position:0%
+basically is that when you think about
+ 
+
+00:01:36.680 --> 00:01:38.990 align:start position:0%
+basically is that when you think about
+coordinates<00:01:37.119><c> as</c><00:01:37.280><c> scalers</c><00:01:38.079><c> the</c><00:01:38.200><c> basis</c><00:01:38.600><c> vectors</c>
+
+00:01:38.990 --> 00:01:39.000 align:start position:0%
+coordinates as scalers the basis vectors
+ 
+
+00:01:39.000 --> 00:01:41.310 align:start position:0%
+coordinates as scalers the basis vectors
+are<00:01:39.159><c> what</c><00:01:39.320><c> those</c><00:01:39.479><c> scalers</c><00:01:40.040><c> actually</c><00:01:40.640><c> you</c><00:01:40.799><c> know</c>
+
+00:01:41.310 --> 00:01:41.320 align:start position:0%
+are what those scalers actually you know
+ 
+
+00:01:41.320 --> 00:01:43.670 align:start position:0%
+are what those scalers actually you know
+scale<00:01:42.320><c> there's</c><00:01:42.680><c> also</c><00:01:42.880><c> a</c><00:01:43.000><c> more</c><00:01:43.200><c> technical</c>
+
+00:01:43.670 --> 00:01:43.680 align:start position:0%
+scale there's also a more technical
+ 
+
+00:01:43.680 --> 00:01:46.510 align:start position:0%
+scale there's also a more technical
+definition<00:01:44.439><c> but</c><00:01:44.640><c> I'll</c><00:01:44.799><c> get</c><00:01:44.920><c> to</c><00:01:45.079><c> that</c>
+
+00:01:46.510 --> 00:01:46.520 align:start position:0%
+definition but I'll get to that
+ 
+
+00:01:46.520 --> 00:01:48.950 align:start position:0%
+definition but I'll get to that
+later<00:01:47.520><c> by</c><00:01:47.640><c> Framing</c><00:01:48.000><c> our</c><00:01:48.119><c> coordinate</c><00:01:48.560><c> system</c>
+
+00:01:48.950 --> 00:01:48.960 align:start position:0%
+later by Framing our coordinate system
+ 
+
+00:01:48.960 --> 00:01:50.910 align:start position:0%
+later by Framing our coordinate system
+in<00:01:49.079><c> terms</c><00:01:49.360><c> of</c><00:01:49.600><c> these</c><00:01:49.759><c> two</c><00:01:50.119><c> special</c><00:01:50.479><c> basis</c>
+
+00:01:50.910 --> 00:01:50.920 align:start position:0%
+in terms of these two special basis
+ 
+
+00:01:50.920 --> 00:01:53.069 align:start position:0%
+in terms of these two special basis
+vectors<00:01:51.640><c> it</c><00:01:51.799><c> raises</c><00:01:52.159><c> a</c><00:01:52.320><c> pretty</c><00:01:52.560><c> interesting</c>
+
+00:01:53.069 --> 00:01:53.079 align:start position:0%
+vectors it raises a pretty interesting
+ 
+
+00:01:53.079 --> 00:01:55.469 align:start position:0%
+vectors it raises a pretty interesting
+and<00:01:53.200><c> subtle</c><00:01:53.560><c> point</c><00:01:54.360><c> we</c><00:01:54.479><c> could</c><00:01:54.640><c> have</c><00:01:54.799><c> chosen</c>
+
+00:01:55.469 --> 00:01:55.479 align:start position:0%
+and subtle point we could have chosen
+ 
+
+00:01:55.479 --> 00:01:57.590 align:start position:0%
+and subtle point we could have chosen
+different<00:01:55.880><c> basis</c><00:01:56.320><c> vectors</c><00:01:56.960><c> and</c><00:01:57.119><c> gotten</c><00:01:57.360><c> a</c>
+
+00:01:57.590 --> 00:01:57.600 align:start position:0%
+different basis vectors and gotten a
+ 
+
+00:01:57.600 --> 00:02:00.990 align:start position:0%
+different basis vectors and gotten a
+completely<00:01:58.159><c> reasonable</c><00:01:59.000><c> new</c><00:01:59.479><c> coord</c><00:02:00.200><c> system</c>
+
+00:02:00.990 --> 00:02:01.000 align:start position:0%
+completely reasonable new coord system
+ 
+
+00:02:01.000 --> 00:02:03.109 align:start position:0%
+completely reasonable new coord system
+for<00:02:01.200><c> example</c><00:02:01.759><c> take</c><00:02:02.079><c> some</c><00:02:02.320><c> Vector</c><00:02:02.640><c> pointing</c><00:02:02.960><c> up</c>
+
+00:02:03.109 --> 00:02:03.119 align:start position:0%
+for example take some Vector pointing up
+ 
+
+00:02:03.119 --> 00:02:04.950 align:start position:0%
+for example take some Vector pointing up
+and<00:02:03.240><c> to</c><00:02:03.399><c> the</c><00:02:03.560><c> right</c><00:02:04.000><c> along</c><00:02:04.320><c> with</c><00:02:04.520><c> some</c><00:02:04.719><c> other</c>
+
+00:02:04.950 --> 00:02:04.960 align:start position:0%
+and to the right along with some other
+ 
+
+00:02:04.960 --> 00:02:06.510 align:start position:0%
+and to the right along with some other
+Vector<00:02:05.240><c> pointing</c><00:02:05.640><c> down</c><00:02:05.840><c> and</c><00:02:05.960><c> to</c><00:02:06.119><c> the</c><00:02:06.240><c> right</c><00:02:06.399><c> in</c>
+
+00:02:06.510 --> 00:02:06.520 align:start position:0%
+Vector pointing down and to the right in
+ 
+
+00:02:06.520 --> 00:02:08.749 align:start position:0%
+Vector pointing down and to the right in
+some<00:02:06.759><c> way</c><00:02:07.479><c> take</c><00:02:07.640><c> a</c><00:02:07.759><c> moment</c><00:02:08.039><c> to</c><00:02:08.160><c> think</c><00:02:08.360><c> about</c>
+
+00:02:08.749 --> 00:02:08.759 align:start position:0%
+some way take a moment to think about
+ 
+
+00:02:08.759 --> 00:02:10.270 align:start position:0%
+some way take a moment to think about
+all<00:02:08.959><c> the</c><00:02:09.119><c> different</c><00:02:09.399><c> vectors</c><00:02:09.800><c> that</c><00:02:09.879><c> you</c><00:02:10.000><c> can</c>
+
+00:02:10.270 --> 00:02:10.280 align:start position:0%
+all the different vectors that you can
+ 
+
+00:02:10.280 --> 00:02:13.430 align:start position:0%
+all the different vectors that you can
+get<00:02:10.800><c> by</c><00:02:10.959><c> choosing</c><00:02:11.440><c> two</c><00:02:11.840><c> scalers</c><00:02:12.840><c> using</c><00:02:13.239><c> each</c>
+
+00:02:13.430 --> 00:02:13.440 align:start position:0%
+get by choosing two scalers using each
+ 
+
+00:02:13.440 --> 00:02:15.750 align:start position:0%
+get by choosing two scalers using each
+one<00:02:13.640><c> to</c><00:02:13.879><c> scale</c><00:02:14.280><c> one</c><00:02:14.400><c> of</c><00:02:14.519><c> the</c><00:02:14.680><c> vectors</c><00:02:15.560><c> then</c>
+
+00:02:15.750 --> 00:02:15.760 align:start position:0%
+one to scale one of the vectors then
+ 
+
+00:02:15.760 --> 00:02:18.229 align:start position:0%
+one to scale one of the vectors then
+adding<00:02:16.239><c> together</c><00:02:16.519><c> what</c><00:02:16.640><c> you</c><00:02:16.840><c> get</c><00:02:17.840><c> which</c><00:02:18.000><c> two</c>
+
+00:02:18.229 --> 00:02:18.239 align:start position:0%
+adding together what you get which two
+ 
+
+00:02:18.239 --> 00:02:19.790 align:start position:0%
+adding together what you get which two
+dimensional<00:02:18.640><c> vectors</c><00:02:19.000><c> can</c><00:02:19.080><c> you</c><00:02:19.280><c> reach</c><00:02:19.599><c> by</c>
+
+00:02:19.790 --> 00:02:19.800 align:start position:0%
+dimensional vectors can you reach by
+ 
+
+00:02:19.800 --> 00:02:23.670 align:start position:0%
+dimensional vectors can you reach by
+altering<00:02:20.280><c> the</c><00:02:20.400><c> choices</c><00:02:20.760><c> of</c>
+
+00:02:23.670 --> 00:02:23.680 align:start position:0%
+ 
+ 
+
+00:02:23.680 --> 00:02:26.229 align:start position:0%
+ 
+scalers<00:02:24.680><c> the</c><00:02:24.840><c> answer</c><00:02:25.280><c> is</c><00:02:25.400><c> that</c><00:02:25.519><c> you</c><00:02:25.599><c> can</c><00:02:25.800><c> reach</c>
+
+00:02:26.229 --> 00:02:26.239 align:start position:0%
+scalers the answer is that you can reach
+ 
+
+00:02:26.239 --> 00:02:28.470 align:start position:0%
+scalers the answer is that you can reach
+every<00:02:26.599><c> possible</c><00:02:26.959><c> two-dimensional</c><00:02:27.640><c> vector</c>
+
+00:02:28.470 --> 00:02:28.480 align:start position:0%
+every possible two-dimensional vector
+ 
+
+00:02:28.480 --> 00:02:31.309 align:start position:0%
+every possible two-dimensional vector
+and<00:02:28.599><c> I</c><00:02:28.680><c> think</c><00:02:28.800><c> it's</c><00:02:28.920><c> a</c><00:02:29.040><c> good</c><00:02:29.200><c> puzzle</c><00:02:29.519><c> to</c><00:02:30.080><c> plate</c>
+
+00:02:31.309 --> 00:02:31.319 align:start position:0%
+and I think it's a good puzzle to plate
+ 
+
+00:02:31.319 --> 00:02:34.509 align:start position:0%
+and I think it's a good puzzle to plate
+y<00:02:32.319><c> a</c><00:02:32.480><c> new</c><00:02:32.760><c> pair</c><00:02:32.959><c> of</c><00:02:33.120><c> basis</c><00:02:33.480><c> vectors</c><00:02:33.879><c> like</c><00:02:34.080><c> this</c>
+
+00:02:34.509 --> 00:02:34.519 align:start position:0%
+y a new pair of basis vectors like this
+ 
+
+00:02:34.519 --> 00:02:36.270 align:start position:0%
+y a new pair of basis vectors like this
+still<00:02:34.800><c> gives</c><00:02:35.000><c> us</c><00:02:35.160><c> a</c><00:02:35.319><c> valid</c><00:02:35.599><c> way</c><00:02:35.760><c> to</c><00:02:35.920><c> go</c><00:02:36.160><c> back</c>
+
+00:02:36.270 --> 00:02:36.280 align:start position:0%
+still gives us a valid way to go back
+ 
+
+00:02:36.280 --> 00:02:38.190 align:start position:0%
+still gives us a valid way to go back
+and<00:02:36.480><c> forth</c><00:02:36.760><c> between</c><00:02:37.120><c> Pairs</c><00:02:37.400><c> of</c><00:02:37.519><c> numbers</c><00:02:38.080><c> and</c>
+
+00:02:38.190 --> 00:02:38.200 align:start position:0%
+and forth between Pairs of numbers and
+ 
+
+00:02:38.200 --> 00:02:40.149 align:start position:0%
+and forth between Pairs of numbers and
+two-dimensional<00:02:38.920><c> vectors</c><00:02:39.840><c> but</c><00:02:40.000><c> the</c>
+
+00:02:40.149 --> 00:02:40.159 align:start position:0%
+two-dimensional vectors but the
+ 
+
+00:02:40.159 --> 00:02:42.190 align:start position:0%
+two-dimensional vectors but the
+association<00:02:40.840><c> is</c><00:02:41.080><c> definitely</c><00:02:41.680><c> different</c><00:02:42.040><c> from</c>
+
+00:02:42.190 --> 00:02:42.200 align:start position:0%
+association is definitely different from
+ 
+
+00:02:42.200 --> 00:02:43.670 align:start position:0%
+association is definitely different from
+the<00:02:42.280><c> one</c><00:02:42.440><c> that</c><00:02:42.560><c> you</c><00:02:42.720><c> get</c><00:02:42.920><c> using</c><00:02:43.200><c> the</c><00:02:43.360><c> more</c>
+
+00:02:43.670 --> 00:02:43.680 align:start position:0%
+the one that you get using the more
+ 
+
+00:02:43.680 --> 00:02:46.790 align:start position:0%
+the one that you get using the more
+standard<00:02:44.200><c> basis</c><00:02:44.640><c> of</c><00:02:44.840><c> ihat</c><00:02:45.239><c> and</c><00:02:45.560><c> jhat</c><00:02:46.560><c> this</c><00:02:46.680><c> is</c>
+
+00:02:46.790 --> 00:02:46.800 align:start position:0%
+standard basis of ihat and jhat this is
+ 
+
+00:02:46.800 --> 00:02:48.350 align:start position:0%
+standard basis of ihat and jhat this is
+something<00:02:47.040><c> I'll</c><00:02:47.200><c> go</c><00:02:47.319><c> into</c><00:02:47.640><c> much</c><00:02:47.840><c> more</c><00:02:48.040><c> detail</c>
+
+00:02:48.350 --> 00:02:48.360 align:start position:0%
+something I'll go into much more detail
+ 
+
+00:02:48.360 --> 00:02:50.110 align:start position:0%
+something I'll go into much more detail
+on<00:02:48.599><c> later</c><00:02:49.120><c> describing</c><00:02:49.640><c> the</c><00:02:49.800><c> exact</c>
+
+00:02:50.110 --> 00:02:50.120 align:start position:0%
+on later describing the exact
+ 
+
+00:02:50.120 --> 00:02:51.630 align:start position:0%
+on later describing the exact
+relationship<00:02:50.879><c> between</c><00:02:51.319><c> different</c>
+
+00:02:51.630 --> 00:02:51.640 align:start position:0%
+relationship between different
+ 
+
+00:02:51.640 --> 00:02:53.670 align:start position:0%
+relationship between different
+coordinate<00:02:52.120><c> systems</c><00:02:52.840><c> but</c><00:02:52.959><c> for</c><00:02:53.159><c> right</c><00:02:53.319><c> now</c><00:02:53.560><c> I</c>
+
+00:02:53.670 --> 00:02:53.680 align:start position:0%
+coordinate systems but for right now I
+ 
+
+00:02:53.680 --> 00:02:55.270 align:start position:0%
+coordinate systems but for right now I
+just<00:02:53.879><c> want</c><00:02:54.000><c> you</c><00:02:54.120><c> to</c><00:02:54.280><c> appreciate</c><00:02:54.720><c> the</c><00:02:54.920><c> fact</c>
+
+00:02:55.270 --> 00:02:55.280 align:start position:0%
+just want you to appreciate the fact
+ 
+
+00:02:55.280 --> 00:02:57.030 align:start position:0%
+just want you to appreciate the fact
+that<00:02:55.519><c> anytime</c><00:02:55.920><c> we</c><00:02:56.159><c> describe</c><00:02:56.640><c> vectors</c>
+
+00:02:57.030 --> 00:02:57.040 align:start position:0%
+that anytime we describe vectors
+ 
+
+00:02:57.040 --> 00:02:59.229 align:start position:0%
+that anytime we describe vectors
+numerically<00:02:57.920><c> it</c><00:02:58.040><c> depends</c><00:02:58.360><c> on</c><00:02:58.519><c> an</c><00:02:58.720><c> implicit</c>
+
+00:02:59.229 --> 00:02:59.239 align:start position:0%
+numerically it depends on an implicit
+ 
+
+00:02:59.239 --> 00:03:02.430 align:start position:0%
+numerically it depends on an implicit
+choice<00:02:59.599><c> of</c><00:02:59.920><c> what</c><00:03:00.120><c> basis</c><00:03:00.519><c> vectors</c><00:03:00.840><c> we're</c><00:03:01.440><c> using</c>
+
+00:03:02.430 --> 00:03:02.440 align:start position:0%
+choice of what basis vectors we're using
+ 
+
+00:03:02.440 --> 00:03:04.070 align:start position:0%
+choice of what basis vectors we're using
+so<00:03:02.760><c> anytime</c><00:03:03.159><c> that</c><00:03:03.280><c> you're</c><00:03:03.440><c> scaling</c><00:03:03.879><c> two</c>
+
+00:03:04.070 --> 00:03:04.080 align:start position:0%
+so anytime that you're scaling two
+ 
+
+00:03:04.080 --> 00:03:05.869 align:start position:0%
+so anytime that you're scaling two
+vectors<00:03:04.400><c> and</c><00:03:04.560><c> adding</c><00:03:04.840><c> them</c><00:03:05.080><c> like</c><00:03:05.239><c> this</c><00:03:05.720><c> it's</c>
+
+00:03:05.869 --> 00:03:05.879 align:start position:0%
+vectors and adding them like this it's
+ 
+
+00:03:05.879 --> 00:03:10.309 align:start position:0%
+vectors and adding them like this it's
+called<00:03:06.080><c> a</c><00:03:06.319><c> linear</c><00:03:06.879><c> combination</c><00:03:07.720><c> of</c><00:03:07.959><c> those</c><00:03:08.120><c> two</c>
+
+00:03:10.309 --> 00:03:10.319 align:start position:0%
+called a linear combination of those two
+ 
+
+00:03:10.319 --> 00:03:12.470 align:start position:0%
+called a linear combination of those two
+vectors<00:03:11.319><c> where</c><00:03:11.440><c> does</c><00:03:11.599><c> this</c><00:03:11.720><c> word</c><00:03:11.879><c> linear</c><00:03:12.319><c> come</c>
+
+00:03:12.470 --> 00:03:12.480 align:start position:0%
+vectors where does this word linear come
+ 
+
+00:03:12.480 --> 00:03:13.910 align:start position:0%
+vectors where does this word linear come
+from<00:03:12.799><c> why</c><00:03:12.920><c> does</c><00:03:13.120><c> this</c><00:03:13.280><c> have</c><00:03:13.440><c> anything</c><00:03:13.680><c> to</c><00:03:13.799><c> do</c>
+
+00:03:13.910 --> 00:03:13.920 align:start position:0%
+from why does this have anything to do
+ 
+
+00:03:13.920 --> 00:03:16.270 align:start position:0%
+from why does this have anything to do
+with<00:03:14.080><c> lines</c><00:03:14.879><c> well</c><00:03:15.080><c> this</c><00:03:15.159><c> isn't</c><00:03:15.400><c> the</c><00:03:15.519><c> atomology</c>
+
+00:03:16.270 --> 00:03:16.280 align:start position:0%
+with lines well this isn't the atomology
+ 
+
+00:03:16.280 --> 00:03:18.110 align:start position:0%
+with lines well this isn't the atomology
+but<00:03:16.519><c> one</c><00:03:16.720><c> way</c><00:03:16.879><c> I</c><00:03:17.000><c> like</c><00:03:17.120><c> to</c><00:03:17.239><c> think</c><00:03:17.440><c> about</c><00:03:17.640><c> it</c><00:03:18.000><c> is</c>
+
+00:03:18.110 --> 00:03:18.120 align:start position:0%
+but one way I like to think about it is
+ 
+
+00:03:18.120 --> 00:03:20.149 align:start position:0%
+but one way I like to think about it is
+that<00:03:18.280><c> if</c><00:03:18.360><c> you</c><00:03:18.599><c> fix</c><00:03:18.879><c> one</c><00:03:19.000><c> of</c><00:03:19.159><c> those</c><00:03:19.319><c> scalers</c><00:03:20.000><c> and</c>
+
+00:03:20.149 --> 00:03:20.159 align:start position:0%
+that if you fix one of those scalers and
+ 
+
+00:03:20.159 --> 00:03:21.550 align:start position:0%
+that if you fix one of those scalers and
+let<00:03:20.319><c> the</c><00:03:20.480><c> other</c><00:03:20.640><c> one</c><00:03:20.840><c> change</c><00:03:21.120><c> its</c><00:03:21.280><c> value</c>
+
+00:03:21.550 --> 00:03:21.560 align:start position:0%
+let the other one change its value
+ 
+
+00:03:21.560 --> 00:03:24.350 align:start position:0%
+let the other one change its value
+freely<00:03:22.400><c> the</c><00:03:22.599><c> tip</c><00:03:22.879><c> of</c><00:03:23.040><c> the</c><00:03:23.200><c> resulting</c><00:03:23.799><c> Vector</c>
+
+00:03:24.350 --> 00:03:24.360 align:start position:0%
+freely the tip of the resulting Vector
+ 
+
+00:03:24.360 --> 00:03:28.070 align:start position:0%
+freely the tip of the resulting Vector
+draws<00:03:24.720><c> a</c><00:03:24.879><c> straight</c>
+
+00:03:28.070 --> 00:03:28.080 align:start position:0%
+ 
+ 
+
+00:03:28.080 --> 00:03:30.789 align:start position:0%
+ 
+line<00:03:29.080><c> now</c><00:03:29.319><c> if</c><00:03:29.400><c> you</c><00:03:29.519><c> let</c><00:03:29.879><c> both</c><00:03:30.040><c> scalers</c><00:03:30.480><c> range</c>
+
+00:03:30.789 --> 00:03:30.799 align:start position:0%
+line now if you let both scalers range
+ 
+
+00:03:30.799 --> 00:03:32.910 align:start position:0%
+line now if you let both scalers range
+freely<00:03:31.400><c> and</c><00:03:31.599><c> consider</c><00:03:32.159><c> every</c><00:03:32.560><c> possible</c>
+
+00:03:32.910 --> 00:03:32.920 align:start position:0%
+freely and consider every possible
+ 
+
+00:03:32.920 --> 00:03:34.589 align:start position:0%
+freely and consider every possible
+Vector<00:03:33.200><c> that</c><00:03:33.280><c> you</c><00:03:33.400><c> can</c><00:03:33.640><c> get</c><00:03:34.159><c> there</c><00:03:34.239><c> are</c><00:03:34.400><c> two</c>
+
+00:03:34.589 --> 00:03:34.599 align:start position:0%
+Vector that you can get there are two
+ 
+
+00:03:34.599 --> 00:03:37.030 align:start position:0%
+Vector that you can get there are two
+things<00:03:34.840><c> that</c><00:03:34.959><c> can</c><00:03:35.319><c> happen</c><00:03:36.319><c> for</c><00:03:36.480><c> most</c><00:03:36.680><c> pairs</c><00:03:36.879><c> of</c>
+
+00:03:37.030 --> 00:03:37.040 align:start position:0%
+things that can happen for most pairs of
+ 
+
+00:03:37.040 --> 00:03:38.990 align:start position:0%
+things that can happen for most pairs of
+vectors<00:03:37.599><c> you'll</c><00:03:37.840><c> be</c><00:03:37.959><c> able</c><00:03:38.120><c> to</c><00:03:38.239><c> reach</c><00:03:38.640><c> every</c>
+
+00:03:38.990 --> 00:03:39.000 align:start position:0%
+vectors you'll be able to reach every
+ 
+
+00:03:39.000 --> 00:03:40.789 align:start position:0%
+vectors you'll be able to reach every
+possible<00:03:39.360><c> point</c><00:03:39.560><c> in</c><00:03:39.680><c> the</c><00:03:39.799><c> plane</c><00:03:40.519><c> every</c>
+
+00:03:40.789 --> 00:03:40.799 align:start position:0%
+possible point in the plane every
+ 
+
+00:03:40.799 --> 00:03:42.550 align:start position:0%
+possible point in the plane every
+two-dimensional<00:03:41.519><c> Vector</c><00:03:41.879><c> is</c><00:03:42.040><c> within</c><00:03:42.319><c> your</c>
+
+00:03:42.550 --> 00:03:42.560 align:start position:0%
+two-dimensional Vector is within your
+ 
+
+00:03:42.560 --> 00:03:44.910 align:start position:0%
+two-dimensional Vector is within your
+grasp<00:03:43.560><c> however</c><00:03:43.840><c> in</c><00:03:43.959><c> The</c><00:03:44.120><c> Unlucky</c><00:03:44.599><c> case</c><00:03:44.799><c> where</c>
+
+00:03:44.910 --> 00:03:44.920 align:start position:0%
+grasp however in The Unlucky case where
+ 
+
+00:03:44.920 --> 00:03:46.949 align:start position:0%
+grasp however in The Unlucky case where
+your<00:03:45.080><c> two</c><00:03:45.319><c> original</c><00:03:45.760><c> vectors</c><00:03:46.280><c> happen</c><00:03:46.519><c> to</c><00:03:46.680><c> line</c>
+
+00:03:46.949 --> 00:03:46.959 align:start position:0%
+your two original vectors happen to line
+ 
+
+00:03:46.959 --> 00:03:49.429 align:start position:0%
+your two original vectors happen to line
+up<00:03:47.560><c> the</c><00:03:47.720><c> tip</c><00:03:47.920><c> of</c><00:03:48.040><c> the</c><00:03:48.200><c> resulting</c><00:03:48.680><c> Vector</c><00:03:49.239><c> is</c>
+
+00:03:49.429 --> 00:03:49.439 align:start position:0%
+up the tip of the resulting Vector is
+ 
+
+00:03:49.439 --> 00:03:51.589 align:start position:0%
+up the tip of the resulting Vector is
+limited<00:03:49.840><c> to</c><00:03:50.040><c> just</c><00:03:50.239><c> this</c><00:03:50.439><c> single</c><00:03:50.879><c> line</c><00:03:51.280><c> passing</c>
+
+00:03:51.589 --> 00:03:51.599 align:start position:0%
+limited to just this single line passing
+ 
+
+00:03:51.599 --> 00:03:52.949 align:start position:0%
+limited to just this single line passing
+through<00:03:51.799><c> the</c>
+
+00:03:52.949 --> 00:03:52.959 align:start position:0%
+through the
+ 
+
+00:03:52.959 --> 00:03:54.949 align:start position:0%
+through the
+origin<00:03:53.959><c> actually</c><00:03:54.319><c> technically</c><00:03:54.680><c> there's</c><00:03:54.840><c> a</c>
+
+00:03:54.949 --> 00:03:54.959 align:start position:0%
+origin actually technically there's a
+ 
+
+00:03:54.959 --> 00:03:57.030 align:start position:0%
+origin actually technically there's a
+third<00:03:55.280><c> possibility</c><00:03:55.760><c> too</c><00:03:56.360><c> both</c><00:03:56.560><c> your</c><00:03:56.720><c> vectors</c>
+
+00:03:57.030 --> 00:03:57.040 align:start position:0%
+third possibility too both your vectors
+ 
+
+00:03:57.040 --> 00:03:58.949 align:start position:0%
+third possibility too both your vectors
+could<00:03:57.159><c> be</c><00:03:57.360><c> zero</c><00:03:58.000><c> in</c><00:03:58.159><c> which</c><00:03:58.319><c> case</c><00:03:58.560><c> you'd</c><00:03:58.799><c> just</c>
+
+00:03:58.949 --> 00:03:58.959 align:start position:0%
+could be zero in which case you'd just
+ 
+
+00:03:58.959 --> 00:04:00.270 align:start position:0%
+could be zero in which case you'd just
+be<00:03:59.159><c> stuck</c><00:03:59.400><c> at</c><00:03:59.519><c> the</c>
+
+00:04:00.270 --> 00:04:00.280 align:start position:0%
+be stuck at the
+ 
+
+00:04:00.280 --> 00:04:03.030 align:start position:0%
+be stuck at the
+origin<00:04:01.280><c> here's</c><00:04:01.480><c> some</c><00:04:01.640><c> more</c><00:04:01.879><c> terminology</c><00:04:02.879><c> the</c>
+
+00:04:03.030 --> 00:04:03.040 align:start position:0%
+origin here's some more terminology the
+ 
+
+00:04:03.040 --> 00:04:04.990 align:start position:0%
+origin here's some more terminology the
+set<00:04:03.200><c> of</c><00:04:03.480><c> all</c><00:04:03.799><c> possible</c><00:04:04.200><c> vectors</c><00:04:04.560><c> that</c><00:04:04.640><c> you</c><00:04:04.760><c> can</c>
+
+00:04:04.990 --> 00:04:05.000 align:start position:0%
+set of all possible vectors that you can
+ 
+
+00:04:05.000 --> 00:04:06.949 align:start position:0%
+set of all possible vectors that you can
+reach<00:04:05.319><c> with</c><00:04:05.439><c> a</c><00:04:05.599><c> linear</c><00:04:06.079><c> combination</c><00:04:06.720><c> of</c><00:04:06.840><c> a</c>
+
+00:04:06.949 --> 00:04:06.959 align:start position:0%
+reach with a linear combination of a
+ 
+
+00:04:06.959 --> 00:04:09.710 align:start position:0%
+reach with a linear combination of a
+given<00:04:07.200><c> pair</c><00:04:07.400><c> of</c><00:04:07.560><c> vectors</c><00:04:08.360><c> is</c><00:04:08.560><c> called</c><00:04:08.799><c> the</c><00:04:09.040><c> span</c>
+
+00:04:09.710 --> 00:04:09.720 align:start position:0%
+given pair of vectors is called the span
+ 
+
+00:04:09.720 --> 00:04:13.470 align:start position:0%
+given pair of vectors is called the span
+of<00:04:09.920><c> those</c><00:04:10.120><c> two</c>
+
+00:04:13.470 --> 00:04:13.480 align:start position:0%
+ 
+ 
+
+00:04:13.480 --> 00:04:16.069 align:start position:0%
+ 
+vectors<00:04:14.480><c> so</c><00:04:14.760><c> restating</c><00:04:15.280><c> what</c><00:04:15.400><c> we</c><00:04:15.519><c> just</c><00:04:15.720><c> saw</c><00:04:15.959><c> in</c>
+
+00:04:16.069 --> 00:04:16.079 align:start position:0%
+vectors so restating what we just saw in
+ 
+
+00:04:16.079 --> 00:04:18.550 align:start position:0%
+vectors so restating what we just saw in
+this<00:04:16.199><c> lingo</c><00:04:16.959><c> the</c><00:04:17.120><c> span</c><00:04:17.440><c> of</c><00:04:17.639><c> most</c><00:04:17.880><c> pairs</c><00:04:18.079><c> of</c><00:04:18.199><c> 2D</c>
+
+00:04:18.550 --> 00:04:18.560 align:start position:0%
+this lingo the span of most pairs of 2D
+ 
+
+00:04:18.560 --> 00:04:21.229 align:start position:0%
+this lingo the span of most pairs of 2D
+vectors<00:04:19.199><c> is</c><00:04:19.400><c> all</c><00:04:19.639><c> vectors</c><00:04:19.959><c> of</c><00:04:20.079><c> 2D</c><00:04:20.440><c> space</c><00:04:21.120><c> but</c>
+
+00:04:21.229 --> 00:04:21.239 align:start position:0%
+vectors is all vectors of 2D space but
+ 
+
+00:04:21.239 --> 00:04:23.350 align:start position:0%
+vectors is all vectors of 2D space but
+when<00:04:21.400><c> they</c><00:04:21.560><c> line</c><00:04:21.799><c> up</c><00:04:22.280><c> their</c><00:04:22.479><c> span</c><00:04:22.919><c> is</c><00:04:23.120><c> all</c>
+
+00:04:23.350 --> 00:04:23.360 align:start position:0%
+when they line up their span is all
+ 
+
+00:04:23.360 --> 00:04:26.030 align:start position:0%
+when they line up their span is all
+vectors<00:04:23.800><c> whose</c><00:04:24.080><c> tip</c><00:04:24.560><c> sit</c><00:04:24.800><c> on</c><00:04:24.960><c> a</c><00:04:25.080><c> certain</c>
+
+00:04:26.030 --> 00:04:26.040 align:start position:0%
+vectors whose tip sit on a certain
+ 
+
+00:04:26.040 --> 00:04:28.310 align:start position:0%
+vectors whose tip sit on a certain
+line<00:04:27.040><c> remember</c><00:04:27.360><c> how</c><00:04:27.520><c> I</c><00:04:27.600><c> said</c><00:04:27.800><c> that</c><00:04:27.919><c> linear</c>
+
+00:04:28.310 --> 00:04:28.320 align:start position:0%
+line remember how I said that linear
+ 
+
+00:04:28.320 --> 00:04:30.310 align:start position:0%
+line remember how I said that linear
+algebra<00:04:28.919><c> revolves</c><00:04:29.400><c> around</c><00:04:29.759><c> vector</c><00:04:30.039><c> addition</c>
+
+00:04:30.310 --> 00:04:30.320 align:start position:0%
+algebra revolves around vector addition
+ 
+
+00:04:30.320 --> 00:04:32.990 align:start position:0%
+algebra revolves around vector addition
+and<00:04:30.479><c> scalar</c><00:04:31.280><c> multiplication</c><00:04:32.280><c> well</c><00:04:32.520><c> the</c><00:04:32.680><c> span</c>
+
+00:04:32.990 --> 00:04:33.000 align:start position:0%
+and scalar multiplication well the span
+ 
+
+00:04:33.000 --> 00:04:35.070 align:start position:0%
+and scalar multiplication well the span
+of<00:04:33.160><c> two</c><00:04:33.360><c> vectors</c><00:04:34.039><c> is</c><00:04:34.240><c> basically</c><00:04:34.600><c> a</c><00:04:34.720><c> way</c><00:04:34.880><c> of</c>
+
+00:04:35.070 --> 00:04:35.080 align:start position:0%
+of two vectors is basically a way of
+ 
+
+00:04:35.080 --> 00:04:37.110 align:start position:0%
+of two vectors is basically a way of
+asking<00:04:35.680><c> what</c><00:04:35.800><c> are</c><00:04:36.080><c> all</c><00:04:36.240><c> the</c><00:04:36.440><c> possible</c><00:04:36.800><c> vectors</c>
+
+00:04:37.110 --> 00:04:37.120 align:start position:0%
+asking what are all the possible vectors
+ 
+
+00:04:37.120 --> 00:04:39.150 align:start position:0%
+asking what are all the possible vectors
+you<00:04:37.240><c> can</c><00:04:37.400><c> reach</c><00:04:37.919><c> using</c><00:04:38.320><c> only</c><00:04:38.680><c> these</c><00:04:38.919><c> two</c>
+
+00:04:39.150 --> 00:04:39.160 align:start position:0%
+you can reach using only these two
+ 
+
+00:04:39.160 --> 00:04:41.310 align:start position:0%
+you can reach using only these two
+fundamental<00:04:39.800><c> operations</c><00:04:40.720><c> vector</c><00:04:41.000><c> addition</c>
+
+00:04:41.310 --> 00:04:41.320 align:start position:0%
+fundamental operations vector addition
+ 
+
+00:04:41.320 --> 00:04:42.510 align:start position:0%
+fundamental operations vector addition
+and<00:04:41.440><c> scalar</c>
+
+00:04:42.510 --> 00:04:42.520 align:start position:0%
+and scalar
+ 
+
+00:04:42.520 --> 00:04:44.310 align:start position:0%
+and scalar
+multiplication<00:04:43.520><c> this</c><00:04:43.600><c> is</c><00:04:43.720><c> a</c><00:04:43.880><c> good</c><00:04:44.000><c> time</c><00:04:44.160><c> to</c>
+
+00:04:44.310 --> 00:04:44.320 align:start position:0%
+multiplication this is a good time to
+ 
+
+00:04:44.320 --> 00:04:45.710 align:start position:0%
+multiplication this is a good time to
+talk<00:04:44.479><c> about</c><00:04:44.680><c> how</c><00:04:44.840><c> people</c><00:04:45.120><c> commonly</c><00:04:45.479><c> think</c>
+
+00:04:45.710 --> 00:04:45.720 align:start position:0%
+talk about how people commonly think
+ 
+
+00:04:45.720 --> 00:04:48.510 align:start position:0%
+talk about how people commonly think
+about<00:04:46.000><c> vectors</c><00:04:46.520><c> as</c><00:04:46.800><c> points</c><00:04:47.800><c> it</c><00:04:47.960><c> gets</c><00:04:48.280><c> really</c>
+
+00:04:48.510 --> 00:04:48.520 align:start position:0%
+about vectors as points it gets really
+ 
+
+00:04:48.520 --> 00:04:49.790 align:start position:0%
+about vectors as points it gets really
+crowded<00:04:48.919><c> to</c><00:04:49.039><c> think</c><00:04:49.199><c> about</c><00:04:49.400><c> a</c><00:04:49.560><c> whole</c>
+
+00:04:49.790 --> 00:04:49.800 align:start position:0%
+crowded to think about a whole
+ 
+
+00:04:49.800 --> 00:04:52.150 align:start position:0%
+crowded to think about a whole
+collection<00:04:50.199><c> of</c><00:04:50.360><c> vectors</c><00:04:50.960><c> sitting</c><00:04:51.240><c> on</c><00:04:51.400><c> a</c><00:04:51.560><c> line</c>
+
+00:04:52.150 --> 00:04:52.160 align:start position:0%
+collection of vectors sitting on a line
+ 
+
+00:04:52.160 --> 00:04:53.510 align:start position:0%
+collection of vectors sitting on a line
+and<00:04:52.280><c> more</c><00:04:52.440><c> crowded</c><00:04:52.800><c> still</c><00:04:53.039><c> to</c><00:04:53.160><c> think</c><00:04:53.320><c> about</c>
+
+00:04:53.510 --> 00:04:53.520 align:start position:0%
+and more crowded still to think about
+ 
+
+00:04:53.520 --> 00:04:55.510 align:start position:0%
+and more crowded still to think about
+all<00:04:53.800><c> two</c><00:04:54.000><c> dimensional</c><00:04:54.440><c> vectors</c><00:04:54.880><c> all</c><00:04:55.039><c> at</c><00:04:55.199><c> once</c>
+
+00:04:55.510 --> 00:04:55.520 align:start position:0%
+all two dimensional vectors all at once
+ 
+
+00:04:55.520 --> 00:04:57.990 align:start position:0%
+all two dimensional vectors all at once
+filling<00:04:55.880><c> up</c><00:04:56.039><c> the</c><00:04:56.199><c> plane</c><00:04:57.199><c> so</c><00:04:57.479><c> when</c><00:04:57.639><c> dealing</c>
+
+00:04:57.990 --> 00:04:58.000 align:start position:0%
+filling up the plane so when dealing
+ 
+
+00:04:58.000 --> 00:04:59.909 align:start position:0%
+filling up the plane so when dealing
+with<00:04:58.199><c> collections</c><00:04:58.639><c> of</c><00:04:58.840><c> vectors</c><00:04:59.240><c> like</c><00:04:59.400><c> this</c>
+
+00:04:59.909 --> 00:04:59.919 align:start position:0%
+with collections of vectors like this
+ 
+
+00:04:59.919 --> 00:05:01.909 align:start position:0%
+with collections of vectors like this
+it's<00:05:00.120><c> common</c><00:05:00.400><c> to</c><00:05:00.560><c> represent</c><00:05:01.039><c> each</c><00:05:01.240><c> one</c><00:05:01.720><c> with</c>
+
+00:05:01.909 --> 00:05:01.919 align:start position:0%
+it's common to represent each one with
+ 
+
+00:05:01.919 --> 00:05:04.510 align:start position:0%
+it's common to represent each one with
+just<00:05:02.080><c> a</c><00:05:02.320><c> point</c><00:05:02.720><c> in</c><00:05:02.960><c> Space</c><00:05:03.759><c> the</c><00:05:03.919><c> point</c><00:05:04.199><c> at</c><00:05:04.320><c> the</c>
+
+00:05:04.510 --> 00:05:04.520 align:start position:0%
+just a point in Space the point at the
+ 
+
+00:05:04.520 --> 00:05:06.950 align:start position:0%
+just a point in Space the point at the
+tip<00:05:04.720><c> of</c><00:05:04.880><c> that</c><00:05:05.080><c> Vector</c><00:05:05.600><c> where</c><00:05:05.960><c> as</c><00:05:06.120><c> usual</c><00:05:06.720><c> I</c><00:05:06.840><c> want</c>
+
+00:05:06.950 --> 00:05:06.960 align:start position:0%
+tip of that Vector where as usual I want
+ 
+
+00:05:06.960 --> 00:05:08.469 align:start position:0%
+tip of that Vector where as usual I want
+you<00:05:07.120><c> thinking</c><00:05:07.400><c> about</c><00:05:07.680><c> that</c><00:05:07.840><c> Vector</c><00:05:08.160><c> with</c><00:05:08.280><c> its</c>
+
+00:05:08.469 --> 00:05:08.479 align:start position:0%
+you thinking about that Vector with its
+ 
+
+00:05:08.479 --> 00:05:11.710 align:start position:0%
+you thinking about that Vector with its
+tail<00:05:08.880><c> on</c><00:05:09.039><c> the</c><00:05:09.680><c> origin</c><00:05:10.680><c> that</c><00:05:10.840><c> way</c><00:05:11.320><c> if</c><00:05:11.400><c> you</c><00:05:11.560><c> want</c>
+
+00:05:11.710 --> 00:05:11.720 align:start position:0%
+tail on the origin that way if you want
+ 
+
+00:05:11.720 --> 00:05:13.510 align:start position:0%
+tail on the origin that way if you want
+to<00:05:11.880><c> think</c><00:05:12.080><c> about</c><00:05:12.440><c> every</c><00:05:12.800><c> possible</c><00:05:13.160><c> Vector</c>
+
+00:05:13.510 --> 00:05:13.520 align:start position:0%
+to think about every possible Vector
+ 
+
+00:05:13.520 --> 00:05:15.749 align:start position:0%
+to think about every possible Vector
+whose<00:05:13.759><c> tip</c><00:05:14.039><c> sits</c><00:05:14.240><c> on</c><00:05:14.360><c> a</c><00:05:14.479><c> certain</c><00:05:14.840><c> line</c><00:05:15.520><c> just</c>
+
+00:05:15.749 --> 00:05:15.759 align:start position:0%
+whose tip sits on a certain line just
+ 
+
+00:05:15.759 --> 00:05:19.110 align:start position:0%
+whose tip sits on a certain line just
+think<00:05:15.960><c> about</c><00:05:16.240><c> the</c><00:05:16.440><c> line</c>
+
+00:05:19.110 --> 00:05:19.120 align:start position:0%
+ 
+ 
+
+00:05:19.120 --> 00:05:21.629 align:start position:0%
+ 
+itself<00:05:20.120><c> likewise</c><00:05:20.680><c> to</c><00:05:20.840><c> think</c><00:05:21.039><c> about</c><00:05:21.360><c> all</c>
+
+00:05:21.629 --> 00:05:21.639 align:start position:0%
+itself likewise to think about all
+ 
+
+00:05:21.639 --> 00:05:23.390 align:start position:0%
+itself likewise to think about all
+possible<00:05:21.960><c> two-dimensional</c><00:05:22.680><c> vectors</c><00:05:23.120><c> all</c><00:05:23.280><c> at</c>
+
+00:05:23.390 --> 00:05:23.400 align:start position:0%
+possible two-dimensional vectors all at
+ 
+
+00:05:23.400 --> 00:05:26.390 align:start position:0%
+possible two-dimensional vectors all at
+once<00:05:24.080><c> conceptualize</c><00:05:24.919><c> each</c><00:05:25.120><c> one</c><00:05:25.600><c> as</c><00:05:25.759><c> the</c><00:05:25.960><c> point</c>
+
+00:05:26.390 --> 00:05:26.400 align:start position:0%
+once conceptualize each one as the point
+ 
+
+00:05:26.400 --> 00:05:28.590 align:start position:0%
+once conceptualize each one as the point
+where<00:05:26.520><c> its</c><00:05:26.720><c> tip</c><00:05:27.000><c> sits</c><00:05:27.680><c> so</c><00:05:27.960><c> in</c><00:05:28.160><c> effect</c><00:05:28.479><c> what</c>
+
+00:05:28.590 --> 00:05:28.600 align:start position:0%
+where its tip sits so in effect what
+ 
+
+00:05:28.600 --> 00:05:30.510 align:start position:0%
+where its tip sits so in effect what
+you'll<00:05:28.800><c> be</c><00:05:28.919><c> thinking</c><00:05:29.240><c> about</c><00:05:29.759><c> is</c><00:05:29.880><c> the</c><00:05:30.080><c> infinite</c>
+
+00:05:30.510 --> 00:05:30.520 align:start position:0%
+you'll be thinking about is the infinite
+ 
+
+00:05:30.520 --> 00:05:32.309 align:start position:0%
+you'll be thinking about is the infinite
+flat<00:05:30.800><c> sheet</c><00:05:31.120><c> of</c><00:05:31.280><c> two-dimensional</c><00:05:32.000><c> space</c>
+
+00:05:32.309 --> 00:05:32.319 align:start position:0%
+flat sheet of two-dimensional space
+ 
+
+00:05:32.319 --> 00:05:35.110 align:start position:0%
+flat sheet of two-dimensional space
+itself<00:05:32.880><c> leaving</c><00:05:33.199><c> the</c><00:05:33.319><c> arrows</c><00:05:33.759><c> out</c><00:05:33.880><c> of</c>
+
+00:05:35.110 --> 00:05:35.120 align:start position:0%
+itself leaving the arrows out of
+ 
+
+00:05:35.120 --> 00:05:37.670 align:start position:0%
+itself leaving the arrows out of
+it<00:05:36.120><c> in</c><00:05:36.280><c> general</c><00:05:36.759><c> if</c><00:05:36.880><c> you're</c><00:05:37.039><c> thinking</c><00:05:37.319><c> about</c><00:05:37.479><c> a</c>
+
+00:05:37.670 --> 00:05:37.680 align:start position:0%
+it in general if you're thinking about a
+ 
+
+00:05:37.680 --> 00:05:39.430 align:start position:0%
+it in general if you're thinking about a
+vector<00:05:38.000><c> on</c><00:05:38.160><c> its</c><00:05:38.319><c> own</c><00:05:38.800><c> think</c><00:05:38.960><c> of</c><00:05:39.080><c> it</c><00:05:39.199><c> as</c><00:05:39.280><c> an</c>
+
+00:05:39.430 --> 00:05:39.440 align:start position:0%
+vector on its own think of it as an
+ 
+
+00:05:39.440 --> 00:05:41.309 align:start position:0%
+vector on its own think of it as an
+arrow<00:05:40.360><c> and</c><00:05:40.479><c> if</c><00:05:40.560><c> you're</c><00:05:40.720><c> dealing</c><00:05:41.039><c> with</c><00:05:41.160><c> a</c>
+
+00:05:41.309 --> 00:05:41.319 align:start position:0%
+arrow and if you're dealing with a
+ 
+
+00:05:41.319 --> 00:05:43.230 align:start position:0%
+arrow and if you're dealing with a
+collection<00:05:41.720><c> of</c><00:05:41.880><c> vectors</c><00:05:42.520><c> it's</c><00:05:42.680><c> convenient</c><00:05:43.120><c> to</c>
+
+00:05:43.230 --> 00:05:43.240 align:start position:0%
+collection of vectors it's convenient to
+ 
+
+00:05:43.240 --> 00:05:45.790 align:start position:0%
+collection of vectors it's convenient to
+think<00:05:43.400><c> of</c><00:05:43.520><c> them</c><00:05:43.680><c> all</c><00:05:43.840><c> as</c><00:05:44.199><c> points</c><00:05:45.199><c> so</c><00:05:45.400><c> for</c><00:05:45.560><c> our</c>
+
+00:05:45.790 --> 00:05:45.800 align:start position:0%
+think of them all as points so for our
+ 
+
+00:05:45.800 --> 00:05:47.990 align:start position:0%
+think of them all as points so for our
+span<00:05:46.120><c> example</c><00:05:46.840><c> the</c><00:05:46.960><c> span</c><00:05:47.240><c> of</c><00:05:47.400><c> most</c><00:05:47.600><c> pairs</c><00:05:47.840><c> of</c>
+
+00:05:47.990 --> 00:05:48.000 align:start position:0%
+span example the span of most pairs of
+ 
+
+00:05:48.000 --> 00:05:50.110 align:start position:0%
+span example the span of most pairs of
+vectors<00:05:48.560><c> ends</c><00:05:48.800><c> up</c><00:05:49.000><c> being</c><00:05:49.440><c> the</c><00:05:49.639><c> entire</c>
+
+00:05:50.110 --> 00:05:50.120 align:start position:0%
+vectors ends up being the entire
+ 
+
+00:05:50.120 --> 00:05:52.230 align:start position:0%
+vectors ends up being the entire
+infinite<00:05:50.479><c> sheet</c><00:05:50.720><c> of</c><00:05:50.840><c> two-dimensional</c><00:05:51.560><c> space</c>
+
+00:05:52.230 --> 00:05:52.240 align:start position:0%
+infinite sheet of two-dimensional space
+ 
+
+00:05:52.240 --> 00:05:57.550 align:start position:0%
+infinite sheet of two-dimensional space
+but<00:05:52.400><c> if</c><00:05:52.520><c> they</c><00:05:52.680><c> line</c><00:05:52.919><c> up</c><00:05:53.319><c> their</c><00:05:53.520><c> span</c><00:05:54.039><c> is</c><00:05:54.199><c> just</c><00:05:54.360><c> a</c>
+
+00:05:57.550 --> 00:05:57.560 align:start position:0%
+ 
+ 
+
+00:05:57.560 --> 00:05:59.950 align:start position:0%
+ 
+line<00:05:58.560><c> the</c><00:05:58.680><c> idea</c><00:05:58.880><c> of</c><00:05:59.000><c> span</c><00:05:59.280><c> gets</c><00:05:59.400><c> a</c><00:05:59.479><c> lot</c><00:05:59.800><c> more</c>
+
+00:05:59.950 --> 00:05:59.960 align:start position:0%
+line the idea of span gets a lot more
+ 
+
+00:05:59.960 --> 00:06:01.550 align:start position:0%
+line the idea of span gets a lot more
+interesting<00:06:00.560><c> if</c><00:06:00.680><c> we</c><00:06:00.800><c> start</c><00:06:01.039><c> thinking</c><00:06:01.319><c> about</c>
+
+00:06:01.550 --> 00:06:01.560 align:start position:0%
+interesting if we start thinking about
+ 
+
+00:06:01.560 --> 00:06:04.110 align:start position:0%
+interesting if we start thinking about
+vectors<00:06:01.960><c> in</c><00:06:02.160><c> threedimensional</c><00:06:02.960><c> space</c><00:06:03.960><c> for</c>
+
+00:06:04.110 --> 00:06:04.120 align:start position:0%
+vectors in threedimensional space for
+ 
+
+00:06:04.120 --> 00:06:06.589 align:start position:0%
+vectors in threedimensional space for
+example<00:06:04.639><c> if</c><00:06:04.720><c> you</c><00:06:04.880><c> take</c><00:06:05.120><c> two</c><00:06:05.400><c> vectors</c><00:06:05.960><c> in</c><00:06:06.160><c> 3D</c>
+
+00:06:06.589 --> 00:06:06.599 align:start position:0%
+example if you take two vectors in 3D
+ 
+
+00:06:06.599 --> 00:06:08.309 align:start position:0%
+example if you take two vectors in 3D
+space<00:06:07.160><c> that</c><00:06:07.240><c> are</c><00:06:07.400><c> not</c><00:06:07.599><c> pointing</c><00:06:07.880><c> in</c><00:06:08.000><c> the</c><00:06:08.080><c> same</c>
+
+00:06:08.309 --> 00:06:08.319 align:start position:0%
+space that are not pointing in the same
+ 
+
+00:06:08.319 --> 00:06:10.189 align:start position:0%
+space that are not pointing in the same
+direction<00:06:09.280><c> what</c><00:06:09.400><c> does</c><00:06:09.520><c> it</c><00:06:09.639><c> mean</c><00:06:09.840><c> to</c><00:06:10.000><c> take</c>
+
+00:06:10.189 --> 00:06:10.199 align:start position:0%
+direction what does it mean to take
+ 
+
+00:06:10.199 --> 00:06:12.350 align:start position:0%
+direction what does it mean to take
+their
+
+00:06:12.350 --> 00:06:12.360 align:start position:0%
+their
+ 
+
+00:06:12.360 --> 00:06:15.070 align:start position:0%
+their
+span<00:06:13.360><c> well</c><00:06:13.759><c> their</c><00:06:13.960><c> span</c><00:06:14.400><c> is</c><00:06:14.520><c> the</c><00:06:14.720><c> collection</c>
+
+00:06:15.070 --> 00:06:15.080 align:start position:0%
+span well their span is the collection
+ 
+
+00:06:15.080 --> 00:06:17.790 align:start position:0%
+span well their span is the collection
+of<00:06:15.319><c> all</c><00:06:15.720><c> possible</c><00:06:16.160><c> linear</c><00:06:16.639><c> combinations</c><00:06:17.599><c> of</c>
+
+00:06:17.790 --> 00:06:17.800 align:start position:0%
+of all possible linear combinations of
+ 
+
+00:06:17.800 --> 00:06:20.350 align:start position:0%
+of all possible linear combinations of
+those<00:06:18.000><c> two</c><00:06:18.240><c> vectors</c><00:06:18.960><c> meaning</c><00:06:19.720><c> all</c><00:06:20.000><c> possible</c>
+
+00:06:20.350 --> 00:06:20.360 align:start position:0%
+those two vectors meaning all possible
+ 
+
+00:06:20.360 --> 00:06:22.550 align:start position:0%
+those two vectors meaning all possible
+vectors<00:06:20.720><c> you</c><00:06:20.960><c> get</c><00:06:21.440><c> by</c><00:06:21.639><c> scaling</c><00:06:22.160><c> each</c><00:06:22.319><c> of</c><00:06:22.440><c> the</c>
+
+00:06:22.550 --> 00:06:22.560 align:start position:0%
+vectors you get by scaling each of the
+ 
+
+00:06:22.560 --> 00:06:24.469 align:start position:0%
+vectors you get by scaling each of the
+two<00:06:22.759><c> of</c><00:06:22.880><c> them</c><00:06:23.039><c> in</c><00:06:23.160><c> some</c><00:06:23.400><c> way</c><00:06:23.880><c> and</c><00:06:24.000><c> then</c><00:06:24.160><c> adding</c>
+
+00:06:24.469 --> 00:06:24.479 align:start position:0%
+two of them in some way and then adding
+ 
+
+00:06:24.479 --> 00:06:26.990 align:start position:0%
+two of them in some way and then adding
+them<00:06:24.919><c> together</c><00:06:25.919><c> you</c><00:06:26.039><c> can</c><00:06:26.240><c> kind</c><00:06:26.360><c> of</c><00:06:26.560><c> Imagine</c>
+
+00:06:26.990 --> 00:06:27.000 align:start position:0%
+them together you can kind of Imagine
+ 
+
+00:06:27.000 --> 00:06:28.990 align:start position:0%
+them together you can kind of Imagine
+turning<00:06:27.400><c> two</c><00:06:27.639><c> different</c><00:06:28.000><c> knobs</c><00:06:28.479><c> to</c><00:06:28.680><c> change</c>
+
+00:06:28.990 --> 00:06:29.000 align:start position:0%
+turning two different knobs to change
+ 
+
+00:06:29.000 --> 00:06:30.990 align:start position:0%
+turning two different knobs to change
+the<00:06:29.120><c> two</c><00:06:29.280><c> SC</c><00:06:29.560><c> scalers</c><00:06:30.120><c> defining</c><00:06:30.520><c> the</c><00:06:30.639><c> linear</c>
+
+00:06:30.990 --> 00:06:31.000 align:start position:0%
+the two SC scalers defining the linear
+ 
+
+00:06:31.000 --> 00:06:33.070 align:start position:0%
+the two SC scalers defining the linear
+combination<00:06:31.919><c> adding</c><00:06:32.199><c> the</c><00:06:32.319><c> scaled</c><00:06:32.720><c> vectors</c>
+
+00:06:33.070 --> 00:06:33.080 align:start position:0%
+combination adding the scaled vectors
+ 
+
+00:06:33.080 --> 00:06:35.029 align:start position:0%
+combination adding the scaled vectors
+and<00:06:33.240><c> following</c><00:06:33.639><c> the</c><00:06:33.800><c> tip</c><00:06:34.080><c> of</c><00:06:34.199><c> the</c><00:06:34.319><c> resulting</c>
+
+00:06:35.029 --> 00:06:35.039 align:start position:0%
+and following the tip of the resulting
+ 
+
+00:06:35.039 --> 00:06:37.710 align:start position:0%
+and following the tip of the resulting
+Vector<00:06:36.039><c> that</c><00:06:36.240><c> tip</c><00:06:36.560><c> will</c><00:06:36.800><c> Trace</c><00:06:37.120><c> out</c><00:06:37.319><c> some</c><00:06:37.560><c> kind</c>
+
+00:06:37.710 --> 00:06:37.720 align:start position:0%
+Vector that tip will Trace out some kind
+ 
+
+00:06:37.720 --> 00:06:39.830 align:start position:0%
+Vector that tip will Trace out some kind
+of<00:06:37.960><c> flat</c><00:06:38.199><c> sheet</c><00:06:38.800><c> cutting</c><00:06:39.120><c> through</c><00:06:39.319><c> the</c><00:06:39.479><c> origin</c>
+
+00:06:39.830 --> 00:06:39.840 align:start position:0%
+of flat sheet cutting through the origin
+ 
+
+00:06:39.840 --> 00:06:42.350 align:start position:0%
+of flat sheet cutting through the origin
+of<00:06:40.000><c> three-dimensional</c><00:06:40.880><c> space</c><00:06:41.880><c> this</c><00:06:42.080><c> flat</c>
+
+00:06:42.350 --> 00:06:42.360 align:start position:0%
+of three-dimensional space this flat
+ 
+
+00:06:42.360 --> 00:06:45.270 align:start position:0%
+of three-dimensional space this flat
+sheet<00:06:42.919><c> is</c><00:06:43.080><c> the</c><00:06:43.280><c> span</c><00:06:43.599><c> of</c><00:06:43.720><c> the</c><00:06:43.840><c> two</c><00:06:44.120><c> vectors</c><00:06:45.039><c> or</c>
+
+00:06:45.270 --> 00:06:45.280 align:start position:0%
+sheet is the span of the two vectors or
+ 
+
+00:06:45.280 --> 00:06:47.350 align:start position:0%
+sheet is the span of the two vectors or
+more<00:06:45.560><c> precisely</c><00:06:46.280><c> the</c><00:06:46.440><c> set</c><00:06:46.639><c> of</c><00:06:46.800><c> all</c><00:06:47.039><c> possible</c>
+
+00:06:47.350 --> 00:06:47.360 align:start position:0%
+more precisely the set of all possible
+ 
+
+00:06:47.360 --> 00:06:49.189 align:start position:0%
+more precisely the set of all possible
+vectors<00:06:47.759><c> whose</c><00:06:47.960><c> tips</c><00:06:48.360><c> sit</c><00:06:48.599><c> on</c><00:06:48.800><c> that</c><00:06:48.960><c> flat</c>
+
+00:06:49.189 --> 00:06:49.199 align:start position:0%
+vectors whose tips sit on that flat
+ 
+
+00:06:49.199 --> 00:06:51.749 align:start position:0%
+vectors whose tips sit on that flat
+sheet<00:06:49.759><c> is</c><00:06:49.880><c> the</c><00:06:50.039><c> span</c><00:06:50.280><c> of</c><00:06:50.400><c> your</c><00:06:50.560><c> two</c><00:06:50.800><c> vectors</c>
+
+00:06:51.749 --> 00:06:51.759 align:start position:0%
+sheet is the span of your two vectors
+ 
+
+00:06:51.759 --> 00:06:53.830 align:start position:0%
+sheet is the span of your two vectors
+isn't<00:06:52.000><c> that</c><00:06:52.120><c> a</c><00:06:52.280><c> beautiful</c><00:06:52.639><c> mental</c>
+
+00:06:53.830 --> 00:06:53.840 align:start position:0%
+isn't that a beautiful mental
+ 
+
+00:06:53.840 --> 00:06:56.550 align:start position:0%
+isn't that a beautiful mental
+image<00:06:54.840><c> so</c><00:06:55.199><c> what</c><00:06:55.319><c> happens</c><00:06:55.599><c> if</c><00:06:55.720><c> we</c><00:06:55.879><c> add</c><00:06:56.000><c> a</c><00:06:56.199><c> third</c>
+
+00:06:56.550 --> 00:06:56.560 align:start position:0%
+image so what happens if we add a third
+ 
+
+00:06:56.560 --> 00:06:58.430 align:start position:0%
+image so what happens if we add a third
+vector<00:06:57.039><c> and</c><00:06:57.240><c> consider</c><00:06:57.560><c> the</c><00:06:57.720><c> span</c><00:06:58.000><c> of</c><00:06:58.199><c> all</c>
+
+00:06:58.430 --> 00:06:58.440 align:start position:0%
+vector and consider the span of all
+ 
+
+00:06:58.440 --> 00:07:00.550 align:start position:0%
+vector and consider the span of all
+three<00:06:58.639><c> of</c><00:06:58.800><c> those</c><00:06:59.039><c> guys</c>
+
+00:07:00.550 --> 00:07:00.560 align:start position:0%
+three of those guys
+ 
+
+00:07:00.560 --> 00:07:02.749 align:start position:0%
+three of those guys
+a<00:07:00.720><c> linear</c><00:07:01.039><c> combination</c><00:07:01.520><c> of</c><00:07:01.720><c> three</c><00:07:02.000><c> vectors</c><00:07:02.560><c> is</c>
+
+00:07:02.749 --> 00:07:02.759 align:start position:0%
+a linear combination of three vectors is
+ 
+
+00:07:02.759 --> 00:07:04.390 align:start position:0%
+a linear combination of three vectors is
+defined<00:07:03.280><c> pretty</c><00:07:03.479><c> much</c><00:07:03.720><c> the</c><00:07:03.800><c> same</c><00:07:04.039><c> way</c><00:07:04.199><c> as</c><00:07:04.280><c> it</c>
+
+00:07:04.390 --> 00:07:04.400 align:start position:0%
+defined pretty much the same way as it
+ 
+
+00:07:04.400 --> 00:07:06.270 align:start position:0%
+defined pretty much the same way as it
+is<00:07:04.520><c> for</c><00:07:04.720><c> two</c><00:07:05.240><c> you'll</c><00:07:05.479><c> choose</c><00:07:05.800><c> three</c><00:07:06.039><c> different</c>
+
+00:07:06.270 --> 00:07:06.280 align:start position:0%
+is for two you'll choose three different
+ 
+
+00:07:06.280 --> 00:07:09.110 align:start position:0%
+is for two you'll choose three different
+scalers<00:07:07.160><c> scale</c><00:07:07.680><c> each</c><00:07:07.840><c> of</c><00:07:08.039><c> those</c><00:07:08.240><c> vectors</c><00:07:08.960><c> and</c>
+
+00:07:09.110 --> 00:07:09.120 align:start position:0%
+scalers scale each of those vectors and
+ 
+
+00:07:09.120 --> 00:07:15.309 align:start position:0%
+scalers scale each of those vectors and
+then<00:07:09.360><c> add</c><00:07:09.560><c> them</c><00:07:09.720><c> all</c>
+
+00:07:15.309 --> 00:07:15.319 align:start position:0%
+ 
+ 
+
+00:07:15.319 --> 00:07:17.869 align:start position:0%
+ 
+together<00:07:16.319><c> and</c><00:07:16.520><c> again</c><00:07:17.039><c> the</c><00:07:17.199><c> span</c><00:07:17.520><c> of</c><00:07:17.680><c> these</c>
+
+00:07:17.869 --> 00:07:17.879 align:start position:0%
+together and again the span of these
+ 
+
+00:07:17.879 --> 00:07:19.869 align:start position:0%
+together and again the span of these
+vectors<00:07:18.440><c> is</c><00:07:18.599><c> the</c><00:07:18.759><c> set</c><00:07:19.000><c> of</c><00:07:19.240><c> all</c><00:07:19.520><c> possible</c>
+
+00:07:19.869 --> 00:07:19.879 align:start position:0%
+vectors is the set of all possible
+ 
+
+00:07:19.879 --> 00:07:23.510 align:start position:0%
+vectors is the set of all possible
+linear
+
+00:07:23.510 --> 00:07:23.520 align:start position:0%
+ 
+ 
+
+00:07:23.520 --> 00:07:25.390 align:start position:0%
+ 
+combinations<00:07:24.520><c> two</c><00:07:24.759><c> different</c><00:07:25.000><c> things</c><00:07:25.199><c> could</c>
+
+00:07:25.390 --> 00:07:25.400 align:start position:0%
+combinations two different things could
+ 
+
+00:07:25.400 --> 00:07:27.790 align:start position:0%
+combinations two different things could
+happen<00:07:25.720><c> here</c><00:07:26.319><c> if</c><00:07:26.400><c> your</c><00:07:26.599><c> third</c><00:07:26.919><c> Vector</c><00:07:27.479><c> happens</c>
+
+00:07:27.790 --> 00:07:27.800 align:start position:0%
+happen here if your third Vector happens
+ 
+
+00:07:27.800 --> 00:07:29.629 align:start position:0%
+happen here if your third Vector happens
+to<00:07:27.960><c> be</c><00:07:28.080><c> sitting</c><00:07:28.479><c> on</c><00:07:28.639><c> the</c><00:07:28.800><c> span</c><00:07:29.039><c> of</c><00:07:29.160><c> the</c><00:07:29.240><c> first</c>
+
+00:07:29.629 --> 00:07:29.639 align:start position:0%
+to be sitting on the span of the first
+ 
+
+00:07:29.639 --> 00:07:31.869 align:start position:0%
+to be sitting on the span of the first
+two<00:07:30.440><c> then</c><00:07:30.560><c> the</c><00:07:30.680><c> span</c><00:07:30.919><c> doesn't</c><00:07:31.199><c> change</c><00:07:31.680><c> you're</c>
+
+00:07:31.869 --> 00:07:31.879 align:start position:0%
+two then the span doesn't change you're
+ 
+
+00:07:31.879 --> 00:07:34.430 align:start position:0%
+two then the span doesn't change you're
+sort<00:07:32.039><c> of</c><00:07:32.319><c> trapped</c><00:07:32.720><c> on</c><00:07:32.919><c> that</c><00:07:33.080><c> same</c><00:07:33.360><c> flat</c><00:07:33.599><c> sheet</c>
+
+00:07:34.430 --> 00:07:34.440 align:start position:0%
+sort of trapped on that same flat sheet
+ 
+
+00:07:34.440 --> 00:07:36.350 align:start position:0%
+sort of trapped on that same flat sheet
+in<00:07:34.560><c> other</c><00:07:34.759><c> words</c><00:07:35.240><c> adding</c><00:07:35.479><c> a</c><00:07:35.639><c> scaled</c><00:07:36.080><c> version</c>
+
+00:07:36.350 --> 00:07:36.360 align:start position:0%
+in other words adding a scaled version
+ 
+
+00:07:36.360 --> 00:07:37.869 align:start position:0%
+in other words adding a scaled version
+of<00:07:36.520><c> that</c><00:07:36.639><c> third</c><00:07:36.919><c> Vector</c><00:07:37.240><c> to</c><00:07:37.400><c> the</c><00:07:37.520><c> linear</c>
+
+00:07:37.869 --> 00:07:37.879 align:start position:0%
+of that third Vector to the linear
+ 
+
+00:07:37.879 --> 00:07:39.830 align:start position:0%
+of that third Vector to the linear
+combination<00:07:38.840><c> doesn't</c><00:07:39.160><c> really</c><00:07:39.479><c> give</c><00:07:39.599><c> you</c>
+
+00:07:39.830 --> 00:07:39.840 align:start position:0%
+combination doesn't really give you
+ 
+
+00:07:39.840 --> 00:07:41.710 align:start position:0%
+combination doesn't really give you
+access<00:07:40.160><c> to</c><00:07:40.319><c> any</c><00:07:40.479><c> new</c>
+
+00:07:41.710 --> 00:07:41.720 align:start position:0%
+access to any new
+ 
+
+00:07:41.720 --> 00:07:43.950 align:start position:0%
+access to any new
+vectors<00:07:42.720><c> but</c><00:07:42.840><c> if</c><00:07:42.919><c> you</c><00:07:43.080><c> just</c><00:07:43.319><c> randomly</c><00:07:43.720><c> choose</c>
+
+00:07:43.950 --> 00:07:43.960 align:start position:0%
+vectors but if you just randomly choose
+ 
+
+00:07:43.960 --> 00:07:46.309 align:start position:0%
+vectors but if you just randomly choose
+a<00:07:44.120><c> third</c><00:07:44.400><c> Vector</c><00:07:45.039><c> it's</c><00:07:45.199><c> almost</c><00:07:45.560><c> certainly</c><00:07:46.039><c> not</c>
+
+00:07:46.309 --> 00:07:46.319 align:start position:0%
+a third Vector it's almost certainly not
+ 
+
+00:07:46.319 --> 00:07:48.790 align:start position:0%
+a third Vector it's almost certainly not
+sitting<00:07:46.639><c> on</c><00:07:46.800><c> the</c><00:07:46.919><c> span</c><00:07:47.159><c> of</c><00:07:47.319><c> those</c><00:07:47.520><c> first</c><00:07:47.800><c> two</c>
+
+00:07:48.790 --> 00:07:48.800 align:start position:0%
+sitting on the span of those first two
+ 
+
+00:07:48.800 --> 00:07:50.270 align:start position:0%
+sitting on the span of those first two
+then<00:07:49.120><c> since</c><00:07:49.280><c> it's</c><00:07:49.440><c> pointing</c><00:07:49.720><c> in</c><00:07:49.840><c> a</c><00:07:49.960><c> separate</c>
+
+00:07:50.270 --> 00:07:50.280 align:start position:0%
+then since it's pointing in a separate
+ 
+
+00:07:50.280 --> 00:07:52.909 align:start position:0%
+then since it's pointing in a separate
+Direction<00:07:51.080><c> it</c><00:07:51.280><c> unlocks</c><00:07:51.879><c> access</c><00:07:52.199><c> to</c><00:07:52.520><c> every</c>
+
+00:07:52.909 --> 00:07:52.919 align:start position:0%
+Direction it unlocks access to every
+ 
+
+00:07:52.919 --> 00:07:55.589 align:start position:0%
+Direction it unlocks access to every
+possible<00:07:53.199><c> three</c><00:07:53.520><c> dimensional</c><00:07:54.400><c> Vector</c><00:07:55.400><c> one</c>
+
+00:07:55.589 --> 00:07:55.599 align:start position:0%
+possible three dimensional Vector one
+ 
+
+00:07:55.599 --> 00:07:57.350 align:start position:0%
+possible three dimensional Vector one
+way<00:07:55.759><c> I</c><00:07:55.879><c> like</c><00:07:56.000><c> to</c><00:07:56.159><c> think</c><00:07:56.319><c> about</c><00:07:56.599><c> this</c><00:07:57.000><c> is</c><00:07:57.159><c> that</c>
+
+00:07:57.350 --> 00:07:57.360 align:start position:0%
+way I like to think about this is that
+ 
+
+00:07:57.360 --> 00:07:59.749 align:start position:0%
+way I like to think about this is that
+as<00:07:57.520><c> you</c><00:07:57.680><c> scale</c><00:07:58.199><c> that</c><00:07:58.319><c> new</c><00:07:58.599><c> third</c><00:07:58.960><c> vector</c><00:07:59.599><c> it</c>
+
+00:07:59.749 --> 00:07:59.759 align:start position:0%
+as you scale that new third vector it
+ 
+
+00:07:59.759 --> 00:08:02.149 align:start position:0%
+as you scale that new third vector it
+moves<00:08:00.199><c> around</c><00:08:00.800><c> that</c><00:08:01.000><c> span</c><00:08:01.400><c> sheet</c><00:08:01.879><c> of</c><00:08:02.000><c> the</c>
+
+00:08:02.149 --> 00:08:02.159 align:start position:0%
+moves around that span sheet of the
+ 
+
+00:08:02.159 --> 00:08:04.830 align:start position:0%
+moves around that span sheet of the
+first<00:08:02.400><c> two</c><00:08:02.919><c> sweeping</c><00:08:03.360><c> it</c><00:08:03.520><c> through</c><00:08:03.720><c> all</c><00:08:03.960><c> of</c>
+
+00:08:04.830 --> 00:08:04.840 align:start position:0%
+first two sweeping it through all of
+ 
+
+00:08:04.840 --> 00:08:07.029 align:start position:0%
+first two sweeping it through all of
+space<00:08:05.840><c> another</c><00:08:06.120><c> way</c><00:08:06.240><c> to</c><00:08:06.360><c> think</c><00:08:06.520><c> about</c><00:08:06.720><c> it</c><00:08:06.919><c> is</c>
+
+00:08:07.029 --> 00:08:07.039 align:start position:0%
+space another way to think about it is
+ 
+
+00:08:07.039 --> 00:08:09.029 align:start position:0%
+space another way to think about it is
+that<00:08:07.159><c> you're</c><00:08:07.280><c> making</c><00:08:07.720><c> full</c><00:08:08.039><c> use</c><00:08:08.360><c> of</c><00:08:08.520><c> the</c><00:08:08.720><c> three</c>
+
+00:08:09.029 --> 00:08:09.039 align:start position:0%
+that you're making full use of the three
+ 
+
+00:08:09.039 --> 00:08:10.749 align:start position:0%
+that you're making full use of the three
+freely<00:08:09.440><c> changing</c><00:08:09.800><c> scalers</c><00:08:10.280><c> that</c><00:08:10.400><c> you</c><00:08:10.520><c> have</c><00:08:10.639><c> at</c>
+
+00:08:10.749 --> 00:08:10.759 align:start position:0%
+freely changing scalers that you have at
+ 
+
+00:08:10.759 --> 00:08:12.950 align:start position:0%
+freely changing scalers that you have at
+your<00:08:10.919><c> disposal</c><00:08:11.680><c> to</c><00:08:11.919><c> access</c><00:08:12.199><c> the</c><00:08:12.319><c> full</c><00:08:12.639><c> three</c>
+
+00:08:12.950 --> 00:08:12.960 align:start position:0%
+your disposal to access the full three
+ 
+
+00:08:12.960 --> 00:08:15.950 align:start position:0%
+your disposal to access the full three
+dimensions<00:08:13.520><c> of</c>
+
+00:08:15.950 --> 00:08:15.960 align:start position:0%
+ 
+ 
+
+00:08:15.960 --> 00:08:18.430 align:start position:0%
+ 
+space<00:08:16.960><c> now</c><00:08:17.360><c> in</c><00:08:17.479><c> the</c><00:08:17.639><c> case</c><00:08:17.879><c> where</c><00:08:18.000><c> the</c><00:08:18.159><c> third</c>
+
+00:08:18.430 --> 00:08:18.440 align:start position:0%
+space now in the case where the third
+ 
+
+00:08:18.440 --> 00:08:20.230 align:start position:0%
+space now in the case where the third
+Vector<00:08:18.879><c> was</c><00:08:19.199><c> already</c><00:08:19.479><c> sitting</c><00:08:19.759><c> on</c><00:08:19.879><c> the</c><00:08:20.000><c> span</c>
+
+00:08:20.230 --> 00:08:20.240 align:start position:0%
+Vector was already sitting on the span
+ 
+
+00:08:20.240 --> 00:08:22.110 align:start position:0%
+Vector was already sitting on the span
+of<00:08:20.400><c> the</c><00:08:20.520><c> first</c><00:08:20.720><c> two</c><00:08:21.280><c> or</c><00:08:21.479><c> the</c><00:08:21.599><c> case</c><00:08:21.800><c> where</c><00:08:21.919><c> two</c>
+
+00:08:22.110 --> 00:08:22.120 align:start position:0%
+of the first two or the case where two
+ 
+
+00:08:22.120 --> 00:08:23.990 align:start position:0%
+of the first two or the case where two
+vectors<00:08:22.440><c> happen</c><00:08:22.680><c> to</c><00:08:22.840><c> line</c><00:08:23.039><c> up</c><00:08:23.560><c> we</c><00:08:23.680><c> want</c><00:08:23.800><c> some</c>
+
+00:08:23.990 --> 00:08:24.000 align:start position:0%
+vectors happen to line up we want some
+ 
+
+00:08:24.000 --> 00:08:25.909 align:start position:0%
+vectors happen to line up we want some
+terminology<00:08:24.639><c> to</c><00:08:24.840><c> describe</c><00:08:25.240><c> the</c><00:08:25.360><c> fact</c><00:08:25.639><c> that</c><00:08:25.800><c> at</c>
+
+00:08:25.909 --> 00:08:25.919 align:start position:0%
+terminology to describe the fact that at
+ 
+
+00:08:25.919 --> 00:08:28.189 align:start position:0%
+terminology to describe the fact that at
+least<00:08:26.120><c> one</c><00:08:26.280><c> of</c><00:08:26.400><c> these</c><00:08:26.599><c> vectors</c><00:08:27.199><c> is</c><00:08:27.400><c> redundant</c>
+
+00:08:28.189 --> 00:08:28.199 align:start position:0%
+least one of these vectors is redundant
+ 
+
+00:08:28.199 --> 00:08:30.790 align:start position:0%
+least one of these vectors is redundant
+not<00:08:28.400><c> adding</c><00:08:28.720><c> anything</c><00:08:28.960><c> to</c><00:08:29.080><c> our</c><00:08:29.199><c> span</c>
+
+00:08:30.790 --> 00:08:30.800 align:start position:0%
+not adding anything to our span
+ 
+
+00:08:30.800 --> 00:08:32.350 align:start position:0%
+not adding anything to our span
+whenever<00:08:31.159><c> this</c><00:08:31.319><c> happens</c><00:08:31.879><c> where</c><00:08:32.000><c> you</c><00:08:32.159><c> have</c>
+
+00:08:32.350 --> 00:08:32.360 align:start position:0%
+whenever this happens where you have
+ 
+
+00:08:32.360 --> 00:08:33.909 align:start position:0%
+whenever this happens where you have
+multiple<00:08:32.800><c> vectors</c><00:08:33.159><c> and</c><00:08:33.279><c> you</c><00:08:33.399><c> could</c><00:08:33.560><c> remove</c>
+
+00:08:33.909 --> 00:08:33.919 align:start position:0%
+multiple vectors and you could remove
+ 
+
+00:08:33.919 --> 00:08:35.909 align:start position:0%
+multiple vectors and you could remove
+one<00:08:34.200><c> without</c><00:08:34.440><c> reducing</c><00:08:34.839><c> the</c><00:08:35.000><c> span</c><00:08:35.800><c> the</c>
+
+00:08:35.909 --> 00:08:35.919 align:start position:0%
+one without reducing the span the
+ 
+
+00:08:35.919 --> 00:08:37.909 align:start position:0%
+one without reducing the span the
+relevant<00:08:36.279><c> terminology</c><00:08:37.200><c> is</c><00:08:37.320><c> to</c><00:08:37.519><c> say</c><00:08:37.719><c> that</c><00:08:37.839><c> they</c>
+
+00:08:37.909 --> 00:08:37.919 align:start position:0%
+relevant terminology is to say that they
+ 
+
+00:08:37.919 --> 00:08:39.389 align:start position:0%
+relevant terminology is to say that they
+are<00:08:38.159><c> linearly</c>
+
+00:08:39.389 --> 00:08:39.399 align:start position:0%
+are linearly
+ 
+
+00:08:39.399 --> 00:08:41.670 align:start position:0%
+are linearly
+dependent<00:08:40.399><c> another</c><00:08:40.640><c> way</c><00:08:40.760><c> of</c><00:08:40.880><c> phrasing</c><00:08:41.320><c> that</c>
+
+00:08:41.670 --> 00:08:41.680 align:start position:0%
+dependent another way of phrasing that
+ 
+
+00:08:41.680 --> 00:08:43.469 align:start position:0%
+dependent another way of phrasing that
+would<00:08:41.839><c> be</c><00:08:41.959><c> to</c><00:08:42.080><c> say</c><00:08:42.240><c> that</c><00:08:42.399><c> one</c><00:08:42.519><c> of</c><00:08:42.640><c> the</c><00:08:42.800><c> vectors</c>
+
+00:08:43.469 --> 00:08:43.479 align:start position:0%
+would be to say that one of the vectors
+ 
+
+00:08:43.479 --> 00:08:45.470 align:start position:0%
+would be to say that one of the vectors
+can<00:08:43.640><c> be</c><00:08:43.839><c> expressed</c><00:08:44.240><c> as</c><00:08:44.360><c> a</c><00:08:44.519><c> linear</c><00:08:44.959><c> combination</c>
+
+00:08:45.470 --> 00:08:45.480 align:start position:0%
+can be expressed as a linear combination
+ 
+
+00:08:45.480 --> 00:08:47.430 align:start position:0%
+can be expressed as a linear combination
+of<00:08:45.600><c> the</c><00:08:45.760><c> others</c><00:08:46.360><c> since</c><00:08:46.720><c> it's</c><00:08:46.880><c> already</c><00:08:47.120><c> in</c><00:08:47.279><c> the</c>
+
+00:08:47.430 --> 00:08:47.440 align:start position:0%
+of the others since it's already in the
+ 
+
+00:08:47.440 --> 00:08:51.870 align:start position:0%
+of the others since it's already in the
+span<00:08:47.920><c> of</c><00:08:48.080><c> the</c>
+
+00:08:51.870 --> 00:08:51.880 align:start position:0%
+ 
+ 
+
+00:08:51.880 --> 00:08:54.750 align:start position:0%
+ 
+others<00:08:52.880><c> on</c><00:08:53.000><c> the</c><00:08:53.120><c> other</c><00:08:53.279><c> hand</c><00:08:53.839><c> if</c><00:08:54.040><c> each</c><00:08:54.279><c> Vector</c>
+
+00:08:54.750 --> 00:08:54.760 align:start position:0%
+others on the other hand if each Vector
+ 
+
+00:08:54.760 --> 00:08:56.590 align:start position:0%
+others on the other hand if each Vector
+really<00:08:55.080><c> does</c><00:08:55.360><c> add</c><00:08:55.600><c> another</c><00:08:55.920><c> dimension</c><00:08:56.279><c> to</c><00:08:56.440><c> the</c>
+
+00:08:56.590 --> 00:08:56.600 align:start position:0%
+really does add another dimension to the
+ 
+
+00:08:56.600 --> 00:08:58.870 align:start position:0%
+really does add another dimension to the
+span<00:08:57.320><c> they're</c><00:08:57.519><c> said</c><00:08:57.720><c> to</c><00:08:57.839><c> be</c><00:08:58.240><c> linearly</c>
+
+00:08:58.870 --> 00:08:58.880 align:start position:0%
+span they're said to be linearly
+ 
+
+00:08:58.880 --> 00:09:06.430 align:start position:0%
+span they're said to be linearly
+independent
+
+00:09:06.430 --> 00:09:06.440 align:start position:0%
+ 
+ 
+
+00:09:06.440 --> 00:09:08.110 align:start position:0%
+ 
+so<00:09:06.680><c> with</c><00:09:06.800><c> all</c><00:09:06.920><c> of</c><00:09:07.000><c> that</c><00:09:07.120><c> terminology</c><00:09:07.880><c> and</c>
+
+00:09:08.110 --> 00:09:08.120 align:start position:0%
+so with all of that terminology and
+ 
+
+00:09:08.120 --> 00:09:09.509 align:start position:0%
+so with all of that terminology and
+hopefully<00:09:08.480><c> with</c><00:09:08.600><c> some</c><00:09:08.760><c> good</c><00:09:08.920><c> mental</c><00:09:09.200><c> images</c>
+
+00:09:09.509 --> 00:09:09.519 align:start position:0%
+hopefully with some good mental images
+ 
+
+00:09:09.519 --> 00:09:11.190 align:start position:0%
+hopefully with some good mental images
+to<00:09:09.680><c> go</c><00:09:09.880><c> with</c><00:09:10.000><c> it</c><00:09:10.440><c> let</c><00:09:10.560><c> me</c><00:09:10.680><c> leave</c><00:09:10.839><c> you</c><00:09:11.000><c> with</c><00:09:11.079><c> a</c>
+
+00:09:11.190 --> 00:09:11.200 align:start position:0%
+to go with it let me leave you with a
+ 
+
+00:09:11.200 --> 00:09:13.470 align:start position:0%
+to go with it let me leave you with a
+puzzle<00:09:11.560><c> before</c><00:09:11.800><c> we</c><00:09:12.000><c> go</c><00:09:12.800><c> the</c><00:09:13.000><c> technical</c>
+
+00:09:13.470 --> 00:09:13.480 align:start position:0%
+puzzle before we go the technical
+ 
+
+00:09:13.480 --> 00:09:16.230 align:start position:0%
+puzzle before we go the technical
+definition<00:09:14.040><c> of</c><00:09:14.160><c> a</c><00:09:14.360><c> basis</c><00:09:14.760><c> of</c><00:09:14.880><c> a</c><00:09:15.079><c> space</c><00:09:15.720><c> is</c><00:09:16.040><c> a</c>
+
+00:09:16.230 --> 00:09:16.240 align:start position:0%
+definition of a basis of a space is a
+ 
+
+00:09:16.240 --> 00:09:18.949 align:start position:0%
+definition of a basis of a space is a
+set<00:09:16.480><c> of</c><00:09:16.720><c> linearly</c><00:09:17.360><c> independent</c><00:09:18.040><c> vectors</c><00:09:18.760><c> that</c>
+
+00:09:18.949 --> 00:09:18.959 align:start position:0%
+set of linearly independent vectors that
+ 
+
+00:09:18.959 --> 00:09:20.990 align:start position:0%
+set of linearly independent vectors that
+span<00:09:19.560><c> that</c>
+
+00:09:20.990 --> 00:09:21.000 align:start position:0%
+span that
+ 
+
+00:09:21.000 --> 00:09:23.750 align:start position:0%
+span that
+space<00:09:22.000><c> now</c><00:09:22.279><c> given</c><00:09:22.519><c> how</c><00:09:22.640><c> I</c><00:09:22.760><c> described</c><00:09:23.120><c> a</c><00:09:23.240><c> basis</c>
+
+00:09:23.750 --> 00:09:23.760 align:start position:0%
+space now given how I described a basis
+ 
+
+00:09:23.760 --> 00:09:25.829 align:start position:0%
+space now given how I described a basis
+earlier<00:09:24.760><c> and</c><00:09:24.880><c> given</c><00:09:25.120><c> your</c><00:09:25.279><c> current</c>
+
+00:09:25.829 --> 00:09:25.839 align:start position:0%
+earlier and given your current
+ 
+
+00:09:25.839 --> 00:09:27.310 align:start position:0%
+earlier and given your current
+understanding<00:09:26.040><c> of</c><00:09:26.160><c> the</c><00:09:26.240><c> words</c><00:09:26.640><c> span</c><00:09:27.079><c> and</c>
+
+00:09:27.310 --> 00:09:27.320 align:start position:0%
+understanding of the words span and
+ 
+
+00:09:27.320 --> 00:09:29.910 align:start position:0%
+understanding of the words span and
+linearly<00:09:27.959><c> independent</c><00:09:28.959><c> think</c><00:09:29.160><c> about</c><00:09:29.640><c> why</c>
+
+00:09:29.910 --> 00:09:29.920 align:start position:0%
+linearly independent think about why
+ 
+
+00:09:29.920 --> 00:09:33.030 align:start position:0%
+linearly independent think about why
+this<00:09:30.160><c> definition</c><00:09:30.839><c> would</c><00:09:31.040><c> make</c>
+
+00:09:33.030 --> 00:09:33.040 align:start position:0%
+this definition would make
+ 
+
+00:09:33.040 --> 00:09:35.470 align:start position:0%
+this definition would make
+sense<00:09:34.040><c> in</c><00:09:34.160><c> the</c><00:09:34.320><c> next</c><00:09:34.519><c> video</c><00:09:34.800><c> I'll</c><00:09:35.000><c> get</c><00:09:35.120><c> into</c>
+
+00:09:35.470 --> 00:09:35.480 align:start position:0%
+sense in the next video I'll get into
+ 
+
+00:09:35.480 --> 00:09:37.870 align:start position:0%
+sense in the next video I'll get into
+matrices<00:09:36.040><c> and</c><00:09:36.240><c> transforming</c><00:09:36.880><c> space</c><00:09:37.519><c> see</c><00:09:37.680><c> you</c>
+
+00:09:37.870 --> 00:09:37.880 align:start position:0%
+matrices and transforming space see you
+ 
+
+00:09:37.880 --> 00:09:53.810 align:start position:0%
+matrices and transforming space see you
+then
+
+00:09:53.810 --> 00:09:53.820 align:start position:0%
+ 
+ 
+
+00:09:53.820 --> 00:10:00.539 align:start position:0%
+ 
+[Music]
+

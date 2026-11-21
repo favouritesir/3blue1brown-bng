@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অনিশ্চিতির সাধারণ নীতি — ফুরিয়ে রূপান্তর | The more general uncertainty principle, regarding Fourier transforms (3Blue1Brown Physics)</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/physics/lesson_09/manifest.js?v=1"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="পদার্থবিজ্ঞান"
+  course-url="../../index.html#physics"
+  home-url="../../index.html"
+  chapter-num="০৯"
+  chapter-total="১৩"
+  prev-url="lesson_08.html"
+  prev-title="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_10.html"
+  next-title="পরবর্তী অধ্যায়"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="পদার্থবিজ্ঞান"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৯ · পদার্থবিজ্ঞান"
+  title="অনিশ্চিতির সাধারণ নীতি — ফুরিয়ে রূপান্তর | The more general uncertainty principle, regarding Fourier transforms"
+  desc="কোনো তরঙ্গের অবস্থান ও তার ফুরিয়ে রূপ একসাথে কতটা ধারালো হতে পারে — দুইটি অ-কোয়ান্টাম উদাহরণ দিয়ে হাইজেনবার্গের নীতি।"
+  video-src="../../media_vault/physics/lesson_09/experiments/3b1b_physics_09_full_dubbed.mp4"
+  yt-id="MBnnXbOM5S4"
+  date="২৫ ফেব্রুয়ারি, ২০১৮"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">অনিশ্চিতি শুধু কোয়ান্টাম নয়</b1b-bookmark>
+      <b1b-bookmark time="24" time-bn="০০:২৪">উদাহরণ ১ — সুর ও সময়</b1b-bookmark>
+      <b1b-bookmark time="61" time-bn="০১:০১">উদাহরণ ২ — স্লিট ও ডিফ্রাকশন</b1b-bookmark>
+      <b1b-bookmark time="84" time-bn="০১:২৪">হাইজেনবার্গের নীতি</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-up-intro">অনিশ্চিতি শুধু কোয়ান্টাম নয়</a>
+      <a href="#sec-up-audio">উদাহরণ ১ — সুর ও সময়</a>
+      <a href="#sec-up-slit">উদাহরণ ২ — স্লিট ও ডিফ্রাকশন</a>
+      <a href="#sec-up-heisenberg">হাইজেনবার্গের নীতি</a>
+      <a href="#sec-visualizer">ইন্টারেক্টিভ ল্যাব</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ অনিশ্চিতি শুধু কোয়ান্টাম নয় ═══ -->
+      <b1b-section id="sec-up-intro" title="অনিশ্চিতি শুধু কোয়ান্টাম নয়">
+        <p>হাইজেনবার্গের অনিশ্চিতি নীতিকে প্রায়ই কোয়ান্টাম বলবিজ্ঞানের বিশেষ কিছু মনে করা হয়। কিন্তু গাণিতিকভাবে এটি আসলে ফুরিয়ে রূপান্তরের একটা সাধারণ বৈশিষ্ট্য: একটি ফাংশন ও তার ফুরিয়ে রূপান্তর — দুটোই একসাথে খুব '<em>ধারালো</em>' হতে পারে না। কোয়ান্টাম বলবিজ্ঞান শুধু এই গাণিতিক সত্যটিকে প্রকৃতির ওপর প্রয়োগ করে।</p>
+        <b1b-figure src="../../assets/figures/phys_09/fig_01.svg" alt="spike spectrum" caption="একটি ছোট spike ও তার বিস্তৃত ফুরিয়ে রূপান্তর"></b1b-figure>
+        <b1b-quiz
+          question="❓ একটি খুব সংক্ষিপ্ত শব্দের কম্পাঙ্ক বর্ণালী কেমন হয়?"
+          correct="1"
+          correct-msg="সঠিক! সময়ে ধারালো হলে কম্পাঙ্কে বিস্তৃত হতে হয়।"
+          wrong-msg="সংক্ষিপ্ত pulse-এ অনেক কম্পাঙ্ক মিশে থাকে, তাই বর্ণালী চওড়া হয়।"
+          reveal-msg="সঠিক উত্তর: বিস্তৃত।"
+          data-no-narration="true">
+          <div slot="option">খুব সরু</div>
+          <div slot="option">বিস্তৃত</div>
+          <div slot="option">শূন্য</div>
+          <div slot="option">একটিমাত্র কম্পাঙ্ক</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ উদাহরণ ১ — সুর ও সময় ═══ -->
+      <b1b-section id="sec-up-audio" title="উদাহরণ ১ — সুর ও সময়">
+        <p>ভাবুন একজন ড্রামার একটিমাত্র সংক্ষিপ্ত আঘাত দিলেন। সময়ের দিক থেকে সেটি খুব ধারালো — এক মুহূর্তেই শেষ। কিন্তু তার ফুরিয়ে রূপান্তর, অর্থাৎ কম্পাঙ্ক বিশ্লেষণ, দেখা যায় অনেক কম্পাঙ্ক জুড়ে ছড়ানো। বিপরীতে একটি বিশুদ্ধ সুর কম্পাঙ্কে খুব ধারালো, কিন্তু সময়ে তা দীর্ঘ ধরে চলে। একসাথে দুটোই ধারালো করা যায় না।</p>
+        <b1b-formula math="\sigma_t\,\sigma_f \ge \frac{1}{4\pi}"></b1b-formula>
+        <b1b-figure src="../../assets/figures/phys_09/fig_02.svg" alt="time frequency" caption="সংক্ষিপ্ত আঘাতের বিস্তৃত বর্ণালী বনাম দীর্ঘ সুরের সরু বর্ণালী"></b1b-figure>
+        <b1b-callout type="blue" icon="🎵" title="শোনার অনুভূতি">
+          <p>খুব ছোট টিক শব্দে আপনি নির্দিষ্ট সুর শুনতে পান না — কারণ এর কম্পাঙ্ক ছড়ানো থাকে। দীর্ঘ সুরে সুরটি স্পষ্ট, কিন্তু সেটি কখন শুরু–শেষ হয় তা বোঝা কঠিন।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ উদাহরণ ২ — স্লিট ও ডিফ্রাকশন ═══ -->
+      <b1b-section id="sec-up-slit" title="উদাহরণ ২ — স্লিট ও ডিফ্রাকশন">
+        <p>একটি সরু স্লিট দিয়ে আলো পাঠালে স্লিট যত সরু করা হয়, পেছনের পর্দায় আলো তত বেশি ছড়িয়ে পড়ে — ডিফ্রাকশন পট্টি চওড়া হয়। স্লিটের অবস্থান যত নিখুঁতভাবে নির্ধারণ করা হয়, তরঙ্গের দিক অর্থাৎ তরঙ্গসংখ্যার ভেক্টর তত অনিশ্চিত হয়।</p>
+        <b1b-formula math="\sigma_x\,\sigma_k \ge \tfrac12"></b1b-formula>
+        <b1b-figure src="../../assets/figures/phys_09/fig_03.svg" alt="slit diffraction" caption="সরু স্লিটের পরে আলোর বিস্তৃত ডিফ্রাকশন পট্টি"></b1b-figure>
+        <b1b-quiz
+          question="❓ হাইজেনবার্গের অনিশ্চিতি সূত্র কী?"
+          correct="0"
+          correct-msg="হ্যাঁ! Δx·Δp ≥ hbar/2 — অবস্থান ও ভরবেগের অনিশ্চিতির গুণফলের নিচের সীমা।"
+          wrong-msg="p = hbar k সম্পর্ক ব্যবহার করে এই সূত্র আসে।"
+          reveal-msg="সঠিক উত্তর: ΔxΔp ≥ hbar/2।"
+          data-no-narration="true">
+          <div slot="option">ΔxΔp ≥ hbar/2</div>
+          <div slot="option">ΔxΔp = 0</div>
+          <div slot="option">Δx + Δp = hbar</div>
+          <div slot="option">Δx/Δp ≥ c</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ হাইজেনবার্গের নীতি ═══ -->
+      <b1b-section id="sec-up-heisenberg" title="হাইজেনবার্গের নীতি">
+        <p>কোয়ান্টাম বলবিজ্ঞানে একটি কণার তরঙ্গ ফাংশন ও তার ফুরিয়ে রূপান্তর — এই দুটির মধ্যে ঠিক সেই অনিশ্চিতি সম্পর্ক আছে। যেহেতু ভরবেগ p = hbar k, তাই পাই Δx·Δp ≥ hbar/2। এটি কোনো পরিমাপ-ত্রুটি নয়; এটি প্রকৃতির গঠনগত বৈশিষ্ট্য।</p>
+        <b1b-formula math="\Delta x\,\Delta p \ge \frac{\hbar}{2}"></b1b-formula>
+        <b1b-callout type="gold" icon="🧭" title="মূল বার্তা">
+          <p>অনিশ্চিতি নীতি কোয়ান্টামের আগে থেকেই ফুরিয়ে বিশ্লেষণে বিদ্যমান ছিল। কোয়ান্টাম বিজ্ঞান শুধু সেই গাণিতিক সীমাটিকে পদার্থের ভাষায় অনুবাদ করেছে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Interactive lab — excluded from narration ═══ -->
+      <b1b-section id="sec-visualizer" title="ফুরিয়ে অনিশ্চিতি সিমুলেটর — প্রস্থ বদলে বর্ণালী দেখুন" data-no-narration="true">
+        <p class="viz-intro">এই ইন্টারেক্টিভ ল্যাবটি ব্যবহার করে ধারণাটি নিজে পরীক্ষা করে দেখুন। প্যারামিটার বদলে ফলাফলের পরিবর্তন পর্যবেক্ষণ করুন।</p>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="3,-2"></b1b-vector-plane>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/physics/lesson_09/experiments/3b1b_physics_09_full_dubbed.mp4"
+    yt-id="MBnnXbOM5S4"
+    title="অনিশ্চিতির সাধারণ নীতি — ফুরিয়ে রূপান্তর — অধ্যায় ০৯"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — পদার্থবিজ্ঞান">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_08.html"
+  prev-title="পূর্ববর্তী অধ্যায়"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_10.html"
+  next-title="পরবর্তী অধ্যায়"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+{
+  "lesson_id": "lesson_03",
+  "chapter_num": 3,
+  "course_id": "linear_algebra",
+  "title_en": "Linear transformations and matrices",
+  "title_bn": "রৈখিক রূপান্তর ও ম্যাট্রিক্স",
+  "subtitle_bn": "ভিত্তি ভেক্টর ট্র্যাকিং এবং স্থান রূপান্তরের জ্যামিতিক ভাষা হিসেবে ম্যাট্রিক্স",
+  "video_id": "kYB8IZa5AuE",
+  "official_url": "https://www.3blue1brown.com/lessons/linear-transformations",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "10:53",
+    "prerequisites": [
+      "lesson_01",
+      "lesson_02"
+    ]
+  },
+  "epigraph": {
+    "quote": "Unfortunately, no one can be told what the Matrix is. You have to see it for yourself.",
+    "quote_bn": "দুর্ভাগ্যবশত কাউকে শুধু মুখে বলে ম্যাট্রিক্স কী তা বোঝানো যায় না; এটি নিজেকে নিজের চোখে দেখে উপলব্ধি করতে হয়।",
+    "author": "Morpheus (The Matrix)"
+  },
+  "sections": [
+    {
+      "id": "sec-transformations-are-functions",
+      "title_bn": "১. রূপান্তর আসলে একটি ফাংশন (Transformations are Functions)",
+      "title_en": "Transformations are Functions",
+      "summary_bn": "রূপান্তর হলো একটি ফাংশন যা একটি ভেক্টর ইনপুট নিয়ে আরেকটি ভেক্টর আউটপুট দেয়। গ্রাফের চেয়ে চলন বা গতির মাধ্যমে স্থানকে পরিবর্তিত হতে দেখাই হলো রূপান্তর বোঝার সর্বোত্তম উপায়।",
+      "key_takeaways": [
+        "রূপান্তর (Transformation) মূলত একটি ফাংশনেরই চমৎকার জ্যামিতিক প্রতিশব্দ।",
+        "এটি একটি ইনপুট ভেক্টর গ্রহণ করে এবং আউটপুট হিসেবে একটি নতুন ভেক্টর তৈরি করে।",
+        "তীর চিহ্নের ভিড় এড়াতে প্রতিটি ভেক্টরকে তার শীর্ষবিন্দু (Point tip) হিসেবে কল্পনা করা হয়; সম্পূর্ণ স্থান বা গ্রিড মসৃণভাবে পরিবর্তিত হয়।"
+      ],
+      "formulas": [
+        {
+          "label": "ভেক্টর ফাংশন নোটেশন",
+          "katex": "T: \\mathbb{R}^2 \\to \\mathbb{R}^2, \\quad \\vec{v} \\mapsto T(\\vec{v})"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_vector_transformation",
+          "caption_bn": "একটি ইনপুট ভেক্টর গতিশীল হয়ে আউটপুট ভেক্টরে পরিবর্তিত হচ্ছে",
+          "type": "svg_and_mp4",
+          "src": "figures/transformations-are-functions/VectorTransformation.svg"
+        },
+        {
+          "id": "fig_transform_vectors",
+          "caption_bn": "স্থানের সমস্ত ভেক্টরের যুগপৎ চলন ও রূপান্তর",
+          "type": "svg_and_mp4",
+          "src": "figures/transformations-are-functions/TransformVectors.svg"
+        },
+        {
+          "id": "fig_transform_grid",
+          "caption_bn": "গ্রিডের প্রতিটি বিন্দুর চলনের মাধ্যমে সম্পূর্ণ তলের রূপান্তর প্রত্যক্ষ করা",
+          "type": "svg_and_mp4",
+          "src": "figures/transformations-are-functions/TransformGrid.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-what-makes-linear",
+      "title_bn": "২. একটি রূপান্তরকে কী 'রৈখিক' (Linear) করে তোলে?",
+      "title_en": "What Makes a Transformation Linear?",
+      "summary_bn": "একটি রূপান্তর রৈখিক হওয়ার দৃশ্যমান শর্ত: সমস্ত গ্রিড রেখাকে সর্বদা সরল, সমান্তরাল এবং সমদূরত্বে থাকতে হবে এবং মূলবিন্দুকে নিজ স্থানে স্থির থাকতে হবে।",
+      "key_takeaways": [
+        "প্রথম শর্ত: সমস্ত সরলরেখাকে রূপান্তরের পরও সোজা সরলরেখাই থাকতে হবে (কোনো বক্রতা গ্রহণযোগ্য নয়)।",
+        "দ্বিতীয় শর্ত: মূলবিন্দু (Origin) নিজ স্থানে সম্পূর্ণ স্থির ও অনড় থাকতে হবে।",
+        "সারসংক্ষেপ দৃশ্যমান ফলাফল: স্থানাঙ্ক গ্রিডের রেখাগুলো সমান্তরাল এবং সমান দূরত্ব বজায় রাখবে (Grid lines remain parallel and evenly spaced)।"
+      ],
+      "formulas": [
+        {
+          "label": "রৈখিকতার জ্যামিতিক শর্ত",
+          "katex": "\\text{Lines remain lines} \\quad \\& \\quad T(\\vec{0}) = \\vec{0}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_lines_remain_lines",
+          "caption_bn": "রৈখিক রূপান্তরের দুই মূল বৈশিষ্ট্য: সরলরেখা সরলই থাকে এবং মূলবিন্দু নিজ স্থানে স্থির থাকে",
+          "type": "image",
+          "src": "figures/what-makes-a-transformation-linear/LinesRemainLinesAndOriginRemainsFixed.jpg"
+        },
+        {
+          "id": "fig_grid_lines_parallel",
+          "caption_bn": "গ্রিড লাইনগুলো সমান্তরাল ও সমদূরত্বে অবস্থান করে—এটিই রৈখিকতার নিখুঁত চাক্ষুষ পরিচয়",
+          "type": "image",
+          "src": "figures/what-makes-a-transformation-linear/GridLinesRemainParallelAndEvenlySpaced.jpg"
+        },
+        {
+          "id": "fig_nonlinear_origin_moves",
+          "caption_bn": "অরৈখিক রূপান্তর: মূলবিন্দু স্থানচ্যুত হয়েছে",
+          "type": "image",
+          "src": "figures/what-makes-a-transformation-linear/NonLinearTransformationOriginMoves.jpg"
+        },
+        {
+          "id": "fig_nonlinear_curved_lines",
+          "caption_bn": "অরৈখিক রূপান্তর: সরলরেখাগুলো বেঁকে বক্ররেখায় পরিণত হয়েছে",
+          "type": "image",
+          "src": "figures/what-makes-a-transformation-linear/NonLinearTransformationCurvedLines.jpg"
+        }
+      ]
+    },
+    {
+      "id": "sec-formal-properties",
+      "title_bn": "৩. রৈখিকতার ফর্মাল বীজগাণিতিক নিয়মাবলী (Formal Properties)",
+      "title_en": "Formal Algebraic Properties of Linear Transformations",
+      "summary_bn": "বীজগণিতে একটি রূপান্তর রৈখিক হয় যদি এটি ভেক্টর যোগ এবং স্কেলার গুণনকে অবিকল সংরক্ষণ করে: L(v + w) = L(v) + L(w) এবং L(cv) = c L(v)।",
+      "key_takeaways": [
+        "সংযোজ্যতা (Additivity): ভেক্টরদ্বয়ের যোগফলের রূপান্তর তাদের পৃথক রূপান্তরের যোগফলের সমান।",
+        "সমসত্ত্বতা (Homogeneity): স্কেলার গুণিতক রূপান্তরের বাইরে অবাধে চলাচল করতে পারে।",
+        "স্কেলার ০ বসালে প্রমাণিত হয় $L(\\vec{0}) = \\vec{0}$, অর্থাৎ মূলবিন্দু সর্বদা স্থির থাকে।"
+      ],
+      "formulas": [
+        {
+          "label": "যোগ সংরক্ষণ (Additivity)",
+          "katex": "L(\\vec{v} + \\vec{w}) = L(\\vec{v}) + L(\\vec{w})"
+        },
+        {
+          "label": "স্কেলার গুণন সংরক্ষণ (Homogeneity)",
+          "katex": "L(c\\vec{v}) = c\\,L(\\vec{v})"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_algebraic_properties",
+          "caption_bn": "রৈখিক রূপান্তরের দুই অপরিহার্য বীজগাণিতিক শর্ত",
+          "type": "svg",
+          "src": "figures/formal-properties/AlgebraicProperties.svg"
+        },
+        {
+          "id": "fig_basis_combination_before_after",
+          "caption_bn": "ভিত্তি ভেক্টরের রৈখিক সমন্বয় রূপান্তরের পূর্বে ও পরে অবিকল বজায় থাকে",
+          "type": "svg_and_mp4",
+          "src": "figures/formal-properties/LinearCombinationOfBasisVectorsAfter.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-describing-transformations",
+      "title_bn": "৪. ভিত্তি ভেক্টর দিয়েই সম্পূর্ণ রূপান্তরের বর্ণনা",
+      "title_en": "Tracking Where Basis Vectors Land",
+      "summary_bn": "যেহেতু রৈখিক রূপান্তর রৈখিক সমন্বয়কে সংরক্ষণ করে, তাই কেবল ভিত্তি ভেক্টর î এবং ĵ কোথায় অবতরণ করে তা জানলেই সমতলের যেকোনো ভেক্টরের নতুন অবস্থান এক নিমেষেই গণনা করা যায়।",
+      "key_takeaways": [
+        "যেকোনো ভেক্টর $\\vec{v} = x\\hat{i} + y\\hat{j}$ ভিত্তি ভেক্টরের একটি রৈখিক সমন্বয়।",
+        "রৈখিকতার কারণে রূপান্তরের পর: $T(\\vec{v}) = x\\,T(\\hat{i}) + y\\,T(\\hat{j})$।",
+        "তলের কোটি কোটি বিন্দুর জন্য অসীম তথ্যের প্রয়োজন নেই—শুধু î এবং ĵ-এর চূড়ান্ত স্থানাঙ্কই যথেষ্ট!"
+      ],
+      "formulas": [
+        {
+          "label": "ভিত্তি ভেক্টর ট্র্যাকিং নীতি",
+          "katex": "T(\\vec{v}) = T(x\\hat{i} + y\\hat{j}) = x\\,T(\\hat{i}) + y\\,T(\\hat{j})"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_linear_transformation_tracking",
+          "caption_bn": "ভিত্তি ভেক্টর দুটির গতিবিধি অনুসরণ করে সামগ্রিক রূপান্তরের দৃশ্যপট",
+          "type": "svg_and_mp4",
+          "src": "figures/matrices/LinearTransformation.svg"
+        },
+        {
+          "id": "fig_linear_combination_transform",
+          "caption_bn": "রৈখিক সমন্বয়ের রূপান্তর: রূপান্তরিত ভিত্তি ভেক্টরের স্কেলার যোগফল",
+          "type": "svg_and_mp4",
+          "src": "figures/matrices/LinearTransformationCombination.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-matrix-notation",
+      "title_bn": "৫. ম্যাট্রিক্স নোটেশন ও ভেক্টর গুণনের জ্যামিতিক সত্য",
+      "title_en": "Matrix Notation & Vector Multiplication as Linear Combination",
+      "summary_bn": "একটি ২×২ ম্যাট্রিক্সের কলাম দুটি নির্দেশ করে î এবং ĵ রূপান্তরের পর ঠিক কোথায় দাঁড়িয়েছে। ম্যাট্রিক্স-ভেক্টর গুণন মানেই হলো কলামগুলোর একটি রৈখিক সমন্বয়।",
+      "key_takeaways": [
+        "একটি ২×২ ম্যাট্রিক্স $\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}$-এর প্রথম কলাম $\\begin{bmatrix} a \\\\ c \\end{bmatrix}$ হলো রূপান্তরিত $\\hat{i}$, এবং দ্বিতীয় কলাম $\\begin{bmatrix} b \\\\ d \\end{bmatrix}$ হলো রূপান্তরিত $\\hat{j}$।",
+        "ম্যাট্রিক্স-ভেক্টর গুণন অন্ধ মুখস্থের কোনো সারি-কলাম নিয়ম নয়; এটি হলো $x\\begin{bmatrix} a \\\\ c \\end{bmatrix} + y\\begin{bmatrix} b \\\\ d \\end{bmatrix}$।",
+        "ম্যাট্রিক্স হলো স্থান রূপান্তরকে সাংকেতিকভাবে প্রকাশ করার নিখুঁত গাণিতিক ভাষা।"
+      ],
+      "formulas": [
+        {
+          "label": "ম্যাট্রিক্সের কলাম ব্যাখ্যা",
+          "katex": "M = \\begin{bmatrix} T(\\hat{i}) & T(\\hat{j}) \\end{bmatrix} = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}"
+        },
+        {
+          "label": "ম্যাট্রিক্স-ভেক্টর গুণন",
+          "katex": "\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = x\\begin{bmatrix} a \\\\ c \\end{bmatrix} + y\\begin{bmatrix} b \\\\ d \\end{bmatrix} = \\begin{bmatrix} ax + by \\\\ cx + dy \\end{bmatrix}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_record_basis_vectors",
+          "caption_bn": "ভিত্তি ভেক্টরের রূপান্তরিত অবস্থান দুটি পাশাপাশি লিখে ২×২ ম্যাট্রিক্স তৈরি",
+          "type": "svg_and_mp4",
+          "src": "figures/matrices/RecordWhereBasisVectorsLand.svg"
+        },
+        {
+          "id": "fig_matrix_general_product",
+          "caption_bn": "ম্যাট্রিক্স গুণনের প্রকৃত জ্যামিতিক অর্থ: কলামের রৈখিক সমন্বয়",
+          "type": "svg",
+          "src": "figures/matrices/MatrixNotation2x2InputOutputGeneral.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-geometric-examples",
+      "title_bn": "৬. বিশেষ রূপান্তরের উদাহরণ (ঘূর্ণন, শিয়ার ও স্থান সংকোচন)",
+      "title_en": "Special Transformations: Rotation, Shear & Dimension Collapse",
+      "summary_bn": "৯০° ঘূর্ণনে î যায় [0, 1] এবং ĵ যায় [-1, 0]-এ; শিয়ার রূপান্তরে î স্থির থাকে এবং ĵ হেলে যায়; আর কলাম দুটি সমরেখ হলে সম্পূর্ণ ২ডি স্থান একটি ১ডি সরলরেখায় চ্যাপ্টা হয়ে যায়।",
+      "key_takeaways": [
+        "ঘড়ির কাঁটার বিপরীত ৯০° ঘূর্ণন ম্যাট্রিক্স: $\\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}$।",
+        "অনুভূমিক শিয়ার রূপান্তর ম্যাট্রিক্স: $\\begin{bmatrix} 1 & 1 \\\\ 0 & 1 \\end{bmatrix}$, যেখানে ক্ষেত্রফল সর্বদা ১ বজায় থাকে।",
+        "কলাম দুটি রৈখিকভাবে নির্ভরশীল হলে পুরো সমতল ধসে গিয়ে একটি একমাত্রিক রেখায় সংকুচিত হয় (Determinant = 0)।"
+      ],
+      "formulas": [
+        {
+          "label": "৯০° ঘূর্ণন ম্যাট্রিক্স",
+          "katex": "R_{90^\\circ} = \\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}"
+        },
+        {
+          "label": "অনুভূমিক শিয়ার ম্যাট্রিক্স",
+          "katex": "S = \\begin{bmatrix} 1 & 1 \\\\ 0 & 1 \\end{bmatrix}"
+        },
+        {
+          "label": "স্থান সংকোচন (Linearly Dependent Columns)",
+          "katex": "\\begin{bmatrix} 2 & -1 \\\\ 4 & -2 \\end{bmatrix} \\implies \\text{Span}(\\text{Columns}) = 1\\text{D Line}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_rotation",
+          "caption_bn": "৯০ ডিগ্রি ঘড়ির কাঁটার বিপরীত ঘূর্ণন রূপান্তর",
+          "type": "svg_and_mp4",
+          "src": "figures/examples/Rotation.svg"
+        },
+        {
+          "id": "fig_shear",
+          "caption_bn": "শিয়ার রূপান্তর: সমান্তরাল রেখা কাত হয়ে যাওয়া কিন্তু ক্ষেত্রফল অপরিবর্তিত থাকা",
+          "type": "svg_and_mp4",
+          "src": "figures/examples/Shear.svg"
+        },
+        {
+          "id": "fig_linearly_dependent_columns",
+          "caption_bn": "রৈখিকভাবে নির্ভরশীল কলাম সমতলকে সরলরেখায় সংকুচিত করে",
+          "type": "svg_and_mp4",
+          "src": "figures/examples/LinearlyDependentColumns.svg"
+        }
+      ]
+    }
+  ],
+  "interactive_lab": {
+    "title_bn": "ইন্টারেক্টিভ ২×২ ম্যাট্রিক্স রূপান্তর ল্যাব",
+    "description_bn": "ক্যানভাসে সবুজ ভেক্টর î এবং লাল ভেক্টর ĵ-এর শীর্ষবিন্দু টেনে যেকোনো দিকে সরিয়ে রিয়েল-টাইমে গ্রিডের বিকৃতি, ম্যাট্রিক্স মান ও ডিটারমিন্যান্ট প্রত্যক্ষ করুন।",
+    "type": "matrix_2x2_interactive_lab"
+  },
+  "quizzes": [
+    {
+      "id": "quiz_01_basis_matrix",
+      "section_ref": "sec-matrix-notation",
+      "question_bn": "একটি রৈখিক রূপান্তরের পর ভিত্তি ভেক্টর $\\hat{i}$ গিয়ে পৌঁছায় $\\begin{bmatrix} 3 \\\\ 0 \\end{bmatrix}$-এ এবং $\\hat{j}$ গিয়ে পৌঁছায় $\\begin{bmatrix} 1 \\\\ 2 \\end{bmatrix}$-এ। এই রূপান্তরটির ২×২ ম্যাট্রিক্স রূপ কোনটি?",
+      "question_en": "If a linear transformation takes i-hat to [3, 0] and j-hat to [1, 2], what is its 2x2 matrix?",
+      "options": [
+        "$\\begin{bmatrix} 3 & 0 \\\\ 1 & 2 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 3 & 1 \\\\ 0 & 2 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 1 & 3 \\\\ 2 & 0 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 0 & 2 \\\\ 3 & 1 \\end{bmatrix}$"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ম্যাট্রিক্সের প্রথম কলাম হলো $\\hat{i}$-এর রূপান্তরিত স্থানাঙ্ক $\\begin{bmatrix} 3 \\\\ 0 \\end{bmatrix}$ এবং দ্বিতীয় কলাম হলো $\\hat{j}$-এর রূপান্তরিত স্থানাঙ্ক $\\begin{bmatrix} 1 \\\\ 2 \\end{bmatrix}$। সুতরাং ম্যাট্রিক্সটি হবে $\\begin{bmatrix} 3 & 1 \\\\ 0 & 2 \\end{bmatrix}$।",
+      "explanation_en": "The first column of the matrix records where i-hat lands, and the second column records where j-hat lands."
+    },
+    {
+      "id": "quiz_02_matrix_vector_product",
+      "section_ref": "sec-matrix-notation",
+      "question_bn": "যদি ম্যাট্রিক্স $M = \\begin{bmatrix} -1 & 0 \\\\ 2 & 1 \\end{bmatrix}$ হয়, তবে ভেক্টর $\\vec{v} = \\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}$ রূপান্তরের পর কোন নতুন ভেক্টরে রূপান্তরিত হবে?",
+      "question_en": "What vector results from multiplying M = [[-1, 0], [2, 1]] by v = [2, 3]?",
+      "options": [
+        "$\\begin{bmatrix} 2 \\\\ 5 \\end{bmatrix}$",
+        "$\\begin{bmatrix} -2 \\\\ 3 \\end{bmatrix}$",
+        "$\\begin{bmatrix} -2 \\\\ 7 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 1 \\\\ 4 \\end{bmatrix}$"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "কলামভিত্তিক রৈখিক সমন্বয় অনুসারে: $2\\begin{bmatrix} -1 \\\\ 2 \\end{bmatrix} + 3\\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} -2 \\\\ 4 \\end{bmatrix} + \\begin{bmatrix} 0 \\\\ 3 \\end{bmatrix} = \\begin{bmatrix} -2 \\\\ 7 \\end{bmatrix}$।",
+      "explanation_en": "Multiplying a matrix by a vector is taking a linear combination of its columns: 2 * [-1, 2]^T + 3 * [0, 1]^T = [-2, 7]^T."
+    },
+    {
+      "id": "quiz_03_linearly_dependent_collapse",
+      "section_ref": "sec-geometric-examples",
+      "question_bn": "ম্যাট্রিক্স $A = \\begin{bmatrix} 2 & 1 \\\\ 4 & 2 \\end{bmatrix}$ দ্বারা দ্বিমাত্রিক স্থানাঙ্ক স্থান রূপান্তর করলে জ্যামিতিকভাবে কী ঘটবে?",
+      "question_en": "What happens geometrically when 2D space is transformed by A = [[2, 1], [4, 2]]?",
+      "options": [
+        "স্থানটি ৪৫° কোণে মসৃণভাবে ঘুরে যাবে",
+        "স্থানটির ক্ষেত্রফল দ্বিগুণ প্রসারিত হবে",
+        "স্থানটি অপরিবর্তিত থাকবে",
+        "সম্পূর্ণ ২ডি সমতল ধসে গিয়ে একটি মাত্র ১ডি সরলরেখায় সংকুচিত হবে"
+      ],
+      "correct_index": 3,
+      "explanation_bn": "ম্যাট্রিক্সের কলাম দুটি হলো $\\begin{bmatrix} 2 \\\\ 4 \\end{bmatrix}$ এবং $\\begin{bmatrix} 1 \\\\ 2 \\end{bmatrix}$। প্রথম কলামটি দ্বিতীয় কলামের ঠিক দ্বিগুণ—অর্থাৎ তারা রৈখিকভাবে নির্ভরশীল। ফলে ভিত্তি ভেক্টর দুটি একই রেখায় অবতরণ করায় সম্পূর্ণ সমতলটি একটি ১ডি রেখায় সংকুচিত হয়ে যায়।",
+      "explanation_en": "Since the columns are linearly dependent (one is a multiple of the other), the 2D plane is squished into a 1D line."
+    },
+    {
+      "id": "quiz_04_linear_condition",
+      "section_ref": "sec-what-makes-linear",
+      "question_bn": "নিচের কোন রূপান্তরটি নিশ্চিতভাবে একটি রৈখিক রূপান্তর (Linear Transformation)?",
+      "question_en": "Which of the following is guaranteed to be a linear transformation?",
+      "options": [
+        "একটি রূপান্তর যা সমস্ত বিন্দুকে ডানদিকে ৩ একক সরিয়ে দেয় ($T(x, y) = (x+3, y)$)",
+        "একটি রূপান্তর যাতে স্থানাঙ্ক গ্রিড রেখাগুলো বক্র ধনুকের মতো বাঁকা হয়ে যায়",
+        "মূলবিন্দুকে কেন্দ্র করে সমতলকে ৪৫° কোণে ঘড়ির কাঁটার বিপরীত দিকে ঘুরিয়ে দেওয়া",
+        "একটি রূপান্তর যা প্রতিটি বিন্দুর স্থানাঙ্ককে বর্গ করে ($T(x, y) = (x^2, y^2)$)"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "মূলবিন্দুকে কেন্দ্র করে ঘূর্ণন (Rotation about the origin) একটি নিখুঁত রৈখিক রূপান্তর; কারণ এতে মূলবিন্দু $(0, 0)$ স্থির থাকে এবং সমস্ত গ্রিড রেখা সরল, সমান্তরাল ও সমদূরত্বে বজায় থাকে। বিন্দুকে ৩ একক ডানে সরালে মূলবিন্দু সরে যায় ($T(0,0)=(3,0)$), যা রৈখিকতার শর্ত ভঙ্গ করে।",
+      "explanation_en": "Rotation about the origin fixes the origin and keeps all grid lines straight, parallel, and evenly spaced."
+    }
+  ]
+}

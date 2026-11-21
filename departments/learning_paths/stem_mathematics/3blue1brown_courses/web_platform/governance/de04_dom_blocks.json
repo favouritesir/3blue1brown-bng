@@ -1,0 +1,214 @@
+{
+  "dom": [
+    {
+      "id": "sec-heat-intro",
+      "noNarration": false,
+      "types": [
+        "h2",
+        "chapter-quote",
+        "p",
+        "p",
+        "figure",
+        "p",
+        "formula-box",
+        "p",
+        "callout-gold"
+      ],
+      "tex": [
+        [
+          "\\frac{\\partial u}{\\partial t} = \\alpha \\frac{\\partial^2 u}{\\partial x^2}"
+        ]
+      ]
+    },
+    {
+      "id": "sec-curvature-intuition",
+      "noNarration": false,
+      "types": [
+        "h2",
+        "p",
+        "figure",
+        "p",
+        "p",
+        "formula-box",
+        "callout-blue",
+        "p"
+      ],
+      "tex": [
+        [
+          "\\frac{\\partial^2 u}{\\partial x^2} \\approx \\frac{u(x + \\Delta x, t) - 2u(x, t) + u(x - \\Delta x, t)}{\\Delta x^2} = \\frac{2}{\\Delta x^2}\\left(u_{\\text{avg}} - u(x, t)\\right)"
+        ]
+      ]
+    },
+    {
+      "id": "sec-sine-decay",
+      "noNarration": false,
+      "types": [
+        "h2",
+        "p",
+        "callout-green",
+        "formula-box",
+        "p",
+        "formula-box",
+        "callout-gold",
+        "p"
+      ],
+      "tex": [
+        [
+          "\\frac{\\partial^2}{\\partial x^2}\\sin\\left(\\frac{n \\pi x}{L}\\right) = -\\left(\\frac{n \\pi}{L}\\right)^2 \\sin\\left(\\frac{n \\pi x}{L}\\right)"
+        ],
+        [
+          "u_n(x, t) = e^{-\\alpha \\left(\\frac{n \\pi}{L}\\right)^2 t} \\sin\\left(\\frac{n \\pi x}{L}\\right)"
+        ]
+      ]
+    },
+    {
+      "id": "sec-fourier-series",
+      "noNarration": false,
+      "types": [
+        "h2",
+        "p",
+        "chapter-quote",
+        "p",
+        "formula-box",
+        "p",
+        "formula-box",
+        "callout-purple"
+      ],
+      "tex": [
+        [
+          "f(x) = \\sum_{n=1}^{\\infty} b_n \\sin\\left(\\frac{n \\pi x}{L}\\right)"
+        ],
+        [
+          "u(x, t) = \\sum_{n=1}^{\\infty} b_n e^{-\\alpha \\left(\\frac{n \\pi}{L}\\right)^2 t} \\sin\\left(\\frac{n \\pi x}{L}\\right)"
+        ]
+      ]
+    },
+    {
+      "id": "sec-entropy-irreversibility",
+      "noNarration": false,
+      "types": [
+        "h2",
+        "p",
+        "figure",
+        "p",
+        "callout-red",
+        "p",
+        "p"
+      ],
+      "tex": []
+    },
+    {
+      "id": "sec-interactive-lab",
+      "noNarration": true,
+      "types": [
+        "h2",
+        "p",
+        "formula-box",
+        "p",
+        "callout-blue",
+        "p"
+      ],
+      "tex": [
+        [
+          "\\frac{\\partial u}{\\partial t} = \\alpha \\frac{\\partial^2 u}{\\partial x^2}, \\qquad u_i^{n+1} = u_i^{n} + r\\left(u_{i+1}^{n} - 2u_i^{n} + u_{i-1}^{n}\\right)"
+        ]
+      ]
+    },
+    {
+      "id": "sec-quizzes",
+      "noNarration": true,
+      "types": [
+        "h2",
+        "p",
+        "callout-gold",
+        "callout-blue",
+        "callout-green"
+      ],
+      "tex": []
+    }
+  ],
+  "engine": [
+    {
+      "id": "sec-heat-intro",
+      "blockCount": 9,
+      "cueCount": 9,
+      "audioFile": "../../assets/audio/differential_equations/lesson_04/sec_01_heat_intro.mp3",
+      "types": [
+        "h2",
+        "chapter-quote",
+        "p",
+        "p",
+        "figure",
+        "p",
+        "formula-box",
+        "p",
+        "callout-gold"
+      ]
+    },
+    {
+      "id": "sec-curvature-intuition",
+      "blockCount": 8,
+      "cueCount": 8,
+      "audioFile": "../../assets/audio/differential_equations/lesson_04/sec_02_curvature_intuition.mp3",
+      "types": [
+        "h2",
+        "p",
+        "figure",
+        "p",
+        "p",
+        "formula-box",
+        "callout-blue",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-sine-decay",
+      "blockCount": 8,
+      "cueCount": 8,
+      "audioFile": "../../assets/audio/differential_equations/lesson_04/sec_03_sine_decay.mp3",
+      "types": [
+        "h2",
+        "p",
+        "callout-green",
+        "formula-box",
+        "p",
+        "formula-box",
+        "callout-gold",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-fourier-series",
+      "blockCount": 8,
+      "cueCount": 8,
+      "audioFile": "../../assets/audio/differential_equations/lesson_04/sec_04_fourier_series.mp3",
+      "types": [
+        "h2",
+        "p",
+        "chapter-quote",
+        "p",
+        "formula-box",
+        "p",
+        "formula-box",
+        "callout-purple"
+      ]
+    },
+    {
+      "id": "sec-entropy-irreversibility",
+      "blockCount": 7,
+      "cueCount": 7,
+      "audioFile": "../../assets/audio/differential_equations/lesson_04/sec_05_entropy_irreversibility.mp3",
+      "types": [
+        "h2",
+        "p",
+        "figure",
+        "p",
+        "callout-red",
+        "p",
+        "p"
+      ]
+    }
+  ],
+  "hasStudioAudio": true,
+  "manifestPresent": true
+}

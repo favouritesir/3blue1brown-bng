@@ -1,0 +1,125 @@
+window.TEACHER_AUDIO_MANIFEST = {
+  "course": "why_pi",
+  "lesson": "lesson_06",
+  "voice": "bn-BD-PradeepNeural",
+  "mode": "authentic_teacher",
+  "sections": {
+    "sec-bell-curve": {
+      "title": "বেল-আকৃতি ও গাউসিয়ান",
+      "audio_file": "sec_01_sec-bell-curve.mp3",
+      "total_duration_ms": 20000.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "প্রকৃতির অসংখ্য পরিমাপ বেল-আকৃতির বণ্টন অনুসরণ করে—এবং তার সূত্রে হঠাৎ √π কোথা থেকে এসে যায়?",
+          "start_ms": 0.0,
+          "end_ms": 4500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 1,
+          "type": "p",
+          "text": "স্বাভাবিক বণ্টনের ঘনত্ব $f(x)\\propto e^{-x^2/2}$।",
+          "start_ms": 5000.0,
+          "end_ms": 9500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 2,
+          "type": "p",
+          "text": "সম্পূর্ণ বক্ররেখার নিচের ক্ষেত্রফল ১ হতে হলে একটা স্কেলিং ধ্রুবক লাগে।",
+          "start_ms": 10000.0,
+          "end_ms": 14500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 3,
+          "type": "p",
+          "text": "সেই ধ্রুবকের ভেতরেই লুকিয়ে আছে $\\sqrt{2\\pi}$—অর্থাৎ পাই।",
+          "start_ms": 15000.0,
+          "end_ms": 19500.0,
+          "duration_ms": 4500.0
+        }
+      ]
+    },
+    "sec-integral-trick": {
+      "title": "ইন্টিগ্রালের কৌশল",
+      "audio_file": "sec_02_sec-integral-trick.mp3",
+      "total_duration_ms": 20000.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "$e^{-x^2}$ কে সরাসরি ইন্টিগ্রেট করা যায় না; কিন্তু দুইটি কপি নিয়ে দ্বিমাত্রিক ক্ষেত্রে নিলে পোলার কোঅর্ডিনেটে সহজে হয়ে যায়।",
+          "start_ms": 0.0,
+          "end_ms": 4500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 1,
+          "type": "p",
+          "text": "ধরি $I=\\int_{-\\infty}^{\\infty}e^{-x^2}dx$। তবে $I^2=\\iint e^{-(x^2+y^2)}dx\\,dy$।",
+          "start_ms": 5000.0,
+          "end_ms": 9500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 2,
+          "type": "p",
+          "text": "পোলার কোঅর্ডিনেটে $x^2+y^2=r^2$ আর $dx\\,dy=r\\,dr\\,d\\theta$।",
+          "start_ms": 10000.0,
+          "end_ms": 14500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 3,
+          "type": "p",
+          "text": "ফলাফল $I^2=\\pi$, অর্থাৎ $I=\\sqrt{\\pi}$।",
+          "start_ms": 15000.0,
+          "end_ms": 19500.0,
+          "duration_ms": 4500.0
+        }
+      ]
+    },
+    "sec-herschel-maxwell": {
+      "title": "কেন এই বণ্টন স্বাভাবিক?",
+      "audio_file": "sec_03_sec-herschel-maxwell.mp3",
+      "total_duration_ms": 20000.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "কয়েকটি স্বাভাবিক শর্ত (দিক-নিরপেক্ষতা, স্থান-নিরপেক্ষতা, স্বাধীনতা) থেকেই বেল-আকৃতির বণ্টন এবং তার স্কেলিং বের করা যায়—তাই √π-র উপস্থিতি যুক্তিসঙ্গত।",
+          "start_ms": 0.0,
+          "end_ms": 4500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 1,
+          "type": "p",
+          "text": "ভুলের পরিমাপ সব দিকে একই রকম হলে (দিক-নিরপেক্ষ) $x$ ও $y$ আলাদা হয়।",
+          "start_ms": 5000.0,
+          "end_ms": 9500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 2,
+          "type": "p",
+          "text": "স্বাধীন উপাদানের ক্ষেত্রে $f(x)f(y)$ শুধু $x^2+y^2$-র ওপর নির্ভর করলে $f$ অবশ্যই $e^{-cx^2}$।",
+          "start_ms": 10000.0,
+          "end_ms": 14500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 3,
+          "type": "p",
+          "text": "এই ডেরিভেশন বোঝায় কেন ইন্টিগ্রালের কৌশল কেবল কাকতালীয় নয়।",
+          "start_ms": 15000.0,
+          "end_ms": 19500.0,
+          "duration_ms": 4500.0
+        }
+      ]
+    }
+  }
+};

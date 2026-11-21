@@ -1,0 +1,361 @@
+{
+  "sectionEls": [
+    {
+      "id": "sec-discrete-to-continuous",
+      "noNarration": null
+    },
+    {
+      "id": "sec-discrete-to-continuous-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-zero-prob-paradox",
+      "noNarration": null
+    },
+    {
+      "id": "sec-zero-prob-paradox-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-density-concept",
+      "noNarration": null
+    },
+    {
+      "id": "sec-density-concept-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-uniform-exponential",
+      "noNarration": null
+    },
+    {
+      "id": "sec-uniform-exponential-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-cdf-calculus",
+      "noNarration": null
+    },
+    {
+      "id": "sec-cdf-calculus-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-clt-emergence",
+      "noNarration": null
+    },
+    {
+      "id": "sec-clt-emergence-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-interactive-lab",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-quizzes",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-formulas-glossary",
+      "noNarration": "true"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-discrete-to-continuous",
+      "title": "বিচ্ছিন্ন স্তম্ভ থেকে অবিচ্ছিন্ন তরঙ্গে উত্তরণ",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "বিচ্ছিন্ন স্তম্ভ থেকে অবিচ্ছিন্ন তরঙ্গে উত্তরণ"
+        },
+        {
+          "type": "p",
+          "text": "বাস্তব জগতের বহু চলক বিচ্ছিন্ন ধাপে নয়, অবিচ্ছিন্ন রেখায় বিস্তৃত থাকে।"
+        },
+        {
+          "type": "p",
+          "text": "হিস্টোগ্রামের বারগুলোর প্রস্থ শূন্যের কাছাকাছি নিলে তা মসৃণ বক্ররেখায় পরিণত হয়।"
+        },
+        {
+          "type": "p",
+          "text": "সমষ্টি রূপ নেয় সমাকলনে: \n∑\n→\n∫\n∑→∫।"
+        },
+        {
+          "type": "formula-box",
+          "text": "∑\n𝑖\n𝑃\n(\n𝑋\n=\n𝑥\n𝑖\n)\n=\n1.0\ni\n∑\n\t​\n\nP(X=x\ni\n\t​\n\n)=1.0"
+        },
+        {
+          "type": "formula-box",
+          "text": "∫\n−\n∞\n∞\n𝑓\n(\n𝑥\n)\n𝑑\n𝑥\n=\n1.0\n∫\n−∞\n∞\n\t​\n\nf(x)dx=1.0"
+        }
+      ]
+    },
+    {
+      "id": "sec-zero-prob-paradox",
+      "title": "একক বিন্দুর শূন্য সম্ভাব্যতা প্যারাডক্স",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "একক বিন্দুর শূন্য সম্ভাব্যতা প্যারাডক্স"
+        },
+        {
+          "type": "p",
+          "text": "অবিচ্ছিন্ন চলকে একক বিন্দুর সম্ভাবনা সর্বদা শূন্য: P(X=c) = 0।"
+        },
+        {
+          "type": "p",
+          "text": "সম্ভাবনা শূন্য হলেও ঘটনাটি বাস্তবে ঘটা সম্পূর্ণ সম্ভব।"
+        },
+        {
+          "type": "p",
+          "text": "সম্ভাবনা কেবল একটি ধনাত্মক দৈর্ঘ্যের ব্যবধানেই ক্ষেত্রফল ধারণ করে।"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑃\n(\n𝑋\n=\n𝑐\n)\n=\n0\n(\n∀\n𝑐\n∈\n𝑅\n)\nP(X=c)=0(∀c∈R)"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑃\n(\n𝑎\n≤\n𝑋\n≤\n𝑏\n)\n=\n𝑃\n(\n𝑎\n<\n𝑋\n<\n𝑏\n)\nP(a≤X≤b)=P(a<X<b)"
+        }
+      ]
+    },
+    {
+      "id": "sec-density-concept",
+      "title": "সম্ভাব্যতা ঘনত্ব f(x): উচ্চতা বনাম ক্ষেত্রফল",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "সম্ভাব্যতা ঘনত্ব f(x): উচ্চতা বনাম ক্ষেত্রফল"
+        },
+        {
+          "type": "p",
+          "text": "f(x) হলো সম্ভাব্যতা ঘনত্ব, সরাসরি সম্ভাব্যতা নয়।"
+        },
+        {
+          "type": "p",
+          "text": "সম্ভাব্যতা হলো বক্ররেখার নিচের নির্দিষ্ট এলাকার ক্ষেত্রফল।"
+        },
+        {
+          "type": "p",
+          "text": "ক্ষুদ্র অঞ্চলে ঘনত্ব অনেক বেশি (এমনকি ১-এর চেয়েও বেশি) হতে পারে।"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑃\n(\n𝑎\n≤\n𝑋\n≤\n𝑏\n)\n=\n∫\n𝑎\n𝑏\n𝑓\n(\n𝑥\n)\n𝑑\n𝑥\nP(a≤X≤b)=∫\na\nb\n\t​\n\nf(x)dx"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑓\n(\n𝑥\n)\n≥\n0\n(\n∀\n𝑥\n)\n,\n∫\n−\n∞\n∞\n𝑓\n(\n𝑥\n)\n𝑑\n𝑥\n=\n1.0\nf(x)≥0(∀x),∫\n−∞\n∞\n\t​\n\nf(x)dx=1.0"
+        }
+      ]
+    },
+    {
+      "id": "sec-uniform-exponential",
+      "title": "বাস্তব মডেল: সুষম বণ্টন ও এক্সপোনেনশিয়াল স্মৃতিহীনতা",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "বাস্তব মডেল: সুষম বণ্টন ও এক্সপোনেনশিয়াল স্মৃতিহীনতা"
+        },
+        {
+          "type": "p",
+          "text": "সুষম বণ্টনে সম্ভাব্যতা কেবল ব্যবধানের দৈর্ঘ্যের সমানুপাতিক হয়।"
+        },
+        {
+          "type": "p",
+          "text": "এক্সপোনেনশিয়াল বণ্টন সময় ও অপেক্ষার প্রক্রিয়াকে সূচকীয়ভাবে মডেল করে।"
+        },
+        {
+          "type": "p",
+          "text": "স্মৃতিহীনতা অবিচ্ছিন্ন এক্সপোনেনশিয়াল প্রক্রিয়ার অনন্য গাণিতিক পরিচয়।"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑓\n(\n𝑥\n)\n=\n1\n𝑏\n−\n𝑎\n(\n𝑎\n≤\n𝑥\n≤\n𝑏\n)\nf(x)=\nb−a\n1\n\t​\n\n(a≤x≤b)"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑓\n(\n𝑥\n)\n=\n𝜆\n𝑒\n−\n𝜆\n𝑥\n,\n𝑃\n(\n𝑋\n>\n𝑡\n)\n=\n𝑒\n−\n𝜆\n𝑡\nf(x)=λe\n−λx\n,P(X>t)=e\n−λt"
+        }
+      ]
+    },
+    {
+      "id": "sec-cdf-calculus",
+      "title": "ক্রমযোজিত সম্ভাবনা (CDF) ও ক্যালকুলাসের মৌলিক উপপাদ্য",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "ক্রমযোজিত সম্ভাবনা (CDF) ও ক্যালকুলাসের মৌলিক উপপাদ্য"
+        },
+        {
+          "type": "p",
+          "text": "CDF হলো বাম দিক থেকে সঞ্চিত মোট ক্ষেত্রফল \n𝐹\n(\n𝑥\n)\n=\n𝑃\n(\n𝑋\n≤\n𝑥\n)\nF(x)=P(X≤x)।"
+        },
+        {
+          "type": "p",
+          "text": "CDF-এর পরিবর্তনের হার (ঢাল) সরাসরি PDF-এর উচ্চতা \n𝑓\n(\n𝑥\n)\nf(x) প্রদান করে।"
+        },
+        {
+          "type": "p",
+          "text": "যেকোনো ব্যবধানের সম্ভাবনা সরাসরি \n𝐹\n(\n𝑏\n)\n−\n𝐹\n(\n𝑎\n)\nF(b)−F(a) দিয়ে এক নিমিষে বের করা যায়।"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝐹\n(\n𝑥\n)\n=\n𝑃\n(\n𝑋\n≤\n𝑥\n)\n=\n∫\n−\n∞\n𝑥\n𝑓\n(\n𝑡\n)\n𝑑\n𝑡\nF(x)=P(X≤x)=∫\n−∞\nx\n\t​\n\nf(t)dt"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑑\n𝑑\n𝑥\n𝐹\n(\n𝑥\n)\n=\n𝑓\n(\n𝑥\n)\n,\n𝑃\n(\n𝑎\n≤\n𝑋\n≤\n𝑏\n)\n=\n𝐹\n(\n𝑏\n)\n−\n𝐹\n(\n𝑎\n)\ndx\nd\n\t​\n\nF(x)=f(x),P(a≤X≤b)=F(b)−F(a)"
+        }
+      ]
+    },
+    {
+      "id": "sec-clt-emergence",
+      "title": "সেন্ট্রাল লিমিট থিওরেম: গ্যালটন বোর্ড ও বেল কার্ভ",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "সেন্ট্রাল লিমিট থিওরেম: গ্যালটন বোর্ড ও বেল কার্ভ"
+        },
+        {
+          "type": "p",
+          "text": "বহু স্বাধীন দৈব চলকের সমষ্টি সর্বদা একটি নরমাল বেল কার্ভে পরিণত হয়।"
+        },
+        {
+          "type": "p",
+          "text": "আদি চলকগুলোর নিজস্ব আকৃতি যাই হোক না কেন, সিএলটি সবার ওপর সমভাবে কার্যকর।"
+        },
+        {
+          "type": "p",
+          "text": "প্রকৃতির অসংখ্য পরিমাপ ও ভৌত অস্থিরতার পেছনে রয়েছে এই গাউসিয়ান ঐকতান।"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑓\n(\n𝑥\n)\n=\n1\n𝜎\n2\n𝜋\n𝑒\n−\n1\n2\n(\n𝑥\n−\n𝜇\n𝜎\n)\n2\nf(x)=\nσ\n2π\n\t​\n\n1\n\t​\n\ne\n−\n2\n1\n\t​\n\n(\nσ\nx−μ\n\t​\n\n)\n2"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑍\n=\n𝑋\nˉ\n𝑛\n−\n𝜇\n𝜎\n/\n𝑛\n→\n𝑑\n𝑁\n(\n0\n,\n1\n)\n(\n𝑛\n→\n∞\n)\nZ=\nσ/\nn\n\t​\n\nX\nˉ\nn\n\t​\n\n−μ\n\t​\n\nd\n\t​\n\nN(0,1)(n→∞)"
+        }
+      ]
+    }
+  ],
+  "engine": [
+    {
+      "id": "sec-discrete-to-continuous",
+      "blockCount": 6,
+      "audioFile": "../../assets/audio/lockdown_math/lesson_06/sec-discrete-to-continuous.mp3",
+      "cueCount": 6,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "formula-box"
+      ]
+    },
+    {
+      "id": "sec-zero-prob-paradox",
+      "blockCount": 6,
+      "audioFile": "../../assets/audio/lockdown_math/lesson_06/sec-zero-prob-paradox.mp3",
+      "cueCount": 6,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "formula-box"
+      ]
+    },
+    {
+      "id": "sec-density-concept",
+      "blockCount": 6,
+      "audioFile": "../../assets/audio/lockdown_math/lesson_06/sec-density-concept.mp3",
+      "cueCount": 6,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "formula-box"
+      ]
+    },
+    {
+      "id": "sec-uniform-exponential",
+      "blockCount": 6,
+      "audioFile": "../../assets/audio/lockdown_math/lesson_06/sec-uniform-exponential.mp3",
+      "cueCount": 6,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "formula-box"
+      ]
+    },
+    {
+      "id": "sec-cdf-calculus",
+      "blockCount": 6,
+      "audioFile": "../../assets/audio/lockdown_math/lesson_06/sec-cdf-calculus.mp3",
+      "cueCount": 6,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "formula-box"
+      ]
+    },
+    {
+      "id": "sec-clt-emergence",
+      "blockCount": 6,
+      "audioFile": "../../assets/audio/lockdown_math/lesson_06/sec-clt-emergence.mp3",
+      "cueCount": 6,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "formula-box"
+      ]
+    }
+  ],
+  "manifestPresent": true,
+  "manifestKeys": [
+    "sec-discrete-to-continuous",
+    "sec-zero-prob-paradox",
+    "sec-density-concept",
+    "sec-uniform-exponential",
+    "sec-cdf-calculus",
+    "sec-clt-emergence",
+    "sec-interactive-lab",
+    "sec-quizzes"
+  ],
+  "page_errors": [],
+  "console_errors": [
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND"
+  ]
+}

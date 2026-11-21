@@ -1,0 +1,365 @@
+{
+  "lesson_id": "lesson_03",
+  "chapter_num": 3,
+  "course_id": "fractals",
+  "title_en": "Fractals are typically not self-similar",
+  "title_bn": "ফ্র্যাক্টাল সাধারণত স্ব-সদৃশ নয়",
+  "subtitle_bn": "ফ্র্যাক্টাল নিয়ে প্রচলিত ভুল ধারণা ভেঙে ফেলা — স্ব-সদৃশতা নয়, বরং স্কেলিংয়ের নিয়ম ও ভগ্নাংশ মাত্রা হলো আসল বিষয়",
+  "video_id": "gB9n2gHsHN4",
+  "youtube_id": "gB9n2gHsHN4",
+  "official_url": "https://www.3blue1brown.com/lessons/fractal-dimension",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "~ ১০ মিনিট",
+    "prerequisites": [],
+    "date": "২৭ জানুয়ারি, ২০১৭",
+    "interactive_by": "Josh Pullen & Vincent Rubinetti",
+    "source_url": "https://github.com/3b1b/videos/blob/master/_2017/fractal_dimension.py"
+  },
+  "epigraph": {
+    "quote": "A fractal is a shape whose complexity depends on the scale at which you view it.",
+    "quote_bn": "ফ্র্যাক্টাল হলো এমন আকৃতি যার জটিলতা নির্ভর করে আপনি কোন মাপাঙ্কে এটিকে দেখছেন তার ওপর।",
+    "author": "বাংলা STEM পাঠ প্রস্তুতি দল"
+  },
+  "toc": [
+    {
+      "id": "sec-misconception",
+      "title_bn": "একটি প্রচলিত ভুল ধারণা"
+    },
+    {
+      "id": "sec-dimension",
+      "title_bn": "মাত্রা আসলে কী?"
+    },
+    {
+      "id": "sec-scaling",
+      "title_bn": "স্কেলিং নিয়ম ও সূত্র"
+    },
+    {
+      "id": "sec-not-selfsimilar",
+      "title_bn": "স্ব-সদৃশ নয় এমন ফ্র্যাক্টাল"
+    },
+    {
+      "id": "sec-coast",
+      "title_bn": "উপকূলের কাহিনী"
+    },
+    {
+      "id": "sec-conclusion",
+      "title_bn": "উপসংহার"
+    },
+    {
+      "id": "sec-lab",
+      "title_bn": "ইন্টারেক্টিভ ল্যাব ও কুইজ"
+    }
+  ],
+  "bookmarks": [
+    {
+      "time": 0,
+      "time_bn": "০০:০০",
+      "label_bn": "প্রচলিত ভুল ধারণা"
+    },
+    {
+      "time": 110,
+      "time_bn": "০১:৫০",
+      "label_bn": "মাত্রা কী?"
+    },
+    {
+      "time": 230,
+      "time_bn": "০৩:৫০",
+      "label_bn": "স্কেলিং সূত্র"
+    },
+    {
+      "time": 360,
+      "time_bn": "০৬:০০",
+      "label_bn": "অ-স্ব-সদৃশ ফ্র্যাক্টাল"
+    },
+    {
+      "time": 480,
+      "time_bn": "০৮:০০",
+      "label_bn": "উপকূলের কাহিনী"
+    },
+    {
+      "time": 570,
+      "time_bn": "০৯:৩০",
+      "label_bn": "উপসংহার"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-misconception",
+      "title_bn": "একটি প্রচলিত ভুল ধারণা",
+      "title_en": "A common misconception",
+      "summary_bn": "ফ্র্যাক্টাল মানে স্ব-সদৃশ আকৃতি — এই ধারণা কেন ভুল তা নিয়ে আলোচনা।",
+      "key_takeaways": [
+        "অনেকের মতে ফ্র্যাক্টাল মানে এমন আকৃতি যা জুম করলে হুবহু আগের মতো দেখায়।",
+        "বাস্তবে অধিকাংশ ফ্র্যাক্টালই ঠিক স্ব-সদৃশ নয়; তাদের নিজস্ব মাত্রা থাকে।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_sec-misconception_1",
+          "caption_bn": "Sierpinski ত্রিভুজ — প্রতিটি ছোট ত্রিভুজ পুরো আকৃতির হুবহু প্রতিলিপি, তাই এটি স্ব-সদৃশ ফ্র্যাক্টাল।",
+          "type": "inline-svg",
+          "svg_kind": "sierpinski"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "p"
+        },
+        {
+          "type": "figure"
+        },
+        {
+          "type": "p"
+        },
+        {
+          "type": "callout"
+        }
+      ]
+    },
+    {
+      "id": "sec-dimension",
+      "title_bn": "মাত্রা আসলে কী?",
+      "title_en": "What is dimension?",
+      "summary_bn": "বিন্দু, রেখা, তল ও ঘনবস্তুর মাত্রা — এবং তার মাঝখানের অদ্ভুত জগৎ।",
+      "key_takeaways": [
+        "বিন্দুর মাত্রা ০, রেখার ১, তলের ২, ঘনবস্তুর ৩ — এটি আমাদের পরিচিত ধারণা।",
+        "ফ্র্যাক্টালের মাত্রা এই পূর্ণসংখ্যাগুলোর মাঝখানে পড়ে — তাই একে ভগ্নাংশ মাত্রা বলা হয়।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_sec-dimension_1",
+          "caption_bn": "একটি কাটা-ছেঁড়া উপকূলরেখা — সোজা রেখা নয়, আবার পুরো তলও নয়; এর মাত্রা ১ ও ২ এর মাঝখানে।",
+          "type": "inline-svg",
+          "svg_kind": "coast"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "p"
+        },
+        {
+          "type": "figure"
+        },
+        {
+          "type": "p"
+        },
+        {
+          "type": "callout"
+        }
+      ]
+    },
+    {
+      "id": "sec-scaling",
+      "title_bn": "স্কেলিং নিয়ম ও সূত্র",
+      "title_en": "The scaling rule",
+      "summary_bn": "মাপাঙ্ক বদলালে অংশের সংখ্যা কীভাবে বদলায় — আর সেখান থেকেই মাত্রার সূত্র।",
+      "key_takeaways": [
+        "যদি মাপাঙ্ক s গুণ ছোট করলে N গুণ বেশি অংশ দেখা যায়, তবে মাত্রা D = log N / log s।",
+        "Koch বক্ররেখার মাত্রা log 4 / log 3 ≈ 1.26; Sierpinski ত্রিভুজের log 3 / log 2 ≈ 1.585।"
+      ],
+      "formulas": [
+        {
+          "label": "গাণিতিক সূত্র — স্কেলিং নিয়ম ও সূত্র",
+          "katex": "D = \\frac{\\log N}{\\log s}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_sec-scaling_1",
+          "caption_bn": "Koch বক্ররেখা — প্রতিটি খাঁজে রেখাটি তিনভাগে ভেঙে মাঝখানে নতুন অংশ যোগ হয়; তাই ১ থেকে ৪ গুণ অংশ বাড়ে।",
+          "type": "inline-svg",
+          "svg_kind": "koch"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "p"
+        },
+        {
+          "type": "figure"
+        },
+        {
+          "type": "formula"
+        },
+        {
+          "type": "p"
+        },
+        {
+          "type": "callout"
+        }
+      ]
+    },
+    {
+      "id": "sec-not-selfsimilar",
+      "title_bn": "স্ব-সদৃশ নয় এমন ফ্র্যাক্টাল",
+      "title_en": "Fractals that are not self-similar",
+      "summary_bn": "নিউটনের ফ্র্যাক্টালের মতো জটিল আকৃতি কেন ঠিক স্ব-সদৃশ নয়, তা বোঝা।",
+      "key_takeaways": [
+        "অনেক ফ্র্যাক্টালে জুম করলে আগের ছবির হুবহু প্রতিলিপি পাওয়া যায় না।",
+        "তবুও তাদের মাত্রা থাকে — স্কেলিংয়ের নিয়ম থাকাই যথেষ্ট।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_sec-not-selfsimilar_1",
+          "caption_bn": "একটি অ-স্ব-সদৃশ ফ্র্যাক্টালের সীমানা — প্রতি স্তরে নতুন রূপ, পুরোনোর হুবহু প্রতিলিপি নয়।",
+          "type": "inline-svg",
+          "svg_kind": "zoom"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "p"
+        },
+        {
+          "type": "figure"
+        },
+        {
+          "type": "p"
+        },
+        {
+          "type": "quote"
+        },
+        {
+          "type": "callout"
+        }
+      ]
+    },
+    {
+      "id": "sec-coast",
+      "title_bn": "উপকূলের কাহিনী",
+      "title_en": "The coastline paradox",
+      "summary_bn": "মাপার দণ্ড ছোট করলে দৈর্ঘ্য বাড়তে থাকে — বাস্তব জগতের ফ্র্যাক্টাল প্রমাণ।",
+      "key_takeaways": [
+        "একটি উপকূলের দৈর্ঘ্য নির্ভর করে আপনি কত বড় মাপার দণ্ড ব্যবহার করেছেন তার ওপর।",
+        "দণ্ড যত ছোট হবে, ধরা পড়বে তত বেশি ছোট ছোট ভাঁজ — ফলে মোট দৈর্ঘ্য বাড়তে থাকে।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_sec-coast_1",
+          "caption_bn": "উপকূলরেখা — বড় দণ্ড দিয়ে মাপলে সোজা দেখায়, ছোট দণ্ডে উঠে আসে নতুন নতুন ভাঁজ।",
+          "type": "inline-svg",
+          "svg_kind": "coast"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "p"
+        },
+        {
+          "type": "figure"
+        },
+        {
+          "type": "p"
+        },
+        {
+          "type": "callout"
+        }
+      ]
+    },
+    {
+      "id": "sec-conclusion",
+      "title_bn": "উপসংহার",
+      "title_en": "Conclusion",
+      "summary_bn": "ফ্র্যাক্টাল মাত্রার শিক্ষা এবং পরবর্তী পাঠের দিকে নজর।",
+      "key_takeaways": [
+        "ফ্র্যাক্টালের আসল পরিচয় তার ভগ্নাংশ মাত্রা, স্ব-সদৃশতা নয়।",
+        "পরবর্তী পাঠে হিলবার্ট বক্ররেখা দেখব যা পুরো একটি তল ভরে দেয়।"
+      ],
+      "formulas": [],
+      "figures": [],
+      "blocks": [
+        {
+          "type": "p"
+        },
+        {
+          "type": "p"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_fractal-dimension",
+      "question_bn": "❓ Koch বক্ররেখার মাত্রা কত?",
+      "question_en": "❓ Koch বক্ররেখার মাত্রা কত?",
+      "options": [
+        "১",
+        "log 4 / log 3 ≈ ১.২৬",
+        "log 3 / log 2 ≈ ১.৫৮",
+        "২"
+      ],
+      "options_bn": [
+        "১",
+        "log 4 / log 3 ≈ ১.২৬",
+        "log 3 / log 2 ≈ ১.৫৮",
+        "২"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "সঠিক! প্রতি ধাপে ৩ গুণ ছোট করলে ৪ গুণ বেশি অংশ পাই — তাই D = log 4 / log 3 ≈ 1.26।",
+      "hint": "মনে রাখবেন: Koch বক্ররেখায় s = 3 ও N = 4। সূত্র D = log N / log s প্রয়োগ করুন।",
+      "hints": [
+        "মনে রাখবেন: Koch বক্ররেখায় s = 3 ও N = 4। সূত্র D = log N / log s প্রয়োগ করুন।",
+        "সঠিক উত্তর: log 4 / log 3 ≈ ১.২৬।"
+      ]
+    },
+    {
+      "id": "quiz_02_fractal-dimension",
+      "question_bn": "❓ ফ্র্যাক্টালের আসল সংজ্ঞা কোনটি?",
+      "question_en": "❓ ফ্র্যাক্টালের আসল সংজ্ঞা কোনটি?",
+      "options": [
+        "জুম করলে হুবহু আগের মতো দেখায়",
+        "ভগ্নাংশ মাত্রা থাকে",
+        "সবসময় ত্রিভুজাকার",
+        "শুধু কম্পিউটারে আঁকা যায়"
+      ],
+      "options_bn": [
+        "জুম করলে হুবহু আগের মতো দেখায়",
+        "ভগ্নাংশ মাত্রা থাকে",
+        "সবসময় ত্রিভুজাকার",
+        "শুধু কম্পিউটারে আঁকা যায়"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "চমৎকার! ফ্র্যাক্টালের সংজ্ঞা হলো এর মাত্রা পূর্ণসংখ্যা নয় — স্ব-সদৃশতা একটি বিশেষ ক্ষেত্র মাত্র।",
+      "hint": "স্ব-সদৃশতা সব ফ্র্যাক্টালে থাকে না। আসল বিষয় হলো ভগ্নাংশ মাত্রা।",
+      "hints": [
+        "স্ব-সদৃশতা সব ফ্র্যাক্টালে থাকে না। আসল বিষয় হলো ভগ্নাংশ মাত্রা।",
+        "সঠিক উত্তর: ভগ্নাংশ মাত্রা থাকে।"
+      ]
+    },
+    {
+      "id": "quiz_03_fractal-dimension",
+      "question_bn": "❓ উপকূলরেখার দৈর্ঘ্য মাপার দণ্ড ছোট করলে কী হয়?",
+      "question_en": "❓ উপকূলরেখার দৈর্ঘ্য মাপার দণ্ড ছোট করলে কী হয়?",
+      "options": [
+        "দৈর্ঘ্য কমে যায়",
+        "দৈর্ঘ্য বাড়তে থাকে",
+        "কোনো পরিবর্তন হয় না",
+        "দৈর্ঘ্য শূন্য হয়"
+      ],
+      "options_bn": [
+        "দৈর্ঘ্য কমে যায়",
+        "দৈর্ঘ্য বাড়তে থাকে",
+        "কোনো পরিবর্তন হয় না",
+        "দৈর্ঘ্য শূন্য হয়"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ঠিক! ছোট দণ্ড দিয়ে বেশি ভাঁজ ধরা পড়ে — ফলে মোট দৈর্ঘ্য বাড়তেই থাকে। একে coastline paradox বলে।",
+      "hint": "ছোট মাপার দণ্ড নতুন নতুন ভাঁজ প্রকাশ করে, তাই দৈর্ঘ্য বাড়ে — কমে না।",
+      "hints": [
+        "ছোট মাপার দণ্ড নতুন নতুন ভাঁজ প্রকাশ করে, তাই দৈর্ঘ্য বাড়ে — কমে না।",
+        "সঠিক উত্তর: দৈর্ঘ্য বাড়তে থাকে।"
+      ]
+    }
+  ],
+  "lab": {
+    "id": "sec-lab",
+    "title_bn": "স্কেলিং ও মাত্রা পরীক্ষক",
+    "description_bn": "সমতলের বিন্দুটি টেনে বিভিন্ন অবস্থান বেছে নিন। ছোট স্কেলে কীভাবে নতুন কাঠামো ফুটে ওঠে তা পর্যবেক্ষণ করুন — ঠিক যেমন ফ্র্যাক্টালের ক্ষেত্রে মাপাঙ্ক বদলালে নতুন বিশদতা দেখা যায়।",
+    "data_no_narration": true
+  }
+}

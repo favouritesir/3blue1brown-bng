@@ -1,0 +1,198 @@
+param([string]$Path)
+$enc = New-Object System.Text.UTF8Encoding($false)
+$t = [System.IO.File]::ReadAllText($Path, [System.Text.Encoding]::UTF8)
+
+# 1. meta description
+$t = [regex]::Replace($t, '(<meta name="description" content=")[^"]*(")', { param($m) $m.Groups[1].Value + '3Blue1Brown Bengali platform — রোডম্যাপ: 6 সিরিজিজ, 11+ বিষয়, 65+ পাথ, 100% বিনামূল্যেপাথ Only Linear Algebra lessons 01-05 are Bengali-dubbed; other series link out to 3blue1brown.com.' + $m.Groups[2].Value })
+
+# 2. hero stats block
+$stats = @'
+      <div class="hero__stats animate-fade-up animate-delay-4" aria-label="Roadmap stats">
+        <div class="hero__stat">
+          <span class="hero__stat-value">6</span>
+          <span class="hero__stat-label">সিরিজ</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-value">11+</span>
+          <span class="hero__stat-label">বিষয়</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-value">65+</span>
+          <span class="hero__stat-label">মোট পাঠ</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-value">100%</span>
+          <span class="hero__stat-label">বিনামূল্যে</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-value">∞</span>
+          <span class="hero__stat-label">অনুপ্রেরণা</span>
+        </div>
+      </div>
+'@
+$t = [regex]::Replace($t, '(?s)<div class="hero__stats.*?\n      </div>', { param($m) $stats.TrimEnd() }, 'None')
+
+# 3. about course-content paragraph (anchor: unique feature-item with book icon)
+$aboutP = @'
+            Linear Algebra — 5 Bengali-dubbed lessons live now — plus Calculus,
+            Neural Networks, Differential Equations, Lockdown Math and Probability:
+            6 series + 11 topic collections from the official 3blue1brown.com.
+'@
+$t = [regex]::Replace($t, '(?s)(<div class="feature-item__icon">📚</div>\s*<h3[^>]*>.*?</h3>\s*<p class="feature-item__desc">).*?(</p>)', { param($m) $m.Groups[1].Value + $aboutP.TrimEnd() + $m.Groups[2].Value })
+
+# 4. footer course links
+$la = '<a href="courses/linear_algebra/index.html">লিনিয়ার অ্যালজেব্রা</a>'
+$extra = @'
+          <a href="https://www.3blue1brown.com/?topic=calculus" target="_blank" rel="noopener">ক্যালকুলাস ↗</a>
+          <a href="https://www.3blue1brown.com/?topic=neural-networks" target="_blank" rel="noopener">নেটওয়ার্ক ↗</a>
+          <a href="https://www.3blue1brown.com/?topic=differential-equations" target="_blank" rel="noopener">ডিফারেনশিয়াল ↗</a>
+          <a href="https://www.3blue1brown.com/?topic=lockdown-math" target="_blank" rel="noopener">লকডাউন ↗</a>
+          <a href="https://www.3blue1brown.com/?topic=probability" target="_blank" rel="noopener">সম্ভাব্যতা ↗</a>
+'@
+$t = [regex]::Replace($t, '<a href="courses/calculus/index\.html">[^<]*</a>', '')
+$t = [regex]::Replace($t, '<a href="courses/neural_networks/index\.html">[^<]*</a>', '')
+$t = [regex]::Replace($t, [regex]::Escape($la), $la + "`n" + $extra.TrimEnd())
+
+# 5. resources: add official lessons link after curriculum_index.json
+$t = [regex]::Replace($t, '(<a href="curriculum_index\.json">[^<]*</a>)', { param($m) $m.Groups[1].Value + "`n" + '          <a href="https://www.3blue1brown.com/#lessons" target="_blank" rel="noopener">3b1b Lessons ↗</a>' })
+
+# 6. back-to-top button before toast container
+$t = [regex]::Replace($t, '(<div class="toast-container")', { param($m) '<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>' + "`n" + '  ' + $m.Groups[1].Value })
+
+# 7. tracks section -> full roadmap
+$tracks = @'
+<section class="section" id="tracks" aria-labelledby="tracksTitle">
+  <div class="container">
+
+    <div class="section__header">
+      <span class="section__label">রোডম্যাপ</span>
+      <h2 class="section__title animate-fade-up" id="tracksTitle">সম্পূর্ণ সিলেবাস রোডম্যাপ</h2>
+      <p class="section__subtitle animate-fade-up animate-delay-1">
+        Official curriculum of 3blue1brown.com — 6 core series + 11 topic collections.
+        Bengali-dubbed now: Linear Algebra lessons 01-05 (চলমান). All other series: আসছে —
+        tap a card to open the official 3blue1brown.com topic page.
+      </p>
+    </div>
+
+    <nav class="roadmap-nav" aria-label="Roadmap sections">
+      <a href="#core-series" class="roadmap-nav__pill">সিরিজ (6)</a>
+      <a href="#topic-collections" class="roadmap-nav__pill">11+ বিষয়</a>
+    </nav>
+
+    <h3 class="roadmap-subhead" id="core-series">সিরিজ — Core Series (6)</h3>
+    <div class="tracks-grid" role="list" aria-label="Core series">
+
+      <article class="track-card track-card--blue animate-fade-up animate-delay-1" data-href="courses/linear_algebra/index.html" role="listitem" aria-label="Linear Algebra — live in Bengali">
+        <div class="track-card__icon" aria-hidden="true">📐</div>
+        <div class="track-card__meta">
+          <span class="badge badge--green">চলমান</span>
+          <span class="badge badge--blue">5 / 15 পাঠ</span>
+        </div>
+        <h3 class="track-card__title">লিনিয়ার অ্যালজেব্রা</h3>
+        <p class="track-card__subtitle">Essence of Linear Algebra</p>
+        <p class="track-card__desc">Vectors, matrices, determinants, eigenvalues — the core of linear algebra made visual. 5 Bengali-dubbed HD lessons live now.</p>
+        <div class="track-card__footer">
+          <span class="track-card__lessons">পাথ 5 / 15 — Bengali dub</span>
+          <div class="track-card__arrow" aria-hidden="true">→</div>
+        </div>
+      </article>
+
+      <article class="track-card track-card--gold animate-fade-up animate-delay-2" data-external="https://www.3blue1brown.com/?topic=calculus" role="listitem" aria-label="Calculus — opens official site">
+        <div class="track-card__icon" aria-hidden="true">∫</div>
+        <div class="track-card__meta">
+          <span class="badge badge--orange">আসছে</span>
+          <span class="badge badge--gray">12 lessons</span>
+        </div>
+        <h3 class="track-card__title">ক্যালকুলাস</h3>
+        <p class="track-card__subtitle">Essence of Calculus</p>
+        <p class="track-card__desc">Limits, derivatives, integrals, the fundamental theorem — calculus as a visual story. Bengali dub upcoming.</p>
+        <div class="track-card__footer">
+          <span class="track-card__lessons">3blue1brown.com ↗</span>
+          <div class="track-card__arrow" aria-hidden="true">↗</div>
+        </div>
+      </article>
+
+      <article class="track-card track-card--purple animate-fade-up animate-delay-3" data-external="https://www.3blue1brown.com/?topic=neural-networks" role="listitem" aria-label="Neural Networks — opens official site">
+        <div class="track-card__icon" aria-hidden="true">🧠</div>
+        <div class="track-card__meta">
+          <span class="badge badge--orange">আসছে</span>
+          <span class="badge badge--gray">8 lessons</span>
+        </div>
+        <h3 class="track-card__title">নেটওয়ার্ক</h3>
+        <p class="track-card__subtitle">Neural Networks</p>
+        <p class="track-card__desc">Backpropagation, gradient descent, deep learning — how neural networks learn, from the math up. Bengali dub upcoming.</p>
+        <div class="track-card__footer">
+          <span class="track-card__lessons">3blue1brown.com ↗</span>
+          <div class="track-card__arrow" aria-hidden="true">↗</div>
+        </div>
+      </article>
+
+      <article class="track-card track-card--teal animate-fade-up" data-external="https://www.3blue1brown.com/?topic=differential-equations" role="listitem" aria-label="Differential Equations — opens official site">
+        <div class="track-card__icon" aria-hidden="true">📈</div>
+        <div class="track-card__meta">
+          <span class="badge badge--orange">আসছে</span>
+        </div>
+        <h3 class="track-card__title">ডিফারেনশিয়াল</h3>
+        <p class="track-card__subtitle">Differential Equations</p>
+        <p class="track-card__desc">The language of change — solving and visualizing differential equations. Bengali dub upcoming.</p>
+        <div class="track-card__footer">
+          <span class="track-card__lessons">3blue1brown.com ↗</span>
+          <div class="track-card__arrow" aria-hidden="true">↗</div>
+        </div>
+      </article>
+
+      <article class="track-card track-card--pink animate-fade-up" data-external="https://www.3blue1brown.com/?topic=lockdown-math" role="listitem" aria-label="Lockdown Math — opens official site">
+        <div class="track-card__icon" aria-hidden="true">🏠</div>
+        <div class="track-card__meta">
+          <span class="badge badge--orange">আসছে</span>
+        </div>
+        <h3 class="track-card__title">লকডাউন</h3>
+        <p class="track-card__subtitle">Lockdown Math</p>
+        <p class="track-card__desc">Special live-stream lessons full of beautiful, surprising math. Bengali dub upcoming.</p>
+        <div class="track-card__footer">
+          <span class="track-card__lessons">3blue1brown.com ↗</span>
+          <div class="track-card__arrow" aria-hidden="true">↗</div>
+        </div>
+      </article>
+
+      <article class="track-card track-card--green animate-fade-up" data-external="https://www.3blue1brown.com/?topic=probability" role="listitem" aria-label="Essence of Probability — opens official site">
+        <div class="track-card__icon" aria-hidden="true">🎲</div>
+        <div class="track-card__meta">
+          <span class="badge badge--orange">আসছে</span>
+          <span class="badge badge--pink">2025</span>
+        </div>
+        <h3 class="track-card__title">সম্ভাব্যতা</h3>
+        <p class="track-card__subtitle">Essence of Probability (2025)</p>
+        <p class="track-card__desc">Probability from first principles — chance, uncertainty and Bayes, made visual. Bengali dub upcoming.</p>
+        <div class="track-card__footer">
+          <span class="track-card__lessons">3blue1brown.com ↗</span>
+          <div class="track-card__arrow" aria-hidden="true">↗</div>
+        </div>
+      </article>
+
+    </div>
+
+    <h3 class="roadmap-subhead" id="topic-collections">বিষয় — Topic Collections (11)</h3>
+    <div class="topics-grid">
+      <a class="topic-card" href="https://www.3blue1brown.com/?topic=best-of" target="_blank" rel="noopener"><span class="topic-card__title">সেরা ভিডিও</span><span class="topic-card__sub">Best of 3Blue1Brown ↗</span></a>
+      <a class="topic-card" href="https://www.3blue1brown.com/?topic=analysis" target="_blank" rel="noopener"><span class="topic-card__title">অ্যানালাইসিস</span><span class="topic-card__sub">Analysis ↗</span></a>
+      <a class="topic-card" href="https://www.3blue1brown.com/?topic=physics" target="_blank" rel="noopener"><span class="topic-card__title">পদার্থবিজ্ঞান</span><span class="topic-card__sub">Physics ↗</span></a>
+      <a class="topic-card" href="https://www.3blue1brown.com/?topic=computer-science" target="_blank" rel="noopener"><span class="topic-card__title">Computer Science</span><span class="topic-card__sub">Computer Science ↗</span></a>
+      <a class="topic-card" href="https://www.3blue1brown.com/?topic=why-pi" target="_blank" rel="noopener"><span class="topic-card__title">কেন পাই</span><span class="topic-card__sub">Why Pi? ↗</span></a>
+      <a class="topic-card" href="https://www.3blue1brown.com/?topic=puzzles" target="_blank" rel="noopener"><span class="topic-card__title">ধাঁধা</span><span class="topic-card__sub">Puzzles ↗</span></a>
+      <a class="topic-card" href="https://www.3blue1brown.com/?topic=geometry" target="_blank" rel="noopener"><span class="topic-card__title">জ্যামিতি</span><span class="topic-card__sub">Geometry ↗</span></a>
+      <a class="topic-card" href="https://www.3blue1brown.com/?topic=topology" target="_blank" rel="noopener"><span class="topic-card__title">টপোলজি</span><span class="topic-card__sub">Topology ↗</span></a>
+      <a class="topic-card" href="https://www.3blue1brown.com/?topic=fractals" target="_blank" rel="noopener"><span class="topic-card__title">ফ্র্যাক্টাল</span><span class="topic-card__sub">Fractals ↗</span></a>
+      <a class="topic-card" href="https://www.3blue1brown.com/?topic=group-theory" target="_blank" rel="noopener"><span class="topic-card__title">গ্রুপ তত্ত্ব</span><span class="topic-card__sub">Group Theory ↗</span></a>
+      <a class="topic-card" href="https://www.3blue1brown.com/?topic=number-theory" target="_blank" rel="noopener"><span class="topic-card__title">সংখ্যা তত্ত্ব</span><span class="topic-card__sub">Number Theory ↗</span></a>
+    </div>
+
+    <p class="roadmap-note">All series &amp; collections are 100% free on the official 3blue1brown.com — this platform adds Bengali dubs as they are produced.</p>
+
+  </div>
+</section>
+'@
+$t = [regex]::Replace($t, '(?s)<section class="section" id="tracks".*?</section>', { param($m) $tracks.TrimEnd() })
+
+[System.IO.File]::WriteAllText($Path, $t, $enc)
+Write-Output 'index.html edited'

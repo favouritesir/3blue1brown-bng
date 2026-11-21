@@ -1,0 +1,883 @@
+{
+  "total": 13,
+  "passed": 13,
+  "failed": [],
+  "index": {
+    "status": 200,
+    "rows": 13,
+    "errors": []
+  },
+  "lessons": [
+    {
+      "n": 1,
+      "slug": "holograms",
+      "checks": {
+        "script_order_l01": true,
+        "course_id_physics": true,
+        "youtube_id_official": true,
+        "official_url": true,
+        "video_src": true,
+        "yt_in_html": true,
+        "narrated_ids_match_manifest": true,
+        "json_sections_match_dom": true,
+        "manifest_cues_nonempty": true,
+        "manifest_js_json_parity": true,
+        "lab_no_narration": true,
+        "quiz_count_parity": true,
+        "figure_count_parity": true,
+        "figure_files_exist": true,
+        "components_once_static": true,
+        "http_200": true,
+        "components_once_dom": true,
+        "figures_rendered": true,
+        "sections_dom_parity": true,
+        "lab_excluded_from_narration_dom": true,
+        "manifest_preloaded": true,
+        "toc_links": true,
+        "quiz_click_ok": true,
+        "zero_console_errors": true
+      },
+      "errors": [],
+      "dom": {
+        "siteNav": 1,
+        "singleComponents": {
+          "b1b-search-overlay": 1,
+          "b1b-navbar": 1,
+          "b1b-hero-player": 1,
+          "b1b-narration-banner": 1,
+          "b1b-toc-sidebar": 1,
+          "b1b-article": 1,
+          "b1b-watch-panel": 1,
+          "b1b-chapter-nav": 1,
+          "b1b-footer": 1,
+          "b1b-back-to-top": 1
+        },
+        "quizzesRendered": 2,
+        "figuresRendered": 3,
+        "sectionsRendered": 4,
+        "narrIds": [
+          "sec-holo-intro",
+          "sec-holo-coherence",
+          "sec-holo-record",
+          "sec-holo-reconstruct"
+        ],
+        "labSkipped": true,
+        "tocLinks": 5,
+        "videoSrcs": [
+          "../../media_vault/physics/lesson_01/experiments/3b1b_physics_01_full_dubbed.mp4",
+          "../../media_vault/physics/lesson_01/experiments/3b1b_physics_01_full_dubbed.mp4"
+        ],
+        "manifestLoaded": true
+      },
+      "quiz_detail": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "n": 2,
+      "slug": "cosmic-distance-1",
+      "checks": {
+        "script_order_l01": true,
+        "course_id_physics": true,
+        "youtube_id_official": true,
+        "official_url": true,
+        "video_src": true,
+        "yt_in_html": true,
+        "narrated_ids_match_manifest": true,
+        "json_sections_match_dom": true,
+        "manifest_cues_nonempty": true,
+        "manifest_js_json_parity": true,
+        "lab_no_narration": true,
+        "quiz_count_parity": true,
+        "figure_count_parity": true,
+        "figure_files_exist": true,
+        "components_once_static": true,
+        "http_200": true,
+        "components_once_dom": true,
+        "figures_rendered": true,
+        "sections_dom_parity": true,
+        "lab_excluded_from_narration_dom": true,
+        "manifest_preloaded": true,
+        "toc_links": true,
+        "quiz_click_ok": true,
+        "zero_console_errors": true
+      },
+      "errors": [],
+      "dom": {
+        "siteNav": 1,
+        "singleComponents": {
+          "b1b-search-overlay": 1,
+          "b1b-navbar": 1,
+          "b1b-hero-player": 1,
+          "b1b-narration-banner": 1,
+          "b1b-toc-sidebar": 1,
+          "b1b-article": 1,
+          "b1b-watch-panel": 1,
+          "b1b-chapter-nav": 1,
+          "b1b-footer": 1,
+          "b1b-back-to-top": 1
+        },
+        "quizzesRendered": 2,
+        "figuresRendered": 3,
+        "sectionsRendered": 4,
+        "narrIds": [
+          "sec-cosmic-intro",
+          "sec-cosmic-parallax",
+          "sec-cosmic-candles",
+          "sec-cosmic-hubble"
+        ],
+        "labSkipped": true,
+        "tocLinks": 5,
+        "videoSrcs": [
+          "../../media_vault/physics/lesson_02/experiments/3b1b_physics_02_full_dubbed.mp4",
+          "../../media_vault/physics/lesson_02/experiments/3b1b_physics_02_full_dubbed.mp4"
+        ],
+        "manifestLoaded": true
+      },
+      "quiz_detail": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "n": 3,
+      "slug": "cosmic-distance-2",
+      "checks": {
+        "script_order_l01": true,
+        "course_id_physics": true,
+        "youtube_id_official": true,
+        "official_url": true,
+        "video_src": true,
+        "yt_in_html": true,
+        "narrated_ids_match_manifest": true,
+        "json_sections_match_dom": true,
+        "manifest_cues_nonempty": true,
+        "manifest_js_json_parity": true,
+        "lab_no_narration": true,
+        "quiz_count_parity": true,
+        "figure_count_parity": true,
+        "figure_files_exist": true,
+        "components_once_static": true,
+        "http_200": true,
+        "components_once_dom": true,
+        "figures_rendered": true,
+        "sections_dom_parity": true,
+        "lab_excluded_from_narration_dom": true,
+        "manifest_preloaded": true,
+        "toc_links": true,
+        "quiz_click_ok": true,
+        "zero_console_errors": true
+      },
+      "errors": [],
+      "dom": {
+        "siteNav": 1,
+        "singleComponents": {
+          "b1b-search-overlay": 1,
+          "b1b-navbar": 1,
+          "b1b-hero-player": 1,
+          "b1b-narration-banner": 1,
+          "b1b-toc-sidebar": 1,
+          "b1b-article": 1,
+          "b1b-watch-panel": 1,
+          "b1b-chapter-nav": 1,
+          "b1b-footer": 1,
+          "b1b-back-to-top": 1
+        },
+        "quizzesRendered": 2,
+        "figuresRendered": 2,
+        "sectionsRendered": 4,
+        "narrIds": [
+          "sec-cosmic2-intro",
+          "sec-cosmic2-au",
+          "sec-cosmic2-standard",
+          "sec-cosmic2-cosmology"
+        ],
+        "labSkipped": true,
+        "tocLinks": 5,
+        "videoSrcs": [
+          "../../media_vault/physics/lesson_03/experiments/3b1b_physics_03_full_dubbed.mp4",
+          "../../media_vault/physics/lesson_03/experiments/3b1b_physics_03_full_dubbed.mp4"
+        ],
+        "manifestLoaded": true
+      },
+      "quiz_detail": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "n": 4,
+      "slug": "barber-pole-1",
+      "checks": {
+        "script_order_l01": true,
+        "course_id_physics": true,
+        "youtube_id_official": true,
+        "official_url": true,
+        "video_src": true,
+        "yt_in_html": true,
+        "narrated_ids_match_manifest": true,
+        "json_sections_match_dom": true,
+        "manifest_cues_nonempty": true,
+        "manifest_js_json_parity": true,
+        "lab_no_narration": true,
+        "quiz_count_parity": true,
+        "figure_count_parity": true,
+        "figure_files_exist": true,
+        "components_once_static": true,
+        "http_200": true,
+        "components_once_dom": true,
+        "figures_rendered": true,
+        "sections_dom_parity": true,
+        "lab_excluded_from_narration_dom": true,
+        "manifest_preloaded": true,
+        "toc_links": true,
+        "quiz_click_ok": true,
+        "zero_console_errors": true
+      },
+      "errors": [],
+      "dom": {
+        "siteNav": 1,
+        "singleComponents": {
+          "b1b-search-overlay": 1,
+          "b1b-navbar": 1,
+          "b1b-hero-player": 1,
+          "b1b-narration-banner": 1,
+          "b1b-toc-sidebar": 1,
+          "b1b-article": 1,
+          "b1b-watch-panel": 1,
+          "b1b-chapter-nav": 1,
+          "b1b-footer": 1,
+          "b1b-back-to-top": 1
+        },
+        "quizzesRendered": 2,
+        "figuresRendered": 3,
+        "sectionsRendered": 4,
+        "narrIds": [
+          "sec-bp1-demo",
+          "sec-bp1-polarization",
+          "sec-bp1-rotation",
+          "sec-bp1-colors"
+        ],
+        "labSkipped": true,
+        "tocLinks": 5,
+        "videoSrcs": [
+          "../../media_vault/physics/lesson_04/experiments/3b1b_physics_04_full_dubbed.mp4",
+          "../../media_vault/physics/lesson_04/experiments/3b1b_physics_04_full_dubbed.mp4"
+        ],
+        "manifestLoaded": true
+      },
+      "quiz_detail": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "n": 5,
+      "slug": "barber-pole-2",
+      "checks": {
+        "script_order_l01": true,
+        "course_id_physics": true,
+        "youtube_id_official": true,
+        "official_url": true,
+        "video_src": true,
+        "yt_in_html": true,
+        "narrated_ids_match_manifest": true,
+        "json_sections_match_dom": true,
+        "manifest_cues_nonempty": true,
+        "manifest_js_json_parity": true,
+        "lab_no_narration": true,
+        "quiz_count_parity": true,
+        "figure_count_parity": true,
+        "figure_files_exist": true,
+        "components_once_static": true,
+        "http_200": true,
+        "components_once_dom": true,
+        "figures_rendered": true,
+        "sections_dom_parity": true,
+        "lab_excluded_from_narration_dom": true,
+        "manifest_preloaded": true,
+        "toc_links": true,
+        "quiz_click_ok": true,
+        "zero_console_errors": true
+      },
+      "errors": [],
+      "dom": {
+        "siteNav": 1,
+        "singleComponents": {
+          "b1b-search-overlay": 1,
+          "b1b-navbar": 1,
+          "b1b-hero-player": 1,
+          "b1b-narration-banner": 1,
+          "b1b-toc-sidebar": 1,
+          "b1b-article": 1,
+          "b1b-watch-panel": 1,
+          "b1b-chapter-nav": 1,
+          "b1b-footer": 1,
+          "b1b-back-to-top": 1
+        },
+        "quizzesRendered": 2,
+        "figuresRendered": 2,
+        "sectionsRendered": 4,
+        "narrIds": [
+          "sec-bp2-intro",
+          "sec-bp2-retarded",
+          "sec-bp2-circular",
+          "sec-bp2-synthesis"
+        ],
+        "labSkipped": true,
+        "tocLinks": 5,
+        "videoSrcs": [
+          "../../media_vault/physics/lesson_05/experiments/3b1b_physics_05_full_dubbed.mp4",
+          "../../media_vault/physics/lesson_05/experiments/3b1b_physics_05_full_dubbed.mp4"
+        ],
+        "manifestLoaded": true
+      },
+      "quiz_detail": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "n": 6,
+      "slug": "prism",
+      "checks": {
+        "script_order_l01": true,
+        "course_id_physics": true,
+        "youtube_id_official": true,
+        "official_url": true,
+        "video_src": true,
+        "yt_in_html": true,
+        "narrated_ids_match_manifest": true,
+        "json_sections_match_dom": true,
+        "manifest_cues_nonempty": true,
+        "manifest_js_json_parity": true,
+        "lab_no_narration": true,
+        "quiz_count_parity": true,
+        "figure_count_parity": true,
+        "figure_files_exist": true,
+        "components_once_static": true,
+        "http_200": true,
+        "components_once_dom": true,
+        "figures_rendered": true,
+        "sections_dom_parity": true,
+        "lab_excluded_from_narration_dom": true,
+        "manifest_preloaded": true,
+        "toc_links": true,
+        "quiz_click_ok": true,
+        "zero_console_errors": true
+      },
+      "errors": [],
+      "dom": {
+        "siteNav": 1,
+        "singleComponents": {
+          "b1b-search-overlay": 1,
+          "b1b-navbar": 1,
+          "b1b-hero-player": 1,
+          "b1b-narration-banner": 1,
+          "b1b-toc-sidebar": 1,
+          "b1b-article": 1,
+          "b1b-watch-panel": 1,
+          "b1b-chapter-nav": 1,
+          "b1b-footer": 1,
+          "b1b-back-to-top": 1
+        },
+        "quizzesRendered": 2,
+        "figuresRendered": 2,
+        "sectionsRendered": 4,
+        "narrIds": [
+          "sec-prism-intro",
+          "sec-prism-interaction",
+          "sec-prism-frequency",
+          "sec-prism-snell"
+        ],
+        "labSkipped": true,
+        "tocLinks": 5,
+        "videoSrcs": [
+          "../../media_vault/physics/lesson_06/experiments/3b1b_physics_06_full_dubbed.mp4",
+          "../../media_vault/physics/lesson_06/experiments/3b1b_physics_06_full_dubbed.mp4"
+        ],
+        "manifestLoaded": true
+      },
+      "quiz_detail": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "n": 7,
+      "slug": "refractive-index-questions",
+      "checks": {
+        "script_order_l01": true,
+        "course_id_physics": true,
+        "youtube_id_official": true,
+        "official_url": true,
+        "video_src": true,
+        "yt_in_html": true,
+        "narrated_ids_match_manifest": true,
+        "json_sections_match_dom": true,
+        "manifest_cues_nonempty": true,
+        "manifest_js_json_parity": true,
+        "lab_no_narration": true,
+        "quiz_count_parity": true,
+        "figure_count_parity": true,
+        "figure_files_exist": true,
+        "components_once_static": true,
+        "http_200": true,
+        "components_once_dom": true,
+        "figures_rendered": true,
+        "sections_dom_parity": true,
+        "lab_excluded_from_narration_dom": true,
+        "manifest_preloaded": true,
+        "toc_links": true,
+        "quiz_click_ok": true,
+        "zero_console_errors": true
+      },
+      "errors": [],
+      "dom": {
+        "siteNav": 1,
+        "singleComponents": {
+          "b1b-search-overlay": 1,
+          "b1b-navbar": 1,
+          "b1b-hero-player": 1,
+          "b1b-narration-banner": 1,
+          "b1b-toc-sidebar": 1,
+          "b1b-article": 1,
+          "b1b-watch-panel": 1,
+          "b1b-chapter-nav": 1,
+          "b1b-footer": 1,
+          "b1b-back-to-top": 1
+        },
+        "quizzesRendered": 2,
+        "figuresRendered": 2,
+        "sectionsRendered": 4,
+        "narrIds": [
+          "sec-riq-intro",
+          "sec-riq-phase-group",
+          "sec-riq-fermat",
+          "sec-riq-mirage"
+        ],
+        "labSkipped": true,
+        "tocLinks": 5,
+        "videoSrcs": [
+          "../../media_vault/physics/lesson_07/experiments/3b1b_physics_07_full_dubbed.mp4",
+          "../../media_vault/physics/lesson_07/experiments/3b1b_physics_07_full_dubbed.mp4"
+        ],
+        "manifestLoaded": true
+      },
+      "quiz_detail": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "n": 8,
+      "slug": "light-quantum-mechanics",
+      "checks": {
+        "script_order_l01": true,
+        "course_id_physics": true,
+        "youtube_id_official": true,
+        "official_url": true,
+        "video_src": true,
+        "yt_in_html": true,
+        "narrated_ids_match_manifest": true,
+        "json_sections_match_dom": true,
+        "manifest_cues_nonempty": true,
+        "manifest_js_json_parity": true,
+        "lab_no_narration": true,
+        "quiz_count_parity": true,
+        "figure_count_parity": true,
+        "figure_files_exist": true,
+        "components_once_static": true,
+        "http_200": true,
+        "components_once_dom": true,
+        "figures_rendered": true,
+        "sections_dom_parity": true,
+        "lab_excluded_from_narration_dom": true,
+        "manifest_preloaded": true,
+        "toc_links": true,
+        "quiz_click_ok": true,
+        "zero_console_errors": true
+      },
+      "errors": [],
+      "dom": {
+        "siteNav": 1,
+        "singleComponents": {
+          "b1b-search-overlay": 1,
+          "b1b-navbar": 1,
+          "b1b-hero-player": 1,
+          "b1b-narration-banner": 1,
+          "b1b-toc-sidebar": 1,
+          "b1b-article": 1,
+          "b1b-watch-panel": 1,
+          "b1b-chapter-nav": 1,
+          "b1b-footer": 1,
+          "b1b-back-to-top": 1
+        },
+        "quizzesRendered": 2,
+        "figuresRendered": 3,
+        "sectionsRendered": 4,
+        "narrIds": [
+          "sec-lqm-intro",
+          "sec-lqm-polarization",
+          "sec-lqm-photons",
+          "sec-lqm-weird"
+        ],
+        "labSkipped": true,
+        "tocLinks": 5,
+        "videoSrcs": [
+          "../../media_vault/physics/lesson_08/experiments/3b1b_physics_08_full_dubbed.mp4",
+          "../../media_vault/physics/lesson_08/experiments/3b1b_physics_08_full_dubbed.mp4"
+        ],
+        "manifestLoaded": true
+      },
+      "quiz_detail": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "n": 9,
+      "slug": "uncertainty-principle",
+      "checks": {
+        "script_order_l01": true,
+        "course_id_physics": true,
+        "youtube_id_official": true,
+        "official_url": true,
+        "video_src": true,
+        "yt_in_html": true,
+        "narrated_ids_match_manifest": true,
+        "json_sections_match_dom": true,
+        "manifest_cues_nonempty": true,
+        "manifest_js_json_parity": true,
+        "lab_no_narration": true,
+        "quiz_count_parity": true,
+        "figure_count_parity": true,
+        "figure_files_exist": true,
+        "components_once_static": true,
+        "http_200": true,
+        "components_once_dom": true,
+        "figures_rendered": true,
+        "sections_dom_parity": true,
+        "lab_excluded_from_narration_dom": true,
+        "manifest_preloaded": true,
+        "toc_links": true,
+        "quiz_click_ok": true,
+        "zero_console_errors": true
+      },
+      "errors": [],
+      "dom": {
+        "siteNav": 1,
+        "singleComponents": {
+          "b1b-search-overlay": 1,
+          "b1b-navbar": 1,
+          "b1b-hero-player": 1,
+          "b1b-narration-banner": 1,
+          "b1b-toc-sidebar": 1,
+          "b1b-article": 1,
+          "b1b-watch-panel": 1,
+          "b1b-chapter-nav": 1,
+          "b1b-footer": 1,
+          "b1b-back-to-top": 1
+        },
+        "quizzesRendered": 2,
+        "figuresRendered": 3,
+        "sectionsRendered": 4,
+        "narrIds": [
+          "sec-up-intro",
+          "sec-up-audio",
+          "sec-up-slit",
+          "sec-up-heisenberg"
+        ],
+        "labSkipped": true,
+        "tocLinks": 5,
+        "videoSrcs": [
+          "../../media_vault/physics/lesson_09/experiments/3b1b_physics_09_full_dubbed.mp4",
+          "../../media_vault/physics/lesson_09/experiments/3b1b_physics_09_full_dubbed.mp4"
+        ],
+        "manifestLoaded": true
+      },
+      "quiz_detail": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "n": 10,
+      "slug": "feynmans-lost-lecture",
+      "checks": {
+        "script_order_l01": true,
+        "course_id_physics": true,
+        "youtube_id_official": true,
+        "official_url": true,
+        "video_src": true,
+        "yt_in_html": true,
+        "narrated_ids_match_manifest": true,
+        "json_sections_match_dom": true,
+        "manifest_cues_nonempty": true,
+        "manifest_js_json_parity": true,
+        "lab_no_narration": true,
+        "quiz_count_parity": true,
+        "figure_count_parity": true,
+        "figure_files_exist": true,
+        "components_once_static": true,
+        "http_200": true,
+        "components_once_dom": true,
+        "figures_rendered": true,
+        "sections_dom_parity": true,
+        "lab_excluded_from_narration_dom": true,
+        "manifest_preloaded": true,
+        "toc_links": true,
+        "quiz_click_ok": true,
+        "zero_console_errors": true
+      },
+      "errors": [],
+      "dom": {
+        "siteNav": 1,
+        "singleComponents": {
+          "b1b-search-overlay": 1,
+          "b1b-navbar": 1,
+          "b1b-hero-player": 1,
+          "b1b-narration-banner": 1,
+          "b1b-toc-sidebar": 1,
+          "b1b-article": 1,
+          "b1b-watch-panel": 1,
+          "b1b-chapter-nav": 1,
+          "b1b-footer": 1,
+          "b1b-back-to-top": 1
+        },
+        "quizzesRendered": 2,
+        "figuresRendered": 3,
+        "sectionsRendered": 4,
+        "narrIds": [
+          "sec-fll-intro",
+          "sec-fll-kepler",
+          "sec-fll-hodograph",
+          "sec-fll-ellipse"
+        ],
+        "labSkipped": true,
+        "tocLinks": 5,
+        "videoSrcs": [
+          "../../media_vault/physics/lesson_10/experiments/3b1b_physics_10_full_dubbed.mp4",
+          "../../media_vault/physics/lesson_10/experiments/3b1b_physics_10_full_dubbed.mp4"
+        ],
+        "manifestLoaded": true
+      },
+      "quiz_detail": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "n": 11,
+      "slug": "turbulence",
+      "checks": {
+        "script_order_l01": true,
+        "course_id_physics": true,
+        "youtube_id_official": true,
+        "official_url": true,
+        "video_src": true,
+        "yt_in_html": true,
+        "narrated_ids_match_manifest": true,
+        "json_sections_match_dom": true,
+        "manifest_cues_nonempty": true,
+        "manifest_js_json_parity": true,
+        "lab_no_narration": true,
+        "quiz_count_parity": true,
+        "figure_count_parity": true,
+        "figure_files_exist": true,
+        "components_once_static": true,
+        "http_200": true,
+        "components_once_dom": true,
+        "figures_rendered": true,
+        "sections_dom_parity": true,
+        "lab_excluded_from_narration_dom": true,
+        "manifest_preloaded": true,
+        "toc_links": true,
+        "quiz_click_ok": true,
+        "zero_console_errors": true
+      },
+      "errors": [],
+      "dom": {
+        "siteNav": 1,
+        "singleComponents": {
+          "b1b-search-overlay": 1,
+          "b1b-navbar": 1,
+          "b1b-hero-player": 1,
+          "b1b-narration-banner": 1,
+          "b1b-toc-sidebar": 1,
+          "b1b-article": 1,
+          "b1b-watch-panel": 1,
+          "b1b-chapter-nav": 1,
+          "b1b-footer": 1,
+          "b1b-back-to-top": 1
+        },
+        "quizzesRendered": 2,
+        "figuresRendered": 3,
+        "sectionsRendered": 4,
+        "narrIds": [
+          "sec-turb-intro",
+          "sec-turb-cascade",
+          "sec-turb-kolmogorov",
+          "sec-turb-universality"
+        ],
+        "labSkipped": true,
+        "tocLinks": 5,
+        "videoSrcs": [
+          "../../media_vault/physics/lesson_11/experiments/3b1b_physics_11_full_dubbed.mp4",
+          "../../media_vault/physics/lesson_11/experiments/3b1b_physics_11_full_dubbed.mp4"
+        ],
+        "manifestLoaded": true
+      },
+      "quiz_detail": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "n": 12,
+      "slug": "brachistochrone",
+      "checks": {
+        "script_order_l01": true,
+        "course_id_physics": true,
+        "youtube_id_official": true,
+        "official_url": true,
+        "video_src": true,
+        "yt_in_html": true,
+        "narrated_ids_match_manifest": true,
+        "json_sections_match_dom": true,
+        "manifest_cues_nonempty": true,
+        "manifest_js_json_parity": true,
+        "lab_no_narration": true,
+        "quiz_count_parity": true,
+        "figure_count_parity": true,
+        "figure_files_exist": true,
+        "components_once_static": true,
+        "http_200": true,
+        "components_once_dom": true,
+        "figures_rendered": true,
+        "sections_dom_parity": true,
+        "lab_excluded_from_narration_dom": true,
+        "manifest_preloaded": true,
+        "toc_links": true,
+        "quiz_click_ok": true,
+        "zero_console_errors": true
+      },
+      "errors": [],
+      "dom": {
+        "siteNav": 1,
+        "singleComponents": {
+          "b1b-search-overlay": 1,
+          "b1b-navbar": 1,
+          "b1b-hero-player": 1,
+          "b1b-narration-banner": 1,
+          "b1b-toc-sidebar": 1,
+          "b1b-article": 1,
+          "b1b-watch-panel": 1,
+          "b1b-chapter-nav": 1,
+          "b1b-footer": 1,
+          "b1b-back-to-top": 1
+        },
+        "quizzesRendered": 2,
+        "figuresRendered": 3,
+        "sectionsRendered": 4,
+        "narrIds": [
+          "sec-brach-intro",
+          "sec-brach-light",
+          "sec-brach-cycloid",
+          "sec-brach-legacy"
+        ],
+        "labSkipped": true,
+        "tocLinks": 5,
+        "videoSrcs": [
+          "../../media_vault/physics/lesson_12/experiments/3b1b_physics_12_full_dubbed.mp4",
+          "../../media_vault/physics/lesson_12/experiments/3b1b_physics_12_full_dubbed.mp4"
+        ],
+        "manifestLoaded": true
+      },
+      "quiz_detail": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "n": 13,
+      "slug": "snells-law",
+      "checks": {
+        "script_order_l01": true,
+        "course_id_physics": true,
+        "youtube_id_official": true,
+        "official_url": true,
+        "video_src": true,
+        "yt_in_html": true,
+        "narrated_ids_match_manifest": true,
+        "json_sections_match_dom": true,
+        "manifest_cues_nonempty": true,
+        "manifest_js_json_parity": true,
+        "lab_no_narration": true,
+        "quiz_count_parity": true,
+        "figure_count_parity": true,
+        "figure_files_exist": true,
+        "components_once_static": true,
+        "http_200": true,
+        "components_once_dom": true,
+        "figures_rendered": true,
+        "sections_dom_parity": true,
+        "lab_excluded_from_narration_dom": true,
+        "manifest_preloaded": true,
+        "toc_links": true,
+        "quiz_click_ok": true,
+        "zero_console_errors": true
+      },
+      "errors": [],
+      "dom": {
+        "siteNav": 1,
+        "singleComponents": {
+          "b1b-search-overlay": 1,
+          "b1b-navbar": 1,
+          "b1b-hero-player": 1,
+          "b1b-narration-banner": 1,
+          "b1b-toc-sidebar": 1,
+          "b1b-article": 1,
+          "b1b-watch-panel": 1,
+          "b1b-chapter-nav": 1,
+          "b1b-footer": 1,
+          "b1b-back-to-top": 1
+        },
+        "quizzesRendered": 2,
+        "figuresRendered": 3,
+        "sectionsRendered": 4,
+        "narrIds": [
+          "sec-snell-intro",
+          "sec-snell-springs",
+          "sec-snell-derivation",
+          "sec-snell-meaning"
+        ],
+        "labSkipped": true,
+        "tocLinks": 5,
+        "videoSrcs": [
+          "../../media_vault/physics/lesson_13/experiments/3b1b_physics_13_full_dubbed.mp4",
+          "../../media_vault/physics/lesson_13/experiments/3b1b_physics_13_full_dubbed.mp4"
+        ],
+        "manifestLoaded": true
+      },
+      "quiz_detail": [
+        true,
+        true
+      ],
+      "pass": true
+    }
+  ]
+}

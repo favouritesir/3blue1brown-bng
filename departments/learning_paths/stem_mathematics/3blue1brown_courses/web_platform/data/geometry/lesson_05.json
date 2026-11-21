@@ -1,0 +1,159 @@
+{
+  "lesson_id": "lesson_05",
+  "chapter_num": 5,
+  "course_id": "geometry",
+  "title_en": "Quaternions and 3d rotation, explained interactively",
+  "title_bn": "কোয়াটারনিয়ন ও ত্রিমাত্রিক ঘূর্ণন",
+  "subtitle_bn": "অক্ষ-কোণ থেকে $qvq^{-1}$—কোয়াটারনিয়ন দিয়ে 3D ঘূর্ণন বর্ণনার সম্পূর্ণ গাইড",
+  "video_id": "zjMuIxRvygQ",
+  "official_url": "https://www.3blue1brown.com/lessons/quaternions-and-3d-rotation",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "book chapter",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "Rotation is the simplest thing that is not simple.",
+    "quote_bn": "ঘূর্ণনই হলো সবচেয়ে সরল জিনিস যা সরল নয়।",
+    "author": "অজানা"
+  },
+  "sections": [
+    {
+      "id": "sec-intro",
+      "title_bn": "ভূমিকা — ঘূর্ণন বর্ণনা করার সমস্যা",
+      "title_en": "Describing Rotation",
+      "summary_bn": "ত্রিমাত্রিক ঘূর্ণনকে কীভাবে নিখুঁতভাবে লেখা যায়—ম্যাট্রিক্স, ইউলার কোণ ও কোয়াটারনিয়নের তুলনা।",
+      "key_takeaways": [
+        "$3\\times3$ রূপান্তর ম্যাট্রিক্স দিয়ে ঘূর্ণন লেখা যায়, কিন্তু নয়টি সংখ্যা অপ্রয়োজনীয়।",
+        "ইউলার কোণ তিনটি সংখ্যা ব্যবহার করে, কিন্তু গিম্বাল লক সমস্যা রয়েছে।",
+        "কোয়াটারনিয়ন মাত্র চারটি সংখ্যায় সমস্যামুক্ত বর্ণনা দেয়।"
+      ],
+      "formulas": [],
+      "figures": []
+    },
+    {
+      "id": "sec-axis-angle",
+      "title_bn": "অক্ষ-কোণ পদ্ধতি",
+      "title_en": "Axis & Angle",
+      "summary_bn": "যেকোনো 3D ঘূর্ণনকে একটি অক্ষ ($\\hat{u}$) ও তার চারপাশের কোণ ($\\theta$) দিয়ে বর্ণনা করা যায়।",
+      "key_takeaways": [
+        "যেকোনো ঘূর্ণনের একটি অক্ষ থাকে—যে বরাবর বিন্দুগুলো অপরিবর্তিত থাকে।",
+        "অক্ষ $\\hat{u}$ ও কোণ $\\theta$ মিলে ঘূর্ণনটি সম্পূর্ণ narrator নির্ধারিত হয়।",
+        "এই $\\hat{u}$ ও $\\theta$-কেই কোয়াটারনিয়নের ভাষায় রূপ দিতে হবে।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_axis-angle",
+          "caption_bn": "অক্ষ ও কোণ",
+          "type": "svg",
+          "src": "figures/axis-angle.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-formula",
+      "title_bn": "কোয়াটারনিয়ন সূত্র",
+      "title_en": "The Quaternion Formula",
+      "summary_bn": "$q=\\cos(\\theta/2)+\\hat{u}\\sin(\\theta/2)$ কোয়াটারনিয়ন দিয়ে $v'=qvq^{-1}$ ফলাফল বের করা হয়।",
+      "key_takeaways": [
+        "$q=\\cos(\\theta/2)+u_x i\\sin(\\theta/2)+u_y j\\sin(\\theta/2)+u_z k\\sin(\\theta/2)$।",
+        "ভেক্টর $v$-কে কোয়াটারনিয়ন হিসেবে লিখে $qvq^{-1}$ গুণ করলেই ঘোরানো ভেক্টর পাওয়া যায়।",
+        "অর্ধ-কোণ $\\theta/2$ ব্যবহারই কোয়াটারনিয়নকে ‘দ্বি-আবরণ’ করে তোলে।"
+      ],
+      "formulas": [
+        {
+          "label": "ঘূর্ণন সূত্র",
+          "katex": "q=\\cos(\\theta/2)+\\hat u\\sin(\\theta/2),\\quad v'=qvq^{-1}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_rotation-result",
+          "caption_bn": "ঘূর্ণনের ফল",
+          "type": "svg",
+          "src": "figures/rotation-result.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-double-cover",
+      "title_bn": "দ্বি-আবরণ ও ৭২০°",
+      "title_en": "Double Cover",
+      "summary_bn": "$q$ ও $−q$ একই ঘূর্ণন দেয়—অর্থাৎ কোয়াটারনিয়ন 3D ঘূর্ণনের দ্বি-আবরণ (double cover)।",
+      "key_takeaways": [
+        "$q$ ও $-q$ দিয়ে একই $v'=qvq^{-1}$ পাওয়া যায়—চিহ্ন বাতিল হয়ে যায়।",
+        "অর্থাৎ $360^\\circ$ ঘোরালে কোয়াটারনিয়নের চিহ্ন বদলায়; আবার $360^\\circ$ ঘোরালে ফিরে আসে—মোট $720^\\circ$ চক্র।",
+        "এই fact টি কোয়ান্টাম বলবিদ্যায় স্পিনর-এর সাথে গভীরভাবে যুক্ত।"
+      ],
+      "formulas": [
+        {
+          "label": "দ্বি-আবরণ",
+          "katex": "(-q)\\,v\\,(-q)^{-1}=q\\,v\\,q^{-1}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_double-cover",
+          "caption_bn": "দ্বি-আবরণ",
+          "type": "svg",
+          "src": "figures/double-cover.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-interpolation",
+      "title_bn": "স্লার্প ও গিম্বাল লক",
+      "title_en": "Slerp & Gimbal Lock",
+      "summary_bn": "দুটি কোয়াটারনিয়নের মাঝে মসৃণ ইন্টারপোলেশন (slerp) গিম্বাল লক এড়িয়ে কাজ করে।",
+      "key_takeaways": [
+        "দুটি কোয়াটারনিয়নের ওপর ‘গ্রেট সার্কেল’ বরাবর সরল ইন্টারপোলেশনই slerp।",
+        "ইউলার কোণে দুটি অক্ষ একসাথে হয়ে গেলে গিম্বাল লক হয়—কোয়াটারনিয়নে তা হয় না।",
+        "ভিডিও গেম ও রোবোটিক্সে ক্যামেরা/আর্মের মসৃণ গতির জন্য slerp ব্যবহৃত হয়।"
+      ],
+      "formulas": [],
+      "figures": []
+    },
+    {
+      "id": "sec-conclusion",
+      "title_bn": "উপসংহার",
+      "title_en": "Conclusion",
+      "summary_bn": "অক্ষ-কোণ থেকে শুরু করে দ্বি-আবরণ—কোয়াটারনিয়ন 3D ঘূর্ণনের এক সম্পূর্ণ ও নির্ভরযোগ্য ভাষা।",
+      "key_takeaways": [
+        "$q=\\cos(\\theta/2)+\\hat u\\sin(\\theta/2)$ দিয়ে যেকোনো ঘূর্ণন লেখা যায়।",
+        "$v'=qvq^{-1}$—গুণনই হলো ঘূর্ণন।",
+        "$q$ ও $-q$ একই ঘূর্ণন; $720^\\circ$ পূর্ণ চক্র—এই দ্বি-আবরণই কোয়াটারনিয়নের স্বাক্ষর।"
+      ],
+      "formulas": [],
+      "figures": []
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_formula",
+      "section_ref": "sec-formula",
+      "question_bn": "কোয়াটারনিয়ন $q$-তে কোণের কোন অংশ ব্যবহার করা হয়?",
+      "question_en": "কোয়াটারনিয়ন $q$-তে কোণের কোন অংশ ব্যবহার করা হয়?",
+      "options": [
+        "$\\theta$",
+        "$\\theta/2$",
+        "$2\\theta$",
+        "$\\theta^2$"
+      ],
+      "options_bn": [
+        "$\\theta$",
+        "$\\theta/2$",
+        "$2\\theta$",
+        "$\\theta^2$"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "$q=\\cos(\\theta/2)+\\hat u\\sin(\\theta/2)$—অর্ধ-কোণ ব্যবহার করা হয়, কারণ $qvq^{-1}$-এ দুই পাশ থেকে অর্ধ-কোণ যোগ হয়ে পূর্ণ $\\theta$ হয়।",
+      "explanation_en": "$q=\\cos(\\theta/2)+\\hat u\\sin(\\theta/2)$—অর্ধ-কোণ ব্যবহার করা হয়, কারণ $qvq^{-1}$-এ দুই পাশ থেকে অর্ধ-কোণ যোগ হয়ে পূর্ণ $\\theta$ হয়।",
+      "hint": "$qvq^{-1}$ গুণনে বামে ও ডানে কত কোণ যোগ হয় ভাবুন।",
+      "hints": [
+        "$qvq^{-1}$ গুণনে বামে ও ডানে কত কোণ যোগ হয় ভাবুন।"
+      ]
+    }
+  ]
+}

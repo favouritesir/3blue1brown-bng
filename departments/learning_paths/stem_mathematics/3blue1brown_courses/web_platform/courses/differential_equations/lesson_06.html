@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অধ্যায় ০৬: তরঙ্গ সমীকরণ ও কম্পন — স্থান ও কালের অবিরাম স্পন্দন | The Wave Equation and Vibrations</title>
+
+<!-- ═══════════ STYLES (exact L01 order) ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/differential_equations/lesson_06/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict L01 load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="ডিফারেনশিয়াল সমীকরণ"
+  course-url="../../index.html#differential-equations"
+  home-url="../../index.html"
+  chapter-num="০৬"
+  chapter-total="০৬"
+  prev-url="lesson_05.html"
+  prev-title="অধ্যায় ০৫: ফেজ পোর্ট্রেট এবং রৈখিক ওডিই সিস্টেম"
+  next-url=""
+  next-title="ডিফারেনশিয়াল সমীকরণ সিরিজের শেষ অধ্যায়"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="ডিফারেনশিয়াল সমীকরণ"
+  course-url="../../index.html"
+  chapter-label="ডিফারেনশিয়াল সমীকরণ • ষষ্ঠ অধ্যায় — তরঙ্গ সমীকরণ ও কম্পন"
+  title="অধ্যায় ০৬: তরঙ্গ সমীকরণ ও কম্পন — স্থান ও কালের অবিরাম স্পন্দন"
+  desc="তাপ সমীকরণ সবকিছুকে মসৃণ ও বিলীন করে দিত। কিন্তু সময়ের প্রথম ডেরিভেটিভের বদলে ত্বরণ বসালে কেন ক্ষয়হীন অনন্ত তরঙ্গের জন্ম হয়? ⚠️ নোট: তরঙ্গ সমীকরণ বিষয়ে কোনো নিজস্ব অফিশিয়াল ৩ব্লু১ব্রাউন ভিডিও নেই; সম্পূর্ণ পাঠ্যবস্তু ও শিক্ষক অডিও ডাটা JSON-এর উপর ভিত্তি করে তৈরি। চিত্রের ভিডিও ট্যাবে একটি সম্পর্কিত অফিশিয়াল ৩ব্লু১ব্রাউন ক্লিপ (DE4 — Fourier series) ফলব্যাক হিসেবে স্পষ্টভাবে লেবেল করা হয়েছে।"
+  video-src="../../media_vault/differential_equations/lesson_06/experiments/3b1b_de_06_full_dubbed.mp4"
+  yt-id="r6sGWTCMz2k"
+  date="অফিশিয়াল ৩ব্লু১ব্রাউন ডিফারেনশিয়াল সমীকরণ সিরিজ · এই অধ্যায়ে নিজস্ব ভিডিও নেই"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="মূল পাঠ: Grant Sanderson (3Blue1Brown) · বাংলা রূপান্তর ও পাঠ্য বিন্যাস: STEM ম্যাথমেটিক্স উইং"
+  github-url="https://www.3blue1brown.com/lessons/differential-equations"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">তরঙ্গ সমীকরণের সূচনা: তাপের মসৃণকরণ বনাম অবিরাম স্পন্দন</b1b-bookmark>
+      <b1b-bookmark time="121" time-bn="০২:০১">টানটান তারের ব্যবকলন ও তরঙ্গ বেগ c = √(T/μ)</b1b-bookmark>
+      <b1b-bookmark time="243" time-bn="০৪:০৩">স্থির তরঙ্গ, চলক পৃথকীকরণ ও সুরের হারমোনিক্স</b1b-bookmark>
+      <b1b-bookmark time="357" time-bn="০৫:৫৭">দ্য'আলেমবার্টের পদ্ধতি ও বিপরীতমুখী চলন্ত তরঙ্গ</b1b-bookmark>
+      <b1b-bookmark time="457" time-bn="০৭:৩৭">শক্তির নিত্যতা, তথ্য সংরক্ষণ ও মহাজাগতিক বিস্তার</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-wave-intro">১. তরঙ্গ সমীকরণের সূচনা: তাপের মসৃণকরণ বনাম অবিরাম স্পন্দন</a>
+      <a href="#sec-wave-derivation">২. টানটান তারের ব্যবকলন ও তরঙ্গ বেগ c = √(T/μ)</a>
+      <a href="#sec-standing-waves">৩. স্থির তরঙ্গ, চলক পৃথকীকরণ ও সুরের হারমোনিক্স</a>
+      <a href="#sec-dalembert">৪. দ্য'আলেমবার্টের পদ্ধতি ও বিপরীতমুখী চলন্ত তরঙ্গ</a>
+      <a href="#sec-energy-harmonics">৫. শক্তির নিত্যতা, তথ্য সংরক্ষণ ও মহাজাগতিক বিস্তার</a>
+      <a href="#sec-figures">চিত্র-সহায়ক ব্যাখ্যা: ছন্দ ও তরঙ্গ দুই মাধ্যমে</a>
+      <a href="#sec-interactive-lab">৬. ইন্টারেক্টিভ তারের কম্পন ও দ্য'আলেমবার্ট ল্যাব</a>
+      <a href="#sec-quizzes">৭. ধারণা যাচাই ও বহুনির্বাচনী কুইজ</a>
+      <a href="#sec-video-note">⚠️ ভিডিও ফলব্যাক সংক্রান্ত নোট</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ Section 1 — NARRATED (manifest: sec-wave-intro · 8 cues: h2, quote, p, p, figure, p, formula, callout) ═══ -->
+      <b1b-section id="sec-wave-intro" title="১. তরঙ্গ সমীকরণের সূচনা: তাপের মসৃণকরণ বনাম অবিরাম স্পন্দন (Introduction: Diffusion vs. Oscillation)">
+
+        <b1b-quote author="জঁ লে রঁ দ্য'আলেমবার্ট">প্রকৃতি কম্পনের মাঝে কোনো জটিল ধাঁধা লুকায়নি; সে কেবল স্থান ও সময়কে তরঙ্গের ছন্দে বেঁধে দিয়েছে।</b1b-quote>
+
+        <p>আগের অধ্যায়ে আমরা আংশিক ডিফারেনশিয়াল সমীকরণের জগতে পা রেখে তাপ সমীকরণ প্রত্যক্ষ করেছিলাম: $\frac{\partial T}{\partial t} = \alpha \frac{\partial^2 T}{\partial x^2}$। সেখানে লক্ষ্য করেছিলেন সময়ের অন্তরজটি ছিল প্রথম ক্রমের (First-order in time)।</p>
+
+        <p>প্রথম ডেরিভেটিভ থাকার কারণে যে কোনো ধারালো খাঁজ বা তাপমাত্রা একমুখীভাবে মসৃণ হয়ে শূন্যে মিলিয়ে যেত। উচ্চ ফ্রিকোয়েন্সিগুলো ধ্বংস হয়ে যেত, তথ্য হারিয়ে যেত এবং ব্যবস্থাটি অপরিবর্তনীয়ভাবে তাপীয় সাম্যাবস্থায় পৌঁছাত।</p>
+
+        <b1b-figure alt="বাঁয়ে তাপ সমীকরণের ক্ষয়িষ্ণু মসৃণতা ও ডানে তরঙ্গ সমীকরণের অক্ষত বিস্তার" caption="এই তুলনামূলক চিত্রে বাঁয়ে তাপ সমীকরণের ধারালো খাঁজটি ক্রমশ মসৃণ হয়ে সমতল হচ্ছে—অর্থাৎ তথ্য বিলীন হয়ে যাচ্ছে। ডানে তরঙ্গ সমীকরণের একই খাঁজ বিন্দুমাত্র রূপ না হারিয়ে দুই দিকে অবিকল ছড়িয়ে চলেছে। লক্ষ্য করুন ডান প্যানেলে তরঙ্গের চূড়ার উচ্চতা ও আকৃতি অপরিবর্তিত থাকে; এই দৃশ্যমান বৈসাদৃশ্যই প্যারাবলিক ব্যাপন আর হাইপারবোলিক তরঙ্গের মধ্যকার মৌলিক পার্থক্য।">
+          <svg viewBox="0 0 600 270" role="img" aria-label="Diffusion versus wave propagation" style="background:var(--bg-alt,#0b0c12);width:100%;height:auto;border-radius:8px;">
+            <text x="18" y="26" fill="#8b949e" font-size="15">তাপ সমীকরণ — মসৃণকরণ (∂ₜu = α∂ₓ²u)</text>
+            <text x="320" y="26" fill="#8b949e" font-size="15">তরঙ্গ সমীকরণ — অবিরাম স্পন্দন (∂ₜ²u = c²∂ₓ²u)</text>
+            <line x1="20" y1="130" x2="290" y2="130" stroke="#8b949e" stroke-width="1.5"/>
+            <line x1="310" y1="130" x2="585" y2="130" stroke="#8b949e" stroke-width="1.5"/>
+            <path d="M25 130 L110 40 L150 130 L190 40 L275 130" fill="none" stroke="#74c0e3" stroke-width="2.5" opacity="0.5"/>
+            <path d="M25 130 Q 150 118 275 130" fill="none" stroke="#74c0e3" stroke-width="3"/>
+            <path d="M320 130 Q 380 55 420 130 Q 460 205 500 130 Q 540 55 580 130" fill="none" stroke="#10b981" stroke-width="3"/>
+            <path d="M340 130 Q 400 70 450 130 Q 500 190 560 130" fill="none" stroke="#10b981" stroke-width="2" opacity="0.55"/>
+            <text x="60" y="225" fill="#74c0e3" font-size="14">ধারালো খাঁজ → মসৃণ</text>
+            <text x="360" y="225" fill="#10b981" font-size="14">আকৃতি অক্ষত → ছড়িয়ে যায়</text>
+            <text x="20" y="255" fill="#8b949e" font-size="13">চিত্র ১: ব্যাপন বনাম তরঙ্গ — তথ্যের বিলুপ্তি বনাম সংরক্ষণ</text>
+          </svg>
+        </b1b-figure>
+
+        <p>কিন্তু এবার এক মহাবিস্ময়কর প্রশ্ন ভাবুন: সময়ের সেই প্রথম অন্তরজের জায়গায় যদি আমরা দ্বিতীয় অন্তরজ—অর্থাৎ ত্বরণ বসিয়ে দিই? $\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}$। মাত্র একটি ডেরিভেটিভের ক্রম বৃদ্ধির সাথে সাথে পুরো বিশ্বব্রহ্মাণ্ডের গতিবিধি বদলে যায়! শক্তির অপচয় বিলুপ্ত হয়, তরঙ্গের রূপ অক্ষত থাকে এবং স্থান জুড়ে সংকেত অবিকল অনন্তকালের জন্য প্রতিধ্বনিত হতে থাকে।</p>
+
+        <b1b-formula math="\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}"></b1b-formula>
+
+        <b1b-callout type="gold" icon="⚖️" title="তাপ সমীকরণ বনাম তরঙ্গ সমীকরণ">
+          <p>• তাপ সমীকরণ (Heat Equation, $\partial_t u = \alpha \partial_x^2 u$): প্যারাবলিক পিডিই। এতে কোনো জড়তা নেই। এটি মসৃণ করে, তথ্য নিশ্চিহ্ন করে, এবং এনট্রপি বাড়ায়।</p>
+          <p>• তরঙ্গ সমীকরণ (Wave Equation, $\partial_t^2 u = c^2 \partial_x^2 u$): হাইপারবোলিক পিডিই। এতে জড়তা রয়েছে। এটি সংকেত ও তথ্যকে স্থানান্তর করে, কোনো ক্ষয় ছাড়াই রূপ ও বিস্তার অবিকল ধরে রাখে।</p>
+          <p>কেন স্থানিক দ্বিতীয় অন্তরজ বা বক্রতার সাথে সময়ের দ্বিতীয় অন্তরজ বা ত্বরণের সমতা তরঙ্গের এই অবিরাম স্পন্দন সৃষ্টি করে?</p>
+        </b1b-callout>
+
+      </b1b-section>
+
+      <!-- ═══ Section 2 — NARRATED (manifest: sec-wave-derivation · 8 cues: h2, p, p, figure, p, formula, p, callout) ═══ -->
+      <b1b-section id="sec-wave-derivation" title="২. টানটান তারের ব্যবকলন ও তরঙ্গ বেগ c = √(T/μ) (Derivation from a Vibrating String)">
+
+        <p>এই সমীকরণটি কীভাবে প্রকৃতির নিয়ম থেকে স্বাভাবিকভাবে উঠে আসে? চলুন কল্পনা করি সবচেয়ে আদিম এক ব্যবস্থা: দুই প্রান্তে দৃঢ়ভাবে আটকানো একটি টানটান গিটারের তার।</p>
+
+        <p>ধরা যাক, অনুভূমিক অবস্থান $x$ এবং সময় $t$-তে তারটির উল্লম্ব সরণ হলো $u(x, t)$। এবার অবস্থান $x$ এবং $x + \Delta x$-এর মধ্যবর্তী অতি ক্ষুদ্র একটি অংশ কেটে আলাদা করে ভাবুন। তারের প্রতি একক দৈর্ঘ্যের ভর $\mu$ (Linear mass density), এবং তারটিতে অনুভূমিক টান বল $T$ কাজ করছে।</p>
+
+        <b1b-figure alt="টানটান তারের ক্ষুদ্র অংশে প্রান্তদ্বয়ের স্পর্শক টান বল ও নিট উল্লম্ব বল" caption="চিত্রে টানটান তারের $x$ থেকে $x+\Delta x$ অংশটি আলাদা করে দেখানো হয়েছে। দুই প্রান্তে $T$ টান বল স্পর্শক বরাবর কাজ করছে, কিন্তু ঢাল দুটি ভিন্ন হওয়ায় তাদের উল্লম্ব উপাংশ পরস্পর প্রশমিত হয় না। ফলে একটি নিট ঊর্ধ্বমুখী বল তৈরি হয়—এই অসমতাই বক্রতার পরিমাপ $\partial_x^2 u$ থেকে জন্ম নেয় এবং কণাটিকে ত্বরণ দেয়।">
+          <svg viewBox="0 0 600 250" role="img" aria-label="Tension on a small string element" style="background:var(--bg-alt,#0b0c12);width:100%;height:auto;border-radius:8px;">
+            <path d="M40 170 Q 180 100 300 160 Q 420 220 560 140" fill="none" stroke="#74c0e3" stroke-width="4"/>
+            <circle cx="180" cy="118" r="5" fill="#f0f6fc"/><circle cx="420" cy="207" r="5" fill="#f0f6fc"/>
+            <line x1="180" y1="118" x2="100" y2="82" stroke="#f0a500" stroke-width="3"/>
+            <line x1="420" y1="207" x2="500" y2="171" stroke="#f0a500" stroke-width="3"/>
+            <text x="86" y="76" fill="#f0a500" font-size="16">T</text>
+            <text x="500" y="165" fill="#f0a500" font-size="16">T</text>
+            <path d="M300 95 l0 -42 m-8 10 l8 -10 l8 10" fill="none" stroke="#10b981" stroke-width="3"/>
+            <text x="312" y="62" fill="#10b981" font-size="16">F_net = T ∂²ₓu Δx</text>
+            <text x="150" y="155" fill="#8b949e" font-size="14">x</text>
+            <text x="410" y="240" fill="#8b949e" font-size="14">x + Δx</text>
+            <text x="20" y="28" fill="#8b949e" font-size="14">চিত্র ২: স্পর্শক টানের অসমতা → নিট উল্লম্ব বল</text>
+          </svg>
+        </b1b-figure>
+
+        <p>যদি তারটি বাঁকা থাকে, তবে দুই প্রান্তের টান স্পর্শক রেখা বরাবর ক্রিয়া করায় পুরোপুরি পরস্পরকে প্রশমিত করতে পারে না। ডান প্রান্তের ঢাল $\left.\frac{\partial u}{\partial x}\right|_{x+\Delta x}$ এবং বাম প্রান্তের ঢাল $\left.\frac{\partial u}{\partial x}\right|_x$ সমান না হওয়ায় একটি নিট উল্লম্ব বল সৃষ্টি হয়।</p>
+
+        <b1b-formula math="F_{\text{net, vertical}} \approx T \left( \left.\frac{\partial u}{\partial x}\right|_{x+\Delta x} - \left.\frac{\partial u}{\partial x}\right|_x \right) \approx T \frac{\partial^2 u}{\partial x^2} \Delta x"></b1b-formula>
+
+        <p>এই দুই ঢালের ব্যবধানকে $\Delta x$ দিয়ে ভাগ করলে ক্যালকুলাসের সংজ্ঞানুযায়ী স্থানিক দ্বিতীয় অন্তরজ $\frac{\partial^2 u}{\partial x^2}$ বা বক্রতা পাওয়া যায়। নিউটনের দ্বিতীয় সূত্র $F = ma$ প্রয়োগ করলে ভর $(\mu \Delta x)$ এবং উল্লম্ব ত্বরণ $\frac{\partial^2 u}{\partial t^2}$-এর সাথে সমতা স্থাপন করলেই ডেল্টা এক্স কাটাকাটি হয়ে অবিকল তরঙ্গ সমীকরণটি প্রকাশিত হয়: $$(\mu \Delta x) \frac{\partial^2 u}{\partial t^2} = T \frac{\partial^2 u}{\partial x^2} \Delta x \implies \frac{\partial^2 u}{\partial t^2} = \left( \frac{T}{\mu} \right) \frac{\partial^2 u}{\partial x^2}$$</p>
+
+        <b1b-callout type="blue" icon="🎸" title="তরঙ্গ গতিবেগের ভৌত স্বজ্ঞা">
+          <p>সমীকরণ $c = \sqrt{T/\mu}$ আমাদের প্রতিদিনের অভিজ্ঞতার সাথে নিখুঁতভাবে মেলে:</p>
+          <p>• টান বৃদ্ধি ($T \uparrow$): গিটারের তার যত বেশি টাইট করা হয়, টান বৃদ্ধি পাওয়ায় তরঙ্গের বেগ $c$ তত বাড়ে এবং স্বরতীক্ষ্ণতা বা কম্পাঙ্ক বৃদ্ধি পায়।</p>
+          <p>• ভর বৃদ্ধি ($\mu \uparrow$): মোটা বা ভারী তারের জড়তা বেশি হওয়ায় তরঙ্গের গতি ধীর হয়, ফলে বাদ্যযন্ত্রের খাদ বা লো-ফ্রিকোয়েন্সি নোট তৈরি হয়।</p>
+          <p>$$c = \sqrt{\frac{T}{\mu}}$$</p>
+          <p>স্থানিক বক্রতা সৃষ্টি করে ত্বরণ, যা বেগকে পরিবর্তন করে সরণ ঘটায়—এভাবেই তারের প্রতিটি কণা পার্শ্ববর্তী কণার সাথে শৃঙ্খলিত হয়ে তরঙ্গ ছড়ায়।</p>
+        </b1b-callout>
+
+      </b1b-section>
+
+      <!-- ═══ Section 3 — NARRATED (manifest: sec-standing-waves · 7 cues: h2, p, p, formula, p, figure, callout) ═══ -->
+      <b1b-section id="sec-standing-waves" title="৩. স্থির তরঙ্গ, চলক পৃথকীকরণ ও সুরের হারমোনিক্স (Standing Waves &amp; Separation of Variables)">
+
+        <p>একটি টানটান গিটারের তার যখন দুই প্রান্তে দৃঢ়ভাবে আটকানো থাকে ($u(0, t) = u(L, t) = 0$), তখন তরঙ্গ মুক্তভাবে প্রবাহিত হতে পারে না; বরং দুই প্রান্ত থেকে অবিরাম প্রতিফলিত হয়ে একটি সুনির্দিষ্ট ছন্দে স্থির দাঁড়িয়ে থাকে। একে বলে স্থির তরঙ্গ (Standing Wave)।</p>
+
+        <p>এই ধরনের বাউন্ডারি ভ্যালু সমস্যা সমাধানের সবচেয়ে শক্তিশালী পদ্ধতি হলো চলক পৃথকীকরণ (Separation of Variables)। আমরা ধরে নিই সমাধানটি স্থানিক ও কালিক অংশের গুণফল: $u(x, t) = X(x) T(t)$।</p>
+
+        <b1b-formula math="u(x, t) = X(x)T(t) \implies \frac{1}{c^2}\frac{T''(t)}{T(t)} = \frac{X''(x)}{X(x)} = -k^2"></b1b-formula>
+
+        <p>তরঙ্গ সমীকরণে এটি প্রতিস্থাপন করে $c^2 X T$ দিয়ে উভয় পক্ষে ভাগ করলে পাওয়া যায়: $\frac{T''(t)}{c^2 T(t)} = \frac{X''(x)}{X(x)}$। বামপাশ কেবল সময়ের এবং ডানপাশ কেবল দূরত্বের ফাংশন হওয়ায় উভয়কেই একটি ঋণাত্মক ধ্রুবক $-k^2$-এর সমান হতে হবে। সীমান্ত শর্ত $X(0) = X(L) = 0$ প্রয়োগ করলে স্থানিক সমাধান দাঁড়ায় সাইন তরঙ্গ: $X_n(x) = \sin\left(\frac{n \pi x}{L}\right)$। আর কালিক সমীকরণটি রূপ নেয় একটি অবমন্দহীন সাধারণ স্পন্দকে: $T_n''(t) + \omega_n^2 T_n(t) = 0$, যার কৌণিক কম্পাঙ্ক $\omega_n = c \frac{n \pi}{L}$।</p>
+
+        <b1b-figure alt="একটি আটকানো তারের প্রথম তিনটি স্থায়ী তরঙ্গ মোড ও নিস্পন্দ বিন্দু" caption="চিত্রে উপর থেকে নিচে $n=1$ মূল সুর, $n=2$ প্রথম উপরি-সুর ও $n=3$ দ্বিতীয় উপরি-সুর দেখানো হয়েছে। লক্ষ্য করুন প্রতিটি মোডে প্রান্তদ্বয় সর্বদা নিস্পন্দ (Node), আর মোডের ক্রম যত বাড়ে নিস্পন্দ বিন্দুর সংখ্যা তত বাড়ে—$n$-তম মোডে $n+1$ টি নিস্পন্দ বিন্দু থাকে। কম্পাঙ্ক $\omega_n = n\pi c/L$ হওয়ায় দ্বিতীয় মোডের সুর প্রথমটির ঠিক দ্বিগুণ; এই পূর্ণসংখ্যা গুণিতকের সম্পর্কই সুরের হারমোনিক্স নামে পরিচিত।">
+          <svg viewBox="0 0 600 300" role="img" aria-label="First three standing wave modes" style="background:var(--bg-alt,#0b0c12);width:100%;height:auto;border-radius:8px;">
+            <line x1="60" y1="50" x2="560" y2="50" stroke="#8b949e" stroke-width="1"/>
+            <line x1="60" y1="150" x2="560" y2="150" stroke="#8b949e" stroke-width="1"/>
+            <line x1="60" y1="250" x2="560" y2="250" stroke="#8b949e" stroke-width="1"/>
+            <path d="M60 50 Q 180 -5 310 50 Q 440 105 560 50" fill="none" stroke="#74c0e3" stroke-width="3"/>
+            <path d="M60 150 Q 145 95 230 150 Q 315 205 395 150 Q 480 95 560 150" fill="none" stroke="#10b981" stroke-width="3"/>
+            <path d="M60 250 Q 115 205 170 250 Q 225 295 280 250 Q 335 205 390 250 Q 445 295 500 250 Q 545 210 560 250" fill="none" stroke="#ffa94d" stroke-width="3"/>
+            <circle cx="60" cy="50" r="4" fill="#f0f6fc"/><circle cx="560" cy="50" r="4" fill="#f0f6fc"/>
+            <circle cx="60" cy="150" r="4" fill="#f0f6fc"/><circle cx="310" cy="150" r="4" fill="#f0f6fc"/><circle cx="560" cy="150" r="4" fill="#f0f6fc"/>
+            <text x="565" y="55" fill="#74c0e3" font-size="14">n=1</text>
+            <text x="565" y="155" fill="#10b981" font-size="14">n=2</text>
+            <text x="565" y="255" fill="#ffa94d" font-size="14">n=3</text>
+            <text x="20" y="30" fill="#8b949e" font-size="14">চিত্র ৩: স্থায়ী তরঙ্গ মোড ও নিস্পন্দ বিন্দু</text>
+          </svg>
+        </b1b-figure>
+
+        <b1b-callout type="purple" icon="🎵" title="বাদ্যযন্ত্রের সুর ও হারমোনিক্স">
+          <p>• $n=1$ (Fundamental Mode): মূল সুর। তারের মাঝখানে সর্বোচ্চ বিস্তার এবং দুই প্রান্তে দুটি নিস্পন্দ বিন্দু (Nodes)।</p>
+          <p>• $n=2$ (First Overtone): অষ্টক সুর। মাঝখানে একটি অতিরিক্ত নিস্পন্দ বিন্দু গঠিত হয় এবং কম্পাঙ্ক অবিকল দ্বিগুণ হয়ে যায়।</p>
+          <p>• সাধারণ সুর: যেকোনো বাস্তব বাদ্যযন্ত্র বাজানো হলে সমস্ত স্বাভাবিক মোডের রৈখিক উপরিপাত ঘটে: $u(x, t) = \sum_{n=1}^\infty u_n(x, t)$। বিভিন্ন মোডের বিস্তারের অনুপাতই নির্ধারণ করে সুরের বর্ণ বা টিম্বার (Timbre)।</p>
+          <p>$$\omega_n = c \frac{n \pi}{L} = \frac{n \pi}{L}\sqrt{\frac{T}{\mu}}, \quad n = 1, 2, 3, \dots$$</p>
+          <p>$$u_n(x, t) = \sin\left( \frac{n \pi x}{L} \right) \left[ A_n \cos(\omega_n t) + B_n \sin(\omega_n t) \right]$$</p>
+          <p>কিন্তু তারটি যদি অসীম দীর্ঘ হয় বা মুক্ত স্থানে শব্দ বা আলোর তরঙ্গ ছড়ায়, তবে তার গতিপ্রকৃতি কেমন হবে?</p>
+        </b1b-callout>
+
+      </b1b-section>
+
+      <!-- ═══ Section 4 — NARRATED (manifest: sec-dalembert · 6 cues: h2, p, formula, p, figure, callout) ═══ -->
+      <b1b-section id="sec-dalembert" title="৪. দ্য'আলেমবার্টের পদ্ধতি ও বিপরীতমুখী চলন্ত তরঙ্গ f(x-ct) + g(x+ct) (d'Alembert's Traveling Wave Solution)">
+
+        <p>১৭৪৭ সালে ফরাসি দার্শনিক ও গণিতবিদ জঁ লে রঁ দ্য'আলেমবার্ট তরঙ্গ সমীকরণকে এমন এক দৃষ্টিতে দেখেছিলেন যা গণিতের ইতিহাসে সবচেয়ে মার্জিত সমাধানগুলোর একটি হিসেবে স্বীকৃত। তিনি লক্ষ্য করেন যে তরঙ্গ সমীকরণের ডিফারেনশিয়াল অপারেটরটিকে দুটি বর্গের বিয়োগফলের মতো উৎপাদকে বিশ্লেষণ করা যায়।</p>
+
+        <b1b-formula math="u(x, t) = f(x - ct) + g(x + ct)"></b1b-formula>
+
+        <p>অপারেটরটি উৎপাদকীকরণ করা যায়: $$\left( \frac{\partial^2}{\partial t^2} - c^2 \frac{\partial^2}{\partial x^2} \right) = \left( \frac{\partial}{\partial t} - c \frac{\partial}{\partial x} \right) \left( \frac{\partial}{\partial t} + c \frac{\partial}{\partial x} \right)$$এবার বৈশিষ্ট্যমূলক স্থানাঙ্ক (Characteristic Coordinates) সংজ্ঞায়িত করুন: $\xi = x - ct$ এবং $\eta = x + ct$। চেইন রুল প্রয়োগ করলে তরঙ্গ সমীকরণটি সংকুচিত হয়ে দাঁড়ায় $\frac{\partial^2 u}{\partial \xi \partial \eta} = 0$! উভয় পক্ষে ক্রমান্বয়ে দুইবার সমাকলন করলে সরাসরি সাধারণ সমাধান $u(x,t)=f(x-ct)+g(x+ct)$ বেরিয়ে আসে।</p>
+
+        <b1b-figure alt="একক ত্রিভুজাকার খাঁজ দুটি অর্ধ-উচ্চতার বিপরীতমুখী তরঙ্গে বিভক্ত হচ্ছে" caption="চলমান সিমুলেশনে দেখুন: কেন্দ্রে থাকা একটি ত্রিভুজাকার খাঁজ কীভাবে সমান দুটি অর্ধ-উচ্চতার তরঙ্গে ভেঙে একটি বেগ $c$ নিয়ে ডানে ও অন্যটি বেগ $c$ নিয়ে বামে ছুটে যায়। আকৃতির কোনো বিকৃতি বা শক্তির কোনো ক্ষয় ঘটে না—দ্য'আলেমবার্ট সূত্র $u=\frac{1}{2}u_0(x-ct)+\frac{1}{2}u_0(x+ct)$ ঠিক এই বিভাজনটি বর্ণনা করে। দুই তরঙ্গ পরস্পরকে অতিক্রম করার সময়ও তারা রৈখিক উপরিপাতের নিয়মে অবিকল আগের মতোই বেরিয়ে যায়।">
+          <svg viewBox="0 0 600 260" role="img" aria-label="Pulse splitting into counter-propagating waves" style="background:var(--bg-alt,#0b0c12);width:100%;height:auto;border-radius:8px;">
+            <line x1="25" y1="150" x2="580" y2="150" stroke="#8b949e" stroke-width="1.5"/>
+            <path d="M200 150 L300 55 L400 150" fill="none" stroke="#f0a500" stroke-width="3" opacity="0.6"/>
+            <text x="255" y="45" fill="#f0a500" font-size="14">u₀(x), t = 0</text>
+            <path d="M90 150 L160 100 L230 150" fill="none" stroke="#74c0e3" stroke-width="3"/>
+            <path d="M370 150 L440 100 L510 150" fill="none" stroke="#10b981" stroke-width="3"/>
+            <path d="M160 100 l-14 -8 m14 8 l-4 -14" fill="none" stroke="#74c0e3" stroke-width="2.5"/>
+            <path d="M440 100 l14 -8 m-14 8 l4 -14" fill="none" stroke="#10b981" stroke-width="2.5"/>
+            <text x="120" y="92" fill="#74c0e3" font-size="14">½u₀(x+ct) →</text>
+            <text x="395" y="92" fill="#10b981" font-size="14">← ½u₀(x−ct)</text>
+            <text x="20" y="28" fill="#8b949e" font-size="14">চিত্র ৪: বিপরীতমুখী চলন্ত তরঙ্গে আদি খাঁজের বিভাজন</text>
+          </svg>
+        </b1b-figure>
+
+        <b1b-callout type="green" icon="🔁" title="দ্য'আলেমবার্ট সমাধানের জ্যামিতিক তাৎপর্য">
+          <p>• $f(x - ct)$: একটি অনড় আকার যা বিন্দুমাত্র বিকৃত না হয়ে ধ্রুব বেগ $c$ নিয়ে ডান দিকে এগিয়ে চলেছে।</p>
+          <p>• $g(x + ct)$: একই আকৃতির বা ভিন্ন আকৃতির অপর একটি তরঙ্গ যা বেগ $c$ নিয়ে বাম দিকে ছুটে চলেছে।</p>
+          <p>• পালস বিভাজন: যদি আপনি একটি তারকে স্থির অবস্থায় কোনো খাঁজে টেনে ছেড়ে দেন ($v_0 = 0$), তবে আদি আকৃতি $u_0(x)$ সমান দুটি অর্ধেক উচ্চতার তরঙ্গে বিভক্ত হয়: একটি ডানমুখী $\frac{1}{2}u_0(x-ct)$ এবং অন্যটি বামমুখী $\frac{1}{2}u_0(x+ct)$।</p>
+          <p>$$u(x, t) = \frac{u_0(x - ct) + u_0(x + ct)}{2} + \frac{1}{2c}\int_{x - ct}^{x + ct} v_0(s)\,ds$$</p>
+          <p>দুটি বিপরীতমুখী চলন্ত তরঙ্গ যখন পরস্পরের মুখোমুখি হয়, তখন তারা কোনো শক্তি ক্ষয় বা সংঘর্ষ ছাড়াই একে অপরকে অতিক্রম করে চলে যায়—এটাই রৈখিক উপরিপাতের পরম সৌন্দর্য।</p>
+        </b1b-callout>
+
+      </b1b-section>
+
+      <!-- ═══ Section 5 — NARRATED (manifest: sec-energy-harmonics · 6 cues: h2, p, formula, p, figure, callout) ═══ -->
+      <b1b-section id="sec-energy-harmonics" title="৫. শক্তির নিত্যতা, তথ্য সংরক্ষণ ও মহাজাগতিক বিস্তার (Energy Conservation &amp; The Preservation of Signals)">
+
+        <p>তরঙ্গ সমীকরণের পদার্থবৈজ্ঞানিক আত্মা নিহিত রয়েছে এর নিখুঁত শক্তি সংরক্ষণে। তাপ সমীকরণে যেখানে শক্তির রূপ একমুখীভাবে তাপে রূপান্তরিত হয়ে হারিয়ে যায়, তরঙ্গ সমীকরণে সেখানে শক্তি চিরকাল সম্পূর্ণ সংরক্ষিত থাকে। কম্পনশীল তারের মোট যান্ত্রিক শক্তি $E(t)$ দুটি উপাদানের সমন্বয়: উল্লম্ব অণুগুলোর গতিশক্তি (Kinetic Energy) এবং তারের ক্ষুদ্র বক্রতার জন্য সঞ্চিত স্থিতিস্থাপক স্থিতিশক্তি (Potential Energy)।</p>
+
+        <b1b-formula math="\frac{dE}{dt} = \int_0^L \left[ \mu \frac{\partial u}{\partial t}\frac{\partial^2 u}{\partial t^2} + T \frac{\partial u}{\partial x}\frac{\partial^2 u}{\partial x \partial t} \right] dx = 0"></b1b-formula>
+
+        <p>সমগ্র তারের ওপর শক্তির যোগফলকে সময়ের সাপেক্ষে ব্যবকলন করে তরঙ্গ সমীকরণ এবং আংশিক সমাকলন প্রয়োগ করলে দেখা যায় $\frac{dE}{dt} = 0$! এর অর্থ হলো, ঘর্ষণ বা সান্দ্রতাহীন মাধ্যমে তরঙ্গ শক্তি স্থান থেকে স্থানে পরিবাহিত হয়, কিন্তু মহাবিশ্বে তার মোট পরিমাণ এক ফোঁটাও কমে না। গতিশক্তি ও স্থিতিশক্তি অনবরত একে অপরে রূপান্তরিত হয়, ঠিক যেমন একটি পেন্ডুলাম বা সরল ছন্দিত স্পন্দকে ঘটে; কোনো শক্তি উত্তাপে হারিয়ে যায় না। মোট শক্তি: $$E(t) = \int_0^L \left[ \frac{1}{2}\mu \left( \frac{\partial u}{\partial t} \right)^2 + \frac{1}{2}T \left( \frac{\partial u}{\partial x} \right)^2 \right] dx$$</p>
+
+        <b1b-figure alt="গতিশক্তি ও স্থিতিশক্তির ফেজ বিনিময় এবং ধ্রুব মোট শক্তি" caption="গ্রাফে লক্ষ্য করুন: নীল গতিশক্তি ও কমলা স্থিতিশক্তি পর্যায়ক্রমে ঊর্ধ্ব-নিম্ন হচ্ছে, কিন্তু সবুজ মোট শক্তি রেখা সম্পূর্ণ সমতল—এটিই $dE/dt=0$ এর দৃশ্যমান প্রমাণ। যখন তার সম্পূর্ণ সোজা তখন বেগ সর্বোচচ হওয়ায় সমস্ত শক্তি গতিশক্তিতে, আর যখন সর্বোচ্চ স্থানচ্যুত তখন বক্রতা সর্বোচ্চ হওয়ায় সমস্ত শক্তি স্থিতিশক্তিতে জমা হয়। এই অবিরাম বিনিময়ই তরঙ্গকে ক্ষয়হীনভাবে এগিয়ে নিয়ে যায়।">
+          <svg viewBox="0 0 600 270" role="img" aria-label="Kinetic potential and total energy exchange" style="background:var(--bg-alt,#0b0c12);width:100%;height:auto;border-radius:8px;">
+            <line x1="50" y1="225" x2="570" y2="225" stroke="#8b949e" stroke-width="1.5"/>
+            <line x1="50" y1="225" x2="50" y2="30" stroke="#8b949e" stroke-width="1.5"/>
+            <path d="M55 150 Q 115 45 175 150 Q 235 255 295 150 Q 355 45 415 150 Q 475 255 565 150" fill="none" stroke="#74c0e3" stroke-width="3"/>
+            <path d="M55 150 Q 115 255 175 150 Q 235 45 295 150 Q 355 255 415 150 Q 475 45 565 150" fill="none" stroke="#ffa94d" stroke-width="3"/>
+            <line x1="55" y1="150" x2="565" y2="150" stroke="#10b981" stroke-width="3"/>
+            <text x="470" y="142" fill="#10b981" font-size="14">E = K + U (ধ্রুবক)</text>
+            <text x="60" y="60" fill="#74c0e3" font-size="13">K(t)</text>
+            <text x="60" y="205" fill="#ffa94d" font-size="13">U(t)</text>
+            <text x="20" y="28" fill="#8b949e" font-size="14">চিত্র ৫: শক্তির ফেজ বিনিময় ও নিত্যতা</text>
+          </svg>
+        </b1b-figure>
+
+        <b1b-callout type="gold" icon="💡" title="মহাজাগতিক বার্তা ও আলোর গতিবেগ">
+          <p>১৮৬৫ সালে জেমস ক্লার্ক ম্যাক্সওয়েল যখন তাঁর তড়িৎ ও চুম্বকত্বের সমীকরণগুলোকে একত্রিত করেন, তখন শূন্যস্থানে তড়িৎক্ষেত্র $\vec{E}$ এবং চৌম্বকক্ষেত্র $\vec{B}$-এর জন্য হুবহু ত্রিমাত্রিক তরঙ্গ সমীকরণটি বেরিয়ে আসে!</p>
+          <p>সেখানে তরঙ্গের বেগ ছিল $c = 1/\sqrt{\mu_0 \varepsilon_0}$, যা নির্ভুলভাবে আলোর পরিমাপকৃত গতিবেগের সমান। ম্যাক্সওয়েল উপলব্ধি করেছিলেন: আলো নিজেই একটি তরঙ্গ সমীকরণ মেনে চলা তড়িৎচৌম্বকীয় আলোড়ন! এই সমীকরণই কোটি আলোকবর্ষ দূর থেকে নক্ষত্রের আলো ও মহাকর্ষীয় তরঙ্গকে অবিকৃত অবস্থায় আমাদের টেলিস্কোপে পৌঁছে দেয়।</p>
+          <p>$$\frac{\partial^2 \vec{E}}{\partial t^2} = c^2 \nabla^2 \vec{E}, \quad \frac{\partial^2 \vec{B}}{\partial t^2} = c^2 \nabla^2 \vec{B}, \quad c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}$$</p>
+          <p>ক্যালকুলাসের দ্বিতীয় ক্রমের এই রূপান্তর স্থান ও কালের মাঝে এমন এক সেতুবন্ধন রচনা করে, যা আমাদের মহাবিশ্বকে আলো, সঙ্গীত ও চেতনার রঙে রাঙিয়ে তোলে।</p>
+        </b1b-callout>
+
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — image/video figures via b1b-media-tab (official 3B1B fallback clip, explicitly labelled) ═══ -->
+      <b1b-section id="sec-figures" title="চিত্র-সহায়ক ব্যাখ্যা: ছন্দ ও তরঙ্গ দুই মাধ্যমে" data-no-narration="true">
+        <p>নিচের চিত্রগুলো অধ্যায়ের চারটি কেন্দ্রীয় ধারণাকে দৃশ্যমান করে। প্রতিটির সাথে ২–৪ বাক্যের শিক্ষণীয় ব্যাখ্যা দেওয়া হলো। 'Video' ট্যাবে দেখানো ক্লিপটি <strong>সম্পর্কিত অফিশিয়াল ৩ব্লু১ব্রাউন ফলব্যাক</strong> (<code>r6sGWTCMz2k</code> — DE4, Fourier series); এটি তরঙ্গ ও হারমোনিক্সের সাথে সম্পর্কিত কিন্তু এই অধ্যায়ের নিজস্ব অফিশিয়াল ভিডিও নয়।</p>
+
+        <b1b-media-tab active-tab="image" caption="চিত্রে একটি টানটান তারের ক্ষুদ্র অংশ বক্র হয়ে গেছে। দুই প্রান্তের টান বল স্পর্শক বরাবর কাজ করায় তাদের উল্লম্ব উপাংশের ব্যবধান একটি নিট প্রত্যয়নী বল তৈরি করে—এটিই বক্রতা $\partial_x^2 u$। লক্ষ্য করুন বক্রতা যত বেশি, বল তত বড় এবং কণার ত্বরণ $\partial_t^2 u$ তত প্রবল; এই সমানুপাতিকতাই তরঙ্গ সমীকরণের ভৌত ভিত্তি। ভিডিও ট্যাবে অফিশিয়াল ক্লিপে এই বলের ধারাবাহিক গতি দেখা যাবে।">
+          <div slot="image"><svg viewBox="0 0 500 260" role="img" aria-label="Curved string restoring force" style="background:#0b1220;width:100%;height:auto;">
+            <path d="M30 190 Q 160 60 250 190 Q 340 320 470 190" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            <circle cx="250" cy="190" r="6" fill="#f472b6"/>
+            <line x1="250" y1="190" x2="250" y2="120" stroke="#fbbf24" stroke-width="3"/>
+            <path d="M250 120 l-9 14 h18 z" fill="#fbbf24"/>
+            <text x="258" y="112" fill="#fbbf24" font-size="15">F ∝ −∂²ₓu</text>
+            <line x1="60" y1="225" x2="440" y2="225" stroke="#8b949e" stroke-width="1.5"/>
+            <text x="30" y="34" fill="#e2e8f0" font-size="15">বক্রতা → প্রত্যয়নী বল → ত্বরণ</text>
+          </svg></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/r6sGWTCMz2k?start=25" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="সম্পর্কিত অফিশিয়াল ৩ব্লু১ব্রাউন ফলব্যাক (DE4): তরঙ্গ ও হারমোনিক"></iframe></div>
+        </b1b-media-tab>
+
+        <b1b-media-tab active-tab="image" caption="চিত্রে দুই প্রান্তে আটকানো তারের প্রথম তিনটি স্থায়ী তরঙ্গ মোড দেখা যাচ্ছে। মূল সুর $n=1$-এ মাঝখানে সর্বোচ্চ বিস্তার এবং দুই প্রান্তে নিস্পন্দ বিন্দু; $n=2$-এ মাঝখানে আরও একটি নিস্পন্দ বিন্দু যোগ হয় ও কম্পাঙ্ক দ্বিগুণ হয়। মোডের সংখ্যা বাড়ার সাথে সাথে নিস্পন্দ বিন্দুর সংখ্যাও বাড়ে—এই ক্রমবৃদ্ধিই হারমোনিক সিরিস তৈরি করে। ভিডিও ট্যাবে অফিশিয়াল ক্লিপে এই মোডগুলোর অ্যানিমেশন দেখা যাবে।">
+          <div slot="image"><svg viewBox="0 0 500 260" role="img" aria-label="Standing wave harmonics" style="background:#0b1220;width:100%;height:auto;">
+            <line x1="40" y1="60" x2="460" y2="60" stroke="#8b949e" stroke-width="1"/>
+            <line x1="40" y1="140" x2="460" y2="140" stroke="#8b949e" stroke-width="1"/>
+            <line x1="40" y1="220" x2="460" y2="220" stroke="#8b949e" stroke-width="1"/>
+            <path d="M40 60 Q 130 0 250 60 Q 370 120 460 60" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            <path d="M40 140 Q 100 90 160 140 Q 220 190 280 140 Q 340 90 400 140 Q 440 180 460 140" fill="none" stroke="#34d399" stroke-width="3"/>
+            <path d="M40 220 Q 85 175 130 220 Q 175 265 220 220 Q 265 175 310 220 Q 355 265 400 220 Q 440 180 460 220" fill="none" stroke="#fb923c" stroke-width="3"/>
+            <text x="465" y="65" fill="#38bdf8" font-size="13">n=1</text>
+            <text x="465" y="145" fill="#34d399" font-size="13">n=2</text>
+            <text x="465" y="225" fill="#fb923c" font-size="13">n=3</text>
+          </svg></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/r6sGWTCMz2k?start=180" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="সম্পর্কিত অফিশিয়াল ৩ব্লু১ব্রাউন ফলব্যাক (DE4): স্থির তরঙ্গ"></iframe></div>
+        </b1b-media-tab>
+
+        <b1b-media-tab active-tab="image" caption="চিত্রে একটি ত্রিভুজাকার খাঁজ সমান দুটি অর্ধ-উচ্চতার তরঙ্গে বিভক্ত হয়ে ডানে ও বামে ছুটে যাচ্ছে। দ্য'আলেমবার্ট সূত্র [$u=\frac12 u_0(x-ct)+\frac12 u_0(x+ct)$] প্রকাশ করে যে আদি আকৃতি কখনোই হারিয়ে যায় না—শুধু দুই ভাগে ভাগ হয়ে স্থান জুড়ে স্থানান্তরিত হয়। লক্ষ্য করুন দুই অগ্রগামী তরঙ্গের আকৃতি আদি খাঁজের হুবহু অর্ধাংশ, কোনো বিকৃতি নেই। ভিডিও ট্যাবে অফিশিয়াল ক্লিপে চলন্ত তরঙ্গের ধারাবাহিক গতি দেখা যাবে।">
+          <div slot="image"><svg viewBox="0 0 500 260" role="img" aria-label="Traveling pulse split" style="background:#0b1220;width:100%;height:auto;">
+            <line x1="20" y1="160" x2="480" y2="160" stroke="#8b949e" stroke-width="1.5"/>
+            <path d="M170 160 L250 60 L330 160" fill="none" stroke="#a78bfa" stroke-width="3" opacity="0.5"/>
+            <path d="M60 160 L120 110 L180 160" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            <path d="M320 160 L380 110 L440 160" fill="none" stroke="#34d399" stroke-width="3"/>
+            <text x="90" y="100" fill="#38bdf8" font-size="14">← ½u₀(x+ct)</text>
+            <text x="320" y="100" fill="#34d399" font-size="14">½u₀(x−ct) →</text>
+            <text x="190" y="50" fill="#a78bfa" font-size="14">আদি খাঁজ u₀(x)</text>
+          </svg></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/r6sGWTCMz2k?start=330" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="সম্পর্কিত অফিশিয়াল ৩ব্লু১ব্রাউন ফলব্যাক (DE4): চলন্ত তরঙ্গ"></iframe></div>
+        </b1b-media-tab>
+
+        <b1b-media-tab active-tab="image" caption="চিত্রে গতিশক্তি ও স্থিতিশক্তি পর্যায়ক্রমে ঊর্ধ্ব-নিম্ন হচ্ছে, অথচ সবুজ মোট শক্তি রেখা একেবারে সমতল। তরঙ্গের ক্ষেত্রে শক্তি কখনো তাপে রূপান্তরিত হয়ে হারিয়ে যায় না—কেবল এক রূপ থেকে অন্য রূপে যাতায়াত করে। এই নিখুঁত নিত্যতাই ($dE/dt=0$) আলোকে কোটি আলোকবর্ষ পথ অতিক্রম করেও অবিকৃত রাখে। ভিডিও ট্যাবে অফিশিয়াল ক্লিপে হারমোনিকের শক্তির এই ছন্দ দেখা যাবে।">
+          <div slot="image"><svg viewBox="0 0 500 260" role="img" aria-label="Energy conservation graph" style="background:#0b1220;width:100%;height:auto;">
+            <line x1="45" y1="215" x2="470" y2="215" stroke="#8b949e" stroke-width="1.5"/>
+            <line x1="45" y1="215" x2="45" y2="30" stroke="#8b949e" stroke-width="1.5"/>
+            <path d="M50 130 Q 100 45 150 130 Q 200 215 250 130 Q 300 45 350 130 Q 400 215 460 130" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            <path d="M50 130 Q 100 215 150 130 Q 200 45 250 130 Q 300 215 350 130 Q 400 45 460 130" fill="none" stroke="#fb923c" stroke-width="3"/>
+            <line x1="50" y1="130" x2="460" y2="130" stroke="#34d399" stroke-width="3"/>
+            <text x="350" y="122" fill="#34d399" font-size="13">E = K + U</text>
+          </svg></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/r6sGWTCMz2k?start=480" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="সম্পর্কিত অফিশিয়াল ৩ব্লু১ব্রাউন ফলব্যাক (DE4): শক্তি ও হারমোনিক"></iframe></div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <!-- ═══ Section — NON-NARRATED interactive lab ═══ -->
+      <b1b-section id="sec-interactive-lab" title="৬. ইন্টারেক্টিভ তারের কম্পন ও দ্য'আলেমবার্ট ল্যাব" data-no-narration="true">
+
+        <p>নিচের ল্যাবে আপনি একটি টানটান তারের প্রাথমিক আকৃতি, টান $T$, রৈখিক ঘনত্ব $\mu$ ও প্রান্তীয় শর্ত বদলে রিযেল-টাইমে তরঙ্গের গতি দেখতে পারবেন। বাঁ প্যানেলে দেখা যাবে তারের সরণ $u(x,t)$, ডান প্যানেলে গতিশক্তি $K(t)$, স্থিতিশক্তি $U(t)$ ও তাদের ধ্রুবক যোগফল $E$। লক্ষ্য করুন কীভাবে টান বাড়ালে তরঙ্গ দ্রুত ছুটে যায় এবং প্রতিফলনের সময় স্থির তরঙ্গ বা বিপরীতমুখী চলন্ত তরঙ্গের জন্ম হয়।</p>
+
+        <b1b-formula math="c = \sqrt{\frac{T}{\mu}}, \quad \omega_n = \frac{n\pi c}{L}, \quad u(x,t) = f(x-ct) + g(x+ct), \quad \frac{dE}{dt}=0"></b1b-formula>
+
+        <b1b-callout type="blue" icon="🕹️" title="ল্যাব ব্যবহারের নির্দেশিকা">
+          <p>১. 'প্রাথমিক আকৃতি' বদলে গিটারের খাঁজ, মূল সুর, মিশ্র হারমোনিক বা গাউসিয়ান পালস বেছে নিন।<br/>২. টান $T$ ও ঘনত্ব $\mu$ স্লাইডার ঘুরিয়ে তরঙ্গবেগ $c=\sqrt{T/\mu}$ কীভাবে বদলায় পর্যবেক্ষণ করুন।<br/>৩. 'প্রান্তীয় শর্ত' বদলে আটকানো প্রান্তে স্থির তরঙ্গ ও মুক্ত/পর্যায়বৃত্ত প্রান্তে দ্য'আলেমবার্টের বিপরীতমুখী তরঙ্গ দেখুন।<br/>৪. '↻ আবার চালো' বাটনে টিপে নতুন আদি অবস্থা থেকে সিমুলেশন রিসেট করুন।</p>
+        </b1b-callout>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <div class="viz-wrapper" id="waveVizWrapper">
+            <div class="viz-header"><span>🌊 তরঙ্গ সমীকরণ সিমুলেটর — স্লাইডার বদলে দেখুন!</span></div>
+            <div class="viz-canvas-container" style="position:relative;">
+              <canvas class="viz-canvas" id="waveCanvas" style="display:block;width:100%;height:auto;min-height:420px;background:#0b0c12;border-radius:10px;"></canvas>
+            </div>
+            <div class="viz-controls" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:14px;">
+              <div class="viz-slider-row"><label>প্রাথমিক আকৃতি:<select id="waveShape" style="width:100%;padding:6px;border-radius:6px;background:var(--bg-alt,#111827);color:var(--text,#e5e7eb);border:1px solid var(--border,#334155);">
+                <option value="pluck_triangle">টানটান গিটারের খাঁজ (Plucked Triangle)</option>
+                <option value="fundamental_sine">একক মূল সুর (Fundamental Sine)</option>
+                <option value="harmonic_multi">মিশ্র হারমোনিকস (Harmonic Superposition)</option>
+                <option value="gaussian_pulse">কেন্দ্রে গাউসিয়ান পালস (Traveling Pulse)</option>
+              </select></label></div>
+              <div class="viz-slider-row"><label>টান T (N): <span class="viz-val" id="waveTVal">১০০.০</span></label><input type="range" id="waveT" min="10" max="200" step="5" value="100" style="width:100%;"/></div>
+              <div class="viz-slider-row"><label>ঘনত্ব μ (kg/m): <span class="viz-val" id="waveMuVal">০.০১০</span></label><input type="range" id="waveMu" min="0.001" max="0.05" step="0.001" value="0.01" style="width:100%;"/></div>
+              <div class="viz-slider-row"><label>প্রান্তীয় শর্ত:<select id="waveBoundary" style="width:100%;padding:6px;border-radius:6px;background:var(--bg-alt,#111827);color:var(--text,#e5e7eb);border:1px solid var(--border,#334155);">
+                <option value="fixed">উভয় প্রান্তে আটকানো (Fixed Ends / Nodes)</option>
+                <option value="free">মুক্ত প্রান্ত (Free Ends / Antinodes)</option>
+                <option value="periodic">অনন্ত পর্যায়বৃত্ত সীমান্ত (Periodic Ring)</option>
+              </select></label></div>
+            </div>
+            <div class="viz-actions" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;">
+              <button type="button" class="viz-tool-btn" id="waveReset" style="background:var(--theme,#06b6d4);color:#000;font-weight:bold;border:0;border-radius:8px;padding:8px 14px;cursor:pointer;">↻ আবার চালো</button>
+              <button type="button" class="viz-tool-btn" id="wavePause" style="border:1px solid var(--border);border-radius:8px;padding:8px 14px;cursor:pointer;">⏸ বিরতি</button>
+            </div>
+            <div class="viz-info" id="waveInfo" style="margin-top:12px;color:var(--text-muted);font-size:0.9rem;">c = ১০০.০ m/s | f₁ = ৫.০০ Hz | E = 0.000 J</div>
+          </div>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ Section 6 — NON-NARRATED quizzes (exact data-JSON options + rich Bengali feedback) ═══ -->
+      <b1b-section id="sec-quizzes" title="৭. ধারণা যাচাই ও বহুনির্বাচনী কুইজ" data-no-narration="true">
+
+        <p>নিচের তিনটি কুইজ অধ্যায়ের ডাটা JSON থেকে নেওয়া হয়েছে — প্রতিটি অপশন ও সমৃদ্ধ বাংলা ফিডব্যাক হুবহু সংরক্ষিত। উত্তর বাছাই করে 'যাচাই করো' টিপুন।</p>
+
+        <b1b-quiz
+          question="❓ ১. একমাত্রিক তরঙ্গ সমীকরণ $\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}$-এ স্থানিক দ্বিতীয় অন্তরজ $\frac{\partial^2 u}{\partial x^2}$-এর স্বজ্ঞাত ভৌতিক তাৎপর্য কী?"
+          correct="1"
+          correct-msg="চমৎকার ও সম্পূর্ণ সঠিক! তার বাঁকা হলে দুই প্রান্তের স্পর্শক টানের উল্লম্ব উপাংশগুলোর ব্যবধান ঘটে, যা নিউটনের দ্বিতীয় সূত্রানুযায়ী কণার উল্লম্ব ত্বরণ $\frac{\partial^2 u}{\partial t^2}$ সৃষ্টি করে।"
+          wrong-msg="ভুল! তরঙ্গ সমীকরণে কোনো শক্তির অপচয় নেই, এটি একটি ক্ষয়হীন সংরক্ষণশীল সমীকরণ। কণাগুলো কেবল উল্লম্বভাবে স্পন্দিত হয়; অনুভূমিক গতিবেগ $c$ একটি ধ্রুবক সহগ। তাপীয় ব্যাপন তাপ সমীকরণের বৈশিষ্ট্য, তরঙ্গ সমীকরণের নয়। স্থানিক দ্বিতীয় অন্তরজ আসলে তারের স্থানীয় বক্রতা পরিমাপ করে।"
+          reveal-msg="সঠিক উত্তর: এটি তারের স্থানীয় বক্রতা পরিমাপ করে, যা স্পর্শক টানের অসমতার কারণে তারের কণাটির ওপর নিট উল্লম্ব প্রত্যয়নী বল ও ত্বরণ তৈরি করে। টানটান তারের জন্য স্থানিক দ্বিতীয় অন্তরজ হলো বক্রতার পরিমাপ। স্থানীয় বক্রতাই বলে দেয় দুই প্রান্তের টান বলের দিক কতটা ভিন্ন, যার ফলে সৃষ্টি হয় নিট ঊর্ধ্বমুখী বা নিম্নমুখী বল এবং ত্বরণ।">
+          <div slot="option">এটি তরঙ্গের মোট শক্তির অপচয়ের হার নির্দেশ করে</div>
+          <div slot="option">এটি তারের স্থানীয় বক্রতা পরিমাপ করে, যা স্পর্শক টানের অসমতার কারণে তারের কণাটির ওপর নিট উল্লম্ব প্রত্যয়নী বল ও ত্বরণ তৈরি করে</div>
+          <div slot="option">এটি তরঙ্গের অনুভূমিক গতিবেগকে সরাসরি পরিমাপ করে</div>
+          <div slot="option">এটি তারের তাপীয় ব্যাপন সহগের সমানুপাতিক</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ২. তারের টান $T$ চারগুণ বৃদ্ধি করা হলে এবং প্রতি একক দৈর্ঘ্যের ভর $\mu$ অপরিবর্তিত থাকলে তারের মধ্য দিয়ে তরঙ্গ সঞ্চালনের গতিবেগ $c = \sqrt{T/\mu}$ এবং তারের মূল সুরের কম্পাঙ্ক কত গুণ বৃদ্ধি পাবে?"
+          correct="2"
+          correct-msg="একদম নিখুঁত! যেহেতু $c = \sqrt{T/\mu}$, তাই টান চারগুণ ($4T$) হলে তরঙ্গের বেগ $\sqrt{4} = 2$ গুণ বৃদ্ধি পায়। আর মৌলিক কম্পাঙ্ক $f_1 = \frac{c}{2L}$ হওয়ায় কম্পাঙ্কও অবিকল ২ গুণ বৃদ্ধি পাবে!"
+          wrong-msg="ভুল! বেগ টানের সমানুপাতিক নয়, বরং টানের বর্গমূলের সমানুপাতিক; এটি বর্গের সমানুপাতিক নয়। টান বাড়ালে বেগ ও কম্পাঙ্ক উভয়ই প্রত্যক্ষভাবে বৃদ্ধি পায়, কেবল বিস্তার দ্বিগুণ হয় না।"
+          reveal-msg="সঠিক উত্তর: ২ গুণ বৃদ্ধি পাবে। তরঙ্গ বেগ $c = \sqrt{T/\mu}$ টানের বর্গমূলের সাথে পরিবর্তিত হয়। ফলে টান ৪ গুণ হলে বেগ দ্বিগুণ হয় এবং বাদ্যযন্ত্রের তারে উৎপন্ন সুরের কম্পাঙ্কও দ্বিগুণ (এক অক্টেভ উপরে) উঠে যায়।"
+          <div slot="option">৪ গুণ বৃদ্ধি পাবে</div>
+          <div slot="option">১৬ গুণ বৃদ্ধি পাবে</div>
+          <div slot="option">২ গুণ বৃদ্ধি পাবে</div>
+          <div slot="option">কোনো পরিবর্তন হবে না, কেবল বিস্তার দ্বিগুণ হবে</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৩. দ্য'আলেমবার্টের সমাধান $u(x, t) = f(x - ct) + g(x + ct)$-এর ক্ষেত্রে শুরুতে স্থির থাকা একটি তারের কেন্দ্রবিন্দুতে ত্রিভুজাকার খাঁজ তুলে ছেড়ে দিলে ($v_0(x) = 0$) তরঙ্গের গতিপ্রকৃতি কেমন হয়?"
+          correct="0"
+          correct-msg="অসাধারণ উত্তর! দ্য'আলেমবার্টের সূত্রানুযায়ী $u(x, t) = \frac{1}{2}u_0(x - ct) + \frac{1}{2}u_0(x + ct)$। ফলে আদি স্পন্দন অবিকল দুটি সমান বিপরীতমুখী অর্ধাংশে ভাগ হয়ে স্থান জুড়ে স্থানান্তরিত হয়।"
+          wrong-msg="ভুল! এটি তরঙ্গ সমীকরণ, তাপ সমীকরণ নয়—এতে কোনো শক্তি অপচয় বা মসৃণ হয়ে মিলিয়ে যাওয়ার প্রক্রিয়া নেই। মুক্ত বা চলন্ত অবস্থায় খাঁজটি স্থির থাকে না, বরং স্থান জুড়ে সঞ্চালিত হয়। প্রতিসাম্যের কারণে উভয় দিকেই সমান বিস্তারের তরঙ্গ ছুটে যায়, কেবল ডান দিকে নয়।"
+          reveal-msg="সঠিক উত্তর: প্রাথমিক ত্রিভুজাকার খাঁজটি সমান অর্ধেক উচ্চতার দুটি অভিন্ন তরঙ্গে বিভক্ত হয়ে যায়, যার একটি বেগ $c$ নিয়ে ডান দিকে এবং অপরটি বেগ $c$ নিয়ে বাম দিকে কোনো বিকৃতি ছাড়াই ছুটে চলে। আদি বেগ শূন্য হলে দ্য'আলেমবার্ট সূত্র $u(x, t) = \frac{1}{2}[u_0(x - ct) + u_0(x + ct)]$ প্রদান করে—যেকোনো প্রাথমিক আকৃতি দুটি অর্ধ-বিস্তারের অবিকৃত রূপ নিয়ে বিপরীত দুই দিকে ছুটে যায়।"
+          <div slot="option">প্রাথমিক ত্রিভুজাকার খাঁজটি সমান অর্ধেক উচ্চতার দুটি অভিন্ন তরঙ্গে বিভক্ত হয়ে যায়, যার একটি বেগ $c$ নিয়ে ডান দিকে এবং অপরটি বেগ $c$ নিয়ে বাম দিকে কোনো বিকৃতি ছাড়াই ছুটে চলে</div>
+          <div slot="option">তরঙ্গটি তাৎক্ষণিকভাবে মসৃণ হয়ে তাপ সমীকরণের মতো এক নিমেষে সমতল হয়ে যায়</div>
+          <div slot="option">পুরো খাঁজটি তার মূল স্থানেই আটকে থাকে এবং কেবল বিস্তার সময়ের সাথে বাড়তে থাকে</div>
+          <div slot="option">তরঙ্গটি কেবল ডান দিকে প্রবাহিত হয়, বাম দিকে কোনো তরঙ্গ সৃষ্টি হতে পারে না</div>
+        </b1b-quiz>
+
+        <!-- 100% data-JSON reference content: all key formulas + glossary -->
+        <b1b-callout type="blue" icon="📐" title="মূল সূত্র সংগ্রহ (Key Formulas — সম্পূর্ণ ডাটা JSON)">
+          <p>১. $\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}, \quad c = \sqrt{\frac{T}{\mu}}$ — একমাত্রিক তরঙ্গ সমীকরণ।<br/>
+          ২. $u_n(x, t) = \sin\left(\frac{n \pi x}{L}\right)\left[ A_n \cos(\omega_n t) + B_n \sin(\omega_n t) \right], \quad \omega_n = \frac{n \pi c}{L}$ — চলক পৃথকীকরণ আইগেনমোড।<br/>
+          ৩. $u(x, t) = f(x - ct) + g(x + ct)$ — দ্য'আলেমবার্টের সার্বিক রূপ।<br/>
+          ৪. $u(x, t) = \frac{u_0(x - ct) + u_0(x + ct)}{2} + \frac{1}{2c}\int_{x - ct}^{x + ct} v_0(s)\,ds$ — আদি শর্ত সাপেক্ষে দ্য'আলেমবার্ট সূত্র।<br/>
+          ৫. $E = \int_0^L \left[ \frac{1}{2}\mu \left(\frac{\partial u}{\partial t}\right)^2 + \frac{1}{2}T \left(\frac{\partial u}{\partial x}\right)^2 \right] dx, \quad \frac{dE}{dt} = 0$ — শক্তির নিত্যতা সমাকলন।<br/>
+          ৬. $\Box u = \frac{1}{c^2}\frac{\partial^2 u}{\partial t^2} - \nabla^2 u = 0, \quad \nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$ — ত্রিমাত্রিক তরঙ্গ সমীকরণ ও ডেল'আলেমবার্টিয়ান।</p>
+        </b1b-callout>
+
+        <b1b-callout type="green" icon="📖" title="পরিভাষা (Glossary)">
+          <p><strong>তরঙ্গ সমীকরণ (Wave Equation):</strong> একটি দ্বিতীয় ক্রমের রৈখিক আংশিক ডিফারেনশিয়াল সমীকরণ যা স্থান ও কালের মধ্য দিয়ে কোনো মাধ্যমের স্পন্দন বা তরঙ্গের ক্ষয়হীন সঞ্চালনকে বর্ণনা করে।</p>
+          <p><strong>দ্য'আলেমবার্টের সমাধান:</strong> তরঙ্গ সমীকরণের সাধারণ রূপ যা প্রমাণ করে প্রতিটি সমাধান দুটি বিপরীতমুখী অনড় চলন্ত তরঙ্গের যোগফল: $f(x - ct) + g(x + ct)$।</p>
+          <p><strong>স্থির তরঙ্গ (Standing Wave):</strong> সীমান্তে আটকানো মাধ্যমে বিপরীতমুখী তরঙ্গের উপরিপাতের ফলে সৃষ্ট তরঙ্গ, যেখানে কিছু নির্দিষ্ট বিন্দু (নিস্পন্দ বিন্দু) সর্বদাই স্থির থাকে।</p>
+          <p><strong>সুরের হারমোনিক্স (Harmonics / Normal Modes):</strong> একটি বাদ্যযন্ত্রের তারের নিজস্ব প্রাকৃতিক কম্পন মোড, যার কম্পাঙ্কগুলো মূল সুরের পূর্ণসংখ্যা গুণিতক।</p>
+          <p><strong>তরঙ্গ গতিবেগ (Wave Speed, c):</strong> মাধ্যমে তরঙ্গের ফেজ সঞ্চালনের গতিবেগ, যা তারের টান ও ভর ঘনত্বের অনুপাতের বর্গমূল $c = \sqrt{T/\mu}$ দ্বারা নির্ধারিত হয়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — official video fallback disclosure ═══ -->
+      <b1b-section id="sec-video-note" title="⚠️ ভিডিও ফলব্যাক সংক্রান্ত নোট" data-no-narration="true">
+        <b1b-callout type="red" icon="⚠️" title="এই অধ্যায়ের নিজস্ব অফিশিয়াল ৩ব্লু১ব্রাউন ভিডিও নেই">
+          <p>ডিফারেনশিয়াল সমীকরণ সিরিজে কেবল চারটি অফিশিয়াল ৩ব্লু১ব্রাউন ভিডিও আছে (ডিফারেনশিয়াল সমীকরণের ভ্রমণ, আংশিক ডিফারেনশিয়াল সমীকরণ, তাপ সমীকরণ ও ফুরিয়ার ধারা)। <strong>তরঙ্গ সমীকরণ ও কম্পন</strong> বিষয়ে কোনো স্বতন্ত্র অফিশিয়াল ভিডিও তৈরি হয়নি। ডাটা JSON-এর <code>youtube_id = ToIXSwZ1pJU</code> আসলে তাপ সমীকরণ অধ্যায়ের (DE4) আইডির একটি ডুপ্লিকেট/প্লেসহোল্ডার — এটি এই অধ্যায়ের সাথে মেলে না, তাই একে এখানে সত্যিকারের ম্যাচ হিসেবে দেখানো হয়নি।</p>
+          <p>এই পেইজের হিরো ও ওয়াচ প্যানেলের <code>video-src</code> পাথটি (<code>3b1b_de_06_full_dubbed.mp4</code>) ভবিষ্যতে কোনো ডাবড ভিডিও তৈরি হলে সংরক্ষিত রাখা হয়েছে — বর্তমানে কোনো ডাবড ভিডিও তৈরির পরিকল্পনা নেই। চিত্রের 'Video' ট্যাবে <strong>সম্পর্কিত অফিশিয়াল ৩ব্লু১ব্রাউন ফলব্যাক ক্লিপ</strong> (<code>r6sGWTCMz2k</code> — DE4, ফুরিয়ার ধারা) ব্যবহার করা হয়েছে; এটি তরঙ্গ ও হারমোনিক্সের সাথে সম্পর্কিত কিন্তু এই অধ্যায়ের অধ্যায়-নির্দিষ্ট ডাবিং নয়। সম্পূর্ণ পাঠ্যবস্তু, সূত্র, চিত্র ও কুইজ অফিশিয়াল ডাটা JSON থেকে নেওয়া হয়েছে এবং শিক্ষক অডিও ম্যানিফেস্টের সাথে ১:১ মিল রাখা হয়েছে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/differential_equations/lesson_06/experiments/3b1b_de_06_full_dubbed.mp4"
+    yt-id="r6sGWTCMz2k"
+    title="অধ্যায় ০৬: তরঙ্গ সমীকরণ ও কম্পন — সম্পর্কিত অফিশিয়াল ৩ব্লু১ব্রাউন ফলব্যাক ক্লিপ (DE4)"
+    subtitle="এই অধ্যায়ের নিজস্ব অফিশিয়াল ভিডিও নেই; নিচের ক্লিপটি তরঙ্গ ও হারমোনিক্সের সাথে সম্পর্কিত একটি অফিশিয়াল ৩ব্লু১ব্রাউন ক্লিপ (ফলব্যাক)। সম্পূর্ণ পাঠ্য ও শিক্ষক অডিও ডাটা JSON-ভিত্তিক।"
+    playlist-title="📋 প্লেলিস্ট — ডিফারেনশিয়াল সমীকরণ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_05.html"
+  prev-title="ফেজ পোর্ট্রেট ও রৈখিক ওডিই সিস্টেম"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url=""
+  next-title="সিরিজের শেষ অধ্যায়"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ WAVE EQUATION SIMULATOR (page-local lab script) ═══════════ -->
+<script>
+(function () {
+  function bn(v, d) { return v.toLocaleString('bn-BD', { minimumFractionDigits: d, maximumFractionDigits: d }); }
+  function init() {
+    var canvas = document.getElementById('waveCanvas');
+    if (!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext('2d');
+    var els = {
+      shape: document.getElementById('waveShape'), T: document.getElementById('waveT'),
+      mu: document.getElementById('waveMu'), boundary: document.getElementById('waveBoundary'),
+      Tv: document.getElementById('waveTVal'), muv: document.getElementById('waveMuVal'),
+      info: document.getElementById('waveInfo'), reset: document.getElementById('waveReset'),
+      pause: document.getElementById('wavePause')
+    };
+    var L = 10, N = 220, W = 900, H = 440, simT = 0, running = true;
+    var last = (window.performance && performance.now) ? performance.now() : Date.now();
+
+    function num(el, d) { return el ? parseFloat(el.value) : d; }
+    function params() {
+      return { shape: els.shape ? els.shape.value : 'pluck_triangle',
+               T: num(els.T, 100), mu: num(els.mu, 0.01),
+               boundary: els.boundary ? els.boundary.value : 'fixed' };
+    }
+    function cval(p) { return Math.sqrt(p.T / p.mu); }
+    function shapeFn(p, x) {
+      var c = L / 2;
+      switch (p.shape) {
+        case 'fundamental_sine': return Math.sin(Math.PI * x / L);
+        case 'harmonic_multi': return Math.sin(Math.PI * x / L) + 0.34 * Math.sin(3 * Math.PI * x / L) + 0.16 * Math.sin(5 * Math.PI * x / L);
+        case 'gaussian_pulse': return Math.exp(-Math.pow((x - c) / 0.9, 2));
+        default: var a = Math.abs(x - c); return a < 2.2 ? 1 - a / 2.2 : 0;
+      }
+    }
+    // Analytic standing-wave solution for fixed ends (mode superposition).
+    function uFixed(x, t, p) {
+      var c = cval(p), s = 0;
+      var modes = (p.shape === 'fundamental_sine') ? [1] : (p.shape === 'harmonic_multi' ? [1, 3, 5] : [1, 2, 3, 4, 5, 6, 7]);
+      for (var i = 0; i < modes.length; i++) {
+        var n = modes[i], an = 0, M = 240;
+        for (var j = 1; j < M; j++) {
+          var xx = L * j / M;
+          an += shapeFn(p, xx) * Math.sin(n * Math.PI * xx / L);
+        }
+        an *= 2 / M;
+        var wn = n * Math.PI * c / L;
+        s += an * Math.sin(n * Math.PI * x / L) * Math.cos(wn * t);
+      }
+      return s;
+    }
+    // d'Alembert solution for free/periodic ends: half amplitude each way.
+    function uTravel(x, t, p) {
+      var c = cval(p), y = 0, w = 2.4;
+      var left = x - c * t, right = x + c * t;
+      if (p.boundary === 'periodic') {
+        left = ((left % L) + L) % L; right = ((right % L) + L) % L;
+        y = 0.5 * shapeFn(p, left) + 0.5 * shapeFn(p, right);
+      } else {
+        function ref(z) { if (z < 0) return -z; if (z > L) return 2 * L - z; return z; }
+        y = 0.5 * shapeFn(p, ref(left)) + 0.5 * shapeFn(p, ref(right));
+      }
+      return y;
+    }
+    function u(x, t, p) { return p.boundary === 'fixed' ? uFixed(x, t, p) : uTravel(x, t, p); }
+
+    function syncLabels() {
+      var p = params(), c = cval(p);
+      if (els.Tv) els.Tv.textContent = bn(p.T, 1);
+      if (els.muv) els.muv.textContent = bn(p.mu, 3);
+    }
+    function resize() {
+      var container = canvas.parentElement;
+      W = (container && container.clientWidth) ? container.clientWidth : 900;
+      var wrapper = document.getElementById('waveVizWrapper');
+      var fs = wrapper && wrapper.querySelector('.b1b-fs-host.b1b-fs-active');
+      H = fs ? Math.max((window.innerHeight || 800) - 320, 380) : 440;
+      canvas.width = W; canvas.height = H;
+    }
+    function reset() { simT = 0; syncLabels(); }
+    function resetAndResize() { resize(); reset(); }
+    window.addEventListener('resize', resetAndResize);
+    if (els.shape) els.shape.addEventListener('change', reset);
+    if (els.boundary) els.boundary.addEventListener('change', reset);
+    ['T', 'mu'].forEach(function (k) { var el = els[k]; if (el) el.addEventListener('input', syncLabels); });
+    if (els.reset) els.reset.addEventListener('click', reset);
+    if (els.pause) els.pause.addEventListener('click', function () {
+      running = !running;
+      els.pause.textContent = running ? '⏸ বিরতি' : '▶ চালো';
+    });
+
+    function draw() {
+      var p = params(), c = cval(p);
+      var isDark = document.documentElement.classList.contains('dark') || document.documentElement.getAttribute('data-theme') === 'dark';
+      ctx.fillStyle = isDark ? '#0b0c12' : '#f8fafc'; ctx.fillRect(0, 0, W, H);
+      var pad = 46, plotW = W - pad * 2, midY = H * 0.46, amp = H * 0.22;
+      ctx.strokeStyle = 'rgba(255,255,255,0.14)'; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(pad, midY); ctx.lineTo(W - pad, midY); ctx.stroke();
+      ctx.fillStyle = isDark ? '#8b949e' : '#475569'; ctx.font = '14px sans-serif';
+      ctx.fillText('u(x,t) — তারের সরণ', pad, 26);
+
+      var pts = [], K = 0, U = 0, dx = L / (N - 1);
+      for (var i = 0; i < N; i++) {
+        var xx = L * i / (N - 1);
+        pts.push(u(xx, simT, p));
+      }
+      for (var j = 0; j < N; j++) {
+        var vel = (u(L * j / (N - 1), simT + 0.0015, p) - u(L * j / (N - 1), simT - 0.0015, p)) / 0.003;
+        var slope = (pts[Math.min(N - 1, j + 1)] - pts[Math.max(0, j - 1)]) / (2 * dx);
+        K += 0.5 * p.mu * vel * vel * dx;
+        U += 0.5 * p.T * slope * slope * dx;
+      }
+      ctx.beginPath();
+      for (var k = 0; k < N; k++) {
+        var px = pad + (k / (N - 1)) * plotW, py = midY - pts[k] * amp;
+        if (k === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+      }
+      ctx.strokeStyle = '#22d3ee'; ctx.lineWidth = 2.6; ctx.stroke();
+      ctx.fillStyle = '#06b6d4';
+      for (var n = 0; n <= 1; n++) { ctx.beginPath(); ctx.arc(pad + n * plotW, midY, 5, 0, 2 * Math.PI); ctx.fill(); }
+
+      // Energy bars
+      var by = H - 58, maxE = Math.max(0.0001, K + U);
+      function bar(x, w, val, col, label) {
+        ctx.fillStyle = 'rgba(255,255,255,0.07)'; ctx.fillRect(x, by, w, 12);
+        ctx.fillStyle = col; ctx.fillRect(x, by, w * Math.max(0, Math.min(1, val / maxE)), 12);
+        ctx.fillStyle = isDark ? '#cbd5e1' : '#334155'; ctx.font = '12px sans-serif';
+        ctx.fillText(label, x, by - 6);
+      }
+      bar(pad, plotW * 0.29, K, '#38bdf8', 'K(t) গতিশক্তি');
+      bar(pad + plotW * 0.35, plotW * 0.29, U, '#fb923c', 'U(t) স্থিতিশক্তি');
+      bar(pad + plotW * 0.70, plotW * 0.29, K + U, '#34d399', 'E = K + U (ধ্রুবক)');
+
+      var f1 = c / (2 * L);
+      if (els.info) els.info.textContent = 'c = ' + bn(c, 1) + ' m/s | f₁ = ' + bn(f1, 2) + ' Hz | K = ' + bn(K, 3) + ' J | U = ' + bn(U, 3) + ' J | E = ' + bn(K + U, 3) + ' J';
+    }
+    function loop(now) {
+      var dt = Math.min((now - last) / 1000, 0.05); last = now;
+      if (running) simT += dt * 0.06;
+      draw();
+      if (window.requestAnimationFrame) requestAnimationFrame(loop);
+    }
+    resetAndResize();
+    if (window.requestAnimationFrame) requestAnimationFrame(loop);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+</body>
+</html>

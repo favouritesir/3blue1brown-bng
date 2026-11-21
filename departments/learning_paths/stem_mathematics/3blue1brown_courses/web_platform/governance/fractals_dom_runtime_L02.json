@@ -1,0 +1,81 @@
+{
+  "runtime": [
+    {
+      "id": "sec-iteration",
+      "title": "পুনরাবৃত্তির জগৎ",
+      "noNarration": false
+    },
+    {
+      "id": "sec-holomorphic",
+      "title": "হলোমর্ফিক ফাংশন",
+      "noNarration": false
+    },
+    {
+      "id": "sec-newton-again",
+      "title": "নিউটনের পদ্ধতি নতুন করে দেখা",
+      "noNarration": false
+    },
+    {
+      "id": "sec-parameter",
+      "title": "প্যারামিটার স্পেস",
+      "noNarration": false
+    },
+    {
+      "id": "sec-mandelbrot",
+      "title": "ম্যান্ডেলব্রোট সেট",
+      "noNarration": false
+    },
+    {
+      "id": "sec-escape",
+      "title": "পলায়ন-সময় ও রঙ",
+      "noNarration": false
+    },
+    {
+      "id": "sec-conclusion",
+      "title": "উপসংহার",
+      "noNarration": false
+    },
+    {
+      "id": "sec-lab",
+      "title": "ইন্টারেক্টিভ ল্যাব ও কুইজ",
+      "noNarration": true
+    }
+  ],
+  "engine": [
+    {
+      "id": "sec-iteration",
+      "blocks": 6,
+      "cues": 6
+    },
+    {
+      "id": "sec-holomorphic",
+      "blocks": 6,
+      "cues": 6
+    },
+    {
+      "id": "sec-newton-again",
+      "blocks": 6,
+      "cues": 6
+    },
+    {
+      "id": "sec-parameter",
+      "blocks": 5,
+      "cues": 5
+    },
+    {
+      "id": "sec-mandelbrot",
+      "blocks": 6,
+      "cues": 6
+    },
+    {
+      "id": "sec-escape",
+      "blocks": 5,
+      "cues": 5
+    },
+    {
+      "id": "sec-conclusion",
+      "blocks": 3,
+      "cues": 3
+    }
+  ]
+}

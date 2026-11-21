@@ -1,0 +1,16 @@
+{
+  "lesson": "lesson_01",
+  "youtube_id": "-RdOwhmqP5s",
+  "youtube_url": "https://www.youtube.com/watch?v=-RdOwhmqP5s",
+  "oembed_author_name": "3Blue1Brown",
+  "oembed_author_url": "https://www.youtube.com/@3blue1brown",
+  "oembed_title": "Newton’s fractal (which Newton knew nothing about)",
+  "oembed_confirms_3b1b": true,
+  "ffprobe_duration_sec": 1565.141043,
+  "ffprobe_size_bytes": 968578169,
+  "video_codec": "av1",
+  "video_resolution": [
+    3840,
+    2160
+  ]
+}

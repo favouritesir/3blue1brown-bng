@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>টোপোলজি — ৩ব্লু১ব্রাউন বাংলা</title>
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<style>
+  .course-hero {
+    padding: 100px 24px 48px;
+    background: radial-gradient(circle at 50% 20%, rgba(167, 139, 250, 0.15), transparent 70%);
+    text-align: center;
+  }
+  .course-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    background: rgba(167, 139, 250, 0.15);
+    border: 1px solid var(--border-theme);
+    border-radius: 20px;
+    color: var(--theme);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .course-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+  .course-sub {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 680px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+  }
+  .course-stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .c-stat {
+    text-align: center;
+  }
+  .c-stat-val {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--theme);
+  }
+  .c-stat-lbl {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .chapters-container {
+    max-width: 960px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+  }
+  .chapter-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .chapter-row {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+  .chapter-row:hover {
+    border-color: var(--theme);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+  }
+  .ch-num {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--theme);
+    min-width: 48px;
+    text-align: center;
+    opacity: 0.85;
+  }
+  .ch-body {
+    flex: 1;
+  }
+  .ch-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+  .ch-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .ch-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .ch-tag {
+    font-size: 0.78rem;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+  }
+  .ch-action {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--theme);
+    font-weight: bold;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../../index.html">
+      <svg class="pi-logo" viewBox="-50 -50 100 100" aria-label="৩ব্লু১ব্রাউন">
+        <path fill="#74C0E3" d="M 0 0 L 0 -50 A 50 50 0 1 1 -50 0 z"/>
+        <path fill="#8C6239" d="M 0 0 L 0 -50 A 50 50 0 0 0 -50 0 z"/>
+        <circle cx="0" cy="0" r="22" fill="#000"/>
+        <circle cx="-8" cy="-6" r="7" fill="#fff"/>
+        <circle cx="8" cy="-6" r="7" fill="#fff"/>
+        <circle cx="-7" cy="-6" r="3.5" fill="#000"/>
+        <circle cx="9" cy="-6" r="3.5" fill="#000"/>
+        <path d="M -10 6 Q 0 14 10 6" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-title">৩ব্লু১ব্রাউন বাংলা</span>
+        <span class="logo-sub">কোর্স সূচিপত্র</span>
+      </div>
+    </a>
+
+    <div class="nav-breadcrumb">
+      <a href="../../index.html">হোম</a>
+      <span>/</span>
+      <span>টোপোলজি</span>
+    </div>
+
+    <div class="nav-actions">
+      <a href="../../board.html" style="color:var(--theme); font-weight:700; font-size:0.85rem; text-decoration:none; margin-right:8px;">📊 ট্র্যাকার বোর্ড</a>
+      <button class="icon-btn" id="themeBtn" onclick="toggleTheme()" title="থিম পরিবর্তন">🌙</button>
+      <a href="lesson_01.html" style="background:var(--theme); color:#000; padding:6px 16px; border-radius:20px; font-weight:bold; font-size:0.85rem;">শুরু করুন →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="course-hero">
+  <div class="course-badge">সম্পূর্ণ বাংলায় অনুদিত ও ভিজ্যুয়ালাইজড</div>
+  <h1 class="course-title">টোপোলজি</h1>
+  <p class="course-sub">Delightful proofs that showcase the true spirit of topology — মোবিয়াস স্ট্রিপ, কেশবহুল গোলক আর চুরি হওয়া হারের মতো ধাঁধার ভেতর দিয়ে টোপোলজির সুন্দর ও অপ্রত্যাশিত প্রমাণের সাথে পরিচিতি।</p>
+
+  <div class="course-stats-bar">
+    <div class="c-stat">
+      <div class="c-stat-val">৩</div>
+      <div class="c-stat-lbl">সম্পূর্ণ পাঠ</div>
+    </div>
+    <div class="c-stat">
+      <div class="c-stat-val">~৫৭ মি.</div>
+      <div class="c-stat-lbl">বাংলা ডাবড ভিডিও</div>
+    </div>
+    <div class="c-stat">
+      <div class="c-stat-val">১০০%</div>
+      <div class="c-stat-lbl">অফলাইন KaTeX গণিত</div>
+    </div>
+    <div class="c-stat">
+      <div class="c-stat-val">০%</div>
+      <div class="c-stat-lbl">ভোকাল ব্লিড / নয়েজ</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CHAPTERS LIST ═══════════ -->
+<main class="chapters-container">
+  <div class="chapter-grid">
+
+    <a href="lesson_01.html" class="chapter-row">
+      <div class="ch-num">০১</div>
+      <div class="ch-body">
+        <h2 class="ch-title">এই অমীমাংসিত সমস্যাই আমাকে টোপোলজি শিখিয়েছে (This open problem taught me what topology is)</h2>
+        <p class="ch-desc">অন্তর্লিখিত আয়তক্ষেত্র, জোড়া বিন্দুর টরাস ও মোবিয়াস স্ট্রিপ — একটি খোলা প্রশ্ন থেকে টোপোলজির জন্মকথা</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ ~২০:০০</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_02.html" class="chapter-row">
+      <div class="ch-num">০২</div>
+      <div class="ch-body">
+        <h2 class="ch-title">কেশবহুল গোলকের উপপাদ্য (The Hairy Ball Theorem)</h2>
+        <p class="ch-desc">বাতাসের শূন্য-বিন্দু, স্পর্শক ভেক্টর ক্ষেত্র ও ডিগ্রির বিরোধ — একটি হাস্যকর নামের উপপাদ্যের গভীর প্রমাণ</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ ~১৮:০০</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_03.html" class="chapter-row">
+      <div class="ch-num">০৩</div>
+      <div class="ch-body">
+        <h2 class="ch-title">চোরাগপ্তো টোপোলজি — বোরসুক–উলাম ও চুরি হওয়া হার (Sneaky Topology | The Borsuk-Ulam theorem and stolen necklaces)</h2>
+        <p class="ch-desc">বিপরীত বিন্দুর মিলন থেকে পুঁতির হারের ন্যায্য ভাগ — বিচ্ছিন্ন ধাঁধার সমাধানে টোপোলজির আশ্চর্য প্রয়োগ</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ ~১৯:০০</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>৩ব্লু১ব্রাউন বাংলা · মূল রচনা: Grant Sanderson · ভয়েস: bn-BD-PradeepNeural · অফলাইন গণিত: KaTeX v0.16.11</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="কাল্পনিক সংখ্যা i কোনো বিমূর্ত কল্পনা নয়—এটি সমতলে ৯০ ডিগ্রি ঘূর্ণন! আর্গাঁ সমতল, পোলার রূপ, জটিল সংখ্যার গুণনে স্কেলিং ও রোটেশন এবং ত্রিকোণমিতির সূত্রের জ্যামিতিক আবিষ্কার।"/>
+<title>জটিল সংখ্যার জ্যামিতিক রূপ ও গুণনের রহস্য | Complex Number Fundamentals &amp; Geometric Multiplication | লকডাউন ম্যাথ | ৩ব্লু১ব্রাউন বাংলা</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/lockdown_math/lesson_04/manifest.js?v=3"></script>
+
+<!-- ═══════════ SCRIPTS — exact L01 load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (LAST: parses the final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="লকডাউন ম্যাথ"
+  course-url="../../index.html#lockdown-math"
+  home-url="../../index.html"
+  chapter-num="০৪"
+  chapter-total="১০"
+  prev-url="lesson_03.html"
+  prev-title="পূর্ববর্তী অধ্যায়: সূচকীয় বৃদ্ধি ও মহামারী গণিত"
+  next-url="lesson_05.html"
+  next-title="পরবর্তী অধ্যায়: অয়লারের সূত্র ও ত্রিকোণমিতি"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="লকডাউন ম্যাথ"
+  course-url="../../index.html#lockdown-math"
+  chapter-label="অধ্যায় ০৪ · লকডাউন ম্যাথ ও জ্যামিতিক অন্তর্দৃষ্টি"
+  title="জটিল সংখ্যার জ্যামিতিক রূপ ও গুণনের রহস্য | Complex Number Fundamentals &amp; Geometric Multiplication"
+  desc="স্কুল বীজগণিতে শেখানো হয় i = √−1 যার কোনো বাস্তব অস্তিত্ব নেই। কিন্তু গ্রান্ট স্যান্ডারসনের দৃষ্টিতে i কোনো ভূতুড়ে সংখ্যা নয়—এটি একটি খাঁটি জ্যামিতিক অপারেশন: দ্বিমাত্রিক সমতলে ঘড়ির কাঁটার বিপরীত দিকে ৯০ ডিগ্রি ঘূর্ণন! জটিল সংখ্যার গুণ মানেই হলো কোণ যোগ এবং দৈর্ঘ্য গুণ।"
+  video-src="../../media_vault/lockdown_math/lesson_04/experiments/3b1b_lockdown_04_full_dubbed.mp4"
+  yt-id="5PcpBw5Hbwo"
+  date="লকডাউন সেশন ৪ · ২০২০"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner
+      title="শিক্ষক অডিও বিবরণ ও লাইভ কারাওকে সহকারী"
+      desc="দরদী শিক্ষকের কণ্ঠে প্রতিটি অনুচ্ছেদ, গাণিতিক সূত্র ও চিত্র বিবরণ শুনুন — সাথে রিয়েলটাইম হাইলাইটার ও কন্ট্রোল।"
+      cta="🎙️ শিক্ষকের কণ্ঠে শুনুন">
+    </b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"    time-bn="০০:০০">সংখ্যার ধারণার ক্রমবিকাশ ও ঋণাত্মক সংখ্যার ইতিহাস</b1b-bookmark>
+      <b1b-bookmark time="142"  time-bn="০২:২২">কাল্পনিক সংখ্যা i: সমতলে ৯০ ডিগ্রি ঘূর্ণন</b1b-bookmark>
+      <b1b-bookmark time="277" time-bn="০৪:৩৭">আর্গাঁ সমতল ও জটিল সংখ্যার কার্তেসীয় রূপ (a + bi)</b1b-bookmark>
+      <b1b-bookmark time="418" time-bn="০৬:৫৮">পোলার রূপ: মডুলাস ও আর্গুমেন্ট (r, θ)</b1b-bookmark>
+      <b1b-bookmark time="583" time-bn="০৯:৪৩">জটিল সংখ্যার গুণনের মূল জ্যামিতি: কোণ যোগ ও দৈর্ঘ্য গুণ</b1b-bookmark>
+      <b1b-bookmark time="727" time-bn="১২:০৭">জটিল সংখ্যার সাহায্যে ত্রিকোণমিতিক যোগফল সূত্র আবিষ্কার</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-number-extension">১. সংখ্যা ধারণার বিস্তৃতি: ঋণাত্মক সংখ্যা থেকে দ্বিমাত্রিক জগতে</a>
+      <a href="#sec-rotation-meaning">২. i-এর আসল অর্থ: সমতলে ৯০ ডিগ্রি ঘূর্ণন</a>
+      <a href="#sec-argand-plane">৩. আর্গাঁ চিত্র ও কার্তেসীয় স্থানাঙ্ক রূপ (a + bi)</a>
+      <a href="#sec-polar-form">৪. পোলার রূপ: দূরত্ব ও কোণের ভাষা (r, θ)</a>
+      <a href="#sec-complex-multiplication">৫. জটিল সংখ্যার গুণন: স্কেলিং ও রোটেশনের দ্বৈত নৃত্য</a>
+      <a href="#sec-trig-connection">৬. ত্রিকোণমিতির সূত্রাবলি: মুখস্থহীন জ্যামিতিক আবিষ্কার</a>
+      <a href="#sec-interactive-lab">৭. ইন্টারেক্টিভ জটিল সমতল ঘূর্ণন ও গুণন ল্যাব</a>
+      <a href="#sec-quizzes">৮. ধারণা যাচাই ও বহুনির্বাচনী কুইজ</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ NARRATED 1 — manifest sec-number-extension: h2 + 3p + 2formula = 6 cues ═══ -->
+      <b1b-section id="sec-number-extension" title="সংখ্যা ধারণার বিস্তৃতি: ঋণাত্মক সংখ্যা থেকে দ্বিমাত্রিক জগতে">
+        <p>সংখ্যা কেবল পরিমাপের একক নয়, সংখ্যা হলো এক একটি জ্যামিতিক রূপান্তর।</p>
+        <p>ঋণাত্মক ১ দ্বারা গুণ মানে সংখ্যারেখায় ১৮০ ডিগ্রি ঘূর্ণন।</p>
+        <p>জটিল সংখ্যা একমাত্রিক সংখ্যারেখাকে পূর্ণাঙ্গ দ্বিমাত্রিক সমতলে রূপান্তর করে।</p>
+        <b1b-formula math="1 \times (-1) = -1, \qquad (-1) \times (-1) = +1"></b1b-formula>
+        <b1b-formula math="i^2 = -1 \implies i = \sqrt{-1}"></b1b-formula>
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="সংখ্যারেখায় ১৮০ ডিগ্রি বিপরীতকরণ ও দুইটি ৯০ ডিগ্রি পদক্ষেপ" style="width:100%;height:auto;display:block">
+              <rect width="640" height="300" fill="#0f141c"/>
+              <text x="320" y="26" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">১ × (−1) = −1 : সংখ্যারেখায় ১৮০° বিপরীতকরণ</text>
+              <line x1="70" y1="140" x2="570" y2="140" stroke="#8b949e" stroke-width="2"/>
+              <polygon points="570,140 558,134 558,146" fill="#8b949e"/>
+              <circle cx="210" cy="140" r="7" fill="#10b981"/><text x="210" y="122" fill="#10b981" font-size="14" text-anchor="middle" font-family="sans-serif">−1</text>
+              <circle cx="320" cy="140" r="7" fill="#8b949e"/><text x="320" y="122" fill="#8b949e" font-size="14" text-anchor="middle" font-family="sans-serif">0</text>
+              <circle cx="430" cy="140" r="7" fill="#74c0e3"/><text x="430" y="122" fill="#74c0e3" font-size="14" text-anchor="middle" font-family="sans-serif">+1</text>
+              <path d="M 425 128 Q 320 40 215 128" fill="none" stroke="#f6ad55" stroke-width="2.5" stroke-dasharray="6 4"/>
+              <polygon points="215,128 226,124 220,136" fill="#f6ad55"/>
+              <text x="320" y="66" fill="#f6ad55" font-size="14" text-anchor="middle" font-family="sans-serif">৯০° + ৯০° = ১৮০°</text>
+              <text x="320" y="220" fill="#38bdf8" font-size="14" text-anchor="middle" font-family="sans-serif">দুইবার একই রূপান্তর → প্রতিবার ৯০° ঘূর্ণন</text>
+              <text x="320" y="254" fill="#8b949e" font-size="13" text-anchor="middle" font-family="sans-serif">একমাত্রিক রেখা ভেঙে দ্বিমাত্রিক সমতলে প্রবেশ</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_04/experiments/3b1b_lockdown_04_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্রে সংখ্যারেখার +১ বিন্দু থেকে −১ বিন্দু পর্যন্ত একটি কমলা ড্যাশড চাপ দেখানো হয়েছে — এটি −১ দ্বারা গুণনের ১৮০° বিপরীতকরণ। লক্ষ্য করুন, এই একই পথ দুটি সমান ৯০° পদক্ষেপে ভেঙে দিলে প্রতিটি পদক্ষেপ হয়ে যায় একটি ৯০° ঘূর্ণন, আর তা-ই হলো কাল্পনিক একক i। ছবিটি বোঝায় যে জটিল সংখ্যা কোনো কাল্পনিক জিনিস নয়, বরং একমাত্রিক রেখাকে পূর্ণ দ্বিমাত্রিক সমতলে প্রসারিত করার প্রাকৃতিক ধাপ।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <!-- STUDY NOTES (non-narrated) — full paragraphs, quote, callout -->
+      <b1b-section id="sec-number-extension-study" title="ঐতিহাসিক প্রেক্ষাপট ও সংখ্যা ধারণার বিবর্তন" data-no-narration="true">
+        <b1b-quote author="উইলিয়াম রোয়ান হ্যামিল্টন">নতুন গাণিতিক সত্য আবিষ্কারের উপায় হলো কোনো বাস্তব ধাঁধার সমান্তরাল জ্যামিতিক স্থান উন্মোচন করা।</b1b-quote>
+
+        <p>মানব সভ্যতার শুরুতে সংখ্যার ধারণা সীমাবদ্ধ ছিল কেবল গণনাযোগ্য স্বাভাবিক সংখ্যায় ($1, 2, 3...$)। যখন ঋণ বা ক্ষতির ধারণা আসলো, তখন ঋণাত্মক সংখ্যা যোগ হলো। ঋণাত্মক সংখ্যাকে অনেকে শুরুতে অর্থহীন ও অস্তিত্বহীন মনে করেছিলেন—কারণ টেবিলে কীভাবে 'ঋণাত্মক তিনটি আপেল' থাকতে পারে? কিন্তু যখন রেনে দেকার্ত ও জন ওয়ালিস সংখ্যাকে একটি একমাত্রিক সংখ্যারেখা (Number Line) হিসেবে প্রকাশ করলেন, তখন ঋণাত্মক সংখ্যা হয়ে উঠল একটি বিপরীতমুখী দিক। সংখ্যারেখায় ধনাত্মক ১-কে ঋণাত্মক ১ দ্বারা গুণ করার অর্থ হলো ১৮০ ডিগ্রি ঘুরে যাওয়া!</p>
+
+        <p>ঠিক একই ইতিহাস পুনরাবৃত্তি হয় যখন রেনেসাঁ যুগের গণিতবিদরা দ্বিঘাত ও ত্রিঘাত সমীকরণ সমাধান করতে গিয়ে ঋণাত্মক সংখ্যার বর্গমূলের মুখোমুখি হন। যদি ১-কে এমন কিছু দিয়ে গুণ করা হয় যা দুইবার প্রয়োগ করলে ফলাফল -১ হয়, তবে জ্যামিতিকভাবে সেই রূপান্তরটি আসলে কী?</p>
+
+        <p>একমাত্রিক সংখ্যারেখার বন্দিদশা ভেঙে যখন আমরা সমতলে পা রাখি, তখন স্পষ্ট হয়ে ওঠে যে দুটি ধারাবাহিক রূপান্তরে ১৮০ ডিগ্রি ঘোরার অর্থ হলো প্রতিটি পদক্ষেপে ঠিক ৯০ ডিগ্রি করে ঘোরা। জটিল সংখ্যা কোনো বিমূর্ত কল্পনা নয়—এটি একমাত্রিক সংখ্যারেখাকে একটি সম্পূর্ণ দ্বিমাত্রিক সমতলে প্রসারিত করার বিজ্ঞান।</p>
+
+        <b1b-callout type="blue" icon="💡" title="ঐতিহাসিক দৃষ্টিভঙ্গি">
+          <p>রেনে দেকার্ত এই সংখ্যাগুলোকে উপহাস করে 'কাল্পনিক' (Imaginary) নাম দিয়েছিলেন। কিন্তু গণিতবিদ কার্ল ফ্রিডরিখ গাউস মন্তব্য করেছিলেন: এই সংখ্যাগুলোকে যদি 'কাল্পনিক' না বলে 'পার্শ্ববর্তী' বা 'দ্বিমাত্রিক রূপান্তর' বলা হতো, তবে শত শত বছর ধরে শিক্ষার্থীদের মনে এই অহেতুক ভীতি তৈরি হতো না।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 2 — manifest sec-rotation-meaning: h2 + 3p + 2formula = 6 cues ═══ -->
+      <b1b-section id="sec-rotation-meaning" title="i-এর আসল অর্থ: সমতলে ৯০ ডিগ্রি ঘূর্ণন">
+        <p>কাল্পনিক একক i কোনো সংখ্যা নয়, এটি সমতলে ৯০° ঘড়ির কাঁটার বিপরীত ঘূর্ণন।</p>
+        <p>চারবার i প্রয়োগ করলে পূর্ণাঙ্গ ৩৬০° ঘূর্ণন সম্পন্ন হয় এবং মূল অবস্থানে ফেরা যায়।</p>
+        <p>i-এর ঘাত নির্ণয় মূলত ৪ মডুলো পাটিগণিতের জ্যামিতিক প্রতিচ্ছবি।</p>
+        <b1b-formula math="i^1 = i, \quad i^2 = -1, \quad i^3 = -i, \quad i^4 = 1"></b1b-formula>
+        <b1b-formula math="i^{4k + r} = i^r \qquad (r \in \{0, 1, 2, 3\})"></b1b-formula>
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="i দ্বারা গুণনের ৯০ ডিগ্রি ঘূর্ণন চক্র" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <text x="320" y="24" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">i দ্বারা গুণ = ৯০° ঘড়ির কাঁটার বিপরীত ঘূর্ণন</text>
+              <line x1="80" y1="170" x2="560" y2="170" stroke="#8b949e" stroke-width="1.5"/>
+              <line x1="320" y1="30" x2="320" y2="300" stroke="#8b949e" stroke-width="1.5"/>
+              <circle cx="320" cy="170" r="100" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <circle cx="420" cy="170" r="7" fill="#74c0e3"/><text x="438" y="162" fill="#74c0e3" font-size="15" font-family="sans-serif">1</text>
+              <circle cx="320" cy="70" r="7" fill="#f6ad55"/><text x="332" y="62" fill="#f6ad55" font-size="15" font-family="sans-serif">i</text>
+              <circle cx="220" cy="170" r="7" fill="#10b981"/><text x="196" y="162" fill="#10b981" font-size="15" font-family="sans-serif">−1</text>
+              <circle cx="320" cy="270" r="7" fill="#a78bfa"/><text x="332" y="284" fill="#a78bfa" font-size="15" font-family="sans-serif">−i</text>
+              <path d="M 414 158 Q 386 96 332 76" fill="none" stroke="#f6ad55" stroke-width="2.5"/>
+              <polygon points="332,76 344,80 337,90" fill="#f6ad55"/>
+              <path d="M 308 76 Q 254 96 226 158" fill="none" stroke="#10b981" stroke-width="2.5"/>
+              <polygon points="226,158 238,152 237,164" fill="#10b981"/>
+              <text x="320" y="306" fill="#8b949e" font-size="13" text-anchor="middle" font-family="sans-serif">১ → i → −1 → −i → ১ (৪ ধাপে ৩৬০°)</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_04/experiments/3b1b_lockdown_04_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্রে একক বৃত্তের চারটি বিন্দু ১, i, −১ ও −i সবুজ-কমলা তীর দিয়ে পর্যায়ক্রমে সংযুক্ত — প্রতিটি লাফ ঠিক ৯০° কোণে ঘড়ির কাঁটার বিপরীত দিকে। দৈর্ঘ্য সর্বত্র ১ থাকায় i কেবল দিক বদলায়, মান বদলায় না। লক্ষ্য করুন চারবার ঘুরলে আবার ১-এ ফিরে আসা যা i⁴ = 1 কে জ্যামিতিকভাবে প্রমাণ করে; এই চক্রই i-এর ঘাতকে ৪-মডুলো পাটিগণিতে রূপ দেয়।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <b1b-section id="sec-rotation-meaning-study" title="i কেন ৯০° ঘূর্ণন — ধাপে ধাপে যুক্তি" data-no-narration="true">
+        <p>বীজগণিতে সংজ্ঞায়িত করা হয়: $i$ হলো এমন এক সংখ্যা যার বর্গ -১। কিন্তু দৃষ্টিকে জ্যামিতিতে রূপান্তর করুন: ধরুন আপনার কাছে একটি স্কেলিং বা ঘূর্ণন ফ্যাক্টর $R$ আছে।</p>
+
+        <p>আমরা চাই $1 \times R \times R = -1$। সংখ্যারেখায় ধনাত্মক ১ বিন্দুতে দাঁড়িয়ে দুটি সমান ধাপে ১৮০ ডিগ্রি উল্টো দিকে (-১) পৌঁছাতে হলে প্রতিটি পদক্ষেপে ঘড়ির কাঁটার বিপরীত দিকে (Counterclockwise) ঠিক কত ডিগ্রি ঘুরতে হবে? স্পষ্টতই ৯০ ডিগ্রি!</p>
+
+        <p>সুতরাং, $i$ দ্বারা গুণ করার অর্থ হলো দ্বিমাত্রিক কার্তেসীয় সমতলে যেকোনো ভেক্টর বা সংখ্যাকে মূলবিন্দুর সাপেক্ষে ঘড়ির কাঁটার বিপরীতে ৯০° কোণে ঘুরিয়ে দেওয়া।</p>
+
+        <p>এবার চক্রটি পর্যবেক্ষণ করুন: ১-কে $i$ দিয়ে গুণ করলে তা অনুভূমিক বাস্তব অক্ষ থেকে উল্লম্ব অক্ষের ১ একক বিন্দুতে পৌঁছায় (যা হলো $i$)। পুনরায় $i$ দিয়ে গুণ করলে তা পৌঁছে যায় -১ এ ($i \times i = -1$)। তৃতীয়বার $i$ দিয়ে গুণ করলে পৌঁছায় $-i$ তে ($(-1) \times i = -i$)। আর চতুর্থবার $i$ দিয়ে গুণ করলে আবার শুরুতে ১-এ ফিরে আসে ($(-i) \times i = -i^2 = 1$)! এটিই হলো চক্রাকার ৪-ধাপের বৃত্তীয় পর্যায়ক্রম।</p>
+
+        <b1b-callout type="gold" icon="🔄" title="ঘূর্ণনের প্রতিসাম্য">
+          <p>$i$ কে একটি ক্রিয়াশীল অপারেটর হিসেবে ভাবুন। কোনো ভেক্টরকে $i$ দিয়ে গুণ করার অর্থ তার দৈর্ঘ্য অপরিবর্তিত রেখে তাকে কেবল ৯০ ডিগ্রি বামে কাত করে দেওয়া।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 3 — manifest sec-argand-plane: h2 + 3p + 2formula = 6 cues ═══ -->
+      <b1b-section id="sec-argand-plane" title="আর্গাঁ চিত্র ও কার্তেসীয় স্থানাঙ্ক রূপ (a + bi)">
+        <p>জটিল সমতলে অনুভূমিক অক্ষ বাস্তব এবং উল্লম্ব অক্ষ কাল্পনিক অংশ নির্দেশ করে।</p>
+        <p>জটিল সংখ্যার যোগফল জ্যামিতিকভাবে ভেক্টর যোগের অনুরূপ।</p>
+        <p>প্রতিটি জটিল সংখ্যা সমতলের একটি বিন্দু ও ভেক্টরের দ্বৈত পরিচয় ধারণ করে।</p>
+        <b1b-formula math="z = a + bi \quad (a, b \in \mathbb{R})"></b1b-formula>
+        <b1b-formula math="z_1 + z_2 = (a_1 + a_2) + (b_1 + b_2)i"></b1b-formula>
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="আর্গাঁ সমতলে z = a + bi বিন্দু ও ভেক্টর" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <text x="320" y="24" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">আর্গাঁ সমতল: z = a + bi → বিন্দু (a, b)</text>
+              <line x1="70" y1="200" x2="560" y2="200" stroke="#8b949e" stroke-width="1.5"/>
+              <polygon points="560,200 548,194 548,206" fill="#8b949e"/>
+              <line x1="320" y1="290" x2="320" y2="40" stroke="#8b949e" stroke-width="1.5"/>
+              <polygon points="320,40 314,52 326,52" fill="#8b949e"/>
+              <text x="566" y="205" fill="#74c0e3" font-size="13" font-family="sans-serif">Re</text>
+              <text x="330" y="50" fill="#f6ad55" font-size="13" font-family="sans-serif">Im</text>
+              <line x1="440" y1="200" x2="440" y2="100" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <line x1="320" y1="100" x2="440" y2="100" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <line x1="320" y1="200" x2="440" y2="100" stroke="#f6ad55" stroke-width="3"/>
+              <polygon points="440,100 428,106 435,114" fill="#f6ad55"/>
+              <circle cx="440" cy="100" r="6" fill="#10b981"/>
+              <text x="452" y="94" fill="#10b981" font-size="15" font-family="sans-serif">z = a + bi</text>
+              <text x="440" y="222" fill="#74c0e3" font-size="13" text-anchor="middle" font-family="sans-serif">a = Re(z)</text>
+              <text x="300" y="96" fill="#f6ad55" font-size="13" text-anchor="end" font-family="sans-serif">b = Im(z)</text>
+              <text x="320" y="310" fill="#8b949e" font-size="12" text-anchor="middle" font-family="sans-serif">দুটি জটিল সংখ্যার যোগ = ভেক্টরের সামান্তরিক যোগ</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_04/experiments/3b1b_lockdown_04_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্রে অনুভূমিক বাস্তব অক্ষ Re ও উল্লম্ব কাল্পনিক অক্ষ Im-এর ছেদবিন্দু থেকে কমলা ভেক্টরটি (a, b) বিন্দুতে পৌঁছেছে; নীল ড্যাশড রেখা দুটি a ও b উপাদান দেখাচ্ছে। সবুজ বিন্দুটি একই সাথে একটি বিন্দু ও একটি ভেক্টর — জটিল সংখ্যার দ্বৈত পরিচয়। বীজগণিতের $a+bi$ এবং জ্যামিতির $(a,b)$ যেখানে মিলে যায়, সেখানেই জটিল সংখ্যার শক্তি; দুটি জটিল সংখ্যা যোগ করলে বাস্তব ও কাল্পনিক অংশ আলাদাভাবে যুক্ত হয় ঠিক ভেক্টর যোগের মতো।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <b1b-section id="sec-argand-plane-study" title="জটিল সমতল ও কার্তেসীয় রূপ" data-no-narration="true">
+        <p>যখন আমরা একটি বাস্তব সংখ্যা $a$ এবং একটি কাল্পনিক সংখ্যা $bi$-কে একত্রে যোগ করি, তখন তৈরি হয় একটি সাধারণ জটিল সংখ্যা $z = a + bi$।</p>
+
+        <p>জিন-রবার্ট আর্গাঁ এবং কার্ল ফ্রিডরিখ গাউসের প্রস্তাবিত জটিল সমতল (Argand Diagram)-এ অনুভূমিক অক্ষটি হলো বাস্তব অক্ষ (Real Axis, $\text{Re}$) এবং উল্লম্ব অক্ষটি হলো কাল্পনিক অক্ষ (Imaginary Axis, $\text{Im}$)।</p>
+
+        <p>যেকোনো জটিল সংখ্যা $z = a + bi$ এই সমতলে একটি নির্দিষ্ট বিন্দু $(a, b)$ অথবা মূলবিন্দু থেকে সেই বিন্দু পর্যন্ত বিস্তৃত একটি অবস্থান ভেক্টর নির্দেশ করে।</p>
+
+        <p>দুটি জটিল সংখ্যার যোগফল $z_1 + z_2 = (a_1 + a_2) + (b_1 + b_2)i$ আসলে ভেক্টর যোগের সামান্তরিক সূত্রের অনুরূপ। বাস্তব অংশ বাস্তব অংশের সাথে এবং কাল্পনিক অংশ কাল্পনিক অংশের সাথে স্বাধীনভাবে যুক্ত হয়।</p>
+
+        <b1b-callout type="blue" icon="📌" title="সমতলের প্রতিটি বিন্দু একটি একক সংখ্যা!">
+          <p>সাধারণ দ্বিমাত্রিক কার্তেসীয় স্থানাঙ্কে $(x, y)$ ছিল দুটি ভিন্ন সংখ্যার জোড়া। কিন্তু জটিল সমতলে সম্পূর্ণ দ্বিমাত্রিক বিন্দুটি নিজেই একটি একক সংখ্যা $z$—যার মধ্যে বীজগণিত ও জ্যামিতি একীভূত হয়েছে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 4 — manifest sec-polar-form: h2 + 3p + 3formula = 7 cues ═══ -->
+      <b1b-section id="sec-polar-form" title="পোলার রূপ: দূরত্ব ও কোণের ভাষা (r, θ)">
+        <p>পোলার স্থানাঙ্কে জটিল সংখ্যা দূরত্ব r এবং কোণ θ দ্বারা নির্ধারিত হয়।</p>
+        <p>মডুলাস হলো সমতলে ভেক্টরের দৈর্ঘ্য এবং আর্গুমেন্ট হলো তার ঘূর্ণন কোণ।</p>
+        <p>পোলার রূপ জটিল সংখ্যার গুণ ও ভাগের জ্যামিতিক সারমর্ম উন্মোচন করে।</p>
+        <b1b-formula math="r = |z| = \sqrt{a^2 + b^2}"></b1b-formula>
+        <b1b-formula math="\theta = \text{arg}(z) = \arctan\left(\frac{b}{a}\right)"></b1b-formula>
+        <b1b-formula math="z = r (\cos\theta + i\sin\theta)"></b1b-formula>
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="পোলার স্থানাঙ্কে মডুলাস r ও আর্গুমেন্ট θ" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <text x="320" y="24" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">পোলার রূপ: z = r(cos θ + i sin θ)</text>
+              <line x1="70" y1="230" x2="560" y2="230" stroke="#8b949e" stroke-width="1.5"/>
+              <polygon points="560,230 548,224 548,236" fill="#8b949e"/>
+              <line x1="150" y1="280" x2="150" y2="40" stroke="#8b949e" stroke-width="1.5"/>
+              <line x1="150" y1="230" x2="430" y2="230" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <line x1="430" y1="230" x2="430" y2="100" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <line x1="150" y1="230" x2="430" y2="100" stroke="#f6ad55" stroke-width="3"/>
+              <polygon points="430,100 418,106 425,114" fill="#f6ad55"/>
+              <circle cx="430" cy="100" r="6" fill="#10b981"/>
+              <path d="M 218 230 Q 218 186 262 182" fill="none" stroke="#74c0e3" stroke-width="2"/>
+              <text x="238" y="212" fill="#74c0e3" font-size="14" font-family="sans-serif">θ</text>
+              <text x="288" y="158" fill="#f6ad55" font-size="16" font-weight="bold" font-family="sans-serif">r = |z|</text>
+              <text x="290" y="248" fill="#74c0e3" font-size="13" text-anchor="middle" font-family="sans-serif">a = r cos θ</text>
+              <text x="446" y="170" fill="#74c0e3" font-size="13" font-family="sans-serif">b = r sin θ</text>
+              <rect x="150" y="230" width="12" height="12" fill="none" stroke="#10b981" stroke-width="1.5"/>
+              <text x="320" y="306" fill="#8b949e" font-size="13" text-anchor="middle" font-family="sans-serif">পিথাগোরাস ও ত্রিকোণমিতি থেকে কার্তেসীয় ও পোলারের সেতু</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_04/experiments/3b1b_lockdown_04_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্রে কমলা ভেক্টরের দৈর্ঘ্য r অর্থাৎ মডুলাস, আর বাস্তব অক্ষের সাথে নীল চাপের কোণ θ অর্থাৎ আর্গুমেন্ট; ড্যাশড রেখা দুটি b ও a উপাদান। ছোট সবুজ বর্গাকার চিহ্নটি ডান কোণ বোঝায়, যার কারণেই পিথাগোরাস থেকে $r=\sqrt{a^2+b^2}$ পাওয়া যায়। এই রূপটিই গুণ ও ভাগের সময় সৌন্দর্য প্রকাশ করে — কারণ এখানে দৈর্ঘ্য ও কোণ আলাদা করে দেখা যায়।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <b1b-section id="sec-polar-form-study" title="মডুলাস ও আর্গুমেন্ট — বিশদ পাঠ" data-no-narration="true">
+        <p>যদিও কার্তেসীয় রূপ $a + bi$ যোগ করার জন্য অত্যন্ত সুবিধাজনক, কিন্তু গুণ ও ভাগের ক্ষেত্রে এটি আসল জ্যামিতিক সৌন্দর্য প্রকাশ করতে পারে না। এর জন্য প্রয়োজন পোলার রূপ বা পোলার স্থানাঙ্ক।</p>
+
+        <p>সমতলের যেকোনো বিন্দুকে অনুভূমিক ও উল্লম্ব দূরত্বের বদলে দুটি ভিন্ন উপায়ে প্রকাশ করা যায়: মূলবিন্দু থেকে বিন্দুর সরাসরি দূরত্ব বা দৈর্ঘ্য $r$ (যাকে বলা হয় মডুলাস বা পরমমান, $|z|$), এবং বাস্তব অক্ষের ধনাত্মক দিকের সাথে উৎপন্ন কোণ $\theta$ (যাকে বলা হয় আর্গুমেন্ট, $\text{arg}(z)$)।</p>
+
+        <p>পিথাগোরাসের উপপাদ্য এবং ত্রিকোণমিতি প্রয়োগ করে আমরা পাই: $a = r\cos\theta$ এবং $b = r\sin\theta$। ফলে জটিল সংখ্যাটিকে লেখা যায়: $z = r(\cos\theta + i\sin\theta)$।</p>
+
+        <b1b-callout type="gold" icon="📏" title="জ্যামিতিক দূরত্ব ও কোণ">
+          <p>মডুলাস $r$ নির্দেশ করে স্কেলিং ফ্যাক্টর (কতটা বড় বা ছোট), আর আর্গুমেন্ট $\theta$ নির্দেশ করে দিক বা ঘূর্ণন কোণ।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 5 — manifest sec-complex-multiplication: h2 + 3p + 2formula = 6 cues ═══ -->
+      <b1b-section id="sec-complex-multiplication" title="জটিল সংখ্যার গুণন: স্কেলিং ও রোটেশনের দ্বৈত নৃত্য">
+        <p>জটিল সংখ্যার গুণনে মডুলাসদ্বয় গুণ হয় এবং আর্গুমেন্টদ্বয় যোগ হয়।</p>
+        <p>একক বৃত্তের জটিল সংখ্যা দিয়ে গুণ করা কেবল স্থানটিকে নির্দিষ্ট কোণে ঘুরিয়ে দেয়।</p>
+        <p>দ্য মোয়াভ্রের উপপাদ্য সরাসরি এই ঘূর্ণন নীতির স্বাভাবিক অনুসিদ্ধান্ত।</p>
+        <b1b-formula math="|z_1 z_2| = |z_1| \cdot |z_2|, \qquad \text{arg}(z_1 z_2) = \text{arg}(z_1) + \text{arg}(z_2)"></b1b-formula>
+        <b1b-formula math="(\cos\theta + i\sin\theta)^n = \cos(n\theta) + i\sin(n\theta)"></b1b-formula>
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="জটিল গুণনে দৈর্ঘ্য গুণ ও কোণ যোগ" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <text x="320" y="24" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">গুণন = স্কেলিং × + রোটেশন ∠</text>
+              <line x1="70" y1="220" x2="560" y2="220" stroke="#8b949e" stroke-width="1.5"/>
+              <line x1="300" y1="290" x2="300" y2="40" stroke="#8b949e" stroke-width="1.5"/>
+              <circle cx="300" cy="220" r="70" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <line x1="300" y1="220" x2="400" y2="160" stroke="#74c0e3" stroke-width="3"/>
+              <polygon points="400,160 387,163 395,171" fill="#74c0e3"/>
+              <text x="404" y="154" fill="#74c0e3" font-size="14" font-family="sans-serif">z₁ = r₁∠θ₁</text>
+              <line x1="300" y1="220" x2="386" y2="260" stroke="#f6ad55" stroke-width="3"/>
+              <polygon points="386,260 373,253 377,265" fill="#f6ad55"/>
+              <text x="360" y="284" fill="#f6ad55" font-size="14" font-family="sans-serif">z₂ = r₂∠θ₂</text>
+              <line x1="300" y1="220" x2="500" y2="90" stroke="#10b981" stroke-width="4"/>
+              <polygon points="500,90 487,96 494,104" fill="#10b981"/>
+              <text x="466" y="80" fill="#10b981" font-size="15" font-family="sans-serif">z₁z₂ = r₁r₂ ∠(θ₁+θ₂)</text>
+              <path d="M 356 220 Q 356 176 400 164" fill="none" stroke="#74c0e3" stroke-width="2"/>
+              <path d="M 384 220 Q 440 170 486 100" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="4 4"/>
+              <text x="320" y="308" fill="#8b949e" font-size="13" text-anchor="middle" font-family="sans-serif">দৈর্ঘ্য গুণ হয়, কোণ যোগ হয় — স্কেল + রোটেশন</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_04/experiments/3b1b_lockdown_04_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্রে নীল z₁ ও কমলা z₂ ভেক্টরের গুণফল সবুজ z₁z₂ ভেক্টর — এর দৈর্ঘ্য r₁×r₂ এবং কোণ θ₁+θ₂। ড্যাশড সবুজ চাপটি দেখাচ্ছে z₁-কে কতটা প্রসারিত ও ঘুরিয়ে গুণফলে রূপ দেওয়া হয়েছে। যখন গুণকের মডুলাস ১ হয়, তখন শুধু ঘূর্ণন ঘটে; এই নীতি থেকেই দ্য মোয়াভ্রের উপপাদ্য সরাসরি উদ্ভূত হয়।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <b1b-section id="sec-complex-multiplication-study" title="গুণনের জ্যামিতি — পূর্ণ প্রাকৃতিক উন্মোচন" data-no-narration="true">
+        <p>এখন আমরা লকডাউন ম্যাথের সবচেয়ে কেন্দ্রীয় সত্যে উপনীত হয়েছি: দুটি জটিল সংখ্যা গুণ করলে জ্যামিতিকভাবে ঠিক কী ঘটে?</p>
+
+        <p>ধরা যাক, $z_1 = r_1(\cos\theta_1 + i\sin\theta_1)$ এবং $z_2 = r_2(\cos\theta_2 + i\sin\theta_2)$। বীজগণিতের মাধ্যমে বন্ধনী গুণ করে ত্রিকোণমিতিক সূত্র প্রয়োগ করলে আমরা একটি অবিস্মরণীয় রূপ পাই:</p>
+
+        <p>$z_1 z_2 = r_1 r_2 [(\cos\theta_1\cos\theta_2 - \sin\theta_1\sin\theta_2) + i(\sin\theta_1\cos\theta_2 + \cos\theta_1\sin\theta_2)]$ =</p>
+
+        <p>$r_1 r_2 [\cos(\theta_1 + \theta_2) + i\sin(\theta_1 + \theta_2)]$।</p>
+
+        <p>এর জ্যামিতিক তাৎপর্য অত্যন্ত গভীর: দুটি জটিল সংখ্যা গুণ করার সময় তাদের দৈর্ঘ্যগুলো সাধারণ সংখ্যার মতো গুণ হয় ($r_{\text{new}} = r_1 \times r_2$), কিন্তু তাদের কোণগুলো পরস্পরের সাথে সরাসরি যোগ হয় ($\theta_{\text{new}} = \theta_1 + \theta_2$)!</p>
+
+        <p>অর্থাৎ, যেকোনো জটিল সংখ্যা $z$ দিয়ে কোনো বিন্দুকে গুণ করার অর্থ হলো: সমতলটিকে $|z|$ অনুপাতে প্রসারিত করা (Scaling) এবং $\text{arg}(z)$ কোণে ঘুরিয়ে দেওয়া (Rotation)।</p>
+
+        <b1b-callout type="blue" icon="🎯" title="কেন i-এর বর্গ -১ হয় তার স্পষ্ট ব্যাখ্যা">
+          <p>$i$-এর দৈর্ঘ্য ১ এবং কোণ ৯০°। তাই $i \times i$-এর নতুন দৈর্ঘ্য হবে $1 \times 1 = 1$, এবং নতুন কোণ হবে $90^\circ + 90^\circ = 180^\circ$। ১৮০° কোণে ১ দৈর্ঘ্যের বিন্দুটি সংখ্যারেখার কোথায় পড়ে? ঠিক -১ এ! কোনো বিভ্রান্তি নেই, কোনো ভূত নেই—খাঁটি জ্যামিতি!</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 6 — manifest sec-trig-connection: h2 + 3p + 2formula = 6 cues ═══ -->
+      <b1b-section id="sec-trig-connection" title="ত্রিকোণমিতির সূত্রাবলি: মুখস্থহীন জ্যামিতিক আবিষ্কার">
+        <p>ত্রিকোণমিতির সমস্ত যৌগিক কোণের সূত্র জটিল সংখ্যার স্বাভাবিক গুণফল থেকে সরাসরি উদ্ভূত হয়।</p>
+        <p>বাস্তব অংশ কোসাইনের পরিবর্তন এবং কাল্পনিক অংশ সাইনের পরিবর্তন প্রকাশ করে।</p>
+        <p>জটিল সংখ্যায় কোণ যোগ হওয়া এবং বীজগণিতে পদগুলোর গুণফল এক ও অভিন্ন প্রক্রিয়া।</p>
+        <b1b-formula math="\cos(\alpha + \beta) = \cos\alpha\cos\beta - \sin\alpha\sin\beta"></b1b-formula>
+        <b1b-formula math="\sin(\alpha + \beta) = \sin\alpha\cos\beta + \cos\alpha\sin\beta"></b1b-formula>
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="একক বৃত্তে দুটি জটিল সংখ্যার গুণ থেকে কোণ যোগ সূত্র" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <text x="320" y="24" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">u·v = ∠(α+β) → ত্রিকোণমিতির সূত্র জন্ম নেয়</text>
+              <line x1="70" y1="220" x2="560" y2="220" stroke="#8b949e" stroke-width="1.5"/>
+              <line x1="300" y1="290" x2="300" y2="40" stroke="#8b949e" stroke-width="1.5"/>
+              <circle cx="300" cy="220" r="100" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <line x1="300" y1="220" x2="388" y2="170" stroke="#74c0e3" stroke-width="3"/>
+              <polygon points="388,170 375,173 383,181" fill="#74c0e3"/>
+              <text x="386" y="160" fill="#74c0e3" font-size="14" font-family="sans-serif">u = cosα + i sinα</text>
+              <line x1="300" y1="220" x2="362" y2="130" stroke="#f6ad55" stroke-width="3"/>
+              <polygon points="362,130 351,135 358,143" fill="#f6ad55"/>
+              <text x="300" y="112" fill="#f6ad55" font-size="14" font-family="sans-serif">v = cosβ + i sinβ</text>
+              <line x1="300" y1="220" x2="470" y2="92" stroke="#10b981" stroke-width="3.5"/>
+              <polygon points="470,92 457,99 464,107" fill="#10b981"/>
+              <text x="452" y="82" fill="#10b981" font-size="14" font-family="sans-serif">uv = ∠(α+β)</text>
+              <path d="M 346 220 Q 346 186 388 172" fill="none" stroke="#74c0e3" stroke-width="2"/>
+              <text x="360" y="210" fill="#74c0e3" font-size="12" font-family="sans-serif">α</text>
+              <path d="M 374 220 Q 388 190 390 168" fill="none" stroke="#f6ad55" stroke-width="2"/>
+              <text x="392" y="206" fill="#f6ad55" font-size="12" font-family="sans-serif">β</text>
+              <text x="320" y="308" fill="#8b949e" font-size="13" text-anchor="middle" font-family="sans-serif">বাস্তব অংশ → cos(α+β) · কাল্পনিক অংশ → sin(α+β)</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_04/experiments/3b1b_lockdown_04_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্রে একক বৃত্তের দুটি সংখ্যা u (কোণ α) ও v (কোণ β)-কে গুণ করে সবুজ uv ভেক্টর পাওয়া হয়েছে, যার কোণ α+β। বীজগণিতীয় গুণফলের বাস্তব অংশ থেকে $\cos(\alpha+\beta)$ আর কাল্পনিক অংশ থেকে $\sin(\alpha+\beta)$ — কোনো মুখস্থ সূত্র ছাড়াই সরাসরি বেরিয়ে আসে। ছবিটি দেখায় যে ত্রিকোণমিতি ও জটিল সংখ্যা আসলে একই ঘূর্ণনের দুই ভাষা; পরবর্তী অধ্যায়ে এই রূপটি $e^{i\theta}$ আকারে আরও সংক্ষিপ্ত হবে।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <b1b-section id="sec-trig-connection-study" title="মুখস্থ ছাড়াই ত্রিকোণমিতি ও অয়লারের পূর্বাভাস" data-no-narration="true">
+        <p>স্কুল জীবনে বেশিরভাগ শিক্ষার্থী $\cos(\alpha + \beta)$ এবং $\sin(\alpha + \beta)$-এর সূত্র মুখস্থ করতে গিয়ে বিভ্রান্তিতে পড়ে। চিহ্নের এলোমেলো হওয়া খুবই সাধারণ ভুল। কিন্তু জটিল সংখ্যা জানলে এই সূত্রগুলো মুখস্থ করার কোনো প্রয়োজনই থাকে না!</p>
+
+        <p>একক বৃত্তের দুটি সংখ্যা নেওয়া যাক: $u = \cos\alpha + i\sin\alpha$ এবং $v = \cos\beta + i\sin\beta$।</p>
+
+        <p>তাদের সাধারণ বীজগণিতীয় নিয়মে গুণ করা যাক: $uv = (\cos\alpha + i\sin\alpha)(\cos\beta + i\sin\beta) = (\cos\alpha\cos\beta - \sin\alpha\sin\beta) + i(\sin\alpha\cos\beta + \cos\alpha\sin\beta)$।</p>
+
+        <p>আবার জ্যামিতিক নিয়ম বলে: তাদের কোণ দুটি যোগ হয়ে নতুন সংখ্যাটি হবে $\cos(\alpha + \beta) + i\sin(\alpha + \beta)$।</p>
+
+        <p>উভয় পক্ষের বাস্তব অংশ এবং কাল্পনিক অংশ তুলনা করলেই এক নিমিষে ত্রিকোণমিতির বিখ্যাত কোণ যোগ সূত্র স্বতঃস্ফূর্তভাবে বেরিয়ে আসে! জটিল সংখ্যা এখানে ত্রিকোণমিতির জন্য এক অলৌকিক অ্যালজেব্রাইক জেনারেটর হিসেবে কাজ করে।</p>
+
+        <b1b-callout type="gold" icon="✨" title="গণিতের একীকরণ ও অয়লারের দিকে পদক্ষেপ">
+          <p>জটিল সংখ্যা কোনো বাড়তি বোঝা নয়; বরং জটিল সংখ্যা ত্রিকোণমিতি, জ্যামিতি ও বীজগণিতকে একটি একক ও সুসংহত ফ্রেমওয়ার্কে একীভূত করে। একক বৃত্তের $\cos\theta + i\sin\theta$ রূপটিকে পরবর্তী অধ্যায়ে অয়লারের সূত্র $e^{i\theta}$ হিসেবে লেখা হবে — সেটিই হবে এই পাঠের পরবর্তী অধ্যায়: অয়লারের সূত্র ও ত্রিকোণমিতি।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══════════ INTERACTIVE LAB (non-narrated) — inside b1b-fullscreen ═══════════ -->
+      <b1b-section id="sec-interactive-lab" title="৭. ইন্টারেক্টিভ জটিল সমতল ঘূর্ণন ও গুণন ল্যাব" data-no-narration="true" data-widget-id="complex-plane-multiplication-lab">
+        <p class="viz-intro">নিচের ইন্টারেক্টিভ ক্যানভাসটিতে দুটি জটিল সংখ্যা $z_1$ এবং $z_2$ দেওয়া আছে। স্লাইডার ব্যবহার করে তাদের মডুলাস ($r_1, r_2$) এবং আর্গুমেন্ট ($\theta_1, \theta_2$) পরিবর্তন করুন। লক্ষ্য করুন কীভাবে তাদের গুণফল ভেক্টর $z_1 z_2$ স্বয়ংক্রিয়ভাবে কোণ যোগ এবং দৈর্ঘ্য গুণের নিয়ম মেনে সমতলে নতুন রূপ নেয়:</p>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <div id="complexVizWrapper">
+            <style>
+              #complexVizWrapper .lm-lab-head { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:12px; padding-right:140px; }
+              #complexVizWrapper .lm-title { font-size:1.05rem; font-weight:700; color:var(--theme,#f6ad55); }
+              #complexVizWrapper .lm-reset { margin-left:auto; padding:8px 16px; border-radius:8px; border:1px solid var(--border); background:var(--bg-alt); color:var(--text-muted); font-weight:600; cursor:pointer; font-family:inherit; }
+              #complexVizWrapper canvas { display:block; width:100%; height:460px; background:#0b0c10; border-radius:8px; border:1px solid var(--border); }
+              #complexVizWrapper .lm-sliders { display:grid; grid-template-columns:1fr 1fr; gap:14px 24px; margin-top:16px; background:var(--bg-alt); padding:16px 20px; border-radius:8px; border:1px solid var(--border); }
+              #complexVizWrapper .lm-row { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+              #complexVizWrapper .lm-row label { font-weight:600; min-width:160px; }
+              #complexVizWrapper .lm-row input[type=range] { flex:1; min-width:140px; accent-color:#f6ad55; }
+              #complexVizWrapper .lm-badge { min-width:78px; font-family:monospace; font-weight:bold; padding:3px 8px; background:var(--bg-card); border:1px solid var(--border); border-radius:4px; text-align:center; color:#f6ad55; }
+              #complexVizWrapper .lm-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:16px; }
+              #complexVizWrapper .lm-stat { background:var(--bg-alt); border:1px solid var(--border); border-left:3px solid #10b981; border-radius:8px; padding:12px 14px; }
+              #complexVizWrapper .lm-stat span { display:block; font-size:.78rem; color:var(--text-muted); margin-bottom:4px; }
+              #complexVizWrapper .lm-stat strong { font-size:1.05rem; color:#10b981; font-family:monospace; }
+              #complexVizWrapper .lm-insight { margin-top:16px; padding:14px 16px; background:rgba(16,185,129,0.10); border:1px solid rgba(16,185,129,0.35); border-radius:8px; }
+              @media (max-width:640px){ #complexVizWrapper .lm-sliders { grid-template-columns:1fr; } }
+            </style>
+            <div class="lm-lab-head">
+              <span class="lm-title">🧮 জটিল গুণন ল্যাব — স্কেল × রোটেশন</span>
+              <button type="button" class="lm-reset" id="lmReset">↺ রিসেট</button>
+            </div>
+            <canvas id="complexCanvas" aria-label="জটিল সমতলে z1, z2 ও তাদের গুণফল"></canvas>
+            <div class="lm-sliders">
+              <div class="lm-row">
+                <label for="sliderR1">z₁ মডুলাস |z₁|</label>
+                <input type="range" id="sliderR1" min="0.5" max="3" step="0.1" value="1.5"/>
+                <span class="lm-badge" id="valR1">১.৫</span>
+              </div>
+              <div class="lm-row">
+                <label for="sliderTheta1">z₁ কোণ θ₁ (ডিগ্রি)</label>
+                <input type="range" id="sliderTheta1" min="0" max="360" step="5" value="30"/>
+                <span class="lm-badge" id="valTheta1">৩০°</span>
+              </div>
+              <div class="lm-row">
+                <label for="sliderR2">z₂ মডুলাস |z₂|</label>
+                <input type="range" id="sliderR2" min="0.5" max="3" step="0.1" value="1.2"/>
+                <span class="lm-badge" id="valR2">১.২</span>
+              </div>
+              <div class="lm-row">
+                <label for="sliderTheta2">z₂ কোণ θ₂ (ডিগ্রি)</label>
+                <input type="range" id="sliderTheta2" min="0" max="360" step="5" value="45"/>
+                <span class="lm-badge" id="valTheta2">৪৫°</span>
+              </div>
+            </div>
+            <div class="lm-stats">
+              <div class="lm-stat" data-stat-id="statZ1"><span>ভেক্টর z₁ (r₁ ∠ θ₁)</span><strong id="statZ1">1.50 ∠ 30°</strong></div>
+              <div class="lm-stat" data-stat-id="statZ2"><span>ভেক্টর z₂ (r₂ ∠ θ₂)</span><strong id="statZ2">1.20 ∠ 45°</strong></div>
+              <div class="lm-stat" data-stat-id="statProductMod"><span>গুণফলের মডুলাস |z₁| × |z₂|</span><strong id="statProductMod">1.80</strong></div>
+              <div class="lm-stat" data-stat-id="statProductArg"><span>গুণফলের আর্গুমেন্ট θ₁ + θ₂</span><strong id="statProductArg">75°</strong></div>
+            </div>
+            <div class="lm-insight" id="lmInsight">💡 লক্ষ্য করুন: যখন $|z_2| = 1.0$ রাখা হয়, তখন গুণফল ভেক্টরের দৈর্ঘ্য বাড়ে না—এটি কেবল $z_1$-কে $\theta_2$ কোণে নিখুঁতভাবে ঘুরিয়ে দেয়!</div>
+          </div>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══════════ QUIZZES (non-narrated) — exact JSON options + rich feedback ═══════════ -->
+      <b1b-section id="sec-quizzes" title="৮. ধারণা যাচাই ও বহুনির্বাচনী কুইজ" data-no-narration="true">
+        <b1b-quiz
+          question="❓ ১. জটিল সমতলে যেকোনো ভেক্টরকে কাল্পনিক একক $i$ দ্বারা গুণ করলে জ্যামিতিকভাবে কী পরিবর্তন ঘটে?"
+          correct="1"
+          correct-msg="একদম সঠিক! i-এর মান হলো ১ ∠ ৯০°। সুতরাং এটি দৈর্ঘ্য না বাড়িয়ে কেবল ৯০ ডিগ্রি বামে (অ্যান্টি-ক্লকওয়াইজ) ঘুরিয়ে দেয়।"
+          wrong-msg="আবার ভাবুন! i-এর মডুলাস ১ — তাই দৈর্ঘ্য বদলায় না। ১৮০° ঘূর্ণন আসে (−১) দ্বারা গুণে, i দ্বারা নয়; শূন্য দ্বারা গুণলে ভেক্টর মূলবিন্দুতে বিলীন হতো।"
+          reveal-msg="সঠিক উত্তর: ভেক্টরটি অপরিবর্তিত দৈর্ঘ্যে ঘড়ির কাঁটার বিপরীত দিকে ৯০° ঘুরে যায়। কাল্পনিক সংখ্যা i-এর মডুলাস ১ ও আর্গুমেন্ট ৯০°; জটিল গুণনের নিয়মে দৈর্ঘ্য ১ দ্বারা গুণ হওয়ায় অপরিবর্তিত থাকে এবং কোণ ৯০° যোগ হয়।">
+          <div slot="option">ভেক্টরটির দৈর্ঘ্য দ্বিগুণ হয়ে যায়</div>
+          <div slot="option">ভেক্টরটি অপরিবর্তিত দৈর্ঘ্যে ঘড়ির কাঁটার বিপরীত দিকে ৯০° ঘুরে যায়</div>
+          <div slot="option">ভেক্টরটি ১৮০° কোণে উল্টো দিকে ঘুরে যায়</div>
+          <div slot="option">ভেক্টরটি মূলবিন্দুতে বিলীন হয়ে যায়</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ২. যদি দুটি জটিল সংখ্যা $z_1 = 2(\cos 40^\circ + i\sin 40^\circ)$ এবং $z_2 = 3(\cos 50^\circ + i\sin 50^\circ)$ হয়, তবে তাদের গুণফল $z_1 z_2$-এর মান কত?"
+          correct="2"
+          correct-msg="চমৎকার! নতুন মডুলাস $2 \times 3 = 6$ এবং নতুন কোণ $40^\circ + 50^\circ = 90^\circ$। আর ৯০° কোণে একক ভেক্টর হলো i, ফলে ফলাফল ৬i।"
+          wrong-msg="আবার হিসাব করুন! মডুলাসদ্বয় যোগ নয়, গুণ হয় ($2\times3=6$); কোণদ্বয় গুণ নয়, যোগ হয় ($40^\circ+50^\circ=90^\circ$)। আর ৯০° কোণের মান কাল্পনিক অক্ষে থাকে, ঋণাত্মক বাস্তব অক্ষে নয়।"
+          reveal-msg="সঠিক উত্তর: $6i$ বা $6(\cos 90^\circ + i\sin 90^\circ)$। জটিল গুণনের জ্যামিতিক উপপাদ্য অনুসারে মডুলাসদ্বয় গুণ হয় ($2 \times 3 = 6$) এবং কোণদ্বয় যোগ হয় ($40^\circ + 50^\circ = 90^\circ$)। যেহেতু $\cos 90^\circ = 0$ এবং $\sin 90^\circ = 1$, ফলাফল $6(0 + 1i) = 6i$।">
+          <div slot="option">$5(\cos 90^\circ + i\sin 90^\circ)$</div>
+          <div slot="option">$6(\cos 2000^\circ + i\sin 2000^\circ)$</div>
+          <div slot="option">$6i$ বা $6(\cos 90^\circ + i\sin 90^\circ)$</div>
+          <div slot="option">$-6$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৩. $i^{2026}$-এর মান নিচের কোনটি?"
+          correct="2"
+          correct-msg="অসাধারণ! ২০২৬ কে ৪ দিয়ে ভাগ করলে ভাগশেষ থাকে ২। ফলে $i^{2026} = i^2 = -1$।"
+          wrong-msg="আবার চেষ্টা করুন! i-এর ঘাত ৪ ধাপে চক্রাকারে পুনরাবৃত্ত হয়। ২০২৬ কে ৪ দিয়ে ভাগ করলে ভাগশেষ ২ — ভাগশেষ ১ হলে $i$, ৩ হলে $-i$ হতো; ২০২৬ ৪ দ্বারা নিঃশেষে বিভাজ্য নয়।"
+          reveal-msg="সঠিক উত্তর: $-1$। $i$-এর ঘাত প্রতি ৪ ধাপে চক্রাকারে পুনরাবৃত্ত হয় ($i^4 = 1$)। এখানে $2026 = 4 \times 506 + 2$। সুতরাং $i^{2026} = (i^4)^{506} \cdot i^2 = 1^{506} \cdot (-1) = -1$।">
+          <div slot="option">$1$</div>
+          <div slot="option">$i$</div>
+          <div slot="option">$-1$</div>
+          <div slot="option">$-i$</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══════════ FORMULA REFERENCE & GLOSSARY (non-narrated) ═══════════ -->
+      <b1b-section id="sec-formulas-glossary" title="সূত্র সংগ্রহ ও পরিভাষা" data-no-narration="true">
+        <b1b-callout type="blue" icon="🧮" title="পাঁচটি গুরুত্বপূর্ণ সূত্র">
+          <p>কাল্পনিক এককের সংজ্ঞা: $i^2 = -1 \iff i = \sqrt{-1}$</p>
+          <p>জটিল সংখ্যার পোলার রূপ: $z = r(\cos\theta + i\sin\theta)$</p>
+          <p>মডুলাস ও আর্গুমেন্ট: $r = \sqrt{a^2 + b^2}, \quad \theta = \arctan\left(\frac{b}{a}\right)$</p>
+          <p>জটিল গুণনের জ্যামিতিক নীতি: $|z_1 z_2| = |z_1||z_2|, \quad \text{arg}(z_1 z_2) = \text{arg}(z_1) + \text{arg}(z_2)$</p>
+          <p>দ্য মোয়াভ্রের উপপাদ্য: $(\cos\theta + i\sin\theta)^n = \cos(n\theta) + i\sin(n\theta)$</p>
+        </b1b-callout>
+
+        <b1b-callout type="gold" icon="📖" title="পরিভাষা (Glossary)">
+          <p><strong>Argand Plane — আর্গাঁ সমতল:</strong> জটিল সংখ্যার দ্বিমাত্রিক জ্যামিতিক লেখচিত্র যেখানে অনুভূমিক অক্ষ বাস্তব এবং উল্লম্ব অক্ষ কাল্পনিক অংশ প্রকাশ করে।</p>
+          <p><strong>Modulus — মডুলাস বা পরমমান:</strong> জটিল সমতলে মূলবিন্দু থেকে জটিল সংখ্যা নির্দেশক বিন্দুর সরাসরি ইউক্লিডীয় দূরত্ব।</p>
+          <p><strong>Argument — আর্গুমেন্ট বা কোণ:</strong> বাস্তব অক্ষের ধনাত্মক দিকের সাথে ভেক্টরটির উৎপন্ন ঘড়ির কাঁটার বিপরীত কোণ।</p>
+          <p><strong>Scale and Rotate — স্কেলিং ও ঘূর্ণন:</strong> জটিল সংখ্যার গুণনের মূল জ্যামিতিক প্রক্রিয়া—দৈর্ঘ্যের গুণন ও কোণের যোগফল।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/lockdown_math/lesson_04/experiments/3b1b_lockdown_04_full_dubbed.mp4"
+    yt-id="5PcpBw5Hbwo"
+    title="জটিল সংখ্যার জ্যামিতিক রূপ ও গুণনের রহস্য — অধ্যায় ০৪"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — লকডাউন ম্যাথ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_03.html"
+  prev-title="সূচকীয় বৃদ্ধি ও মহামারী গণিত"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_05.html"
+  next-title="অয়লারের সূত্র ও ত্রিকোণমিতি"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ PAGE-LOCAL INTERACTIVE LAB CONTROLLER ═══════════
+     Scoped to #complexVizWrapper; does not touch the shared component library. -->
+<script>
+(function () {
+  'use strict';
+  function initLab() {
+    const lab = document.getElementById('complexVizWrapper');
+    if (!lab || lab.dataset.inited) return;
+    lab.dataset.inited = '1';
+
+    const $ = (id) => document.getElementById(id);
+    const canvas = $('complexCanvas');
+    const sliders = [$('sliderR1'), $('sliderTheta1'), $('sliderR2'), $('sliderTheta2')];
+    if (!canvas || sliders.some(s => !s)) return;
+    const ctx = canvas.getContext('2d');
+
+    function math(scope) {
+      if (scope && typeof window.renderMathInElement === 'function') {
+        window.renderMathInElement(scope, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false
+        });
+      }
+    }
+
+    function readState() {
+      const r1 = parseFloat(sliders[0].value) || 1.5;
+      const t1 = parseFloat(sliders[1].value) || 0;
+      const r2 = parseFloat(sliders[2].value) || 1.2;
+      const t2 = parseFloat(sliders[3].value) || 0;
+      const pMod = r1 * r2;
+      const pArg = t1 + t2;
+      return { r1, t1, r2, t2, pMod, pArg };
+    }
+
+    function polar(r, deg) {
+      const a = (deg * Math.PI) / 180;
+      return { x: r * Math.cos(a), y: r * Math.sin(a) };
+    }
+
+    function updatePanel(s) {
+      $('valR1').textContent = s.r1.toFixed(1).replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[d]);
+      $('valTheta1').textContent = String(Math.round(s.t1)).replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[d]) + '°';
+      $('valR2').textContent = s.r2.toFixed(1).replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[d]);
+      $('valTheta2').textContent = String(Math.round(s.t2)).replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[d]) + '°';
+      $('statZ1').textContent = s.r1.toFixed(2) + ' ∠ ' + Math.round(s.t1) + '°';
+      $('statZ2').textContent = s.r2.toFixed(2) + ' ∠ ' + Math.round(s.t2) + '°';
+      $('statProductMod').textContent = s.pMod.toFixed(2);
+      $('statProductArg').textContent = Math.round(s.pArg) + '°';
+    }
+
+    function drawVector(ox, oy, unit, vec, color, label, width) {
+      const px = ox + vec.x * unit;
+      const py = oy - vec.y * unit;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = width || 3;
+      ctx.beginPath();
+      ctx.moveTo(ox, oy);
+      ctx.lineTo(px, py);
+      ctx.stroke();
+      const ang = Math.atan2(oy - py, px - ox);
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.moveTo(px, py);
+      ctx.lineTo(px - 11 * Math.cos(ang - 0.42), py - 11 * Math.sin(ang - 0.42));
+      ctx.lineTo(px - 11 * Math.cos(ang + 0.42), py - 11 * Math.sin(ang + 0.42));
+      ctx.closePath();
+      ctx.fill();
+      ctx.font = 'bold 14px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(label, px + (px >= ox ? 34 : -34), py - 10);
+    }
+
+    function draw(s) {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      const W = Math.max(320, rect.width || 640);
+      const H = 460;
+      canvas.width = W * dpr;
+      canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#0b0c10' : '#f8f9fa';
+      ctx.fillRect(0, 0, W, H);
+
+      const ox = W / 2, oy = H / 2;
+      const unit = Math.min(W, H) / 9;
+
+      ctx.strokeStyle = dark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.07)';
+      ctx.lineWidth = 1;
+      for (let x = ox % unit; x < W; x += unit) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+      for (let y = oy % unit; y < H; y += unit) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+
+      ctx.strokeStyle = dark ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)';
+      ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(0, oy); ctx.lineTo(W, oy); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(ox, 0); ctx.lineTo(ox, H); ctx.stroke();
+      ctx.font = '13px sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillStyle = dark ? '#8b949e' : '#475569';
+      ctx.fillText('Re', W - 34, oy - 10);
+      ctx.fillText('Im', ox + 10, 22);
+
+      ctx.strokeStyle = dark ? 'rgba(56,189,248,0.35)' : 'rgba(2,132,199,0.25)';
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([5, 4]);
+      ctx.beginPath(); ctx.arc(ox, oy, unit, 0, 2 * Math.PI); ctx.stroke();
+      ctx.setLineDash([]);
+
+      drawVector(ox, oy, unit, polar(s.r1, s.t1), '#74c0e3', 'z₁', 3);
+      drawVector(ox, oy, unit, polar(s.r2, s.t2), '#f6ad55', 'z₂', 3);
+      drawVector(ox, oy, unit, polar(s.pMod, s.pArg), '#10b981', 'z₁z₂', 4);
+
+      ctx.fillStyle = dark ? '#e2e8f0' : '#1e293b';
+      ctx.font = '13px sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillText('|z₁z₂| = ' + s.pMod.toFixed(2) + '  ·  arg(z₁z₂) = ' + Math.round(s.pArg) + '°', 16, H - 16);
+    }
+
+    function update() {
+      const s = readState();
+      updatePanel(s);
+      draw(s);
+    }
+
+    sliders.forEach(sl => sl.addEventListener('input', update));
+    $('lmReset').addEventListener('click', () => {
+      sliders[0].value = '1.5';
+      sliders[1].value = '30';
+      sliders[2].value = '1.2';
+      sliders[3].value = '45';
+      update();
+    });
+    window.addEventListener('resize', update);
+    window.addEventListener('b1b-fullscreen-change', update);
+    math($('lmInsight'));
+    update();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLab);
+  } else {
+    initLab();
+  }
+})();
+</script>
+
+</body>
+</html>

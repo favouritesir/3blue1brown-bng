@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>গ্রুপ তত্ত্ব, বিমূর্ততা ও ১৯৬,৮৮৩-মাত্রিক মনস্টার | Group theory, abstraction, and the 196,883-dimensional monster</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/group_theory/lesson_01/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="গ্রুপ তত্ত্ব"
+  course-url="../../index.html#group-theory"
+  home-url="../../index.html"
+  chapter-num="০১"
+  chapter-total="০২"
+  prev-url=""
+  next-url="lesson_02.html"
+  next-title="পরবর্তী অধ্যায়: ইউলারের সূত্র গ্রুপ তত্ত্বের মাধ্যমে"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="গ্রুপ তত্ত্ব"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০১ · গ্রুপ তত্ত্ব"
+  title="গ্রুপ তত্ত্ব, বিমূর্ততা ও ১৯৬,৮৮৩-মাত্রিক মনস্টার | Group theory, abstraction, and the 196,883-dimensional monster"
+  desc="প্রতিসাম্য, গ্রুপ তত্ত্ব, আইসোমরফিজম এবং মনস্টার গ্রুপের পরিচিতি"
+  video-src="../../media_vault/group_theory/lesson_01/experiments/3b1b_group_theory_01_full_dubbed.mp4"
+  yt-id="mH0oCDa74tE"
+  date="১৯ আগস্ট, ২০২০"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2020/monster.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+        <b1b-bookmark time="0" time-bn="০০:০০">আমার প্রিয় মেগা-সংখ্যা</b1b-bookmark>
+        <b1b-bookmark time="69" time-bn="০১:০৯">গ্রুপের স্বজ্ঞাত সংজ্ঞা</b1b-bookmark>
+        <b1b-bookmark time="234" time-bn="০৩:৫৪">গ্রুপের চারটি স্বত্ব</b1b-bookmark>
+        <b1b-bookmark time="350" time-bn="০৫:৫০">আইসোমরফিজম</b1b-bookmark>
+        <b1b-bookmark time="432" time-bn="০৭:১২">মনস্টার</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-intro">১. আমার প্রিয় মেগা-সংখ্যা</a>
+      <a href="#sec-definition">২. গ্রুপের স্বজ্ঞাত সংজ্ঞা</a>
+      <a href="#sec-axioms">৩. গ্রুপের গাণিতিক সংজ্ঞা</a>
+      <a href="#sec-isomorphism">৪. বিভিন্ন গ্রুপের তুলনা ও আইসোমরফিজম</a>
+      <a href="#sec-monster">৫. মনস্টার</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <b1b-section id="sec-intro" title="১. আমার প্রিয় মেগা-সংখ্যা">
+        <p>আমরা যে সংখ্যাটি নিয়ে আলোচনা করব তা এক মিলিয়নের চেয়েও অনেক বড়—প্রায় $8\times10^{53}$। প্রথমে মনে হতে পারে এটি ইচ্ছামাত্রিক বাছাই, কিন্তু এই সংখ্যার পেছনে রয়েছে গণিতের এক গভীর ও অদ্ভুত সত্য।</p>
+        <b1b-formula math="808017424794512875886459904961710757005754368000000000 = 2^{46}\cdot3^{20}\cdot5^9\cdot7^6\cdot11^2\cdot13^3\cdot17\cdot19\cdot23\cdot29\cdot31\cdot41\cdot47\cdot59\cdot71"></b1b-formula>
+        <b1b-figure src="../../assets/figures/gt_01/jupiter.svg" alt="বৃহস্পতি গ্রহ" caption="বৃহস্পতি গ্রহ—এই সংখ্যাটি আনুমানিক বৃহস্পতির পরমাণুর সংখ্যার কাছাকাছি"></b1b-figure>
+        <p>এই বিশাল সংখ্যাটি হলো <strong>মনস্টার</strong> নামক একটি গ্রুপের আকার। কিন্তু মনস্টার কী, তা বোঝার আগে আমাদের কিছুটা পেছনে যেতে হবে—গ্রুপ তত্ত্বের মূল ধারণাগুলোর দিকে।</p>
+      </b1b-section>
+      <b1b-section id="sec-definition" title="২. গ্রুপের স্বজ্ঞাত সংজ্ঞা">
+        <p>গ্রুপ তত্ত্বের কাজ হলো প্রতিসাম্যের ধারণাকে আনুষ্ঠানিকভাবে ধরা। যখন আমরা বলি কোনো মুখ প্রতিসম, তখন বোঝাই—একে কোনো রেখা বরাবর উল্টালেও সেটি আগের মতোই দেখায়। অর্থাৎ এটি একটি <em>কাজ</em> বা <em>ক্রিয়া</em> সম্পর্কে কথা বলছে।</p>
+        <b1b-figure src="../../assets/figures/gt_01/symmetric_face.svg" alt="প্রতিসম মুখ" caption="প্রতিফলনের পরও মুখটি আগের মতোই দেখায়"></b1b-figure>
+        <p>তুষারকণা আরও অনেকভাবে প্রতিসম—আপনি ৬০°, ১২০° ঘোরাতে পারেন, অথবা বিভিন্ন অক্ষ বরাবর উল্টাতে পারেন; প্রতিটি কাজের পরেই এটি আগের মতোই দেখায়।</p>
+        <b1b-figure src="../../assets/figures/gt_01/snowflake.svg" alt="তুষারকণা" caption="তুষারকণার একাধিক ঘূর্ণন ও প্রতিফলন প্রতিসাম্য"></b1b-figure>
+        <b1b-callout type="blue" icon="❄️" title="১. গ্রুপ কী?">
+<p>এই ধরনের সব কাজের সমষ্টিকেই আমরা 'গ্রুপ' বলি। কিছু না করা কাজটিও সবসময় গ্রুপের অংশ ধরা হয়। তুষারকণার ক্ষেত্রে এই ১২টি কাজ নিয়ে গড়ে ওঠা গ্রুপটির নাম $D_6$।</p>
+        </b1b-callout>
+        <p>মুখের মতো সরল প্রতিসাম্যের গ্রুপটির নাম $C_2$। সাধারণভাবে গ্রুপের এক বিশাল 'প্রাণীশালা' রয়েছে—প্রতিটি নামই ভিন্ন ভিন্ন প্রতিসাম্যের ধরন বর্ণনা করে।</p>
+        <b1b-figure src="../../assets/figures/gt_01/zoo_groups.svg" alt="বিভিন্ন গ্রুপ" caption="বিভিন্ন গ্রুপের 'প্রাণীশালা'—প্রতিটি নাম এক ধরনের প্রতিসাম্য"></b1b-figure>
+        <p>যেকোনো বস্তুর ক্ষেত্রে আমরা কোনো গঠন অক্ষত রেখে কাজগুলোর কথা ভাবি। ঘনককে ২৪ভাবে ঘোরালে সেটি আগের মতোই থাকে—এই ২৪টি কাজ মিলে একটি গ্রুপ।</p>
+        <b1b-figure src="../../assets/figures/gt_01/cube_rotation.svg" alt="ঘনকের ঘূর্ণন" caption="ঘনকের ২৪টি ঘূর্ণন গঠন রক্ষা করে"></b1b-figure>
+        <p>যদি প্রতিফলনের অনুমতি দেওয়া হয়, অর্থাৎ অভিমুখ রক্ষা না করা হয়, তবে মোট ৪৮টি কাজ পাওয়া যায়। আবার যদি মুখগুলোকে আলগা ভেবে সরানো ও ঘোরানো যায়, তবে $(8^6)(6!)$ টি কাজের একটি বড় গ্রুপ পাই।</p>
+        <p>সবচেয়ে আলগা কাঠামো হলো—বিন্দুগুলোর যেকোনো বিন্যাস, অর্থাৎ যেকোনো <em>permutation</em> কে প্রতিসাম্য ধরা। ৬টি বিন্দুর ক্ষেত্রে $6!=720$ টি কাজ। ১০১টি বিন্দুর permutation group-এর আকার $101!\approx9.43\times10^{159}$—অবজার্ভেবল ইউনিভার্সের প্রতিটি পরমাণুর ভেতরে একটা করে ইউনিভার্স থাকলে যতটি সাব-অ্যাটম হতো, প্রায় ততটি!</p>
+        <b1b-quiz
+          question="❓ ১টি পাঁচ-কোণা তারার কতগুলো প্রতিসাম্য (ঘূর্ণন ও উল্টানো) আছে?"
+          correct="3"
+          correct-msg="চমৎকার! সঠিক উত্তর।  পাঁচ-কোণা তারার ৫টি ঘূর্ণন (০°, ৭২°, ১৪৪°, ২১৬°, ২৮৮°) এবং ৫টি প্রতিফলন—মোট ১০টি কাজ। এটি $D_5$ গ্রুপ।"
+          wrong-msg="আবার চেষ্টা করো! ঘূর্ণনের সংখ্যার সমান সংখ্যক উল্টানোও থাকে।"
+          reveal-msg="সঠিক উত্তর: বিকল্প 4।  পাঁচ-কোণা তারার ৫টি ঘূর্ণন (০°, ৭২°, ১৪৪°, ২১৬°, ২৮৮°) এবং ৫টি প্রতিফলন—মোট ১০টি কাজ। এটি $D_5$ গ্রুপ।">
+          <div slot="option">১</div>
+          <div slot="option">৫</div>
+          <div slot="option">৬</div>
+          <div slot="option">১০</div>
+          <div slot="option">১২</div>
+        </b1b-quiz>
+        <b1b-quiz
+          question="❓ কোন গ্রুপটি বৃহত্তম?"
+          correct="3"
+          correct-msg="চমৎকার! সঠিক উত্তর। ৮টি মুক্ত বিন্দুর permutation গ্রুপের আকার $8!=40320$—বাকি সবগুলোর চেয়ে অনেক বড় (ঘনক ২৪, অষ্টভুজ ৮)।"
+          wrong-msg="আবার চেষ্টা করো! মুক্ত বিন্দু মানে কোনো গঠন রক্ষা করতে হবে না—সব বিন্যাসই চলে।"
+          reveal-msg="সঠিক উত্তর: বিকল্প 4। ৮টি মুক্ত বিন্দুর permutation গ্রুপের আকার $8!=40320$—বাকি সবগুলোর চেয়ে অনেক বড় (ঘনক ২৪, অষ্টভুজ ৮)।">
+          <div slot="option">ঘনকের ঘূর্ণন প্রতিসাম্য</div>
+          <div slot="option">অষ্টভুজের শুধু ঘূর্ণন</div>
+          <div slot="option">অষ্টভুজের শুধু প্রতিফলন</div>
+          <div slot="option">৮টি মুক্ত বিন্দুর প্রতিসাম্য</div>
+        </b1b-quiz>
+      </b1b-section>
+      <b1b-section id="sec-axioms" title="৩. গ্রুপের গাণিতিক সংজ্ঞা">
+        <p>এখন প্রশ্ন—কোনো কিছুকে গ্রুপ বলা যাবে কীভাবে ঠিক করব? প্রথমে লাগবে একটি সেট: যেকোনো জিনিসের সংগ্রহ, যেমন পূর্ণসংখ্যা, permutation, অথবা কোনো জ্যামিতিক বস্তুর প্রতিসাম্য কাজ।</p>
+        <b1b-formula math="a\circ b = c \quad (\text{এখানে } \circ \text{ হলো বাইনারি অপারেটর})"></b1b-formula>
+        <b1b-callout type="gold" icon="📜" title="গ্রুপের চারটি স্বত্ব (Axioms)">
+<p><strong>১. আবদ্ধতা (Closure):</strong> দুটি উপাদানের ফলাফলও গ্রুপের ভেতরেই থাকবে। <strong>২. সহযোগিতা (Associativity):</strong> $(ab)c=a(bc)$—গ্রুপিং বদলালে ফল বদলায় না। <strong>৩. একত্ব (Identity):</strong> 'কিছু না করা' উপাদানটি থাকবে। <strong>৪. বিপরীত (Inverse):</strong> প্রতিটি উপাদানের একটি বিপরীত থাকবে, যার সাথে গুণ করলে একত্ব পাওয়া যায়।</p>
+        </b1b-callout>
+        <b1b-figure src="../../assets/figures/gt_01/closure.svg" alt="আবদ্ধতা" caption="প্রতিসাম্য কাজের সংযোজন সবসময় আরেকটি প্রতিসাম্য কাজ"></b1b-figure>
+        <p>তুষারকণার ৬০° ঘোরানোকে তিনবার প্রয়োগ করলে ১৮০° ঘোরানো পাই। অপারেশন বাইনারি হওয়ায় একবারে দুটিকে নিতে হয়; সহযোগিতার স্বত্ব বলে কোন দুটিকে আগে নিই তা ফল বদলায় না: $(r_{60}\circ r_{60})\circ r_{60}=r_{60}\circ(r_{60}\circ r_{60})=r_{180}$।</p>
+        <p>বর্গক্ষেত্রের প্রতিসাম্যের পূর্ণ $8\times8$ গুণন সারণি আছে। উপরের সারির কাজের পর বাঁ কলামের কাজ প্রয়োগ করলে যে ঘরে পৌঁছাই, সেটিই তাদের গুণফল।</p>
+        <b1b-figure src="../../assets/figures/gt_01/multiplication_table.svg" alt="গুণন সারণি" caption="বর্গক্ষেত্রের প্রতিসাম্যের ৮×৮ গুণন সারণি"></b1b-figure>
+        <p>ঘোরানো $r$ এবং $x$-অক্ষ বরাবর প্রতিফলন $s$ দিয়ে বর্গের গ্রুপ বর্ণনা করা যায়। কাজগুলো ডান থেকে বাঁয়ে পড়া হয়, তাই আগে ঘোরে পরে উল্টালে লেখা হয় $sr$।</p>
+        <b1b-quiz
+          question="❓ বর্গের ক্ষেত্রে $r$ = ৯০° ঘোরানো, $s$ = x-অক্ষ বরাবর প্রতিফলন। তবে $r^3srs$ এর মান কী?"
+          correct="2"
+          correct-msg="চমৎকার! সঠিক উত্তর। ডান থেকে বাঁয়ে পড়ি: $srs=r^{-1}=r^3$। তাই $r^3\cdot(srs)=r^3\cdot r^3=r^6=r^2$ (যেহেতু $r^4=1$)।"
+          wrong-msg="আবার চেষ্টা করো! প্রতিফলন-ঘোরানো-প্রতিফলন = বিপরীত ঘোরানো ($r^{-1}$)।"
+          reveal-msg="সঠিক উত্তর: বিকল্প 3। ডান থেকে বাঁয়ে পড়ি: $srs=r^{-1}=r^3$। তাই $r^3\cdot(srs)=r^3\cdot r^3=r^6=r^2$ (যেহেতু $r^4=1$)।">
+          <div slot="option">$1$</div>
+          <div slot="option">$r$</div>
+          <div slot="option">$r^2$</div>
+          <div slot="option">$r^3s$</div>
+        </b1b-quiz>
+      </b1b-section>
+      <b1b-section id="sec-isomorphism" title="৪. বিভিন্ন গ্রুপের তুলনা ও আইসোমরফিজম">
+        <p>তুষারকণা ও ষড়ভুজের প্রতিসাম্য একই গ্রুপ $D_6$—দুটির একই কাজ সংরক্ষিত হয়। কিন্তু একটি কম স্পষ্ট উদাহরণ: ঘনকের ঘূর্ণন ও ৪টি বস্তুর permutation গ্রুপ প্রথমে আলাদা মনে হলেও আসলে একই—তাদের গুণন সারণি অভিন্ন।</p>
+        <b1b-figure src="../../assets/figures/gt_01/cube_4perm.svg" alt="ঘনক ও permutation" caption="ঘনকের ঘূর্ণন আর ৪টি বিন্দুর permutation—আসলে একই গঠন"></b1b-figure>
+        <p>ঘনকের ৮টি কোণের দূরত্ব ও অভিমুখ রক্ষা করা আর ৪টি বিন্দুর ওপর সম্পূর্ণ স্বাধীন কাজ—এই দুইয়ের মধ্যে একে-একি মিল রয়েছে, যা composition সংরক্ষণ করে। একে বলা হয় <strong>আইসোমরফিজম</strong>।</p>
+        <b1b-callout type="green" icon="🔗" title="আইসোমরফিজম কেন গুরুত্বপূর্ণ?">
+<p>দুটি গ্রুপ আইসোমরফিক মানে তাদের একই অন্তর্নিহিত গঠন; এক সম্পর্কে যা বলা যায় তা অপরের ক্ষেত্রেও সত্য। গ্রুপ কোনো এক বস্তুর প্রতিসাম্য নয়, বরং প্রতিসাম্যের একটি বিমূর্ত রূপ—ঠিক যেমন '৩' কোনো নির্দিষ্ট ত্রয়ী নয়, সব ত্রয়ীরই সারাংশ।</p>
+        </b1b-callout>
+        <b1b-figure src="../../assets/figures/gt_01/abstract_3.svg" alt="বিমূর্ত ৩" caption="'৩' যেমন সব ত্রয়ীর সারাংশ, গ্রুপও তেমনি প্রতিসাম্যের বিমূর্ত রূপ"></b1b-figure>
+      </b1b-section>
+      <b1b-section id="sec-monster" title="৫. মনস্টার">
+        <p>আইসোমরফিজম বোঝার পর একটা স্বাভাবিক প্রশ্ন ওঠে—বিশ্বে কতগুলো গ্রুপ আছে? অবশ্যই 'আইসোমরফিজম পর্যন্ত'। আসলে কতভাবে কিছু প্রতিসম হতে পারে, সেটাই জানতে চাওয়া।</p>
+        <p>অসংখ্য গ্রুপ আছে, আবার অনেক সসীম গ্রুপও। পূর্ণসংখ্যার মৌলিক উৎপাদক বা অণুর পরমাণুর মতো অনেক গ্রুপকে ছোট গ্রুপে ভেঙে লেখা যায়। যেগুলো আর ভাঙা যায় না, তাদের বলা হয় <strong>সরল গ্রুপ</strong> (simple groups)।</p>
+        <b1b-figure src="../../assets/figures/gt_01/classification.svg" alt="সরল গ্রুপের শ্রেণীবিভাগ" caption="সরল গ্রুপের শ্রেণীবিভাগ—পর্যায় সারণির মতো"></b1b-figure>
+        <p>১৮টি অসীম পরিবার ছাড়াও ২৬টি এমন সরল গ্রুপ আছে যারা কোনো পরিবারে ফিট করে না—তাদের বলা হয় <em>sporadic</em>। মনস্টার হলো এদের মধ্যে বৃহত্তম; এর আকারই সেই $8\times10^{53}$ সংখ্যা। ১৯টি sporadic গ্রুপ মনস্টারের 'সন্তান', আর বাকি ৬টি 'pariah'।</p>
+        <p>মনস্টার কোনো ২ বা ৩-মাত্রিক বস্তুর প্রতিসাম্য নয়; এটি <strong>১৯৬,৮৮৩ মাত্রার</strong> একটি স্থানে কাজ করে—একটিমাত্র উপাদান বর্ণনা করতে প্রায় ৪ গিগাবাইট তথ্য লাগে!</p>
+        <b1b-quote author="Richard Borcherds">গ্রুপের স্বত্বগুলো সংক্ষিপ্ত ও স্বাভাবিক... কিন্তু এর পেছনে লুকিয়ে আছে মনস্টার সিম্পল গ্রুপ, এক বিশাল ও অসাধারণ গাণিতিক বস্তু।</b1b-quote>
+        <p>৭০-এর দশকে জন ম্যাককি লক্ষ করেন ১৯৬,৮৮৩-এর কাছাকাছি এক সংখ্যা মডুলার ফর্মের ধারা বিস্তারে হাজির হয়। এটি 'moonshine' নামে পরিচিত হয় এবং ১৯৯২ সালে রিচার্ড বোচার্ডস এটি প্রমাণ করেন—গণিতের দুই সম্পূর্ণ আলাদা অংশের অপ্রত্যাশিত সংযোগ।</p>
+      </b1b-section>
+
+      <b1b-section id="sec-visualizer" title="ইন্টারেক্টিভ চিত্র প্রদর্শনী" data-no-narration="true">
+        <p class="viz-intro">নিচের চিত্রটি পূর্ণস্ক্রিনে দেখে বিষয়টি আরও ভালোভাবে পর্যবেক্ষণ করুন।</p>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <figure class="interactive-figure"><img src="../../assets/figures/gt_01/monster_gigabytes.svg" alt="ইন্টারেক্টিভ চিত্র"/><figcaption>গ্রুপ তত্ত্ব, বিমূর্ততা ও ১৯৬,৮৮৩-মাত্রিক মনস্টার — পূর্ণস্ক্রিনে দেখুন</figcaption></figure>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/group_theory/lesson_01/experiments/3b1b_group_theory_01_full_dubbed.mp4"
+    yt-id="mH0oCDa74tE"
+    title="গ্রুপ তত্ত্ব, বিমূর্ততা ও ১৯৬,৮৮৩-মাত্রিক মনস্টার | Group theory, abstraction, and the 196,883-dimensional monster — অধ্যায় ০১"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — গ্রুপ তত্ত্ব">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url=""
+  prev-title="শুরু"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_02.html"
+  next-title="ইউলারের সূত্র গ্রুপ তত্ত্বের মাধ্যমে"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>সাধারণ অনিশ্চয়তা নীতি — কোয়ান্টামের বাইরেও | The more general uncertainty principle, beyond quantum</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/analysis/lesson_04/manifest.js?v=8"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="বিশ্লেষণ"
+  course-url="../../index.html#analysis"
+  home-url="../../index.html"
+  chapter-num="০৪"
+  chapter-total="১০"
+  prev-url="lesson_03.html"
+  prev-title="পূর্ববর্তী অধ্যায়: ফুরিয়ার ট্রান্সফর্ম আসলে কী? — এক দৃশ্যমান পরিচয়"
+  next-url="lesson_05.html"
+  next-title="পরবর্তী অধ্যায়: ফুরিয়ার সিরিজ — তাপ প্রবাহ থেকে বৃত্ত অঙ্কন"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="বিশ্লেষণ"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৪ · বিশ্লেষণ"
+  title="সাধারণ অনিশ্চয়তা নীতি — কোয়ান্টামের বাইরেও | The more general uncertainty principle, beyond quantum"
+  desc="তরঙ্গ কতটা সঙ্কুচিত হতে পারে, আর তার ফুরিয়ার রূপ কতটা ছড়ানো — এই দুইয়ের অদ্ভুত টানাপোড়েন"
+  video-src="../../media_vault/analysis/lesson_04/experiments/3b1b_analysis_04_full_dubbed.mp4"
+  yt-id="MBnnXbOM5S4"
+  date="২৫ ফেব্রুয়ারি, ২০১৮"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://www.3blue1brown.com/lessons/uncertainty-principle"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">সংকেতের বিস্তার আর ফ্রিকোয়েন্সির বিস্তার</b1b-bookmark>
+      <b1b-bookmark time="86" time-bn="০১:২৬">দুটি অ-কোয়ান্টাম উদাহরণ</b1b-bookmark>
+      <b1b-bookmark time="158" time-bn="০২:৩৮">হাইজেনবার্গের অনিশ্চয়তা নীতি</b1b-bookmark>
+      <b1b-bookmark time="220" time-bn="০৩:৪০">কেন এই গুণফলের একটি সীমা আছে?</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-unc-spread">সংকেতের বিস্তার আর ফ্রিকোয়েন্সির বিস্তার</a>
+      <a href="#sec-unc-examples">দুটি অ-কোয়ান্টাম উদাহরণ</a>
+      <a href="#sec-unc-heisenberg">হাইজেনবার্গের অনিশ্চয়তা নীতি</a>
+      <a href="#sec-unc-why">কেন এই গুণফলের একটি সীমা আছে?</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ সংকেতের বিস্তার আর ফ্রিকোয়েন্সির বিস্তার ═══ -->
+      <b1b-section id="sec-unc-spread" title="সংকেতের বিস্তার আর ফ্রিকোয়েন্সির বিস্তার">
+        <b1b-quote author="Grant Sanderson">একটি তরঙ্গ আর তার ফুরিয়ার রূপ — দুটোই একসাথে তীক্ষ্ণভাবে স্থানীয় করা যায় না।</b1b-quote>
+        <p>আগের পাঠে আমরা দেখেছি একটি টানা সাইন তরঙ্গের ফুরিয়ার রূপ একটিমাত্র তীক্ষ্ণ চূড়া। কিন্তু যদি তরঙ্গটি শুধু অল্প সময়ের জন্য বাজে — একটিমাত্র ছোট «ব্লিপ» — তবে কী হবে? ফুরিয়ার গ্রাফে আর একটি তীক্ষ্ণ চূড়া থাকবে না; শক্তি ছড়িয়ে পড়বে অনেকগুলো ফ্রিকোয়েন্সিতে।</p>
+        <b1b-figure src="../../assets/figures/an_04/fig_04_01.svg" alt="ছোট সময়ের ব্লিপ সংকেত ও তার চওড়া ফ্রিকোয়েন্সি বর্ণালি" caption="ছোট সময়ের ব্লিপ সংকেত ও তার চওড়া ফ্রিকোয়েন্সি বর্ণালি"></b1b-figure>
+        <p>এটি কোনো প্রযুক্তিগত ত্রুটি নয়। একটা ছোট ঘটনা বর্ণনা করতে আপনাকে অনেকগুলো ফ্রিকোয়েন্সি একসাথে ব্যবহার করতেই হয় — ঠিক যেমন একটা সংক্ষিপ্ত শব্দ তৈরি করতে অনেকগুলো স্বরের প্রয়োজন হয়। সময়ে যত সংকুচিত, ফ্রিকোয়েন্সিতে তত বেশি ছড়ানো।</p>
+        <b1b-callout type="gold" icon="📌" title="পরিচিত একটি উদাহরণ">
+          <p>একটি একক আঘাতের শব্দ (যেমন তালি) কোনো নির্দিষ্ট স্বরের মতো শোনা যায় না — কারণ এর শক্তি সব ফ্রিকোয়েন্সিতে ছড়িয়ে থাকে। বিপরীত একটি দীর্ঘ টানা স্বরের ফ্রিকোয়েন্সি বর্ণালি অনেক সরু।</p>
+        </b1b-callout>
+
+        <!-- Quiz quiz-unc-blip -->
+        <b1b-quiz
+          question="❓ একটি সংকেতকে সময়ে যত সংকুচিত করা হয়, তার ফ্রিকোয়েন্সি বর্ণালি কী হয়?"
+          correct="1"
+          correct-msg="ঠিক! সময়ে সংকোচন মানে ফ্রিকোয়েন্সিতে প্রসারণ — ছোট ব্লিপের বর্ণালিও হয় চওড়া।"
+          wrong-msg="দুই ডোমেইনের বিস্তার বিপরীতভাবে কাজ করে: একটু কমলে অন্যটি বাড়ে।"
+          reveal-msg="সঠিক উত্তর: তত চওড়া হয়।">
+          <div slot="option">তত সরু হয়</div>
+          <div slot="option">তত চওড়া হয়</div>
+          <div slot="option">অপরিবর্তিত থাকে</div>
+          <div slot="option">শূন্য হয়ে যায়</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ দুটি অ-কোয়ান্টাম উদাহরণ ═══ -->
+      <b1b-section id="sec-unc-examples" title="দুটি অ-কোয়ান্টাম উদাহরণ">
+        <p>প্রথম উদাহরণ: সময় আর ফ্রিকোয়েন্সি। একটি অডিও ক্লিপ যত ছোট, তার পিচ (frequency) তত কম নির্দিষ্ট — ছোট ক্লিপ থেকে «এটা কি ৪৪০ হার্জ?» বলা কঠিন। দীর্ঘ ক্লিপে সেটি সহজ।</p>
+        <p>দ্বিতীয় উদাহরণ: অবস্থান আর বেগ। একটা ছোট গোলাকার «ওয়েভ প্যাকেট» ভাবুন — সেটি কোথায় আছে তা আমরা ভালোভাবে জানি। কিন্তু এটি গঠন করতে অনেকগুলো ভিন্ন তরঙ্গ-দৈর্ঘ্য যোগ করতে হয়েছে, অর্থাৎ তার বেগ (বা তরঙ্গ-সংখ্যা) নিয়ে আমাদের ধারণা কম নিখুঁত।</p>
+        <b1b-figure src="../../assets/figures/an_04/fig_04_02.svg" alt="সংকুচিত ওয়েভ প্যাকেট: অবস্থান নিখুঁত, তরঙ্গ-সংখ্যা ছড়ানো" caption="সংকুচিত ওয়েভ প্যাকেট: অবস্থান নিখুঁত, তরঙ্গ-সংখ্যা ছড়ানো"></b1b-figure>
+        <b1b-callout type="blue" icon="💡" title="দুটি মাত্রার টানাপোড়েন">
+          <p>এখানে মাত্রা দুটি হলো $x$ (অবস্থান) আর $k$ (তরঙ্গ-সংখ্যা)। এগুলো একে অপরের ফুরিয়ার রূপ। যত $\Delta x$ ছোট, তত $\Delta k$ বড় — এই সম্পর্কের নিচে একটা গাণিতিক সীমা আছে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ হাইজেনবার্গের অনিশ্চয়তা নীতি ═══ -->
+      <b1b-section id="sec-unc-heisenberg" title="হাইজেনবার্গের অনিশ্চয়তা নীতি">
+        <p>কোয়ান্টাম বলবিদ্যায় অবস্থান $x$ আর ভরবেগ $p$ একে অপরের ফুরিয়ার রূপ — কারণ দ্রুতি (velocity) আসলে তরঙ্গ-সংখ্যার সমানুপাতিক, $p=\hbar k$। তাই আমাদের এই সাধারণ তরঙ্গ-বিষয়ক ফলাফলটিই হয়ে যায় বিখ্যাত হাইজেনবার্গ নীতি।</p>
+        <b1b-formula math="\Delta x\,\Delta p\ \geq\ \frac{\hbar}{2}"></b1b-formula>
+        <p>এখানে $\Delta$ মানে «বিস্তার» বা «অনিশ্চয়তা» — সাধারণত standardized deviation। দুটি রাশির বিস্তারের গুণফল কখনোই $\hbar/2$-এর চেয়ে ছোট হতে পারে না। এটি কোনো যন্ত্রের অপূর্ণতা নয়; এটি তরঙ্গের গঠনগত বৈশিষ্ট্য।</p>
+        <b1b-figure src="../../assets/figures/an_04/fig_04_03.svg" alt="অবস্থান-ভরবেগ তলে ন্যূনতম অনিশ্চয়তার আয়তক্ষেত্র" caption="অবস্থান-ভরবেগ তলে ন্যূনতম অনিশ্চয়তার আয়তক্ষেত্র"></b1b-figure>
+
+        <!-- Quiz quiz-unc-heisenberg -->
+        <b1b-quiz
+          question="❓ হাইজেনবার্গের অনিশ্চয়তা নীতির সূত্র কোনটি?"
+          correct="1"
+          correct-msg="হ্যাঁ! $\Delta x\,\Delta p\geq\hbar/2$ — গুণফলেরই একটি নিম্নসীমা আছে।"
+          wrong-msg="এটি যোগ বা ভাগের সম্পর্ক নয়; দুই বিস্তারের গুণফলের সীমা।"
+          reveal-msg="সঠিক উত্তর: $\Delta x\,\Delta p\geq\frac{\hbar}{2}$।">
+          <div slot="option">$\Delta x+\Delta p\geq\hbar$</div>
+          <div slot="option">$\Delta x\,\Delta p\geq\frac{\hbar}{2}$</div>
+          <div slot="option">$\frac{\Delta x}{\Delta p}\geq\hbar$</div>
+          <div slot="option">$\Delta x\,\Delta p=0$</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ কেন এই গুণফলের একটি সীমা আছে? ═══ -->
+      <b1b-section id="sec-unc-why" title="কেন এই গুণফলের একটি সীমা আছে?">
+        <p>একটি তরঙ্গকে খুব সংকুচিত করতে হলে তার ভেতরে একটিমাত্র চূড়া রাখা যাবে না — কাছাকাছি কিছু বিকল্প ফ্রিকোয়েন্সিও ঢোকাতে হয়, নইলে চূড়াটা তৈরিই হবে না। গাণিতিকভাবে এই বিনিময়ের হিসাব করলে গুণফলের নিচের সীমা পাওয়া যায়।</p>
+        <b1b-callout type="blue" icon="📐" title="গাউসিয়ানই সেরা">
+          <p>যে আকারের তরঙ্গের অবস্থান ও ফ্রিকোয়েন্সি — দুটোই যতটা সম্ভব কম ছড়ানো, সেটি হলো গাউসিয়ান (Bell curve)। এর ফুরিয়ার রূপও আবার একটি গাউসিয়ান; এই সমতা থেকেই $\hbar/2$ সংখ্যাটি আসে।</p>
+        </b1b-callout>
+        <b1b-formula math="\sigma_x\,\sigma_k\ \geq\ \frac12 \quad\Longrightarrow\quad \Delta x\,\Delta p\ \geq\ \frac{\hbar}{2}"></b1b-formula>
+        <p>তাই «অনিশ্চয়তা» শব্দটি কখনো কখনো ভুল বোঝা হয় — মনে হয় বোঝা যাচ্ছে না এমন কিছু। আসলে কথা হলো: প্রকৃতি নিজেই এই দুই বৈশিষ্ট্যকে একসাথে নিখুঁত করে দিতে দেয় না। আর এই সীমাটি আমরা ফুরিয়ার বিশ্লেষণ থেকেই বের করে আনতে পারি।</p>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/analysis/lesson_04/experiments/3b1b_analysis_04_full_dubbed.mp4"
+    yt-id="MBnnXbOM5S4"
+    title="সাধারণ অনিশ্চয়তা নীতি — কোয়ান্টামের বাইরেও — অধ্যায় ০৪"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — বিশ্লেষণ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_03.html"
+  prev-title="ফুরিয়ার ট্রান্সফর্ম আসলে কী? — এক দৃশ্যমান পরিচয়"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_05.html"
+  next-title="ফুরিয়ার সিরিজ — তাপ প্রবাহ থেকে বৃত্ত অঙ্কন"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

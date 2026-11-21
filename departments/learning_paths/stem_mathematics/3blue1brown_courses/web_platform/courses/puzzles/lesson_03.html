@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অপ্রত্যাশিতভাবে কঠিন বাতাই-প্রশ্ন | The unexpectedly hard windmill question (2011 IMO, Q2)</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/puzzles/lesson_03/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="ধাঁধা"
+  course-url="index.html"
+  home-url="../../index.html"
+  chapter-num="০৩"
+  chapter-total="১০"
+  prev-url="lesson_02.html"
+  prev-title="পূর্ববর্তী: কঠিনতম পরীক্ষার কঠিনতম সমস্যা"
+  next-url="lesson_04.html"
+  next-title="পরবর্তী: অ্যালিস, বব ও ঘনকের গড় ছায়া"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="ধাঁধা"
+  course-url="index.html"
+  chapter-label="অধ্যায় ০৩ · ধাঁধা"
+  title="অপ্রত্যাশিতভাবে কঠিন বাতাই-প্রশ্ন | The unexpectedly hard windmill question (2011 IMO, Q2)"
+  desc="২০১১ সালের আইএমও-র দ্বিতীয় প্রশ্ন — দেখতে সহজ, কিন্তু ইনভ্যারিয়েন্ট খোঁজা ছাড়া সমাধান অসম্ভব।"
+  video-src="../../media_vault/puzzles/lesson_03/experiments/3b1b_puzzles_03_full_dubbed.mp4"
+  yt-id="M64HUIJFTZM"
+  date="৪ আগস্ট, ২০১৯"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">আইএমও ও প্রশ্নটি</b1b-bookmark>
+      <b1b-bookmark time="54" time-bn="০০:৫৪">আসল প্রশ্ন ও প্রথম খেলা</b1b-bookmark>
+      <b1b-bookmark time="101" time-bn="০১:৪১">মূল ধারণা: ইনভ্যারিয়েন্ট</b1b-bookmark>
+      <b1b-bookmark time="150" time-bn="০২:৩০">সমাধান</b1b-bookmark>
+      <b1b-bookmark time="200" time-bn="০৩:২০">দুটি শিক্ষা</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-im-o">আইএমও ও প্রশ্নটি</a>
+      <a href="#sec-question">আসল প্রশ্ন ও প্রথম খেলা</a>
+      <a href="#sec-invariant">মূল ধারণা: ইনভ্যারিয়েন্ট</a>
+      <a href="#sec-solution">সমাধান</a>
+      <a href="#sec-takeaway">দুটি শিক্ষা</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <b1b-section id="sec-im-o" title="আইএমও ও প্রশ্নটি">
+        <p>২০১১ সালে ১০১টি দেশের ৫৬৩ জন প্রতিযোগী অংশ নেন। কেবল একজনই পূর্ণাঙ্গ নম্বর পান — আর তাকে থামিয়েছিল ঠিক এই দ্বিতীয় প্রশ্নটি।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_03/f01_windmill.svg" alt="বাতাই প্রক্রিয়া" caption="একটি রেখা বিন্দু থেকে বিন্দুতে ঘুরে বাতাইয়ের মতো কাজ করে"></b1b-figure>
+        <p>সমতলে কয়েকটি বিন্দু দেওয়া আছে, কোনো তিনটি এক সরলরেখায় নয়। একটি রেখা একটি বিন্দু দিয়ে ঘুরতে শুরু করে; যখনই সেটি অন্য কোনো বিন্দুতে পৌঁছায়, নতুন বিন্দুটি হয় কেন্দ্র (পিভট)।</p>
+        <b1b-callout type="blue" icon="⚠️" title="কেন “কোনো তিনটি এক রেখায় নয়”?">
+          <p>নাহলে রেখা একসাথে তিনটি বিন্দুতে পৌঁছালে কে নতুন পিভট হবে তা অনির্ধারিত হয়ে যেত।</p>
+        </b1b-callout>
+      </b1b-section>
+      <b1b-section id="sec-question" title="আসল প্রশ্ন ও প্রথম খেলা">
+        <p>দেখাতে হবে — এমন একটি শুরুর বিন্দু ও রেখা বাছা সম্ভব, যাতে প্রক্রিয়াটি প্রতিটি বিন্দুকে অসংখ্যবার পিভট হিসেবে ব্যবহার করে।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_03/f02_four.svg" alt="চার বিন্দু ও ভেতরের বিন্দু" caption="ত্রিভুজের ভেতরে একটি বিন্দু — বাতাই কি সব বিন্দুতে যাবে?"></b1b-figure>
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin: 24px 0 12px; color: var(--theme);">সরল ক্ষেত্র</h3>
+        <p>দুই বিন্দুতে রেখা সোজা বিনিময় করে; তিন বিন্দুতে সবকটিতে ঘুরে। চার বিন্দুতে দেখা যায় — ভেতরের বিন্দুটি কখনো পৌঁছানো যায় না, যদি শুরুটা ভুল হয়।</p>
+      </b1b-section>
+      <b1b-section id="sec-invariant" title="মূল ধারণা: ইনভ্যারিয়েন্ট">
+        <p>রেখাকে একটি অভিমুখ দিন। বাঁ পাশের বিন্দুগুলো নীল, ডান পাশের বিন্দুগুলো বাদামী রঙে চিহ্নিত করুন। “মাঝখানে” থাকার অর্থ হলো — দুই পাশে সমান সংখ্যক বিন্দু।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_03/f03_colors.svg" alt="নীল-বাদামী বিন্দু" caption="রেখার দুই পাশের বিন্দুগুলো নীল ও বাদামী রঙে — সংখ্যা অপরিবর্তিত থাকে"></b1b-figure>
+        <b1b-quiz
+          question="❓ বাতাই-প্রশ্নের সমাধানে কোন ধারণাটি কাজে লাগে?"
+          correct="1"
+          correct-msg="চমৎকার! পিভট বদলালে যে বিন্দু হারায়, সেই রঙের নতুন বিন্দু যোগ হয় — ফলে দুই পাশের বিন্দুসংখ্যা অপরিবর্তিত থাকে। এই ইনভ্যারিয়েন্টিই সমাধানের চাবি।"
+          wrong-msg="আবার ভেবে দেখুন। ইঙ্গিত: “যা বদলায় না” — সেটিই খুঁজুন।"
+          reveal-msg="সঠিক উত্তর: রেখার দুই পাশের বিন্দুসংখ্যা অপরিবর্তিত থাকা (ইনভ্যারিয়েন্ট)">
+          <div slot="option">রেখার দৈর্ঘ্য পরিমাপ</div>
+          <div slot="option">রেখার দুই পাশের বিন্দুসংখ্যা অপরিবর্তিত থাকা (ইনভ্যারিয়েন্ট)</div>
+          <div slot="option">বিন্দুগুলোর দূরত্বের যোগফল</div>
+          <div slot="option">কোণগুলোর সমষ্টি ৩৬০°</div>
+        </b1b-quiz>
+        <p>পিভট বদলের সময় যে বিন্দুটি হারায়, তার জায়গায় ঠিক সেই রঙের আরেকটি বিন্দু যোগ হয়। তাই কোনো পাশের বিন্দুসংখ্যা কখনো বদলায় না।</p>
+        <b1b-callout type="gold" icon="🔒" title="ইনভ্যারিয়েন্ট">
+          <p>জটিল ব্যবস্থার ভেতরে যেটি অপরিবর্তিত থাকে, তাকেই বলা হয় ইনভ্যারিয়েন্ট। এটি খোঁজাই এই পাঠের হৃদয়।</p>
+        </b1b-callout>
+      </b1b-section>
+      <b1b-section id="sec-solution" title="সমাধান">
+        <p>বিন্দুসংখ্যা বিজোড় হলে: শুরুতে বাঁ-ডানে সমান বিন্দু রেখে বাকিটি পিভটে রাখুন। রেখা ১৮০° ঘুরলে সেই একই বিন্দু দিয়ে আবার যায় — অর্থাৎ পথটি বন্ধ চক্র।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_03/f04_cycle.svg" alt="বন্ধ চক্র" caption="আধ-ঘুরের পর রেখা আবার একই বিন্দু দিয়ে যায় — একটি বন্ধ চক্র"></b1b-figure>
+        <p>জোড় সংখ্যার ক্ষেত্রে পিভটকে বাদামী ধরে একই যুক্তি কাজ করে; শুধু প্রথম অর্ধ-ঘুরের পর বিন্দুটি বদলায়। যাই হোক, চক্রটি সব বিন্দুকে স্পর্শ করে।</p>
+        <p>ফলে নির্বাচিত শুরুর অবস্থা থেকে বাতাই প্রতিটি বিন্দুকে বারবার — অর্থাৎ অসংখ্যবার — পিভট বানায়।</p>
+      </b1b-section>
+      <b1b-section id="sec-takeaway" title="দুটি শিক্ষা">
+        <p>সামাজিক শিক্ষা: একবার সমাধান জেনে গেলে মনে হয় সহজ; কিন্তু আইএমও-র তথ্য প্রমাণ করে যে এটি আসলেই কঠিন ছিল। নিজের বোঝাপড়ার সীমা সম্পর্কে বিনম্র থাকুন।</p>
+        <b1b-quote author="টেরেন্স টাও">গণিতের সমস্যা বা ধাঁধা প্রকৃত গণিতের জন্য ততটুকু গুরুত্বপূর্ণ, যতখানি গল্প বা উপাখ্যান শিশুর জন্য বাস্তব জীন বোঝার ক্ষেত্রে গুরুত্বপূর্ণ।</b1b-quote>
+        <p>গাণিতিক শিক্ষা: ইনভ্যারিয়েন্ট খোঁজা। টপোলজিস্ট ছিদ্র গণনা করেন, পদার্থবিদ শক্তি ও ভরবেগ — সবই একই ধারণার রূপ।</p>
+      </b1b-section>
+
+      <!-- ═══ Practice — excluded from narration ═══ -->
+      <b1b-section id="sec-practice" title="অনুশীলন ও সারসংক্ষেপ" data-no-narration="true">
+        <p>পাঠের মূল ধারণাটি নিজের ভাষায় বলে দেখুন, তারপর নিচের প্রশ্নের উত্তর দিন।</p>
+        <b1b-quiz
+          question="❓ এই পাঠের মূল ধারণা কোনটি?"
+          correct="1"
+          correct-msg="চমৎকার! এই কোর্সজুড়ে আমরা দেখেছি — ইনভ্যারিয়েন্ট, কোডিং, জ্যামিতি বা টপোলজি যাই হোক, সঠিক দৃষ্টিভঙ্গিই সমাধানের চাবি।"
+          wrong-msg="আবার ভেবে দেখুন। ইঙ্গিত: “দৃষ্টিভঙ্গি” শব্দটি মনে রাখুন।"
+          reveal-msg="সঠিক উত্তর: সঠিক দৃষ্টিভঙ্গি বা কাঠামো খুঁজে পেলে কঠিন ধাঁধাও সরল হয়">
+          <div slot="option">ধাঁধা মানেই ভাগ্যের ব্যাপার</div>
+          <div slot="option">সঠিক দৃষ্টিভঙ্গি বা কাঠামো খুঁজে পেলে কঠিন ধাঁধাও সরল হয়</div>
+          <div slot="option">সব উত্তর মুখস্থ করতে হয়</div>
+          <div slot="option">গণিত কেবল সংখ্যা নিয়ে কাজ করে</div>
+        </b1b-quiz>
+        <b1b-callout type="green" icon="✅" title="পরবর্তী পাঠ">
+          <p>পরবর্তী অধ্যায়ে আমরা আরেকটি ধাঁধা নিয়ে কাজ করব। প্রতিটি পাঠেই নতুন একটি দৃষ্টিভঙ্গি যোগ হবে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/puzzles/lesson_03/experiments/3b1b_puzzles_03_full_dubbed.mp4"
+    yt-id="M64HUIJFTZM"
+    title="অপ্রত্যাশিতভাবে কঠিন বাতাই-প্রশ্ন | The unexpectedly hard windmill question (2011 IMO, Q2)"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — ধাঁধা">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_02.html"
+  prev-title="পূর্ববর্তী: কঠিনতম পরীক্ষার কঠিনতম সমস্যা"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_04.html"
+  next-title="পরবর্তী: অ্যালিস, বব ও ঘনকের গড় ছায়া"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "source_type": "website",
+  "source_category": "websites",
+  "source_label": "anthropic",
+  "content_type": "research_paper",
+  "genre": "agentic_architecture",
+  "content_slug": "model_context_protocol_in_depth",
+  "full_target_dir": "D:\\Drive\\gub221902131\\My Drive\\my\\INS\\PaperClip-opencode\\Dub Studio\\departments\\research_academic\\websites\\anthropic\\agentic_architecture\\model_context_protocol_in_depth",
+  "relative_path": "departments/research_academic/websites/anthropic/agentic_architecture/model_context_protocol_in_depth",
+  "subfolders": [
+    "original_en",
+    "bangla_adapted",
+    "figures_and_data"
+  ]
+}

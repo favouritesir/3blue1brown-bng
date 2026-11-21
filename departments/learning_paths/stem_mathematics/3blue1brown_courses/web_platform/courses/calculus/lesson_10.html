@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অধ্যায় ১০ — টেইলর ধারা ও উচ্চতর সান্নিধ্যকরণ (Taylor series) | ৩ব্লু১ব্রাউন বাংলা</title>
+
+<!-- ═══════════ STYLES (shared library only — no per-lesson overrides) ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded, synchronous — zero-CORS narration) ═══════════ -->
+<script src="../../assets/audio/calculus/lesson_10/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict canonical load order (Lesson 01 template) ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (LAST: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+
+<style>
+  /* Lab-only layout helpers (no design override of the component library). */
+  .calc-lab { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+  .calc-canvas { display: block; width: 100%; height: auto; min-height: 360px; background: #080b12; border-radius: 10px; }
+  [data-theme="light"] .calc-canvas { background: #f8fafc; }
+  .calc-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 16px; }
+  .calc-control label { display: flex; justify-content: space-between; font-size: .9rem; font-weight: 600; margin-bottom: 6px; }
+  .calc-control input[type=range] { width: 100%; }
+  .calc-control select { width: 100%; padding: 6px; font-family: inherit; }
+  .calc-val { color: var(--theme, #8b5cf6); font-family: monospace; }
+  .calc-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 16px; }
+  .calc-stat { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+  .calc-stat span { display: block; font-size: .8rem; color: var(--text-muted); margin-bottom: 4px; }
+  .calc-stat strong { font-size: 1.05rem; color: var(--theme, #8b5cf6); }
+</style>
+</head>
+<body class="mode-read">
+
+<b1b-search-overlay></b1b-search-overlay>
+
+<b1b-navbar
+  course-title="ক্যালকুলাসের মূল সারমর্ম"
+  course-url="../../index.html#calculus"
+  home-url="../../index.html"
+  chapter-num="১০"
+  chapter-total="১২"
+  prev-url="lesson_09.html"
+  prev-title="পূর্ববর্তী অধ্যায়: ক্ষেত্রফলের সাথে ঢালের সম্পর্ক"
+  next-url="lesson_11.html"
+  next-title="পরবর্তী অধ্যায়: ডি এক্স এর প্রকৃত অর্থ"
+  active-mode="read">
+</b1b-navbar>
+
+<b1b-hero-player
+  course-title="ক্যালকুলাসের মূল সারমর্ম"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ১০ · ক্যালকুলাসের মূল সারমর্ম"
+  title="অধ্যায় ১০: টেইলর ধারা ও উচ্চতর সান্নিধ্যকরণ (Taylor series)"
+  desc="যেকোনো জটিল বক্ররেখা বা ট্রান্সেন্ডেন্টাল ফাংশনকে কীভাবে সহজ সরল বহুপদীতে রূপান্তরিত করা যায়? একটি নির্দিষ্ট বিন্দুতে ডেরিভেটিভের পর ডেরিভেটিভ মেলানোর জাদুকরী কৌশল।"
+  video-src="../../media_vault/calculus/lesson_10/experiments/fill_v2/3b1b_calculus_10_full_dubbed_fill2.mp4"
+  yt-id="3d6DsjIBzJ4"
+  date="৭ মে, ২০১৭"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="মূল পাঠ: Grant Sanderson (3Blue1Brown) · পাঠ্য অ্যাডাপ্টেশন: Kurt Bruns · বাংলা রূপান্তর ও পাঠ্য বিন্যাস: STEM ম্যাথমেটিক্স উইং"
+  github-url="https://github.com/3b1b/videos/blob/master/_2017/eoc/chapter10.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<div class="lesson-body">
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">কনওয়ের উদ্ধৃতি ও বহুপদী আসন্নায়নের দর্শন</b1b-bookmark>
+      <b1b-bookmark time="158" time-bn="০২:৩৮">স্পর্শক রেখা ও রৈখিক আসন্নায়ন</b1b-bookmark>
+      <b1b-bookmark time="282" time-bn="০৪:৪২">দ্বিঘাত বহুপদী ও বক্রতা মেলানো</b1b-bookmark>
+      <b1b-bookmark time="448" time-bn="০৭:২৮">ফ্যাক্টোরিয়াল ও সাধারণ টেইলর সূত্র</b1b-bookmark>
+      <b1b-bookmark time="584" time-bn="০৯:৪৪">অভিসারী ব্যাসার্ধ ও ফাংশনের সীমাবদ্ধতা</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-poly-approximation">১. জটিল ফাংশনের সহজ প্রতিরূপ: বহুপদী আসন্নায়ন</a>
+      <a href="#sec-linear-tangent">২. রৈখিক সান্নিধ্যকরণ ও স্পর্শক সরলরেখা</a>
+      <a href="#sec-quadratic-curvature">৩. দ্বিতীয় ক্রমের পরাবৃত্ত ও বক্রতা মেলানো</a>
+      <a href="#sec-general-taylor-formula">৪. টেইলর ধারার সাধারণ রূপ ও ম্যাকলরিন ধারা</a>
+      <a href="#sec-convergence-applications">৫. অভিসারী ব্যাসার্ধ ও প্রয়োগ</a>
+      <a href="#sec-better-approximations">৬. উচ্চতর পদ: c₃, c₄ ও সাইন-এর কুইজ</a>
+      <a href="#sec-euler-series">৭. e^x, অসীম ধারা ও অভিসারণ</a>
+      <a href="#sec-ln-radius">৮. ln(x)-এর অভিসারী ব্যাসার্ধ</a>
+      <a href="#sec-labs">৯. ইন্টারেক্টিভ ল্যাব</a>
+      <a href="#sec-quizzes">১০. ধারণা যাচাই: ৫টি কুইজ</a>
+      <a href="#sec-summary">১১. সারমর্ম ও পরবর্তী পাঠ</a>
+      <a href="#sec-figure-study">১২. চিত্র অধ্যয়ন: পেন্ডুলাম ও কোসাইন</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ NARRATED 1 — sec-poly-approximation | manifest cues: h2, chapter-quote, p, p, p, formula-box, callout, p (8) ═══ -->
+      <b1b-section id="sec-poly-approximation" title="জটিল ফাংশনের সহজ প্রতিরূপ: বহুপদী আসন্নায়ন (Polynomial Approximation)">
+        <b1b-quote author="John B. Conway">To many, mathematics is a collection of theorems. For me, mathematics is a collection of examples; a theorem is a statement about a collection of examples and the purpose of proving theorems is to classify and explain the examples. — অনেকের কাছে গণিত উপপাদ্যের সংগ্রহ; আমার কাছে গণিত হলো উদাহরণের সংগ্রহ। গণিত ও গণনার মূল শক্তি নিহিত রয়েছে যেকোনো দুর্ভেদ্য ও জটিল ফাংশনকে সাধারণ বহুপদীর যোগফলে রূপান্তর করার দক্ষতায়।</b1b-quote>
+
+        <p>টেইলর ধারা প্রথমে আমার কাছে ততটা গুরুত্বপূর্ণ মনে হয়নি—যতক্ষণ না একটি পদার্থবিদ্যার ক্লাসে এর ব্যবহার দেখলাম। আমরা একটি পেন্ডুলামের সম্ভাব্য শক্তি নিয়ে কাজ করছিলাম, যার জন্য বলটি তার নিচতম অবস্থানের ওপরে কতটা উঠেছে তা বের করতে হয়। এই উচ্চতা হয় $1-\cos\theta$-এর সমানুপাতিক, যেখানে $\theta$ হলো পেন্ডুলামের দণ্ড ও উল্লম্ব রেখার মধ্যকার কোণ। এই $\cos\theta$ আসলেই সমস্যাটিকে জটিল করে তুলেছিল।</p>
+
+        <p>কিন্তু $\cos\theta$-কে $1-\frac{\theta^2}{2}$ দ্বারা আসন্নায়ন করতেই পুরো হিসাব সহজ হয়ে গেল। ছোট কোণের ক্ষেত্রে $\cos\theta$ আর $1-\frac{\theta^2}{2}$ খুব কাছাকাছি—কিন্তু এই আসন্নায়নটি কীভাবে খুঁজে পাওয়া যায়? টেইলর ধারার মূল কাজ হলো অ-বহুপদী ফাংশনের জন্য এমন বহুপদী খোঁজা যা কোনো নির্দিষ্ট ইনপুটের কাছে তার মতো আচরণ করে। বহুপদীদের সাথে কাজ করা সহজ: এগুলো হিসাব করা, ডেরিভেটিভ নেওয়া ও ইন্টিগ্রেট করা—সবই সহজ।</p>
+
+        <p>বাস্তব জীবনে আমরা প্রতিনিয়ত $\cos(x)$, $\sin(x)$, $e^x$ বা $\ln(x)$-এর মতো অবীজীয় ফাংশন ব্যবহার করি, অথচ কম্পিউটারের সিপিইউ শুধু যোগ, বিয়োগ, গুণ ও ভাগই জানে। সে কীভাবে মাইক্রোসেকেন্ডে $\cos(0.3)$ বা $e^{0.15}$-এর দশমিকের পর দশ ঘর পর্যন্ত নিখুঁত মান বের করে? উত্তর হলো বহুপদী $P(x)=c_0+c_1x+c_2x^2+\dots+c_nx^n$—যাতে শুধু পুনরাবৃত্ত গুণ ও যোগ আছে। টেইলর ধারার দর্শন হলো যেকোনো বক্ররেখার গায়ে এমন বহুপদী সেঁটে দেওয়া যা একটি নির্দিষ্ট বিন্দুর চারপাশে অবিকল মূল ফাংশনের মতো আচরণ করে।</p>
+
+        <b1b-formula math="P_n(x) = c_0 + c_1(x-a) + c_2(x-a)^2 + \dots + c_n(x-a)^n"></b1b-formula>
+
+        <b1b-callout type="gold" icon="🎯" title="কেন্দ্রীয় প্রশ্ন: ডেরিভেটিভ কীভাবে বহুপদী তৈরি করে?">
+          <p>আমরা কীভাবে সহগ $c_0, c_1, c_2, \dots$ নির্ধারণ করব যাতে বহুপদীটি কেবল ওই বিন্দুতেই মূল ফাংশনকে স্পর্শ না করে, বরং তার ঢাল, বাঁক এবং পরিবর্তনের হারকেও সমানভাবে অনুকরণ করে? একটি একক বিন্দুতে ফাংশনের মান ও পরপর ডেরিভেটিভগুলোই কি সম্পূর্ণ প্রতিবেশে ফাংশনটিকে পুনর্নির্মাণ করতে পারে?</p>
+        </b1b-callout>
+
+        <p>প্রথমে সবচেয়ে সহজ রূপ দিয়ে শুরু করা যাক: স্পর্শক রেখা বা প্রথম ক্রমের রৈখিক আসন্নায়ন।</p>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 2 — sec-linear-tangent | manifest cues: h2, p, p, p, p, formula-box, callout (7) ═══ -->
+      <b1b-section id="sec-linear-tangent" title="রৈখিক সান্নিধ্যকরণ ও স্পর্শক সরলরেখা (Linear Approximation: Tangent Line)">
+        <p>ধরা যাক আমরা $x=0$ বিন্দুর কাছে $f(x)=\cos(x)$ ফাংশনটিকে আসন্নায়ন করতে চাই। $x=0$ বিন্দুতে $\cos(0)=1$। সুতরাং যেকোনো ভালো আসন্নায়নের মানও ওই বিন্দুতে $1$ হতে হবে।</p>
+
+        <p>সবচেয়ে স্থূল ও শূন্য-মাত্রার অনুমানটি হবে একটি অনুভূমিক সরলরেখা: $P_0(x)=1$। কিন্তু $x$ শূন্য থেকে সামান্য দূরে সরে গেলেই এই অনুভূমিক রেখাটি মূল কোসাইন বক্ররেখা থেকে বিচ্ছিন্ন হয়ে পড়ে—কারণ কোসাইন বক্ররেখা শূন্যের কাছে নিচের দিকে বাঁক নেয়।</p>
+
+        <p>একটি উন্নততর আসন্নায়নের জন্য আমাদের এমন একটি সরলরেখা চাই যার উচ্চতা মূল ফাংশনের সমান হবে এবং যার ঢালও (প্রথম ডেরিভেটিভ) মূল ফাংশনের ঠিক সমান হবে। অর্থাৎ $P_1(0)=f(0)$ এবং $P_1'(0)=f'(0)$। এই দুটি শর্তই স্পর্শক রেখাকে অন্যান্য রেখা থেকে আলাদা করে।</p>
+
+        <p>আমরা জানি $\frac{d}{dx}[\cos(x)]=-\sin(x)$, এবং $x=0$-তে $-\sin(0)=0$। ফলে স্পর্শক রেখার ঢাল শূন্য। অন্য যেকোনো ফাংশনের ক্ষেত্রে স্পর্শক রেখার সমীকরণ হয় $P_1(x)=f(a)+f'(a)(x-a)$; আর ইনপুটের ক্ষুদ্র বিচ্যুতি $dx=x-a$-এর জন্য পরিবর্তনের প্রথম ক্রমের অনুমান লেখা যায় $f(x)\approx f(a)+f'(a)\,dx$।</p>
+
+        <b1b-formula math="P_1(x) = f(a) + f'(a)(x - a)"></b1b-formula>
+
+        <b1b-callout type="blue" icon="📏" title="রৈখিকতার সীমাবদ্ধতা">
+          <p>স্পর্শক সরলরেখা কেবল একটি নির্দিষ্ট বিন্দুতে পরিবর্তনের তাৎক্ষণিক গতিবেগ ধরে রাখে, কিন্তু বক্ররেখাটি কোন দিকে বাঁক নিচ্ছে—অর্থাৎ Curvature বা উত্তলতা-অবতলতা—তা একটি সরলরেখা কখনোই ফুটিয়ে তুলতে পারে না। কোসাইনের ক্ষেত্রে $\cos(0)=1$ ও $-\sin(0)=0$ হওয়ায় $P_1(x)=1$ পাই, যা আসলে আমাদের প্রথমের সেই অনুভূমিক রেখাটিই। এখন বাঁক মেলাতে হবে দ্বিঘাত পদ যোগ করে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 3 — sec-quadratic-curvature | manifest cues: h2, p, p, p, p, p, p, formula-box, callout, p (10) ═══ -->
+      <b1b-section id="sec-quadratic-curvature" title="দ্বিতীয় ক্রমের পরাবৃত্ত ও বক্রতা মেলানো (Quadratic Approximation & Curvature)">
+        <p>যদি আমরা সরলরেখার পরিবর্তে একটি দ্বিঘাত বহুপদী বা পরাবৃত্ত $P_2(x)=c_0+c_1x+c_2x^2$ ব্যবহার করি, তবে আমরা তিনটি শর্ত আরোপ করতে পারি: উচ্চতা, ঢাল ও বক্রতা—তিনটিই $x=0$-তে মূল ফাংশনের সমান হতে হবে।</p>
+
+        <p>১. উচ্চতা মিলতে হবে: $P_2(0)=f(0)\implies c_0=f(0)$। কোসাইনের ক্ষেত্রে $\cos(0)=1$, তাই $c_0=1$।</p>
+
+        <p>২. ঢাল মিলতে হবে: $P_2'(0)=f'(0)\implies c_1=f'(0)$। কোসাইনের ক্ষেত্রে $-\sin(0)=0$, তাই $c_1=0$।</p>
+
+        <p>৩. দ্বিতীয় ডেরিভেটিভ বা বক্রতা মিলতে হবে: $P_2''(0)=f''(0)$। কোসাইনের দ্বিতীয় ডেরিভেটিভ $-\cos(x)$, যার মান শূন্যে $-1$।</p>
+
+        <p>এবার লক্ষ্য করুন কী ঘটে যখন আমরা $P_2(x)$-কে দুইবার ডিফারেনশিয়েট করি: প্রথমবার পাই $P_2'(x)=c_1+2c_2x$। দ্বিতীয়বার করলে পাই $P_2''(x)=2c_2$—একটি ধ্রুবক!</p>
+
+        <p>পাওয়ার রুলের কারণে ঘাত $2$ সামনে নেমে এসে সহগের সাথে গুণ হয়েছে। ফলে $P_2''(0)=f''(0)$ হতে হলে $2c_2=f''(0)$, অর্থাৎ $c_2=\frac{f''(0)}{2}=-\frac{1}{2}$। এই তিনটি সহগ $c_0=1$, $c_1=0$, $c_2=-\frac{1}{2}$ যথাক্রমে মান, ঢাল ও বক্রতা মেলায়—এবং কোসাইনের জন্য সেরা দ্বিঘাত আসন্নায়ন দেয়।</p>
+
+        <b1b-formula math="P_2(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2"></b1b-formula>
+
+        <b1b-callout type="purple" icon="❗" title="ফ্যাক্টোরিয়াল কেন জন্ম নেয়?">
+          <p>ঘাত যখন প্রতিবার ডেরিভেটিভ করার সময় ক্রমান্বয়ে নিচে নেমে গুণ হতে থাকে ($x^n\to nx^{n-1}\to n(n-1)x^{n-2}\dots$), তখন $n$-তম ডেরিভেটিভে সহগের সাথে $n\times(n-1)\times\dots\times1=n!$ গুণ হয়ে যায়। মূল ফাংশনের ডেরিভেটিভের সাথে বহুপদীর ডেরিভেটিভ মেলাতে হলে সেই বাড়তি $n!$ কে ভাগ করে প্রশমিত করতে হয়—এই কারণেই $2!$ ও পরে $n!$ আসে।</p>
+        </b1b-callout>
+
+        <p>সুতরাং $\cos(x)\approx 1-\frac{x^2}{2}$। এর মান কতটা ভালো তা দেখতে $x=0.1$ বসাই: প্রকৃত মান $\cos(0.1)=0.9950042\dots$, আর আমাদের আসন্নায়ন $1-\frac{1}{2}(0.1)^2=0.995$—অর্থাৎ $\cos(0.1)\approx 0.995$। মাত্র তিনটি সহগ দিয়েই এত নিখুঁত ফলাফল! এই সহজ কিন্তু গভীর পর্যবেক্ষণটিই আমাদের নিয়ে যায় অসীম ধারার সাধারণ রূপটিতে।</p>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 4 — sec-general-taylor-formula | manifest cues: h2, p, p, p, formula-box, callout (6) ═══ -->
+      <b1b-section id="sec-general-taylor-formula" title="টেইলর ধারার সাধারণ রূপ ও ম্যাকলরিন ধারা (The General Taylor Series Formula)">
+        <p>যদি আমরা তৃতীয় ডেরিভেটিভ মেলাতে চাই, তবে $x^3$ পদকে তিনবার ডিফারেনশিয়েট করলে পাই $3\times2\times1=3!=6$। ফলে তার সহগ হবে $c_3=\frac{f'''(0)}{3!}$। কোসাইনের তৃতীয় ডেরিভেটিভ $\sin(x)$, যা শূন্যে $0$—তাই $c_3=0$: অর্থাৎ $1-\frac{x^2}{2}$ একই সাথে সেরা দ্বিঘাত ও সেরা ঘনক আসন্নায়ন।</p>
+
+        <p>যেকোনো $n$-তম পদের জন্য এই ধারাটি স্বাভাবিক নিয়মেই এগিয়ে চলে: $c_n=\frac{f^{(n)}(0)}{n!}$। যখন কেন্দ্রবিন্দু $a=0$ হয়, তখন একে ম্যাকলরিন ধারা বলা হয়: $P(x)=f(0)+f'(0)\frac{x}{1!}+f''(0)\frac{x^2}{2!}+\dots$। এখানে প্রতিটি ডেরিভেটিভ শূন্যে কেবল একটি মাত্র সহগ দ্বারা নিয়ন্ত্রিত হয়—উচ্চতর পদ যোগ করলে পুরনো সহগগুলোর মান নষ্ট হয় না, কারণ $x=0$-তে বসালে সেই উচ্চতর পদগুলো সবই মিলিয়ে যায়।</p>
+
+        <p>আর যদি আমরা মূলবিন্দুর বদলে যেকোনো বিন্দু $x=a$-এর চারপাশে বহুপদী সেঁটে দিতে চাই (যেমন $x=\pi$-এর কাছে), তবে স্থানচ্যুতিটি হয় $(x-a)$। বহুপদীকে $(x-a)$-র ঘাতে লেখা হয় যাতে $x=a$ বসালে সুন্দর বাতিল ঘটে। এর ফলে জন্ম নেয় গণিতের সবচেয়ে রোমাঞ্চকর উপপাদ্য: সাধারণ টেইলর ধারা। মূল শিক্ষা হলো—একটি বিন্দুতে ডেরিভেটিভের তথ্য সেই বিন্দুর পুরো প্রতিবেশ সম্পর্কে বলে দেয়।</p>
+
+        <b1b-formula math="f(x) = \sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x-a)^n = f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\frac{f'''(a)}{3!}(x-a)^3+\dots"></b1b-formula>
+
+        <b1b-callout type="green" icon="✨" title="অসীম পদ যোগের অলৌকিকতা">
+          <p>পদসংখ্যা যত বাড়ানো হয়, বহুপদীটি বক্ররেখার কেন্দ্র থেকে ততই দূর-দূরান্তে ছড়িয়ে পড়ে এবং মূল ফাংশনের বাঁকগুলোকে নির্ভুলতায় জড়িয়ে ধরে। কোসাইনের ডেরিভেটিভগুলো চক্রাকারে $1,0,-1,0,\dots$ ক্রম অনুসরণ করে; প্রতিটি মানকে যথাযথ $n!$ দিয়ে ভাগ করে সহগ বানালেই $1-\frac{x^2}{2}+\frac{x^4}{24}-\dots$ ধারাটি পাওয়া যায়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 5 — sec-convergence-applications | manifest cues: h2, p, p, p, formula-box, callout (6) ═══ -->
+      <b1b-section id="sec-convergence-applications" title="অভিসারী ব্যাসার্ধ ও আধুনিক বিজ্ঞানে প্রয়োগ (Radius of Convergence & Applications)">
+        <p>টেইলর ধারা নিয়ে কাজ করার সময় একটি অত্যন্ত গুরুত্বপূর্ণ প্রশ্ন ওঠে: আমরা কি একটি বিন্দুতে ফাংশনটির সমস্ত ডেরিভেটিভ জেনে মহাবিশ্বের যেকোনো দূরত্বে ফাংশনটির সঠিক মান বের করতে পারব? সব ফাংশনের জন্য উত্তর 'হ্যাঁ' নয়।</p>
+
+        <p>কিছু ফাংশনের টেইলর ধারা সম্পূর্ণ সংখ্যারেখায় অভিসৃত (Converge) হয়—যেমন $e^x$, $\sin(x)$, $\cos(x)$। কিন্তু কিছু ফাংশনের একটি সুনির্দিষ্ট গণ্ডি থাকে, যাকে বলা হয় অভিসারী ব্যাসার্ধ (Radius of Convergence)। যেমন $f(x)=\frac{1}{1-x}=1+x+x^2+x^3+\dots$ কেবল তখনই কার্যকর যখন $|x|&lt;1$; তার বাইরে ধারাটি অর্থহীন।</p>
+
+        <p>তা সত্ত্বেও আধুনিক পদার্থবিজ্ঞান ও প্রকৌশলে টেইলর ধারা ছাড়া এক পা-ও চলা অসম্ভব। কোয়ান্টাম মেকানিক্সের পারটারবেশন থিওরি, আইনস্টাইনের সাধারণ আপেক্ষিকতায় মহাকর্ষীয় তরঙ্গের হিসাব এবং ডিপ লার্নিংয়ের অপ্টিমাইজেশনে ফাংশন আসন্নায়নের মেরুদণ্ড হলো এই ধারা। টেইলরের উপপাদ্যের অবশিষ্টাংশ $R_n(x)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}$ আমাদের জানায় কতটা ভুল হতে পারে।</p>
+
+        <b1b-formula math="\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n \quad \text{শর্ত: } |x|&lt;1 \qquad;\qquad f(x)=P_n(x)+R_n(x)"></b1b-formula>
+
+        <b1b-callout type="blue" icon="🧭" title="সারমর্ম">
+          <p>টেইলর ধারা স্থানীয় তথ্যকে—অর্থাৎ একটি বিন্দুর ডেরিভেটিভসমূহকে—বৈশ্বিক জ্ঞানে রূপান্তরিত করে। এটি দেখায় কীভাবে পরিবর্তনের উচ্চতর হারগুলো একটি ফাংশনের ভবিষ্যৎ রূপরেখা অঙ্কন করে দেয়; কিন্তু অভিসারী ব্যাসার্ধের বাইরে সেই রূপরেখা ভেঙে পড়ে—এই সীমাবদ্ধতাও সমানভাবে গুরুত্বপূর্ণ।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — official content beyond the 5 teacher-audio sections ═══ -->
+      <b1b-section id="sec-better-approximations" title="উচ্চতর পদ: c₃, c₄ ও সাইন-এর কম্প্রিহেনশন কুইজ" data-no-narration="true">
+        <p>আমরা নিজেদের আরও নিয়ন্ত্রণ দিতে পারি যদি বহুপদীতে আরও পদ যোগ করি। $c_3x^3$ যোগ করলে $\cos(x)\approx 1-\frac{1}{2}x^2+c_3x^3$ পাই। কোনো ঘনককে তিনবার ডিফারেনশিয়েট করলে $1\cdot2\cdot3\cdot c_3=6c_3$ থাকে, আর কোসাইনের তৃতীয় ডেরিভেটিভ $\sin(x)$ শূন্যে $0$—তাই $c_3=0$। অর্থাৎ $1-\frac{x^2}{2}$ একই সাথে সেরা দ্বিঘাত এবং সেরা ঘনক আসন্নায়ন।</p>
+
+        <b1b-media-tab active-tab="image" caption="এই চিত্রে নীল রেখা হলো প্রকৃত $\cos(x)$, হলুদ ড্যাশড রেখা $1-\frac{x^2}{2}$ দ্বিঘাত আসন্নায়ন, আর সবুজ রেখা $1-\frac{x^2}{2}+\frac{x^4}{24}$ চতুর্থ-মাত্রার আসন্নায়ন। লক্ষ্য করুন কীভাবে নতুন পদ যোগ করলে বহুপদীটি শূন্যের চারপাশে অনেক দূর পর্যন্ত কোসাইন বক্ররেখার সাথে লেগে থাকে। ভিডিও ট্যাবে মূল অ্যানিমেশনে এই ক্রমবর্ধমান মিলন ধাপে ধাপে দেখা যাবে।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NjAgMzAwIiB3aWR0aD0iNDYwIiBoZWlnaHQ9IjMwMCI+PHJlY3Qgd2lkdGg9IjQ2MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNDAiIHkxPSIyNTAiIHgyPSI0NDAiIHkyPSIyNTAiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjIzMCIgeTE9IjIwIiB4Mj0iMjMwIiB5Mj0iMjgwIiBzdHJva2U9IiM5NGEzYjgiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0gNjAgNzAgUSAxNDUgMjUwIDIzMCAyNTAgUSAzMTUgMjUwIDQwMCA3MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzhiZGY4IiBzdHJva2Utd2lkdGg9IjMiLz48cGF0aCBkPSJNIDEzMCAxMTAgUSAyMzAgMjUwIDMzMCAxMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZiYmYyNCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtZGFzaGFycmF5PSI2IDQiLz48cGF0aCBkPSJNIDk1IDc1IFEgMjMwIDI1MCAzNjUgNzUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM0ZDM5OSIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAwIiB5PSIxMDUiIGZpbGw9IiMzNGQzOTkiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj4xICYjODcyMjsgeCYjMTc4Oy8yICsgeCYjODMwODsvMjQ8L3RleHQ+PHRleHQgeD0iMzAwIiB5PSIxNDAiIGZpbGw9IiNmYmJmMjQiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj4xICYjODcyMjsgeCYjMTc4Oy8yPC90ZXh0Pjx0ZXh0IHg9IjIwIiB5PSIzMCIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxMyIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPkhpZ2hlci1kZWdyZWUgdGVybXMgaHVnIGNvcyB4IGxvbmdlcjwvdGV4dD48L3N2Zz4=" alt="cos(x) ও তার দ্বিঘাত ও চতুর্থ-মাত্রার টেইলর বহুপদী"/></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/3d6DsjIBzJ4?start=300" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="উচ্চতর পদ যোগের মূল অ্যানিমেশন"></iframe></div>
+        </b1b-media-tab>
+
+        <p>পরবর্তী পদ $c_4x^4$ যোগ করলে কোসাইনের চতুর্থ ডেরিভেটিভ আবার $\cos(x)$ হয়—যার মান শূন্যে $1$। বহুপদীর চতুর্থ ডেরিভেটিভ $1\cdot2\cdot3\cdot4\cdot c_4=24c_4$, তাই $24c_4=1$ থেকে $c_4=\frac{1}{24}$। ফলে পাই $\cos(x)\approx 1-\frac{x^2}{2}+\frac{x^4}{24}$—এটি শূন্যের আশেপাশে কোসাইনের বেশ কাছাকাছি মান দেয়।</p>
+
+        <p>কোসাইনের ডেরিভেটিভগুলোর চক্র হলো $\cos(x)\to-\sin(x)\to-\cos(x)\to\sin(x)\to\cos(x)$। শূন্যে এগুলোর মান হয় $1,0,-1,0,\dots$—এই ক্রমটিকে যথাযথ $n!$ দিয়ে ভাগ করে সহগ বানালে টেইলর বহুপদী তৈরি হয়। কোসাইনের মতোই $\sin(x)$-এর মান ও ডেরিভেটিভও শূন্যে জানা যায়, তাই একই পদ্ধতি প্রয়োগ করা যায়—নিচের কুইজে তা যাচাই করুন।</p>
+
+        <b1b-quiz
+          question="❓ কম্প্রিহেনশন: $\sin(x)$-এর $x=0$-এর চারপাশে সেরা তৃতীয়-মাত্রার (third-degree) টেইলর বহুপদী কোনটি? (সহগ $c_0, c_1, c_2, c_3$ নির্ধারণ করুন)"
+          correct="2"
+          correct-msg="অসাধারণ! $\sin(0)=0\Rightarrow c_0=0$; $\sin'(0)=\cos(0)=1\Rightarrow c_1=1$; $\sin''(0)=-\sin(0)=0\Rightarrow c_2=0$; আর $\sin'''(0)=-\cos(0)=-1\Rightarrow c_3=\frac{-1}{3!}=-\frac{1}{6}$। সুতরাং $P_3(x)=x-\frac{x^3}{6}$।"
+          wrong-msg="আবার চেষ্টা করুন: $\sin(0)=0$ এবং $\sin''(0)=0$ হওয়ায় ধ্রুবক ও $x^2$ পদ থাকবে না। একমাত্র $x$ ও $x^3$ পদ থাকবে। $\sin'''(0)=-\cos(0)=-1$ হওয়ায় $c_3=-\frac{1}{3!}=-\frac{1}{6}$—অর্থাৎ সঠিক উত্তর $x-\frac{x^3}{6}$, কখনো $x-\frac{x^3}{3}$ নয় (সেখানে $3!$-এর বদলে $3$ ব্যবহার হয়েছে)।"
+          reveal-msg="সঠিক উত্তর: তৃতীয় বিকল্প $x-\frac{1}{6}x^3$। মনে রাখবেন $\sin(x)$-এর ধারায় শুধু বিজোড় ঘাত থাকে: $x-\frac{x^3}{3!}+\frac{x^5}{5!}-\dots$।">
+          <div slot="option">$x-\frac{1}{3}x^3$</div>
+          <div slot="option">$1-\frac{1}{2}x^2$</div>
+          <div slot="option">$x-\frac{1}{6}x^3$</div>
+          <div slot="option">$1-\frac{1}{6}x^3$</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <b1b-section id="sec-euler-series" title="e^x, অসীম ধারা ও অভিসারণ (Infinity and Convergence)" data-no-narration="true">
+        <p>এখানে থামলে আমাদের কাছে আসন্নায়নের এক অত্যন্ত কার্যকর হাতিয়ার থাকবে। কিন্তু গণিতবিদের মতো ভাবলে এক প্রশ্ন ওঠে: পদ যোগ করা কেনও বন্ধ না করে অসীম সংখ্যক পদ যোগ করলে কী হয়? গণিতে অসীম যোগফলকে Series বলা হয়—সীমিত পদের $P(x)$ হলো টেইলর বহুপদী, আর সব পদ একসাথে হলো টেইলর ধারা।</p>
+
+        <p>অসীম যোগ নিয়ে সতর্কতা প্রয়োজন: আসলে অসীম সংখ্যক জিনিস যোগ করা যায় না। সঠিক ধারণা হলো—আরও আরও পদ যোগ করলে আংশিক যোগফলগুলো (partial sums) কোনো নির্দিষ্ট মানের কাছে পৌঁছায় কিনা; পৌঁছালে ধারাটি সেই মানে অভিসৃত হয়। যেমন $x=1$-এ বসালে $e^1=1+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\dots=2.7182818\dots$—আর $x=2$-এ একই ধারা $e^2$-তে পৌঁছায়।</p>
+
+        <b1b-formula math="e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \dots = \sum_{n=0}^{\infty}\frac{x^n}{n!}"></b1b-formula>
+
+        <b1b-media-tab active-tab="image" caption="এই চিত্রে নীল বক্ররেখা হলো $e^x$, হলুদ সরলরেখা প্রথম-মাত্রার আসন্নায়ন $1+x$, আর সবুজ ড্যাশড রেখা একটি উচ্চতর আংশিক যোগফল। পদ বাড়ালে আংশিক যোগফলগুলো $e^x$-এর কাছে এগিয়ে যাচ্ছে—এই অভিসারণই $e^x$-এর টেইলর ধারাকে পূর্ণ ফাংশনের সমান করে তোলে। ভিডিও ট্যাবে $x=1$-এ $e$-র মানের দিকে ক্রমশ এগিয়ে যাওয়া দেখা যাবে।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NjAgMzAwIiB3aWR0aD0iNDYwIiBoZWlnaHQ9IjMwMCI+PHJlY3Qgd2lkdGg9IjQ2MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNDAiIHkxPSIyNjAiIHgyPSI0NDAiIHkyPSIyNjAiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjYwIiB5MT0iMjAiIHgyPSI2MCIgeTI9IjI4MCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNIDYwIDI1NSBRIDIwMCAyNTAgMzAwIDE4MCBRIDM4MCAxMTAgNDMwIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGJkZjgiIHN0cm9rZS13aWR0aD0iMyIvPjxwYXRoIGQ9Ik0gNjAgMjU1IEwgMjUwIDI1NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmJiZjI0IiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNIDYwIDI1NSBRIDIwMCAyNTAgMzAwIDE4MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzRkMzk5IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjYgNCIvPjx0ZXh0IHg9IjMwMCIgeT0iNjAiIGZpbGw9IiMzOGJkZjgiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5lXng8L3RleHQ+PHRleHQgeD0iOTAiIHk9IjI0MCIgZmlsbD0iI2ZiYmYyNCIgZm9udC1zaXplPSIxMiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPjE8L3RleHQ+PHRleHQgeD0iMTgwIiB5PSIyMjUiIGZpbGw9IiMzNGQzOTkiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5wYXJ0aWFsIHN1bXMgJiM4NTk0OyBlXng8L3RleHQ+PHRleHQgeD0iMjAiIHk9IjMwIiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjEzIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+JiM5MzE7IHgmIzgzMTk7L24hIGNvbnZlcmdlcyBmb3IgQUxMIHg8L3RleHQ+PC9zdmc+" alt="e^x ও তার টেইলর বহুপদীর আংশিক যোগফলসমূহ"/></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/3d6DsjIBzJ4?start=600" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="অসীম ধারা ও অভিসারণ"></iframe></div>
+        </b1b-media-tab>
+
+        <p>সূচকীয় ফাংশনের মতোই $\sin(x)$-এর ধারাও সমগ্র সংখ্যারেখায় অভিসৃত হয়। বিজোড় প্রতিসাম্যের কারণে এতে কেবল বিজোড় ঘাতের পদ থাকে:</p>
+
+        <b1b-formula math="\sin(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\dots"></b1b-formula>
+
+        <b1b-callout type="gold" icon="🌌" title="এক বিন্দু থেকে পুরো ফাংশন">
+          <p>$e^x$-এর ক্ষেত্রে $x$ যত দূরই হোক না কেন—$x=2$-তেও—ধারাটি $e^x$-এ পৌঁছায়। শূন্যে সংগৃহীত উচ্চতর ডেরিভেটিভের তথ্য থেকেই পুরো ফাংশনটি ফিরে পাওয়া যায়। এটি এক ধরনের যাদু: একটি একক বিন্দুতে ডেরিভেটিভের তথ্য তার পুরো প্রতিবেশ—এমনকি $e^x$-এর ক্ষেত্রে সমগ্র সংখ্যারেখা—নির্ধারণ করে দেয়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <b1b-section id="sec-ln-radius" title="ln(x)-এর অভিসারী ব্যাসার্ধ: 0 &lt; x &lt; 2" data-no-narration="true">
+        <p>সাইন ও কোসাইনের মতো কিছু ফাংশনের ধারা সব জায়গায় অভিসৃত হয়, কিন্তু সব ফাংশনের ক্ষেত্রে তা নয়। $x=1$-এর চারপাশে $\ln(x)$-এর টেইলর ধারা গণনা করলে দেখা যায় এটি কেবল $0&lt;x&lt;2$ পরিসরে কাজ করে। এই পরিসরের ভেতরে পদ বাড়ালে মান $\ln(x)$-এর কাছে পৌঁছায়, কিন্তু $x>2$-এ ধারাটি পড়তে থাকে—আংশিক যোগফলগুলো দোলা খেয়ে কোনো নির্দিষ্ট মানে পৌঁছায় না; একে বলা হয় Divergence।</p>
+
+        <b1b-media-tab active-tab="image" caption="নীল বক্ররেখা হলো প্রকৃত $\ln(x)$, আর হলুদ ড্যাশড রেখা $x=1$-এর চারপাশে গঠিত টেইলর আংশিক যোগফল। $x=1$ (সবুজ রেখা) হলো কেন্দ্র; $0$ থেকে $2$-এর মধ্যে ধারা ক্রমশ $\ln(x)$-এর কাছে এগোলেও তার বাইরে আংশিক যোগফল প্রচণ্ডভাবে দোলে। ভিডিও ট্যাবে এই অস্থির আচরণ ও অভিসারী ব্যাসার্ধের সীমানা স্পষ্টভাবে দেখা যাবে।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NjAgMzAwIiB3aWR0aD0iNDYwIiBoZWlnaHQ9IjMwMCI+PHJlY3Qgd2lkdGg9IjQ2MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNDAiIHkxPSIyNTAiIHgyPSI0NDAiIHkyPSIyNTAiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjE1MCIgeTE9IjIwIiB4Mj0iMTUwIiB5Mj0iMjgwIiBzdHJva2U9IiM5NGEzYjgiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0gMTYwIDIwMCBRIDIwMCAxMzAgMjkwIDk1IFEgMzYwIDc1IDQyMCA2NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzhiZGY4IiBzdHJva2Utd2lkdGg9IjMiLz48cGF0aCBkPSJNIDE2MCAyMDAgUSAyMzAgMTAwIDMwMCAxODAgUSAzNTAgNjAgNDIwIDI0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmJiZjI0IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjUgNCIvPjxsaW5lIHgxPSIxNTAiIHkxPSI2MCIgeDI9IjE1MCIgeTI9IjI0MCIgc3Ryb2tlPSIjMzRkMzk5IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIvPjx0ZXh0IHg9Ijk1IiB5PSI1NSIgZmlsbD0iIzM0ZDM5OSIgZm9udC1zaXplPSIxMyIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnggPSAwPC90ZXh0Pjx0ZXh0IHg9IjIxNSIgeT0iNTUiIGZpbGw9IiMzNGQzOTkiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj54ID0gMTwvdGV4dD48dGV4dCB4PSIyODUiIHk9IjU1IiBmaWxsPSIjMzRkMzk5IiBmb250LXNpemU9IjEzIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+eCA9IDI8L3RleHQ+PHRleHQgeD0iMzMwIiB5PSIyMDAiIGZpbGw9IiNmYmJmMjQiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5kaXZlcmdlczwvdGV4dD48dGV4dCB4PSIyMCIgeT0iMzAiIGZpbGw9IiNlMmU4ZjAiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5sbiB4IHNlcmllcyBjb252ZXJnZXMgb25seSBmb3IgMCAmbHQ7IHggJmx0OyAyPC90ZXh0Pjwvc3ZnPg==" alt="ln(x) ও x=1-এর চারপাশের টেইলর ধারা, অভিসারী ব্যাসার্ধ 0&lt;x&lt;2"/></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/3d6DsjIBzJ4?start=780" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="ln(x)-এর অভিসারী ব্যাসার্ধ"></iframe></div>
+        </b1b-media-tab>
+
+        <p>কেন্দ্রবিন্দু $a=1$ থেকে ধারা যে দূরত্ব পর্যন্ত কনভার্জ করে, সেই সর্বোচ্চ দূরত্বই হলো অভিসারী ব্যাসার্ধ। এখানে $R=1$, তাই কনভার্জেন্সের পরিসর $1-1&lt;x&lt;1+1$, অর্থাৎ $0&lt;x&lt;2$। জ্যামিতিক ধারা $\frac{1}{1-x}=1+x+x^2+\dots$-কে $0$ থেকে $x$ পর্যন্ত ইন্টিগ্রেট করলে $-\ln(1-x)=x+\frac{x^2}{2}+\frac{x^3}{3}+\dots$ পাওয়া যায়; চিহ্ন বিন্যাস নিচের কুইজে যাচাই করুন।</p>
+
+        <b1b-quiz
+          question="❓ $x=0$-এর চারপাশে $-\ln(1-x)$ ফাংশনের টেইলর ধারা কোনটি?"
+          correct="0"
+          correct-msg="নিখুঁত! $\frac{1}{1-x}=1+x+x^2+\dots$ কে পদে পদে ইন্টিগ্রেট করলে $-\ln(1-x)=x+\frac{x^2}{2}+\frac{x^3}{3}+\dots$ পাই; এখানে $x$ একক ঘাতে বসার সাথে সাথে $-1$ গুণকটি এসে চিহ্ন পাল্টে দেয়—তাই $-\ln(1-x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\dots$।"
+          wrong-msg="আবার ভাবুন: $\frac{1}{1-x}=\sum x^n$-এর পদে পদে ইন্টিগ্রেশন দেয় $\sum \frac{x^{n+1}}{n+1}$, অর্থাৎ ধনাত্মক পদ $x+\frac{x^2}{2}+\frac{x^3}{3}+\dots$। কিন্তু $-\ln(1-x)$-এর সামনের ঋণাত্মক চিহ্নের কারণে চূড়ান্ত ধারায় চিহ্ন পাল্টায়—জোড় ঘাত ঋণাত্মক, বিজোড় ঘাত ধনাত্মক। আর $x+x^2+x^3+\dots$ হলো মূল জ্যামিতিক ধারা নিজেই, লগারিদম নয়।"
+          reveal-msg="সঠিক উত্তর: প্রথম বিকল্প $x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\dots$। এটি $0&lt;x&lt;1$ পরিসরে $-\ln(1-x)$-এর সমান।">
+          <div slot="option">$x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\dots$</div>
+          <div slot="option">$x+\frac{x^2}{2}+\frac{x^3}{3}+\frac{x^4}{4}+\dots$</div>
+          <div slot="option">$x+x^2+x^3+x^4+x^5+\dots$</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <b1b-section id="sec-labs" title="🔬 ইন্টারেক্টিভ ল্যাব: পদ যোগ ও অভিসারী ব্যাসার্ধ" data-no-narration="true">
+        <p>নিচের দুটি ল্যাব স্লাইডার ঘুরিয়ে তত্ত্বকে নিজের হাতে যাচাই করার সুযোগ দেয়। প্রথম ল্যাবে পদের সংখ্যা $n$ বাড়ালে দেখুন কীভাবে স্পর্শক রেখা ($n=1$) থেকে শুরু করে পরাবৃত্ত ($n=2$), ঘনক ($n=3$) পেরিয়ে বহুপদীটি $\cos(x)$, $\sin(x)$ বা $e^x$-এর সাথে মিলে যায়। দ্বিতীয় ল্যাবে $x$ ও পদসংখ্যা বদলে দেখুন কোন পরিসরে ধারা কনভার্জ করে আর কোথায় বিস্ফোরিত হয়।</p>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে টেইলর বহুপদী ল্যাব দেখুন">
+          <taylor-poly-lab></taylor-poly-lab>
+        </b1b-fullscreen>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে অভিসারী ব্যাসার্ধ ল্যাব দেখুন">
+          <convergence-radius-lab></convergence-radius-lab>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — all three data-JSON official 3B1B quizzes, exact options ═══ -->
+      <b1b-section id="sec-quizzes" title="ধারণা যাচাই: ৩টি ইন্টারেক্টিভ কুইজ" data-no-narration="true">
+        <b1b-quiz
+          question="❓ ১. টেইলর ধারার $n$-তম ঘাতের পদ $(x-a)^n$-এর সহগে কেন $\frac{1}{n!}$ ফ্যাক্টোরিয়াল ফ্যাক্টরটি উপস্থিত থাকে?"
+          correct="1"
+          correct-msg="চমৎকার ও নিখুঁত! $(x-a)^n$-কে $n$-বার ডিফারেনশিয়েট করলে পাওয়ার রুলের কারণে $n\times(n-1)\times\dots\times1=n!$ গুণক চলে আসে। সহগকে মূল ডেরিভেটিভ $f^{(n)}(a)$-র সমান রাখতে হলে $n!$ দিয়ে ভাগ আবশ্যক—এটি কোনো সুবিধাবাদী অনুপাত নয়, বরং পাওয়ার রুলের প্রত্যক্ষ ফল।"
+          wrong-msg="ভুল! এটি কোনো যদৃচ্ছ বা সুবিধাবাদী অনুপাত নয়, ইন্টিগ্রেশনের ফলও নয়, আর জোড়-বিজোড় ঘাতের নিয়মও নয়। আসল কারণ: $c_nx^n$-কে $n$ বার ডিফারেনশিয়েট করলে পাই $n!\,c_n$। একে $f^{(n)}(0)$-এর সমান করতে হলে $c_n=\frac{f^{(n)}(0)}{n!}$ হতেই হবে।"
+          reveal-msg="সঠিক উত্তর: দ্বিতীয় বিকল্প। ফ্যাক্টোরিয়ালটি আসে বারবার পাওয়ার রুল প্রয়োগ থেকে, এবং সহগকে সঠিক ডেরিভেটিভ মানে আনতেই তার বিপরীত হিসেবে $n!$ দিয়ে ভাগ করা হয়।">
+          <div slot="option">কারণ এটি কেবল একটি সুবিধাজনক সাধারণ অনুপাত যা হিসাব সহজ করে</div>
+          <div slot="option">কারণ $(x-a)^n$-কে $n$-বার ডিফারেনশিয়েট করলে পাওয়ার রুলের কারণে $n\times(n-1)\times\dots\times1=n!$ গুণক চলে আসে, যা প্রশমিত করতে $n!$ দিয়ে ভাগ করতে হয়</div>
+          <div slot="option">কারণ ফাংশনের ক্ষেত্রফল বের করতে ইন্টিগ্রেশনে ফ্যাক্টোরিয়াল প্রয়োজন হয়</div>
+          <div slot="option">কারণ বহুপদীর পদগুলো সর্বদা বিজোড় সংখ্যায় বৃদ্ধি পায়</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ২. $x=0$ বিন্দুর নিকটে $f(x)=\cos(x)$ ফাংশনটির দ্বিতীয় ক্রমের (Quadratic) টেইলর আসন্নায়ন বহুপদী কোনটি?"
+          correct="2"
+          correct-msg="একেবারে সঠিক! $\cos(0)=1$, $\cos'(0)=-\sin(0)=0$, এবং $\cos''(0)=-\cos(0)=-1$। সুতরাং $P_2(x)=1+0\cdot x+\frac{-1}{2!}x^2=1-\frac{x^2}{2}$। $x-\frac{x^3}{6}$ হলো $\sin(x)$-এর তৃতীয় ক্রমের আসন্নায়ন—এখানে তা প্রয়োগযোগ্য নয়।"
+          wrong-msg="ভুল! $1+x$ হলো $e^x$-এর রৈখিক আসন্নায়ন; $1-x$-এ প্রথম ডেরিভেটিভ $-\sin(0)=0$ হওয়ায় রৈখিক পদ থাকাই উচিত নয়; আর $x-\frac{x^3}{6}$ হলো $\sin(x)$-এর আসন্নায়ন। সঠিক উত্তর $1-\frac{x^2}{2}$, কারণ $\cos''(0)=-1$ ও $2!=2$।"
+          reveal-msg="সঠিক উত্তর: তৃতীয় বিকল্প $1-\frac{x^2}{2}$। মান, ঢাল ও বক্রতা—তিনটি শর্তই শূন্যে মিলিয়ে দেয় এই পরাবৃত্তটি।">
+          <div slot="option">$1+x$</div>
+          <div slot="option">$1-x$</div>
+          <div slot="option">$1-\frac{x^2}{2}$</div>
+          <div slot="option">$x-\frac{x^3}{6}$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৩. কোনো ফাংশনের $x=a$ বিন্দুতে টেইলর ধারার সবকটি পদ যোগ করলে তা কি সর্বদা সব বাস্তব সংখ্যার জন্য মূল ফাংশনের নিখুঁত সমান হবে?"
+          correct="3"
+          correct-msg="অসাধারণ অন্তর্দৃষ্টি! প্রতিটি টেইলর ধারার একটি অভিসারী ব্যাসার্ধ $R$ থাকতে পারে; তার বাইরে ধারাটি অপসারিত হয়। যেমন $\frac{1}{1-x}=1+x+x^2+\dots$ কেবল $|x|&lt;1$-এর ভেতরেই কার্যকর। তবে $e^x,\sin(x),\cos(x)$-এর ক্ষেত্রে $R=\infty$, তাই সেখানে ধারা সব জায়গায় সমান।"
+          wrong-msg="ভুল! এটি শুধু অ্যানালাইটিক ফাংশনের ক্ষেত্রেই সত্য; অসীম সংখ্যক পদের সীমাস্থ বহুপদী যেকোনো মসৃণ বক্ররেখা ধারণ করতে পারে (দ্বিতীয় বিকল্পের দাবি ভুল)। এটা কম্পিউটারের মেমরির সীমাবদ্ধতাও নয়—বিষয়টি গাণিতিক তত্ত্বের। সঠিক কারণ হলো অভিসারী ব্যাসার্ধের সীমাবদ্ধতা।"
+          reveal-msg="সঠিক উত্তর: চতুর্থ বিকল্প। কেবল অসীম অভিসারী ব্যাসার্ধযুক্ত ফাংশনের জন্যই ধারা সমগ্র সংখ্যারেখায় ফাংশনের সমান হয়; অন্যদের ক্ষেত্রে একটি নির্দিষ্ট গণ্ডি থাকে।">
+          <div slot="option">হ্যাঁ, যেকোনো ফাংশনের জন্য টেইলর ধারা সমগ্র সংখ্যারেখায় ১০০% সমান হয়</div>
+          <div slot="option">না, কারণ বহুপদী কখনোই বক্ররেখা হতে পারে না</div>
+          <div slot="option">না, কারণ কম্পিউটার কেবল তিনটি পদ পর্যন্ত হিসাব করতে পারে</div>
+          <div slot="option">না, কারণ ফাংশনটির একটি নির্দিষ্ট অভিসারী ব্যাসার্ধ (Radius of Convergence) থাকতে পারে, যার বাইরে ধারাটি অসীমে অপসারিত হয়</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <b1b-section id="sec-summary" title="সারমর্ম ও পরবর্তী পাঠ" data-no-narration="true">
+        <b1b-callout type="green" icon="🧠" title="মূল অন্তর্দৃষ্টি">
+          <p>টেইলর ধারার কেন্দ্রীয় ভাবনা একটিই: একটি একক বিন্দুতে ডেরিভেটিভের তথ্য সেই বিন্দুর পুরো প্রতিবেশে ফাংশনের আসন্ন মানে রূপান্তরিত হয়। $c_n=\frac{f^{(n)}(a)}{n!}$—ফ্যাক্টোরিয়ালটি আসে বারবার পাওয়ার রুল থেকে, আর $(x-a)$ লেখা হয় যাতে $x=a$-তে সুন্দর বাতিল ঘটে। অসীম পদ যোগ করলে টেইলর বহুপদী থেকে টেইলর ধারা পাওয়া যায়, কিন্তু অভিসারী ব্যাসার্ধের বাইরে সেই সমতা ভেঙে যায়।</p>
+        </b1b-callout>
+        <p>টেইলর ধারা সম্পর্কে আরও শিখতে হবে—এর বহু ব্যবহার, ত্রুটির সীমা নির্ধারণের কৌশল, এবং কখন ধারা কনভার্জ করে কখন নয় তা যাচাইয়ের পরীক্ষা। এই সিরিজের লক্ষ্য হলো মৌলিক অন্তর্দৃষ্টি গড়ে তোলা, যাতে আপনি নিজে আরও এগিয়ে যেতে পারেন। পরবর্তী অধ্যায়ে আমরা দেখব টেইলর ধারাকে জ্যামিতিক দৃষ্টিকোণ থেকে কীভাবে বোঝা যায়—একটি ঘূর্ণায়মান বহুপদীর মাধ্যমে।</p>
+      </b1b-section>
+
+      <b1b-section id="sec-figure-study" title="চিত্র অধ্যয়ন: পেন্ডুলাম ও কোসাইন" data-no-narration="true">
+        <b1b-figure
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDAgMzAwIiB3aWR0aD0iNDQwIiBoZWlnaHQ9IjMwMCI+PHJlY3Qgd2lkdGg9IjQ0MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iMjIwIiB5MT0iNDAiIHgyPSIyMjAiIHkyPSI2MCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjMiLz48Y2lyY2xlIGN4PSIyMjAiIGN5PSI0MCIgcj0iNiIgZmlsbD0iI2ZiYmYyNCIvPjxsaW5lIHgxPSIyMjAiIHkxPSI0MCIgeDI9IjMyMCIgeTI9IjIxMCIgc3Ryb2tlPSIjMzhiZGY4IiBzdHJva2Utd2lkdGg9IjQiLz48Y2lyY2xlIGN4PSIzMjAiIGN5PSIyMTAiIHI9IjE2IiBmaWxsPSIjZjk3MzE2Ii8+PGxpbmUgeDE9IjIyMCIgeTE9IjQwIiB4Mj0iMjIwIiB5Mj0iMjUwIiBzdHJva2U9IiM2NDc0OGIiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWRhc2hhcnJheT0iNiA1Ii8+PGxpbmUgeDE9IjIyMCIgeTE9IjI0MCIgeDI9IjMyMCIgeTI9IjI0MCIgc3Ryb2tlPSIjMzRkMzk5IiBzdHJva2Utd2lkdGg9IjMiLz48bGluZSB4MT0iMzIwIiB5MT0iMjEwIiB4Mj0iMzIwIiB5Mj0iMjQwIiBzdHJva2U9IiMzNGQzOTkiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWRhc2hhcnJheT0iNCA0Ii8+PHBhdGggZD0iTSAyMjAgMjUwIFEgMjg1IDI0NSAzMjAgMjEwIiBmaWxsPSJub25lIiBzdHJva2U9IiNhNzhiZmEiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjI1MCIgeT0iMTg1IiBmaWxsPSIjYTc4YmZhIiBmb250LXNpemU9IjE2IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+JiM5NTI7PC90ZXh0Pjx0ZXh0IHg9IjI0OCIgeT0iMjM1IiBmaWxsPSIjMzRkMzk5IiBmb250LXNpemU9IjE0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+MSAmIzg3MjI7IGNvcyAmIzk1Mjs8L3RleHQ+PHRleHQgeD0iMzAiIHk9IjQwIiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjE0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+UGVuZHVsdW06IGggJiM4NzMzOyAxICYjODcyMjsgY29zICYjOTUyOzwvdGV4dD48L3N2Zz4="
+          alt="পেন্ডুলামের কোণ θ ও তার নিচতম অবস্থান থেকে উচ্চতা 1−cosθ"
+          caption="এই চিত্রে পেন্ডুলামের দণ্ড উল্লম্বের সাথে $\theta$ কোণে ঘুরে আছে, আর সবুজ রেখাটি বলটির নিচতম অবস্থান থেকে উঠে যাওয়া উচ্চতা দেখাচ্ছে। এই উচ্চতা $1-\cos\theta$-এর সমানুপাতিক—এই কারণেই টেইলর ধারার মূল প্রেরণা আসে পদার্থবিদ্যা থেকে। লক্ষ্য করুন কোণ ছোট হলে $\cos\theta$-কে $1-\frac{\theta^2}{2}$ দ্বারা বদলে দিলে পুরো হিসাব কত সহজ হয়ে যায়।"></b1b-figure>
+
+        <b1b-figure
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NjAgMzAwIiB3aWR0aD0iNDYwIiBoZWlnaHQ9IjMwMCI+PHJlY3Qgd2lkdGg9IjQ2MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNDAiIHkxPSIyNTAiIHgyPSI0NDAiIHkyPSIyNTAiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjIzMCIgeTE9IjIwIiB4Mj0iMjMwIiB5Mj0iMjgwIiBzdHJva2U9IiM5NGEzYjgiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0gNjAgNzAgUSAxNDUgMjUwIDIzMCAyNTAgUSAzMTUgMjUwIDQwMCA3MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzhiZGY4IiBzdHJva2Utd2lkdGg9IjMiLz48cGF0aCBkPSJNIDEyMCAxMTggUSAyMzAgMjUwIDM0MCAxMTgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZiYmYyNCIgc3Ryb2tlLXdpZHRoPSIzIi8+PGNpcmNsZSBjeD0iMjMwIiBjeT0iMjUwIiByPSI1IiBmaWxsPSIjZjQ3MmI2Ii8+PHRleHQgeD0iMjUwIiB5PSIyMzAiIGZpbGw9IiNmNDcyYjYiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj4oMCwgMSk8L3RleHQ+PHRleHQgeD0iMzAwIiB5PSIxMDAiIGZpbGw9IiMzOGJkZjgiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5jb3MgeDwvdGV4dD48dGV4dCB4PSIzMzAiIHk9IjE1MCIgZmlsbD0iI2ZiYmYyNCIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPjEgJiM4NzIyOyB4JiMxNzg7LzI8L3RleHQ+PHRleHQgeD0iMjAiIHk9IjMwIiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjEzIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+VmFsdWUgKyBzbG9wZSArIGN1cnZhdHVyZSBtYXRjaCBhdCAwPC90ZXh0Pjwvc3ZnPg=="
+          alt="cos(x) বক্ররেখা ও 1−x²/2 দ্বিঘাত আসন্নায়নের তুলনা"
+          caption="নীল রেখা হলো প্রকৃত $\cos(x)$ এবং হলুদ রেখা $1-\frac{x^2}{2}$ পরাবৃত্ত—দুটো শূন্যের কাছে প্রায় অবিকল মিলে যায়। গোলাপি বিন্দু $(0,1)$ সেই জায়গা যেখানে মান, ঢাল ও বক্রতা—তিনটিই মেলানো হয়েছে। এই চিত্রটি দেখেই বোঝা যায় কেন $c_0=1$, $c_1=0$ এবং $c_2=-\frac{1}{2}$: অন্য যেকোনো সহগ বেছে নিলে রেখাটি কোসাইন বক্ররেখা থেকে সরে যেত।"></b1b-figure>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <b1b-watch-panel
+    video-src="../../media_vault/calculus/lesson_10/experiments/fill_v2/3b1b_calculus_10_full_dubbed_fill2.mp4"
+    yt-id="3d6DsjIBzJ4"
+    title="অধ্যায় ১০: টেইলর ধারা ও উচ্চতর সান্নিধ্যকরণ — Taylor series"
+    subtitle="গ্রান্ট স্যান্ডারসনের মূল ৩ব্লু১ব্রাউন উপস্থাপনায় দেখুন কীভাবে একটি বিন্দুর ডেরিভেটিভ থেকে পুরো ফাংশন পুনর্নির্মাণ হয়।"
+    playlist-title="📋 প্লেলিস্ট — ক্যালকুলাস সিরিজ">
+  </b1b-watch-panel>
+</div><!-- /lesson-body -->
+
+<b1b-chapter-nav
+  prev-url="lesson_09.html"
+  prev-title="ক্ষেত্রফলের সাথে ঢালের কী সম্পর্ক?"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_11.html"
+  next-title="ডি এক্স এর প্রকৃত অর্থ"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- Page-local lab components (new components only; no library override/patch). -->
+<script>
+(function () {
+  'use strict';
+
+  class TaylorPolyLab extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.rendered) return;
+      this.dataset.rendered = '1';
+      this.innerHTML = `
+        <div class="calc-lab">
+          <canvas class="calc-canvas" width="900" height="420"></canvas>
+          <div class="calc-controls">
+            <div class="calc-control"><label><span>ফাংশন</span><span class="calc-val" data-for="fn">cos x</span></label><select class="fn"><option value="cos">cos x</option><option value="sin">sin x</option><option value="exp">e^x</option></select></div>
+            <div class="calc-control"><label><span>পদসংখ্যা n</span><span class="calc-val" data-for="n">২</span></label><input type="range" class="n" min="0" max="8" step="1" value="2"/></div>
+          </div>
+          <div class="calc-stats">
+            <div class="calc-stat"><span>বহুপদী P_n(x)</span><strong class="stat-poly">—</strong></div>
+            <div class="calc-stat"><span>ত্রুটি |f − P| at x</span><strong class="stat-err">—</strong></div>
+            <div class="calc-stat"><span>মান x</span><strong class="stat-x">—</strong></div>
+          </div>
+        </div>`;
+      this._canvas = this.querySelector('.calc-canvas');
+      this._ctx = this._canvas.getContext('2d');
+      this._fn = this.querySelector('.fn');
+      this._n = this.querySelector('.n');
+      const draw = () => this._draw();
+      this._fn.addEventListener('change', () => {
+        this.querySelector('[data-for="fn"]').textContent = this._fn.selectedOptions[0].textContent; draw();
+      });
+      this._n.addEventListener('input', () => { this.querySelector('[data-for="n"]').textContent = this._n.value; draw(); });
+      window.addEventListener('resize', () => this._resize());
+      window.addEventListener('b1b-fullscreen-change', () => this._resize());
+      this._resize();
+    }
+    _resize() {
+      if (!this._canvas) return;
+      const w = this._canvas.parentElement.clientWidth || 900;
+      this._canvas.width = w;
+      this._canvas.height = Math.max(360, Math.min(520, w * 0.46));
+      this._draw();
+    }
+    _draw() {
+      const ctx = this._ctx; if (!ctx) return;
+      const W = this._canvas.width, H = this._canvas.height;
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#080b12' : '#f8fafc'; ctx.fillRect(0, 0, W, H);
+      const kind = this._fn.value, N = parseInt(this._n.value, 10);
+      const f = t => kind === 'cos' ? Math.cos(t) : kind === 'sin' ? Math.sin(t) : Math.exp(t);
+      const fact = k => { let p = 1; for (let i = 2; i <= k; i++) p *= i; return p; };
+      const P = t => { let s = 0; for (let k = 0; k <= N; k++) {
+        let d; if (kind === 'cos') d = (k % 4 === 0) ? 1 : (k % 4 === 2) ? -1 : 0;
+        else if (kind === 'sin') d = (k % 4 === 1) ? 1 : (k % 4 === 3) ? -1 : 0;
+        else d = 1;
+        s += d * Math.pow(t, k) / fact(k);
+      } return s; };
+      const ox = 52, oy = H - 46, sx = (W - 90) / 6.4, sy = (H - 100) / 4.6;
+      const fx = t => ox + (t + 0.2) * sx, fy = v => oy - (v + 0.6) * sy;
+      ctx.strokeStyle = dark ? '#64748b' : '#334155'; ctx.lineWidth = 1.4;
+      ctx.beginPath(); ctx.moveTo(fx(-0.2), 18); ctx.lineTo(fx(-0.2), oy); ctx.lineTo(W - 20, oy); ctx.stroke();
+      ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 3; ctx.beginPath();
+      for (let t = -0.2; t <= 6.2; t += 0.03) { const px = fx(t), py = fy(f(t)); t === -0.2 ? ctx.moveTo(px, py) : ctx.lineTo(px, py); } ctx.stroke();
+      ctx.strokeStyle = '#fbbf24'; ctx.lineWidth = 2.4; ctx.beginPath();
+      let started = false;
+      for (let t = -0.2; t <= 6.2; t += 0.03) {
+        const v = P(t); if (!isFinite(v) || v > 8 || v < -4) { started = false; continue; }
+        const px = fx(t), py = fy(v); started ? ctx.lineTo(px, py) : ctx.moveTo(px, py); started = true;
+      } ctx.stroke();
+      const x0 = 2.0;
+      this.querySelector('.stat-poly').textContent = 'n = ' + N;
+      this.querySelector('.stat-x').textContent = x0.toFixed(1);
+      this.querySelector('.stat-err').textContent = Math.abs(f(x0) - P(x0)).toFixed(5);
+      ctx.fillStyle = dark ? '#e2e8f0' : '#0f172a'; ctx.font = '13px sans-serif';
+      ctx.fillText('f(x) = ' + (kind === 'exp' ? 'e^x' : kind + ' x'), W - 150, 30);
+      ctx.fillStyle = '#fbbf24'; ctx.fillText('P_' + N + '(x) — Taylor polynomial', W - 230, 50);
+    }
+  }
+
+  class ConvergenceRadiusLab extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.rendered) return;
+      this.dataset.rendered = '1';
+      this.innerHTML = `
+        <div class="calc-lab">
+          <canvas class="calc-canvas" width="900" height="420"></canvas>
+          <div class="calc-controls">
+            <div class="calc-control"><label><span>ফাংশন / ধারা</span><span class="calc-val" data-for="fn">1/(1−x)</span></label><select class="fn"><option value="geom">1/(1−x)</option><option value="ln">−ln(1−x)</option><option value="exp">e^x</option></select></div>
+            <div class="calc-control"><label><span>আংশিক পদ N</span><span class="calc-val" data-for="n">৮</span></label><input type="range" class="n" min="1" max="30" step="1" value="8"/></div>
+            <div class="calc-control"><label><span>পরীক্ষা বিন্দু x</span><span class="calc-val" data-for="x">০.৫০</span></label><input type="range" class="x" min="-1.5" max="1.5" step="0.05" value="0.5"/></div>
+          </div>
+          <div class="calc-stats">
+            <div class="calc-stat"><span>প্রকৃত f(x)</span><strong class="stat-true">—</strong></div>
+            <div class="calc-stat"><span>আংশিক যোগফল S_N</span><strong class="stat-sum">—</strong></div>
+            <div class="calc-stat"><span>অবস্থা</span><strong class="stat-state">—</strong></div>
+          </div>
+        </div>`;
+      this._canvas = this.querySelector('.calc-canvas');
+      this._ctx = this._canvas.getContext('2d');
+      this._fn = this.querySelector('.fn'); this._n = this.querySelector('.n'); this._x = this.querySelector('.x');
+      const draw = () => this._draw();
+      this._fn.addEventListener('change', () => { this.querySelector('[data-for="fn"]').textContent = this._fn.selectedOptions[0].textContent; draw(); });
+      this._n.addEventListener('input', () => { this.querySelector('[data-for="n"]').textContent = this._n.value; draw(); });
+      this._x.addEventListener('input', () => { this.querySelector('[data-for="x"]').textContent = parseFloat(this._x.value).toFixed(2); draw(); });
+      window.addEventListener('resize', () => this._resize());
+      window.addEventListener('b1b-fullscreen-change', () => this._resize());
+      this._resize();
+    }
+    _resize() {
+      if (!this._canvas) return;
+      const w = this._canvas.parentElement.clientWidth || 900;
+      this._canvas.width = w; this._canvas.height = Math.max(360, Math.min(520, w * 0.46)); this._draw();
+    }
+    _draw() {
+      const ctx = this._ctx; if (!ctx) return;
+      const W = this._canvas.width, H = this._canvas.height;
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#080b12' : '#f8fafc'; ctx.fillRect(0, 0, W, H);
+      const kind = this._fn.value, N = parseInt(this._n.value, 10), x = parseFloat(this._x.value);
+      const trueFn = t => kind === 'geom' ? 1 / (1 - t) : kind === 'ln' ? -Math.log(1 - t) : Math.exp(t);
+      const partial = t => { let s = 0; for (let k = 0; k <= N; k++) {
+        if (kind === 'geom') s += Math.pow(t, k);
+        else if (kind === 'ln') s += Math.pow(t, k + 1) / (k + 1) * (k % 2 === 0 ? -1 : 1) * -1;
+        else { let p = 1; for (let i = 2; i <= k; i++) p *= i; s += Math.pow(t, k) / p; }
+      } return s; };
+      const ox = 52, oy = H - 46, sx = (W - 90) / 3.1, sy = (H - 100) / 12;
+      const fx = t => ox + (t + 1.5) * sx, fy = v => oy - v * sy;
+      ctx.strokeStyle = dark ? '#64748b' : '#334155'; ctx.lineWidth = 1.4;
+      ctx.beginPath(); ctx.moveTo(fx(-1.5), 18); ctx.lineTo(fx(-1.5), oy); ctx.lineTo(W - 20, oy); ctx.stroke();
+      ctx.strokeStyle = '#34d399'; ctx.lineWidth = 2; ctx.setLineDash([4, 4]);
+      ctx.strokeRect(fx(kind === 'exp' ? -1.5 : 0), 20, fx(kind === 'exp' ? 1.5 : 2) - fx(kind === 'exp' ? -1.5 : 0), oy - 20);
+      ctx.setLineDash([]);
+      ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 3; ctx.beginPath();
+      let s1 = false;
+      for (let t = -1.5; t <= 1.5; t += 0.02) { const v = trueFn(t); if (!isFinite(v) || v > 11 || v < -5) { s1 = false; continue; } const px = fx(t), py = fy(v); s1 ? ctx.lineTo(px, py) : ctx.moveTo(px, py); s1 = true; } ctx.stroke();
+      ctx.strokeStyle = '#fbbf24'; ctx.lineWidth = 2; ctx.beginPath();
+      let s2 = false;
+      for (let t = -1.5; t <= 1.5; t += 0.02) { const v = partial(t); if (!isFinite(v) || v > 11 || v < -5) { s2 = false; continue; } const px = fx(t), py = fy(v); s2 ? ctx.lineTo(px, py) : ctx.moveTo(px, py); s2 = true; } ctx.stroke();
+      const tv = trueFn(x), sv = partial(x);
+      this.querySelector('.stat-true').textContent = isFinite(tv) ? tv.toFixed(4) : 'অসংজ্ঞায়িত';
+      this.querySelector('.stat-sum').textContent = isFinite(sv) ? sv.toFixed(4) : 'অসীম';
+      const conv = kind === 'exp' || Math.abs(x) < 1;
+      this.querySelector('.stat-state').textContent = conv ? 'কনভার্জ করছে' : 'ডাইভার্জ করছে';
+      ctx.fillStyle = dark ? '#e2e8f0' : '#0f172a'; ctx.font = '13px sans-serif';
+      ctx.fillText('সবুজ গণ্ডি = অভিসারী পরিসর', W - 250, 30);
+      ctx.fillStyle = '#fbbf24'; ctx.fillText('আংশিক যোগফল S_N', W - 230, 50);
+    }
+  }
+
+  if (!customElements.get('taylor-poly-lab')) customElements.define('taylor-poly-lab', TaylorPolyLab);
+  if (!customElements.get('convergence-radius-lab')) customElements.define('convergence-radius-lab', ConvergenceRadiusLab);
+})();
+</script>
+
+</body>
+</html>

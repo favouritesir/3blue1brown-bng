@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>বিশ্লেষণ — ৩ব্লু১ব্রাউন বাংলা</title>
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<style>
+  .course-hero {
+    padding: 100px 24px 48px;
+    background: radial-gradient(circle at 50% 20%, rgba(116, 192, 227, 0.15), transparent 70%);
+    text-align: center;
+  }
+  .course-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    background: rgba(116, 192, 227, 0.15);
+    border: 1px solid var(--border-theme);
+    border-radius: 20px;
+    color: var(--theme);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .course-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+  .course-sub {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 680px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+  }
+  .course-stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .c-stat {
+    text-align: center;
+  }
+  .c-stat-val {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--theme);
+  }
+  .c-stat-lbl {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .chapters-container {
+    max-width: 960px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+  }
+  .chapter-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .chapter-row {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+  .chapter-row:hover {
+    border-color: var(--theme);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+  }
+  .ch-num {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--theme);
+    min-width: 48px;
+    text-align: center;
+    opacity: 0.85;
+  }
+  .ch-body {
+    flex: 1;
+  }
+  .ch-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+  .ch-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .ch-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .ch-tag {
+    font-size: 0.78rem;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+  }
+  .ch-action {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--theme);
+    font-weight: bold;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../../index.html">
+      <svg class="pi-logo" viewBox="-50 -50 100 100" aria-label="৩ব্লু১ব্রাউন">
+        <path fill="#74C0E3" d="M 0 0 L 0 -50 A 50 50 0 1 1 -50 0 z"/>
+        <path fill="#8C6239" d="M 0 0 L 0 -50 A 50 50 0 0 0 -50 0 z"/>
+        <circle cx="0" cy="0" r="22" fill="#000"/>
+        <circle cx="-8" cy="-6" r="7" fill="#fff"/>
+        <circle cx="8" cy="-6" r="7" fill="#fff"/>
+        <circle cx="-7" cy="-6" r="3.5" fill="#000"/>
+        <circle cx="9" cy="-6" r="3.5" fill="#000"/>
+        <path d="M -10 6 Q 0 14 10 6" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-title">৩ব্লু১ব্রাউন বাংলা</span>
+        <span class="logo-sub">কোর্স সূচিপত্র</span>
+      </div>
+    </a>
+
+    <div class="nav-breadcrumb">
+      <a href="../../index.html">হোম</a>
+      <span>/</span>
+      <span>বিশ্লেষণ</span>
+    </div>
+
+    <div class="nav-actions">
+      <a href="../../board.html" style="color:var(--theme); font-weight:700; font-size:0.85rem; text-decoration:none; margin-right:8px;">📊 ট্র্যাকার বোর্ড</a>
+      <button class="icon-btn" id="themeBtn" onclick="toggleTheme()" title="থিম পরিবর্তন">🌙</button>
+      <a href="lesson_01.html" style="background:var(--theme); color:#000; padding:6px 16px; border-radius:20px; font-weight:bold; font-size:0.85rem;">শুরু করুন →</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="course-hero">
+  <div class="course-badge">সম্পূর্ণ বাংলায় অনুদিত ও ভিজ্যুয়ালাইজড</div>
+  <h1 class="course-title">বিশ্লেষণ</h1>
+  <p class="course-sub">Analysis — জেটা ফাংশন, ফুরিয়ার বিশ্লেষণ, কনভোলিউশন, ওয়াইন্ডিং নম্বর, প্যাডিক সংখ্যা ও পরিমাপ তত্ত্ব: গ্রান্ট স্যান্ডারসনের এই ধারণাগুলোর বাংলা পাঠ।</p>
+
+  <div class="course-stats-bar">
+    <div class="c-stat"><div class="c-stat-val">১০</div><div class="c-stat-lbl">সম্পূর্ণ পাঠ</div></div>
+    <div class="c-stat"><div class="c-stat-val">৪০+</div><div class="c-stat-lbl">ন্যারেশন কিউ</div></div>
+    <div class="c-stat"><div class="c-stat-val">১০০%</div><div class="c-stat-lbl">অফলাইন KaTeX গণিত</div></div>
+    <div class="c-stat"><div class="c-stat-val">০%</div><div class="c-stat-lbl">ভোকাল ব্লিড / নয়েজ</div></div>
+  </div>
+</section>
+
+<!-- ═══════════ CHAPTERS LIST ═══════════ -->
+<main class="chapters-container">
+  <div class="chapter-grid">
+  
+    <a href="lesson_01.html" class="chapter-row">
+      <div class="ch-num">0১</div>
+      <div class="ch-body">
+        <h2 class="ch-title">রিম্যান জেটা ফাংশন ও বিশ্লেষণীয় ধারাবাহিকতা (Visualizing the Riemann zeta function and analytic continuation)</h2>
+        <p class="ch-desc">একটি সাদাসিধে অසිමোটিক যোগ থেকে জন্ম নেওয়া গভীরতম ফাংশন — এবং কীভাবে একে জটিল তলে আঁকা যায়</p>
+        <div class="ch-tags">
+          <span class="ch-tag">📅 ৯ ডিসেম্বর, ২০১৬</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_02.html" class="chapter-row">
+      <div class="ch-num">0২</div>
+      <div class="ch-body">
+        <h2 class="ch-title">ছবির লগারিদম কীভাবে (এবং কেন) নেবেন (How (and why) to take a logarithm of an image)</h2>
+        <p class="ch-desc">এশারের «Print Gallery» চিত্রের ভেতরের অসম্ভব ঘূর্ণন আর জটিল লগারিদমের সুন্দর সংযোগ</p>
+        <div class="ch-tags">
+          <span class="ch-tag">📅 ২১ মার্চ, ২০২৬</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_03.html" class="chapter-row">
+      <div class="ch-num">0৩</div>
+      <div class="ch-body">
+        <h2 class="ch-title">ফুরিয়ার ট্রান্সফর্ম আসলে কী? — এক দৃশ্যমান পরিচয় (But what is the Fourier Transform? A visual introduction)</h2>
+        <p class="ch-desc">সংকেতকে বৃত্তে মেপে তার ভেতরের ফ্রিকোয়েন্সিগুলো কীভাবে বের করা যায়</p>
+        <div class="ch-tags">
+          <span class="ch-tag">📅 ২৬ জানুয়ারি, ২০১৮</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_04.html" class="chapter-row">
+      <div class="ch-num">0৪</div>
+      <div class="ch-body">
+        <h2 class="ch-title">সাধারণ অনিশ্চয়তা নীতি — কোয়ান্টামের বাইরেও (The more general uncertainty principle, beyond quantum)</h2>
+        <p class="ch-desc">তরঙ্গ কতটা সঙ্কুচিত হতে পারে, আর তার ফুরিয়ার রূপ কতটা ছড়ানো — এই দুইয়ের অদ্ভুত টানাপোড়েন</p>
+        <div class="ch-tags">
+          <span class="ch-tag">📅 ২৫ ফেব্রুয়ারি, ২০১৮</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_05.html" class="chapter-row">
+      <div class="ch-num">0৫</div>
+      <div class="ch-body">
+        <h2 class="ch-title">ফুরিয়ার সিরিজ — তাপ প্রবাহ থেকে বৃত্ত অঙ্কন (But what is a Fourier series? From heat flow to circle drawings)</h2>
+        <p class="ch-desc">ঘূর্ণায়মান ছোট ভেক্টরগুলো কীভাবে যোগ হয়ে যেকোনো ছবি আঁকে</p>
+        <div class="ch-tags">
+          <span class="ch-tag">📅 ৩০ জুন, ২০১৯</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_06.html" class="chapter-row">
+      <div class="ch-num">0৬</div>
+      <div class="ch-body">
+        <h2 class="ch-title">গবেষকরা ভাবলেন এটা বাগ — বোরওয়েইন ইন্টিগ্রাল (Researchers thought this was a bug (Borwein integrals))</h2>
+        <p class="ch-desc">সারির পর সারি ইন্টিগ্রাল ঠিক $\pi/2$ দিচ্ছে, তারপর হঠাৎ একটিমাত্র পদে সামান্য কমে যায়</p>
+        <div class="ch-tags">
+          <span class="ch-tag">📅 ৪ নভেম্বর, ২০২২</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_07.html" class="chapter-row">
+      <div class="ch-num">0৭</div>
+      <div class="ch-body">
+        <h2 class="ch-title">কনভোলিউশন আসলে কী? (But what is a convolution?)</h2>
+        <p class="ch-desc">দুই পাশার যোগফল থেকে ছবির ঝাপসা করা — একই গাণিতিক ক্রিয়ার তিন রূপ</p>
+        <div class="ch-tags">
+          <span class="ch-tag">📅 ১৮ নভেম্বর, ২০২২</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_08.html" class="chapter-row">
+      <div class="ch-num">0৮</div>
+      <div class="ch-body">
+        <h2 class="ch-title">ওয়াইন্ডিং নম্বর ও ডোমেইন কালারিং (Winding numbers and domain coloring)</h2>
+        <p class="ch-desc">জটিল সমীকরণের সমাধান খোঁজার একটি চতুর, দৃশ্যমান অ্যালগরিদম</p>
+        <div class="ch-tags">
+          <span class="ch-tag">📅 ২৪ মার্চ, ২০১৮</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_09.html" class="chapter-row">
+      <div class="ch-num">0৯</div>
+      <div class="ch-body">
+        <h2 class="ch-title">গণিত আবিষ্কারের অনুভূতি কেমন? (What does it feel like to invent math?)</h2>
+        <p class="ch-desc">অসীম যোগ আর প্যাডিক সংখ্যার ভেতর দিয়ে নতুন গণিত তৈরির এক আস্বাদ</p>
+        <div class="ch-tags">
+          <span class="ch-tag">📅 ১৪ আগস্ট, ২০১৫</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_10.html" class="chapter-row">
+      <div class="ch-num">১০</div>
+      <div class="ch-body">
+        <h2 class="ch-title">সঙ্গীত ও পরিমাপ তত্ত্ব (Music And Measure Theory)</h2>
+        <p class="ch-desc">সুরের মিল-অমিল থেকে জন্ম নেওয়া একটি গাণিতিক ধারণা — পরিমাপ</p>
+        <div class="ch-tags">
+          <span class="ch-tag">📅 ৪ অক্টোবর, ২০১৫</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+  </div>
+</main>
+
+</body>
+</html>

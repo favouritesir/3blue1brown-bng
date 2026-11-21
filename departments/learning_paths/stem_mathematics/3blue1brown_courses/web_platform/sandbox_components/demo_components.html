@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ভেক্টর আসলে কী? | Vectors, what even are they? (Essence of linear algebra, chapter 1)</title>
+<!-- Official KaTeX Stylesheet & Scripts -->
+<link rel="stylesheet" href="../assets/libs/katex/katex.min.css"/>
+<!-- Main & Lesson Stylesheets -->
+<link rel="stylesheet" href="../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../assets/css/narration.css"/>
+<script src="../assets/audio/linear_algebra/lesson_01/manifest.js"></script>
+<script defer src="../assets/js/narration_engine.js"></script>
+
+<!-- KaTeX Offline Engine & Stub Fallback -->
+<script defer src="../assets/libs/katex/katex.min.js"></script>
+<script defer src="../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../assets/libs/katex-stub.js"></script>
+
+<!-- Web Components Library -->
+<script src="lesson_components.js"></script>
+
+<!-- Platform JS & Lesson Engine -->
+<script defer src="../assets/js/main.js"></script>
+<script defer src="../assets/js/lesson.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY WEB COMPONENT ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR WEB COMPONENT ═══════════ -->
+<b1b-navbar
+  course-title="লিনিয়ার অ্যালজেব্রা"
+  course-url="../courses/linear_algebra/index.html"
+  home-url="../index.html"
+  chapter-num="০১"
+  chapter-total="০৫"
+  prev-url=""
+  prev-title="পূর্ববর্তী অধ্যায় নেই"
+  next-url="../courses/linear_algebra/lesson_02.html"
+  next-title="পরবর্তী অধ্যায়: রৈখিক সমন্বয় ও স্প্যান"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO WEB COMPONENT ═══════════ -->
+<b1b-hero-player
+  course-title="লিনিয়ার অ্যালজেব্রা"
+  course-url="../courses/linear_algebra/index.html"
+  chapter-label="অধ্যায় ০১ · লিনিয়ার অ্যালজেব্রার সারমর্ম"
+  title="ভেক্টর আসলে কী? | Vectors, what even are they? (Essence of linear algebra, chapter 1)"
+  desc="ভেক্টরের তিনটি ভিন্ন ব্যাখ্যা — পদার্থবিদ, কম্পিউটার বিজ্ঞানী ও গণিতবিদের দৃষ্টিভঙ্গি থেকে — এবং ভেক্টর যোগ ও স্কেলার গুণনের অন্তর্দৃষ্টি।"
+  video-src="../media_vault/lesson_01/3b1b_lesson_01_bangla_dubbed_video.mp4"
+  yt-id="fNk_zzaMoSs"
+  date="৬ আগস্ট, ২০১৬"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2016/eola/chapter1.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <!-- Smart Reading Narration Top Banner -->
+    <div class="narration-card fade-up">
+      <div class="narration-card-left">
+        <div class="narration-icon-box">🎙️</div>
+        <div>
+          <h4>শিক্ষক অডিও বিবরণ ও লাইভ কারাওকে সহকারী <span class="badge-live">TEACHER VOICE</span></h4>
+          <p>দরদী শিক্ষকের কণ্ঠে প্রতিটি অনুচ্ছেদ, গাণিতিক সূত্র ও চিত্র বিবরণ শুনুন — সাথে রিয়েলটাইম হাইলাইটার ও কন্ট্রোল।</p>
+        </div>
+      </div>
+      <div class="narration-card-right">
+        <button id="btnListenFullArticle" class="btn-read-full">
+          🎙️ শিক্ষকের কণ্ঠে শুনুন
+        </button>
+      </div>
+    </div>
+
+    <!-- Timestamp Bookmarks Ribbon -->
+    <div class="bookmark-ribbon fade-up">
+      <div class="bookmark-ribbon-title">
+        <span>⏱️ অধ্যায়ের টাইমস্ট্যাম্প বুকমার্ক — যেকোনো অংশে সরাসরি জাম্প করুন:</span>
+      </div>
+      <div class="bookmark-grid">
+        <button class="bookmark-chip" onclick="jumpToLessonTime(0, this)">
+          <span class="bookmark-time">০০:০০</span>
+          <span>ভেক্টরের সূচনা ও মূল দৃষ্টিভঙ্গি</span>
+        </button>
+        <button class="bookmark-chip" onclick="jumpToLessonTime(65, this)">
+          <span class="bookmark-time">০১:০৫</span>
+          <span>পদার্থবিদ, সিএস ও গণিতবিদ দৃষ্টিভঙ্গি</span>
+        </button>
+        <button class="bookmark-chip" onclick="jumpToLessonTime(160, this)">
+          <span class="bookmark-time">০২:৪০</span>
+          <span>স্থানাঙ্ক ব্যবস্থার পেছনের দর্শন</span>
+        </button>
+        <button class="bookmark-chip" onclick="jumpToLessonTime(315, this)">
+          <span class="bookmark-time">০৫:১৫</span>
+          <span>ভেক্টর যোগ — ত্রিভুজ ও সামান্তরিক সূত্র</span>
+        </button>
+        <button class="bookmark-chip" onclick="jumpToLessonTime(450, this)">
+          <span class="bookmark-time">০৭:৩০</span>
+          <span>স্কেলার গুণন ও স্ট্রেচিং রহস্য</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Table of Contents Web Component -->
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-interpretations">ভেক্টরের তিনটি দৃষ্টিভঙ্গি</a>
+      <a href="#sec-coordinates">কোঅর্ডিনেট সিস্টেম ও মূলবিন্দু</a>
+      <a href="#sec-addition">ভেক্টর যোগ — জ্যামিতিক ও সংখ্যাতাত্ত্বিক রূপ</a>
+      <a href="#sec-scalar">স্কেলার গুণন — প্রসারণ, সংকোচন ও বিপরীতকরণ</a>
+      <a href="#sec-basis">ভিত্তি ভেক্টর (আই হ্যাট ও জে হ্যাট)</a>
+      <a href="#sec-visualizer">ইন্টারেক্টিভ এসভিজি ভিজ্যুয়ালাইজার</a>
+    </b1b-toc-sidebar>
+
+    <article class="article">
+
+      <!-- Section 1: Interpretations -->
+      <b1b-section id="sec-interpretations" title="ভেক্টরের তিনটি দৃষ্টিভঙ্গি">
+        <b1b-quote author="হের্মান ওয়াইল">
+          সংখ্যাকে স্থানাঙ্ক হিসেবে উপস্থাপন করা একটি সহিংস কাজ।
+        </b1b-quote>
+
+        <p>লিনিয়ার বীজগণিতের একেবারে গোড়ার বা মৌলিক ভিত্তিপ্রস্তর হলো—<strong>ভেক্টর</strong>। কিন্তু ভেক্টর <em>আসলে কী জিনিস?</em> গণিত, পদার্থবিদ্যা এবং কম্পিউটার বিজ্ঞানের শিক্ষার্থীরা এই প্রশ্নটির উত্তর কিছুটা ভিন্ন ভিন্ন দৃষ্টিভঙ্গি থেকে দিয়ে থাকেন।</p>
+
+        <b1b-figure src="../assets/figures/la_01/VectorExample.svg" alt="ভেক্টরের উদাহরণ" caption="একটি ভেক্টর — দিক ও মান নির্দেশক তীরচিহ্ন"></b1b-figure>
+
+        <p>মোটাদাগে তিনটি সুনির্দিষ্ট দৃষ্টিভঙ্গি রয়েছে — পদার্থবিজ্ঞানের ছাত্রের দৃষ্টিভঙ্গি, কম্পিউটার সায়েন্সের ছাত্রের দৃষ্টিভঙ্গি, এবং গণিতবিদদের দৃষ্টিভঙ্গি।</p>
+
+        <b1b-figure src="../assets/figures/la_01/perspectives.svg" alt="তিনটি দৃষ্টিভঙ্গি" caption="তিনটি পৃথক দৃষ্টিভঙ্গি থেকে ভেক্টরের ব্যাখ্যা"></b1b-figure>
+
+        <b1b-callout type="blue" icon="📐" title="১. পদার্থবিজ্ঞানের ছাত্রের দৃষ্টিভঙ্গি (Physics Perspective)">
+          <p>পদার্থবিজ্ঞানের শিক্ষার্থীদের কাছে ভেক্টর হলো মহাশূন্যে বা সমতলে নির্দেশিত একটি <strong>তীরচিহ্ন (arrow)</strong>। একটি নির্দিষ্ট ভেক্টরকে সংজ্ঞায়িত করে দুটি মৌলিক বৈশিষ্ট্য: তার <em>দৈর্ঘ্য বা মান (magnitude)</em> এবং তার <em>অভিমুখ (direction)</em>। যতক্ষণ এই দুটি বৈশিষ্ট্য অপরিবর্তিত থাকছে, আপনি একে স্থান পরিবর্তন করে যেকোনো জায়গায় সরাতে পারেন—ভেক্টর কিন্তু একই থাকবে।</p>
+        </b1b-callout>
+
+        <b1b-figure src="../assets/figures/la_01/MagnitudeAndDirection.svg" alt="দৈর্ঘ্য ও দিক" caption="ভেক্টরের দুটি অবিচ্ছেদ্য বৈশিষ্ট্য: মান (দৈর্ঘ্য) এবং দিক"></b1b-figure>
+
+        <p>যেসব ভেক্টর একটি সমতলে অবস্থান করে তারা দ্বিমাত্রিক (২ডি), আর আমাদের চারপাশের বিস্তৃত স্থানে যেসব ভেক্টর অবস্থান করে তারা ত্রিমাত্রিক (থ্রিডি)।</p>
+
+        <b1b-figure src="../assets/figures/la_01/2dAnd3DVectors.jpg" alt="টুডি ও থ্রিডি ভেক্টর" caption="একটি সমতলে থাকা ভেক্টর হলো দ্বিমাত্রিক (টুডি), আর বিস্তৃত স্থানের ভেক্টর হলো ত্রিমাত্রিক (থ্রিডি)"></b1b-figure>
+
+        <b1b-callout type="gold" icon="💻" title="২. কম্পিউটার সায়েন্সের ছাত্রের দৃষ্টিভঙ্গি (Computer Science Perspective)">
+          <p>অন্যদিকে, কম্পিউটার সায়েন্সের দৃষ্টিভঙ্গি হলো—ভেক্টর মূলত <strong>সংখ্যার একটি সুশৃঙ্খল তালিকা (Ordered List / Array)</strong>। উদাহরণস্বরূপ, আপনি যদি বাড়ির দাম ও বৈশিষ্ট্যের অ্যানালিটিক্স করেন, তবে প্রতিটি বাড়িকে একজোড়া সংখ্যা দিয়ে প্রকাশ করতে পারেন:</p>
+          <b1b-formula math="\vec{v}_{\text{house}} = \begin{bmatrix} 2{,}600 \text{ ft}^2 \\ \$3{,}00{,}000 \end{bmatrix}"></b1b-formula>
+          
+          <p>এখানে সংখ্যার ক্রম কিন্তু অত্যন্ত সংবেদনশীল ও অর্থবহ। প্রথম সংখ্যাটি সবসময় আয়তন নির্দেশ করবে এবং দ্বিতীয়টি দাম। এই প্রেক্ষাপটে ভেক্টর শব্দটি মূলত লিস্ট বা তালিকারই একটি গাণিতিক প্রতিশব্দ, এবং এর মাত্রা নির্ভর করে তালিকার দৈর্ঘ্যের ওপর।</p>
+          
+          <!-- Code Showcase (Refined high contrast syntax theme) -->
+          <div class="code-showcase">
+            <div class="code-header">
+              <div class="code-dots">
+                <span class="code-dot dot-red"></span>
+                <span class="code-dot dot-yellow"></span>
+                <span class="code-dot dot-green"></span>
+              </div>
+              <span class="code-title">vector_ops.js — Array & Vector Transform</span>
+              <span class="code-badge">JavaScript</span>
+            </div>
+            <pre class="code-body"><code><span class="hl-kw">function</span> <span class="hl-fn">swap</span>( <span class="hl-param">i</span>, <span class="hl-param">j</span> ) {
+  [<span class="hl-var">arr</span>[<span class="hl-param">i</span>], <span class="hl-var">arr</span>[<span class="hl-param">j</span>]] <span class="hl-op">=</span> [<span class="hl-var">arr</span>[<span class="hl-param">j</span>], <span class="hl-var">arr</span>[<span class="hl-param">i</span>]];
+}
+
+<span class="hl-kw">function</span> <span class="hl-fn">vectorMerge</span>(<span class="hl-param">l</span>, <span class="hl-param">m</span>, <span class="hl-param">r</span>) {
+  <span class="hl-kw">let</span> <span class="hl-var">last</span> <span class="hl-op">=</span> <span class="hl-num">0</span>, <span class="hl-var">ap</span> <span class="hl-op">=</span> <span class="hl-param">m</span> <span class="hl-op">+</span> <span class="hl-num">1</span>, <span class="hl-var">rp</span> <span class="hl-op">=</span> <span class="hl-param">m</span> <span class="hl-op">+</span> <span class="hl-num">1</span>;
+  <span class="hl-kw">while</span>(<span class="hl-var">a</span>[<span class="hl-param">l</span>] <span class="hl-op">&lt;=</span> <span class="hl-var">a</span>[<span class="hl-var">rp</span>]) { <span class="hl-param">l</span><span class="hl-op">++</span>; }
+  <span class="hl-fn">swap</span>(<span class="hl-param">l</span><span class="hl-op">++</span>, <span class="hl-var">rp</span><span class="hl-op">++</span>);
+}</code></pre>
+          </div>
+        </b1b-callout>
+
+        <b1b-callout type="green" icon="📐" title="৩. গণিতবিদদের দৃষ্টিভঙ্গি (Mathematician's Perspective)">
+          <p>গণিতবিদরা এই দুই ধারণাকে এক সুতোয় গেঁথে একটি সাধারণ বিমূর্ত রূপ দেন। তাঁদের মতে, <em>যেকোনো কিছুকেই ভেক্টর বলা যাবে</em>, যদি সেখানে দুটি নির্দিষ্ট গাণিতিক ক্রিয়াকলাপের সুস্পষ্ট ও সংগত নিয়ম থাকে: <strong>ভেক্টর যোগ</strong> এবং <strong>স্কেলার দ্বারা গুণন</strong>।</p>
+        </b1b-callout>
+
+        <b1b-figure src="../assets/figures/la_01/MathematiciansPerspective.svg" alt="গণিতবিদের দৃষ্টিভঙ্গি" caption="গণিতবিদের বিমূর্ত ভেক্টর স্পেসের সার্বজনীন রূপ"></b1b-figure>
+      </b1b-section>
+
+      <!-- Section 2: Coordinate Systems -->
+      <b1b-section id="sec-coordinates" title="কোঅর্ডিনেট সিস্টেম ও মূলবিন্দু">
+        <p>দ্বিমাত্রিক বা টুডি তলের দিকে তাকালে, আমরা একটি অনুভূমিক রেখা পাই যাকে বলে <em>এক্স অক্ষ</em>, এবং একটি উল্লম্ব রেখা পাই যাকে বলে <em>ওয়াই অক্ষ</em>।</p>
+
+        <b1b-figure src="../assets/figures/la_01/CoordinateSystemAxes.svg" alt="কোঅর্ডিনেট অক্ষ" caption="অনুভূমিক এক্স অক্ষ এবং উল্লম্ব ওয়াই অক্ষ"></b1b-figure>
+
+        <p>যে বিন্দুতে অক্ষ দুটি পরস্পরকে লম্বভাবে ছেদ করে, তাকে বলে <strong>মূলবিন্দু (origin)</strong>। লিনিয়ার বীজগণিতে এই মূলবিন্দু হলো সমস্ত ভেক্টরের মূল সূচনাস্থল। প্রতিটি ভেক্টরের লেজ বা tail সর্বদা এই মূলবিন্দুতেই স্থিত থাকে।</p>
+
+        <b1b-figure src="../assets/figures/la_01/CoordinateSystemOrigin.svg" alt="মূলবিন্দু" caption="অক্ষের মিলনকেন্দ্র: মূলবিন্দু $(0, 0)$"></b1b-figure>
+
+        <b1b-figure src="../assets/figures/la_01/CoordinateSystemGrid.svg" alt="গ্রিড সিস্টেম" caption="সমান দূরত্বের টিক মার্ক ও নির্দেশক গ্রিড লাইন"></b1b-figure>
+
+        <p>একটি ভেক্টরের <strong>কোঅর্ডিনেট (Coordinates)</strong> হলো দুটি সংখ্যার জোড়া, যা নির্দেশ করে মূলবিন্দু থেকে ভেক্টরের শীর্ষবিন্দুতে পৌঁছাতে কত দূর এবং কোন দিকে যেতে হবে।</p>
+
+        <b1b-figure src="../assets/figures/la_01/VectorAsArrow.svg" alt="তীর হিসেবে ভেক্টর" caption="মূলবিন্দু থেকে শীর্ষবিন্দু নির্দেশক তীরচিহ্ন"></b1b-figure>
+        <b1b-figure src="../assets/figures/la_01/VectorCoordinates.svg" alt="ভেক্টরের কোঅর্ডিনেট" caption="ভেক্টরের উপাদান প্রকাশ: কলাম ভেক্টর রূপে"></b1b-figure>
+
+        <b1b-formula math="\vec{v} = \begin{bmatrix} x \\ y \end{bmatrix}"></b1b-formula>
+
+        <p>উদাহরণস্বরূপ, ভেক্টর $\begin{bmatrix} 3 \\ -2 \end{bmatrix}$ নির্দেশ করে: এক্স অক্ষ বরাবর ডানদিকে ৩ একক, এবং তারপর ওয়াই অক্ষের সমান্তরালে নিচের দিকে ২ একক।</p>
+
+        <b1b-figure src="../assets/figures/la_01/VectorCoordinates3d.svg" alt="থ্রিডি ভেক্টর কোঅর্ডিনেট" caption="ত্রিমাত্রিক স্থানে তৃতীয় অক্ষ — জেড অক্ষ — যুক্ত হয়"></b1b-figure>
+
+        <!-- Quiz 1 as Web Component <b1b-quiz> -->
+        <b1b-quiz
+          question="❓ কোন ভেক্টরটি ৪ একক <em>নিচে</em> এবং তারপর ৭ একক <em>ডানে</em> যাওয়ার সাথে মিলে?"
+          correct="2"
+          correct-msg="চমৎকার! ৪ একক নিচে এবং ৭ একক ডানে — তার মানে $x = 7$, $y = -4$। সুতরাং ভেক্টর $\begin{bmatrix} 7 \\ -4 \end{bmatrix}$ বা $[7, -4]$।"
+          wrong-msg="মনে রেখো: প্রথম সংখ্যাটি এক্স অক্ষের (ডান-বাম), দ্বিতীয় সংখ্যাটি ওয়াই অক্ষের (উপর-নিচ): $x = 7, y = -4$।"
+          reveal-msg="সঠিক উত্তর হলো $\begin{bmatrix} 7 \\ -4 \end{bmatrix}$ বা $[7, -4]$ — এক্স অক্ষে $+7$ এবং ওয়াই অক্ষে $-4$।">
+          <div slot="option">$\begin{bmatrix} -4 \\ 7 \end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix} -7 \\ 4 \end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix} 7 \\ -4 \end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix} 4 \\ 7 \end{bmatrix}$</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- Section 3: Vector Addition -->
+      <b1b-section id="sec-addition" title="ভেক্টর যোগ — জ্যামিতিক ও সংখ্যাতাত্ত্বিক রূপ">
+        <p>দুটি ভেক্টর যোগ করার জ্যামিতিক পদ্ধতিটি অত্যন্ত স্বাভাবিক ও স্বজ্ঞাত। একে বলা হয় <em>টিপ-টু-টেইল (Tip-to-Tail) পদ্ধতি</em>। প্রথম ভেক্টরের মাথায় দ্বিতীয় ভেক্টরের লেজ স্থাপন করুন। এরপর প্রথম ভেক্টরের সূচনা থেকে দ্বিতীয় ভেক্টরের শীর্ষবিন্দু পর্যন্ত টানা নতুন ভেক্টরটিই হলো তাদের যোগফল।</p>
+
+        <b1b-figure src="../assets/figures/la_01/VectorAdditionPrep.svg" alt="ভেক্টর যোগের প্রস্তুতি"></b1b-figure>
+        <b1b-figure src="../assets/figures/la_01/VectorAddition.svg" alt="ভেক্টর যোগ" caption="টিপ-টু-টেইল নিয়মে দুটি ভেক্টরের যোগফল"></b1b-figure>
+
+        <p>ভেক্টর যোগকে চলন বা সরণ হিসেবে ভাবলে বোঝা যায়: প্রথমে প্রথম ভেক্টর বরাবর যাত্রা, তারপর দ্বিতীয় ভেক্টর বরাবর যাত্রা — মোট সরণটিই হলো এই দুই ভেক্টরের যোগফল ভেক্টরের সমান।</p>
+
+        <b1b-formula math="\begin{bmatrix} x_1 \\ y_1 \end{bmatrix} + \begin{bmatrix} x_2 \\ y_2 \end{bmatrix} = \begin{bmatrix} x_1 + x_2 \\ y_1 + y_2 \end{bmatrix}"></b1b-formula>
+
+        <b1b-figure src="../assets/figures/la_01/VectorAdditionComponents.svg" alt="উপাদানসহ ভেক্টর যোগ" caption="উপাদান পুনর্বিন্যাসের মাধ্যমে উপাংশভিত্তিক যোগের যৌক্তিক প্রমাণ"></b1b-figure>
+
+        <b1b-formula math="\begin{bmatrix} 1 \\ 2 \end{bmatrix} + \begin{bmatrix} 3 \\ -1 \end{bmatrix} = \begin{bmatrix} 4 \\ 1 \end{bmatrix}"></b1b-formula>
+
+        <p>উদাহরণস্বরূপ: প্রথম ভেক্টর $\begin{bmatrix} 1 \\ 2 \end{bmatrix}$ এবং দ্বিতীয় ভেক্টর $\begin{bmatrix} 3 \\ -1 \end{bmatrix}$; টিপ-টু-টেইল পথে চারটি পদক্ষেপ: ১ ডানে, ২ উপরে, ৩ ডানে, ১ নিচে। পদক্ষেপগুলো পুনর্বিন্যাস করলে: মোট ৪ একক ডানে এবং ১ একক উপরে — অর্থাৎ লব্ধি যোগফল $\begin{bmatrix} 4 \\ 1 \end{bmatrix}$।</p>
+
+        <b1b-figure src="../assets/figures/la_01/VectorAdditionComponentsReorganizeSteps.svg" alt="টিপ-টু-টেইল পথের চারটি পদক্ষেপ পুনর্বিন্যাস" caption="টিপ-টু-টেইল পথের চারটি পদক্ষেপ পুনর্বিন্যাস"></b1b-figure>
+
+        <p>সাধারণ সংখ্যারেখায়ও একইভাবে কাজ করে: $2 + 5 = 7$ মানে প্রথমে ২ একক ডানে পদার্পণ, তারপর আরও ৫ একক ডানে — মোট ৭ এককের সরণ।</p>
+
+        <b1b-figure src="../assets/figures/la_01/NumberLine.svg" alt="সংখ্যারেখা" caption="একমাত্রিক সংখ্যারেখায় পদক্ষেপের মতো ভেক্টর যোগ"></b1b-figure>
+
+        <b1b-callout type="blue" icon="💡" title="কেন এই নির্দিষ্ট সংজ্ঞা?">
+          <p>ভেক্টরকে যদি কোনো চলনের পদক্ষেপ হিসেবে ভাবা হয়—প্রথমে প্রথম ভেক্টর বরাবর পদার্পণ, তারপর দ্বিতীয় ভেক্টর বরাবর যাত্রা—তবে মোট সরণ হবে সরাসরি যোগফল ভেক্টরের সমান। পদার্থবিদ্যায় একাধিক বলের লব্ধি নির্ণয় করতেও এই একই নিয়ম প্রযোজ্য।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- Section 4: Scalar Multiplication -->
+      <b1b-section id="sec-scalar" title="স্কেলার গুণন — প্রসারণ, সংকোচন ও বিপরীতকরণ">
+        <p>একটি সংখ্যা দিয়ে ভেক্টরকে গুণ করার প্রক্রিয়াকে বলা হয় <strong>স্কেলিং (Scaling)</strong>। আর যে সংখ্যাটি দিয়ে গুণ করা হয় তাকে বলা হয় <strong>স্কেলার (Scalar)</strong>।</p>
+
+        <b1b-formula math="k \cdot \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} k \cdot x \\ k \cdot y \end{bmatrix}"></b1b-formula>
+
+        <p>গণিতে "স্কেলার" শব্দটি মূলত সংখ্যার সমার্থক হিসেবে ব্যবহৃত হয়: যেকোনো সংখ্যা দিয়ে কোনো ভেক্টরকে প্রসারিত বা সংকুচিত (স্কেল) করলে সেই সংখ্যাটিকে স্কেলার বলা হয়।</p>
+
+        <b1b-figure src="../assets/figures/la_01/VectorScalingByTwo.svg" alt="২ দিয়ে স্কেলিং" caption="$k = 2$: ভেক্টরটির দৈর্ঘ্য দ্বিগুণ হয়"></b1b-figure>
+        <b1b-figure src="../assets/figures/la_01/VectorScalingByOneOverThree.svg" alt="১/৩ দিয়ে স্কেলিং" caption="$k = 1/3$: ভেক্টরটি এক-তৃতীয়াংশে সংকুচিত হয়"></b1b-figure>
+        <b1b-figure src="../assets/figures/la_01/VectorScalingByNegativeOnePointFive.svg" alt="−১.৫ দিয়ে স্কেলিং" caption="$k = -1.8$: ভেক্টরটির দিক ১৮০° ঘুরে যায় এবং দেড়গুণের বেশি প্রসারিত হয়"></b1b-figure>
+
+        <div class="insight-box">
+          <strong>🔑 মূল অন্তর্দৃষ্টি:</strong> লিনিয়ার বীজগণিতের প্রতিটি স্তম্ভ — লিনিয়ার কম্বিনেশন, স্প্যান, ভিত্তি, ম্যাট্রিক্স রূপান্তর, এবং আইগেনভ্যালু — এই দুটি মৌলিক অপারেশনের (ভেক্টর যোগ ও স্কেলার গুণন) ওপর ভিত্তি করেই প্রতিষ্ঠিত।
+        </div>
+
+        <!-- 3B1B Media Tab Component (Dual Image / Video Switcher) -->
+        <b1b-media-tab>
+          <div slot="image">
+            <img src="../assets/figures/la_02/LinearCombinationScalarsRangeFree.svg" alt="স্কেলার মুক্তভাবে পরিবর্তনশীল" />
+          </div>
+          <div slot="video">
+            <video src="../assets/figures/la_02/LinearCombinationScalarsRangeFree.mp4" controls loop muted playsinline></video>
+          </div>
+          <div slot="caption">চিত্র ও ভিডিও টগল: স্কেলার দুটি মুক্তভাবে পরিবর্তন হলে সম্পূর্ণ দ্বিমাত্রিক সমতল কীভাবে গঠিত হয় তা লক্ষ্য করুন।</div>
+        </b1b-media-tab>
+
+        <!-- Quiz 2 as Web Component <b1b-quiz> -->
+        <b1b-quiz
+          question="❓ যদি $\vec{v} = \begin{bmatrix} 3 \\ 1 \end{bmatrix}$ হয়, তবে $-2\vec{v}$ এর মান কত?"
+          correct="1"
+          correct-msg="অসাধারণ! $-2 \cdot \begin{bmatrix} 3 \\ 1 \end{bmatrix} = \begin{bmatrix} -2 \cdot 3 \\ -2 \cdot 1 \end{bmatrix} = \begin{bmatrix} -6 \\ -2 \end{bmatrix}$।"
+          wrong-msg="প্রতিটি উপাদান স্কেলার দিয়ে গুণ হয়: $k = -2$ হলে $x \to -2x$ এবং $y \to -2y$।"
+          reveal-msg="সঠিক উত্তর হলো $\begin{bmatrix} -6 \\ -2 \end{bmatrix}$।">
+          <div slot="option">$\begin{bmatrix} -3 \\ -1 \end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix} -6 \\ -2 \end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix} 6 \\ 2 \end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix} -2 \\ -6 \end{bmatrix}$</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- Section 5: Basis Vectors -->
+      <b1b-section id="sec-basis" title="ভিত্তি ভেক্টর — আই হ্যাট ও জে হ্যাট">
+        <p>দ্বিমাত্রিক কার্তেসীয় তলে দুটি বিশেষ একক ভেক্টর রয়েছে, যা সম্পূর্ণ স্থানাঙ্ক ব্যবস্থার মেরুদণ্ড হিসেবে কাজ করে:</p>
+        <ul>
+          <li><strong>আই হ্যাট ($\hat{i}$):</strong> এক্স অক্ষের ধনাত্মক দিকে ১ একক দৈর্ঘ্যের নির্দেশক ভেক্টর।</li>
+          <li><strong>জে হ্যাট ($\hat{j}$):</strong> ওয়াই অক্ষের ধনাত্মক দিকে ১ একক দৈর্ঘ্যের নির্দেশক ভেক্টর।</li>
+        </ul>
+
+        <b1b-formula math="\hat{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \qquad \hat{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}"></b1b-formula>
+
+        <p>যেকোনো দ্বিমাত্রিক ভেক্টরকে এই দুটির স্কেল করা রূপের যোগফল বা রৈখিক সমন্বয় হিসেবে প্রকাশ করা যায়:</p>
+        <b1b-formula math="\begin{bmatrix} 3 \\ -2 \end{bmatrix} = 3\hat{i} + (-2)\hat{j}"></b1b-formula>
+
+        <b1b-callout type="gold" icon="🌟" title="কেন ভিত্তি ভেক্টর গুরুত্বপূর্ণ?">
+          <p>গ্রান্ট স্যান্ডারসন (3Blue1Brown) সুন্দরভাবে ব্যাখ্যা করেন: স্থানাঙ্ক আসলে কোনো পরম সত্য নয়, এটি কেবল একটি নির্দিষ্ট ভিত্তি ভেক্টর জোড়ার সাপেক্ষে স্থান পরিমাপের চুক্তি মাত্র। আগামী অধ্যায়ে আমরা দেখব কীভাবে এই ভিত্তি ভেক্টরগুলো পুরো ত্রিমাত্রিক ও দ্বিমাত্রিক স্থানকে তৈরি (span) করে।</p>
+        </b1b-callout>
+
+        <!-- ─── Interactive Vector Decomposer & Analyzer ─── -->
+        <div class="interactive-calc-box" id="vectorDecomposerBox">
+          <div class="calc-header">
+            <div class="calc-title">
+              <span>⚡ ইন্টারেক্টিভ ল্যাব: ভিত্তি ভেক্টর বিশ্লেষণ ও উপাংশ পরীক্ষক</span>
+            </div>
+            <div class="code-badge">Live Math Engine</div>
+          </div>
+          <p style="font-size:0.95rem; margin-bottom:16px; color:var(--text-muted);">
+            যেকোনো স্থানাঙ্ক $(x, y)$ ইনপুট দিন অথবা প্রিসেটে ক্লিক করুন — সিস্টেম সরাসরি ভিত্তি ভেক্টর $(\hat{i}, \hat{j})$, দৈর্ঘ্য $\|\vec{v}\|$, দিক কোণ $\theta$ এবং একক ভেক্টরে $(\hat{u})$ রূপান্তর দেখাবে:
+          </p>
+          <div class="calc-grid">
+            <div class="calc-input-group">
+              <label for="decompX">এক্স উপাংশ ($x$ বা $\hat{i}$ এর স্কেলার গুণক):</label>
+              <div class="calc-input-row">
+                <input type="number" id="decompX" class="calc-input" value="3" step="0.5" />
+              </div>
+            </div>
+            <div class="calc-input-group">
+              <label for="decompY">ওয়াই উপাংশ ($y$ বা $\hat{j}$ এর স্কেলার গুণক):</label>
+              <div class="calc-input-row">
+                <input type="number" id="decompY" class="calc-input" value="-2" step="0.5" />
+              </div>
+            </div>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px;">
+            <span style="font-size:0.85rem; color:var(--text-muted); align-self:center;">প্রিসেট ট্রাই করুন:</span>
+            <button type="button" class="viz-tool-btn" onclick="setDecompVals(3, -2)">[3, -2]</button>
+            <button type="button" class="viz-tool-btn" onclick="setDecompVals(-4, 3)">[-4, 3]</button>
+            <button type="button" class="viz-tool-btn" onclick="setDecompVals(5, 0)">[5, 0]</button>
+            <button type="button" class="viz-tool-btn" onclick="setDecompVals(-2, -3.5)">[-2, -3.5]</button>
+          </div>
+          <div class="calc-result-panel" id="decompResult">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </b1b-section>
+
+      <!-- Section 6: Interactive SVG Visualizer Web Component -->
+      <b1b-section id="sec-visualizer" title="ইন্টারেক্টিভ এসভিজি ভিজ্যুয়ালাইজার (Interactive 2D Vector Plane)">
+        <p>নিচের কোঅর্ডিনেট সমতলে ভেক্টরের লাল বিন্দুটি টেনে যেকোনো অবস্থানে নিন। স্কেলার স্লাইডার ঘুরিয়ে ভেক্টরটিকে প্রসারিত, সংকুচিত বা দিক উল্টে দিন ($c \cdot \vec{v}$)। রিয়েল-টাইমে স্থানাঙ্ক, দৈর্ঘ্য ও দিক কোণ আপডেট হবে।</p>
+
+        <b1b-interactive-lab title="ভেক্টর কোঅর্ডিনেট সমতল — ড্র্যাগ করে পরীক্ষা করো!" wrapper-id="vecVizWrapper">
+          <!-- SVG-based High-Precision Coordinate Plane -->
+          <div class="viz-svg-container" id="svgContainer">
+            <svg id="interactiveSvgPlane" class="viz-svg" viewBox="-300 -200 600 400">
+              <defs>
+                <!-- Arrowhead markers -->
+                <marker id="arrow-v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#ff4757"/>
+                </marker>
+                <marker id="arrow-scaled" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f7c948"/>
+                </marker>
+                <marker id="arrow-i" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#3a86ff"/>
+                </marker>
+                <marker id="arrow-j" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#00b4d8"/>
+                </marker>
+              </defs>
+
+              <!-- Dynamic Grid & Axes Layer -->
+              <g id="svgGridLayer"></g>
+              <g id="svgAxesLayer"></g>
+
+              <!-- Basis Vectors Layer -->
+              <g id="svgBasisLayer">
+                <line x1="0" y1="0" x2="40" y2="0" stroke="#3a86ff" stroke-width="2.5" marker-end="url(#arrow-i)"/>
+                <text x="46" y="-6" fill="#3a86ff" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">î</text>
+                
+                <line x1="0" y1="0" x2="0" y2="-40" stroke="#00b4d8" stroke-width="2.5" marker-end="url(#arrow-j)"/>
+                <text x="6" y="-46" fill="#00b4d8" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">ĵ</text>
+              </g>
+
+              <!-- Scaled Vector Layer (Yellow) -->
+              <line id="svgScaledLine" x1="0" y1="0" x2="120" y2="80" stroke="#f7c948" stroke-width="3" stroke-dasharray="6,4" marker-end="url(#arrow-scaled)"/>
+              <text id="svgScaledText" x="125" y="95" fill="#f7c948" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold"></text>
+
+              <!-- Primary Vector Layer (Red) -->
+              <line id="svgVectorLine" x1="0" y1="0" x2="120" y2="80" stroke="#ff4757" stroke-width="3.5" marker-end="url(#arrow-v)"/>
+              <text id="svgVectorText" x="125" y="75" fill="#ff4757" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">v = [3, -2]</text>
+
+              <!-- Draggable Vector Tip Handle -->
+              <circle id="svgVectorHandle" class="svg-handle" cx="120" cy="80" r="8" fill="#ff4757" stroke="#ffffff" stroke-width="2.5"/>
+            </svg>
+          </div>
+
+          <div class="viz-controls">
+            <div class="viz-slider-row">
+              <label for="scalarSlider">স্কেলার গুণক ($c$):</label>
+              <input type="range" id="scalarSlider" min="-3" max="3" step="0.05" value="1"/>
+              <span class="viz-val" id="scalarVal">১.০০</span>
+            </div>
+          </div>
+          <div class="viz-info" id="vecInfo">ভেক্টর v: [৩.০০, −২.০০] | দৈর্ঘ্য ||v||: ৩.৬১ | কোণ: −৩৪° | c·v: [৩.০০, −২.০০]</div>
+        </b1b-interactive-lab>
+      </b1b-section>
+
+    </article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE PANEL WEB COMPONENT ── -->
+  <b1b-watch-panel
+    video-src="../media_vault/lesson_01/3b1b_lesson_01_bangla_dubbed_video.mp4"
+    yt-id="fNk_zzaMoSs"
+    title="ভেক্টর আসলে কী? | Vectors, what even are they? — অধ্যায় ১"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — লিনিয়ার অ্যালজেব্রা">
+    <div slot="playlist">
+      <a class="playlist-item active" href="demo_components.html">
+        <div class="playlist-num">১</div>
+        <div class="playlist-item-info">
+          <div class="playlist-item-title">ভেক্টর আসলে কী?</div>
+          <div class="playlist-item-meta">অধ্যায় ১ · চলমান</div>
+        </div>
+      </a>
+      <a class="playlist-item" href="../courses/linear_algebra/lesson_02.html">
+        <div class="playlist-num">২</div>
+        <div class="playlist-item-info">
+          <div class="playlist-item-title">রৈখিক সমন্বয়, স্প্যান ও ভিত্তি</div>
+          <div class="playlist-item-meta">অধ্যায় ২</div>
+        </div>
+      </a>
+      <a class="playlist-item" href="../courses/linear_algebra/lesson_03.html">
+        <div class="playlist-num">৩</div>
+        <div class="playlist-item-info">
+          <div class="playlist-item-title">রৈখিক রূপান্তর ও ম্যাট্রিক্স</div>
+          <div class="playlist-item-meta">অধ্যায় ৩</div>
+        </div>
+      </a>
+      <a class="playlist-item" href="../courses/linear_algebra/lesson_04.html">
+        <div class="playlist-num">৪</div>
+        <div class="playlist-item-info">
+          <div class="playlist-item-title">ম্যাট্রিক্স গুণন — রূপান্তরের রচনা</div>
+          <div class="playlist-item-meta">অধ্যায় ৪</div>
+        </div>
+      </a>
+      <a class="playlist-item" href="../courses/linear_algebra/lesson_05.html">
+        <div class="playlist-num">৫</div>
+        <div class="playlist-item-info">
+          <div class="playlist-item-title">ত্রিমাত্রিক রৈখিক রূপান্তর</div>
+          <div class="playlist-item-meta">অধ্যায় ৫</div>
+        </div>
+      </a>
+    </div>
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM CHAPTER NAVIGATION WEB COMPONENT ═══════════ -->
+<b1b-chapter-nav
+  prev-url=""
+  prev-title="শুরু"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="../courses/linear_algebra/lesson_02.html"
+  next-title="রৈখিক সমন্বয়, স্প্যান ও ভিত্তি ভেক্টর"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<!-- ═══════════ COURSE CHAPTER PLAYLIST WEB COMPONENT ═══════════ -->
+<b1b-chapter-list
+  title="📋 কোর্স অধ্যায় তালিকা — লিনিয়ার অ্যালজেব্রা"
+  course-url="../courses/linear_algebra/index.html"
+  course-label="সম্পূর্ণ কোর্স সূচি দেখুন →">
+  <a class="playlist-item active" href="demo_components.html">
+    <div class="playlist-num">১</div>
+    <div class="playlist-item-info">
+      <div class="playlist-item-title">ভেক্টর আসলে কী? | Vectors, what even are they?</div>
+      <div class="playlist-item-meta">অধ্যায় ১ · চলমান পাঠ</div>
+    </div>
+  </a>
+  <a class="playlist-item" href="../courses/linear_algebra/lesson_02.html">
+    <div class="playlist-num">২</div>
+    <div class="playlist-item-info">
+      <div class="playlist-item-title">রৈখিক সমন্বয়, স্প্যান ও ভিত্তি ভেক্টর</div>
+      <div class="playlist-item-meta">অধ্যায় ২</div>
+    </div>
+  </a>
+  <a class="playlist-item" href="../courses/linear_algebra/lesson_03.html">
+    <div class="playlist-num">৩</div>
+    <div class="playlist-item-info">
+      <div class="playlist-item-title">রৈখিক রূপান্তর ও ম্যাট্রিক্স</div>
+      <div class="playlist-item-meta">অধ্যায় ৩</div>
+    </div>
+  </a>
+  <a class="playlist-item" href="../courses/linear_algebra/lesson_04.html">
+    <div class="playlist-num">৪</div>
+    <div class="playlist-item-info">
+      <div class="playlist-item-title">ম্যাট্রিক্স গুণন — রূপান্তরের রচনা</div>
+      <div class="playlist-item-meta">অধ্যায় ৪</div>
+    </div>
+  </a>
+  <a class="playlist-item" href="../courses/linear_algebra/lesson_05.html">
+    <div class="playlist-num">৫</div>
+    <div class="playlist-item-info">
+      <div class="playlist-item-title">ত্রিমাত্রিক রৈখিক রূপান্তর</div>
+      <div class="playlist-item-meta">অধ্যায় ৫</div>
+    </div>
+  </a>
+</b1b-chapter-list>
+
+<!-- ═══════════ SMART SCROLL TO TOP WEB COMPONENT ═══════════ -->
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ FOOTER WEB COMPONENT ═══════════ -->
+<b1b-footer></b1b-footer>
+
+<!-- ═══════════ SVG VISUALIZER CONTROLLER ═══════════ -->
+<script>
+(function() {
+  const svg = document.getElementById('interactiveSvgPlane');
+  const gridLayer = document.getElementById('svgGridLayer');
+  const axesLayer = document.getElementById('svgAxesLayer');
+  const vectorLine = document.getElementById('svgVectorLine');
+  const vectorText = document.getElementById('svgVectorText');
+  const vectorHandle = document.getElementById('svgVectorHandle');
+  const scaledLine = document.getElementById('svgScaledLine');
+  const scaledText = document.getElementById('svgScaledText');
+  const slider = document.getElementById('scalarSlider');
+  const valEl = document.getElementById('scalarVal');
+  const infoEl = document.getElementById('vecInfo');
+
+  if (!svg || !gridLayer || !axesLayer || !vectorLine || !vectorHandle) return;
+
+  const SCALE = 40; // 40 SVG units per Cartesian coordinate unit
+  let vx = 3;
+  let vy = -2;
+  let isDragging = false;
+
+  // Build Grid & Coordinate Axes using CSS classes (.grid-line, .axis-line, .axis-text)
+  function buildGrid() {
+    let gridHtml = '';
+
+    // Vertical lines
+    for (let x = -280; x <= 280; x += SCALE) {
+      gridHtml += `<line class="grid-line" x1="${x}" y1="-190" x2="${x}" y2="190"/>`;
+    }
+    // Horizontal lines
+    for (let y = -160; y <= 160; y += SCALE) {
+      gridHtml += `<line class="grid-line" x1="-290" y1="${y}" x2="290" y2="${y}"/>`;
+    }
+    gridLayer.innerHTML = gridHtml;
+
+    // Axes
+    let axesHtml = `
+      <line class="axis-line" x1="-290" y1="0" x2="290" y2="0"/>
+      <line class="axis-line" x1="0" y1="-190" x2="0" y2="190"/>
+      <text class="axis-text" x="275" y="16" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">x</text>
+      <text class="axis-text" x="8" y="-175" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">y</text>
+    `;
+
+    // Tick labels
+    for (let i = -6; i <= 6; i++) {
+      if (i === 0) continue;
+      const x = i * SCALE;
+      axesHtml += `<text class="axis-text" x="${x}" y="15" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="middle">${i}</text>`;
+    }
+    for (let j = -4; j <= 4; j++) {
+      if (j === 0) continue;
+      const y = -j * SCALE;
+      axesHtml += `<text class="axis-text" x="-8" y="${y + 4}" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="end">${j}</text>`;
+    }
+    axesLayer.innerHTML = axesHtml;
+  }
+
+  function updateVisualizer() {
+    const sx = vx * SCALE;
+    const sy = -vy * SCALE; // inverted for SVG coordinates
+
+    const c = parseFloat(slider.value) || 1;
+    const cx = c * vx;
+    const cy = c * vy;
+    const scx = cx * SCALE;
+    const scy = -cy * SCALE;
+
+    // Primary Vector update
+    vectorLine.setAttribute('x2', sx);
+    vectorLine.setAttribute('y2', sy);
+    vectorHandle.setAttribute('cx', sx);
+    vectorHandle.setAttribute('cy', sy);
+    vectorText.setAttribute('x', sx + 10);
+    vectorText.setAttribute('y', sy - 6);
+    vectorText.textContent = `v = [${vx.toFixed(1)}, ${vy.toFixed(1)}]`;
+
+    // Scaled Vector update
+    if (Math.abs(c - 1) > 0.05) {
+      scaledLine.style.display = 'block';
+      scaledText.style.display = 'block';
+      scaledLine.setAttribute('x2', scx);
+      scaledLine.setAttribute('y2', scy);
+      scaledText.setAttribute('x', scx + 10);
+      scaledText.setAttribute('y', scy + 14);
+      scaledText.textContent = `c·v = [${cx.toFixed(1)}, ${cy.toFixed(1)}]`;
+    } else {
+      scaledLine.style.display = 'none';
+      scaledText.style.display = 'none';
+    }
+
+    const mag = Math.hypot(vx, vy).toFixed(2);
+    const ang = Math.round(Math.atan2(vy, vx) * 180 / Math.PI);
+    valEl.textContent = c.toFixed(2);
+    infoEl.textContent = `ভেক্টর v: [${vx.toFixed(2)}, ${vy.toFixed(2)}] | দৈর্ঘ্য ||v||: ${mag} | দিক কোণ: ${ang}° | c·v: [${cx.toFixed(2)}, ${cy.toFixed(2)}]`;
+  }
+
+  function getSvgCoordinates(evt) {
+    const pt = svg.createSVGPoint();
+    pt.x = evt.clientX || (evt.touches && evt.touches[0].clientX);
+    pt.y = evt.clientY || (evt.touches && evt.touches[0].clientY);
+    const ctm = svg.getScreenCTM().inverse();
+    const svgP = pt.matrixTransform(ctm);
+    return [svgP.x / SCALE, -svgP.y / SCALE];
+  }
+
+  vectorHandle.addEventListener('mousedown', () => {
+    isDragging = true;
+    vectorHandle.classList.add('dragging');
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const [rawX, rawY] = getSvgCoordinates(e);
+    vx = Math.min(Math.max(Math.round(rawX * 4) / 4, -6.5), 6.5);
+    vy = Math.min(Math.max(Math.round(rawY * 4) / 4, -4.5), 4.5);
+    updateVisualizer();
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      vectorHandle.classList.remove('dragging');
+    }
+  });
+
+  // Touch support for mobile devices
+  vectorHandle.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    isDragging = true;
+    vectorHandle.classList.add('dragging');
+  }, { passive: false });
+
+  window.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const [rawX, rawY] = getSvgCoordinates(e);
+    vx = Math.min(Math.max(Math.round(rawX * 4) / 4, -6.5), 6.5);
+    vy = Math.min(Math.max(Math.round(rawY * 4) / 4, -4.5), 4.5);
+    updateVisualizer();
+  }, { passive: false });
+
+  window.addEventListener('touchend', () => {
+    if (isDragging) {
+      isDragging = false;
+      vectorHandle.classList.remove('dragging');
+    }
+  });
+
+  slider.addEventListener('input', updateVisualizer);
+
+  window.resetVectorVisualizer = function() {
+    vx = 3;
+    vy = -2;
+    slider.value = 1;
+    updateVisualizer();
+  };
+
+  buildGrid();
+  updateVisualizer();
+
+  const themeBtn = document.getElementById('themeBtn');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      setTimeout(() => {
+        buildGrid();
+        updateVisualizer();
+      }, 50);
+    });
+  }
+})();
+
+// Decomposer interactive logic
+function updateDecomposer() {
+  const xInput = document.getElementById('decompX');
+  const yInput = document.getElementById('decompY');
+  const res = document.getElementById('decompResult');
+  if (!xInput || !yInput || !res) return;
+
+  const x = parseFloat(xInput.value) || 0;
+  const y = parseFloat(yInput.value) || 0;
+  const mag = Math.hypot(x, y);
+  const ang = (Math.atan2(y, x) * 180 / Math.PI).toFixed(1);
+  const signY = y >= 0 ? '+' : '−';
+  const absY = Math.abs(y);
+  
+  const ux = mag > 0 ? (x / mag).toFixed(3) : 0;
+  const uy = mag > 0 ? (y / mag).toFixed(3) : 0;
+  const signUY = uy >= 0 ? '+' : '−';
+  const absUY = Math.abs(uy);
+
+  res.innerHTML = `
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div><strong>১. ভিত্তি ভেক্টর প্রকাশ:</strong> $\\vec{v} = ${x}\\hat{i} ${signY} ${absY}\\hat{j} = \\begin{bmatrix} ${x} \\\\ ${y} \\end{bmatrix}$</div>
+      <div><strong>২. ভেক্টরের দৈর্ঘ্য (Magnitude):</strong> $\\|\\vec{v}\\| = \\sqrt{(${x})^2 + (${y})^2} = \\sqrt{${(x*x + y*y).toFixed(2)}} \\approx \\mathbf{${mag.toFixed(2)}}$</div>
+      <div><strong>৩. দিক কোণ (Direction Angle $\\theta$):</strong> $\\theta = \\arctan2(${y}, ${x}) \\approx \\mathbf{${ang}^\\circ}$</div>
+      <div><strong>৪. প্রমিত একক ভেক্টর (Unit Vector $\\hat{u}$):</strong> $\\hat{u} = \\frac{\\vec{v}}{\\|\\vec{v}\\|} \\approx \\mathbf{${ux}\\hat{i} ${signUY} ${absUY}\\hat{j}}$</div>
+    </div>
+  `;
+
+  if (window.renderMathInElement) {
+    renderMathInElement(res, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false }
+      ],
+      throwOnError: false
+    });
+  }
+}
+
+function setDecompVals(x, y) {
+  const xInput = document.getElementById('decompX');
+  const yInput = document.getElementById('decompY');
+  if (xInput && yInput) {
+    xInput.value = x;
+    yInput.value = y;
+    updateDecomposer();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const xInput = document.getElementById('decompX');
+  const yInput = document.getElementById('decompY');
+  if (xInput && yInput) {
+    xInput.addEventListener('input', updateDecomposer);
+    yInput.addEventListener('input', updateDecomposer);
+    updateDecomposer();
+  }
+});
+</script>
+
+</body>
+</html>

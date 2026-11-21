@@ -1,0 +1,313 @@
+{
+  "lesson_id": "lesson_01",
+  "chapter_num": 1,
+  "course_id": "guest_videos",
+  "title_en": "But how do AI images and videos actually work? | Guest video by Welch Labs",
+  "title_bn": "এআই ছবি ও ভিডিও আসলে কীভাবে কাজ করে?",
+  "subtitle_bn": "ডিফিউশন মডেল, CLIP এবং টেক্সট থেকে ছবি তৈরির গণিত — অতিথি পাঠ: স্টিফেন ওয়েলচ, ওয়েলচ ল্যাবস",
+  "video_id": "iv-5mZ_9CPY",
+  "youtube_id": "iv-5mZ_9CPY",
+  "author": "Stephen Welch",
+  "official_url": "https://www.3blue1brown.com/lessons/diffusion-models",
+  "oembed": {
+    "url": "https://www.youtube.com/watch?v=iv-5mZ_9CPY",
+    "author_name": "3Blue1Brown",
+    "author_url": "https://www.youtube.com/@3blue1brown",
+    "verified": true
+  },
+  "meta": {
+    "credits": "Stephen Welch",
+    "author": "Stephen Welch",
+    "author_bn": "স্টিফেন ওয়েলচ (Welch Labs)",
+    "host_channel": "3Blue1Brown",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "২৭:৪১",
+    "description_en": "Diffusion models, CLIP, and the math of turning text into images.",
+    "date_published": "২৫ জুলাই, ২০২৫",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "Our task is not to imagine a picture, but to learn how to slowly remove noise.",
+    "quote_bn": "আমাদের কাজ কোনো ছবি একবারে কল্পনা করা নয়, বরং ধীরে ধীরে নয়েজ সরানো শেখা।",
+    "author": "Welch Labs (ওয়েলচ ল্যাবস)"
+  },
+  "sections": [
+    {
+      "id": "sec-01-noise",
+      "title_bn": "নয়েজ থেকে ছবি: ডিফিউশনের মূল ধারণা",
+      "title_en": "From noise to an image: the core idea of diffusion",
+      "summary_bn": "এআই ইমেজ জেনারেশনের মূলে রয়েছে এক ধীর, পুনরাবৃত্তিমূলক প্রক্রিয়া — প্রথমে ছবিতে নয়েজ যোগ করা, অতঃপর সেই নয়েজকে ধাপে ধাপে সরিয়ে আসল ছবি ফিরে পাওয়া।",
+      "key_takeaways": [
+        "ডিফিউশন মডেলের কাজ শুরু হয় একটি সম্পূর্ণ এলোমেলো নয়েজ ছবি দিয়ে এবং শেষ হয় একটি অর্থবহ ছবিতে।",
+        "প্রতিটি ধাপে মডেল শুধু একটিমাত্র জিনিস শেখে: বর্তমান ছবিতে কতটুকু নয়েজ আছে এবং সেটি কীভাবে সরাতে হয়।",
+        "এই ধাপভিত্তিক পদ্ধতিকে বলা হয় Markov chain — প্রতিটি ধাপ শুধু তার আগের ধাপের ওপর নির্ভর করে।"
+      ],
+      "formulas": [
+        {
+          "label": "ধাপভিত্তিক ডিনয়েজিং",
+          "katex": "x_{t-1} = x_t - \\epsilon_\\theta(x_t,\\, t)"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_noise_to_image",
+          "caption_bn": "নয়েজ থেকে ছবি — ধাপে ধাপে পরিশোধন",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_01/fig_noise_to_image.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "figure",
+        "p",
+        "callout",
+        "formula",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-02-forward",
+      "title_bn": "ফরোয়ার্ড প্রসেস: ছবিকে নয়েজে রূপান্তর",
+      "title_en": "The forward process: turning an image into noise",
+      "summary_bn": "প্রশিক্ষণের জন্য প্রথমে নির্ধারিত নিয়মে একটি ছবিকে সম্পূর্ণ নয়েজে রূপান্তর করা হয়। এই নিয়মটি জানা থাকায় প্রতিটি ধাপের 'লক্ষ্য' আমরা নিখুঁতভাবে হিসেব করতে পারি।",
+      "key_takeaways": [
+        "ফরোয়ার্ড প্রসেসে প্রতিটি ধাপে সামান্য গaussian নয়েজ যোগ করা হয়, যতক্ষণ না ছবি সম্পূর্ণ এলোমেলো হয়।",
+        "যেহেতু এই নয়েজ যোগ করার নিয়ম আমাদের জানা, তাই প্রশিক্ষণের সময় সঠিক উত্তর (ground truth) সহজেই পাওয়া যায়।",
+        "β (beta) নামক একটি ছোট পরামিতি নিয়ন্ত্রণ করে কত দ্রুত নয়েজ যোগ হবে।"
+      ],
+      "formulas": [
+        {
+          "label": "গaussian নয়েজ যোগ",
+          "katex": "q(x_t \\mid x_{t-1}) = \\mathcal{N}(\\sqrt{1-\\beta_t}\\,x_{t-1},\\ \\beta_t I)"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_forward_noise",
+          "caption_bn": "ফরোয়ার্ড প্রসেস — ছবি থেকে নয়েজ",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_01/fig_forward_noise.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "formula",
+        "p",
+        "figure",
+        "callout",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-03-reverse",
+      "title_bn": "রিভার্স প্রসেস: নয়েজ থেকে ছবি ফিরে পাওয়া",
+      "title_en": "The reverse process: recovering an image from noise",
+      "summary_bn": "প্রশিক্ষিত নেটওয়ার্ক এখন এক ধাপে এক ধাপ করে নয়েজ সরিয়ে একটি এলোমেলো শুরুর বিন্দু থেকে অর্থবহ ছবি তৈরি করে। টেক্সট প্রম্পট এই যাত্রার দিক নির্ধারণ করে।",
+      "key_takeaways": [
+        "রিভার্স প্রসেসে মডেল প্রতিটি ধাপে নয়েজের পরিমাণ অনুমান করে এবং সেটি বিয়োগ করে।",
+        "টেক্সট প্রম্পটকে কন্ডিশনিং হিসেবে যোগ করার মাধ্যমে আমরা বলতে পারি কোন ধরনের ছবি তৈরি করতে হবে।",
+        "классификаtor-free guidance নামক কৌশল প্রম্পটের প্রভাবকে আরও তীক্ষ্ণ করে তোলে।"
+      ],
+      "formulas": [
+        {
+          "label": "কন্ডিশনাল ডিনয়েজিং",
+          "katex": "\\hat{\\epsilon} = \\epsilon_{\\theta}(x_t,t,c)"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_reverse_loop",
+          "caption_bn": "রিভার্স লুপ — বারবার নয়েজ অনুমান ও অপসারণ",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_01/fig_reverse_loop.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "quote",
+        "p",
+        "figure",
+        "p",
+        "callout",
+        "formula",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-04-clip",
+      "title_bn": "CLIP: ভাষা ও ছবির মধ্যে সেতু",
+      "title_en": "CLIP: the bridge between language and images",
+      "summary_bn": "টেক্সটকে ছবির সাথে মিলাতে হয় তবে শব্দ আর পিক্সেলের একটি ভাগ করা উপস্থাপনা প্রয়োজন — সেই কাজ করে CLIP মডেল।",
+      "key_takeaways": [
+        "CLIP টেক্সট ও ইমেজকে একই ভেক্টর স্পেসে রূপান্তর করে, যাতে দুটির মিল পরিমাপ করা যায়।",
+        "প্রশিক্ষণে লাখ লাখ ছবি ও তার ক্যাপশন ব্যবহার করে মডেল শিখে কোন শব্দ কোন দৃশ্যের সাথে যায়।",
+        "কসাইন সিমিলারিটি (cosine similarity) দুই ভেক্টরের মিলের পরিমাপক হিসেবে কাজ করে।"
+      ],
+      "formulas": [
+        {
+          "label": "কসাইন সিমিলারিটি",
+          "katex": "s = \\cos(\\angle(E_t(c), E_i(x)))"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_clip_space",
+          "caption_bn": "CLIP-এর ভাগ করা ভেক্টর স্পেস",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_01/fig_clip_space.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "figure",
+        "p",
+        "formula",
+        "callout",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-05-practice",
+      "title_bn": "প্রশিক্ষণ ও বাস্তব প্রয়োগ",
+      "title_en": "Training and real-world applications",
+      "summary_bn": "বিশাল ডেটাসেট, শক্তিশালী কম্পিউটার এবং কয়েকটি চতুর কৌশল একসাথে মিলে আজকের ছবি ও ভিডিও জেনারেশন সম্ভব হয়েছে।",
+      "key_takeaways": [
+        "প্রশিক্ষণে বিলিয়ন বিলিয়ন ছবি-টেক্সট জোড়া ব্যবহার করা হয়, যা মডেলকে ভাষা ও দৃশ্যের গভীর সম্পর্ক শিখায়।",
+        "প্রথমে ছবির মান কম রেজোলিউশনে শিখিয়ে পরে ধীরে ধীরে বাড়ানো হয় — একে progressive training বলে।",
+        "এই প্রযুক্তি আজ ডিজাইন, চলচ্চিত্র, শিক্ষা ও বিজ্ঞান চিত্রায়নে ব্যবহৃত হচ্ছে।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_pipeline",
+          "caption_bn": "সম্পূর্ণ পাইপলাইন — টেক্সট থেকে চূড়ান্ত ছবি",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_01/fig_pipeline.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "callout",
+        "figure",
+        "p",
+        "quote",
+        "p"
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_noise",
+      "section_ref": "sec-01-noise",
+      "question_bn": "ডিফিউশন মডেলে প্রথম ধাপে কী করা হয়?",
+      "question_en": "What happens in the first step of a diffusion model?",
+      "options": [
+        "একটি সম্পূর্ণ ছবি একবারে আঁকা হয়",
+        "একটি পরিচ্ছন্ন ছবিতে ধীরে ধীরে নয়েজ যোগ করা হয়",
+        "ছবিটিকে ছোট করে ফেলা হয়",
+        "শুধু রঙ বদলানো হয়"
+      ],
+      "options_bn": [
+        "একটি সম্পূর্ণ ছবি একবারে আঁকা হয়",
+        "একটি পরিচ্ছন্ন ছবিতে ধীরে ধীরে নয়েজ যোগ করা হয়",
+        "ছবিটিকে ছোট করে ফেলা হয়",
+        "শুধু রঙ বদলানো হয়"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ফরোয়ার্ড প্রক্রিয়ায় পরিচ্ছন্ন ছবিতে ধাপে ধাপে গaussian নয়েজ যোগ করা হয়, যাতে মডেল সেই ক্ষয়জনিত নয়েজ চিনতে শিখে।",
+      "explanation_en": "ফরোয়ার্ড প্রক্রিয়ায় পরিচ্ছন্ন ছবিতে ধাপে ধাপে গaussian নয়েজ যোগ করা হয়, যাতে মডেল সেই ক্ষয়জনিত নয়েজ চিনতে শিখে।",
+      "hint": "মনে রাখবেন: প্রথমে ছবি ভাঙা হয়, পরে সেটিকে আবার গড়ে তোলা হয়।",
+      "hints": [
+        "মনে রাখবেন: প্রথমে ছবি ভাঙা হয়, পরে সেটিকে আবার গড়ে তোলা হয়।"
+      ]
+    },
+    {
+      "id": "quiz_02_reverse",
+      "section_ref": "sec-03-reverse",
+      "question_bn": "রিভার্স প্রসেসে প্রতিটি ধাপে মডেল আসলে কী করে?",
+      "question_en": "What does the model do at each reverse-process step?",
+      "options": [
+        "নতুন নয়েজ যোগ করে",
+        "নয়েজের পরিমাণ অনুমান করে এবং সেটি বিয়োগ করে",
+        "ছবিটি মুছে ফেলে",
+        "রঙ পরিবর্তন করে"
+      ],
+      "options_bn": [
+        "নতুন নয়েজ যোগ করে",
+        "নয়েজের পরিমাণ অনুমান করে এবং সেটি বিয়োগ করে",
+        "ছবিটি মুছে ফেলে",
+        "রঙ পরিবর্তন করে"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "প্রতিটি ধাপে নেটওয়ার্ক বর্তমান ছবিতে কতটা নয়েজ আছে তা অনুমান করে এবং সেই অনুমানটিকে বিয়োগ করে পরिच্ছন্ন ধাপে অগ্রসর হয়।",
+      "explanation_en": "প্রতিটি ধাপে নেটওয়ার্ক বর্তমান ছবিতে কতটা নয়েজ আছে তা অনুমান করে এবং সেই অনুমানটিকে বিয়োগ করে পরिच্ছন্ন ধাপে অগ্রসর হয়।",
+      "hint": "ফরোয়ার্ড আর রিভার্স — দুটোর দিক আলাদা।",
+      "hints": [
+        "ফরোয়ার্ড আর রিভার্স — দুটোর দিক আলাদা।"
+      ]
+    },
+    {
+      "id": "quiz_03_clip",
+      "section_ref": "sec-04-clip",
+      "question_bn": "CLIP মডেলের মূল কাজ কী?",
+      "question_en": "What is the main job of the CLIP model?",
+      "options": [
+        "ছবির রঙ বদলানো",
+        "টেক্সট ও ইমেজকে একই ভেক্টর স্পেসে উপস্থাপন করা",
+        "ভিডিও কাটা",
+        "শব্দ গণনা করা"
+      ],
+      "options_bn": [
+        "ছবির রঙ বদলানো",
+        "টেক্সট ও ইমেজকে একই ভেক্টর স্পেসে উপস্থাপন করা",
+        "ভিডিও কাটা",
+        "শব্দ গণনা করা"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "CLIP টেক্সট ও ইমেজ — দুটিকেই একই ভেক্টর স্পেসে রূপান্তর করে, যাতে তাদের মধ্যে মিলের মাত্রা পরিমাপ করা যায়।",
+      "explanation_en": "CLIP টেক্সট ও ইমেজ — দুটিকেই একই ভেক্টর স্পেসে রূপান্তর করে, যাতে তাদের মধ্যে মিলের মাত্রা পরিমাপ করা যায়।",
+      "hint": "ভেক্টর স্পেসের কথা মনে রাখবেন।",
+      "hints": [
+        "ভেক্টর স্পেসের কথা মনে রাখবেন।"
+      ]
+    }
+  ],
+  "lab": {
+    "title": "ইন্টারেক্টিভ ল্যাব: নয়েজ অপসারণ পর্যবেক্ষক",
+    "desc_bn": "নিচের স্লাইডারটি ঘুরিয়ে নয়েজের মাত্রা বদলান এবং দেখুন কীভাবে একটি ছবি ধীরে ধীরে তার আসল রূপ ফিরে পায়।",
+    "data_no_narration": true
+  },
+  "narration_manifest": "assets/audio/guest_videos/lesson_01/manifest.json",
+  "video_src": "../../media_vault/guest_videos/lesson_01/experiments/3b1b_guest_videos_01_full_dubbed.mp4",
+  "figure_assets": [
+    {
+      "id": "fig_noise_to_image",
+      "caption_bn": "নয়েজ থেকে ছবি — ধাপে ধাপে পরিশোধন",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_01/fig_noise_to_image.svg"
+    },
+    {
+      "id": "fig_forward_noise",
+      "caption_bn": "ফরোয়ার্ড প্রসেস — ছবি থেকে নয়েজ",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_01/fig_forward_noise.svg"
+    },
+    {
+      "id": "fig_reverse_loop",
+      "caption_bn": "রিভার্স লুপ — বারবার নয়েজ অনুমান ও অপসারণ",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_01/fig_reverse_loop.svg"
+    },
+    {
+      "id": "fig_clip_space",
+      "caption_bn": "CLIP-এর ভাগ করা ভেক্টর স্পেস",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_01/fig_clip_space.svg"
+    },
+    {
+      "id": "fig_pipeline",
+      "caption_bn": "সম্পূর্ণ পাইপলাইন — টেক্সট থেকে চূড়ান্ত ছবি",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_01/fig_pipeline.svg"
+    }
+  ]
+}

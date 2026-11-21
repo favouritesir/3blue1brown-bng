@@ -1,0 +1,1465 @@
+- generic [ref=f18e1] [box=0,0,1275,18429]:
+  - generic [box=0,0,1275,0]:
+    - generic [box=0,0,1275,885]:
+      - generic [box=348,90,580,403]:
+        - generic [box=349,91,578,61]:
+          - generic [box=369,105,24,32]: 🔍
+          - textbox "অধ্যায় খুঁজুন…" [box=405,107,453,29]
+          - button "ESC" [box=870,106,37,31]
+        - generic [box=349,152,578,340]:
+          - link "→ ভেক্টর আসলে কী? লিনিয়ার অ্যালজেব্রা" [box=357,160,557,67]:
+            - /url: courses/linear_algebra/lesson_01.html
+            - generic [box=371,177,32,32]: →
+            - generic [box=415,170,101,47]:
+              - generic [box=415,170,101,26]: ভেক্টর আসলে কী?
+              - generic [box=415,196,101,21]: লিনিয়ার অ্যালজেব্রা
+          - link "⊕ রৈখিক সমন্বয়, স্প্যান ও ভিত্তি ভেক্টর লিনিয়ার অ্যালজেব্রা" [box=357,226,557,67]:
+            - /url: courses/linear_algebra/lesson_02.html
+            - generic [box=371,244,32,32]: ⊕
+            - generic [box=415,236,191,47]:
+              - generic [box=415,236,191,26]: রৈখিক সমন্বয়, স্প্যান ও ভিত্তি ভেক্টর
+              - generic [box=415,262,191,21]: লিনিয়ার অ্যালজেব্রা
+          - link "↕ রৈখিক রূপান্তর ও ম্যাট্রিক্স লিনিয়ার অ্যালজেব্রা" [box=357,293,557,67]:
+            - /url: courses/linear_algebra/lesson_03.html
+            - generic [box=371,310,32,32]: ↕
+            - generic [box=415,303,140,47]:
+              - generic [box=415,303,140,26]: রৈখিক রূপান্তর ও ম্যাট্রিক্স
+              - generic [box=415,329,140,21]: লিনিয়ার অ্যালজেব্রা
+          - link "× ম্যাট্রিক্স গুণন — রূপান্তরের রচনা লিনিয়ার অ্যালজেব্রা" [box=357,360,557,67]:
+            - /url: courses/linear_algebra/lesson_04.html
+            - generic [box=371,377,32,32]: ×
+            - generic [box=415,370,178,47]:
+              - generic [box=415,370,178,26]: ম্যাট্রিক্স গুণন — রূপান্তরের রচনা
+              - generic [box=415,396,178,21]: লিনিয়ার অ্যালজেব্রা
+          - link "⊗ ত্রিমাত্রিক রৈখিক রূপান্তর লিনিয়ার অ্যালজেব্রা" [box=357,426,557,67]:
+            - /url: courses/linear_algebra/lesson_05.html
+            - generic [box=371,444,32,32]: ⊗
+            - generic [box=415,436,133,47]:
+              - generic [box=415,436,133,26]: ত্রিমাত্রিক রৈখিক রূপান্তর
+              - generic [box=415,462,133,21]: লিনিয়ার অ্যালজেব্রা
+          - link "📈 ডিফারেনশিয়াল সমীকরণ কী? — পরিবর্তনের ভাষা ডিফারেনশিয়াল সমীকরণ" [box=357,493,557,67]:
+            - /url: courses/differential_equations/lesson_01.html
+            - generic [box=371,510,32,32]: 📈
+            - generic [box=415,503,269,47]:
+              - generic [box=415,503,269,26]: ডিফারেনশিয়াল সমীকরণ কী? — পরিবর্তনের ভাষা
+              - generic [box=415,529,269,21]: ডিফারেনশিয়াল সমীকরণ
+          - link "🎲 সম্ভাব্যতা আসলে কী? — অনিশ্চয়তার জ্যামিতি সম্ভাব্যতার মূলভাব" [box=357,560,557,67]:
+            - /url: courses/probability/lesson_01.html
+            - generic [box=371,577,32,32]: 🎲
+            - generic [box=415,570,253,47]:
+              - generic [box=415,570,253,26]: সম্ভাব্যতা আসলে কী? — অনিশ্চয়তার জ্যামিতি
+              - generic [box=415,596,253,21]: সম্ভাব্যতার মূলভাব
+  - navigation [ref=f18e2] [box=0,0,1275,68]:
+    - generic [ref=f18e3] [box=38,0,1200,67]:
+      - link "৩ব্লু১ব্রাউন ৩ব্লু১ব্রাউন বাংলা লিনিয়ার অ্যালজেব্রা" [ref=f18e4] [cursor=pointer] [box=62,12,157,44]:
+        - /url: ../index.html
+        - img "৩ব্লু১ব্রাউন" [ref=f18e5] [box=62,12,44,44]
+        - generic [ref=f18e14] [box=116,18,103,30]:
+          - generic [ref=f18e15] [box=116,18,103,18]: ৩ব্লু১ব্রাউন বাংলা
+          - generic [ref=f18e16] [box=116,37,103,12]: লিনিয়ার অ্যালজেব্রা
+      - generic [ref=f18e17] [box=235,15,628,38]:
+        - link "হোম" [ref=f18e18] [cursor=pointer] [box=235,22,21,24]:
+          - /url: ../index.html
+        - generic [ref=f18e19] [box=262,22,5,24]: /
+        - link "লিনিয়ার অ্যালজেব্রা" [ref=f18e20] [cursor=pointer] [box=273,22,99,24]:
+          - /url: ../courses/linear_algebra/index.html
+        - generic [ref=f18e21] [box=378,22,5,24]: /
+        - generic [ref=f18e22] [box=389,22,51,24]: অধ্যায় ০১
+        - generic [ref=f18e24] [box=460,15,166,38]:
+          - generic "পূর্ববর্তী অধ্যায় নেই" [box=473,20,28,28]
+          - generic [ref=f18e25] [box=509,20,68,27]: ০১ / ০৫
+          - 'link "পরবর্তী অধ্যায়: রৈখিক সমন্বয় ও স্প্যান" [ref=f18e26] [cursor=pointer] [box=586,20,28,28]':
+            - /url: ../courses/linear_algebra/lesson_02.html
+      - generic [ref=f18e29] [box=879,13,334,41]:
+        - generic [ref=f18e30] [box=879,13,158,41]:
+          - button "📖 পড়ুন" [ref=f18e31] [cursor=pointer] [box=883,17,72,33]
+          - button "📺 দেখুন" [ref=f18e32] [cursor=pointer] [box=958,17,75,33]
+        - button "🔍" [ref=f18e33] [cursor=pointer] [box=1045,15,38,38]
+        - button "অ (সানস)" [ref=f18e34] [cursor=pointer] [box=1091,15,77,38]
+        - button "🌙" [ref=f18e35] [cursor=pointer] [box=1176,15,38,38]
+  - generic "ভেক্টর আসলে কী? | Vectors, what even are they? (Essence of linear algebra, chapter 1)" [ref=f18e36] [box=0,0,1275,634]:
+    - generic [ref=f18e38] [box=88,100,1100,493]:
+      - link "লিনিয়ার অ্যালজেব্রা" [ref=f18e39] [cursor=pointer] [box=112,100,125,24]:
+        - /url: ../courses/linear_algebra/index.html
+      - generic [ref=f18e42] [box=112,148,1052,444]:
+        - generic [ref=f18e47] [box=112,443,502,40]:
+          - button "🇧🇩 বাংলা ডাবড (লোকাল)" [ref=f18e48] [cursor=pointer] [box=112,443,164,40]
+          - button "▶ অরিজিনাল ভিডিও" [ref=f18e49] [cursor=pointer] [box=283,443,143,40]
+        - generic [ref=f18e50] [box=662,148,502,444]:
+          - generic [ref=f18e51] [box=662,148,502,27]: অধ্যায় ০১ · লিনিয়ার অ্যালজেব্রার সারমর্ম
+          - heading "ভেক্টর আসলে কী? | Vectors, what even are they? (Essence of linear algebra, chapter 1)" [level=1] [ref=f18e52] [box=662,195,502,132]
+          - paragraph [ref=f18e53] [box=662,347,502,56]: ভেক্টরের তিনটি ভিন্ন ব্যাখ্যা — পদার্থবিদ, কম্পিউটার বিজ্ঞানী ও গণিতবিদের দৃষ্টিভঙ্গি থেকে — এবং ভেক্টর যোগ ও স্কেলার গুণনের অন্তর্দৃষ্টি।
+          - generic [ref=f18e54] [box=662,423,502,170]:
+            - generic [ref=f18e55] [box=662,423,502,26]: ৬ আগস্ট, ২০১৬
+            - generic [ref=f18e58] [box=662,459,502,26]:
+              - text: "পাঠ রচনা:"
+              - link "Grant Sanderson" [ref=f18e62] [cursor=pointer] [box=754,459,102,26]:
+                - /url: https://www.3blue1brown.com/about
+            - generic [ref=f18e63] [box=662,495,502,26]: "বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+            - link "সোর্স কোড (GitHub)" [ref=f18e71] [cursor=pointer] [box=690,531,112,26]:
+              - /url: https://github.com/3b1b/videos/blob/master/_2016/eola/chapter1.py
+            - generic [ref=f18e72] [box=662,567,502,26]: "বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড"
+  - generic [ref=f18e77] [box=112,650,1052,16976]:
+    - generic [ref=f18e78] [box=112,670,1052,89]:
+      - generic [ref=f18e79] [box=135,687,805,55]:
+        - generic [ref=f18e80] [box=135,690,48,48]: 🎙️
+        - generic [ref=f18e81] [box=199,687,592,55]:
+          - heading "শিক্ষক অডিও বিবরণ ও লাইভ কারাওকে সহকারী TEACHER VOICE" [level=4] [ref=f18e82] [box=199,687,592,30]:
+            - text: শিক্ষক অডিও বিবরণ ও লাইভ কারাওকে সহকারী
+            - generic [ref=f18e83] [box=522,689,105,26]: TEACHER VOICE
+          - paragraph [ref=f18e84] [box=199,721,592,20]: দরদী শিক্ষকের কণ্ঠে প্রতিটি অনুচ্ছেদ, গাণিতিক সূত্র ও চিত্র বিবরণ শুনুন — সাথে রিয়েলটাইম হাইলাইটার ও কন্ট্রোল।
+      - button "🎙️ শিক্ষকের কণ্ঠে শুনুন" [ref=f18e86] [cursor=pointer] [box=960,691,181,46]
+    - generic [ref=f18e87] [box=112,783,1052,179]:
+      - generic [ref=f18e88] [box=133,800,1010,26]: "⏱️ অধ্যায়ের টাইমস্ট্যাম্প বুকমার্ক — যেকোনো অংশে সরাসরি জাম্প করুন:"
+      - generic [ref=f18e90] [box=133,840,1010,105]:
+        - button "০০:০০ ভেক্টরের সূচনা ও মূল দৃষ্টিভঙ্গি" [ref=f18e91] [cursor=pointer] [box=133,840,245,54]:
+          - generic [ref=f18e92] [box=146,856,57,23]: ০০:০০
+          - generic [ref=f18e93] [box=212,858,143,18]: ভেক্টরের সূচনা ও মূল দৃষ্টিভঙ্গি
+        - button "০১:০৫ পদার্থবিদ, সিএস ও গণিতবিদ দৃষ্টিভঙ্গি" [ref=f18e94] [cursor=pointer] [box=388,840,245,54]:
+          - generic [ref=f18e95] [box=401,856,57,23]: ০১:০৫
+          - generic [ref=f18e96] [box=467,849,152,36]: পদার্থবিদ, সিএস ও গণিতবিদ দৃষ্টিভঙ্গি
+        - button "০২:৪০ স্থানাঙ্ক ব্যবস্থার পেছনের দর্শন" [ref=f18e97] [cursor=pointer] [box=643,840,245,54]:
+          - generic [ref=f18e98] [box=656,856,57,23]: ০২:৪০
+          - generic [ref=f18e99] [box=723,858,139,18]: স্থানাঙ্ক ব্যবস্থার পেছনের দর্শন
+        - button "০৫:১৫ ভেক্টর যোগ — ত্রিভুজ ও সামান্তরিক সূত্র" [ref=f18e100] [cursor=pointer] [box=898,840,245,54]:
+          - generic [ref=f18e101] [box=911,856,58,23]: ০৫:১৫
+          - generic [ref=f18e102] [box=979,849,151,36]: ভেক্টর যোগ — ত্রিভুজ ও সামান্তরিক সূত্র
+        - button "০৭:৩০ স্কেলার গুণন ও স্ট্রেচিং রহস্য" [ref=f18e103] [cursor=pointer] [box=133,904,245,41]:
+          - generic [ref=f18e104] [box=146,913,59,23]: ০৭:৩০
+          - generic [ref=f18e105] [box=214,915,131,18]: স্কেলার গুণন ও স্ট্রেচিং রহস্য
+    - generic "📋 বিষয়সূচি" [ref=f18e106] [box=112,974,1052,166]:
+      - generic [ref=f18e107] [box=112,994,1052,76]:
+        - generic [ref=f18e108] [box=139,1015,1000,22]: 📋 বিষয়সূচি
+        - navigation [box=139,1049,1000,0]
+      - link "ভেক্টরের তিনটি দৃষ্টিভঙ্গি" [ref=f18e109] [cursor=pointer] [box=112,1083,140,26]:
+        - /url: "#sec-interpretations"
+      - link "কোঅর্ডিনেট সিস্টেম ও মূলবিন্দু" [ref=f18e110] [cursor=pointer] [box=255,1083,177,26]:
+        - /url: "#sec-coordinates"
+      - link "ভেক্টর যোগ — জ্যামিতিক ও সংখ্যাতাত্ত্বিক রূপ" [ref=f18e111] [cursor=pointer] [box=436,1083,266,26]:
+        - /url: "#sec-addition"
+      - link "স্কেলার গুণন — প্রসারণ, সংকোচন ও বিপরীতকরণ" [ref=f18e112] [cursor=pointer] [box=705,1083,287,26]:
+        - /url: "#sec-scalar"
+      - link "ভিত্তি ভেক্টর (আই হ্যাট ও জে হ্যাট)" [ref=f18e113] [cursor=pointer] [box=112,1083,1048,55]:
+        - /url: "#sec-basis"
+      - link "ইন্টারেক্টিভ এসভিজি ভিজ্যুয়ালাইজার" [ref=f18e114] [cursor=pointer] [box=145,1112,217,26]:
+        - /url: "#sec-visualizer"
+    - article [ref=f18e115] [box=112,1140,1052,16486]:
+      - generic "ভেক্টরের তিনটি দৃষ্টিভঙ্গি" [ref=f18e116] [box=112,1232,1052,3802]:
+        - generic [ref=f18e117] [box=112,1232,1052,91]:
+          - heading "ভেক্টরের তিনটি দৃষ্টিভঙ্গি" [level=2] [ref=f18e118] [box=112,1232,1052,49]
+          - button "🔊 এই সেকশনটি শুনুন" [ref=f18e120] [cursor=pointer] [box=1007,1290,157,32]
+        - generic [ref=f18e124] [box=112,1359,1052,122]:
+          - generic [ref=f18e125] [box=127,1367,20,48]: "\""
+          - paragraph [ref=f18e126] [box=151,1387,981,32]: সংখ্যাকে স্থানাঙ্ক হিসেবে উপস্থাপন করা একটি সহিংস কাজ।
+          - paragraph [ref=f18e127] [box=151,1427,981,26]: — হের্মান ওয়াইল
+        - paragraph [ref=f18e128] [box=112,1521,1052,64]:
+          - text: লিনিয়ার বীজগণিতের একেবারে গোড়ার বা মৌলিক ভিত্তিপ্রস্তর হলো—
+          - strong [ref=f18e129] [box=534,1523,38,27]: ভেক্টর
+          - text: । কিন্তু ভেক্টর
+          - emphasis [ref=f18e130] [box=655,1523,122,27]: আসলে কী জিনিস?
+          - text: গণিত, পদার্থবিদ্যা এবং কম্পিউটার বিজ্ঞানের শিক্ষার্থীরা এই প্রশ্নটির উত্তর কিছুটা ভিন্ন ভিন্ন দৃষ্টিভঙ্গি থেকে দিয়ে থাকেন।
+        - figure "একটি ভেক্টর — দিক ও মান নির্দেশক তীরচিহ্ন" [ref=f18e132] [box=112,1616,1052,394]:
+          - img "ভেক্টরের উদাহরণ" [ref=f18e133] [box=318,1616,640,360]
+        - paragraph [ref=f18e135] [box=112,2043,1052,32]: মোটাদাগে তিনটি সুনির্দিষ্ট দৃষ্টিভঙ্গি রয়েছে — পদার্থবিজ্ঞানের ছাত্রের দৃষ্টিভঙ্গি, কম্পিউটার সায়েন্সের ছাত্রের দৃষ্টিভঙ্গি, এবং গণিতবিদদের দৃষ্টিভঙ্গি।
+        - figure "তিনটি পৃথক দৃষ্টিভঙ্গি থেকে ভেক্টরের ব্যাখ্যা" [ref=f18e137] [box=112,2107,1052,394]:
+          - img "তিনটি দৃষ্টিভঙ্গি" [ref=f18e138] [box=318,2107,640,360]
+        - generic "১. পদার্থবিজ্ঞানের ছাত্রের দৃষ্টিভঙ্গি (Physics Perspective)" [ref=f18e140] [box=112,2533,1052,183]:
+          - generic [ref=f18e141] [box=112,2533,1052,183]:
+            - generic [ref=f18e142] [box=137,2551,1005,24]: 📐 ১. পদার্থবিজ্ঞানের ছাত্রের দৃষ্টিভঙ্গি (Physics Perspective)
+            - paragraph [ref=f18e144] [box=137,2582,1005,96]:
+              - text: পদার্থবিজ্ঞানের শিক্ষার্থীদের কাছে ভেক্টর হলো মহাশূন্যে বা সমতলে নির্দেশিত একটি
+              - strong [ref=f18e145] [box=650,2584,112,27]: তীরচিহ্ন (arrow)
+              - text: "। একটি নির্দিষ্ট ভেক্টরকে সংজ্ঞায়িত করে দুটি মৌলিক বৈশিষ্ট্য: তার"
+              - emphasis [ref=f18e146] [box=165,2616,168,27]: দৈর্ঘ্য বা মান (magnitude)
+              - text: এবং তার
+              - emphasis [ref=f18e147] [box=397,2616,132,27]: অভিমুখ (direction)
+              - text: । যতক্ষণ এই দুটি বৈশিষ্ট্য অপরিবর্তিত থাকছে, আপনি একে স্থান পরিবর্তন করে যেকোনো জায়গায় সরাতে পারেন—ভেক্টর কিন্তু একই থাকবে।
+        - 'figure "ভেক্টরের দুটি অবিচ্ছেদ্য বৈশিষ্ট্য: মান (দৈর্ঘ্য) এবং দিক" [ref=f18e149] [box=112,2748,1052,394]':
+          - img "দৈর্ঘ্য ও দিক" [ref=f18e150] [box=318,2748,640,360]
+        - paragraph [ref=f18e152] [box=112,3174,1052,32]: যেসব ভেক্টর একটি সমতলে অবস্থান করে তারা দ্বিমাত্রিক (২ডি), আর আমাদের চারপাশের বিস্তৃত স্থানে যেসব ভেক্টর অবস্থান করে তারা ত্রিমাত্রিক (থ্রিডি)।
+        - figure "একটি সমতলে থাকা ভেক্টর হলো দ্বিমাত্রিক (টুডি), আর বিস্তৃত স্থানের ভেক্টর হলো ত্রিমাত্রিক (থ্রিডি)" [ref=f18e154] [box=112,3238,1052,394]:
+          - img "টুডি ও থ্রিডি ভেক্টর" [ref=f18e155] [box=318,3238,640,360]
+        - generic "২. কম্পিউটার সায়েন্সের ছাত্রের দৃষ্টিভঙ্গি (Computer Science Perspective)" [ref=f18e157] [box=112,3664,1052,764]:
+          - generic [ref=f18e158] [box=112,3664,1052,764]:
+            - generic [ref=f18e159] [box=137,3682,1005,24]: 💻 ২. কম্পিউটার সায়েন্সের ছাত্রের দৃষ্টিভঙ্গি (Computer Science Perspective)
+            - generic [ref=f18e160] [box=137,3714,1005,664]:
+              - paragraph [ref=f18e161] [box=137,3714,1005,64]:
+                - text: অন্যদিকে, কম্পিউটার সায়েন্সের দৃষ্টিভঙ্গি হলো—ভেক্টর মূলত
+                - strong [ref=f18e162] [box=515,3716,369,27]: সংখ্যার একটি সুশৃঙ্খল তালিকা (Ordered List / Array)
+                - text: "। উদাহরণস্বরূপ, আপনি যদি বাড়ির দাম ও বৈশিষ্ট্যের অ্যানালিটিক্স করেন, তবে প্রতিটি বাড়িকে একজোড়া সংখ্যা দিয়ে প্রকাশ করতে পারেন:"
+              - generic [ref=f18e167] [box=171,3847,940,55]:
+                - math [ref=f18e169] [box=641,3847,1,44]:
+                  - generic [ref=f18e171] [box=641,3847,197,44]:
+                    - generic [ref=f18e172] [box=641,3859,55,22]:
+                      - generic [ref=f18e173] [box=641,3859,12,17]:
+                        - generic [ref=f18e174] [box=641,3866,12,10]: v
+                        - generic [ref=f18e175] [box=642,3860,8,5]: ⃗
+                      - generic [ref=f18e176] [box=653,3869,42,11]: house
+                    - generic [ref=f18e177] [box=702,3867,17,5]: =
+                    - generic [ref=f18e178] [box=724,3847,113,44]:
+                      - generic [ref=f18e179] [box=724,3847,9,44]: "["
+                      - generic [ref=f18e180] [box=734,3848,94,42]:
+                        - generic [ref=f18e184] [box=739,3848,83,23]:
+                          - generic [ref=f18e185] [box=739,3854,12,15]: "2"
+                          - generic [ref=f18e186] [box=752,3866,5,5]: ","
+                          - generic [ref=f18e187] [box=756,3854,37,15]: "600"
+                          - generic [ref=f18e188] [box=793,3848,29,21]:
+                            - generic [ref=f18e189] [box=793,3853,19,16]: ft
+                            - generic [ref=f18e190] [box=813,3848,9,10]: "2"
+                        - generic [ref=f18e194] [box=734,3871,94,19]:
+                          - generic [ref=f18e195] [box=734,3871,11,19]: $
+                          - generic [ref=f18e196] [box=745,3873,12,15]: "3"
+                          - generic [ref=f18e197] [box=757,3885,5,5]: ","
+                          - generic [ref=f18e198] [box=762,3873,25,15]: "00"
+                          - generic [ref=f18e199] [box=787,3885,5,5]: ","
+                          - generic [ref=f18e200] [box=791,3873,37,15]: "000"
+                      - generic [ref=f18e201] [box=828,3847,9,44]: "]"
+                - generic [aria-hidden] [ref=f18e202] [box=171,3847,940,55]:
+                  - generic [ref=f18e203] [box=544,3860,80,27]:
+                    - generic [ref=f18e204] [box=544,3860,50,26]:
+                      - generic [ref=f18e205] [box=544,3860,12,26]: v
+                      - generic [ref=f18e212] [box=555,3860,38,26]: house
+                    - text: =
+                  - generic [ref=f18e223] [box=623,3860,114,26]:
+                    - generic [ref=f18e224] [box=623,3860,12,26]: "["
+                    - generic [ref=f18e230] [box=635,3847,90,33]:
+                      - generic [ref=f18e231] [box=640,3847,81,27]:
+                        - text: "2"
+                        - generic [ref=f18e232] [box=651,3847,6,26]: ","
+                        - text: "600"
+                        - generic [ref=f18e233] [box=691,3847,30,26]:
+                          - generic [ref=f18e234] [box=691,3847,21,26]: ft
+                          - generic [ref=f18e235] [box=712,3847,9,26]: "2"
+                      - generic [ref=f18e240] [box=635,3874,90,27]:
+                        - text: $3
+                        - generic [ref=f18e241] [box=657,3874,6,26]: ","
+                        - text: "00"
+                        - generic [ref=f18e242] [box=686,3874,6,26]: ","
+                        - text: "000"
+                    - generic [ref=f18e246] [box=726,3860,12,26]: "]"
+              - paragraph [ref=f18e247] [box=137,3971,1005,64]: এখানে সংখ্যার ক্রম কিন্তু অত্যন্ত সংবেদনশীল ও অর্থবহ। প্রথম সংখ্যাটি সবসময় আয়তন নির্দেশ করবে এবং দ্বিতীয়টি দাম। এই প্রেক্ষাপটে ভেক্টর শব্দটি মূলত লিস্ট বা তালিকারই একটি গাণিতিক প্রতিশব্দ, এবং এর মাত্রা নির্ভর করে তালিকার দৈর্ঘ্যের ওপর।
+              - generic [ref=f18e248] [box=137,4067,1005,311]:
+                - generic [ref=f18e249] [box=138,4068,1003,46]:
+                  - generic [ref=f18e254] [box=467,4079,304,24]: vector_ops.js — Array & Vector Transform
+                  - generic [ref=f18e255] [box=1036,4078,86,25]: JavaScript
+                - code [ref=f18e257] [box=160,4135,284,222]: "function swap( i, j ) { [arr[i], arr[j]] = [arr[j], arr[i]]; } function vectorMerge(l, m, r) { let last = 0, ap = m + 1, rp = m + 1; while(a[l] <= a[rp]) { l++; } swap(l++, rp++); }"
+        - generic "৩. গণিতবিদদের দৃষ্টিভঙ্গি (Mathematician's Perspective)" [ref=f18e258] [box=112,4452,1052,155]:
+          - generic [ref=f18e259] [box=112,4452,1052,68]: 📐 ৩. গণিতবিদদের দৃষ্টিভঙ্গি (Mathematician's Perspective)
+          - paragraph [ref=f18e261] [box=112,4544,1052,64]:
+            - text: গণিতবিদরা এই দুই ধারণাকে এক সুতোয় গেঁথে একটি সাধারণ বিমূর্ত রূপ দেন। তাঁদের মতে,
+            - emphasis [ref=f18e262] [box=661,4546,214,27]: যেকোনো কিছুকেই ভেক্টর বলা যাবে
+            - text: ", যদি সেখানে দুটি নির্দিষ্ট গাণিতিক ক্রিয়াকলাপের সুস্পষ্ট ও সংগত নিয়ম থাকে:"
+            - strong [ref=f18e263] [box=377,4578,73,27]: ভেক্টর যোগ
+            - text: এবং
+            - strong [ref=f18e264] [box=484,4578,114,27]: স্কেলার দ্বারা গুণন
+            - text: ।
+        - figure "গণিতবিদের বিমূর্ত ভেক্টর স্পেসের সার্বজনীন রূপ" [ref=f18e266] [box=112,4640,1052,394]:
+          - img "গণিতবিদের দৃষ্টিভঙ্গি" [ref=f18e267] [box=318,4640,640,360]
+      - generic "কোঅর্ডিনেট সিস্টেম ও মূলবিন্দু" [ref=f18e269] [box=112,5086,1052,3820]:
+        - generic [ref=f18e270] [box=112,5086,1052,91]:
+          - heading "কোঅর্ডিনেট সিস্টেম ও মূলবিন্দু" [level=2] [ref=f18e271] [box=112,5086,1052,49]
+          - button "🔊 এই সেকশনটি শুনুন" [ref=f18e273] [cursor=pointer] [box=1007,5144,157,32]
+        - paragraph [ref=f18e276] [box=112,5213,1052,32]:
+          - text: দ্বিমাত্রিক বা টুডি তলের দিকে তাকালে, আমরা একটি অনুভূমিক রেখা পাই যাকে বলে
+          - emphasis [ref=f18e277] [box=631,5215,64,27]: এক্স অক্ষ
+          - text: ", এবং একটি উল্লম্ব রেখা পাই যাকে বলে"
+          - emphasis [ref=f18e278] [box=935,5215,69,27]: ওয়াই অক্ষ
+          - text: ।
+        - figure "অনুভূমিক এক্স অক্ষ এবং উল্লম্ব ওয়াই অক্ষ" [ref=f18e280] [box=112,5277,1052,394]:
+          - img "কোঅর্ডিনেট অক্ষ" [ref=f18e281] [box=318,5277,640,360]
+        - paragraph [ref=f18e283] [box=112,5703,1052,64]:
+          - text: যে বিন্দুতে অক্ষ দুটি পরস্পরকে লম্বভাবে ছেদ করে, তাকে বলে
+          - strong [ref=f18e284] [box=492,5705,112,27]: মূলবিন্দু (origin)
+          - text: । লিনিয়ার বীজগণিতে এই মূলবিন্দু হলো সমস্ত ভেক্টরের মূল সূচনাস্থল। প্রতিটি ভেক্টরের লেজ বা tail সর্বদা এই মূলবিন্দুতেই স্থিত থাকে।
+        - 'figure "অক্ষের মিলনকেন্দ্র: মূলবিন্দু ( 0 , 0 )" [ref=f18e286] [box=112,5799,1052,394]':
+          - img "মূলবিন্দু" [ref=f18e287] [box=318,5799,640,360]
+          - generic [ref=f18e288] [box=112,6169,1052,24]:
+            - text: "অক্ষের মিলনকেন্দ্র: মূলবিন্দু"
+            - generic [ref=f18e290] [box=691,6170,36,19]:
+              - math [ref=f18e292] [box=691,6173,38,15]:
+                - generic [ref=f18e294] [box=691,6173,38,15]:
+                  - generic [ref=f18e295] [box=691,6173,7,15]: (
+                  - generic [ref=f18e296] [box=698,6174,9,10]: "0"
+                  - generic [ref=f18e297] [box=707,6182,3,4]: ","
+                  - generic [ref=f18e298] [box=713,6174,9,10]: "0"
+                  - generic [ref=f18e299] [box=722,6173,7,15]: )
+              - generic [ref=f18e301] [box=691,6170,36,20]: (0, 0)
+        - figure "সমান দূরত্বের টিক মার্ক ও নির্দেশক গ্রিড লাইন" [ref=f18e303] [box=112,6225,1052,394]:
+          - img "গ্রিড সিস্টেম" [ref=f18e304] [box=318,6225,640,359]
+        - paragraph [ref=f18e306] [box=112,6651,1052,32]:
+          - text: একটি ভেক্টরের
+          - strong [ref=f18e307] [box=207,6653,189,27]: কোঅর্ডিনেট (Coordinates)
+          - text: হলো দুটি সংখ্যার জোড়া, যা নির্দেশ করে মূলবিন্দু থেকে ভেক্টরের শীর্ষবিন্দুতে পৌঁছাতে কত দূর এবং কোন দিকে যেতে হবে।
+        - figure "মূলবিন্দু থেকে শীর্ষবিন্দু নির্দেশক তীরচিহ্ন" [ref=f18e309] [box=112,6715,1052,394]:
+          - img "তীর হিসেবে ভেক্টর" [ref=f18e310] [box=318,6715,640,359]
+        - 'figure "ভেক্টরের উপাদান প্রকাশ: কলাম ভেক্টর রূপে" [ref=f18e313] [box=112,7140,1052,394]':
+          - img "ভেক্টরের কোঅর্ডিনেট" [ref=f18e314] [box=318,7140,640,359]
+        - generic [ref=f18e320] [box=146,7607,987,53]:
+          - math [ref=f18e322] [box=639,7607,1,27]:
+            - generic [ref=f18e324] [box=639,7607,72,27]:
+              - generic [ref=f18e325] [box=639,7610,12,17]:
+                - generic [ref=f18e326] [box=639,7617,12,10]: v
+                - generic [ref=f18e327] [box=641,7611,8,5]: ⃗
+              - generic [ref=f18e328] [box=657,7618,17,5]: =
+              - generic [ref=f18e329] [box=680,7607,31,27]:
+                - generic [ref=f18e330] [box=680,7607,9,27]: "["
+                - generic [ref=f18e331] [box=689,7608,12,25]:
+                  - generic [ref=f18e332] [box=689,7608,12,10]: x
+                  - generic [ref=f18e336] [box=689,7618,12,15]: "y"
+                - generic [ref=f18e340] [box=702,7607,9,27]: "]"
+          - generic [aria-hidden] [ref=f18e341] [box=146,7607,987,53]:
+            - generic [ref=f18e342] [box=600,7619,41,27]:
+              - generic [ref=f18e343] [box=600,7619,12,26]: v
+              - text: =
+            - generic [ref=f18e351] [box=642,7619,36,26]:
+              - generic [ref=f18e352] [box=642,7619,12,26]: "["
+              - generic [ref=f18e358] [box=653,7607,13,32]:
+                - generic [ref=f18e359] [box=653,7606,13,29]: x
+                - generic [ref=f18e360] [box=654,7633,12,29]: "y"
+              - generic [ref=f18e364] [box=666,7619,12,26]: "]"
+        - paragraph [ref=f18e365] [box=112,7730,1052,49]:
+          - text: উদাহরণস্বরূপ, ভেক্টর
+          - generic [ref=f18e367] [box=244,7741,48,24]:
+            - math [ref=f18e369] [box=244,7730,44,33]:
+              - generic [ref=f18e371] [box=244,7730,44,33]:
+                - generic [ref=f18e372] [box=244,7730,9,33]: "["
+                - generic [ref=f18e373] [box=253,7733,26,26]:
+                  - generic [ref=f18e374] [box=253,7733,26,13]: "3"
+                  - generic [ref=f18e381] [box=253,7746,26,13]:
+                    - generic [ref=f18e382] [box=253,7753,15,1]: −
+                    - generic [ref=f18e383] [box=268,7746,11,13]: "2"
+                - generic [ref=f18e384] [box=279,7730,9,33]: "]"
+            - generic [ref=f18e387] [box=244,7741,48,24]:
+              - generic [ref=f18e388] [box=244,7741,11,24]: "["
+              - generic [ref=f18e394] [box=255,7730,26,29]:
+                - generic [ref=f18e395] [box=263,7729,10,24]: "3"
+                - generic [ref=f18e396] [box=255,7753,26,24]: −2
+              - generic [ref=f18e400] [box=282,7741,11,24]: "]"
+          - text: "নির্দেশ করে: এক্স অক্ষ বরাবর ডানদিকে ৩ একক, এবং তারপর ওয়াই অক্ষের সমান্তরালে নিচের দিকে ২ একক।"
+        - figure "ত্রিমাত্রিক স্থানে তৃতীয় অক্ষ — জেড অক্ষ — যুক্ত হয়" [ref=f18e402] [box=112,7811,1052,574]:
+          - img "থ্রিডি ভেক্টর কোঅর্ডিনেট" [ref=f18e403] [box=318,7811,640,540]
+        - generic [ref=f18e406] [box=112,8421,1052,485]:
+          - generic [ref=f18e407] [box=145,8450,986,27]:
+            - text: ❓ কোন ভেক্টরটি ৪ একক
+            - emphasis [ref=f18e408] [box=308,8450,27,26]: নিচে
+            - text: এবং তারপর ৭ একক
+            - emphasis [ref=f18e409] [box=466,8450,29,26]: ডানে
+            - text: যাওয়ার সাথে মিলে?
+          - generic [ref=f18e410] [box=145,8497,986,311]:
+            - generic [ref=f18e415] [cursor=pointer] [box=194,8520,43,22]:
+              - math [ref=f18e417] [box=194,8510,39,30]:
+                - generic [ref=f18e419] [box=194,8510,39,30]:
+                  - generic [ref=f18e420] [box=194,8510,8,30]: "["
+                  - generic [ref=f18e421] [box=201,8513,24,24]:
+                    - generic [ref=f18e425] [box=201,8513,24,12]:
+                      - generic [ref=f18e426] [box=201,8519,14,1]: −
+                      - generic [ref=f18e427] [box=215,8513,10,12]: "4"
+                    - generic [ref=f18e428] [box=201,8525,24,12]: "7"
+                  - generic [ref=f18e432] [box=225,8510,8,30]: "]"
+              - generic [ref=f18e435] [box=194,8520,43,22]:
+                - generic [ref=f18e436] [box=194,8520,10,22]: "["
+                - generic [ref=f18e442] [box=203,8510,24,27]:
+                  - generic [ref=f18e443] [box=203,8509,24,22]: −4
+                  - generic [ref=f18e444] [box=210,8531,9,22]: "7"
+                - generic [ref=f18e448] [box=227,8520,10,22]: "]"
+            - generic [ref=f18e453] [cursor=pointer] [box=194,8600,43,22]:
+              - math [ref=f18e455] [box=194,8590,39,30]:
+                - generic [ref=f18e457] [box=194,8590,39,30]:
+                  - generic [ref=f18e458] [box=194,8590,8,30]: "["
+                  - generic [ref=f18e459] [box=201,8593,24,24]:
+                    - generic [ref=f18e463] [box=201,8593,24,12]:
+                      - generic [ref=f18e464] [box=201,8599,14,1]: −
+                      - generic [ref=f18e465] [box=215,8593,10,12]: "7"
+                    - generic [ref=f18e466] [box=201,8605,24,12]: "4"
+                  - generic [ref=f18e470] [box=225,8590,8,30]: "]"
+              - generic [ref=f18e473] [box=194,8600,43,22]:
+                - generic [ref=f18e474] [box=194,8600,10,22]: "["
+                - generic [ref=f18e480] [box=203,8590,24,27]:
+                  - generic [ref=f18e481] [box=203,8589,24,22]: −7
+                  - generic [ref=f18e482] [box=210,8611,9,22]: "4"
+                - generic [ref=f18e486] [box=227,8600,10,22]: "]"
+            - generic [ref=f18e491] [cursor=pointer] [box=194,8680,43,22]:
+              - math [ref=f18e493] [box=194,8670,39,30]:
+                - generic [ref=f18e495] [box=194,8670,39,30]:
+                  - generic [ref=f18e496] [box=194,8670,8,30]: "["
+                  - generic [ref=f18e497] [box=201,8673,24,24]:
+                    - generic [ref=f18e498] [box=201,8673,24,12]: "7"
+                    - generic [ref=f18e505] [box=201,8685,24,12]:
+                      - generic [ref=f18e506] [box=201,8691,14,1]: −
+                      - generic [ref=f18e507] [box=215,8685,10,12]: "4"
+                  - generic [ref=f18e508] [box=225,8670,8,30]: "]"
+              - generic [ref=f18e511] [box=194,8680,43,22]:
+                - generic [ref=f18e512] [box=194,8680,10,22]: "["
+                - generic [ref=f18e518] [box=203,8670,24,27]:
+                  - generic [ref=f18e519] [box=210,8669,9,22]: "7"
+                  - generic [ref=f18e520] [box=203,8691,24,22]: −4
+                - generic [ref=f18e524] [box=227,8680,10,22]: "]"
+            - generic [ref=f18e529] [cursor=pointer] [box=194,8760,29,22]:
+              - math [ref=f18e531] [box=194,8751,26,30]:
+                - generic [ref=f18e533] [box=194,8751,26,30]:
+                  - generic [ref=f18e534] [box=194,8751,8,30]: "["
+                  - generic [ref=f18e535] [box=201,8754,10,24]:
+                    - generic [ref=f18e536] [box=201,8754,10,12]: "4"
+                    - generic [ref=f18e540] [box=201,8766,10,12]: "7"
+                  - generic [ref=f18e544] [box=211,8751,8,30]: "]"
+              - generic [ref=f18e547] [box=194,8760,29,22]:
+                - generic [ref=f18e548] [box=194,8760,10,22]: "["
+                - generic [ref=f18e554] [box=203,8751,9,27]:
+                  - generic [ref=f18e555] [box=203,8749,9,22]: "4"
+                  - generic [ref=f18e556] [box=203,8771,9,22]: "7"
+                - generic [ref=f18e560] [box=212,8760,10,22]: "]"
+          - generic [ref=f18e561] [box=145,8830,986,47]:
+            - button "যাচাই করো" [disabled] [ref=f18e562] [box=145,8830,110,47]
+            - button "উত্তর দেখাও" [ref=f18e563] [cursor=pointer] [box=265,8830,114,47]
+      - generic "ভেক্টর যোগ — জ্যামিতিক ও সংখ্যাতাত্ত্বিক রূপ" [ref=f18e564] [box=112,8958,1052,2909]:
+        - generic [ref=f18e565] [box=112,8958,1052,91]:
+          - heading "ভেক্টর যোগ — জ্যামিতিক ও সংখ্যাতাত্ত্বিক রূপ" [level=2] [ref=f18e566] [box=112,8958,1052,49]
+          - button "🔊 এই সেকশনটি শুনুন" [ref=f18e568] [cursor=pointer] [box=1007,9017,157,32]
+        - paragraph [ref=f18e571] [box=112,9085,1052,64]:
+          - text: দুটি ভেক্টর যোগ করার জ্যামিতিক পদ্ধতিটি অত্যন্ত স্বাভাবিক ও স্বজ্ঞাত। একে বলা হয়
+          - emphasis [ref=f18e572] [box=633,9087,210,27]: টিপ-টু-টেইল (Tip-to-Tail) পদ্ধতি
+          - text: । প্রথম ভেক্টরের মাথায় দ্বিতীয় ভেক্টরের লেজ স্থাপন করুন। এরপর প্রথম ভেক্টরের সূচনা থেকে দ্বিতীয় ভেক্টরের শীর্ষবিন্দু পর্যন্ত টানা নতুন ভেক্টরটিই হলো তাদের যোগফল।
+        - figure [ref=f18e574] [box=112,9181,1052,360]:
+          - img "ভেক্টর যোগের প্রস্তুতি" [ref=f18e575] [box=318,9181,640,360]
+        - figure "টিপ-টু-টেইল নিয়মে দুটি ভেক্টরের যোগফল" [ref=f18e577] [box=112,9573,1052,394]:
+          - img "ভেক্টর যোগ" [ref=f18e578] [box=318,9573,640,360]
+        - paragraph [ref=f18e580] [box=112,9999,1052,64]: "ভেক্টর যোগকে চলন বা সরণ হিসেবে ভাবলে বোঝা যায়: প্রথমে প্রথম ভেক্টর বরাবর যাত্রা, তারপর দ্বিতীয় ভেক্টর বরাবর যাত্রা — মোট সরণটিই হলো এই দুই ভেক্টরের যোগফল ভেক্টরের সমান।"
+        - generic [ref=f18e585] [box=146,10132,987,53]:
+          - math [ref=f18e587] [box=639,10132,1,44]:
+            - generic [ref=f18e589] [box=639,10132,227,44]:
+              - generic [ref=f18e590] [box=639,10136,41,36]:
+                - generic [ref=f18e591] [box=639,10136,9,36]: "["
+                - generic [ref=f18e592] [box=648,10138,22,33]:
+                  - generic [ref=f18e596] [box=649,10138,22,15]:
+                    - generic [ref=f18e597] [box=649,10138,12,10]: x
+                    - generic [ref=f18e598] [box=661,10142,9,10]: "1"
+                  - generic [ref=f18e602] [box=648,10152,22,18]:
+                    - generic [ref=f18e603] [box=648,10152,12,15]: "y"
+                    - generic [ref=f18e604] [box=661,10161,9,10]: "1"
+                - generic [ref=f18e605] [box=671,10136,9,36]: "]"
+              - generic [ref=f18e606] [box=685,10148,17,13]: +
+              - generic [ref=f18e607] [box=707,10136,41,36]:
+                - generic [ref=f18e608] [box=707,10136,9,36]: "["
+                - generic [ref=f18e609] [box=716,10138,22,33]:
+                  - generic [ref=f18e613] [box=716,10138,22,15]:
+                    - generic [ref=f18e614] [box=716,10138,12,10]: x
+                    - generic [ref=f18e615] [box=728,10142,9,10]: "2"
+                  - generic [ref=f18e619] [box=716,10152,22,18]:
+                    - generic [ref=f18e620] [box=716,10152,12,15]: "y"
+                    - generic [ref=f18e621] [box=728,10161,9,10]: "2"
+                - generic [ref=f18e622] [box=738,10136,9,36]: "]"
+              - generic [ref=f18e623] [box=754,10152,17,5]: =
+              - generic [ref=f18e624] [box=777,10132,90,44]:
+                - generic [ref=f18e625] [box=777,10132,9,44]: "["
+                - generic [ref=f18e626] [box=786,10135,71,39]:
+                  - generic [ref=f18e630] [box=787,10135,70,18]:
+                    - generic [ref=f18e631] [box=787,10138,22,15]:
+                      - generic [ref=f18e632] [box=787,10138,12,10]: x
+                      - generic [ref=f18e633] [box=798,10142,9,10]: "1"
+                    - generic [ref=f18e634] [box=813,10135,17,13]: +
+                    - generic [ref=f18e635] [box=835,10138,22,15]:
+                      - generic [ref=f18e636] [box=835,10138,12,10]: x
+                      - generic [ref=f18e637] [box=847,10142,9,10]: "2"
+                  - generic [ref=f18e641] [box=786,10152,71,21]:
+                    - generic [ref=f18e642] [box=786,10155,22,18]:
+                      - generic [ref=f18e643] [box=786,10155,12,15]: "y"
+                      - generic [ref=f18e644] [box=798,10164,9,10]: "1"
+                    - generic [ref=f18e645] [box=813,10152,17,13]: +
+                    - generic [ref=f18e646] [box=835,10155,22,18]:
+                      - generic [ref=f18e647] [box=835,10155,12,15]: "y"
+                      - generic [ref=f18e648] [box=847,10164,9,10]: "2"
+                - generic [ref=f18e649] [box=857,10132,9,44]: "]"
+          - generic [aria-hidden] [ref=f18e650] [box=146,10132,987,53]:
+            - generic [ref=f18e651] [box=518,10132,72,53]:
+              - generic [ref=f18e652] [box=518,10145,45,26]:
+                - generic [ref=f18e653] [box=518,10145,12,26]: "["
+                - generic [ref=f18e659] [box=530,10132,22,32]:
+                  - generic [ref=f18e661] [box=530,10131,22,26]:
+                    - text: x
+                    - generic [ref=f18e662] [box=543,10131,9,26]: "1"
+                  - generic [ref=f18e671] [box=531,10158,20,26]:
+                    - text: "y"
+                    - generic [ref=f18e672] [box=543,10158,8,26]: "1"
+                - generic [ref=f18e683] [box=552,10145,12,26]: "]"
+              - text: +
+            - generic [ref=f18e684] [box=591,10132,75,53]:
+              - generic [ref=f18e685] [box=591,10145,45,26]:
+                - generic [ref=f18e686] [box=591,10145,12,26]: "["
+                - generic [ref=f18e692] [box=603,10132,22,32]:
+                  - generic [ref=f18e694] [box=603,10131,22,26]:
+                    - text: x
+                    - generic [ref=f18e695] [box=615,10131,9,26]: "2"
+                  - generic [ref=f18e704] [box=603,10158,20,26]:
+                    - text: "y"
+                    - generic [ref=f18e705] [box=615,10158,8,26]: "2"
+                - generic [ref=f18e716] [box=624,10145,12,26]: "]"
+              - text: =
+            - generic [ref=f18e718] [box=666,10145,94,26]:
+              - generic [ref=f18e719] [box=666,10145,12,26]: "["
+              - generic [ref=f18e725] [box=677,10132,70,32]:
+                - generic [ref=f18e726] [box=677,10131,70,29]:
+                  - generic [ref=f18e727] [box=677,10131,22,26]:
+                    - text: x
+                    - generic [ref=f18e728] [box=690,10131,9,26]: "1"
+                  - text: +
+                  - generic [ref=f18e736] [box=726,10131,22,26]:
+                    - text: x
+                    - generic [ref=f18e737] [box=739,10131,9,26]: "2"
+                - generic [ref=f18e745] [box=679,10158,67,29]:
+                  - generic [ref=f18e746] [box=679,10158,20,26]:
+                    - text: "y"
+                    - generic [ref=f18e747] [box=691,10158,8,26]: "1"
+                  - text: +
+                  - generic [ref=f18e755] [box=726,10158,20,26]:
+                    - text: "y"
+                    - generic [ref=f18e756] [box=738,10158,8,26]: "2"
+              - generic [ref=f18e767] [box=748,10145,12,26]: "]"
+        - figure "উপাদান পুনর্বিন্যাসের মাধ্যমে উপাংশভিত্তিক যোগের যৌক্তিক প্রমাণ" [ref=f18e769] [box=112,10259,1052,394]:
+          - img "উপাদানসহ ভেক্টর যোগ" [ref=f18e770] [box=318,10259,640,360]
+        - generic [ref=f18e776] [box=146,10727,987,53]:
+          - math [ref=f18e778] [box=639,10727,1,36]:
+            - generic [ref=f18e780] [box=639,10727,165,36]:
+              - generic [ref=f18e781] [box=639,10727,31,36]:
+                - generic [ref=f18e782] [box=639,10727,9,36]: "["
+                - generic [ref=f18e783] [box=648,10730,12,30]:
+                  - generic [ref=f18e784] [box=648,10730,12,15]: "1"
+                  - generic [ref=f18e788] [box=648,10745,12,15]: "2"
+                - generic [ref=f18e792] [box=661,10727,9,36]: "]"
+              - generic [ref=f18e793] [box=675,10738,17,13]: +
+              - generic [ref=f18e794] [box=696,10727,48,36]:
+                - generic [ref=f18e795] [box=696,10727,9,36]: "["
+                - generic [ref=f18e796] [box=706,10730,29,30]:
+                  - generic [ref=f18e797] [box=706,10730,29,15]: "3"
+                  - generic [ref=f18e804] [box=706,10745,29,15]:
+                    - generic [ref=f18e805] [box=706,10753,17,1]: −
+                    - generic [ref=f18e806] [box=722,10745,12,15]: "1"
+                - generic [ref=f18e807] [box=735,10727,9,36]: "]"
+              - generic [ref=f18e808] [box=750,10742,17,5]: =
+              - generic [ref=f18e809] [box=773,10727,31,36]:
+                - generic [ref=f18e810] [box=773,10727,9,36]: "["
+                - generic [ref=f18e811] [box=782,10730,12,30]:
+                  - generic [ref=f18e812] [box=782,10730,12,15]: "4"
+                  - generic [ref=f18e816] [box=782,10745,12,15]: "1"
+                - generic [ref=f18e820] [box=795,10727,9,36]: "]"
+          - generic [aria-hidden] [ref=f18e821] [box=146,10727,987,53]:
+            - generic [ref=f18e822] [box=550,10727,62,53]:
+              - generic [ref=f18e823] [box=550,10739,35,26]:
+                - generic [ref=f18e824] [box=550,10739,12,26]: "["
+                - generic [ref=f18e830] [box=562,10727,11,32]:
+                  - generic [ref=f18e831] [box=562,10725,11,27]: "1"
+                  - generic [ref=f18e832] [box=562,10752,11,27]: "2"
+                - generic [ref=f18e836] [box=573,10739,12,26]: "]"
+              - text: +
+            - generic [ref=f18e837] [box=612,10727,82,53]:
+              - generic [ref=f18e838] [box=612,10739,52,26]:
+                - generic [ref=f18e839] [box=612,10739,12,26]: "["
+                - generic [ref=f18e845] [box=624,10727,28,32]:
+                  - generic [ref=f18e846] [box=632,10725,11,27]: "3"
+                  - generic [ref=f18e847] [box=624,10752,28,27]: −1
+                - generic [ref=f18e851] [box=652,10739,12,26]: "]"
+              - text: =
+            - generic [ref=f18e853] [box=693,10739,35,26]:
+              - generic [ref=f18e854] [box=693,10739,12,26]: "["
+              - generic [ref=f18e860] [box=705,10727,11,32]:
+                - generic [ref=f18e861] [box=705,10725,11,27]: "4"
+                - generic [ref=f18e862] [box=705,10752,11,27]: "1"
+              - generic [ref=f18e866] [box=716,10739,12,26]: "]"
+        - paragraph [ref=f18e867] [box=112,10850,1052,98]:
+          - text: "উদাহরণস্বরূপ: প্রথম ভেক্টর"
+          - generic [ref=f18e869] [box=280,10861,32,24]:
+            - math [ref=f18e871] [box=280,10850,28,33]:
+              - generic [ref=f18e873] [box=280,10850,28,33]:
+                - generic [ref=f18e874] [box=280,10850,9,33]: "["
+                - generic [ref=f18e875] [box=288,10853,11,26]:
+                  - generic [ref=f18e876] [box=288,10853,11,13]: "1"
+                  - generic [ref=f18e880] [box=288,10866,11,13]: "2"
+                - generic [ref=f18e884] [box=300,10850,9,33]: "]"
+            - generic [ref=f18e887] [box=280,10861,32,24]:
+              - generic [ref=f18e888] [box=280,10861,11,24]: "["
+              - generic [ref=f18e894] [box=291,10850,10,29]:
+                - generic [ref=f18e895] [box=291,10849,10,24]: "1"
+                - generic [ref=f18e896] [box=291,10873,10,24]: "2"
+              - generic [ref=f18e900] [box=301,10861,11,24]: "]"
+          - text: এবং দ্বিতীয় ভেক্টর
+          - generic [ref=f18e902] [box=430,10861,48,24]:
+            - math [ref=f18e904] [box=430,10850,44,33]:
+              - generic [ref=f18e906] [box=430,10850,44,33]:
+                - generic [ref=f18e907] [box=430,10850,9,33]: "["
+                - generic [ref=f18e908] [box=439,10853,26,26]:
+                  - generic [ref=f18e909] [box=439,10853,26,13]: "3"
+                  - generic [ref=f18e916] [box=439,10866,26,13]:
+                    - generic [ref=f18e917] [box=439,10873,15,1]: −
+                    - generic [ref=f18e918] [box=454,10866,11,13]: "1"
+                - generic [ref=f18e919] [box=465,10850,9,33]: "]"
+            - generic [ref=f18e922] [box=430,10861,48,24]:
+              - generic [ref=f18e923] [box=430,10861,11,24]: "["
+              - generic [ref=f18e929] [box=441,10850,26,29]:
+                - generic [ref=f18e930] [box=449,10849,10,24]: "3"
+                - generic [ref=f18e931] [box=441,10873,26,24]: −1
+              - generic [ref=f18e935] [box=468,10861,11,24]: "]"
+          - text: "; টিপ-টু-টেইল পথে চারটি পদক্ষেপ: ১ ডানে, ২ উপরে, ৩ ডানে, ১ নিচে। পদক্ষেপগুলো পুনর্বিন্যাস করলে: মোট ৪ একক ডানে এবং ১ একক উপরে — অর্থাৎ লব্ধি যোগফল"
+          - generic [ref=f18e937] [box=459,10910,32,24]:
+            - math [ref=f18e939] [box=459,10898,28,33]:
+              - generic [ref=f18e941] [box=459,10898,28,33]:
+                - generic [ref=f18e942] [box=459,10898,9,33]: "["
+                - generic [ref=f18e943] [box=467,10902,11,26]:
+                  - generic [ref=f18e944] [box=467,10902,11,13]: "4"
+                  - generic [ref=f18e948] [box=467,10915,11,13]: "1"
+                - generic [ref=f18e952] [box=479,10898,9,33]: "]"
+            - generic [ref=f18e955] [box=459,10910,32,24]:
+              - generic [ref=f18e956] [box=459,10910,11,24]: "["
+              - generic [ref=f18e962] [box=470,10898,10,29]:
+                - generic [ref=f18e963] [box=470,10897,10,24]: "4"
+                - generic [ref=f18e964] [box=470,10922,10,24]: "1"
+              - generic [ref=f18e968] [box=480,10910,11,24]: "]"
+          - text: ।
+        - figure "টিপ-টু-টেইল পথের চারটি পদক্ষেপ পুনর্বিন্যাস" [ref=f18e970] [box=112,10979,1052,394]:
+          - img "টিপ-টু-টেইল পথের চারটি পদক্ষেপ পুনর্বিন্যাস" [ref=f18e971] [box=318,10979,640,360]
+        - paragraph [ref=f18e973] [box=112,11405,1052,32]:
+          - text: "সাধারণ সংখ্যারেখায়ও একইভাবে কাজ করে:"
+          - generic [ref=f18e975] [box=386,11408,83,24]:
+            - math [ref=f18e977] [box=386,11409,84,15]:
+              - generic [ref=f18e979] [box=386,11409,84,15]:
+                - generic [ref=f18e980] [box=386,11410,11,13]: "2"
+                - generic [ref=f18e981] [box=402,11411,15,13]: +
+                - generic [ref=f18e982] [box=422,11409,11,14]: "5"
+                - generic [ref=f18e983] [box=439,11415,15,5]: =
+                - generic [ref=f18e984] [box=459,11410,11,13]: "7"
+            - generic [aria-hidden] [ref=f18e985] [box=386,11408,83,24]:
+              - generic [ref=f18e986] [box=386,11408,35,24]: 2 +
+              - generic [ref=f18e987] [box=422,11408,38,24]: 5 =
+              - generic [ref=f18e988] [box=459,11408,10,24]: "7"
+          - text: মানে প্রথমে ২ একক ডানে পদার্পণ, তারপর আরও ৫ একক ডানে — মোট ৭ এককের সরণ।
+        - figure "একমাত্রিক সংখ্যারেখায় পদক্ষেপের মতো ভেক্টর যোগ" [ref=f18e990] [box=112,11469,1052,214]:
+          - img "সংখ্যারেখা" [ref=f18e991] [box=318,11469,640,180]
+        - generic "কেন এই নির্দিষ্ট সংজ্ঞা?" [ref=f18e993] [box=112,11715,1052,151]:
+          - generic [ref=f18e994] [box=112,11715,1052,151]:
+            - generic [ref=f18e995] [box=137,11733,1005,24]: 💡 কেন এই নির্দিষ্ট সংজ্ঞা?
+            - paragraph [ref=f18e997] [box=137,11765,1005,64]: ভেক্টরকে যদি কোনো চলনের পদক্ষেপ হিসেবে ভাবা হয়—প্রথমে প্রথম ভেক্টর বরাবর পদার্পণ, তারপর দ্বিতীয় ভেক্টর বরাবর যাত্রা—তবে মোট সরণ হবে সরাসরি যোগফল ভেক্টরের সমান। পদার্থবিদ্যায় একাধিক বলের লব্ধি নির্ণয় করতেও এই একই নিয়ম প্রযোজ্য।
+      - generic "স্কেলার গুণন — প্রসারণ, সংকোচন ও বিপরীতকরণ" [ref=f18e998] [box=112,11919,1052,3093]:
+        - generic [ref=f18e999] [box=112,11919,1052,91]:
+          - heading "স্কেলার গুণন — প্রসারণ, সংকোচন ও বিপরীতকরণ" [level=2] [ref=f18e1000] [box=112,11919,1052,49]
+          - button "🔊 এই সেকশনটি শুনুন" [ref=f18e1002] [cursor=pointer] [box=1007,11977,157,32]
+        - paragraph [ref=f18e1005] [box=112,12046,1052,32]:
+          - text: একটি সংখ্যা দিয়ে ভেক্টরকে গুণ করার প্রক্রিয়াকে বলা হয়
+          - strong [ref=f18e1006] [box=463,12048,114,27]: স্কেলিং (Scaling)
+          - text: । আর যে সংখ্যাটি দিয়ে গুণ করা হয় তাকে বলা হয়
+          - strong [ref=f18e1007] [box=890,12048,106,27]: স্কেলার (Scalar)
+          - text: ।
+        - generic [ref=f18e1012] [box=146,12147,987,53]:
+          - math [ref=f18e1014] [box=639,12147,1,44]:
+            - generic [ref=f18e1016] [box=639,12147,143,44]:
+              - generic [ref=f18e1017] [box=639,12160,12,16]: k
+              - generic [ref=f18e1018] [box=655,12168,6,3]: ⋅
+              - generic [ref=f18e1019] [box=665,12156,31,27]:
+                - generic [ref=f18e1020] [box=665,12156,9,27]: "["
+                - generic [ref=f18e1021] [box=674,12157,12,25]:
+                  - generic [ref=f18e1022] [box=674,12157,12,10]: x
+                  - generic [ref=f18e1026] [box=674,12167,12,15]: "y"
+                - generic [ref=f18e1030] [box=687,12156,9,27]: "]"
+              - generic [ref=f18e1031] [box=702,12167,17,5]: =
+              - generic [ref=f18e1032] [box=725,12147,57,44]:
+                - generic [ref=f18e1033] [box=725,12147,9,44]: "["
+                - generic [ref=f18e1034] [box=734,12151,38,37]:
+                  - generic [ref=f18e1038] [box=735,12151,38,16]:
+                    - generic [ref=f18e1039] [box=735,12151,12,16]: k
+                    - generic [ref=f18e1040] [box=751,12159,6,3]: ⋅
+                    - generic [ref=f18e1041] [box=761,12157,12,10]: x
+                  - generic [ref=f18e1045] [box=734,12167,38,21]:
+                    - generic [ref=f18e1046] [box=734,12167,12,16]: k
+                    - generic [ref=f18e1047] [box=750,12175,6,3]: ⋅
+                    - generic [ref=f18e1048] [box=760,12173,12,15]: "y"
+                - generic [ref=f18e1049] [box=773,12147,9,44]: "]"
+          - generic [aria-hidden] [ref=f18e1050] [box=146,12147,987,53]:
+            - generic [ref=f18e1051] [box=560,12160,28,29]: k ⋅
+            - generic [ref=f18e1052] [box=588,12147,66,53]:
+              - generic [ref=f18e1053] [box=588,12160,36,26]:
+                - generic [ref=f18e1054] [box=588,12160,12,26]: "["
+                - generic [ref=f18e1060] [box=600,12147,13,32]:
+                  - generic [ref=f18e1061] [box=600,12146,13,29]: x
+                  - generic [ref=f18e1062] [box=600,12173,12,29]: "y"
+                - generic [ref=f18e1066] [box=612,12160,12,26]: "]"
+              - text: =
+            - generic [ref=f18e1068] [box=654,12160,65,26]:
+              - generic [ref=f18e1069] [box=654,12160,12,26]: "["
+              - generic [ref=f18e1075] [box=666,12147,41,32]:
+                - generic [ref=f18e1076] [box=666,12146,41,29]: k ⋅ x
+                - generic [ref=f18e1077] [box=666,12173,40,29]: k ⋅ y
+              - generic [ref=f18e1081] [box=707,12160,12,26]: "]"
+        - paragraph [ref=f18e1082] [box=112,12270,1052,64]: "গণিতে \"স্কেলার\" শব্দটি মূলত সংখ্যার সমার্থক হিসেবে ব্যবহৃত হয়: যেকোনো সংখ্যা দিয়ে কোনো ভেক্টরকে প্রসারিত বা সংকুচিত (স্কেল) করলে সেই সংখ্যাটিকে স্কেলার বলা হয়।"
+        - 'figure "k = 2 : ভেক্টরটির দৈর্ঘ্য দ্বিগুণ হয়" [ref=f18e1084] [box=112,12366,1052,394]':
+          - img "২ দিয়ে স্কেলিং" [ref=f18e1085] [box=318,12366,640,360]
+          - generic [ref=f18e1086] [box=112,12736,1052,24]:
+            - generic [ref=f18e1088] [box=554,12737,39,19]:
+              - math [ref=f18e1090] [box=554,12740,39,11]:
+                - generic [ref=f18e1092] [box=554,12740,39,11]:
+                  - generic [ref=f18e1093] [box=554,12740,9,11]: k
+                  - generic [ref=f18e1094] [box=567,12744,12,4]: =
+                  - generic [ref=f18e1095] [box=584,12741,9,10]: "2"
+              - generic [aria-hidden] [ref=f18e1096] [box=554,12737,39,19]:
+                - generic [ref=f18e1097] [box=554,12737,31,22]: k =
+                - generic [ref=f18e1098] [box=585,12737,8,20]: "2"
+            - text: ": ভেক্টরটির দৈর্ঘ্য দ্বিগুণ হয়"
+        - 'figure "k = 1 / 3 : ভেক্টরটি এক-তৃতীয়াংশে সংকুচিত হয়" [ref=f18e1100] [box=112,12792,1052,394]':
+          - img "১/৩ দিয়ে স্কেলিং" [ref=f18e1101] [box=318,12792,640,360]
+          - generic [ref=f18e1102] [box=112,13162,1052,24]:
+            - generic [ref=f18e1104] [box=516,13163,55,19]:
+              - math [ref=f18e1106] [box=516,13166,56,14]:
+                - generic [ref=f18e1108] [box=516,13166,56,14]:
+                  - generic [ref=f18e1109] [box=516,13166,9,11]: k
+                  - generic [ref=f18e1110] [box=529,13170,12,4]: =
+                  - generic [ref=f18e1111] [box=546,13167,9,10]: "1"
+                  - generic [ref=f18e1112] [box=555,13166,8,14]: /
+                  - generic [ref=f18e1113] [box=563,13167,9,10]: "3"
+              - generic [aria-hidden] [ref=f18e1114] [box=516,13163,55,19]:
+                - generic [ref=f18e1115] [box=516,13163,31,22]: k =
+                - generic [ref=f18e1116] [box=546,13163,24,20]: 1/3
+            - text: ": ভেক্টরটি এক-তৃতীয়াংশে সংকুচিত হয়"
+        - 'figure "k = − 1.8 : ভেক্টরটির দিক ১৮০° ঘুরে যায় এবং দেড়গুণের বেশি প্রসারিত হয়" [ref=f18e1118] [box=112,13218,1052,394]':
+          - img "−১.৫ দিয়ে স্কেলিং" [ref=f18e1119] [box=318,13218,640,360]
+          - generic [ref=f18e1120] [box=112,13588,1052,24]:
+            - generic [ref=f18e1122] [box=447,13589,64,19]:
+              - math [ref=f18e1124] [box=447,13592,70,11]:
+                - generic [ref=f18e1126] [box=447,13592,70,11]:
+                  - generic [ref=f18e1127] [box=447,13592,9,11]: k
+                  - generic [ref=f18e1128] [box=461,13596,12,4]: =
+                  - generic [ref=f18e1129] [box=481,13598,12,1]: −
+                  - generic [ref=f18e1130] [box=496,13593,21,10]: "1.8"
+              - generic [aria-hidden] [ref=f18e1131] [box=447,13589,64,19]:
+                - generic [ref=f18e1132] [box=447,13589,31,22]: k =
+                - generic [ref=f18e1133] [box=478,13589,33,20]: −1.8
+            - text: ": ভেক্টরটির দিক ১৮০° ঘুরে যায় এবং দেড়গুণের বেশি প্রসারিত হয়"
+        - generic [ref=f18e1134] [box=112,13644,1052,96]:
+          - strong [ref=f18e1135] [box=135,13664,104,26]: "🔑 মূল অন্তর্দৃষ্টি:"
+          - text: লিনিয়ার বীজগণিতের প্রতিটি স্তম্ভ — লিনিয়ার কম্বিনেশন, স্প্যান, ভিত্তি, ম্যাট্রিক্স রূপান্তর, এবং আইগেনভ্যালু — এই দুটি মৌলিক অপারেশনের (ভেক্টর যোগ ও স্কেলার গুণন) ওপর ভিত্তি করেই প্রতিষ্ঠিত।
+        - generic [ref=f18e1136] [box=112,13768,1052,703]:
+          - generic [ref=f18e1137] [box=112,13768,1052,496]:
+            - tablist "চিত্র ও ভিডিও প্রদর্শন" [ref=f18e1138] [box=531,13768,213,52]:
+              - tab "🖼️ Image" [selected] [ref=f18e1139] [cursor=pointer] [box=537,13774,99,40]
+              - tab "🎬 Video" [ref=f18e1141] [cursor=pointer] [box=641,13774,97,40]
+            - img "স্কেলার মুক্তভাবে পরিবর্তনশীল" [ref=f18e1145] [box=259,13841,758,426]
+          - generic [ref=f18e1148] [box=112,14442,1052,29]: "চিত্র ও ভিডিও টগল: স্কেলার দুটি মুক্তভাবে পরিবর্তন হলে সম্পূর্ণ দ্বিমাত্রিক সমতল কীভাবে গঠিত হয় তা লক্ষ্য করুন।"
+        - generic [ref=f18e1150] [box=112,14507,1052,504]:
+          - generic [ref=f18e1151] [box=145,14536,986,46]:
+            - text: ❓ যদি
+            - generic [ref=f18e1153] [box=196,14547,66,22]:
+              - math [ref=f18e1155] [box=196,14536,62,31]:
+                - generic [ref=f18e1157] [box=196,14536,62,31]:
+                  - generic [ref=f18e1158] [box=196,14542,10,15]:
+                    - generic [ref=f18e1159] [box=196,14548,10,9]: v
+                    - generic [ref=f18e1160] [box=198,14543,7,5]: ⃗
+                  - generic [ref=f18e1161] [box=212,14550,14,4]: =
+                  - generic [ref=f18e1162] [box=231,14536,27,31]:
+                    - generic [ref=f18e1163] [box=231,14536,8,31]: "["
+                    - generic [ref=f18e1164] [box=239,14539,11,26]:
+                      - generic [ref=f18e1165] [box=239,14539,11,13]: "3"
+                      - generic [ref=f18e1169] [box=239,14552,11,13]: "1"
+                    - generic [ref=f18e1173] [box=250,14536,8,31]: "]"
+              - generic [aria-hidden] [ref=f18e1174] [box=196,14547,66,22]:
+                - generic [ref=f18e1175] [box=196,14547,36,23]:
+                  - generic [ref=f18e1176] [box=196,14547,10,22]: v
+                  - text: =
+                - generic [ref=f18e1184] [box=232,14547,30,22]:
+                  - generic [ref=f18e1185] [box=232,14547,10,22]: "["
+                  - generic [ref=f18e1191] [box=242,14536,10,28]:
+                    - generic [ref=f18e1192] [box=242,14535,10,23]: "3"
+                    - generic [ref=f18e1193] [box=242,14559,10,23]: "1"
+                  - generic [ref=f18e1197] [box=252,14547,10,22]: "]"
+            - text: হয়, তবে
+            - generic [ref=f18e1199] [box=319,14547,35,22]:
+              - math [ref=f18e1201] [box=319,14538,35,15]:
+                - generic [ref=f18e1203] [box=319,14538,35,15]:
+                  - generic [ref=f18e1204] [box=319,14547,14,1]: −
+                  - generic [ref=f18e1205] [box=333,14540,11,13]: "2"
+                  - generic [ref=f18e1206] [box=344,14538,10,15]:
+                    - generic [ref=f18e1207] [box=344,14544,10,9]: v
+                    - generic [ref=f18e1208] [box=345,14539,7,5]: ⃗
+              - generic [ref=f18e1210] [box=319,14547,35,23]:
+                - text: −2
+                - generic [ref=f18e1211] [box=344,14547,10,22]: v
+            - text: এর মান কত?
+          - generic [ref=f18e1218] [box=145,14603,986,311]:
+            - generic [ref=f18e1223] [cursor=pointer] [box=194,14625,43,22]:
+              - math [ref=f18e1225] [box=194,14616,39,30]:
+                - generic [ref=f18e1227] [box=194,14616,39,30]:
+                  - generic [ref=f18e1228] [box=194,14616,8,30]: "["
+                  - generic [ref=f18e1229] [box=201,14619,24,24]:
+                    - generic [ref=f18e1233] [box=201,14619,24,12]:
+                      - generic [ref=f18e1234] [box=201,14625,14,1]: −
+                      - generic [ref=f18e1235] [box=215,14619,10,12]: "3"
+                    - generic [ref=f18e1239] [box=201,14631,24,12]:
+                      - generic [ref=f18e1240] [box=201,14637,14,1]: −
+                      - generic [ref=f18e1241] [box=215,14631,10,12]: "1"
+                  - generic [ref=f18e1242] [box=225,14616,8,30]: "]"
+              - generic [ref=f18e1245] [box=194,14625,43,22]:
+                - generic [ref=f18e1246] [box=194,14625,10,22]: "["
+                - generic [ref=f18e1252] [box=203,14616,24,27]:
+                  - generic [ref=f18e1253] [box=203,14614,24,22]: −3
+                  - generic [ref=f18e1254] [box=203,14636,24,22]: −1
+                - generic [ref=f18e1258] [box=227,14625,10,22]: "]"
+            - generic [ref=f18e1263] [cursor=pointer] [box=194,14705,43,22]:
+              - math [ref=f18e1265] [box=194,14696,39,30]:
+                - generic [ref=f18e1267] [box=194,14696,39,30]:
+                  - generic [ref=f18e1268] [box=194,14696,8,30]: "["
+                  - generic [ref=f18e1269] [box=201,14699,24,24]:
+                    - generic [ref=f18e1273] [box=201,14699,24,12]:
+                      - generic [ref=f18e1274] [box=201,14705,14,1]: −
+                      - generic [ref=f18e1275] [box=215,14699,10,12]: "6"
+                    - generic [ref=f18e1279] [box=201,14711,24,12]:
+                      - generic [ref=f18e1280] [box=201,14717,14,1]: −
+                      - generic [ref=f18e1281] [box=215,14711,10,12]: "2"
+                  - generic [ref=f18e1282] [box=225,14696,8,30]: "]"
+              - generic [ref=f18e1285] [box=194,14705,43,22]:
+                - generic [ref=f18e1286] [box=194,14705,10,22]: "["
+                - generic [ref=f18e1292] [box=203,14696,24,27]:
+                  - generic [ref=f18e1293] [box=203,14694,24,22]: −6
+                  - generic [ref=f18e1294] [box=203,14716,24,22]: −2
+                - generic [ref=f18e1298] [box=227,14705,10,22]: "]"
+            - generic [ref=f18e1303] [cursor=pointer] [box=194,14786,29,22]:
+              - math [ref=f18e1305] [box=194,14776,26,30]:
+                - generic [ref=f18e1307] [box=194,14776,26,30]:
+                  - generic [ref=f18e1308] [box=194,14776,8,30]: "["
+                  - generic [ref=f18e1309] [box=201,14779,10,24]:
+                    - generic [ref=f18e1310] [box=201,14779,10,12]: "6"
+                    - generic [ref=f18e1314] [box=201,14791,10,12]: "2"
+                  - generic [ref=f18e1318] [box=211,14776,8,30]: "]"
+              - generic [ref=f18e1321] [box=194,14786,29,22]:
+                - generic [ref=f18e1322] [box=194,14786,10,22]: "["
+                - generic [ref=f18e1328] [box=203,14776,9,27]:
+                  - generic [ref=f18e1329] [box=203,14774,9,22]: "6"
+                  - generic [ref=f18e1330] [box=203,14796,9,22]: "2"
+                - generic [ref=f18e1334] [box=212,14786,10,22]: "]"
+            - generic [ref=f18e1339] [cursor=pointer] [box=194,14866,43,22]:
+              - math [ref=f18e1341] [box=194,14856,39,30]:
+                - generic [ref=f18e1343] [box=194,14856,39,30]:
+                  - generic [ref=f18e1344] [box=194,14856,8,30]: "["
+                  - generic [ref=f18e1345] [box=201,14859,24,24]:
+                    - generic [ref=f18e1349] [box=201,14859,24,12]:
+                      - generic [ref=f18e1350] [box=201,14865,14,1]: −
+                      - generic [ref=f18e1351] [box=215,14859,10,12]: "2"
+                    - generic [ref=f18e1355] [box=201,14871,24,12]:
+                      - generic [ref=f18e1356] [box=201,14877,14,1]: −
+                      - generic [ref=f18e1357] [box=215,14871,10,12]: "6"
+                  - generic [ref=f18e1358] [box=225,14856,8,30]: "]"
+              - generic [ref=f18e1361] [box=194,14866,43,22]:
+                - generic [ref=f18e1362] [box=194,14866,10,22]: "["
+                - generic [ref=f18e1368] [box=203,14856,24,27]:
+                  - generic [ref=f18e1369] [box=203,14854,24,22]: −2
+                  - generic [ref=f18e1370] [box=203,14877,24,22]: −6
+                - generic [ref=f18e1374] [box=227,14866,10,22]: "]"
+          - generic [ref=f18e1375] [box=145,14935,986,47]:
+            - button "যাচাই করো" [disabled] [ref=f18e1376] [box=145,14935,110,47]
+            - button "উত্তর দেখাও" [ref=f18e1377] [cursor=pointer] [box=265,14935,114,47]
+      - generic "ভিত্তি ভেক্টর — আই হ্যাট ও জে হ্যাট" [ref=f18e1378] [box=112,15063,1052,1338]:
+        - generic [ref=f18e1379] [box=112,15063,1052,91]:
+          - heading "ভিত্তি ভেক্টর — আই হ্যাট ও জে হ্যাট" [level=2] [ref=f18e1380] [box=112,15063,1052,49]
+          - button "🔊 এই সেকশনটি শুনুন" [ref=f18e1382] [cursor=pointer] [box=1007,15122,157,32]
+        - paragraph [ref=f18e1385] [box=112,15191,1052,32]: "দ্বিমাত্রিক কার্তেসীয় তলে দুটি বিশেষ একক ভেক্টর রয়েছে, যা সম্পূর্ণ স্থানাঙ্ক ব্যবস্থার মেরুদণ্ড হিসেবে কাজ করে:"
+        - list [ref=f18e1386] [box=140,15242,1024,70]:
+          - listitem [ref=f18e1387] [box=140,15242,1024,30]:
+            - strong [ref=f18e1388] [box=140,15244,83,26]:
+              - text: আই হ্যাট (
+              - generic [ref=f18e1390] [box=206,15244,7,23]:
+                - math [ref=f18e1392] [box=206,15242,11,21]:
+                  - generic [ref=f18e1395] [box=206,15242,11,21]:
+                    - generic [ref=f18e1396] [box=208,15251,6,13]: i
+                    - generic [ref=f18e1397] [box=206,15244,11,7]: ^
+                - generic [ref=f18e1403] [box=206,15244,7,18]:
+                  - generic [ref=f18e1404] [box=206,15246,7,24]: i
+                  - text: ^
+              - text: "):"
+            - text: এক্স অক্ষের ধনাত্মক দিকে ১ একক দৈর্ঘ্যের নির্দেশক ভেক্টর।
+          - listitem [ref=f18e1405] [box=140,15283,1024,30]:
+            - strong [ref=f18e1406] [box=140,15285,78,26]:
+              - text: জে হ্যাট (
+              - generic [ref=f18e1408] [box=198,15285,9,23]:
+                - math [ref=f18e1410] [box=198,15283,11,25]:
+                  - generic [ref=f18e1413] [box=198,15283,11,25]:
+                    - generic [ref=f18e1414] [box=200,15291,7,17]: j
+                    - generic [ref=f18e1415] [box=198,15284,11,7]: ^
+                - generic [ref=f18e1421] [box=198,15284,9,18]:
+                  - generic [ref=f18e1422] [box=198,15287,8,24]: j
+                  - text: ^
+              - text: "):"
+            - text: ওয়াই অক্ষের ধনাত্মক দিকে ১ একক দৈর্ঘ্যের নির্দেশক ভেক্টর।
+        - generic [ref=f18e1430] [box=146,15382,987,53]:
+          - math [ref=f18e1432] [box=639,15382,1,36]:
+            - generic [ref=f18e1434] [box=639,15382,197,36]:
+              - generic [ref=f18e1435] [box=639,15382,12,24]:
+                - generic [ref=f18e1436] [box=642,15392,7,15]: i
+                - generic [ref=f18e1437] [box=639,15384,12,8]: ^
+              - generic [ref=f18e1438] [box=657,15398,17,5]: =
+              - generic [ref=f18e1439] [box=680,15382,31,36]:
+                - generic [ref=f18e1440] [box=680,15382,9,36]: "["
+                - generic [ref=f18e1441] [box=690,15385,12,30]:
+                  - generic [ref=f18e1442] [box=690,15385,12,15]: "1"
+                  - generic [ref=f18e1446] [box=690,15400,12,15]: "0"
+                - generic [ref=f18e1450] [box=702,15382,9,36]: "]"
+              - generic [ref=f18e1451] [box=711,15404,5,5]: ","
+              - generic [ref=f18e1452] [box=764,15382,12,29]:
+                - generic [ref=f18e1453] [box=766,15392,8,20]: j
+                - generic [ref=f18e1454] [box=764,15384,12,8]: ^
+              - generic [ref=f18e1455] [box=782,15398,17,5]: =
+              - generic [ref=f18e1456] [box=805,15382,31,36]:
+                - generic [ref=f18e1457] [box=805,15382,9,36]: "["
+                - generic [ref=f18e1458] [box=815,15385,12,30]:
+                  - generic [ref=f18e1459] [box=815,15385,12,15]: "0"
+                  - generic [ref=f18e1463] [box=815,15400,12,15]: "1"
+                - generic [ref=f18e1467] [box=827,15382,9,36]: "]"
+          - generic [aria-hidden] [ref=f18e1468] [box=146,15382,987,53]:
+            - generic [ref=f18e1469] [box=537,15394,37,27]:
+              - generic [ref=f18e1473] [box=537,15394,8,21]:
+                - generic [ref=f18e1474] [box=537,15396,8,27]: i
+                - text: ^
+              - text: =
+            - generic [ref=f18e1475] [box=574,15382,133,53]:
+              - generic [ref=f18e1476] [box=574,15394,35,26]:
+                - generic [ref=f18e1477] [box=574,15394,12,26]: "["
+                - generic [ref=f18e1483] [box=586,15382,11,32]:
+                  - generic [ref=f18e1484] [box=586,15381,11,27]: "1"
+                  - generic [ref=f18e1485] [box=586,15408,11,27]: "0"
+                - generic [ref=f18e1489] [box=597,15394,12,26]: "]"
+              - text: ","
+              - generic [ref=f18e1493] [box=667,15394,10,21]:
+                - generic [ref=f18e1494] [box=667,15396,9,27]: j
+                - text: ^
+              - text: =
+            - generic [ref=f18e1499] [box=707,15394,35,26]:
+              - generic [ref=f18e1500] [box=707,15394,12,26]: "["
+              - generic [ref=f18e1506] [box=719,15382,11,32]:
+                - generic [ref=f18e1507] [box=719,15381,11,27]: "0"
+                - generic [ref=f18e1508] [box=719,15408,11,27]: "1"
+              - generic [ref=f18e1512] [box=730,15394,12,26]: "]"
+        - paragraph [ref=f18e1513] [box=112,15505,1052,32]: "যেকোনো দ্বিমাত্রিক ভেক্টরকে এই দুটির স্কেল করা রূপের যোগফল বা রৈখিক সমন্বয় হিসেবে প্রকাশ করা যায়:"
+        - generic [ref=f18e1518] [box=146,15606,987,53]:
+          - math [ref=f18e1520] [box=639,15606,1,36]:
+            - generic [ref=f18e1522] [box=639,15606,197,36]:
+              - generic [ref=f18e1523] [box=639,15606,48,36]:
+                - generic [ref=f18e1524] [box=639,15606,9,36]: "["
+                - generic [ref=f18e1525] [box=648,15609,29,30]:
+                  - generic [ref=f18e1526] [box=648,15609,29,15]: "3"
+                  - generic [ref=f18e1533] [box=648,15624,29,15]:
+                    - generic [ref=f18e1534] [box=648,15632,17,1]: −
+                    - generic [ref=f18e1535] [box=665,15624,12,15]: "2"
+                - generic [ref=f18e1536] [box=677,15606,9,36]: "]"
+              - generic [ref=f18e1537] [box=693,15622,17,5]: =
+              - generic [ref=f18e1538] [box=716,15616,12,15]: "3"
+              - generic [ref=f18e1539] [box=728,15606,12,24]:
+                - generic [ref=f18e1540] [box=731,15616,7,15]: i
+                - generic [ref=f18e1541] [box=728,15608,12,8]: ^
+              - generic [ref=f18e1542] [box=745,15618,17,13]: +
+              - generic [ref=f18e1543] [box=767,15615,9,21]: (
+              - generic [ref=f18e1544] [box=781,15624,17,1]: −
+              - generic [ref=f18e1545] [box=802,15616,12,15]: "2"
+              - generic [ref=f18e1546] [box=815,15615,9,21]: )
+              - generic [ref=f18e1547] [box=824,15606,12,29]:
+                - generic [ref=f18e1548] [box=826,15616,8,20]: j
+                - generic [ref=f18e1549] [box=824,15608,12,8]: ^
+          - generic [aria-hidden] [ref=f18e1550] [box=146,15606,987,53]:
+            - generic [ref=f18e1551] [box=547,15606,82,53]:
+              - generic [ref=f18e1552] [box=547,15619,52,26]:
+                - generic [ref=f18e1553] [box=547,15619,12,26]: "["
+                - generic [ref=f18e1559] [box=559,15606,28,32]:
+                  - generic [ref=f18e1560] [box=567,15605,11,27]: "3"
+                  - generic [ref=f18e1561] [box=559,15632,28,27]: −2
+                - generic [ref=f18e1565] [box=587,15619,12,26]: "]"
+              - text: =
+            - generic [ref=f18e1566] [box=629,15618,46,27]:
+              - text: "3"
+              - generic [ref=f18e1570] [box=640,15618,8,21]:
+                - generic [ref=f18e1571] [box=640,15621,8,27]: i
+                - text: ^
+              - text: +
+            - generic [ref=f18e1572] [box=675,15618,56,27]:
+              - text: (−2)
+              - generic [ref=f18e1576] [box=721,15618,10,21]:
+                - generic [ref=f18e1577] [box=721,15621,9,27]: j
+                - text: ^
+        - generic "কেন ভিত্তি ভেক্টর গুরুত্বপূর্ণ?" [ref=f18e1581] [box=112,15729,1052,151]:
+          - generic [ref=f18e1582] [box=112,15729,1052,151]:
+            - generic [ref=f18e1583] [box=137,15747,1005,24]: 🌟 কেন ভিত্তি ভেক্টর গুরুত্বপূর্ণ?
+            - paragraph [ref=f18e1585] [box=137,15779,1005,64]: "গ্রান্ট স্যান্ডারসন (3Blue1Brown) সুন্দরভাবে ব্যাখ্যা করেন: স্থানাঙ্ক আসলে কোনো পরম সত্য নয়, এটি কেবল একটি নির্দিষ্ট ভিত্তি ভেক্টর জোড়ার সাপেক্ষে স্থান পরিমাপের চুক্তি মাত্র। আগামী অধ্যায়ে আমরা দেখব কীভাবে এই ভিত্তি ভেক্টরগুলো পুরো ত্রিমাত্রিক ও দ্বিমাত্রিক স্থানকে তৈরি (span) করে।"
+        - generic [ref=f18e1586] [box=112,15913,1052,489]:
+          - generic [ref=f18e1587] [box=137,15938,1002,45]:
+            - generic [ref=f18e1588] [box=137,15938,411,32]: "⚡ ইন্টারেক্টিভ ল্যাব: ভিত্তি ভেক্টর বিশ্লেষণ ও উপাংশ পরীক্ষক"
+            - generic [ref=f18e1590] [box=1012,15941,127,25]: Live Math Engine
+          - paragraph [ref=f18e1591] [box=137,15998,1002,29]:
+            - text: যেকোনো স্থানাঙ্ক
+            - generic [ref=f18e1593] [box=231,15999,43,22]:
+              - math [ref=f18e1595] [box=231,16002,42,17]:
+                - generic [ref=f18e1597] [box=231,16002,42,17]:
+                  - generic [ref=f18e1598] [box=231,16002,8,17]: (
+                  - generic [ref=f18e1599] [box=239,16006,10,9]: x
+                  - generic [ref=f18e1600] [box=249,16013,4,4]: ","
+                  - generic [ref=f18e1601] [box=256,16006,10,13]: "y"
+                  - generic [ref=f18e1602] [box=266,16002,8,17]: )
+              - generic [ref=f18e1604] [box=231,15999,43,24]: (x, y)
+            - text: ইনপুট দিন অথবা প্রিসেটে ক্লিক করুন — সিস্টেম সরাসরি ভিত্তি ভেক্টর
+            - generic [ref=f18e1606] [box=659,15999,38,22]:
+              - math [ref=f18e1608] [box=659,15998,42,23]:
+                - generic [ref=f18e1610] [box=659,15998,42,23]:
+                  - generic [ref=f18e1611] [box=659,16004,8,17]: (
+                  - generic [ref=f18e1612] [box=666,15998,10,19]:
+                    - generic [ref=f18e1613] [box=669,16005,6,12]: i
+                    - generic [ref=f18e1614] [box=666,15999,10,6]: ^
+                  - generic [ref=f18e1615] [box=677,16015,4,4]: ","
+                  - generic [ref=f18e1616] [box=683,15998,10,23]:
+                    - generic [ref=f18e1617] [box=685,16005,7,16]: j
+                    - generic [ref=f18e1618] [box=683,15999,10,6]: ^
+                  - generic [ref=f18e1619] [box=693,16004,8,17]: )
+              - generic [ref=f18e1621] [box=659,15999,38,22]:
+                - text: (
+                - generic [ref=f18e1625] [box=666,15999,7,17]:
+                  - generic [ref=f18e1626] [box=666,16001,7,22]: i
+                  - text: ^
+                - text: ","
+                - generic [ref=f18e1630] [box=681,15999,9,17]:
+                  - generic [ref=f18e1631] [box=681,16001,8,22]: j
+                  - text: ^
+                - text: )
+            - text: ", দৈর্ঘ্য"
+            - generic [ref=f18e1636] [box=734,15999,28,22]:
+              - math [ref=f18e1638] [box=734,16000,27,17]:
+                - generic [ref=f18e1640] [box=734,16000,27,17]:
+                  - generic [ref=f18e1641] [box=734,16003,9,14]: ∥
+                  - generic [ref=f18e1642] [box=742,16000,10,15]:
+                    - generic [ref=f18e1643] [box=742,16006,10,9]: v
+                    - generic [ref=f18e1644] [box=744,16001,7,5]: ⃗
+                  - generic [ref=f18e1645] [box=752,16003,9,14]: ∥
+              - generic [ref=f18e1647] [box=734,15999,28,22]:
+                - text: ∥
+                - generic [ref=f18e1648] [box=743,15999,10,22]: v
+                - text: ∥
+            - text: ", দিক কোণ"
+            - generic [ref=f18e1656] [box=828,15999,9,22]:
+              - math [ref=f18e1658] [box=828,16002,10,13]:
+                - generic [ref=f18e1659] [box=828,16002,10,13]: θ
+              - generic [ref=f18e1663] [box=828,15999,9,24]: θ
+            - text: এবং একক ভেক্টরে
+            - generic [ref=f18e1665] [box=946,15999,25,22]:
+              - math [ref=f18e1667] [box=946,15999,26,20]:
+                - generic [ref=f18e1669] [box=946,15999,26,20]:
+                  - generic [ref=f18e1670] [box=946,16002,8,17]: (
+                  - generic [ref=f18e1671] [box=954,15999,11,16]:
+                    - generic [ref=f18e1672] [box=954,16006,11,9]: u
+                    - generic [ref=f18e1673] [box=954,16000,10,6]: ^
+                  - generic [ref=f18e1674] [box=965,16002,8,17]: )
+              - generic [ref=f18e1676] [box=946,15999,25,22]:
+                - text: (
+                - generic [ref=f18e1680] [box=954,16003,11,13]:
+                  - generic [ref=f18e1681] [box=954,16001,11,22]: u
+                  - text: ^
+                - text: )
+            - text: "রূপান্তর দেখাবে:"
+          - generic [ref=f18e1682] [box=137,16043,1002,78]:
+            - generic [ref=f18e1683] [box=137,16043,493,78]:
+              - generic [ref=f18e1684] [box=137,16043,493,25]:
+                - text: এক্স উপাংশ (
+                - generic [ref=f18e1686] [box=207,16044,10,20]:
+                  - math [ref=f18e1688] [box=207,16050,9,8]:
+                    - generic [ref=f18e1689] [box=207,16050,9,8]: x
+                  - generic [ref=f18e1693] [box=207,16044,10,22]: x
+                - text: বা
+                - generic [ref=f18e1695] [box=234,16044,6,20]:
+                  - math [ref=f18e1697] [box=234,16043,9,18]:
+                    - generic [ref=f18e1700] [box=234,16043,9,18]:
+                      - generic [ref=f18e1701] [box=236,16050,5,11]: i
+                      - generic [ref=f18e1702] [box=234,16044,9,6]: ^
+                  - generic [ref=f18e1708] [box=234,16044,6,15]:
+                    - generic [ref=f18e1709] [box=234,16046,6,20]: i
+                    - text: ^
+                - text: "এর স্কেলার গুণক):"
+              - spinbutton "এক্স উপাংশ ( x বা i ^ এর স্কেলার গুণক):" [ref=f18e1711] [box=137,16074,493,47]: "3"
+            - generic [ref=f18e1712] [box=646,16043,493,78]:
+              - generic [ref=f18e1713] [box=646,16043,493,25]:
+                - text: ওয়াই উপাংশ (
+                - generic [ref=f18e1715] [box=720,16044,9,20]:
+                  - math [ref=f18e1717] [box=720,16050,10,12]:
+                    - generic [ref=f18e1718] [box=720,16050,10,12]: "y"
+                  - generic [ref=f18e1722] [box=720,16044,9,22]: "y"
+                - text: বা
+                - generic [ref=f18e1724] [box=746,16044,8,20]:
+                  - math [ref=f18e1726] [box=746,16043,9,22]:
+                    - generic [ref=f18e1729] [box=746,16043,9,22]:
+                      - generic [ref=f18e1730] [box=748,16050,6,15]: j
+                      - generic [ref=f18e1731] [box=746,16044,9,6]: ^
+                  - generic [ref=f18e1737] [box=746,16044,8,15]:
+                    - generic [ref=f18e1738] [box=746,16046,7,20]: j
+                    - text: ^
+                - text: "এর স্কেলার গুণক):"
+              - spinbutton "ওয়াই উপাংশ ( y বা j ^ এর স্কেলার গুণক):" [ref=f18e1743] [box=646,16074,493,47]: "-2"
+          - generic [ref=f18e1744] [box=137,16139,1002,38]:
+            - generic [ref=f18e1745] [box=137,16146,86,24]: "প্রিসেট ট্রাই করুন:"
+            - button "[3, -2]" [ref=f18e1746] [cursor=pointer] [box=230,16139,66,38]
+            - button "[-4, 3]" [ref=f18e1747] [cursor=pointer] [box=304,16139,66,38]
+            - button "[5, 0]" [ref=f18e1748] [cursor=pointer] [box=378,16139,62,38]
+            - button "[-2, -3.5]" [ref=f18e1749] [cursor=pointer] [box=448,16139,81,38]
+          - generic [ref=f18e1751] [box=160,16209,959,152]:
+            - generic [ref=f18e1752] [box=160,16209,959,45]:
+              - strong [ref=f18e1753] [box=160,16219,127,25]: "১. ভিত্তি ভেক্টর প্রকাশ:"
+              - generic [ref=f18e1755] [box=290,16219,159,22]:
+                - math [ref=f18e1757] [box=290,16209,162,31]:
+                  - generic [ref=f18e1759] [box=290,16209,162,31]:
+                    - generic [ref=f18e1760] [box=290,16215,10,15]:
+                      - generic [ref=f18e1761] [box=290,16221,10,9]: v
+                      - generic [ref=f18e1762] [box=291,16216,7,5]: ⃗
+                    - generic [ref=f18e1763] [box=305,16223,14,4]: =
+                    - generic [ref=f18e1764] [box=324,16217,10,13]: "3"
+                    - generic [ref=f18e1765] [box=335,16209,10,21]:
+                      - generic [ref=f18e1766] [box=337,16217,6,13]: i
+                      - generic [ref=f18e1767] [box=335,16210,10,7]: ^
+                    - generic [ref=f18e1768] [box=349,16224,14,1]: −
+                    - generic [ref=f18e1769] [box=367,16217,10,13]: "2"
+                    - generic [ref=f18e1770] [box=377,16209,10,25]:
+                      - generic [ref=f18e1771] [box=379,16217,7,17]: j
+                      - generic [ref=f18e1772] [box=377,16210,10,7]: ^
+                    - generic [ref=f18e1773] [box=393,16223,14,4]: =
+                    - generic [ref=f18e1774] [box=412,16210,40,31]:
+                      - generic [ref=f18e1775] [box=412,16210,8,31]: "["
+                      - generic [ref=f18e1776] [box=420,16212,24,26]:
+                        - generic [ref=f18e1777] [box=420,16212,24,13]: "3"
+                        - generic [ref=f18e1784] [box=420,16225,24,13]:
+                          - generic [ref=f18e1785] [box=420,16232,14,1]: −
+                          - generic [ref=f18e1786] [box=434,16225,10,13]: "2"
+                      - generic [ref=f18e1787] [box=444,16210,8,31]: "]"
+                - generic [aria-hidden] [ref=f18e1788] [box=290,16219,159,22]:
+                  - generic [ref=f18e1789] [box=290,16219,34,22]:
+                    - generic [ref=f18e1790] [box=290,16219,10,22]: v
+                    - text: =
+                  - generic [ref=f18e1797] [box=324,16219,38,22]:
+                    - text: "3"
+                    - generic [ref=f18e1801] [box=333,16219,6,17]:
+                      - generic [ref=f18e1802] [box=333,16221,6,22]: i
+                      - text: ^
+                    - text: −
+                  - generic [ref=f18e1803] [box=363,16219,43,22]:
+                    - text: "2"
+                    - generic [ref=f18e1807] [box=372,16219,9,17]:
+                      - generic [ref=f18e1808] [box=372,16221,8,22]: j
+                      - text: ^
+                    - text: =
+                  - generic [ref=f18e1813] [box=405,16219,43,22]:
+                    - generic [ref=f18e1814] [box=405,16219,10,22]: "["
+                    - generic [ref=f18e1820] [box=415,16209,24,27]:
+                      - generic [ref=f18e1821] [box=422,16208,9,22]: "3"
+                      - generic [ref=f18e1822] [box=415,16230,24,22]: −2
+                    - generic [ref=f18e1826] [box=439,16219,10,22]: "]"
+            - generic [ref=f18e1827] [box=160,16262,959,28]:
+              - strong [ref=f18e1828] [box=160,16263,188,25]: "২. ভেক্টরের দৈর্ঘ্য (Magnitude):"
+              - generic [ref=f18e1830] [box=351,16263,317,22]:
+                - math [ref=f18e1832] [box=351,16262,322,43]:
+                  - generic [ref=f18e1834] [box=351,16262,322,43]:
+                    - generic [ref=f18e1835] [box=351,16271,9,15]: ∥
+                    - generic [ref=f18e1836] [box=360,16269,10,15]:
+                      - generic [ref=f18e1837] [box=360,16275,10,9]: v
+                      - generic [ref=f18e1838] [box=361,16270,7,5]: ⃗
+                    - generic [ref=f18e1839] [box=370,16271,9,15]: ∥
+                    - generic [ref=f18e1840] [box=384,16277,14,4]: =
+                    - generic [ref=f18e1842] [box=417,16266,114,23]:
+                      - generic [ref=f18e1843] [box=417,16271,8,17]: (
+                      - generic [ref=f18e1844] [box=424,16271,10,13]: "3"
+                      - generic [ref=f18e1845] [box=435,16266,16,23]:
+                        - generic [ref=f18e1846] [box=435,16271,8,17]: )
+                        - generic [ref=f18e1847] [box=442,16266,8,10]: "2"
+                      - generic [ref=f18e1848] [box=455,16273,14,11]: +
+                      - generic [ref=f18e1849] [box=474,16271,8,17]: (
+                      - generic [ref=f18e1850] [box=485,16278,14,1]: −
+                      - generic [ref=f18e1851] [box=504,16271,10,13]: "2"
+                      - generic [ref=f18e1852] [box=514,16266,16,23]:
+                        - generic [ref=f18e1853] [box=514,16271,8,17]: )
+                        - generic [ref=f18e1854] [box=522,16266,8,10]: "2"
+                    - generic [ref=f18e1855] [box=536,16277,14,4]: =
+                    - generic [ref=f18e1856] [box=555,16268,59,20]: "13.00"
+                    - generic [ref=f18e1858] [box=620,16274,14,8]: ≈
+                    - generic [ref=f18e1859] [box=639,16271,35,13]: "3.61"
+                - generic [aria-hidden] [ref=f18e1860] [box=351,16263,317,22]:
+                  - generic [ref=f18e1861] [box=351,16263,53,22]:
+                    - text: ∥
+                    - generic [ref=f18e1862] [box=360,16263,10,22]: v
+                    - text: ∥ =
+                  - generic [ref=f18e1869] [box=404,16262,143,23]:
+                    - generic [ref=f18e1874] [box=404,16263,118,22]:
+                      - text: (3
+                      - generic [ref=f18e1875] [box=439,16263,15,22]:
+                        - text: )
+                        - generic [ref=f18e1876] [box=446,16263,7,22]: "2"
+                      - text: + (−2
+                      - generic [ref=f18e1881] [box=508,16263,15,22]:
+                        - text: )
+                        - generic [ref=f18e1882] [box=515,16263,7,22]: "2"
+                    - text: =
+                  - generic [ref=f18e1893] [box=547,16263,83,22]:
+                    - generic [ref=f18e1894] [box=547,16263,58,22]: "13.00"
+                    - text: ≈
+                  - generic [ref=f18e1905] [box=630,16263,38,22]: "3.61"
+            - generic [ref=f18e1907] [box=160,16297,959,28]:
+              - strong [ref=f18e1908] [box=160,16298,217,25]:
+                - text: ৩. দিক কোণ (Direction Angle
+                - generic [ref=f18e1910] [box=358,16298,9,22]:
+                  - math [ref=f18e1912] [box=358,16301,10,13]:
+                    - generic [ref=f18e1913] [box=358,16301,10,13]: θ
+                  - generic [ref=f18e1917] [box=358,16298,9,24]: θ
+                - text: "):"
+              - generic [ref=f18e1919] [box=380,16298,239,22]:
+                - math [ref=f18e1921] [box=380,16299,240,20]:
+                  - generic [ref=f18e1923] [box=380,16299,240,20]:
+                    - generic [ref=f18e1924] [box=380,16301,10,13]: θ
+                    - generic [ref=f18e1925] [box=396,16307,14,4]: =
+                    - generic [ref=f18e1926] [box=415,16303,50,11]: arctan
+                    - generic [box=465,16314,0,0]: ⁡
+                    - generic [ref=f18e1927] [box=465,16301,10,13]: "2"
+                    - generic [ref=f18e1928] [box=476,16301,8,17]: (
+                    - generic [ref=f18e1929] [box=488,16308,14,1]: −
+                    - generic [ref=f18e1930] [box=506,16301,10,13]: "2"
+                    - generic [ref=f18e1931] [box=516,16312,4,5]: ","
+                    - generic [ref=f18e1932] [box=523,16301,10,13]: "3"
+                    - generic [ref=f18e1933] [box=533,16301,8,17]: )
+                    - generic [ref=f18e1934] [box=546,16304,14,8]: ≈
+                    - generic [ref=f18e1935] [box=565,16299,55,16]:
+                      - generic [ref=f18e1936] [box=565,16308,14,1]: −
+                      - generic [ref=f18e1937] [box=579,16301,24,13]: "33."
+                      - generic [ref=f18e1938] [box=604,16299,17,16]:
+                        - generic [ref=f18e1939] [box=604,16300,10,14]: "7"
+                        - generic [ref=f18e1940] [box=614,16299,6,5]: ∘
+                - generic [aria-hidden] [ref=f18e1941] [box=380,16298,239,22]:
+                  - generic [ref=f18e1942] [box=380,16298,34,24]: θ =
+                  - generic [ref=f18e1943] [box=414,16298,145,22]:
+                    - generic [ref=f18e1944] [box=414,16298,52,22]: arctan
+                    - text: 2(−2, 3) ≈
+                  - generic [ref=f18e1946] [box=559,16298,60,22]:
+                    - text: −33.
+                    - generic [ref=f18e1947] [box=601,16298,18,22]:
+                      - text: "7"
+                      - generic [ref=f18e1948] [box=611,16298,7,22]: ∘
+            - generic [ref=f18e1953] [box=160,16333,959,28]:
+              - strong [ref=f18e1954] [box=160,16334,238,25]:
+                - text: ৪. প্রমিত একক ভেক্টর (Unit Vector
+                - generic [ref=f18e1956] [box=377,16334,11,22]:
+                  - math [ref=f18e1958] [box=377,16333,11,17]:
+                    - generic [ref=f18e1961] [box=377,16333,11,17]:
+                      - generic [ref=f18e1962] [box=377,16341,11,9]: u
+                      - generic [ref=f18e1963] [box=377,16334,10,7]: ^
+                  - generic [ref=f18e1969] [box=377,16338,11,13]:
+                    - generic [ref=f18e1970] [box=377,16336,11,22]: u
+                    - text: ^
+                - text: "):"
+              - generic [ref=f18e1972] [box=401,16334,217,22]:
+                - math [ref=f18e1974] [box=401,16333,214,34]:
+                  - generic [ref=f18e1976] [box=401,16333,214,34]:
+                    - generic [ref=f18e1977] [box=401,16340,11,17]:
+                      - generic [ref=f18e1978] [box=401,16348,11,9]: u
+                      - generic [ref=f18e1979] [box=401,16341,10,7]: ^
+                    - generic [ref=f18e1980] [box=417,16350,14,4]: =
+                    - generic [ref=f18e1981] [box=436,16333,22,34]:
+                      - generic [ref=f18e1982] [box=443,16333,8,13]:
+                        - generic [ref=f18e1983] [box=443,16339,8,7]: v
+                        - generic [ref=f18e1984] [box=444,16334,5,5]: ⃗
+                      - generic [ref=f18e1985] [box=436,16353,22,14]:
+                        - generic [ref=f18e1986] [box=436,16356,7,11]: ∥
+                        - generic [ref=f18e1987] [box=443,16353,8,13]:
+                          - generic [ref=f18e1988] [box=443,16359,8,7]: v
+                          - generic [ref=f18e1989] [box=444,16354,5,5]: ⃗
+                        - generic [ref=f18e1990] [box=451,16356,7,11]: ∥
+                    - generic [ref=f18e1991] [box=463,16347,14,8]: ≈
+                    - generic [ref=f18e1992] [box=482,16336,133,25]:
+                      - generic [ref=f18e1993] [box=482,16344,45,13]: "0.832"
+                      - generic [ref=f18e1994] [box=527,16336,10,21]:
+                        - generic [ref=f18e1995] [box=529,16344,6,13]: i
+                        - generic [ref=f18e1996] [box=527,16337,10,7]: ^
+                      - generic [ref=f18e1997] [box=542,16351,14,1]: −
+                      - generic [ref=f18e1998] [box=560,16343,45,14]: "0.555"
+                      - generic [ref=f18e1999] [box=605,16336,10,25]:
+                        - generic [ref=f18e2000] [box=606,16344,7,17]: j
+                        - generic [ref=f18e2001] [box=605,16337,10,7]: ^
+                - generic [aria-hidden] [ref=f18e2002] [box=401,16334,217,22]:
+                  - generic [ref=f18e2003] [box=401,16334,35,22]:
+                    - generic [ref=f18e2007] [box=401,16338,11,13]:
+                      - generic [ref=f18e2008] [box=401,16336,11,22]: u
+                      - text: ^
+                    - text: =
+                  - generic [ref=f18e2009] [box=436,16334,49,27]:
+                    - generic [ref=f18e2014] [box=438,16334,20,17]:
+                      - generic [ref=f18e2016] [box=438,16345,20,16]:
+                        - text: ∥
+                        - generic [ref=f18e2017] [box=445,16345,7,16]: v
+                        - text: ∥
+                      - generic [ref=f18e2025] [box=445,16333,7,16]: v
+                    - text: ≈
+                  - generic [ref=f18e2038] [box=485,16334,133,22]:
+                    - text: "0.832"
+                    - generic [ref=f18e2042] [box=534,16333,6,18]:
+                      - generic [ref=f18e2043] [box=534,16334,6,22]: i
+                      - text: ^
+                    - text: − 0.555
+                    - generic [ref=f18e2047] [box=611,16333,7,18]:
+                      - generic [ref=f18e2048] [box=611,16334,7,22]: j
+                      - text: ^
+      - generic "ইন্টারেক্টিভ এসভিজি ভিজ্যুয়ালাইজার (Interactive 2D Vector Plane)" [ref=f18e2052] [box=112,16454,1052,1057]:
+        - generic [ref=f18e2053] [box=112,16454,1052,91]:
+          - heading "ইন্টারেক্টিভ এসভিজি ভিজ্যুয়ালাইজার (Interactive 2D Vector Plane)" [level=2] [ref=f18e2054] [box=112,16454,1052,49]
+          - button "🔊 এই সেকশনটি শুনুন" [ref=f18e2056] [cursor=pointer] [box=1007,16512,157,32]
+        - paragraph [ref=f18e2059] [box=112,16581,1052,64]:
+          - text: নিচের কোঅর্ডিনেট সমতলে ভেক্টরের লাল বিন্দুটি টেনে যেকোনো অবস্থানে নিন। স্কেলার স্লাইডার ঘুরিয়ে ভেক্টরটিকে প্রসারিত, সংকুচিত বা দিক উল্টে দিন (
+          - generic [ref=f18e2061] [box=1044,16584,35,24]:
+            - math [ref=f18e2063] [box=1044,16583,33,16]:
+              - generic [ref=f18e2065] [box=1044,16583,33,16]:
+                - generic [ref=f18e2066] [box=1044,16590,9,9]: c
+                - generic [ref=f18e2067] [box=1057,16592,6,2]: ⋅
+                - generic [ref=f18e2068] [box=1066,16583,11,16]:
+                  - generic [ref=f18e2069] [box=1066,16590,11,9]: v
+                  - generic [ref=f18e2070] [box=1068,16584,7,5]: ⃗
+            - generic [aria-hidden] [ref=f18e2071] [box=1044,16584,35,24]:
+              - generic [ref=f18e2072] [box=1044,16584,24,25]: c ⋅
+              - generic [ref=f18e2073] [box=1068,16584,11,24]: v
+          - text: )। রিয়েল-টাইমে স্থানাঙ্ক, দৈর্ঘ্য ও দিক কোণ আপডেট হবে।
+        - generic "ভেক্টর কোঅর্ডিনেট সমতল — ড্র্যাগ করে পরীক্ষা করো!" [ref=f18e2081] [box=112,16681,1052,830]:
+          - generic [ref=f18e2082] [box=112,16681,1052,830]:
+            - generic [ref=f18e2083] [box=137,16706,1002,38]:
+              - generic [ref=f18e2084] [box=137,16712,350,25]: 🔬 ভেক্টর কোঅর্ডিনেট সমতল — ড্র্যাগ করে পরীক্ষা করো!
+              - generic [ref=f18e2086] [box=961,16706,178,38]:
+                - button "↺ রিসেট" [ref=f18e2087] [cursor=pointer] [box=961,16706,77,38]
+                - button "⛶ ফুলস্ক্রিন" [ref=f18e2088] [cursor=pointer] [box=1045,16706,93,38]
+            - img [ref=f18e2090] [box=138,16761,1000,624]:
+              - generic [ref=f18e2092] [box=185,16777,905,593]:
+                - generic [ref=f18e2093] [box=1067,17081,11,22]: x
+                - generic [ref=f18e2094] [box=649,16783,12,22]: "y"
+                - generic [ref=f18e2095] [box=254,17083,18,18]: "-6"
+                - generic [ref=f18e2096] [box=317,17083,17,18]: "-5"
+                - generic [ref=f18e2097] [box=379,17083,18,18]: "-4"
+                - generic [ref=f18e2098] [box=442,17083,17,18]: "-3"
+                - generic [ref=f18e2099] [box=504,17083,18,18]: "-2"
+                - generic [ref=f18e2100] [box=566,17083,18,18]: "-1"
+                - generic [ref=f18e2101] [box=696,17083,9,18]: "1"
+                - generic [ref=f18e2102] [box=758,17083,9,18]: "2"
+                - generic [ref=f18e2103] [box=820,17083,9,18]: "3"
+                - generic [ref=f18e2104] [box=883,17083,9,18]: "4"
+                - generic [ref=f18e2105] [box=945,17083,9,18]: "5"
+                - generic [ref=f18e2106] [box=1008,17083,9,18]: "6"
+                - generic [ref=f18e2107] [box=608,17315,18,18]: "-4"
+                - generic [ref=f18e2108] [box=608,17253,17,18]: "-3"
+                - generic [ref=f18e2109] [box=608,17190,18,18]: "-2"
+                - generic [ref=f18e2110] [box=608,17128,18,18]: "-1"
+                - generic [ref=f18e2111] [box=616,17003,9,18]: "1"
+                - generic [ref=f18e2112] [box=616,16941,9,18]: "2"
+                - generic [ref=f18e2113] [box=616,16878,9,18]: "3"
+                - generic [ref=f18e2114] [box=616,16816,9,18]: "4"
+              - generic [ref=f18e2115] [box=638,16982,83,91]:
+                - generic [ref=f18e2116] [box=709,17045,11,24]: î
+                - generic [ref=f18e2117] [box=647,16982,11,24]: ĵ
+              - generic [ref=f18e2119] [box=840,17170,167,24]: v = [3.0, -2.0]
+            - generic [ref=f18e2122] [box=137,17404,1002,25]:
+              - generic [ref=f18e2123] [box=137,17404,180,25]:
+                - text: স্কেলার গুণক (
+                - generic [ref=f18e2125] [box=212,17406,7,20]:
+                  - math [ref=f18e2127] [box=212,17411,8,8]:
+                    - generic [ref=f18e2128] [box=212,17411,8,8]: c
+                  - generic [ref=f18e2132] [box=212,17406,7,21]: c
+                - text: "):"
+              - slider "স্কেলার গুণক ( c ):" [ref=f18e2133] [box=331,17414,746,6]: "1"
+              - generic [ref=f18e2134] [box=1091,17404,48,25]: "1.00"
+            - generic [ref=f18e2135] [box=137,17440,1002,46]: "ভেক্টর v: [3.00, -2.00] | দৈর্ঘ্য ||v||: 3.61 | দিক কোণ: -34° | c·v: [3.00, -2.00]"
+  - generic [ref=f18e2137] [box=88,17626,1100,196]:
+    - generic [box=112,17667,516,91]:
+      - generic [box=137,17692,42,42]: ←
+      - generic [box=195,17688,68,49]:
+        - generic [box=195,17688,68,21]: পূর্ববর্তী অধ্যায়
+        - generic [box=195,17711,68,26]: শুরু
+    - link "→ পরবর্তী অধ্যায় রৈখিক সমন্বয়, স্প্যান ও ভিত্তি ভেক্টর" [ref=f18e2138] [cursor=pointer] [box=648,17667,516,91]:
+      - /url: ../courses/linear_algebra/lesson_02.html
+      - generic [ref=f18e2139] [box=1097,17692,42,42]: →
+      - generic [ref=f18e2140] [box=886,17688,194,49]:
+        - generic [ref=f18e2141] [box=886,17688,194,21]: পরবর্তী অধ্যায়
+        - generic [ref=f18e2142] [box=886,17711,194,26]: রৈখিক সমন্বয়, স্প্যান ও ভিত্তি ভেক্টর
+  - generic "📋 কোর্স অধ্যায় তালিকা — লিনিয়ার অ্যালজেব্রা" [ref=f18e2143] [box=0,17822,1275,443]:
+    - generic [ref=f18e2145] [box=112,17842,1052,443]:
+      - generic [ref=f18e2146] [box=113,17843,1050,60]:
+        - generic [ref=f18e2147] [box=137,17859,288,27]: 📋 কোর্স অধ্যায় তালিকা — লিনিয়ার অ্যালজেব্রা
+        - link "সম্পূর্ণ কোর্স সূচি দেখুন →" [ref=f18e2149] [cursor=pointer] [box=1014,17861,124,24]:
+          - /url: ../courses/linear_algebra/index.html
+      - generic [ref=f18e2150] [box=113,17903,1050,381]:
+        - link "১ ভেক্টর আসলে কী? | Vectors, what even are they? অধ্যায় ১ · চলমান পাঠ" [ref=f18e2151] [cursor=pointer] [box=113,17903,1050,76]:
+          - /url: demo_components.html
+          - generic [ref=f18e2152] [box=133,17927,28,28]: ১
+          - generic [ref=f18e2153] [box=173,17917,970,47]:
+            - generic [ref=f18e2154] [box=173,17917,970,24]: ভেক্টর আসলে কী? | Vectors, what even are they?
+            - generic [ref=f18e2155] [box=173,17944,970,21]: অধ্যায় ১ · চলমান পাঠ
+        - link "২ রৈখিক সমন্বয়, স্প্যান ও ভিত্তি ভেক্টর অধ্যায় ২" [ref=f18e2156] [cursor=pointer] [box=113,17979,1050,76]:
+          - /url: ../courses/linear_algebra/lesson_02.html
+          - generic [ref=f18e2157] [box=133,18003,28,28]: ২
+          - generic [ref=f18e2158] [box=173,17993,970,47]:
+            - generic [ref=f18e2159] [box=173,17993,970,24]: রৈখিক সমন্বয়, স্প্যান ও ভিত্তি ভেক্টর
+            - generic [ref=f18e2160] [box=173,18020,970,21]: অধ্যায় ২
+        - link "৩ রৈখিক রূপান্তর ও ম্যাট্রিক্স অধ্যায় ৩" [ref=f18e2161] [cursor=pointer] [box=113,18056,1050,76]:
+          - /url: ../courses/linear_algebra/lesson_03.html
+          - generic [ref=f18e2162] [box=133,18079,28,28]: ৩
+          - generic [ref=f18e2163] [box=173,18070,970,47]:
+            - generic [ref=f18e2164] [box=173,18070,970,24]: রৈখিক রূপান্তর ও ম্যাট্রিক্স
+            - generic [ref=f18e2165] [box=173,18096,970,21]: অধ্যায় ৩
+        - link "৪ ম্যাট্রিক্স গুণন — রূপান্তরের রচনা অধ্যায় ৪" [ref=f18e2166] [cursor=pointer] [box=113,18132,1050,76]:
+          - /url: ../courses/linear_algebra/lesson_04.html
+          - generic [ref=f18e2167] [box=133,18155,28,28]: ৪
+          - generic [ref=f18e2168] [box=173,18146,970,47]:
+            - generic [ref=f18e2169] [box=173,18146,970,24]: ম্যাট্রিক্স গুণন — রূপান্তরের রচনা
+            - generic [ref=f18e2170] [box=173,18172,970,21]: অধ্যায় ৪
+        - link "৫ ত্রিমাত্রিক রৈখিক রূপান্তর অধ্যায় ৫" [ref=f18e2171] [cursor=pointer] [box=113,18208,1050,76]:
+          - /url: ../courses/linear_algebra/lesson_05.html
+          - generic [ref=f18e2172] [box=133,18232,28,28]: ৫
+          - generic [ref=f18e2173] [box=173,18222,970,47]:
+            - generic [ref=f18e2174] [box=173,18222,970,24]: ত্রিমাত্রিক রৈখিক রূপান্তর
+            - generic [ref=f18e2175] [box=173,18248,970,21]: অধ্যায় ৫
+  - generic [box=0,18313,1275,0]:
+    - button "পৃষ্ঠার শুরুতে ফিরে যান" [box=1198,822,45,45]:
+      - generic [box=1128,828,67,32]: উপরে যান
+  - contentinfo [ref=f18e2177] [box=0,18313,1275,116]:
+    - paragraph [ref=f18e2178] [box=24,18346,1227,26]:
+      - text: ৩ব্লু১ব্রাউন বাংলা প্ল্যাটফর্ম ·
+      - link "3blue1brown.com" [ref=f18e2179] [cursor=pointer] [box=617,18348,96,20]:
+        - /url: https://www.3blue1brown.com
+      - text: থেকে অনুপ্রাণিত
+    - paragraph [ref=f18e2180] [box=24,18372,1227,26]: "মূল পাঠ: Grant Sanderson · বাংলা ডাবিং: Edge-TTS bn-BD-PradeepNeural · গণিত: KaTeX v0.16.11 (অফলাইন)"
+  - generic [box=356,873,563,58]:
+    - generic [box=375,887,141,28]:
+      - generic [box=399,887,104,28]:
+        - generic [box=399,887,104,14]: শিক্ষক ভয়েস ডাবিং
+        - generic [box=399,903,104,13]: স্টুডিও শিক্ষক ভয়েস প্রস্তুত
+    - generic [box=530,884,196,36]:
+      - button "পূর্ববর্তী সেকশন" [box=530,886,32,32]
+      - button "পূর্ববর্তী অনুচ্ছেদ / বাক্য" [box=570,886,32,32]
+      - button "প্লে / পজ" [box=610,884,36,36]
+      - button "পরবর্তী অনুচ্ছেদ / বাক্য" [box=654,886,32,32]
+      - button "পরবর্তী সেকশন" [box=694,886,32,32]
+    - generic [box=740,885,114,33]:
+      - button "১×" [box=743,888,28,27]
+      - button "১.২৫×" [box=771,888,43,27]
+      - button "১.৫×" [box=814,888,37,27]
+    - button "বন্ধ করুন" [box=868,886,32,32]
+  - button "সূচিপত্র" [ref=f18e2181] [cursor=pointer] [box=20,80,44,44]
+  - generic [ref=f18e2183] [box=-320,0,300,885]:
+    - generic [ref=f18e2184] [box=-320,0,299,84]:
+      - generic [ref=f18e2185] [box=-296,27,69,29]: সূচিপত্র
+      - button "✕" [ref=f18e2188] [cursor=pointer] [box=-77,20,32,43]
+    - generic [ref=f18e2189] [box=-320,84,299,801]:
+      - link "• ভেক্টরের তিনটি দৃষ্টিভঙ্গি" [ref=f18e2190] [cursor=pointer] [box=-296,104,251,42]:
+        - /url: "#sec-interpretations"
+        - generic [ref=f18e2191] [box=-284,112,7,26]: •
+        - generic [ref=f18e2192] [box=-269,112,129,26]: ভেক্টরের তিনটি দৃষ্টিভঙ্গি
+      - link "• কোঅর্ডিনেট সিস্টেম ও মূলবিন্দু" [ref=f18e2193] [cursor=pointer] [box=-296,154,251,42]:
+        - /url: "#sec-coordinates"
+        - generic [ref=f18e2194] [box=-284,162,7,26]: •
+        - generic [ref=f18e2195] [box=-269,162,163,26]: কোঅর্ডিনেট সিস্টেম ও মূলবিন্দু
+      - link "• ভেক্টর যোগ — জ্যামিতিক ও সংখ্যাতাত্ত্বিক রূপ" [ref=f18e2196] [cursor=pointer] [box=-296,205,251,69]:
+        - /url: "#sec-addition"
+        - generic [ref=f18e2197] [box=-284,226,7,26]: •
+        - generic [ref=f18e2198] [box=-269,213,212,53]: ভেক্টর যোগ — জ্যামিতিক ও সংখ্যাতাত্ত্বিক রূপ
+      - link "• স্কেলার গুণন — প্রসারণ, সংকোচন ও বিপরীতকরণ" [ref=f18e2199] [cursor=pointer] [box=-296,282,251,69]:
+        - /url: "#sec-scalar"
+        - generic [ref=f18e2200] [box=-284,303,7,26]: •
+        - generic [ref=f18e2201] [box=-269,290,212,53]: স্কেলার গুণন — প্রসারণ, সংকোচন ও বিপরীতকরণ
+      - link "• ভিত্তি ভেক্টর — আই হ্যাট ও জে হ্যাট" [ref=f18e2202] [cursor=pointer] [box=-296,358,251,42]:
+        - /url: "#sec-basis"
+        - generic [ref=f18e2203] [box=-284,366,7,26]: •
+        - generic [ref=f18e2204] [box=-269,366,188,26]: ভিত্তি ভেক্টর — আই হ্যাট ও জে হ্যাট
+      - link "• ইন্টারেক্টিভ এসভিজি ভিজ্যুয়ালাইজার (Interactive 2D Vector Plane)" [ref=f18e2205] [cursor=pointer] [box=-296,409,251,69]:
+        - /url: "#sec-visualizer"
+        - generic [ref=f18e2206] [box=-284,430,7,26]: •
+        - generic [ref=f18e2207] [box=-269,417,212,53]: ইন্টারেক্টিভ এসভিজি ভিজ্যুয়ালাইজার (Interactive 2D Vector Plane)

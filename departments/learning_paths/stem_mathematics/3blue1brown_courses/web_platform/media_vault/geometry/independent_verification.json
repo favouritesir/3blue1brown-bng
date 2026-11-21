@@ -1,0 +1,326 @@
+[
+  {
+    "lesson": "lesson_01",
+    "output": "departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\geometry\\lesson_01\\experiments\\3b1b_geometry_01_full_dubbed.mp4",
+    "youtube_id": "GNcFjFmqEc8",
+    "is_3b1b": true,
+    "original_duration_s": 950.462,
+    "output_size_bytes": 82669294,
+    "output_duration_s": 950.417,
+    "duration_delta_s": -0.046,
+    "duration_ok": true,
+    "streams": [
+      {
+        "codec_name": "av1",
+        "codec_type": "video"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      }
+    ],
+    "has_video": true,
+    "has_audio": true,
+    "audio_duration_s": 950.37,
+    "first_speech_s": 2.592,
+    "last_speech_s": 946.889,
+    "silent_runs_gt_2s": [
+      {
+        "kind": "lead_in",
+        "start_s": 0.0,
+        "end_s": 2.592,
+        "duration_s": 2.592
+      },
+      {
+        "kind": "tail",
+        "start_s": 946.889,
+        "end_s": 950.37,
+        "duration_s": 3.48
+      }
+    ],
+    "internal_silent_runs_gt_2s": [],
+    "internal_silence_ok": true,
+    "pipeline_median_fill": 0.9989,
+    "pipeline_max_internal_gap_s": 0.7844,
+    "pipeline_quality_gate": {
+      "median_fill_ok": true,
+      "max_internal_gap_ok": true,
+      "passed": true
+    },
+    "pipeline_failed_tts_cues": [],
+    "pipeline_render_rounds": 1,
+    "pipeline_cue_count": 37,
+    "gates": {
+      "duration_ok": true,
+      "internal_silence_ok": true,
+      "median_fill_ok": true,
+      "max_internal_gap_ok": true,
+      "has_video": true,
+      "has_audio": true,
+      "no_failed_cues": true,
+      "is_3b1b": true
+    },
+    "status": "PASS"
+  },
+  {
+    "lesson": "lesson_02",
+    "output": "departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\geometry\\lesson_02\\experiments\\3b1b_geometry_02_full_dubbed.mp4",
+    "youtube_id": "pQa_tWZmlGs",
+    "is_3b1b": true,
+    "original_duration_s": 771.228,
+    "output_size_bytes": 41762831,
+    "output_duration_s": 771.167,
+    "duration_delta_s": -0.061,
+    "duration_ok": true,
+    "streams": [
+      {
+        "codec_name": "av1",
+        "codec_type": "video"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      }
+    ],
+    "has_video": true,
+    "has_audio": true,
+    "audio_duration_s": 771.088,
+    "first_speech_s": 2.625,
+    "last_speech_s": 767.672,
+    "silent_runs_gt_2s": [
+      {
+        "kind": "lead_in",
+        "start_s": 0.0,
+        "end_s": 2.625,
+        "duration_s": 2.625
+      },
+      {
+        "kind": "tail",
+        "start_s": 767.672,
+        "end_s": 771.088,
+        "duration_s": 3.416
+      }
+    ],
+    "internal_silent_runs_gt_2s": [],
+    "internal_silence_ok": true,
+    "pipeline_median_fill": 0.9989,
+    "pipeline_max_internal_gap_s": 0.7427,
+    "pipeline_quality_gate": {
+      "median_fill_ok": true,
+      "max_internal_gap_ok": true,
+      "passed": true
+    },
+    "pipeline_failed_tts_cues": [],
+    "pipeline_render_rounds": 1,
+    "pipeline_cue_count": 29,
+    "gates": {
+      "duration_ok": true,
+      "internal_silence_ok": true,
+      "median_fill_ok": true,
+      "max_internal_gap_ok": true,
+      "has_video": true,
+      "has_audio": true,
+      "no_failed_cues": true,
+      "is_3b1b": true
+    },
+    "status": "PASS"
+  },
+  {
+    "lesson": "lesson_03",
+    "output": "departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\geometry\\lesson_03\\experiments\\3b1b_geometry_03_full_dubbed.mp4",
+    "youtube_id": "fsLh-NYhOoU",
+    "is_3b1b": true,
+    "original_duration_s": 3623.311,
+    "status": "MISSING_OR_TOO_SMALL",
+    "output_size_bytes": 3064
+  },
+  {
+    "lesson": "lesson_04",
+    "output": "departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\geometry\\lesson_04\\experiments\\3b1b_geometry_04_full_dubbed.mp4",
+    "youtube_id": "d4EgbgTm0Bg",
+    "is_3b1b": true,
+    "original_duration_s": 1910.445,
+    "output_size_bytes": 422812589,
+    "output_duration_s": 1910.383,
+    "duration_delta_s": -0.062,
+    "duration_ok": true,
+    "streams": [
+      {
+        "codec_name": "av1",
+        "codec_type": "video"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      }
+    ],
+    "has_video": true,
+    "has_audio": true,
+    "audio_duration_s": 1910.306,
+    "first_speech_s": 2.615,
+    "last_speech_s": 1906.801,
+    "silent_runs_gt_2s": [
+      {
+        "kind": "lead_in",
+        "start_s": 0.0,
+        "end_s": 2.615,
+        "duration_s": 2.615
+      },
+      {
+        "kind": "tail",
+        "start_s": 1906.801,
+        "end_s": 1910.306,
+        "duration_s": 3.504
+      }
+    ],
+    "internal_silent_runs_gt_2s": [],
+    "internal_silence_ok": true,
+    "pipeline_median_fill": 0.9996,
+    "pipeline_max_internal_gap_s": 0.8944,
+    "pipeline_quality_gate": {
+      "median_fill_ok": true,
+      "max_internal_gap_ok": true,
+      "passed": true
+    },
+    "pipeline_failed_tts_cues": [],
+    "pipeline_render_rounds": 1,
+    "pipeline_cue_count": 27,
+    "gates": {
+      "duration_ok": true,
+      "internal_silence_ok": true,
+      "median_fill_ok": true,
+      "max_internal_gap_ok": true,
+      "has_video": true,
+      "has_audio": true,
+      "no_failed_cues": true,
+      "is_3b1b": true
+    },
+    "status": "PASS"
+  },
+  {
+    "lesson": "lesson_05",
+    "output": "departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\geometry\\lesson_05\\experiments\\3b1b_geometry_05_full_dubbed.mp4",
+    "youtube_id": "zjMuIxRvygQ",
+    "is_3b1b": true,
+    "original_duration_s": 358.563,
+    "output_size_bytes": 33302767,
+    "output_duration_s": 358.5,
+    "duration_delta_s": -0.063,
+    "duration_ok": true,
+    "streams": [
+      {
+        "codec_name": "av1",
+        "codec_type": "video"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      }
+    ],
+    "has_video": true,
+    "has_audio": true,
+    "audio_duration_s": 358.446,
+    "first_speech_s": 2.568,
+    "last_speech_s": 355.121,
+    "silent_runs_gt_2s": [
+      {
+        "kind": "lead_in",
+        "start_s": 0.0,
+        "end_s": 2.568,
+        "duration_s": 2.568
+      },
+      {
+        "kind": "tail",
+        "start_s": 355.121,
+        "end_s": 358.446,
+        "duration_s": 3.325
+      }
+    ],
+    "internal_silent_runs_gt_2s": [],
+    "internal_silence_ok": true,
+    "pipeline_median_fill": 0.9985,
+    "pipeline_max_internal_gap_s": 0.5639,
+    "pipeline_quality_gate": {
+      "median_fill_ok": true,
+      "max_internal_gap_ok": true,
+      "passed": true
+    },
+    "pipeline_failed_tts_cues": [],
+    "pipeline_render_rounds": 1,
+    "pipeline_cue_count": 25,
+    "gates": {
+      "duration_ok": true,
+      "internal_silence_ok": true,
+      "median_fill_ok": true,
+      "max_internal_gap_ok": true,
+      "has_video": true,
+      "has_audio": true,
+      "no_failed_cues": true,
+      "is_3b1b": true
+    },
+    "status": "PASS"
+  },
+  {
+    "lesson": "lesson_06",
+    "output": "departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\geometry\\lesson_06\\experiments\\3b1b_geometry_06_full_dubbed.mp4",
+    "youtube_id": "zwAD6dRSVyI",
+    "is_3b1b": true,
+    "original_duration_s": 1512.664,
+    "output_size_bytes": 68942369,
+    "output_duration_s": 1512.611,
+    "duration_delta_s": -0.053,
+    "duration_ok": true,
+    "streams": [
+      {
+        "codec_name": "av1",
+        "codec_type": "video"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      }
+    ],
+    "has_video": true,
+    "has_audio": true,
+    "audio_duration_s": 1512.571,
+    "first_speech_s": 2.612,
+    "last_speech_s": 1509.057,
+    "silent_runs_gt_2s": [
+      {
+        "kind": "lead_in",
+        "start_s": 0.0,
+        "end_s": 2.612,
+        "duration_s": 2.611
+      },
+      {
+        "kind": "tail",
+        "start_s": 1509.057,
+        "end_s": 1512.571,
+        "duration_s": 3.514
+      }
+    ],
+    "internal_silent_runs_gt_2s": [],
+    "internal_silence_ok": true,
+    "pipeline_median_fill": 0.9995,
+    "pipeline_max_internal_gap_s": 0.804,
+    "pipeline_quality_gate": {
+      "median_fill_ok": true,
+      "max_internal_gap_ok": true,
+      "passed": true
+    },
+    "pipeline_failed_tts_cues": [],
+    "pipeline_render_rounds": 1,
+    "pipeline_cue_count": 26,
+    "gates": {
+      "duration_ok": true,
+      "internal_silence_ok": true,
+      "median_fill_ok": true,
+      "max_internal_gap_ok": true,
+      "has_video": true,
+      "has_audio": true,
+      "no_failed_cues": true,
+      "is_3b1b": true
+    },
+    "status": "PASS"
+  }
+]

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  CANONICAL LESSON TEMPLATE — derived from the verified Lesson 01 migration
+  ============================================================================
+  Copy this file for every new lesson migration. Replace the {{PLACEHOLDERS}}.
+
+  HARD RULES (never break):
+   1. Script order: manifest -> KaTeX -> components -> extended -> main/lesson
+      -> narration_engine (LAST, so it parses the final DOM).
+   2. Every content-bearing component renders SYNCHRONOUSLY.
+   3. Parent components MOVE child nodes; never re-parse innerHTML.
+   4. DOM readable-block sequence must equal manifest cue sequence 1:1
+      (same count AND same type order) for every narrated section.
+   5. Every <b1b-figure> caption carries a full spoken explanation.
+   6. Interactive-only sections get data-no-narration="true".
+  ============================================================================
+-->
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>{{TITLE_BN}} | {{TITLE_EN}}</title>
+
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<script src="../../assets/audio/{{COURSE}}/{{LESSON}}/manifest.js?v=1"></script>
+
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<b1b-search-overlay></b1b-search-overlay>
+
+<b1b-navbar
+  course-title="{{COURSE_TITLE_BN}}"
+  course-url="../../index.html#{{COURSE}}"
+  home-url="../../index.html"
+  chapter-num="{{NUM}}"
+  chapter-total="{{TOTAL}}"
+  prev-url="{{PREV_URL}}"
+  prev-title="{{PREV_TITLE}}"
+  next-url="{{NEXT_URL}}"
+  next-title="{{NEXT_TITLE}}"
+  active-mode="read">
+</b1b-navbar>
+
+<b1b-hero-player
+  course-title="{{COURSE_TITLE_BN}}"
+  course-url="../../index.html"
+  chapter-label="{{CHAPTER_LABEL}}"
+  title="{{TITLE_FULL}}"
+  desc="{{DESC}}"
+  video-src="{{VIDEO_SRC}}"
+  yt-id="{{YT_ID}}"
+  date="{{DATE}}"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="{{TRANSLATION}}"
+  github-url="{{GITHUB_URL}}"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<div class="lesson-body">
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">সূচনা</b1b-bookmark>
+      <!-- one <b1b-bookmark> per timestamp -->
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <!-- <a href="#sec-...">...</a> per section -->
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+      <!-- NARRATED SECTION: block order must mirror manifest cues exactly -->
+      <b1b-section id="sec-01" title="{{SECTION_TITLE}}">
+        <b1b-quote author="{{AUTHOR}}">{{QUOTE}}</b1b-quote>
+        <p>{{PARAGRAPH}}</p>
+        <b1b-figure src="{{FIGURE_SRC}}" alt="{{ALT}}" caption="{{FULL_SPOKEN_EXPLANATION}}"></b1b-figure>
+        <b1b-callout type="blue" icon="📐" title="{{TITLE}}">
+          <p>{{CONTENT}}</p>
+        </b1b-callout>
+        <b1b-formula math="{{LATEX}}"></b1b-formula>
+        <b1b-quiz question="{{Q}}" correct="{{IDX}}"
+          correct-msg="{{OK}}" wrong-msg="{{NO}}" reveal-msg="{{REVEAL}}">
+          <div slot="option">{{OPT_1}}</div>
+          <div slot="option">{{OPT_2}}</div>
+          <div slot="option">{{OPT_3}}</div>
+          <div slot="option">{{OPT_4}}</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- INTERACTIVE-ONLY SECTION: excluded from narration -->
+      <b1b-section id="sec-lab" title="{{LAB_TITLE}}" data-no-narration="true">
+        <!-- <b1b-vector-plane>, <b1b-vector-decomposer>, other labs -->
+      </b1b-section>
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <b1b-watch-panel
+    video-src="{{VIDEO_SRC}}" yt-id="{{YT_ID}}"
+    title="{{TITLE}}" subtitle="{{SUBTITLE}}"
+    playlist-title="{{PLAYLIST_TITLE}}">
+  </b1b-watch-panel>
+</div><!-- /lesson-body -->
+
+<b1b-chapter-nav prev-url="{{PREV_URL}}" prev-title="{{PREV_TITLE}}"
+  next-url="{{NEXT_URL}}" next-title="{{NEXT_TITLE}}"></b1b-chapter-nav>
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

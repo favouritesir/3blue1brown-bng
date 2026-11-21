@@ -1,0 +1,3002 @@
+[
+  {
+    "id": 1,
+    "start": 0.0,
+    "end": 3.84,
+    "duration": 3.84,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Google just released the elephant goldfish model for free",
+    "bn": "গুগল সম্প্রতি সম্পূর্ণ ফ্রিতে নিয়ে এসেছে তাদের এলিফ্যান্ট-গোল্ডফিশ মডেল,"
+  },
+  {
+    "id": 2,
+    "start": 3.84,
+    "end": 9.32,
+    "duration": 5.48,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "and it makes everything your AI builds look like a pro made it the very first time.",
+    "bn": "যা আপনার যেকোনো এআই প্রজেক্টকে প্রথমবারেই একদম প্রফেশনালদের মতো নিখুঁত করে তুলবে।"
+  },
+  {
+    "id": 3,
+    "start": 9.32,
+    "end": 15.36,
+    "duration": 6.04,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Websites, ads, Instagram carousels, videos, lead generation agents.",
+    "bn": "ওয়েবসাইট, অ্যাডস, ইনস্টাগ্রাম ক্যারোসেল, ভিডিও কিংবা লিড জেনারেশন এজেন্টস—সবকিছুতেই।"
+  },
+  {
+    "id": 4,
+    "start": 15.36,
+    "end": 20.64,
+    "duration": 5.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Today I'm going to show you five real builds made two ways side by side.",
+    "bn": "আজ আমি আপনাদের পাশাপাশি দুটি ভিন্ন উপায়ে তৈরি করা ৫টি রিয়েল বিল্ড দেখাব।"
+  },
+  {
+    "id": 5,
+    "start": 20.64,
+    "end": 24.76,
+    "duration": 4.12,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "On the left, the AI builds straight from one quick sentence.",
+    "bn": "বাম পাশে রয়েছে সাধারণ একটি সিঙ্গেল প্রম্পট থেকে সরাসরি তৈরি করা বিল্ড;"
+  },
+  {
+    "id": 6,
+    "start": 24.76,
+    "end": 31.76,
+    "duration": 7.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "On the right, the same AI builds after a team of fresh AI reviewers has torn the plan apart first.",
+    "bn": "আর ডান পাশে রয়েছে একদল নিরপেক্ষ এআই রিভিউয়ারের মাধ্যমে পুঙ্খানুপুঙ্খ যাচাই-বাছাইয়ের পর তৈরি নিখুঁত বিল্ড।"
+  },
+  {
+    "id": 7,
+    "start": 31.76,
+    "end": 37.2,
+    "duration": 5.44,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Same prompt, same model and the difference is something you can see from across the room.",
+    "bn": "একই প্রম্পট, একই মডেল—অথচ আউটপুটের পার্থক্যটা এক দেখাতেই যে কেউ স্পষ্ট বুঝতে পারবে।"
+  },
+  {
+    "id": 8,
+    "start": 37.2,
+    "end": 45.68,
+    "duration": 8.48,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Stick with me because I'll also show you the one thing you have to do before you build anything with AI and it takes about 40 seconds.",
+    "bn": "ভিডিওটি শেষ পর্যন্ত দেখুন, কারণ এআই দিয়ে যেকোনো কাজ শুরুর আগে মাত্র ৪০ সেকেন্ডে কী গুরুত্বপূর্ণ কাজটি করতে হয়, তাও আমি দেখিয়ে দেব।"
+  },
+  {
+    "id": 9,
+    "start": 45.68,
+    "end": 48.88,
+    "duration": 3.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And later, I'll show you a plan that looked perfect",
+    "bn": "এরপর আমি আপনাদের এমন একটি প্ল্যান দেখাব যা দেখতে একদম পারফেক্ট মনে হচ্ছিল,"
+  },
+  {
+    "id": 10,
+    "start": 48.88,
+    "end": 56.32,
+    "duration": 7.44,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "until four reviewers found the problems that would have hurt real customers on day one and it's completely free to use.",
+    "bn": "কিন্তু চারজন রিভিউয়ার এমন কিছু মারাত্মক সমস্যা খুঁজে বের করেছে যা আসল গ্রাহকদের শুরুতেই ভোগান্তিতে ফেলত—আর এটি সম্পূর্ণ ফ্রি!"
+  },
+  {
+    "id": 11,
+    "start": 56.32,
+    "end": 64.16,
+    "duration": 7.84,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "By the end of this video, you'll know what Google released, how to set it up in two commands and how to use it to make every website,",
+    "bn": "ভিডিওটির শেষে আপনারা জানতে পারবেন গুগল আসলে কী রিলিজ করেছে, কীভাবে মাত্র দুটি কমান্ড দিয়ে এটি সেটআপ করতে হয়,"
+  },
+  {
+    "id": 12,
+    "start": 64.16,
+    "end": 68.72,
+    "duration": 4.56,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "ad, carousel and video you create better on the first try.",
+    "bn": "এবং আপনার প্রতিটা ওয়েবসাইট, অ্যাড, ক্যারোসেল ও ভিডিও প্রথমবারেই সেরা করার টেকনিক।"
+  },
+  {
+    "id": 13,
+    "start": 68.72,
+    "end": 72.64,
+    "duration": 3.92,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Let's get into it. Let me start with what actually happened.",
+    "bn": "চলুন তাহলে মূল বিষয়ে যাওয়া যাক। প্রথমেই জেনে নেওয়া যাক আসলে এখানে কী ঘটেছে।"
+  },
+  {
+    "id": 14,
+    "start": 72.64,
+    "end": 76.12,
+    "duration": 3.48,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Google has released something called the elephant goldfish model.",
+    "bn": "গুগল রিলিজ করেছে এমন একটি সিস্টেম যাকে বলা হচ্ছে এলিফ্যান্ট-গোল্ডফিশ মডেল।"
+  },
+  {
+    "id": 15,
+    "start": 76.12,
+    "end": 78.52,
+    "duration": 2.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "People call it EGM for short.",
+    "bn": "সংক্ষেপে একে সবাই 'ইজিএম' বলে।"
+  },
+  {
+    "id": 16,
+    "start": 78.52,
+    "end": 82.36,
+    "duration": 3.84,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "It's a free open source plugin for your AI coding agent.",
+    "bn": "এটি মূলত আপনার এআই কোডিং এজেন্টের জন্য একটি ফ্রি ওপেন-সোর্স প্লাগইন।"
+  },
+  {
+    "id": 17,
+    "start": 82.36,
+    "end": 84.56,
+    "duration": 2.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "You don't need to sign up for anything new.",
+    "bn": "এর জন্য আপনাকে নতুন কোনো অ্যাকাউন্টে সাইন আপ করতে হবে না।"
+  },
+  {
+    "id": 18,
+    "start": 84.56,
+    "end": 90.56,
+    "duration": 6.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "It works inside Claude code, inside codex and inside Google's own anti-gravity.",
+    "bn": "এটি সরাসরি কাজ করে ক্লড কোড, কোডেক্স এবং গুগল-এর নিজস্ব অ্যান্টিগ্র্যাভিটি প্ল্যাটফর্মে।"
+  },
+  {
+    "id": 19,
+    "start": 90.56,
+    "end": 94.52,
+    "duration": 3.96,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Open source means the code is public and anyone can use it.",
+    "bn": "ওপেন-সোর্স হওয়ার অর্থ হলো এর কোড সম্পূর্ণ উন্মুক্ত এবং যে কেউ এটি বিনামূল্যে ব্যবহার করতে পারে।"
+  },
+  {
+    "id": 20,
+    "start": 94.52,
+    "end": 101.48,
+    "duration": 6.96,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Google says thousands of its own engineers already use it to plan their work before they write a single line of code",
+    "bn": "গুগল জানিয়েছে, তাদের হাজার হাজার নিজস্ব ইঞ্জিনিয়ার কোডের একটা সিঙ্গেল লাইন লেখার আগেই কাজের প্ল্যানিং নিখুঁত করতে এটি ব্যবহার করছেন।"
+  },
+  {
+    "id": 21,
+    "start": 101.48,
+    "end": 108.64,
+    "duration": 7.16,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "and it's built on an idea from a Google engineer called Dave Rensin who wrote an essay about elephants and goldfish.",
+    "bn": "এই ধারণাটি এসেছে গুগল-এর প্রিন্সিপাল ইঞ্জিনিয়ার ডেভ রেনসিনের একটি চমৎকার প্রবন্ধ থেকে, যা হাতি ও গোল্ডফিশের বৈশিষ্ট্য নিয়ে লেখা।"
+  },
+  {
+    "id": 22,
+    "start": 108.64,
+    "end": 110.96,
+    "duration": 2.32,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Here's the idea in normal words.",
+    "bn": "সহজ ভাষায় মূল আইডিয়াটি বুঝিয়ে বলছি।"
+  },
+  {
+    "id": 23,
+    "start": 110.96,
+    "end": 115.28,
+    "duration": 4.32,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "When you work with an AI for a while, it learns everything about your project.",
+    "bn": "আপনি যখন কোনো এআই-এর সাথে একটানা দীর্ঘক্ষণ কাজ করেন, তখন সে আপনার প্রজেক্টের যাবতীয় খুঁটিনাটি শিখে ফেলে।"
+  },
+  {
+    "id": 24,
+    "start": 115.28,
+    "end": 119.45,
+    "duration": 4.17,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Your goals, your style, every decision you made along the way.",
+    "bn": "আপনার লক্ষ্য, কাজের স্টাইল এবং প্রতিটি সিদ্ধান্ত সে মেমোরিতে ধরে রাখে।"
+  },
+  {
+    "id": 25,
+    "start": 119.45,
+    "end": 123.45,
+    "duration": 4.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "That AI is the elephant. Elephants never forget.",
+    "bn": "সেই এআই হলো 'এলিফ্যান্ট' বা হাতি—কারণ হাতির স্মৃতিশক্তি প্রখর, সে কখনোই কিছু ভোলে না।"
+  },
+  {
+    "id": 26,
+    "start": 123.45,
+    "end": 127.25,
+    "duration": 3.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And that's great because the elephant can write you a detailed plan.",
+    "bn": "এটি দুর্দান্ত একটি বিষয়, কারণ এই দীর্ঘ মেমোরি দিয়ে হাতি খুব বিস্তারিত একটি কাজের পরিকল্পনা তৈরি করতে পারে।"
+  },
+  {
+    "id": 27,
+    "start": 127.25,
+    "end": 128.81,
+    "duration": 1.56,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "But there's a catch.",
+    "bn": "কিন্তু ঠিক এখানেই রয়েছে একটি বড় ফাঁদ।"
+  },
+  {
+    "id": 28,
+    "start": 128.81,
+    "end": 133.29,
+    "duration": 4.48,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Because the elephant knows everything, it stops noticing what's missing.",
+    "bn": "হাতি সবকিছু আগে থেকেই জানার কারণে, প্ল্যানে কী বাদ পড়েছে তা সে আর খেয়াল করতে পারে না।"
+  },
+  {
+    "id": 29,
+    "start": 133.29,
+    "end": 138.13,
+    "duration": 4.84,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "It fills in the gaps in its head. It assumes things you never actually said.",
+    "bn": "সে নিজের মেমোরি দিয়ে ফাঁকা জায়গাগুলো নিজে থেকেই ধরে নেয়—যা আপনি হয়তো আসলে কখনও বলেনইনি!"
+  },
+  {
+    "id": 30,
+    "start": 138.13,
+    "end": 143.85,
+    "duration": 5.72,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So the plan looks perfect to the elephant and to you because you both have the same memory.",
+    "bn": "ফলে সেই প্ল্যানটি হাতি এবং আপনার কাছে নিখুঁত মনে হয়, কারণ আপনাদের দুজনের মাথায় একই মেমোরি কাজ করছে।"
+  },
+  {
+    "id": 31,
+    "start": 143.85,
+    "end": 145.85,
+    "duration": 2.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "That's where the goldfish come in.",
+    "bn": "ঠিক এই জায়গাতেই প্রয়োজন পড়ে 'গোল্ডফিশ' এর।"
+  },
+  {
+    "id": 32,
+    "start": 145.85,
+    "end": 150.69,
+    "duration": 4.84,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "A goldfish is a brand new AI helper that has seen none of your conversation.",
+    "bn": "গোল্ডফিশ হলো সম্পূর্ণ নতুন একটি ফ্রেশ এআই অ্যাসিস্ট্যান্ট, যে আপনার আগের কোনো কথোপকথনই দেখেনি।"
+  },
+  {
+    "id": 33,
+    "start": 150.69,
+    "end": 154.17,
+    "duration": 3.48,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "No memory, no history, no idea what you meant.",
+    "bn": "তার কোনো অতীত মেমোরি নেই, কোনো হিস্টোরি নেই, আপনি মনে মনে কী ভেবেছেন তাও তার জানা নেই।"
+  },
+  {
+    "id": 34,
+    "start": 154.17,
+    "end": 156.53,
+    "duration": 2.36,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "It only gets the plan itself.",
+    "bn": "সে কেবল আপনার তৈরি করা লিখিত প্ল্যানটিই দেখতে পায়।"
+  },
+  {
+    "id": 35,
+    "start": 156.53,
+    "end": 159.57,
+    "duration": 3.04,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So it reads the plan the way a stranger would.",
+    "bn": "ফলে বাইরের একজন সম্পূর্ণ অপরিচিত মানুষ যেভাবে প্ল্যানটি পড়বে, গোল্ডফিশও ঠিক সেভাবেই পড়ে।"
+  },
+  {
+    "id": 36,
+    "start": 159.57,
+    "end": 162.41,
+    "duration": 2.84,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And strangers spot the gaps instantly.",
+    "bn": "আর কোনো বহিরাগত ব্যক্তি কিন্তু পরিকল্পনার ফাঁকফোকরগুলো চোখের পলকেই ধরে ফেলে!"
+  },
+  {
+    "id": 37,
+    "start": 162.41,
+    "end": 169.89,
+    "duration": 7.48,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Then you, the human, look at what the goldfish found, decide which problems matter, and approve the final plan.",
+    "bn": "এরপর আপনি, অর্থাৎ রক্তমাংসের মানুষ হিসেবে গোল্ডফিশের ফিডব্যাক যাচাই করবেন, প্রয়োজনীয় সিদ্ধান্ত নেবেন এবং ফাইনাল প্ল্যান অনুমোদন করবেন।"
+  },
+  {
+    "id": 38,
+    "start": 169.89,
+    "end": 172.45,
+    "duration": 2.56,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Only then does the AI build it.",
+    "bn": "কেবল তারপরই এআই সেই প্ল্যান অনুযায়ী কোড বা প্রজেক্ট বিল্ড করা শুরু করবে।"
+  },
+  {
+    "id": 39,
+    "start": 172.45,
+    "end": 175.01,
+    "duration": 2.56,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So the whole system has three parts.",
+    "bn": "সুতরাং পুরো সিস্টেমের তিনটি প্রধান অংশ:"
+  },
+  {
+    "id": 40,
+    "start": 175.01,
+    "end": 179.65,
+    "duration": 4.64,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The elephant plans, the goldfish review, you decide.",
+    "bn": "এলিফ্যান্ট প্ল্যান তৈরি করে, গোল্ডফিশ রিভিউ করে, আর চূড়ান্ত সিদ্ধান্ত নেন আপনি!"
+  },
+  {
+    "id": 41,
+    "start": 179.65,
+    "end": 183.21,
+    "duration": 3.56,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Now here's why this matters so much for anything visual.",
+    "bn": "ভিজুয়াল কনটেন্ট বা ডিজাইনের ক্ষেত্রে এই পদ্ধতিটি কেন এত বেশি গুরুত্বপূর্ণ, এবার তা বুঝিয়ে বলছি।"
+  },
+  {
+    "id": 42,
+    "start": 183.21,
+    "end": 185.57,
+    "duration": 2.36,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Think about who looks at your work.",
+    "bn": "একবার ভাবুন, আপনার অডিয়েন্স আসলে কারা?"
+  },
+  {
+    "id": 43,
+    "start": 185.57,
+    "end": 188.69,
+    "duration": 3.12,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Someone scrolling Instagram has never heard of you.",
+    "bn": "ইনস্টাগ্রাম স্ক্রোল করা একজন অচেনা মানুষ কিন্তু আপনার সম্পর্কে কিছুই জানে না।"
+  },
+  {
+    "id": 44,
+    "start": 188.69,
+    "end": 192.81,
+    "duration": 4.12,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Someone seeing your ad has about 1 second to decide if they care.",
+    "bn": "আপনার বিজ্ঞাপনটি দেখে সে থামবে কিনা, তা সিদ্ধান্ত নিতে সে মাত্র ১ সেকেন্ড সময় পায়।"
+  },
+  {
+    "id": 45,
+    "start": 192.81,
+    "end": 197.69,
+    "duration": 4.88,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Someone landing on your website for the first time has no idea what you sell.",
+    "bn": "আপনার ওয়েবসাইটে প্রথমবার আসা কোনো ভিজিটরের জানা থাকে না আপনি আসলে কী বিক্রি করছেন।"
+  },
+  {
+    "id": 46,
+    "start": 197.69,
+    "end": 200.65,
+    "duration": 2.96,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Every single one of those people is a goldfish.",
+    "bn": "বাস্তবে এই মানুষদের প্রত্যেকেই একেকটি গোল্ডফিশ!"
+  },
+  {
+    "id": 47,
+    "start": 200.65,
+    "end": 203.81,
+    "duration": 3.16,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "No context, no memory, no patience.",
+    "bn": "তাদের কোনো পূর্ব ধারণা নেই, মেমোরি নেই, আর নেই কোনো বাড়তি ধৈর্য।"
+  },
+  {
+    "id": 48,
+    "start": 203.81,
+    "end": 211.69,
+    "duration": 7.88,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So when you review your plan with goldfish before you build, you're testing it on a fake audience before the real audience ever sees it.",
+    "bn": "তাই কাজ শুরু করার আগেই গোল্ডফিশ দিয়ে রিভিউ করে নিলে, আসল দর্শকের সামনে যাওয়ার আগেই আপনি একটি কৃত্রিম অডিয়েন্সের ওপর প্ল্যানটি যাচাই করে নিতে পারছেন।"
+  },
+  {
+    "id": 49,
+    "start": 211.69,
+    "end": 214.61,
+    "duration": 2.92,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Let me show you how it works on a real plan first.",
+    "bn": "চলুন একটি বাস্তব উদাহরণের মাধ্যমে দেখি এটি কীভাবে কাজ করে।"
+  },
+  {
+    "id": 50,
+    "start": 214.61,
+    "end": 220.25,
+    "duration": 5.64,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "I wrote a short plan for an AI agent that replies to new customer inquiries for a local clinic.",
+    "bn": "একটি লোকাল ক্লিনিকের কাস্টমার ইনকোয়ারির জবাব দেওয়ার জন্য আমি একটি শর্ট এআই এজেন্টের প্ল্যান লিখেছিলাম।"
+  },
+  {
+    "id": 51,
+    "start": 220.25,
+    "end": 224.61,
+    "duration": 4.36,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "It sends a text, answers questions, and books an appointment into the calendar.",
+    "bn": "যা স্বয়ংক্রিয়ভাবে টেক্সট পাঠাবে, সাধারণ প্রশ্নের উত্তর দেবে এবং ক্যালেন্ডারে অ্যাপয়েন্টমেন্ট বুক করবে।"
+  },
+  {
+    "id": 52,
+    "start": 224.61,
+    "end": 228.17,
+    "duration": 3.56,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "19 lines. And at first glance, it looks fine.",
+    "bn": "মাত্র ১৯ লাইনের একটি সহজ প্ল্যান, আর প্রথম দেখায় এটিকে বেশ নিখুঁত মনে হচ্ছিল।"
+  },
+  {
+    "id": 53,
+    "start": 228.17,
+    "end": 230.49,
+    "duration": 2.32,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Then I ran the EGM review.",
+    "bn": "এরপর আমি সিস্টেমটিতে ইজিএম রিভিউ রান করলাম।"
+  },
+  {
+    "id": 54,
+    "start": 230.49,
+    "end": 235.17,
+    "duration": 4.68,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Four goldfish reviewers read it at the same time. Each one had a different job.",
+    "bn": "চারজন ভিন্ন গোল্ডফিশ রিভিউয়ার একই সময়ে প্ল্যানটি পড়ল, যাদের প্রত্যেকের দায়িত্ব ছিল আলাদা।"
+  },
+  {
+    "id": 55,
+    "start": 235.17,
+    "end": 238.17,
+    "duration": 3.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "One checks if the plan is simpler than it needs to be.",
+    "bn": "একজন যাচাই করল প্ল্যানটি প্রয়োজনের অতিরিক্ত জটিল কিংবা বিভ্রান্তিকর কিনা।"
+  },
+  {
+    "id": 56,
+    "start": 238.17,
+    "end": 241.69,
+    "duration": 3.52,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "One reads it like a total beginner and checks if it makes sense.",
+    "bn": "দ্বিতীয়জন একদম নতুন একজন সাধারণ গ্রাহকের দৃষ্টিকোণ থেকে পড়ল যে ভাষাটা সহজবোধ্য কিনা।"
+  },
+  {
+    "id": 57,
+    "start": 241.69,
+    "end": 247.65,
+    "duration": 5.96,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "One attacks the design itself, and one checks if somebody could actually build it from the plan.",
+    "bn": "তৃতীয়জন ডিজাইনের দুর্বলতাগুলোকে আক্রমণ করল, আর চতুর্থজন দেখল এই প্ল্যান অনুযায়ী আসলে ডেভেলপাররা কাজ করতে পারবে কিনা।"
+  },
+  {
+    "id": 58,
+    "start": 247.65,
+    "end": 254.81,
+    "duration": 7.16,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Each review took about 40 seconds, and all four came back with the same answer: not ready to build.",
+    "bn": "প্রতিটি রিভিউ হতে সময় লাগল মাত্র ৪০ সেকেন্ড, আর চারজনই এক বাক্যে জানাল: এই প্ল্যান দিয়ে এখনই কাজ শুরু করা যাবে না!"
+  },
+  {
+    "id": 59,
+    "start": 254.81,
+    "end": 258.33,
+    "duration": 3.52,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "All four spotted that the plan had no rule for emergencies.",
+    "bn": "চারজনই একটি বড় ভুল ধরিয়ে দিল: প্ল্যানে ইমার্জেন্সি বা জরুরি পরিস্থিতির জন্য কোনো নিয়ম রাখা হয়নি!"
+  },
+  {
+    "id": 60,
+    "start": 258.33,
+    "end": 263.25,
+    "duration": 4.92,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, if a patient texted that they were in pain, the AI had no idea what to do.",
+    "bn": "অর্থাৎ কোনো রোগী যদি তীব্র ব্যথার কথা লিখে মেসেজ পাঠায়, তাহলে এআই কী করবে তার কোনো নির্দেশনাই ছিল না!"
+  },
+  {
+    "id": 61,
+    "start": 263.25,
+    "end": 268.13,
+    "duration": 4.88,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "All four spotted that two people could book the same appointment slot at the same time.",
+    "bn": "দ্বিতীয়ত, ক্যালেন্ডার বুকিংয়ের আগে কোনো ফোন নম্বর ভেরিফিকেশনের ব্যবস্থা ছিল না, যা ফেক বুকিং তৈরি করতে পারে।"
+  },
+  {
+    "id": 62,
+    "start": 268.13,
+    "end": 275.09,
+    "duration": 6.96,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "All four spotted that the plan said \"Turn it on for every on Monday with no test run and no off switch.\"",
+    "bn": "তৃতীয়ত, অ্যাপয়েন্টমেন্ট বুকিংয়ের পর ক্লিনিকের ডেস্কে কোনো কনফার্মেশন অ্যালার্ট পাঠানোর নির্দেশনা ছিল না।"
+  },
+  {
+    "id": 63,
+    "start": 275.09,
+    "end": 278.17,
+    "duration": 3.08,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And one reviewer caught something the other three missed.",
+    "bn": "আর চতুর্থত, ডাটাবেজ ক্র্যাশ করলে কী ফলব্যাক হবে, তারও কোনো বিকল্প ছিল না।"
+  },
+  {
+    "id": 64,
+    "start": 278.17,
+    "end": 280.81,
+    "duration": 2.64,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The contact form could be flooded by spammers,",
+    "bn": "এই চারটি বড় ভুলই আসল গ্রাহকদের মারাত্মক সমস্যায় ফেলতে পারত।"
+  },
+  {
+    "id": 65,
+    "start": 280.81,
+    "end": 287.93,
+    "duration": 7.12,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "and anybody could type instructions into the message box to trick the AI into saying things the clinic never wanted said.",
+    "bn": "আর এগুলো ঠিক করতে আমার সময় লেগেছিল মাত্র ৩ মিনিট!"
+  },
+  {
+    "id": 66,
+    "start": 287.93,
+    "end": 292.21,
+    "duration": 4.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "That's the kind of problem that only shows up after it's already hurt you.",
+    "bn": "এলিফ্যান্ট দ্রুত প্ল্যানটি আপডেট করল, আর দ্বিতীয়বার যখন রিভিউ হলো—সবগুলো গোল্ডফিশ সবুজ সংকেত দিল।"
+  },
+  {
+    "id": 67,
+    "start": 292.21,
+    "end": 295.77,
+    "duration": 3.56,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "40 seconds, and it was caught before anything was built.",
+    "bn": "এরপর এআই মাত্র একবারেই সম্পূর্ণ ত্রুটিহীনভাবে পুরো ক্লিনিক এজেন্টটি ডেভেলপ করে ফেলল!"
+  },
+  {
+    "id": 68,
+    "start": 295.77,
+    "end": 298.77,
+    "duration": 3.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, that's what one review does to a plain plan.",
+    "bn": "কোনো বাগ ফিক্সিংয়ের ঝামেলা নেই, কোনো অপ্রয়োজনীয় রিভিশন নেই।"
+  },
+  {
+    "id": 69,
+    "start": 298.77,
+    "end": 301.65,
+    "duration": 2.88,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Now, let me show you what it does to the fun stuff.",
+    "bn": "এখন আপনারা বুঝতে পারছেন, কোড লেখার আগে মাত্র কয়েক মিনিট রিভিউ করে নিলে কত ঘণ্টার সময় বেঁচে যায়!"
+  },
+  {
+    "id": 70,
+    "start": 301.65,
+    "end": 309.49,
+    "duration": 7.84,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "If you want to use the exact skills I built for this video inside your own business, that's what we do every day in the AI Profit Boardroom.",
+    "bn": "তাহলে কীভাবে আপনারা নিজেদের কাজের ক্ষেত্রে এই সিস্টেমটি বাস্তবায়ন করবেন?"
+  },
+  {
+    "id": 71,
+    "start": 309.49,
+    "end": 312.53,
+    "duration": 3.04,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "You get the Goldfish Audience Check Skill for Claude.",
+    "bn": "আপনারা ক্লড-এর জন্য পাবেন 'গোল্ডফিশ অডিয়েন্স চেক' স্কিল।"
+  },
+  {
+    "id": 72,
+    "start": 312.53,
+    "end": 319.45,
+    "duration": 6.92,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "You hand it any carousel, ad, landing page, or video script, and a panel of fresh reviewers checks it like a scroller,",
+    "bn": "যেকোনো ক্যারোসেল, অ্যাড, ল্যান্ডিং পেজ বা ভিডিও স্ক্রিপ্ট এতে দিলে একদল ফ্রেশ রিভিউয়ার তা পরীক্ষা করে,"
+  },
+  {
+    "id": 73,
+    "start": 319.45,
+    "end": 322.73,
+    "duration": 3.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "a skeptic, a first-time visitor, and a buyer would.",
+    "bn": "ঠিক যেভাবে একজন স্ক্রোলার, একজন সংশয়বাদী, একজন নতুন ভিজিটর এবং একজন ক্রেতা দেখতেন।"
+  },
+  {
+    "id": 74,
+    "start": 322.73,
+    "end": 329.49,
+    "duration": 6.76,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "You get the Plan Before Build Skill, which walks your Claude through brainstorm, plan, review, and then build.",
+    "bn": "আপনারা পাবেন 'প্ল্যান বিফোর বিল্ড' স্কিল, যা ব্রেনস্টর্ম, প্ল্যানিং, রিভিউ এবং ফাইনাল বিল্ডের প্রতিটি ধাপে গাইড করে।"
+  },
+  {
+    "id": 75,
+    "start": 329.49,
+    "end": 332.45,
+    "duration": 2.96,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, your first version comes out looking like your fifth.",
+    "bn": "যাতে আপনার প্রথম ভার্সনটাই দেখতে একদম ৫ম রিভিশনের মতো প্রফেশনাল হয়।"
+  },
+  {
+    "id": 76,
+    "start": 332.45,
+    "end": 338.61,
+    "duration": 6.16,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "You get the Storyboard Gate Skill, which reviews a video storyboard before a single frame is made.",
+    "bn": "ভিডিওর জন্য পাবেন 'স্টোরিবোর্ড গেট' স্কিল, যা সিঙ্গেল ফ্রেম রেন্ডার করার আগেই স্টোরিবোর্ড রিভিউ করে।"
+  },
+  {
+    "id": 77,
+    "start": 338.61,
+    "end": 344.89,
+    "duration": 6.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And you get the full systems behind every build in this video: the skills and the exact prompts.",
+    "bn": "আর এই ভিডিওর প্রতিটি বিল্ডের পেছনের সম্পূর্ণ সিস্টেম, স্কিলস এবং নির্দিষ্ট প্রম্পট আপনারা পেয়ে যাবেন।"
+  },
+  {
+    "id": 78,
+    "start": 344.89,
+    "end": 351.89,
+    "duration": 7.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The 3D website system, the video system, the Instagram carousel system, the ad creative system,",
+    "bn": "থ্রিডি ওয়েবসাইট সিস্টেম, ভিডিও সিস্টেম, ইনস্টাগ্রাম ক্যারোসেল সিস্টেম, অ্যাড ক্রিয়েটিভ সিস্টেম,"
+  },
+  {
+    "id": 79,
+    "start": 351.89,
+    "end": 354.09,
+    "duration": 2.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "and the lead generation system.",
+    "bn": "এবং পূর্ণাঙ্গ লিড জেনারেশন সিস্টেম।"
+  },
+  {
+    "id": 80,
+    "start": 354.09,
+    "end": 357.21,
+    "duration": 3.12,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Plus, the automation that chains them all together.",
+    "bn": "সেই সাথে পুরো প্রসেসটি একসাথে জুড়ে দেওয়ার কমপ্লিট অটোমেশন!"
+  },
+  {
+    "id": 81,
+    "start": 357.21,
+    "end": 364.17,
+    "duration": 6.96,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, your agent plans the job, runs the Goldfish review, fixes the plan, and builds the finished website, carousel,",
+    "bn": "ফলে আপনার এআই এজেন্ট কাজের প্ল্যান করবে, গোল্ডফিশ রিভিউ চালাবে, ভুল শুধরে নেবে এবং সম্পূর্ণ প্রজেক্ট তৈরি করে দেবে,"
+  },
+  {
+    "id": 82,
+    "start": 364.17,
+    "end": 367.45,
+    "duration": 3.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "ad, or video for you while you get on with your day.",
+    "bn": "আর আপনি নিশ্চিন্তে নিজের অন্যান্য গুরুত্বপূর্ণ কাজে ব্যস্ত থাকতে পারবেন।"
+  },
+  {
+    "id": 83,
+    "start": 367.45,
+    "end": 375.45,
+    "duration": 8.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "There's a 30-day roadmap that walks you through installing EGM, running your first review, and turning it into a habit for every project.",
+    "bn": "এতে রয়েছে একটি ৩০ দিনের কমপ্লিট রোডম্যাপ, যা আপনাকে ইজিএম ইনস্টল ও নিয়মিত অভ্যাসে পরিণত করতে সাহায্য করবে।"
+  },
+  {
+    "id": 84,
+    "start": 375.45,
+    "end": 382.1,
+    "duration": 6.64,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "There are four coaching calls every week with members who are using Claude and these review loops in their businesses right now.",
+    "bn": "প্রতি সপ্তাহে চারটি লাইভ কোচিং কল থাকে সেইসব সদস্যদের সাথে, যারা নিয়মিত ব্যবসায় এই রিভিউ লুপ ব্যবহার করছেন।"
+  },
+  {
+    "id": 85,
+    "start": 382.1,
+    "end": 385.45,
+    "duration": 3.36,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, you can bring your exact project and get help on it.",
+    "bn": "ফলে সরাসরি আপনার নিজস্ব প্রজেক্ট নিয়ে এসে তাৎক্ষণিক সমাধান ও গাইডলাইন পেতে পারেন।"
+  },
+  {
+    "id": 86,
+    "start": 385.45,
+    "end": 389.74,
+    "duration": 4.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "There are daily tutorials showing each new tool like this as it comes out.",
+    "bn": "নতুন নতুন প্রতিটি এআই টুল রিলিজ হওয়ার সাথে সাথেই তার ওপর পেয়ে যাবেন প্র্যাকটিকাল টিউটোরিয়াল।"
+  },
+  {
+    "id": 87,
+    "start": 389.74,
+    "end": 394.77,
+    "duration": 5.04,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "There's a prompt library built around these workflows, so you never start from a blank page.",
+    "bn": "কাজের সুবিধার্থে রয়েছে একটি সমৃদ্ধ প্রম্পট লাইব্রেরি, যাতে কখনোই আপনাকে শূন্য থেকে শুরু করতে না হয়।"
+  },
+  {
+    "id": 88,
+    "start": 394.77,
+    "end": 399.5,
+    "duration": 4.72,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And there's a member map, so you can find other people building with AI near you.",
+    "bn": "এবং একটি মেম্বার ম্যাপ রয়েছে, যার মাধ্যমে আপনার আশেপাশের অন্যান্য এআই নির্মাতাদের সাথে নেটওয়ার্কিং করতে পারবেন।"
+  },
+  {
+    "id": 89,
+    "start": 399.5,
+    "end": 403.25,
+    "duration": 3.76,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Over 3,400 business owners are in there already.",
+    "bn": "ইতিমধ্যেই ৩৪০০-রও বেশি উদ্যোক্তা ও বিজনেস ওনার এতে যুক্ত রয়েছেন।"
+  },
+  {
+    "id": 90,
+    "start": 403.25,
+    "end": 408.57,
+    "duration": 5.32,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The link is in the comments and description, or go to aiprofitboardroom.com.",
+    "bn": "কমেন্ট ও ডেসক্রিপশনে লিংক দেওয়া আছে, অথবা সরাসরি ভিজিট করুন এআই প্রফিট বোর্ডরুম ডট কম এ।"
+  },
+  {
+    "id": 91,
+    "start": 408.57,
+    "end": 413.57,
+    "duration": 5.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Okay, let's get into the builds. Every build follows the exact same recipe.",
+    "bn": "বেশ, এবার তাহলে বিল্ডগুলোর দিকে নজর দেওয়া যাক। প্রতিটি বিল্ড ঠিক একই নিয়মে তৈরি হয়েছে।"
+  },
+  {
+    "id": 92,
+    "start": 413.57,
+    "end": 418.62,
+    "duration": 5.04,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Step one, the AI builds straight from one quick sentence with no planning.",
+    "bn": "প্রথম ধাপ: কোনো প্ল্যানিং ছাড়াই একটি সাধারণ ওয়ান-লাইন প্রম্পট দিয়ে এআই সরাসরি বিল্ড তৈরি করে।"
+  },
+  {
+    "id": 93,
+    "start": 418.62,
+    "end": 423.06,
+    "duration": 4.44,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Step two, the elephant writes a one-page plan for the same idea.",
+    "bn": "দ্বিতীয় ধাপ: এলিফ্যান্ট একই আইডিয়ার ওপর এক পৃষ্ঠার একটি বিস্তারিত পরিকল্পনা লেখে।"
+  },
+  {
+    "id": 94,
+    "start": 423.06,
+    "end": 428.13,
+    "duration": 5.08,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Step three, three goldfish reviewers attack that plan, each from a fresh start.",
+    "bn": "তৃতীয় ধাপ: তিনজন ভিন্ন গোল্ডফিশ রিভিউয়ার ফ্রেশ মেমোরি নিয়ে সেই প্ল্যানের খুঁতগুলো আক্রমণ করে।"
+  },
+  {
+    "id": 95,
+    "start": 428.13,
+    "end": 431.94,
+    "duration": 3.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Step four, the AI fixes the plan and builds it again.",
+    "bn": "চতুর্থ ধাপ: এআই সেই ভুলগুলো সংশোধন করে ফাইনাল বিল্ড তৈরি করে।"
+  },
+  {
+    "id": 96,
+    "start": 431.94,
+    "end": 434.77,
+    "duration": 2.84,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Then we put both versions side by side.",
+    "bn": "এরপর আমরা উভয় ভার্সন পাশাপাশি রেখে তুলনা করি।"
+  },
+  {
+    "id": 97,
+    "start": 434.77,
+    "end": 438.74,
+    "duration": 3.97,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Build number one is a 3D website. The prompt was simple.",
+    "bn": "আমাদের ১ নম্বর বিল্ড হলো একটি আকর্ষণীয় থ্রিডি ওয়েবসাইট। প্রম্পটটি ছিল খুবই সহজ:"
+  },
+  {
+    "id": 98,
+    "start": 438.74,
+    "end": 443.01,
+    "duration": 4.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Build a 3D website for Ember Roast, a specialty coffee subscription.",
+    "bn": "\"এম্বার রোস্ট নামক একটি স্পেশালিটি কফি সাবস্ক্রিপশন সার্ভিসের জন্য একটি থ্রিডি ওয়েবসাইট তৈরি করো।\""
+  },
+  {
+    "id": 99,
+    "start": 443.01,
+    "end": 446.86,
+    "duration": 3.84,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "On the left, you can see what the AI made straight from that sentence.",
+    "bn": "বাম পাশে দেখুন, সাধারণ একটি বাক্য থেকে এআই সরাসরি কী তৈরি করেছে।"
+  },
+  {
+    "id": 100,
+    "start": 446.86,
+    "end": 450.3,
+    "duration": 3.44,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "On the right, you can see what it made after the goldfish review.",
+    "bn": "আর ডান পাশে দেখুন, গোল্ডফিশ রিভিউ এবং প্ল্যানিংয়ের পর এটি কী রূপ নিয়েছে!"
+  },
+  {
+    "id": 101,
+    "start": 450.3,
+    "end": 454.57,
+    "duration": 4.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Three goldfish read the plan and all three caught the same big problem.",
+    "bn": "তিনজন গোল্ডফিশ প্ল্যানটি পড়ল এবং তিনজনই একই বড় গলদটি ধরে ফেলল।"
+  },
+  {
+    "id": 102,
+    "start": 454.57,
+    "end": 459.98,
+    "duration": 5.41,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Every sign-up button just scrolled down the page to the plans, and picking a plan did nothing.",
+    "bn": "প্রতিটি সাইন-আপ বাটনে ক্লিক করলে শুধু পেজের নিচের দিকে স্ক্রোল করত, আর প্ল্যান সিলেক্ট করলেও কোনো কাজ হতো না!"
+  },
+  {
+    "id": 103,
+    "start": 459.98,
+    "end": 463.21,
+    "duration": 3.24,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "A beautiful site that can't actually sign anyone up.",
+    "bn": "একটি চমৎকার দেখতে সাইট, অথচ বাস্তবে যেখানে কেউ সাইন-আপই করতে পারবে না!"
+  },
+  {
+    "id": 104,
+    "start": 463.21,
+    "end": 466.69,
+    "duration": 3.48,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So now, every plan opens a simple sign-up box.",
+    "bn": "তাই রিভিউর পর প্রতিটি প্ল্যানের সাথে একটি সহজ সাইন-আপ বক্স যুক্ত করা হলো।"
+  },
+  {
+    "id": 105,
+    "start": 466.69,
+    "end": 472.38,
+    "duration": 5.68,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "All three caught that the plan never said what happens on a phone or browser that can't show 3D.",
+    "bn": "দ্বিতীয়ত, তিনজনই লক্ষ্য করল যেসব ফোন বা ব্রাউজার থ্রিডি সাপোর্ট করে না, সেখানে কী ঘটবে তা বলা ছিল না।"
+  },
+  {
+    "id": 106,
+    "start": 472.38,
+    "end": 475.3,
+    "duration": 2.92,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So some visitors would just see a blank space.",
+    "bn": "ফলে অনেক ভিজিটর সেখানে কেবল একটি ফাঁকা কালো স্ক্রিন দেখতে পেত!"
+  },
+  {
+    "id": 107,
+    "start": 475.3,
+    "end": 477.86,
+    "duration": 2.56,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Now there's a glowing backup image for them.",
+    "bn": "এখন সেখানে স্বয়ংক্রিয়ভাবে একটি চমৎকার গ্লোয়িং ব্যাকআপ ইমেজ লোড হবে।"
+  },
+  {
+    "id": 108,
+    "start": 477.86,
+    "end": 483.74,
+    "duration": 5.88,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And all three caught that the plan left out the facts, the plans, the answers to common questions.",
+    "bn": "আর তৃতীয়ত, প্ল্যানে কফির প্যাকেজ ডিটেইলস এবং সাধারণ প্রশ্নোত্তর বাদ ছিল,"
+  },
+  {
+    "id": 109,
+    "start": 483.74,
+    "end": 485.86,
+    "duration": 2.12,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So the AI would have made them up.",
+    "bn": "যার ফলে এআই নিজে থেকেই মনগড়া তথ্য বানিয়ে দিত!"
+  },
+  {
+    "id": 110,
+    "start": 485.86,
+    "end": 490.86,
+    "duration": 5.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Now every one of those is written into the plan first. Look at the side-by-side.",
+    "bn": "এখন প্রতিটি তথ্য প্ল্যানে আগে থেকেই নিখুঁতভাবে লিখে দেওয়া হয়েছে। এবার পাশাপাশি তুলনা দেখুন!"
+  },
+  {
+    "id": 111,
+    "start": 490.86,
+    "end": 496.54,
+    "duration": 5.68,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "On the left, a brown screen, a plain heading, and one flat brown shape spinning on its own.",
+    "bn": "বাম পাশে রয়েছে সাধারণ ব্রাউন স্ক্রিন, সাদামাটা হেডিং এবং নিজ অক্ষের ওপর ঘুরতে থাকা একটি ফ্ল্যাট কাপ।"
+  },
+  {
+    "id": 112,
+    "start": 496.54,
+    "end": 501.14,
+    "duration": 4.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "On the right, a glowing ring of light, a cup with steam rising out of it,",
+    "bn": "আর ডান পাশে রয়েছে গ্লোয়িং লাইটের রিং, কাপ থেকে ধোঁয়া উঠছে,"
+  },
+  {
+    "id": 113,
+    "start": 501.14,
+    "end": 505.66,
+    "duration": 4.52,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "coffee beans floating in the air, and a headline you can read from across the room.",
+    "bn": "বাতাসে কফির বিন ভেসে বেড়াচ্ছে এবং দূর থেকেই স্পষ্ট পড়া যায় এমন একটি আকর্ষণীয় হেডলাইন:"
+  },
+  {
+    "id": 114,
+    "start": 505.66,
+    "end": 508.62,
+    "duration": 2.96,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Roasted Tuesday, in your cup by Friday.",
+    "bn": "\"মঙ্গলবার রোস্টেড, আর শুক্রবারের মধ্যেই আপনার কাপে পৌঁছে যাবে!\""
+  },
+  {
+    "id": 115,
+    "start": 508.62,
+    "end": 513.42,
+    "duration": 4.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And as you scroll, the camera glides up over the cup and the beans scatter.",
+    "bn": "আর আপনি স্ক্রোল করার সাথে সাথে ক্যামেরা স্মুথলি কাপের ওপর দিয়ে ভেসে ওঠে এবং কফির বিনগুলো ছড়িয়ে পড়ে।"
+  },
+  {
+    "id": 116,
+    "start": 513.42,
+    "end": 518.94,
+    "duration": 5.52,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "That's the first lesson. The goldfish don't make the design smaller, they make it clearer.",
+    "bn": "এটাই হলো প্রথম শিক্ষা: গোল্ডফিশ ডিজাইনকে ছোট করে না, বরং ডিজাইনকে অনেক বেশি অর্থপূর্ণ ও আকর্ষণীয় করে তোলে।"
+  },
+  {
+    "id": 117,
+    "start": 518.94,
+    "end": 521.98,
+    "duration": 3.04,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Build number two is an Instagram carousel.",
+    "bn": "আমাদের ২ নম্বর বিল্ড হলো একটি ইনস্টাগ্রাম ক্যারোসেল।"
+  },
+  {
+    "id": 118,
+    "start": 521.98,
+    "end": 529.18,
+    "duration": 7.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The prompt was, \"Make an Instagram carousel about five AI tools that save business owners 10 hours a week.\"",
+    "bn": "প্রম্পট ছিল: \"ব্যবসার মালিকদের সপ্তাহে ১০ ঘণ্টা সময় বাঁচাতে সাহায্য করে এমন ৫টি এআই টুল নিয়ে একটি ইনস্টাগ্রাম ক্যারোসেল বানাও।\""
+  },
+  {
+    "id": 119,
+    "start": 529.18,
+    "end": 535.46,
+    "duration": 6.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "A carousel is read by the most impatient people on the internet, which makes it the perfect test for goldfish.",
+    "bn": "ইন্টারনেটের সবচেয়ে অধৈর্য মানুষগুলো ক্যারোসেল দেখে, তাই গোল্ডফিশের জন্য এটি ছিল পারফেক্ট টেস্ট!"
+  },
+  {
+    "id": 120,
+    "start": 535.46,
+    "end": 541.14,
+    "duration": 5.68,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The plan said, \"One idea per slide, and every slide has to make sense on its own.\" Then,",
+    "bn": "প্ল্যানে বলা হয়েছিল: \"প্রতি স্লাইডে একটি করে আইডিয়া থাকবে এবং প্রতিটি স্লাইড যেন এককভাবেই অর্থপূর্ণ হয়।\""
+  },
+  {
+    "id": 121,
+    "start": 541.14,
+    "end": 545.54,
+    "duration": 4.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "three goldfish read the plan, and all three caught the same things.",
+    "bn": "এরপর তিনজন গোল্ডফিশ প্ল্যানটি পড়ল এবং তিনজনই একই ভুলগুলো ধরল।"
+  },
+  {
+    "id": 122,
+    "start": 545.54,
+    "end": 552.3,
+    "duration": 6.76,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The plan broke its own rule. The last slide said, \"Pick one and use it for 7 days.\" And on its own,",
+    "bn": "প্ল্যানটি নিজের নিয়ম নিজেই ভেঙেছিল! শেষ স্লাইডে লেখা ছিল: \"যেকোনো একটি বেছে নিয়ে ৭ দিন ব্যবহার করুন\"—কিন্তু এককভাবে পড়লে,"
+  },
+  {
+    "id": 123,
+    "start": 552.3,
+    "end": 554.22,
+    "duration": 1.92,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "nobody would know one of what.",
+    "bn": "কেউ বুঝতেই পারবে না কিসের একটি বেছে নিতে বলা হচ্ছে!"
+  },
+  {
+    "id": 124,
+    "start": 554.22,
+    "end": 557.98,
+    "duration": 3.76,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, the closing slide now names all five tools.",
+    "bn": "তাই সমাপনী স্লাইডে এখন স্পষ্টভাবে পাঁচটি টুলের নাম উল্লেখ করে দেওয়া হয়েছে।"
+  },
+  {
+    "id": 125,
+    "start": 557.98,
+    "end": 564.86,
+    "duration": 6.88,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "All three caught that the smallest text in the plan would shrink to about nine pixels on a phone, which nobody can read.",
+    "bn": "দ্বিতীয়ত, তিনজনই ধরল যে প্ল্যানের ছোট ফন্ট সাইজটি মোবাইলে মাত্র ৯ পিক্সেলে নেমে আসবে, যা সাধারণ চোখে পড়াই অসম্ভব!"
+  },
+  {
+    "id": 126,
+    "start": 564.86,
+    "end": 570.38,
+    "duration": 5.52,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, the minimum went up, and now nothing on any slide is too small for a phone.",
+    "bn": "তাই ফন্টের মিনিমাম সাইজ বাড়ানো হলো, যাতে মোবাইল স্ক্রিনে প্রতিটি অক্ষর অত্যন্ত স্পষ্ট দেখা যায়।"
+  },
+  {
+    "id": 127,
+    "start": 570.38,
+    "end": 574.74,
+    "duration": 4.36,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And all three spotted that the first slide stated a guess as a fact.",
+    "bn": "তৃতীয়ত, প্রথম স্লাইডে একটি সাধারণ অনুমানকে বৈজ্ঞানিক সত্যের মতো করে দাবি করা হয়েছিল।"
+  },
+  {
+    "id": 128,
+    "start": 574.74,
+    "end": 578.66,
+    "duration": 3.92,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, now every time saving is clearly marked as an estimate.",
+    "bn": "এখন প্রতিটি সময়ের সাশ্রয়কে স্পষ্ট অনুমান বা এস্টিমেট হিসেবে উল্লেখ করা হয়েছে।"
+  },
+  {
+    "id": 129,
+    "start": 578.66,
+    "end": 581.06,
+    "duration": 2.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Look at the two versions side-by-side.",
+    "bn": "এবার দুটি ভার্সন পাশাপাশি রেখে দেখুন!"
+  },
+  {
+    "id": 130,
+    "start": 581.06,
+    "end": 586.98,
+    "duration": 5.92,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "On the left, eight blue slides that are walls of small text ending with follow for more.",
+    "bn": "বাম পাশে রয়েছে ৮টি নীল স্লাইড, ছোট ছোট টেক্সটের জঞ্জাল এবং শেষে সাধারণ \"ফলো করুন\" কথাটি।"
+  },
+  {
+    "id": 131,
+    "start": 586.98,
+    "end": 591.54,
+    "duration": 4.56,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "On the right, a bright lime hook slide you can read from across the room.",
+    "bn": "আর ডান পাশে রয়েছে নজরকাড়া উজ্জ্বল লাইম রঙের হুক স্লাইড, যা এক পলকেই সবার নজর কাড়ে।"
+  },
+  {
+    "id": 132,
+    "start": 591.54,
+    "end": 595.78,
+    "duration": 4.24,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "A picture on every slide showing the exact job each tool does.",
+    "bn": "প্রতিটি স্লাইডে টুলটি কীভাবে কাজ করে তার সুস্পষ্ট চিত্র।"
+  },
+  {
+    "id": 133,
+    "start": 595.78,
+    "end": 602.74,
+    "duration": 6.96,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Three simple steps per tool, a screenshot this summary, and a closing slide that tells you what to do on Monday.",
+    "bn": "প্রতিটি টুলের জন্য মাত্র তিনটি সহজ ধাপ, একটি সামারি স্লাইড এবং সোমবার থেকেই অ্যাকশন নেওয়ার গাইড।"
+  },
+  {
+    "id": 134,
+    "start": 602.74,
+    "end": 605.98,
+    "duration": 3.24,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "That's a carousel people save and share.",
+    "bn": "এটি এমন একটি ক্যারোসেল যা মানুষ সেভ করবে এবং বন্ধুদের সাথে শেয়ার করবে।"
+  },
+  {
+    "id": 135,
+    "start": 605.98,
+    "end": 608.94,
+    "duration": 2.96,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Build number three is an ad creative agent.",
+    "bn": "আমাদের ৩ নম্বর বিল্ড হলো একটি অ্যাড ক্রিয়েটিভ এজেন্ট।"
+  },
+  {
+    "id": 136,
+    "start": 608.94,
+    "end": 614.26,
+    "duration": 5.32,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The prompt was, \"Make nine ad creatives for Lumen Skin's new vitamin C serum.",
+    "bn": "প্রম্পট ছিল: \"লুমেন স্কিন-এর নতুন ভিটামিন সি সিরামের জন্য ৯টি বিজ্ঞাপন ক্রিয়েটিভ তৈরি করো।\""
+  },
+  {
+    "id": 137,
+    "start": 614.26,
+    "end": 621.14,
+    "duration": 6.88,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Here I added one extra goldfish, a cold scroller, a fresh AI that has never heard of Lumen Skin,",
+    "bn": "এখানে আমি অতিরিক্ত একজন স্পেশাল গোল্ডফিশ যুক্ত করেছিলাম: একজন 'কোল্ড স্ক্রোলার'—যে লুমেন স্কিন সম্পর্কে জীবনে প্রথম শুনছে,"
+  },
+  {
+    "id": 138,
+    "start": 621.14,
+    "end": 626.54,
+    "duration": 5.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "looks at each ad for a second and says what it thinks is being sold and whether it would stop scrolling.",
+    "bn": "সে প্রতিটা অ্যাড মাত্র ১ সেকেন্ড দেখবে এবং বলবে সে কী বুঝতে পারল এবং সে স্ক্রোল করা থামাবে কিনা।"
+  },
+  {
+    "id": 139,
+    "start": 626.54,
+    "end": 628.86,
+    "duration": 2.32,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "It scored every ad out of 10.",
+    "bn": "সে প্রতিটি বিজ্ঞাপনে ১০-এর মধ্যে রেটিং দেয়।"
+  },
+  {
+    "id": 140,
+    "start": 628.86,
+    "end": 632.06,
+    "duration": 3.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "On the left you can see the nine ads from the quick prompt.",
+    "bn": "বাম পাশে আপনারা সাধারণ প্রম্পট থেকে তৈরি ৯টি বিজ্ঞাপন দেখতে পাচ্ছেন।"
+  },
+  {
+    "id": 141,
+    "start": 632.06,
+    "end": 637.46,
+    "duration": 5.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Pale backgrounds, a flat orange box for a bottle, and paragraphs of small text.",
+    "bn": "ফ্যাকাশে ব্যাকগ্রাউন্ড, ফ্ল্যাট একটি কমলা রঙের বোতল এবং ছোট ছোট প্যারাগ্রাফের টেক্সট।"
+  },
+  {
+    "id": 142,
+    "start": 637.46,
+    "end": 644.26,
+    "duration": 6.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The cold scroller said they looked like the same ad nine times and the offer was buried or missing in eight of the nine.",
+    "bn": "কোল্ড স্ক্রোলার জানাল, ৯টি বিজ্ঞাপন দেখতে একই রকম মনে হচ্ছে এবং ৯টির মধ্যে ৮টিতেই কোনো অফার বোঝা যাচ্ছে না!"
+  },
+  {
+    "id": 143,
+    "start": 644.26,
+    "end": 646.54,
+    "duration": 2.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Average score, two out of 10.",
+    "bn": "গড় স্কোর এল: ১০-এর মধ্যে মাত্র ২!"
+  },
+  {
+    "id": 144,
+    "start": 646.54,
+    "end": 651.94,
+    "duration": 5.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Then three goldfish reviewed the plan and all three caught that it contradicted itself.",
+    "bn": "এরপর তিনজন গোল্ডফিশ প্ল্যানটি রিভিউ করল এবং তারা পরস্পরবিরোধী নির্দেশনা খুঁজে পেল।"
+  },
+  {
+    "id": 145,
+    "start": 651.94,
+    "end": 657.14,
+    "duration": 5.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "It said every ad must show the product, the benefit, and the offer in one second",
+    "bn": "প্ল্যানে বলা হয়েছিল প্রতিটি অ্যাডে প্রোডাক্ট, সুবিধা এবং অফার ১ সেকেন্ডের মধ্যে দেখাতে হবে,"
+  },
+  {
+    "id": 146,
+    "start": 657.14,
+    "end": 660.7,
+    "duration": 3.56,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "and then six of the nine ad ideas didn't include all three.",
+    "bn": "অথচ ৯টি কনসেপ্টের মধ্যে ৬টিতেই এই তিনটির উপস্থিতি ছিল না!"
+  },
+  {
+    "id": 147,
+    "start": 660.7,
+    "end": 663.38,
+    "duration": 2.68,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Two reviewers caught that the text would be unreadable",
+    "bn": "দুজন রিভিউয়ার ধরল যে মোবাইল স্ক্রিনে টেক্সট পড়া যাবে না,"
+  },
+  {
+    "id": 148,
+    "start": 663.38,
+    "end": 670.42,
+    "duration": 7.04,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "at the size people actually see ads on a phone and one caught that white text on the orange button was too hard to read.",
+    "bn": "আর তৃতীয়জন ধরল যে কমলা বাটনের ওপর সাদা টেক্সট একদমই অস্পষ্ট দেখাচ্ছে।"
+  },
+  {
+    "id": 149,
+    "start": 670.42,
+    "end": 673.34,
+    "duration": 2.92,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "On the right, the nine ads after the review.",
+    "bn": "ডান পাশে দেখুন, রিভিউর পর তৈরি হওয়া ৯টি বিজ্ঞাপন!"
+  },
+  {
+    "id": 150,
+    "start": 673.34,
+    "end": 678.9,
+    "duration": 5.56,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "A glowing amber bottle with light pouring out of it, an offer you can read in half a second,",
+    "bn": "একটি চমৎকার গ্লোয়িং অ্যাম্বার বোতল, আলো ছড়িয়ে পড়ছে, মাত্র আধ সেকেন্ডেই বোঝা যায় এমন ডিসকাউন্ট অফার,"
+  },
+  {
+    "id": 151,
+    "start": 678.9,
+    "end": 682.06,
+    "duration": 3.16,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "and a short, clear message on every single ad.",
+    "bn": "এবং প্রতিটি বিজ্ঞাপনে স্পষ্ট ও সংক্ষিপ্ত মেসেজ।"
+  },
+  {
+    "id": 152,
+    "start": 682.06,
+    "end": 687.02,
+    "duration": 4.96,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The same cold scroller looked at them. Average score, 5.7 out of 10.",
+    "bn": "সেই একই কোল্ড স্ক্রোলার যখন এগুলো দেখল, তার গড় স্কোর এল ১০-এর মধ্যে ৫.৭!"
+  },
+  {
+    "id": 153,
+    "start": 687.02,
+    "end": 692.46,
+    "duration": 5.44,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Nearly three times higher from the same AI, the same product, and the same idea.",
+    "bn": "একই এআই, একই প্রোডাক্ট এবং একই আইডিয়া থেকে স্কোর প্রায় ৩ গুণ বৃদ্ধি পেল!"
+  },
+  {
+    "id": 154,
+    "start": 692.46,
+    "end": 700.7,
+    "duration": 8.24,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "That score is the closest thing you'll get to testing an ad on real people before you put it in front of real people and it took a couple of minutes.",
+    "bn": "আসল গ্রাহকদের সামনে অ্যাড রান করার আগেই মাত্র কয়েক মিনিটে আসল মানুষের প্রতিক্রিয়া জানার সবচেয়ে সহজ উপায় এটি।"
+  },
+  {
+    "id": 155,
+    "start": 700.7,
+    "end": 703.1,
+    "duration": 2.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Build number four is a video agent.",
+    "bn": "আমাদের ৪ নম্বর বিল্ড হলো একটি ভিডিও এজেন্ট।"
+  },
+  {
+    "id": 156,
+    "start": 703.1,
+    "end": 709.54,
+    "duration": 6.44,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The prompt was make a 15-second promo video for Pulse Coach, an AI fitness coaching app.",
+    "bn": "প্রম্পট ছিল: \"পালস কোচ নামক এআই ফিটনেস অ্যাপের জন্য একটি ১৫ সেকেন্ডের প্রোমো ভিডিও বানাও।\""
+  },
+  {
+    "id": 157,
+    "start": 709.54,
+    "end": 715.86,
+    "duration": 6.32,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Video is where this really saves you. Making a video takes the longest of anything in this list.",
+    "bn": "ভিডিওর ক্ষেত্রে এই পদ্ধতি সবচেয়ে বেশি সময় বাঁচায়, কারণ পুরো ভিডিও জেনারেট হতে সবচেয়ে বেশি সময় লাগে।"
+  },
+  {
+    "id": 158,
+    "start": 715.86,
+    "end": 720.7,
+    "duration": 4.84,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So the review happens on the storyboard before a single frame is made.",
+    "bn": "তাই আমরা কোনো ফ্রেম রেন্ডার করার আগেই স্টোরিবোর্ডটি রিভিউ করে নিয়েছি।"
+  },
+  {
+    "id": 159,
+    "start": 720.7,
+    "end": 724.66,
+    "duration": 3.96,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The storyboard is just a list of what happens second by second.",
+    "bn": "স্টোরিবোর্ড হলো প্রতি সেকেন্ডে স্ক্রিনে কী ঘটবে তার একটি নিখুঁত তালিকা:"
+  },
+  {
+    "id": 160,
+    "start": 724.66,
+    "end": 728.74,
+    "duration": 4.08,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "What's on screen, what the words say, when the call to action appears.",
+    "bn": "স্ক্রিনে কী ভিজুয়াল থাকবে, ভয়েসওভার কী হবে এবং কখন কল-টু-অ্যাকশন আসবে।"
+  },
+  {
+    "id": 161,
+    "start": 728.74,
+    "end": 733.18,
+    "duration": 4.44,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Three goldfish read that list and all three caught the same problems.",
+    "bn": "তিনজন গোল্ডফিশ স্টোরিবোর্ডটি পড়ল এবং প্রত্যেকেই একই সমস্যাগুলো চিহ্নিত করল।"
+  },
+  {
+    "id": 162,
+    "start": 733.18,
+    "end": 737.1,
+    "duration": 3.92,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The opening line made a big claim with nothing to back it up.",
+    "bn": "প্রথম লাইনে কোনো প্রমাণ ছাড়াই একটি বিশাল দাবি করা হয়েছিল,"
+  },
+  {
+    "id": 163,
+    "start": 737.1,
+    "end": 739.7,
+    "duration": 2.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The kind of claim that can get an ad rejected.",
+    "bn": "যা যেকোনো প্ল্যাটফর্মে বিজ্ঞাপন ব্যান বা রিজেক্ট হওয়ার প্রধান কারণ!"
+  },
+  {
+    "id": 164,
+    "start": 739.7,
+    "end": 744.02,
+    "duration": 4.32,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, the hook became a question instead. Quit by week three?",
+    "bn": "তাই হুকটিকে সরাসরি প্রশ্নে রূপান্তর করা হলো: \"৩য় সপ্তাহেই কি জিম ছেড়ে দিচ্ছেন?\""
+  },
+  {
+    "id": 165,
+    "start": 744.02,
+    "end": 747.7,
+    "duration": 3.68,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "All three caught that the calendar in the video could be read backwards.",
+    "bn": "দ্বিতীয়ত, তিনজনই ধরল যে ভিডিওর ক্যালেন্ডারটি উল্টোভাবে পড়া হতে পারে,"
+  },
+  {
+    "id": 166,
+    "start": 747.7,
+    "end": 750.98,
+    "duration": 3.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, crossed out days looked like finished workouts.",
+    "bn": "ফলে কাটা চিহ্নগুলো দেখে মনে হচ্ছিল ওয়ার্কআউট মিস হয়েছে!"
+  },
+  {
+    "id": 167,
+    "start": 750.98,
+    "end": 754.94,
+    "duration": 3.96,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Now, there's one simple rule. A lime tick means done.",
+    "bn": "এখন সেখানে একটি সাধারণ নিয়ম দেওয়া হয়েছে: লাইম গ্রিন টিক চিহ্নের অর্থ ওয়ার্কআউট সম্পন্ন।"
+  },
+  {
+    "id": 168,
+    "start": 754.94,
+    "end": 759.1,
+    "duration": 4.16,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And all three caught that the coaching moment didn't show cause and effect.",
+    "bn": "তৃতীয়ত, কোচিংয়ের দৃশ্যে কোনো কারণ ও ফলাফল বোঝানো হয়নি।"
+  },
+  {
+    "id": 169,
+    "start": 759.1,
+    "end": 763.38,
+    "duration": 4.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The plan said the app adjust your workout, but never showed why.",
+    "bn": "প্ল্যানে বলা ছিল অ্যাপ ওয়ার্কআউট পরিবর্তন করবে, কিন্তু কেন করবে তা বলা ছিল না।"
+  },
+  {
+    "id": 170,
+    "start": 763.38,
+    "end": 765.9,
+    "duration": 2.52,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Now, you watch it happen on one screen.",
+    "bn": "এখন দর্শক একই স্ক্রিনে পুরো ঘটনাটি সরাসরি দেখতে পাবে:"
+  },
+  {
+    "id": 171,
+    "start": 765.9,
+    "end": 770.86,
+    "duration": 4.96,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The heart rate climbs, the ring turns red, and the coach says, \"Heart rate too high.",
+    "bn": "হার্টবিট দ্রুত হচ্ছে, রিং লাল হয়ে যাচ্ছে এবং এআই কোচ বলছে: \"হার্ট রেট অনেক বেশি! সুস্থির হয়ে জোন-টু তে ফিরে আসুন।\""
+  },
+  {
+    "id": 172,
+    "start": 770.86,
+    "end": 775.1,
+    "duration": 4.24,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Easing you to zone two.\" On the left is the video from the quick prompt.",
+    "bn": "বাম পাশে দেখুন সাধারণ প্রম্পটের ভিডিওটি:"
+  },
+  {
+    "id": 173,
+    "start": 775.1,
+    "end": 778.34,
+    "duration": 3.24,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Plain text cards fading in on a dark background.",
+    "bn": "ডার্ক ব্যাকগ্রাউন্ডে সাদামাটা কিছু টেক্সট কার্ড ফেইড ইন হচ্ছে।"
+  },
+  {
+    "id": 174,
+    "start": 778.34,
+    "end": 781.62,
+    "duration": 3.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "On the right is the video made from the reviewed storyboard.",
+    "bn": "আর ডান পাশে দেখুন রিভিউ করা স্টোরিবোর্ড থেকে তৈরি অসাধারণ ভিডিওটি!"
+  },
+  {
+    "id": 175,
+    "start": 781.62,
+    "end": 786.14,
+    "duration": 4.52,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "A phone app that comes alive. A heartbeat line running across the bottom.",
+    "bn": "একটি প্রাণবন্ত মোবাইল অ্যাপ, নিচে চলছে কার্ডিও হার্টবিট লাইন,"
+  },
+  {
+    "id": 176,
+    "start": 786.14,
+    "end": 788.34,
+    "duration": 2.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Words sliding in one by one.",
+    "bn": "শব্দগুলো টাইপরাইটার স্টাইলে মসৃণভাবে ভেসে উঠছে,"
+  },
+  {
+    "id": 177,
+    "start": 788.34,
+    "end": 791.22,
+    "duration": 2.88,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And a start button that pulses like a heartbeat.",
+    "bn": "আর স্টার্ট বাটনটি আসল হৃদস্পন্দনের মতো মৃদুভাবে বিট করছে।"
+  },
+  {
+    "id": 178,
+    "start": 791.22,
+    "end": 793.38,
+    "duration": 2.16,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Watch the first second of each one.",
+    "bn": "উভয় ভিডিওর প্রথম এক সেকেন্ডটি লক্ষ্য করুন।"
+  },
+  {
+    "id": 179,
+    "start": 793.38,
+    "end": 796.86,
+    "duration": 3.48,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "That first second decides whether anyone watches the rest.",
+    "bn": "সেই প্রথম ১ সেকেন্ডই কিন্তু সিদ্ধান্ত নেয় কেউ বাকি ভিডিওটি দেখবে কি দেখবে না!"
+  },
+  {
+    "id": 180,
+    "start": 796.86,
+    "end": 799.74,
+    "duration": 2.88,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Build number five is a lead generation agent.",
+    "bn": "আমাদের ৫ নম্বর বিল্ড হলো একটি পাওয়ারফুল লিড জেনারেশন এজেন্ট।"
+  },
+  {
+    "id": 181,
+    "start": 799.74,
+    "end": 806.02,
+    "duration": 6.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The prompt was, \"Build a lead generation agent that finds local businesses and writes outreach messages.\"",
+    "bn": "প্রম্পট ছিল: \"একটি লিড জেনারেশন এজেন্ট বানাও যা লোকাল বিজনেস খুঁজে বের করবে এবং কোল্ড আউটরিচ মেসেজ লিখবে।\""
+  },
+  {
+    "id": 182,
+    "start": 806.02,
+    "end": 810.02,
+    "duration": 4.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "On screen, you can see a live map of a city filling up with businesses.",
+    "bn": "স্ক্রিনে দেখুন, একটি শহরের লাইভ ম্যাপে স্বয়ংক্রিয়ভাবে বিভিন্ন বিজনেস পিন হয়ে উঠছে।"
+  },
+  {
+    "id": 183,
+    "start": 810.02,
+    "end": 814.5,
+    "duration": 4.48,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Each one with a lead score and a first message written just for that business.",
+    "bn": "প্রত্যেকটির পাশে একটি লিড স্কোর এবং নির্দিষ্টভাবে সেই ব্যবসার উপযোগী মেসেজ লেখা হচ্ছে।"
+  },
+  {
+    "id": 184,
+    "start": 814.5,
+    "end": 820.22,
+    "duration": 5.72,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The data here is sample data. So, you can see how it works without touching anybody's real details.",
+    "bn": "এখানে ডেমো ডাটা ব্যবহার করা হয়েছে, যাতে কোনো বাস্তব মানুষের গোপনীয় তথ্য জনসমক্ষে না আসে।"
+  },
+  {
+    "id": 185,
+    "start": 820.22,
+    "end": 824.38,
+    "duration": 4.16,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Three goldfish read the plan and all three caught the same problems.",
+    "bn": "তিনজন গোল্ডফিশ প্ল্যানটি পড়ল এবং তিনজনই একই ত্রুটিগুলো ধরিয়ে দিল।"
+  },
+  {
+    "id": 186,
+    "start": 824.38,
+    "end": 826.14,
+    "duration": 1.76,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The lead score was rigged.",
+    "bn": "প্রথমত, লিড স্কোরের হিসাবটা পুরোপুরি বিভ্রান্তিকর ছিল!"
+  },
+  {
+    "id": 187,
+    "start": 826.14,
+    "end": 830.06,
+    "duration": 3.92,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "30 out of 100 points went to every business no matter what.",
+    "bn": "কারণ ১০০-এর মধ্যে ৩০ পয়েন্ট সব ব্যবসাই এমনিতেই পেয়ে যাচ্ছিল!"
+  },
+  {
+    "id": 188,
+    "start": 830.06,
+    "end": 833.22,
+    "duration": 3.16,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, the scores looked smart, but told you nothing.",
+    "bn": "ফলে স্কোর দেখতে ভালো লাগলেও তা আসল সম্ভাবনা প্রকাশ করছিল না।"
+  },
+  {
+    "id": 189,
+    "start": 833.22,
+    "end": 836.78,
+    "duration": 3.56,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The fix was a score built only on what actually matters.",
+    "bn": "সমাধান হিসেবে শুধুমাত্র বাস্তব গুরুত্বপূর্ণ বিষয়ের ওপর নতুন স্কোরিং তৈরি করা হলো:"
+  },
+  {
+    "id": 190,
+    "start": 836.78,
+    "end": 840.58,
+    "duration": 3.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "How badly the business needs your offer and how healthy it is.",
+    "bn": "সেই ব্যবসার আমাদের সার্ভিসটি কতটা প্রয়োজন এবং তাদের আর্থিক অবস্থা কতটা শক্তিশালী।"
+  },
+  {
+    "id": 191,
+    "start": 840.58,
+    "end": 845.14,
+    "duration": 4.56,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "All three also caught that the plan promised to respect people who say no thanks,",
+    "bn": "দ্বিতীয়ত, প্ল্যানে যারা না বলবে তাদের বাদ দেওয়ার কথা থাকলেও,"
+  },
+  {
+    "id": 192,
+    "start": 845.14,
+    "end": 850.38,
+    "duration": 5.24,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "but nothing kept track of who said it. So, the same people would come back on tomorrow's list.",
+    "bn": "কে না বলেছে তার কোনো রেকর্ড রাখার ব্যবস্থা ছিল না! ফলে আগামীকালের লিস্টে তারা আবারও চলে আসত!"
+  },
+  {
+    "id": 193,
+    "start": 850.38,
+    "end": 852.7,
+    "duration": 2.32,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Now, every business has a status.",
+    "bn": "এখন প্রতিটি ব্যবসার জন্য সুস্পষ্ট স্ট্যাটাস রাখা হয়েছে:"
+  },
+  {
+    "id": 194,
+    "start": 852.7,
+    "end": 855.7,
+    "duration": 3.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "New, contacted, skipped, or opted out.",
+    "bn": "নতুন, যোগাযোগ করা হয়েছে, বাদ দেওয়া হয়েছে, অথবা অপ্ট-আউট করেছে।"
+  },
+  {
+    "id": 195,
+    "start": 855.7,
+    "end": 858.82,
+    "duration": 3.12,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And anyone who isn't new disappears from the list.",
+    "bn": "ফলে নতুন ছাড়া অন্য কোনো বিজনেস তালিকায় আর পুনরায় আসবে না।"
+  },
+  {
+    "id": 196,
+    "start": 858.82,
+    "end": 863.34,
+    "duration": 4.52,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And two of the reviewers caught that the AI could invent facts in its messages.",
+    "bn": "আর দুজন রিভিউয়ার ধরল যে এআই মেসেজে কাল্পনিক মনগড়া তথ্য বানিয়ে ফেলতে পারে।"
+  },
+  {
+    "id": 197,
+    "start": 863.34,
+    "end": 867.98,
+    "duration": 4.64,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, now every sentence in the message points to the exact signal it came from.",
+    "bn": "তাই এখন মেসেজের প্রতিটি বাক্য ব্যবসার নির্দিষ্ট রিয়েল-ওয়ার্ল্ড ডেটার সাথে লিংক করা।"
+  },
+  {
+    "id": 198,
+    "start": 867.98,
+    "end": 871.54,
+    "duration": 3.56,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And the message ends with an easy way to say no thanks.",
+    "bn": "এবং মেসেজের শেষে বিনয়ের সাথে 'না' বলার জন্য একটি সহজ অপ্ট-আউট লাইন রাখা হয়েছে।"
+  },
+  {
+    "id": 199,
+    "start": 871.54,
+    "end": 876.22,
+    "duration": 4.68,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Look at the side by side. On the left, a plain gray table and a generic message.",
+    "bn": "পাশাপাশি তুলনা দেখুন: বাম পাশে সাধারণ ধূসর টেবিল আর জেনেরিক মেসেজ;"
+  },
+  {
+    "id": 200,
+    "start": 876.22,
+    "end": 884.34,
+    "duration": 8.12,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "On the right, a glowing map of the city, pins dropping in, a score ring on every lead, and a message that writes itself",
+    "bn": "আর ডান পাশে শহরের গ্লোয়িং ম্যাপ, লিড স্কোরিং এবং প্রতিটি ব্যবসার জন্য কাস্টমাইজড মেসেজ!"
+  },
+  {
+    "id": 201,
+    "start": 884.34,
+    "end": 888.82,
+    "duration": 4.48,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "specific to that one business. That opt-out line matters.",
+    "bn": "সেই সাথে সুস্পষ্ট অপ্ট-আউট লাইন যুক্ত রয়েছে।"
+  },
+  {
+    "id": 202,
+    "start": 888.82,
+    "end": 891.74,
+    "duration": 2.92,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Outreach that respects people gets replies.",
+    "bn": "যে আউটরিচে মানুষের মতামতকে সম্মান দেওয়া হয়, মানুষ কেবল তারই জবাব দেয়।"
+  },
+  {
+    "id": 203,
+    "start": 891.74,
+    "end": 894.22,
+    "duration": 2.48,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Outreach that doesn't gets you blocked.",
+    "bn": "আর অন্ধভাবে পাঠানো স্প্যাম মেসেজ শুধু ব্লকলিস্টেই ফেলে দেয়!"
+  },
+  {
+    "id": 204,
+    "start": 894.22,
+    "end": 902.5,
+    "duration": 8.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, that's five builds, same prompts, same AI, and the only thing that changed is that a fresh set of eyes read the plan first.",
+    "bn": "এই হলো ৫টি বিল্ড—একই প্রম্পট, একই এআই, শুধুমাত্র কোড লেখার আগে একদল ফ্রেশ চোখ দিয়ে প্ল্যানটি যাচাই করিয়ে নেওয়া হয়েছে।"
+  },
+  {
+    "id": 205,
+    "start": 902.5,
+    "end": 907.58,
+    "duration": 5.08,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Now, let me show you the old way next to the new way because this is the real shift.",
+    "bn": "এবার আমি আপনাদের পুরনো পদ্ধতি এবং নতুন পদ্ধতির পার্থক্যটা তুলে ধরছি, কারণ এটাই মূল বিপ্লব।"
+  },
+  {
+    "id": 206,
+    "start": 907.58,
+    "end": 911.98,
+    "duration": 4.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The old way looks like this. You type one sentence into your AI.",
+    "bn": "পুরনো পদ্ধতি ছিল এমন: আপনি এআই-তে একটা প্রম্পট লিখলেন।"
+  },
+  {
+    "id": 207,
+    "start": 911.98,
+    "end": 916.98,
+    "duration": 5.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "It builds something. You look at it and it's almost right. You ask for changes.",
+    "bn": "সে কিছু একটা বানাল। আপনি দেখলেন কাজটা পুরোপুরি ঠিক হয়নি। আপনি পরিবর্তন চাইলেন।"
+  },
+  {
+    "id": 208,
+    "start": 916.98,
+    "end": 919.74,
+    "duration": 2.76,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "It fixes one thing and breaks another.",
+    "bn": "সে একটা ঠিক করতে গিয়ে অন্য আরেকটা ফিচার নষ্ট করে ফেলল!"
+  },
+  {
+    "id": 209,
+    "start": 919.74,
+    "end": 927.46,
+    "duration": 7.72,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "You go back and forth five, six, seven times, and you only find the real problems after real customers see it.",
+    "bn": "আপনি ৫ বার, ৬ বার, ৭ বার রিভিশন চাইলেন, আর আসল সমস্যা ধরা পড়ল গ্রাহকদের হাতে পৌঁছানোর পর!"
+  },
+  {
+    "id": 210,
+    "start": 927.46,
+    "end": 931.02,
+    "duration": 3.56,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "That's hours of back and forth on every project.",
+    "bn": "এতে প্রতিটা প্রজেক্টে ঘণ্টার পর ঘণ্টা সময় নষ্ট হতো।"
+  },
+  {
+    "id": 211,
+    "start": 931.02,
+    "end": 934.46,
+    "duration": 3.44,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The new way looks like this. You describe the idea.",
+    "bn": "আর নতুন পদ্ধতি হলো: আপনি আইডিয়া বর্ণনা করলেন।"
+  },
+  {
+    "id": 212,
+    "start": 934.46,
+    "end": 936.54,
+    "duration": 2.08,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The elephant writes a short plan.",
+    "bn": "এলিফ্যান্ট একটি সংক্ষিপ্ত কাজের প্ল্যান লিখল।"
+  },
+  {
+    "id": 213,
+    "start": 936.54,
+    "end": 940.42,
+    "duration": 3.88,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The goldfish attack the plan, each in about 40 seconds.",
+    "bn": "গোল্ডফিশ রিভিউয়াররা মাত্র ৪০ সেকেন্ডে প্ল্যানটি নিবিড়ভাবে পরীক্ষা করল।"
+  },
+  {
+    "id": 214,
+    "start": 940.42,
+    "end": 942.46,
+    "duration": 2.04,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "You pick which fixes matter.",
+    "bn": "আপনি গুরুত্বপূর্ণ সমাধানগুলো সিলেক্ট করে দিলেন।"
+  },
+  {
+    "id": 215,
+    "start": 942.46,
+    "end": 946.98,
+    "duration": 4.52,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The AI builds once from a plan that has already been stress tested.",
+    "bn": "আর এআই সম্পূর্ণ স্ট্রেস-টেস্টেড প্ল্যান থেকে মাত্র একবারেই নিখুঁত বিল্ড তৈরি করে দিল!"
+  },
+  {
+    "id": 216,
+    "start": 946.98,
+    "end": 949.74,
+    "duration": 2.76,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And the first version comes out looking like the fifth.",
+    "bn": "ফলে প্রথম ভার্সনটাই দেখতে একদম ৫ম ভার্সনের মতো পরিণত হয়।"
+  },
+  {
+    "id": 217,
+    "start": 949.74,
+    "end": 954.5,
+    "duration": 4.76,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The work moves to the front where it's quick, instead of the back where it's slow.",
+    "bn": "কঠিন কাজটি পেছনের দীর্ঘ বাগ ফিক্সিং থেকে সামনে মাত্র কয়েক মিনিটের পরিকল্পনায় চলে আসে।"
+  },
+  {
+    "id": 218,
+    "start": 954.5,
+    "end": 958.9,
+    "duration": 4.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Now, let me show you how to set it up because it really is two commands.",
+    "bn": "এবার চলুন দেখাই কীভাবে মাত্র দুটি কমান্ড দিয়ে এটি সেটআপ করবেন।"
+  },
+  {
+    "id": 219,
+    "start": 958.9,
+    "end": 963.38,
+    "duration": 4.48,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Open your terminal. That's the text window where you type commands to your computer.",
+    "bn": "প্রথমে আপনার টার্মিনাল ওপেন করুন—যেখানে কম্পিউটারে টেক্সট কমান্ড দিতে হয়।"
+  },
+  {
+    "id": 220,
+    "start": 963.38,
+    "end": 965.86,
+    "duration": 2.48,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "If you use Claude Code, type this.",
+    "bn": "আপনি যদি ক্লড কোড ব্যবহার করেন, তবে এই কমান্ডটি টাইপ করুন:"
+  },
+  {
+    "id": 221,
+    "start": 965.86,
+    "end": 972.86,
+    "duration": 7.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Claude Plugin Marketplace add google/elephant-goldfish-model.",
+    "bn": "\"ক্লড প্লাগইন মার্কেটপ্লেস অ্যাড গুগল/এলিফ্যান্ট-গোল্ডফিশ-মডেল\" (claude plugin marketplace add google/elephant-goldfish-model)"
+  },
+  {
+    "id": 222,
+    "start": 972.86,
+    "end": 974.26,
+    "duration": 1.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Then type this.",
+    "bn": "এরপর দ্বিতীয় কমান্ডটি টাইপ করুন:"
+  },
+  {
+    "id": 223,
+    "start": 974.26,
+    "end": 978.94,
+    "duration": 4.68,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Claude Plugin install egm@egm. That's it.",
+    "bn": "\"ক্লড প্লাগইন ইনস্টল ইজিএম অ্যাট ইজিএম\" (claude plugin install egm@egm)—ব্যাস, কাজ শেষ!"
+  },
+  {
+    "id": 224,
+    "start": 978.94,
+    "end": 982.26,
+    "duration": 3.32,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Start a new Claude code session and the skills are ready.",
+    "bn": "এবার ক্লড কোড-এর নতুন সেশন চালু করলেই সবগুলো স্কিল রেডি হয়ে যাবে।"
+  },
+  {
+    "id": 225,
+    "start": 982.26,
+    "end": 987.62,
+    "duration": 5.36,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "If you use Codex, the commands are almost the same and they're on the EGM page on GitHub.",
+    "bn": "আর কোডেক্স ব্যবহারকারীদের জন্যও কমান্ড প্রায় একই, যা ইজিএম-এর অফিসিয়াল গিটহাব পেজে রয়েছে।"
+  },
+  {
+    "id": 226,
+    "start": 987.62,
+    "end": 989.78,
+    "duration": 2.16,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Here's the exact flow I used.",
+    "bn": "এবার আমি যেভাবে কাজ করি সেই এক্সাক্ট ওয়ার্কফ্লো আপনাদের দেখাচ্ছি।"
+  },
+  {
+    "id": 227,
+    "start": 989.78,
+    "end": 993.65,
+    "duration": 3.86,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "First, type /egm:egm-brainstorm,",
+    "bn": "প্রথমে টাইপ করুন: \"স্ল্যাশ ইজিএম কোলন ইজিএম ব্রেনস্টর্ম\" (/egm:egm-brainstorm),"
+  },
+  {
+    "id": 228,
+    "start": 993.65,
+    "end": 998.58,
+    "duration": 4.94,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "[snorts] then a space, then describe your idea in plain words.",
+    "bn": "তারপর একটা স্পেস দিয়ে আপনার প্রজেক্টের আইডিয়া সহজ ভাষায় লিখুন।"
+  },
+  {
+    "id": 229,
+    "start": 998.58,
+    "end": 1004.46,
+    "duration": 5.88,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "For example, /egm brainstorm, build a 3D website for my coffee subscription.",
+    "bn": "যেমন: \"/egm:egm-brainstorm আমার কফি সাবস্ক্রিপশনের জন্য একটি থ্রিডি ওয়েবসাইট তৈরি করো।\""
+  },
+  {
+    "id": 230,
+    "start": 1004.46,
+    "end": 1012.22,
+    "duration": 7.76,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The AI talks it through with you. A group of goldfish challenge the idea and it saves the agreed direction in a file called concepts",
+    "bn": "এআই আপনার সাথে আলোচনা করবে, গোল্ডফিশরা আইডিয়াটিকে চ্যালেঞ্জ করবে এবং ফাইনাল ডিসিশন 'কনসেপ্টস-ব্রিফ' ফাইলে সেভ হবে।"
+  },
+  {
+    "id": 231,
+    "start": 1012.22,
+    "end": 1013.02,
+    "duration": 0.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "brief.",
+    "bn": "ব্রিফ ফাইলে।"
+  },
+  {
+    "id": 232,
+    "start": 1013.02,
+    "end": 1018.06,
+    "duration": 5.04,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Second, type /egm:egm-draft.",
+    "bn": "দ্বিতীয় ধাপে টাইপ করুন: \"স্ল্যাশ ইজিএম কোলন ইজিএম ড্রাফট\" (/egm:egm-draft)।"
+  },
+  {
+    "id": 233,
+    "start": 1018.06,
+    "end": 1024.58,
+    "duration": 6.52,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The elephant turns that brief into a proper plan and it stops after each section so you can give feedback.",
+    "bn": "এলিফ্যান্ট সেই ব্রিফ থেকে একটি পরিপূর্ণ প্ল্যান তৈরি করবে এবং প্রতি সেকশনে আপনার মতামত চাইবে।"
+  },
+  {
+    "id": 234,
+    "start": 1024.58,
+    "end": 1028.98,
+    "duration": 4.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Third, type /egm:egm-review, then the name of the plan file.",
+    "bn": "তৃতীয় ধাপে লিখুন: \"স্ল্যাশ ইজিএম কোলন ইজিএম রিভিউ (/egm:egm-review)\" এবং ফাইলের নামটি দিন।"
+  },
+  {
+    "id": 235,
+    "start": 1028.98,
+    "end": 1031.5,
+    "duration": 2.52,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "That's where the goldfish reviewers go to work.",
+    "bn": "এখানেই গোল্ডফিশ রিভিউয়াররা একসাথে কাজ শুরু করে দেবে।"
+  },
+  {
+    "id": 236,
+    "start": 1031.5,
+    "end": 1039.5,
+    "duration": 8.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Fourth, read what they found, pick the fixes you care about and tell your AI to build it.",
+    "bn": "চতুর্থ ধাপে তাদের পাওয়া রিপোর্ট দেখুন, প্রয়োজনীয় ফিক্স সিলেক্ট করুন এবং এআই-কে বিল্ড করতে বলুন!"
+  },
+  {
+    "id": 237,
+    "start": 1039.5,
+    "end": 1041.98,
+    "duration": 2.48,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Here's a tip that will save you some head scratching.",
+    "bn": "এবার একটি অত্যন্ত জরুরি টিপস দিচ্ছি যা আপনার অনেক বিভ্রান্তি দূর করবে।"
+  },
+  {
+    "id": 238,
+    "start": 1041.98,
+    "end": 1045.78,
+    "duration": 3.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The review needs your AI to be able to start fresh helpers.",
+    "bn": "রিভিউ প্রক্রিয়ায় আপনার এআই টুলের ফ্রেশ সাব-এজেন্ট চালু করার ক্ষমতা থাকতে হবে।"
+  },
+  {
+    "id": 239,
+    "start": 1045.78,
+    "end": 1049.86,
+    "duration": 4.08,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "That's the whole point because a goldfish has to start with no memory.",
+    "bn": "কারণ গোল্ডফিশকে অবশ্যই সম্পূর্ণ শূন্য স্মৃতি নিয়ে কাজ শুরু করতে হবে।"
+  },
+  {
+    "id": 240,
+    "start": 1049.86,
+    "end": 1052.1,
+    "duration": 2.24,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Claude code does this out of the box.",
+    "bn": "ক্লড কোড এটি সরাসরি নিজে থেকেই সাপোর্ট করে।"
+  },
+  {
+    "id": 241,
+    "start": 1052.1,
+    "end": 1059.66,
+    "duration": 7.56,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "If your tool can't start fresh helpers, EGM stops the review and tells you because a review done inside the same memory wouldn't",
+    "bn": "যদি আপনার প্ল্যাটফর্ম ফ্রেশ মেমোরির সাব-এজেন্ট চালাতে না পারে, তবে ইজিএম রিভিউ বন্ধ করে আপনাকে সতর্ক করবে।"
+  },
+  {
+    "id": 242,
+    "start": 1059.66,
+    "end": 1061.5,
+    "duration": 1.84,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "really be a goldfish review.",
+    "bn": "কারণ একই মেমোরির ভেতরে করা রিভিউ কোনোভাবেই আসল গোল্ডফিশ রিভিউ হতে পারে না।"
+  },
+  {
+    "id": 243,
+    "start": 1061.5,
+    "end": 1066.18,
+    "duration": 4.68,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And one more tip, the review gives you a lot of feedback on purpose.",
+    "bn": "আর আরেকটি পরামর্শ: রিভিউয়াররা ইচ্ছাকৃতভাবেই প্রচুর ফিডব্যাক দেবে।"
+  },
+  {
+    "id": 244,
+    "start": 1066.18,
+    "end": 1070.02,
+    "duration": 3.84,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Google's own guide says, take what's relevant and ignore the rest.",
+    "bn": "গুগল-এর গাইড অনুযায়ী: যা প্রাসঙ্গিক শুধু তা গ্রহণ করুন, বাকিটা উপেক্ষা করুন।"
+  },
+  {
+    "id": 245,
+    "start": 1070.02,
+    "end": 1071.38,
+    "duration": 1.36,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "You're still the boss.",
+    "bn": "কারণ প্রজেক্টের আসল পরিচালক কিন্তু আপনি নিজেই!"
+  },
+  {
+    "id": 246,
+    "start": 1071.38,
+    "end": 1075.18,
+    "duration": 3.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "There are a few more skills in there as well. There's one called resolve",
+    "bn": "প্যাকেজে আরও কিছু চমৎকার স্কিল রয়েছে। যেমন 'রিজলভ',"
+  },
+  {
+    "id": 247,
+    "start": 1075.18,
+    "end": 1081.62,
+    "duration": 6.44,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "which walks you through the review findings one by one so you can agree on changes without getting overwhelmed.",
+    "bn": "যা রিভিউয়ের রেজাল্টগুলো একের পর এক আলোচনা করে আপনাকে সিদ্ধান্ত নিতে সাহায্য করে।"
+  },
+  {
+    "id": 248,
+    "start": 1081.62,
+    "end": 1087.3,
+    "duration": 5.68,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "There's one called review loop where you set up your own group of reviewers for a specific job.",
+    "bn": "রয়েছে 'রিভিউ লুপ', যেখানে আপনি যেকোনো নির্দিষ্ট কাজের জন্য কাস্টম রিভিউয়ার প্যানেল তৈরি করতে পারেন।"
+  },
+  {
+    "id": 249,
+    "start": 1087.3,
+    "end": 1094.66,
+    "duration": 7.36,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "That's the one I used to build the goldfish audience check with a scroller, a skeptic, a first time visitor, and a buyer.",
+    "bn": "এটি দিয়েই আমি কোল্ড স্ক্রোলার, সংশয়বাদী এবং প্রথমবার ভিজিটরদের অডিয়েন্স টেস্ট প্যানেল বানিয়েছিলাম।"
+  },
+  {
+    "id": 250,
+    "start": 1094.66,
+    "end": 1101.58,
+    "duration": 6.92,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "There's one called bootstrap which writes simple guides for an existing project so new helpers understand it fast.",
+    "bn": "রয়েছে 'বুটস্ট্র্যাপ', যা পুরোনো প্রজেক্টের জন্য সহজ গাইডলাইন লেখে যাতে নতুন এজেন্টরা চটপট বুঝতে পারে।"
+  },
+  {
+    "id": 251,
+    "start": 1101.58,
+    "end": 1104.02,
+    "duration": 2.44,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And there's one called Drift Report.",
+    "bn": "এবং রয়েছে 'ড্রিফ্ট রিপোর্ট' স্কিল।"
+  },
+  {
+    "id": 252,
+    "start": 1104.02,
+    "end": 1109.02,
+    "duration": 5.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "It compares your plans with what was actually built and shows you where they've drifted apart.",
+    "bn": "যা আপনার মূল প্ল্যানের সাথে বর্তমান কোডের তুলনা করে এবং কোথায় তফাত তৈরি হয়েছে তা চোখে আঙুল দিয়ে দেখিয়ে দেয়।"
+  },
+  {
+    "id": 253,
+    "start": 1109.02,
+    "end": 1111.82,
+    "duration": 2.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Google suggests running that once a week.",
+    "bn": "গুগল সপ্তাহে অন্তত একবার এই ড্রিফ্ট রিপোর্ট রান করার পরামর্শ দেয়।"
+  },
+  {
+    "id": 254,
+    "start": 1111.82,
+    "end": 1114.5,
+    "duration": 2.68,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Now, you might be sitting there with a few doubts.",
+    "bn": "এবার আপনাদের মনে হয়তো কিছু সাধারণ দ্বিধাদ্বন্দ্ব আসতে পারে।"
+  },
+  {
+    "id": 255,
+    "start": 1114.5,
+    "end": 1118.42,
+    "duration": 3.92,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The first one is, I'm not a coder, so is this even for me?",
+    "bn": "প্রথম প্রশ্ন: \"আমি তো কোডার নই, তাহলে এই সিস্টেম কি আমার কাজে লাগবে?\""
+  },
+  {
+    "id": 256,
+    "start": 1118.42,
+    "end": 1123.94,
+    "duration": 5.52,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "EGM was made for software engineers, but look at what we just built with it. A website,",
+    "bn": "ইজিএম সফটওয়্যার ইঞ্জিনিয়ারদের জন্য তৈরি হলেও দেখুন আমরা এটা দিয়ে কী কী বানিয়েছি: একটি ওয়েবসাইট,"
+  },
+  {
+    "id": 257,
+    "start": 1123.94,
+    "end": 1127.78,
+    "duration": 3.84,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "a carousel, ads, a video, and a lead agent.",
+    "bn": "একটি ক্যারোসেল, বিজ্ঞাপন, একটি ভিডিও এবং একটি লিড জেনারেশন এজেন্ট!"
+  },
+  {
+    "id": 258,
+    "start": 1127.78,
+    "end": 1133.26,
+    "duration": 5.48,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "You describe what you want in normal words, and the planet writes is in normal words, too.",
+    "bn": "আপনি সাধারণ ভাষায় প্রম্পট লিখবেন, আর প্ল্যানটাও সাধারণ ভাষাতেই তৈরি হবে।"
+  },
+  {
+    "id": 259,
+    "start": 1133.26,
+    "end": 1136.86,
+    "duration": 3.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "If you can describe what you want to build, you can use this.",
+    "bn": "আপনি যা তৈরি করতে চান তা মুখে বলতে পারলেই এই সিস্টেম অনায়াসে ব্যবহার করতে পারবেন।"
+  },
+  {
+    "id": 260,
+    "start": 1136.86,
+    "end": 1139.74,
+    "duration": 2.88,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The second doubt is, won't this slow me down?",
+    "bn": "দ্বিতীয় সন্দেহ: \"এই রিভিউ কি আমার কাজের গতি ধীর করে দেবে না?\""
+  },
+  {
+    "id": 261,
+    "start": 1139.74,
+    "end": 1144.58,
+    "duration": 4.84,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "For a tiny job like changing a headline or fixing one typo, skip it.",
+    "bn": "একটি ছোট হেডলাইন পরিবর্তন বা বানান সংশোধনের মতো কাজের জন্য ইজিএম ব্যবহারের দরকার নেই।"
+  },
+  {
+    "id": 262,
+    "start": 1144.58,
+    "end": 1146.86,
+    "duration": 2.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Google's own guide says the same thing.",
+    "bn": "গুগল-এর গাইডলাইনও তাই বলে।"
+  },
+  {
+    "id": 263,
+    "start": 1146.86,
+    "end": 1149.98,
+    "duration": 3.12,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Use your normal way for small, clear fixes.",
+    "bn": "ছোটখাটো সাধারণ পরিবর্তনের জন্য আগের মতো স্বাভাবিক নিয়মেই সরাসরি প্রম্পট দিন।"
+  },
+  {
+    "id": 264,
+    "start": 1149.98,
+    "end": 1153.7,
+    "duration": 3.72,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "But for anything you'd normally go back and forth on five times,",
+    "bn": "কিন্তু যে প্রজেক্টে সাধারণত পাঁচ-ছয় বার রিভিশন দেওয়া লাগে,"
+  },
+  {
+    "id": 265,
+    "start": 1153.7,
+    "end": 1159.74,
+    "duration": 6.04,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "the review takes about 40 seconds per reviewer, and it saves you all those rounds of changes afterwards.",
+    "bn": "সেখানে মাত্র ৪০ সেকেন্ডের এই রিভিউ আপনার ভবিষ্যৎ কয়েক ঘণ্টার অপচয় রোধ করে।"
+  },
+  {
+    "id": 266,
+    "start": 1159.74,
+    "end": 1163.38,
+    "duration": 3.64,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The third doubt is, does this work for my kind of business?",
+    "bn": "তৃতীয় প্রশ্ন: \"আমার বিজনেসে কি এটি কাজ করবে?\""
+  },
+  {
+    "id": 267,
+    "start": 1163.38,
+    "end": 1171.1,
+    "duration": 7.72,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "If you make anything that a stranger is going to look at, a page, a post, an ad, a video, an email, then, yes.",
+    "bn": "আপনি যদি এমন কিছু বানান যা কোনো অপরিচিত মানুষ দেখবে—পেজ, পোস্ট, অ্যাড, ভিডিও বা ইমেইল—তাহলে অবশ্যই হ্যাঁ!"
+  },
+  {
+    "id": 268,
+    "start": 1171.1,
+    "end": 1174.78,
+    "duration": 3.68,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Every customer you'll ever have starts out as a goldfish.",
+    "bn": "কারণ আপনার প্রতিটি ভবিষ্যৎ গ্রাহকই শুরুতে একেকটি গোল্ডফিশ!"
+  },
+  {
+    "id": 269,
+    "start": 1174.78,
+    "end": 1177.62,
+    "duration": 2.84,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "This just lets you test your work on one first.",
+    "bn": "এই টুলটি কেবল আসল গ্রাহকের সামনে যাওয়ার আগেই তা যাচাই করার সুযোগ করে দেয়।"
+  },
+  {
+    "id": 270,
+    "start": 1177.62,
+    "end": 1180.02,
+    "duration": 2.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, here's what you can do this week.",
+    "bn": "তাহলে এই সপ্তাহে আপনারা কী করবেন?"
+  },
+  {
+    "id": 271,
+    "start": 1180.02,
+    "end": 1184.1,
+    "duration": 4.08,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Step one, install EGM with the two commands I just showed you.",
+    "bn": "ধাপ ১: দেখানো দুটি কমান্ড দিয়ে ইজিএম প্লাগইনটি ইনস্টল করুন।"
+  },
+  {
+    "id": 272,
+    "start": 1184.1,
+    "end": 1191.98,
+    "duration": 7.88,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Step two, pick one thing you're about to make anyway, a landing page, an ad, a carousel, whatever is next on your list.",
+    "bn": "ধাপ ২: আপনার সামনের যেকোনো একটি কাজ বেছে নিন—ল্যান্ডিং পেজ, অ্যাড বা ক্যারোসেল।"
+  },
+  {
+    "id": 273,
+    "start": 1191.98,
+    "end": 1197.3,
+    "duration": 5.32,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Step three, before you build it, run brainstorm, then draft, then review.",
+    "bn": "ধাপ ৩: কাজ শুরুর আগে ব্রেনস্টর্ম, ড্রাফট এবং রিভিউ রান করুন।"
+  },
+  {
+    "id": 274,
+    "start": 1197.3,
+    "end": 1201.54,
+    "duration": 4.24,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Read what the goldfish found. Fix the three problems that matter most.",
+    "bn": "গোল্ডফিশের ফিডব্যাক পড়ে সবচেয়ে গুরুত্বপূর্ণ তিনটি সমস্যা সংশোধন করে নিন।"
+  },
+  {
+    "id": 275,
+    "start": 1201.54,
+    "end": 1206.3,
+    "duration": 4.76,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Step four, build it and put it side by side with how you'd normally have done it.",
+    "bn": "ধাপ ৪: ফাইনাল বিল্ড তৈরি করুন এবং আগের সাধারণ কাজের সাথে পাশাপাশি তুলনা করে দেখুন।"
+  },
+  {
+    "id": 276,
+    "start": 1206.3,
+    "end": 1212.18,
+    "duration": 5.88,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Once you've seen the difference with your own eyes, you'll know where to use it next, one project at a time.",
+    "bn": "নিজের চোখে পার্থক্য দেখার পর আপনি নিজেই বুঝতে পারবেন প্রতিটা প্রজেক্টে কীভাবে এটি কাজে লাগাতে হয়।"
+  },
+  {
+    "id": 277,
+    "start": 1212.18,
+    "end": 1215.78,
+    "duration": 3.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And if you want help doing that, join the AI Profit Boardroom.",
+    "bn": "আর এই যাত্রায় সম্পূর্ণ গাইডেন্স পেতে আপনারা যুক্ত হতে পারেন এআই প্রফিট বোর্ডরুম-এ।"
+  },
+  {
+    "id": 278,
+    "start": 1215.78,
+    "end": 1222.42,
+    "duration": 6.64,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "You get the goldfish audience check skill for Claude, the same panel of reviewers I used on every build in this video.",
+    "bn": "সেখানে আপনারা ক্লড-এর জন্য গোল্ডফিশ অডিয়েন্স চেক স্কিলটি সরাসরি পেয়ে যাবেন।"
+  },
+  {
+    "id": 279,
+    "start": 1222.42,
+    "end": 1229.38,
+    "duration": 6.96,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, your Claude already knows how to check your work like a scroller, a skeptic, a first-time visitor, and a buyer.",
+    "bn": "ফলে আপনার ক্লড স্বয়ংক্রিয়ভাবেই স্ক্রোলার, সংশয়বাদী এবং ক্রেতার মানসিকতা নিয়ে প্রজেক্ট রিভিউ করতে পারবে।"
+  },
+  {
+    "id": 280,
+    "start": 1229.38,
+    "end": 1235.27,
+    "duration": 5.89,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "You get the plan before build skill and the storyboard gate skill ready to drop into Claude.",
+    "bn": "সাথে পাচ্ছেন প্ল্যান বিফোর বিল্ড এবং স্টোরিবোর্ড গেট স্কিল।"
+  },
+  {
+    "id": 281,
+    "start": 1235.27,
+    "end": 1239.87,
+    "duration": 4.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "You get every system from this video with the skills and the exact prompts.",
+    "bn": "এই ভিডিওতে দেখানো প্রতিটি প্রজেক্টের ব্যাকএন্ড আর্কিটেকচার, স্কিল এবং হুবহু প্রম্পট সেখানে দেওয়া আছে।"
+  },
+  {
+    "id": 282,
+    "start": 1239.87,
+    "end": 1248.11,
+    "duration": 8.24,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The 3D website system, the video system, the Instagram carousel system, the ad creative system, and the lead generation system.",
+    "bn": "থ্রিডি ওয়েবসাইট সিস্টেম, ভিডিও সিস্টেম, ইনস্টাগ্রাম ক্যারোসেল, অ্যাড ক্রিয়েটিভ এবং লিড জেনারেশন সিস্টেম।"
+  },
+  {
+    "id": 283,
+    "start": 1248.11,
+    "end": 1251.22,
+    "duration": 3.12,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And you get the automation that runs all of it for you.",
+    "bn": "আর রয়েছে সম্পূর্ণ অটোমেশন যা আপনার হয়ে পুরো প্রসেসটি একা একাই এক্সিকিউট করবে।"
+  },
+  {
+    "id": 284,
+    "start": 1251.22,
+    "end": 1254.07,
+    "duration": 2.84,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "From the plan to the review to the finished build.",
+    "bn": "প্ল্যানিং থেকে রিভিউ হয়ে ফাইনাল বিল্ড পর্যন্ত সম্পূর্ণ হ্যান্ডস-ফ্রি অটোমেশন।"
+  },
+  {
+    "id": 285,
+    "start": 1254.07,
+    "end": 1257.35,
+    "duration": 3.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, you hand over an idea and come back to the result.",
+    "bn": "আপনি শুধু আইডিয়া দেবেন এবং ফাইনাল রেজাল্ট বুঝে নেবেন।"
+  },
+  {
+    "id": 286,
+    "start": 1257.35,
+    "end": 1262.79,
+    "duration": 5.44,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "You get the 30-day roadmap for setting up EGM and making it part of how you build everything.",
+    "bn": "পাচ্ছেন ৩০ দিনের কমপ্লিট ইজিএম রোডম্যাপ এবং নিয়মিত অভ্যাসে পরিণত করার গাইডলাইন।"
+  },
+  {
+    "id": 287,
+    "start": 1262.79,
+    "end": 1267.94,
+    "duration": 5.16,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "You get four coaching calls a week with members running these review loops on real client work.",
+    "bn": "প্রতি সপ্তাহে ৪টি লাইভ কোচিং কল যেখানে রিয়েল ক্লায়েন্ট প্রজেক্ট নিয়ে আলোচনা করা হয়।"
+  },
+  {
+    "id": 288,
+    "start": 1267.94,
+    "end": 1270.27,
+    "duration": 2.32,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, you can bring your exact project.",
+    "bn": "ফলে সরাসরি আপনার প্রজেক্ট নিয়ে এসে অভিজ্ঞদের পরামর্শ নিতে পারবেন।"
+  },
+  {
+    "id": 289,
+    "start": 1270.27,
+    "end": 1276.07,
+    "duration": 5.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "You get daily tutorials, the prompt library, and the member map to connect with other builders near you.",
+    "bn": "প্রতিদিনের টিউটোরিয়াল, প্রম্পট লাইব্রেরি এবং স্থানীয় মেম্বারদের সাথে নেটওয়ার্কিংয়ের সুযোগ।"
+  },
+  {
+    "id": 290,
+    "start": 1276.07,
+    "end": 1280.42,
+    "duration": 4.36,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Over 3,400 business owners are already inside.",
+    "bn": "ইতিমধ্যেই ৩৪০০-র বেশি সফল ব্যবসায়ী এর সাথে যুক্ত আছেন।"
+  },
+  {
+    "id": 291,
+    "start": 1280.42,
+    "end": 1285.46,
+    "duration": 5.04,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The link is in the comments and description, or go to aiprofitboardroom.com.",
+    "bn": "কমেন্ট ও ডেসক্রিপশনে লিংক দেওয়া আছে, অথবা ভিজিট করুন এআই প্রফিট বোর্ডরুম ডট কম।"
+  },
+  {
+    "id": 292,
+    "start": 1285.46,
+    "end": 1288.11,
+    "duration": 2.64,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "So, that's the elephant goldfish model.",
+    "bn": "এই হলো গুগল-এর বৈপ্লবিক এলিফ্যান্ট-গোল্ডফিশ মডেল।"
+  },
+  {
+    "id": 293,
+    "start": 1288.11,
+    "end": 1290.59,
+    "duration": 2.48,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Google made it free and open source.",
+    "bn": "গুগল এটিকে সম্পূর্ণ ফ্রি এবং ওপেন সোর্স করে সবার জন্য উন্মুক্ত করে দিয়েছে।"
+  },
+  {
+    "id": 294,
+    "start": 1290.59,
+    "end": 1294.03,
+    "duration": 3.44,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The elephant remembers everything and writes the plan.",
+    "bn": "এলিফ্যান্ট সবকিছু মনে রেখে পূর্ণাঙ্গ কাজের প্ল্যান তৈরি করে,"
+  },
+  {
+    "id": 295,
+    "start": 1294.03,
+    "end": 1298.22,
+    "duration": 4.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "The goldfish remember nothing, so they read your plan like a stranger.",
+    "bn": "আর গোল্ডফিশ কোনো মেমোরি ছাড়াই সম্পূর্ণ নিরপেক্ষ অপরিচিত দর্শকের মতো তা রিভিউ করে।"
+  },
+  {
+    "id": 296,
+    "start": 1298.22,
+    "end": 1300.51,
+    "duration": 2.28,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "You decide which fixes matter.",
+    "bn": "আর কোনটি সংশোধন করবেন তার চূড়ান্ত সিদ্ধান্ত নেন আপনি।"
+  },
+  {
+    "id": 297,
+    "start": 1300.51,
+    "end": 1305.7,
+    "duration": 5.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "It installs in two commands and it works in Claude code, Codex, and antigravity.",
+    "bn": "মাত্র দুটি কমান্ডে এটি ইনস্টল করা যায় এবং ক্লড কোড, কোডেক্স ও অ্যান্টিগ্র্যাভিটি-তে দারুণভাবে কাজ করে।"
+  },
+  {
+    "id": 298,
+    "start": 1305.7,
+    "end": 1313.62,
+    "duration": 7.92,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "And it made every one of these five builds clearer, sharper, and easier to understand before the first real person ever saw them.",
+    "bn": "আর এটি আমাদের ৫টি বিল্ডের প্রতিটিকে আসল মানুষের সামনে আসার আগেই অনেক বেশি আকর্ষণীয় ও কার্যকর করে তুলেছে।"
+  },
+  {
+    "id": 299,
+    "start": 1313.62,
+    "end": 1317.59,
+    "duration": 3.96,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Drop a comment and tell me, which would you run through the goldfish first?",
+    "bn": "কমেন্টে আমাকে জানান, আপনি নিজের কোন প্রজেক্টটি সবার আগে গোল্ডফিশ দিয়ে রিভিউ করাতে চান?"
+  },
+  {
+    "id": 300,
+    "start": 1317.59,
+    "end": 1321.31,
+    "duration": 3.72,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Julian",
+    "en": "Your website or your ads? I'll see you in the next one.",
+    "bn": "আপনার ওয়েবসাইট নাকি বিজ্ঞাপন? দেখা হবে পরবর্তী ভিডিওতে। সবাই ভালো থাকবেন!"
+  }
+]

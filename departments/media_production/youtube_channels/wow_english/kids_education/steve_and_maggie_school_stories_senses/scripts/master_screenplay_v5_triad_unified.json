@@ -1,0 +1,1564 @@
+{
+  "project": "Steve and Maggie | Learn the Senses (School Stories)",
+  "framework": "Elephant & Goldfish Model (EGM) Unified Triad Protocol",
+  "version": "5.0-100percent-precision-lip-sync",
+  "video_path": "departments/media_production/youtube_channels/wow_english/kids_education/steve_and_maggie_school_stories_senses/raw_sources/source_video.mp4",
+  "duration_seconds": 213.53,
+  "fps": 25,
+  "target_language": "bn-BD",
+  "voice_engine": "Google AI Studio Voice Engine (gemini-3.8-flash-tts)",
+  "methodology": "Unified Triad Script & Synchronization: Image (Visual mouth frame) + Acoustic (Original audio energy burst) + Text (Authentic children's Bengali dialogue)",
+  "casting": {
+    "Steve": {
+      "character_type": "Human Teacher / Comic Actor",
+      "voice": "Orus",
+      "gender": "male",
+      "acoustic_profile": "Enthusiastic British male teacher, physical comic acting, big laughs, animated screams, gasps, pedagogical encouragement"
+    },
+    "Maggie": {
+      "character_type": "Magpie Bird Puppet",
+      "voice": "Aoede",
+      "gender": "female_puppet",
+      "acoustic_profile": "High-pitched, chirpy, cheeky puppet squawks, mischievous teasing giggles, playful vocal bursts"
+    }
+  },
+  "total_cues": 48,
+  "cues": [
+    {
+      "id": 1,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 1.9,
+          "visual_mouth_end": 6.58,
+          "facial_expression": "Enthusiastic discovery; balancing on giant pencil, pointing down",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 1.9,
+          "original_audio_offset": 6.57,
+          "original_english_text": "Look, it's a pencil."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "আরে দেখো! এটা তো একটা পেন্সিল!",
+          "google_tts_prompt": "<cheer> আরে দেখো! এটা তো একটা পেন্সিল!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 1.9,
+        "end": 6.06,
+        "duration": 4.16
+      },
+      "scene_title": "Balancing on Giant Pencil",
+      "en": "Look, it's a pencil.",
+      "bn": "আরে দেখো! এটা তো একটা পেন্সিল!"
+    },
+    {
+      "id": 2,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 6.1,
+          "visual_mouth_end": 8.78,
+          "facial_expression": "Prompting kids warmly to say pencil",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 6.1,
+          "original_audio_offset": 8.77,
+          "original_english_text": "Pencil."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "পেন্সিল! তোমরা কি বলতে পারো পেন্সিল?",
+          "google_tts_prompt": "পেন্সিল! তোমরা কি বলতে পারো পেন্সিল?",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 6.1,
+        "end": 8.26,
+        "duration": 2.16
+      },
+      "scene_title": "Balancing on Giant Pencil",
+      "en": "Pencil.",
+      "bn": "পেন্সিল! তোমরা কি বলতে পারো পেন্সিল?"
+    },
+    {
+      "id": 3,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 8.3,
+          "visual_mouth_end": 10.48,
+          "facial_expression": "Clear, bounce encouraging repetition",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 8.3,
+          "original_audio_offset": 10.47,
+          "original_english_text": "Pencil."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "বলো পেন্সিল!",
+          "google_tts_prompt": "বলো পেন্সিল!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 8.3,
+        "end": 9.96,
+        "duration": 1.66
+      },
+      "scene_title": "Balancing on Giant Pencil",
+      "en": "Pencil.",
+      "bn": "বলো পেন্সিল!"
+    },
+    {
+      "id": 4,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 10.0,
+          "visual_mouth_end": 12.58,
+          "facial_expression": "Arms up cheering and celebrating success",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 10.0,
+          "original_audio_offset": 12.57,
+          "original_english_text": "YEAH."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "ইয়েস! সাবাশ!",
+          "google_tts_prompt": "<cheer> ইয়েস! সাবাশ!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 10.0,
+        "end": 12.17,
+        "duration": 2.17
+      },
+      "scene_title": "Pencil Balancing Triumph",
+      "en": "YEAH.",
+      "bn": "ইয়েস! সাবাশ!"
+    },
+    {
+      "id": 5,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 12.21,
+          "visual_mouth_end": 13.88,
+          "facial_expression": "Comedic horror as pencil cracks in half",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 12.21,
+          "original_audio_offset": 13.87,
+          "original_english_text": "[screaming]"
+        },
+        "text_modality": {
+          "bengali_adapted_text": "আরেহ্! ভেঙে গেল! ওরেব্বাবা!",
+          "google_tts_prompt": "<gasp> আরেহ্! ভেঙে গেল! <scream> ওরেব্বাবা!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 12.21,
+        "end": 13.26,
+        "duration": 1.05
+      },
+      "scene_title": "Pencil Cracking & Plunge Gag",
+      "en": "[screaming]",
+      "bn": "আরেহ্! ভেঙে গেল! ওরেব্বাবা!"
+    },
+    {
+      "id": 6,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 13.3,
+          "visual_mouth_end": 17.26,
+          "facial_expression": "Bouncing chant with high energy",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 13.3,
+          "original_audio_offset": 17.26,
+          "original_english_text": "PENCIL. PENCIL. PENCIL."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "পেন্সিল! পেন্সিল! পেন্সিল!",
+          "google_tts_prompt": "<cheer> পেন্সিল! পেন্সিল! পেন্সিল!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 13.3,
+        "end": 17.12,
+        "duration": 3.82
+      },
+      "scene_title": "Pencil Chanting",
+      "en": "PENCIL. PENCIL. PENCIL.",
+      "bn": "পেন্সিল! পেন্সিল! পেন্সিল!"
+    },
+    {
+      "id": 7,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 17.16,
+          "visual_mouth_end": 19.78,
+          "facial_expression": "Curious lean in looking at giant eraser",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 17.16,
+          "original_audio_offset": 19.77,
+          "original_english_text": "HEY, LOOK. What is it?"
+        },
+        "text_modality": {
+          "bengali_adapted_text": "হেই দেখো! এটা কী?",
+          "google_tts_prompt": "<gasp> হেই দেখো! এটা কী?",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 17.16,
+        "end": 19.26,
+        "duration": 2.1
+      },
+      "scene_title": "Giant Eraser Discovery",
+      "en": "HEY, LOOK. What is it?",
+      "bn": "হেই দেখো! এটা কী?"
+    },
+    {
+      "id": 8,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 19.3,
+          "visual_mouth_end": 24.78,
+          "facial_expression": "Bouncing and jumping on giant rubber eraser",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 19.3,
+          "original_audio_offset": 24.77,
+          "original_english_text": "It's an eraser. Eraser. Eraser."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "দেখো, এটা একটা ইরেজার! ইরেজার! লাফ দাও! লাফ দাও! লাফ দাও!",
+          "google_tts_prompt": "<cheer> দেখো, এটা একটা ইরেজার! ইরেজার! লাফ দাও! লাফ দাও! লাফ দাও!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 19.3,
+        "end": 24.26,
+        "duration": 4.96
+      },
+      "scene_title": "Eraser Demonstration",
+      "en": "It's an eraser. Eraser. Eraser.",
+      "bn": "দেখো, এটা একটা ইরেজার! ইরেজার! লাফ দাও! লাফ দাও! লাফ দাও!"
+    },
+    {
+      "id": 9,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 24.3,
+          "visual_mouth_end": 30.28,
+          "facial_expression": "Warm pedagogic call to children",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 24.3,
+          "original_audio_offset": 30.27,
+          "original_english_text": "Say with me. Eraser. Eraser. Eraser."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "আমার সাথে সাথে বলো! ইরেজার! ইরেজার! ইরেজার!",
+          "google_tts_prompt": "<cheer> আমার সাথে সাথে বলো! ইরেজার! ইরেজার! ইরেজার!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 24.3,
+        "end": 29.76,
+        "duration": 5.46
+      },
+      "scene_title": "Eraser Call-and-Response",
+      "en": "Say with me. Eraser. Eraser. Eraser.",
+      "bn": "আমার সাথে সাথে বলো! ইরেজার! ইরেজার! ইরেজার!"
+    },
+    {
+      "id": 10,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 29.8,
+          "visual_mouth_end": 36.78,
+          "facial_expression": "Hearty laughter bouncing up and down",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 29.8,
+          "original_audio_offset": 36.77,
+          "original_english_text": "[laughter] Eraser. Eraser. Eraser."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "হা হা হা! খুব মজা! ইরেজার! ইরেজার! ইরেজার!",
+          "google_tts_prompt": "<laugh> হা হা হা! খুব মজা! ইরেজার! ইরেজার! ইরেজার!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 29.8,
+        "end": 36.65,
+        "duration": 6.85
+      },
+      "scene_title": "Eraser Bouncing Finale",
+      "en": "[laughter] Eraser. Eraser. Eraser.",
+      "bn": "হা হা হা! খুব মজা! ইরেজার! ইরেজার! ইরেজার!"
+    },
+    {
+      "id": 11,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 36.69,
+          "visual_mouth_end": 38.48,
+          "facial_expression": "Classroom game challenge",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 36.69,
+          "original_audio_offset": 38.47,
+          "original_english_text": "FIND THE RULER."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "স্কেলটা খুঁজে বের করো!",
+          "google_tts_prompt": "<cheer> স্কেলটা খুঁজে বের করো!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 36.69,
+        "end": 37.96,
+        "duration": 1.27
+      },
+      "scene_title": "Desk Stationery Game Introduction",
+      "en": "FIND THE RULER.",
+      "bn": "স্কেলটা খুঁজে বের করো!"
+    },
+    {
+      "id": 12,
+      "speaker": "Maggie",
+      "character_role": "Magpie Puppet (Maggie)",
+      "voice": "Aoede",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 38.0,
+          "visual_mouth_end": 43.78,
+          "facial_expression": "Mischievous puppet teasing Steve",
+          "active_speaker_on_screen": "Maggie"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 38.0,
+          "original_audio_offset": 43.77,
+          "original_english_text": "FIND the ruler. Find find"
+        },
+        "text_modality": {
+          "bengali_adapted_text": "স্কেলটা খুঁজে বের করো! হিহিহি, খোঁজো খোঁজো!",
+          "google_tts_prompt": "<laugh> স্কেলটা খুঁজে বের করো! হিহিহি, খোঁজো খোঁজো!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 38.0,
+        "end": 43.63,
+        "duration": 5.63
+      },
+      "scene_title": "Maggie Hovering Tease",
+      "en": "FIND the ruler. Find find",
+      "bn": "স্কেলটা খুঁজে বের করো! হিহিহি, খোঁজো খোঁজো!"
+    },
+    {
+      "id": 13,
+      "speaker": "Maggie",
+      "character_role": "Magpie Puppet (Maggie)",
+      "voice": "Aoede",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 43.67,
+          "visual_mouth_end": 45.98,
+          "facial_expression": "Wing flapping flourish",
+          "active_speaker_on_screen": "Maggie"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 43.67,
+          "original_audio_offset": 45.97,
+          "original_english_text": "the ruler."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "কোথায় স্কেলটা?",
+          "google_tts_prompt": "কোথায় স্কেলটা?",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 43.67,
+        "end": 45.46,
+        "duration": 1.79
+      },
+      "scene_title": "Maggie Taunting Flourish",
+      "en": "the ruler.",
+      "bn": "কোথায় স্কেলটা?"
+    },
+    {
+      "id": 14,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 45.5,
+          "visual_mouth_end": 46.78,
+          "facial_expression": "Clutter panic clutching hair",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 45.5,
+          "original_audio_offset": 46.77,
+          "original_english_text": "[screaming]"
+        },
+        "text_modality": {
+          "bengali_adapted_text": "উফ্! ওরেহ্!",
+          "google_tts_prompt": "<gasp> উফ্! ওরেহ্!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 45.5,
+        "end": 46.61,
+        "duration": 1.11
+      },
+      "scene_title": "Steve Cluttered Desk Panic",
+      "en": "[screaming]",
+      "bn": "উফ্! ওরেহ্!"
+    },
+    {
+      "id": 15,
+      "speaker": "Maggie",
+      "character_role": "Magpie Puppet (Maggie)",
+      "voice": "Aoede",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 46.65,
+          "visual_mouth_end": 51.08,
+          "facial_expression": "Urging him to hurry",
+          "active_speaker_on_screen": "Maggie"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 46.65,
+          "original_audio_offset": 51.07,
+          "original_english_text": "Find find."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "খোঁজো খোঁজো! জলদি খোঁজো রুলার!",
+          "google_tts_prompt": "<cheer> খোঁজো খোঁজো! জলদি খোঁজো রুলার!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 46.65,
+        "end": 50.66,
+        "duration": 4.01
+      },
+      "scene_title": "Maggie Cheering On Hunt",
+      "en": "Find find.",
+      "bn": "খোঁজো খোঁজো! জলদি খোঁজো রুলার!"
+    },
+    {
+      "id": 16,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 50.7,
+          "visual_mouth_end": 57.78,
+          "facial_expression": "Surfing the giant ruler through the air",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 50.7,
+          "original_audio_offset": 57.77,
+          "original_english_text": "WOW. LOOK. It's a ruler. Ruler."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "ওয়াও! পেয়ে গেছি! দেখো এটা একটা স্কেল! রুলার!",
+          "google_tts_prompt": "<cheer> ওয়াও! পেয়ে গেছি! দেখো এটা একটা স্কেল! রুলার!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 50.7,
+        "end": 57.26,
+        "duration": 6.56
+      },
+      "scene_title": "Giant Blue Ruler Surfing",
+      "en": "WOW. LOOK. It's a ruler. Ruler.",
+      "bn": "ওয়াও! পেয়ে গেছি! দেখো এটা একটা স্কেল! রুলার!"
+    },
+    {
+      "id": 17,
+      "speaker": "Maggie",
+      "character_role": "Magpie Puppet (Maggie)",
+      "voice": "Aoede",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 57.3,
+          "visual_mouth_end": 64.67,
+          "facial_expression": "Flying alongside laughing",
+          "active_speaker_on_screen": "Maggie"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 57.3,
+          "original_audio_offset": 64.67,
+          "original_english_text": "[laughter] Ruler. Yeah. Ruler. Ruler. Ruler. Look."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "হিহিহিহি! স্কেল! হ্যাঁ! রুলার! রুলার! রুলার! দেখো তো!",
+          "google_tts_prompt": "<laugh> হিহিহিহি! স্কেল! হ্যাঁ! রুলার! রুলার! রুলার! দেখো তো!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 57.3,
+        "end": 64.67,
+        "duration": 7.37
+      },
+      "scene_title": "Maggie Ruler Flying Escort",
+      "en": "[laughter] Ruler. Yeah. Ruler. Ruler. Ruler. Look.",
+      "bn": "হিহিহিহি! স্কেল! হ্যাঁ! রুলার! রুলার! রুলার! দেখো তো!"
+    },
+    {
+      "id": 18,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 65.06,
+          "visual_mouth_end": 67.96,
+          "facial_expression": "Pointing excitedly at giant purple pen",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 65.06,
+          "original_audio_offset": 67.96,
+          "original_english_text": "Look. Look. Look."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "দেখো! দেখো! দেখো!",
+          "google_tts_prompt": "দেখো! দেখো! দেখো!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 65.06,
+        "end": 67.66,
+        "duration": 2.6
+      },
+      "scene_title": "Giant Purple Pen Spotted",
+      "en": "Look. Look. Look.",
+      "bn": "দেখো! দেখো! দেখো!"
+    },
+    {
+      "id": 19,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 67.7,
+          "visual_mouth_end": 72.78,
+          "facial_expression": "Bending down to lift heavy pen",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 67.7,
+          "original_audio_offset": 72.78,
+          "original_english_text": "It's a pen. Yeah."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "এটা একটা কলম! উফ্, এটা তো খুব ভারী!",
+          "google_tts_prompt": "<cheer> এটা একটা কলম! <groan> উফ্, এটা তো খুব ভারী!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 67.7,
+        "end": 72.66,
+        "duration": 4.96
+      },
+      "scene_title": "Identifying Giant Pen",
+      "en": "It's a pen. Yeah.",
+      "bn": "এটা একটা কলম! উফ্, এটা তো খুব ভারী!"
+    },
+    {
+      "id": 20,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 72.7,
+          "visual_mouth_end": 78.65,
+          "facial_expression": "Physical strain deadlifting giant pen",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 72.7,
+          "original_audio_offset": 78.65,
+          "original_english_text": "Pen. Pen."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "উহুহুহু! তোলো তোলো! ভারী কলম! পেন!",
+          "google_tts_prompt": "<groan> উহুহুহু! তোলো তোলো! ভারী কলম! পেন!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 72.7,
+        "end": 78.65,
+        "duration": 5.95
+      },
+      "scene_title": "Pen Rhythmic Articulation",
+      "en": "Pen. Pen.",
+      "bn": "উহুহুহু! তোলো তোলো! ভারী কলম! পেন!"
+    },
+    {
+      "id": 21,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 79.16,
+          "visual_mouth_end": 82.78,
+          "facial_expression": "Lifting upright then staggering under weight",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 79.16,
+          "original_audio_offset": 82.77,
+          "original_english_text": "Pen. Yeah. [screaming]"
+        },
+        "text_modality": {
+          "bengali_adapted_text": "পেন! হ্যাঁ! পেরেছি! ওরেব্বাবা! আআাহ্!",
+          "google_tts_prompt": "<cheer> পেন! হ্যাঁ! পেরেছি! <gasp> ওরেব্বাবা! আআাহ্!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 79.16,
+        "end": 82.26,
+        "duration": 3.1
+      },
+      "scene_title": "Heavy Lift Triumph & Comic Wobble",
+      "en": "Pen. Yeah. [screaming]",
+      "bn": "পেন! হ্যাঁ! পেরেছি! ওরেব্বাবা! আআাহ্!"
+    },
+    {
+      "id": 22,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 82.3,
+          "visual_mouth_end": 86.78,
+          "facial_expression": "Panting laugh balancing the pen",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 82.3,
+          "original_audio_offset": 86.77,
+          "original_english_text": "Pen. Pen. Pen."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "হা হা হা! পেন! পেন! পেন!",
+          "google_tts_prompt": "<laugh> হা হা হা! পেন! পেন! পেন!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 82.3,
+        "end": 86.6,
+        "duration": 4.3
+      },
+      "scene_title": "Pen Comic Chuckle Chant",
+      "en": "Pen. Pen. Pen.",
+      "bn": "হা হা হা! পেন! পেন! পেন!"
+    },
+    {
+      "id": 23,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 86.64,
+          "visual_mouth_end": 94.08,
+          "facial_expression": "Marveling at giant red storybook opening",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 86.64,
+          "original_audio_offset": 94.07,
+          "original_english_text": "Look, it's a book. Book book. Yeah."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "দেখো! একটা বই! একটা সুন্দর বই! বুক! বুক! হ্যাঁ!",
+          "google_tts_prompt": "<cheer> দেখো! একটা বই! একটা সুন্দর বই! বুক! বুক! হ্যাঁ!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 86.64,
+        "end": 93.66,
+        "duration": 7.02
+      },
+      "scene_title": "Giant Red Storybook Discovery",
+      "en": "Look, it's a book. Book book. Yeah.",
+      "bn": "দেখো! একটা বই! একটা সুন্দর বই! বুক! বুক! হ্যাঁ!"
+    },
+    {
+      "id": 24,
+      "speaker": "Maggie",
+      "character_role": "Magpie Puppet (Maggie)",
+      "voice": "Aoede",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 93.7,
+          "visual_mouth_end": 97.35,
+          "facial_expression": "Pecking playfully at the pages",
+          "active_speaker_on_screen": "Maggie"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 93.7,
+          "original_audio_offset": 97.35,
+          "original_english_text": "[laughter] A book."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "হিহিহি! মজার একটা বই!",
+          "google_tts_prompt": "<laugh> হিহিহি! মজার একটা বই!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 93.7,
+        "end": 97.26,
+        "duration": 3.56
+      },
+      "scene_title": "Maggie Book Perch",
+      "en": "[laughter] A book.",
+      "bn": "হিহিহি! মজার একটা বই!"
+    },
+    {
+      "id": 25,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 97.3,
+          "visual_mouth_end": 102.08,
+          "facial_expression": "Walking on illustrated crease",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 97.3,
+          "original_audio_offset": 102.07,
+          "original_english_text": "Book. Book. Book."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "বুক! বই! বুক! বুক!",
+          "google_tts_prompt": "বুক! বই! বুক! বুক!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 97.3,
+        "end": 101.75,
+        "duration": 4.45
+      },
+      "scene_title": "Book Pages Turning Chant",
+      "en": "Book. Book. Book.",
+      "bn": "বুক! বই! বুক! বুক!"
+    },
+    {
+      "id": 26,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 101.79,
+          "visual_mouth_end": 108.08,
+          "facial_expression": "Surprised as giant teal backpack lands",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 101.79,
+          "original_audio_offset": 108.07,
+          "original_english_text": "Oh, look. IT'S A BAG. BAG. BAG. BAG."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "ওহ্ দেখো! একটা স্কুল ব্যাগ! বাহ্! ব্যাগ! ব্যাগ! ব্যাগ!",
+          "google_tts_prompt": "<gasp> ওহ্ দেখো! একটা স্কুল ব্যাগ! <cheer> বাহ্! ব্যাগ! ব্যাগ! ব্যাগ!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 101.79,
+        "end": 107.72,
+        "duration": 5.93
+      },
+      "scene_title": "Giant Teal Backpack Arrival",
+      "en": "Oh, look. IT'S A BAG. BAG. BAG. BAG.",
+      "bn": "ওহ্ দেখো! একটা স্কুল ব্যাগ! বাহ্! ব্যাগ! ব্যাগ! ব্যাগ!"
+    },
+    {
+      "id": 27,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 107.76,
+          "visual_mouth_end": 115.97,
+          "facial_expression": "Popping out of zipper pocket playfully",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 107.76,
+          "original_audio_offset": 115.97,
+          "original_english_text": "YEAH, IT'S A BAG. HEY. BAG. BAG. BAG."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "হ্যাঁ, এটা একটা স্কুল ব্যাগ! হেই! ব্যাগ! ব্যাগ! ব্যাগ!",
+          "google_tts_prompt": "<cheer> হ্যাঁ, এটা একটা স্কুল ব্যাগ! হেই! ব্যাগ! ব্যাগ! ব্যাগ!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 107.76,
+        "end": 115.86,
+        "duration": 8.1
+      },
+      "scene_title": "Backpack Zipper Peek-a-boo",
+      "en": "YEAH, IT'S A BAG. HEY. BAG. BAG. BAG.",
+      "bn": "হ্যাঁ, এটা একটা স্কুল ব্যাগ! হেই! ব্যাগ! ব্যাগ! ব্যাগ!"
+    },
+    {
+      "id": 28,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 115.9,
+          "visual_mouth_end": 121.28,
+          "facial_expression": "Showing clean white sheets to children",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 115.9,
+          "original_audio_offset": 121.27,
+          "original_english_text": "What is it? It's paper. Paper."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "এটা কী বলো তো? হা হা! দেখো কাগজ! পেপার!",
+          "google_tts_prompt": "এটা কী বলো তো? <laugh> হা হা! দেখো কাগজ! পেপার!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 115.9,
+        "end": 121.07,
+        "duration": 5.17
+      },
+      "scene_title": "White Paper Presentation",
+      "en": "What is it? It's paper. Paper.",
+      "bn": "এটা কী বলো তো? হা হা! দেখো কাগজ! পেপার!"
+    },
+    {
+      "id": 29,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 121.11,
+          "visual_mouth_end": 127.6,
+          "facial_expression": "Paper flutters and sticks squarely onto his forehead",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 121.11,
+          "original_audio_offset": 127.6,
+          "original_english_text": "Paper. Yeah, it's paper for you. Paper."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "পেপার! এই কাগজ কপালে আটকে গেল! হা হা! পেপার!",
+          "google_tts_prompt": "<cheer> পেপার! <laugh> এই কাগজ কপালে আটকে গেল! হা হা! পেপার!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 121.11,
+        "end": 127.6,
+        "duration": 6.49
+      },
+      "scene_title": "Paper Handout & Forehead Stick Gag",
+      "en": "Paper. Yeah, it's paper for you. Paper.",
+      "bn": "পেপার! এই কাগজ কপালে আটকে গেল! হা হা! পেপার!"
+    },
+    {
+      "id": 30,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 128.18,
+          "visual_mouth_end": 131.08,
+          "facial_expression": "Peeling paper off forehead smiling",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 128.18,
+          "original_audio_offset": 131.07,
+          "original_english_text": "Paper. Paper."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "পেপার! কাগজ!",
+          "google_tts_prompt": "পেপার! কাগজ!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 128.18,
+        "end": 130.95,
+        "duration": 2.77
+      },
+      "scene_title": "Paper Conclusion",
+      "en": "Paper. Paper.",
+      "bn": "পেপার! কাগজ!"
+    },
+    {
+      "id": 31,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 130.99,
+          "visual_mouth_end": 135.07,
+          "facial_expression": "Holding up 1 pen in right hand",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 130.99,
+          "original_audio_offset": 135.07,
+          "original_english_text": "This This This is a pen."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "এইটা... এইটা... এইটা একটা কলম!",
+          "google_tts_prompt": "এইটা... এইটা... এইটা একটা কলম!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 130.99,
+        "end": 135.07,
+        "duration": 4.08
+      },
+      "scene_title": "Grammar Comparison: Singular Pen",
+      "en": "This This This is a pen.",
+      "bn": "এইটা... এইটা... এইটা একটা কলম!"
+    },
+    {
+      "id": 32,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 135.55,
+          "visual_mouth_end": 141.77,
+          "facial_expression": "Showing multiple pens floating in left hand",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 135.55,
+          "original_audio_offset": 141.77,
+          "original_english_text": "These These These are pens. Yeah."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "আর এগুলো... এগুলো অনেকগুলো কলম! পেনস! হ্যাঁ!",
+          "google_tts_prompt": "আর এগুলো... এগুলো অনেকগুলো কলম! পেনস! <cheer> হ্যাঁ!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 135.55,
+        "end": 141.77,
+        "duration": 6.22
+      },
+      "scene_title": "Grammar Comparison: Plural Pens",
+      "en": "These These These are pens. Yeah.",
+      "bn": "আর এগুলো... এগুলো অনেকগুলো কলম! পেনস! হ্যাঁ!"
+    },
+    {
+      "id": 33,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 143.61,
+          "visual_mouth_end": 152.28,
+          "facial_expression": "Stumbling blindfolded in bedroom with outstretched trembling arms",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 143.61,
+          "original_audio_offset": 152.27,
+          "original_english_text": "These these these I can't see. Oh, I can't see. [screaming]"
+        },
+        "text_modality": {
+          "bengali_adapted_text": "আমি তো কিছু দেখতে পাচ্ছি না! ওহ্, কিচ্ছু দেখতে পাচ্ছি না! ওরেব্বাস! আআাহ্!",
+          "google_tts_prompt": "<sigh> আমি তো কিছু দেখতে পাচ্ছি না! <groan> ওহ্, কিচ্ছু দেখতে পাচ্ছি না! <gasp> ওরেব্বাস! আআাহ্!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 143.61,
+        "end": 152.28,
+        "duration": 8.67
+      },
+      "scene_title": "Blindfold Groping & Wandering Gag",
+      "en": "These these these I can't see. Oh, I can't see. [screaming]",
+      "bn": "আমি তো কিছু দেখতে পাচ্ছি না! ওহ্, কিচ্ছু দেখতে পাচ্ছি না! ওরেব্বাস! আআাহ্!"
+    },
+    {
+      "id": 34,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 153.22,
+          "visual_mouth_end": 159.7,
+          "facial_expression": "Pushes mask up; beaming joy seeing kids",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 153.22,
+          "original_audio_offset": 159.7,
+          "original_english_text": "OH, I can see see you. Hi."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "আরে বাহ্! চোখ দিয়ে আমি দেখতে পাচ্ছি! আমি তোমাদের দেখতে পাচ্ছি! হ্যালো!",
+          "google_tts_prompt": "<cheer> আরে বাহ্! চোখ দিয়ে আমি দেখতে পাচ্ছি! <laugh> আমি তোমাদের দেখতে পাচ্ছি! হ্যালো!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 153.22,
+        "end": 159.66,
+        "duration": 6.44
+      },
+      "scene_title": "Mask Lifted - Sight Sense Joy",
+      "en": "OH, I can see see you. Hi.",
+      "bn": "আরে বাহ্! চোখ দিয়ে আমি দেখতে পাচ্ছি! আমি তোমাদের দেখতে পাচ্ছি! হ্যালো!"
+    },
+    {
+      "id": 35,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 159.7,
+          "visual_mouth_end": 163.78,
+          "facial_expression": "Pointing to eyes deliberately",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 159.7,
+          "original_audio_offset": 163.77,
+          "original_english_text": "See see."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "চোখ দিয়ে দেখা! চোখ দিয়ে দেখি!",
+          "google_tts_prompt": "চোখ দিয়ে দেখা! চোখ দিয়ে দেখি!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 159.7,
+        "end": 163.66,
+        "duration": 3.96
+      },
+      "scene_title": "Sight Concept Anchor",
+      "en": "See see.",
+      "bn": "চোখ দিয়ে দেখা! চোখ দিয়ে দেখি!"
+    },
+    {
+      "id": 36,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 163.7,
+          "visual_mouth_end": 170.48,
+          "facial_expression": "Deep dramatic inhale sniffing white flower with nose",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 163.7,
+          "original_audio_offset": 170.47,
+          "original_english_text": "[snorts] [sighs and gasps] Smell the flower. Smell."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "আহ্! ফুলের গন্ধ নাও! নাক দিয়ে আমি গন্ধ শুঁকতে পারি! চমৎকার গন্ধ!",
+          "google_tts_prompt": "<gasp> আহ্! ফুলের গন্ধ নাও! নাক দিয়ে আমি গন্ধ শুঁকতে পারি! <sigh> চমৎকার গন্ধ!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 163.7,
+        "end": 170.42,
+        "duration": 6.72
+      },
+      "scene_title": "Daisy Flower Inhale",
+      "en": "[snorts] [sighs and gasps] Smell the flower. Smell.",
+      "bn": "আহ্! ফুলের গন্ধ নাও! নাক দিয়ে আমি গন্ধ শুঁকতে পারি! চমৎকার গন্ধ!"
+    },
+    {
+      "id": 37,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 170.46,
+          "visual_mouth_end": 175.34,
+          "facial_expression": "Sniffing happily pointing to nose",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 170.46,
+          "original_audio_offset": 175.34,
+          "original_english_text": "Smell. [snorts] Smell."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "ঘ্রাণ নেওয়া! স্মেল! নাক দিয়ে ঘ্রাণ নেওয়া!",
+          "google_tts_prompt": "<sigh> ঘ্রাণ নেওয়া! স্মেল! নাক দিয়ে ঘ্রাণ নেওয়া!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 170.46,
+        "end": 175.34,
+        "duration": 4.88
+      },
+      "scene_title": "Smell Sense Affirmation",
+      "en": "Smell. [snorts] Smell.",
+      "bn": "ঘ্রাণ নেওয়া! স্মেল! নাক দিয়ে ঘ্রাণ নেওয়া!"
+    },
+    {
+      "id": 38,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 176.04,
+          "visual_mouth_end": 179.76,
+          "facial_expression": "Comedic puzzled face",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 176.04,
+          "original_audio_offset": 179.76,
+          "original_english_text": "[sighs] Uh-oh."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "উহু... এ কিসের গন্ধ? ওহ্ না... ওরেব্বাস!",
+          "google_tts_prompt": "<sigh> উহু... এ কিসের গন্ধ? <gasp> ওহ্ না... ওরেব্বাস!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 176.04,
+        "end": 179.76,
+        "duration": 3.72
+      },
+      "scene_title": "Sudden Suspicious Scent",
+      "en": "[sighs] Uh-oh.",
+      "bn": "উহু... এ কিসের গন্ধ? ওহ্ না... ওরেব্বাস!"
+    },
+    {
+      "id": 39,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 181.17,
+          "visual_mouth_end": 186.18,
+          "facial_expression": "Transitioning from nose to tongue tasting",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 181.17,
+          "original_audio_offset": 186.17,
+          "original_english_text": "Smell. Smell. SMELL. TASTE. TASTE."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "গন্ধ শোঁকা! স্মেল! এবার স্বাদ নেওয়ার পালা! টেস্ট!",
+          "google_tts_prompt": "গন্ধ শোঁকা! স্মেল! <cheer> এবার স্বাদ নেওয়ার পালা! টেস্ট!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 181.17,
+        "end": 185.7,
+        "duration": 4.53
+      },
+      "scene_title": "Transition: From Smell to Taste",
+      "en": "Smell. Smell. SMELL. TASTE. TASTE.",
+      "bn": "গন্ধ শোঁকা! স্মেল! এবার স্বাদ নেওয়ার পালা! টেস্ট!"
+    },
+    {
+      "id": 40,
+      "speaker": "Maggie",
+      "character_role": "Magpie Puppet (Maggie)",
+      "voice": "Aoede",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 185.74,
+          "visual_mouth_end": 190.08,
+          "facial_expression": "Maggie brings fruit plate, giggling",
+          "active_speaker_on_screen": "Maggie"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 185.74,
+          "original_audio_offset": 190.07,
+          "original_english_text": "OKAY, STEVE."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "ঠিক আছে স্টিভ! হিহিহি, চোখ বন্ধ করো!",
+          "google_tts_prompt": "<laugh> ঠিক আছে স্টিভ! হিহিহি, চোখ বন্ধ করো!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 185.74,
+        "end": 189.66,
+        "duration": 3.92
+      },
+      "scene_title": "Maggie Taste Test Setup",
+      "en": "OKAY, STEVE.",
+      "bn": "ঠিক আছে স্টিভ! হিহিহি, চোখ বন্ধ করো!"
+    },
+    {
+      "id": 41,
+      "speaker": "Maggie",
+      "character_role": "Magpie Puppet (Maggie)",
+      "voice": "Aoede",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 189.7,
+          "visual_mouth_end": 194.48,
+          "facial_expression": "Feeding crispy sweet apple",
+          "active_speaker_on_screen": "Maggie"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 189.7,
+          "original_audio_offset": 194.47,
+          "original_english_text": "I can taste. Taste. TASTE. APPLE."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "আমি স্বাদ নিচ্ছি! টেস্ট! খাও মিষ্টি আপেল!",
+          "google_tts_prompt": "<cheer> আমি স্বাদ নিচ্ছি! টেস্ট! খাও মিষ্টি আপেল!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 189.7,
+        "end": 193.96,
+        "duration": 4.26
+      },
+      "scene_title": "Sweet Apple Taste",
+      "en": "I can taste. Taste. TASTE. APPLE.",
+      "bn": "আমি স্বাদ নিচ্ছি! টেস্ট! খাও মিষ্টি আপেল!"
+    },
+    {
+      "id": 42,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 194.0,
+          "visual_mouth_end": 195.68,
+          "facial_expression": "Joyful delicious bite",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 194.0,
+          "original_audio_offset": 195.67,
+          "original_english_text": "[screaming]"
+        },
+        "text_modality": {
+          "bengali_adapted_text": "উমম্! চমৎকার আপেল!",
+          "google_tts_prompt": "<gasp> উমম্! চমৎকার আপেল!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 194.0,
+        "end": 195.16,
+        "duration": 1.16
+      },
+      "scene_title": "Steve Apple Delight",
+      "en": "[screaming]",
+      "bn": "উমম্! চমৎকার আপেল!"
+    },
+    {
+      "id": 43,
+      "speaker": "Maggie",
+      "character_role": "Magpie Puppet (Maggie)",
+      "voice": "Aoede",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 195.2,
+          "visual_mouth_end": 197.28,
+          "facial_expression": "Sneaking in red chili",
+          "active_speaker_on_screen": "Maggie"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 195.2,
+          "original_audio_offset": 197.27,
+          "original_english_text": "YEAH. TASTE TIME."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "হিহিহি! এবার এটা খাও!",
+          "google_tts_prompt": "<laugh> হিহিহি! এবার এটা খাও!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 195.2,
+        "end": 196.94,
+        "duration": 1.74
+      },
+      "scene_title": "Maggie Chili Pepper Switcheroo",
+      "en": "YEAH. TASTE TIME.",
+      "bn": "হিহিহি! এবার এটা খাও!"
+    },
+    {
+      "id": 44,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 196.98,
+          "visual_mouth_end": 199.9,
+          "facial_expression": "Unsuspecting smile",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 196.98,
+          "original_audio_offset": 199.9,
+          "original_english_text": "OKAY."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "বেশ! দাও, আমি টেস্ট করছি!",
+          "google_tts_prompt": "<cheer> বেশ! দাও, আমি টেস্ট করছি!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 196.98,
+        "end": 199.9,
+        "duration": 2.92
+      },
+      "scene_title": "Unsuspecting Steve Agrees",
+      "en": "OKAY.",
+      "bn": "বেশ! দাও, আমি টেস্ট করছি!"
+    },
+    {
+      "id": 45,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 200.53,
+          "visual_mouth_end": 204.68,
+          "facial_expression": "Chewing... sudden burning fire realization",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 200.53,
+          "original_audio_offset": 204.67,
+          "original_english_text": "I can taste. Taste. Taste."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "আমি স্বাদ নিচ্ছি... টেস্ট... টেস্ট... একি!",
+          "google_tts_prompt": "আমি স্বাদ নিচ্ছি... টেস্ট... টেস্ট... <gasp> একি!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 200.53,
+        "end": 204.18,
+        "duration": 3.65
+      },
+      "scene_title": "Chewing Chili Unknowingly",
+      "en": "I can taste. Taste. Taste.",
+      "bn": "আমি স্বাদ নিচ্ছি... টেস্ট... টেস্ট... একি!"
+    },
+    {
+      "id": 46,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 204.22,
+          "visual_mouth_end": 207.08,
+          "facial_expression": "Eyes popping wide screaming",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 204.22,
+          "original_audio_offset": 207.07,
+          "original_english_text": "Hot chili."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "ওরেব্বাস! এ তো ঝাল মরিচ! আগুন!",
+          "google_tts_prompt": "<gasp> ওরেব্বাস! এ তো ঝাল মরিচ! আগুন!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 204.22,
+        "end": 206.56,
+        "duration": 2.34
+      },
+      "scene_title": "The Chili Shock Realization",
+      "en": "Hot chili.",
+      "bn": "ওরেব্বাস! এ তো ঝাল মরিচ! আগুন!"
+    },
+    {
+      "id": 47,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 206.6,
+          "visual_mouth_end": 209.68,
+          "facial_expression": "Fanning tongue frantically running around",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 206.6,
+          "original_audio_offset": 209.67,
+          "original_english_text": "[screaming]"
+        },
+        "text_modality": {
+          "bengali_adapted_text": "উহুহুহু! খুব ঝাল! বাপরে বাপ! জ্বলে গেল! আআাহ্!",
+          "google_tts_prompt": "<groan> উহুহুহু! খুব ঝাল! বাপরে বাপ! <scream> জ্বলে গেল! আআাহ্!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 206.6,
+        "end": 209.61,
+        "duration": 3.01
+      },
+      "scene_title": "Fiery Tongue Screaming & Panting",
+      "en": "[screaming]",
+      "bn": "উহুহুহু! খুব ঝাল! বাপরে বাপ! জ্বলে গেল! আআাহ্!"
+    },
+    {
+      "id": 48,
+      "speaker": "Steve",
+      "character_role": "Human Teacher (Steve)",
+      "voice": "Orus",
+      "triad_validation": {
+        "image_modality": {
+          "visual_mouth_start": 209.65,
+          "visual_mouth_end": 212.94,
+          "facial_expression": "Panting, laughing, waving goodbye",
+          "active_speaker_on_screen": "Steve"
+        },
+        "acoustic_modality": {
+          "original_audio_onset": 209.65,
+          "original_audio_offset": 212.94,
+          "original_english_text": "Taste. Taste. Taste."
+        },
+        "text_modality": {
+          "bengali_adapted_text": "হা হা হা! টেস্ট! টেস্ট! স্বাদ নেওয়া!",
+          "google_tts_prompt": "<laugh> হা হা হা! টেস্ট! টেস্ট! স্বাদ নেওয়া!",
+          "phonetic_safeguard_verified": true
+        }
+      },
+      "v5_timeline": {
+        "start": 209.65,
+        "end": 212.94,
+        "duration": 3.29
+      },
+      "scene_title": "Grand Comedic Outro",
+      "en": "Taste. Taste. Taste.",
+      "bn": "হা হা হা! টেস্ট! টেস্ট! স্বাদ নেওয়া!"
+    }
+  ]
+}

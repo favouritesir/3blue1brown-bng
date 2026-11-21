@@ -1,0 +1,128 @@
+{
+  "lesson_id": "lesson_08",
+  "chapter_num": 8,
+  "course_id": "why_pi",
+  "title_en": "How pi was almost 6.283185...",
+  "title_bn": "পাই প্রায় ৬.২৮৩১৮৫… হতে পারত",
+  "subtitle_bn": "পাই-র প্রতীকটি নিয়ে ইতিহাস—অয়লার কীভাবেই বা π দিয়ে একাধিক বৃত্ত-ধ্রুবক বোঝাতেন",
+  "official_url": "https://www.3blue1brown.com/lessons/pi-was-628",
+  "video_src": "../../media_vault/why_pi/lesson_08/experiments/3b1b_why_pi_08_full_dubbed.mp4",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "5:01",
+    "date": "১৪ মার্চ, ২০১৮",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "The symbol could so easily have meant something else.",
+    "quote_bn": "এই প্রতীকটি খুব সহজেই অন্য কিছু বোঝাতে পারত।",
+    "author": "Grant Sanderson"
+  },
+  "sections": [
+    {
+      "id": "sec-early-notation",
+      "title_bn": "প্রথম দিকের চিহ্ন",
+      "title_en": "Early Notation",
+      "summary_bn": "পাইয়ের আধুনিক প্রতীক ব্যবহার শুরু হয় ১৮শ শতাব্দীতে; তার আগে বৃত্ত-ধ্রুবক বোঝাতে বিভিন্ন অক্ষর ব্যবহৃত হতো।",
+      "key_takeaways": [
+        "ওয়ালিস ও অন্যরা বৃত্তের পরিধি/ব্যাস অনুপাত বোঝাতে বিভিন্ন চিহ্ন ব্যবহার করতেন।",
+        "১৭০৬ সালে William Jones প্রথম π চিহ্নটি ব্যবহার করেন।",
+        "অয়লার ১৭৩০-এর দশকে এই চিহ্নকে জনপ্রিয় করেন।"
+      ],
+      "formulas": [
+        {
+          "label": "পাইয়ের সংজ্ঞা",
+          "katex": "\\pi=\\frac{\\text{perimeter}}{\\text{diameter}}\\approx 3.14159"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_history_pi",
+          "caption_bn": "পাই-র আধুনিক প্রতীকের উৎপত্তি",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_08/fig_history_pi.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-euler-pi",
+      "title_bn": "অয়লারের দুই মান",
+      "title_en": "Euler's Two Values of Pi",
+      "summary_bn": "অয়লার কখনো π দিয়ে ৩.১৪ বোঝাতেন, আবার কখনো ৬.২৮—অর্থাৎ আজকের 2π। ইতিহাসে পাই প্রায় ৬.২৮ হয়ে যেতে পারত!",
+      "key_takeaways": [
+        "অয়লার π দিয়ে বৃত্তের perimeter (≈ ৬.২৮) ও diameter (≈ ৩.১৪)—দুটোই বোঝাতেন।",
+        "তাঁর লেখায় কোথাও $\\pi$ মানে ৬.২৮ আবার কোথাও ৩.১৪—প্রসঙ্গভেদে অর্থ বদলাতো।",
+        "আজকের সুবিধाजনক ঐকমত্যেই π = ৩.১৪, আর 2π-র জন্য অনেকে τ প্রস্তাব করেন।"
+      ],
+      "formulas": [
+        {
+          "label": "দুই সম্ভাব্য অর্থ",
+          "katex": "\\pi\\approx 3.14159\\quad\\text{before}\\quad 2\\pi\\approx 6.28319"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_history_two",
+          "caption_bn": "অয়লারের π—দুইটি সম্ভাব্য অর্থ",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_08/fig_history_two.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-today",
+      "title_bn": "আজকের ঐকমত্য ও টাউ (τ) প্রস্তাব",
+      "title_en": "Today's Convention and the Tau Proposal",
+      "summary_bn": "আজ π = ৩.১৪-এ ঐকমত্য; তবে 2π-র জন্য τ ব্যবহারের প্রস্তাব গণিত সম্প্রদায়ে আলোচিত।",
+      "key_takeaways": [
+        "আন্তর্জাতিক ঐকমত্যে π = ৩.১৪১৫৯…, পরিধি/ব্যাস।",
+        "প্রস্তাবিত τ = 2π ≈ ৬.২৮৩১৮৫; একটি পূর্ণ ঘূর্ণন = τ রেডিয়ান।",
+        "কোনটা “সঠিক” তা নয়—কোনটা বেশি সুবিধাজনক তা নিয়েই আলোচনা।"
+      ],
+      "formulas": [
+        {
+          "label": "টাউ প্রস্তাব",
+          "katex": "\\tau = 2\\pi \\approx 6.283185"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_history_tau",
+          "caption_bn": "π বনাম τ—দুইটি প্রস্তাবিত ভিত্তি",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_08/fig_history_tau.svg"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_pi_628",
+      "course_id": "why_pi",
+      "lesson_id": "lesson_08",
+      "section_ref": "sec-euler-pi",
+      "question_bn": "অয়লার কখনো π দিয়ে কোন মানটি বোঝাতেন?",
+      "question_en": "Which value did Euler sometimes denote by pi?",
+      "options": [
+        "$\\pi/2$",
+        "$2\\pi \\approx 6.283$",
+        "$1/\\pi$",
+        "$\\pi^2$"
+      ],
+      "options_bn": [
+        "$\\pi/2$",
+        "$2\\pi \\approx 6.283$",
+        "$1/\\pi$",
+        "$\\pi^2$"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ঠিক! অয়লার কখনো π দিয়ে 2π ≈ ৬.২৮৩ বোঝাতেন—তাই পাই প্রায় ৬.২৮ হয়ে যেতে পারত।",
+      "explanation_en": "",
+      "hint": "পাইয়ের “অন্য” মানটা হলো ৩.১৪-এর দ্বিগুণ।",
+      "hints": [
+        "পাইয়ের “অন্য” মানটা হলো ৩.১৪-এর দ্বিগুণ।"
+      ]
+    }
+  ]
+}

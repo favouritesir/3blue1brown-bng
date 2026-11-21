@@ -1,0 +1,223 @@
+[
+  {
+    "lesson": "lesson_01",
+    "http": 200,
+    "pageErrors": [],
+    "consoleErrorsOtherThanPendingVideo": [],
+    "pendingVideo404Count": 15,
+    "scriptOrderMatchesL01": true,
+    "scriptDiff": [],
+    "metrics": {
+      "narratedIds": [
+        "sec-intro",
+        "sec-square",
+        "sec-rectangle",
+        "sec-pairs",
+        "sec-topology"
+      ],
+      "manifestIds": [
+        "sec-intro",
+        "sec-square",
+        "sec-rectangle",
+        "sec-pairs",
+        "sec-topology"
+      ],
+      "parity": true,
+      "sections": 7,
+      "noNarration": 2,
+      "duplicateSectionIds": 0,
+      "figures": 24,
+      "figureRenders": 24,
+      "quizzes": 3,
+      "quizBlocks": 3,
+      "imgTotal": 24,
+      "imgLoaded": 24,
+      "singletons": {
+        "navbar": 1,
+        "hero": 1,
+        "toc": 1,
+        "article": 1,
+        "watch": 1,
+        "chapterNav": 1,
+        "footer": 1,
+        "backToTop": 1,
+        "narrationBanner": 1,
+        "bookmarks": 1
+      },
+      "doubleWrap": 0,
+      "scriptTags": [
+        "../../assets/audio/topology/lesson_01/manifest.js?v=1",
+        "../../assets/libs/katex/katex.min.js",
+        "../../assets/libs/katex/auto-render.min.js",
+        "../../assets/libs/katex-stub.js",
+        "../../assets/js/lesson_components.js",
+        "../../assets/js/lesson_components_extended.js",
+        "../../assets/js/main.js",
+        "../../assets/js/lesson.js",
+        "../../assets/js/narration_engine.js"
+      ],
+      "videoSrc": "../../media_vault/topology/lesson_01/experiments/3b1b_topology_01_full_dubbed.mp4"
+    },
+    "quizClicks": [
+      {
+        "ok": true,
+        "feedback": "✅ ঠিক! মধ্যবিন্দু ((1+1)/2, (2+4)/2) = (1, 3) এবং দূরত্ব |4−"
+      },
+      {
+        "ok": true,
+        "feedback": "✅ হ্যাঁ! বর্গের (x, y) স্থানাঙ্ক দুটি যথাক্রমে প্রথম ও দ্বিত"
+      },
+      {
+        "ok": true,
+        "feedback": "✅ একদম ঠিক! আয়তক্ষেত্রের শর্ত precisely এই — দুই কর্ণের মধ্"
+      }
+    ],
+    "allQuizzesWork": true
+  },
+  {
+    "lesson": "lesson_02",
+    "http": 200,
+    "pageErrors": [],
+    "consoleErrorsOtherThanPendingVideo": [],
+    "pendingVideo404Count": 15,
+    "scriptOrderMatchesL01": true,
+    "scriptDiff": [],
+    "metrics": {
+      "narratedIds": [
+        "sec-intro",
+        "sec-applications",
+        "sec-proof",
+        "sec-dimensions"
+      ],
+      "manifestIds": [
+        "sec-intro",
+        "sec-applications",
+        "sec-proof",
+        "sec-dimensions"
+      ],
+      "parity": true,
+      "sections": 6,
+      "noNarration": 2,
+      "duplicateSectionIds": 0,
+      "figures": 5,
+      "figureRenders": 5,
+      "quizzes": 3,
+      "quizBlocks": 3,
+      "imgTotal": 5,
+      "imgLoaded": 5,
+      "singletons": {
+        "navbar": 1,
+        "hero": 1,
+        "toc": 1,
+        "article": 1,
+        "watch": 1,
+        "chapterNav": 1,
+        "footer": 1,
+        "backToTop": 1,
+        "narrationBanner": 1,
+        "bookmarks": 1
+      },
+      "doubleWrap": 0,
+      "scriptTags": [
+        "../../assets/audio/topology/lesson_02/manifest.js?v=1",
+        "../../assets/libs/katex/katex.min.js",
+        "../../assets/libs/katex/auto-render.min.js",
+        "../../assets/libs/katex-stub.js",
+        "../../assets/js/lesson_components.js",
+        "../../assets/js/lesson_components_extended.js",
+        "../../assets/js/main.js",
+        "../../assets/js/lesson.js",
+        "../../assets/js/narration_engine.js"
+      ],
+      "videoSrc": "../../media_vault/topology/lesson_02/experiments/3b1b_topology_02_full_dubbed.mp4"
+    },
+    "quizClicks": [
+      {
+        "ok": true,
+        "feedback": "✅ একদম ঠিক! কোথাও না কোথাও একটি কাউলিক থাকবেই — সেটিই উপপাদ্"
+      },
+      {
+        "ok": true,
+        "feedback": "✅ ঠিক! বাতাস পৃষ্ঠের সমান্তরালে বইছে এবং অবিচ্ছিন্ন — তাই কে"
+      },
+      {
+        "ok": true,
+        "feedback": "✅ হ্যাঁ! টরাসের ইুলার বৈশিষ্ট্য ০, তাই শূন্য-মুক্ত ক্ষেত্র ত"
+      }
+    ],
+    "allQuizzesWork": true
+  },
+  {
+    "lesson": "lesson_03",
+    "http": 200,
+    "pageErrors": [],
+    "consoleErrorsOtherThanPendingVideo": [],
+    "pendingVideo404Count": 15,
+    "scriptOrderMatchesL01": true,
+    "scriptDiff": [],
+    "metrics": {
+      "narratedIds": [
+        "sec-intro",
+        "sec-necklace",
+        "sec-proof",
+        "sec-meaning"
+      ],
+      "manifestIds": [
+        "sec-intro",
+        "sec-necklace",
+        "sec-proof",
+        "sec-meaning"
+      ],
+      "parity": true,
+      "sections": 6,
+      "noNarration": 2,
+      "duplicateSectionIds": 0,
+      "figures": 5,
+      "figureRenders": 5,
+      "quizzes": 3,
+      "quizBlocks": 3,
+      "imgTotal": 5,
+      "imgLoaded": 5,
+      "singletons": {
+        "navbar": 1,
+        "hero": 1,
+        "toc": 1,
+        "article": 1,
+        "watch": 1,
+        "chapterNav": 1,
+        "footer": 1,
+        "backToTop": 1,
+        "narrationBanner": 1,
+        "bookmarks": 1
+      },
+      "doubleWrap": 0,
+      "scriptTags": [
+        "../../assets/audio/topology/lesson_03/manifest.js?v=1",
+        "../../assets/libs/katex/katex.min.js",
+        "../../assets/libs/katex/auto-render.min.js",
+        "../../assets/libs/katex-stub.js",
+        "../../assets/js/lesson_components.js",
+        "../../assets/js/lesson_components_extended.js",
+        "../../assets/js/main.js",
+        "../../assets/js/lesson.js",
+        "../../assets/js/narration_engine.js"
+      ],
+      "videoSrc": "../../media_vault/topology/lesson_03/experiments/3b1b_topology_03_full_dubbed.mp4"
+    },
+    "quizClicks": [
+      {
+        "ok": true,
+        "feedback": "✅ সঠিক! f: S² → ℝ²-এর জন্য f(x) = f(−x) এমন x অবশ্যই আছে।"
+      },
+      {
+        "ok": true,
+        "feedback": "✅ ঠিক! r রঙের জন্য সর্বোচ্চ r টি কাট — এটি হার-ভাগ নিয়মের ব"
+      },
+      {
+        "ok": true,
+        "feedback": "✅ হ্যাঁ! g(−x) = −g(x), তাই বোরসুক–উলামের শূন্য-বিন্দুতে g(x"
+      }
+    ],
+    "allQuizzesWork": true
+  }
+]

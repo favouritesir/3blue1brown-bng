@@ -1,0 +1,85 @@
+{
+  "agent": "A (hy4_flash_high)",
+  "generated_at": "2026-11-19",
+  "output_file": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_01_vectors/dubbing_pipeline/experiments/agents/hy4_flash_high/review_cues01-10_clean_v2.mp4",
+  "build_status": "SUCCESS (no failed step)",
+  "ffprobe_video": {
+    "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duration_sec": 70.700000,
+    "size_bytes": 3176002,
+    "bit_rate_bps": 359377,
+    "streams": [
+      {
+        "index": 0,
+        "codec_type": "video",
+        "codec_name": "h264",
+        "profile": "High",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration_sec": 70.700000,
+        "nb_frames": 2121,
+        "bit_rate_bps": 220739
+      },
+      {
+        "index": 1,
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "profile": "LC",
+        "sample_rate": 44100,
+        "channels": 2,
+        "duration_sec": 70.700000,
+        "nb_frames": 3045,
+        "bit_rate_bps": 130228
+      }
+    ]
+  },
+  "ffprobe_audio_master": {
+    "path": "review_audio.m4a",
+    "format": "aac in mp4",
+    "duration_sec": 70.700000,
+    "size_bytes": 1164294,
+    "codec_name": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "bit_rate_bps": 130228
+  },
+  "source_video": {
+    "path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/web_platform/media_vault/lesson_01/3b1b_lesson_01_bangla_dubbed_video.mp4",
+    "duration_sec": 559.933333,
+    "codec": "h264 1920x1080 30fps",
+    "video_mapping": "-map 0:v:0 -c:v copy (verbatim stream copy, NO re-encode)",
+    "original_audio_stream_excluded": true
+  },
+  "audio_assembly": {
+    "note": "clean_timesync_v2/master.mp3 was NOT present (build_clean_v2.py never completed; raw_047.mp3 is 0 bytes). Re-assembled from the existing clean-v2 TTS cues raw_001..raw_010.mp3 using the identical build_clean_v2.py algorithm.",
+    "cue_range": [1, 10],
+    "cue_count": 10,
+    "sample_rate_hz": 44100,
+    "placement": "round(start_sec * 44100) absolute sample offset; max measured drift = 0.000 ms",
+    "fitting": "atempo to fit each cue into its window (1.112x-1.8245x, all < 2.0 so single-filter); PAD only, NEVER truncate",
+    "fades": "12 ms raised-cosine fade in/out per cue",
+    "sfx": "NONE - clean speech only, no ambient/SFX stem -> no background whisper or bleed",
+    "normalization": "loudnorm I=-14:LRA=7:TP=-1",
+    "canvas_duration_sec": 70.680,
+    "overrun_cues": 0,
+    "truncation": "none",
+    "peak_before_norm": 0.506927,
+    "peak_after_norm": 0.506927
+  },
+  "audio_sanity_volumedetect": {
+    "whole_audio": {"mean_volume_db": -19.9, "max_volume_db": -3.9},
+    "intro_0_to_10.9s": {"mean_volume_db": -91.0, "max_volume_db": -91.0, "note": "digital silence -> no background whisper"},
+    "cue1_10.92_to_15.22s": {"mean_volume_db": -23.5, "max_volume_db": -8.2, "note": "speech present"},
+    "cue10_63.02_to_68.68s": {"mean_volume_db": -18.1, "max_volume_db": -4.0, "note": "speech present"}
+  },
+  "checks": {
+    "duration_matches_expectation": "PASS - cues 1-10 end at 68.68s; output 70.70s includes full cue 10 plus ~2s tail (no truncation)",
+    "single_audio_stream": "PASS - only the clean review audio is present",
+    "video_not_reencoded": "PASS - h264 High 1920x1080 30fps preserved via -c:v copy",
+    "speech_not_truncated": "PASS - overrun_cues=0, pad-only fitting",
+    "no_background_whisper": "PASS - no SFX stem mixed",
+    "absolute_sample_placement": "PASS - drift 0.000 ms on all 10 cues"
+  }
+}

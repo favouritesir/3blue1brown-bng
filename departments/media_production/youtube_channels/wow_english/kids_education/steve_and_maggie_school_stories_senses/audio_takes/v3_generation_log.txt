@@ -1,0 +1,5 @@
+[14:07:29] Steve: generating continuous master take (1849 chars, voice=Orus)
+[14:08:04] Steve: master saved -> D:\0PEN CODE\Dub Studio\departments\media_production\youtube_channels\wow_english\kids_education\steve_and_maggie_school_stories_senses\audio_takes\v3_authentic_masters\steve_master_take_v3_authentic.wav (9337316 bytes, 194.5s @ 24000Hz, attempt=1, 35.2s wall)
+[14:08:04] Maggie: generating continuous master take (329 chars, voice=Aoede)
+[14:08:17] Maggie: master saved -> D:\0PEN CODE\Dub Studio\departments\media_production\youtube_channels\wow_english\kids_education\steve_and_maggie_school_stories_senses\audio_takes\v3_authentic_masters\maggie_master_take_v3_authentic.wav (2129636 bytes, 44.4s @ 24000Hz, attempt=1, 13.5s wall)
+[14:08:17] V3 Master take generation complete!

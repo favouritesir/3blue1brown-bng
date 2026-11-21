@@ -1,0 +1,191 @@
+{
+  "generated_by": "number_theory/_verify_all.py (independent re-measurement)",
+  "lessons": {
+    "lesson_01": {
+      "video_id": "EK32jo7i5LQ",
+      "original_duration_sec": 1340.302,
+      "output_duration_sec": 1340.25,
+      "duration_delta_sec": -0.052,
+      "full_length_ok": true,
+      "audio_decoded_duration_sec": 1340.14,
+      "total_silent_runs_detected": 865,
+      "internal_silent_runs_gt_2s": [],
+      "internal_silence_gate_ok": true,
+      "verification_json": {
+        "exists": true,
+        "cue_count": 37,
+        "expected_cue_count": 37,
+        "failed_tts_cues": [],
+        "median_fill": 0.9992,
+        "max_internal_gap_s": 0.82,
+        "timeline_scale": 0.68556,
+        "render_rounds": 1,
+        "scale_recomputed_from_rendered_speech": true,
+        "quality_gate_passed": true,
+        "speech_ends_before_video_end": true,
+        "tail_silence_sec": 2.999,
+        "output_size_bytes": 106400837
+      },
+      "median_fill_gate_ok": true,
+      "max_internal_gap_gate_ok": true,
+      "provenance": {
+        "oembed": {
+          "ok": true,
+          "author_name": "3Blue1Brown",
+          "title": "Why do prime numbers make these spirals? | Dirichlet’s theorem and pi approximations",
+          "author_url": "https://www.youtube.com/@3blue1brown"
+        },
+        "ytdlp": {
+          "ok": true,
+          "id": "EK32jo7i5LQ",
+          "uploader": "3Blue1Brown",
+          "channel": "3Blue1Brown",
+          "title": "Why do prime numbers make these spirals? ",
+          "duration": " Dirichlet’s theorem and pi approximations"
+        },
+        "confirms_3b1b": true
+      },
+      "output_streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "av1",
+          "width": 1280,
+          "height": 720,
+          "duration": "1340.250000"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "width": null,
+          "height": null,
+          "duration": "1340.237460"
+        }
+      ],
+      "ALL_GATES_PASS": true
+    },
+    "lesson_02": {
+      "video_id": "QJYmyhnaaek",
+      "original_duration_sec": 892.738,
+      "output_duration_sec": 892.692,
+      "duration_delta_sec": -0.046,
+      "full_length_ok": true,
+      "audio_decoded_duration_sec": 892.621,
+      "total_silent_runs_detected": 604,
+      "internal_silent_runs_gt_2s": [],
+      "internal_silence_gate_ok": true,
+      "verification_json": {
+        "exists": true,
+        "cue_count": 26,
+        "expected_cue_count": 26,
+        "failed_tts_cues": [],
+        "median_fill": 0.9991,
+        "max_internal_gap_s": 0.7763,
+        "timeline_scale": 0.673632,
+        "render_rounds": 1,
+        "scale_recomputed_from_rendered_speech": true,
+        "quality_gate_passed": true,
+        "speech_ends_before_video_end": true,
+        "tail_silence_sec": 3.001,
+        "output_size_bytes": 47301165
+      },
+      "median_fill_gate_ok": true,
+      "max_internal_gap_gate_ok": true,
+      "provenance": {
+        "oembed": {
+          "ok": true,
+          "author_name": "3Blue1Brown",
+          "title": "All possible pythagorean triples, visualized",
+          "author_url": "https://www.youtube.com/@3blue1brown"
+        },
+        "ytdlp": {
+          "ok": true,
+          "id": "QJYmyhnaaek",
+          "uploader": "3Blue1Brown",
+          "channel": "3Blue1Brown",
+          "title": "All possible pythagorean triples, visualized",
+          "duration": "893"
+        },
+        "confirms_3b1b": true
+      },
+      "output_streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "av1",
+          "width": 1280,
+          "height": 720,
+          "duration": "892.691800"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "width": null,
+          "height": null,
+          "duration": "892.683900"
+        }
+      ],
+      "ALL_GATES_PASS": true
+    },
+    "lesson_03": {
+      "video_id": "NaL_Cb42WyY",
+      "original_duration_sec": 1782.828,
+      "output_duration_sec": 1782.781,
+      "duration_delta_sec": -0.047,
+      "full_length_ok": true,
+      "audio_decoded_duration_sec": 1782.689,
+      "total_silent_runs_detected": 1329,
+      "internal_silent_runs_gt_2s": [],
+      "internal_silence_gate_ok": true,
+      "verification_json": {
+        "exists": true,
+        "cue_count": 21,
+        "expected_cue_count": 21,
+        "failed_tts_cues": [],
+        "median_fill": 0.9997,
+        "max_internal_gap_s": 0.859,
+        "timeline_scale": 0.72656,
+        "render_rounds": 1,
+        "scale_recomputed_from_rendered_speech": true,
+        "quality_gate_passed": true,
+        "speech_ends_before_video_end": true,
+        "tail_silence_sec": 2.999,
+        "output_size_bytes": 64260489
+      },
+      "median_fill_gate_ok": true,
+      "max_internal_gap_gate_ok": true,
+      "provenance": {
+        "oembed": {
+          "ok": true,
+          "author_name": "3Blue1Brown",
+          "title": "Pi hiding in prime regularities",
+          "author_url": "https://www.youtube.com/@3blue1brown"
+        },
+        "ytdlp": {
+          "ok": true,
+          "id": "NaL_Cb42WyY",
+          "uploader": "3Blue1Brown",
+          "channel": "3Blue1Brown",
+          "title": "Pi hiding in prime regularities",
+          "duration": "1783"
+        },
+        "confirms_3b1b": true
+      },
+      "output_streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "av1",
+          "width": 1280,
+          "height": 720,
+          "duration": "1782.781000"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "width": null,
+          "height": null,
+          "duration": "1782.760680"
+        }
+      ],
+      "ALL_GATES_PASS": true
+    }
+  }
+}

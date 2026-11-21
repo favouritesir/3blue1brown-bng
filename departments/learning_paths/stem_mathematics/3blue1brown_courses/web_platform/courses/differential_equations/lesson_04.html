@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অধ্যায় ০৪: আংশিক অন্তরক সমীকরণ ও সীমানা শর্ত (Partial Differential Equations and Boundary Conditions) | Solving the heat equation | DE3</title>
+
+<!-- ═══════════ STYLES (exact L01 order) ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/differential_equations/lesson_04/manifest.js?v=9"></script>
+
+<!-- ═══════════ SCRIPTS — strict L01 load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="ডিফারেনশিয়াল সমীকরণ"
+  course-url="../../index.html#differential-equations"
+  home-url="../../index.html"
+  chapter-num="০৪"
+  chapter-total="০৬"
+  prev-url="lesson_03.html"
+  prev-title="অধ্যায় ০৩: দোলন ও হারমোনিক স্পন্দন"
+  next-url="lesson_05.html"
+  next-title="অধ্যায় ০৫: তাপ সমীকরণ ও ফুরিয়ার রূপান্তর"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="ডিফারেনশিয়াল সমীকরণ"
+  course-url="../../index.html"
+  chapter-label="ডিফারেনশিয়াল সমীকরণ • চতুর্থ অধ্যায় — স্থান ও কালের যুগল নৃত্য"
+  title="অধ্যায় ০৪: আংশিক অন্তরক সমীকরণ ও সীমানা শর্ত (Partial Differential Equations and Boundary Conditions)"
+  desc="একটি ধাতব দণ্ডে তাপ কীভাবে ছড়ায়? কেন কোনো বিন্দুর পরিবর্তনের হার দূরত্বের দ্বিতীয় অন্তরজের সমানুপাতিক? প্রান্তীয় সীমানা শর্ত কীভাবে অনুমোদিত তরঙ্গদৈর্ঘ্যকে কোয়ান্টায়িত করে? এবং কীভাবে জটিল প্রাথমিক অবস্থাকে সাইন তরঙ্গের সমাহারে ভেঙে নিখুঁত ভবিষ্যদ্বাণী করা সম্ভব হয়েছিল?"
+  video-src="../../media_vault/differential_equations/lesson_04/experiments/3b1b_de_04_full_dubbed.mp4"
+  yt-id="ToIXSwZ1pJU"
+  date="২০১৯"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM ম্যাথমেটিক্স উইং"
+  github-url="https://www.3blue1brown.com/lessons/differential-equations"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">আংশিক অন্তরক সমীকরণ ও তাপ সমীকরণের সূচনা</b1b-bookmark>
+      <b1b-bookmark time="157" time-bn="০২:৩৭">বক্রতার স্বজ্ঞাত অর্থ ও স্থানীয় প্রতিবেশীর গড়</b1b-bookmark>
+      <b1b-bookmark time="283" time-bn="০৪:৪৩">সীমানা শর্ত, সাইন তরঙ্গের ক্ষয় ও আইগেনমোড</b1b-bookmark>
+      <b1b-bookmark time="406" time-bn="০৬:৪৬">জোসেফ ফুরিয়ারের বিপ্লব ও তরঙ্গের উপরিপাত</b1b-bookmark>
+      <b1b-bookmark time="529" time-bn="০৮:৪৯">তাপের মসৃণকরণ, এনট্রপি ও সময়ের একমুখী তীর</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-heat-intro">১. আংশিক অন্তরক সমীকরণ ও তাপ সমীকরণের সূচনা</a>
+      <a href="#sec-curvature-intuition">২. বক্রতার স্বজ্ঞাত অর্থ ও স্থানীয় প্রতিবেশীদের গড়</a>
+      <a href="#sec-sine-decay">৩. সীমানা শর্ত, সাইন তরঙ্গের ক্ষয় ও আইগেনমোড</a>
+      <a href="#sec-fourier-series">৪. জোসেফ ফুরিয়ারের বিপ্লব ও তরঙ্গের উপরিপাত</a>
+      <a href="#sec-entropy-irreversibility">৫. তাপের মসৃণকরণ, এনট্রপি বৃদ্ধি ও সময়ের একমুখী তীর</a>
+      <a href="#sec-interactive-lab">৬. ইন্টারেক্টিভ তাপ ব্যাপন ও সীমানা শর্ত ল্যাব</a>
+      <a href="#sec-quizzes">৭. ৩ব্লু১ব্রাউন ইন্টারেক্টিভ কুইজ ও ধারণা যাচাই</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ Section 1 — NARRATED (manifest: sec-heat-intro · 9 cues) ═══ -->
+      <b1b-section id="sec-heat-intro" title="১. আংশিক অন্তরক সমীকরণ ও তাপ সমীকরণের সূচনা (Introduction to PDEs & The Heat Equation)">
+
+        <b1b-quote author="জোসেফ ফুরিয়ার">প্রকৃতির গভীর অনুধ্যানই হলো গাণিতিক আবিষ্কারের সবচেয়ে উর্বর উৎস।</b1b-quote>
+
+        <p>শিক্ষার্থী বন্ধুরা, গত অধ্যায়গুলোতে আমরা সাধারণ ডিফারেনশিয়াল সমীকরণ (ODEs) নিয়ে আলোচনা করেছি। সেখানে আমাদের অজানা ফাংশনটি কেবল একটি স্বাধীন চলকের ওপর নির্ভরশীল ছিল—বেশিরভাগ ক্ষেত্রেই যা ছিল সময় $t$। পেন্ডুলামের কোণ $\theta(t)$ সময়ের সাথে সাথে কেবল একটি সরল রেখা বরাবর এগিয়ে চলেছে।</p>
+
+        <p>কিন্তু বাস্তব মহাবিশ্ব বহু চলকের মেলবন্ধন। একটি দীর্ঘ ধাতব রডের তাপমাত্রা চিন্তা করুন। কেবল সময় জানা থাকলে আপনি বলতে পারবেন না তাপমাত্রা কত; আপনাকে জানতে হবে রডের কোন নির্দিষ্ট বিন্দু বা অবস্থানে ($x$) আপনি পরিমাপ করছেন।</p>
+
+        <b1b-figure alt="ধাতব রড বরাবর তাপমাত্রার মসৃণ বণ্টন প্রোফাইল u(x,t)" caption="এই চিত্রে একটি ধাতব রডের অবস্থান $x$ (অনুভূমিক অক্ষ) ও ওই বিন্দুর তাপমাত্রা $u(x,t)$ (উল্লম্ব অক্ষ) দেখানো হয়েছে। লাল বক্ররেখা মাঝখানে একটি উঁচু চূড়া দেখাচ্ছে—সেখানে রড সবচেয়ে বেশি গরম, আর প্রান্তদ্বয় তুলনামূলক ঠান্ডা। লক্ষ্য করুন কীভাবে তাপমাত্রা একই সময়ে অবস্থানের সাথে পরিবর্তিত হচ্ছে: এটি আর কেবল $t$-র ফাংশন নয়, বরং $u(x,t)$—দুই চলকের যুগল ফাংশন।">
+          <svg viewBox="0 0 640 320" role="img" aria-label="Heat profile on a metal rod" style="width:100%;height:auto;background:transparent;">
+            <rect x="0" y="0" width="640" height="320" fill="#0b0c12"/>
+            <line x1="70" y1="270" x2="610" y2="270" stroke="#8b949e" stroke-width="2"/>
+            <line x1="70" y1="270" x2="70" y2="30" stroke="#8b949e" stroke-width="2"/>
+            <path d="M 70 270 C 180 268, 220 120, 320 70 C 420 120, 460 268, 610 270" fill="none" stroke="#ff6b6b" stroke-width="3.5"/>
+            <line x1="70" y1="270" x2="610" y2="270" stroke="#ffa94d" stroke-width="10" stroke-opacity="0.25"/>
+            <circle cx="320" cy="70" r="5" fill="#ff6b6b"/>
+            <text x="330" y="62" fill="#f0f6fc" font-size="14">u(x,t) — তাপমাত্রা</text>
+            <text x="320" y="300" fill="#8b949e" font-size="14">অবস্থান x →</text>
+            <text x="78" y="46" fill="#8b949e" font-size="13">u</text>
+            <text x="74" y="288" fill="#8b949e" font-size="13">x=0</text>
+            <text x="570" y="288" fill="#8b949e" font-size="13">x=L</text>
+            <text x="200" y="250" fill="#8b949e" font-size="12">ঠান্ডা</text>
+            <text x="430" y="250" fill="#8b949e" font-size="12">ঠান্ডা</text>
+            <text x="90" y="30" fill="#74c0e3" font-size="13">চিত্র ১: রড বরাবর তাপের প্রোফাইল</text>
+          </svg>
+        </b1b-figure>
+
+        <p>এখানে তাপমাত্রাকে প্রকাশ করতে হয় একটি দ্বিমাত্রিক অপেক্ষক হিসেবে: $u(x, t)$। যেহেতু অবস্থান $x$ এবং সময় $t$ উভয়ই স্বাধীনভাবে পরিবর্তিত হতে পারে, তাই এদের পরিবর্তনের হার হিসাব করতে আমাদের প্রয়োজন স্থানিক ও কালিক আংশিক অন্তরজ (Partial Derivatives)। আর এই গতিপ্রকৃতির মূল চালিকাশক্তি হলো পদার্থবিজ্ঞানের অন্যতম বিখ্যাত সমীকরণ—একমাত্রিক তাপ সমীকরণ।</p>
+
+        <b1b-formula math="\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}"></b1b-formula>
+
+        <p>এই সমীকরণটি হলো একমাত্রিক তাপ পরিবাহিতা ও ব্যাপনের আংশিক অন্তরক সমীকরণ (1D Heat/Diffusion PDE)। এখানে $\alpha$ (আলফা) হলো উপাদানের তাপীয় ব্যাপন সহগ, যা নির্দেশ করে ওই ধাতুর ভেতর দিয়ে তাপ কত দ্রুত ছড়িয়ে পড়ে। বামপাশে সময়ের প্রথম অন্তরজ $\frac{\partial u}{\partial t}$ এবং ডানপাশে অবস্থানের দ্বিতীয় অন্তরজ $\frac{\partial^2 u}{\partial x^2}$—এই বৈষম্যমূলক সমীকরণটি কীভাবে স্থান ও কালের মাঝে নিখুঁত যোগসূত্র তৈরি করে?</p>
+
+        <b1b-callout type="gold" icon="🔥" title="তাপীয় ব্যাপন সহগ বা থার্মাল ডিফিউসিভিটি ($\alpha$)">
+          <p>সমীকরণে $\alpha$ (আলফা) হলো উপাদানের তাপীয় ব্যাপন সহগ, যার সংজ্ঞা $\alpha = \frac{k}{\rho c_p}$ (যেখানে $k$ তাপ পরিবাহিতা, $\rho$ ঘনত্ব, এবং $c_p$ আপেক্ষিক তাপধারণ ক্ষমতা)। তামা বা রূপার মতো ভালো পরিবাহকের জন্য $\alpha$-এর মান অনেক বেশি, ফলে এদের মধ্যে তাপমাত্রা অতি দ্রুত সুষম হয়; পক্ষান্তরে কাচ বা কাঠের জন্য $\alpha$-এর মান নগণ্য। আংশিক ডিফারেনশিয়াল সমীকরণের বিশেষত্ব হলো—সাধারণ সমীকরণে ফাংশন কেবল একটি চলকের ওপর নির্ভরশীল থাকে, কিন্তু বাস্তব মহাবিশ্বে তরঙ্গ, তাপ, বিদ্যুৎ ও মহাকর্ষ স্থান ও সময় উভয়ের ওপর যুগপৎ নির্ভর করে।</p>
+        </b1b-callout>
+
+        <b1b-media-tab caption="রডের তাপ বণ্টন: বাঁয়ে স্থির চিত্র (image) এবং ডানে বাংলা ডাবড 3Blue1Brown অ্যানিমেশন (video)। দুই মোডেই লক্ষ্য করো—মাঝখানে গরম বিন্দুটি ক্রমাগত চারপাশে ছড়িয়ে পড়ছে এবং পুরো রড একঘেয়ে তাপমাত্রার দিকে এগিয়ে যাচ্ছে; এটিই তাপ সমীকরণের মসৃণকরণ প্রভাব।">
+          <div slot="image">
+            <svg viewBox="0 0 560 240" role="img" aria-label="Heat diffusion still" style="background:#0b0c12;width:100%;height:auto;">
+              <rect x="40" y="150" width="480" height="26" fill="#ffa94d" fill-opacity="0.25"/>
+              <path d="M 40 150 C 160 148, 210 50, 280 40 C 350 50, 400 148, 520 150" fill="none" stroke="#ff6b6b" stroke-width="3"/>
+              <text x="180" y="210" fill="#8b949e" font-size="14">↑ u(x,t): মাঝখানে চূড়া, প্রান্তে শূন্য</text>
+              <text x="60" y="30" fill="#74c0e3" font-size="13">চিত্র ২: তাপ ব্যাপনের স্থির চিত্র</text>
+            </svg>
+          </div>
+          <div slot="video">
+            <video controls preload="none" src="../../media_vault/differential_equations/lesson_04/experiments/3b1b_de_04_full_dubbed.mp4"></video>
+          </div>
+        </b1b-media-tab>
+
+      </b1b-section>
+
+      <!-- ═══ Section 2 — NARRATED (manifest: sec-curvature-intuition · 8 cues) ═══ -->
+      <b1b-section id="sec-curvature-intuition" title="২. বক্রতার স্বজ্ঞাত অর্থ ও স্থানীয় প্রতিবেশীদের গড় (Curvature as Difference from Neighbors)">
+
+        <p>প্রথম দর্শনে সমীকরণটির দিকে তাকালে অনেকেরই মনে প্রশ্ন জাগে: কোনো বিন্দুতে তাপমাত্রা সময়ের সাথে বৃদ্ধি পাবে নাকি হ্রাস পাবে, তা কেন দূরত্বের সাপেক্ষে দ্বিতীয় অন্তরজ $\frac{\partial^2 u}{\partial x^2}$-এর ওপর নির্ভর করবে? প্রথম অন্তরজ নয় কেন?</p>
+
+        <b1b-figure alt="অবতল উপত্যকা ও উত্তল পর্বতচূড়ায় প্রতিবেশী গড়ের সাথে তুলনা" caption="এই চিত্রে দুটি পরিস্থিতি পাশাপাশি দেখানো হয়েছে। বাঁয়ের অবতল উপত্যকায় কেন্দ্রীয় বিন্দুটি তার দুই প্রতিবেশীর গড়ের নিচে থাকায় $\frac{\partial^2 u}{\partial x^2}>0$ এবং তাপ ভেতরে এসে তাপমাত্রা বাড়ায়। ডানের উত্তল চূড়ায় কেন্দ্রীয় বিন্দুটি প্রতিবেশীদের গড়ের ওপরে থাকায় $\frac{\partial^2 u}{\partial x^2}<0$ এবং তাপ বাইরে ছড়িয়ে গিয়ে তাপমাত্রা কমে। মাঝের সোজা রেখায় বক্রতা শূন্য—কোনো নিট প্রবাহ নেই।">
+          <svg viewBox="0 0 640 320" role="img" aria-label="Convex valley and concave peak" style="width:100%;height:auto;">
+            <rect x="0" y="0" width="640" height="320" fill="#0b0c12"/>
+            <line x1="20" y1="270" x2="310" y2="270" stroke="#8b949e" stroke-width="1.5"/>
+            <line x1="330" y1="270" x2="620" y2="270" stroke="#8b949e" stroke-width="1.5"/>
+            <path d="M 40 90 Q 165 260 290 90" fill="none" stroke="#74c0e3" stroke-width="3"/>
+            <path d="M 350 230 Q 475 60 600 230" fill="none" stroke="#ffa94d" stroke-width="3"/>
+            <line x1="90" y1="155" x2="240" y2="155" stroke="#10b981" stroke-dasharray="6 5" stroke-width="2"/>
+            <line x1="400" y1="155" x2="550" y2="155" stroke="#10b981" stroke-dasharray="6 5" stroke-width="2"/>
+            <circle cx="165" cy="200" r="5" fill="#74c0e3"/>
+            <circle cx="475" cy="125" r="5" fill="#ffa94d"/>
+            <text x="120" y="225" fill="#74c0e3" font-size="13">অবতল: u'' &gt; 0</text>
+            <text x="400" y="105" fill="#ffa94d" font-size="13">উত্তল: u'' &lt; 0</text>
+            <text x="90" y="150" fill="#10b981" font-size="12">গড়ের নিচে → উত্তপ্ত</text>
+            <text x="385" y="148" fill="#10b981" font-size="12">গড়ের ওপরে → শীতল</text>
+            <text x="30" y="30" fill="#f0f6fc" font-size="13">চিত্র ৩: বক্রতা ও স্থানীয় গড়</text>
+          </svg>
+        </b1b-figure>
+
+        <p>এই গভীর প্রশ্নের উত্তর লুকিয়ে রয়েছে তাপগতির মৌলিক বিধানে: তাপ স্বতঃস্ফূর্তভাবে উচ্চ তাপমাত্রা থেকে নিম্ন তাপমাত্রার দিকে প্রবাহিত হয় (ফুরিয়ারের তাপ পরিবাহিতা সূত্র: তাপীয় ফ্লাক্স $q = -k \frac{\partial u}{\partial x}$)।</p>
+
+        <p>রডের ভেতরের যেকোনো অতি ক্ষুদ্র বিন্দু $x$ কল্পনা করুন। এর ঠিক বামে রয়েছে প্রতিবেশী বিন্দু $x - \Delta x$ এবং ডানে রয়েছে $x + \Delta x$। বিন্দু $x$-এর তাপমাত্রা যদি তার দুই প্রতিবেশীর গড় $u_{\text{avg}} = \frac{u(x + \Delta x, t) + u(x - \Delta x, t)}{2}$-এর চেয়ে কম হয়, তবে দুই দিক থেকেই তাপ এই বিন্দুর ভেতরে প্রবেশ করবে ($\frac{\partial u}{\partial t} > 0$)। বিপরীতভাবে, যদি বিন্দুটি প্রতিবেশীদের গড়ের চেয়ে বেশি গরম হয়, তবে তাপ দুই পাশে বাইরে নির্গত হবে এবং তাপমাত্রা কমতে থাকবে ($\frac{\partial u}{\partial t} < 0$)।</p>
+
+        <b1b-formula math="\frac{\partial^2 u}{\partial x^2} \approx \frac{u(x + \Delta x, t) - 2u(x, t) + u(x - \Delta x, t)}{\Delta x^2} = \frac{2}{\Delta x^2}\left(u_{\text{avg}} - u(x, t)\right)"></b1b-formula>
+
+        <b1b-callout type="blue" icon="📈" title="জ্যামিতিক অন্তর্দৃষ্টি: বক্রতা বা কার্ভেচার">
+          <p>ক্যালকুলাসে দ্বিতীয় অন্তরজ হলো বক্ররেখার বাঁক বা অবতলতার পরিমাপ:
+          • অবতল বা হাসিমুখী বক্ররেখা (Convex / Smiling Curve): $\frac{\partial^2 u}{\partial x^2} > 0$। বিন্দুটি একটি উপত্যকার তলদেশে আছে, অর্থাৎ প্রতিবেশীদের গড়ের নিচে। সুতরাং এর তাপমাত্রা বৃদ্ধি পায়।
+          • উত্তল বা বিষাদময় বক্ররেখা (Concave / Frowning Curve): $\frac{\partial^2 u}{\partial x^2} < 0$। বিন্দুটি একটি পাহাড়ের চূড়ায় আছে, অর্থাৎ প্রতিবেশীদের গড়ের ওপরে। ফলে এর তাপমাত্রা হ্রাস পায়।
+          • সোজা সরলরেখা (Zero Curvature): $\frac{\partial^2 u}{\partial x^2} = 0$। বিন্দুটি হুবহু তার প্রতিবেশীদের গড়ে আছে। কোনো নিট তাপ প্রবাহ নেই; তাপমাত্রা অপরিবর্তিত থাকে!</p>
+          <p class="fig-note">মনে রাখার কৌশল: দ্বিতীয় অন্তরজ কেবল "আমি কতটা বাঁকা?" তা মাপে। বাঁক যত খাড়া, তাপ প্রবাহ তত তীব্র—এই কারণেই রডের ধারালো চূড়াগুলো সবচেয়ে আগে মসৃণ হয়।</p>
+        </b1b-callout>
+
+        <p>অতএব, তাপ সমীকরণ মহাবিশ্বের সবচেয়ে দক্ষ মসৃণকারী ইঞ্জিন: এটি ক্রমাগত সমস্ত চূড়াকে নামিয়ে আনে এবং সমস্ত উপত্যকাকে ভরাট করে।</p>
+
+      </b1b-section>
+
+      <!-- ═══ Section 3 — NARRATED (manifest: sec-sine-decay · 8 cues) ═══ -->
+      <b1b-section id="sec-sine-decay" title="৩. সীমানা শর্ত, সাইন তরঙ্গের সূচকীয় ক্ষয় ও আইগেনমোড (Boundary Conditions & Sine Eigenmodes)">
+
+        <p>সমীকরণের স্থানীয় ভৌতিক অর্থ পরিষ্কার হলো, কিন্তু পুরো দণ্ড জুড়ে এর বাস্তব সমাধান আমরা কীভাবে নির্ধারণ করব? এখানেই সীমানা শর্ত (Boundary Conditions) কেন্দ্রীয় ভূমিকা পালন করে। একটি ডিফারেনশিয়াল সমীকরণ কেবল স্থানীয় পরিবর্তনের নিয়ম দেয়, কিন্তু বাস্তব পদার্থবিদ্যায় প্রান্তদ্বয়ে কী ঘটছে তা জানা আবশ্যক।</p>
+
+        <b1b-callout type="green" icon="🧊" title="ডিরিখলে সীমানা শর্ত (Dirichlet Boundary Conditions)">
+          <p>ধরা যাক $L$ দৈর্ঘ্যের একটি ধাতব দণ্ড যার প্রান্তদ্বয় $x=0$ এবং $x=L$ বরফের পানিতে শূন্য ডিগ্রি সেলসিয়াসে স্থির রাখা হয়েছে: $u(0, t) = 0$ এবং $u(L, t) = 0$। একে বলা হয় ডিরিখলে সীমানা শর্ত। যদি প্রান্তদ্বয় পুরোপুরি অন্তরক দিয়ে মোড়ানো থাকত যাতে তাপ বের হতে না পারে, তবে $\frac{\partial u}{\partial x} = 0$ হতো, যা নিউম্যান সীমানা শর্ত।</p>
+          <svg viewBox="0 0 560 150" role="img" aria-label="Dirichlet boundary conditions" style="width:100%;height:auto;">
+            <rect x="0" y="0" width="560" height="150" fill="#0b0c12"/>
+            <line x1="70" y1="110" x2="490" y2="110" stroke="#ffa94d" stroke-width="12" stroke-opacity="0.35"/>
+            <circle cx="70" cy="110" r="7" fill="#74c0e3"/>
+            <circle cx="490" cy="110" r="7" fill="#74c0e3"/>
+            <text x="46" y="140" fill="#74c0e3" font-size="14">x=0, u=0</text>
+            <text x="430" y="140" fill="#74c0e3" font-size="14">x=L, u=0</text>
+            <text x="200" y="50" fill="#f0f6fc" font-size="13">বরফ · বরফ</text>
+            <text x="70" y="30" fill="#8b949e" font-size="12">চিত্র ৪: ডিরিখলে প্রান্ত</text>
+          </svg>
+          <p class="fig-note">চিত্রে দুই প্রান্ত নীল বিন্দু দিয়ে চিহ্নিত—এখানে তাপমাত্রা সর্বদা শূন্য। এই দুটি স্থির প্রান্তই রডের ভেতর কোন তরঙ্গ বেঁচে থাকবে তা নির্ধারণ করে।</p>
+        </b1b-callout>
+
+        <b1b-formula math="\frac{\partial^2}{\partial x^2}\sin\left(\frac{n \pi x}{L}\right) = -\left(\frac{n \pi}{L}\right)^2 \sin\left(\frac{n \pi x}{L}\right)"></b1b-formula>
+
+        <p>এই সীমানা শর্তের কারণেই রডের ভেতর যেকোনো এলোমেলো সাইন তরঙ্গ বেঁচে থাকতে পারে না! কেবল সেই সাইন তরঙ্গগুলোই অনুমোদিত হয় যা উভয় প্রান্তে নিখুঁতভাবে শূন্যে পৌঁছায়: $\sin\left(\frac{n \pi x}{L}\right)$। সীমানা শর্ত স্থানিক কম্পাঙ্ককে কোয়ান্টায়িত করে দেয়—অর্থাৎ $u(0,t)=0,\ u(L,t)=0$ মেটাতে কেবল $k=\frac{n\pi}{L}$ মানই চলে। যখন এই ফাংশনকে দূরত্বের সাপেক্ষে দুইবার ব্যবকলন করা হয়, পাওয়া যায় মূল ফাংশনের হুবহু সমানুপাতিক একটি ঋণাত্মক গুণিতক, ফলে আংশিক অন্তরক সমীকরণটি সময়ের সাপেক্ষে একটি সাধারণ সূচকীয় ক্ষয় সমীকরণে রূপান্তরিত হয়।</p>
+
+        <b1b-formula math="u_n(x, t) = e^{-\alpha \left(\frac{n \pi}{L}\right)^2 t} \sin\left(\frac{n \pi x}{L}\right)"></b1b-formula>
+
+        <b1b-callout type="gold" icon="📉" title="কম্পাঙ্কের বর্গের ক্ষয় নীতি (Frequency Squared Decay)">
+          <p>সূচকীয় পদটির ঘাতের দিকে লক্ষ্য করুন: $-\alpha \left(\frac{n \pi}{L}\right)^2 t$। ক্ষয়ের হার মোড সংখ্যা $n$-এর বর্গের সমানুপাতিক!
+          • উচ্চ কম্পাঙ্কের তরঙ্গ ($n$ বড়): অত্যন্ত সূক্ষ্ম, আঁকাবাঁকা ও ঘন ঢেউ। এদের বক্রতা প্রচণ্ড খাড়া। ফলে এগুলো $e^{-n^2 t}$ হারে অবিশ্বাস্য দ্রুততায় শূন্যে মিলিয়ে যায়।
+          • নিম্ন কম্পাঙ্কের তরঙ্গ ($n=1$ মৌলিক মোড): মৃদু, চওড়া ও মসৃণ ঢেউ। এদের ক্ষয় অত্যন্ত ধীর। উচ্চ কম্পাঙ্কগুলো ধ্বংস হয়ে যাওয়ার অনেক পরেও মৌলিক সাইন তরঙ্গটি রডের বুকে মৃদু উজ্জ্বলতায় টিকে থাকে।</p>
+          <svg viewBox="0 0 560 170" role="img" aria-label="Sine eigenmodes n=1,3,5" style="width:100%;height:auto;">
+            <rect x="0" y="0" width="560" height="170" fill="#0b0c12"/>
+            <line x1="40" y1="85" x2="520" y2="85" stroke="#8b949e" stroke-width="1.5"/>
+            <path d="M 40 85 Q 140 10 280 85 T 520 85" fill="none" stroke="#10b981" stroke-width="3"/>
+            <path d="M 40 85 Q 90 15 140 85 T 240 85 T 340 85 T 440 85 T 520 85" fill="none" stroke="#74c0e3" stroke-width="2" stroke-opacity="0.8"/>
+            <text x="455" y="45" fill="#10b981" font-size="13">n=1 (ধীর ক্ষয়)</text>
+            <text x="455" y="65" fill="#74c0e3" font-size="13">n=3,5 (দ্রুত)</text>
+            <text x="40" y="30" fill="#f0f6fc" font-size="13">চিত্র ৫: আইগেনমোড ও ক্ষয় হার</text>
+          </svg>
+          <p class="fig-note">চিত্রে চওড়া সবুজ তরঙ্গ ($n=1$) অনেকক্ষণ টিকে থাকে, কিন্তু ঘন নীল তরঙ্গগুলো ($n=3,5$) খাড়া বক্রতার কারণে প্রায় তাৎক্ষণিকভাবে মিলিয়ে যায়—$n^2$ নীতিরই ফল।</p>
+        </b1b-callout>
+
+        <p>সীমানা শর্ত মান্যকারী সাইন তরঙ্গগুলো হলো তাপ সমীকরণের নিজস্ব প্রাকৃতিক আইগেনমোড (Eigenmodes)। কিন্তু বাস্তব জীবনে প্রাথমিক তাপমাত্রা তো কেবল একটি একক সাইন তরঙ্গ হয় না!</p>
+
+      </b1b-section>
+
+      <!-- ═══ Section 4 — NARRATED (manifest: sec-fourier-series · 8 cues) ═══ -->
+      <b1b-section id="sec-fourier-series" title="৪. জোসেফ ফুরিয়ারের বিপ্লব ও তরঙ্গের উপরিপাত (Fourier Series & Superposition)">
+
+        <p>বাস্তব জীবনে আপনি যদি একটি ধাতব রডের মাঝখানে আগুন দিয়ে এক সেকেন্ডের জন্য স্পর্শ করেন, তবে তাপমাত্রার চিত্রটি হবে একটি আকস্মিক সূঁচালো স্পাইক। অথবা যদি দণ্ডের এক অর্ধেক ফুটন্ত জলে আর অন্য অর্ধেক বরফে নিমজ্জিত থাকে, তবে মাঝখানে তৈরি হয় একটি খাড়া বিচ্ছেদ—স্টেপ ফাংশন।</p>
+
+        <b1b-quote author="জোসেফ ফুরিয়ার (১৮০৭, প্যারিস বিজ্ঞান একাডেমি)">সীমানা শর্ত মান্যকারী যেকোনো তাপমাত্রা অপেক্ষক $f(x)$—তা যতই খাঁজকাটা, ভাঙা কিংবা অসমতল হোক না কেন—তাকে অসীম সংখ্যক বিভিন্ন কম্পাঙ্কের অনুমোদিত সাইন তরঙ্গের সমাহারে হুবহু প্রকাশ করা যায়!</b1b-quote>
+
+        <p>১৮০৭ সালে ফরাসি প্রকৌশলী ও গণিতবিদ জোসেফ ফুরিয়ার প্যারিসের ফরাসি বিজ্ঞান একাডেমিতে এই বৈপ্লবিক গবেষণাপত্র পেশ করেন। তৎকালীন ইউরোপের গণিত সম্রাটরা—লাগ্রাঞ্জ, লাপ্লাস ও লিজেন্দ্রে—প্রথমে এই ধারণা বিশ্বাস করতে অস্বীকৃতি জানান। কারণ মসৃণ সাইন ঢেউয়ের যোগফল কীভাবে একটি ধারালো কোণা তৈরি করতে পারে? কিন্তু ফুরিয়ার ছিলেন অটল ও নির্ভুল। এটিই গণিতের ইতিহাসে 'ফুরিয়ার ধারা' (Fourier Series) নামে পরিচিত।</p>
+
+        <b1b-formula math="f(x) = \sum_{n=1}^{\infty} b_n \sin\left(\frac{n \pi x}{L}\right)"></b1b-formula>
+
+        <p>অর্থোগোনালিটি বা লম্বতার ধর্ম ব্যবহার করে প্রতিটি সাইন মোডের সহগ নির্ণয় করা হয়: $b_n = \frac{2}{L} \int_0^L f(x) \sin\left(\frac{n \pi x}{L}\right) dx$। অর্থাৎ প্রাথমিক বণ্টন $f(x)$-কে প্রতিটি আইগেনমোডের সাথে "অভিক্ষেপ" করে দেখা হয় ওই মোডটি কতটা অবদান রাখছে। রৈখিকতার কারণে এই বিশ্লেষণ সম্ভব—প্রতিটি টুকরোকে আলাদাভাবে সময়ের সাথে মিলিয়ে আবার যোগ করলেই ভবিষ্যৎ মিলে যায়।</p>
+
+        <b1b-formula math="u(x, t) = \sum_{n=1}^{\infty} b_n e^{-\alpha \left(\frac{n \pi}{L}\right)^2 t} \sin\left(\frac{n \pi x}{L}\right)"></b1b-formula>
+
+        <b1b-callout type="purple" icon="🧮" title="রৈখিকতা ও উপরিপাত নীতি (Linearity & Superposition)">
+          <p>কেন ফুরিয়ার বিশ্লেষণ তাপ সমীকরণের জন্য এত অপরিহার্য? কারণ তাপ সমীকরণ একটি রৈখিক সমীকরণ! যদি $u_1$ এবং $u_2$ দুটি সমাধান হয়, তবে তাদের যেকোনো রৈখিক যোগফল $c_1 u_1 + c_2 u_2$-ও একটি সমাধান হবে।
+          কৌশলটি তিন ধাপে সম্পন্ন হয়:
+          ১. যেকোনো প্রাথমিক তাপমাত্রাকে ফুরিয়ার সাইন ধারায় বিশ্লিষ্ট করুন (Fourier Analysis)।
+          ২. প্রতিটি $n$-তম হারমোনিককে তার নিজস্ব গতিতে সূচকীয় ক্ষয় $e^{-\alpha (n\pi/L)^2 t}$ পেতে দিন।
+          ৩. ক্ষয়প্রাপ্ত সমস্ত সাইন তরঙ্গকে আবার একসাথে যোগ করে দিন (Fourier Synthesis)—আর পেয়ে যান যেকোনো ভবিষ্যতের তাপমাত্রার নির্ভুল চিত্র!</p>
+          <svg viewBox="0 0 560 170" role="img" aria-label="Superposition forming a step" style="width:100%;height:auto;">
+            <rect x="0" y="0" width="560" height="170" fill="#0b0c12"/>
+            <line x1="40" y1="85" x2="520" y2="85" stroke="#8b949e" stroke-width="1.5"/>
+            <path d="M 40 140 L 280 140 L 280 30 L 520 30" fill="none" stroke="#f0f6fc" stroke-width="2.5"/>
+            <path d="M 40 85 Q 110 5 200 85 T 360 85 T 520 85" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-opacity="0.8"/>
+            <text x="430" y="135" fill="#f0f6fc" font-size="12">স্টেপ ফাংশন</text>
+            <text x="45" y="35" fill="#ff6b6b" font-size="12">সাইন মোডের যোগফল</text>
+            <text x="40" y="160" fill="#8b949e" font-size="12">চিত্র ৬: উপরিপাতে ধারালো কোণা</text>
+          </svg>
+          <p class="fig-note">চিত্রে কয়েকটি মসৃণ সাইন তরঙ্গ যোগ করা হলে সাদা স্টেপ ফাংশনের ধারালো কোণা ধীরে ধীরে ফুটে ওঠে—লাগ্রাঞ্জের বিস্ময় ও ফুরিয়ারের সত্যতা এই চিত্রেই প্রমাণিত।</p>
+        </b1b-callout>
+
+      </b1b-section>
+
+      <!-- ═══ Section 5 — NARRATED (manifest: sec-entropy-irreversibility · 7 cues) ═══ -->
+      <b1b-section id="sec-entropy-irreversibility" title="৫. তাপের মসৃণকরণ, এনট্রপি বৃদ্ধি ও সময়ের একমুখী তীর (Smoothing, Entropy & The Arrow of Time)">
+
+        <p>ফুরিয়ার ধারার সমাধানটি শুধু একটি প্রকৌশলগত সূত্র নয়; এটি পদার্থবিজ্ঞানের সবচেয়ে মৌলিক দার্শনিক সত্যগুলোর একটিকে মূর্ত করে তোলে।</p>
+
+        <b1b-figure alt="সময়ের সাথে এবড়োখেবড়ো তাপ বণ্টনের মসৃণকরণ" caption="এই চিত্রে তিনটি সময়ে ($t=0$, $t=1$, $t=5$) একই রডের তাপ প্রোফাইল দেখানো হয়েছে। শুরুর লাল রেখা খাঁজকাটা ও অসম—অনেক সূক্ষ্ম হারমোনিকে ভরা। কালের সাথে সাথে নীল ও সবুজ রেখা ক্রমশ মসৃণ হয়ে একটি মৃদু সাইন কার্ভে রূপ নিচ্ছে। লক্ষ্য করো: যে সূক্ষ্ম তথ্য আদিতে ছিল, তাপ সমীকরণ তা সমূলে মুছে দিচ্ছে—এটিই এনট্রপি বৃদ্ধির দৃশ্যমান রূপ।">
+          <svg viewBox="0 0 640 320" role="img" aria-label="Smoothing over time" style="width:100%;height:auto;">
+            <rect x="0" y="0" width="640" height="320" fill="#0b0c12"/>
+            <line x1="60" y1="270" x2="610" y2="270" stroke="#8b949e" stroke-width="2"/>
+            <line x1="60" y1="270" x2="60" y2="30" stroke="#8b949e" stroke-width="2"/>
+            <path d="M 60 200 l 25 -70 l 25 60 l 25 -90 l 25 80 l 25 -60 l 25 70 l 25 -50 l 25 55 l 25 -40 l 25 30 l 25 -20 l 25 10 l 25 -5 l 150 0" fill="none" stroke="#ff6b6b" stroke-width="2"/>
+            <path d="M 60 220 Q 200 120 340 160 T 610 230" fill="none" stroke="#74c0e3" stroke-width="2.5"/>
+            <path d="M 60 250 Q 280 200 450 235 T 610 255" fill="none" stroke="#10b981" stroke-width="3"/>
+            <text x="470" y="120" fill="#ff6b6b" font-size="13">t = 0 (খাঁজকাটা)</text>
+            <text x="470" y="145" fill="#74c0e3" font-size="13">t = 1</text>
+            <text x="470" y="170" fill="#10b981" font-size="13">t = 5 (মসৃণ)</text>
+            <text x="70" y="30" fill="#f0f6fc" font-size="13">চিত্র ৭: মসৃণকরণ ও তথ্য বিলুপ্তি</text>
+          </svg>
+        </b1b-figure>
+
+        <p>লক্ষ্য করুন, $n$-তম হারমোনিকের ক্ষয় ফ্যাক্টর হলো $e^{-\alpha (n\pi/L)^2 t}$। সূচকে $n^2$ থাকার কারণে উচ্চ হারমোনিকগুলো (যেমন $n=10, 20, 50$) সময় শুরুর ভগ্নাংশের মধ্যে বিলুপ্ত হয়ে যায়। কেবল প্রথম মৌলিক মোড ($n=1$) দীর্ঘক্ষণ মৃদু উজ্জ্বলতায় বেঁচে থাকে। এর অর্থ কী? শুরুর দিকে ধাতব দণ্ডে তাপমাত্রার সূক্ষ্ম বিবরণী বা খাঁজকাটা জ্যামিতি যাই থাকুক না কেন, তাপ সমীকরণ সেই সমস্ত অতীত তথ্যকে সমূলে নিশ্চিহ্ন করে দেয়! কিছু সময় পার হলে সমস্ত প্রাথমিক অবস্থার তাপমাত্রা প্রায় একই রকম দেখতে একটি মৃদু সাইন কার্ভে রূপান্তরিত হয় এবং পরিশেষে একঘেয়ে সমান তাপমাত্রায় স্থির হয়।</p>
+
+        <b1b-callout type="red" icon="⏳" title="সময়ের একমুখী তীর ও ব্যাকওয়ার্ড হিট ইকুয়েশন">
+          <p>নিউটনের গতিসূত্র বা ম্যাক্সওয়েলের তড়িৎচৌম্বকীয় সমীকরণ উভয় দিকেই কাজ করে—ভিডিও রিভার্স করলেও পদার্থবিদ্যা ঠিক থাকে। কিন্তু তাপ সমীকরণ সম্পূর্ণ ভিন্ন! তাপগতিবিদ্যার দ্বিতীয় সূত্র $\frac{dS}{dt} \ge 0$ বলে বিচ্ছিন্ন ব্যবস্থার বিশৃঙ্খলা সর্বদা বৃদ্ধি পায়। যদি আপনি তাপ সমীকরণে $t$-এর জায়গায় $-t$ বসিয়ে অতীতে ফিরে যাওয়ার চেষ্টা করেন, তবে সূচকের ঋণাত্মক চিহ্ন ধনাত্মক হয়ে যায়:
+          $u(x, -t) = \sum_{n=1}^{\infty} b_n e^{+\alpha \left(\frac{n \pi}{L}\right)^2 t} \sin\left(\frac{n \pi x}{L}\right)$।
+          উচ্চ কম্পাঙ্কের ক্ষেত্রে ক্ষুদ্রাতিক্ষুদ্র পরিমাপের ত্রুটি চোখের পলকে অসীমে বিস্ফোরিত হয়। গণিতের ভাষায় এটি একটি অত্যন্ত কুখ্যাত 'ইল-পোজড প্রবলেম' (Ill-posed Problem)। এক কাপ ঠান্ডা কফির বর্তমান তাপমাত্রা দেখে নিখুঁতভাবে বলা সম্ভব নয় কফির শুরুর প্রতিটি অনুতে তাপ কেমন ছিল। তাপ তথ্য ধ্বংস করে এবং এভাবেই মহাবিশ্বে সময়ের একমুখী তীর (Arrow of Time) প্রতিষ্ঠিত হয়।</p>
+        </b1b-callout>
+
+        <p>এটিই হলো তাপগতিবিদ্যার দ্বিতীয় সূত্র—এনট্রপির অবিরত বৃদ্ধি $\frac{dS}{dt} \ge 0$। তাপ সমীকরণ প্রমাণ করে কেন গরম কফি সর্বদা জুড়িয়ে ঘরের তাপমাত্রায় আসে, কিন্তু কক্ষের তাপ শোষণ করে ঠান্ডা কফি কখনো নিজে থেকে ফুটে ওঠে না। ফরওয়ার্ড সময়ে উচ্চ কম্পাঙ্কগুলো $e^{-\alpha (n\pi/L)^2 t}$ আকারে অতি দ্রুত মিলিয়ে গিয়ে মসৃণতা আনে; ব্যাকওয়ার্ডে তা $e^{+\alpha (n\pi/L)^2 t}$ হয়ে যায়—যেকোনো নগণ্য নয়েজ অসীমে ধাবিত হয়।</p>
+
+        <p>এভাবেই জোসেফ ফুরিয়ারের হাত ধরে গণিতের এক সমীকরণ বিশ্বব্রহ্মাণ্ডের সবচেয়ে মৌলিক সত্য—সময়ের একমুখী যাত্রাকে গাণিতিক রূপ দিয়েছে। ক্যালকুলাসের মসৃণ দ্বিতীয় ডেরিভেটিভ এভাবে প্রকৃতির তাপীয় সাম্যাবস্থা এবং এনট্রপির অলঙ্ঘনীয় বিধানের সাথে একাকার হয়ে যায়।</p>
+
+      </b1b-section>
+
+      <!-- ═══ Section 6 — NON-NARRATED interactive lab ═══ -->
+      <b1b-section id="sec-interactive-lab" title="৬. ইন্টারেক্টিভ তাপ ব্যাপন ও সীমানা শর্ত ল্যাব" data-no-narration="true">
+
+        <p>নিচের ল্যাবে আপনি নিজের হাতে একটি একমাত্রিক ধাতব রডের তাপমাত্রা বিবর্তন পরীক্ষা করতে পারবেন। সীমানা শর্ত ও প্রাথমিক প্রোফাইল বদলে দেখুন কীভাবে উচ্চ কম্পাঙ্কের ধারালো খাঁজগুলো কয়েক মুহূর্তেই মসৃণ হয়ে মিলিয়ে যায় এবং রডটি সাম্যাবস্থার দিকে এগিয়ে চলে।</p>
+
+        <b1b-formula math="\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}, \qquad u_i^{n+1} = u_i^{n} + r\left(u_{i+1}^{n} - 2u_i^{n} + u_{i-1}^{n}\right)"></b1b-formula>
+        <p>ল্যাবটি সসীম অন্তর (finite difference) পদ্ধতিতে $r = \frac{\alpha\,\Delta t}{\Delta x^2}$ ব্যবহার করে সমীকরণটি সমাধান করে। উপরের গ্রাফে তাপমাত্রা বক্ররেখা এবং নিচে রডের বাস্তব তাপীয় বর্ণালি (heatmap) দেখানো হয়।</p>
+
+        <b1b-callout type="blue" icon="🕹️" title="ল্যাব ব্যবহারের নির্দেশিকা">
+          <p>১. প্রান্তীয় শর্ত (Dirichlet / Neumann / স্থির প্রান্ত / Periodicity) ও প্রাথমিক প্রোফাইল (স্টেপ, স্পাইক, সাইন, বহু-সাইন, র্যান্ডম) নির্বাচন করুন।<br/>২. $\alpha$ (ব্যাপন সহগ), ফুরিয়ার পদ সংখ্যা ও সিমুলেশন গতির স্লাইডার ঘুরিয়ে পরামিতি পরিবর্তন করুন।<br/>৩. ▶ চালু বাটনে টিপুন বা গ্রাফে ক্লিক করে নতুন প্রোফাইল আঁকুন; ◼ বন্ধ ও ↺ রিসেট বাটন দিয়ে নিয়ন্ত্রণ করুন।</p>
+        </b1b-callout>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <div class="viz-wrapper" id="heatVizWrapper">
+            <div class="viz-header">
+              <div class="viz-header-left"><span>🔥 তাপ ব্যাপন ও সীমানা শর্ত সিমুলেটর — গ্রাফে ক্লিক করে নতুন প্রোফাইল আঁকুন!</span></div>
+            </div>
+            <div class="viz-canvas-container" style="position:relative;">
+              <canvas id="heatGraph" style="width:100%;height:300px;cursor:crosshair;display:block;background:#0b0c12;"></canvas>
+              <canvas id="heatMap" style="width:100%;height:40px;display:block;"></canvas>
+            </div>
+            <div class="viz-controls">
+              <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px;">
+                <label style="font-size:.9rem;">প্রান্তীয় শর্ত:
+                  <select id="hbBoundary" style="margin-left:6px;">
+                    <option value="dirichlet_zero">জিরো ডিরিখলে (u=0°C)</option>
+                    <option value="neumann_insulated">নিউম্যান (অন্তরক, ∂u/∂x=0)</option>
+                    <option value="dirichlet_fixed">স্থির প্রান্ত (১০০°C বাম, ০°C ডান)</option>
+                    <option value="periodic_ring">পর্যায়বৃত্ত রিং</option>
+                  </select>
+                </label>
+                <label style="font-size:.9rem;">প্রাথমিক প্রোফাইল:
+                  <select id="hbProfile" style="margin-left:6px;">
+                    <option value="step">স্টেপ (অর্ধেক ১০০°C)</option>
+                    <option value="spike">মাঝখানে স্পাইক</option>
+                    <option value="sine_fundamental">একক সাইন (n=1)</option>
+                    <option value="multi_sine">মিশ্র হারমোনিক (n=1,3,5)</option>
+                    <option value="random_jagged">এলোমেলো খাঁজকাটা</option>
+                  </select>
+                </label>
+              </div>
+              <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+                <button type="button" id="hbPlay" class="viz-tool-btn" style="background:var(--theme);color:#000;font-weight:bold;">▶ চালু</button>
+                <button type="button" id="hbPause" class="viz-tool-btn">◼ বন্ধ</button>
+                <button type="button" id="hbReset" class="viz-tool-btn">↺ রিসেট</button>
+                <div class="viz-slider-row"><label>α:</label><input type="range" id="hbAlpha" min="0.01" max="0.5" step="0.01" value="0.1"/><span class="viz-val" id="hbAlphaVal">০.১০</span></div>
+                <div class="viz-slider-row"><label>ফুরিয়ার পদ N:</label><input type="range" id="hbTerms" min="1" max="50" step="1" value="20"/><span class="viz-val" id="hbTermsVal">২০</span></div>
+                <div class="viz-slider-row"><label>গতি:</label><input type="range" id="hbSpeed" min="0.1" max="3" step="0.1" value="1"/><span class="viz-val" id="hbSpeedVal">১.০×</span></div>
+              </div>
+            </div>
+            <div class="viz-info" id="hbInfo">সময় t = ০.০০ s | u_max = ১০০.০°C | u_min = ০.০°C | এনট্রপি সূচক = ০.০%</div>
+          </div>
+        </b1b-fullscreen>
+
+        <p>পর্যবেক্ষণ করুন কীভাবে উচ্চ কম্পাঙ্কের ধারালো খাঁজগুলো কয়েক মুহূর্তেই মসৃণ হয়ে যায় ($e^{-n^2 t}$ নীতি), আর নিউম্যান সীমানায় রডের মোট তাপ শক্তি সংরক্ষিত থাকে। ব্যাকওয়ার্ড সময়ে একই প্রক্রিয়া বিস্ফোরক হয়ে ওঠে—সেটিই ইল-পোজড সমস্যা ও সময়ের একমুখী তীর।</p>
+
+      </b1b-section>
+
+      <!-- ═══ Section 7 — NON-NARRATED quizzes + reference ═══ -->
+      <b1b-section id="sec-quizzes" title="৭. ৩ব্লু১ব্রাউন ইন্টারেক্টিভ কুইজ ও ধারণা যাচাই" data-no-narration="true">
+
+        <p>নিচের কুইজগুলোতে অধ্যায়ের মূল ধারণাগুলো যাচাই করা হয়েছে। প্রতিটি প্রশ্নের সাথে সমৃদ্ধ বাংলা ফিডব্যাক দেওয়া আছে—উত্তর বাছাই করে 'যাচাই করো' টিপুন।</p>
+
+        <b1b-callout type="gold" icon="🎯" title="অধ্যায়ের মূল বার্তা (Key Takeaway)">
+          <p>তাপ সমীকরণ $\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}$ একটি রৈখিক আংশিক অন্তরক সমীকরণ (PDE)। স্থানিক দ্বিতীয় অন্তরজ স্থানীয় প্রতিবেশীদের গড়ের সাথে ব্যবধান বা বক্রতা নির্দেশ করে। দুই প্রান্তের ডিরিখলে সীমানা শর্ত ($u(0,t)=u(L,t)=0$) স্থানিক কম্পাঙ্ককে $\frac{n\pi}{L}$ আকারে সীমাবদ্ধ করে। সাইন তরঙ্গগুলো স্থানিক অন্তরকের আইগেনফাংশন হওয়ায় প্রতিটি মোড স্বাধীনভাবে $e^{-\alpha (n\pi/L)^2 t}$ হারে সূচকীয় ক্ষয়প্রাপ্ত হয়, যা এনট্রপির বৃদ্ধি ও সময়ের একমুখী তীরকে সুস্পষ্ট করে তোলে।</p>
+        </b1b-callout>
+
+        <b1b-quiz
+          question="❓ ১. একমাত্রিক তাপ সমীকরণ $\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}$-এ স্থানিক দ্বিতীয় অন্তরজ $\frac{\partial^2 u}{\partial x^2}$-এর স্বজ্ঞাত জ্যামিতিক ও ভৌতিক তাৎপর্য কী?"
+          correct="2"
+          correct-msg="চমৎকার ও সম্পূর্ণ সঠিক! সসীম অন্তর থেকে দেখা যায় $\frac{\partial^2 u}{\partial x^2} \approx \frac{2}{\Delta x^2}(u_{\text{avg}} - u)$। দ্বিতীয় ডেরিভেটিভ স্থানীয় অবতলতা বা হাসিমুখী বাঁক নির্দেশ করে, যা বলে দেয় বিন্দুটি প্রতিবেশীর তুলনায় ঠান্ডা (উত্তপ্ত হবে) নাকি গরম (শীতল হবে)।"
+          wrong-msg="ভুল! এটি গতিবেগ নয়—স্থানিক গতিবেগ নির্দেশ করে প্রথম ক্রমের অ্যাডভেকশন সমীকরণ $\frac{\partial u}{\partial t} + v \frac{\partial u}{\partial x} = 0$। মোট শক্তি ইন্টিগ্রাল $\int u(x,t) dx$ দ্বারা নির্ধারিত হয়, দ্বিতীয় অন্তরজ দ্বারা নয়। তাপীয় রোধ উপাদানের ভৌত ধ্রুবক, ডেরিভেটিভ দ্বারা নয়। সঠিক উত্তর: দ্বিতীয় অন্তরজ পরিমাপ করে বিন্দুটি তার প্রতিবেশীদের গড়ের তুলনায় কতটা কম বা বেশি।"
+          reveal-msg="স্থানীয় দ্বিতীয় ডেরিভেটিভ বক্রতার পরিমাপ। যদি বক্ররেখা অবতল হয় (হাসিমুখী কার্ভ, $u_{xx} > 0$), তবে বিন্দুটি প্রতিবেশীদের গড়ের নিচে অবস্থান করায় তাপ বাইরে থেকে এসে বিন্দুটির তাপমাত্রা বাড়ায়। সঠিক উত্তর: এটি পরিমাপ করে কোনো একটি নির্দিষ্ট বিন্দুর তাপমাত্রা তার আশপাশের প্রতিবেশী বিন্দুগুলোর গড় তাপমাত্রার তুলনায় কতটা কম বা বেশি।">
+          <div slot="option">এটি বস্তুর মধ্য দিয়ে তাপের সামগ্রিক স্থানান্তর গতিবেগ (Velocity) নির্দেশ করে</div>
+          <div slot="option">এটি ধাতব দণ্ডে সঞ্চিত মোট তাপশক্তির সামগ্রিক ইন্টিগ্রাল প্রকাশ করে</div>
+          <div slot="option">এটি পরিমাপ করে কোনো একটি নির্দিষ্ট বিন্দুর তাপমাত্রা তার আশপাশের প্রতিবেশী বিন্দুগুলোর গড় তাপমাত্রার তুলনায় কতটা কম বা বেশি</div>
+          <div slot="option">এটি মাধ্যমের তাপীয় রোধ ও ঘনত্বের অনুপাত নির্দেশ করে</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ২. $L$ দৈর্ঘ্যের একটি ধাতব দণ্ডে ডিরিখলে সীমানা শর্ত $u(0, t) = 0$ এবং $u(L, t) = 0$ প্রয়োগ করার পর কেন কেবল নির্দিষ্ট সাইন তরঙ্গ $\sin\left(\frac{n \pi x}{L}\right)$ টিকে থাকতে পারে?"
+          correct="1"
+          correct-msg="একদম নিখুঁত! সাধারণ সাইন তরঙ্গ $\sin(kx)$ ক্ষেত্রে $x=0$-তে মান শূন্য হয়; কিন্তু $x=L$-এ শূন্য হতে হলে $\sin(kL) = 0$ হতে হয়, যা নির্দেশ করে $kL = n\pi \implies k = \frac{n\pi}{L}$। সীমানা শর্তই অনুমোদিত হারমোনিকসকে কোয়ান্টায়িত করে দেয়!"
+          wrong-msg="ভুল! কোসাইন ফাংশন সব বাস্তব সংখ্যার জন্যই বৈধ, কিন্তু $\cos(0)=1$ হওয়ায় ডিরিখলে শর্ত মেটাতে পারে না। তাপ সমীকরণ সম্পূর্ণ রৈখিক; এর স্বাভাবিক আইগেনফাংশন সাইন ও কোসাইন—বিজোড় ঘাতের বহুপদী নয়। ভর ধ্রুব থাকে, সীমানা শর্ত কেবল প্রান্তীয় তাপমাত্রা নিয়ন্ত্রণ করে।"
+          reveal-msg="সীমানা শর্ত আংশিক ডিফারেনশিয়াল সমীকরণের সাধারণ রূপকে নির্দিষ্ট কাঠামোর মধ্যে আবদ্ধ করে। $u(0)=u(L)=0$ মেটাতে কোসাইন তরঙ্গ বাদ পড়ে যায় (কারণ $\cos(0)=1$) এবং সাইন তরঙ্গের কম্পাঙ্ক $\frac{n\pi}{L}$ কোয়ান্টায়িত হয়। সঠিক উত্তর: প্রান্তীয় বাধ্যবাধকতায় তরঙ্গটিকে $x=0$ ও $x=L$ উভয় বিন্দুতেই শূন্য হতে হয়, যা কেবল $k = \frac{n\pi}{L}$-এর সাইন তরঙ্গই মেটাতে পারে।">
+          <div slot="option">কারণ কেলভিন স্কেলে কোসাইন তরঙ্গের মান বাস্তব সংখ্যার ক্ষেত্রে সংজ্ঞায়িত নয়</div>
+          <div slot="option">কারণ প্রান্তীয় সীমানা শর্তের বাধ্যবাধকতায় তরঙ্গটিকে $x=0$ ও $x=L$ উভয় বিন্দুতেই শূন্য হতে হয়, যা কেবল $k = \frac{n\pi}{L}$ কম্পাঙ্কের সাইন তরঙ্গই মেটাতে পারে</div>
+          <div slot="option">কারণ তাপ সমীকরণ শুধুমাত্র বিজোড় ঘাতের বহুপদী সমাধানকে সমর্থন করে</div>
+          <div slot="option">কারণ ধাতব রডের ভর সীমানা শর্তের কারণে সময়ের সাথে দ্রুত হ্রাস পায়</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৩. তাপ সমীকরণকে সময়ের বিপরীত দিকে ($t \to -t$) সমাধান করা কেন একটি গাণিতিক ও পদার্থবিজ্ঞানসম্মত 'ইল-পোজড' (Ill-posed) সমস্যা?"
+          correct="3"
+          correct-msg="অত্যন্ত গভীর ও নির্ভুল উত্তর! তাপ সমীকরণ সময়ের সাথে উচ্চ কম্পাঙ্কের সমস্ত সূক্ষ্ম তথ্য পুরোপুরি মুছে ফেলে (এনট্রপি বৃদ্ধি)। অতীতে ফিরতে গেলে উচ্চ ফ্রিকোয়েন্সি সূচকীয় বিস্ফোরণ ঘটায়, যা প্রকৃতির অপ্রত্যাবর্তনশীলতা ও সময়ের একমুখী তীরকে প্রতিষ্ঠিত করে।"
+          wrong-msg="ভুল! সমস্যাটি পরম শূন্য তাপমাত্রার সাথে সম্পর্কিত নয়, বরং ডেরিভেটিভ ও ফুরিয়ার ধারার স্থিতিশীলতার সাথে সম্পর্কিত। ফুরিয়ার সহগ স্থানিক ইন্টিগ্রাল—সময় বিপরীত করলেও তা শূন্য হয় না। এটি ক্লাসিক্যাল তাপগতিবিদ্যার সমীকরণ, আপেক্ষিকতার নয়। সঠিক উত্তর: ফরওয়ার্ডে তীব্র ক্ষয় বিপরীত সময়ে $e^{+\alpha (n\pi/L)^2 t}$ বিস্ফোরণে রূপ নেয়।"
+          reveal-msg="ফরওয়ার্ড তাপ সমীকরণে উচ্চ কম্পাঙ্কগুলো $e^{-\alpha (n\pi/L)^2 t}$ আকারে অতি দ্রুত মিলিয়ে গিয়ে মসৃণতা আনে। কিন্তু ব্যাকওয়ার্ড ডিরেকশনে এটি $e^{+\alpha (n\pi/L)^2 t}$ হয়ে যায়। ফলে যে কোনো নগণ্য ক্ষুদ্র নয়েজ অসীমে ধাবিত হয়, যা এনট্রপির দ্বিতীয় সূত্রের প্রতিফলন। সঠিক উত্তর: উচ্চ কম্পাঙ্কের বিস্ফোরক বৃদ্ধির কারণে অতি নগণ্য ত্রুটিও অসীম বিস্তারে পৌঁছায়।">
+          <div slot="option">কারণ সময়ের বিপরীত দিকে তাপমাত্রা স্বয়ংক্রিয়ভাবে ঋণাত্মক পরম শূন্যের নিচে নেমে যায়</div>
+          <div slot="option">কারণ ঋণাত্মক সময়ে ফুরিয়ার সহগ $b_n$ নির্ণয়ের ইন্টিগ্রাল শূন্য হয়ে যায়</div>
+          <div slot="option">কারণ আলোর গতির সীমাবদ্ধতার সাথে তাপের প্রসারণের সংঘর্ষ বাঁধে</div>
+          <div slot="option">কারণ ফরওয়ার্ড সময়ে উচ্চ কম্পাঙ্কের তীব্র ক্ষয় বিপরীত সময়ে বিস্ফোরক বৃদ্ধিতে ($e^{+\alpha (n\pi/L)^2 t}$) পরিণত হয়, যার ফলে অতি নগণ্য পরীক্ষামূলক ত্রুটিও অসীম বিস্তারে বিস্ফোরিত হয়ে অতীতকে পুনরুদ্ধার অসম্ভব করে তোলে</div>
+        </b1b-quiz>
+
+        <b1b-callout type="blue" icon="📐" title="মূল সূত্র সংগ্রহ (Key Formulas)">
+          <p>১. একমাত্রিক তাপ সমীকরণ: $\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2},\quad \alpha = \frac{k}{\rho c_p}$।<br/>
+          ২. বক্রতা ও স্থানীয় গড়: $\frac{\partial^2 u}{\partial x^2} \approx \frac{2}{\Delta x^2}\left(\frac{u(x+\Delta x)+u(x-\Delta x)}{2} - u(x)\right)$।<br/>
+          ৩. জিরো ডিরিখলে শর্ত: $u(0,t)=0,\quad u(L,t)=0$।<br/>
+          ৪. ইনসুলেটেড নিউম্যান শর্ত: $\left.\frac{\partial u}{\partial x}\right|_{x=0}=0,\quad \left.\frac{\partial u}{\partial x}\right|_{x=L}=0$।<br/>
+          ৫. সাইন আইগেনমোড ক্ষয়: $u_n(x,t)=e^{-\alpha\left(\frac{n\pi}{L}\right)^2 t}\sin\left(\frac{n\pi x}{L}\right)$।<br/>
+          ৬. ফুরিয়ার সাইন ধারা: $f(x)=\sum_{n=1}^{\infty} b_n \sin\left(\frac{n\pi x}{L}\right),\quad b_n=\frac{2}{L}\int_0^L f(x)\sin\left(\frac{n\pi x}{L}\right)dx$।<br/>
+          ৭. পূর্ণ সমাধান: $u(x,t)=\sum_{n=1}^{\infty} b_n \exp\left(-\alpha\left(\frac{n\pi}{L}\right)^2 t\right)\sin\left(\frac{n\pi x}{L}\right)$।<br/>
+          ৮. ত্রিমাত্রিক ল্যাপ্লাসিয়ান: $\frac{\partial u}{\partial t}=\alpha\nabla^2 u$।</p>
+        </b1b-callout>
+
+        <b1b-callout type="green" icon="📖" title="পরিভাষা (Glossary)">
+          <p><strong>আংশিক অন্তরক সমীকরণ (PDE):</strong> দুই বা ততোধিক স্বাধীন চলক (যেমন $x$ ও $t$) বিশিষ্ট সমীকরণ যাতে অজ্ঞাত ফাংশনের আংশিক অন্তরজ থাকে।<br/>
+          <strong>সীমানা শর্ত (Boundary Conditions):</strong> প্রান্তসীমায় ফাংশনের মান (ডিরিখলে) বা পরিবর্তনের হার (নিউম্যান)ের ওপর আরোপিত বিধিনিষেধ, যা অনন্য সমাধান নির্ধারণ করে।<br/>
+          <strong>তাপীয় ব্যাপন সহগ ($\alpha$):</strong> $\alpha = k/(\rho c_p)$—উপাদানের ভেতর দিয়ে তাপ কত দ্রুত সঞ্চালিত হয় তা নির্দেশকারী ধ্রুবক।<br/>
+          <strong>বক্রতা / দ্বিতীয় স্থানিক অন্তরজ:</strong> কোনো বিন্দু তার প্রতিবেশীদের গড় থেকে কতটা বিচ্যুত তা মাপকারী রাশি।<br/>
+          <strong>আইগেনমোড / আইগেনফাংশন:</strong> অন্তরক অপারেটরের এমন বিশেষ ফাংশন যা অপারেশনের পর রূপ না বদলিয়ে কেবল স্কেলার ধ্রুবক দ্বারা গুণিত হয়।<br/>
+          <strong>ফুরিয়ার ধারা:</strong> যেকোনো অপেক্ষককে অসীম সংখ্যক সাইন ও কোসাইন তরঙ্গের রৈখিক যোগফলে প্রকাশ।<br/>
+          <strong>উপরিপাত নীতি:</strong> রৈখিক সমীকরণের একাধিক সমাধানের রৈখিক সংমিশ্রণ নিজেও বৈধ সমাধান।<br/>
+          <strong>ইল-পোজড সমস্যা:</strong> ইনপুটের নগণ্য পরিবর্তনে আউটপুটে চরম বিশৃঙ্খলা—যেমন ব্যাকওয়ার্ড তাপ সমীকরণ।<br/>
+          <strong>এনট্রপি / সময়ের তীর:</strong> তাপ সর্বদা ছড়িয়ে পড়ে ও ব্যবস্থা বিশৃঙ্খল হয়, কিন্তু স্বতঃস্ফূর্তভাবে পূর্বাবস্থায় ফিরে যায় না।</p>
+        </b1b-callout>
+
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/differential_equations/lesson_04/experiments/3b1b_de_04_full_dubbed.mp4"
+    yt-id="ToIXSwZ1pJU"
+    title="অধ্যায় ০৪: আংশিক অন্তরক সমীকরণ ও সীমানা শর্ত — Solving the heat equation | DE3"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — ডিফারেনশিয়াল সমীকরণ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_03.html"
+  prev-title="দোলন ও হারমোনিক স্পন্দন"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_05.html"
+  next-title="তাপ সমীকরণ ও ফুরিয়ার রূপান্তর"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ HEAT-DIFFUSION SIMULATOR (interactive lab controller) ═══════════ -->
+<script>
+(function () {
+  var graph = document.getElementById('heatGraph');
+  if (!graph) return;
+  var gctx = graph.getContext('2d');
+  var map = document.getElementById('heatMap');
+  var mctx = map ? map.getContext('2d') : null;
+  var N = 160, dx = 1 / (N - 1);
+  var u = new Float64Array(N), un = new Float64Array(N);
+  var span = 100; // initial temperature span (°C)
+  var running = false;
+  var simTime = 0;
+  var alpha = 0.1, terms = 20, speed = 1;
+  var boundary = 'dirichlet_zero', profile = 'step';
+  var info = document.getElementById('hbInfo');
+
+  function setProfile(kind) {
+    profile = kind;
+    for (var i = 0; i < N; i++) {
+      var x = i * dx, val = 0;
+      switch (kind) {
+        case 'step': val = x < 0.5 ? 100 : 0; break;
+        case 'spike': val = Math.exp(-Math.pow((x - 0.5) / 0.045, 2)) * 100; break;
+        case 'sine_fundamental': val = Math.sin(Math.PI * x) * 100; break;
+        case 'multi_sine':
+          val = (Math.sin(Math.PI * x) + 0.45 * Math.sin(3 * Math.PI * x) + 0.25 * Math.sin(5 * Math.PI * x)) * 70;
+          break;
+        case 'random_jagged': val = Math.max(0, Math.min(100, 50 + (Math.random() - 0.5) * 95)); break;
+      }
+      u[i] = val;
+    }
+    simTime = 0;
+  }
+
+  function applyBoundary(arr) {
+    switch (boundary) {
+      case 'dirichlet_zero': arr[0] = 0; arr[N - 1] = 0; break;
+      case 'dirichlet_fixed': arr[0] = 100; arr[N - 1] = 0; break;
+      case 'neumann_insulated': arr[0] = arr[1]; arr[N - 1] = arr[N - 2]; break;
+      case 'periodic_ring':
+        var tmp0 = u[1] + (u[2] - 2 * u[1] + u[0]) * 0.2;
+        var tmpN = u[N - 2] + (u[N - 1] - 2 * u[N - 2] + u[N - 3]) * 0.2;
+        arr[0] = tmp0; arr[N - 1] = tmpN; break;
+    }
+  }
+
+  function stepSim() {
+    var dt = Math.min(0.00008 * speed, 0.45 * dx * dx / Math.max(alpha, 0.001));
+    var r = alpha * dt / (dx * dx);
+    for (var i = 1; i < N - 1; i++) un[i] = u[i] + r * (u[i + 1] - 2 * u[i] + u[i - 1]);
+    applyBoundary(un);
+    for (var j = 0; j < N; j++) u[j] = un[j];
+    simTime += dt;
+  }
+
+  function resize() {
+    var wrap = document.getElementById('heatVizWrapper');
+    var w = (wrap && wrap.clientWidth) ? wrap.clientWidth : 600;
+    graph.width = w; graph.height = 300;
+    if (map) { map.width = w; map.height = 40; }
+  }
+  window.addEventListener('resize', resize);
+
+  function draw() {
+    var W = graph.width, H = graph.height;
+    var isDark = document.documentElement.classList.contains('dark') || document.documentElement.getAttribute('data-theme') === 'dark';
+    gctx.fillStyle = isDark ? '#0b0c12' : '#f8fafc';
+    gctx.fillRect(0, 0, W, H);
+    gctx.strokeStyle = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.08)';
+    gctx.lineWidth = 1;
+    for (var g = 1; g < 5; g++) {
+      var gy = (H - 20) * g / 5;
+      gctx.beginPath(); gctx.moveTo(40, gy); gctx.lineTo(W - 10, gy); gctx.stroke();
+    }
+    gctx.strokeStyle = 'rgba(255,255,255,0.35)';
+    gctx.beginPath(); gctx.moveTo(40, H - 20); gctx.lineTo(W - 10, H - 20); gctx.stroke();
+
+    var maxv = 0, minv = 1e9;
+    for (var i = 0; i < N; i++) { if (u[i] > maxv) maxv = u[i]; if (u[i] < minv) minv = u[i]; }
+    var scaleMax = Math.max(100, maxv);
+
+    gctx.beginPath();
+    for (var k = 0; k < N; k++) {
+      var px = 40 + (W - 50) * (k / (N - 1));
+      var py = (H - 20) - ((u[k] - 0) / scaleMax) * (H - 40);
+      if (k === 0) gctx.moveTo(px, py); else gctx.lineTo(px, py);
+    }
+    gctx.strokeStyle = '#ff6b6b'; gctx.lineWidth = 2.6; gctx.lineJoin = 'round'; gctx.stroke();
+
+    if (mctx && map) {
+      for (var x = 0; x < map.width; x++) {
+        var idx = Math.min(N - 1, Math.floor(x / map.width * (N - 1)));
+        var t = Math.max(0, Math.min(1, u[idx] / 100));
+        var rr = Math.round(30 + t * 225), gg = Math.round(60 + t * 90), bb = Math.round(120 - t * 100);
+        mctx.fillStyle = 'rgb(' + rr + ',' + gg + ',' + bb + ')';
+        mctx.fillRect(x, 0, 1, map.height);
+      }
+    }
+
+    var uniform = 1 - (maxv - minv) / Math.max(span, 1);
+    if (info) info.textContent = 'সময় t = ' + simTime.toFixed(2) + ' s | u_max = ' + maxv.toFixed(1) + '°C | u_min = '
+      + minv.toFixed(1) + '°C | এনট্রপি সূচক = ' + (uniform * 100).toFixed(1) + '%';
+  }
+
+  function loop() {
+    if (running) for (var s = 0; s < 60; s++) stepSim();
+    draw();
+    requestAnimationFrame(loop);
+  }
+
+  function bind() {
+    var bSel = document.getElementById('hbBoundary'), pSel = document.getElementById('hbProfile');
+    var aS = document.getElementById('hbAlpha'), tS = document.getElementById('hbTerms'), sS = document.getElementById('hbSpeed');
+    var aV = document.getElementById('hbAlphaVal'), tV = document.getElementById('hbTermsVal'), sV = document.getElementById('hbSpeedVal');
+    if (bSel) bSel.addEventListener('change', function () { boundary = bSel.value; setProfile(profile); });
+    if (pSel) pSel.addEventListener('change', function () { setProfile(pSel.value); });
+    if (aS) aS.addEventListener('input', function () { alpha = parseFloat(aS.value); aV.textContent = alpha.toFixed(2); });
+    if (tS) tS.addEventListener('input', function () { terms = parseInt(tS.value, 10); tV.textContent = String(terms); });
+    if (sS) sS.addEventListener('input', function () { speed = parseFloat(sS.value); sV.textContent = speed.toFixed(1) + '×'; });
+    var play = document.getElementById('hbPlay'), pause = document.getElementById('hbPause'), reset = document.getElementById('hbReset');
+    if (play) play.addEventListener('click', function () { running = true; });
+    if (pause) pause.addEventListener('click', function () { running = false; });
+    if (reset) reset.addEventListener('click', function () { running = false; setProfile(profile); });
+    graph.addEventListener('mousedown', function (e) {
+      running = false;
+      var r = graph.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width;
+      for (var i = 0; i < N; i++) {
+        var d = Math.abs(i / (N - 1) - px);
+        u[i] += Math.exp(-d * d / 0.0006) * 100;
+        u[i] = Math.min(100, u[i]);
+      }
+      simTime = 0;
+    });
+  }
+
+  resize(); bind(); setProfile('step'); draw(); requestAnimationFrame(loop);
+})();
+</script>
+
+</body>
+</html>

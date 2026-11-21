@@ -1,0 +1,418 @@
+{
+  "channel": "chrome (headless=True)",
+  "all_ok": true,
+  "reports": [
+    {
+      "lesson": "lesson_01",
+      "url": "file:///D:/0PEN%20CODE/Dub%20Studio/departments/learning_paths/stem_mathematics/3blue1brown_courses/web_platform/courses/guest_videos/lesson_01.html",
+      "channel": "chrome (headless=True)",
+      "manifest_version": 8,
+      "checks": {
+        "valid_json": true,
+        "manifest_js_equals_json": true,
+        "placeholder_backup_present": true,
+        "section_ids_match_dom": true,
+        "cue_timings_exact": true,
+        "mp3_nonzero_and_matching": true,
+        "no_markup_or_latin_in_tts": true,
+        "no_forbidden_labels_or_types": true,
+        "figure_explanations_2to4": true,
+        "zero_duplicate_cues": true,
+        "page_manifest_version_bumped": true,
+        "no_page_errors": true,
+        "page_manifest_matches": true,
+        "engine_ids_match_dom": true,
+        "narration_parity_1to1": true,
+        "zero_quiz_media_tab_narration": true
+      },
+      "all_ok": true,
+      "errors": [],
+      "per_section": {
+        "sec-01-noise": {
+          "manifest_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 667676,
+          "mp3_ms": 110400.0,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "engine_ok": true
+        },
+        "sec-02-forward": {
+          "manifest_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 613676,
+          "mp3_ms": 101400.0,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "engine_ok": true
+        },
+        "sec-03-reverse": {
+          "manifest_cues": 8,
+          "dom_blocks": 8,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 679436,
+          "mp3_ms": 112224.0,
+          "engine_blocks": 8,
+          "engine_cues": 8,
+          "engine_ok": true
+        },
+        "sec-04-clip": {
+          "manifest_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 570908,
+          "mp3_ms": 94272.0,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "engine_ok": true
+        },
+        "sec-05-practice": {
+          "manifest_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 556364,
+          "mp3_ms": 91848.0,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "engine_ok": true
+        }
+      },
+      "totals": {
+        "sections": 5,
+        "cues": 36,
+        "figures": 5,
+        "audio_seconds": 508.47
+      }
+    },
+    {
+      "lesson": "lesson_02",
+      "url": "file:///D:/0PEN%20CODE/Dub%20Studio/departments/learning_paths/stem_mathematics/3blue1brown_courses/web_platform/courses/guest_videos/lesson_02.html",
+      "channel": "chrome (headless=True)",
+      "manifest_version": 8,
+      "checks": {
+        "valid_json": true,
+        "manifest_js_equals_json": true,
+        "placeholder_backup_present": true,
+        "section_ids_match_dom": true,
+        "cue_timings_exact": true,
+        "mp3_nonzero_and_matching": true,
+        "no_markup_or_latin_in_tts": true,
+        "no_forbidden_labels_or_types": true,
+        "figure_explanations_2to4": true,
+        "zero_duplicate_cues": true,
+        "page_manifest_version_bumped": true,
+        "no_page_errors": true,
+        "page_manifest_matches": true,
+        "engine_ids_match_dom": true,
+        "narration_parity_1to1": true,
+        "zero_quiz_media_tab_narration": true
+      },
+      "all_ok": true,
+      "errors": [],
+      "per_section": {
+        "sec-01-art": {
+          "manifest_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 554636,
+          "mp3_ms": 91560.0,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "engine_ok": true
+        },
+        "sec-02-symmetry": {
+          "manifest_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 552764,
+          "mp3_ms": 91248.0,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "engine_ok": true
+        },
+        "sec-03-burnside": {
+          "manifest_cues": 8,
+          "dom_blocks": 8,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 647468,
+          "mp3_ms": 106896.0,
+          "engine_blocks": 8,
+          "engine_cues": 8,
+          "engine_ok": true
+        },
+        "sec-04-result": {
+          "manifest_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 694748,
+          "mp3_ms": 114912.0,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "engine_ok": true
+        }
+      },
+      "totals": {
+        "sections": 4,
+        "cues": 29,
+        "figures": 4,
+        "audio_seconds": 403.26
+      }
+    },
+    {
+      "lesson": "lesson_03",
+      "url": "file:///D:/0PEN%20CODE/Dub%20Studio/departments/learning_paths/stem_mathematics/3blue1brown_courses/web_platform/courses/guest_videos/lesson_03.html",
+      "channel": "chrome (headless=True)",
+      "manifest_version": 8,
+      "checks": {
+        "valid_json": true,
+        "manifest_js_equals_json": true,
+        "placeholder_backup_present": true,
+        "section_ids_match_dom": true,
+        "cue_timings_exact": true,
+        "mp3_nonzero_and_matching": true,
+        "no_markup_or_latin_in_tts": true,
+        "no_forbidden_labels_or_types": true,
+        "figure_explanations_2to4": true,
+        "zero_duplicate_cues": true,
+        "page_manifest_version_bumped": true,
+        "no_page_errors": true,
+        "page_manifest_matches": true,
+        "engine_ids_match_dom": true,
+        "narration_parity_1to1": true,
+        "zero_quiz_media_tab_narration": true
+      },
+      "all_ok": true,
+      "errors": [],
+      "per_section": {
+        "sec-01-boltzmann": {
+          "manifest_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 627068,
+          "mp3_ms": 103632.0,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "engine_ok": true
+        },
+        "sec-02-temperature": {
+          "manifest_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 621596,
+          "mp3_ms": 102720.0,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "engine_ok": true
+        },
+        "sec-03-model": {
+          "manifest_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 577100,
+          "mp3_ms": 95304.0,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "engine_ok": true
+        },
+        "sec-04-transition": {
+          "manifest_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 604748,
+          "mp3_ms": 99912.0,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "engine_ok": true
+        },
+        "sec-05-supercritical": {
+          "manifest_cues": 6,
+          "dom_blocks": 6,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 471308,
+          "mp3_ms": 77808.0,
+          "engine_blocks": 6,
+          "engine_cues": 6,
+          "engine_ok": true
+        }
+      },
+      "totals": {
+        "sections": 5,
+        "cues": 34,
+        "figures": 5,
+        "audio_seconds": 477.81
+      }
+    },
+    {
+      "lesson": "lesson_04",
+      "url": "file:///D:/0PEN%20CODE/Dub%20Studio/departments/learning_paths/stem_mathematics/3blue1brown_courses/web_platform/courses/guest_videos/lesson_04.html",
+      "channel": "chrome (headless=True)",
+      "manifest_version": 8,
+      "checks": {
+        "valid_json": true,
+        "manifest_js_equals_json": true,
+        "placeholder_backup_present": true,
+        "section_ids_match_dom": true,
+        "cue_timings_exact": true,
+        "mp3_nonzero_and_matching": true,
+        "no_markup_or_latin_in_tts": true,
+        "no_forbidden_labels_or_types": true,
+        "figure_explanations_2to4": true,
+        "zero_duplicate_cues": true,
+        "page_manifest_version_bumped": true,
+        "no_page_errors": true,
+        "page_manifest_matches": true,
+        "engine_ids_match_dom": true,
+        "narration_parity_1to1": true,
+        "zero_quiz_media_tab_narration": true
+      },
+      "all_ok": true,
+      "errors": [],
+      "per_section": {
+        "sec-01-imo": {
+          "manifest_cues": 6,
+          "dom_blocks": 6,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 529052,
+          "mp3_ms": 87432.0,
+          "engine_blocks": 6,
+          "engine_cues": 6,
+          "engine_ok": true
+        },
+        "sec-02-dd": {
+          "manifest_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 571916,
+          "mp3_ms": 94440.0,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "engine_ok": true
+        },
+        "sec-03-lm": {
+          "manifest_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 591644,
+          "mp3_ms": 97728.0,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "engine_ok": true
+        },
+        "sec-04-results": {
+          "manifest_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 596108,
+          "mp3_ms": 98472.0,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "engine_ok": true
+        }
+      },
+      "totals": {
+        "sections": 4,
+        "cues": 27,
+        "figures": 4,
+        "audio_seconds": 376.83
+      }
+    },
+    {
+      "lesson": "lesson_05",
+      "url": "file:///D:/0PEN%20CODE/Dub%20Studio/departments/learning_paths/stem_mathematics/3blue1brown_courses/web_platform/courses/guest_videos/lesson_05.html",
+      "channel": "chrome (headless=True)",
+      "manifest_version": 8,
+      "checks": {
+        "valid_json": true,
+        "manifest_js_equals_json": true,
+        "placeholder_backup_present": true,
+        "section_ids_match_dom": true,
+        "cue_timings_exact": true,
+        "mp3_nonzero_and_matching": true,
+        "no_markup_or_latin_in_tts": true,
+        "no_forbidden_labels_or_types": true,
+        "figure_explanations_2to4": true,
+        "zero_duplicate_cues": true,
+        "page_manifest_version_bumped": true,
+        "no_page_errors": true,
+        "page_manifest_matches": true,
+        "engine_ids_match_dom": true,
+        "narration_parity_1to1": true,
+        "zero_quiz_media_tab_narration": true
+      },
+      "all_ok": true,
+      "errors": [],
+      "per_section": {
+        "sec-01-elements": {
+          "manifest_cues": 6,
+          "dom_blocks": 6,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 506012,
+          "mp3_ms": 83592.0,
+          "engine_blocks": 6,
+          "engine_cues": 6,
+          "engine_ok": true
+        },
+        "sec-02-postulates": {
+          "manifest_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 582140,
+          "mp3_ms": 96144.0,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "engine_ok": true
+        },
+        "sec-03-construction": {
+          "manifest_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 566012,
+          "mp3_ms": 93456.0,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "engine_ok": true
+        },
+        "sec-04-legacy": {
+          "manifest_cues": 6,
+          "dom_blocks": 6,
+          "types_match": true,
+          "indices_ok": true,
+          "mp3_bytes": 466700,
+          "mp3_ms": 77040.0,
+          "engine_blocks": 6,
+          "engine_cues": 6,
+          "engine_ok": true
+        }
+      },
+      "totals": {
+        "sections": 4,
+        "cues": 26,
+        "figures": 4,
+        "audio_seconds": 349.05
+      }
+    }
+  ]
+}

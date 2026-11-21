@@ -1,0 +1,229 @@
+{
+  "lesson_id": "lesson_02",
+  "chapter_num": 2,
+  "course_id": "number_theory",
+  "title_en": "All possible pythagorean triples, visualized",
+  "title_bn": "সমস্ত পিথাগোরীয় ট্রিপলের দৃশ্যায়ন",
+  "subtitle_bn": "৩-৪-৫ থেকে জটিল সংখ্যা: a² + b² = c²-এর সম্পূর্ণ সমাধানের জ্যামিতিক পথ",
+  "video_id": "QJYmyhnaaek",
+  "youtube_id": "QJYmyhnaaek",
+  "official_url": "https://www.3blue1brown.com/lessons/pythagorean-triples",
+  "slug": "pythagorean-triples",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "date": "২৬ মে, ২০১৭",
+    "source_url": "https://github.com/3b1b/videos/blob/master/_2017/triples.py",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "There is a way to understand all triplets (a, b, c) satisfying a² + b² = c² — and it uses complex numbers in a clever way.",
+    "quote_bn": "a² + b² = c² পূরণকারী সব ট্রিপল বোঝার একটি পথ আছে — আর তা জটিল সংখ্যা ব্যবহার করে।",
+    "author": "3Blue1Brown"
+  },
+  "bookmarks": [
+    {
+      "time": 0,
+      "time_bn": "০০:০০",
+      "label_bn": "পরিচিত ত্রিভুজ ও প্রশ্ন"
+    },
+    {
+      "time": 110,
+      "time_bn": "০১:৫০",
+      "label_bn": "একক বৃত্ত ও পরিমেয় বিন্দু"
+    },
+    {
+      "time": 250,
+      "time_bn": "০৪:১০",
+      "label_bn": "ইউক্লিডের সূত্র"
+    },
+    {
+      "time": 400,
+      "time_bn": "০৬:৪০",
+      "label_bn": "জটিল সংখ্যা ও গাউসিয়ান পূর্ণসংখ্যা"
+    },
+    {
+      "time": 560,
+      "time_bn": "০৯:২০",
+      "label_bn": "সমস্ত ট্রিপলের মানচিত্র"
+    }
+  ],
+  "toc": [
+    {
+      "href": "#sec-familiar-triangles",
+      "label_bn": "পরিচিত ত্রিভুজ ও মূল প্রশ্ন"
+    },
+    {
+      "href": "#sec-unit-circle",
+      "label_bn": "একক বৃত্ত, পরিমেয় বিন্দু ও ইউক্লিডের সূত্র"
+    },
+    {
+      "href": "#sec-complex-numbers",
+      "label_bn": "জটিল সংখ্যা ও গাউসিয়ান পূর্ণসংখ্যা"
+    },
+    {
+      "href": "#sec-all-triples",
+      "label_bn": "সমস্ত ট্রিপলের মানচিত্র"
+    },
+    {
+      "href": "#sec-conclusion",
+      "label_bn": "বীজগণিত ও জ্যামিতির মিলন"
+    },
+    {
+      "href": "#sec-lab",
+      "label_bn": "ইন্টারেক্টিভ ল্যাব — ট্রিপল জেনারেটর"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-familiar-triangles",
+      "title_bn": "পরিচিত ত্রিভুজ ও মূল প্রশ্ন",
+      "title_en": "Sec Familiar Triangles",
+      "block_types": [
+        "p",
+        "figure",
+        "formula",
+        "p"
+      ],
+      "narrated": true
+    },
+    {
+      "id": "sec-unit-circle",
+      "title_bn": "একক বৃত্ত, পরিমেয় বিন্দু ও ইউক্লিডের সূত্র",
+      "title_en": "Sec Unit Circle",
+      "block_types": [
+        "p",
+        "figure",
+        "p",
+        "formula",
+        "formula",
+        "callout"
+      ],
+      "narrated": true
+    },
+    {
+      "id": "sec-complex-numbers",
+      "title_bn": "জটিল সংখ্যা ও গাউসিয়ান পূর্ণসংখ্যা",
+      "title_en": "Sec Complex Numbers",
+      "block_types": [
+        "p",
+        "figure",
+        "formula",
+        "p",
+        "callout",
+        "formula"
+      ],
+      "narrated": true
+    },
+    {
+      "id": "sec-all-triples",
+      "title_bn": "সমস্ত ট্রিপলের মানচিত্র",
+      "title_en": "Sec All Triples",
+      "block_types": [
+        "p",
+        "figure",
+        "p"
+      ],
+      "narrated": true
+    },
+    {
+      "id": "sec-conclusion",
+      "title_bn": "বীজগণিত ও জ্যামিতির মিলন",
+      "title_en": "Sec Conclusion",
+      "block_types": [
+        "p",
+        "p"
+      ],
+      "narrated": true
+    },
+    {
+      "id": "sec-lab",
+      "title_bn": "ইন্টারেক্টিভ ল্যাব — ট্রিপল জেনারেটর",
+      "title_en": "Interactive Lab",
+      "narrated": false,
+      "mode": "triples",
+      "desc_bn": "m ও n-এর বিভিন্ন জোড়া বেছে সরাসরি আদিম ট্রিপল তৈরি হতে দেখো। প্রতিটি ত্রিভুজের চারপাশে বর্গগুলোর ক্ষেত্রফল যোগ হয়ে কীভাবে বড় বর্গ তৈরি করে তা পর্যবেক্ষণ করো।"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "q_primitive",
+      "question_bn": "❓ নিচের কোনটি একটি আদিম (primitive) পিথাগোরীয় ট্রিপল?",
+      "options_bn": [
+        "(6, 8, 10)",
+        "(9, 12, 15)",
+        "(8, 15, 17)",
+        "(10, 24, 26)"
+      ],
+      "correct_index": 2,
+      "correct_feedback_bn": "সঠিক! (8, 15, 17)-এর তিনটি সংখ্যার কোনো সাধারণ উৎপাদক নেই — gc.d = 1। বাকিগুলো (3,4,5), (3,4,5), (5,12,13)-এর গুণিতক।",
+      "wrong_feedback_bn": "আদিম মানে তিনটি সংখ্যার gc.d = 1। 6,8,10 কে 2 দিয়ে ভাগ করা যায়; 9,12,15 কে 3 দিয়ে; 10,24,26 কে 2 দিয়ে।",
+      "reveal_bn": "সঠিক উত্তর (8, 15, 17) — এটি মূল ট্রিপল, অন্যগুলো এর গুণিতক।"
+    },
+    {
+      "id": "q_euclid",
+      "question_bn": "❓ ইউক্লিডের সূত্রে m = 2, n = 1 বসালে কোন ট্রিপল পাওয়া যায়?",
+      "options_bn": [
+        "(3, 4, 5)",
+        "(5, 12, 13)",
+        "(8, 15, 17)",
+        "(7, 24, 25)"
+      ],
+      "correct_index": 0,
+      "correct_feedback_bn": "চমৎকার! a = m²−n² = 4−1 = 3, b = 2mn = 4, c = m²+n² = 5। পাওয়া গেল পরিচিত ৩-৪-৫ ত্রিভুজ।",
+      "wrong_feedback_bn": "সূত্রটি মনে রেখো: a = m² − n², b = 2mn, c = m² + n²। m = 2, n = 1 বসিয়ে হিসাব করো।",
+      "reveal_bn": "সঠিক উত্তর (3, 4, 5)।"
+    },
+    {
+      "id": "q_m3n2",
+      "question_bn": "❓ m = 3, n = 2-এর জন্য ইউক্লিডের সূত্র থেকে কী পাওয়া যায়?",
+      "options_bn": [
+        "(5, 12, 13)",
+        "(8, 15, 17)",
+        "(7, 24, 25)",
+        "(20, 21, 29)"
+      ],
+      "correct_index": 0,
+      "correct_feedback_bn": "ঠিক! 3²−2² = 5, 2×3×2 = 12, 3²+2² = 13 — অর্থাৎ ৫-১২-১৩ ত্রিভুজ, যা আমরা পরিচিত ত্রিভুজ হিসেবে জানতাম।",
+      "wrong_feedback_bn": "m = 3, n = 2 বসাও: 9−4 = 5, 12, 9+4 = 13।",
+      "reveal_bn": "সঠিক উত্তর (5, 12, 13)।"
+    },
+    {
+      "id": "q_mod4",
+      "question_bn": "❓ কোন মৌলিক সংখ্যাটি দুটি পূর্ণবর্গের যোগফল হিসেবে লেখা যায়?",
+      "options_bn": [
+        "7",
+        "11",
+        "13",
+        "19"
+      ],
+      "correct_index": 2,
+      "correct_feedback_bn": "সঠিক! 13 = 4 + 9 = 2² + 3²। 7, 11, 19 — তিনটিই 4k+3 আকারের মৌলিক, যেগুলো কখনো দুই বর্গের যোগফল হতে পারে না।",
+      "wrong_feedback_bn": "4k+3 আকারের মৌলিক (যেমন 7, 11, 19) দুই বর্গের যোগফল হতে পারে না। 13 হলো 4k+1 আকারের।",
+      "reveal_bn": "সঠিক উত্তর 13 = 2² + 3²।"
+    }
+  ],
+  "figures": [
+    {
+      "id": "fig_02_01",
+      "caption_bn": " তিনটি বর্গ ত্রিভুজের তিন বাহুর ওপর আঁকা হয়েছে। দুটি ছোট বর্গের ক্ষেত্রফল (a² ও b²) যোগ করলে বড় বর্গের ক্ষেত্রফল (c²)-এর সমান হয় — এটি পিথাগোরাসের সূত্রের জ্যামিতিক রূপ। ছবিতে ৩-৪-৫ ত্রিভুজের ক্ষেত্রে ৯ + ১৬ = ২৫ দেখা যায়।",
+      "type": "svg-inline"
+    },
+    {
+      "id": "fig_02_02",
+      "caption_bn": " ছবিতে (−1, 0) বিন্দু দিয়ে একটি রেখা বৃত্ততে কাটা হয়েছে এবং ছেদবিন্দু (x, y) চিহ্নিত করা হয়েছে। রেখার ঢাল t যুক্তিসঙ্গত হলে ছেদবিন্দুর স্থানাঙ্কও যুক্তিসঙ্গত হয়। এই সরল জ্যামিতিক কৌশলটিই পরবর্তীতে পূর্ণসংখ্যার সূত্রে রূপ নেয়।",
+      "type": "svg-inline"
+    },
+    {
+      "id": "fig_02_03",
+      "caption_bn": " জটিল তলে এক বিন্দু a + bi দেখানো হয়েছে, সাথে তার অনুভূমিক ও উল্লম্ব উপাদান a ও b। বিন্দুটির মূলবিন্দু থেকে দূরত্বের বর্গই হলো |a + bi|² = a² + b²। ছবিতে এই দূরত্ব ও বর্গের সম্পর্কটি মনে রাখো — গাউসিয়ান পূর্ণসংখ্যার অনন্য factorization-এর মূল এখানেই।",
+      "type": "svg-inline"
+    },
+    {
+      "id": "fig_02_04",
+      "caption_bn": " চিত্রটি আবার দেখো — এখন বর্গগুলোর ক্ষেত্রফল শুধু সংখ্যা নয়, বরং জটিল সংখ্যার নর্মের গুণফল। বাঁয়ের বর্গ a², ওপরের বর্গ b² আর ডানের বর্গ c² — তিনটি মিলে পিথাগোরীয় সম্পর্ক প্রকাশ করে। বড় আদিম ট্রিপলগুলোও এই একই কাঠামো মেনে চলে, শুধু m ও n বড় হয়।",
+      "type": "svg-inline"
+    }
+  ],
+  "video_src": "../../media_vault/number_theory/lesson_02/experiments/3b1b_number_theory_02_full_dubbed.mp4"
+}

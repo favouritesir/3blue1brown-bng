@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>নিউরাল নেটওয়ার্ক ও ডিপ লার্নিং — ৩ব্লু১ব্রাউন বাংলা</title>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<style>
+  :root {
+    --nn-accent: #a855f7;
+    --nn-accent-glow: rgba(168, 85, 247, 0.25);
+  }
+  .course-hero {
+    padding: 100px 24px 48px;
+    background: radial-gradient(circle at 50% 20%, rgba(168, 85, 247, 0.18), transparent 70%);
+    text-align: center;
+  }
+  .course-badge {
+    display: inline-block;
+    padding: 4px 16px;
+    background: rgba(168, 85, 247, 0.16);
+    border: 1px solid rgba(168, 85, 247, 0.45);
+    border-radius: 20px;
+    color: #c084fc;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+  }
+  .course-title {
+    font-size: 2.7rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: var(--text);
+    background: linear-gradient(135deg, #ffffff 40%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  [data-theme="light"] .course-title {
+    background: linear-gradient(135deg, #1e1b4b 30%, #7e22ce 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .course-sub {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 720px;
+    margin: 0 auto 30px;
+    line-height: 1.75;
+  }
+  .course-stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .c-stat {
+    text-align: center;
+    min-width: 110px;
+  }
+  .c-stat-val {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #c084fc;
+  }
+  .c-stat-lbl {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .chapters-container {
+    max-width: 980px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+  }
+  .chapter-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .chapter-row {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+  .chapter-row.active-lesson {
+    border-color: rgba(168, 85, 247, 0.6);
+    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.12);
+  }
+  .chapter-row:hover {
+    border-color: #a855f7;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(168, 85, 247, 0.2);
+    text-decoration: none;
+  }
+  .chapter-row.upcoming {
+    opacity: 0.85;
+  }
+  .chapter-row.upcoming:hover {
+    border-color: var(--border-theme);
+  }
+  .ch-num {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #c084fc;
+    min-width: 52px;
+    text-align: center;
+    opacity: 0.9;
+  }
+  .chapter-row.upcoming .ch-num {
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+  .ch-body {
+    flex: 1;
+  }
+  .ch-header-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+  .ch-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .status-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .status-tag.ready {
+    background: rgba(34, 197, 94, 0.18);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.4);
+  }
+  .status-tag.soon {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+  }
+  .ch-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .ch-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .ch-tag {
+    font-size: 0.78rem;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+  }
+  .ch-action {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #c084fc;
+    font-weight: bold;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+  .chapter-row.upcoming .ch-action {
+    color: var(--text-muted);
+    font-weight: normal;
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../../index.html">
+      <svg class="pi-logo" viewBox="-50 -50 100 100" aria-label="৩ব্লু১ব্রাউন">
+        <path fill="#74C0E3" d="M 0 0 L 0 -50 A 50 50 0 1 1 -50 0 z"/>
+        <path fill="#8C6239" d="M 0 0 L 0 -50 A 50 50 0 0 0 -50 0 z"/>
+        <circle cx="0" cy="0" r="22" fill="#000"/>
+        <circle cx="-8" cy="-6" r="7" fill="#fff"/>
+        <circle cx="8" cy="-6" r="7" fill="#fff"/>
+        <circle cx="-7" cy="-6" r="3.5" fill="#000"/>
+        <circle cx="9" cy="-6" r="3.5" fill="#000"/>
+        <path d="M -10 6 Q 0 14 10 6" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-title">৩ব্লু১ব্রাউন বাংলা</span>
+        <span class="logo-sub">নিউরাল নেটওয়ার্ক ও ডিপ লার্নিং</span>
+      </div>
+    </a>
+
+    <div class="nav-breadcrumb">
+      <a href="../../index.html">হোম</a>
+      <span>/</span>
+      <span>নিউরাল নেটওয়ার্ক</span>
+    </div>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" onclick="toggleTheme()" title="থিম পরিবর্তন">🌙</button>
+      <a href="lesson_01.html" style="background:#a855f7; color:#fff; padding:6px 18px; border-radius:20px; font-weight:bold; font-size:0.85rem; box-shadow:0 2px 10px rgba(168,85,247,0.35);">পাঠ ০১ শুরু করুন →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="course-hero">
+  <div class="course-badge">🧠 ডিপ লার্নিং ও কৃত্রিম বুদ্ধিমত্তার গাণিতিক ভিত্তি</div>
+  <h1 class="course-title">নিউরাল নেটওয়ার্ক ও ডিপ লার্নিং</h1>
+  <p class="course-sub">গ্রান্ট স্যান্ডারসনের সুপ্রসিদ্ধ ডিপ লার্নিং মাস্টারপিস সিরিজ। সংখ্যা ও অ্যালগরিদম কীভাবে মানুষের মস্তিষ্কের মতো প্যাটার্ন শেখে — হস্তাক্ষর শনাক্তকরণ থেকে শুরু করে ব্যাকপ্রোপাগেশন ও আধুনিক ট্রান্সফরমার (LLM)-এর দৃষ্টিগ্রাহ্য বিশ্লেষণ।</p>
+  
+  <div class="course-stats-bar">
+    <div class="c-stat">
+      <div class="c-stat-val">৮টি অধ্যায়</div>
+      <div class="c-stat-lbl">সম্পূর্ণ কারিকুলাম</div>
+    </div>
+    <div class="c-stat">
+      <div class="c-stat-val">১৬০+ মিনিট</div>
+      <div class="c-stat-lbl">ভিজ্যুয়াল অ্যানিমেশন</div>
+    </div>
+    <div class="c-stat">
+      <div class="c-stat-val">১০০% অফলাইন</div>
+      <div class="c-stat-lbl">KaTeX গাণিতিক ফর্মুলা</div>
+    </div>
+    <div class="c-stat">
+      <div class="c-stat-val">ইন্টারেক্টিভ</div>
+      <div class="c-stat-lbl">ক্যানভাস ও লাইভ লেয়ার সিমুলেটর</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CHAPTERS LIST ═══════════ -->
+<main class="chapters-container">
+  <div class="chapter-grid">
+
+    <a href="lesson_01.html" class="chapter-row">
+      <div class="ch-num">০১</div>
+      <div class="ch-body">
+        <h2 class="ch-title">But what is a neural network? (Deep learning, chapter 1)</h2>
+        <p class="ch-desc">মাল্টিলেয়ার পারসেপট্রন, হস্তাক্ষর সংখ্যা শনাক্তকরণ (MNIST), ওজন ও বায়াসের অন্তর্দৃষ্টি</p>
+        <div class="ch-tags">
+          <span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_02.html" class="chapter-row">
+      <div class="ch-num">০২</div>
+      <div class="ch-body">
+        <h2 class="ch-title">Gradient descent, how neural networks learn</h2>
+        <p class="ch-desc">কস্ট ফাংশন, ১৩,০০২ মাত্রার ল্যান্ডস্কেপ, ঋনাত্মক গ্রেডিয়েন্ট ভেক্টর ও মিনি-ব্যাচ স্টোকাস্টিক গ্রেডিয়েন্ট ডিসেন্ট (SGD)</p>
+        <div class="ch-tags">
+          <span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_03.html" class="chapter-row">
+      <div class="ch-num">০৩</div>
+      <div class="ch-body">
+        <h2 class="ch-title">What is backpropagation really doing?</h2>
+        <p class="ch-desc">একক উদাহরণের প্রত্যাশা, সক্রিয়তার সমাহার, ওজনের মৃদু ধাক্কা (Nudge), এবং হিডেন লেয়ারের দিকে পেছনের টান</p>
+        <div class="ch-tags">
+          <span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_04.html" class="chapter-row">
+      <div class="ch-num">০৪</div>
+      <div class="ch-body">
+        <h2 class="ch-title">Backpropagation calculus</h2>
+        <p class="ch-desc">একক নিউরন চেইন রুল, বহুমাত্রিক লেয়ার সাধারণীকরণ, এরর টার্ম δ এবং ম্যাট্রিক্স-ভেক্টর ব্যাকওয়ার্ড পাস</p>
+        <div class="ch-tags">
+          <span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+  </div>
+</main>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="site-footer">
+  <p>৩ব্লু১ব্রাউন বাংলা প্ল্যাটফর্ম · মূল পাঠ ও ভিজ্যুয়াল ধারণা: Grant Sanderson · অফলাইন KaTeX গণিত ইঞ্জিন v0.16.11</p>
+</footer>
+
+</body>
+</html>

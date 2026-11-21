@@ -1,0 +1,16 @@
+{
+  "lesson": "lesson_04",
+  "youtube_id": "3s7h2MHQtxc",
+  "youtube_url": "https://www.youtube.com/watch?v=3s7h2MHQtxc",
+  "oembed_author_name": "3Blue1Brown",
+  "oembed_author_url": "https://www.youtube.com/@3blue1brown",
+  "oembed_title": "Hilbert's Curve: Is infinite math useful?",
+  "oembed_confirms_3b1b": true,
+  "ffprobe_duration_sec": 1097.862676,
+  "ffprobe_size_bytes": 128180839,
+  "video_codec": "vp9",
+  "video_resolution": [
+    1920,
+    1080
+  ]
+}

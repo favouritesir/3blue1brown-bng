@@ -1,0 +1,856 @@
+- generic [ref=f26e1] [box=0,0,1265,4464]:
+  - banner [ref=f26e2] [box=0,0,1265,74]:
+    - link "৩ব্লু১ব্রাউন ৩ব্লু১ব্রাউন বাংলা · মিশন কন্ট্রোল রিয়েল-টাইম আর্কিটেকচার ও প্ল্যাটফর্ম ট্র্যাকার" [ref=f26e3] [cursor=pointer] [box=24,12,284,49]:
+      - /url: index.html
+      - img "৩ব্লু১ব্রাউন" [ref=f26e4] [box=24,20,34,34]
+      - generic [ref=f26e13] [box=70,12,238,49]:
+        - generic [ref=f26e14] [box=70,12,238,29]: ৩ব্লু১ব্রাউন বাংলা · মিশন কন্ট্রোল
+        - generic [ref=f26e15] [box=70,41,238,20]: রিয়েল-টাইম আর্কিটেকচার ও প্ল্যাটফর্ম ট্র্যাকার
+    - generic [ref=f26e16] [box=865,19,376,36]:
+      - button "🌙 লাইট/ডার্ক" [ref=f26e17] [cursor=pointer] [box=865,21,119,32]
+      - button "🔄 রিফ্রেশ ডাটা" [ref=f26e18] [cursor=pointer] [box=996,21,131,32]
+      - link "🏠 হোম পেজ" [ref=f26e19] [cursor=pointer] [box=1139,19,102,36]:
+        - /url: index.html
+  - main [ref=f26e20] [box=0,74,1265,4319]:
+    - generic [ref=f26e21] [box=24,106,1217,82]:
+      - generic [ref=f26e22] [box=24,106,695,82]:
+        - heading "লাইভ প্ল্যাটফর্ম ট্র্যাকার ও অডিট বোর্ড" [level=1] [ref=f26e23] [box=24,106,695,51]
+        - paragraph [ref=f26e25] [box=24,164,695,24]: সর্বশেষ রিকোয়ারমেন্ট, সিঙ্গেল-শেল কম্পোনেন্ট আর্কিটেকচার, শিক্ষক অডিও কারাওকে সিঙ্ক ও ডে/নাইট ইন্টারেকশন ট্র্যাকিং।
+      - generic [ref=f26e26] [box=1065,162,176,26]: "লাইভ সিঙ্ক: ৬:৩৬:২৬ PM"
+    - generic [ref=f26e27] [box=24,216,1217,160]:
+      - generic [ref=f26e28] [box=24,216,292,160]:
+        - generic [ref=f26e29] [box=45,235,250,21]: মোট ট্র্যাকিং অধ্যায়
+        - generic [ref=f26e30] [box=45,262,250,51]: "48"
+        - generic [ref=f26e31] [box=45,319,250,20]: ৬টি প্রধান গণিত সিরিজ
+      - generic [ref=f26e32] [box=332,216,292,160]:
+        - generic [ref=f26e33] [box=353,235,250,21]: বাংলা মাস্টার স্ক্রিপ্ট
+        - generic [ref=f26e34] [box=353,262,250,51]: 42 / 48
+        - generic [ref=f26e35] [box=353,319,250,20]: অরিজিনাল ৩B1B সাহিত্যিক পূর্ণাঙ্গতা
+      - generic [ref=f26e38] [box=641,216,292,160]:
+        - generic [ref=f26e39] [box=662,235,250,21]: শিক্ষক অডিও ও কারাওকে
+        - generic [ref=f26e40] [box=662,262,250,51]: 28 / 48
+        - generic [ref=f26e41] [box=662,319,250,20]: EBU R128 + শব্দে শব্দে হাইলাইট
+      - generic [ref=f26e44] [box=949,216,292,160]:
+        - generic [ref=f26e45] [box=970,235,250,21]: কম্পোনেন্ট ও ডে/নাইট থিমিং
+        - generic [ref=f26e46] [box=970,262,250,51]: 24 / 48
+        - generic [ref=f26e47] [box=970,319,250,20]: আইসোমরফিক <b1b-*> + ক্যানভাস সিঙ্ক
+    - generic [ref=f26e50] [box=24,408,1217,150]:
+      - generic [ref=f26e51] [box=43,423,1179,72]:
+        - button "সবগুলো সিরিজ (All)" [ref=f26e52] [cursor=pointer] [box=43,423,163,32]
+        - button "১. লিনিয়ার অ্যালজেব্রা (15)" [ref=f26e53] [cursor=pointer] [box=214,423,201,32]
+        - button "২. ক্যালকুলাস (12)" [ref=f26e54] [cursor=pointer] [box=423,423,147,32]
+        - button "৩. ডিফারেনশিয়াল সমীকরণ (6)" [ref=f26e55] [cursor=pointer] [box=578,423,230,32]
+        - button "৪. সম্ভাব্যতা (6)" [ref=f26e56] [cursor=pointer] [box=816,423,124,32]
+        - button "৫. নিউরাল নেটওয়ার্ক (4)" [ref=f26e57] [cursor=pointer] [box=948,423,185,32]
+        - button "৬. লকডাউন ম্যাথ (10)" [ref=f26e58] [cursor=pointer] [box=43,463,171,32]
+      - textbox "🔍 অধ্যায় বা টপিক খুঁজুন..." [ref=f26e60] [box=43,509,240,34]
+    - generic [ref=f26e61] [box=24,582,1217,3699]:
+      - generic [ref=f26e62] [box=25,583,1215,62]:
+        - generic [ref=f26e63] [box=45,599,304,29]: পাঠভিত্তিক ফিচার ও আর্কিটেকচার ম্যাট্রিক্স
+        - generic [ref=f26e64] [box=921,604,299,20]:
+          - generic [ref=f26e65] [box=921,604,73,20]: সম্পন্ন / রেডি
+          - generic [ref=f26e67] [box=1010,604,105,20]: কাজ চলমান (WIP)
+          - generic [ref=f26e69] [box=1132,604,88,20]: কিউতে নির্ধারিত
+      - table [ref=f26e72] [box=25,646,1215,3635]:
+        - rowgroup [ref=f26e73] [box=25,646,1215,45]:
+          - row [ref=f26e74] [box=25,646,1215,45]:
+            - columnheader "আইডি" [ref=f26e75] [box=25,646,70,45]
+            - columnheader "সিরিজ ও অধ্যায় শিরোনাম" [ref=f26e76] [box=95,646,327,45]
+            - columnheader "স্ট্যাটাস" [ref=f26e77] [box=422,646,100,45]
+            - columnheader "মাস্টার স্ক্রিপ্ট" [ref=f26e78] [box=522,646,94,45]
+            - columnheader "শিক্ষক অডিও" [ref=f26e79] [box=616,646,103,45]
+            - columnheader "কম্পোনেন্ট" [ref=f26e80] [box=719,646,83,45]
+            - columnheader "KaTeX" [ref=f26e81] [box=802,646,70,45]
+            - columnheader "ডে/নাইট" [ref=f26e82] [box=872,646,73,45]
+            - columnheader "লেজি মিডিয়া" [ref=f26e83] [box=945,646,97,45]
+            - columnheader "ল্যাব" [ref=f26e84] [box=1042,646,53,45]
+            - columnheader "কুইজ" [ref=f26e85] [box=1095,646,57,45]
+            - columnheader "অ্যাকশন" [ref=f26e86] [box=1152,646,88,45]
+        - rowgroup [ref=f26e87] [box=25,690,1215,3590]:
+          - row [ref=f26e88] [box=25,690,1215,74]:
+            - cell "LA-01" [ref=f26e89] [box=25,690,70,74]
+            - cell [ref=f26e90] [box=95,690,327,74]:
+              - strong [ref=f26e91] [box=109,704,100,23]: ভেক্টর আসলে কী?
+              - text: লিনিয়ার অ্যালজেব্রা
+            - cell "সম্পন্ন" [ref=f26e92] [box=422,690,100,74]
+            - cell "✓" [ref=f26e95] [box=522,690,94,74]
+            - cell "✓" [ref=f26e96] [box=616,690,103,74]
+            - cell "✓" [ref=f26e97] [box=719,690,83,74]
+            - cell "✓" [ref=f26e98] [box=802,690,70,74]
+            - cell "✓" [ref=f26e99] [box=872,690,73,74]
+            - cell "✓" [ref=f26e100] [box=945,690,97,74]
+            - cell "✓" [ref=f26e101] [box=1042,690,53,74]
+            - cell "✓" [ref=f26e102] [box=1095,690,57,74]
+            - cell [ref=f26e103] [box=1152,690,88,74]:
+              - link "খুলুন ↗" [ref=f26e104] [cursor=pointer] [box=1166,713,59,30]:
+                - /url: courses/linear_algebra/lesson_01.html
+          - row [ref=f26e105] [box=25,765,1215,74]:
+            - cell "LA-02" [ref=f26e106] [box=25,765,70,74]
+            - cell [ref=f26e107] [box=95,765,327,74]:
+              - strong [ref=f26e108] [box=109,778,190,23]: রৈখিক সমন্বয়, স্প্যান ও ভিত্তি ভেক্টর
+              - text: লিনিয়ার অ্যালজেব্রা
+            - cell "চলমান" [ref=f26e109] [box=422,765,100,74]
+            - cell "✓" [ref=f26e112] [box=522,765,94,74]
+            - cell "✓" [ref=f26e113] [box=616,765,103,74]
+            - cell "○" [ref=f26e114] [box=719,765,83,74]
+            - cell "✓" [ref=f26e115] [box=802,765,70,74]
+            - cell "✓" [ref=f26e116] [box=872,765,73,74]
+            - cell "✓" [ref=f26e117] [box=945,765,97,74]
+            - cell "✓" [ref=f26e118] [box=1042,765,53,74]
+            - cell "✓" [ref=f26e119] [box=1095,765,57,74]
+            - cell [ref=f26e120] [box=1152,765,88,74]:
+              - link "খুলুন ↗" [ref=f26e121] [cursor=pointer] [box=1166,787,59,30]:
+                - /url: courses/linear_algebra/lesson_02.html
+          - row [ref=f26e122] [box=25,839,1215,74]:
+            - cell "LA-03" [ref=f26e123] [box=25,839,70,74]
+            - cell [ref=f26e124] [box=95,839,327,74]:
+              - strong [ref=f26e125] [box=109,852,154,23]: রৈখিক রূপান্তর এবং ম্যাট্রিক্স
+              - text: লিনিয়ার অ্যালজেব্রা
+            - cell "চলমান" [ref=f26e126] [box=422,839,100,74]
+            - cell "✓" [ref=f26e129] [box=522,839,94,74]
+            - cell "✓" [ref=f26e130] [box=616,839,103,74]
+            - cell "○" [ref=f26e131] [box=719,839,83,74]
+            - cell "✓" [ref=f26e132] [box=802,839,70,74]
+            - cell "✓" [ref=f26e133] [box=872,839,73,74]
+            - cell "✓" [ref=f26e134] [box=945,839,97,74]
+            - cell "✓" [ref=f26e135] [box=1042,839,53,74]
+            - cell "✓" [ref=f26e136] [box=1095,839,57,74]
+            - cell [ref=f26e137] [box=1152,839,88,74]:
+              - link "খুলুন ↗" [ref=f26e138] [cursor=pointer] [box=1166,861,59,30]:
+                - /url: courses/linear_algebra/lesson_03.html
+          - row [ref=f26e139] [box=25,913,1215,74]:
+            - cell "LA-04" [ref=f26e140] [box=25,913,70,74]
+            - cell [ref=f26e141] [box=95,913,327,74]:
+              - strong [ref=f26e142] [box=109,926,205,23]: ম্যাট্রিক্স গুণন আসলে রূপান্তরের রচনা
+              - text: লিনিয়ার অ্যালজেব্রা
+            - cell "চলমান" [ref=f26e143] [box=422,913,100,74]
+            - cell "✓" [ref=f26e146] [box=522,913,94,74]
+            - cell "✓" [ref=f26e147] [box=616,913,103,74]
+            - cell "○" [ref=f26e148] [box=719,913,83,74]
+            - cell "✓" [ref=f26e149] [box=802,913,70,74]
+            - cell "✓" [ref=f26e150] [box=872,913,73,74]
+            - cell "✓" [ref=f26e151] [box=945,913,97,74]
+            - cell "✓" [ref=f26e152] [box=1042,913,53,74]
+            - cell "✓" [ref=f26e153] [box=1095,913,57,74]
+            - cell [ref=f26e154] [box=1152,913,88,74]:
+              - link "খুলুন ↗" [ref=f26e155] [cursor=pointer] [box=1166,935,59,30]:
+                - /url: courses/linear_algebra/lesson_04.html
+          - row [ref=f26e156] [box=25,987,1215,74]:
+            - cell "LA-05" [ref=f26e157] [box=25,987,70,74]
+            - cell [ref=f26e158] [box=95,987,327,74]:
+              - strong [ref=f26e159] [box=109,1000,162,23]: ত্রিমাত্রিক স্থানে রৈখিক রূপান্তর
+              - text: লিনিয়ার অ্যালজেব্রা
+            - cell "চলমান" [ref=f26e160] [box=422,987,100,74]
+            - cell "✓" [ref=f26e163] [box=522,987,94,74]
+            - cell "✓" [ref=f26e164] [box=616,987,103,74]
+            - cell "○" [ref=f26e165] [box=719,987,83,74]
+            - cell "✓" [ref=f26e166] [box=802,987,70,74]
+            - cell "✓" [ref=f26e167] [box=872,987,73,74]
+            - cell "✓" [ref=f26e168] [box=945,987,97,74]
+            - cell "✓" [ref=f26e169] [box=1042,987,53,74]
+            - cell "✓" [ref=f26e170] [box=1095,987,57,74]
+            - cell [ref=f26e171] [box=1152,987,88,74]:
+              - link "খুলুন ↗" [ref=f26e172] [cursor=pointer] [box=1166,1009,59,30]:
+                - /url: courses/linear_algebra/lesson_05.html
+          - row [ref=f26e173] [box=25,1061,1215,74]:
+            - cell "LA-06" [ref=f26e174] [box=25,1061,70,74]
+            - cell [ref=f26e175] [box=95,1061,327,74]:
+              - strong [ref=f26e176] [box=109,1074,167,23]: ডিটারমিন্যান্ট (Determinant)
+              - text: লিনিয়ার অ্যালজেব্রা
+            - cell "সম্পন্ন" [ref=f26e177] [box=422,1061,100,74]
+            - cell "✓" [ref=f26e180] [box=522,1061,94,74]
+            - cell "✓" [ref=f26e181] [box=616,1061,103,74]
+            - cell "✓" [ref=f26e182] [box=719,1061,83,74]
+            - cell "✓" [ref=f26e183] [box=802,1061,70,74]
+            - cell "✓" [ref=f26e184] [box=872,1061,73,74]
+            - cell "✓" [ref=f26e185] [box=945,1061,97,74]
+            - cell "✓" [ref=f26e186] [box=1042,1061,53,74]
+            - cell "✓" [ref=f26e187] [box=1095,1061,57,74]
+            - cell [ref=f26e188] [box=1152,1061,88,74]:
+              - link "খুলুন ↗" [ref=f26e189] [cursor=pointer] [box=1166,1083,59,30]:
+                - /url: data/linear_algebra/lesson_06.json
+          - row [ref=f26e190] [box=25,1135,1215,74]:
+            - cell "LA-07" [ref=f26e191] [box=25,1135,70,74]
+            - cell [ref=f26e192] [box=95,1135,327,74]:
+              - strong [ref=f26e193] [box=109,1148,232,23]: বিপরীত ম্যাট্রিক্স, কলাম স্পেস ও নাল স্পেস
+              - text: লিনিয়ার অ্যালজেব্রা
+            - cell "সম্পন্ন" [ref=f26e194] [box=422,1135,100,74]
+            - cell "✓" [ref=f26e197] [box=522,1135,94,74]
+            - cell "✓" [ref=f26e198] [box=616,1135,103,74]
+            - cell "✓" [ref=f26e199] [box=719,1135,83,74]
+            - cell "✓" [ref=f26e200] [box=802,1135,70,74]
+            - cell "✓" [ref=f26e201] [box=872,1135,73,74]
+            - cell "✓" [ref=f26e202] [box=945,1135,97,74]
+            - cell "✓" [ref=f26e203] [box=1042,1135,53,74]
+            - cell "✓" [ref=f26e204] [box=1095,1135,57,74]
+            - cell [ref=f26e205] [box=1152,1135,88,74]:
+              - link "খুলুন ↗" [ref=f26e206] [cursor=pointer] [box=1166,1157,59,30]:
+                - /url: data/linear_algebra/lesson_07.json
+          - row [ref=f26e207] [box=25,1209,1215,74]:
+            - cell "LA-08" [ref=f26e208] [box=25,1209,70,74]
+            - cell [ref=f26e209] [box=95,1209,327,74]:
+              - strong [ref=f26e210] [box=109,1222,254,23]: অ-বর্গাকার ম্যাট্রিক্স ও ডাইমেনশন ট্রান্সফর্মেশন
+              - text: লিনিয়ার অ্যালজেব্রা
+            - cell "সম্পন্ন" [ref=f26e211] [box=422,1209,100,74]
+            - cell "✓" [ref=f26e214] [box=522,1209,94,74]
+            - cell "✓" [ref=f26e215] [box=616,1209,103,74]
+            - cell "✓" [ref=f26e216] [box=719,1209,83,74]
+            - cell "✓" [ref=f26e217] [box=802,1209,70,74]
+            - cell "✓" [ref=f26e218] [box=872,1209,73,74]
+            - cell "✓" [ref=f26e219] [box=945,1209,97,74]
+            - cell "✓" [ref=f26e220] [box=1042,1209,53,74]
+            - cell "✓" [ref=f26e221] [box=1095,1209,57,74]
+            - cell [ref=f26e222] [box=1152,1209,88,74]:
+              - link "খুলুন ↗" [ref=f26e223] [cursor=pointer] [box=1166,1231,59,30]:
+                - /url: data/linear_algebra/lesson_08.json
+          - row [ref=f26e224] [box=25,1283,1215,74]:
+            - cell "LA-09" [ref=f26e225] [box=25,1283,70,74]
+            - cell [ref=f26e226] [box=95,1283,327,74]:
+              - strong [ref=f26e227] [box=109,1296,258,23]: ডট গুণন ও দ্বৈততা (Dot Products & Duality)
+              - text: লিনিয়ার অ্যালজেব্রা
+            - cell "সম্পন্ন" [ref=f26e228] [box=422,1283,100,74]
+            - cell "✓" [ref=f26e231] [box=522,1283,94,74]
+            - cell "✓" [ref=f26e232] [box=616,1283,103,74]
+            - cell "✓" [ref=f26e233] [box=719,1283,83,74]
+            - cell "✓" [ref=f26e234] [box=802,1283,70,74]
+            - cell "✓" [ref=f26e235] [box=872,1283,73,74]
+            - cell "✓" [ref=f26e236] [box=945,1283,97,74]
+            - cell "✓" [ref=f26e237] [box=1042,1283,53,74]
+            - cell "✓" [ref=f26e238] [box=1095,1283,57,74]
+            - cell [ref=f26e239] [box=1152,1283,88,74]:
+              - link "খুলুন ↗" [ref=f26e240] [cursor=pointer] [box=1166,1305,59,30]:
+                - /url: data/linear_algebra/lesson_09.json
+          - row [ref=f26e241] [box=25,1357,1215,74]:
+            - cell "LA-10" [ref=f26e242] [box=25,1357,70,74]
+            - cell [ref=f26e243] [box=95,1357,327,74]:
+              - strong [ref=f26e244] [box=109,1370,158,23]: ক্রস গুণন (Cross Products)
+              - text: লিনিয়ার অ্যালজেব্রা
+            - cell "সম্পন্ন" [ref=f26e245] [box=422,1357,100,74]
+            - cell "✓" [ref=f26e248] [box=522,1357,94,74]
+            - cell "✓" [ref=f26e249] [box=616,1357,103,74]
+            - cell "✓" [ref=f26e250] [box=719,1357,83,74]
+            - cell "✓" [ref=f26e251] [box=802,1357,70,74]
+            - cell "✓" [ref=f26e252] [box=872,1357,73,74]
+            - cell "✓" [ref=f26e253] [box=945,1357,97,74]
+            - cell "✓" [ref=f26e254] [box=1042,1357,53,74]
+            - cell "✓" [ref=f26e255] [box=1095,1357,57,74]
+            - cell [ref=f26e256] [box=1152,1357,88,74]:
+              - link "খুলুন ↗" [ref=f26e257] [cursor=pointer] [box=1166,1379,59,30]:
+                - /url: data/linear_algebra/lesson_10.json
+          - row [ref=f26e258] [box=25,1431,1215,74]:
+            - cell "LA-11" [ref=f26e259] [box=25,1431,70,74]
+            - cell [ref=f26e260] [box=95,1431,327,74]:
+              - strong [ref=f26e261] [box=109,1444,186,23]: ক্রস গুণন ও রৈখিক রূপান্তর দ্বৈততা
+              - text: লিনিয়ার অ্যালজেব্রা
+            - cell "সম্পন্ন" [ref=f26e262] [box=422,1431,100,74]
+            - cell "✓" [ref=f26e265] [box=522,1431,94,74]
+            - cell "✓" [ref=f26e266] [box=616,1431,103,74]
+            - cell "✓" [ref=f26e267] [box=719,1431,83,74]
+            - cell "✓" [ref=f26e268] [box=802,1431,70,74]
+            - cell "✓" [ref=f26e269] [box=872,1431,73,74]
+            - cell "✓" [ref=f26e270] [box=945,1431,97,74]
+            - cell "✓" [ref=f26e271] [box=1042,1431,53,74]
+            - cell "✓" [ref=f26e272] [box=1095,1431,57,74]
+            - cell [ref=f26e273] [box=1152,1431,88,74]:
+              - link "খুলুন ↗" [ref=f26e274] [cursor=pointer] [box=1166,1453,59,30]:
+                - /url: data/linear_algebra/lesson_11.json
+          - row [ref=f26e275] [box=25,1505,1215,74]:
+            - cell "LA-12" [ref=f26e276] [box=25,1505,70,74]
+            - cell [ref=f26e277] [box=95,1505,327,74]:
+              - strong [ref=f26e278] [box=109,1518,292,23]: ভিত্তি পরিবর্তন (Cramer's Rule & Change of Basis)
+              - text: লিনিয়ার অ্যালজেব্রা
+            - cell "সম্পন্ন" [ref=f26e279] [box=422,1505,100,74]
+            - cell "✓" [ref=f26e282] [box=522,1505,94,74]
+            - cell "✓" [ref=f26e283] [box=616,1505,103,74]
+            - cell "✓" [ref=f26e284] [box=719,1505,83,74]
+            - cell "✓" [ref=f26e285] [box=802,1505,70,74]
+            - cell "✓" [ref=f26e286] [box=872,1505,73,74]
+            - cell "✓" [ref=f26e287] [box=945,1505,97,74]
+            - cell "✓" [ref=f26e288] [box=1042,1505,53,74]
+            - cell "✓" [ref=f26e289] [box=1095,1505,57,74]
+            - cell [ref=f26e290] [box=1152,1505,88,74]:
+              - link "খুলুন ↗" [ref=f26e291] [cursor=pointer] [box=1166,1527,59,30]:
+                - /url: data/linear_algebra/lesson_12.json
+          - row [ref=f26e292] [box=25,1579,1215,74]:
+            - cell "LA-13" [ref=f26e293] [box=25,1579,70,74]
+            - cell [ref=f26e294] [box=95,1579,327,74]:
+              - strong [ref=f26e295] [box=109,1592,179,23]: আইগেনভ্যালু এবং আইগেনভেক্টর
+              - text: লিনিয়ার অ্যালজেব্রা
+            - cell "সম্পন্ন" [ref=f26e296] [box=422,1579,100,74]
+            - cell "✓" [ref=f26e299] [box=522,1579,94,74]
+            - cell "✓" [ref=f26e300] [box=616,1579,103,74]
+            - cell "✓" [ref=f26e301] [box=719,1579,83,74]
+            - cell "✓" [ref=f26e302] [box=802,1579,70,74]
+            - cell "✓" [ref=f26e303] [box=872,1579,73,74]
+            - cell "✓" [ref=f26e304] [box=945,1579,97,74]
+            - cell "✓" [ref=f26e305] [box=1042,1579,53,74]
+            - cell "✓" [ref=f26e306] [box=1095,1579,57,74]
+            - cell [ref=f26e307] [box=1152,1579,88,74]:
+              - link "খুলুন ↗" [ref=f26e308] [cursor=pointer] [box=1166,1601,59,30]:
+                - /url: data/linear_algebra/lesson_13.json
+          - row [ref=f26e309] [box=25,1653,1215,74]:
+            - cell "LA-14" [ref=f26e310] [box=25,1653,70,74]
+            - cell [ref=f26e311] [box=95,1653,327,74]:
+              - strong [ref=f26e312] [box=109,1666,256,23]: বিমূর্ত ভেক্টর স্পেস (Abstract Vector Spaces)
+              - text: লিনিয়ার অ্যালজেব্রা
+            - cell "সম্পন্ন" [ref=f26e313] [box=422,1653,100,74]
+            - cell "✓" [ref=f26e316] [box=522,1653,94,74]
+            - cell "✓" [ref=f26e317] [box=616,1653,103,74]
+            - cell "✓" [ref=f26e318] [box=719,1653,83,74]
+            - cell "✓" [ref=f26e319] [box=802,1653,70,74]
+            - cell "✓" [ref=f26e320] [box=872,1653,73,74]
+            - cell "✓" [ref=f26e321] [box=945,1653,97,74]
+            - cell "✓" [ref=f26e322] [box=1042,1653,53,74]
+            - cell "✓" [ref=f26e323] [box=1095,1653,57,74]
+            - cell [ref=f26e324] [box=1152,1653,88,74]:
+              - link "খুলুন ↗" [ref=f26e325] [cursor=pointer] [box=1166,1675,59,30]:
+                - /url: data/linear_algebra/lesson_14.json
+          - row [ref=f26e326] [box=25,1727,1215,74]:
+            - cell "LA-15" [ref=f26e327] [box=25,1727,70,74]
+            - cell [ref=f26e328] [box=95,1727,327,74]:
+              - strong [ref=f26e329] [box=109,1740,248,23]: ক্রেমারের নিয়ম (Cramer's Rule Geometry)
+              - text: লিনিয়ার অ্যালজেব্রা
+            - cell "সম্পন্ন" [ref=f26e330] [box=422,1727,100,74]
+            - cell "✓" [ref=f26e333] [box=522,1727,94,74]
+            - cell "✓" [ref=f26e334] [box=616,1727,103,74]
+            - cell "✓" [ref=f26e335] [box=719,1727,83,74]
+            - cell "✓" [ref=f26e336] [box=802,1727,70,74]
+            - cell "✓" [ref=f26e337] [box=872,1727,73,74]
+            - cell "✓" [ref=f26e338] [box=945,1727,97,74]
+            - cell "✓" [ref=f26e339] [box=1042,1727,53,74]
+            - cell "✓" [ref=f26e340] [box=1095,1727,57,74]
+            - cell [ref=f26e341] [box=1152,1727,88,74]:
+              - link "খুলুন ↗" [ref=f26e342] [cursor=pointer] [box=1166,1749,59,30]:
+                - /url: data/linear_algebra/lesson_15.json
+          - row [ref=f26e343] [box=25,1801,1215,76]:
+            - cell "CALC-01" [ref=f26e344] [box=25,1801,70,76]
+            - cell [ref=f26e345] [box=95,1801,327,76]:
+              - strong [ref=f26e346] [box=109,1815,235,23]: ক্যালকুলাসের মূল সারমর্ম ও ক্ষেত্রফল-ঢাল
+              - text: ক্যালকুলাস
+            - cell "সম্পন্ন" [ref=f26e347] [box=422,1801,100,76]
+            - cell "✓" [ref=f26e350] [box=522,1801,94,76]
+            - cell "✓" [ref=f26e351] [box=616,1801,103,76]
+            - cell "✓" [ref=f26e352] [box=719,1801,83,76]
+            - cell "✓" [ref=f26e353] [box=802,1801,70,76]
+            - cell "✓" [ref=f26e354] [box=872,1801,73,76]
+            - cell "✓" [ref=f26e355] [box=945,1801,97,76]
+            - cell "✓" [ref=f26e356] [box=1042,1801,53,76]
+            - cell "✓" [ref=f26e357] [box=1095,1801,57,76]
+            - cell [ref=f26e358] [box=1152,1801,88,76]:
+              - link "খুলুন ↗" [ref=f26e359] [cursor=pointer] [box=1166,1824,59,30]:
+                - /url: data/calculus/lesson_01.json
+          - row [ref=f26e360] [box=25,1877,1215,76]:
+            - cell "CALC-02" [ref=f26e361] [box=25,1877,70,76]
+            - cell [ref=f26e362] [box=95,1877,327,76]:
+              - strong [ref=f26e363] [box=109,1891,188,23]: ডেরিভেটিভের জ্যামিতি ও সংজ্ঞায়ন
+              - text: ক্যালকুলাস
+            - cell "সম্পন্ন" [ref=f26e364] [box=422,1877,100,76]
+            - cell "✓" [ref=f26e367] [box=522,1877,94,76]
+            - cell "✓" [ref=f26e368] [box=616,1877,103,76]
+            - cell "✓" [ref=f26e369] [box=719,1877,83,76]
+            - cell "✓" [ref=f26e370] [box=802,1877,70,76]
+            - cell "✓" [ref=f26e371] [box=872,1877,73,76]
+            - cell "✓" [ref=f26e372] [box=945,1877,97,76]
+            - cell "✓" [ref=f26e373] [box=1042,1877,53,76]
+            - cell "✓" [ref=f26e374] [box=1095,1877,57,76]
+            - cell [ref=f26e375] [box=1152,1877,88,76]:
+              - link "খুলুন ↗" [ref=f26e376] [cursor=pointer] [box=1166,1900,59,30]:
+                - /url: data/calculus/lesson_02.json
+          - row [ref=f26e377] [box=25,1953,1215,76]:
+            - cell "CALC-03" [ref=f26e378] [box=25,1953,70,76]
+            - cell [ref=f26e379] [box=95,1953,327,76]:
+              - strong [ref=f26e380] [box=109,1968,218,23]: ডেরিভেটিভের ফর্মুলা ও জ্যামিতিক প্রমাণ
+              - text: ক্যালকুলাস
+            - cell "সম্পন্ন" [ref=f26e381] [box=422,1953,100,76]
+            - cell "✓" [ref=f26e384] [box=522,1953,94,76]
+            - cell "✓" [ref=f26e385] [box=616,1953,103,76]
+            - cell "✓" [ref=f26e386] [box=719,1953,83,76]
+            - cell "✓" [ref=f26e387] [box=802,1953,70,76]
+            - cell "✓" [ref=f26e388] [box=872,1953,73,76]
+            - cell "✓" [ref=f26e389] [box=945,1953,97,76]
+            - cell "✓" [ref=f26e390] [box=1042,1953,53,76]
+            - cell "✓" [ref=f26e391] [box=1095,1953,57,76]
+            - cell [ref=f26e392] [box=1152,1953,88,76]:
+              - link "খুলুন ↗" [ref=f26e393] [cursor=pointer] [box=1166,1976,59,30]:
+                - /url: data/calculus/lesson_03.json
+          - row [ref=f26e394] [box=25,2029,1215,76]:
+            - cell "CALC-04" [ref=f26e395] [box=25,2029,70,76]
+            - cell [ref=f26e396] [box=95,2029,327,76]:
+              - strong [ref=f26e397] [box=109,2044,134,23]: প্রোডাক্ট রুল ও চেইন রুল
+              - text: ক্যালকুলাস
+            - cell "সম্পন্ন" [ref=f26e398] [box=422,2029,100,76]
+            - cell "✓" [ref=f26e401] [box=522,2029,94,76]
+            - cell "✓" [ref=f26e402] [box=616,2029,103,76]
+            - cell "✓" [ref=f26e403] [box=719,2029,83,76]
+            - cell "✓" [ref=f26e404] [box=802,2029,70,76]
+            - cell "✓" [ref=f26e405] [box=872,2029,73,76]
+            - cell "✓" [ref=f26e406] [box=945,2029,97,76]
+            - cell "✓" [ref=f26e407] [box=1042,2029,53,76]
+            - cell "✓" [ref=f26e408] [box=1095,2029,57,76]
+            - cell [ref=f26e409] [box=1152,2029,88,76]:
+              - link "খুলুন ↗" [ref=f26e410] [cursor=pointer] [box=1166,2052,59,30]:
+                - /url: data/calculus/lesson_04.json
+          - row [ref=f26e411] [box=25,2105,1215,76]:
+            - cell "CALC-05" [ref=f26e412] [box=25,2105,70,76]
+            - cell [ref=f26e413] [box=95,2105,327,76]:
+              - strong [ref=f26e414] [box=109,2120,183,23]: অয়লার সংখ্যা e কেন এত বিশেষ?
+              - text: ক্যালকুলাস
+            - cell "সম্পন্ন" [ref=f26e415] [box=422,2105,100,76]
+            - cell "✓" [ref=f26e418] [box=522,2105,94,76]
+            - cell "✓" [ref=f26e419] [box=616,2105,103,76]
+            - cell "✓" [ref=f26e420] [box=719,2105,83,76]
+            - cell "✓" [ref=f26e421] [box=802,2105,70,76]
+            - cell "✓" [ref=f26e422] [box=872,2105,73,76]
+            - cell "✓" [ref=f26e423] [box=945,2105,97,76]
+            - cell "✓" [ref=f26e424] [box=1042,2105,53,76]
+            - cell "✓" [ref=f26e425] [box=1095,2105,57,76]
+            - cell [ref=f26e426] [box=1152,2105,88,76]:
+              - link "খুলুন ↗" [ref=f26e427] [cursor=pointer] [box=1166,2128,59,30]:
+                - /url: data/calculus/lesson_05.json
+          - row [ref=f26e428] [box=25,2181,1215,76]:
+            - cell "CALC-06" [ref=f26e429] [box=25,2181,70,76]
+            - cell [ref=f26e430] [box=95,2181,327,76]:
+              - strong [ref=f26e431] [box=109,2196,145,23]: ইমপ্লিসিট ডিফারেনশিয়েশন
+              - text: ক্যালকুলাস
+            - cell "সম্পন্ন" [ref=f26e432] [box=422,2181,100,76]
+            - cell "✓" [ref=f26e435] [box=522,2181,94,76]
+            - cell "✓" [ref=f26e436] [box=616,2181,103,76]
+            - cell "✓" [ref=f26e437] [box=719,2181,83,76]
+            - cell "✓" [ref=f26e438] [box=802,2181,70,76]
+            - cell "✓" [ref=f26e439] [box=872,2181,73,76]
+            - cell "✓" [ref=f26e440] [box=945,2181,97,76]
+            - cell "✓" [ref=f26e441] [box=1042,2181,53,76]
+            - cell "✓" [ref=f26e442] [box=1095,2181,57,76]
+            - cell [ref=f26e443] [box=1152,2181,88,76]:
+              - link "খুলুন ↗" [ref=f26e444] [cursor=pointer] [box=1166,2204,59,30]:
+                - /url: data/calculus/lesson_06.json
+          - row [ref=f26e445] [box=25,2257,1215,76]:
+            - cell "CALC-07" [ref=f26e446] [box=25,2257,70,76]
+            - cell [ref=f26e447] [box=95,2257,327,76]:
+              - strong [ref=f26e448] [box=109,2272,232,23]: সীমা, ল'হোপিতাল রুল ও এপসাইলন-ডেল্টা
+              - text: ক্যালকুলাস
+            - cell "চলমান" [ref=f26e449] [box=422,2257,100,76]
+            - cell "✓" [ref=f26e452] [box=522,2257,94,76]
+            - cell "○" [ref=f26e453] [box=616,2257,103,76]
+            - cell "○" [ref=f26e454] [box=719,2257,83,76]
+            - cell "✓" [ref=f26e455] [box=802,2257,70,76]
+            - cell "✓" [ref=f26e456] [box=872,2257,73,76]
+            - cell "✓" [ref=f26e457] [box=945,2257,97,76]
+            - cell "✓" [ref=f26e458] [box=1042,2257,53,76]
+            - cell "✓" [ref=f26e459] [box=1095,2257,57,76]
+            - cell "শীঘ্রই" [ref=f26e460] [box=1152,2257,88,76]
+          - row [ref=f26e461] [box=25,2333,1215,76]:
+            - cell "CALC-08" [ref=f26e462] [box=25,2333,70,76]
+            - cell [ref=f26e463] [box=95,2333,327,76]:
+              - strong [ref=f26e464] [box=109,2348,266,23]: ইন্টিগ্রেশন ও ক্যালকুলাসের ফান্ডামেন্টাল থিওরেম
+              - text: ক্যালকুলাস
+            - cell "সম্পন্ন" [ref=f26e465] [box=422,2333,100,76]
+            - cell "✓" [ref=f26e468] [box=522,2333,94,76]
+            - cell "✓" [ref=f26e469] [box=616,2333,103,76]
+            - cell "✓" [ref=f26e470] [box=719,2333,83,76]
+            - cell "✓" [ref=f26e471] [box=802,2333,70,76]
+            - cell "✓" [ref=f26e472] [box=872,2333,73,76]
+            - cell "✓" [ref=f26e473] [box=945,2333,97,76]
+            - cell "✓" [ref=f26e474] [box=1042,2333,53,76]
+            - cell "✓" [ref=f26e475] [box=1095,2333,57,76]
+            - cell [ref=f26e476] [box=1152,2333,88,76]:
+              - link "খুলুন ↗" [ref=f26e477] [cursor=pointer] [box=1166,2356,59,30]:
+                - /url: data/calculus/lesson_08.json
+          - row [ref=f26e478] [box=25,2409,1215,76]:
+            - cell "CALC-09" [ref=f26e479] [box=25,2409,70,76]
+            - cell [ref=f26e480] [box=95,2409,327,76]:
+              - strong [ref=f26e481] [box=109,2424,179,23]: ক্ষেত্রফল ও ঢালের গভীর সংযোগ
+              - text: ক্যালকুলাস
+            - cell "চলমান" [ref=f26e482] [box=422,2409,100,76]
+            - cell "✓" [ref=f26e485] [box=522,2409,94,76]
+            - cell "○" [ref=f26e486] [box=616,2409,103,76]
+            - cell "○" [ref=f26e487] [box=719,2409,83,76]
+            - cell "✓" [ref=f26e488] [box=802,2409,70,76]
+            - cell "✓" [ref=f26e489] [box=872,2409,73,76]
+            - cell "✓" [ref=f26e490] [box=945,2409,97,76]
+            - cell "✓" [ref=f26e491] [box=1042,2409,53,76]
+            - cell "✓" [ref=f26e492] [box=1095,2409,57,76]
+            - cell "শীঘ্রই" [ref=f26e493] [box=1152,2409,88,76]
+          - row [ref=f26e494] [box=25,2485,1215,76]:
+            - cell "CALC-10" [ref=f26e495] [box=25,2485,70,76]
+            - cell [ref=f26e496] [box=95,2485,327,76]:
+              - strong [ref=f26e497] [box=109,2500,151,23]: টেলর ধারা (Taylor Series)
+              - text: ক্যালকুলাস
+            - cell "চলমান" [ref=f26e498] [box=422,2485,100,76]
+            - cell "✓" [ref=f26e501] [box=522,2485,94,76]
+            - cell "○" [ref=f26e502] [box=616,2485,103,76]
+            - cell "○" [ref=f26e503] [box=719,2485,83,76]
+            - cell "✓" [ref=f26e504] [box=802,2485,70,76]
+            - cell "✓" [ref=f26e505] [box=872,2485,73,76]
+            - cell "✓" [ref=f26e506] [box=945,2485,97,76]
+            - cell "✓" [ref=f26e507] [box=1042,2485,53,76]
+            - cell "✓" [ref=f26e508] [box=1095,2485,57,76]
+            - cell "শীঘ্রই" [ref=f26e509] [box=1152,2485,88,76]
+          - row [ref=f26e510] [box=25,2561,1215,76]:
+            - cell "CALC-11" [ref=f26e511] [box=25,2561,70,76]
+            - cell [ref=f26e512] [box=95,2561,327,76]:
+              - strong [ref=f26e513] [box=109,2576,270,23]: পাই (Pi) আসলে কী এবং কেন ক্যালকুলাসে থাকে?
+              - text: ক্যালকুলাস
+            - cell "চলমান" [ref=f26e514] [box=422,2561,100,76]
+            - cell "✓" [ref=f26e517] [box=522,2561,94,76]
+            - cell "○" [ref=f26e518] [box=616,2561,103,76]
+            - cell "○" [ref=f26e519] [box=719,2561,83,76]
+            - cell "✓" [ref=f26e520] [box=802,2561,70,76]
+            - cell "✓" [ref=f26e521] [box=872,2561,73,76]
+            - cell "✓" [ref=f26e522] [box=945,2561,97,76]
+            - cell "✓" [ref=f26e523] [box=1042,2561,53,76]
+            - cell "✓" [ref=f26e524] [box=1095,2561,57,76]
+            - cell "শীঘ্রই" [ref=f26e525] [box=1152,2561,88,76]
+          - row [ref=f26e526] [box=25,2637,1215,76]:
+            - cell "CALC-12" [ref=f26e527] [box=25,2637,70,76]
+            - cell [ref=f26e528] [box=95,2637,327,76]:
+              - strong [ref=f26e529] [box=109,2652,108,23]: ফাংশন আসলে কী?
+              - text: ক্যালকুলাস
+            - cell "চলমান" [ref=f26e530] [box=422,2637,100,76]
+            - cell "✓" [ref=f26e533] [box=522,2637,94,76]
+            - cell "○" [ref=f26e534] [box=616,2637,103,76]
+            - cell "○" [ref=f26e535] [box=719,2637,83,76]
+            - cell "✓" [ref=f26e536] [box=802,2637,70,76]
+            - cell "✓" [ref=f26e537] [box=872,2637,73,76]
+            - cell "✓" [ref=f26e538] [box=945,2637,97,76]
+            - cell "✓" [ref=f26e539] [box=1042,2637,53,76]
+            - cell "✓" [ref=f26e540] [box=1095,2637,57,76]
+            - cell "শীঘ্রই" [ref=f26e541] [box=1152,2637,88,76]
+          - row [ref=f26e542] [box=25,2713,1215,74]:
+            - cell "DE-01" [ref=f26e543] [box=25,2713,70,74]
+            - cell [ref=f26e544] [box=95,2713,327,74]:
+              - strong [ref=f26e545] [box=109,2727,182,23]: ব্যবকলনীয় সমীকরণ আসলে কী?
+              - text: ডিফারেনশিয়াল সমীকরণ
+            - cell "সম্পন্ন" [ref=f26e546] [box=422,2713,100,74]
+            - cell "✓" [ref=f26e549] [box=522,2713,94,74]
+            - cell "✓" [ref=f26e550] [box=616,2713,103,74]
+            - cell "✓" [ref=f26e551] [box=719,2713,83,74]
+            - cell "✓" [ref=f26e552] [box=802,2713,70,74]
+            - cell "✓" [ref=f26e553] [box=872,2713,73,74]
+            - cell "✓" [ref=f26e554] [box=945,2713,97,74]
+            - cell "✓" [ref=f26e555] [box=1042,2713,53,74]
+            - cell "✓" [ref=f26e556] [box=1095,2713,57,74]
+            - cell [ref=f26e557] [box=1152,2713,88,74]:
+              - link "খুলুন ↗" [ref=f26e558] [cursor=pointer] [box=1166,2735,59,30]:
+                - /url: data/differential_equations/lesson_01.json
+          - row [ref=f26e559] [box=25,2787,1215,74]:
+            - cell "DE-02" [ref=f26e560] [box=25,2787,70,74]
+            - cell [ref=f26e561] [box=95,2787,327,74]:
+              - strong [ref=f26e562] [box=109,2801,179,23]: পেন্ডুলাম ও উচ্চমাত্রিক স্টেট স্পেস
+              - text: ডিফারেনশিয়াল সমীকরণ
+            - cell "সম্পন্ন" [ref=f26e563] [box=422,2787,100,74]
+            - cell "✓" [ref=f26e566] [box=522,2787,94,74]
+            - cell "✓" [ref=f26e567] [box=616,2787,103,74]
+            - cell "✓" [ref=f26e568] [box=719,2787,83,74]
+            - cell "✓" [ref=f26e569] [box=802,2787,70,74]
+            - cell "✓" [ref=f26e570] [box=872,2787,73,74]
+            - cell "✓" [ref=f26e571] [box=945,2787,97,74]
+            - cell "✓" [ref=f26e572] [box=1042,2787,53,74]
+            - cell "✓" [ref=f26e573] [box=1095,2787,57,74]
+            - cell [ref=f26e574] [box=1152,2787,88,74]:
+              - link "খুলুন ↗" [ref=f26e575] [cursor=pointer] [box=1166,2809,59,30]:
+                - /url: data/differential_equations/lesson_02.json
+          - row [ref=f26e576] [box=25,2861,1215,74]:
+            - cell "DE-03" [ref=f26e577] [box=25,2861,70,74]
+            - cell [ref=f26e578] [box=95,2861,327,74]:
+              - strong [ref=f26e579] [box=109,2875,266,23]: রৈখিক ডিফারেনশিয়াল সমীকরণ ও আইগেনভ্যালু
+              - text: ডিফারেনশিয়াল সমীকরণ
+            - cell "চলমান" [ref=f26e580] [box=422,2861,100,74]
+            - cell "✓" [ref=f26e583] [box=522,2861,94,74]
+            - cell "○" [ref=f26e584] [box=616,2861,103,74]
+            - cell "○" [ref=f26e585] [box=719,2861,83,74]
+            - cell "✓" [ref=f26e586] [box=802,2861,70,74]
+            - cell "✓" [ref=f26e587] [box=872,2861,73,74]
+            - cell "✓" [ref=f26e588] [box=945,2861,97,74]
+            - cell "✓" [ref=f26e589] [box=1042,2861,53,74]
+            - cell "✓" [ref=f26e590] [box=1095,2861,57,74]
+            - cell "শীঘ্রই" [ref=f26e591] [box=1152,2861,88,74]
+          - row [ref=f26e592] [box=25,2935,1215,74]:
+            - cell "DE-04" [ref=f26e593] [box=25,2935,70,74]
+            - cell [ref=f26e594] [box=95,2935,327,74]:
+              - strong [ref=f26e595] [box=109,2949,179,23]: তাপ সমীকরণ ও ফুরিয়ার বিশ্লেষণ
+              - text: ডিফারেনশিয়াল সমীকরণ
+            - cell "সম্পন্ন" [ref=f26e596] [box=422,2935,100,74]
+            - cell "✓" [ref=f26e599] [box=522,2935,94,74]
+            - cell "✓" [ref=f26e600] [box=616,2935,103,74]
+            - cell "✓" [ref=f26e601] [box=719,2935,83,74]
+            - cell "✓" [ref=f26e602] [box=802,2935,70,74]
+            - cell "✓" [ref=f26e603] [box=872,2935,73,74]
+            - cell "✓" [ref=f26e604] [box=945,2935,97,74]
+            - cell "✓" [ref=f26e605] [box=1042,2935,53,74]
+            - cell "✓" [ref=f26e606] [box=1095,2935,57,74]
+            - cell [ref=f26e607] [box=1152,2935,88,74]:
+              - link "খুলুন ↗" [ref=f26e608] [cursor=pointer] [box=1166,2957,59,30]:
+                - /url: data/differential_equations/lesson_04.json
+          - row [ref=f26e609] [box=25,3009,1215,74]:
+            - cell "DE-05" [ref=f26e610] [box=25,3009,70,74]
+            - cell [ref=f26e611] [box=95,3009,327,74]:
+              - strong [ref=f26e612] [box=109,3023,296,23]: সরল স্পন্দন গতি ও অনুরণন (Harmonic Oscillators)
+              - text: ডিফারেনশিয়াল সমীকরণ
+            - cell "চলমান" [ref=f26e613] [box=422,3009,100,74]
+            - cell "✓" [ref=f26e616] [box=522,3009,94,74]
+            - cell "○" [ref=f26e617] [box=616,3009,103,74]
+            - cell "○" [ref=f26e618] [box=719,3009,83,74]
+            - cell "✓" [ref=f26e619] [box=802,3009,70,74]
+            - cell "✓" [ref=f26e620] [box=872,3009,73,74]
+            - cell "✓" [ref=f26e621] [box=945,3009,97,74]
+            - cell "✓" [ref=f26e622] [box=1042,3009,53,74]
+            - cell "✓" [ref=f26e623] [box=1095,3009,57,74]
+            - cell "শীঘ্রই" [ref=f26e624] [box=1152,3009,88,74]
+          - row [ref=f26e625] [box=25,3083,1215,74]:
+            - cell "DE-06" [ref=f26e626] [box=25,3083,70,74]
+            - cell [ref=f26e627] [box=95,3083,327,74]:
+              - strong [ref=f26e628] [box=109,3097,212,23]: ল্যাপ্লাস রূপান্তর (Laplace Transform)
+              - text: ডিফারেনশিয়াল সমীকরণ
+            - cell "চলমান" [ref=f26e629] [box=422,3083,100,74]
+            - cell "✓" [ref=f26e632] [box=522,3083,94,74]
+            - cell "○" [ref=f26e633] [box=616,3083,103,74]
+            - cell "○" [ref=f26e634] [box=719,3083,83,74]
+            - cell "✓" [ref=f26e635] [box=802,3083,70,74]
+            - cell "✓" [ref=f26e636] [box=872,3083,73,74]
+            - cell "✓" [ref=f26e637] [box=945,3083,97,74]
+            - cell "✓" [ref=f26e638] [box=1042,3083,53,74]
+            - cell "✓" [ref=f26e639] [box=1095,3083,57,74]
+            - cell "শীঘ্রই" [ref=f26e640] [box=1152,3083,88,74]
+          - row [ref=f26e641] [box=25,3158,1215,76]:
+            - cell "PROB-01" [ref=f26e642] [box=25,3158,70,76]
+            - cell [ref=f26e643] [box=95,3158,327,76]:
+              - strong [ref=f26e644] [box=109,3172,189,23]: সম্ভাব্যতার সূচনা ও শর্তাধীন সম্ভাবনা
+              - text: সম্ভাব্যতা
+            - cell "সম্পন্ন" [ref=f26e645] [box=422,3158,100,76]
+            - cell "✓" [ref=f26e648] [box=522,3158,94,76]
+            - cell "✓" [ref=f26e649] [box=616,3158,103,76]
+            - cell "✓" [ref=f26e650] [box=719,3158,83,76]
+            - cell "✓" [ref=f26e651] [box=802,3158,70,76]
+            - cell "✓" [ref=f26e652] [box=872,3158,73,76]
+            - cell "✓" [ref=f26e653] [box=945,3158,97,76]
+            - cell "✓" [ref=f26e654] [box=1042,3158,53,76]
+            - cell "✓" [ref=f26e655] [box=1095,3158,57,76]
+            - cell [ref=f26e656] [box=1152,3158,88,76]:
+              - link "খুলুন ↗" [ref=f26e657] [cursor=pointer] [box=1166,3181,59,30]:
+                - /url: data/probability/lesson_01.json
+          - row [ref=f26e658] [box=25,3234,1215,76]:
+            - cell "PROB-02" [ref=f26e659] [box=25,3234,70,76]
+            - cell [ref=f26e660] [box=95,3234,327,76]:
+              - strong [ref=f26e661] [box=109,3248,213,23]: দ্বিপদী বণ্টন (Binomial Distribution)
+              - text: সম্ভাব্যতা
+            - cell "চলমান" [ref=f26e662] [box=422,3234,100,76]
+            - cell "✓" [ref=f26e665] [box=522,3234,94,76]
+            - cell "○" [ref=f26e666] [box=616,3234,103,76]
+            - cell "○" [ref=f26e667] [box=719,3234,83,76]
+            - cell "✓" [ref=f26e668] [box=802,3234,70,76]
+            - cell "✓" [ref=f26e669] [box=872,3234,73,76]
+            - cell "✓" [ref=f26e670] [box=945,3234,97,76]
+            - cell "✓" [ref=f26e671] [box=1042,3234,53,76]
+            - cell "✓" [ref=f26e672] [box=1095,3234,57,76]
+            - cell "শীঘ্রই" [ref=f26e673] [box=1152,3234,88,76]
+          - row [ref=f26e674] [box=25,3310,1215,76]:
+            - cell "PROB-03" [ref=f26e675] [box=25,3310,70,76]
+            - cell [ref=f26e676] [box=95,3310,327,76]:
+              - strong [ref=f26e677] [box=109,3324,149,23]: বেইজের সূত্র (Bayes' Rule)
+              - text: সম্ভাব্যতা
+            - cell "চলমান" [ref=f26e678] [box=422,3310,100,76]
+            - cell "✓" [ref=f26e681] [box=522,3310,94,76]
+            - cell "○" [ref=f26e682] [box=616,3310,103,76]
+            - cell "○" [ref=f26e683] [box=719,3310,83,76]
+            - cell "✓" [ref=f26e684] [box=802,3310,70,76]
+            - cell "✓" [ref=f26e685] [box=872,3310,73,76]
+            - cell "✓" [ref=f26e686] [box=945,3310,97,76]
+            - cell "✓" [ref=f26e687] [box=1042,3310,53,76]
+            - cell "✓" [ref=f26e688] [box=1095,3310,57,76]
+            - cell "শীঘ্রই" [ref=f26e689] [box=1152,3310,88,76]
+          - row [ref=f26e690] [box=25,3386,1215,76]:
+            - cell "PROB-04" [ref=f26e691] [box=25,3386,70,76]
+            - cell [ref=f26e692] [box=95,3386,327,76]:
+              - strong [ref=f26e693] [box=109,3400,235,23]: অবিচ্ছিন্ন সম্ভাব্যতা ও সম্ভাব্যতা ঘনত্ব ফাংশন
+              - text: সম্ভাব্যতা
+            - cell "চলমান" [ref=f26e694] [box=422,3386,100,76]
+            - cell "✓" [ref=f26e697] [box=522,3386,94,76]
+            - cell "○" [ref=f26e698] [box=616,3386,103,76]
+            - cell "○" [ref=f26e699] [box=719,3386,83,76]
+            - cell "✓" [ref=f26e700] [box=802,3386,70,76]
+            - cell "✓" [ref=f26e701] [box=872,3386,73,76]
+            - cell "✓" [ref=f26e702] [box=945,3386,97,76]
+            - cell "✓" [ref=f26e703] [box=1042,3386,53,76]
+            - cell "✓" [ref=f26e704] [box=1095,3386,57,76]
+            - cell "শীঘ্রই" [ref=f26e705] [box=1152,3386,88,76]
+          - row [ref=f26e706] [box=25,3462,1215,76]:
+            - cell "PROB-05" [ref=f26e707] [box=25,3462,70,76]
+            - cell [ref=f26e708] [box=95,3462,327,76]:
+              - strong [ref=f26e709] [box=109,3476,131,23]: মার্কভ চেইন ও স্টেডি স্টেট
+              - text: সম্ভাব্যতা
+            - cell "সম্পন্ন" [ref=f26e710] [box=422,3462,100,76]
+            - cell "✓" [ref=f26e713] [box=522,3462,94,76]
+            - cell "✓" [ref=f26e714] [box=616,3462,103,76]
+            - cell "✓" [ref=f26e715] [box=719,3462,83,76]
+            - cell "✓" [ref=f26e716] [box=802,3462,70,76]
+            - cell "✓" [ref=f26e717] [box=872,3462,73,76]
+            - cell "✓" [ref=f26e718] [box=945,3462,97,76]
+            - cell "✓" [ref=f26e719] [box=1042,3462,53,76]
+            - cell "✓" [ref=f26e720] [box=1095,3462,57,76]
+            - cell [ref=f26e721] [box=1152,3462,88,76]:
+              - link "খুলুন ↗" [ref=f26e722] [cursor=pointer] [box=1166,3485,59,30]:
+                - /url: data/probability/lesson_05.json
+          - row [ref=f26e723] [box=25,3538,1215,76]:
+            - cell "PROB-06" [ref=f26e724] [box=25,3538,70,76]
+            - cell [ref=f26e725] [box=95,3538,327,76]:
+              - strong [ref=f26e726] [box=109,3552,175,23]: কেন্দ্রীয় সীমা উপপাদ্য ও পি-ভ্যালু
+              - text: সম্ভাব্যতা
+            - cell "চলমান" [ref=f26e727] [box=422,3538,100,76]
+            - cell "✓" [ref=f26e730] [box=522,3538,94,76]
+            - cell "○" [ref=f26e731] [box=616,3538,103,76]
+            - cell "○" [ref=f26e732] [box=719,3538,83,76]
+            - cell "✓" [ref=f26e733] [box=802,3538,70,76]
+            - cell "✓" [ref=f26e734] [box=872,3538,73,76]
+            - cell "✓" [ref=f26e735] [box=945,3538,97,76]
+            - cell "✓" [ref=f26e736] [box=1042,3538,53,76]
+            - cell "✓" [ref=f26e737] [box=1095,3538,57,76]
+            - cell "শীঘ্রই" [ref=f26e738] [box=1152,3538,88,76]
+          - row [ref=f26e739] [box=25,3614,1215,74]:
+            - cell "NN-01" [ref=f26e740] [box=25,3614,70,74]
+            - cell [ref=f26e741] [box=95,3614,327,74]:
+              - strong [ref=f26e742] [box=109,3627,169,23]: নিউরাল নেটওয়ার্ক আসলে কী?
+              - text: নিউরাল নেটওয়ার্ক
+            - cell "সম্পন্ন" [ref=f26e743] [box=422,3614,100,74]
+            - cell "✓" [ref=f26e746] [box=522,3614,94,74]
+            - cell "✓" [ref=f26e747] [box=616,3614,103,74]
+            - cell "✓" [ref=f26e748] [box=719,3614,83,74]
+            - cell "✓" [ref=f26e749] [box=802,3614,70,74]
+            - cell "✓" [ref=f26e750] [box=872,3614,73,74]
+            - cell "✓" [ref=f26e751] [box=945,3614,97,74]
+            - cell "✓" [ref=f26e752] [box=1042,3614,53,74]
+            - cell "✓" [ref=f26e753] [box=1095,3614,57,74]
+            - cell [ref=f26e754] [box=1152,3614,88,74]:
+              - link "খুলুন ↗" [ref=f26e755] [cursor=pointer] [box=1166,3636,59,30]:
+                - /url: courses/neural_networks/index.html
+          - row [ref=f26e756] [box=25,3688,1215,74]:
+            - cell "NN-02" [ref=f26e757] [box=25,3688,70,74]
+            - cell [ref=f26e758] [box=95,3688,327,74]:
+              - strong [ref=f26e759] [box=109,3701,239,23]: "গ্র্যাডিয়েন্ট ডিসেন্ট: নেটওয়ার্ক কীভাবে শেখে?"
+              - text: নিউরাল নেটওয়ার্ক
+            - cell "চলমান" [ref=f26e760] [box=422,3688,100,74]
+            - cell "✓" [ref=f26e763] [box=522,3688,94,74]
+            - cell "○" [ref=f26e764] [box=616,3688,103,74]
+            - cell "○" [ref=f26e765] [box=719,3688,83,74]
+            - cell "✓" [ref=f26e766] [box=802,3688,70,74]
+            - cell "✓" [ref=f26e767] [box=872,3688,73,74]
+            - cell "✓" [ref=f26e768] [box=945,3688,97,74]
+            - cell "✓" [ref=f26e769] [box=1042,3688,53,74]
+            - cell "✓" [ref=f26e770] [box=1095,3688,57,74]
+            - cell "শীঘ্রই" [ref=f26e771] [box=1152,3688,88,74]
+          - row [ref=f26e772] [box=25,3762,1215,74]:
+            - cell "NN-03" [ref=f26e773] [box=25,3762,70,74]
+            - cell [ref=f26e774] [box=95,3762,327,74]:
+              - strong [ref=f26e775] [box=109,3775,196,23]: ব্যাকপ্রোপাগেশনের গাণিতিক অন্তর্দৃষ্টি
+              - text: নিউরাল নেটওয়ার্ক
+            - cell "চলমান" [ref=f26e776] [box=422,3762,100,74]
+            - cell "✓" [ref=f26e779] [box=522,3762,94,74]
+            - cell "○" [ref=f26e780] [box=616,3762,103,74]
+            - cell "○" [ref=f26e781] [box=719,3762,83,74]
+            - cell "✓" [ref=f26e782] [box=802,3762,70,74]
+            - cell "✓" [ref=f26e783] [box=872,3762,73,74]
+            - cell "✓" [ref=f26e784] [box=945,3762,97,74]
+            - cell "✓" [ref=f26e785] [box=1042,3762,53,74]
+            - cell "✓" [ref=f26e786] [box=1095,3762,57,74]
+            - cell "শীঘ্রই" [ref=f26e787] [box=1152,3762,88,74]
+          - row [ref=f26e788] [box=25,3836,1215,74]:
+            - cell "NN-04" [ref=f26e789] [box=25,3836,70,74]
+            - cell [ref=f26e790] [box=95,3836,327,74]:
+              - strong [ref=f26e791] [box=109,3849,234,23]: ব্যাকপ্রোপাগেশন ক্যালকুলাস ও ট্রান্সফরমার
+              - text: নিউরাল নেটওয়ার্ক
+            - cell "কিউ" [ref=f26e792] [box=422,3836,100,74]
+            - cell "○" [ref=f26e795] [box=522,3836,94,74]
+            - cell "○" [ref=f26e796] [box=616,3836,103,74]
+            - cell "○" [ref=f26e797] [box=719,3836,83,74]
+            - cell "✓" [ref=f26e798] [box=802,3836,70,74]
+            - cell "✓" [ref=f26e799] [box=872,3836,73,74]
+            - cell "✓" [ref=f26e800] [box=945,3836,97,74]
+            - cell "✓" [ref=f26e801] [box=1042,3836,53,74]
+            - cell "✓" [ref=f26e802] [box=1095,3836,57,74]
+            - cell "শীঘ্রই" [ref=f26e803] [box=1152,3836,88,74]
+          - row [ref=f26e804] [box=25,3910,1215,74]:
+            - cell "LM-01" [ref=f26e805] [box=25,3910,70,74]
+            - cell [ref=f26e806] [box=95,3910,327,74]:
+              - strong [ref=f26e807] [box=109,3923,181,23]: দ্বিঘাত সমীকরণের জ্যামিতিক রূপ
+              - text: লকডাউন ম্যাথ
+            - cell "কিউ" [ref=f26e808] [box=422,3910,100,74]
+            - cell "○" [ref=f26e811] [box=522,3910,94,74]
+            - cell "○" [ref=f26e812] [box=616,3910,103,74]
+            - cell "○" [ref=f26e813] [box=719,3910,83,74]
+            - cell "✓" [ref=f26e814] [box=802,3910,70,74]
+            - cell "✓" [ref=f26e815] [box=872,3910,73,74]
+            - cell "✓" [ref=f26e816] [box=945,3910,97,74]
+            - cell "○" [ref=f26e817] [box=1042,3910,53,74]
+            - cell "○" [ref=f26e818] [box=1095,3910,57,74]
+            - cell [ref=f26e819] [box=1152,3910,88,74]:
+              - link "খুলুন ↗" [ref=f26e820] [cursor=pointer] [box=1166,3932,59,30]:
+                - /url: courses/lockdown_math/index.html
+          - row [ref=f26e821] [box=25,3984,1215,74]:
+            - cell "LM-02" [ref=f26e822] [box=25,3984,70,74]
+            - cell [ref=f26e823] [box=95,3984,327,74]:
+              - strong [ref=f26e824] [box=109,3997,176,23]: জটিল সংখ্যার মোহনীয় জ্যামিতি
+              - text: লকডাউন ম্যাথ
+            - cell "কিউ" [ref=f26e825] [box=422,3984,100,74]
+            - cell "○" [ref=f26e828] [box=522,3984,94,74]
+            - cell "○" [ref=f26e829] [box=616,3984,103,74]
+            - cell "○" [ref=f26e830] [box=719,3984,83,74]
+            - cell "✓" [ref=f26e831] [box=802,3984,70,74]
+            - cell "✓" [ref=f26e832] [box=872,3984,73,74]
+            - cell "✓" [ref=f26e833] [box=945,3984,97,74]
+            - cell "○" [ref=f26e834] [box=1042,3984,53,74]
+            - cell "○" [ref=f26e835] [box=1095,3984,57,74]
+            - cell [ref=f26e836] [box=1152,3984,88,74]:
+              - link "খুলুন ↗" [ref=f26e837] [cursor=pointer] [box=1166,4006,59,30]:
+                - /url: courses/lockdown_math/index.html
+          - row [ref=f26e838] [box=25,4058,1215,74]:
+            - cell "LM-03" [ref=f26e839] [box=25,4058,70,74]
+            - cell [ref=f26e840] [box=95,4058,327,74]:
+              - strong [ref=f26e841] [box=109,4071,171,23]: অয়লারের সূত্র ও ইউনিট সার্কেল
+              - text: লকডাউন ম্যাথ
+            - cell "কিউ" [ref=f26e842] [box=422,4058,100,74]
+            - cell "○" [ref=f26e845] [box=522,4058,94,74]
+            - cell "○" [ref=f26e846] [box=616,4058,103,74]
+            - cell "○" [ref=f26e847] [box=719,4058,83,74]
+            - cell "✓" [ref=f26e848] [box=802,4058,70,74]
+            - cell "✓" [ref=f26e849] [box=872,4058,73,74]
+            - cell "✓" [ref=f26e850] [box=945,4058,97,74]
+            - cell "○" [ref=f26e851] [box=1042,4058,53,74]
+            - cell "○" [ref=f26e852] [box=1095,4058,57,74]
+            - cell [ref=f26e853] [box=1152,4058,88,74]:
+              - link "খুলুন ↗" [ref=f26e854] [cursor=pointer] [box=1166,4080,59,30]:
+                - /url: courses/lockdown_math/index.html
+          - row [ref=f26e855] [box=25,4132,1215,74]:
+            - cell "LM-04" [ref=f26e856] [box=25,4132,70,74]
+            - cell [ref=f26e857] [box=95,4132,327,74]:
+              - strong [ref=f26e858] [box=109,4145,211,23]: প্রাইম স্পাইরাল ও মৌলিক সংখ্যার রহস্য
+              - text: লকডাউন ম্যাথ
+            - cell "কিউ" [ref=f26e859] [box=422,4132,100,74]
+            - cell "○" [ref=f26e862] [box=522,4132,94,74]
+            - cell "○" [ref=f26e863] [box=616,4132,103,74]
+            - cell "○" [ref=f26e864] [box=719,4132,83,74]
+            - cell "✓" [ref=f26e865] [box=802,4132,70,74]
+            - cell "✓" [ref=f26e866] [box=872,4132,73,74]
+            - cell "✓" [ref=f26e867] [box=945,4132,97,74]
+            - cell "○" [ref=f26e868] [box=1042,4132,53,74]
+            - cell "○" [ref=f26e869] [box=1095,4132,57,74]
+            - cell [ref=f26e870] [box=1152,4132,88,74]:
+              - link "খুলুন ↗" [ref=f26e871] [cursor=pointer] [box=1166,4154,59,30]:
+                - /url: courses/lockdown_math/index.html
+          - row [ref=f26e872] [box=25,4206,1215,74]:
+            - cell "LM-05" [ref=f26e873] [box=25,4206,70,74]
+            - cell [ref=f26e874] [box=95,4206,327,74]:
+              - strong [ref=f26e875] [box=109,4219,185,23]: দ্বিপদী বিস্তার ও প্যাসকেলের ত্রিভুজ
+              - text: লকডাউন ম্যাথ
+            - cell "কিউ" [ref=f26e876] [box=422,4206,100,74]
+            - cell "○" [ref=f26e879] [box=522,4206,94,74]
+            - cell "○" [ref=f26e880] [box=616,4206,103,74]
+            - cell "○" [ref=f26e881] [box=719,4206,83,74]
+            - cell "✓" [ref=f26e882] [box=802,4206,70,74]
+            - cell "✓" [ref=f26e883] [box=872,4206,73,74]
+            - cell "✓" [ref=f26e884] [box=945,4206,97,74]
+            - cell "○" [ref=f26e885] [box=1042,4206,53,74]
+            - cell "○" [ref=f26e886] [box=1095,4206,57,74]
+            - cell [ref=f26e887] [box=1152,4206,88,74]:
+              - link "খুলুন ↗" [ref=f26e888] [cursor=pointer] [box=1166,4228,59,30]:
+                - /url: courses/lockdown_math/index.html
+  - contentinfo [ref=f26e889] [box=0,4393,1265,71]: ৩ব্লু১ব্রাউন বাংলা প্ল্যাটফর্ম · মিশন কন্ট্রোল ইঞ্জিন · স্বয়ংক্রিয় রিয়েল-টাইম ট্র্যাকার

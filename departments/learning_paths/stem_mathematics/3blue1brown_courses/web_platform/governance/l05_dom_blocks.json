@@ -1,0 +1,210 @@
+[
+  {
+    "id": "sec_01_3d_space",
+    "title": "১. ভূমিকা ও ত্রিমাত্রিক জগতে রূপান্তর (Intro · Three-dimensions)",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "১. ভূমিকা ও ত্রিমাত্রিক জগতে রূপান্তর (Intro · Three-dimensions)",
+        "tex": ""
+      },
+      {
+        "type": "chapter-quote",
+        "text": "\" লিসা: “Well, where's my dad?” · ফ্রিংক: “Well, it should be obvious to even the most dimwitted individual who holds an advanced degree in hyperbolic topology that Homer Simpson has stumbled into... dramatic pause... the third dimension.” — দ্য সিম্পসন্স (The Simpsons)",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "গত দুই অধ্যায়ে আমরা লিনিয়ার রূপান্তর ও ম্যাট্রিক্স নিয়ে কথা বলেছি, কিন্তু সেটি ছিল শুধু ২ডি ভেক্টর থেকে ২ডি ভেক্টরের বিশেষ ক্ষেত্র। এই সিরিজে আমরা মূলত দ্বিমাত্রিকতেই কাজ করব—কারণ স্ক্রিনে দেখা ও মনে ধারণা করা সহজ, এবং সবচেয়ে গুরুত্বপূর্ণ হলো দ্বিমাত্রিকে মূল ধারণাগুলো আয়ত্ত করলে সেগুলো উচ্চতর মাত্রায় প্রায় নির্বিঘ্নেই চলে যায়।",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "তবুও মাঝে মাঝে ফ্ল্যাটল্যান্ডের বাইরে মাথা তুলে দেখা ভালো—বাস্তব ত্রিমাত্রিক স্পেসে এই ধারণাগুলোর প্রয়োগ আসলে কী রূপ নেয়। যে নিয়ম আপনি সমতলে শিখেছেন, ঠিক সেই নিয়মই তিনটি অক্ষের জগতে কাজ করবে; শুধু একটি অক্ষ ও একটি বেসিস ভেক্টর বেশি যোগ হবে।",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "এই অধ্যায়ে আমরা ৩ডি স্পেসে প্রবেশ করব এবং দেখব কীভাবে তিনটি বেসিস ভেক্টরের গন্তব্য ট্র্যাক করে পুরো ত্রিমাত্রিক রূপান্তরকে নয়টি সংখ্যার একটি ৩×৩ ম্যাট্রিক্সে বাঁধা যায়।",
+        "tex": ""
+      },
+      {
+        "type": "h3",
+        "text": "ত্রিমাত্রিক জগতের তিনটি বেসিস ভেক্টর",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "দ্বিমাত্রিক স্থানে যেমন <annotation>x</annotation> ও <annotation>y</annotation> অক্ষ বরাবর <annotation>\\hat{\\imath}</annotation> ও <annotation>\\hat{\\jmath}</annotation> ছিল, ত্রিমাত্রিক স্থানে তেমনি তিনটি পরস্পর-লম্ব অক্ষ থাকে: <annotation>x</annotation>-অক্ষ বরাবর <annotation>\\hat{\\imath}</annotation>, <annotation>y</annotation>-অক্ষ বরাবর <annotation>\\hat{\\jmath}</annotation> এবং <annotation>z</annotation>-অক্ষ বরাবর <annotation>\\hat{k}</annotation>। প্রথম দুটি অক্ষ যেভাবে সমতল গড়ে তোলে, <annotation>z</annotation>-অক্ষ সেই সমতলে গভীরতা যোগ করে।",
+        "tex": "x y \\hat{\\imath} \\hat{\\jmath} x \\hat{\\imath} y \\hat{\\jmath} z \\hat{k} z"
+      },
+      {
+        "type": "figure",
+        "text": "এই চিত্রে ত্রিমাত্রিক স্থানের তিনটি প্রমিত বেসিস ভেক্টর দেখা যায়—লাল তীর <annotation>\\hat{\\imath}</annotation> এক্স অক্ষ বরাবর, সবুজ তীর <annotation>\\hat{\\jmath}</annotation> ওয়াই অক্ষ বরাবর এবং নীল তীর <annotation>\\hat{k}</annotation> উল্লম্ব জেড অক্ষ বরাবর। তিনটি অক্ষ পরস্পরের সাথে সমকোণে থাকায় যেকোনো ত্রিমাত্রিক ভেক্টরকে এদের সাহায্যে প্রকাশ করা যায়। তীরগুলোর দিক ও দৈর্ঘ্য লক্ষ্য করুন, কারণ রূপান্তরের পর এদের নতুন অবতরণ-স্থানই ম্যাট্রিক্সের কলাম হবে।",
+        "tex": "\\hat{\\imath} \\hat{\\jmath} \\hat{k}"
+      },
+      {
+        "type": "p",
+        "text": "যেকোনো ৩ডি ভেক্টর <annotation>\\vec{v}</annotation> কে এই তিনটি বেসিস ভেক্টরের স্কেলিং ও রৈখিক সমাবেশ হিসেবে লেখা যায়। স্থানাঙ্ক <annotation>x, y, z</annotation> আসলে তিনটি নির্দেশনা—প্রতিটি বেসিস ভেক্টরকে কতটা টেনে প্রসারিত বা সংকুচিত করে যোগ করতে হবে তা বলে দেয়।",
+        "tex": "\\vec{v} x, y, z"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\vec{v} = x\\hat{\\imath} + y\\hat{\\jmath} + z\\hat{k} = x\\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\end{bmatrix} + y\\begin{bmatrix} 0 \\\\ 1 \\\\ 0 \\end{bmatrix} + z\\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix}</annotation>",
+        "tex": "\\vec{v} = x\\hat{\\imath} + y\\hat{\\jmath} + z\\hat{k} = x\\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\end{bmatrix} + y\\begin{bmatrix} 0 \\\\ 1 \\\\ 0 \\end{bmatrix} + z\\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix}"
+      },
+      {
+        "type": "h3",
+        "text": "ত্রিমাত্রিক রৈখিক রূপান্তরের জ্যামিতিক বৈশিষ্ট্য",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "টুডি জগতের মতোই একটি রূপান্তর তখনই রৈখিক যখন দুটি শর্ত পূরণ হয়—মূলবিন্দু <annotation>(0,0,0)</annotation> নিজের জায়গায় অটল থাকে অর্থাৎ <annotation>L(\\vec{0}) = \\vec{0}</annotation>, এবং গ্রিডরেখা সোজা ও সমান্তরাল তলগুলো রূপান্তরের পরেও পরস্পরের সমান্তরাল ও সমদূরত্বে থাকে।",
+        "tex": "(0,0,0) L(\\vec{0}) = \\vec{0}"
+      },
+      {
+        "type": "figure",
+        "text": "এই চিত্রে পুরো ত্রিমাত্রিক গ্রিডকে এক টুকরো নরম রবারের জালির মতো টানা বা সংকুচিত হতে দেখা যায়, কিন্তু মূলবিন্দু অনড় থাকে। লক্ষ্য করুন প্রতিটি তল পরস্পরের সমান্তরাল এবং সমদূরত্বে রয়েছে—এটিই রৈখিকতার জ্যামিতিক চিহ্ন। কোথাও বাঁক বা ভাঙন দেখলে বুঝতে হবে রূপান্তরটি রৈখিক নয়।",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "ত্রিমাত্রিক স্থানে কোটি কোটি ভেক্টরকে তীর হিসেবে কল্পনা করা অসম্ভব। তাই সবচেয়ে শক্তিশালী কৌশল হলো—পুরো স্পেসের পেছনে না ছুটে কেবল লক্ষ্য করা যে রূপান্তরের পর আমাদের তিনটি বেসিস ভেক্টর <annotation>\\hat{\\imath}</annotation>, <annotation>\\hat{\\jmath}</annotation> ও <annotation>\\hat{k}</annotation> কোথায় গিয়ে পৌঁছাল।",
+        "tex": "\\hat{\\imath} \\hat{\\jmath} \\hat{k}"
+      }
+    ]
+  },
+  {
+    "id": "sec_02_matrix3x3",
+    "title": "২. ৩×৩ ম্যাট্রিক্স, উদাহরণ ও সংযোজন (Examples · Combining)",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "২. ৩×৩ ম্যাট্রিক্স, উদাহরণ ও সংযোজন (Examples · Combining)",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "রূপান্তরের পর আমাদের তিনটি বেসিস ভেক্টর মহাকাশের তিনটি নতুন অবস্থানে অবতরণ করে: <annotation>\\hat{\\imath}</annotation> পৌঁছায় <annotation>L(\\hat{\\imath})</annotation>-এ, <annotation>\\hat{\\jmath}</annotation> পৌঁছায় <annotation>L(\\hat{\\jmath})</annotation>-এ এবং <annotation>\\hat{k}</annotation> পৌঁছায় <annotation>L(\\hat{k})</annotation>-এ। পেছনের আদি অক্ষগুলোর সাপেক্ষে এই নতুন ঠিকানাগুলোই আমাদের সব কিছু বলে দেয়।",
+        "tex": "\\hat{\\imath} L(\\hat{\\imath}) \\hat{\\jmath} L(\\hat{\\jmath}) \\hat{k} L(\\hat{k})"
+      },
+      {
+        "type": "figure",
+        "text": "এই চিত্রে রূপান্তরের পর <annotation>\\hat{\\imath}</annotation>, <annotation>\\hat{\\jmath}</annotation> ও <annotation>\\hat{k}</annotation> কোথায় অবতরণ করেছে তা পেছনের মূল অক্ষগুলোর সাপেক্ষে দেখানো হয়েছে। হালকা অক্ষগুলো আদি অবস্থান ধরে রাখে, আর রঙিন তীরগুলো নতুন অবস্থান নির্দেশ করে। এই তিনটি নতুন স্থানাঙ্কই পরবর্তীতে ম্যাট্রিক্সের তিনটি কলাম গঠন করবে—তাই এই পদক্ষেপটি সবচেয়ে গুরুত্বপূর্ণ।",
+        "tex": "\\hat{\\imath} \\hat{\\jmath} \\hat{k}"
+      },
+      {
+        "type": "p",
+        "text": "এই তিনটি রূপান্তরিত ভেক্টরকে পাশাপাশি তিনটি উল্লম্ব কলাম আকারে সাজালেই পাওয়া যায় একটি ৩×৩ ম্যাট্রিক্স। এই নয়টি বাস্তব সংখ্যাই পুরো ত্রিমাত্রিক রূপান্তরের পূর্ণাঙ্গ ডিএনএ—কোথাও কোনো তথ্য বাদ যায় না।",
+        "tex": ""
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>M = \\begin{bmatrix} \\color{#69f0ae}a & \\color{#e94560}b & \\color{#4fc3f7}c \\\\ \\color{#69f0ae}d & \\color{#e94560}e & \\color{#4fc3f7}f \\\\ \\color{#69f0ae}g & \\color{#e94560}h & \\color{#4fc3f7}i \\end{bmatrix} = \\begin{bmatrix} L(\\hat{\\imath}) & L(\\hat{\\jmath}) & L(\\hat{k}) \\end{bmatrix}</annotation>",
+        "tex": "M = \\begin{bmatrix} \\color{#69f0ae}a & \\color{#e94560}b & \\color{#4fc3f7}c \\\\ \\color{#69f0ae}d & \\color{#e94560}e & \\color{#4fc3f7}f \\\\ \\color{#69f0ae}g & \\color{#e94560}h & \\color{#4fc3f7}i \\end{bmatrix} = \\begin{bmatrix} L(\\hat{\\imath}) & L(\\hat{\\jmath}) & L(\\hat{k}) \\end{bmatrix}"
+      },
+      {
+        "type": "h3",
+        "text": "ত্রিমাত্রিক ম্যাট্রিক্স-ভেক্টর গুণনের জ্যামিতিক তাৎপর্য",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "যেকোনো সাধারণ ভেক্টর <annotation>(x, y, z)</annotation> এর ওপর এই রূপান্তর প্রয়োগ করলে কী হবে? এটি কোনো অন্ধ বীজগাণিতিক সূত্র নয়—এটি হলো রূপান্তরিত কলাম তিনটির একটি ভারযুক্ত বা ওয়েইটেড যোগফল, যেখানে ইনপুটের স্থানাঙ্কগুলো ওজন হিসেবে কাজ করে।",
+        "tex": "(x, y, z)"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\begin{bmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{bmatrix}\\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix} = x\\begin{bmatrix} a \\\\ d \\\\ g \\end{bmatrix} + y\\begin{bmatrix} b \\\\ e \\\\ h \\end{bmatrix} + z\\begin{bmatrix} c \\\\ f \\\\ i \\end{bmatrix} = \\begin{bmatrix} ax + by + cz \\\\ dx + ey + fz \\\\ gx + hy + iz \\end{bmatrix}</annotation>",
+        "tex": "\\begin{bmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{bmatrix}\\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix} = x\\begin{bmatrix} a \\\\ d \\\\ g \\end{bmatrix} + y\\begin{bmatrix} b \\\\ e \\\\ h \\end{bmatrix} + z\\begin{bmatrix} c \\\\ f \\\\ i \\end{bmatrix} = \\begin{bmatrix} ax + by + cz \\\\ dx + ey + fz \\\\ gx + hy + iz \\end{bmatrix}"
+      },
+      {
+        "type": "figure",
+        "text": "এই ডায়াগ্রামে দেখানো হয়েছে কীভাবে ইনপুট ভেক্টরের <annotation>x</annotation>, <annotation>y</annotation>, <annotation>z</annotation> স্থানাঙ্ক ম্যাট্রিক্সের তিনটি কলামকে যথাক্রমে স্কেল করে যোগ হয়ে আউটপুট ভেক্টর তৈরি করে। প্রতিটি কলাম আগে একটি রূপান্তরিত বেসিস ভেক্টর ছিল, এখন সেটি ওজন হিসেবে কাজ করছে। এই 'কলামের ভারযুক্ত যোগফল' দৃষ্টিভঙ্গিটিই মুখস্থ সূত্রের বদলে গুণনকে গভীরভাবে বোঝার চাবিকাঠি।",
+        "tex": "x y z"
+      },
+      {
+        "type": "h3",
+        "text": "বাস্তব উদাহরণ: ওয়াই অক্ষকে কেন্দ্র করে ৯০° ঘূর্ণন",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "ধরা যাক পুরো স্পেসকে <annotation>y</annotation>-অক্ষ অনড় রেখে তার চারপাশে ৯০° ঘোরানো হলো। ফলে <annotation>\\hat{\\imath}</annotation> ঋণাত্মক <annotation>z</annotation>-অক্ষে <annotation>\\begin{bmatrix}0\\\\0\\\\-1\\end{bmatrix}</annotation> পৌঁছায়, <annotation>\\hat{\\jmath}</annotation> অপরিবর্তিত থাকে <annotation>\\begin{bmatrix}0\\\\1\\\\0\\end{bmatrix}</annotation>, আর <annotation>\\hat{k}</annotation> ধনাত্মক <annotation>x</annotation>-অক্ষে <annotation>\\begin{bmatrix}1\\\\0\\\\0\\end{bmatrix}</annotation> চলে আসে—এই তিনটিই তিনটি কলাম।",
+        "tex": "y \\hat{\\imath} z \\begin{bmatrix}0\\\\0\\\\-1\\end{bmatrix} \\hat{\\jmath} \\begin{bmatrix}0\\\\1\\\\0\\end{bmatrix} \\hat{k} x \\begin{bmatrix}1\\\\0\\\\0\\end{bmatrix}"
+      },
+      {
+        "type": "figure",
+        "text": "এই চিত্রে <annotation>y</annotation>-অক্ষকে অনড় রেখে পুরো স্পেস ৯০° ঘুরছে: <annotation>\\hat{\\imath}</annotation> ঋণাত্মক <annotation>z</annotation>-অক্ষে, <annotation>\\hat{\\jmath}</annotation> অপরিবর্তিত, এবং <annotation>\\hat{k}</annotation> ধনাত্মক <annotation>x</annotation>-অক্ষে পৌঁছায়। তিনটি কলাম যথাক্রমে <annotation>[0,0,-1]</annotation>, <annotation>[0,1,0]</annotation> ও <annotation>[1,0,0]</annotation> লিখলেই ঘূর্ণন ম্যাট্রিক্সটি তৈরি হয়। মনে রাখবেন ঘূর্ণনের দিক ও কোন অক্ষ অনড় আছে তা কলামের চিহ্ন নির্ধারণ করে।",
+        "tex": "y \\hat{\\imath} z \\hat{\\jmath} \\hat{k} x [0,0,-1] [0,1,0] [1,0,0]"
+      },
+      {
+        "type": "h3",
+        "text": "ত্রিমাত্রিক ম্যাট্রিক্স গুণন ও রূপান্তরের সংযোজন",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "দুটি ৩×৩ ম্যাট্রিক্স <annotation>A</annotation> ও <annotation>B</annotation> গুণ করার জ্যামিতিক অর্থ হলো—প্রথমে ডানের <annotation>B</annotation> রূপান্তরটি স্পেসে ঘটে, এরপর তার ওপর বামের <annotation>A</annotation> প্রযুক্ত হয়: <annotation>(AB)\\vec{v} = A(B\\vec{v})</annotation>। কম্পিউটার গ্রাফিক্স ও রোবোটিক্সে জটিল ৩ডি আবর্তনকে এভাবে আলাদা অক্ষের ঘূর্ণন ম্যাট্রিক্সের গুণ হিসেবে তৈরি করা হয়।",
+        "tex": "A B B A (AB)\\vec{v} = A(B\\vec{v})"
+      },
+      {
+        "type": "callout",
+        "text": "⚠️ সতর্কতা — ত্রিমাত্রিক ঘূর্ণনের ক্রম সংবেদনশীল (Non-commutativity) ত্রিমাত্রিক স্থানে রূপান্তরের ক্রম অত্যন্ত সংবেদনশীল—সাধারণত <annotation>AB \\neq BA</annotation>। ফোনটিকে প্রথমে ডানে ৯০° এবং পরে উপরে ৯০° ঘোরালে যে অবস্থান পাবেন, প্রথমে উপরে ও পরে ডানে ঘোরালে সম্পূর্ণ ভিন্ন অবস্থান পাবেন। ২ডি-র মতো এখানে ক্রম বিনিময় করা চলে না।",
+        "tex": "AB \\neq BA"
+      }
+    ]
+  },
+  {
+    "id": "sec_03_determinant3d",
+    "title": "৩. মাত্রার ধাঁধা ও আয়তন স্কেলিং (Puzzle · Bridge)",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৩. মাত্রার ধাঁধা ও আয়তন স্কেলিং (Puzzle · Bridge)",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "অধ্যায়ের সমাপনী ধাঁধায় গ্রান্ট স্যান্ডারসন প্রশ্ন তুলেছেন—ভিন্ন মাত্রার মধ্যে কি লিনিয়ার রূপান্তর সম্ভব? উত্তর হলো হ্যাঁ; ২ডি থেকে ৩ডি রূপান্তর ঘটে ৩×২ ম্যাট্রিক্স দ্বারা, যা দ্বিমাত্রিক সমতলকে ৩ডি স্পেসের ভেতরে একটি চাদরের মতো স্থাপন করে।",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "উল্টোভাবে ৩ডি থেকে ২ডি রূপান্তর ঘটে ২×৩ ম্যাট্রিক্স দ্বারা—এটি ত্রিমাত্রিক বস্তুকে দ্বিমাত্রিক স্ক্রিনে ছায়া ফেলার মতো প্রজেকশন বা অভিক্ষেপ করে, যা আধুনিক ৩ডি কম্পিউটার গ্রাফিক্সের প্রধান ভিত্তি।",
+        "tex": ""
+      },
+      {
+        "type": "figure",
+        "text": "এই চিত্রে দেখানো হয়েছে ইনপুট ভেক্টরের মাত্রা কীভাবে আউটপুট ভেক্টরের মাত্রা নির্ধারণ করে। বাঁদিকের ২ডি ভেক্টর ৩×২ ম্যাট্রিক্সের মাধ্যমে ৩ডি স্পেসের একটি সমতলে পড়ে, আবার ৩ডি ভেক্টর ২×৩ ম্যাট্রিক্সের মাধ্যমে ২ডি স্ক্রিনে প্রক্ষিপ্ত হয়। কলাম সংখ্যা = ইনপুট মাত্রা এবং সারি সংখ্যা = আউটপুট মাত্রা—এই নিয়মটি ম্যাট্রিক্সের আকার মনে রাখার সহজ উপায়।",
+        "tex": ""
+      },
+      {
+        "type": "h3",
+        "text": "ত্রিমাত্রিক আয়তন স্কেলিং ও একক ঘনকের রূপান্তর",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "কল্পনা করুন মূলবিন্দুতে <annotation>\\hat{\\imath}</annotation>, <annotation>\\hat{\\jmath}</annotation> ও <annotation>\\hat{k}</annotation> দ্বারা গঠিত <annotation>1\\times1\\times1</annotation> একক ঘনক রয়েছে, যার আদি আয়তন ঠিক ১ ঘন একক। যেকোনো ৩×৩ রূপান্তর প্রয়োগ করলে পুরো স্পেসের সাথে এই ঘনকটিও টানটান হয়ে একটি তির্যক বাক্সে পরিণত হয়।",
+        "tex": "\\hat{\\imath} \\hat{\\jmath} \\hat{k} 1\\times1\\times1"
+      },
+      {
+        "type": "p",
+        "text": "যেমন কোনো রূপান্তরে <annotation>\\hat{\\imath} \\to 2\\hat{\\imath}</annotation>, <annotation>\\hat{\\jmath} \\to 3\\hat{\\jmath}</annotation> ও <annotation>\\hat{k} \\to \\hat{k}</annotation> হলে নতুন বাক্সের আয়তন হবে <annotation>2\\times3\\times1 = 6</annotation> ঘন একক। আয়তনের এই পরিবর্তনই পরবর্তী অধ্যায়ের ডিটারমিন্যান্টের ভিত্তি গড়ে তোলে।",
+        "tex": "\\hat{\\imath} \\to 2\\hat{\\imath} \\hat{\\jmath} \\to 3\\hat{\\jmath} \\hat{k} \\to \\hat{k} 2\\times3\\times1 = 6"
+      },
+      {
+        "type": "callout",
+        "text": "💎 পরবর্তী অধ্যায়ের সেতুবন্ধন: ডিটারমিন্যান্ট (The Determinant) পরবর্তী লেসনে আমরা শিখব ডিটারমিন্যান্ট। ২ডি-তে যেমন এটি ক্ষেত্রফলের পরিবর্তনের হার মাপত, ৩ডি-তে এটি পরিমাপ করে যেকোনো রৈখিক রূপান্তরের ফলে কোনো বাক্সের আয়তন ঠিক কত গুণ প্রসারিত বা সংকুচিত হলো। টুডিতে চারটি সংখ্যা যেমন সমতল পরিচালনা করত, থ্রিডিতে তেমনি নয়টি সংখ্যা পুরো মহাকাশ নিয়ন্ত্রণ করে।",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "সারসংক্ষেপে মনে রাখুন: স্থানাঙ্ক আসলে কোনো পরম সত্য নয়—এটি একটি নির্দিষ্ট বেসিসের সাপেক্ষে পরিমাপের চুক্তি। লিনিয়ার অ্যালজেব্রার আসল শক্তি হলো জ্যামিতিক দৃষ্টি ও সংখ্যার তালিকার মধ্যকার অবলীলায় আদান-প্রদান; পরবর্তী অধ্যায়ে ডিটারমিন্যান্টের মাধ্যমে আমরা এই যাত্রা অব্যাহত রাখব।",
+        "tex": ""
+      }
+    ]
+  }
+]

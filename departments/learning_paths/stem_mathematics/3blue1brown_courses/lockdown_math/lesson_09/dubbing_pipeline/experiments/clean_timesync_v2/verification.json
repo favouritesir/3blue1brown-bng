@@ -1,0 +1,187 @@
+{
+  "experiment": "clean_timesync_v2 (lockdown_math_lesson_09 full-length, STRONG expansion, scale recomputed from rendered speech)",
+  "lesson": "lesson_09",
+  "course": "lockdown_math",
+  "video_id": "LyGKycYT2v0",
+  "source_metadata_note": {
+    "oembed_title": "Dot products and duality | Chapter 9, Essence of linear algebra",
+    "oembed_author": "3Blue1Brown (Grant Sanderson)",
+    "channel": "3Blue1Brown (official)",
+    "oembed_url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=LyGKycYT2v0&format=json",
+    "verified_date": "2026-11-20",
+    "topic_match": "Exact: dot products, duality, linear combinations, orthogonal projection",
+    "original_ffprobe": {
+      "format_duration_sec": "851.220317",
+      "video_codec": "h264",
+      "video_resolution": "1920x1080",
+      "video_stream_duration_sec": "851.150300"
+    }
+  },
+  "script_source": "audio_manifest:manifest.json (alias-deduped)",
+  "cue_count": 4,
+  "expected_cue_count": 4,
+  "failed_tts_cues": [],
+  "strategy": "absolute sample offset (start*44100); atempo fit floor 0.82; pad only; no truncation",
+  "sfx": "NONE - clean speech only",
+  "voice": "bn-BD-PradeepNeural",
+  "min_tempo": 0.82,
+  "max_tempo": 2.2,
+  "overrun_cues": 0,
+  "max_measured_drift_ms": 0.01,
+  "timeline_scale": 1.412642,
+  "timeline_scale_initial_manifest": 4.497125,
+  "scale_recomputed_from_rendered_speech": true,
+  "rendered_natural_speech_total_sec": 598.68,
+  "render_rounds": 1,
+  "lead_in_sec": 2.5,
+  "tail_margin_sec": 3.0,
+  "video_duration_sec": 851.22,
+  "master_audio_duration_sec": 851.22,
+  "last_cue_end_sec": 848.221,
+  "tail_silence_sec": 2.999,
+  "speech_ends_before_video_end": true,
+  "fill_policy": {
+    "expand_trigger_ratio": 0.62,
+    "expand_target_fill": 0.85,
+    "median_fill": 0.863,
+    "median_fill_target": 0.72,
+    "median_fill_ok": true,
+    "max_internal_gap_s": 1.3744,
+    "max_internal_gap_target": 1.5,
+    "max_internal_gap_ok": true
+  },
+  "quality_gate": {
+    "median_fill_ok": true,
+    "max_internal_gap_ok": true,
+    "passed": true
+  },
+  "median_fill": 0.863,
+  "max_internal_gap_s": 1.3744,
+  "expanded_cues": [
+    {
+      "id": 1,
+      "section": "sec-01-linear-combinations",
+      "natural_before": 85.776,
+      "natural_after": 144.24,
+      "sentences_added": 9,
+      "final_chars": 2204,
+      "fill_before": 0.508,
+      "fill_after": 0.855
+    },
+    {
+      "id": 2,
+      "section": "sec-02-multidim-to-1d",
+      "natural_before": 86.88,
+      "natural_after": 149.376,
+      "sentences_added": 10,
+      "final_chars": 2312,
+      "fill_before": 0.507,
+      "fill_after": 0.871
+    },
+    {
+      "id": 3,
+      "section": "sec-03-duality-dot-product",
+      "natural_before": 87.792,
+      "natural_after": 152.424,
+      "sentences_added": 10,
+      "final_chars": 2322,
+      "fill_before": 0.507,
+      "fill_after": 0.88
+    },
+    {
+      "id": 4,
+      "section": "sec-04-geometric-projection",
+      "natural_before": 97.464,
+      "natural_after": 152.64,
+      "sentences_added": 9,
+      "final_chars": 2342,
+      "fill_before": 0.554,
+      "fill_after": 0.867
+    }
+  ],
+  "cues": [
+    {
+      "id": 1,
+      "section": "sec-01-linear-combinations",
+      "expected_start_ms": 2500.0,
+      "actual_start_ms": 2500.0,
+      "drift_ms": 0.0,
+      "tempo": 0.82,
+      "natural_sec": 144.24,
+      "target_sec": 203.759,
+      "fit_samples": 7754659,
+      "window_samples": 8985772,
+      "fill": 0.863,
+      "max_internal_gap_s": 1.3637,
+      "placed_samples": 8985772,
+      "expanded": true
+    },
+    {
+      "id": 2,
+      "section": "sec-02-multidim-to-1d",
+      "expected_start_ms": 206259.0,
+      "actual_start_ms": 206259.0,
+      "drift_ms": 0.0,
+      "tempo": 0.82,
+      "natural_sec": 149.376,
+      "target_sec": 211.015,
+      "fit_samples": 8030924,
+      "window_samples": 9305762,
+      "fill": 0.863,
+      "max_internal_gap_s": 1.3597,
+      "placed_samples": 9305762,
+      "expanded": true
+    },
+    {
+      "id": 3,
+      "section": "sec-03-duality-dot-product",
+      "expected_start_ms": 417274.0,
+      "actual_start_ms": 417273.99,
+      "drift_ms": -0.01,
+      "tempo": 0.82,
+      "natural_sec": 152.424,
+      "target_sec": 215.32,
+      "fit_samples": 8194832,
+      "window_samples": 9495612,
+      "fill": 0.863,
+      "max_internal_gap_s": 1.3744,
+      "placed_samples": 9495612,
+      "expanded": true
+    },
+    {
+      "id": 4,
+      "section": "sec-04-geometric-projection",
+      "expected_start_ms": 632595.0,
+      "actual_start_ms": 632595.01,
+      "drift_ms": 0.01,
+      "tempo": 0.82,
+      "natural_sec": 152.64,
+      "target_sec": 215.626,
+      "fit_samples": 8206569,
+      "window_samples": 9509107,
+      "fill": 0.863,
+      "max_internal_gap_s": 1.345,
+      "placed_samples": 9509107,
+      "expanded": true
+    }
+  ],
+  "output_video": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\lockdown_math\\lesson_09\\experiments\\3b1b_lockdown_09_full_dubbed.mp4",
+  "output_duration_sec": 851.15,
+  "output_size_bytes": 37202846,
+  "output_streams": [
+    {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_type": "video",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "index": 1,
+      "codec_name": "aac",
+      "codec_type": "audio"
+    }
+  ],
+  "volumedetect_intro_0_2s_db": -91.0,
+  "volumedetect_final_2s_db": -91.0
+}

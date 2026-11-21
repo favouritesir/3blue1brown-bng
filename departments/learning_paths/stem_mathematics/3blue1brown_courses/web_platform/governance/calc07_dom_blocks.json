@@ -1,0 +1,206 @@
+[
+  {
+    "id": "sec-limits-intro",
+    "title": "১. অন্তরজের সংজ্ঞা ও সীমার প্রয়োজনীয়তা",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "১. অন্তরজের সংজ্ঞা ও সীমার প্রয়োজনীয়তা",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "chapter-quote",
+        "text": "\" Calculus is all about making curvy things look straight — ক্যালকুলাসের কাজই হলো বাঁকা জিনিসকে সোজা দেখানো। — অজ্ঞাত অধ্যাপক (Anonymous Professor)",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "আগের অধ্যায়গুলোতে আমরা অন্তরজকে একটিমাত্র ক্রিয়ার মাধ্যমে চিনেছি: কোনো বিন্দুতে—যেমন <annotation>x=2</annotation>—ফাংশনের ইনপুটে একটু নাড়া দিই <annotation>dx</annotation> পরিমাণ, তারপর ঢালের অনুপাত <annotation>\\frac{df}{dx}</annotation> বের করি। ছবির মতোই এই অনুপাতটা আসলে ‘রাইজ ওভার রান’—উপরের পরিবর্তন <annotation>\\Delta f</annotation> আর পাশের পরিবর্তন <annotation>\\Delta x</annotation>-এর ভাগ।",
+        "math_attr": "",
+        "tex": "x=2 dx \\frac{df}{dx} \\Delta f \\Delta x"
+      },
+      {
+        "type": "p",
+        "text": "কিন্তু এখানেই একটা গভীর অস্বস্তি লুকিয়ে আছে। যদি <annotation>dx</annotation> সত্যিই শূন্য হয়, তবে <annotation>\\frac{df}{dx}</annotation> দাঁড়ায় <annotation>\\frac{0}{0}</annotation>—সম্পূর্ণ অনির্ণেয়। আবার যদি <annotation>dx</annotation> শূন্য না হয়, তবে হিসাবের শেষ ধাপে আমরা বাড়তি <annotation>dx</annotation>-পদগুলো কীভাবে মুছে ফেলি? এই প্রশ্নটিই ক্যালকুলাসের ভিত্তিকে নাড়া দেয়।",
+        "math_attr": "",
+        "tex": "dx \\frac{df}{dx} \\frac{0}{0} dx dx"
+      },
+      {
+        "type": "figure",
+        "text": "চিত্রে <annotation>x=2</annotation> বিন্দুতে বক্ররেখার ওপর একটি লাল বিন্দু দেখা যাচ্ছে। হলুদ ভাঙা রেখাটি একটি সসীম নাড়া <annotation>dx</annotation> নিয়ে টানা ছেদক (secant), আর সবুজ রেখাটি তার সীমাস্থ অবস্থা—অর্থাৎ স্পর্শক (tangent)। <annotation>dx</annotation> কে যত ছোট করা হয়, ছেদক ততই স্পর্শকের ওপর এসে পড়ে; কিন্তু কখনোই শূন্য করা হয় না। এই ‘কাছে এসে পৌঁছানো’-ই লিমিটের কাজ।",
+        "math_attr": "",
+        "tex": "x=2 dx dx"
+      },
+      {
+        "type": "p",
+        "text": "সমাধান হলো লিমিট (limit)। আমরা <annotation>dx</annotation>-কে শূন্য করে দিই না; বরং তাকে শূন্যের যত ইচ্ছা কাছে নিয়ে যাই এবং দেখি অনুপাতটি কোন একক, অপরিবর্তনীয় মানের দিকে এগিয়ে যাচ্ছে। লেখা হয় <annotation>\\lim_{dx \\to 0} \\frac{df}{dx}</annotation>—অর্থাৎ ‘<annotation>dx</annotation> শূন্যের দিকে গেলে অনুপাতের গন্তব্য কী’।",
+        "math_attr": "",
+        "tex": "dx \\lim_{dx \\to 0} \\frac{df}{dx} dx"
+      },
+      {
+        "type": "callout",
+        "text": "💡 মৌলিক অন্তর্দৃষ্টি লিমিট কখনোই ‘বিন্দুতে কী আছে’ তা জিজ্ঞেস করে না; সে জিজ্ঞেস করে ‘বিন্দুর অতি কাছে আউটপুট কোন ঠিকানার দিকে ছুটছে’। এই ছোট্ট বদলেই ক্যালকুলাস অযৌক্তিকতা থেকে মুক্তি পায়।",
+        "math_attr": "",
+        "tex": ""
+      }
+    ]
+  },
+  {
+    "id": "sec-zero-over-zero",
+    "title": "২. df/dx থেকে f'(x)-এর আনুষ্ঠানিক সংজ্ঞা",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "২. df/dx থেকে f'(x)-এর আনুষ্ঠানিক সংজ্ঞা",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "ধরা যাক আমরা <annotation>x</annotation> বিন্দুতে আছি। ইনপুটে একটু নাড়া দিয়ে <annotation>x+h</annotation> বিন্দুতে পৌঁছালাম, যেখানে <annotation>h</annotation> একটি সসীম সংখ্যা। ফাংশনের মান বদল হয়ে হলো <annotation>f(x+h)</annotation>। তাই ঢালের আসন্ন অনুপাত দাঁড়ায় <annotation>\\frac{f(x+h)-f(x)}{h}</annotation>—উপরে উচ্চতার পরিবর্তন, নিচে অনুভূমিক দূরত্ব।",
+        "math_attr": "",
+        "tex": "x x+h h f(x+h) \\frac{f(x+h)-f(x)}{h}"
+      },
+      {
+        "type": "p",
+        "text": "ঐতিহাসিকভাবে লেখকেরা <annotation>dx</annotation> লেখেন, কিন্তু আনুষ্ঠানিক সংজ্ঞায় একই কথা <annotation>\\Delta x</annotation> বা কেবল <annotation>h</annotation> দিয়ে লেখা হয়—কারণ <annotation>d</annotation> অক্ষরটিকে ‘অসীম ক্ষুদ্র’-এর রহস্যময় অর্থ দেওয়ার প্রয়োজন নেই। গুরুত্বপূর্ণ হলো <annotation>h</annotation> শূন্য নয়, বরং শূন্যের দিকে যাচ্ছে।",
+        "math_attr": "",
+        "tex": "dx \\Delta x h d h"
+      },
+      {
+        "type": "figure",
+        "text": "এই ছবিতে সবুজ বিন্দু দুটির মাঝে হলুদ অনুভূমিক রেখা <annotation>h</annotation> (বা <annotation>\\Delta x</annotation>) এবং খাড়া রেখা <annotation>f(x+h)-f(x)</annotation> দেখানো হয়েছে। সাদা তির্যক রেখাটি একই দুই বিন্দু দিয়ে যাওয়া ছেদক, যার ঢাল ঠিক ঐ অনুপাত। <annotation>h</annotation> ছোট হলে ত্রিভুজটি সঙ্কুচিত হয় কিন্তু তার ঢাল স্থির হয়—এই স্থিরত্বই আমাদের অন্তরজ।",
+        "math_attr": "",
+        "tex": "h \\Delta x f(x+h)-f(x) h"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}</annotation>",
+        "math_attr": "",
+        "tex": "f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}"
+      },
+      {
+        "type": "p",
+        "text": "এই সমীকরণটিই অন্তরজের আনুষ্ঠানিক সংজ্ঞা। এখানে কোথাও ‘অসীম ক্ষুদ্র’ বলা নেই—শুধু বলা আছে: <annotation>h</annotation>-কে শূন্যের কাছে পাঠালে ভাগফল যে মানে স্থিতিশীল হয়, তাই <annotation>f'(x)</annotation>। যেমন <annotation>f(t)=t^3</annotation>-এর <annotation>t=2</annotation> বিন্দুতে এই সীমা দেয় <annotation>3(2)^2=12</annotation>—আগের অধ্যায়ের সেই পরিচিত ১২।",
+        "math_attr": "",
+        "tex": "h f'(x) f(t)=t^3 t=2 3(2)^2=12"
+      },
+      {
+        "type": "callout",
+        "text": "🔗 <annotation>\\Delta x</annotation>, <annotation>h</annotation> ও <annotation>dx</annotation> — একই কথার তিন রূপ <annotation>\\Delta x</annotation>, <annotation>h</annotation> আর <annotation>dx</annotation>—এগুলো সবই একই ধারণার ভিন্ন পোশাক। পার্থক্য শুধু ঐতিহ্য ও লেখার সুবিধার; গাণিতিক সারমর্ম অপরিবর্তিত: একটি সসীম নাড়া, তারপর সীমা।",
+        "math_attr": "",
+        "tex": "\\Delta x h dx \\Delta x h dx"
+      }
+    ]
+  },
+  {
+    "id": "sec-lhopital-geometry",
+    "title": "৩. ‘অসীম ক্ষুদ্র’ নিয়ে ভুল বোঝাবুঝি",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৩. ‘অসীম ক্ষুদ্র’ নিয়ে ভুল বোঝাবুঝি",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "chapter-quote",
+        "text": "\" …ghosts of departed quantities — ‘বিদায়ী রাশির প্রেতাত্মা’: ক্যালকুলাসের ওপর historical তীক্ষ্ণ কটাক্ষ, যার উত্তর লিমিট। — বিশপ জর্জ বার্কলে",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "অনেকেই মনে করেন ক্যালকুলাস ‘অসীম ক্ষুদ্র’ নামক কোনো রহস্যময় সংখ্যার ওপর দাঁড়িয়ে। কিন্তু আনুষ্ঠানিক সংজ্ঞায় এমন কোনো জিনিস নেই। <annotation>h</annotation> হলো একেবারে সাধারণ, বাস্তব সংখ্যা—যেমন <annotation>0.001</annotation>। আপনি ক্যালকুলেটরে বসিয়ে দেখতে পারেন <annotation>\\frac{f(x+0.001)-f(x)}{0.001}</annotation> সত্যিই <annotation>f'(x)</annotation>-এর কাছাকাছি।",
+        "math_attr": "",
+        "tex": "h 0.001 \\frac{f(x+0.001)-f(x)}{0.001} f'(x)"
+      },
+      {
+        "type": "p",
+        "text": "ভুলটা হয় যখন আমরা <annotation>dx</annotation>-কে একই সাথে শূন্য ও অশূন্য ভাবি—আগে ভাগের জন্য ধরে রাখি, পরে মুছে দিই। লিমিট এই দ্বিচারিতা দূর করে: প্রথমে <annotation>h</annotation>-কে সসীম রেখে হিসাব করি, তারপর ‘<annotation>h\\to0</annotation>’ বলে সীমা নিই। কোনো ধাপেই শূন্য দিয়ে ভাগ করা হয় না।",
+        "math_attr": "",
+        "tex": "dx h h\\to0"
+      },
+      {
+        "type": "figure",
+        "text": "ছবিতে সংখ্যারেখায় <annotation>x</annotation> ও <annotation>x+0.001</annotation> দুটি বিন্দু দেখানো হয়েছে—এগুলো আলাদা, পরিমাপযোগ্য দূরত্ব। বড় বিবর্ধক কাঁচটি স্মরণ করিয়ে দেয় যে আমরা শুধু ‘কাছ থেকে দেখছি’, কোনো অদৃশ্য অণু-সংখ্যা ব্যবহার করছি না। <annotation>h=0.001</annotation> একটি নির্দিষ্ট, নিরাপদ সংখ্যা; সীমা তারপর আসে।",
+        "math_attr": "",
+        "tex": "x x+0.001 h=0.001"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\frac{f(x+0.001)-f(x)}{0.001} \\approx f'(x), \\qquad f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}</annotation>",
+        "math_attr": "",
+        "tex": "\\frac{f(x+0.001)-f(x)}{0.001} \\approx f'(x), \\qquad f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}"
+      },
+      {
+        "type": "p",
+        "text": "এই পদ্ধতির সুন্দর দিক হলো ত্রুটিও পরিমাপ করা যায়: <annotation>h</annotation> যত ছোট, আসন্ন ঢালের শতাংশ ত্রুটি তত কমে। তাই ‘অসীম ক্ষুদ্র’-এর রহস্য না বেঁধেই কাজ চলে—সসীম নাড়া + সীমা, এই দুটিই যথেষ্ট।",
+        "math_attr": "",
+        "tex": "h"
+      },
+      {
+        "type": "callout",
+        "text": "📌 পাদটীকা: ইনফিনিটেসিমাল নিয়ে আধুনিক গণিতে হাইপাররিয়েল সংখ্যা ব্যবহার করে ‘ইনফিনিটেসিমাল’-কেও সুসংজ্ঞায়িত করা যায় (অ্যাব্রাহাম রবিনসন)। কিন্তু সেটি একটিমাত্র বিকল্প ভাষা—আমাদের জন্য <annotation>\\varepsilon</annotation>-<annotation>\\delta</annotation> ভাষাই যথেষ্ট ও ঝামেলামুক্ত।",
+        "math_attr": "",
+        "tex": "\\varepsilon \\delta"
+      }
+    ]
+  },
+  {
+    "id": "sec-epsilon-delta",
+    "title": "৪. কেন আমরা এ নিয়ে ভাবব — পরবর্তী অধ্যায়",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৪. কেন আমরা এ নিয়ে ভাবব — পরবর্তী অধ্যায়",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "chapter-quote",
+        "text": "\" A derivative tells you what a curve looks like when you zoom in far enough — যথেষ্ট কাছ থেকে দেখলে বক্ররেখা সোজা লাগে। — Grant Sanderson",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "কেন আমরা এত খাটাখাটুনি করছি? কারণ অন্তরজের কাজই হলো বাঁকা জিনিসকে সোজা দেখানো। <annotation>e^x</annotation> বক্ররেখার <annotation>x=0</annotation> বিন্দুতে যদি আপনি বারবার জুম করেন, দেখবেন বক্রতা কমে যাচ্ছে এবং স্পর্শকের ঢাল আসছে <annotation>1</annotation>-এর কাছে—ঠিক সেখানকার ফাংশনের মানের মতোই।",
+        "math_attr": "",
+        "tex": "e^x x=0 1"
+      },
+      {
+        "type": "p",
+        "text": "কতদূর জুম করা দরকার? ব্যবহারিক প্রকৌশলী বলবেন—যতক্ষণ ত্রুটি সহনশীলতার ভেতরে থাকে, ততক্ষণই যথেষ্ট; এটা ‘যথার্থতার খেলা’। গণিতবিদ চাইবেন এক নিখুঁত উত্তর: ‘প্রতিটি চ্যালেঞ্জের ব্যবধান <annotation>\\varepsilon</annotation>-এর জন্য এমন এক <annotation>\\delta</annotation> আছে কি?’—এই প্রশ্নের উত্তরই পরবর্তী অধ্যায়ের <annotation>\\varepsilon</annotation>-<annotation>\\delta</annotation> সংজ্ঞা।",
+        "math_attr": "",
+        "tex": "\\varepsilon \\delta \\varepsilon \\delta"
+      },
+      {
+        "type": "figure",
+        "text": "চিত্রে <annotation>e^x</annotation> বক্ররেখার <annotation>x=0</annotation> বিন্দুটিকে ঘিরে দুটি জুম বক্স দেখা যাচ্ছে। সবুজ স্পর্শকের ঢাল <annotation>1</annotation>, আর হলুদ বৃত্তাকার অংশ বাড়ালে বক্ররেখা সরলরেখার মতো দেখায়। মনে রাখবেন জুম কেবল দৃশ্যমান সাহায্য—সীমা হলো তার নিখুঁত গাণিতিক রূপ।",
+        "math_attr": "",
+        "tex": "e^x x=0 1"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\lim_{h \\to 0} \\frac{e^{h}-1}{h} = 1</annotation>",
+        "math_attr": "",
+        "tex": "\\lim_{h \\to 0} \\frac{e^{h}-1}{h} = 1"
+      },
+      {
+        "type": "p",
+        "text": "পরবর্তী পর্বে আমরা এই ‘কাছে আসা’-কে সংখ্যায় বাঁধব: <annotation>|x-a|<\\delta</annotation> হলে <annotation>|f(x)-L|<\\varepsilon</annotation>—অর্থাৎ ইনপুট যত কাছে আসবে, আউটপুট তত নির্দিষ্ট লক্ষ্যের ভেতরে পড়বে। সেখানেই লিমিটের পূর্ণ কঠোরতা জন্ম নেবে।",
+        "math_attr": "",
+        "tex": "|x-a|<\\delta |f(x)-L|<\\varepsilon"
+      },
+      {
+        "type": "callout",
+        "text": "🎯 শেষ কথা লিমিট কোনো অতিরিক্ত যন্ত্রপাতি নয়—এটি আমাদের সাধারণ বুদ্ধিকেই লিখিত রূপ দেয়। আপনি ইতিমধ্যেই বুঝেছেন বক্ররেখা কাছ থেকে সোজা হয়; <annotation>\\varepsilon</annotation>-<annotation>\\delta</annotation> শুধু সেই বোঝাপড়ার হিসাববই।",
+        "math_attr": "",
+        "tex": "\\varepsilon \\delta"
+      }
+    ]
+  }
+]

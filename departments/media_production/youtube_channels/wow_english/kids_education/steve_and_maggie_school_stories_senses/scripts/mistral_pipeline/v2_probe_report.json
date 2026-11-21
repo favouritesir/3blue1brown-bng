@@ -1,0 +1,55 @@
+{
+  "audio_takes/google_studio_masters/steve_master_take_google_studio.wav": {
+    "size_mb": 3.606,
+    "samplerate": 24000,
+    "channels": 1,
+    "duration_s": 75.0,
+    "subtype": "PCM_16"
+  },
+  "audio_takes/google_studio_masters/maggie_master_take_google_studio.wav": {
+    "size_mb": 1.137,
+    "samplerate": 24000,
+    "channels": 1,
+    "duration_s": 23.56,
+    "subtype": "PCM_16"
+  },
+  "isolated_stems/mistral_direct_pure_sfx.wav": {
+    "size_mb": 56.5,
+    "samplerate": 44100,
+    "channels": 2,
+    "duration_s": 213.531,
+    "subtype": "PCM_24"
+  },
+  "raw_sources/source_video.mp4": {
+    "size_mb": 7.935
+  },
+  "raw_sources/original_audio.wav": {
+    "size_mb": 37.667,
+    "samplerate": 44100,
+    "channels": 2,
+    "duration_s": 213.531,
+    "subtype": "PCM_16"
+  },
+  "video_streams": [
+    {
+      "codec_type": "video",
+      "codec_name": "h264",
+      "duration": "213.400000",
+      "sample_rate": null,
+      "channels": null,
+      "width": 640,
+      "height": 360,
+      "r_frame_rate": "25/1"
+    },
+    {
+      "codec_type": "audio",
+      "codec_name": "aac",
+      "duration": "213.530703",
+      "sample_rate": "44100",
+      "channels": 2,
+      "width": null,
+      "height": null,
+      "r_frame_rate": "0/0"
+    }
+  ]
+}

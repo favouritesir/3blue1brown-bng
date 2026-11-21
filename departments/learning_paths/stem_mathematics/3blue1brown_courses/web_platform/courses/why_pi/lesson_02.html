@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>সংঘর্ষরত ব্লকরা কীভাবে পাই গণনা করে | Why colliding blocks compute pi</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/why_pi/lesson_02/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="কেন পাই"
+  course-url="../../courses/why_pi/index.html"
+  home-url="../../index.html"
+  chapter-num="০২"
+  chapter-total="০৮"
+  prev-url="lesson_01.html"
+  prev-title="পূর্ববর্তী: একটি গণনার ধাঁধার সবচেয়ে অপ্রত্যাশিত উত্তর"
+  next-url="lesson_03.html"
+  next-title="পরবর্তী: সংঘর্ষরত ব্লকরা আলোর রশ্মির মতো আচরণ করে"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="কেন পাই"
+  course-url="../../courses/why_pi/index.html"
+  chapter-label="অধ্যায় ০২ · কেন পাই (Why Pi)"
+  title="সংঘর্ষরত ব্লকরা কীভাবে পাই গণনা করে | Why colliding blocks compute pi"
+  desc="বেগ-ফেজ স্পেস, শক্তি ও ভরবেগের সংরক্ষণ এবং অন্তর্লিখিত কোণ—এই টুলগুলো দিয়ে পাইয়ের আবির্ভাবের পেছনের পদার্থবিজ্ঞান খোলা"
+  video-src="../../media_vault/why_pi/lesson_02/experiments/3b1b_why_pi_02_full_dubbed.mp4"
+  yt-id="d4gKmDq7Y1A"
+  date="১৩ মার্চ, ২০২৫"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://www.3blue1brown.com/lessons/colliding-blocks-v2"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">শক্তি ও ভরবেগের সংরক্ষণ</b1b-bookmark>
+      <b1b-bookmark time="84" time-bn="০১:২৪">বেগ-ফেজ স্পেসে বৃত্ত</b1b-bookmark>
+      <b1b-bookmark time="170" time-bn="০২:৫০">ভরবেগের রেখা ও ফেজের লাফ</b1b-bookmark>
+      <b1b-bookmark time="263" time-bn="০৪:২৩">অন্তর্লিখিত কোণ ও থিটা হিসাব</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-conservation">শক্তি ও ভরবেগের সংরক্ষণ</a>
+      <a href="#sec-phase-circle">বেগ-ফেজ স্পেসে বৃত্ত</a>
+      <a href="#sec-momentum-line">ভরবেগের রেখা ও ফেজের লাফ</a>
+      <a href="#sec-inscribed-angle">অন্তর্লিখিত কোণ ও থিটা হিসাব</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <b1b-quote author="Alan Kay">দৃষ্টিভঙ্গির একটা বদল ৮০ আইকিউ পয়েন্টের মতো।</b1b-quote>
+
+      <b1b-section id="sec-conservation" title="শক্তি ও ভরবেগের সংরক্ষণ">
+<p>আমাদের আসলে কী দরকার? সংঘর্ষের ঠিক পরে দুই ব্লকের বেগ কত—তা বের করা। এর চাবিকাঠি হলো দুটি সংরক্ষণ আইন: <strong>শক্তি</strong> আর <strong>ভরবেগ</strong>।</p>
+
+<p>ব্লক দুটির ভর $m_1, m_2$ এবং বেগ $v_1, v_2$। মোট গতিশক্তি $\tfrac12 m_1 v_1^2+\tfrac12 m_2 v_2^2$—ব্লকগুলো যতই ধাক্কা খাক, এই মান একই থাকতে হবে। মোট ভরবেগ $m_1 v_1+m_2 v_2$-ও ব্লক সংঘর্ষে অপরিবর্তিত থাকে; শুধু ছোট ব্লক দেয়ালে ঠুকে তার ভরবেগ দেয়ালে দিয়ে দেয় (দেয়ালের ভর অসীম বলে নড়ে না)।</p>
+
+<b1b-figure src="../../assets/figures/why_pi/lesson_02/fig_v2_conservation.svg" alt="দুটি সংরক্ষণ আইনই বেগের পরিবর্তন নির্ধারণ করে" caption="দুটি সংরক্ষণ আইনই বেগের পরিবর্তন নির্ধারণ করে"></b1b-figure>
+
+<p>দুটি অজানা, দুটি সমীকরণ—কাজটা সম্ভব। কিন্তু সরাসরি বীজগণিতের বদলে আমরা একটা ছবি আঁকব। আর সেই ছবিই পাইয়ের দিকে নিয়ে যাবে।</p>
+
+<b1b-formula math="E=\tfrac12 m_1 v_1^2+\tfrac12 m_2 v_2^2,\qquad p=m_1 v_1+m_2 v_2"></b1b-formula>
+      </b1b-section>
+      <b1b-section id="sec-phase-circle" title="বেগ-ফেজ স্পেসে বৃত্ত">
+<p>প্রথমে শক্তির সমীকরণটার দিকে তাকাই। $v_1$ আর $v_2$ তো বদলাচ্ছে—তাই একটা সমতল আঁকি যার x-অক্ষ $v_1$ আর y-অক্ষ $v_2$ বোঝায়। তখন $\tfrac12 m_1 v_1^2+\tfrac12 m_2 v_2^2=\text{const}$ একটি <strong>উপবৃত্ত</strong> (ellipse) হয়।</p>
+
+<p>কিন্তু আমরা পাইয়ের খোঁজে আছি—তাই অক্ষদুটো এভাবে পাল্টাই: x-এ $v_1$-এর বদলে $\sqrt{m_1}v_1$ আর y-তে $\sqrt{m_2}v_2$। তখন সমীকরণটা সোজা $\tfrac12(x^2+y^2)=\text{const}$—একটি <strong>নিখুঁত বৃত্ত</strong>!</p>
+
+<b1b-figure src="../../assets/figures/why_pi/lesson_02/fig_v2_circle.svg" alt="উপবৃত্তকে স্কেল করে নিখুঁত বৃত্ত বানানো হলো" caption="উপবৃত্তকে স্কেল করে নিখুঁত বৃত্ত বানানো হলো"></b1b-figure>
+
+<p>বৃত্তের প্রতিটি বিন্দু এমন এক জোড়া বেগ যারা একই পরিমাণ শক্তি বহন করে। শুরুতে আমরা বৃত্তের সবচেয়ে বাঁ-প্রান্তে আছি: বড় ব্লক বাঁ দিকে যাচ্ছে ($x<0$) আর ছোটটি স্থির ($y=0$)।</p>
+
+<b1b-formula math="x=\sqrt{m_1}v_1,\;y=\sqrt{m_2}v_2\;\Rightarrow\;\tfrac12(x^2+y^2)=E"></b1b-formula>
+      </b1b-section>
+      <b1b-section id="sec-momentum-line" title="ভরবেগের রেখা ও ফেজের লাফ">
+<p>শক্তি বলছে আমাদের বৃত্তের ওপর থাকতে হবে। কিন্তু কোন বিন্দুতে যাব? সেটা ঠিক করে <strong>ভরবেগ</strong>। স্কেল করা অক্ষে $m_1v_1+m_2v_2=\text{const}$ হয় $\sqrt{m_1}x+\sqrt{m_2}y=\text{const}$—একটি সরলরেখা, যার ঢাল $-\sqrt{m_1/m_2}$।</p>
+
+<p>বৃত্ত আর এই রেখার ছেদে ঠিক দুটি বিন্দু। এর একটি আগের অবস্থা, অন্যটি সংঘর্ষের পরের অবস্থা। দেয়ালে ঠুকে ছোট ব্লকের বেগের চিহ্ন বদলায়—ছবিতে এটা x-অক্ষের ওপর প্রতিফলনের মতো। এইভাবে বারবার লাফ দিয়ে আমরা বৃত্তের ওপর ঘুরে বেড়াই, যতক্ষণ না দুই বেগই ধনাত্মক হয় আর বড় ব্লক ছোটটিকে অতিক্রম করে যায়।</p>
+
+<b1b-figure src="../../assets/figures/why_pi/lesson_02/fig_v2_line.svg" alt="বৃত্ত আর ভরবেগের রেখার ছেদবিন্দুতেই লাফ ঘটে" caption="বৃত্ত আর ভরবেগের রেখার ছেদবিন্দুতেই লাফ ঘটে"></b1b-figure>
+
+<b1b-callout type="blue" icon="🗺️" title='ফেজ ডায়াগ্রামের ক্ষমতা'>
+<p>সিস্টেমের অবস্থাকে একটা বিন্দু দিয়ে প্রকাশ করলে <em>গতীয়</em> প্রশ্নগুলো <em>জ্যামিতিক</em> প্রশ্ন হয়ে যায়। শক্তির মতো গতীয় ধারণা হয়ে যায় বৃত্ত; আর সংঘর্ষ গণনা হয়ে যায় বৃত্তের ওপর লাফের সংখ্যা গণনা।</p>
+</b1b-callout>
+
+<b1b-formula math="\sqrt{m_1}\,x+\sqrt{m_2}\,y=\text{const},\qquad \text{slope}=-\sqrt{\tfrac{m_1}{m_2}}"></b1b-formula>
+      </b1b-section>
+      <b1b-section id="sec-inscribed-angle" title="অন্তর্লিখিত কোণ ও থিটা হিসাব">
+<p>এখন আসল প্রশ্ন: সংঘর্ষের সংখ্যা কত? ছবিটার দিকে গভীরভাবে তাকালে দেখা যায় বিন্দুগুলোর মাঝের চাপগুলো প্রায় সমান। <strong>অন্তর্লিখিত কোণের উপপাদ্য</strong> ব্যবহার করে দেখা যায় প্রতিটি লাফ ঠিক $2\theta$ রেডিয়ান চাপ তৈরি করে।</p>
+
+<p>তাই প্রশ্নটা দাঁড়ায়: $2\theta$ কে কতবার যোগ করলে $2\pi$ অতিক্রম করবে না? সরল করে লেখা যায় $N\cdot\theta<\pi$। এখন $\theta$ হিসাব করি: ভরবেগের রেখার ঢাল $-\sqrt{m_1/m_2}$ হওয়ায় $\theta=\arctan\!\left(\sqrt{m_2/m_1}\right)$।</p>
+
+<b1b-figure src="../../assets/figures/why_pi/lesson_02/fig_v2_theta.svg" alt="সমান চাপ 2θ আর π-র সাথে তুলনা" caption="সমান চাপ 2θ আর π-র সাথে তুলনা"></b1b-figure>
+
+<p>ভর অনুপাত ১০,০০০ : ১ হলে $\sqrt{m_2/m_1}=1/100$, আর $\arctan(1/100)\approx 0.01$। তখন $314\times 0.01=3.14<\pi$ কিন্তু $315\times 0.01=3.15>\pi$—অর্থাৎ ৩১৪টি সংঘর্ষ। ছোট $x$-এর জন্য $\arctan x\approx x$ হওয়াতেই পাইয়ের অঙ্কগুলো এভাবে ফুটে ওঠে!</p>
+
+<b1b-formula math="\theta=\arctan\!\left(\sqrt{\tfrac{m_2}{m_1}}\right)\approx\sqrt{\tfrac{m_2}{m_1}}"></b1b-formula>
+
+<b1b-formula math="N\cdot\theta&lt;\pi\;\Rightarrow\;N=\left\lfloor\tfrac{\pi}{\theta}\right\rfloor"></b1b-formula>
+
+<b1b-quiz
+          question="❓ প্রতিটি সংঘর্ষ বৃত্তে কত radian চাপ তৈরি করে?"
+          correct="1"
+          correct-msg="সঠিক! অন্তর্লিখিত কোণের উপপাদ্য অনুযায়ী প্রতিটি লাফ 2θ চাপ জুড়ে যায়।"
+          wrong-msg="অন্তর্লিখিত কোণ কেন্দ্রীয় কোণের অর্ধেক—তাই চাপ 2θ।"
+          reveal-msg="সঠিক উত্তর 2θ।">
+          <div slot="option">$\theta$</div>
+          <div slot="option">$2\theta$</div>
+          <div slot="option">$\pi$</div>
+          <div slot="option">$2\pi$</div>
+        </b1b-quiz>
+      </b1b-section>
+      <b1b-section id="sec-visualizer" title="ইন্টারেক্টিভ ভিজ্যুয়ালাইজার" data-no-narration="true">
+        <p class="viz-intro">নিচের সমতলে বিষয়টির মূল জ্যামিতিক চিত্রটি পর্যবেক্ষণ করুন। বৃত্ত, কোণ এবং স্কেলিংয়ের মাধ্যমে পাই কীভাবে আবির্ভূত হয় তা অনুভব করুন।</p>
+        <b1b-vector-decomposer initial="3,-2">
+          <p>ভেক্টরের উপাংশ ও স্কেলিংয়ের মাধ্যমে জ্যামিতিক রূপান্তর পর্যবেক্ষণ করুন।</p>
+        </b1b-vector-decomposer>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="3,-2"></b1b-vector-plane>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/why_pi/lesson_02/experiments/3b1b_why_pi_02_full_dubbed.mp4"
+    yt-id="d4gKmDq7Y1A"
+    title="সংঘর্ষরত ব্লকরা কীভাবে পাই গণনা করে — অধ্যায় ০২"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — কেন পাই">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_01.html"
+  prev-title="পূর্ববর্তী: একটি গণনার ধাঁধার সবচেয়ে অপ্রত্যাশিত উত্তর"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_03.html"
+  next-title="পরবর্তী: সংঘর্ষরত ব্লকরা আলোর রশ্মির মতো আচরণ করে"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অধ্যায় ০১: সম্ভাব্যতা আসলে কী? — অনিশ্চয়তার জ্যামিতি ও প্যারাডক্স | সম্ভাব্যতার মূলভাব | ৩ব্লু১ব্রাউন বাংলা</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/probability/lesson_01/manifest.js?v=8"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="সম্ভাব্যতার মূলভাব"
+  course-url="../../index.html#probability"
+  home-url="../../index.html"
+  chapter-num="০১"
+  chapter-total="০৬"
+  prev-url=""
+  prev-title="পূর্ববর্তী অধ্যায় নেই"
+  next-url="lesson_02.html"
+  next-title="পরবর্তী অধ্যায়: বেজের সূত্র এবং মেডিকেল টেস্ট প্যারাডক্স"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="সম্ভাব্যতার মূলভাব"
+  course-url="../../index.html#probability"
+  chapter-label="সম্ভাব্যতা • প্রথম অধ্যায় · Essence of Probability"
+  title="অধ্যায় ০১: সম্ভাব্যতা আসলে কী? — অনিশ্চয়তার জ্যামিতি ও প্যারাডক্স"
+  desc="সম্ভাব্যতা কোনো শুষ্ক সূত্র বা বিমূর্ত ভগ্নাংশ নয় — এটি মূলত জ্যামিতিক ক্ষেত্রফল। নমুনা ক্ষেত্রকে একক ক্ষেত্রফল (১.০) ধরে কীভাবে ঘটনাগুলো ক্ষেত্র দখল করে এবং শর্তাধীন সম্ভাব্যতা কীভাবে পুরো মহাবিশ্বকে ছোট করে ফেলে, তার অনবদ্য দর্শন।"
+  video-src="../../media_vault/probability/lesson_01/experiments/3b1b_prob_01_full_dubbed.mp4"
+  yt-id="HZGCoVF3YvM"
+  date="সিরিজ প্রিমিয়ার · ২০২৫-২৬"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর ও ইন্টারঅ্যাকশন ইঞ্জিনিয়ারিং: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner
+      title="শিক্ষক অডিও বিবরণ ও লাইভ কারাওকে সহকারী"
+      desc="দরদী শিক্ষকের কণ্ঠে প্রতিটি অনুচ্ছেদ, গাণিতিক সূত্র ও চিত্র বিবরণ শুনুন — সাথে রিয়েলটাইম হাইলাইটার ও কন্ট্রোল।"
+      cta="🎙️ শিক্ষকের কণ্ঠে শুনুন">
+    </b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">অনিশ্চয়তার পরিমাপ ও সম্ভাবনা সূচনা</b1b-bookmark>
+      <b1b-bookmark time="68" time-bn="০১:০৮">সম্ভাব্যতা হলো ক্ষেত্রফল (Area Concept)</b1b-bookmark>
+      <b1b-bookmark time="136" time-bn="০২:১৬">নমুনা ক্ষেত্র ও ইনক্লুশন-এক্সক্লুশন নীতি</b1b-bookmark>
+      <b1b-bookmark time="215" time-bn="০৩:৩৫">মন্টি হল প্যারাডক্স ও স্বজ্ঞার বিভ্রান্তি</b1b-bookmark>
+      <b1b-bookmark time="295" time-bn="০৪:৫৫">শর্তাধীন সম্ভাব্যতা ও ইউনিভার্স ক্রপিং</b1b-bookmark>
+      <b1b-bookmark time="370" time-bn="০৬:১০">বেজের সূত্রের দৃশ্যমান অন্তর্দৃষ্টি</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-intro">অনিশ্চয়তাকে কীভাবে পরিমাপ করা যায়?</a>
+      <a href="#sec-area-concept">সম্ভাব্যতা হলো ক্ষেত্রফল (Probability as Area)</a>
+      <a href="#sec-sample-space">নমুনা ক্ষেত্র এবং ঘটনার পার্টিশন</a>
+      <a href="#sec-monty-hall">মন্টি হল প্যারাডক্স: স্বজ্ঞার মহাবিপত্তি</a>
+      <a href="#sec-conditional">শর্তাধীন সম্ভাব্যতা: নতুন মহাবিশ্বে সংকোচন</a>
+      <a href="#sec-bayes-intuition">বেজের সূত্রের দৃশ্যমান অন্তর্দৃষ্টি</a>
+      <a href="#sec-simulator">ইন্টারেক্টিভ এরিয়া-প্রবাবিলিটি ল্যাব</a>
+      <a href="#sec-quizzes">ধারণা যাচাই ও কুইজ</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ Section 1: Intro — 5 manifest cues (h2, quote, p, p, callout) ═══ -->
+      <b1b-section id="sec-intro" title="অনিশ্চয়তাকে কীভাবে পরিমাপ করা যায়?">
+        <b1b-quote author="পিয়েরে-সিমন লাপ্লাস">সম্ভাব্যতা তত্ত্ব মূলত সাধারণ কাণ্ডজ্ঞানকে গণিতের ভাষায় রূপান্তরিত করার শিল্প ছাড়া আর কিছুই নয়।</b1b-quote>
+
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="একক বর্গক্ষেত্ররূপ নমুনা ক্ষেত্র ও তার ভেতরের ঘটনা" style="width:100%;height:auto;display:block">
+              <rect width="640" height="340" fill="#0f141c"/>
+              <text x="320" y="24" fill="#f6ad55" font-size="15" text-anchor="middle">নমুনা ক্ষেত্র = একক ১ × ১ বর্গ</text>
+              <rect x="150" y="36" width="280" height="280" fill="#151b26" stroke="#74c0e3" stroke-width="2"/>
+              <rect x="194" y="80" width="112" height="192" fill="rgba(116,192,227,0.28)" stroke="#74c0e3" stroke-width="1.5"/>
+              <text x="250" y="184" fill="#74c0e3" font-size="25" font-weight="bold" text-anchor="middle">A</text>
+              <text x="320" y="334" fill="#8b949e" font-size="15" text-anchor="middle">Ω — মোট ক্ষেত্রফল ১.০ (১০০%)</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/probability/lesson_01/experiments/3b1b_prob_01_full_dubbed.mp4"></video></div>
+          <div slot="caption">ছবিতে পুরো সম্ভাব্যতার জগতকে একটি ১ × ১ বর্গক্ষেত্র হিসেবে আঁকা হয়েছে, আর এর ভেতরের নীল অংশটি হলো A ঘটনা। লক্ষ্য করুন বর্গটির মোট ক্ষেত্রফল ঠিক ১.০ — অর্থাৎ ১০০% সম্ভাবনা। এই একক ক্ষেত্রফলের ধারণাটিই পরবর্তীতে যেকোনো ঘটনার সম্ভাবনাকে ক্ষেত্রফলের অনুপাত হিসেবে পড়তে সাহায্য করবে।</div>
+        </b1b-media-tab>
+
+        <p>আমরা যখন বলি 'কাল বৃষ্টি হওয়ার সম্ভাবনা ৭০%' বা 'একটি নিরপেক্ষ ছক্কা ফেললে ৩ আসার সম্ভাবনা ১/৬', তখন এই সংখ্যার পেছনের অন্তর্নিহিত জ্যামিতি কী? অধিকাংশ মানুষ সম্ভাব্যতাকে কিছু সূত্র বা ভগ্নাংশের কাটাকাটি হিসেবে শেখে। কিন্তু ৩ব্লু১ব্রাউনের দর্শন হলো: <strong>সম্ভাব্যতা কোনো বিমূর্ত সংখ্যা নয় — এটি মূলত স্থান এবং ক্ষেত্রফলের ভগ্নাংশ।</strong></p>
+
+        <p>যেকোনো অনিশ্চিত ঘটনাকে জ্যামিতিক উপায়ে উপস্থাপন করলে জটিল সব উপপাদ্য — যেমন শর্তাধীন সম্ভাব্যতা ($P(A|B)$), ইন্ডিপেন্ডেন্স (Independence) কিংবা বেজের সূত্র (Bayes' Rule) — চোখের সামনে স্বতঃসিদ্ধ ছবির মতো স্পষ্ট হয়ে ওঠে।</p>
+
+        <b1b-callout type="blue" icon="💡" title="মূল ভাবনার ভিত্তি (Core Axiom)">
+          <p>আমরা সমস্ত সম্ভাবনার জগতকে একটি <strong>১ × ১ বর্গক্ষেত্র</strong> হিসেবে কল্পনা করব, যার মোট ক্ষেত্রফল <strong>১.০ (বা ১০০%)</strong>। মহাবিশ্বের যেকোনো সম্ভাব্য ঘটনা হলো এই বর্গক্ষেত্রের ভেতরের নির্দিষ্ট কিছু অঞ্চলের ক্ষেত্রফল। স্বতঃসিদ্ধটি লেখা যায় $P(\Omega) = \text{Area}(\Omega) = 1.0 = 100\%$ — অর্থাৎ পুরো নমুনা ক্ষেত্রের সম্ভাবনা সবসময় একক।</p>
+          <ul>
+            <li>সম্ভাব্যতা কোনো শুষ্ক গাণিতিক প্রতীক নয়, এটি স্থান ও ক্ষেত্রফলের অনুপাত।</li>
+            <li>সমগ্র সম্ভাবনা জগত বা স্যাম্পল স্পেসকে ১ × ১ বর্গক্ষেত্র বিবেচনা করা হয়।</li>
+            <li>যেকোনো ঘটনা ঘটা মানে ওই বর্গক্ষেত্রের নির্দিষ্ট অঞ্চলে একটি বিন্দু পতিত হওয়া।</li>
+          </ul>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Section 2: Area Concept — 8 manifest cues ═══ -->
+      <b1b-section id="sec-area-concept" title="সম্ভাব্যতা হলো ক্ষেত্রফল (Probability as Area)">
+        <p>ধরা যাক, আমরা একটি লক্ষ্যবস্তুতে অন্ধভাবে একটি বিন্দু নিক্ষেপ করলাম। বিন্দুটি যেকোনো জায়গায় সমান সম্ভাবনায় পড়তে পারে।</p>
+
+        <b1b-formula math="P(\Omega) = \text{Area}(\Omega) = 1.0 = 100\%"></b1b-formula>
+
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ঘটনা A ও B-র ওভারল্যাপ দেখানো ভেন চিত্র" style="width:100%;height:auto;display:block">
+              <rect width="640" height="340" fill="#0f141c"/>
+              <rect x="110" y="24" width="420" height="290" fill="#151b26" stroke="#8b949e" stroke-width="1.5"/>
+              <defs><clipPath id="probVennClipA"><circle cx="280" cy="166" r="88"/></clipPath></defs>
+              <circle cx="280" cy="166" r="88" fill="rgba(116,192,227,0.26)" stroke="#74c0e3" stroke-width="2.5"/>
+              <circle cx="366" cy="166" r="88" fill="rgba(246,173,85,0.26)" stroke="#f6ad55" stroke-width="2.5"/>
+              <circle cx="366" cy="166" r="88" fill="rgba(72,187,120,0.55)" clip-path="url(#probVennClipA)"/>
+              <text x="240" y="172" fill="#74c0e3" font-size="22" font-weight="bold" text-anchor="middle">A</text>
+              <text x="408" y="172" fill="#f6ad55" font-size="22" font-weight="bold" text-anchor="middle">B</text>
+              <text x="323" y="172" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">A ∩ B</text>
+              <text x="320" y="332" fill="#8b949e" font-size="15" text-anchor="middle">Ω = বর্গক্ষেত্র; ছেদ অংশ দুবার গণনা হয়</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/probability/lesson_01/experiments/3b1b_prob_01_full_dubbed.mp4"></video></div>
+          <div slot="caption">এই ভেন চিত্রে নীল বৃত্তটি ঘটনা A, কমলা বৃত্তটি ঘটনা B এবং তাদের মাঝখানের সবুজ অংশটি হলো যৌথ ছেদ A ∩ B। লক্ষ্য করুন দুটি বৃত্তের ক্ষেত্রফল আলাদাভাবে যোগ করলে মাঝখানের সবুজ অংশটি দুইবার পড়া হয়। তাই সঠিক সংযোগ ক্ষেত্রফল পেতে সেই যৌথ অংশ একবার বিয়োগ করতে হয় — এটিই ইনক্লুশন-এক্সক্লুশন নীতির জ্যামিতিক ছবি।</div>
+        </b1b-media-tab>
+
+        <p>এখন যদি কোনো ঘটনা $A$ ঘটে (যেমন: 'বৃষ্টি হওয়া' বা 'মুদ্রায় হেড আসা'), তবে তা সমগ্র অঞ্চলের কিছু অংশ অধিকার করে। ঘটনা $A$-এর সম্ভাব্যতা $P(A)$ হলো ঠিক সেই অঞ্চলের ক্ষেত্রফল:</p>
+
+        <b1b-formula math="P(A) = \frac{\text{Area}(A)}{\text{Area}(\Omega)} = \text{Area}(A)"></b1b-formula>
+
+        <p>যদি দুটি ঘটনা $A$ এবং $B$ পরস্পর বর্জনীয় (Mutually Exclusive) হয় — অর্থাৎ একসাথে ঘটা অসম্ভব — তবে তাদের অঞ্চল দুটি একে অপরকে স্পর্শ বা ওভারল্যাপ করবে না। তখন $P(A \cup B) = P(A) + P(B)$, কারণ কোনো দ্বিতীয়বার গণনা জড়িতই না।</p>
+
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="পরস্পর বর্জনীয় ও ওভারল্যাপিং অঞ্চলের তুলনা" style="width:100%;height:auto;display:block">
+              <rect width="640" height="300" fill="#0f141c"/>
+              <text x="160" y="28" fill="#74c0e3" font-size="16" text-anchor="middle">বর্জনীয়: ছেদ নেই</text>
+              <text x="480" y="28" fill="#f6ad55" font-size="16" text-anchor="middle">বর্জনীয় নয়: ছেদ আছে</text>
+              <rect x="40" y="46" width="230" height="200" fill="#151b26" stroke="#8b949e"/>
+              <rect x="180" y="46" width="230" height="200" fill="rgba(116,192,227,0.28)" stroke="#74c0e3" stroke-width="2"/>
+              <rect x="370" y="46" width="230" height="200" fill="#151b26" stroke="#8b949e"/>
+              <rect x="390" y="76" width="150" height="140" fill="rgba(116,192,227,0.28)" stroke="#74c0e3" stroke-width="2"/>
+              <rect x="480" y="76" width="110" height="140" fill="rgba(246,173,85,0.28)" stroke="#f6ad55" stroke-width="2"/>
+              <text x="160" y="280" fill="#8b949e" font-size="15" text-anchor="middle">P(A ∪ B) = P(A) + P(B)</text>
+              <text x="480" y="280" fill="#8b949e" font-size="15" text-anchor="middle">P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/probability/lesson_01/experiments/3b1b_prob_01_full_dubbed.mp4"></video></div>
+          <div slot="caption">বামের ছবিতে দুটি অঞ্চল একে অপরকে স্পর্শও করছে না, তাই ক্ষেত্রফল সরাসরি যোগ করা যায়। ডানের ছবিতে অঞ্চল দুটি ওভারল্যাপ করায় মাঝখানের অংশ দুবার গোনা হয়। এই সাদৃশ্যপূর্ণ তুলনাটি মনে রাখলে কখন বিয়োগ করতে হবে তা স্বয়ংক্রিয়ভাবে বোঝা যায়।</div>
+        </b1b-media-tab>
+
+        <p>কিন্তু যদি তারা পরস্পর বর্জনীয় না হয়? তখন তাদের মাঝে একটি সাধারণ ক্ষেত্রফল তৈরি হয়, যাকে আমরা বলি ছেদ (Intersection) বা $A \cap B$। এই কারণে সাধারণ ক্ষেত্রে সংযোগের ক্ষেত্রফল এককভাবে যোগ করা যায় না।</p>
+
+        <b1b-callout type="gold" icon="🔍" title="জ্যামিতিক উপলব্ধি: কেন $P(A \cap B)$ বিয়োগ হয়?">
+          <p>যখন আপনি $A$-এর ক্ষেত্রফল এবং $B$-এর ক্ষেত্রফল আলাদাভাবে যোগ করেন, তখন মাঝখানের ওভারল্যাপ অঞ্চলটি দুবার গুনে ফেলা হয়! তাই সঠিক মোট ক্ষেত্রফল পেতে একবার সেই যৌথ ক্ষেত্রফল বিয়োগ দিতে হয়। এটিই হলো ইনক্লুশন-এক্সক্লুশন সূত্রের সবচেয়ে সহজ ভিজ্যুয়াল প্রমাণ: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$। টেবিলের ওপর দুটি কাগজ ওভারল্যাপ করার মতো জ্যামিতিক বাস্তবতাই এর মূল সত্য।</p>
+          <ul>
+            <li>পরস্পর বর্জনীয় ঘটনায় কোনো সাধারণ ছেদ থাকে না ($A \cap B = \emptyset$)।</li>
+            <li>সাধারণ ছেদ থাকলে $P(A \cap B)$ বিয়োগ করে ডাবল-কাউন্টিং সংশোধন করা হয়।</li>
+            <li>ওভারল্যাপের ক্ষেত্রফল সরাসরি দেখে এই সূত্রটি মনে রাখা যায়।</li>
+          </ul>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Section 3: Sample Space — 6 manifest cues ═══ -->
+      <b1b-section id="sec-sample-space" title="নমুনা ক্ষেত্র এবং ঘটনার পার্টিশন (Partitions & Total Probability)">
+        <p>বাস্তব জগতের যেকোনো সমস্যাকে সহজে বোঝার জন্য গ্রান্ট স্যান্ডারসন প্রায়ই গ্রিড পার্টিশন (Grid Partitioning) ব্যবহার করেন। নমুনা ক্ষেত্রকে আয়তাকার খণ্ডে ভাগ করলে জটিল সমস্যাও নিখুঁতভাবে বিশ্লেষণ করা যায়।</p>
+
+        <p>ধরা যাক, একটি কোম্পানিতে দুটি সার্ভার আছে: সার্ভার $X$ এবং সার্ভার $Y$। সার্ভার $X$ মোট ট্রাফিকের ৭০% ($০.৭০$) পরিচালনা করে, আর সার্ভার $Y$ বাকি ৩০% ($০.৩০$) পরিচালনা করে।</p>
+
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="সার্ভার এক্স ও ওয়াই-র ৭০-৩০ পার্টিশন এবং এরর স্ট্রিপ" style="width:100%;height:auto;display:block">
+              <rect width="640" height="340" fill="#0f141c"/>
+              <rect x="70" y="30" width="500" height="270" fill="#151b26" stroke="#8b949e" stroke-width="1.5"/>
+              <rect x="70" y="30" width="350" height="270" fill="rgba(116,192,227,0.14)"/>
+              <rect x="420" y="30" width="150" height="270" fill="rgba(246,173,85,0.14)"/>
+              <line x1="70" y1="190" x2="570" y2="190" stroke="#8b949e" stroke-width="1.5"/>
+              <rect x="70" y="190" width="350" height="40" fill="rgba(116,192,227,0.55)"/>
+              <rect x="420" y="190" width="150" height="80" fill="rgba(246,173,85,0.6)"/>
+              <text x="245" y="120" fill="#74c0e3" font-size="17" text-anchor="middle">সার্ভার X — ৭০%</text>
+              <text x="495" y="120" fill="#f6ad55" font-size="17" text-anchor="middle">সার্ভার Y — ৩০%</text>
+              <text x="245" y="218" fill="#0b0f19" font-size="14" text-anchor="middle">এরর ২%</text>
+              <text x="495" y="238" fill="#0b0f19" font-size="14" text-anchor="middle">এরর ১০%</text>
+              <text x="320" y="330" fill="#8b949e" font-size="15" text-anchor="middle">প্রস্থ × উচ্চতা = ক্ষেত্রফল = যৌথ সম্ভাবনা</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/probability/lesson_01/experiments/3b1b_prob_01_full_dubbed.mp4"></video></div>
+          <div slot="caption">ছবিতে পুরো বর্গক্ষেত্রকে ৭০% ও ৩০% প্রস্থের দুটি স্ট্রিপে ভাগ করা হয়েছে, যা যথাক্রমে সার্ভার X ও Y-র ট্রাফিক ভাগ। প্রতিটি স্ট্রিপের ভেতরে নিচের অংশটি এররের শতাংশ ধরে কাটা হয়েছে। তাই প্রতিটি ছোট আয়তক্ষেত্রের ক্ষেত্রফল = প্রস্থ × উচ্চতা = পূর্ব সম্ভাবনা × শর্তাধীন সম্ভাবনা; এই ক্ষেত্রফলগুলো যোগ করেই মোট এররের সম্ভাবনা পাওয়া যায়।</div>
+        </b1b-media-tab>
+
+        <p>এখন আমরা পুরো বর্গক্ষেত্রকে অনুভূমিকভাবে দুই ভাগে ভাগ করি: একটি ৭০% চওড়া স্ট্রিপ ($X$), আরেকটি ৩০% স্ট্রিপ ($Y$)। ধরা যাক সার্ভার $X$-এ এরর হওয়ার সম্ভাবনা ২%, কিন্তু সার্ভার $Y$-এ এরর হওয়ার সম্ভাবনা ১০%। উলম্বভাবে প্রতিটি স্ট্রিপকে এরর ($E$) এবং নো-এরর হিসেবে কাটলে মোট এররের সম্ভাবনা হবে দুটি আয়তক্ষেত্রের ক্ষেত্রফলের যোগফল।</p>
+
+        <b1b-formula math="P(E) = P(X) \cdot P(E|X) + P(Y) \cdot P(E|Y) = (0.70 \times 0.02) + (0.30 \times 0.10) = 0.014 + 0.030 = 0.044 \text{ (৪.৪%)}"></b1b-formula>
+
+        <b1b-callout type="blue" icon="💡" title="জ্যামিতিক আয়তক্ষেত্র নীতি">
+          <p>কোনো জটিল বীজগণিত ছাড়াই, শুধু আয়তক্ষেত্রের <strong>প্রস্থ × উচ্চতা = ক্ষেত্রফল</strong> সূত্র দিয়েই সমগ্র সম্ভাব্যতা উপপাদ্য (Law of Total Probability) চোখের সামনে ভেসে ওঠে! প্রতিটি পার্টিশনের ক্ষেত্রফল হলো তার পূর্ব সম্ভাবনা ও শর্তাধীন সম্ভাবনার গুণফল, আর মোট সম্ভাবনা হলো ওই সব ক্ষেত্রফলের সমষ্টি।</p>
+          <ul>
+            <li>নমুনা ক্ষেত্রকে সামগ্রিক পার্টিশনে বিভক্ত করা জটিল হিসাবকে দ্বিমাত্রিক গ্রিডে রূপান্তর করে।</li>
+            <li>প্রতিটি আয়তক্ষেত্রের ক্ষেত্রফল = পূর্ববর্তী সম্ভাবনা × শর্তাধীন সম্ভাবনা।</li>
+            <li>মোট সম্ভাবনা = সকল পার্টিশনভুক্ত আয়তক্ষেত্রের ক্ষেত্রফলের সমষ্টি।</li>
+          </ul>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Section 4: Monty Hall — 6 manifest cues ═══ -->
+      <b1b-section id="sec-monty-hall" title="মন্টি হল প্যারাডক্স: স্বজ্ঞার মহাবিপত্তি (The Monty Hall Dilemma)">
+        <p>গণিতের ইতিহাসে মন্টি হল সমস্যার মতো তীব্র বিতর্ক আর কোনো সমস্যা তৈরি করতে পারেনি। ১৯৭০-এর দশকের একটি বিখ্যাত আমেরিকান টিভি গেম শো 'লেটস মেক আ ডিল' (Let's Make a Deal) থেকে এর উৎপত্তি, যার উপস্থাপক ছিলেন মন্টি হল। খেলার নিয়মটি চমৎকার: আপনার সামনে ৩টি বন্ধ দরজা আছে—১, ২ এবং ৩। একটি দরজার পেছনে আছে একটি দামি চকচকে গাড়ি, আর বাকি দুটি দরজার পেছনে রয়েছে দুটি সাধারণ ছাগল।</p>
+
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="মন্টি হলের তিনটি দরজা, একটি বেছে নেওয়া ও একটি ছাগল উন্মোচন" style="width:100%;height:auto;display:block">
+              <rect width="640" height="330" fill="#0f141c"/>
+              <text x="320" y="26" fill="#f6ad55" font-size="16" text-anchor="middle">আপনি ১ নম্বর দরজা বাছলেন; মন্টি ৩ নম্বর খুললেন</text>
+              <rect x="60" y="56" width="150" height="190" fill="#1b2740" stroke="#74c0e3" stroke-width="3"/>
+              <rect x="245" y="56" width="150" height="190" fill="#151b26" stroke="#8b949e" stroke-width="2"/>
+              <rect x="430" y="56" width="150" height="190" fill="#2a1f12" stroke="#f6ad55" stroke-width="2"/>
+              <text x="135" y="160" fill="#74c0e3" font-size="42" text-anchor="middle">১</text>
+              <text x="320" y="160" fill="#8b949e" font-size="42" text-anchor="middle">২</text>
+              <text x="505" y="160" fill="#f6ad55" font-size="42" text-anchor="middle">৩</text>
+              <text x="135" y="276" fill="#8b949e" font-size="15" text-anchor="middle">আপনার বাছাই (১/৩)</text>
+              <text x="505" y="276" fill="#f6ad55" font-size="15" text-anchor="middle">ছাগল উন্মোচন</text>
+              <text x="320" y="310" fill="#48bb78" font-size="16" text-anchor="middle">বদলালে বাকি দরজায় ২/৩ সম্ভাবনা!</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/probability/lesson_01/experiments/3b1b_prob_01_full_dubbed.mp4"></video></div>
+          <div slot="caption">এই ছবিতে তিনটি বন্ধ দরজার মধ্যে আপনি ১ নম্বরটি বাছাই করেছেন এবং সঞ্চালক ৩ নম্বর দরজা খুলে সেখানে একটি ছাগল দেখিয়েছেন। লক্ষ্য করুন মন্টির পছন্দটি দৈবচয়িত নয় — তিনি গাড়ির দরজাটি কখনো খুলতে পারেন না। তাই আপনার প্রাথমিক ভুল বাছাইয়ের ২/৩ সম্ভাবনা এখন অবশিষ্ট বন্ধ দরজায় কেন্দ্রীভূত হয়; সেটিই দরজা বদলানোর সুবিধা।</div>
+        </b1b-media-tab>
+
+        <p>আপনি ধরুন ১ নম্বর দরজা বেছে নিলেন। উপস্থাপক মন্টি হল—যিনি ভালো করেই জানেন কোন দরজার পেছনে কী আছে—বাকি দুটি দরজার একটি খুলে দিলেন (ধরুন ৩ নম্বর দরজা) এবং দেখা গেল সেখানে একটি ছাগল দাঁড়িয়ে আছে! এবার মন্টি আপনাকে প্রশ্ন করলেন: 'আপনি কি আপনার সিদ্ধান্ত পরিবর্তন করে ২ নম্বর দরজায় যাবেন, নাকি ১ নম্বরেই স্থির থাকবেন?'</p>
+
+        <p>আমাদের সাধারণ কাণ্ডজ্ঞান বলে: দুটি দরজা অবশিষ্ট আছে, তাই গাড়ি থাকার সম্ভাবনা ৫০-৫০; সুতরাং সিদ্ধান্ত বদলানোর কোনো লাভ নেই। এমনকি ১৯৯০ সালে মেরিলিন ভস সাভান্ত যখন প্যারাডক্সটির সঠিক সমাধান দেন, তখন প্রায় ১,০০০ পিএইচডি ডিগ্রিধারী গণিতবিদ চিঠি লিখে দাবি করেছিলেন যে সিদ্ধান্ত বদলালে কোনো বাড়তি লাভ হবে না!</p>
+
+        <b1b-callout type="gold" icon="🚪" title="কেন দরজা বদলানোতে সম্ভাবনা দ্বিগুণ হয়? (The Asymmetry)">
+          <p>কিন্তু গণিত ও ক্ষেত্রফল মডেল প্রমাণ করে: দরজা বদলালে আপনার গাড়ি জেতার সম্ভাবনা ১/৩ থেকে লাফিয়ে ২/৩ (বা প্রায় ৬৭%) এ পৌঁছে যায় — অর্থাৎ জয়ের সুযোগ সরাসরি দ্বিগুণ হয়! শুরুতে বাছাইয়ের সম্ভাবনা ছিল $P(\text{Car behind Door 1}) = \frac{1}{3}$, আর বাকি দুই দরজার মিলিত সম্ভাবনা $\frac{2}{3}$ সংরক্ষিত ছিল। সুতরাং $P(\text{Win by Switching}) = 1 - \frac{1}{3} = \frac{2}{3}$।</p>
+          <ul>
+            <li>মন্টি কখনোই গাড়ি থাকা দরজাটি খুলতে পারেন না এবং আপনার বাছাই করা দরজাও খুলতে পারেন না।</li>
+            <li>আপনি যখনই ছাগল বাছাই করেছিলেন (২/৩ ক্ষেত্রে), মন্টি বাধ্য হয়ে অন্য ছাগলটি দেখিয়ে দেন।</li>
+            <li>একশত দরজার কল্পনা করলে স্পষ্ট হয়: আপনি ১টি বাছলেন, মন্টি ৯৮টি ছাগল খুলে দিলেন—অবশিষ্ট দরজায় ৯৯%!</li>
+          </ul>
+        </b1b-callout>
+
+        <p>কেন এমন হয়? কারণ তিন ভাগের দুই ভাগ ক্ষেত্রে আপনার প্রাথমিক বাছাই ছিল ছাগল। আর যখনই আপনি ছাগল বেছে নেন, মন্টি বাধ্য হয়ে অন্য ছাগলের দরজাটি খুলে দেন—ফলে বাকি বন্ধ দরজায় নিশ্চিতভাবে গাড়ি অবস্থান করে। মন্টি আসলে তথ্য প্রদান করেন; সেই নিয়ন্ত্রিত তথ্যটিই ২/৩ সম্ভাবনাটি এক দরজায় ঘনীভূত করে দেয়।</p>
+      </b1b-section>
+
+      <!-- ═══ Section 5: Conditional — 5 manifest cues ═══ -->
+      <b1b-section id="sec-conditional" title="শর্তাধীন সম্ভাব্যতা: নতুন মহাবিশ্বে সংকোচন (Conditioning is Cropping)">
+        <p>সম্ভাব্যতা তত্ত্বে সবচেয়ে বিভ্রান্তিকর অথচ সবচেয়ে ক্ষমতাবান ধারণা হলো শর্তাধীন সম্ভাব্যতা (Conditional Probability): $P(A|B)$। এর সাধারণ গাণিতিক সংজ্ঞা হলো $P(A|B) = \frac{P(A \cap B)}{P(B)}$ — অর্থাৎ যৌথ ক্ষেত্রফলকে $B$-র ক্ষেত্রফল দিয়ে ভাগ করা।</p>
+
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="মহাবিশ্ব ক্রপিং: বি অঞ্চলকে নতুন মহাবিশ্ব হিসেবে দেখানো" style="width:100%;height:auto;display:block">
+              <rect width="640" height="340" fill="#0f141c"/>
+              <rect x="40" y="36" width="270" height="250" fill="#151b26" stroke="#8b949e" stroke-width="1.5"/>
+              <rect x="110" y="96" width="150" height="150" fill="rgba(246,173,85,0.30)" stroke="#f6ad55" stroke-width="2"/>
+              <rect x="150" y="136" width="80" height="80" fill="rgba(72,187,120,0.6)" stroke="#48bb78" stroke-width="2"/>
+              <text x="175" y="70" fill="#8b949e" font-size="14">পুরনো মহাবিশ্ব Ω</text>
+              <text x="185" y="178" fill="#ffffff" font-size="15" text-anchor="middle">A ∩ B</text>
+              <text x="345" y="160" fill="#f6ad55" font-size="30" text-anchor="middle">→</text>
+              <rect x="390" y="76" width="200" height="180" fill="rgba(246,173,85,0.24)" stroke="#f6ad55" stroke-width="2"/>
+              <rect x="435" y="116" width="92" height="92" fill="rgba(72,187,120,0.6)" stroke="#48bb78" stroke-width="2"/>
+              <text x="490" y="60" fill="#f6ad55" font-size="14" text-anchor="middle">নতুন মহাবিশ্ব B = ১.০</text>
+              <text x="481" y="168" fill="#ffffff" font-size="14" text-anchor="middle">A-র ভাগ</text>
+              <text x="320" y="326" fill="#8b949e" font-size="15" text-anchor="middle">ক্রপিংয়ের পর ক্ষেত্রফল পুনরায় ১.০-এ নরমালাইজ হয়</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/probability/lesson_01/experiments/3b1b_prob_01_full_dubbed.mp4"></video></div>
+          <div slot="caption">বামের চিত্রে পুরনো মহাবিশ্ব Ω-র ভেতর অঞ্চল B কমলা রঙে এবং তার ভেতর A ∩ B সবুজ রঙে দেখানো হয়েছে। ডানের চিত্রে বাকি সবকিছু কেটে ফেলে কেবল B অঞ্চলটিই রাখা হয়েছে, তাই এখন B-র ক্ষেত্রফল ১.০। লক্ষ্য করুন নতুন মহাবিশ্বে A কতটা জায়গা দখল করে তা ঠিক সেই অনুপাত — এটিই শর্তাধীন সম্ভাব্যতার ক্রপিং রূপ।</div>
+        </b1b-media-tab>
+
+        <b1b-formula math="P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{\text{Area}(A \cap B)}{\text{Area}(B)}"></b1b-formula>
+
+        <b1b-callout type="green" icon="✂️" title="মহাবিশ্বের ক্রপিং (The Cropping Metaphor)">
+          <p>কিন্তু ৩ব্লু১ব্রাউনের দৃষ্টিতে এর আসল অর্থ কী? 'দেওয়া আছে ঘটনা $B$ ঘটেছে' — এর অর্থ হলো আপনার পূর্বের সমগ্র মহাবিশ্ব ($\Omega$) বাতিল হয়ে গেছে! এখন আপনার নতুন মহাবিশ্ব হলো কেবল অঞ্চল $B$। কল্পনা করুন একটি ছবি থেকে আপনি বাকি সবকিছু কেটে ফেলে (Crop করে) কেবল অঞ্চল $B$-কে রাখলেন; এখন এই নতুন মহাবিশ্বে $B$-র ক্ষেত্রফল ১০০% ($১.০$)। তাহলে এই নতুন প্রেক্ষাপটে $A$ কতটা জায়গা দখল করে? ঠিক ততটুকুই, যতটুকু $A$ অঞ্চল $B$-এর ভেতরে বিদ্যমান ছিল।</p>
+          <ul>
+            <li>কন্ডিশনিং মানে পুরনো নমুনা ক্ষেত্র বাতিল করে নতুন সীমাবদ্ধ মহাবিশ্ব তৈরি করা।</li>
+            <li>শর্তাধীন সম্ভাব্যতা = সংকুচিত মহাবিশ্বে মূল ঘটনার বেঁচে থাকা অংশের ক্ষেত্রফল অনুপাত।</li>
+            <li>$P(B)$ দ্বারা ভাগ করার অর্থ নতুন মহাবিশ্বকে পুনরায় ১.০-এ নরমালাইজ করা।</li>
+          </ul>
+        </b1b-callout>
+
+        <p>সুতরাং, শর্তাধীন সম্ভাব্যতা কোনো ভিনগ্রহের সূত্র নয় — এটি হলো <strong>নতুন সংকুচিত মহাবিশ্বের সাপেক্ষে ক্ষেত্রফলের স্বাভাবিক পুনর্স্কেলিং (Rescaling)</strong>। একবার এই ছবিটি মনে রাখলে বেজের সূত্রসহ বেশিরভাগ ক্লাসিক্যাল প্যারাডক্স সরাসরি বোঝা যায়।</p>
+      </b1b-section>
+
+      <!-- ═══ Section 6: Bayes Intuition — 5 manifest cues ═══ -->
+      <b1b-section id="sec-bayes-intuition" title="বেজের সূত্রের দৃশ্যমান অন্তর্দৃষ্টি (Visual Bayes' Rule)">
+        <p>বেজের সূত্র (Bayes' Theorem) আসলে শর্তাধীন সম্ভাব্যতার দ্বিমুখী প্রতিসাম্য থেকেই সরাসরি জন্ম নেয়: $P(A \cap B) = P(B) \cdot P(A|B) = P(A) \cdot P(B|A)$। যেহেতু উভয় প্রকাশই মাঝখানের একই ওভারল্যাপ ক্ষেত্রফল $P(A \cap B)$-কে প্রকাশ করে, তাই আমরা একটিকে আরেকটির সমান লিখতে পারি।</p>
+
+        <b1b-formula math="P(A|B) = \frac{P(A) \cdot P(B|A)}{P(B)}"></b1b-formula>
+
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="বেজ হালনাগাদ: পূর্ব বিশ্বাস থেকে পশ্চাৎ বিশ্বাস" style="width:100%;height:auto;display:block">
+              <rect width="640" height="330" fill="#0f141c"/>
+              <text x="180" y="34" fill="#8b949e" font-size="15" text-anchor="middle">পূর্ব বিশ্বাস P(A) = ১%</text>
+              <text x="460" y="34" fill="#48bb78" font-size="15" text-anchor="middle">পশ্চাৎ বিশ্বাস P(A|B) ≈ ৫০%</text>
+              <rect x="60" y="60" width="240" height="180" fill="#151b26" stroke="#8b949e"/>
+              <rect x="60" y="60" width="24" height="180" fill="#74c0e3"/>
+              <rect x="84" y="60" width="216" height="180" fill="rgba(116,192,227,0.10)"/>
+              <rect x="340" y="60" width="240" height="180" fill="#151b26" stroke="#8b949e"/>
+              <rect x="340" y="60" width="120" height="180" fill="#48bb78"/>
+              <rect x="460" y="60" width="120" height="180" fill="rgba(72,187,120,0.12)"/>
+              <text x="180" y="162" fill="#74c0e3" font-size="16" text-anchor="middle">রোগী ১%</text>
+              <text x="400" y="162" fill="#0b0f19" font-size="15" text-anchor="middle">আক্রান্ত</text>
+              <text x="520" y="162" fill="#8b949e" font-size="14" text-anchor="middle">সুস্থ</text>
+              <text x="320" y="270" fill="#f6ad55" font-size="18" text-anchor="middle">P(A|B) = P(A)·P(B|A) / P(B)</text>
+              <text x="320" y="304" fill="#8b949e" font-size="14" text-anchor="middle">নতুন প্রমাণ B পূর্বানুমানকে হালনাগাদ করে</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/probability/lesson_01/experiments/3b1b_prob_01_full_dubbed.mp4"></video></div>
+          <div slot="caption">বামের সংকীর্ণ নীল অংশটি বিরল রোগের ১% পূর্ব বিশ্বাস; ডানের ছবিতে টেস্ট পজিটিভ হওয়ার পর সেই অংশ প্রায় অর্ধেক হয়ে গেছে। লক্ষ্য করুন ৯৯% সঠিক টেস্ট হলেও সুস্থ দলের ছোট ফলস-পজিটিভ ভাগটি আক্রান্ত দলের ট্রু-পজিটিভ ভাগের প্রায় সমান। ক্ষেত্রফল আঁকলে দেখা যায় পজিটিভ নতুন মহাবিশ্বে রোগ থাকার সম্ভাবনা আসলে প্রায় ৫০% — এটিই বেজের হালনাগাদ।</div>
+        </b1b-media-tab>
+
+        <b1b-callout type="gold" icon="🧠" title="মেডিকেল টেস্ট প্যারাডক্সের বীজ">
+          <p>ধরা যাক, বিরল একটি রোগ জনসংখ্যার ১% ($০.০১$) মানুষের হয়। একটি টেস্ট ৯৯% সঠিক। আপনার টেস্ট পজিটিভ আসলো। আপনার কি সত্যিই রোগটি থাকার সম্ভাবনা ৯৯%? না! কারণ বাকি ৯৯% সুস্থ মানুষের ১% ফলস পজিটিভ হলেও সেই সুস্থ দলের ফলস পজিটিভের ক্ষেত্রফল রোগাক্রান্ত দলের ট্রু পজিটিভ ক্ষেত্রফলের প্রায় সমান! ফলে পজিটিভ নতুন মহাবিশ্বে আপনার রোগ থাকার সম্ভাবনা আসলে মাত্র ৫০%। বেজের সূত্র হলো নতুন তথ্যের আলোতে কোনো পূর্বানুমানকে পরিমার্জন করার নিখুঁত গাণিতিক কাঠামো।</p>
+          <ul>
+            <li>বেজের সূত্র = প্রমাণ ও তথ্যের আলোকে যৌক্তিক বিশ্বাস হালনাগাদের সার্বজনীন ইঞ্জিন।</li>
+            <li>মাঝখানের যৌথ ক্ষেত্রফলকে অনুভূমিক ও উল্লম্ব উভয় দিক থেকে পরিমাপ করা যায়।</li>
+            <li>পরবর্তী অধ্যায় ০২-এ এই সূত্র দিয়ে ফলস পজিটিভ প্যারাডক্স পুরোপুরি উন্মোচন করা হবে।</li>
+          </ul>
+        </b1b-callout>
+
+        <p>এটিই বেজের সূত্রের বিশুদ্ধ জ্যামিতিক প্রমাণ। কোনো কৃত্রিম নিয়ম ছাড়া, কেবল একই যৌথ ক্ষেত্রফলকে দুই ভিন্ন দিক থেকে পরিমাপ করার মাধ্যমেই সমীকরণটি গঠিত হয়। পরবর্তী অধ্যায়ে আমরা দেখব কীভাবে একটি ৯৯ শতাংশ নিখুঁত মেডিকেল টেস্ট বিরল রোগের ক্ষেত্রে অধিকাংশ সময়েই ফলস পজিটিভ ফল দেয় — যার পেছনের রহস্য এই জ্যামিতিক ক্ষেত্রফলেই লুকানো।</p>
+      </b1b-section>
+
+      <!-- ═══ Section 7: Simulator lab — NON-NARRATED ═══ -->
+      <b1b-section id="sec-simulator" title="ইন্টারেক্টিভ এরিয়া-প্রবাবিলিটি ল্যাব (Interactive Area-Probability Lab)" data-no-narration="true">
+        <p>নিচের ইন্টারেক্টিভ ক্যানভাসটিতে সমগ্র নমুনা ক্ষেত্রকে একটি আয়তাকার স্পেস হিসেবে দেখানো হয়েছে। নীল বৃত্তটি হলো ঘটনা $A$ এবং কমলা বৃত্তটি হলো ঘটনা $B$।</p>
+
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ল্যাবের দুই ঘটনার ওভারল্যাপিং ক্ষেত্র" style="width:100%;height:auto;display:block">
+              <rect width="640" height="300" fill="#0f141c"/>
+              <rect x="90" y="26" width="460" height="230" fill="#151b26" stroke="#8b949e" stroke-width="1.5"/>
+              <defs><clipPath id="probLabClipA"><circle cx="290" cy="140" r="86"/></clipPath></defs>
+              <circle cx="290" cy="140" r="86" fill="rgba(116,192,227,0.28)" stroke="#74c0e3" stroke-width="2.5"/>
+              <circle cx="370" cy="140" r="86" fill="rgba(246,173,85,0.28)" stroke="#f6ad55" stroke-width="2.5"/>
+              <circle cx="370" cy="140" r="86" fill="rgba(72,187,120,0.55)" clip-path="url(#probLabClipA)"/>
+              <text x="240" y="148" fill="#74c0e3" font-size="22" font-weight="bold">A</text>
+              <text x="420" y="148" fill="#f6ad55" font-size="22" font-weight="bold">B</text>
+              <text x="320" y="286" fill="#8b949e" font-size="14" text-anchor="middle">স্লাইডার টেনে P(A), P(B) ও P(A ∩ B) বদলান</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/probability/lesson_01/experiments/3b1b_prob_01_full_dubbed.mp4"></video></div>
+          <div slot="caption">এই ছবিটি নিচের ল্যাবের প্রাকদর্শন — নীল বৃত্ত A, কমলা বৃত্ত B এবং সবুজ ছেদ অংশ A ∩ B। স্লাইডার বদলালে বৃত্তের আকার ও দূরত্ব পরিবর্তন হয়, ঠিক যেমন ক্ষেত্রফল পরিবর্তন হয়। লক্ষ্য করুন ছেদ বাড়ালে শর্তাধীন সম্ভাব্যতা কীভাবে স্বয়ংক্রিয়ভাবে নতুন মান নেয়।</div>
+        </b1b-media-tab>
+
+        <p>স্লাইডার দিয়ে ঘটনাগুলোর সম্ভাবনা এবং তাদের পারস্পরিক ওভারল্যাপ ($A \cap B$) পরিবর্তন করুন — লক্ষ্য করুন কীভাবে সংকুচিত মহাবিশ্বে শর্তাধীন সম্ভাব্যতা $P(A|B)$ এবং $P(B|A)$ স্বয়ংক্রিয়ভাবে পুনঃগণনা ও দৃশ্যমান হয়:</p>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <div class="viz-wrapper" id="probVizWrapper">
+            <div class="viz-header">
+              <div class="viz-header-left"><span>🔬 ইন্টারেক্টিভ ক্ষেত্রফল সম্ভাব্যতা সিমুলেটর — ড্র্যাগ ও স্লাইড করুন!</span></div>
+            </div>
+            <div class="viz-canvas-container">
+              <canvas class="viz-canvas" id="probCanvas" aria-label="দুই ঘটনার ক্ষেত্রফল ও ছেদ দেখানো ক্যানভাস"></canvas>
+            </div>
+            <div class="viz-controls" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px;">
+              <div class="viz-slider-row">
+                <label for="sliderPA">ঘটনা A-এর প্রবাবিলিটি $P(A)$:</label>
+                <input type="range" id="sliderPA" min="0.10" max="0.70" step="0.02" value="0.40"/>
+                <span class="viz-val" id="valPA">০.৪০</span>
+              </div>
+              <div class="viz-slider-row">
+                <label for="sliderPB">ঘটনা B-এর প্রবাবিলিটি $P(B)$:</label>
+                <input type="range" id="sliderPB" min="0.10" max="0.70" step="0.02" value="0.50"/>
+                <span class="viz-val" id="valPB">০.৫০</span>
+              </div>
+              <div class="viz-slider-row">
+                <label for="sliderPAB">যৌথ ক্ষেত্রফল $P(A \cap B)$:</label>
+                <input type="range" id="sliderPAB" min="0.00" max="0.40" step="0.01" value="0.20"/>
+                <span class="viz-val" id="valPAB">০.২০</span>
+              </div>
+            </div>
+            <div class="prob-sim-stats">
+              <div class="prob-stat-card"><div class="prob-stat-title">মহাবিশ্ব $\Omega$</div><div class="prob-stat-val" style="color:var(--text);">১.০০</div><div class="prob-stat-formula">মোট ক্ষেত্রফল</div></div>
+              <div class="prob-stat-card"><div class="prob-stat-title">শর্তাধীন $P(A|B)$</div><div class="prob-stat-val" id="statP_AgivenB" style="color:#74C0E3;">০.৪০</div><div class="prob-stat-formula">P(A ∩ B) / P(B)</div></div>
+              <div class="prob-stat-card"><div class="prob-stat-title">শর্তাধীন $P(B|A)$</div><div class="prob-stat-val" id="statP_BgivenA" style="color:#f6ad55;">০.৫০</div><div class="prob-stat-formula">P(A ∩ B) / P(A)</div></div>
+              <div class="prob-stat-card"><div class="prob-stat-title">সংযোগ $P(A \cup B)$</div><div class="prob-stat-val" id="statP_AunionB" style="color:#48bb78;">০.৭০</div><div class="prob-stat-formula">P(A) + P(B) − P(A ∩ B)</div></div>
+            </div>
+            <div class="viz-info" id="probInfo">💡 লক্ষ্য করুন: যখন আপনি $P(B)$ ছোট করেন, তখন $P(A|B)$ নাটকীয়ভাবে বৃদ্ধি পায় — কারণ নতুন সংকুচিত মহাবিশ্বে $A \cap B$ অনেক বড় ভগ্নাংশ অধিকার করে!</div>
+          </div>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ Section 8: Quizzes — NON-NARRATED ═══ -->
+      <b1b-section id="sec-quizzes" title="ধারণা যাচাই ও কুইজ (Concept Verification Quizzes)" data-no-narration="true">
+        <p>অধ্যায়ের মূল ধারণাগুলো কতটা স্পষ্ট হয়েছে তা যাচাই করতে নিচের বহুনিবার্চনী প্রশ্নগুলোর উত্তর দিন। প্রতিটি উত্তরের সাথে রয়েছে বিস্তারিত জ্যামিতিক ব্যাখ্যা।</p>
+
+        <b1b-quiz
+          question="❓ যদি $P(A) = 0.50$, $P(B) = 0.30$ এবং $P(A \cap B) = 0.15$ হয়, তবে শর্তাধীন সম্ভাব্যতা $P(A|B)$ কত?"
+          correct="1"
+          correct-msg="চমৎকার! $P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{0.15}{0.30} = 0.50$ (বা ৫০%)। ঘটনা $B$ ঘটলে নমুনা ক্ষেত্র $0.30$-এ সংকুচিত হয়ে যায়।"
+          wrong-msg="পুনরায় চিন্তা করুন: $P(A|B)$ হলো $P(B)$-এর সাপেক্ষে যৌথ ক্ষেত্রফল $P(A \cap B)$-এর অনুপাত।"
+          reveal-msg="সঠিক উত্তর হলো ০.৫০ (বা ৫০%)। যেহেতু $P(B) = 0.30$ এবং এর ভেতর $A \cap B = 0.15$, তাই অনুপাতটি $0.15 / 0.30 = 0.50$।">
+          <div slot="option">$0.30$</div>
+          <div slot="option">$0.50$</div>
+          <div slot="option">$0.15$</div>
+          <div slot="option">$0.65$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ দুটি ঘটনা $A$ এবং $B$ স্বাধীন (Independent) হলে নিচের কোন উক্তিটি সত্য?"
+          correct="2"
+          correct-msg="নিখুঁত! দুটি ঘটনা স্বাধীন (Independent) হওয়ার অর্থ হলো একটি ঘটা অপরটির সম্ভাবনা পরিবর্তন করে না, অর্থাৎ $P(A|B) = P(A)$। যার ফলশ্রুতিতে ক্ষেত্রফল গুণ হয়: $P(A \cap B) = P(A) \cdot P(B)$।"
+          wrong-msg="পারস্পরিক বর্জনীয় (Mutually exclusive) ও স্বাধীন (Independent) এক নয়। স্বাধীন হলে একটির তথ্য অপরটির ক্ষেত্রফল অনুপাত বদলায় না।"
+          reveal-msg="সঠিক উত্তর হলো $P(A|B) = P(A)$। মহাবিশ্ব $B$-তে সংকুচিত হলেও $A$-এর আপেক্ষিক অনুপাত অপরিবর্তিত থাকে।">
+          <div slot="option">$P(A \cap B) = 0$ (তাদের কোনো সাধারণ ক্ষেত্রফল নেই)</div>
+          <div slot="option">$P(A \cup B) = 1.0$ (তারা সম্পূর্ণ ক্ষেত্রফল জুড়ে থাকে)</div>
+          <div slot="option">$P(A|B) = P(A)$ (তথ্য মহাবিশ্ব বদলালেও ক্ষেত্রফলের হার একই থাকে)</div>
+          <div slot="option">$P(A) + P(B) = 1.0$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ মন্টি হল খেলায় আপনি ১ নম্বর দরজা বাছাই করার পর সঞ্চালক ৩ নম্বর দরজায় ছাগল দেখালেন। এখন ২ নম্বর দরজায় পরিবর্তন করলে গাড়ি পাওয়ার সম্ভাবনা কত?"
+          correct="2"
+          correct-msg="অসাধারণ! শুরুতেই আপনার ভুল বা ছাগল বাছাই করার সুযোগ ছিল $\frac{2}{3}$। মন্টি অন্য ছাগল দেখিয়ে দেওয়ায় বাকি দরজায় সেই পুরো $\frac{2}{3}$ সম্ভাবনা ঘনীভূত হয়!"
+          wrong-msg="৫০-৫০ মনে হওয়াটাই মন্টি হল ফ্যালাসি! মন্টির ছাগল উন্মোচন একটি নিয়ন্ত্রিত তথ্য যা অবশিষ্ট দরজার সম্ভাবনা বাড়িয়ে দেয়।"
+          reveal-msg="সঠিক উত্তর হলো ২/৩ (প্রায় ৬৬.৭%)। দরজা পরিবর্তন করলে জয়ের সম্ভাবনা ঠিক দ্বিগুণ হয়।">
+          <div slot="option">$\frac{1}{3}$ (৩৩.৩%)</div>
+          <div slot="option">$\frac{1}{2}$ (৫০%)</div>
+          <div slot="option">$\frac{2}{3}$ (৬৬.৭%)</div>
+          <div slot="option">$\frac{3}{4}$ (৭৫%)</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ইনক্লুশন-এক্সক্লুশন সূত্রে কেন যৌথ ক্ষেত্রফল $P(A \cap B)$ বিয়োগ করা হয়?"
+          correct="1"
+          correct-msg="একেবারে সঠিক! জ্যামিতিকভাবে দুটি কাগজ একে অপরের উপর থাকলে উপরিপাতিত অঞ্চলটি দুইবার গোনা হয়, তাই সঠিক মোট ক্ষেত্রফলের জন্য একবার বিয়োগ দিতে হয়।"
+          wrong-msg="ভেবে দেখুন: যখন আপনি $A$-এর অঞ্চল এবং $B$-এর অঞ্চল যোগ করলেন, মাঝখানের সাধারণ অংশে কী ঘটল?"
+          reveal-msg="সঠিক উত্তর: ওভারল্যাপ অংশটি দুইবার গণনা করা হয় বলে একবার বিয়োগ দিয়ে ভারসাম্য আনা হয়।">
+          <div slot="option">কারণ যৌথ অংশের সম্ভাবনা শূন্য হয়ে যায়</div>
+          <div slot="option">কারণ $P(A)$ ও $P(B)$ আলাদা যোগ করার সময় ওভারল্যাপ অংশটি দুইবার গণনা করা হয়</div>
+          <div slot="option">কারণ সম্ভাব্যতা সর্বদা ১-এর কম হতে হয়</div>
+          <div slot="option">কারণ ঘটনা দুটি পরস্পর বর্জনীয়</div>
+        </b1b-quiz>
+
+        <b1b-callout type="blue" icon="📝" title="প্ল্যাটফর্ম সম্পর্কে">
+          <p>৩ব্লু১ব্রাউন বাংলা প্ল্যাটফর্ম · মূল পাঠ ভাবনা: Grant Sanderson (3Blue1Brown)। অফলাইন গাণিতিক প্রতীক: KaTeX v0.16.11 · একক শেল ডেটা ইঞ্জিনিয়ারিং: STEM টিম।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/probability/lesson_01/experiments/3b1b_prob_01_full_dubbed.mp4"
+    yt-id="HZGCoVF3YvM"
+    title="সম্ভাব্যতা আসলে কী? — অনিশ্চয়তার জ্যামিতি ও প্যারাডক্স — অধ্যায় ১"
+    subtitle="সম্ভাব্যতা হলো স্থান ও ক্ষেত্রফলের অনুপাত। কন্ডিশনিং বা শর্তারোপের অর্থ হলো মহাবিশ্বকে ক্রপ করে ছোট করা, যার ফলে মন্টি হল ও মেডিকেল টেস্টের মতো আপাত জটিল ধাঁধাগুলো চোখের সামনে স্বতঃসিদ্ধ ছবির মতো স্পষ্ট হয়ে ওঠে।"
+    playlist-title="📋 প্লেলিস্ট — সম্ভাব্যতার মূলভাব">
+    <div slot="playlist">
+      <a class="playlist-item active" href="lesson_01.html">
+        <div class="playlist-num">১</div>
+        <div class="playlist-item-info">
+          <div class="playlist-item-title">সম্ভাব্যতা আসলে কী? — অনিশ্চয়তার জ্যামিতি ও প্যারাডক্স</div>
+          <div class="playlist-item-meta">অধ্যায় ১ · চলমান পাঠ</div>
+        </div>
+      </a>
+      <a class="playlist-item" href="lesson_02.html">
+        <div class="playlist-num">২</div>
+        <div class="playlist-item-info">
+          <div class="playlist-item-title">বেজের সূত্র এবং মেডিকেল টেস্ট প্যারাডক্স</div>
+          <div class="playlist-item-meta">অধ্যায় ২ · পরবর্তী পাঠ</div>
+        </div>
+      </a>
+    </div>
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url=""
+  prev-title="শুরু"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_02.html"
+  next-title="০২. বেজের সূত্র এবং মেডিকেল টেস্ট প্যারাডক্স"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ INTERACTIVE AREA-PROBABILITY CANVAS SCRIPT ═══════════ -->
+<script>
+(function () {
+  function init() {
+    if (window.__probAreaLabReady) return;
+    const canvas = document.getElementById('probCanvas');
+    if (!canvas) return;
+    window.__probAreaLabReady = true;
+
+    const ctx = canvas.getContext('2d');
+    let W = 600, H = 380;
+    const sPA = document.getElementById('sliderPA');
+    const sPB = document.getElementById('sliderPB');
+    const sPAB = document.getElementById('sliderPAB');
+    const vPA = document.getElementById('valPA');
+    const vPB = document.getElementById('valPB');
+    const vPAB = document.getElementById('valPAB');
+    const statAgB = document.getElementById('statP_AgivenB');
+    const statBgA = document.getElementById('statP_BgivenA');
+    const statAub = document.getElementById('statP_AunionB');
+    if (!ctx || !sPA || !sPB || !sPAB) return;
+
+    function resize() {
+      const container = canvas.parentElement;
+      W = container && container.clientWidth ? container.clientWidth : 600;
+      const full = !!canvas.closest('.b1b-fs-active, .fullscreen');
+      H = full ? Math.max(window.innerHeight - 220, 420)
+               : Math.min(Math.max(W * 0.52, 340), 420);
+      canvas.width = W;
+      canvas.height = H;
+      draw();
+    }
+
+    function clampOverlap() {
+      const pA = parseFloat(sPA.value), pB = parseFloat(sPB.value);
+      const maxOverlap = Math.min(pA, pB);
+      const minOverlap = Math.max(0, pA + pB - 1.0);
+      sPAB.max = maxOverlap.toFixed(2);
+      sPAB.min = minOverlap.toFixed(2);
+      if (parseFloat(sPAB.value) > maxOverlap) sPAB.value = maxOverlap;
+      if (parseFloat(sPAB.value) < minOverlap) sPAB.value = minOverlap;
+    }
+
+    const bn = (n) => String(n).replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[+d]);
+
+    function update() {
+      clampOverlap();
+      const pA = parseFloat(sPA.value), pB = parseFloat(sPB.value), pAB = parseFloat(sPAB.value);
+      vPA && (vPA.textContent = bn(pA.toFixed(2)));
+      vPB && (vPB.textContent = bn(pB.toFixed(2)));
+      vPAB && (vPAB.textContent = bn(pAB.toFixed(2)));
+      statAgB && (statAgB.textContent = bn((pB > 0 ? pAB / pB : 0).toFixed(2)));
+      statBgA && (statBgA.textContent = bn((pA > 0 ? pAB / pA : 0).toFixed(2)));
+      statAub && (statAub.textContent = bn((pA + pB - pAB).toFixed(2)));
+      draw();
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      const pad = 36, boxW = W - pad * 2, boxH = H - pad * 2;
+      const boxX = pad, boxY = pad;
+
+      ctx.save();
+      ctx.fillStyle = '#10131b';
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      if (ctx.roundRect) ctx.roundRect(boxX, boxY, boxW, boxH, 10); else ctx.rect(boxX, boxY, boxW, boxH);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+      ctx.font = '14px sans-serif';
+      ctx.fillText('নমুনা ক্ষেত্র Ω (ক্ষেত্রফল = ১.০)', boxX + 16, boxY + 24);
+
+      const pA = parseFloat(sPA.value), pB = parseFloat(sPB.value), pAB = parseFloat(sPAB.value);
+      const maxR = Math.min(boxW, boxH) * 0.42;
+      const rA = Math.sqrt(pA) * maxR, rB = Math.sqrt(pB) * maxR;
+      const fraction = Math.min(1, pAB / Math.max(0.001, Math.min(pA, pB)));
+      const dist = (rA + rB) * (1 - fraction * 0.65);
+      const cy = boxY + boxH / 2, cx = boxX + boxW / 2;
+      const cAx = cx - dist / 2, cBx = cx + dist / 2;
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(116, 192, 227, 0.35)';
+      ctx.strokeStyle = '#74C0E3';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath(); ctx.arc(cAx, cy, rA, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(246, 173, 85, 0.35)';
+      ctx.strokeStyle = '#f6ad55';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath(); ctx.arc(cBx, cy, rB, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.beginPath(); ctx.arc(cAx, cy, rA, 0, Math.PI * 2); ctx.clip();
+      ctx.beginPath(); ctx.arc(cBx, cy, rB, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(72, 187, 120, 0.55)'; ctx.fill();
+      ctx.strokeStyle = '#48bb78'; ctx.lineWidth = 2; ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.textAlign = 'center';
+      ctx.font = 'bold 16px sans-serif';
+      ctx.fillStyle = '#74C0E3'; ctx.fillText('A', cAx - rA * 0.4, cy + 5);
+      ctx.fillStyle = '#f6ad55'; ctx.fillText('B', cBx + rB * 0.4, cy + 5);
+      if (pAB > 0.03) {
+        ctx.fillStyle = '#ffffff'; ctx.font = 'bold 12px sans-serif';
+        ctx.fillText('A ∩ B', (cAx + cBx) / 2, cy + 4);
+      }
+      ctx.restore();
+      ctx.restore();
+    }
+
+    [sPA, sPB, sPAB].forEach(s => s.addEventListener('input', update));
+    window.addEventListener('resize', resize, { passive: true });
+    resize();
+    update();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>

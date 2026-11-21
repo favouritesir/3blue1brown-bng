@@ -1,0 +1,22 @@
+{
+  "source_type": "youtube_channel",
+  "source_category": "youtube_channels",
+  "source_label": "wow_english",
+  "channel_name": "WOW ENGLISH",
+  "content_type": "video_dubbing",
+  "genre": "kids_education",
+  "content_slug": "steve_and_maggie_school_stories_senses",
+  "video_id": "WL8qVKfw0Dk",
+  "title": "Fun Short School Stories for Children with Steve and Maggie | Learn the Senses  | English for Kids",
+  "characters": [
+    "Steve",
+    "Maggie"
+  ],
+  "relative_path": "departments/media_production/youtube_channels/wow_english/kids_education/steve_and_maggie_school_stories_senses",
+  "subfolders": [
+    "scripts",
+    "stems_audio",
+    "output_rendered",
+    "raw_sources"
+  ]
+}

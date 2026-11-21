@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="কেন বৃত্তের ক্ষেত্রফলের পরিবর্তনের হার অবিকল তার পরিধি? বলয় আনরোলিং কৌশল, ৩ডি গোলকের আয়তন ও পৃষ্ঠতলের ক্ষেত্রফলের সংযোগ এবং উচ্চতর মাত্রার হাইপারগোলক পর্যন্ত ক্যালকুলাসের অপরূপ জ্যামিতিক ঐক্য।"/>
+<title>বৃত্তের ক্ষেত্রফল ও অন্তরজের জ্যামিতিক প্রমাণ | Area and the derivative of a circle | লকডাউন ম্যাথ | ৩ব্লু১ব্রাউন বাংলা</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/lockdown_math/lesson_07/manifest.js?v=3"></script>
+
+<!-- ═══════════ SCRIPTS — strict L01 load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (LAST: parses the final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="লকডাউন ম্যাথ"
+  course-url="../../index.html#lockdown-math"
+  home-url="../../index.html"
+  chapter-num="০৭"
+  chapter-total="১০"
+  prev-url="lesson_06.html"
+  prev-title="মৌলিক সংখ্যা ও মডুলার অ্যারিথমেটিক"
+  next-url="lesson_08.html"
+  next-title="ব্যাসেল সমস্যা ও পাই স্কয়ার বাই ৬ এর সমাধান"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="লকডাউন ম্যাথ"
+  course-url="../../index.html#lockdown-math"
+  chapter-label="অধ্যায় ০৭ · লকডাউন ম্যাথ ও বিশেষ জ্যামিতি"
+  title="বৃত্তের ক্ষেত্রফল ও অন্তরজের জ্যামিতিক প্রমাণ | Area and the derivative of a circle"
+  desc="সূত্র মুখস্থ না করে জ্যামিতিক চোখে দেখা: ব্যাসার্ধ সামান্য একটু বাড়ালে ক্ষেত্রফল কেন ঠিক পরিধি বরাবর নতুন পাতলা বলয় গড়ে তোলে?"
+  video-src="../../media_vault/lockdown_math/lesson_07/experiments/3b1b_lockdown_07_full_dubbed.mp4"
+  yt-id="GNcFjFmqEc8"
+  date="লকডাউন সেশন ৭ · ২০২০"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner
+      title="শিক্ষক অডিও বিবরণ ও লাইভ কারাওকে সহকারী"
+      desc="দরদী শিক্ষকের কণ্ঠে প্রতিটি অনুচ্ছেদ, গাণিতিক সূত্র ও চিত্র বিবরণ শুনুন — সাথে রিয়েলটাইম হাইলাইটার ও কন্ট্রোল।"
+      cta="🎙️ শিক্ষকের কণ্ঠে শুনুন">
+    </b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"    time-bn="০০:০০">ভূমিকা ও ধাঁধা: ক্ষেত্রফলের ডেরিভেটিভ কেন পরিধি?</b1b-bookmark>
+      <b1b-bookmark time="43"  time-bn="০০:৪৩">বৃত্তকে বলয়ে কাটা ও সোজা করে ত্রিভুজ তৈরি</b1b-bookmark>
+      <b1b-bookmark time="87" time-bn="০১:২৭">ডেরিভেটিভের দৃষ্টিতে ক্ষুদ্র বৃদ্ধি dA = 2πr dr</b1b-bookmark>
+      <b1b-bookmark time="144" time-bn="০২:২৪">ত্রিমাত্রিক গোলক: আয়তন বনাম পৃষ্ঠতলের ক্ষেত্রফল</b1b-bookmark>
+      <b1b-bookmark time="144" time-bn="০২:২৪">বর্গ ও ঘনকের সাথে তুলনা: একমুখী বনাম প্রতিসম বৃদ্ধি</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-01-circle-unwrapping">১. বৃত্তকে বলয়ে কাটা ও ত্রিভুজে উন্মোচন</a>
+      <a href="#sec-02-derivative-connection">২. পরিবর্তনের হার ও ডেরিভেটিভের জ্যামিতিক অর্থ</a>
+      <a href="#sec-03-sphere-volume-surface">৩. ত্রিমাত্রিক গোলক: আয়তন ও পৃষ্ঠতলের ক্ষেত্রফল</a>
+      <a href="#sec-04-square-contrast">৪. বর্গের সাথে তুলনা: কেন x² এর ডেরিভেটিভ 2x?</a>
+      <a href="#sec-interactive-lab">ইন্টারেক্টিভ ল্যাব: বলয় উন্মোচন ও ডেরিভেটিভ সিমুলেটর</a>
+      <a href="#sec-quizzes">ধারণা যাচাই: ৩টি কুইজ</a>
+      <a href="#sec-formulas-glossary">সূত্র সংগ্রহ ও পরিভাষা</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ NARRATED 1 — manifest cue: h2 (1 cue) ═══ -->
+      <b1b-section id="sec-01-circle-unwrapping" title="১. বৃত্তকে বলয়ে কাটা ও ত্রিভুজে উন্মোচন">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="সমকেন্দ্রিক বলয় সোজা হয়ে ত্রিভুজ গঠন" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <text x="320" y="26" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">সমকেন্দ্রিক বলয় → সোজা ফালি → সমকোণী ত্রিভুজ</text>
+              <circle cx="150" cy="168" r="24" fill="none" stroke="#74c0e3" stroke-width="1.3" opacity="0.65"/>
+              <circle cx="150" cy="168" r="48" fill="none" stroke="#38bdf8" stroke-width="1.3" opacity="0.75"/>
+              <circle cx="150" cy="168" r="72" fill="none" stroke="#f6ad55" stroke-width="1.3" opacity="0.8"/>
+              <circle cx="150" cy="168" r="96" fill="none" stroke="#10b981" stroke-width="1.3" opacity="0.85"/>
+              <circle cx="150" cy="168" r="116" fill="none" stroke="#e2e8f0" stroke-width="1.6" opacity="0.9"/>
+              <circle cx="150" cy="168" r="4" fill="#e2e8f0"/>
+              <text x="150" y="302" fill="#8b949e" font-size="13" text-anchor="middle" font-family="sans-serif">বৃত্ত: ব্যাসার্ধ r</text>
+              <path d="M 288 168 L 352 168" stroke="#f6ad55" stroke-width="2.5"/>
+              <polygon points="352,168 340,161 340,175" fill="#f6ad55"/>
+              <polygon points="392,278 602,278 602,52" fill="rgba(116,192,227,0.16)" stroke="#74c0e3" stroke-width="2.5"/>
+              <line x1="426" y1="240" x2="602" y2="240" stroke="rgba(246,173,85,0.55)" stroke-width="1.4"/>
+              <line x1="463" y1="200" x2="602" y2="200" stroke="rgba(246,173,85,0.55)" stroke-width="1.4"/>
+              <line x1="500" y1="160" x2="602" y2="160" stroke="rgba(246,173,85,0.55)" stroke-width="1.4"/>
+              <line x1="536" y1="120" x2="602" y2="120" stroke="rgba(246,173,85,0.55)" stroke-width="1.4"/>
+              <line x1="573" y1="80"  x2="602" y2="80"  stroke="rgba(246,173,85,0.55)" stroke-width="1.4"/>
+              <text x="497" y="300" fill="#38bdf8" font-size="14" text-anchor="middle" font-family="sans-serif">ভূমি = r</text>
+              <text x="626" y="165" fill="#10b981" font-size="14" text-anchor="middle" font-family="sans-serif" transform="rotate(-90 626 165)">উচ্চতা = 2πr</text>
+              <text x="320" y="316" fill="#8b949e" font-size="12" text-anchor="middle" font-family="sans-serif">ক্ষেত্রফল = ½ · r · 2πr = πr²</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_07/experiments/3b1b_lockdown_07_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্রে বৃত্তটিকে পেঁয়াজের মতো অসংখ্য পাতলা সমকেন্দ্রিক বলয়ে ভাগ করা হয়েছে এবং প্রতিটি বলয় কেটে সোজা করে পাশাপাশি সাজানো হয়েছে। কেন্দ্র থেকে দূরে সরে যাওয়ার সাথে সাথে বলয়গুলোর দৈর্ঘ্য বাড়তে বাড়তে শেষ পর্যন্ত ভূমি $r$ ও উচ্চতা $2\pi r$ বিশিষ্ট একটি সমকোণী ত্রিভুজ গঠন করে। লক্ষ্য করুন, প্রতিটি সরু ফালির ক্ষেত্রফল তার পরিধি ও $dr$ এর গুণফল, ফলে সবগুলো যোগ করলে ত্রিভুজের ক্ষেত্রফল $\frac{1}{2} \cdot r \cdot 2\pi r = \pi r^2$ দাঁড়ায়। এই রূপান্তরটি দেখে বৃত্তের ক্ষেত্রফলের সূত্রটি যান্ত্রিক মুখস্থ ছাড়াই নিজের চোখে যাচাই করা যায়।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <!-- STUDY NOTES (non-narrated; manifest has only the h2 cue) -->
+      <b1b-section id="sec-01-study" title="বলয় আনরোলিং ও ত্রিভুজ ক্ষেত্রফল — পড়ার নোট" data-no-narration="true">
+        <b1b-quote author="গ্রান্ট স্যান্ডারসন (Grant Sanderson), Lockdown Math, Lesson 7">গণিতের প্রকৃত জাদু সূত্রে নয়, বরং সেই দৃষ্টিতে যা প্রকাশ করে কেন একটি গোলকের আয়তনের ডেরিভেটিভ অবিকল তার পৃষ্ঠতলের ক্ষেত্রফল হতে বাধ্য।</b1b-quote>
+
+        <p>ছোটবেলা থেকে আমরা শিখেছি বৃত্তের ক্ষেত্রফল হলো $\pi r^2$। কিন্তু এই সূত্রটি কোথা থেকে এলো? ক্যালকুলাসের অন্যতম চমৎকার দৃশ্যমান অন্তর্দৃষ্টি হলো বৃত্তটিকে একটি পেঁয়াজের মতো অসংখ্য পাতলা সমকেন্দ্রিক বলয়ে (concentric rings বা annuli) বিভক্ত করা।</p>
+
+        <p>ধরা যাক প্রতিটি বলয়ের বেধ $dr$। যদি আমরা একটি বলয়কে কাঁচি দিয়ে কেটে সোজা করি, তবে সেটি প্রায় একটি নিখুঁত আয়তক্ষেত্রে রূপ নেয়। সেই আয়তক্ষেত্রের প্রস্থ হলো ক্ষুদ্র বেধ $dr$, এবং তার দৈর্ঘ্য হলো ওই বলয়ের পরিধি $2\pi x$, যেখানে $x$ হলো কেন্দ্র থেকে বলয়টির দূরত্ব।</p>
+
+        <p>এখন যদি আমরা কেন্দ্র থেকে শুরু করে সবচেয়ে বাইরের বলয় পর্যন্ত সবগুলো উন্মোচিত ফালিকে পাশাপাশি একটির পর একটি সাজাই, তবে তাদের উচ্চতা বাড়তে বাড়তে একটি সমকোণী ত্রিভুজ গড়ে তোলে। এই ত্রিভুজের ভূমি হলো মূল বৃত্তের ব্যাসার্ধ $r$, এবং সর্বোচ্চ উচ্চতা হলো সর্ববহিঃস্থ পরিধি $2\pi r$।</p>
+
+        <b1b-formula math="\text{Area} = \int_0^r 2\pi x \, dx = \frac{1}{2} \times \text{ভূমি} \times \text{উচ্চতা} = \frac{1}{2} \cdot r \cdot 2\pi r = \pi r^2"></b1b-formula>
+        <p>অসীম সংখ্যক ক্ষুদ্র বলয়ের ক্ষেত্রফল যোগ করার অর্থ হলো এই ত্রিভুজের মোট ক্ষেত্রফল পরিমাপ করা, যা স্বাভাবিকভাবেই $\pi r^2$ প্রদান করে।</p>
+
+        <b1b-callout type="gold" icon="💡" title="গভীর অন্তর্দৃষ্টি">
+          <p>এখানে কোনো যান্ত্রিক সমাকলন নিয়ম মুখস্থ করতে হয় না; বৃত্তের জ্যামিতিক উপাদানগুলোকে পুনর্বিন্যস্ত করলেই সূত্রের সত্যতা নিজের চোখে ধরা দেয়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 2 — manifest cue: h2 (1 cue) ═══ -->
+      <b1b-section id="sec-02-derivative-connection" title="২. পরিবর্তনের হার ও ডেরিভেটিভের জ্যামিতিক অর্থ">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ব্যাসার্ধ dr বৃদ্ধিতে বাইরের পাতলা বলয়" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <text x="320" y="26" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">ব্যাসার্ধ r → r + dr: যুক্ত হওয়া পাতলা বলয়</text>
+              <circle cx="210" cy="170" r="120" fill="rgba(246,173,85,0.35)" stroke="#f6ad55" stroke-width="2"/>
+              <circle cx="210" cy="170" r="107" fill="#0f141c" stroke="#74c0e3" stroke-width="2.5"/>
+              <circle cx="210" cy="170" r="4" fill="#e2e8f0"/>
+              <line x1="210" y1="170" x2="317" y2="170" stroke="#74c0e3" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <text x="258" y="162" fill="#74c0e3" font-size="15" font-family="sans-serif" text-anchor="middle">r</text>
+              <line x1="318" y1="118" x2="333" y2="118" stroke="#f6ad55" stroke-width="3"/>
+              <text x="348" y="123" fill="#f6ad55" font-size="13" font-family="sans-serif">dr</text>
+              <text x="470" y="110" fill="#e2e8f0" font-size="15" font-family="sans-serif">নতুন যুক্ত অংশ = বহিঃস্থ বলয়</text>
+              <text x="470" y="146" fill="#f6ad55" font-size="20" font-weight="bold" font-family="sans-serif">dA ≈ 2πr · dr</text>
+              <text x="470" y="180" fill="#10b981" font-size="16" font-family="sans-serif">dA/dr = 2πr = পরিধি</text>
+              <text x="470" y="218" fill="#8b949e" font-size="13" font-family="sans-serif">দ্বিতীয় ক্রমের পদ π(dr)² সীমায় শূন্য</text>
+              <text x="210" y="306" fill="#8b949e" font-size="12" font-family="sans-serif" text-anchor="middle">চিত্র ২: ক্ষুদ্র বৃদ্ধি কেবল সীমানা বরাবর</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_07/experiments/3b1b_lockdown_07_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্রের ভেতরের বৃত্তটির ব্যাসার্ধ $r$, আর তার ঠিক বাইরে কমলা রঙের পাতলা বলয়টি $dr$ বৃদ্ধির ফলে নতুন যুক্ত হওয়া অংশ। এই বলয়ের পরিধি প্রায় $2\pi r$ এবং বেধ $dr$, তাই এর ক্ষেত্রফল $dA \approx 2\pi r \, dr$। ব্যাসার্ধ সামান্য বাড়ালে ক্ষেত্রফল কেবল সীমানা বরাবরই যোগ হয় — এটি দেখেই $\frac{dA}{dr} = 2\pi r$ সম্পর্কটির জ্যামিতিক অর্থ পরিষ্কার হয়।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <b1b-section id="sec-02-study" title="ডেরিভেটিভ কেন পরিধি — পড়ার নোট" data-no-narration="true">
+        <p>এখন ক্যালকুলাসের দ্বিতীয় মৌলিক প্রশ্নটিতে আসা যাক: যদি আমরা বৃত্তের ব্যাসার্ধ $r$-কে সামান্য একটু বাড়িয়ে $r + dr$ করি, তবে এর ক্ষেত্রফল ঠিক কতটুকু বৃদ্ধি পাবে?</p>
+
+        <p>চিত্রের দিকে তাকালে দেখা যায়, নতুন যুক্ত হওয়া ক্ষেত্রফলটি হলো বৃত্তের পরিধি বরাবর সদ্য তৈরি হওয়া একটি সর্ববহিরস্থ পাতলা প্রলেপ বা বলয়। যেহেতু বলয়টির পরিধি প্রায় $2\pi r$ এবং বেধ $dr$, তাই ক্ষেত্রফলের বৃদ্ধি হলো $dA \approx 2\pi r \, dr$।</p>
+
+        <p>উভয় পক্ষকে $dr$ দিয়ে ভাগ করে সীমাস্থ মান নিলে আমরা পাই $\frac{dA}{dr} = 2\pi r$। বীজগণিতীয়ভাবে $\pi r^2$-কে $r$ সাপেক্ষে অন্তরীকরণ করলে যে $2\pi r$ পাওয়া যায়, এটি কেবল একটি অ্যালগরিদমিক কাকতাল নয়—এটি সরাসরি প্রকাশ করে যে বৃত্তের নতুন বৃদ্ধি ঘটে কেবল তার সীমানা বা পরিধি জুড়েই!</p>
+
+        <b1b-formula math="\frac{d}{dr}(\pi r^2) = 2\pi r = \text{পরিধি (Circumference)}"></b1b-formula>
+        <p>ব্যাসার্ধ বাড়ার সাথে সাথে ক্ষেত্রফল বৃদ্ধির হার হলো প্রতি একক ব্যাসার্ধে কতটুকু সীমানা জুড়ে নতুন স্থান উন্মুক্ত হচ্ছে।</p>
+
+        <b1b-callout type="red" icon="⚠️" title="সতর্কতা ও সূক্ষ্মতা">
+          <p>প্রকৃত বৃদ্ধিতে একটি দ্বিতীয় ক্রমের পদ $\pi (dr)^2$ থাকে, কিন্তু $dr \to 0$ হলে তা প্রথম ক্রমের পদ $2\pi r \, dr$-এর তুলনায় এতই ক্ষুদ্র যে সীমায় এর প্রভাব পুরোপুরি শূন্য হয়ে যায়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 3 — manifest cue: h2 (1 cue) ═══ -->
+      <b1b-section id="sec-03-sphere-volume-surface" title="৩. ত্রিমাত্রিক গোলক: আয়তন ও পৃষ্ঠতলের ক্ষেত্রফল">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="গোলকের বাইরে dr বেধের পাতলা খোসা" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <text x="320" y="26" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">গোলক প্রসারিত হলে: আয়তনের ডেরিভেটিভ = পৃষ্ঠতল</text>
+              <defs>
+                <radialGradient id="lm07SphereGrad" cx="38%" cy="32%" r="72%">
+                  <stop offset="0%" stop-color="rgba(116,192,227,0.55)"/>
+                  <stop offset="100%" stop-color="rgba(20,40,70,0.85)"/>
+                </radialGradient>
+              </defs>
+              <circle cx="200" cy="170" r="104" fill="url(#lm07SphereGrad)" stroke="#74c0e3" stroke-width="2.5"/>
+              <circle cx="200" cy="170" r="116" fill="none" stroke="#f6ad55" stroke-width="9" stroke-dasharray="7 5" opacity="0.85"/>
+              <line x1="200" y1="170" x2="304" y2="170" stroke="#74c0e3" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <text x="250" y="162" fill="#74c0e3" font-size="15" font-family="sans-serif" text-anchor="middle">r</text>
+              <line x1="330" y1="118" x2="348" y2="118" stroke="#f6ad55" stroke-width="3"/>
+              <text x="362" y="123" fill="#f6ad55" font-size="13" font-family="sans-serif">dr</text>
+              <text x="452" y="108" fill="#e2e8f0" font-size="15" font-family="sans-serif">আয়তন V = 4/3 πr³</text>
+              <text x="452" y="144" fill="#f6ad55" font-size="18" font-weight="bold" font-family="sans-serif">dV = 4πr² · dr</text>
+              <text x="452" y="180" fill="#10b981" font-size="16" font-family="sans-serif">dV/dr = 4πr² = পৃষ্ঠতল</text>
+              <text x="452" y="216" fill="#8b949e" font-size="13" font-family="sans-serif">যেকোনো n-মাত্রায় একই নিয়ম</text>
+              <text x="200" y="306" fill="#8b949e" font-size="12" font-family="sans-serif" text-anchor="middle">চিত্র ৩: পাতলা গোলকীয় খোসা</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_07/experiments/3b1b_lockdown_07_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্রে $r$ ব্যাসার্ধের গোলকটির চারপাশে $dr$ বেধের একটি পাতলা খোসা বা চামড়া দেখানো হয়েছে, যা ব্যাসার্ধ বাড়ানোর সময় যোগ হয়। এই খোসার ক্ষেত্রফল $4\pi r^2$ এবং বেধ $dr$, ফলে অতিরিক্ত আয়তন $dV = 4\pi r^2 \, dr$। তাই আয়তনের ডেরিভেটিভ $\frac{dV}{dr} = 4\pi r^2$ অবিকল গোলকের পৃষ্ঠতলের ক্ষেত্রফল — দ্বিমাত্রিক বৃত্তের ঠিক এই একই নীতি ত্রিমাত্রিক জগতেও প্রযোজ্য।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <b1b-section id="sec-03-study" title="গোলকের আয়তন ও পৃষ্ঠতল — পড়ার নোট" data-no-narration="true">
+        <p>এই নীতিটি কি ত্রিমাত্রিক জগতেও কাজ করে? আসুন একটি গোলকের ক্ষেত্রে পরীক্ষা করি। একটি $r$ ব্যাসার্ধের গোলকের আয়তনের সুপরিচিত সূত্র হলো $V = \frac{4}{3}\pi r^3$।</p>
+
+        <p>যদি আমরা এই সূত্রটিকে ব্যাসার্ধ $r$ সাপেক্ষে অন্তরীকরণ করি, তবে আমরা পাই $\frac{dV}{dr} = \frac{4}{3}\pi \cdot 3r^2 = 4\pi r^2$। আর এটি অবিকল গোলকের পৃষ্ঠতলের ক্ষেত্রফল (Surface Area)!</p>
+
+        <p>জ্যামিতিকভাবে এটি পুরোপুরি যৌক্তিক: যখন একটি বেলুন বা গোলকের ব্যাসার্ধ সামান্য $dr$ প্রসারিত হয়, তখন যুক্ত হওয়া অতিরিক্ত আয়তন হলো গোলকের পুরো পৃষ্ঠ জুড়ে আবৃত একটি পাতলা খোলস বা চামড়া। চামড়াটির ক্ষেত্রফল $4\pi r^2$ এবং বেধ $dr$, ফলে অতিরিক্ত আয়তন $dV = 4\pi r^2 \, dr$।</p>
+
+        <b1b-formula math="\frac{dV}{dr} = \frac{d}{dr}\left(\frac{4}{3}\pi r^3\right) = 4\pi r^2 = A_{\text{পৃষ্ঠতল}}"></b1b-formula>
+        <p>যেহেতু গোলকটি কেন্দ্র থেকে চতুর্দিকে সমানভাবে প্রসারিত হয়, তাই আয়তন বৃদ্ধির হার হুবহু তার পৃষ্ঠতলের ক্ষেত্রফল।</p>
+
+        <b1b-callout type="gold" icon="🌟" title="সার্বজনীন জ্যামিতিক নিয়ম">
+          <p>যেকোনো n-মাত্রিক সুষম গোলকের (hypersphere) ক্ষেত্রে, ব্যাসার্ধ সাপেক্ষে n-মাত্রিক আয়তনের ডেরিভেটিভ সর্বদাই তার (n-1)-মাত্রিক পৃষ্ঠতলের পরিমাপ প্রদান করবে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 4 — manifest cue: h2 (1 cue) ═══ -->
+      <b1b-section id="sec-04-square-contrast" title="৪. বর্গের সাথে তুলনা: কেন x² এর ডেরিভেটিভ 2x?">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="বর্গের এক কোণা বনাম কেন্দ্র থেকে প্রতিসম বৃদ্ধি" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <text x="320" y="26" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">বর্গ: এক কোণা থেকে বৃদ্ধি বনাম কেন্দ্র থেকে প্রতিসম বৃদ্ধি</text>
+              <rect x="62" y="86" width="112" height="112" fill="rgba(116,192,227,0.3)" stroke="#74c0e3" stroke-width="2.5"/>
+              <rect x="174" y="86" width="32" height="112" fill="rgba(246,173,85,0.35)" stroke="#f6ad55" stroke-width="2"/>
+              <rect x="62" y="198" width="112" height="32" fill="rgba(246,173,85,0.35)" stroke="#f6ad55" stroke-width="2"/>
+              <rect x="174" y="198" width="32" height="32" fill="rgba(16,185,129,0.28)" stroke="#10b981" stroke-width="2" stroke-dasharray="4 3"/>
+              <text x="118" y="150" fill="#74c0e3" font-size="24" font-weight="bold" text-anchor="middle" font-family="sans-serif">x²</text>
+              <text x="190" y="150" fill="#f6ad55" font-size="12" text-anchor="middle" font-family="sans-serif">x·dx</text>
+              <text x="118" y="218" fill="#f6ad55" font-size="12" text-anchor="middle" font-family="sans-serif">x·dx</text>
+              <text x="160" y="258" fill="#8b949e" font-size="13" text-anchor="middle" font-family="sans-serif">এক কোণা: b = x, dA = 2x·dx</text>
+              <rect x="372" y="66" width="140" height="140" fill="rgba(116,192,227,0.3)" stroke="#74c0e3" stroke-width="2.5"/>
+              <rect x="358" y="52" width="168" height="168" fill="none" stroke="#f6ad55" stroke-width="9" stroke-dasharray="7 5"/>
+              <text x="442" y="145" fill="#74c0e3" font-size="22" font-weight="bold" text-anchor="middle" font-family="sans-serif">4r²</text>
+              <text x="442" y="248" fill="#8b949e" font-size="13" text-anchor="middle" font-family="sans-serif">কেন্দ্র থেকে: A = 4r², dA/dr = 8r</text>
+              <text x="320" y="302" fill="#10b981" font-size="14" text-anchor="middle" font-family="sans-serif">চলকের পছন্দই ঠিক করে ডেরিভেটিভ কী বলবে</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_07/experiments/3b1b_lockdown_07_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্রের বাঁয়ে বর্গটিকে এক কোণা স্থির রেখে ডানে ও নিচে দুটি ফালি যোগ করা হয়েছে, ফলে বৃদ্ধি $2x\,dx$ এবং ডেরিভেটিভ $2x$। ডানে দেখানো হয়েছে কেন্দ্র থেকে চতুর্দিকে প্রতিসম প্রসারণ, যেখানে বাহুর দৈর্ঘ্য $2r$ এবং চার পাশ মিলে পরিসীমা $8r$। একই আকৃতির জন্য ভিন্ন চলক বেছে নিলে ডেরিভেটিভ ভিন্ন অর্থ প্রকাশ করে — এটিই বর্গ ও বৃত্তের তুলনার মূল শিক্ষণীয় বিষয়।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <b1b-section id="sec-04-study" title="বর্গের সাথে তুলনা — পড়ার নোট" data-no-narration="true">
+        <p>অনেকেই প্রশ্ন করেন: যদি বৃত্তের ক্ষেত্রফলের ডেরিভেটিভ পরিধি হয়, তবে $x$ বাহুবিশিষ্ট একটি বর্গের ক্ষেত্রফল $A = x^2$ হলে এর ডেরিভেটিভ কেন পরিসীমা $4x$ না হয়ে $2x$ হয়?</p>
+
+        <p>এই আপাত বিরোধটির কারণ লুকিয়ে আছে আমরা কীভাবে পরিবর্তন পরিমাপ করছি তার মধ্যে। যখন আমরা $x$ বাহুর বর্গের এক কোণা স্থির রেখে দৈর্ঘ্য ও প্রস্থ বরাবর বৃদ্ধি করি, তখন নতুন ক্ষেত্রফল যোগ হয় মাত্র দুটি সংলগ্ন বাহু বরাবর—প্রতিটি ফালির ক্ষেত্রফল $x \cdot dx$। ফলে মোট বৃদ্ধি $2x \, dx$ এবং ডেরিভেটিভ $\frac{dA}{dx} = 2x$।</p>
+
+        <p>কিন্তু যদি আমরা বৃত্তের মতো বর্গকেও কেন্দ্র থেকে চতুর্দিকে প্রতিসমভাবে প্রসারিত করতাম (যেখানে কেন্দ্র থেকে বাহুর দূরত্ব $r$ এবং বাহুর দৈর্ঘ্য $2r$), তবে বর্গের ক্ষেত্রফল হতো $A = (2r)^2 = 4r^2$। এবার ব্যাসার্ধ $r$ সাপেক্ষে ডেরিভেটিভ নিলে আমরা পাই $\frac{dA}{dr} = 8r$—যা অবিকল ওই বর্গের সমগ্র পরিসীমা ($4 \times 2r = 8r$)!</p>
+
+        <b1b-formula math="A(r) = (2r)^2 = 4r^2 \implies \frac{dA}{dr} = 8r = \text{বর্গের পরিসীমা}"></b1b-formula>
+        <p>কেন্দ্র থেকে সমস্ত বাহু সমান দূরত্বে থাকলে ব্যাসার্ধ সাপেক্ষে বৃদ্ধির হার সর্বদাই সম্পূর্ণ সীমানার সমান হয়।</p>
+
+        <b1b-callout type="blue" icon="🔑" title="চলক নির্বাচনের গুরুত্ব">
+          <p>ডেরিভেটিভ কী প্রকাশ করবে তা নির্ভর করে আমরা কোন চলকের সাপেক্ষে পরিমাপ করছি—একপাশের বাহু নাকি কেন্দ্র থেকে প্রতিসম ব্যাসার্ধ।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ INTERACTIVE LAB (non-narrated) — inside b1b-fullscreen ═══ -->
+      <b1b-section id="sec-interactive-lab" title="ইন্টারেক্টিভ ল্যাব: বলয় উন্মোচন ও ডেরিভেটিভ সিমুলেটর" data-no-narration="true" data-widget-id="circle-derivative-visualizer">
+        <p class="viz-intro">স্লাইডার ঘুরিয়ে ব্যাসার্ধ $r$, বলয়ের সংখ্যা ও উন্মোচন অগ্রগতি পরিবর্তন করুন। দেখুন কীভাবে সমকেন্দ্রিক বলয়গুলো খুলে গিয়ে নিখুঁত ত্রিভুজে রূপ নেয়, ক্ষুদ্র বৃদ্ধির স্তর $dA$ পরিধির সমান হয় এবং গোলকের খোসার আয়তন $4\pi r^2 \, dr$ প্রকাশ পায়।</p>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <div id="lmCircleLab">
+            <style>
+              #lmCircleLab .lm-lab-tabs { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:14px; align-items:center; padding-right:140px; }
+              #lmCircleLab .lm-tab-btn { padding:8px 16px; border-radius:8px; border:1px solid var(--border); background:var(--bg-alt); color:var(--text-muted); font-weight:600; font-size:.9rem; cursor:pointer; font-family:inherit; }
+              #lmCircleLab .lm-tab-btn.active { background:var(--theme,#74c0e3); color:#0b0f19; border-color:var(--theme,#74c0e3); }
+              #lmCircleLab .lm-reset { margin-left:auto; }
+              #lmCircleLab canvas { display:block; width:100%; height:440px; background:#0b0c10; border-radius:8px; border:1px solid var(--border); }
+              #lmCircleLab .lm-sliders { display:flex; flex-direction:column; gap:14px; margin-top:16px; background:var(--bg-alt); padding:16px 20px; border-radius:8px; border:1px solid var(--border); }
+              #lmCircleLab .lm-row { display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+              #lmCircleLab .lm-row label { font-weight:600; min-width:210px; }
+              #lmCircleLab .lm-row input[type=range] { flex:1; min-width:180px; accent-color:#f6ad55; }
+              #lmCircleLab .lm-badge { min-width:64px; font-family:monospace; font-weight:bold; padding:3px 8px; background:var(--bg-card); border:1px solid var(--border); border-radius:4px; text-align:center; color:#f6ad55; }
+              #lmCircleLab .lm-metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin-top:16px; }
+              #lmCircleLab .lm-metric { background:var(--bg-alt); border:1px solid var(--border); border-left:3px solid #10b981; border-radius:8px; padding:12px 14px; }
+              #lmCircleLab .lm-metric span { display:block; font-size:.78rem; color:var(--text-muted); margin-bottom:4px; }
+              #lmCircleLab .lm-metric strong { font-size:1.1rem; color:#10b981; font-family:monospace; }
+              #lmCircleLab .lm-formula { margin-top:16px; padding:14px; background:var(--bg-alt); border:1px solid var(--border); border-radius:8px; text-align:center; font-size:1.05rem; }
+            </style>
+            <div class="lm-lab-tabs">
+              <button type="button" class="lm-tab-btn active" id="lmModeUnroll" data-mode-id="mode-circle-unroll">🔄 বলয় আনরোলিং ও ত্রিভুজ</button>
+              <button type="button" class="lm-tab-btn" id="lmModeDerivative" data-mode-id="mode-derivative-slice">📏 সীমানা বৃদ্ধি ও dA/dr</button>
+              <button type="button" class="lm-tab-btn" id="lmModeSphere" data-mode-id="mode-3d-sphere">🌐 গোলক ও খোসার আয়তন</button>
+              <button type="button" class="lm-tab-btn lm-reset" id="lmCircleReset">↺ রিসেট</button>
+            </div>
+            <canvas id="lmCircleCanvas" aria-label="বৃত্ত বলয় উন্মোচন ও ডেরিভেটিভ সিমুলেশন"></canvas>
+            <div class="lm-sliders">
+              <div class="lm-row">
+                <label for="lmSliderRadius">ব্যাসার্ধ (r) =</label>
+                <input type="range" id="lmSliderRadius" min="1" max="5" step="0.1" value="2.5"/>
+                <span class="lm-badge" id="lmValRadius">২.৫</span>
+              </div>
+              <div class="lm-row">
+                <label for="lmSliderRings">বলয়ের সংখ্যা (n) =</label>
+                <input type="range" id="lmSliderRings" min="4" max="64" step="1" value="16"/>
+                <span class="lm-badge" id="lmValRings">১৬</span>
+              </div>
+              <div class="lm-row">
+                <label for="lmSliderUnroll">উন্মোচন অগ্রগতি =</label>
+                <input type="range" id="lmSliderUnroll" min="0" max="100" step="1" value="0"/>
+                <span class="lm-badge" id="lmValUnroll">০%</span>
+              </div>
+              <div class="lm-row">
+                <label for="lmSliderDr">বেধ (dr) =</label>
+                <input type="range" id="lmSliderDr" min="0.01" max="0.5" step="0.01" value="0.1"/>
+                <span class="lm-badge" id="lmValDr">০.১০</span>
+              </div>
+            </div>
+            <div class="lm-metrics">
+              <div class="lm-metric" data-metric-id="area_exact"><span>নিখুঁত ক্ষেত্রফল (πr²)</span><strong id="lmMArea">—</strong></div>
+              <div class="lm-metric" data-metric-id="circumference"><span>পরিধি / ডেরিভেটিভ (2πr)</span><strong id="lmMCirc">—</strong></div>
+              <div class="lm-metric" data-metric-id="triangle_area"><span>উন্মোচিত ত্রিভুজ ক্ষেত্রফল</span><strong id="lmMTri">—</strong></div>
+            </div>
+            <div class="lm-formula" id="lmCircleFormula"></div>
+          </div>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ QUIZZES (non-narrated) — exact JSON options + rich feedback ═══ -->
+      <b1b-section id="sec-quizzes" title="ধারণা যাচাই — ৩টি কুইজ" data-no-narration="true">
+        <b1b-quiz
+          question="❓ বৃত্তকে অসীম সংখ্যক পাতলা সমকেন্দ্রিক বলয়ে কেটে সোজা করে সাজালে যে সমকোণী ত্রিভুজ তৈরি হয়, তার ভূমি ও উচ্চতা যথাক্রমে কী?"
+          correct="0"
+          correct-msg="চমৎকার! কেন্দ্র থেকে পরিধি পর্যন্ত বলয়গুলোর দৈর্ঘ্য ০ থেকে বাড়তে বাড়তে $2\pi r$ পর্যন্ত পৌঁছায়। এই দৈর্ঘ্যগুলোকে উল্লম্বভাবে সাজালে ভূমি বরাবর ব্যাসার্ধ $r$ প্রসারিত হয় এবং উচ্চতা হয় $2\pi r$। তাই ক্ষেত্রফল $\frac{1}{2} \times r \times 2\pi r = \pi r^2$।"
+          wrong-msg="আবার ভাবো: বলয়গুলোর দৈর্ঘ্য কেন্দ্রে ০ থেকে শুরু করে সবচেয়ে বাইরের বলয়ে $2\pi r$ হয়। সোজা করলে ভূমি হয় ব্যাসার্ধ $r$ আর উচ্চতা হয় সর্ববহিঃস্থ পরিধি $2\pi r$ — ক্ষেত্রফল বা ব্যাস নয়।"
+          reveal-msg="সঠিক উত্তর: ভূমি = r, উচ্চতা = 2πr। কেন্দ্র থেকে পরিধি পর্যন্ত বলয়গুলোর দৈর্ঘ্য $0$ থেকে বাড়তে বাড়তে $2\pi r$ পর্যন্ত পৌঁছায়। এই দৈর্ঘ্যগুলোকে উল্লম্বভাবে সাজালে ভূমি বরাবর ব্যাসার্ধ $r$ প্রসারিত হয় এবং উচ্চতা হয় $2\pi r$। $\text{Area} = \frac{1}{2} \times \text{ভূমি} \times \text{উচ্চতা} = \frac{1}{2} \cdot r \cdot 2\pi r = \pi r^2$।">
+          <div slot="option">$\text{ভূমি} = r, \; \text{উচ্চতা} = 2\pi r$<br/><small>ভূমি হলো ব্যাসার্ধ $r$ এবং উচ্চতা হলো সবচেয়ে বাইরের বলয়ের পরিধি $2\pi r$</small></div>
+          <div slot="option">$\text{ভূমি} = 2\pi r, \; \text{উচ্চতা} = \pi r^2$<br/><small>ভূমি হলো পরিধি $2\pi r$ এবং উচ্চতা হলো ক্ষেত্রফল $\pi r^2$</small></div>
+          <div slot="option">$\text{ভূমি} = 2r, \; \text{উচ্চতা} = r$<br/><small>ভূমি হলো ব্যাস $2r$ এবং উচ্চতা হলো ব্যাসার্ধ $r$</small></div>
+          <div slot="option">$\text{ভূমি} = \pi r, \; \text{উচ্চতা} = \pi r$<br/><small>ভূমি হলো $\pi r$ এবং উচ্চতা হলো $\pi r$</small></div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ $\frac{d}{dr}(\pi r^2) = 2\pi r$ সমীকরণটির গভীর জ্যামিতিক তাৎপর্য কী?"
+          correct="1"
+          correct-msg="একেবারে নিখুঁত! ব্যাসার্ধ $dr$ বৃদ্ধির ফলে যুক্ত হওয়া নতুন অংশটি হলো পরিধি বরাবর একটি পাতলা বলয়। এর ক্ষেত্রফল $2\pi r \cdot dr$, যাকে $dr$ দিয়ে ভাগ করলে ঠিক পরিধি $2\pi r$ ফেরত পাওয়া যায়। সীমায় $\lim_{dr \to 0} \frac{2\pi r \, dr + \pi (dr)^2}{dr} = 2\pi r$।"
+          wrong-msg="মনে রেখো: ডেরিভেটিভ মানে ক্ষুদ্র বৃদ্ধির সীমাস্থ অনুপাত। ব্যাসার্ধ $dr$ বাড়ালে নতুন ক্ষেত্রফল $2\pi r \, dr$ যোগ হয় কেবল বাইরের পরিধি বরাবর — ক্ষেত্রফল ধ্রুবক নয়, আর পাইয়ের অমূলদতা এখানে বিষয় না।"
+          reveal-msg="সঠিক উত্তর: ব্যাসার্ধ বাড়ানোর ফলে নতুন ক্ষেত্রফল কেবল বাইরের পরিধি বরাবরই পাতলা স্তরে যোগ হয়, অর্থাৎ $dA = 2\pi r \, dr$। ব্যাসার্ধ $dr$ বৃদ্ধির ফলে যুক্ত হওয়া নতুন অংশটি হলো পরিধি বরাবর একটি পাতলা বলয়; এর ক্ষেত্রফল $2\pi r \cdot dr$, যাকে $dr$ দিয়ে ভাগ করলে ঠিক পরিধি $2\pi r$ ফেরত পাওয়া যায়। $\lim_{dr \to 0} \frac{A(r+dr) - A(r)}{dr} = \lim_{dr \to 0} \frac{2\pi r \, dr + \pi (dr)^2}{dr} = 2\pi r$।">
+          <div slot="option">$\frac{dA}{dr} = \text{ধ্রুবক}$<br/><small>বৃত্তের ক্ষেত্রফল সর্বদা একটি ধ্রুবক সংখ্যা</small></div>
+          <div slot="option">$dA = 2\pi r \, dr$<br/><small>ব্যাসার্ধ বাড়ানোর ফলে নতুন ক্ষেত্রফল কেবল বাইরের পরিধি বরাবরই পাতলা স্তরে যোগ হয়</small></div>
+          <div slot="option">$2\pi r > \pi r^2$<br/><small>বৃত্তের পরিধি সর্বদা তার ক্ষেত্রফলের চেয়ে বড় হয়</small></div>
+          <div slot="option">$\pi \approx 3.14159$<br/><small>পাই একটি অমূলদ সংখ্যা হওয়ায় এই সম্পর্কটি কেবল আসন্নায়ন</small></div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ যদি একটি বর্গের কেন্দ্র থেকে বাহুর লম্ব দূরত্ব $r$ হয় (অর্থাৎ বাহুর দৈর্ঘ্য $2r$), তবে $r$ সাপেক্ষে এর ক্ষেত্রফলের ডেরিভেটিভ কত এবং তা কী নির্দেশ করে?"
+          correct="2"
+          correct-msg="অসাধারণ! যেহেতু বাহুর দৈর্ঘ্য $2r$, তাই বর্গের পরিসীমা হলো $4 \times 2r = 8r$। কেন্দ্র থেকে চতুর্দিকে প্রতিসমভাবে বৃদ্ধি করলে ক্ষেত্রফলের বৃদ্ধির হার অবিকল তার সমগ্র সীমানা বা পরিসীমা প্রদান করে: $A(r) = (2r)^2 = 4r^2 \implies \frac{dA}{dr} = 8r = 4 \times (2r)$।"
+          wrong-msg="ধাপে ধাপে হিসাব করো: বাহুর দৈর্ঘ্য $2r$, ফলে ক্ষেত্রফল $A = (2r)^2 = 4r^2$। এর ডেরিভেটিভ $\frac{dA}{dr} = 8r$, আর এটি $4 \times 2r$ অর্থাৎ বর্গের সমগ্র পরিসীমা। অর্ধেক বাহু বা শূন্য নয়।"
+          reveal-msg="সঠিক উত্তর: ডেরিভেটিভ $8r$, যা বর্গের সম্পূর্ণ পরিসীমা নির্দেশ করে। যেহেতু বাহুর দৈর্ঘ্য $2r$, তাই বর্গের পরিসীমা হলো $4 \times 2r = 8r$। কেন্দ্র থেকে চতুর্দিকে প্রতিসমভাবে বৃদ্ধি করলে ক্ষেত্রফলের বৃদ্ধির হার অবিকল তার সমগ্র সীমানা বা পরিসীমা প্রদান করে। $A(r) = (2r)^2 = 4r^2 \implies \frac{dA}{dr} = 8r = 4 \times (2r)$।">
+          <div slot="option">$\frac{dA}{dr} = 2r$<br/><small>ডেরিভেটিভ $2r$, যা অর্ধেক বাহু নির্দেশ করে</small></div>
+          <div slot="option">$\frac{dA}{dr} = 4r$<br/><small>ডেরিভেটিভ $4r$, যা দুটি বাহুর যোগফল নির্দেশ করে</small></div>
+          <div slot="option">$\frac{dA}{dr} = 8r = \text{পরিসীমা}$<br/><small>ডেরিভেটিভ $8r$, যা বর্গের সম্পূর্ণ পরিসীমা নির্দেশ করে</small></div>
+          <div slot="option">$\frac{dA}{dr} = 0$<br/><small>ডেরিভেটিভ শূন্য, কারণ বর্গ প্রতিসম নয়</small></div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ FORMULA REFERENCE & GLOSSARY (non-narrated) ═══ -->
+      <b1b-section id="sec-formulas-glossary" title="সূত্র সংগ্রহ ও পরিভাষা" data-no-narration="true">
+        <b1b-callout type="blue" icon="🧮" title="ছয়টি গুরুত্বপূর্ণ সূত্র">
+          <p>বৃত্তের ক্ষেত্রফল: $A = \pi r^2$</p>
+          <p>বৃত্তের পরিধি (অন্তরজ): $\frac{dA}{dr} = 2\pi r$</p>
+          <p>বলয় ক্ষেত্রফলের সমাকলন: $\int_0^r 2\pi x \, dx = \pi r^2$</p>
+          <p>গোলকের আয়তন: $V = \frac{4}{3}\pi r^3$</p>
+          <p>গোলকের পৃষ্ঠতল (অন্তরজ): $\frac{dV}{dr} = 4\pi r^2$</p>
+          <p>প্রতিসম বর্গের পরিসীমা: $\frac{d}{dr}(4r^2) = 8r$</p>
+        </b1b-callout>
+
+        <b1b-formula math="A = \pi r^2 \quad\Longrightarrow\quad \frac{dA}{dr} = 2\pi r \qquad;\qquad V = \frac{4}{3}\pi r^3 \quad\Longrightarrow\quad \frac{dV}{dr} = 4\pi r^2"></b1b-formula>
+
+        <b1b-callout type="gold" icon="📖" title="পরিভাষা (Glossary)">
+          <p><strong>Concentric Rings (Annulus) — সমকেন্দ্রিক বলয়:</strong> একই কেন্দ্রবিশিষ্ট বিভিন্ন ব্যাসার্ধের বৃত্তাকার ফালি বা রিং।</p>
+          <p><strong>Derivative — অন্তরজ বা পরিবর্তনের হার:</strong> একটি রাশির অতি ক্ষুদ্র পরিবর্তনের ফলে অন্য রাশির পরিবর্তনের সীমাস্থ অনুপাত।</p>
+          <p><strong>Hypersphere — হাইপারগোলক:</strong> তিন মাত্রার চেয়ে বেশি উচ্চতর মাত্রার গোলক।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/lockdown_math/lesson_07/experiments/3b1b_lockdown_07_full_dubbed.mp4"
+    yt-id="GNcFjFmqEc8"
+    title="বৃত্তের ক্ষেত্রফল ও অন্তরজের জ্যামিতিক প্রমাণ — অধ্যায় ০৭"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — লকডাউন ম্যাথ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_06.html"
+  prev-title="মৌলিক সংখ্যা ও মডুলার অ্যারিথমেটিক"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_08.html"
+  next-title="ব্যাসেল সমস্যা ও পাই স্কয়ার বাই ৬ এর সমাধান"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ PAGE-LOCAL INTERACTIVE LAB CONTROLLER ═══════════
+     Scoped to #lmCircleLab; does not touch the shared component library. -->
+<script>
+(function () {
+  'use strict';
+  function initLab() {
+    const lab = document.getElementById('lmCircleLab');
+    if (!lab || lab.dataset.inited) return;
+    lab.dataset.inited = '1';
+
+    const $ = (id) => document.getElementById(id);
+    const canvas = $('lmCircleCanvas');
+    const sRadius = $('lmSliderRadius');
+    const sRings = $('lmSliderRings');
+    const sUnroll = $('lmSliderUnroll');
+    const sDr = $('lmSliderDr');
+    if (!canvas || !sRadius || !sRings || !sUnroll || !sDr) return;
+    const ctx = canvas.getContext('2d');
+    const toBn = (n) => String(n).replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[d]);
+    let mode = 'unroll';
+
+    function readState() {
+      const r = parseFloat(sRadius.value) || 2.5;
+      const n = parseInt(sRings.value, 10) || 16;
+      const p = parseInt(sUnroll.value, 10) || 0;
+      const dr = parseFloat(sDr.value) || 0.1;
+      return { r, n, p, dr };
+    }
+
+    function math(scope) {
+      if (scope && typeof window.renderMathInElement === 'function') {
+        window.renderMathInElement(scope, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false
+        });
+      }
+    }
+
+    function updatePanel(s) {
+      $('lmValRadius').textContent = toBn(s.r.toFixed(1));
+      $('lmValRings').textContent = toBn(s.n);
+      $('lmValUnroll').textContent = toBn(s.p) + '%';
+      $('lmValDr').textContent = toBn(s.dr.toFixed(2));
+      const area = Math.PI * s.r * s.r;
+      const circ = 2 * Math.PI * s.r;
+      const tri = 0.5 * s.r * circ;
+      $('lmMArea').textContent = area.toFixed(3);
+      $('lmMCirc').textContent = circ.toFixed(3);
+      $('lmMTri').textContent = tri.toFixed(3);
+      const box = $('lmCircleFormula');
+      if (mode === 'unroll') {
+        box.innerHTML = '<strong>বলয় আনরোলিং:</strong> $\\text{Area} = \\int_0^{' + s.r.toFixed(1) + '} 2\\pi x\\,dx = \\tfrac12 \\cdot ' +
+          s.r.toFixed(1) + ' \\cdot 2\\pi(' + s.r.toFixed(1) + ') = ' + area.toFixed(2) +
+          '$ &nbsp; | &nbsp; $\\pi r^2 = ' + area.toFixed(2) + '$';
+      } else if (mode === 'derivative') {
+        box.innerHTML = '<strong>সীমানা বৃদ্ধি:</strong> $dA \\approx 2\\pi r\\,dr = 2\\pi(' + s.r.toFixed(1) + ')(' +
+          s.dr.toFixed(2) + ') = ' + (circ * s.dr).toFixed(3) +
+          '$ &nbsp; | &nbsp; $\\frac{dA}{dr} = 2\\pi r = ' + circ.toFixed(3) + '$';
+      } else {
+        box.innerHTML = '<strong>গোলকের খোসা:</strong> $dV \\approx 4\\pi r^2\\,dr = ' + (4 * Math.PI * s.r * s.r * s.dr).toFixed(3) +
+          '$ &nbsp; | &nbsp; $\\frac{dV}{dr} = 4\\pi r^2 = ' + (4 * Math.PI * s.r * s.r).toFixed(3) +
+          '\\, = A_{\\text{পৃষ্ঠতল}}$';
+      }
+      math(box);
+    }
+
+    function draw(s) {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      const W = Math.max(320, rect.width || 640);
+      const H = 440;
+      canvas.width = W * dpr;
+      canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#0a0b10' : '#f8f9fa';
+      ctx.fillRect(0, 0, W, H);
+      ctx.font = '14px sans-serif';
+      const fg = dark ? '#e2e8f0' : '#1e293b';
+
+      if (mode === 'unroll') {
+        const cx = W > 560 ? W * 0.26 : W * 0.3;
+        const cy = 210;
+        const R = Math.min(150, H * 0.34);
+        const p = s.p / 100;
+        const colors = ['#74c0e3', '#38bdf8', '#f6ad55', '#10b981', '#e2e8f0'];
+        for (let i = s.n - 1; i >= 0; i--) {
+          const rr = R * ((i + 1) / s.n);
+          ctx.strokeStyle = colors[i % colors.length];
+          ctx.globalAlpha = 0.85 * (1 - p * 0.7);
+          ctx.lineWidth = 1.6;
+          ctx.beginPath(); ctx.arc(cx, cy, rr, 0, Math.PI * 2); ctx.stroke();
+        }
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = fg; ctx.textAlign = 'center';
+        ctx.font = 'bold 14px sans-serif';
+        ctx.fillText('r = ' + s.r.toFixed(1), cx, cy - 4);
+        ctx.font = '13px sans-serif';
+        ctx.fillStyle = dark ? '#8b949e' : '#475569';
+        ctx.fillText(s.n + ' টি বলয়', cx, cy + 18);
+        ctx.fillText('উন্মোচন ' + s.p + '%', cx, 372);
+
+        const bx = W > 560 ? W * 0.52 : W * 0.5;
+        const baseW = Math.min(210, W * 0.34);
+        const triH = Math.min(300, H * 0.68);
+        ctx.strokeStyle = '#74c0e3'; ctx.lineWidth = 2.5;
+        ctx.beginPath(); ctx.moveTo(bx, 370); ctx.lineTo(bx + baseW, 370); ctx.lineTo(bx + baseW, 370 - triH); ctx.closePath(); ctx.stroke();
+        const stripH = triH / s.n;
+        for (let i = 0; i < s.n; i++) {
+          const xLeft = bx + baseW * (i / s.n);
+          const y = 370 - (i + 1) * stripH;
+          ctx.strokeStyle = colors[i % colors.length];
+          ctx.globalAlpha = 0.35 + 0.65 * p;
+          ctx.lineWidth = 1.4;
+          ctx.beginPath(); ctx.moveTo(xLeft, y); ctx.lineTo(bx + baseW, y); ctx.stroke();
+        }
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = '#38bdf8'; ctx.font = 'bold 13px sans-serif'; ctx.textAlign = 'center';
+        ctx.fillText('ভূমি = r', bx + baseW / 2, 392);
+        ctx.fillStyle = '#10b981';
+        ctx.save(); ctx.translate(bx + baseW + 26, 370 - triH / 2); ctx.rotate(-Math.PI / 2);
+        ctx.fillText('উচ্চতা = 2πr', 0, 0); ctx.restore();
+      } else if (mode === 'derivative') {
+        const cx = W / 2;
+        const cy = 220;
+        const R = Math.min(150, H * 0.33);
+        const thick = Math.max(8, R * (s.dr / 2.5));
+        ctx.fillStyle = 'rgba(246,173,85,0.38)'; ctx.strokeStyle = '#f6ad55'; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.arc(cx, cy, R + thick, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+        ctx.fillStyle = dark ? '#0a0b10' : '#f8f9fa'; ctx.strokeStyle = '#74c0e3'; ctx.lineWidth = 2.5;
+        ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+        ctx.fillStyle = fg; ctx.textAlign = 'center'; ctx.font = 'bold 16px sans-serif';
+        ctx.fillText('r = ' + s.r.toFixed(1), cx, cy);
+        ctx.font = '13px sans-serif'; ctx.fillStyle = '#f6ad55';
+        ctx.fillText('dr = ' + s.dr.toFixed(2), cx, cy - R - thick - 14);
+        ctx.textAlign = 'left'; ctx.fillStyle = '#f6ad55'; ctx.font = 'bold 16px sans-serif';
+        ctx.fillText('dA ≈ 2πr · dr', 24, 40);
+        ctx.fillStyle = '#10b981';
+        ctx.fillText('dA/dr = 2πr = ' + (2 * Math.PI * s.r).toFixed(3), 24, 66);
+      } else {
+        const cx = W / 2;
+        const cy = 220;
+        const R = Math.min(140, H * 0.32);
+        const thick = Math.max(8, R * (s.dr / 2.5));
+        const g = ctx.createRadialGradient(cx - R * 0.3, cy - R * 0.3, R * 0.1, cx, cy, R);
+        g.addColorStop(0, 'rgba(116,192,227,0.6)'); g.addColorStop(1, 'rgba(20,40,70,0.9)');
+        ctx.fillStyle = g; ctx.strokeStyle = '#74c0e3'; ctx.lineWidth = 2.5;
+        ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+        ctx.strokeStyle = '#f6ad55'; ctx.lineWidth = thick; ctx.setLineDash([7, 5]);
+        ctx.beginPath(); ctx.arc(cx, cy, R + thick / 2, 0, Math.PI * 2); ctx.stroke(); ctx.setLineDash([]);
+        for (let k = 0; k < 12; k++) {
+          const a = k * Math.PI / 6;
+          ctx.strokeStyle = 'rgba(246,173,85,0.8)'; ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.moveTo(cx + Math.cos(a) * (R + thick + 4), cy + Math.sin(a) * (R + thick + 4));
+          ctx.lineTo(cx + Math.cos(a) * (R + thick + 20), cy + Math.sin(a) * (R + thick + 20));
+          ctx.stroke();
+        }
+        ctx.fillStyle = fg; ctx.textAlign = 'center'; ctx.font = 'bold 15px sans-serif';
+        ctx.fillText('r = ' + s.r.toFixed(1), cx, cy);
+        ctx.textAlign = 'left'; ctx.fillStyle = '#f6ad55'; ctx.font = 'bold 16px sans-serif';
+        ctx.fillText('dV ≈ 4πr² · dr = ' + (4 * Math.PI * s.r * s.r * s.dr).toFixed(3), 24, 40);
+        ctx.fillStyle = '#10b981';
+        ctx.fillText('dV/dr = 4πr² = ' + (4 * Math.PI * s.r * s.r).toFixed(3), 24, 66);
+      }
+    }
+
+    function render() {
+      const s = readState();
+      updatePanel(s);
+      draw(s);
+    }
+
+    [sRadius, sRings, sUnroll, sDr].forEach((el) => el.addEventListener('input', render));
+    const tabs = [
+      [$('lmModeUnroll'), 'unroll'],
+      [$('lmModeDerivative'), 'derivative'],
+      [$('lmModeSphere'), 'sphere']
+    ];
+    tabs.forEach(([btn, m]) => {
+      btn.addEventListener('click', () => {
+        mode = m;
+        tabs.forEach(([b]) => b.classList.toggle('active', b === btn));
+        render();
+      });
+    });
+    $('lmCircleReset').addEventListener('click', () => {
+      sRadius.value = '2.5'; sRings.value = '16'; sUnroll.value = '0'; sDr.value = '0.1';
+      mode = 'unroll';
+      tabs.forEach(([b], i) => b.classList.toggle('active', i === 0));
+      render();
+    });
+    window.addEventListener('resize', render);
+    render();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLab);
+  } else {
+    initLab();
+  }
+})();
+</script>
+
+</body>
+</html>

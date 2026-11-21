@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ফুরিয়ার ট্রান্সফর্ম আসলে কী? — এক দৃশ্যমান পরিচয় | But what is the Fourier Transform? A visual introduction</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/analysis/lesson_03/manifest.js?v=8"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="বিশ্লেষণ"
+  course-url="../../index.html#analysis"
+  home-url="../../index.html"
+  chapter-num="০৩"
+  chapter-total="১০"
+  prev-url="lesson_02.html"
+  prev-title="পূর্ববর্তী অধ্যায়: ছবির লগারিদম কীভাবে (এবং কেন) নেবেন"
+  next-url="lesson_04.html"
+  next-title="পরবর্তী অধ্যায়: সাধারণ অনিশ্চয়তা নীতি — কোয়ান্টামের বাইরেও"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="বিশ্লেষণ"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৩ · বিশ্লেষণ"
+  title="ফুরিয়ার ট্রান্সফর্ম আসলে কী? — এক দৃশ্যমান পরিচয় | But what is the Fourier Transform? A visual introduction"
+  desc="সংকেতকে বৃত্তে মেপে তার ভেতরের ফ্রিকোয়েন্সিগুলো কীভাবে বের করা যায়"
+  video-src="../../media_vault/analysis/lesson_03/experiments/3b1b_analysis_03_full_dubbed.mp4"
+  yt-id="spUNpyF58BY"
+  date="২৬ জানুয়ারি, ২০১৮"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://www.3blue1brown.com/lessons/fourier-transforms"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">শব্দ সংকেত যোগ করা</b1b-bookmark>
+      <b1b-bookmark time="81" time-bn="০১:২১">সংকেতকে বৃত্তে মোড়া</b1b-bookmark>
+      <b1b-bookmark time="169" time-bn="০২:৪৯">ভরকেন্দ্র ও «প্রায়-ফুরিয়ার» রূপান্তর</b1b-bookmark>
+      <b1b-bookmark time="251" time-bn="০৪:১১">সূত্র আর শব্দ সম্পাদনায় প্রয়োগ</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-ft-sound">শব্দ সংকেত যোগ করা</a>
+      <a href="#sec-ft-winding">সংকেতকে বৃত্তে মোড়া</a>
+      <a href="#sec-ft-almost">ভরকেন্দ্র ও «প্রায়-ফুরিয়ার» রূপান্তর</a>
+      <a href="#sec-ft-formula">সূত্র আর শব্দ সম্পাদনায় প্রয়োগ</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ শব্দ সংকেত যোগ করা ═══ -->
+      <b1b-section id="sec-ft-sound" title="শব্দ সংকেত যোগ করা">
+        <b1b-quote author="Kalid Azad">স্মুদি দিলে এটি খুঁজে বের করে তার রেসিপি।</b1b-quote>
+        <p>একটি বিশুদ্ধ স্বর, যেমন ৪৪০ হার্জের A স্বর, সময়ের সাথে বাতাসের চাপের এক সুন্দর সাইন তরঙ্গ। আরেকটি স্বর, ধরুন ২৯৪ হার্জের D, তার চেয়ে কিছু ধীর। দুটো একসাথে বাজালে যে শব্দ শোনা যায় তার গ্রাফ আর সাদাসিধে সাইন তরঙ্গ থাকে না — কিন্তু প্রতি মুহূর্তে তার মান আসলে ওই দুই তরঙ্গের মানের যোগ।</p>
+        <b1b-figure src="../../assets/figures/an_03/fig_03_01.svg" alt="দুটি বিশুদ্ধ স্বর তরঙ্গ যোগ হয়ে জটিল সংকেত তৈরি করে" caption="দুটি বিশুদ্ধ স্বর তরঙ্গ যোগ হয়ে জটিল সংকেত তৈরি করে"></b1b-figure>
+        <p>মাইক্রোফোন শুধু চাপের শেষ যোগফলই দেখে; কোন স্বর কতটা অবদান রেখেছে তা দেখে না। আমাদের মূল প্রশ্ন হলো — এই মিশ্র সংকেত থেকে কীভাবে আবার আলাদা আলাদা ফ্রিকোয়েন্সি বের করা যায়?</p>
+        <b1b-callout type="gold" icon="📌" title="সমস্যাটি কত কঠিন?">
+          <p>রং মিশ্রিত করার পর আবার আলাদা করা যেমন কঠিন, তেমনি কয়েকটি সাইন তরঙ্গ এক করা হলে সেগুলো আলাদা করা কঠিন মনে হয়। কিন্তু ফুরিয়ার ট্রান্সফর্ম নামক এই «মেশিন» ঠিক সেটিই করে।</p>
+        </b1b-callout>
+
+        <!-- Quiz quiz-ft-period -->
+        <b1b-quiz
+          question="❓ ৩ হার্জ ও ৫ হার্জের দুটি তরঙ্গ যোগ করলে সবচেয়ে বড় শিখর কতক্ষণ পর পর আসে?"
+          correct="1"
+          correct-msg="ঠিক! ৩ ও ৫-এর লঘিষ্ঠ সাধারণ গুণিতক ১৫, তাই প্রতি ১৫ সেকেন্ডে দুই তরঙ্গের শিখর একসাথে মিলে সবচেয়ে বড় শিখর তৈরি করে।"
+          wrong-msg="দুই তরের period হলো ১/৩ ও ১/৫ সেকেন্ড। শিখর মিলতে সময় লাগে তাদের লঘিষ্ঠ সাধারণ গুণিতক — ১৫ সেকেন্ড।"
+          reveal-msg="সঠিক উত্তর: প্রতি ১৫ সেকেন্ডে।">
+          <div slot="option">প্রতি ৬ সেকেন্ডে</div>
+          <div slot="option">প্রতি ১৫ সেকেন্ডে</div>
+          <div slot="option">প্রতি ২৪ সেকেন্ডে</div>
+          <div slot="option">প্রতি ৩৩ সেকেন্ডে</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ সংকেতকে বৃত্তে মোড়া ═══ -->
+      <b1b-section id="sec-ft-winding" title="সংকেতকে বৃত্তে মোড়া">
+        <p>ধরুন আমাদের কাছে ৩ হার্জের একটিমাত্র সাইন তরঙ্গ আছে। একে সরলরেখায় রেখে দেখলে তার «৩» সংখ্যাটি চোখে পড়ে হুমুনিAh হয় — কিন্তু অন্য তরঙ্গের সাথে যোগ হয়ে গেলে সেই সহজ পদ্ধতি কাজ করবে না। তাই আমরা অন্য একটি কৌশল ব্যবহার করব।</p>
+        <p>সময়ের সাথে সাথে একটি ছোট ভেক্টরকে বৃত্তে ঘুরাতে থাকব; তার দৈর্ঘ্য হবে ওই মুহূর্তের সংকেত-মান। এভাবে পুরো গ্রাফটিকে বৃত্তের চারপাশে পেঁচিয়ে দেওয়া হয়। ঘূর্ণনের গতিকে আমরা বলি «winding frequency» বা মোড়ার ফ্রিকোয়েন্সি।</p>
+        <b1b-figure src="../../assets/figures/an_03/fig_03_02.svg" alt="সময়-সংকেতকে ঘূর্ণায়মান ভেক্টর দিয়ে বৃত্তে পেঁচানো" caption="সময়-সংকেতকে ঘূর্ণায়মান ভেক্টর দিয়ে বৃত্তে পেঁচানো"></b1b-figure>
+        <p>মজার বিষয় হলো — যখন মোড়ার ফ্রিকোয়েন্সি ঠিক সংকেতের ফ্রিকোয়েন্সির সমান হয় (এখানে ৩), তখন আঁকা বক্রটি ডানদিকে অসমতল হয়: ভেক্টরটি ডানে থাকা অবস্থায় সবসময় লম্বা। অন্য ফ্রিকোয়েন্সিতে এই অসমতলতা থাকে না।</p>
+        <b1b-callout type="gold" icon="📌" title="কেন ৬টি পাপড়ি?">
+          <p>সংকেতের ফ্রিকোয়েন্সি ৩ আর মোড়ার ফ্রিকোয়েন্সি ০.৫ — এই দুইয়ের যোগফল-ভিত্তিক সম্পর্ক থেকেই ৬টি পাপড়ি তৈরি হয়। মোড়া ধীর বা দ্রুত করলে পাপড়ির সংখ্যা বদলে যায়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ ভরকেন্দ্র ও «প্রায়-ফুরিয়ার» রূপান্তর ═══ -->
+      <b1b-section id="sec-ft-almost" title="ভরকেন্দ্র ও «প্রায়-ফুরিয়ার» রূপান্তর">
+        <p>এই পেঁচানো বক্রটিকে একটি তারের মতো ভাবুন। তার ওপর ভরকেন্দ্রের একটা বিন্দু আছে। মোড়ার ফ্রিকোয়েন্সি বদলালে এই ভরকেন্দ্রের $x$-স্থানাঙ্ক ওঠানামা করে — আর ঠিক যে ফ্রিকোয়েন্সিতে মূল সংকেত আছে, সেখানে সেটি সুন্দর একটা চূড়া তৈরি করে।</p>
+        <b1b-figure src="../../assets/figures/an_03/fig_03_03.svg" alt="মোড়ার ফ্রিকোয়েন্সির বিরুদ্ধে ভরকেন্দ্রের $x$-স্থানাঙ্ক — চূড়ায় মূল ফ্রিকোয়েন্সি" caption="মোড়ার ফ্রিকোয়েন্সির বিরুদ্ধে ভরকেন্দ্রের $x$-স্থানাঙ্ক — চূড়ায় মূল ফ্রিকোয়েন্সি"></b1b-figure>
+        <b1b-formula math="\hat g(f)\;\longleftrightarrow\;\text{center of mass of } g(t)e^{-2\pi i f t}"></b1b-formula>
+        <p>দুটি সংকেত যোগ করলে তাদের «প্রায়-ফুরিয়ার» চিত্রও যোগ হয়ে যায় — অর্থাৎ এই অপারেশন রৈখিক (linear)। আর সত্যি বলতে, মিশ্রণ থেকে উপাদান বের করার এই রৈখিকতাই আমাদের কাঙ্ক্ষিত বৈশিষ্ট্য।</p>
+        <b1b-callout type="gold" icon="📌" title="শূন্য ফ্রিকোয়েন্সির চূড়া">
+          <p>যদি সাইন তরঙ্গটি ০ থেকে ২-এর মাঝে ওঠানামা করে, তবে $f=0$-তে একটা বাড়তি চূড়া দেখা যায় — সেটি আসলে সংকেতের গড় মানকে নির্দেশ করে। সংকেতকে শূন্যের চারপাশে কেন্দ্রীভূত করলেই এই চূড়াও মিলিয়ে যায়।</p>
+        </b1b-callout>
+
+        <!-- Quiz quiz-ft-winding -->
+        <b1b-quiz
+          question="❓ ফুরিয়ার ট্রান্সফর্মের চূড়া কোথায় দেখা যায়?"
+          correct="0"
+          correct-msg="হ্যাঁ! মোড়ার ফ্রিকোয়েন্সি যখন সংকেতের কোনো উপাদানের ফ্রিকোয়েন্সির সাথে মেলে, তখন ভরকেন্দ্র সরে চূড়া তৈরি করে।"
+          wrong-msg="চূড়া সেই ফ্রিকোয়েন্সিতেই হয় যা মূল সংকেতে আসলেই উপস্থিত।"
+          reveal-msg="সঠিক উত্তর: যে ফ্রিকোয়েন্সিতে সংকেতের শক্তি বেশি, সেখানে।">
+          <div slot="option">যে ফ্রিকোয়েন্সিতে সংকেতের শক্তি বেশি, সেখানে</div>
+          <div slot="option">সবসময় $f=0$-তে</div>
+          <div slot="option">শুধু ঋণাত্মক ফ্রিকোয়েন্সিতে</div>
+          <div slot="option">সময়ের প্রতিটি বিন্দুতে</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ সূত্র আর শব্দ সম্পাদনায় প্রয়োগ ═══ -->
+      <b1b-section id="sec-ft-formula" title="সূত্র আর শব্দ সম্পাদনায় প্রয়োগ">
+        <p>২ডি ভেক্টরের বদলে জটিল সংখ্যা ব্যবহার করলে ঘূর্ণন লেখা হয় $e^{-2\pi i f t}$ — অয়লারের সূত্রের কারণে। সংকেত $g(t)$-কে এটি দিয়ে গুণ করাই হলো বৃত্তে মোড়া; তারপর সময়ের ওপর গড় নিলাম ভরকেন্দ্র। সেই গড়কে সময়ের দৈর্ঘ্য দ্বারা না ভাগ করলেই পাই আসল ফুরিয়ার ট্রান্সফর্ম।</p>
+        <b1b-formula math="\hat g(f)=\int_{-\infty}^{\infty} g(t)\,e^{-2\pi i f t}\,dt"></b1b-formula>
+        <p>ফলাফল একটি জটিল সংখ্যা: তার মান বলে ওই ফ্রিকোয়েন্সি কতটা শক্তিশালী, আর কোণ বলে সেই উপাদানের দশা (phase)। আমরা এখন পর্যন্ত শুধু বাস্তব অংশটিই প্লট করেছি; পূর্ণ চিত্রের জন্য কাল্পনিক অংশও রাখতে হয়।</p>
+        <b1b-figure src="../../assets/figures/an_03/fig_03_04.svg" alt="সময়-ডোমেইন সংকেত থেকে ফ্রিকোয়েন্সি-ডোমেইনে রূপান্তর" caption="সময়-ডোমেইন সংকেত থেকে ফ্রিকোয়েন্সি-ডোমেইনে রূপান্তর"></b1b-figure>
+        <b1b-callout type="gold" icon="📌" title="ব্যবহারিক একটি উদাহরণ">
+          <p>রেকর্ডিংয়ে কোথাও বিরক্তিকর উঁচু শব্দ আছে? ফুরিয়ার ট্রান্সফর্ম নিলে সেটি ফ্রিকোয়েন্সি-গ্রাফে ডানদিকে একটা সুস্পষ্ট চূড়া হয়ে দেখা দেয়। সেই চূড়াটি মুছে বিপরীত রূপান্তর করলেই শব্দটি থাকবে, বিরক্তিকর আওয়াজটি যাবে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/analysis/lesson_03/experiments/3b1b_analysis_03_full_dubbed.mp4"
+    yt-id="spUNpyF58BY"
+    title="ফুরিয়ার ট্রান্সফর্ম আসলে কী? — এক দৃশ্যমান পরিচয় — অধ্যায় ০৩"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — বিশ্লেষণ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_02.html"
+  prev-title="ছবির লগারিদম কীভাবে (এবং কেন) নেবেন"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_04.html"
+  next-title="সাধারণ অনিশ্চয়তা নীতি — কোয়ান্টামের বাইরেও"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

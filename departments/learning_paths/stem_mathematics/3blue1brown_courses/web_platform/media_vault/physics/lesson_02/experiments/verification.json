@@ -1,0 +1,411 @@
+{
+  "experiment": "clean_timesync_v2 + adaptive enrichment (physics full-length)",
+  "lesson": "lesson_02",
+  "video_id": "YdOXS_9_P4U",
+  "script_source": "audio_manifest:manifest.json",
+  "cue_count": 18,
+  "expected_cue_count": 18,
+  "failed_tts_cues": [],
+  "strategy": "absolute sample offset; atempo [0.82,2.2]; pad only; fixed 0.8s pause; no truncation",
+  "sfx": "NONE — clean speech only",
+  "voice": "bn-BD-PradeepNeural",
+  "max_tempo": 2.2,
+  "tempo_floor": 0.82,
+  "overrun_cues": 0,
+  "max_measured_drift_ms": 0.01,
+  "timeline_scale": 7.327194,
+  "fixed_inter_cue_pause_sec": 0.8,
+  "lead_in_sec": 2.5,
+  "tail_margin_sec": 3.0,
+  "video_duration_sec": 1712.913,
+  "master_audio_duration_sec": 1712.913,
+  "last_cue_end_sec": 1709.913,
+  "tail_silence_sec": 3.0,
+  "speech_ends_before_video_end": true,
+  "median_fill": 0.9998,
+  "max_internal_gap_s": 0.0355,
+  "fill_policy_target": "median_fill >= 0.72 and max_internal_gap_s <= 1.5",
+  "fill_policy_met": true,
+  "enrichments_applied": [
+    {
+      "id": 1,
+      "natural_before": 3.384,
+      "natural_after": 31.32,
+      "target_sec": 26.026,
+      "passes": 1
+    },
+    {
+      "id": 2,
+      "natural_before": 16.992,
+      "natural_after": 139.92,
+      "target_sec": 122.042,
+      "passes": 1
+    },
+    {
+      "id": 3,
+      "natural_before": 13.92,
+      "natural_after": 127.896,
+      "target_sec": 106.215,
+      "passes": 1
+    },
+    {
+      "id": 4,
+      "natural_before": 12.528,
+      "natural_after": 114.24,
+      "target_sec": 94.609,
+      "passes": 1
+    },
+    {
+      "id": 5,
+      "natural_before": 4.8,
+      "natural_after": 40.392,
+      "target_sec": 36.929,
+      "passes": 1
+    },
+    {
+      "id": 6,
+      "natural_before": 21.744,
+      "natural_after": 171.84,
+      "target_sec": 156.157,
+      "passes": 1
+    },
+    {
+      "id": 7,
+      "natural_before": 11.784,
+      "natural_after": 95.064,
+      "target_sec": 93.905,
+      "passes": 1
+    },
+    {
+      "id": 8,
+      "natural_before": 15.216,
+      "natural_after": 131.352,
+      "target_sec": 116.063,
+      "passes": 1
+    },
+    {
+      "id": 9,
+      "natural_before": 12.96,
+      "natural_after": 102.84,
+      "target_sec": 97.95,
+      "passes": 1
+    },
+    {
+      "id": 10,
+      "natural_before": 5.28,
+      "natural_after": 48.168,
+      "target_sec": 40.622,
+      "passes": 1
+    },
+    {
+      "id": 11,
+      "natural_before": 18.024,
+      "natural_after": 142.704,
+      "target_sec": 129.603,
+      "passes": 1
+    },
+    {
+      "id": 12,
+      "natural_before": 12.648,
+      "natural_after": 108.024,
+      "target_sec": 90.916,
+      "passes": 1
+    },
+    {
+      "id": 13,
+      "natural_before": 14.856,
+      "natural_after": 125.28,
+      "target_sec": 118.173,
+      "passes": 1
+    },
+    {
+      "id": 14,
+      "natural_before": 3.936,
+      "natural_after": 32.592,
+      "target_sec": 30.247,
+      "passes": 1
+    },
+    {
+      "id": 15,
+      "natural_before": 19.152,
+      "natural_after": 154.056,
+      "target_sec": 137.517,
+      "passes": 1
+    },
+    {
+      "id": 16,
+      "natural_before": 12.288,
+      "natural_after": 106.584,
+      "target_sec": 97.95,
+      "passes": 1
+    },
+    {
+      "id": 17,
+      "natural_before": 13.176,
+      "natural_after": 107.952,
+      "target_sec": 100.588,
+      "passes": 1
+    },
+    {
+      "id": 18,
+      "natural_before": 13.032,
+      "natural_after": 108.312,
+      "target_sec": 98.302,
+      "passes": 1
+    }
+  ],
+  "enrich_threshold_ratio": 0.9,
+  "cues": [
+    {
+      "id": 1,
+      "section": "sec-cosmic-intro",
+      "expected_start_ms": 2500.0,
+      "actual_start_ms": 2500.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2034,
+      "natural_sec": 31.32,
+      "target_sec": 26.026,
+      "fill_ratio": 0.9993,
+      "internal_gap_s": 0.0189,
+      "enriched": true
+    },
+    {
+      "id": 2,
+      "section": "sec-cosmic-intro",
+      "expected_start_ms": 29326.0,
+      "actual_start_ms": 29326.01,
+      "drift_ms": 0.01,
+      "tempo": 1.1465,
+      "natural_sec": 139.92,
+      "target_sec": 122.042,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0213,
+      "enriched": true
+    },
+    {
+      "id": 3,
+      "section": "sec-cosmic-intro",
+      "expected_start_ms": 152168.0,
+      "actual_start_ms": 152168.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2041,
+      "natural_sec": 127.896,
+      "target_sec": 106.215,
+      "fill_ratio": 0.9999,
+      "internal_gap_s": 0.0145,
+      "enriched": true
+    },
+    {
+      "id": 4,
+      "section": "sec-cosmic-intro",
+      "expected_start_ms": 259183.0,
+      "actual_start_ms": 259182.99,
+      "drift_ms": -0.01,
+      "tempo": 1.2075,
+      "natural_sec": 114.24,
+      "target_sec": 94.609,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0165,
+      "enriched": true
+    },
+    {
+      "id": 5,
+      "section": "sec-cosmic-parallax",
+      "expected_start_ms": 354592.0,
+      "actual_start_ms": 354592.0,
+      "drift_ms": 0.0,
+      "tempo": 1.0938,
+      "natural_sec": 40.392,
+      "target_sec": 36.929,
+      "fill_ratio": 0.9994,
+      "internal_gap_s": 0.0211,
+      "enriched": true
+    },
+    {
+      "id": 6,
+      "section": "sec-cosmic-parallax",
+      "expected_start_ms": 392321.0,
+      "actual_start_ms": 392321.0,
+      "drift_ms": 0.0,
+      "tempo": 1.1004,
+      "natural_sec": 171.84,
+      "target_sec": 156.157,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0355,
+      "enriched": true
+    },
+    {
+      "id": 7,
+      "section": "sec-cosmic-parallax",
+      "expected_start_ms": 549278.0,
+      "actual_start_ms": 549278.0,
+      "drift_ms": 0.0,
+      "tempo": 1.0123,
+      "natural_sec": 95.064,
+      "target_sec": 93.905,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0189,
+      "enriched": true
+    },
+    {
+      "id": 8,
+      "section": "sec-cosmic-parallax",
+      "expected_start_ms": 643983.0,
+      "actual_start_ms": 643982.99,
+      "drift_ms": -0.01,
+      "tempo": 1.1317,
+      "natural_sec": 131.352,
+      "target_sec": 116.063,
+      "fill_ratio": 0.9999,
+      "internal_gap_s": 0.0154,
+      "enriched": true
+    },
+    {
+      "id": 9,
+      "section": "sec-cosmic-parallax",
+      "expected_start_ms": 760846.0,
+      "actual_start_ms": 760846.01,
+      "drift_ms": 0.01,
+      "tempo": 1.0499,
+      "natural_sec": 102.84,
+      "target_sec": 97.95,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0194,
+      "enriched": true
+    },
+    {
+      "id": 10,
+      "section": "sec-cosmic-candles",
+      "expected_start_ms": 859596.0,
+      "actual_start_ms": 859596.01,
+      "drift_ms": 0.01,
+      "tempo": 1.1858,
+      "natural_sec": 48.168,
+      "target_sec": 40.622,
+      "fill_ratio": 0.9995,
+      "internal_gap_s": 0.0185,
+      "enriched": true
+    },
+    {
+      "id": 11,
+      "section": "sec-cosmic-candles",
+      "expected_start_ms": 901018.0,
+      "actual_start_ms": 901018.0,
+      "drift_ms": 0.0,
+      "tempo": 1.1011,
+      "natural_sec": 142.704,
+      "target_sec": 129.603,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0215,
+      "enriched": true
+    },
+    {
+      "id": 12,
+      "section": "sec-cosmic-candles",
+      "expected_start_ms": 1031421.0,
+      "actual_start_ms": 1031421.0,
+      "drift_ms": 0.0,
+      "tempo": 1.1882,
+      "natural_sec": 108.024,
+      "target_sec": 90.916,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0194,
+      "enriched": true
+    },
+    {
+      "id": 13,
+      "section": "sec-cosmic-candles",
+      "expected_start_ms": 1123137.0,
+      "actual_start_ms": 1123137.01,
+      "drift_ms": 0.01,
+      "tempo": 1.0601,
+      "natural_sec": 125.28,
+      "target_sec": 118.173,
+      "fill_ratio": 0.9999,
+      "internal_gap_s": 0.0166,
+      "enriched": true
+    },
+    {
+      "id": 14,
+      "section": "sec-cosmic-hubble",
+      "expected_start_ms": 1242110.0,
+      "actual_start_ms": 1242110.0,
+      "drift_ms": 0.0,
+      "tempo": 1.0775,
+      "natural_sec": 32.592,
+      "target_sec": 30.247,
+      "fill_ratio": 0.9994,
+      "internal_gap_s": 0.0194,
+      "enriched": true
+    },
+    {
+      "id": 15,
+      "section": "sec-cosmic-hubble",
+      "expected_start_ms": 1273157.0,
+      "actual_start_ms": 1273157.01,
+      "drift_ms": 0.01,
+      "tempo": 1.1203,
+      "natural_sec": 154.056,
+      "target_sec": 137.517,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0237,
+      "enriched": true
+    },
+    {
+      "id": 16,
+      "section": "sec-cosmic-hubble",
+      "expected_start_ms": 1411474.0,
+      "actual_start_ms": 1411473.99,
+      "drift_ms": -0.01,
+      "tempo": 1.0881,
+      "natural_sec": 106.584,
+      "target_sec": 97.95,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0158,
+      "enriched": true
+    },
+    {
+      "id": 17,
+      "section": "sec-cosmic-hubble",
+      "expected_start_ms": 1510223.0,
+      "actual_start_ms": 1510222.99,
+      "drift_ms": -0.01,
+      "tempo": 1.0732,
+      "natural_sec": 107.952,
+      "target_sec": 100.588,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0206,
+      "enriched": true
+    },
+    {
+      "id": 18,
+      "section": "sec-cosmic-hubble",
+      "expected_start_ms": 1611611.0,
+      "actual_start_ms": 1611611.0,
+      "drift_ms": 0.0,
+      "tempo": 1.1018,
+      "natural_sec": 108.312,
+      "target_sec": 98.302,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0168,
+      "enriched": true
+    }
+  ],
+  "output_video": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\physics\\lesson_02\\experiments\\3b1b_physics_02_full_dubbed.mp4",
+  "output_duration_sec": 1712.867,
+  "output_size_bytes": 138736217,
+  "output_streams": [
+    {
+      "index": 0,
+      "codec_name": "av1",
+      "codec_type": "video"
+    },
+    {
+      "index": 1,
+      "codec_name": "aac",
+      "codec_type": "audio"
+    }
+  ],
+  "volumedetect_intro_0_2s_db": -91.0,
+  "volumedetect_final_2s_db": -91.0
+}

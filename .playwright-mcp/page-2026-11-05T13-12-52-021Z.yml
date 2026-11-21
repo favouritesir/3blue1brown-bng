@@ -1,0 +1,1331 @@
+- generic [ref=f1e2] [box=0,-2300,1265,6100]:
+  - banner [ref=f1e3] [box=20,-2276,1225,87]:
+    - generic [ref=f1e4] [box=45,-2259,619,53]:
+      - link [ref=f1e5] [cursor=pointer] [box=45,-2259,46,52]:
+        - /url: index.html
+        - img "৩ব্লু১ব্রাউন" [ref=f1e6] [box=45,-2259,46,46]
+      - generic [ref=f1e15] [box=107,-2259,557,53]:
+        - heading [level=1] [ref=f1e16] [box=107,-2259,557,32]:
+          - text: 3Blue1Brown বাংলা মিশন কন্ট্রোল
+          - generic [ref=f1e17] [box=449,-2254,100,23]: LIVE SCAN
+        - generic [ref=f1e19] [box=107,-2227,557,20]:
+          - generic [ref=f1e20] [box=107,-2227,248,20]: ৩ব্লু১ব্রাউন বাংলা প্ল্যাটফর্ম ইঞ্জিনিয়ারিং ড্যাশবোর্ড
+          - generic [ref=f1e21] [box=361,-2227,3,20]: ·
+          - generic [ref=f1e22] [box=371,-2227,294,20]: Edge-TTS bn-BD-PradeepNeural & KaTeX
+    - generic [ref=f1e23] [box=680,-2253,540,40]:
+      - button "🔄 স্ক্যান রিফ্রেশ" [ref=f1e24] [cursor=pointer] [box=680,-2253,125,40]:
+        - generic [ref=f1e25] [box=697,-2242,19,18]: 🔄
+        - generic [ref=f1e26] [box=724,-2244,64,22]: স্ক্যান রিফ্রেশ
+      - link "🌐 ওয়েব প্ল্যাটফর্ম" [ref=f1e27] [cursor=pointer] [box=817,-2252,135,38]:
+        - /url: index.html
+        - generic [ref=f1e28] [box=834,-2243,19,20]: 🌐
+        - generic [ref=f1e29] [box=861,-2243,74,20]: ওয়েব প্ল্যাটফর্ম
+      - link "🧩 কম্পোনেন্টস স্যান্ডবক্স" [ref=f1e30] [cursor=pointer] [box=964,-2252,206,38]:
+        - /url: sandbox_components/demo_components.html
+        - generic [ref=f1e31] [box=981,-2243,19,20]: 🧩
+        - generic [ref=f1e32] [box=1008,-2243,145,20]: কম্পোনেন্টস স্যান্ডবক্স
+      - button "🌙" [ref=f1e33] [cursor=pointer] [box=1182,-2252,38,38]
+  - generic [ref=f1e35] [box=20,-2161,1225,378]:
+    - generic [ref=f1e36] [box=20,-2161,232,195]:
+      - generic [ref=f1e37] [box=43,-2140,186,30]:
+        - generic [ref=f1e38] [box=43,-2135,143,19]: মোট কারিকুলাম লেসন
+        - generic [ref=f1e39] [box=202,-2140,27,30]: 📚
+      - generic [ref=f1e40] [box=43,-2088,186,35]: "53"
+      - generic [ref=f1e41] [box=43,-2032,186,19]: ৬টি পূর্ণাঙ্গ সিরিজ ট্র্যাকিং
+    - generic [ref=f1e45] [box=268,-2161,232,195]:
+      - generic [ref=f1e46] [box=291,-2140,186,30]:
+        - generic [ref=f1e47] [box=291,-2135,119,19]: বাংলা মাস্টার স্ক্রিপ্ট
+        - generic [ref=f1e48] [box=450,-2140,27,30]: 📜
+      - generic [ref=f1e49] [box=291,-2100,186,35]: "30"
+      - generic [ref=f1e50] [box=291,-2057,186,56]:
+        - generic [ref=f1e51] [box=291,-2038,38,19]: 56.6%
+        - generic [ref=f1e52] [box=335,-2057,142,56]: অনুবাদিত ও প্যাডাগোজিকালি ভেরিফাইড
+    - generic [ref=f1e55] [box=516,-2161,232,195]:
+      - generic [ref=f1e56] [box=539,-2140,186,30]:
+        - generic [ref=f1e57] [box=539,-2135,146,19]: অডিও ম্যানিফেস্ট সিঙ্ক
+        - generic [ref=f1e58] [box=698,-2140,27,30]: 🎙️
+      - generic [ref=f1e59] [box=539,-2094,186,35]: "32"
+      - generic [ref=f1e60] [box=539,-2045,186,37]:
+        - generic [ref=f1e61] [box=539,-2035,39,19]: 60.4%
+        - generic [ref=f1e62] [box=585,-2045,141,37]: ক্যারাওকে হাইলাইট সিঙ্ক রেডি
+    - generic [ref=f1e65] [box=765,-2161,232,195]:
+      - generic [ref=f1e66] [box=788,-2140,186,38]:
+        - generic [ref=f1e67] [box=788,-2140,159,38]: লাইভ এইচটিএমএল পেজ
+        - generic [ref=f1e68] [box=946,-2136,27,30]: 💻
+      - generic [ref=f1e69] [box=788,-2088,186,35]: "10"
+      - generic [ref=f1e70] [box=788,-2042,186,37]: ১০টি পেজ অ্যাক্টিভ ও ইন্টারঅ্যাক্টিভ
+    - generic [ref=f1e74] [box=1013,-2161,232,195]:
+      - generic [ref=f1e75] [box=1036,-2140,186,38]:
+        - generic [ref=f1e76] [box=1036,-2140,159,38]: কম্পোনেন্টস আরকিটেকচার
+        - generic [ref=f1e77] [box=1195,-2136,27,30]: 🧩
+      - generic [ref=f1e78] [box=1036,-2082,186,35]: ১০ / ৫৩
+      - generic [ref=f1e79] [box=1036,-2029,186,19]: <b1b-*> স্যান্ডবক্স লাইব্রেরি প্রস্তুত
+    - generic [ref=f1e83] [box=20,-1950,232,166]:
+      - generic [ref=f1e84] [box=43,-1929,186,38]:
+        - generic [ref=f1e85] [box=43,-1929,159,38]: সামগ্রিক প্ল্যাটফর্ম প্রোগ্রেস
+        - generic [ref=f1e86] [box=202,-1925,27,30]: 🚀
+      - generic [ref=f1e87] [box=43,-1880,186,35]: 43%
+      - generic [ref=f1e88] [box=43,-1837,186,19]: স্ক্রিপ্ট + ক্যারাওকে + কাটেক
+  - generic [ref=f1e92] [box=20,-1756,1225,104]:
+    - generic [ref=f1e93] [box=39,-1745,130,19]:
+      - generic [ref=f1e94] [box=39,-1745,17,19]: 💡
+      - generic [ref=f1e95] [box=62,-1745,107,19]: "মেট্রিক্স নির্দেশিকা:"
+    - generic [ref=f1e96] [box=39,-1714,1187,51]:
+      - generic [ref=f1e97] [box=39,-1714,275,19]:
+        - text: 📜
+        - strong [ref=f1e98] [box=60,-1713,75,15]: মাস্টার স্ক্রিপ্ট
+        - text: (১০০% 3B1B প্যারালাল ডায়ালগ)
+      - generic [ref=f1e99] [box=328,-1714,390,19]:
+        - text: 🎙️
+        - strong [ref=f1e100] [box=348,-1713,105,15]: অডিও ম্যানিফেস্ট
+        - text: (Edge-TTS bn-BD-PradeepNeural ক্যারাওকে)
+      - generic [ref=f1e101] [box=731,-1714,189,19]:
+        - text: 🔊
+        - strong [ref=f1e102] [box=752,-1713,90,15]: ফুল অডিও ডাব
+        - text: (মাস্টার MP3)
+      - generic [ref=f1e103] [box=934,-1714,194,19]:
+        - text: ∑
+        - strong [ref=f1e104] [box=947,-1713,73,15]: KaTeX Math
+        - text: (অফলাইন ল্যাটেক্স)
+      - generic [ref=f1e105] [box=39,-1681,211,19]:
+        - text: ❓
+        - strong [ref=f1e106] [box=60,-1680,121,15]: ইন্টারঅ্যাক্টিভ কুইজ
+        - text: (স্ব-মূল্যায়ন)
+      - generic [ref=f1e107] [box=264,-1681,256,19]:
+        - text: 🧪
+        - strong [ref=f1e108] [box=285,-1680,88,15]: সিমুলেশন ল্যাব
+        - text: (ক্যানভাস ভিজ্যুয়ালাইজার)
+      - generic [ref=f1e109] [box=534,-1681,312,19]:
+        - text: 🧩
+        - strong [ref=f1e110] [box=555,-1680,113,15]: ওয়েব কম্পোনেন্টস
+        - text: (<b1b-*> মডুলার আর্কিটেকচার)
+  - generic [ref=f1e111] [box=20,-1631,1225,158]:
+    - generic [ref=f1e112] [box=41,-1616,380,42]:
+      - generic [ref=f1e113] [box=56,-1607,22,24]: 🔍
+      - textbox "অধ্যায় বা বিষয়ের নাম খুঁজুন (বাংলা বা ইংরেজিতে)..." [ref=f1e114] [box=88,-1607,318,23]
+    - generic [ref=f1e115] [box=41,-1558,1183,70]:
+      - button "সকল কোর্স 53" [active] [ref=f1e116] [cursor=pointer] [box=41,-1558,130,31]:
+        - generic [ref=f1e117] [box=56,-1551,68,17]: সকল কোর্স
+        - generic [ref=f1e118] [box=130,-1551,26,17]: "53"
+      - button "লিনিয়ার অ্যালজেব্রা 15" [ref=f1e119] [cursor=pointer] [box=179,-1558,182,31]:
+        - generic [ref=f1e120] [box=194,-1551,120,17]: লিনিয়ার অ্যালজেব্রা
+        - generic [ref=f1e121] [box=321,-1551,26,17]: "15"
+      - button "ক্যালকুলাস 12" [ref=f1e122] [cursor=pointer] [box=369,-1558,130,31]:
+        - generic [ref=f1e123] [box=384,-1551,68,17]: ক্যালকুলাস
+        - generic [ref=f1e124] [box=458,-1551,26,17]: "12"
+      - button "নিউরাল নেটওয়ার্ক 4" [ref=f1e125] [cursor=pointer] [box=507,-1558,165,31]:
+        - generic [ref=f1e126] [box=522,-1551,110,17]: নিউরাল নেটওয়ার্ক
+        - generic [ref=f1e127] [box=638,-1551,19,17]: "4"
+      - button "ডিফারেনশিয়াল 6" [ref=f1e128] [cursor=pointer] [box=680,-1558,149,31]:
+        - generic [ref=f1e129] [box=695,-1551,94,17]: ডিফারেনশিয়াল
+        - generic [ref=f1e130] [box=795,-1551,19,17]: "6"
+      - button "সম্ভাব্যতা 6" [ref=f1e131] [cursor=pointer] [box=837,-1558,109,31]:
+        - generic [ref=f1e132] [box=852,-1551,54,17]: সম্ভাব্যতা
+        - generic [ref=f1e133] [box=911,-1551,19,17]: "6"
+      - button "লকডাউন ম্যাথ 10" [ref=f1e134] [cursor=pointer] [box=953,-1558,150,31]:
+        - generic [ref=f1e135] [box=968,-1551,88,17]: লকডাউন ম্যাথ
+        - generic [ref=f1e136] [box=1063,-1551,26,17]: "10"
+      - button "✅ সম্পূর্ণ" [ref=f1e137] [cursor=pointer] [box=1120,-1558,88,31]
+      - button "🌐 লাইভ" [ref=f1e139] [cursor=pointer] [box=41,-1519,85,31]
+  - main [ref=f1e141] [box=20,-1449,1225,5137]:
+    - generic [ref=f1e142] [box=20,-1449,1225,1340]:
+      - generic [ref=f1e143] [box=21,-1448,1223,93]:
+        - generic [ref=f1e146] [box=71,-1428,383,52]:
+          - heading "Essence of Linear Algebra Core Foundation" [level=2] [ref=f1e147] [box=71,-1428,383,30]:
+            - text: Essence of Linear Algebra
+            - generic [ref=f1e148] [box=336,-1427,118,28]: Core Foundation
+          - generic [ref=f1e149] [box=71,-1398,383,22]: লিনিয়ার অ্যালজেব্রা · 15টি লেসন
+        - generic [ref=f1e150] [box=1051,-1417,169,28]:
+          - generic [ref=f1e151] [box=1051,-1417,76,28]: 5 / 15 চালু
+          - generic [ref=f1e152] [box=1135,-1416,85,26]: 33% সম্পন্ন
+      - table [ref=f1e153] [box=21,-1356,1223,1245]:
+        - rowgroup [ref=f1e154] [box=21,-1356,1223,43]:
+          - row [ref=f1e155] [box=21,-1356,1223,43]:
+            - columnheader "নম্বর" [ref=f1e156] [box=21,-1356,74,43]
+            - columnheader "অধ্যায়ের শিরোনাম" [ref=f1e157] [box=95,-1356,441,43]
+            - columnheader "স্ট্যাটাস" [ref=f1e158] [box=536,-1356,140,43]
+            - columnheader "ম্যাট্রিক্স ও আর্কিটেকচার ফিচার" [ref=f1e159] [box=676,-1356,337,43]
+            - columnheader "অ্যাকশন" [ref=f1e160] [box=1013,-1356,231,43]
+        - rowgroup [ref=f1e161] [box=21,-1313,1223,1202]:
+          - row [ref=f1e162] [box=21,-1313,1223,79]:
+            - cell "01" [ref=f1e163] [box=21,-1313,74,79]
+            - cell "Vectors, what even are they? ভেক্টর আসলে কী?" [ref=f1e165] [box=95,-1313,441,79]:
+              - generic [ref=f1e166] [box=115,-1295,401,21]: Vectors, what even are they?
+              - generic [ref=f1e167] [box=115,-1272,401,19]: ভেক্টর আসলে কী?
+            - cell "✅ সম্পূর্ণ ভেরিফাইড" [ref=f1e168] [box=536,-1313,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e170] [box=676,-1313,337,79]:
+              - generic [ref=f1e171] [box=696,-1286,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e172] [box=696,-1286,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e173] [box=726,-1286,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: উপলব্ধ" [ref=f1e174] [box=756,-1286,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e175] [box=786,-1286,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e176] [box=816,-1286,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e177] [box=846,-1286,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e178] [box=876,-1286,24,24]': 🧩
+            - cell [ref=f1e179] [box=1013,-1313,231,79]:
+              - generic [ref=f1e180] [box=1033,-1289,191,31]:
+                - link "🚀 খুলুন" [ref=f1e181] [cursor=pointer] [box=1105,-1289,72,31]:
+                  - /url: courses/linear_algebra/lesson_01.html
+                  - generic [ref=f1e182] [box=1116,-1283,17,19]: 🚀
+                  - generic [ref=f1e183] [box=1138,-1283,28,19]: খুলুন
+                - button "🔍" [ref=f1e184] [box=1185,-1288,39,28]
+          - row [ref=f1e186] [box=21,-1234,1223,79]:
+            - cell "02" [ref=f1e187] [box=21,-1234,74,79]
+            - cell "Linear combinations, span, and basis vectors রৈখিক সমন্বয়, স্প্যান ও ভিত্তি ভেক্টর" [ref=f1e189] [box=95,-1234,441,79]:
+              - generic [ref=f1e190] [box=115,-1216,401,21]: Linear combinations, span, and basis vectors
+              - generic [ref=f1e191] [box=115,-1193,401,19]: রৈখিক সমন্বয়, স্প্যান ও ভিত্তি ভেক্টর
+            - cell "✅ সম্পূর্ণ ভেরিফাইড" [ref=f1e192] [box=536,-1234,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e194] [box=676,-1234,337,79]:
+              - generic [ref=f1e195] [box=696,-1207,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e196] [box=696,-1207,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e197] [box=726,-1207,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: উপলব্ধ" [ref=f1e198] [box=756,-1207,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e199] [box=786,-1207,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e200] [box=816,-1207,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e201] [box=846,-1207,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e202] [box=876,-1207,24,24]': 🧩
+            - cell [ref=f1e203] [box=1013,-1234,231,79]:
+              - generic [ref=f1e204] [box=1033,-1210,191,31]:
+                - link "🚀 খুলুন" [ref=f1e205] [cursor=pointer] [box=1105,-1210,72,31]:
+                  - /url: courses/linear_algebra/lesson_02.html
+                  - generic [ref=f1e206] [box=1116,-1204,17,19]: 🚀
+                  - generic [ref=f1e207] [box=1138,-1204,28,19]: খুলুন
+                - button "🔍" [ref=f1e208] [box=1185,-1209,39,28]
+          - row [ref=f1e210] [box=21,-1155,1223,79]:
+            - cell "03" [ref=f1e211] [box=21,-1155,74,79]
+            - cell "Linear transformations and matrices রৈখিক রূপান্তর ও ম্যাট্রিক্স" [ref=f1e213] [box=95,-1155,441,79]:
+              - generic [ref=f1e214] [box=115,-1137,401,21]: Linear transformations and matrices
+              - generic [ref=f1e215] [box=115,-1114,401,19]: রৈখিক রূপান্তর ও ম্যাট্রিক্স
+            - cell "✅ সম্পূর্ণ ভেরিফাইড" [ref=f1e216] [box=536,-1155,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e218] [box=676,-1155,337,79]:
+              - generic [ref=f1e219] [box=696,-1128,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e220] [box=696,-1128,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e221] [box=726,-1128,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: উপলব্ধ" [ref=f1e222] [box=756,-1128,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e223] [box=786,-1128,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e224] [box=816,-1128,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e225] [box=846,-1128,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e226] [box=876,-1128,24,24]': 🧩
+            - cell [ref=f1e227] [box=1013,-1155,231,79]:
+              - generic [ref=f1e228] [box=1033,-1131,191,31]:
+                - link "🚀 খুলুন" [ref=f1e229] [cursor=pointer] [box=1105,-1131,72,31]:
+                  - /url: courses/linear_algebra/lesson_03.html
+                  - generic [ref=f1e230] [box=1116,-1125,17,19]: 🚀
+                  - generic [ref=f1e231] [box=1138,-1125,28,19]: খুলুন
+                - button "🔍" [ref=f1e232] [box=1185,-1130,39,28]
+          - row [ref=f1e234] [box=21,-1076,1223,79]:
+            - cell "04" [ref=f1e235] [box=21,-1076,74,79]
+            - cell "Matrix multiplication as composition ম্যাট্রিক্স গুণন — রূপান্তরের রচনা" [ref=f1e237] [box=95,-1076,441,79]:
+              - generic [ref=f1e238] [box=115,-1058,401,21]: Matrix multiplication as composition
+              - generic [ref=f1e239] [box=115,-1035,401,19]: ম্যাট্রিক্স গুণন — রূপান্তরের রচনা
+            - cell "✅ সম্পূর্ণ ভেরিফাইড" [ref=f1e240] [box=536,-1076,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e242] [box=676,-1076,337,79]:
+              - generic [ref=f1e243] [box=696,-1049,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e244] [box=696,-1049,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e245] [box=726,-1049,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: উপলব্ধ" [ref=f1e246] [box=756,-1049,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e247] [box=786,-1049,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e248] [box=816,-1049,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e249] [box=846,-1049,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e250] [box=876,-1049,24,24]': 🧩
+            - cell [ref=f1e251] [box=1013,-1076,231,79]:
+              - generic [ref=f1e252] [box=1033,-1052,191,31]:
+                - link "🚀 খুলুন" [ref=f1e253] [cursor=pointer] [box=1105,-1052,72,31]:
+                  - /url: courses/linear_algebra/lesson_04.html
+                  - generic [ref=f1e254] [box=1116,-1046,17,19]: 🚀
+                  - generic [ref=f1e255] [box=1138,-1046,28,19]: খুলুন
+                - button "🔍" [ref=f1e256] [box=1185,-1051,39,28]
+          - row [ref=f1e258] [box=21,-997,1223,79]:
+            - cell "05" [ref=f1e259] [box=21,-997,74,79]
+            - cell "Three-dimensional linear transformations ত্রিমাত্রিক রৈখিক রূপান্তর" [ref=f1e261] [box=95,-997,441,79]:
+              - generic [ref=f1e262] [box=115,-979,401,21]: Three-dimensional linear transformations
+              - generic [ref=f1e263] [box=115,-956,401,19]: ত্রিমাত্রিক রৈখিক রূপান্তর
+            - cell "✅ সম্পূর্ণ ভেরিফাইড" [ref=f1e264] [box=536,-997,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e266] [box=676,-997,337,79]:
+              - generic [ref=f1e267] [box=696,-970,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e268] [box=696,-970,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e269] [box=726,-970,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: উপলব্ধ" [ref=f1e270] [box=756,-970,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e271] [box=786,-970,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e272] [box=816,-970,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e273] [box=846,-970,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e274] [box=876,-970,24,24]': 🧩
+            - cell [ref=f1e275] [box=1013,-997,231,79]:
+              - generic [ref=f1e276] [box=1033,-973,191,31]:
+                - link "🚀 খুলুন" [ref=f1e277] [cursor=pointer] [box=1105,-973,72,31]:
+                  - /url: courses/linear_algebra/lesson_05.html
+                  - generic [ref=f1e278] [box=1116,-967,17,19]: 🚀
+                  - generic [ref=f1e279] [box=1138,-967,28,19]: খুলুন
+                - button "🔍" [ref=f1e280] [box=1185,-972,39,28]
+          - row [ref=f1e282] [box=21,-918,1223,79]:
+            - cell "06" [ref=f1e283] [box=21,-918,74,79]
+            - cell "The determinant নির্ণায়ক বা ডিটারমিন্যান্ট" [ref=f1e285] [box=95,-918,441,79]:
+              - generic [ref=f1e286] [box=115,-900,401,21]: The determinant
+              - generic [ref=f1e287] [box=115,-877,401,19]: নির্ণায়ক বা ডিটারমিন্যান্ট
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e288] [box=536,-918,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e290] [box=676,-918,337,79]:
+              - generic [ref=f1e291] [box=696,-891,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e292] [box=696,-891,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e293] [box=726,-891,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e294] [box=756,-891,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e295] [box=786,-891,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e296] [box=816,-891,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e297] [box=846,-891,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e298] [box=876,-891,24,24]': 🧩
+            - cell [ref=f1e299] [box=1013,-918,231,79]:
+              - generic [ref=f1e300] [box=1033,-894,191,31]:
+                - generic [box=1033,-894,80,31]: অফলাইন
+                - link "JSON" [ref=f1e301] [cursor=pointer] [box=1120,-894,56,31]:
+                  - /url: data/linear_algebra/lesson_06.json
+                - button "🔍" [ref=f1e303] [box=1185,-893,39,28]
+          - row [ref=f1e305] [box=21,-839,1223,79]:
+            - cell "07" [ref=f1e306] [box=21,-839,74,79]
+            - cell "Inverse matrices, column space and null space বিপরীত ম্যাট্রিক্স, কলাম স্পেস ও শূন্য স্পেস" [ref=f1e308] [box=95,-839,441,79]:
+              - generic [ref=f1e309] [box=115,-821,401,21]: Inverse matrices, column space and null space
+              - generic [ref=f1e310] [box=115,-798,401,19]: বিপরীত ম্যাট্রিক্স, কলাম স্পেস ও শূন্য স্পেস
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e311] [box=536,-839,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e313] [box=676,-839,337,79]:
+              - generic [ref=f1e314] [box=696,-812,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e315] [box=696,-812,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e316] [box=726,-812,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e317] [box=756,-812,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e318] [box=786,-812,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e319] [box=816,-812,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e320] [box=846,-812,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e321] [box=876,-812,24,24]': 🧩
+            - cell [ref=f1e322] [box=1013,-839,231,79]:
+              - generic [ref=f1e323] [box=1033,-815,191,31]:
+                - generic [box=1033,-815,80,31]: অফলাইন
+                - link "JSON" [ref=f1e324] [cursor=pointer] [box=1120,-815,56,31]:
+                  - /url: data/linear_algebra/lesson_07.json
+                - button "🔍" [ref=f1e326] [box=1185,-814,39,28]
+          - row [ref=f1e328] [box=21,-760,1223,96]:
+            - cell "08" [ref=f1e329] [box=21,-760,74,96]
+            - cell "Nonsquare matrices as transformations between dimensions অসম আকারের ম্যাট্রিক্স ও মাত্রার রূপান্তর" [ref=f1e331] [box=95,-760,441,96]:
+              - generic [ref=f1e332] [box=115,-744,401,42]: Nonsquare matrices as transformations between dimensions
+              - generic [ref=f1e333] [box=115,-700,401,19]: অসম আকারের ম্যাট্রিক্স ও মাত্রার রূপান্তর
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e334] [box=536,-760,140,96]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e336] [box=676,-760,337,96]:
+              - generic [ref=f1e337] [box=696,-724,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e338] [box=696,-724,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e339] [box=726,-724,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e340] [box=756,-724,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e341] [box=786,-724,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e342] [box=816,-724,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e343] [box=846,-724,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e344] [box=876,-724,24,24]': 🧩
+            - cell [ref=f1e345] [box=1013,-760,231,96]:
+              - generic [ref=f1e346] [box=1033,-727,191,31]:
+                - generic [box=1033,-727,80,31]: অফলাইন
+                - link "JSON" [ref=f1e347] [cursor=pointer] [box=1120,-727,56,31]:
+                  - /url: data/linear_algebra/lesson_08.json
+                - button "🔍" [ref=f1e349] [box=1185,-726,39,28]
+          - row [ref=f1e351] [box=21,-664,1223,79]:
+            - cell "09" [ref=f1e352] [box=21,-664,74,79]
+            - cell "Dot products and duality ডট প্রোডাক্ট ও ডুয়ালিটি (দ্বৈততা)" [ref=f1e354] [box=95,-664,441,79]:
+              - generic [ref=f1e355] [box=115,-646,401,21]: Dot products and duality
+              - generic [ref=f1e356] [box=115,-622,401,19]: ডট প্রোডাক্ট ও ডুয়ালিটি (দ্বৈততা)
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e357] [box=536,-664,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e359] [box=676,-664,337,79]:
+              - generic [ref=f1e360] [box=696,-636,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e361] [box=696,-636,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e362] [box=726,-636,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e363] [box=756,-636,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e364] [box=786,-636,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e365] [box=816,-636,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e366] [box=846,-636,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e367] [box=876,-636,24,24]': 🧩
+            - cell [ref=f1e368] [box=1013,-664,231,79]:
+              - generic [ref=f1e369] [box=1033,-640,191,31]:
+                - generic [box=1033,-640,80,31]: অফলাইন
+                - link "JSON" [ref=f1e370] [cursor=pointer] [box=1120,-640,56,31]:
+                  - /url: data/linear_algebra/lesson_09.json
+                - button "🔍" [ref=f1e372] [box=1185,-638,39,28]
+          - row [ref=f1e374] [box=21,-585,1223,79]:
+            - cell "10" [ref=f1e375] [box=21,-585,74,79]
+            - cell "Cross products ক্রস গুণন ও জ্যামিতিক ওরিয়েন্টেশন" [ref=f1e377] [box=95,-585,441,79]:
+              - generic [ref=f1e378] [box=115,-567,401,21]: Cross products
+              - generic [ref=f1e379] [box=115,-543,401,19]: ক্রস গুণন ও জ্যামিতিক ওরিয়েন্টেশন
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e380] [box=536,-585,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e382] [box=676,-585,337,79]:
+              - generic [ref=f1e383] [box=696,-557,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e384] [box=696,-557,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e385] [box=726,-557,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e386] [box=756,-557,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e387] [box=786,-557,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e388] [box=816,-557,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e389] [box=846,-557,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e390] [box=876,-557,24,24]': 🧩
+            - cell [ref=f1e391] [box=1013,-585,231,79]:
+              - generic [ref=f1e392] [box=1033,-561,191,31]:
+                - generic [box=1033,-561,80,31]: অফলাইন
+                - link "JSON" [ref=f1e393] [cursor=pointer] [box=1120,-561,56,31]:
+                  - /url: data/linear_algebra/lesson_10.json
+                - button "🔍" [ref=f1e395] [box=1185,-559,39,28]
+          - row [ref=f1e397] [box=21,-506,1223,79]:
+            - cell "11" [ref=f1e398] [box=21,-506,74,79]
+            - cell "Cross products in the light of linear transformations রৈখিক রূপান্তরের আলোকে ক্রস প্রোডাক্ট ও ডুয়ালিটি" [ref=f1e400] [box=95,-506,441,79]:
+              - generic [ref=f1e401] [box=115,-488,401,21]: Cross products in the light of linear transformations
+              - generic [ref=f1e402] [box=115,-464,401,19]: রৈখিক রূপান্তরের আলোকে ক্রস প্রোডাক্ট ও ডুয়ালিটি
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e403] [box=536,-506,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e405] [box=676,-506,337,79]:
+              - generic [ref=f1e406] [box=696,-478,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e407] [box=696,-478,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e408] [box=726,-478,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e409] [box=756,-478,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e410] [box=786,-478,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e411] [box=816,-478,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e412] [box=846,-478,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e413] [box=876,-478,24,24]': 🧩
+            - cell [ref=f1e414] [box=1013,-506,231,79]:
+              - generic [ref=f1e415] [box=1033,-482,191,31]:
+                - generic [box=1033,-482,80,31]: অফলাইন
+                - link "JSON" [ref=f1e416] [cursor=pointer] [box=1120,-482,56,31]:
+                  - /url: data/linear_algebra/lesson_11.json
+                - button "🔍" [ref=f1e418] [box=1185,-480,39,28]
+          - row [ref=f1e420] [box=21,-427,1223,79]:
+            - cell "12" [ref=f1e421] [box=21,-427,74,79]
+            - 'cell "Cramer''s rule, explained geometrically ক্র্যামারের নিয়ম: একটি জ্যামিতিক ব্যাখ্যা" [ref=f1e423] [box=95,-427,441,79]':
+              - generic [ref=f1e424] [box=115,-409,401,21]: Cramer's rule, explained geometrically
+              - generic [ref=f1e425] [box=115,-385,401,19]: "ক্র্যামারের নিয়ম: একটি জ্যামিতিক ব্যাখ্যা"
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e426] [box=536,-427,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e428] [box=676,-427,337,79]:
+              - generic [ref=f1e429] [box=696,-399,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e430] [box=696,-399,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e431] [box=726,-399,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e432] [box=756,-399,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e433] [box=786,-399,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e434] [box=816,-399,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e435] [box=846,-399,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e436] [box=876,-399,24,24]': 🧩
+            - cell [ref=f1e437] [box=1013,-427,231,79]:
+              - generic [ref=f1e438] [box=1033,-403,191,31]:
+                - generic [box=1033,-403,80,31]: অফলাইন
+                - link "JSON" [ref=f1e439] [cursor=pointer] [box=1120,-403,56,31]:
+                  - /url: data/linear_algebra/lesson_12.json
+                - button "🔍" [ref=f1e441] [box=1185,-401,39,28]
+          - row [ref=f1e443] [box=21,-348,1223,79]:
+            - cell "13" [ref=f1e444] [box=21,-348,74,79]
+            - cell "Change of basis ভিত্তি পরিবর্তন ও ভিন্ন দৃষ্টিভঙ্গির রূপান্তর" [ref=f1e446] [box=95,-348,441,79]:
+              - generic [ref=f1e447] [box=115,-330,401,21]: Change of basis
+              - generic [ref=f1e448] [box=115,-306,401,19]: ভিত্তি পরিবর্তন ও ভিন্ন দৃষ্টিভঙ্গির রূপান্তর
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e449] [box=536,-348,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e451] [box=676,-348,337,79]:
+              - generic [ref=f1e452] [box=696,-320,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e453] [box=696,-320,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e454] [box=726,-320,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e455] [box=756,-320,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e456] [box=786,-320,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e457] [box=816,-320,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e458] [box=846,-320,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e459] [box=876,-320,24,24]': 🧩
+            - cell [ref=f1e460] [box=1013,-348,231,79]:
+              - generic [ref=f1e461] [box=1033,-324,191,31]:
+                - generic [box=1033,-324,80,31]: অফলাইন
+                - link "JSON" [ref=f1e462] [cursor=pointer] [box=1120,-324,56,31]:
+                  - /url: data/linear_algebra/lesson_13.json
+                - button "🔍" [ref=f1e464] [box=1185,-322,39,28]
+          - row [ref=f1e466] [box=21,-269,1223,79]:
+            - cell "14" [ref=f1e467] [box=21,-269,74,79]
+            - cell "Eigenvectors and eigenvalues আইগেনভেক্টর ও আইগেনভ্যালু" [ref=f1e469] [box=95,-269,441,79]:
+              - generic [ref=f1e470] [box=115,-251,401,21]: Eigenvectors and eigenvalues
+              - generic [ref=f1e471] [box=115,-227,401,19]: আইগেনভেক্টর ও আইগেনভ্যালু
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e472] [box=536,-269,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e474] [box=676,-269,337,79]:
+              - generic [ref=f1e475] [box=696,-241,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e476] [box=696,-241,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e477] [box=726,-241,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e478] [box=756,-241,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e479] [box=786,-241,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e480] [box=816,-241,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e481] [box=846,-241,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e482] [box=876,-241,24,24]': 🧩
+            - cell [ref=f1e483] [box=1013,-269,231,79]:
+              - generic [ref=f1e484] [box=1033,-245,191,31]:
+                - generic [box=1033,-245,80,31]: অফলাইন
+                - link "JSON" [ref=f1e485] [cursor=pointer] [box=1120,-245,56,31]:
+                  - /url: data/linear_algebra/lesson_14.json
+                - button "🔍" [ref=f1e487] [box=1185,-243,39,28]
+          - row [ref=f1e489] [box=21,-190,1223,79]:
+            - cell "15" [ref=f1e490] [box=21,-190,74,79]
+            - cell "Abstract vector spaces বিমূর্ত ভেক্টর স্পেস ও ফাংশন স্পেস" [ref=f1e492] [box=95,-190,441,79]:
+              - generic [ref=f1e493] [box=115,-172,401,21]: Abstract vector spaces
+              - generic [ref=f1e494] [box=115,-148,401,19]: বিমূর্ত ভেক্টর স্পেস ও ফাংশন স্পেস
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e495] [box=536,-190,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e497] [box=676,-190,337,79]:
+              - generic [ref=f1e498] [box=696,-162,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e499] [box=696,-162,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e500] [box=726,-162,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e501] [box=756,-162,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e502] [box=786,-162,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e503] [box=816,-162,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e504] [box=846,-162,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e505] [box=876,-162,24,24]': 🧩
+            - cell [ref=f1e506] [box=1013,-190,231,79]:
+              - generic [ref=f1e507] [box=1033,-166,191,31]:
+                - generic [box=1033,-166,80,31]: অফলাইন
+                - link "JSON" [ref=f1e508] [cursor=pointer] [box=1120,-166,56,31]:
+                  - /url: data/linear_algebra/lesson_15.json
+                - button "🔍" [ref=f1e510] [box=1185,-164,39,28]
+    - generic [ref=f1e512] [box=20,-77,1225,1071]:
+      - generic [ref=f1e513] [box=21,-76,1223,93]:
+        - generic [ref=f1e516] [box=71,-56,349,52]:
+          - heading "Essence of Calculus Continuity & Change" [level=2] [ref=f1e517] [box=71,-56,349,30]:
+            - text: Essence of Calculus
+            - generic [ref=f1e518] [box=278,-55,141,28]: Continuity & Change
+          - generic [ref=f1e519] [box=71,-26,349,22]: ক্যালকুলাস · 12টি লেসন
+        - generic [ref=f1e520] [box=1061,-45,159,28]:
+          - generic [ref=f1e521] [box=1061,-45,74,28]: 1 / 12 চালু
+          - generic [ref=f1e522] [box=1143,-44,77,26]: 8% সম্পন্ন
+      - table [ref=f1e523] [box=21,16,1223,976]:
+        - rowgroup [ref=f1e524] [box=21,16,1223,43]:
+          - row [ref=f1e525] [box=21,16,1223,43]:
+            - columnheader "নম্বর" [ref=f1e526] [box=21,16,74,43]
+            - columnheader "অধ্যায়ের শিরোনাম" [ref=f1e527] [box=95,16,441,43]
+            - columnheader "স্ট্যাটাস" [ref=f1e528] [box=536,16,140,43]
+            - columnheader "ম্যাট্রিক্স ও আর্কিটেকচার ফিচার" [ref=f1e529] [box=676,16,337,43]
+            - columnheader "অ্যাকশন" [ref=f1e530] [box=1013,16,231,43]
+        - rowgroup [ref=f1e531] [box=21,59,1223,933]:
+          - row [ref=f1e532] [box=21,59,1223,79]:
+            - cell "01" [ref=f1e533] [box=21,59,74,79]
+            - cell "The Essence of Calculus ক্যালকুলাসের মূল সারমর্ম — ক্ষেত্রফল ও ঢালের রহস্য" [ref=f1e535] [box=95,59,441,79]:
+              - generic [ref=f1e536] [box=115,77,401,21]: The Essence of Calculus
+              - generic [ref=f1e537] [box=115,100,401,19]: ক্যালকুলাসের মূল সারমর্ম — ক্ষেত্রফল ও ঢালের রহস্য
+            - cell "✅ সম্পূর্ণ ভেরিফাইড" [ref=f1e538] [box=536,59,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e540] [box=676,59,337,79]:
+              - generic [ref=f1e541] [box=696,86,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e542] [box=696,86,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e543] [box=726,86,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e544] [box=756,86,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e545] [box=786,86,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e546] [box=816,86,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e547] [box=846,86,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e548] [box=876,86,24,24]': 🧩
+            - cell [ref=f1e549] [box=1013,59,231,79]:
+              - generic [ref=f1e550] [box=1033,83,191,31]:
+                - link "🚀 খুলুন" [ref=f1e551] [cursor=pointer] [box=1040,83,72,31]:
+                  - /url: courses/calculus/lesson_01.html
+                  - generic [ref=f1e552] [box=1051,89,17,19]: 🚀
+                  - generic [ref=f1e553] [box=1073,89,28,19]: খুলুন
+                - link "JSON" [ref=f1e554] [cursor=pointer] [box=1120,83,56,31]:
+                  - /url: data/calculus/lesson_01.json
+                - button "🔍" [ref=f1e556] [box=1185,84,39,28]
+          - row [ref=f1e558] [box=21,138,1223,79]:
+            - cell "02" [ref=f1e559] [box=21,138,74,79]
+            - cell "The Paradox of the Derivative অন্তরজের হেঁয়ালি — তাৎক্ষণিক বেগ ও পরিবর্তনের হার" [ref=f1e561] [box=95,138,441,79]:
+              - generic [ref=f1e562] [box=115,156,401,21]: The Paradox of the Derivative
+              - generic [ref=f1e563] [box=115,179,401,19]: অন্তরজের হেঁয়ালি — তাৎক্ষণিক বেগ ও পরিবর্তনের হার
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e564] [box=536,138,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e566] [box=676,138,337,79]:
+              - generic [ref=f1e567] [box=696,165,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e568] [box=696,165,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e569] [box=726,165,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e570] [box=756,165,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e571] [box=786,165,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e572] [box=816,165,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e573] [box=846,165,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e574] [box=876,165,24,24]': 🧩
+            - cell [ref=f1e575] [box=1013,138,231,79]:
+              - generic [ref=f1e576] [box=1033,162,191,31]:
+                - generic [box=1033,162,80,31]: অফলাইন
+                - link "JSON" [ref=f1e577] [cursor=pointer] [box=1120,162,56,31]:
+                  - /url: data/calculus/lesson_02.json
+                - button "🔍" [ref=f1e579] [box=1185,163,39,28]
+          - row [ref=f1e581] [box=21,217,1223,79]:
+            - cell "03" [ref=f1e582] [box=21,217,74,79]
+            - cell "Derivative Formulas Through Geometry জ্যামিতির মাধ্যমে অন্তরজের সূত্র" [ref=f1e584] [box=95,217,441,79]:
+              - generic [ref=f1e585] [box=115,235,401,21]: Derivative Formulas Through Geometry
+              - generic [ref=f1e586] [box=115,258,401,19]: জ্যামিতির মাধ্যমে অন্তরজের সূত্র
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e587] [box=536,217,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e589] [box=676,217,337,79]:
+              - generic [ref=f1e590] [box=696,244,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e591] [box=696,244,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e592] [box=726,244,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e593] [box=756,244,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e594] [box=786,244,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e595] [box=816,244,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e596] [box=846,244,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e597] [box=876,244,24,24]': 🧩
+            - cell [ref=f1e598] [box=1013,217,231,79]:
+              - generic [ref=f1e599] [box=1033,241,191,31]:
+                - generic [box=1033,241,80,31]: অফলাইন
+                - link "JSON" [ref=f1e600] [cursor=pointer] [box=1120,241,56,31]:
+                  - /url: data/calculus/lesson_03.json
+                - button "🔍" [ref=f1e602] [box=1185,242,39,28]
+          - row [ref=f1e604] [box=21,296,1223,79]:
+            - cell "04" [ref=f1e605] [box=21,296,74,79]
+            - cell "Visualizing the Chain Rule and Product Rule চেইন রুল ও প্রোডাক্ট রুলের জ্যামিতিক রূপ" [ref=f1e607] [box=95,296,441,79]:
+              - generic [ref=f1e608] [box=115,314,401,21]: Visualizing the Chain Rule and Product Rule
+              - generic [ref=f1e609] [box=115,337,401,19]: চেইন রুল ও প্রোডাক্ট রুলের জ্যামিতিক রূপ
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e610] [box=536,296,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e612] [box=676,296,337,79]:
+              - generic [ref=f1e613] [box=696,323,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e614] [box=696,323,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e615] [box=726,323,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e616] [box=756,323,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e617] [box=786,323,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e618] [box=816,323,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e619] [box=846,323,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e620] [box=876,323,24,24]': 🧩
+            - cell [ref=f1e621] [box=1013,296,231,79]:
+              - generic [ref=f1e622] [box=1033,320,191,31]:
+                - generic [box=1033,320,80,31]: অফলাইন
+                - link "JSON" [ref=f1e623] [cursor=pointer] [box=1120,320,56,31]:
+                  - /url: data/calculus/lesson_04.json
+                - button "🔍" [ref=f1e625] [box=1185,321,39,28]
+          - row [ref=f1e627] [box=21,375,1223,79]:
+            - cell "05" [ref=f1e628] [box=21,375,74,79]
+            - cell "What's so special about Euler's number e? অয়লার সংখ্যা e কেন এত বিশেষ?" [ref=f1e630] [box=95,375,441,79]:
+              - generic [ref=f1e631] [box=115,393,401,21]: What's so special about Euler's number e?
+              - generic [ref=f1e632] [box=115,416,401,19]: অয়লার সংখ্যা e কেন এত বিশেষ?
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e633] [box=536,375,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e635] [box=676,375,337,79]:
+              - generic [ref=f1e636] [box=696,402,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e637] [box=696,402,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e638] [box=726,402,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e639] [box=756,402,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e640] [box=786,402,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e641] [box=816,402,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e642] [box=846,402,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e643] [box=876,402,24,24]': 🧩
+            - cell [ref=f1e644] [box=1013,375,231,79]:
+              - generic [ref=f1e645] [box=1033,399,191,31]:
+                - generic [box=1033,399,80,31]: অফলাইন
+                - link "JSON" [ref=f1e646] [cursor=pointer] [box=1120,399,56,31]:
+                  - /url: data/calculus/lesson_05.json
+                - button "🔍" [ref=f1e648] [box=1185,400,39,28]
+          - row [ref=f1e650] [box=21,454,1223,79]:
+            - cell "06" [ref=f1e651] [box=21,454,74,79]
+            - cell "Implicit Differentiation অপ্রত্যক্ষ অন্তরীকরণ বা প্রচ্ছন্ন ব্যবকলন" [ref=f1e653] [box=95,454,441,79]:
+              - generic [ref=f1e654] [box=115,472,401,21]: Implicit Differentiation
+              - generic [ref=f1e655] [box=115,495,401,19]: অপ্রত্যক্ষ অন্তরীকরণ বা প্রচ্ছন্ন ব্যবকলন
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e656] [box=536,454,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e658] [box=676,454,337,79]:
+              - generic [ref=f1e659] [box=696,481,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e660] [box=696,481,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e661] [box=726,481,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e662] [box=756,481,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e663] [box=786,481,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e664] [box=816,481,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e665] [box=846,481,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e666] [box=876,481,24,24]': 🧩
+            - cell [ref=f1e667] [box=1013,454,231,79]:
+              - generic [ref=f1e668] [box=1033,478,191,31]:
+                - generic [box=1033,478,80,31]: অফলাইন
+                - link "JSON" [ref=f1e669] [cursor=pointer] [box=1120,478,56,31]:
+                  - /url: data/calculus/lesson_06.json
+                - button "🔍" [ref=f1e671] [box=1185,479,39,28]
+          - row [ref=f1e673] [box=21,533,1223,75]:
+            - cell "07" [ref=f1e674] [box=21,533,74,75]
+            - cell "Limits, L'Hopital's rule, and epsilon-delta সীমা বা লিমিট, লা হসপিটাল রুল ও এপসিলন-ডেল্টা" [ref=f1e676] [box=95,533,441,75]:
+              - generic [ref=f1e677] [box=115,549,401,21]: Limits, L'Hopital's rule, and epsilon-delta
+              - generic [ref=f1e678] [box=115,572,401,19]: সীমা বা লিমিট, লা হসপিটাল রুল ও এপসিলন-ডেল্টা
+            - cell "🗓️ পরিকল্পিত" [ref=f1e679] [box=536,533,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e681] [box=676,533,337,75]:
+              - generic [ref=f1e682] [box=696,558,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e683] [box=696,558,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e684] [box=726,558,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e685] [box=756,558,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e686] [box=786,558,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e687] [box=816,558,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e688] [box=846,558,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e689] [box=876,558,24,24]': 🧩
+            - cell [ref=f1e690] [box=1013,533,231,75]:
+              - generic [ref=f1e691] [box=1033,555,191,31]:
+                - generic [box=1097,555,80,31]: অফলাইন
+                - button "🔍" [ref=f1e692] [box=1185,556,39,28]
+          - row [ref=f1e694] [box=21,608,1223,79]:
+            - cell "08" [ref=f1e695] [box=21,608,74,79]
+            - cell "Integration & The Fundamental Theorem যোগজীকরণ ও ক্যালকুলাসের মৌলিক উপপাদ্য" [ref=f1e697] [box=95,608,441,79]:
+              - generic [ref=f1e698] [box=115,626,401,21]: Integration & The Fundamental Theorem
+              - generic [ref=f1e699] [box=115,649,401,19]: যোগজীকরণ ও ক্যালকুলাসের মৌলিক উপপাদ্য
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e700] [box=536,608,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e702] [box=676,608,337,79]:
+              - generic [ref=f1e703] [box=696,636,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e704] [box=696,636,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e705] [box=726,636,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e706] [box=756,636,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e707] [box=786,636,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e708] [box=816,636,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e709] [box=846,636,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e710] [box=876,636,24,24]': 🧩
+            - cell [ref=f1e711] [box=1013,608,231,79]:
+              - generic [ref=f1e712] [box=1033,632,191,31]:
+                - generic [box=1033,632,80,31]: অফলাইন
+                - link "JSON" [ref=f1e713] [cursor=pointer] [box=1120,632,56,31]:
+                  - /url: data/calculus/lesson_08.json
+                - button "🔍" [ref=f1e715] [box=1185,634,39,28]
+          - row [ref=f1e717] [box=21,687,1223,79]:
+            - cell "09" [ref=f1e718] [box=21,687,74,79]
+            - cell "What does area have to do with slope? ক্ষেত্রফলের সাথে ঢালের কী সম্পর্ক?" [ref=f1e720] [box=95,687,441,79]:
+              - generic [ref=f1e721] [box=115,705,401,21]: What does area have to do with slope?
+              - generic [ref=f1e722] [box=115,728,401,19]: ক্ষেত্রফলের সাথে ঢালের কী সম্পর্ক?
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e723] [box=536,687,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e725] [box=676,687,337,79]:
+              - generic [ref=f1e726] [box=696,715,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e727] [box=696,715,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e728] [box=726,715,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e729] [box=756,715,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e730] [box=786,715,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e731] [box=816,715,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e732] [box=846,715,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e733] [box=876,715,24,24]': 🧩
+            - cell [ref=f1e734] [box=1013,687,231,79]:
+              - generic [ref=f1e735] [box=1033,711,191,31]:
+                - generic [box=1033,711,80,31]: অফলাইন
+                - link "JSON" [ref=f1e736] [cursor=pointer] [box=1120,711,56,31]:
+                  - /url: data/calculus/lesson_09.json
+                - button "🔍" [ref=f1e738] [box=1185,713,39,28]
+          - row [ref=f1e740] [box=21,766,1223,75]:
+            - cell "10" [ref=f1e741] [box=21,766,74,75]
+            - cell "Higher order derivatives উচ্চতর মাত্রার অন্তরজ বা হায়ার অর্ডার ডেরিভেটিভ" [ref=f1e743] [box=95,766,441,75]:
+              - generic [ref=f1e744] [box=115,783,401,21]: Higher order derivatives
+              - generic [ref=f1e745] [box=115,806,401,19]: উচ্চতর মাত্রার অন্তরজ বা হায়ার অর্ডার ডেরিভেটিভ
+            - cell "🗓️ পরিকল্পিত" [ref=f1e746] [box=536,766,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e748] [box=676,766,337,75]:
+              - generic [ref=f1e749] [box=696,792,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e750] [box=696,792,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e751] [box=726,792,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e752] [box=756,792,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e753] [box=786,792,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e754] [box=816,792,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e755] [box=846,792,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e756] [box=876,792,24,24]': 🧩
+            - cell [ref=f1e757] [box=1013,766,231,75]:
+              - generic [ref=f1e758] [box=1033,788,191,31]:
+                - generic [box=1097,788,80,31]: অফলাইন
+                - button "🔍" [ref=f1e759] [box=1185,790,39,28]
+          - row [ref=f1e761] [box=21,841,1223,75]:
+            - cell "11" [ref=f1e762] [box=21,841,74,75]
+            - cell "Taylor series টেইলর ধারা ও পলিনোমিয়াল আসন্নায়ন" [ref=f1e764] [box=95,841,441,75]:
+              - generic [ref=f1e765] [box=115,858,401,21]: Taylor series
+              - generic [ref=f1e766] [box=115,881,401,19]: টেইলর ধারা ও পলিনোমিয়াল আসন্নায়ন
+            - cell "🗓️ পরিকল্পিত" [ref=f1e767] [box=536,841,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e769] [box=676,841,337,75]:
+              - generic [ref=f1e770] [box=696,867,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e771] [box=696,867,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e772] [box=726,867,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e773] [box=756,867,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e774] [box=786,867,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e775] [box=816,867,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e776] [box=846,867,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e777] [box=876,867,24,24]': 🧩
+            - cell [ref=f1e778] [box=1013,841,231,75]:
+              - generic [ref=f1e779] [box=1033,864,191,31]:
+                - generic [box=1097,864,80,31]: অফলাইন
+                - button "🔍" [ref=f1e780] [box=1185,865,39,28]
+          - row [ref=f1e782] [box=21,917,1223,75]:
+            - cell "12" [ref=f1e783] [box=21,917,74,75]
+            - cell "What is a derivative really? অন্তরজ আসলে কী? — চূড়ান্ত সারমর্ম" [ref=f1e785] [box=95,917,441,75]:
+              - generic [ref=f1e786] [box=115,933,401,21]: What is a derivative really?
+              - generic [ref=f1e787] [box=115,956,401,19]: অন্তরজ আসলে কী? — চূড়ান্ত সারমর্ম
+            - cell "🗓️ পরিকল্পিত" [ref=f1e788] [box=536,917,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e790] [box=676,917,337,75]:
+              - generic [ref=f1e791] [box=696,942,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e792] [box=696,942,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e793] [box=726,942,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e794] [box=756,942,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e795] [box=786,942,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e796] [box=816,942,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e797] [box=846,942,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e798] [box=876,942,24,24]': 🧩
+            - cell [ref=f1e799] [box=1013,917,231,75]:
+              - generic [ref=f1e800] [box=1033,939,191,31]:
+                - generic [box=1097,939,80,31]: অফলাইন
+                - button "🔍" [ref=f1e801] [box=1185,940,39,28]
+    - generic [ref=f1e803] [box=20,1025,1225,446]:
+      - generic [ref=f1e804] [box=21,1026,1223,93]:
+        - generic [ref=f1e807] [box=71,1046,296,52]:
+          - heading "Neural Networks Deep Learning AI" [level=2] [ref=f1e808] [box=71,1046,296,30]:
+            - text: Neural Networks
+            - generic [ref=f1e809] [box=245,1047,122,28]: Deep Learning AI
+          - generic [ref=f1e810] [box=71,1076,296,22]: নিউরাল নেটওয়ার্ক · 4টি লেসন
+        - generic [ref=f1e811] [box=1062,1058,158,28]:
+          - generic [ref=f1e812] [box=1062,1058,73,28]: 0 / 4 চালু
+          - generic [ref=f1e813] [box=1143,1059,77,26]: 0% সম্পন্ন
+      - table [ref=f1e814] [box=21,1119,1223,352]:
+        - rowgroup [ref=f1e815] [box=21,1119,1223,43]:
+          - row [ref=f1e816] [box=21,1119,1223,43]:
+            - columnheader "নম্বর" [ref=f1e817] [box=21,1119,74,43]
+            - columnheader "অধ্যায়ের শিরোনাম" [ref=f1e818] [box=95,1119,441,43]
+            - columnheader "স্ট্যাটাস" [ref=f1e819] [box=536,1119,140,43]
+            - columnheader "ম্যাট্রিক্স ও আর্কিটেকচার ফিচার" [ref=f1e820] [box=676,1119,337,43]
+            - columnheader "অ্যাকশন" [ref=f1e821] [box=1013,1119,231,43]
+        - rowgroup [ref=f1e822] [box=21,1162,1223,309]:
+          - row [ref=f1e823] [box=21,1162,1223,79]:
+            - cell "01" [ref=f1e824] [box=21,1162,74,79]
+            - cell "But what is a neural network? নিউরাল নেটওয়ার্ক আসলে কী?" [ref=f1e826] [box=95,1162,441,79]:
+              - generic [ref=f1e827] [box=115,1180,401,21]: But what is a neural network?
+              - generic [ref=f1e828] [box=115,1203,401,19]: নিউরাল নেটওয়ার্ক আসলে কী?
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e829] [box=536,1162,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e831] [box=676,1162,337,79]:
+              - generic [ref=f1e832] [box=696,1189,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e833] [box=696,1189,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e834] [box=726,1189,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e835] [box=756,1189,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e836] [box=786,1189,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e837] [box=816,1189,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e838] [box=846,1189,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e839] [box=876,1189,24,24]': 🧩
+            - cell [ref=f1e840] [box=1013,1162,231,79]:
+              - generic [ref=f1e841] [box=1033,1186,191,31]:
+                - generic [box=1033,1186,80,31]: অফলাইন
+                - link "JSON" [ref=f1e842] [cursor=pointer] [box=1120,1186,56,31]:
+                  - /url: data/neural_networks/lesson_01.json
+                - button "🔍" [ref=f1e844] [box=1185,1187,39,28]
+          - row [ref=f1e846] [box=21,1241,1223,75]:
+            - cell "02" [ref=f1e847] [box=21,1241,74,75]
+            - 'cell "Gradient descent, how neural networks learn গ্র্যাডিয়েন্ট ডিসেন্ট: নেটওয়ার্ক কীভাবে শেখে?" [ref=f1e849] [box=95,1241,441,75]':
+              - generic [ref=f1e850] [box=115,1257,401,21]: Gradient descent, how neural networks learn
+              - generic [ref=f1e851] [box=115,1280,401,19]: "গ্র্যাডিয়েন্ট ডিসেন্ট: নেটওয়ার্ক কীভাবে শেখে?"
+            - cell "🗓️ পরিকল্পিত" [ref=f1e852] [box=536,1241,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e854] [box=676,1241,337,75]:
+              - generic [ref=f1e855] [box=696,1266,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e856] [box=696,1266,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e857] [box=726,1266,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e858] [box=756,1266,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e859] [box=786,1266,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e860] [box=816,1266,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e861] [box=846,1266,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e862] [box=876,1266,24,24]': 🧩
+            - cell [ref=f1e863] [box=1013,1241,231,75]:
+              - generic [ref=f1e864] [box=1033,1263,191,31]:
+                - generic [box=1097,1263,80,31]: অফলাইন
+                - button "🔍" [ref=f1e865] [box=1185,1264,39,28]
+          - row [ref=f1e867] [box=21,1316,1223,75]:
+            - cell "03" [ref=f1e868] [box=21,1316,74,75]
+            - cell "What is backpropagation really doing? ব্যাকপ্রপাগেশন আসলে কী করে?" [ref=f1e870] [box=95,1316,441,75]:
+              - generic [ref=f1e871] [box=115,1332,401,21]: What is backpropagation really doing?
+              - generic [ref=f1e872] [box=115,1355,401,19]: ব্যাকপ্রপাগেশন আসলে কী করে?
+            - cell "🗓️ পরিকল্পিত" [ref=f1e873] [box=536,1316,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e875] [box=676,1316,337,75]:
+              - generic [ref=f1e876] [box=696,1341,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e877] [box=696,1341,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e878] [box=726,1341,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e879] [box=756,1341,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e880] [box=786,1341,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e881] [box=816,1341,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e882] [box=846,1341,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e883] [box=876,1341,24,24]': 🧩
+            - cell [ref=f1e884] [box=1013,1316,231,75]:
+              - generic [ref=f1e885] [box=1033,1338,191,31]:
+                - generic [box=1097,1338,80,31]: অফলাইন
+                - button "🔍" [ref=f1e886] [box=1185,1339,39,28]
+          - row [ref=f1e888] [box=21,1391,1223,79]:
+            - cell "04" [ref=f1e889] [box=21,1391,74,79]
+            - 'cell "Backpropagation calculus ব্যাকপ্রপাগেশন ক্যালকুলাস: বিস্তারিত প্রমাণ ও অ্যালগরিদম" [ref=f1e891] [box=95,1391,441,79]':
+              - generic [ref=f1e892] [box=115,1409,401,21]: Backpropagation calculus
+              - generic [ref=f1e893] [box=115,1433,401,19]: "ব্যাকপ্রপাগেশন ক্যালকুলাস: বিস্তারিত প্রমাণ ও অ্যালগরিদম"
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e894] [box=536,1391,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e896] [box=676,1391,337,79]:
+              - generic [ref=f1e897] [box=696,1419,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e898] [box=696,1419,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e899] [box=726,1419,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e900] [box=756,1419,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e901] [box=786,1419,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e902] [box=816,1419,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e903] [box=846,1419,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e904] [box=876,1419,24,24]': 🧩
+            - cell [ref=f1e905] [box=1013,1391,231,79]:
+              - generic [ref=f1e906] [box=1033,1415,191,31]:
+                - generic [box=1033,1415,80,31]: অফলাইন
+                - link "JSON" [ref=f1e907] [cursor=pointer] [box=1120,1415,56,31]:
+                  - /url: data/neural_networks/lesson_04.json
+                - button "🔍" [ref=f1e909] [box=1185,1417,39,28]
+    - generic [ref=f1e911] [box=20,1504,1225,601]:
+      - generic [ref=f1e912] [box=21,1505,1223,93]:
+        - generic [ref=f1e915] [box=71,1525,357,52]:
+          - heading "Differential Equations Dynamical Systems" [level=2] [ref=f1e916] [box=71,1525,357,30]:
+            - text: Differential Equations
+            - generic [ref=f1e917] [box=291,1526,136,28]: Dynamical Systems
+          - generic [ref=f1e918] [box=71,1555,357,22]: ডিফারেনশিয়াল সমীকরণ · 6টি লেসন
+        - generic [ref=f1e919] [box=1061,1536,159,28]:
+          - generic [ref=f1e920] [box=1061,1536,69,28]: 1 / 6 চালু
+          - generic [ref=f1e921] [box=1139,1537,81,26]: 17% সম্পন্ন
+      - table [ref=f1e922] [box=21,1597,1223,506]:
+        - rowgroup [ref=f1e923] [box=21,1597,1223,43]:
+          - row [ref=f1e924] [box=21,1597,1223,43]:
+            - columnheader "নম্বর" [ref=f1e925] [box=21,1597,74,43]
+            - columnheader "অধ্যায়ের শিরোনাম" [ref=f1e926] [box=95,1597,441,43]
+            - columnheader "স্ট্যাটাস" [ref=f1e927] [box=536,1597,140,43]
+            - columnheader "ম্যাট্রিক্স ও আর্কিটেকচার ফিচার" [ref=f1e928] [box=676,1597,337,43]
+            - columnheader "অ্যাকশন" [ref=f1e929] [box=1013,1597,231,43]
+        - rowgroup [ref=f1e930] [box=21,1640,1223,463]:
+          - row [ref=f1e931] [box=21,1640,1223,79]:
+            - cell "01" [ref=f1e932] [box=21,1640,74,79]
+            - cell "Differential equations, studying the unsolvable ডিফারেনশিয়াল সমীকরণ কী? — পরিবর্তনের ভাষা" [ref=f1e934] [box=95,1640,441,79]:
+              - generic [ref=f1e935] [box=115,1658,401,21]: Differential equations, studying the unsolvable
+              - generic [ref=f1e936] [box=115,1681,401,19]: ডিফারেনশিয়াল সমীকরণ কী? — পরিবর্তনের ভাষা
+            - cell "✅ সম্পূর্ণ ভেরিফাইড" [ref=f1e937] [box=536,1640,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e939] [box=676,1640,337,79]:
+              - generic [ref=f1e940] [box=696,1667,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e941] [box=696,1667,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e942] [box=726,1667,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e943] [box=756,1667,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e944] [box=786,1667,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e945] [box=816,1667,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e946] [box=846,1667,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e947] [box=876,1667,24,24]': 🧩
+            - cell [ref=f1e948] [box=1013,1640,231,79]:
+              - generic [ref=f1e949] [box=1033,1664,191,31]:
+                - link "🚀 খুলুন" [ref=f1e950] [cursor=pointer] [box=1040,1664,72,31]:
+                  - /url: courses/differential_equations/lesson_01.html
+                  - generic [ref=f1e951] [box=1051,1670,17,19]: 🚀
+                  - generic [ref=f1e952] [box=1073,1670,28,19]: খুলুন
+                - link "JSON" [ref=f1e953] [cursor=pointer] [box=1120,1664,56,31]:
+                  - /url: data/differential_equations/lesson_01.json
+                - button "🔍" [ref=f1e955] [box=1185,1665,39,28]
+          - row [ref=f1e957] [box=21,1719,1223,79]:
+            - cell "02" [ref=f1e958] [box=21,1719,74,79]
+            - cell "The Pendulum and Phase Space পেন্ডুলাম মেকানিক্স এবং ফেজ স্পেস" [ref=f1e960] [box=95,1719,441,79]:
+              - generic [ref=f1e961] [box=115,1737,401,21]: The Pendulum and Phase Space
+              - generic [ref=f1e962] [box=115,1760,401,19]: পেন্ডুলাম মেকানিক্স এবং ফেজ স্পেস
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e963] [box=536,1719,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e965] [box=676,1719,337,79]:
+              - generic [ref=f1e966] [box=696,1746,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e967] [box=696,1746,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e968] [box=726,1746,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e969] [box=756,1746,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e970] [box=786,1746,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e971] [box=816,1746,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e972] [box=846,1746,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e973] [box=876,1746,24,24]': 🧩
+            - cell [ref=f1e974] [box=1013,1719,231,79]:
+              - generic [ref=f1e975] [box=1033,1743,191,31]:
+                - generic [box=1033,1743,80,31]: অফলাইন
+                - link "JSON" [ref=f1e976] [cursor=pointer] [box=1120,1743,56,31]:
+                  - /url: data/differential_equations/lesson_02.json
+                - button "🔍" [ref=f1e978] [box=1185,1744,39,28]
+          - row [ref=f1e980] [box=21,1798,1223,75]:
+            - cell "03" [ref=f1e981] [box=21,1798,74,75]
+            - cell "The Heat Equation and Fourier Series তাপ সমীকরণ এবং ফুরিয়ার ধারা" [ref=f1e983] [box=95,1798,441,75]:
+              - generic [ref=f1e984] [box=115,1814,401,21]: The Heat Equation and Fourier Series
+              - generic [ref=f1e985] [box=115,1837,401,19]: তাপ সমীকরণ এবং ফুরিয়ার ধারা
+            - cell "🗓️ পরিকল্পিত" [ref=f1e986] [box=536,1798,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e988] [box=676,1798,337,75]:
+              - generic [ref=f1e989] [box=696,1823,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e990] [box=696,1823,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e991] [box=726,1823,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e992] [box=756,1823,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e993] [box=786,1823,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e994] [box=816,1823,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e995] [box=846,1823,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e996] [box=876,1823,24,24]': 🧩
+            - cell [ref=f1e997] [box=1013,1798,231,75]:
+              - generic [ref=f1e998] [box=1033,1820,191,31]:
+                - generic [box=1097,1820,80,31]: অফলাইন
+                - button "🔍" [ref=f1e999] [box=1185,1821,39,28]
+          - row [ref=f1e1001] [box=21,1873,1223,79]:
+            - cell "04" [ref=f1e1002] [box=21,1873,74,79]
+            - cell "Exponential decay, growth and Euler's number এক্সপোনেনশিয়াল ক্ষয়, বৃদ্ধি ও অয়লার সংখ্যা" [ref=f1e1004] [box=95,1873,441,79]:
+              - generic [ref=f1e1005] [box=115,1891,401,21]: Exponential decay, growth and Euler's number
+              - generic [ref=f1e1006] [box=115,1914,401,19]: এক্সপোনেনশিয়াল ক্ষয়, বৃদ্ধি ও অয়লার সংখ্যা
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e1007] [box=536,1873,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1009] [box=676,1873,337,79]:
+              - generic [ref=f1e1010] [box=696,1901,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e1011] [box=696,1901,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e1012] [box=726,1901,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1013] [box=756,1901,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e1014] [box=786,1901,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e1015] [box=816,1901,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e1016] [box=846,1901,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1017] [box=876,1901,24,24]': 🧩
+            - cell [ref=f1e1018] [box=1013,1873,231,79]:
+              - generic [ref=f1e1019] [box=1033,1897,191,31]:
+                - generic [box=1033,1897,80,31]: অফলাইন
+                - link "JSON" [ref=f1e1020] [cursor=pointer] [box=1120,1897,56,31]:
+                  - /url: data/differential_equations/lesson_04.json
+                - button "🔍" [ref=f1e1022] [box=1185,1899,39,28]
+          - row [ref=f1e1024] [box=21,1952,1223,75]:
+            - cell "05" [ref=f1e1025] [box=21,1952,74,75]
+            - cell "Phase portraits and linear systems of ODEs ফেজ পোর্ট্রেট এবং লিনিয়ার ওডিই সিস্টেম" [ref=f1e1027] [box=95,1952,441,75]:
+              - generic [ref=f1e1028] [box=115,1969,401,21]: Phase portraits and linear systems of ODEs
+              - generic [ref=f1e1029] [box=115,1992,401,19]: ফেজ পোর্ট্রেট এবং লিনিয়ার ওডিই সিস্টেম
+            - cell "🗓️ পরিকল্পিত" [ref=f1e1030] [box=536,1952,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1032] [box=676,1952,337,75]:
+              - generic [ref=f1e1033] [box=696,1978,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e1034] [box=696,1978,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e1035] [box=726,1978,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1036] [box=756,1978,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e1037] [box=786,1978,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e1038] [box=816,1978,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e1039] [box=846,1978,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1040] [box=876,1978,24,24]': 🧩
+            - cell [ref=f1e1041] [box=1013,1952,231,75]:
+              - generic [ref=f1e1042] [box=1033,1974,191,31]:
+                - generic [box=1097,1974,80,31]: অফলাইন
+                - button "🔍" [ref=f1e1043] [box=1185,1976,39,28]
+          - row [ref=f1e1045] [box=21,2027,1223,75]:
+            - cell "06" [ref=f1e1046] [box=21,2027,74,75]
+            - cell "Lorenz attractor, chaos and bifurcations লরেঞ্জ অ্যাট্রাক্টর, ক্যাওস এবং বাইফারকেশন" [ref=f1e1048] [box=95,2027,441,75]:
+              - generic [ref=f1e1049] [box=115,2044,401,21]: Lorenz attractor, chaos and bifurcations
+              - generic [ref=f1e1050] [box=115,2067,401,19]: লরেঞ্জ অ্যাট্রাক্টর, ক্যাওস এবং বাইফারকেশন
+            - cell "🗓️ পরিকল্পিত" [ref=f1e1051] [box=536,2027,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1053] [box=676,2027,337,75]:
+              - generic [ref=f1e1054] [box=696,2053,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e1055] [box=696,2053,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e1056] [box=726,2053,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1057] [box=756,2053,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e1058] [box=786,2053,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e1059] [box=816,2053,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e1060] [box=846,2053,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1061] [box=876,2053,24,24]': 🧩
+            - cell [ref=f1e1062] [box=1013,2027,231,75]:
+              - generic [ref=f1e1063] [box=1033,2050,191,31]:
+                - generic [box=1097,2050,80,31]: অফলাইন
+                - button "🔍" [ref=f1e1064] [box=1185,2051,39,28]
+    - generic [ref=f1e1066] [box=20,2136,1225,622]:
+      - generic [ref=f1e1067] [box=21,2137,1223,93]:
+        - generic [ref=f1e1070] [box=71,2157,368,52]:
+          - heading "Essence of Probability Uncertainty & Bayes" [level=2] [ref=f1e1071] [box=71,2157,368,30]:
+            - text: Essence of Probability
+            - generic [ref=f1e1072] [box=299,2158,140,28]: Uncertainty & Bayes
+          - generic [ref=f1e1073] [box=71,2187,368,22]: সম্ভাব্যতা তত্ত্ব · 6টি লেসন
+        - generic [ref=f1e1074] [box=1056,2169,165,28]:
+          - generic [ref=f1e1075] [box=1056,2169,72,28]: 2 / 6 চালু
+          - generic [ref=f1e1076] [box=1135,2170,85,26]: 33% সম্পন্ন
+      - table [ref=f1e1077] [box=21,2230,1223,527]:
+        - rowgroup [ref=f1e1078] [box=21,2230,1223,43]:
+          - row [ref=f1e1079] [box=21,2230,1223,43]:
+            - columnheader "নম্বর" [ref=f1e1080] [box=21,2230,74,43]
+            - columnheader "অধ্যায়ের শিরোনাম" [ref=f1e1081] [box=95,2230,441,43]
+            - columnheader "স্ট্যাটাস" [ref=f1e1082] [box=536,2230,140,43]
+            - columnheader "ম্যাট্রিক্স ও আর্কিটেকচার ফিচার" [ref=f1e1083] [box=676,2230,337,43]
+            - columnheader "অ্যাকশন" [ref=f1e1084] [box=1013,2230,231,43]
+        - rowgroup [ref=f1e1085] [box=21,2272,1223,484]:
+          - row [ref=f1e1086] [box=21,2272,1223,79]:
+            - cell "01" [ref=f1e1087] [box=21,2272,74,79]
+            - cell "What even is probability? — The geometry of uncertainty সম্ভাব্যতা আসলে কী? — অনিশ্চয়তার জ্যামিতি" [ref=f1e1089] [box=95,2272,441,79]:
+              - generic [ref=f1e1090] [box=115,2291,401,21]: What even is probability? — The geometry of uncertainty
+              - generic [ref=f1e1091] [box=115,2314,401,19]: সম্ভাব্যতা আসলে কী? — অনিশ্চয়তার জ্যামিতি
+            - cell "🌐 ওয়েব লাইভ" [ref=f1e1092] [box=536,2272,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1094] [box=676,2272,337,79]:
+              - generic [ref=f1e1095] [box=696,2300,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e1096] [box=696,2300,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e1097] [box=726,2300,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1098] [box=756,2300,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e1099] [box=786,2300,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e1100] [box=816,2300,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e1101] [box=846,2300,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1102] [box=876,2300,24,24]': 🧩
+            - cell [ref=f1e1103] [box=1013,2272,231,79]:
+              - generic [ref=f1e1104] [box=1033,2296,191,31]:
+                - link "🚀 খুলুন" [ref=f1e1105] [cursor=pointer] [box=1040,2296,72,31]:
+                  - /url: courses/probability/lesson_01.html
+                  - generic [ref=f1e1106] [box=1051,2302,17,19]: 🚀
+                  - generic [ref=f1e1107] [box=1073,2302,28,19]: খুলুন
+                - link "JSON" [ref=f1e1108] [cursor=pointer] [box=1120,2296,56,31]:
+                  - /url: data/probability/lesson_01.json
+                - button "🔍" [ref=f1e1110] [box=1185,2298,39,28]
+          - row [ref=f1e1112] [box=21,2351,1223,79]:
+            - cell "02" [ref=f1e1113] [box=21,2351,74,79]
+            - cell "Bayes' Rule & The Medical Paradox বেজের সূত্র এবং মেডিকেল টেস্ট প্যারাডক্স" [ref=f1e1115] [box=95,2351,441,79]:
+              - generic [ref=f1e1116] [box=115,2370,401,21]: Bayes' Rule & The Medical Paradox
+              - generic [ref=f1e1117] [box=115,2393,401,19]: বেজের সূত্র এবং মেডিকেল টেস্ট প্যারাডক্স
+            - cell "✅ সম্পূর্ণ ভেরিফাইড" [ref=f1e1118] [box=536,2351,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1120] [box=676,2351,337,79]:
+              - generic [ref=f1e1121] [box=696,2379,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e1122] [box=696,2379,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e1123] [box=726,2379,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1124] [box=756,2379,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e1125] [box=786,2379,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e1126] [box=816,2379,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e1127] [box=846,2379,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1128] [box=876,2379,24,24]': 🧩
+            - cell [ref=f1e1129] [box=1013,2351,231,79]:
+              - generic [ref=f1e1130] [box=1033,2375,191,31]:
+                - link "🚀 খুলুন" [ref=f1e1131] [cursor=pointer] [box=1105,2375,72,31]:
+                  - /url: courses/probability/lesson_02.html
+                  - generic [ref=f1e1132] [box=1116,2381,17,19]: 🚀
+                  - generic [ref=f1e1133] [box=1138,2381,28,19]: খুলুন
+                - button "🔍" [ref=f1e1134] [box=1185,2377,39,28]
+          - row [ref=f1e1136] [box=21,2430,1223,75]:
+            - cell "03" [ref=f1e1137] [box=21,2430,74,75]
+            - cell "Binomial distributions and coin flips দ্বিপদী বিন্যাস ও কয়েন টসের জ্যামিতি" [ref=f1e1139] [box=95,2430,441,75]:
+              - generic [ref=f1e1140] [box=115,2447,401,21]: Binomial distributions and coin flips
+              - generic [ref=f1e1141] [box=115,2470,401,19]: দ্বিপদী বিন্যাস ও কয়েন টসের জ্যামিতি
+            - cell "🗓️ পরিকল্পিত" [ref=f1e1142] [box=536,2430,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1144] [box=676,2430,337,75]:
+              - generic [ref=f1e1145] [box=696,2456,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e1146] [box=696,2456,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e1147] [box=726,2456,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1148] [box=756,2456,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e1149] [box=786,2456,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e1150] [box=816,2456,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e1151] [box=846,2456,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1152] [box=876,2456,24,24]': 🧩
+            - cell [ref=f1e1153] [box=1013,2430,231,75]:
+              - generic [ref=f1e1154] [box=1033,2453,191,31]:
+                - generic [box=1097,2453,80,31]: অফলাইন
+                - button "🔍" [ref=f1e1155] [box=1185,2454,39,28]
+          - row [ref=f1e1157] [box=21,2506,1223,75]:
+            - cell "04" [ref=f1e1158] [box=21,2506,74,75]
+            - cell "Poisson processes and waiting times পয়সোঁ প্রক্রিয়া ও অপেক্ষার সময়" [ref=f1e1160] [box=95,2506,441,75]:
+              - generic [ref=f1e1161] [box=115,2522,401,21]: Poisson processes and waiting times
+              - generic [ref=f1e1162] [box=115,2545,401,19]: পয়সোঁ প্রক্রিয়া ও অপেক্ষার সময়
+            - cell "🗓️ পরিকল্পিত" [ref=f1e1163] [box=536,2506,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1165] [box=676,2506,337,75]:
+              - generic [ref=f1e1166] [box=696,2531,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e1167] [box=696,2531,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e1168] [box=726,2531,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1169] [box=756,2531,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e1170] [box=786,2531,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e1171] [box=816,2531,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e1172] [box=846,2531,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1173] [box=876,2531,24,24]': 🧩
+            - cell [ref=f1e1174] [box=1013,2506,231,75]:
+              - generic [ref=f1e1175] [box=1033,2528,191,31]:
+                - generic [box=1097,2528,80,31]: অফলাইন
+                - button "🔍" [ref=f1e1176] [box=1185,2529,39,28]
+          - row [ref=f1e1178] [box=21,2581,1223,79]:
+            - cell "05" [ref=f1e1179] [box=21,2581,74,79]
+            - cell "Markov Chains, Random Walks, and Steady States মার্কভ চেইন, র‍্যান্ডম ওয়াক ও স্টেডি স্টেট" [ref=f1e1181] [box=95,2581,441,79]:
+              - generic [ref=f1e1182] [box=115,2599,401,21]: Markov Chains, Random Walks, and Steady States
+              - generic [ref=f1e1183] [box=115,2622,401,19]: মার্কভ চেইন, র‍্যান্ডম ওয়াক ও স্টেডি স্টেট
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e1184] [box=536,2581,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1186] [box=676,2581,337,79]:
+              - generic [ref=f1e1187] [box=696,2608,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: রেডি" [ref=f1e1188] [box=696,2608,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e1189] [box=726,2608,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1190] [box=756,2608,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e1191] [box=786,2608,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e1192] [box=816,2608,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e1193] [box=846,2608,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1194] [box=876,2608,24,24]': 🧩
+            - cell [ref=f1e1195] [box=1013,2581,231,79]:
+              - generic [ref=f1e1196] [box=1033,2605,191,31]:
+                - generic [box=1033,2605,80,31]: অফলাইন
+                - link "JSON" [ref=f1e1197] [cursor=pointer] [box=1120,2605,56,31]:
+                  - /url: data/probability/lesson_05.json
+                - button "🔍" [ref=f1e1199] [box=1185,2606,39,28]
+          - row [ref=f1e1201] [box=21,2660,1223,96]:
+            - cell "06" [ref=f1e1202] [box=21,2660,74,96]
+            - cell "Continuous probability distributions & Central Limit Theorem অবিচ্ছিন্ন সম্ভাবনা বিন্যাস ও সেন্ট্রাল লিমিট থিওরেম" [ref=f1e1204] [box=95,2660,441,96]:
+              - generic [ref=f1e1205] [box=115,2676,401,42]: Continuous probability distributions & Central Limit Theorem
+              - generic [ref=f1e1206] [box=115,2721,401,19]: অবিচ্ছিন্ন সম্ভাবনা বিন্যাস ও সেন্ট্রাল লিমিট থিওরেম
+            - cell "🗓️ পরিকল্পিত" [ref=f1e1207] [box=536,2660,140,96]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1209] [box=676,2660,337,96]:
+              - generic [ref=f1e1210] [box=696,2696,297,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e1211] [box=696,2696,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e1212] [box=726,2696,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1213] [box=756,2696,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e1214] [box=786,2696,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e1215] [box=816,2696,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e1216] [box=846,2696,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1217] [box=876,2696,24,24]': 🧩
+            - cell [ref=f1e1218] [box=1013,2660,231,96]:
+              - generic [ref=f1e1219] [box=1033,2693,191,31]:
+                - generic [box=1097,2693,80,31]: অফলাইন
+                - button "🔍" [ref=f1e1220] [box=1185,2694,39,28]
+    - generic [ref=f1e1222] [box=20,2790,1225,898]:
+      - generic [ref=f1e1223] [box=21,2791,1223,93]:
+        - generic [ref=f1e1226] [box=71,2811,312,52]:
+          - heading "Lockdown Math Live Interactive Gems" [level=2] [ref=f1e1227] [box=71,2811,312,30]:
+            - text: Lockdown Math
+            - generic [ref=f1e1228] [box=236,2812,147,28]: Live Interactive Gems
+          - generic [ref=f1e1229] [box=71,2841,312,22]: লকডাউন ম্যাথ · 10টি লেসন
+        - generic [ref=f1e1230] [box=1055,2823,165,28]:
+          - generic [ref=f1e1231] [box=1055,2823,75,28]: 1 / 10 চালু
+          - generic [ref=f1e1232] [box=1138,2824,82,26]: 10% সম্পন্ন
+      - table [ref=f1e1233] [box=21,2883,1223,803]:
+        - rowgroup [ref=f1e1234] [box=21,2883,1223,43]:
+          - row [ref=f1e1235] [box=21,2883,1223,43]:
+            - columnheader "নম্বর" [ref=f1e1236] [box=21,2883,74,43]
+            - columnheader "অধ্যায়ের শিরোনাম" [ref=f1e1237] [box=95,2883,448,43]
+            - columnheader "স্ট্যাটাস" [ref=f1e1238] [box=543,2883,140,43]
+            - columnheader "ম্যাট্রিক্স ও আর্কিটেকচার ফিচার" [ref=f1e1239] [box=683,2883,341,43]
+            - columnheader "অ্যাকশন" [ref=f1e1240] [box=1024,2883,220,43]
+        - rowgroup [ref=f1e1241] [box=21,2926,1223,760]:
+          - row [ref=f1e1242] [box=21,2926,1223,79]:
+            - cell "01" [ref=f1e1243] [box=21,2926,74,79]
+            - cell "The quadratic formula visually দ্বিঘাত সমীকরণের আসল জ্যামিতিক রূপ" [ref=f1e1245] [box=95,2926,448,79]:
+              - generic [ref=f1e1246] [box=115,2944,408,21]: The quadratic formula visually
+              - generic [ref=f1e1247] [box=115,2967,408,19]: দ্বিঘাত সমীকরণের আসল জ্যামিতিক রূপ
+            - cell "🌐 ওয়েব লাইভ" [ref=f1e1248] [box=543,2926,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1250] [box=683,2926,341,79]:
+              - generic [ref=f1e1251] [box=703,2953,301,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e1252] [box=703,2953,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e1253] [box=733,2953,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1254] [box=763,2953,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: সক্রিয়" [ref=f1e1255] [box=793,2953,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: যুক্ত" [ref=f1e1256] [box=823,2953,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: সক্রিয়" [ref=f1e1257] [box=853,2953,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1258] [box=883,2953,24,24]': 🧩
+            - cell [ref=f1e1259] [box=1024,2926,220,79]:
+              - generic [ref=f1e1260] [box=1044,2950,180,31]:
+                - link "🚀 খুলুন" [ref=f1e1261] [cursor=pointer] [box=1105,2950,72,31]:
+                  - /url: courses/lockdown_math/lesson_01.html
+                  - generic [ref=f1e1262] [box=1116,2956,17,19]: 🚀
+                  - generic [ref=f1e1263] [box=1138,2956,28,19]: খুলুন
+                - button "🔍" [ref=f1e1264] [box=1185,2951,39,28]
+          - row [ref=f1e1266] [box=21,3005,1223,79]:
+            - cell "02" [ref=f1e1267] [box=21,3005,74,79]
+            - cell "Exponential growth and epidemics এক্সপোনেনশিয়াল বৃদ্ধি ও মহামারির গণিত" [ref=f1e1269] [box=95,3005,448,79]:
+              - generic [ref=f1e1270] [box=115,3023,408,21]: Exponential growth and epidemics
+              - generic [ref=f1e1271] [box=115,3046,408,19]: এক্সপোনেনশিয়াল বৃদ্ধি ও মহামারির গণিত
+            - cell "⚙️ স্ক্রিপ্ট / অডিও" [ref=f1e1272] [box=543,3005,140,79]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1274] [box=683,3005,341,79]:
+              - generic [ref=f1e1275] [box=703,3032,301,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e1276] [box=703,3032,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: হ্যাঁ" [ref=f1e1277] [box=733,3032,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1278] [box=763,3032,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e1279] [box=793,3032,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e1280] [box=823,3032,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e1281] [box=853,3032,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1282] [box=883,3032,24,24]': 🧩
+            - cell [ref=f1e1283] [box=1024,3005,220,79]:
+              - generic [ref=f1e1284] [box=1044,3029,180,31]:
+                - generic [box=1097,3029,80,31]: অফলাইন
+                - button "🔍" [ref=f1e1285] [box=1185,3030,39,28]
+          - row [ref=f1e1287] [box=21,3084,1223,75]:
+            - cell "03" [ref=f1e1288] [box=21,3084,74,75]
+            - cell "Trigonometric formulas and geometry ত্রিকোণমিতিক সূত্র ও জ্যামিতি" [ref=f1e1290] [box=95,3084,448,75]:
+              - generic [ref=f1e1291] [box=115,3100,408,21]: Trigonometric formulas and geometry
+              - generic [ref=f1e1292] [box=115,3123,408,19]: ত্রিকোণমিতিক সূত্র ও জ্যামিতি
+            - cell "🗓️ পরিকল্পিত" [ref=f1e1293] [box=543,3084,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1295] [box=683,3084,341,75]:
+              - generic [ref=f1e1296] [box=703,3109,301,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e1297] [box=703,3109,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e1298] [box=733,3109,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1299] [box=763,3109,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e1300] [box=793,3109,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e1301] [box=823,3109,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e1302] [box=853,3109,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1303] [box=883,3109,24,24]': 🧩
+            - cell [ref=f1e1304] [box=1024,3084,220,75]:
+              - generic [ref=f1e1305] [box=1044,3106,180,31]:
+                - generic [box=1097,3106,80,31]: অফলাইন
+                - button "🔍" [ref=f1e1306] [box=1185,3107,39,28]
+          - row [ref=f1e1308] [box=21,3159,1223,75]:
+            - cell "04" [ref=f1e1309] [box=21,3159,74,75]
+            - cell "Area and Pi with circle unwrapping বৃত্তের ক্ষেত্রফল ও পাই-এর উন্মোচন" [ref=f1e1311] [box=95,3159,448,75]:
+              - generic [ref=f1e1312] [box=115,3176,408,21]: Area and Pi with circle unwrapping
+              - generic [ref=f1e1313] [box=115,3199,408,19]: বৃত্তের ক্ষেত্রফল ও পাই-এর উন্মোচন
+            - cell "🗓️ পরিকল্পিত" [ref=f1e1314] [box=543,3159,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1316] [box=683,3159,341,75]:
+              - generic [ref=f1e1317] [box=703,3185,301,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e1318] [box=703,3185,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e1319] [box=733,3185,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1320] [box=763,3185,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e1321] [box=793,3185,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e1322] [box=823,3185,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e1323] [box=853,3185,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1324] [box=883,3185,24,24]': 🧩
+            - cell [ref=f1e1325] [box=1024,3159,220,75]:
+              - generic [ref=f1e1326] [box=1044,3181,180,31]:
+                - generic [box=1097,3181,80,31]: অফলাইন
+                - button "🔍" [ref=f1e1327] [box=1185,3183,39,28]
+          - row [ref=f1e1329] [box=21,3234,1223,75]:
+            - cell "05" [ref=f1e1330] [box=21,3234,74,75]
+            - cell "Binomial distributions & Pascal's triangle দ্বিপদী বণ্টন ও প্যাসকেলের ত্রিভুজ" [ref=f1e1332] [box=95,3234,448,75]:
+              - generic [ref=f1e1333] [box=115,3251,408,21]: Binomial distributions & Pascal's triangle
+              - generic [ref=f1e1334] [box=115,3274,408,19]: দ্বিপদী বণ্টন ও প্যাসকেলের ত্রিভুজ
+            - cell "🗓️ পরিকল্পিত" [ref=f1e1335] [box=543,3234,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1337] [box=683,3234,341,75]:
+              - generic [ref=f1e1338] [box=703,3260,301,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e1339] [box=703,3260,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e1340] [box=733,3260,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1341] [box=763,3260,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e1342] [box=793,3260,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e1343] [box=823,3260,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e1344] [box=853,3260,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1345] [box=883,3260,24,24]': 🧩
+            - cell [ref=f1e1346] [box=1024,3234,220,75]:
+              - generic [ref=f1e1347] [box=1044,3257,180,31]:
+                - generic [box=1097,3257,80,31]: অফলাইন
+                - button "🔍" [ref=f1e1348] [box=1185,3258,39,28]
+          - row [ref=f1e1350] [box=21,3310,1223,75]:
+            - cell "06" [ref=f1e1351] [box=21,3310,74,75]
+            - cell "Prime numbers and modular arithmetic মৌলিক সংখ্যা ও মডুলার অ্যারিথমেটিক" [ref=f1e1353] [box=95,3310,448,75]:
+              - generic [ref=f1e1354] [box=115,3326,408,21]: Prime numbers and modular arithmetic
+              - generic [ref=f1e1355] [box=115,3349,408,19]: মৌলিক সংখ্যা ও মডুলার অ্যারিথমেটিক
+            - cell "🗓️ পরিকল্পিত" [ref=f1e1356] [box=543,3310,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1358] [box=683,3310,341,75]:
+              - generic [ref=f1e1359] [box=703,3335,301,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e1360] [box=703,3335,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e1361] [box=733,3335,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1362] [box=763,3335,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e1363] [box=793,3335,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e1364] [box=823,3335,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e1365] [box=853,3335,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1366] [box=883,3335,24,24]': 🧩
+            - cell [ref=f1e1367] [box=1024,3310,220,75]:
+              - generic [ref=f1e1368] [box=1044,3332,180,31]:
+                - generic [box=1097,3332,80,31]: অফলাইন
+                - button "🔍" [ref=f1e1369] [box=1185,3333,39,28]
+          - row [ref=f1e1371] [box=21,3385,1223,75]:
+            - cell "07" [ref=f1e1372] [box=21,3385,74,75]
+            - cell "Complex numbers visually জটিল সংখ্যার জ্যামিতিক রূপ" [ref=f1e1374] [box=95,3385,448,75]:
+              - generic [ref=f1e1375] [box=115,3402,408,21]: Complex numbers visually
+              - generic [ref=f1e1376] [box=115,3425,408,19]: জটিল সংখ্যার জ্যামিতিক রূপ
+            - cell "🗓️ পরিকল্পিত" [ref=f1e1377] [box=543,3385,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1379] [box=683,3385,341,75]:
+              - generic [ref=f1e1380] [box=703,3411,301,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e1381] [box=703,3411,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e1382] [box=733,3411,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1383] [box=763,3411,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e1384] [box=793,3411,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e1385] [box=823,3411,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e1386] [box=853,3411,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1387] [box=883,3411,24,24]': 🧩
+            - cell [ref=f1e1388] [box=1024,3385,220,75]:
+              - generic [ref=f1e1389] [box=1044,3407,180,31]:
+                - generic [box=1097,3407,80,31]: অফলাইন
+                - button "🔍" [ref=f1e1390] [box=1185,3409,39,28]
+          - row [ref=f1e1392] [box=21,3460,1223,75]:
+            - cell "08" [ref=f1e1393] [box=21,3460,74,75]
+            - cell "Vectors & linear transformations revisited ভেক্টর ও রৈখিক রূপান্তর পর্যালোচনা" [ref=f1e1395] [box=95,3460,448,75]:
+              - generic [ref=f1e1396] [box=115,3477,408,21]: Vectors & linear transformations revisited
+              - generic [ref=f1e1397] [box=115,3500,408,19]: ভেক্টর ও রৈখিক রূপান্তর পর্যালোচনা
+            - cell "🗓️ পরিকল্পিত" [ref=f1e1398] [box=543,3460,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1400] [box=683,3460,341,75]:
+              - generic [ref=f1e1401] [box=703,3486,301,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e1402] [box=703,3486,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e1403] [box=733,3486,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1404] [box=763,3486,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e1405] [box=793,3486,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e1406] [box=823,3486,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e1407] [box=853,3486,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1408] [box=883,3486,24,24]': 🧩
+            - cell [ref=f1e1409] [box=1024,3460,220,75]:
+              - generic [ref=f1e1410] [box=1044,3483,180,31]:
+                - generic [box=1097,3483,80,31]: অফলাইন
+                - button "🔍" [ref=f1e1411] [box=1185,3484,39,28]
+          - row [ref=f1e1413] [box=21,3536,1223,75]:
+            - cell "09" [ref=f1e1414] [box=21,3536,74,75]
+            - cell "Calculus without limits সীমা ছাড়া ক্যালকুলাস" [ref=f1e1416] [box=95,3536,448,75]:
+              - generic [ref=f1e1417] [box=115,3552,408,21]: Calculus without limits
+              - generic [ref=f1e1418] [box=115,3575,408,19]: সীমা ছাড়া ক্যালকুলাস
+            - cell "🗓️ পরিকল্পিত" [ref=f1e1419] [box=543,3536,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1421] [box=683,3536,341,75]:
+              - generic [ref=f1e1422] [box=703,3561,301,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e1423] [box=703,3561,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e1424] [box=733,3561,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1425] [box=763,3561,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e1426] [box=793,3561,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e1427] [box=823,3561,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e1428] [box=853,3561,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1429] [box=883,3561,24,24]': 🧩
+            - cell [ref=f1e1430] [box=1024,3536,220,75]:
+              - generic [ref=f1e1431] [box=1044,3558,180,31]:
+                - generic [box=1097,3558,80,31]: অফলাইন
+                - button "🔍" [ref=f1e1432] [box=1185,3559,39,28]
+          - row [ref=f1e1434] [box=21,3611,1223,75]:
+            - cell "10" [ref=f1e1435] [box=21,3611,74,75]
+            - cell "The beauty of pure mathematics বিশুদ্ধ গণিতের অপার সৌন্দর্য" [ref=f1e1437] [box=95,3611,448,75]:
+              - generic [ref=f1e1438] [box=115,3627,408,21]: The beauty of pure mathematics
+              - generic [ref=f1e1439] [box=115,3651,408,19]: বিশুদ্ধ গণিতের অপার সৌন্দর্য
+            - cell "🗓️ পরিকল্পিত" [ref=f1e1440] [box=543,3611,140,75]
+            - cell "📜 🎙️ 🔊 ∑ ❓ 🧪 🧩" [ref=f1e1442] [box=683,3611,341,75]:
+              - generic [ref=f1e1443] [box=703,3637,301,24]:
+                - 'generic "মাস্টার স্ক্রিপ্ট: অনুপস্থিত" [ref=f1e1444] [box=703,3637,24,24]': 📜
+                - 'generic "অডিও ম্যানিফেস্ট সিঙ্ক: নেই" [ref=f1e1445] [box=733,3637,24,24]': 🎙️
+                - 'generic "সম্পূর্ণ বাংলা ডাব মাস্টার: নেই" [ref=f1e1446] [box=763,3637,24,24]': 🔊
+                - 'generic "কাটেক গণিত সূত্র: নেই" [ref=f1e1447] [box=793,3637,24,24]': ∑
+                - 'generic "ইন্টারঅ্যাক্টিভ কুইজ: নেই" [ref=f1e1448] [box=823,3637,24,24]': ❓
+                - 'generic "ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: নেই" [ref=f1e1449] [box=853,3637,24,24]': 🧪
+                - 'generic "ওয়েব কম্পোনেন্টস <b1b-*>: ক্লাসিক" [ref=f1e1450] [box=883,3637,24,24]': 🧩
+            - cell [ref=f1e1451] [box=1024,3611,220,75]:
+              - generic [ref=f1e1452] [box=1044,3633,180,31]:
+                - generic [box=1097,3633,80,31]: অফলাইন
+                - button "🔍" [ref=f1e1453] [box=1185,3635,39,28]

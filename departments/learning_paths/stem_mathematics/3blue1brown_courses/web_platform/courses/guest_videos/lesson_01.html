@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>এআই ছবি ও ভিডিও আসলে কীভাবে কাজ করে? | But how do AI images and videos actually work? | Guest video by Welch Labs (3Blue1Brown Guest Videos)</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/guest_videos/lesson_01/manifest.js?v=8"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order (identical to gold L01) ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<b1b-search-overlay></b1b-search-overlay>
+
+<b1b-navbar
+  course-title="অতিথি ভিডিও"
+  course-url="../../index.html#guest-videos"
+  home-url="../../index.html"
+  chapter-num="০১"
+  chapter-total="০৫"
+  prev-url=""
+  prev-title="পূর্ববর্তী অধ্যায় নেই"
+  next-url="lesson_02.html"
+  next-title="পরবর্তী অধ্যায়: অন্বেষণ ও উদ্ভোদন: অসম্পূর্ণ ঘনকের গণিত"
+  active-mode="read">
+</b1b-navbar>
+
+<b1b-hero-player
+  course-title="অতিথি ভিডিও"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০১ · ৩ব্লু১ব্রাউন অতিথি ভিডিও"
+  title="এআই ছবি ও ভিডিও আসলে কীভাবে কাজ করে? | But how do AI images and videos actually work? | Guest video by Welch Labs"
+  desc="ডিফিউশন মডেল, CLIP এবং টেক্সট থেকে ছবি তৈরির গণিত — অতিথি পাঠ: স্টিফেন ওয়েলচ, ওয়েলচ ল্যাবস"
+  video-src="../../media_vault/guest_videos/lesson_01/experiments/3b1b_guest_videos_01_full_dubbed.mp4"
+  yt-id="iv-5mZ_9CPY"
+  date="২৫ জুলাই, ২০২৫"
+  author="Stephen Welch"
+  author-url="https://www.3blue1brown.com/lessons/diffusion-models"
+  translation="মূল পাঠ: Stephen Welch (অতিথি) | বাংলা রূপান্তর ও পাঠ: STEM টিম"
+  github-url="https://www.3blue1brown.com/lessons/diffusion-models"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="00:00">নয়েজ থেকে ছবি: ডিফিউশনের মূল ধারণা</b1b-bookmark>
+      <b1b-bookmark time="137" time-bn="02:17">ফরোয়ার্ড প্রসেস: ছবিকে নয়েজে রূপান্তর</b1b-bookmark>
+      <b1b-bookmark time="274" time-bn="04:34">রিভার্স প্রসেস: নয়েজ থেকে ছবি ফিরে পাওয়া</b1b-bookmark>
+      <b1b-bookmark time="411" time-bn="06:51">CLIP: ভাষা ও ছবির মধ্যে সেতু</b1b-bookmark>
+      <b1b-bookmark time="548" time-bn="08:08">প্রশিক্ষণ ও বাস্তব প্রয়োগ</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-01-noise">নয়েজ থেকে ছবি: ডিফিউশনের মূল ধারণা</a>
+      <a href="#sec-02-forward">ফরোয়ার্ড প্রসেস: ছবিকে নয়েজে রূপান্তর</a>
+      <a href="#sec-03-reverse">রিভার্স প্রসেস: নয়েজ থেকে ছবি ফিরে পাওয়া</a>
+      <a href="#sec-04-clip">CLIP: ভাষা ও ছবির মধ্যে সেতু</a>
+      <a href="#sec-05-practice">প্রশিক্ষণ ও বাস্তব প্রয়োগ</a>
+      <a href="#sec-06-lab">ইন্টারেক্টিভ ল্যাব</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ Section 1: sec-01-noise ═══ -->
+      <b1b-section id="sec-01-noise" title="নয়েজ থেকে ছবি: ডিফিউশনের মূল ধারণা">
+        <p>আপনি হয়তো ভাবছেন, এআই কীভাবে হঠাৎ করে কোনো ছবি আঁকতে পারে? এর উত্তর কোনো জাদুকরী কল্পশক্তিতে নয়, বরং এক ধীর ও নিয়ন্ত্রিত প্রক্রিয়ায় লুকোনো। একে বলা হয় <strong>ডিফিউশন (diffusion)</strong>। ভাবুন এক কাপ কফিতে দুধ ঢেলে দেওয়া হচ্ছে — প্রথমে দুধ আর কফি আলাদা, কিছুক্ষণ পর সব মিলে একরঙা মিশ্রণ হয়ে যায়। ডিফিউশন মডেল ঠিক এই মিশ্রণ প্রক্রিয়াটিকেই উল্টো দিকে চালানো শেখে।</p>
+        <b1b-figure src="../../assets/figures/guest_videos/lesson_01/fig_noise_to_image.svg" alt="এলোমেলো নয়েজের পিক্সেল ধীরে ধীরে একটি সুন্দর ছবিতে রূপ নিচ্ছে" caption="নয়েজ থেকে ছবি — ধাপে ধাপে পরিশোধন"></b1b-figure>
+        <p>গাণিতিকভাবে আমরা একটি ছবিকে ভাবি এক বড় সংখ্যার গ্রিড হিসেবে — প্রতিটি পিক্সেলের রঙ একটি সংখ্যা। নয়েজ মানে এই সংখ্যাগুলোকে এলোমেলো করে দেওয়া। মডেলের লক্ষ্য হলো, একটি নয়েজবহুল গ্রিড দেখে অনুমান করা কোনটা আসল ছবির অংশ আর কোনটা কৃত্রিম নয়েজ।</p>
+
+        <b1b-quiz
+          question="ডিফিউশন মডেলে প্রথম ধাপে কী করা হয়?"
+          correct="1"
+          correct-msg="চমৎকার! প্রথমে পরিচ্ছন্ন ছবিতে নয়েজ যোগ করে একটি ধ্বংসপ্রাপ্ত সংস্করণ তৈরি করা হয়।"
+          wrong-msg="আবার ভাবুন — নয়েজ কোথা থেকে আসে?"
+          reveal-msg="সঠিক উত্তর: পরিচ্ছন্ন ছবিতে ধীরে ধীরে নয়েজ যোগ করা হয়।"
+          data-no-narration="true">
+            <div slot="option">একটি সম্পূর্ণ ছবি একবারে আঁকা হয়</div>
+            <div slot="option">একটি পরিচ্ছন্ন ছবিতে ধীরে ধীরে নয়েজ যোগ করা হয়</div>
+            <div slot="option">ছবিটিকে ছোট করে ফেলা হয়</div>
+            <div slot="option">শুধু রঙ বদলানো হয়</div>
+        </b1b-quiz>
+        <b1b-callout type="blue" icon="🔁" title="মার্কভ শৃঙ্খল (Markov Chain)">
+<p>প্রতিটি ধাপে মডেল শুধু <strong>বর্তমান অবস্থা</strong> দেখে পরের অবস্থা নির্ধারণ করে। অতীতের দিকে ফিরে তাকাতে হয় না। এই সহজ নিয়মই দীর্ঘ শৃঙ্খলকে পরিচালনাযোগ্য করে তোলে।</p>
+        </b1b-callout>
+        <b1b-formula math="x_{t-1} = x_t - \epsilon_\theta(x_t,\, t)"></b1b-formula>
+        <p>এই সূত্রটিই পুরো প্রক্রিয়ার হৃদয়। $\epsilon_\theta$ হলো নিউরাল নেটওয়ার্ক, যেটি প্রশিক্ষণের মাধ্যমে শিখে নেয় কোনটা নয়েজ। একবার এটি যথেষ্ট ভালোভাবে শিখে গেলে, শুধু বারবার এই একটি কাজ করে একটি নতুন ছবি তৈরি করা যায়।</p>
+      </b1b-section>
+
+      <!-- ═══ Section 2: sec-02-forward ═══ -->
+      <b1b-section id="sec-02-forward" title="ফরোয়ার্ড প্রসেস: ছবিকে নয়েজে রূপান্তর">
+        <p>প্রশিক্ষণ শুরু করার আগে আমাদের একটি নির্দিষ্ট নিয়ম দরকার, যার মাধ্যমে যেকোনো ছবিকে নয়েজে পরিণত করা যায়। একে বলা হয় <strong>ফরোয়ার্ড প্রসেস</strong> বা ডিফিউশন প্রসেস। এটি কোনো শিখন প্রক্রিয়া নয় — এটি একটি নির্ধারিত গাণিতিক সূত্র।</p>
+        <b1b-formula math="q(x_t \mid x_{t-1}) = \mathcal{N}\big(x_t;\ \sqrt{1-\beta_t}\,x_{t-1},\ \beta_t I\big)"></b1b-formula>
+        <p>এখানে $\beta_t$ একটি ছোট সংখ্যা, যা বলে দেয় কতটুকু নয়েজ যোগ হবে। ধাপ বাড়ার সাথে সাথে $\beta_t$ ও বাড়তে থাকে, ফলে ছবি ধীরে ধীরে তার আসল রূপ হারিয়ে ফেলে। শেষ ধাপে ছবিটি সম্পূর্ণরূপে একটি সাধারণ গaussian নয়েজে পরিণত হয়।</p>
+        <b1b-figure src="../../assets/figures/guest_videos/lesson_01/fig_forward_noise.svg" alt="পরিচ্ছন্ন ছবি ধীরে ধীরে এলোমেলো নয়েজে রূপান্তরিত হচ্ছে" caption="ফরোয়ার্ড প্রসেস — ছবি থেকে নয়েজ"></b1b-figure>
+        <b1b-callout type="gold" icon="🎯" title="কেন ফরোয়ার্ড প্রসেস জানা জরুরি?">
+<p>যেহেতু আমরা নিজেরাই নয়েজ যোগ করেছি, তাই আমরা <strong>ঠিক কতটা নয়েজ যোগ করা হয়েছে</strong> তা জানি। এই জানাই নিউরাল নেটওয়ার্কের জন্য পাঠ্যপুস্তকের মতো — প্রতিটি ধাপে সঠিক উত্তর হাতে থাকে।</p>
+        </b1b-callout>
+        <p>এই কারণে ডিফিউশন মডেল.prশিক্ষণ তুলনামূলক সোজা: একটি ছবি নিন, একটি_random ধাপ t বেছে নিন, সেই ধাপের নয়েজযুক্ত সংস্করণ তৈরি করুন এবং নেটওয়ার্ককে বলুন সেই নয়েজটি চিনতে। কোনো জটিল লেবেল বা মানুয়াল ট্যাগিং লাগে না।</p>
+      </b1b-section>
+
+      <!-- ═══ Section 3: sec-03-reverse ═══ -->
+      <b1b-section id="sec-03-reverse" title="রিভার্স প্রসেস: নয়েজ থেকে ছবি ফিরে পাওয়া">
+        <b1b-quote author="Welch Labs">নয়েজ সরানো মানেই হলো এক ধরনের সৃষ্টি — প্রতিটি ছোট সিদ্ধান্ত একসাথে একটি ছবি গড়ে তোলে।</b1b-quote>
+        <p>এবার আসল কাজ — রিভার্স প্রসেস। একটি সম্পূর্ণ এলোমেলো নয়েজ ছবি নিয়ে আমরা বারবার জিজ্ঞেস করি: 'এই নয়েজটি কী?' নেটওয়ার্ক উত্তর দেয়, আমরা সেই উত্তরটি বিয়োগ করি, এবং পরের ধাপে যাই। কয়েক dozen ধাপের পর হঠাৎ করে একটি ছবি ফুটে ওঠে।</p>
+        <b1b-figure src="../../assets/figures/guest_videos/lesson_01/fig_reverse_loop.svg" alt="নয়েজ ছবি থেকে শুরু করে বারবার নয়েজ সরিয়ে চূড়ান্ত ছবি তৈরির চক্র" caption="রিভার্স লুপ — বারবার নয়েজ অনুমান ও অপসারণ"></b1b-figure>
+        <p>কিন্তু কেবল নয়েজ সরালে তো যেকোনো ছবি আসতে পারে — আমরা চাই একটি নির্দিষ্ট ছবি, যেমন 'চাঁদের ওপর একটি বিড়াল'। এজন্য প্রম্পটের টেক্সটকে প্রতিটি ধাপে মডেলের কাছে পৌঁছে দেওয়া হয়। একে বলা হয় <strong>কন্ডিশনিং</strong>।</p>
+
+        <b1b-quiz
+          question="রিভার্স প্রসেসে প্রতিটি ধাপে মডেল আসলে কী করে?"
+          correct="1"
+          correct-msg="ঠিক! মডেল নয়েজ অনুমান করে সেটি বিয়োগ করে।"
+          wrong-msg="ভুল হয়েছে — এটি কি যোগ না বিয়োগ?"
+          reveal-msg="সঠিক উত্তর: নয়েজ অনুমান করে এবং সেটি বিয়োগ করে।"
+          data-no-narration="true">
+            <div slot="option">নতুন নয়েজ যোগ করে</div>
+            <div slot="option">নয়েজের পরিমাণ অনুমান করে এবং সেটি বিয়োগ করে</div>
+            <div slot="option">ছবিটি মুছে ফেলে</div>
+            <div slot="option">রঙ পরিবর্তন করে</div>
+        </b1b-quiz>
+        <b1b-callout type="purple" icon="🧭" title="ক্লাসিফায়ার-ফ্রি গাইডেন্স">
+<p>প্রম্পটসহ ও প্রম্পট ছাড়া — দুইভাবে নয়েজ অনুমান করা হয়। এরপর দুটির পার্থক্যকে কিছুটা বাড়িয়ে যোগ করা হয়, ফলে মডেল প্রম্পটের দিকে আরও দৃঢ়ভাবে অগ্রসর হয়। এটি ছবির গুণমান ও প্রম্পট-মিল দুটিই উন্নত করে।</p>
+        </b1b-callout>
+        <b1b-formula math="\hat{\epsilon} = \epsilon_\theta(x_t, t, \varnothing) + s\big(\epsilon_\theta(x_t,t,c) - \epsilon_\theta(x_t,t,\varnothing)\big)"></b1b-formula>
+        <p>ভিডিও তৈরির ক্ষেত্রে একই নীতি কাজ করে, শুধু প্রතিটি ফ্রেমের সাথে সময়ের মাত্রাও যোগ হয়। ধাপগুলোর মধ্যে ধারাবাহিকতা বজায় রাখার জন্য আলাদা টemporal লেয়ার যোগ করা হয়, যাতে পরপর ফ্রেমগুলো একে অপরের সাথে মিলে যায়।</p>
+      </b1b-section>
+
+      <!-- ═══ Section 4: sec-04-clip ═══ -->
+      <b1b-section id="sec-04-clip" title="CLIP: ভাষা ও ছবির মধ্যে সেতু">
+        <p>একটি.problem আছে: নিউরাল নেটওয়ার্ক সংখ্যা বোঝে, শব্দ বোঝে না। তাই 'লাল গোলাপ' লেখা প্রম্পটটিকে ছবির পিক্সেলের সাথে মিলানোর জন্য আমাদের দরকার একটি অনুবাদক। এই কাজে ব্যবহৃত হয় <strong>CLIP</strong> — Contractive Language–Image Pretraining।</p>
+        <b1b-figure src="../../assets/figures/guest_videos/lesson_01/fig_clip_space.svg" alt="টেক্সট ও ইমেজ এনকোডার একই ভেক্টর স্পেসে বাক্য ও ছবিকে স্থাপন করছে" caption="CLIP-এর ভাগ করা ভেক্টর স্পেস"></b1b-figure>
+        <p>CLIP দুটি এনকোডার নিয়ে গঠিত: একটি শব্দের জন্য, অন্যটি ছবির জন্য। প্রশিক্ষণের পর 'একটি বিড়ালের ছবি' লেখা বাক্য এবং আসল একটা বিড়ালের ছবি — দুটো ভেক্টর এই স্পেসে কাছাকাছি পড়ে, আর 'একটি ট্রাক' লেখা বাক্য পড়ে দূরে।</p>
+
+        <b1b-quiz
+          question="CLIP মডেলের মূল কাজ কী?"
+          correct="1"
+          correct-msg="চমৎকার! CLIP ভাষা ও ছবির জন্য একটি ভাগ করা ভেক্টর স্পেস তৈরি করে।"
+          wrong-msg="আবার চেষ্টা করুন — এটি কোনো সম্পাদনা টুল নয়।"
+          reveal-msg="সঠিক উত্তর: টেক্সট ও ইমেজকে একই ভেক্টর স্পেসে উপস্থাপন করা।"
+          data-no-narration="true">
+            <div slot="option">ছবির রঙ বদলানো</div>
+            <div slot="option">টেক্সট ও ইমেজকে একই ভেক্টর স্পেসে উপস্থাপন করা</div>
+            <div slot="option">ভিডিও কাটা</div>
+            <div slot="option">শব্দ গণনা করা</div>
+        </b1b-quiz>
+        <b1b-formula math="s = \frac{E_{\text{text}}(c)\cdot E_{\text{img}}(x)}{\|E_{\text{text}}(c)\|\,\|E_{\text{img}}(x)\|}"></b1b-formula>
+        <b1b-callout type="green" icon="🔗" title="কেন এটি গুরুত্বপূর্ণ?">
+<p>CLIP-এর thanksgiving ধন্যবাদ সেই ভাগ করা স্পেসই ডিফিউশন মডেলকে বলে দেয় কোন দিকে নয়েজ সরাতে হবে। ফলে আপনি যা লিখছেন, ছবি তার কাছাকাছি হতে থাকে — এটি হলো টেক্সট-টু-ইমেজের আসল যাদু।</p>
+        </b1b-callout>
+        <p>এই পদ্ধতির সুন্দর দিক হলো এটি কোনো নির্দিষ্ট শ্রেণির তালিকার ওপর নির্ভর করে না। নতুন ধরনের শব্দগুচ্ছ লিখলেও মডেল সেটিকে বুঝতে পারে, কারণ শব্দ ও ছবির অর্থ একই জ্যামিতিক স্পেসে মাপা হয়।</p>
+      </b1b-section>
+
+      <!-- ═══ Section 5: sec-05-practice ═══ -->
+      <b1b-section id="sec-05-practice" title="প্রশিক্ষণ ও বাস্তব প্রয়োগ">
+        <p>এত কিছু শিখার পর প্রশ্ন হবে — কোথায় পাওয়া যায় এত ছবি? উত্তর: ইন্টারনেট। প্রশিক্ষণে বিলিয়ন বিলিয়ন ছবি ও তার সাথে যুক্ত টেক্সট সংগ্রহ করা হয়। মডেল এই বিশাল সংগ্রহ থেকে ভাষা আর দৃশ্যের সম্পর্ক শিখে নেয়।</p>
+        <b1b-callout type="blue" icon="📈" title="প্রগ্রেসিভ ট্রেনিং">
+<p>প্রথমে ছোট, অস্পষ্ট ছবি দিয়ে শিক্ষা শুরু করা হয়। মডেল যত ভালো হতে থাকে, রেজোলিউশন তত বাড়ানো হয়। এতে প্রশিক্ষণ স্থিতিশীল থাকে এবং শেষে উচ্চমানের বিশদ ছবি তৈরি করা যায়।</p>
+        </b1b-callout>
+        <b1b-figure src="../../assets/figures/guest_videos/lesson_01/fig_pipeline.svg" alt="টেক্সট এনকোডিং, নয়েজ অনুমান এবং ধাপে ধাপে ছবি তৈরির সম্পূর্ণ প্রবাহ" caption="সম্পূর্ণ পাইপলাইন — টেক্সট থেকে চূড়ান্ত ছবি"></b1b-figure>
+        <p>আজ এই প্রযুক্তি ডিজাইনারদের মকআপ তৈরিতে, চলচ্চিত্র নির্মাতাদের প্রি-ভিজ্যুয়ালাইজেশনে, শিক্ষার্থীদের জটিল ধারণার ছবি আঁকতে এবং বিজ্ঞানীদের অণু-কণার গঠন কল্পনায় সাহায্য করছে।</p>
+        <b1b-quote author="Stephen Welch">গণিত শেখার সবচেয়ে ভালো উপায় হলো সেটিকে নিজের হাতে বানানো — এমনকি নয়েজ থেকেই হোক।</b1b-quote>
+        <p>আপনি যদি এই প্রক্রিয়াটি নিজে কয়েক ধাপ চালিয়ে দেখেন, তবে বুঝতে পারবেন যে এখানে কোনো অদ্ভুত জাদু নেই — আছে শুধু নয়েজ, সংখ্যা আর কয়েকটি সুন্দর গাণিতিক নিয়ম। সেই বোঝাই আসল শিক্ষার লক্ষ্য।</p>
+      </b1b-section>
+
+      <!-- ═══ Interactive lab — excluded from narration ═══ -->
+      <b1b-section id="sec-06-lab" title="ইন্টারেক্টিভ ল্যাব: নয়েজ অপসারণ পর্যবেক্ষক" data-no-narration="true">
+        <p class="viz-intro">নিচের স্লাইডারটি ঘুরিয়ে নয়েজের মাত্রা বদলান এবং দেখুন কীভাবে একটি ছবি ধীরে ধীরে তার আসল রূপ ফিরে পায়।</p>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <div style="border:1px dashed var(--border-theme);border-radius:12px;padding:28px;text-align:center;min-height:160px;">
+            <p style="font-size:2.4rem;margin:0;">🔬</p>
+            <p><strong>ইন্টারেক্টিভ ল্যাব: নয়েজ অপসারণ পর্যবেক্ষক</strong></p>
+            <p style="color:var(--text-muted);">নিচের স্লাইডারটি ঘুরিয়ে নয়েজের মাত্রা বদলান এবং দেখুন কীভাবে একটি ছবি ধীরে ধীরে তার আসল রূপ ফিরে পায়।</p>
+          </div>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/guest_videos/lesson_01/experiments/3b1b_guest_videos_01_full_dubbed.mp4"
+    yt-id="iv-5mZ_9CPY"
+    title="এআই ছবি ও ভিডিও আসলে কীভাবে কাজ করে? — অধ্যায় ০১"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — অতিথি ভিডিও">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url=""
+  prev-title="শুরু"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_02.html"
+  next-title="অন্বেষণ ও উদ্ভোদন: অসম্পূর্ণ ঘনকের গণিত"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

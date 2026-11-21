@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>গণিত আবিষ্কারের অনুভূতি কেমন? | What does it feel like to invent math?</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/analysis/lesson_09/manifest.js?v=8"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="বিশ্লেষণ"
+  course-url="../../index.html#analysis"
+  home-url="../../index.html"
+  chapter-num="০৯"
+  chapter-total="১০"
+  prev-url="lesson_08.html"
+  prev-title="পূর্ববর্তী অধ্যায়: ওয়াইন্ডিং নম্বর ও ডোমেইন কালারিং"
+  next-url="lesson_10.html"
+  next-title="পরবর্তী অধ্যায়: সঙ্গীত ও পরিমাপ তত্ত্ব"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="বিশ্লেষণ"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৯ · বিশ্লেষণ"
+  title="গণিত আবিষ্কারের অনুভূতি কেমন? | What does it feel like to invent math?"
+  desc="অসীম যোগ আর প্যাডিক সংখ্যার ভেতর দিয়ে নতুন গণিত তৈরির এক আস্বাদ"
+  video-src="../../media_vault/analysis/lesson_09/experiments/3b1b_analysis_09_full_dubbed.mp4"
+  yt-id="XFDM1ip5HdU"
+  date="১৪ আগস্ট, ২০১৫"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://www.3blue1brown.com/lessons/inventing-math"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">একটি নির্দিষ্ট না হওয়া যোগ</b1b-bookmark>
+      <b1b-bookmark time="89" time-bn="০১:২৯">দূরত্বের নতুন সংজ্ঞা</b1b-bookmark>
+      <b1b-bookmark time="177" time-bn="০২:৫৭">$1+2+4+8+\cdots=-1$</b1b-bookmark>
+      <b1b-bookmark time="256" time-bn="০৪:১৬">তাহলে আবিষ্কারের অনুভূতি কেমন?</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-invent-grandi">একটি নির্দিষ্ট না হওয়া যোগ</a>
+      <a href="#sec-invent-padic">দূরত্বের নতুন সংজ্ঞা</a>
+      <a href="#sec-invent-geometric">$1+2+4+8+\cdots=-1$</a>
+      <a href="#sec-invent-feeling">তাহলে আবিষ্কারের অনুভূতি কেমন?</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ একটি নির্দিষ্ট না হওয়া যোগ ═══ -->
+      <b1b-section id="sec-invent-grandi" title="একটি নির্দিষ্ট না হওয়া যোগ">
+        <b1b-quote author="Grant Sanderson">কখনো সঠিক উত্তর আসে নতুন ধরনের সংখ্যা নিয়ে প্রশ্ন করতে গিয়ে — কেমন হওয়া উচিত সেটি নিয়ে।</b1b-quote>
+        <p>$1-1+1-1+1-\cdots$ — এই যোগটির মান কত? একজন বলবেন ০ (জোড়া জোড়া করে), অন্যজন বলবেন ১ (প্রথমটি আলাদা রেখে)। আসলে সাধারণ অর্থে এর কোনো মানই নেই, কারণ আংশিক যোগগুলো ০ আর ১-এর মাঝে লাফ দিতে থাকে।</p>
+        <b1b-figure src="../../assets/figures/an_09/fig_09_01.svg" alt="আংশিক যোগগুলো ০ ও ১-এর মাঝে দোলা খাচ্ছে" caption="আংশিক যোগগুলো ০ ও ১-এর মাঝে দোলা খাচ্ছে"></b1b-figure>
+        <p>তবু গণিতবিদরা একে নিয়ে কাজ করেন। ধরুন $S=1-1+1-\cdots$। তবে $1-S=1-(1-1+\cdots)=S$ — অর্থাৎ $2S=1$, তাই $S=\frac12$। এই হিসাবটি বৈধ কি? সাধারণ যোগের কাছে নয় — কিন্তু নতুন một ধরনের «গড়» নিলে এটি সম্পূর্ণ অর্থবহ হয়।</p>
+        <b1b-callout type="gold" icon="📌" title="সেসারো মmedio">
+          <p>আংশিক যোগগুলোর গড় নিতে গেলে $(1,0,1,0,\ldots)$-এর গড় $\frac12$-এর কাছে পৌঁছায়। এই পদ্ধতিকে বলে Cesàro summation — এটি পুরোনো ধারণাকে নতুন করে প্রসারিত করার একটা উদাহরণ মাত্র।</p>
+        </b1b-callout>
+
+        <!-- Quiz quiz-invent-grandi -->
+        <b1b-quiz
+          question="❓ $1-1+1-1+\cdots$ যোগটির Cesàro মান কত?"
+          correct="1"
+          correct-msg="ঠিক! আংশিক যোগগুলোর গড় $\frac12$-এর কাছে পৌঁছায়, তাই Cesàro অর্থে মান $\frac12$।"
+          wrong-msg="জোড়া সংখ্যায় ০, বিজোড়ে ১ — এই দোলার গড় নিলে $\frac12$ পাওয়া যায়।"
+          reveal-msg="সঠিক উত্তর: $\frac12$।">
+          <div slot="option">০</div>
+          <div slot="option">$\frac12$</div>
+          <div slot="option">১</div>
+          <div slot="option">অসীম</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ দূরত্বের নতুন সংজ্ঞা ═══ -->
+      <b1b-section id="sec-invent-padic" title="দূরত্বের নতুন সংজ্ঞা">
+        <p>এখন অন্য একটি প্রশ্ন। সাধারণত ১ আর ১০০১-এর দূরত্ব ১০০০। কিন্তু যদি দূরত্ব নির্ধারণ করি «দুই সংখ্যার সবচেয়ে বড় যে ঘাত ২ দিয়ে ভাগ করা যায়» দিয়ে? ১০০১−১ = ১০০০ = $2^3\cdot 125$, তাই এই নতুন মেট্রিকে ১ আর ১০০১ কাছাকাছি।</p>
+        <b1b-formula math="d_2(a,b)=\frac{1}{2^{v_2(a-b)}}"></b1b-formula>
+        <b1b-figure src="../../assets/figures/an_09/fig_09_02.svg" alt="সাধারণ দূরত্বে দূরে থাকা সংখ্যা ২-অ্যাডিক দূরত্বে কাছে" caption="সাধারণ দূরত্বে দূরে থাকা সংখ্যা ২-অ্যাডিক দূরত্বে কাছে"></b1b-figure>
+        <p>এই «২-অ্যাডিক» দূরত্বে ছোট সংখ্যা মানে বড় ২-এর ঘাত দ্বারা বিভাজ্য পার্থক্য। $\frac{1}{2},\frac{1}{4},\frac{1}{8},\ldots$ ক্রমশ শূন্যের কাছে আসে — কিন্তু $3,9,27,\ldots$ বিচিত্রভাবে আচরণ করে। এই নতুন জগৎকে বলা হয় প্যাডিক সংখ্যা (p-adic numbers)।</p>
+        <b1b-callout type="gold" icon="📌" title="এটা কি বানানো নাকি?">
+          <p>না — এটি আসল গণিত। নতুন মেট্রিকের নিয়মগুলো (ত্রিকোণ অসমতা, ত্রিকোণ অসমতা) যথাযথভাবে মেনে চলে, তাই এটি একটি বৈধ সংখ্যা-ব্যবস্থা গড়ে তোলে। শুধু «কাছে» শব্দটির অর্থ বদলেছে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ $1+2+4+8+\cdots=-1$ ═══ -->
+      <b1b-section id="sec-invent-geometric" title="$1+2+4+8+\cdots=-1$">
+        <p>এই নতুন দূরত্বে $2^n$ ক্রমশ ছোট হয়ে শূন্যের কাছে যায়। তাই $1+2+4+8+\cdots$ একটি অভিসারী যোগ — আর এর মান বের করুন: $S=1+2S$ হলে $S=-1$। সাধারণ পূর্ণসংখ্যায় এটা অসম্ভব মনে হলেও ২-অ্যাডিক সংখ্যায় এটি সম্পূর্ণ সঠিক।</p>
+        <b1b-formula math="1+2+4+8+\cdots=\sum_{n=0}^{\infty}2^n=-1\quad(\text{২-অ্যাডিক অর্থে})"></b1b-formula>
+        <b1b-figure src="../../assets/figures/an_09/fig_09_03.svg" alt="২-অ্যাডিকে ক্রমশ ছোট হয়ে $−1$-এ পৌঁছানো" caption="২-অ্যাডিকে ক্রমশ ছোট হয়ে $−1$-এ পৌঁছানো"></b1b-figure>
+        <p>এই ফলাফলের সাথে আমাদের পরিচিত $1+2+3+\cdots=-\frac{1}{12}$ ফলাফলের মিল আছে — দুটোতেই আমরা «যোগ» শব্দটির অর্থ প্রসারিত করেছি। গণিতের অনেক আবিষ্কার ঠিক এভাবেই হয়: কোনো নিয়ম ভেঙে নয়, বরং প্রশ্ন করে — «যদি এই শব্দটির অর্থ কিছুটা বদলাই, তবে কী হয়?»</p>
+
+        <!-- Quiz quiz-invent-padic -->
+        <b1b-quiz
+          question="❓ ২-অ্যাডিক সংখ্যায় $1+2+4+8+\cdots$ এর মান কত?"
+          correct="2"
+          correct-msg="হ্যাঁ! $S=1+2S$ সমাধান করে $S=-1$ পাই — ২-অ্যাডিকে $2^n\to 0$ হওয়ায় যোগটি অভিসারী।"
+          wrong-msg="নতুন দূরত্বে $2^n$ ছোট হয়, তাই $S=1+2S$ লেখা যায় — এর সমাধান $-1$।"
+          reveal-msg="সঠিক উত্তর: $-1$।">
+          <div slot="option">$0$</div>
+          <div slot="option">$1$</div>
+          <div slot="option">$-1$</div>
+          <div slot="option">অসীম</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ তাহলে আবিষ্কারের অনুভূতি কেমন? ═══ -->
+      <b1b-section id="sec-invent-feeling" title="তাহলে আবিষ্কারের অনুভূতি কেমন?">
+        <p>এই পাঠের উদ্দেশ্য কোনো নির্দিষ্ট ফলাফল মুখস্থ করানো নয়। উদ্দেশ্য হলো দেখানো যে গণিত কখনো কখনো আবিষ্কৃত হয় নতুন প্রশ্ন তুলে, পুরোনো ধারণার সীমা পরীক্ষা করে, এবং দেখে নিয়ে যে নতুন নিয়মও সুন্দরভাবে কাজ করে।</p>
+        <b1b-callout type="blue" icon="📐" title="অন্তর্দৃষ্টির আগে সন্দেহ">
+          <p>প্রথমে $1-1+1-\cdots$-এর মান নিয়ে সন্দেহ, তারপর ২-অ্যাডিক দূরত্ব নিয়ে কৌতূহল, শেষে $\sum 2^n=-1$ দেখে অবাক হওয়া — এই সন্দেহ-কৌতূহল-অবাক হওয়ার চক্রটিই গণিতের অভ্যন্তরীণ চালিকাশক্তি।</p>
+        </b1b-callout>
+        <p>আপনি যখন কোনো নতুন ধারণা নিয়ে «এটা কি ঠিক?» ভাবছেন, তখন ভাবুন: হয়তো আপনি ঠিক আগের ধাপেই আছেন, যেখান থেকে একটা নতুন গণিত শুরু হতে পারে।</p>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/analysis/lesson_09/experiments/3b1b_analysis_09_full_dubbed.mp4"
+    yt-id="XFDM1ip5HdU"
+    title="গণিত আবিষ্কারের অনুভূতি কেমন? — অধ্যায় ০৯"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — বিশ্লেষণ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_08.html"
+  prev-title="ওয়াইন্ডিং নম্বর ও ডোমেইন কালারিং"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_10.html"
+  next-title="সঙ্গীত ও পরিমাপ তত্ত্ব"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

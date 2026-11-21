@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>হ্যামিং কোড পর্ব ২ | এর সৌন্দর্য | Hamming codes part 2, the elegance of it all</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/computer_science/lesson_10/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="কম্পিউটার বিজ্ঞান"
+  course-url="../../index.html#computer-science"
+  home-url="../../index.html"
+  chapter-num="১০"
+  chapter-total="১৩"
+  prev-url="lesson_09.html"
+  prev-title="হ্যামিং কোড ও ত্রুটি সংশোধন"
+  next-url="lesson_11.html"
+  next-title="কোয়ান্টাম কম্পিউটিং আসলে কী? (গ্রোভারের অ্যালগরিদম)"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="কম্পিউটার বিজ্ঞান"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ১০ · কম্পিউটার বিজ্ঞান"
+  title="হ্যামিং কোড পর্ব ২ | এর সৌন্দর্য | Hamming codes part 2, the elegance of it all"
+  desc="XOR ও প্যারিটি-চেক ম্যাট্রিক্স—সিনড্রোম কীভাবে সরাসরি ভুল বিটের অবস্থান (বাইনারিতে) দেয়।"
+  video-src="../../media_vault/computer_science/lesson_10/experiments/3b1b_computer_science_10_full_dubbed.mp4"
+  yt-id="b3NxrZOu_CE"
+  date="৪ সেপ্টেম্বর, ২০২০"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2020/hamming.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">XOR দিয়ে লেখা</b1b-bookmark>
+      <b1b-bookmark time="70" time-bn="০১:১০">ম্যাট্রিক্স</b1b-bookmark>
+      <b1b-bookmark time="165" time-bn="০২:৪৫">সিনড্রোম</b1b-bookmark>
+      <b1b-bookmark time="255" time-bn="০৪:১৫">সাধারণীকরণ</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-xor">১. সবকিছু XOR</a>
+      <a href="#sec-matrix">২. প্যারিটি-চেক ম্যাট্রিক্স</a>
+      <a href="#sec-syndrome">৩. সিনড্রোম = ভুলের ঠিকানা</a>
+      <a href="#sec-general">৪. সাধারণীকরণ $(2^r-1,\,2^r-1-r)$</a>
+      <a href="#sec-elegance">৫. কেন এত সুন্দর</a>
+      <a href="#sec-lab">ইন্টারেক্টিভ — সিনড্রোম পড়ুন</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+    <b1b-section id="sec-xor" title="১. সবকিছু XOR">
+        <p>প্যারিটি হিসাব আসলে XOR-এর খেলা। একাধিক বিটের XOR তখনই ১ হয় যখন ১-এর সংখ্যা বিজোড় হয়। তাই প্যারিটি বিটগুলোকে কয়েকটি XOR হিসেবে লেখা যায়।</p>
+        <b1b-figure src="../../assets/figures/cs10/cs10_f01.svg" alt="xor-table" caption="XOR-এর সত্যের সারণি"></b1b-figure>
+        <b1b-formula math="p_i \;=\; \bigoplus_{j\in S_i} d_j"></b1b-formula>
+        <p>কোড তৈরি ও যাচাই—দুটোই এখন কেবল XOR-এর মাধ্যমে করা যায়। কম্পিউটারের জন্য এটি অত্যন্ত সস্তা ও দ্রুত।</p>
+    </b1b-section>
+
+    <b1b-section id="sec-matrix" title="২. প্যারিটি-চেক ম্যাট্রিক্স">
+        <p>তিনটি প্যারিটি সমীকরণকে একটিমাত্র ম্যাট্রিক্স $H$ দিয়ে লেখা যায়। সঠিক কোডওয়ার্ড $c$-র ক্ষেত্রে $Hc^{T}=0$ হয়—এটি হলো কোডের ''পরীক্ষা''।</p>
+        <b1b-figure src="../../assets/figures/cs10/cs10_f02.svg" alt="parity-matrix" caption="প্যারিটি-চেক ম্যাট্রিক্স $H$"></b1b-figure>
+        <b1b-formula math="H\,c^{T}=0"></b1b-formula>
+        <b1b-callout type="blue" icon="📐" title="কৌশল">
+          <p>$H$-এর কলামগুলোকে ১ থেকে ৭ পর্যন্ত বাইনারি সংখ্যা হিসেবে সাজালে ম্যাজিক ঘটে।</p>
+        </b1b-callout>
+    </b1b-section>
+
+    <b1b-section id="sec-syndrome" title="৩. সিনড্রোম = ভুলের ঠিকানা">
+        <p>প্রাপ্ত শব্দ $r=c+e$ হলে $Hr^{T}=He^{T}$—অর্থাৎ সিনড্রোম নির্ভর করে শুধু ভুলের ওপর। ত্রুটি যদি $i$-তম বিটে হয়, সিনড্রোম হয় $H$-এর $i$-তম কলাম, যা ঠিক $i$-র বাইনারি রূপ।</p>
+        <b1b-figure src="../../assets/figures/cs10/cs10_f03.svg" alt="syndrome-binary" caption="সিনড্রোম সরাসরি বাইনারিতে অবস্থান দিচ্ছে"></b1b-figure>
+        <b1b-formula math="s=Hr^{T}=He^{T}=H_{i}"></b1b-formula>
+        <b1b-quote author="Richard Hamming">সুন্দর মডেল এমনভাবে সাজানো হয় যেন উত্তরটি নিজেই প্রশ্নের ভেতরে লুকিয়ে থাকে।</b1b-quote>
+
+        <b1b-quiz
+          question="❓ সিনড্রোম $101$ (বাইনারি) মানে কোন বিটে ভুল?"
+          correct="2"
+          correct-msg="সঠিক! বাইনারি $101=5$, তাই ৫ম বিটে ভুল।"
+          wrong-msg="সিনড্রোম সরাসরি বাইনারি অবস্থান—$101$ কে দশমিকে রূপান্তর করুন।"
+          reveal-msg="সঠিক উত্তর: ৫ম বিট ($101_2=5$)।">
+          <div slot="option">১</div>
+          <div slot="option">৩</div>
+          <div slot="option">৫</div>
+          <div slot="option">৭</div>
+        </b1b-quiz>
+    </b1b-section>
+
+    <b1b-section id="sec-general" title="৪. সাধারণীকরণ $(2^r-1,\,2^r-1-r)$">
+        <p>একই কৌশল যেকোনো $r$-এর জন্য কাজ করে—$2^r-1$ বিটের ব্লকে $r$টি প্যারিটি যোগ করে মাত্র একটি বিটের ভুল সংশোধন করা যায়। $r=3$ দিলে আমাদের পরিচিত (7,4) কোড পাই।</p>
+        <b1b-figure src="../../assets/figures/cs10/cs10_f04.svg" alt="hamming-family" caption="বিভিন্ন $r$-এর জন্য হ্যামিং কোড"></b1b-figure>
+        <b1b-formula math="(n,k)=(2^{r}-1,\;2^{r}-1-r)"></b1b-formula>
+        <p>বিটের সংখ্যা বাড়লে ''ওভারহেড'' ($r/n$) কমে যায়—ফলে দীর্ঘ বার্তায় এই কোড আরও দক্ষ হয়।</p>
+    </b1b-section>
+
+    <b1b-section id="sec-elegance" title="৫. কেন এত সুন্দর">
+        <p>ভুলের অবস্থান আর তার বাইনারি কোড—এই দুটিকে একই করে দেওয়াই হ্যামিং কোডের শ্রেষ্ঠত্ব। কোনো জটিল অনুসন্ধান নেই; একটি ম্যাট্রিক্স গুণেই উত্তর চলে আসে।</p>
+        <b1b-figure src="../../assets/figures/cs10/cs10_f05.svg" alt="elegance" caption="গণিতের সৌন্দর্য—সরলতা ও দক্ষতা"></b1b-figure>
+        <b1b-callout type="gold" icon="✨" title="মূল শিক্ষা">
+          <p>সঠিক কাঠামো বাছাই করলে জটিল সমস্যাও সরল গণিতে রূপ নেয়।</p>
+        </b1b-callout>
+    </b1b-section>
+
+    <b1b-section id="sec-lab" title="৬. ইন্টারেক্টিভ — সিনড্রোম পড়ুন" data-no-narration="true">
+      <p class="viz-intro">নিচের ইন্টারেক্টিভ উপাদান ও কুইজের মাধ্যমে পাঠের ধারণা নিজে যাচাই করুন।</p>
+      <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+        <figure class="interactive-figure"><img src="../../assets/figures/cs10/cs10_f06.svg" alt="বাইনারি সিনড্রোম ও ত্রুটি অবস্থান"/><figcaption>বাইনারি সিনড্রোম ও ত্রুটি অবস্থান</figcaption></figure>
+      </b1b-fullscreen>
+
+        <b1b-quiz
+          question="❓ (7,4) কোডে সিনড্রোম $111$ মানে কোন অবস্থান?"
+          correct="0"
+          correct-msg="সঠিক! $111_2=7$, তাই সপ্তম বিটে ভুল।"
+          wrong-msg="$111$ কে দশমিকে লিখুন।"
+          reveal-msg="সঠিক উত্তর: ৭ম বিট।">
+          <div slot="option">৭</div>
+          <div slot="option">১</div>
+          <div slot="option">৪</div>
+          <div slot="option">ভুল নেই</div>
+        </b1b-quiz>
+    </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/computer_science/lesson_10/experiments/3b1b_computer_science_10_full_dubbed.mp4"
+    yt-id="b3NxrZOu_CE"
+    title="হ্যামিং কোড পর্ব ২ | এর সৌন্দর্য — অধ্যায় ১০"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — কম্পিউটার বিজ্ঞান">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_09.html"
+  prev-title="হ্যামিং কোড ও ত্রুটি সংশোধন"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_11.html"
+  next-title="কোয়ান্টাম কম্পিউটিং আসলে কী? (গ্রোভারের অ্যালগরিদম)"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

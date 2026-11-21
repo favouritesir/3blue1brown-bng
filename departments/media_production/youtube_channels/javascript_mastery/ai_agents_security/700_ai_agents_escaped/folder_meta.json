@@ -1,0 +1,16 @@
+{
+  "source_type": "youtube_channel",
+  "source_category": "youtube_channels",
+  "source_label": "javascript_mastery",
+  "content_type": "video_dubbing",
+  "genre": "ai_agents_security",
+  "content_slug": "700_ai_agents_escaped",
+  "full_target_dir": "D:\\Drive\\gub221902131\\My Drive\\my\\INS\\PaperClip-opencode\\Dub Studio\\departments\\media_production\\youtube_channels\\javascript_mastery\\ai_agents_security\\700_ai_agents_escaped",
+  "relative_path": "departments/media_production/youtube_channels/javascript_mastery/ai_agents_security/700_ai_agents_escaped",
+  "subfolders": [
+    "scripts",
+    "stems_audio",
+    "output_rendered",
+    "raw_sources"
+  ]
+}

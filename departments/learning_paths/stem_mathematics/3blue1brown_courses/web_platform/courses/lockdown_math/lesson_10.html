@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="উচ্চতর বহুপদী সমীকরণের মূল নির্ণয়: দ্বিঘাতের প্রতিসাম্য, চিশিরনহাউস রূপান্তর, কার্দানোর সূত্র এবং অ্যাবেল-রুফিনি ও গ্যালোয়া তত্ত্বের ৫ ঘাতের দেয়াল। কনটেন্ট + শিক্ষক অডিও; নিজস্ব ৩ব্লু১ব্রাউন ভিডিও নেই।"/>
+<title>উচ্চতর বহুপদী সমীকরণ ও রুট খোঁজার রূপ | Solving higher degree polynomials | লকডাউন ম্যাথ | ৩ব্লু১ব্রাউন বাংলা</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/lockdown_math/lesson_10/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — exact L01 strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (LAST: parses the final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="লকডাউন ম্যাথ"
+  course-url="../../index.html#lockdown-math"
+  home-url="../../index.html"
+  chapter-num="১০"
+  chapter-total="১০"
+  prev-url="lesson_09.html"
+  prev-title="দ্বৈত ভেক্টর ও রৈখিক সমাহার"
+  next-url=""
+  next-title="পরবর্তী অধ্যায় নেই — সিরিজের শেষ পাঠ"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="লকডাউন ম্যাথ"
+  course-url="../../index.html#lockdown-math"
+  chapter-label="অধ্যায় ১০ · লকডাউন ম্যাথ ও বিশেষ জ্যামিতি"
+  title="উচ্চতর বহুপদী সমীকরণ ও রুট খোঁজার রূপ | Solving higher degree polynomials"
+  desc="দ্বিঘাতের সরল প্রতিসাম্য পেরিয়ে ত্রিঘাতের জটিল রূপান্তর: কেন প্রকৃতি ৫ ঘাতের সাধারণ বহুপদী সমীকরণের জন্য কোনো সার্বজনীন মূল-চিহ্নিত সূত্র অনুমোদন করে না? এই পাঠ কনটেন্ট + শিক্ষক অডিও; ভিডিও ট্যাবের ক্লিপটি শুধু সম্পর্কিত (related)।"
+  video-src="../../media_vault/lockdown_math/lesson_10/experiments/3b1b_lockdown_10_full_dubbed.mp4"
+  yt-id="MHXO86wKeDY"
+  date="লকডাউন সেশন ১০ · ২০২০"
+  author="৩ব్లু১ব্রাউন (Grant Sanderson)"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড · কনটেন্ট + অডিও (নিজস্ব ভিডিও নেই)">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner
+      title="শিক্ষক অডিও বিবরণ ও লাইভ কারাওকে সহকারী"
+      desc="দরদী শিক্ষকের কণ্ঠে প্রতিটি অনুচ্ছেদ, গাণিতিক সূত্র ও চিত্র বিবরণ শুনুন — সাথে রিয়েলটাইম হাইলাইটার ও কন্ট্রোল।"
+      cta="🎙️ শিক্ষকের কণ্ঠে শুনুন">
+    </b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"    time-bn="০০:০০">বহুপদী সমীকরণের ক্রমবিকাশ ও দ্বিঘাতের প্রতিসাম্য</b1b-bookmark>
+      <b1b-bookmark time="46"  time-bn="০০:৪৬">চিশিরনহাউস রূপান্তর: x² পদ অপসারণের জাদু</b1b-bookmark>
+      <b1b-bookmark time="91" time-bn="০১:৩১">কার্দানোর ত্রিঘাত সমাধান ও সহায়ক দ্বিঘাত রূপ</b1b-bookmark>
+      <b1b-bookmark time="143" time-bn="০২:২৩">জটিল সমতলে মূলের ঘূর্ণন ও ক্যাসুস ইরিডিউসিবিলিস</b1b-bookmark>
+      <b1b-bookmark time="143" time-bn="০২:২৩">৫ ঘাতের দেয়াল: গ্যালোয়া তত্ত্ব ও রূপান্তরের অসম্ভবতা</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-01-quadratic-symmetry">১. দ্বিঘাতের সরল প্রতিসাম্য: গড় ও দূরত্বের খেলা</a>
+      <a href="#sec-02-depressed-cubic">২. ডিপ্রেসড কিউবিক: x² পদ অপসারণের চিশিরনহাউস কৌশল</a>
+      <a href="#sec-03-cardano-formula">৩. কার্দানোর কৌশল ও কাল্পনিক সংখ্যার ঐতিহাসিক জন্ম</a>
+      <a href="#sec-04-quintic-wall">৪. ৫ ঘাতের অলঙ্ঘনীয় দেয়াল: অ্যাবেল ও গ্যালোয়ার প্রতিসাম্য</a>
+      <a href="#sec-interactive-lab">ইন্টারেক্টিভ ল্যাব: বহুপদী রূপান্তর ও মূলের নৃত্য</a>
+      <a href="#sec-quizzes">ধারণা যাচাই: ৩টি কুইজ</a>
+      <a href="#sec-formulas-glossary">সূত্র সংগ্রহ ও পরিভাষা</a>
+      <a href="#sec-video-disclosure">ভিডিও সম্পর্কে প্রকাশ (Disclosure)</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ NARRATED 1 — manifest key: sec-01-quadratic-symmetry (1 h2 cue) ═══ -->
+      <b1b-section id="sec-01-quadratic-symmetry" title="১. দ্বিঘাতের সরল প্রতিসাম্য: গড় ও দূরত্বের খেলা">
+        <b1b-quote author="গ্রান্ট স্যান্ডারসন (Grant Sanderson), Lockdown Math, Lesson 10">বহুপদী সমীকরণ সমাধান কোনো যান্ত্রিক সূত্র খোঁজা নয়; এটি হলো জটিল সমতলে মূলগুলোর মধ্যকার অভ্যন্তরীণ প্রতিসাম্যের নৃত্য আবিষ্কার করা।</b1b-quote>
+
+        <p>অধ্যায় ০১-এ আমরা দেখেছি কীভাবে একটি দ্বিঘাত সমীকরণ $x^2 - 2mx + p = 0$ অন্ধভাবে সূত্র মুখস্থ না করে জ্যামিতিক প্রতিসাম্য দিয়ে মুহূর্তেই সমাধান করা যায়।</p>
+
+        <b1b-media-tab active-tab="image" caption="চিত্র ১: প্যারাবোলার প্রতিসাম্য অক্ষ $m$ এবং মূলদ্বয় $m-d$ ও $m+d$—দূরত্ব $d$ এর জ্যামিতিক ভারসাম্য। লক্ষ্য করুন, শীর্ষবিন্দু ঠিক দুই মূলের মাঝখানে আছে এবং বক্ররেখা অক্ষটির দুপাশে হুবহু প্রতিফলিত। এই ছবিটিই দেখায় কেন গড় $m$ ও বিচ্যুতি $d$ দিয়ে দ্বিঘাতের সমাধান লেখা যায়। কেন্দ্রটিকে সরালেই পরবর্তী অধ্যায়ের চিশিরনহাউস কৌশলের ভিত্তি তৈরি হয়।">
+          <div slot="image">
+            <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="প্যারাবোলা m-d ও m+d বিন্দুতে x-অক্ষ ছেদ করছে, শীর্ষ x=m এ" style="width:100%;height:auto;display:block">
+              <rect width="640" height="340" fill="#0f141c"/>
+              <g stroke="#2b3648" stroke-width="1">
+                <path d="M60 40V300M100 40V300M140 40V300M180 40V300M220 40V300M260 40V300M300 40V300M340 40V300M380 40V300M420 40V300M460 40V300M500 40V300M540 40V300M580 40V300"/>
+                <path d="M60 60H580M60 100H580M60 140H580M60 180H580M60 220H580M60 260H580M60 300H580"/>
+              </g>
+              <path d="M60 200H580" stroke="#8b949e" stroke-width="1.5"/><path d="M320 40V310" stroke="#a78bfa" stroke-width="2" stroke-dasharray="7 5"/>
+              <path d="M160 293 L200 200 L240 133 L280 93 L320 80 L360 93 L400 133 L440 200 L480 293" fill="none" stroke="#74c0e3" stroke-width="3.5" stroke-linejoin="round"/>
+              <circle cx="200" cy="200" r="6" fill="#f6ad55"/><circle cx="440" cy="200" r="6" fill="#f6ad55"/><circle cx="320" cy="80" r="6" fill="#10b981"/>
+              <text x="200" y="228" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">m−d</text>
+              <text x="320" y="66" fill="#10b981" font-size="16" text-anchor="middle" font-family="sans-serif">m</text>
+              <text x="440" y="228" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">m+d</text>
+              <text x="332" y="292" fill="#a78bfa" font-size="14" font-family="sans-serif">প্রতিসাম্য অক্ষ</text>
+              <text x="320" y="28" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">মূলদ্বয়ের গড়েই শীর্ষ</text>
+              <text x="320" y="328" fill="#8b949e" font-size="13" text-anchor="middle" font-family="sans-serif">(m−d)(m+d) = m² − d² = p  ⇒  d = √(m² − p)</text>
+            </svg>
+          </div>
+          <div slot="video">
+            <div class="b1b-related-clip" style="padding:18px;border:1px solid var(--border);border-radius:10px;background:var(--bg-alt);line-height:1.7">
+              <strong style="color:#f6ad55">🎬 সম্পর্কিত ক্লিপ (related, নিজস্ব ভিডিও নয়)</strong><br/>
+              <a href="https://www.youtube.com/watch?v=MHXO86wKeDY" target="_blank" rel="noopener" style="color:#74c0e3">▶ 3Blue1Brown — Quadratic formula, Ep. 1 (YouTube-তে দেখুন)</a>
+              <p style="margin:10px 0 0;color:var(--text-muted)">এই ক্লিপটি দ্বিঘাত সমীকরণের সাথে সম্পর্কিত; এটি এই পাঠের মূল ভিডিও নয়। ডেটার ভুল id <code>LqbZpur38nw</code> ("Beyond Mandelbrot") এখানে ব্যবহার করা হয়নি।</p>
+            </div>
+          </div>
+          <div slot="caption">চিত্র ১-এ নীল প্যারাবোলাটি $x$-অক্ষকে $m-d$ ও $m+d$ বিন্দুতে ছেদ করেছে, আর সবুজ শীর্ষবিন্দুটি ঠিক $x=m$ রেখার ওপর আছে। কমলা বিন্দু দুটো মূলদ্বয়; তাদের গড় হলো $m$ এবং মাঝবিন্দু থেকে দূরত্ব হলো $d$। বক্ররেখা প্রতিসাম্য অক্ষের দুপাশে প্রতিফলিত হওয়ায় $(m-d)(m+d)=m^2-d^2=p$ সম্পর্কটি সরাসরি পাওয়া যায়। তাই সূত্র মুখস্থ না করেই $d=\sqrt{m^2-p}$ ও $x=m\pm d$ লেখা যায়।</div>
+        </b1b-media-tab>
+
+        <p>প্যারাবোলার প্রতিসাম্য অক্ষ অবস্থান করে মূলদ্বয়ের ঠিক মাঝখানে, অর্থাৎ গড় বিন্দু $m$-এ। যদি মূল দুটি হয় $m - d$ এবং $m + d$, তবে তাদের গুণফল দাঁড়ায় $(m - d)(m + d) = m^2 - d^2 = p$। এখান থেকে বিচ্যুতির মান সরাসরি পাওয়া যায় $d = \sqrt{m^2 - p}$।</p>
+
+        <b1b-formula math="x^2 + bx + c = 0 \implies m = -\frac{b}{2}, \quad d = \sqrt{m^2 - c} \implies x = m \pm d"></b1b-formula>
+
+        <p>এই সহজ জ্যামিতিক ধারণাটি আমাদের শেখায় একটি মৌলিক পাঠ: যেকোনো বহুপদী সমীকরণকে তার সর্বোচ্চ ঘাতের ঠিক নিচের পদটি দূর করার মতো করে স্থানান্তর করলে সমস্যাটি অবিশ্বাস্য রকম সহজ হয়ে যায়।</p>
+
+        <b1b-callout type="gold" icon="💡" title="মূল ভাবনা">
+          <p>সর্বোচ্চ ঘাতের ঠিক নিচের পদটির সহগ আসলে সমস্ত মূলের যোগফলের বিপরীত নির্দেশ করে। একে কেন্দ্রে নিয়ে আসা মানে মূলগুলোর যোগফলকে শূন্য বানানো।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 2 — manifest key: sec-02-depressed-cubic (1 h2 cue) ═══ -->
+      <b1b-section id="sec-02-depressed-cubic" title="২. ডিপ্রেসড কিউবিক: x² পদ অপসারণের চিশিরনহাউস কৌশল">
+        <p>একটি সাধারণ ত্রিঘাত সমীকরণের চেহারা হলো $x^3 + ax^2 + bx + c = 0$। এখানে $x^2$ পদটি থাকায় সরাসরি সমাধান করা অত্যন্ত জটিল হয়ে পড়ে।</p>
+
+        <b1b-media-tab active-tab="image" caption="চিত্র ২: গ্রাফকে আনুভূমিকভাবে $a/3$ পরিমাণ সরানো হয়েছে—কমলা মূল বক্রের নতিবিন্দু ($x=-a/3$) সরে এসে নীল বক্রের ক্ষেত্রে ঠিক $y$-অক্ষে দাঁড়িয়েছে। লক্ষ্য করুন, আকৃতি অপরিবর্তিত; শুধু অবস্থান বদলেছে। এই সরণেই $t^2$ পদটি শূন্য হয়ে যায়। তাই নতুন চলক $t$-তে সমীকরণটি সহজ $t^3+pt+q=0$ রূপ নেয়।">
+          <div slot="image">
+            <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ত্রিঘাত বক্রের আনুভূমিক সরণ: নতিবিন্দু -a/3 থেকে সরে y-অক্ষে" style="width:100%;height:auto;display:block">
+              <rect width="640" height="340" fill="#0f141c"/>
+              <g stroke="#2b3648" stroke-width="1">
+                <path d="M60 40V310M110 40V310M160 40V310M210 40V310M260 40V310M310 40V310M360 40V310M410 40V310M460 40V310M510 40V310M560 40V310M610 40V310"/>
+                <path d="M60 60H620M60 110H620M60 160H620M60 210H620M60 260H620M60 310H620"/>
+              </g>
+              <path d="M60 170H620" stroke="#8b949e" stroke-width="1.5"/><path d="M320 30V320" stroke="#10b981" stroke-width="1.5"/>
+              <path d="M290 326 L200 250 L230 204 L260 180 L290 171 L320 170 L350 169 L380 160 L410 136 L440 90 L470 14" fill="none" stroke="#74c0e3" stroke-width="3.5" stroke-linejoin="round"/>
+              <path d="M410 326 L320 250 L350 204 L380 180 L410 171 L440 170 L470 169 L500 160 L530 136 L560 90 L590 14" fill="none" stroke="#f6ad55" stroke-width="2.5" stroke-dasharray="8 5" stroke-linejoin="round"/>
+              <circle cx="320" cy="170" r="6" fill="#10b981"/><circle cx="440" cy="170" r="6" fill="#f6ad55"/>
+              <text x="312" y="196" fill="#10b981" font-size="15" text-anchor="middle" font-family="sans-serif">t = 0</text>
+              <text x="440" y="196" fill="#f6ad55" font-size="15" text-anchor="middle" font-family="sans-serif">x = −a/3</text>
+              <path d="M330 145 L430 145" stroke="#a78bfa" stroke-width="2"/><path d="M424 139 L430 145 L424 151" fill="none" stroke="#a78bfa" stroke-width="2"/>
+              <text x="380" y="136" fill="#a78bfa" font-size="14" text-anchor="middle" font-family="sans-serif">x = t − a/3</text>
+              <text x="320" y="28" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">নতিবিন্দুকে কেন্দ্রে আনা</text>
+              <text x="320" y="334" fill="#8b949e" font-size="13" text-anchor="middle" font-family="sans-serif">কমলা: মূল বক্র (x² পদসহ) → নীল: ডিপ্রেসড বক্র (x² পদহীন)</text>
+            </svg>
+          </div>
+          <div slot="video">
+            <div class="b1b-related-clip" style="padding:18px;border:1px solid var(--border);border-radius:10px;background:var(--bg-alt);line-height:1.7">
+              <strong style="color:#f6ad55">🎬 সম্পর্কিত ক্লিপ (related, নিজস্ব ভিডিও নয়)</strong><br/>
+              <a href="https://www.youtube.com/watch?v=MHXO86wKeDY" target="_blank" rel="noopener" style="color:#74c0e3">▶ 3Blue1Brown — Quadratic formula, Ep. 1 (বক্র সরণের প্রাথমিক ধারণা)</a>
+              <p style="margin:10px 0 0;color:var(--text-muted)">উচ্চতর বহুপদীর জন্য কোনো নিজস্ব ৩ব্লু১ব্রাউন ভিডিও নেই; এটি শুধুই একটি সম্পর্কিত ক্লিপ।</p>
+            </div>
+          </div>
+          <div slot="caption">চিত্র ২-এ কমলা ড্যাশড বক্রটি মূল ত্রিঘাত সমীকরণ, যার নতিবিন্দু $x=-a/3$-এ আছে; নীল বক্রটি হলো একই আকৃতি $a/3$ পরিমাণ সরানোর পরের রূপ। ধনুর্বান্ড তীরটি দেখাচ্ছে সরণের দিক: $x=t-\frac{a}{3}$। লক্ষ্য করুন, নীল বক্রের নতিবিন্দু ঠিক $t=0$ অর্থাৎ $y$-অক্ষের ওপর এসে দাঁড়িয়েছে। এটি দৃশ্যমান প্রমাণ যে নতুন চলকে $t^2$ পদের সহগ শূন্য হয়ে গেছে।</div>
+        </b1b-media-tab>
+
+        <p>কিন্তু ঠিক যেভাবে দ্বিঘাতে আমরা $x = t - \frac{b}{2}$ ধরেছিলাম, ত্রিঘাতের ক্ষেত্রে তিনটি মূলের গড় হলো $-\frac{a}{3}$। সুতরাং যদি আমরা চলক পরিবর্তন করে ধরি $x = t - \frac{a}{3}$, তবে সমীকরণটি স্থানান্তরিত হয়ে এমন একটি নতুন রূপে রূপ নেয় যেখানে $t^2$ পদটি পুরোপুরি গায়েব হয়ে যায়!</p>
+
+        <b1b-formula math="x = t - \frac{a}{3} \implies t^3 + pt + q = 0, \quad p = b - \frac{a^2}{3}, \; q = c - \frac{ab}{3} + \frac{2a^3}{27}"></b1b-formula>
+
+        <p>এই রূপান্তরিত রূপটিকে বলা হয় ডিপ্রেসড কিউবিক (Depressed Cubic): $t^3 + pt + q = 0$। এটি পুরো সমস্যাকে একটি একক মাত্রিক জটিলতায় নামিয়ে আনে, যা সমাধানের পথ উন্মুক্ত করে।</p>
+
+        <b1b-callout type="gold" icon="🔁" title="স্থানান্তরের শক্তি">
+          <p>যেকোনো n-ঘাতের বহুপদীতে $x = t - \frac{a_{n-1}}{n \cdot a_n}$ প্রতিস্থাপন করলে $t^{n-1}$ পদটি চিরতরে বিলুপ্ত হয়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 3 — manifest key: sec-03-cardano-formula (1 h2 cue) ═══ -->
+      <b1b-section id="sec-03-cardano-formula" title="৩. কার্দানোর কৌশল ও কাল্পনিক সংখ্যার ঐতিহাসিক জন্ম">
+        <p>ষোড়শ শতাব্দীতে স্কিপিওনে দেল ফেরো, তার্তালিয়া এবং জিরোলামো কার্দানো এই ডিপ্রেসড কিউবিক সমাধানের এক অবিস্মরণীয় কৌশল আবিষ্কার করেন।</p>
+
+        <b1b-media-tab active-tab="image" caption="চিত্র ৩: বর্গাকার ‘আলজেব্রা টাইল’-এ $(u+v)^2$ কে $u^2$, $2uv$, $v^2$ খণ্ডে ভাগ করা হয়েছে; ডানের গভীরতা $(u+v)$ যোগ করলে পূর্ণ ঘনক $u^3+v^3+3uv(u+v)$ তৈরি হয়। লক্ষ্য করুন, মাঝখানের তিনটি $uv$-খণ্ডই আসল ‘$3uv$’ সহগের উৎস। এই পুনর্বিন্যাসই কার্দানোর $t=u+v$ ধারণার জ্যামিতিক ছবি।">
+          <div slot="image">
+            <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="u+v ঘনকের u3, v3 ও 3uv(u+v) খণ্ডে বিভক্তি" style="width:100%;height:auto;display:block">
+              <rect width="640" height="340" fill="#0f141c"/>
+              <text x="320" y="30" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">ঘনকের পুনর্বিন্যাস: (u+v)³</text>
+              <rect x="70" y="70" width="110" height="110" fill="rgba(116,192,227,0.16)" stroke="#74c0e3" stroke-width="2"/>
+              <rect x="180" y="70" width="110" height="110" fill="rgba(167,139,250,0.16)" stroke="#a78bfa" stroke-width="2"/>
+              <rect x="70" y="180" width="110" height="110" fill="rgba(167,139,250,0.16)" stroke="#a78bfa" stroke-width="2"/>
+              <rect x="180" y="180" width="110" height="110" fill="rgba(246,173,85,0.16)" stroke="#f6ad55" stroke-width="2"/>
+              <text x="125" y="132" fill="#74c0e3" font-size="18" text-anchor="middle" font-family="monospace">u²</text>
+              <text x="235" y="132" fill="#a78bfa" font-size="16" text-anchor="middle" font-family="monospace">uv</text>
+              <text x="125" y="242" fill="#a78bfa" font-size="16" text-anchor="middle" font-family="monospace">uv</text>
+              <text x="235" y="242" fill="#f6ad55" font-size="18" text-anchor="middle" font-family="monospace">v²</text>
+              <path d="M300 125 L350 95 L460 95 L410 125 Z" fill="rgba(16,185,129,0.10)" stroke="#10b981" stroke-width="1.5"/>
+              <path d="M410 125 L460 95 L460 205 L410 235 Z" fill="rgba(16,185,129,0.14)" stroke="#10b981" stroke-width="1.5"/>
+              <path d="M300 125 L410 125 L410 235 L300 235 Z" fill="rgba(116,192,227,0.09)" stroke="#74c0e3" stroke-width="1.5"/>
+              <text x="386" y="184" fill="#10b981" font-size="14" text-anchor="middle" font-family="sans-serif">×(u+v)</text>
+              <text x="386" y="270" fill="#8b949e" font-size="13" text-anchor="middle" font-family="sans-serif">গভীরতা বসালে</text>
+              <text x="500" y="118" fill="#74c0e3" font-size="15" font-family="sans-serif">u³</text>
+              <text x="500" y="152" fill="#f6ad55" font-size="15" font-family="sans-serif">v³</text>
+              <text x="500" y="186" fill="#a78bfa" font-size="15" font-family="sans-serif">3uv(u+v)</text>
+              <text x="500" y="220" fill="#10b981" font-size="14" font-family="sans-serif">= u³+v³+3uv·t</text>
+              <text x="320" y="312" fill="#8b949e" font-size="13" text-anchor="middle" font-family="sans-serif">3uv = −p  ও  u³+v³ = −q — এখন u³ ও v³ এর যোগফল ও গুণফল জানা</text>
+            </svg>
+          </div>
+          <div slot="video">
+            <div class="b1b-related-clip" style="padding:18px;border:1px solid var(--border);border-radius:10px;background:var(--bg-alt);line-height:1.7">
+              <strong style="color:#f6ad55">🎬 সম্পর্কিত ক্লিপ (related, নিজস্ব ভিডিও নয়)</strong><br/>
+              <a href="https://www.youtube.com/watch?v=MHXO86wKeDY" target="_blank" rel="noopener" style="color:#74c0e3">▶ 3Blue1Brown — Quadratic formula, Ep. 1 (সহায়ক দ্বিঘাত রূপের পূর্বাভাস)</a>
+              <p style="margin:10px 0 0;color:var(--text-muted)">কার্দানোর ত্রিঘাত পদ্ধতির কোনো নিজস্ব ৩ব্লু১ব্রাউন ভিডিও নেই; ক্লিপটি শুধু সম্পর্কিত।</p>
+            </div>
+          </div>
+          <div slot="caption">চিত্র ৩-এর বাঁ পাশে $(u+v)^2$ কে চারটি টাইলে ভাগ করা হয়েছে—$u^2$, দুটি $uv$ এবং $v^2$—আর ডান পাশে একই কাঠামোকে $(u+v)$ গভীরতায় বর্ধিত করা হয়েছে। এতে $u^3$ ও $v^3$ পাশাপাশি তিনটি $uv(u+v)$ খণ্ড যোগ হয়ে $(u+v)^3=u^3+v^3+3uv(u+v)$ গঠিত হয়। কার্দানোর খেলা হলো $3uv=-p$ ও $u^3+v^3=-q$ শর্ত দুটি মেলানো, ফলে $u^3$ ও $v^3$ এর যোগফল ও গুণফল জানা যায়। সেই যোগ-গুণফল থেকেই একটি সহায়ক দ্বিঘাত সমীকরণ তৈরি হয়।</div>
+        </b1b-media-tab>
+
+        <p>কার্দানো প্রস্তাব করলেন: অজানা সংখ্যা $t$-কে দুটি রাশির যোগফল হিসেবে ভাবা যাক—$t = u + v$। এটি ঘন করলে পাওয়া যায় $(u + v)^3 = u^3 + v^3 + 3uv(u + v)$। অতএব $t^3 - 3uv \cdot t - (u^3 + v^3) = 0$।</p>
+
+        <b1b-formula math="t = \sqrt[3]{-\frac{q}{2} + \sqrt{\frac{q^2}{4} + \frac{p^3}{27}}} + \sqrt[3]{-\frac{q}{2} - \sqrt{\frac{q^2}{4} + \frac{p^3}{27}}}"></b1b-formula>
+
+        <p>এখন যদি আমরা এটিকে আমাদের মূল সমীকরণ $t^3 + pt + q = 0$ এর সাথে মেলানোর জন্য শর্ত ধরি $3uv = -p$ (বা $uv = -p/3$) এবং $u^3 + v^3 = -q$, তবে আমরা $u^3$ এবং $v^3$ এর যোগফল ও গুণফল পেয়ে যাই! আর যোগফল ও গুণফল জানা থাকলে তা সরাসরি একটি দ্বিঘাত সমীকরণ দিয়ে সমাধান করা যায়।</p>
+
+        <p>সবচেয়ে অবিশ্বাস্য বিষয় হলো: যখন সমীকরণটির তিনটি মূলই পুরোপুরি বাস্তব সংখ্যা হয় (Casus Irreducibilis), তখনও কার্দানোর সূত্রে বর্গমূলের ভেতরে ঋণাত্মক সংখ্যা ($\sqrt{-1}$) চলে আসে! গণিতবিদরা বাধ্য হয়ে এই কাল্পনিক সংখ্যা নিয়ে কাজ শুরু করেন এবং দেখেন হিসাব শেষে কাল্পনিক অংশ কেটে গিয়ে আবার খাঁটি বাস্তব সংখ্যাই ফেরত আসে—এভাবেই জন্ম নেয় জটিল সংখ্যার মহাবিশ্ব।</p>
+
+        <b1b-callout type="gold" icon="🌀" title="ঐতিহাসিক মোড়">
+          <p>দ্বিঘাত সমীকরণ নয়, বরং ত্রিঘাতের বাস্তব সমাধান বের করতেই গণিতে কাল্পনিক সংখ্যা $i$ অপরিহার্য হয়ে উঠেছিল।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 4 — manifest key: sec-04-quintic-wall (1 h2 cue) ═══ -->
+      <b1b-section id="sec-04-quintic-wall" title="৪. ৫ ঘাতের অলঙ্ঘনীয় দেয়াল: অ্যাবেল ও গ্যালোয়ার প্রতিসাম্য">
+        <p>ত্রিঘাতের পর ফেরারি দ্রুত চতুর্ঘাত (degree 4) সমীকরণের সমাধানও বের করে ফেলেন। স্বভাবতই গণিতবিদরা বিশ্বাস করতে শুরু করেন যে ৫ ঘাত (quintic), ৬ ঘাত বা যেকোনো ঘাতের জন্যই নিশ্চয়ই এমন চমৎকার কোনো বীজগণিতীয় সূত্র বিদ্যমান রয়েছে।</p>
+
+        <b1b-media-tab active-tab="image" caption="চিত্র ৪: জটিল সমতলে পঞ্চভুজাকারে সজ্জিত ৫টি মূল ও তাদের বিনিময়ের জাল—গ্যালোয়ার $S_5$ গ্রুপের ছবি। ডানের কানা দেয়ালটি বোঝাচ্ছে যে এই জালের অভ্যন্তরীণ ঘূর্ণন প্রতিসাম্যকে মূল-চিহ্ন দিয়ে ভেঙে বের করা যায় না। লক্ষ্য করুন, যেকোনো দুই মূলের বিনিময়েই জালটি অপরিবর্তিত থাকে। এই অবিভাজ্য প্রতিসাম্যই ৫ ঘাতের সূত্রের পথ রোধ করে।">
+          <div slot="image">
+            <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="জটিল সমতলে পাঁচটি মূলের S5 বিনিময় জাল ও অলঙ্ঘনীয় দেয়াল" style="width:100%;height:auto;display:block">
+              <rect width="640" height="340" fill="#0f141c"/>
+              <g stroke="#2b3648" stroke-width="1">
+                <path d="M40 50H400M40 110H400M40 170H400M40 230H400M40 290H400"/>
+                <path d="M80 30V320M140 30V320M200 30V320M260 30V320M320 30V320M380 30V320"/>
+              </g>
+              <path d="M40 170H400" stroke="#8b949e" stroke-width="1.5"/><path d="M280 30V320" stroke="#8b949e" stroke-width="1.5"/>
+              <g stroke="#a78bfa" stroke-width="1.4" opacity="0.85">
+                <path d="M280 70 L185 139 L221 251 L339 251 L375 139 Z"/>
+                <path d="M280 70 L221 251 M280 70 L339 251 M185 139 L339 251 M185 139 L375 139 M221 251 L375 139"/>
+              </g>
+              <g fill="#74c0e3">
+                <circle cx="280" cy="70" r="7"/><circle cx="185" cy="139" r="7"/><circle cx="221" cy="251" r="7"/><circle cx="339" cy="251" r="7"/><circle cx="375" cy="139" r="7"/>
+              </g>
+              <text x="280" y="52" fill="#74c0e3" font-size="14" text-anchor="middle" font-family="sans-serif">r₁</text>
+              <text x="176" y="128" fill="#74c0e3" font-size="14" font-family="sans-serif">r₂</text>
+              <text x="206" y="274" fill="#74c0e3" font-size="14" font-family="sans-serif">r₃</text>
+              <text x="344" y="274" fill="#74c0e3" font-size="14" font-family="sans-serif">r₄</text>
+              <text x="378" y="128" fill="#74c0e3" font-size="14" font-family="sans-serif">r₅</text>
+              <text x="280" y="26" fill="#f6ad55" font-size="15" text-anchor="middle" font-family="sans-serif">৫ মূলের বিনিময় গ্রুপ S₅</text>
+              <rect x="440" y="60" width="36" height="240" fill="rgba(246,173,85,0.12)" stroke="#f6ad55" stroke-width="2"/>
+              <g stroke="#f6ad55" stroke-width="1"><path d="M440 80L476 96M440 110L476 126M440 140L476 156M440 170L476 186M440 200L476 216M440 230L476 246M440 260L476 276"/></g>
+              <text x="545" y="150" fill="#f6ad55" font-size="15" text-anchor="middle" font-family="sans-serif">৫ ঘাতের</text>
+              <text x="545" y="176" fill="#f6ad55" font-size="15" text-anchor="middle" font-family="sans-serif">দেয়াল</text>
+              <text x="545" y="204" fill="#a78bfa" font-size="14" text-anchor="middle" font-family="sans-serif">A₅ simple</text>
+              <text x="320" y="330" fill="#8b949e" font-size="13" text-anchor="middle" font-family="sans-serif">মূল-চিহ্ন = প্রতিসাম্য ভাঙা · কিন্তু S₅ সমাধানযোগ্য নয়</text>
+            </svg>
+          </div>
+          <div slot="video">
+            <div class="b1b-related-clip" style="padding:18px;border:1px solid var(--border);border-radius:10px;background:var(--bg-alt);line-height:1.7">
+              <strong style="color:#f6ad55">🎬 সম্পর্কিত ক্লিপ (related, নিজস্ব ভিডিও নয়)</strong><br/>
+              <a href="https://www.youtube.com/watch?v=MHXO86wKeDY" target="_blank" rel="noopener" style="color:#74c0e3">▶ 3Blue1Brown — Quadratic formula, Ep. 1 (প্রতিসাম্যের প্রাথমিক উদাহরণ)</a>
+              <p style="margin:10px 0 0;color:var(--text-muted)">গ্যালোয়া তত্ত্ব বা পঞ্চঘাতের ওপর কোনো নিজস্ব ৩ব্লু১ব্রাউন ভিডিও নেই; ক্লিপটি শুধু সম্পর্কিত।</p>
+            </div>
+          </div>
+          <div slot="caption">চিত্র ৪-এ জটিল সমতলে পাঁচটি মূল পঞ্চভুজের শীর্ষে বসানো হয়েছে এবং তাদের মধ্যে বিনিময়ের সমস্ত রেখা টানা হয়েছে—এটি $S_5$ প্রতিসাম্য গ্রুপের দৃশ্যমান রূপ। যেকোনো দুই মূল অদলবদল করলেও পুরো নেটওয়ার্ক আগের মতোই দেখায়। ডানের কানা দেয়াল ইঙ্গিত করে যে ভেতরের $A_5$ উপগ্রুপ সরল ও অবিভাজ্য, তাই মূল-চিহ্ন দিয়ে স্তরে স্তরে প্রতিসাম্য ভেঙে সূত্র বের করা সম্ভব নয়। এই ছবিটিই অ্যাবেল-রুফিনি উপপাদ্যের অন্তর্দৃষ্টি।</div>
+        </b1b-media-tab>
+
+        <p>কিন্তু প্রায় তিন শতাব্দী ধরে পৃথিবীর সেরা প্রতিভারা চেষ্টা করেও ৫ ঘাতের সাধারণ সূত্র আবিষ্কার করতে পারেননি। অবশেষে ১৯ শতকের শুরুতে নিলস হেনরিক অ্যাবেল এবং প্রতিভাবান তরুণ এভারিস্ত গ্যালোয়া প্রমাণ করেন এক অবিশ্বাস্য সত্য: ৫ বা তদূর্ধ্ব ঘাতের সাধারণ বহুপদী সমীকরণের জন্য এমন কোনো সূত্র তৈরি করা মানুষের পক্ষে সম্ভব নয়—কারণ গণিতের নিয়মেই তা অসম্ভব!</p>
+
+        <b1b-formula math="a_5 x^5 + a_4 x^4 + a_3 x^3 + a_2 x^2 + a_1 x + a_0 = 0 \;\centernot\implies x = \text{Radical Formula}(a_i)"></b1b-formula>
+
+        <p>গ্যালোয়া জটিল সমতলে মূলগুলোর স্থানান্তর ও বিন্যাসের প্রতিসাম্য বিশ্লেষণ করে দেখান যে, ৫টি মূলের বিন্যাস গ্রুপ $S_5$ (Symmetric group on 5 elements) একটি 'সমাধানযোগ্য গ্রুপ' (Solvable group) নয়। মূল-চিহ্ন ($\sqrt[n]{\cdot}$) নেওয়া মানে প্রতিসাম্যকে স্তরে স্তরে খণ্ডন করা, কিন্তু $S_5$ গ্রুপের ভেতরে একটি অবিভাজ্য জটিল ঘূর্ণন প্রতিসাম্য রয়েছে যাকে কেবল মূল-চিহ্ন দিয়ে কখনোই আলাদা করা যায় না।</p>
+
+        <b1b-callout type="gold" icon="🧱" title="গণিতের গভীরতম শিক্ষা">
+          <p>একটি সূত্র খুঁজে না পাওয়া মানে আমাদের মেধার অভাব নয়; কখনো কখনো প্রকৃতি নিজেই তার অভ্যন্তরীণ প্রতিসাম্যের কারণে সূত্রের পথ বন্ধ করে রাখে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ INTERACTIVE LAB (non-narrated) — inside b1b-fullscreen ═══ -->
+      <b1b-section id="sec-interactive-lab" title="ইন্টারেক্টিভ ল্যাব: বহুপদী রূপান্তর ও মূলের নৃত্য" data-no-narration="true" data-widget-id="polynomial-root-visualizer">
+        <b1b-callout type="green" icon="🧪" title="নিজে চেষ্টা করুন">
+          <p>সহগগুলো পরিবর্তন করে জটিল সমতলে মূলগুলোর সরণ প্রত্যক্ষ করুন। দেখুন কীভাবে $x=t-\frac{a}{3}$ সরণে ত্রিঘাতের $x^2$ পদ গায়েব হয় এবং নিশ্চায়কের চিহ্ন বদলালে তিনটি বাস্তব মূল একটিতে নেমে আসে। ঘাত ৫-এ সেট করলে $S_5$ প্রতিসাম্যের জাল দেখা যায়।</p>
+        </b1b-callout>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <div id="lmPolyLab">
+            <style>
+              #lmPolyLab .lm-lab-tabs { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:14px; align-items:center; padding-right:140px; }
+              #lmPolyLab .lm-tab-btn { padding:8px 16px; border-radius:8px; border:1px solid var(--border); background:var(--bg-alt); color:var(--text-muted); font-weight:600; font-size:.9rem; cursor:pointer; font-family:inherit; }
+              #lmPolyLab .lm-tab-btn.active { background:var(--theme,#74c0e3); color:#0b0f19; border-color:var(--theme,#74c0e3); }
+              #lmPolyLab .lm-reset { margin-left:auto; }
+              #lmPolyLab canvas { display:block; width:100%; height:440px; background:#0b0c10; border-radius:8px; border:1px solid var(--border); }
+              #lmPolyLab .lm-sliders { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; margin-top:16px; background:var(--bg-alt); padding:16px 20px; border-radius:8px; border:1px solid var(--border); }
+              #lmPolyLab .lm-row { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+              #lmPolyLab .lm-row label { font-weight:600; min-width:170px; }
+              #lmPolyLab .lm-row input[type=range] { flex:1; min-width:120px; accent-color:#f6ad55; }
+              #lmPolyLab .lm-badge { min-width:52px; font-family:monospace; font-weight:bold; padding:3px 8px; background:var(--bg-card); border:1px solid var(--border); border-radius:4px; text-align:center; color:#f6ad55; }
+              #lmPolyLab .lm-metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-top:16px; }
+              #lmPolyLab .lm-metric { background:var(--bg-alt); border:1px solid var(--border); border-left:3px solid #10b981; border-radius:8px; padding:12px 14px; }
+              #lmPolyLab .lm-metric span { display:block; font-size:.78rem; color:var(--text-muted); margin-bottom:4px; }
+              #lmPolyLab .lm-metric strong { font-size:1.1rem; color:#10b981; font-family:monospace; }
+              #lmPolyLab .lm-formula { margin-top:16px; padding:14px; background:var(--bg-alt); border:1px solid var(--border); border-radius:8px; text-align:center; font-size:1.05rem; }
+            </style>
+            <div class="lm-lab-tabs">
+              <button type="button" class="lm-tab-btn active" id="lmModeShift" data-mode-id="mode-cubic-shift">🔁 চিশিরনহাউস শিফট ও ডিপ্রেসড কিউবিক</button>
+              <button type="button" class="lm-tab-btn" id="lmModeRoots" data-mode-id="mode-complex-roots">🌀 জটিল সমতলে মূলের বিস্তার</button>
+              <button type="button" class="lm-tab-btn" id="lmModeQuintic" data-mode-id="mode-quintic-symmetry">🧱 ৫ ঘাতের মূল ও গ্যালোয়া নেটওয়ার্ক</button>
+              <button type="button" class="lm-tab-btn lm-reset" id="lmReset">↺ রিসেট</button>
+            </div>
+            <canvas id="lmPolyCanvas" aria-label="বহুপদী রূপান্তর ও মূলের সিমুলেশন"></canvas>
+            <div class="lm-sliders">
+              <div class="lm-row">
+                <label for="lmDegree">বহুপদীর ঘাত (n) =</label>
+                <input type="range" id="lmDegree" min="2" max="5" step="1" value="3"/>
+                <span class="lm-badge" id="lmValDegree">৩</span>
+              </div>
+              <div class="lm-row">
+                <label for="lmA">সহগ a (xⁿ) =</label>
+                <input type="range" id="lmA" min="-5" max="5" step="0.5" value="1"/>
+                <span class="lm-badge" id="lmValA">১.০</span>
+              </div>
+              <div class="lm-row">
+                <label for="lmB">সহগ b (xⁿ⁻¹) =</label>
+                <input type="range" id="lmB" min="-5" max="5" step="0.5" value="-3"/>
+                <span class="lm-badge" id="lmValB">−৩.০</span>
+              </div>
+              <div class="lm-row">
+                <label for="lmC">সহগ c (xⁿ⁻²) =</label>
+                <input type="range" id="lmC" min="-5" max="5" step="0.5" value="-1"/>
+                <span class="lm-badge" id="lmValC">−১.০</span>
+              </div>
+              <div class="lm-row">
+                <label for="lmD">ধ্রুবক পদ d =</label>
+                <input type="range" id="lmD" min="-5" max="5" step="0.5" value="3"/>
+                <span class="lm-badge" id="lmValD">৩.০</span>
+              </div>
+            </div>
+            <div class="lm-metrics">
+              <div class="lm-metric" data-metric-id="depressed_shift"><span>ডিপ্রেসড সরণ (−b/3a)</span><strong id="lmMShift">১.০০</strong></div>
+              <div class="lm-metric" data-metric-id="discriminant"><span>ত্রিঘাত নিশ্চায়ক (Discriminant)</span><strong id="lmMDisc">−??? </strong></div>
+              <div class="lm-metric" data-metric-id="roots_count_real"><span>বাস্তব মূলের সংখ্যা</span><strong id="lmMReal">৩</strong></div>
+            </div>
+            <div class="lm-formula" id="lmPolyFormula"></div>
+          </div>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ QUIZZES (non-narrated) — exact JSON options + rich Bengali feedback ═══ -->
+      <b1b-section id="sec-quizzes" title="ধারণা যাচাই — ৩টি কুইজ" data-no-narration="true">
+        <b1b-quiz
+          data-section-id="sec-01-quadratic-symmetry"
+          question="❓ যদি একটি দ্বিঘাত সমীকরণের মূল দুটি হয় $x_1$ এবং $x_2$, তবে সমীকরণের দ্বিতীয় পদের সহগ এবং মূলদ্বয়ের গড় $m$ এর সম্পর্ক কী?"
+          correct="0"
+          correct-msg="চমৎকার! ভিয়েতার সূত্র অনুসারে মূলদ্বয়ের যোগফল হলো $-b/a$। ফলে এদের গড় হলো ঠিক তার অর্ধেক: $-b/(2a)$, যা প্যারাবোলার শীর্ষবিন্দুর এক্স-স্থানাঙ্ক। সূত্র: $x_1 + x_2 = -\frac{b}{a} \implies m = \frac{x_1 + x_2}{2} = -\frac{b}{2a}$।"
+          wrong-msg="আবার ভাবুন: গড় মানে যোগফল ভাগ ২। ভিয়েতার সূত্রে $x_1+x_2=-\frac{b}{a}$, তাই $m=-\frac{b}{2a}$—এটি কখনো মূলদ্বয়ের গুণফল $c/a$ বা কেবল ধ্রুবক পদ নয়।"
+          reveal-msg="সঠিক উত্তর: গড় $m$ হলো মূলদ্বয়ের যোগফলের অর্ধেক, অর্থাৎ $m = -\frac{b}{2a}$। কারণ $x_1 + x_2 = -\frac{b}{a} \implies m = \frac{x_1 + x_2}{2} = -\frac{b}{2a}$ — এটি প্যারাবোলার প্রতিসাম্য অক্ষের অবস্থানও।">
+          <div slot="option">গড় $m$ হলো মূলদ্বয়ের যোগফলের অর্ধেক, অর্থাৎ $m = -b / (2a)$ — $m = -\frac{b}{2a}$</div>
+          <div slot="option">গড় $m$ সর্বদা মূলদ্বয়ের গুণফলের সমান — $m = \frac{c}{a}$</div>
+          <div slot="option">গড় $m$ এর মান সর্বদা শূন্য হতে বাধ্য — $m = 0$</div>
+          <div slot="option">গড় $m$ নির্ভর করে কেবল ধ্রুবক পদের ওপর — $m = c$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          data-section-id="sec-02-depressed-cubic"
+          question="❓ একটি সাধারণ ত্রিঘাত সমীকরণ $x^3 + ax^2 + bx + c = 0$ থেকে $x^2$ পদটি সম্পূর্ণরূপে অপসারিত করার জন্য কোন চলক রূপান্তরটি ব্যবহার করতে হয়?"
+          correct="1"
+          correct-msg="ঠিকই! যেহেতু তিনটি মূলের সমষ্টি $-a$, তাই গড় $-a/3$ পরিমাণ অনুভূমিক সরণ ঘটালে $t^2$ এর সহগ শূন্য হয়ে যায় এবং একটি ডিপ্রেসড কিউবিক $t^3 + pt + q = 0$ তৈরি হয়। হিসাব: $(t - a/3)^3 + a(t - a/3)^2 + \cdots = t^3 - 3t^2(a/3) + a t^2 + \cdots = t^3 + 0\cdot t^2 + \cdots$।"
+          wrong-msg="মনে রেখো তিনটি মূলের গড় $-a/3$; তাই চলককে ঠিক ওই পরিমাণ সরাতে হবে—$x=t-\frac{a}{3}$। $x=t+a$ বা $x=t/2$ বা $x=t^2$ কোনোটিই $t^2$ পদটি বাতিল করে না।"
+          reveal-msg="সঠিক উত্তর: $x = t - \frac{a}{3}$। কারণ $(t - a/3)^3 + a(t - a/3)^2 + \cdots = t^3 - 3t^2(a/3) + a t^2 + \cdots = t^3 + 0\cdot t^2 + \cdots$ — ফলে ডিপ্রেসড কিউবিক $t^3 + pt + q = 0$ পাওয়া যায়।">
+          <div slot="option">এক্স সমান টি যোগ এ — $x = t + a$</div>
+          <div slot="option">এক্স সমান টি বিয়োগ এ ভাগ তিন — $x = t - \frac{a}{3}$</div>
+          <div slot="option">এক্স সমান টি ভাগ দুই — $x = \frac{t}{2}$</div>
+          <div slot="option">এক্স সমান টি স্কয়ার — $x = t^2$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          data-section-id="sec-04-quintic-wall"
+          question="❓ অ্যাবেল-রুফিনি উপপাদ্য এবং গ্যালোয়া তত্ত্ব অনুসারে কেন ৫ বা তদূর্ধ্ব ঘাতের সাধারণ বহুপদী সমীকরণের কোনো সার্বজনীন মূল-চিহ্নিত (radical) সূত্র নেই?"
+          correct="1"
+          correct-msg="অসাধারণ! গ্যালোয়া প্রমাণ করেন যে কোনো সমীকরণ মূল-চিহ্ন দ্বারা সমাধানযোগ্য হতে হলে তার প্রতিসাম্য গ্রুপকে সমাধানযোগ্য হতে হয়। ৫টি উপাদানের প্রতিসাম্য গ্রুপ $S_5$-এ একটি সরল অবিভাজ্য উপগ্রুপ $A_5$ থাকায় সাধারণ ৫ ঘাতের সমীকরণের কোনো সার্বজনীন সূত্র থাকা তাত্ত্বিকভাবে অসম্ভব। সূত্র: $\text{Gal}(K/F) \cong S_5, \quad A_5 \text{ is non-abelian simple} \implies S_5 \text{ not solvable}$।"
+          wrong-msg="এটি কোনো গণনা সীমাবদ্ধতা বা কম্পিউটারের অভাব নয়, এবং ৫ মৌলিক সংখ্যা হওয়ায় ভাগের সমস্যাও নয়। আসল কারণ গ্রুপ তত্ত্বে: $S_5$ একটি সমাধানযোগ্য গ্রুপ নয়—এর ভেতরের $A_5$ অবিভাজ্য।"
+          reveal-msg="সঠিক উত্তর: ৫টি মূলের বিন্যাস গ্রুপ $S_5$ সমাধানযোগ্য (solvable) নয় এবং এর অভ্যন্তরীণ প্রতিসাম্যকে কেবল মূল-চিহ্ন দ্বারা আলাদা করা যায় না। $\text{Gal}(K/F) \cong S_5, \quad A_5 \text{ is non-abelian simple} \implies S_5 \text{ not solvable}$ — এটি অ্যাবেল-রুফিনি উপপাদ্যের মর্ম।">
+          <div slot="option">কারণ গণিতবিদরা এখনও যথেষ্ট বড় কম্পিউটার বা অ্যালগরিদম আবিষ্কার করতে পারেননি — $\text{গণনা সীমাবদ্ধতা}$</div>
+          <div slot="option">কারণ ৫টি মূলের বিন্যাস গ্রুপ $S_5$ সমাধানযোগ্য (solvable) নয় এবং এর অভ্যন্তরীণ প্রতিসাম্যকে কেবল মূল-চিহ্ন দ্বারা আলাদা করা যায় না — $S_5 \text{ is not a solvable group}$</div>
+          <div slot="option">কারণ জটিল সমতলে ৫টি বিন্দুর কোনো জ্যামিতিক অস্তিত্ব নেই — $\text{অবাস্তব}$</div>
+          <div slot="option">কারণ ৫ একটি মৌলিক সংখ্যা হওয়ায় একে কোনো সংখ্যা দিয়ে ভাগ করা যায় না — $5 \in \text{Primes}$</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ FORMULA REFERENCE & GLOSSARY (non-narrated) ═══ -->
+      <b1b-section id="sec-formulas-glossary" title="সূত্র সংগ্রহ ও পরিভাষা" data-no-narration="true">
+        <b1b-callout type="blue" icon="🧮" title="পাঁচটি গুরুত্বপূর্ণ সূত্র">
+          <p><strong>প্রতিসাম্য দ্বিঘাত সমাধান:</strong> $x = m \pm \sqrt{m^2 - c}$</p>
+          <p><strong>চিশিরনহাউস রূপান্তর:</strong> $x = t - \frac{b}{3a}$</p>
+          <p><strong>ডিপ্রেসড কিউবিক:</strong> $t^3 + pt + q = 0$</p>
+          <p><strong>কার্দানোর সূত্র:</strong> $t = \sqrt[3]{-\frac{q}{2} + \sqrt{\frac{q^2}{4}+\frac{p^3}{27}}} + \sqrt[3]{-\frac{q}{2} - \sqrt{\frac{q^2}{4}+\frac{p^3}{27}}}$</p>
+          <p><strong>অ্যাবেল-রুফিনি উপপাদ্য:</strong> $\text{No general radical formula for } n \ge 5$</p>
+        </b1b-callout>
+
+        <b1b-callout type="gold" icon="📖" title="পরিভাষা (Glossary)">
+          <p><strong>Depressed Cubic — ডিপ্রেসড কিউবিক:</strong> যে ত্রিঘাত সমীকরণে দ্বিঘাত পদ ($x^2$) অনুপস্থিত থাকে ($t^3 + pt + q = 0$)।</p>
+          <p><strong>Tschirnhaus Transformation — চিশিরনহাউস রূপান্তর:</strong> বহুপদী সমীকরণ থেকে দ্বিতীয় সর্বোচ্চ ঘাতের পদ অপসারিত করার অ্যালজেব্রাইক সরণ কৌশল।</p>
+          <p><strong>Galois Theory — গ্যালোয়া তত্ত্ব:</strong> বহুপদী সমীকরণের মূলগুলোর অভ্যন্তরীণ প্রতিসাম্য গ্রুপের মাধ্যমে সমীকরণটির সমাধানযোগ্যতা নির্ধারণের গণিত শাখা।</p>
+          <p><strong>Abel-Ruffini Theorem — অ্যাবেল-রুফিনি উপপাদ্য:</strong> প্রমাণ করে যে ৫ বা তদূর্ধ্ব ঘাতের সাধারণ বহুপদী সমীকরণকে সাধারণ মূল-চিহ্ন দ্বারা সমাধান করা অসম্ভব।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ VIDEO DISCLOSURE (non-narrated) ═══ -->
+      <b1b-section id="sec-video-disclosure" title="ভিডিও সম্পর্কে প্রকাশ (Disclosure)" data-no-narration="true">
+        <b1b-callout type="gold" icon="⚠️" title="এই পাঠের জন্য নিজস্ব ৩ব্লু১ব্রাউন ভিডিও নেই">
+          <p>অথোরিটেটিভ ডেটায় এই পাঠের YouTube id <code>LqbZpur38nw</code> দেওয়া আছে, কিন্তু সেটি "Beyond Mandelbrot" নামক ভিডিও—এই টপিকের সাথে মেলে না। <code>governance/VIDEO_ID_DATA_QUIRKS.md</code> অনুযায়ী উচ্চতর বহুপদী সমীকরণের ওপর কোনো নিজস্ব অফিশিয়াল ৩ব্লু১ব্রাউন ভিডিওই নেই; তাই ভিডিও এজেন্ট চালানো হয়নি এবং পাঠটি শুধু <strong>কনটেন্ট + শিক্ষক অডিও</strong> হিসেবে তৈরি।</p>
+          <p>চিত্রের ভিডিও ট্যাবে দেখানো <code>MHXO86wKeDY</code> ("Quadratic formula", Ep. 1) শুধুই একটি <strong>সম্পর্কিত (related)</strong> অফিশিয়াল ক্লিপ—এটি এই পাঠের মূল ভিডিও নয়। হিরো/ওয়াচ প্যানেলের <code>video-src</code> পাথটি ঐচ্ছিক; সেখানে কোনো ডাবড ভিডিও তৈরি করা হয়নি, তাই 404 আশানুরূপ।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/lockdown_math/lesson_10/experiments/3b1b_lockdown_10_full_dubbed.mp4"
+    yt-id="MHXO86wKeDY"
+    title="উচ্চতর বহুপদী সমীকরণ ও রুট খোঁজার রূপ | Solving higher degree polynomials — অধ্যায় ১০"
+    subtitle="কনটেন্ট + শিক্ষক অডিও (EBU R128 নরমালাইজড, ০% ইংলিশ ব্লিড)। এই টপিকে নিজস্ব 3B1B ভিডিও নেই; দেখানো ক্লিপটি শুধু সম্পর্কিত।"
+    playlist-title="📋 প্লেলিস্ট — লকডাউন ম্যাথ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_09.html"
+  prev-title="দ্বৈত ভেক্টর ও রৈখিক সমাহার"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url=""
+  next-title="সিরিজের শেষ পাঠ"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ PAGE-LOCAL INTERACTIVE LAB CONTROLLER ═══════════
+     Scoped to #lmPolyLab; does not touch the shared component library. -->
+<script>
+(function () {
+  'use strict';
+  function initLab() {
+    const lab = document.getElementById('lmPolyLab');
+    if (!lab || lab.dataset.inited) return;
+    lab.dataset.inited = '1';
+
+    const $ = (id) => document.getElementById(id);
+    const canvas = $('lmPolyCanvas');
+    const sliders = {
+      n: $('lmDegree'), a: $('lmA'), b: $('lmB'), c: $('lmC'), d: $('lmD')
+    };
+    if (!canvas || Object.keys(sliders).some(k => !sliders[k])) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    let mode = 'shift';
+
+    const toBn = (n) => String(n).replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[d]);
+    function fmt(n, digits) {
+      const d = digits === undefined ? 2 : digits;
+      const v = Math.abs(n) < 0.0005 ? 0 : n;
+      return v.toFixed(d).replace(/\d/g, (x) => '০১২৩৪৫৬৭৮৯'[x]);
+    }
+    function math(scope) {
+      if (scope && typeof window.renderMathInElement === 'function') {
+        window.renderMathInElement(scope, {
+          delimiters: [ { left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false } ],
+          throwOnError: false
+        });
+      }
+    }
+
+    /* --- tiny complex-number toolkit (Durand–Kerner root finder) --- */
+    const C = (re, im) => ({ re: re, im: im });
+    const cAdd = (x, y) => C(x.re + y.re, x.im + y.im);
+    const cSub = (x, y) => C(x.re - y.re, x.im - y.im);
+    const cMul = (x, y) => C(x.re * y.re - x.im * y.im, x.re * y.im + x.im * y.re);
+    const cDiv = (x, y) => {
+      const den = y.re * y.re + y.im * y.im || 1e-12;
+      return C((x.re * y.re + x.im * y.im) / den, (x.im * y.re - x.re * y.im) / den);
+    };
+    const cAbs = (x) => Math.hypot(x.re, x.im);
+
+    function polyRoots(coeffs) {
+      // coeffs: [a_n, ..., a_0] real numbers, highest power first.
+      const n = coeffs.length - 1;
+      if (n < 1) return [];
+      const lead = Math.abs(coeffs[0]) < 1e-9 ? 0.5 : coeffs[0];
+      const c = coeffs.map(v => v / lead);
+      const roots = [];
+      for (let k = 0; k < n; k++) {
+        const ang = 2 * Math.PI * k / n + 0.37;
+        roots.push(C(Math.cos(ang), Math.sin(ang)));
+      }
+      for (let it = 0; it < 250; it++) {
+        let maxDelta = 0;
+        for (let i = 0; i < n; i++) {
+          let p = C(c[0], 0);
+          for (let j = 1; j <= n; j++) p = cAdd(cMul(p, roots[i]), C(c[j], 0));
+          let den = C(1, 0);
+          for (let j = 0; j < n; j++) if (j !== i) den = cMul(den, cSub(roots[i], roots[j]));
+          const step = cDiv(p, den);
+          roots[i] = cSub(roots[i], step);
+          maxDelta = Math.max(maxDelta, cAbs(step));
+        }
+        if (maxDelta < 1e-9) break;
+      }
+      return roots;
+    }
+
+    function readState() {
+      const n = parseInt(sliders.n.value, 10) || 3;
+      const a0 = parseFloat(sliders.a.value), b = parseFloat(sliders.b.value);
+      const c = parseFloat(sliders.c.value), d = parseFloat(sliders.d.value);
+      const a = Math.abs(a0) < 1e-9 ? 0.5 : a0; // guard leading zero
+      const coeffs = new Array(n + 1).fill(0);
+      coeffs[0] = a; coeffs[1] = b; coeffs[2] = c; coeffs[3] = d;
+      // Depressed-cubic metrics (degree 3 per the lesson's JSON widget spec).
+      const B = b / a, Cc = c / a, D = d / a;
+      const p = Cc - B * B / 3;
+      const q = D - B * Cc / 3 + 2 * B * B * B / 27;
+      const disc = -(4 * p * p * p + 27 * q * q);
+      const realCount = disc >= 0 ? 3 : 1;
+      const shift = -b / (3 * a);
+      return { n, a, b, c, d, coeffs, p, q, disc, realCount, shift };
+    }
+
+    function updatePanel(s) {
+      $('lmValDegree').textContent = toBn(s.n);
+      $('lmValA').textContent = fmt(s.a, 1);
+      $('lmValB').textContent = fmt(s.b, 1);
+      $('lmValC').textContent = fmt(s.c, 1);
+      $('lmValD').textContent = fmt(s.d, 1);
+      $('lmMShift').textContent = fmt(s.shift);
+      $('lmMDisc').textContent = fmt(s.disc);
+      $('lmMReal').textContent = toBn(s.realCount);
+      const box = $('lmPolyFormula');
+      const rootList = polyRoots(s.coeffs).map(r =>
+        '${' + r.re.toFixed(2) + (r.im >= 0 ? '+' : '-') + Math.abs(r.im).toFixed(2) + 'i}$'
+      ).join(',\,');
+      if (mode === 'shift') {
+        box.innerHTML = '<strong>চিশিরনহাউস:</strong> $x = t - \\frac{b}{3a} = t - (' + fmt(s.shift) + ')$ &nbsp;|&nbsp; '
+          + '$t^3 + ' + fmt(s.p) + 't + ' + fmt(s.q) + ' = 0$ &nbsp;|&nbsp; $\\Delta = -(4p^3+27q^2) = ' + fmt(s.disc) + '$';
+      } else if (mode === 'roots') {
+        box.innerHTML = '<strong>জটিল মূল:</strong> $z_k \\approx ' + rootList + '$ &nbsp;|&nbsp; $\\Delta = ' + fmt(s.disc) + '$';
+      } else {
+        box.innerHTML = '<strong>৫ ঘাত:</strong> $\\mathrm{Gal} \\cong S_5$, $A_5$ simple $\\implies$ no general radical formula &nbsp;|&nbsp; roots: $' + rootList + '$';
+      }
+      math(box);
+    }
+
+    function arrow(x0, y0, x1, y1, color, width, label) {
+      ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = width || 3;
+      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke();
+      const ang = Math.atan2(y1 - y0, x1 - x0);
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x1 - 10 * Math.cos(ang - 0.4), y1 - 10 * Math.sin(ang - 0.4));
+      ctx.lineTo(x1 - 10 * Math.cos(ang + 0.4), y1 - 10 * Math.sin(ang + 0.4));
+      ctx.closePath(); ctx.fill();
+      if (label) { ctx.font = 'bold 14px sans-serif'; ctx.fillText(label, x1 + 8, y1 - 8); }
+    }
+
+    function draw(s) {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      const W = Math.max(320, rect.width || 640), H = 440;
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#0a0b10' : '#f8f9fa'; ctx.fillRect(0, 0, W, H);
+      const ox = W / 2, oy = H / 2, scale = 55;
+      ctx.strokeStyle = dark ? 'rgba(255,255,255,0.09)' : 'rgba(0,0,0,0.09)'; ctx.lineWidth = 1;
+      for (let x = -6; x <= 6; x++) { ctx.beginPath(); ctx.moveTo(ox + x * scale, 0); ctx.lineTo(ox + x * scale, H); ctx.stroke(); }
+      for (let y = -4; y <= 4; y++) { ctx.beginPath(); ctx.moveTo(0, oy + y * scale); ctx.lineTo(W, oy + y * scale); ctx.stroke(); }
+      ctx.strokeStyle = dark ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)'; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(0, oy); ctx.lineTo(W, oy); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(ox, 0); ctx.lineTo(ox, H); ctx.stroke();
+      ctx.fillStyle = dark ? '#e2e8f0' : '#1e293b'; ctx.font = '13px sans-serif'; ctx.textAlign = 'center';
+
+      if (mode === 'shift') {
+        // Original cubic and its depressed form, plotted as y = f(x).
+        const f = (x) => s.a * x * x * x + s.b * x * x + s.c * x + s.d;
+        const g = (t) => t * t * t + s.p * t + s.q;
+        function plot(fn, color, width) {
+          ctx.strokeStyle = color; ctx.lineWidth = width; ctx.beginPath();
+          let started = false;
+          for (let x = -3; x <= 3.001; x += 0.03) {
+            let yy = oy - Math.max(-H, Math.min(H, fn(x) * 26));
+            const px = ox + x * 55;
+            if (!started) { ctx.moveTo(px, yy); started = true; } else ctx.lineTo(px, yy);
+          }
+          ctx.stroke();
+        }
+        plot(f, '#f6ad55', 2.5);
+        plot(g, '#74c0e3', 3.5);
+        const sx = ox + s.shift * 55;
+        ctx.save(); ctx.setLineDash([6, 5]); ctx.strokeStyle = '#a78bfa'; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.moveTo(sx, 26); ctx.lineTo(sx, H - 26); ctx.stroke(); ctx.restore();
+        ctx.fillStyle = '#a78bfa'; ctx.fillText('x = −b/3a = ' + s.shift.toFixed(2), sx, 22);
+        ctx.fillStyle = dark ? '#8b949e' : '#475569';
+        ctx.fillText('কমলা: মূল বক্র  ·  নীল: ডিপ্রেসড বক্র  ·  Δ = ' + s.disc.toFixed(2), W / 2, H - 20);
+      } else {
+        const roots = polyRoots(s.coeffs);
+        if (mode === 'quintic') {
+          for (let i = 0; i < roots.length; i++) {
+            for (let j = i + 1; j < roots.length; j++) {
+              ctx.strokeStyle = 'rgba(167,139,250,0.55)'; ctx.lineWidth = 1.4;
+              ctx.beginPath();
+              ctx.moveTo(ox + roots[i].re * scale, oy - roots[i].im * scale);
+              ctx.lineTo(ox + roots[j].re * scale, oy - roots[j].im * scale);
+              ctx.stroke();
+            }
+          }
+          // S5 wall on the right edge
+          const wx = W - 56;
+          ctx.fillStyle = 'rgba(246,173,85,0.12)'; ctx.fillRect(wx, 60, 26, H - 120);
+          ctx.strokeStyle = '#f6ad55'; ctx.lineWidth = 2; ctx.strokeRect(wx, 60, 26, H - 120);
+          ctx.fillStyle = '#f6ad55'; ctx.font = 'bold 14px sans-serif';
+          ctx.fillText('S₅', wx + 13, 50);
+          ctx.fillText('দেয়াল', wx + 13, H - 44);
+        }
+        const palette = ['#74c0e3', '#f6ad55', '#10b981', '#a78bfa', '#f38ba8'];
+        roots.forEach((r, i) => {
+          const px = ox + r.re * scale, py = oy - r.im * scale;
+          ctx.fillStyle = palette[i % palette.length];
+          ctx.beginPath(); ctx.arc(px, py, 7, 0, Math.PI * 2); ctx.fill();
+          ctx.font = 'bold 13px sans-serif'; ctx.fillText('r' + (i + 1), px + 18, py - 10);
+        });
+        ctx.fillStyle = dark ? '#8b949e' : '#475569'; ctx.font = '13px sans-serif';
+        ctx.fillText(mode === 'quintic' ? '৫ মূল · S₅ বিনিময় জাল · মূল-চিহ্নে ভাঙা যায় না'
+          : 'জটিল সমতলে মূল — Δ = ' + s.disc.toFixed(2) + ' · বাস্তব মূল = ' + s.realCount, W / 2, H - 20);
+      }
+    }
+
+    function update() { const s = readState(); updatePanel(s); draw(s); }
+    function setMode(next) {
+      mode = next;
+      $('lmModeShift').classList.toggle('active', mode === 'shift');
+      $('lmModeRoots').classList.toggle('active', mode === 'roots');
+      $('lmModeQuintic').classList.toggle('active', mode === 'quintic');
+      if (mode === 'quintic') { sliders.n.value = '5'; }
+      update();
+    }
+    $('lmModeShift').addEventListener('click', () => setMode('shift'));
+    $('lmModeRoots').addEventListener('click', () => setMode('roots'));
+    $('lmModeQuintic').addEventListener('click', () => setMode('quintic'));
+    $('lmReset').addEventListener('click', () => {
+      sliders.n.value = '3'; sliders.a.value = '1'; sliders.b.value = '-3';
+      sliders.c.value = '-1'; sliders.d.value = '3'; setMode('shift');
+    });
+    Object.keys(sliders).forEach(k => sliders[k].addEventListener('input', update));
+    window.addEventListener('resize', update);
+    window.addEventListener('b1b-fullscreen-change', update);
+    update();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initLab);
+  else initLab();
+})();
+</script>
+
+</body>
+</html>

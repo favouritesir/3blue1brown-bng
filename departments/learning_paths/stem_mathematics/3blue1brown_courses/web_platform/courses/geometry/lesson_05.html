@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>কোয়াটারনিয়ন ও ত্রিমাত্রিক ঘূর্ণন | Quaternions and 3d rotation, explained interactively</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/geometry/lesson_05/manifest.js?v=8"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="জ্যামিতি"
+  course-url="../../index.html#geometry"
+  home-url="../../index.html"
+  chapter-num="০৫"
+  chapter-total="০৬"
+  prev-url="lesson_04.html"
+  prev-title="পূর্ববর্তী অধ্যায়: quaternions-and-3d-rotation"
+  next-url="lesson_06.html"
+  next-title="পরবর্তী অধ্যায়"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="জ্যামিতি"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৫ · জ্যামিতি"
+  title="কোয়াটারনিয়ন ও ত্রিমাত্রিক ঘূর্ণন | Quaternions and 3d rotation, explained interactively"
+  desc="অক্ষ-কোণ থেকে $qvq^{-1}$—কোয়াটারনিয়ন দিয়ে 3D ঘূর্ণন বর্ণনার সম্পূর্ণ গাইড"
+  video-src="../../media_vault/geometry/lesson_05/experiments/3b1b_geometry_05_full_dubbed.mp4"
+  yt-id="zjMuIxRvygQ"
+  date="২০১৯"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://www.3blue1brown.com/lessons/quaternions-and-3d-rotation"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লেড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">পাঠের সূচনা</b1b-bookmark>
+      <b1b-bookmark time="36" time-bn="০০:৩৬">প্রধান ধারণা</b1b-bookmark>
+      <b1b-bookmark time="82" time-bn="০১:২২">মূল প্রমাণ ও অন্তর্দৃষ্টি</b1b-bookmark>
+      <b1b-bookmark time="152" time-bn="০২:৩২">সারাংশ ও উপসংহার</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-intro">ভূমিকা — ঘূর্ণন বর্ণনা করার সমস্যা</a>
+      <a href="#sec-axis-angle">অক্ষ-কোণ পদ্ধতি</a>
+      <a href="#sec-formula">কোয়াটারনিয়ন সূত্র</a>
+      <a href="#sec-double-cover">দ্বি-আবরণ ও ৭২০°</a>
+      <a href="#sec-interpolation">স্লার্প ও গিম্বাল লক</a>
+      <a href="#sec-conclusion">উপসংহার</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+      <!-- ═══ Section: ভূমিকা — ঘূর্ণন বর্ণনা করার সমস্যা ═══ -->
+      <b1b-section id="sec-intro" title="ভূমিকা — ঘূর্ণন বর্ণনা করার সমস্যা">
+        <b1b-quote author="অজানা">ঘূর্ণনই হলো সবচেয়ে সরল জিনিস যা সরল নয়।</b1b-quote>
+        <p>ত্রিমাত্রিক স্থানে কোনো বস্তুকে ঘোরানোর কথা ভাবুন। আপনি একে $3\times3$ ম্যাট্রিক্স দিয়ে লিখতে পারেন—কিন্তু তাতে নয়টি সংখ্যা লাগে, যার অনেকগুলো আবার শূন্য বা একের মতো নির্ধারিত। সুতরাং এটি অদক্ষ।</p>
+        <p>অন্যদিকে ইউলার কোণ—তিনটি কোণ—ব্যবহার করলে ‘গিম্বাল লক’ হয়। কোয়াটারনিয়ন এই সব সমস্যা এড়িয়ে মাত্র চারটি সংখ্যায় কাজ চালিয়ে দেয়। আজ আমরা তার পেছনের সূত্রটি ধাপে ধাপে বুঝব।</p>
+      </b1b-section>
+      <!-- ═══ Section: অক্ষ-কোণ পদ্ধতি ═══ -->
+      <b1b-section id="sec-axis-angle" title="অক্ষ-কোণ পদ্ধতি">
+        <p>একটি গুরুত্বপূর্ণ fact: যেকোনো ত্রিমাত্রিক ঘূর্ণনের একটি অক্ষ থাকে—এমন এক সরলরেখা যার ওপর থাকা বিন্দুগুলো ঘোরানোর পরও একই জায়গায় থাকে। অক্ষটি একক ভেক্টর $\hat{u}$ দিয়ে আর ঘোরার পরিমাণ কোণ $\theta$ দিয়ে বর্ণনা করা যায়।</p>
+        <b1b-figure src="../../assets/figures/geometry/lesson_05/axis-angle.svg" alt="ঘূর্ণনের অক্ষ ও কোণ" caption="ঘূর্ণনের অক্ষ ও কোণ"></b1b-figure>
+        <p>অর্থাৎ মোট তিনটি সংখ্যা (অক্ষের দুটির দিক + কোণ) দিয়েই ঘূর্ণন নির্ধারিত হয়। কোয়াটারনিয়নে আমরা এই তিনটিকে চারটি সংখ্যায় পুনর্গঠিত করি—যার একটি সুবিধাজনক গাণিতিক রূপ আছে।</p>
+      </b1b-section>
+      <!-- ═══ Section: কোয়াটারনিয়ন সূত্র ═══ -->
+      <b1b-section id="sec-formula" title="কোয়াটারনিয়ন সূত্র">
+        <p>এখন সূত্রটি দেখা যাক। অক্ষ $\hat{u}$ ও কোণ $\theta$-র জন্য কোয়াটারনিয়ন $q$ হলো—</p>
+        <b1b-formula math="q=\cos\frac{\theta}{2}+\hat{u}\sin\frac{\theta}{2}"></b1b-formula>
+        <p>এখানে $\hat{u}=u_xi+u_yj+u_zk$। যে ভেক্টর $v$ কে ঘোরাতে চাই, তাকে একটি ‘বিশুদ্ধ’ কোয়াটারনিয়ন (বাস্তব অংশ শূন্য) হিসেবে লিখুন। তাহলে ঘোরানো ফলাফল—</p>
+        <b1b-formula math="v&#x27;=q\,v\,q^{-1}"></b1b-formula>
+        <b1b-figure src="../../assets/figures/geometry/lesson_05/rotation-result.svg" alt="qvq⁻¹ দিয়ে ঘোরানো ভেক্টর" caption="qvq⁻¹ দিয়ে ঘোরানো ভেক্টর"></b1b-figure>
+        <b1b-callout type="gold" icon="🧭" title="অর্ধ-কোণ কেন?"><p>$\theta/2$ ব্যবহারের কারণে $qvq^{-1}$ গুণনে মোট কোণ $\theta$ হয়—বামে $\theta/2$ ও ডানে $\theta/2$ যোগ হয়ে $\theta$ তৈরি করে।</p></b1b-callout>
+        <b1b-quiz
+          question="❓ কোয়াটারনিয়ন $q$-তে কোণের কোন অংশ ব্যবহার করা হয়?"
+          correct="1"
+          correct-msg="চমৎকার! $q=\cos(\theta/2)+\hat u\sin(\theta/2)$—অর্ধ-কোণ ব্যবহার করা হয়, কারণ $qvq^{-1}$-এ দুই পাশ থেকে অর্ধ-কোণ যোগ হয়ে পূর্ণ $\theta$ হয়।"
+          wrong-msg="আবার চেষ্টা করো। ইঙ্গিত: $qvq^{-1}$ গুণনে বামে ও ডানে কত কোণ যোগ হয় ভাবুন।"
+          reveal-msg="সঠিক উত্তর: $q=\cos(\theta/2)+\hat u\sin(\theta/2)$—অর্ধ-কোণ ব্যবহার করা হয়, কারণ $qvq^{-1}$-এ দুই পাশ থেকে অর্ধ-কোণ যোগ হয়ে পূর্ণ $\theta$ হয়।">
+          <div slot="option">$\theta$</div>
+          <div slot="option">$\theta/2$</div>
+          <div slot="option">$2\theta$</div>
+          <div slot="option">$\theta^2$</div>
+        </b1b-quiz>
+      </b1b-section>
+      <!-- ═══ Section: দ্বি-আবরণ ও ৭২০° ═══ -->
+      <b1b-section id="sec-double-cover" title="দ্বি-আবরণ ও ৭২০°">
+        <p>এখন একটি আশ্চর্য fact। $q$-র বদলে $-q$ বসিয়ে $qvq^{-1}$ হিসাব করলেও একই ফল পাওয়া যায়—কারণ $(-q)v(-q)^{-1}=qvq^{-1}$। অর্থাৎ দুটি ভিন্ন কোয়াটারনিয়ন একই ঘূর্ণন বর্ণনা করে।</p>
+        <b1b-figure src="../../assets/figures/geometry/lesson_05/double-cover.svg" alt="q ও −q—একই ঘূর্ণন" caption="q ও −q—একই ঘূর্ণন"></b1b-figure>
+        <p>এর মানে হলো—আপনি যখনই একটি বস্তুকে $360^\circ$ ঘোরান, কোয়াটারনিয়নটি তার চিহ্ন বদলে ফেলে। আবার $360^\circ$ ঘোরালে তবে সেটি আসল অবস্থায় ফিরে আসে। এক কথায়, কোয়াটারনিয়নের একটি পূর্ণ চক্র $720^\circ$। এই ‘দ্বি-আবরণ’-ই কোয়ান্টাম মেকানিক্সের স্পিনর-এর ভিত্তি।</p>
+      </b1b-section>
+      <!-- ═══ Section: স্লার্প ও গিম্বাল লক ═══ -->
+      <b1b-section id="sec-interpolation" title="স্লার্প ও গিম্বাল লক">
+        <p>ব্যবহারিক ক্ষেত্রে প্রায়ই দুটি ঘূর্ণনের মাঝখানে মসৃণভাবে যেতে হয়—যেমন একটি ক্যামেরা এক দিক থেকে অন্য দিকে ঘুরছে। ইউলার কোণে এটি করলে গিম্বাল লকের কারণে হঠাৎ ঝটপট করে ঘোরে।</p>
+        <p>কোয়াটারনিয়নে আমরা দুটি বিন্দুর মাঝে $S^3$-এর ওপর ‘গ্রেট সার্কেল’ বরাবর সরলভাবে চলে যাই—একেই slerp (spherical linear interpolation) বলে। ফলে গতি সম্পূর্ণ মসৃণ হয়। এই কারণেই আজকের প্রায় সব 3D ইঞ্জিন কোয়াটারনিয়ন ব্যবহার করে।</p>
+      </b1b-section>
+      <!-- ═══ Section: উপসংহার ═══ -->
+      <b1b-section id="sec-conclusion" title="উপসংহার">
+        <p>আজ আমরা দেখলাম কীভাবে একটি অক্ষ ও কোণ থেকে শুরু করে কোয়াটারনিয়ন তৈরি করি, $qvq^{-1}$ দিয়ে ভেক্টর ঘোরাই, আর $720^\circ$-র দ্বি-আবরণের মতো অদ্ভুত fact টিও বুঝতে পারি।</p>
+        <p>পরবর্তী পাঠে আমরা এক ধাপ আরও দূরে যাব—দশ মাত্রার জগতে, যেখানে আমাদের ত্রিমাত্রিক অভিজ্ঞতা সম্পূর্ণরূপে কাজে আসবে না।</p>
+      </b1b-section>
+      <!-- ═══ Interactive visualizer — excluded from narration ═══ -->
+      <b1b-section id="sec-visualizer" title="ইন্টারেকটিভ ধারণা-মানচিত্র" data-no-narration="true">
+        <p class="viz-intro">নিচের এসভিজি সমতলে বিন্দুর অবস্থান টেনে বদলান, স্কেলার স্লাইডার ঘুরিয়ে দৈর্ঘ্য ও দিক পর্যবেক্ষণ করুন—জ্যামিতির মৌলিক ক্রিয়াগুলো এখানে রিয়েল-টাইমে দেখা যায়।</p>
+        <b1b-vector-decomposer initial="3,-2">
+          <p>যেকোনো স্থানাঙ্ক এক্স কমা ওয়াই ইনপুট দিন অথবা প্রিসেটে ক্লিক করে পর্যবেক্ষণ করুন কীভাবে একটি ভেক্টর তার উপাদানে বিভক্ত হয়।</p>
+        </b1b-vector-decomposer>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="3,-2"></b1b-vector-plane>
+        </b1b-fullscreen>
+        <b1b-figure src="../../assets/figures/geometry/lesson_05/concept-map.svg" alt="ধারণা-মানচিত্র" caption="কোয়াটারনিয়ন ও ত্রিমাত্রিক ঘূর্ণন — ধারণার সংযোগ"></b1b-figure>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/geometry/lesson_05/experiments/3b1b_geometry_05_full_dubbed.mp4"
+    yt-id="zjMuIxRvygQ"
+    title="কোয়াটারনিয়ন ও ত্রিমাত্রিক ঘূর্ণন — অধ্যায় ০৫"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — জ্যামিতি">
+    <div slot="playlist">
+      <a class="playlist-item" href="lesson_01.html"><div class="playlist-num">০১</div><div class="playlist-item-info"><div class="playlist-item-title">০১ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০১</div></div></a>
+      <a class="playlist-item" href="lesson_02.html"><div class="playlist-num">০২</div><div class="playlist-item-info"><div class="playlist-item-title">০২ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০২</div></div></a>
+      <a class="playlist-item" href="lesson_03.html"><div class="playlist-num">০৩</div><div class="playlist-item-info"><div class="playlist-item-title">০৩ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০৩</div></div></a>
+      <a class="playlist-item" href="lesson_04.html"><div class="playlist-num">০৪</div><div class="playlist-item-info"><div class="playlist-item-title">০৪ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০৪</div></div></a>
+      <a class="playlist-item active" href="lesson_05.html"><div class="playlist-num">০৫</div><div class="playlist-item-info"><div class="playlist-item-title">০৫ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০৫</div></div></a>
+      <a class="playlist-item" href="lesson_06.html"><div class="playlist-num">০৬</div><div class="playlist-item-info"><div class="playlist-item-title">০৬ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০৬</div></div></a>
+    </div>
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_04.html"
+  prev-title="পূর্ববর্তী অধ্যায়"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_06.html"
+  next-title="পরবর্তী অধ্যায়"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

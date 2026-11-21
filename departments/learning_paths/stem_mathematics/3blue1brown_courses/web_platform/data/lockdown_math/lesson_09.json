@@ -1,0 +1,405 @@
+{
+  "id": "lesson_09",
+  "lesson_id": "lesson_09",
+  "course_id": "lockdown_math",
+  "course_title_en": "Lockdown Math",
+  "course_title_bn": "লকডাউন ম্যাথ ও বিশেষ জ্যামিতি",
+  "lesson_number": "০৯",
+  "lesson_number_int": 9,
+  "title_en": "Geometry of linear combinations and dual vectors",
+  "title_bn": "দ্বৈত ভেক্টর ও রৈখিক সমাহার",
+  "subtitle_bn": "ভেক্টর ও ম্যাট্রিক্সকে দুটি ভিন্ন দৃষ্টিতে দেখা: ডট প্রোডাক্ট কীভাবে ১-মাত্রিক রৈখিক রূপান্তরে রূপ নেয় এবং দ্বৈততার জ্যামিতিক সৌন্দর্য",
+  "youtube_id": "LyGKycYT2v0",
+  "duration": "1:05:40",
+  "author": "৩ব্লু১ব্রাউন (Grant Sanderson)",
+  "voice_narrator": "bn-BD-PradeepNeural",
+  "audio_manifest_url": "../../assets/audio/lockdown_math/lesson_09/manifest.json",
+  "meta": {
+    "description_bn": "রৈখিক সমাহার ও ডুয়াল ভেক্টরের গভীর জ্যামিতিক অর্থ। কেন একটি ১x২ ম্যাট্রিক্স এবং একটি দ্বিমাত্রিক ভেক্টর আসলে একই জ্যামিতিক মুদ্রার এপিঠ-ওপিঠ? রিজেস প্রতিনিধিত্ব উপপাদ্য ও লিনিয়ার কম্বিনেশনের স্পষ্ট রূপ।",
+    "keywords": [
+      "লকডাউন ম্যাথ",
+      "লিনিয়ার কম্বিনেশন",
+      "ডুয়াল ভেক্টর",
+      "দ্বৈত ভেক্টর",
+      "ডট প্রোডাক্ট",
+      "রৈখিক রূপান্তর",
+      "3blue1brown",
+      "KaTeX"
+    ],
+    "youtube_id": "LyGKycYT2v0"
+  },
+  "hero": {
+    "chapter_label": "অধ্যায় ০৯",
+    "headline": "দ্বৈত ভেক্টর ও রৈখিক সমাহারের জ্যামিতি",
+    "subheadline": "ডট প্রোডাক্ট কোনো বিমূর্ত বীজগাণিতিক গুণন নয়; এটি বহুমাত্রিক স্থানকে একটি সরলরেখায় প্রক্ষেপণ করার একমাত্র প্রাকৃতিক রৈখিক রূপান্তর।",
+    "chapter_quote": {
+      "quote_bn": "ডুয়ালিটি বা দ্বৈততা হলো এমন এক আয়না, যেখানে তাকালে একটি সাধারণ ভেক্টর সরাসরি একটি রৈখিক ফাংশনে এবং একটি রৈখিক ফাংশন একটি অনন্য ভেক্টরে প্রতিবিম্বিত হয়।",
+      "author": "গ্রান্ট স্যান্ডারসন (Grant Sanderson)",
+      "source": "Lockdown Math, Lesson 9"
+    },
+    "key_takeaways": [
+      "ভেক্টরের রৈখিক সমাহার (Linear Combination) হলো ভিত্তি ভেক্টরগুলোকে স্কেলার দ্বারা গুণ করে যোগ করার মাধ্যমে নতুন স্থান বা সাবস্পেস তৈরির প্রক্রিয়া।",
+      "বহুমাত্রিক স্থান থেকে এক মাত্রার বাস্তব সংখ্যায় ($R^n \\to R$) যেকোনো রৈখিক রূপান্তরকে একটি $1 \\times n$ ম্যাট্রিক্স দ্বারা প্রকাশ করা যায়।",
+      "রৈখিক দ্বৈততা (Linear Duality): যেকোনো ১-মাত্রিক রৈখিক রূপান্তরের সাথে সম্পর্কিত ঠিক একটি অনন্য ভেক্টর $\\vec{u}$ থাকে, যার সাথে ইনপুট ভেক্টরের ডট প্রোডাক্ট নিলে ওই রূপান্তরের হুবহু মান পাওয়া যায়: $T(\\vec{v}) = \\vec{u} \\cdot \\vec{v}$।",
+      "জ্যামিতিকভাবে ডট প্রোডাক্ট হলো একটি ভেক্টরকে অপর ভেক্টরের রেখার ওপর লম্ব অভিক্ষেপ (orthogonal projection) নেওয়া এবং তাদের দৈর্ঘ্য গুণ করা।"
+    ]
+  },
+  "bookmarks": [
+    {
+      "time": "০০:০০",
+      "seconds": 0,
+      "title_bn": "রৈখিক সমাহার ও স্প্যান পর্যালোচনা"
+    },
+    {
+      "time": "১৪:৩০",
+      "seconds": 870,
+      "title_bn": "বহুমাত্রা থেকে এক মাত্রায় রূপান্তর (Rn to R)"
+    },
+    {
+      "time": "২৮:১৫",
+      "seconds": 1695,
+      "title_bn": "ভিত্তি ভেক্টরের পতন ও ১x২ ম্যাট্রিক্সের রহস্য"
+    },
+    {
+      "time": "৪৩:৫০",
+      "seconds": 2630,
+      "title_bn": "ডুয়াল ভেক্টরের জন্ম ও ডট প্রোডাক্টের পুনর্মিলন"
+    },
+    {
+      "time": "৫৭:১০",
+      "seconds": 3430,
+      "title_bn": "অর্থোগোনাল প্রজেকশন ও দ্বৈততার গভীর দর্শন"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-01-linear-combinations",
+      "alias": "sec_01_linear_combinations",
+      "title": "১. রৈখিক সমাহারের জ্যামিতিক বুনন",
+      "title_en": "The Fabric of Linear Combinations",
+      "audio_file": "sec_01_linear_combinations.mp3",
+      "paragraphs": [
+        "রৈখিক বীজগণিতের সমস্ত জাদু মূলত দুটি মৌলিক অপারেশনের ওপর দাঁড়িয়ে আছে: ভেক্টরকে স্কেলার দিয়ে গুণ করা এবং দুটি ভেক্টরকে পরস্পর যোগ করা। যখন আমরা এই দুটি প্রক্রিয়া একসাথে চালাই—যেমন $a\\vec{v} + b\\vec{w}$—তখন তাকে বলা হয় রৈখিক সমাহার (Linear Combination)।",
+        "যদি $\\vec{v}$ এবং $\\vec{w}$ একই রেখায় অবস্থিত না হয়, তবে তাদের সমস্ত সম্ভাব্য রৈখিক সমাহার সমগ্র দ্বিমাত্রিক তলটিকে স্পর্শ করতে পারে—যাকে আমরা বলি তাদের 'স্প্যান' (Span)।",
+        "কিন্তু যদি আমরা এই প্রশ্নটি উল্টো করে করি: সমতলের সমস্ত ভেক্টরকে যদি একটি একক সংখ্যা লাইনে সংকুচিত করে আনা হয়, তবে সেই রৈখিক প্রক্রিয়াটির জ্যামিতি কেমন দেখাবে?"
+      ],
+      "figure": {
+        "id": "fig-linear-combination-plane",
+        "caption": "চিত্র ১: দুটি ভেক্টরের স্কেলিং ও যোগফল কীভাবে সমতলের যেকোনো বিন্দুতে পৌঁছাতে পারে।",
+        "svg_desc": "Two basis vectors v and w scaling and adding to reach various points across 2D grid"
+      },
+      "formula_box": {
+        "title": "রৈখিক সমাহার",
+        "latex": "\\vec{x} = c_1 \\vec{v}_1 + c_2 \\vec{v}_2 + \\cdots + c_n \\vec{v}_n = \\sum_{i=1}^n c_i \\vec{v}_i",
+        "explanation": "স্কেলার গুণন ও ভেক্টর যোগের সমন্বয়ে যেকোনো নতুন ভেক্টর গঠিত হয়।"
+      },
+      "callout": {
+        "type": "insight",
+        "title": "ভিত্তির স্বাধীনতা",
+        "text": "ভেক্টরগুলো পরস্পর রৈখিকভাবে স্বাধীন হলে তাদের সমাহার পূর্ণ মাত্রার স্থান তৈরি করে।"
+      }
+    },
+    {
+      "id": "sec-02-multidim-to-1d",
+      "alias": "sec_02_multidim_to_1d",
+      "title": "২. বহু মাত্রা থেকে এক মাত্রার রূপান্তর (Rⁿ → R)",
+      "title_en": "Linear Transformations from Vector Space to Number Line",
+      "audio_file": "sec_02_multidim_to_1d.mp3",
+      "paragraphs": [
+        "একটি রৈখিক রূপান্তর সমতলের গ্রিড লাইনগুলোকে সরলরেখা এবং সমান দূরবর্তী রাখে। ধরা যাক আমাদের কাছে এমন একটি রূপান্তর $T$ আছে যা দ্বিমাত্রিক সমতলের যেকোনো ভেক্টর $\\begin{bmatrix} x \\\\ y \\end{bmatrix}$-কে ইনপুট হিসেবে নেয় এবং আউটপুট হিসেবে দেয় একটি সাধারণ বাস্তব সংখ্যা।",
+        "যেহেতু রূপান্তরটি রৈখিক, তাই এটি পুরোপুরি নির্ধারিত হয় আমাদের পরিচিত একক ভিত্তি ভেক্টর $\\hat{i}$ এবং $\\hat{j}$ ঠিক কোথায় গিয়ে পড়ে তার ওপর।",
+        "মনে করুন $\\hat{i}$ গিয়ে পড়ল সংখ্যা লাইনের $u_1$ বিন্দুতে এবং $\\hat{j}$ গিয়ে পড়ল $u_2$ বিন্দুতে। তাহলে যেকোনো সাধারণ ভেক্টর $\\begin{bmatrix} x \\\\ y \\end{bmatrix} = x\\hat{i} + y\\hat{j}$ গিয়ে পড়বে ঠিক $x \\cdot u_1 + y \\cdot u_2$ অবস্থানে! এটিকে আমরা একটি সারি ম্যাট্রিক্স দিয়ে লিখতে পারি: $\\begin{bmatrix} u_1 & u_2 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix}$।"
+      ],
+      "figure": {
+        "id": "fig-projection-1d",
+        "caption": "চিত্র ২: দ্বিমাত্রিক সমতল থেকে ১-মাত্রিক সংখ্যা রেখায় রূপান্তর: ভিত্তি ভেক্টরের পতন।",
+        "svg_desc": "2D plane collapsing linearly onto a 1D number line, tracking i-hat and j-hat landing spots"
+      },
+      "formula_box": {
+        "title": "১x২ ম্যাট্রিক্স রূপান্তর",
+        "latex": "T\\left(\\begin{bmatrix} x \\\\ y \\end{bmatrix}\\right) = \\begin{bmatrix} u_1 & u_2 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = u_1 x + u_2 y",
+        "explanation": "বহুমাত্রা থেকে এক মাত্রার রৈখিক রূপান্তর সর্বদাই একটি একক সারি ম্যাট্রিক্স দ্বারা নির্ধারিত হয়।"
+      },
+      "callout": {
+        "type": "insight",
+        "title": "ম্যাট্রিক্সের সারমর্ম",
+        "text": "১x২ ম্যাট্রিক্সটি কোনো সাধারণ তালিকা নয়—এটি ১-মাত্রিক আউটপুট স্পেসের একটি সম্পূর্ণ রূপান্তর নির্দেশিকা।"
+      }
+    },
+    {
+      "id": "sec-03-duality-dot-product",
+      "alias": "sec_03_duality_dot_product",
+      "title": "৩. ডট প্রোডাক্টের সাথে পুনর্মিলন ও ডুয়াল ভেক্টর",
+      "title_en": "The Birth of Dual Vectors & Dot Product Connection",
+      "audio_file": "sec_03_duality_dot_product.mp3",
+      "paragraphs": [
+        "এবার সূত্রটির দিকে তাকান: $u_1 x + u_2 y$। এটি কি অত্যন্ত পরিচিত মনে হচ্ছে না? হ্যাঁ, এটি অবিকল ভেক্টর $\\vec{u} = \\begin{bmatrix} u_1 \\\\ u_2 \\end{bmatrix}$ এবং ভেক্টর $\\vec{v} = \\begin{bmatrix} x \\\\ y \\end{bmatrix}$ এর ডট প্রোডাক্ট!",
+        "এখানেই গণিতের সবচেয়ে অপরূপ ডুয়ালিটি বা দ্বৈততার জন্ম হয়। একটি ১x২ অনুভূমিক ম্যাট্রিক্স $\\begin{bmatrix} u_1 & u_2 \\end{bmatrix}$ (যা একটি ফাংশন হিসেবে কাজ করে) এবং একটি সাধারণ উলম্ব ভেক্টর $\\begin{bmatrix} u_1 \\\\ u_2 \\end{bmatrix}$ (যা স্থানে একটি নির্দেশক তির)—এরা একে অপরের দ্বৈত রূপ!",
+        "গণিতবিদ রিস (Riesz Representation Theorem) এটিকেই প্রমাণ করেছেন: ইউক্লিডীয় স্থানে $R^n \\to R$ যেকোনো রৈখিক রূপান্তর আসলে নির্দিষ্ট একটি দ্বৈত ভেক্টরের সাথে ডট প্রোডাক্টের হুবহু নামান্তর।"
+      ],
+      "figure": {
+        "id": "fig-dual-vector-mirror",
+        "caption": "চিত্র ৩: রৈখিক ফাংশন ও দ্বৈত ভেক্টরের আয়না প্রতিবিম্ব: ডট প্রোডাক্টের আবির্ভাব।",
+        "svg_desc": "Mirror showing 1x2 row matrix on one side reflecting as column vector u on the other side"
+      },
+      "formula_box": {
+        "title": "দ্বৈত সমীকরণ",
+        "latex": "T(\\vec{v}) = \\begin{bmatrix} u_1 & u_2 \\end{bmatrix} \\vec{v} = \\vec{u} \\cdot \\vec{v} = \\|\\vec{u}\\| \\|\\vec{v}\\| \\cos\\theta",
+        "explanation": "প্রতিটি রৈখিক ফাংশন একটি অনন্য ভেক্টর $\\vec{u}$ কে ধারণ করে, যার জ্যামিতিক ডট প্রোডাক্টের মাধ্যমে মান গণনা করা যায়।"
+      },
+      "callout": {
+        "type": "insight",
+        "title": "ডুয়ালিটির দর্শন",
+        "text": "ফাংশন এবং ভেক্টর আলাদা কোনো সত্তা নয়; নির্দিষ্ট ভিত্তি ও ডট প্রোডাক্টের উপস্থিতিতে এরা একই জ্যামিতিক বাস্তবতার দুটি ভিন্ন রূপ।"
+      }
+    },
+    {
+      "id": "sec-04-geometric-projection",
+      "alias": "sec_04_geometric_projection",
+      "title": "৪. অর্থোগোনাল প্রজেকশন ও প্রতিসাম্যের ব্যাখ্যা",
+      "title_en": "Orthogonal Projection and the Symmetry of Duality",
+      "audio_file": "sec_04_geometric_projection.mp3",
+      "paragraphs": [
+        "কেন এই প্রক্ষেপণটি রৈখিক রূপান্তরের সমস্ত নিয়ম মেনে চলে? কল্পনা করুন একটি একক ভেক্টর $\\hat{u}$ এর দিকে নির্দেশিত একটি রেখা রয়েছে। সমতলের সমস্ত ভেক্টরকে যদি এই রেখার ওপর লম্বভাবে ফেলা হয় (orthogonal projection), তবে তা একটি বৈধ রৈখিক রূপান্তর তৈরি করে।",
+        "যেহেতু রূপান্তরটি রৈখিক, তাই একক ভিত্তি ভেক্টর $\\hat{i}$ যখন এই রেখায় পড়ে, তার ছায়ার দৈর্ঘ্য দাঁড়ায় $u_1$ (যা $\\hat{u}$ এর $x$-উপাংশ)। একইভাবে $\\hat{j}$ এর ছায়া দাঁড়ায় $u_2$।",
+        "ফলে যেকোনো ভেক্টরের অভিক্ষেপের দৈর্ঘ্য হয় $x u_1 + y u_2$। ডট প্রোডাক্টে কেন $\\vec{u} \\cdot \\vec{v} = \\vec{v} \\cdot \\vec{u}$ হয়, তার প্রমাণও এই জ্যামিতিতে স্পষ্ট: $\\vec{u}$ এর রেখায় $\\vec{v}$ এর ছায়া গুণ $\\vec{u}$ এর দৈর্ঘ্য, আর $\\vec{v}$ এর রেখায় $\\vec{u}$ এর ছায়া গুণ $\\vec{v}$ এর দৈর্ঘ্য—উভয় প্রক্রিয়াই প্রতিসাম্যের কারণে হুবহু একই ক্ষেত্রফল নির্ধারণ করে!"
+      ],
+      "figure": {
+        "id": "fig-orthogonal-projection",
+        "caption": "চিত্র ৪: রেখার ওপর লম্ব অভিক্ষেপ এবং ডট প্রোডাক্টের প্রতিসাম্য প্রদর্শন।",
+        "svg_desc": "Vector v projecting perpendicularly onto unit vector u line, showing length |v| cos theta"
+      },
+      "formula_box": {
+        "title": "অর্থোগোনাল অভিক্ষেপ ও স্কেলার ডট",
+        "latex": "\\text{Proj}_{\\vec{u}}(\\vec{v}) = \\left(\\frac{\\vec{u} \\cdot \\vec{v}}{\\|\\vec{u}\\|^2}\\right) \\vec{u}, \\quad \\vec{u} \\cdot \\vec{v} = \\vec{v} \\cdot \\vec{u}",
+        "explanation": "প্রজেকশন প্রক্রিয়াটি সরাসরি ডট প্রোডাক্ট দ্বারা নিয়ন্ত্রিত হয় এবং উভয় ভেক্টরের পারস্পরিক প্রতিসাম্য রক্ষা করে।"
+      },
+      "callout": {
+        "type": "insight",
+        "title": "চূড়ান্ত সারসংক্ষেপ",
+        "text": "ডট প্রোডাক্ট কোনো মুখস্থ সূত্র নয়; এটি হলো প্রজেকশনের জ্যামিতিক প্রক্রিয়াকে একটি একক সংখ্যার মাধ্যমে অনুবাদ করার সবচেয়ে বিশুদ্ধ উপায়।"
+      }
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-09-1",
+      "section_id": "sec-01-linear-combinations",
+      "question": "দুটি অশূন্য ভেক্টর $\\vec{v}$ এবং $\\vec{w}$ এর সমস্ত সম্ভাব্য রৈখিক সমাহারের স্প্যান কখন পুরো দ্বিমাত্রিক তল না হয়ে একটি সরলরেখা হয়?",
+      "options": [
+        {
+          "index": 0,
+          "text": "যখন তারা পরস্পর সমকোণে বা লম্বভাবে অবস্থান করে",
+          "latex": "\\vec{v} \\perp \\vec{w}"
+        },
+        {
+          "index": 1,
+          "text": "যখন ভেক্টর দুটি সমরেখ বা একে অপরের স্কেলার গুণিতক হয়",
+          "latex": "\\vec{w} = k\\vec{v}"
+        },
+        {
+          "index": 2,
+          "text": "যখন তাদের উভয়ের দৈর্ঘ্য ঠিক ১ একক হয়",
+          "latex": "\\|\\vec{v}\\| = \\|\\vec{w}\\| = 1"
+        },
+        {
+          "index": 3,
+          "text": "এটি কখনোই সম্ভব নয়; দুটি ভেক্টরের স্প্যান সর্বদাই সমতল হয়",
+          "latex": "\\text{Span} = R^2"
+        }
+      ],
+      "correct_index": 1,
+      "explanation_latex": "\\vec{w} = k\\vec{v} \\implies c_1\\vec{v} + c_2\\vec{w} = (c_1 + k c_2)\\vec{v} \\in \\text{Line}",
+      "explanation_bn": "যদি একটি ভেক্টর অপর ভেক্টরের সরলরেখায় থাকে (রৈখিকভাবে নির্ভরশীল), তবে তাদের কোনো নতুন দিকে যাওয়ার স্বাধীনতা থাকে না; ফলে তাদের স্প্যান কেবল ওই সরলরেখাটিতেই সীমাবদ্ধ থাকে।"
+    },
+    {
+      "id": "quiz-09-2",
+      "section_id": "sec-02-multidim-to-1d",
+      "question": "যদি একটি রৈখিক রূপান্তর $T: R^2 \\to R$ ভিত্তি ভেক্টর দুটিকে যথাক্রমে $T(\\hat{i}) = 3$ এবং $T(\\hat{j}) = -2$ এ পাঠায়, তবে ভেক্টর $\\begin{bmatrix} 4 \\\\ 5 \\end{bmatrix}$ এর আউটপুট মান কত হবে?",
+      "options": [
+        {
+          "index": 0,
+          "text": "মান হবে ২",
+          "latex": "3(4) + (-2)(5) = 2"
+        },
+        {
+          "index": 1,
+          "text": "মান হবে ২২",
+          "latex": "3(4) + 2(5) = 22"
+        },
+        {
+          "index": 2,
+          "text": "মান হবে -২",
+          "latex": "-2"
+        },
+        {
+          "index": 3,
+          "text": "মান হবে ০",
+          "latex": "0"
+        }
+      ],
+      "correct_index": 0,
+      "explanation_latex": "T\\left(\\begin{bmatrix} 4 \\\\ 5 \\end{bmatrix}\\right) = \\begin{bmatrix} 3 & -2 \\end{bmatrix} \\begin{bmatrix} 4 \\\\ 5 \\end{bmatrix} = 3(4) + (-2)(5) = 12 - 10 = 2",
+      "explanation_bn": "রৈখিকতার কারণে $T(4\\hat{i} + 5\\hat{j}) = 4T(\\hat{i}) + 5T(\\hat{j}) = 4(3) + 5(-2) = 12 - 10 = 2$।"
+    },
+    {
+      "id": "quiz-09-3",
+      "section_id": "sec-03-duality-dot-product",
+      "question": "রৈখিক দ্বৈততা (Linear Duality) অনুসারে, একটি ১x২ সারি ম্যাট্রিক্স এবং একটি দ্বিমাত্রিক কলাম ভেক্টরের মধ্যে সংযোগটি কী?",
+      "options": [
+        {
+          "index": 0,
+          "text": "তাদের মধ্যে কোনো গাণিতিক সম্পর্ক নেই",
+          "latex": "\\text{অসম্পর্কিত}"
+        },
+        {
+          "index": 1,
+          "text": "১x২ ম্যাট্রিক্সটি একটি রূপান্তর নির্দেশ করে যা সংশ্লিষ্ট ভেক্টরের সাথে ডট প্রোডাক্ট নেওয়ার সমতুল্য",
+          "latex": "\\begin{bmatrix} u_1 & u_2 \\end{bmatrix} \\vec{v} = \\vec{u} \\cdot \\vec{v}"
+        },
+        {
+          "index": 2,
+          "text": "উভয়ের ডিটারমিন্যান্ট সর্বদা ১ হতে হয়",
+          "latex": "\\det = 1"
+        },
+        {
+          "index": 3,
+          "text": "তারা কেবল তখনই সমান হয় যখন ভেক্টরের উপাদানগুলো শূন্য হয়",
+          "latex": "u_1 = u_2 = 0"
+        }
+      ],
+      "correct_index": 1,
+      "explanation_latex": "T_{\\vec{u}}(\\vec{v}) = \\begin{bmatrix} u_1 & u_2 \\end{bmatrix} \\begin{bmatrix} v_1 \\\\ v_2 \\end{bmatrix} = u_1 v_1 + u_2 v_2 = \\vec{u} \\cdot \\vec{v}",
+      "explanation_bn": "দ্বৈততার মূল নীতি হলো: বহুমাত্রা থেকে এক মাত্রার প্রতিটি রৈখিক রূপান্তর একটি নির্দিষ্ট ভেক্টরের সাথে ডট প্রোডাক্টের হুবহু সমান। সারি ম্যাট্রিক্সটি রূপান্তরের এবং কলাম ভেক্টরটি জ্যামিতিক অবস্থানের ভাষা।"
+    }
+  ],
+  "interactive_widget": {
+    "id": "dual-vector-projection-lab",
+    "title_bn": "ইন্টারেক্টিভ ল্যাব: ডুয়াল ভেক্টর ও প্রজেকশন অন্বেষক",
+    "description_bn": "ক্যানভাসে ডুয়াল ভেক্টর $\\vec{u}$ এবং ইনপুট ভেক্টর $\\vec{v}$ এর অবস্থান পরিবর্তন করুন। দেখুন কীভাবে অর্থোগোনাল প্রজেকশন এবং ১-মাত্রিক রৈখিক রূপান্তর অবিকল ডট প্রোডাক্টের ফলাফল প্রদান করে।",
+    "parameters": [
+      {
+        "name": "u_x",
+        "label_bn": "ডুয়াল ভেক্টর ux",
+        "min": -3.0,
+        "max": 3.0,
+        "default": 2.0,
+        "step": 0.1
+      },
+      {
+        "name": "u_y",
+        "label_bn": "ডুয়াল ভেক্টর uy",
+        "min": -3.0,
+        "max": 3.0,
+        "default": 1.0,
+        "step": 0.1
+      },
+      {
+        "name": "v_x",
+        "label_bn": "ইনপুট ভেক্টর vx",
+        "min": -3.0,
+        "max": 3.0,
+        "default": 1.5,
+        "step": 0.1
+      },
+      {
+        "name": "v_y",
+        "label_bn": "ইনপুট ভেক্টর vy",
+        "min": -3.0,
+        "max": 3.0,
+        "default": 2.5,
+        "step": 0.1
+      }
+    ],
+    "metrics": [
+      {
+        "id": "dot_result",
+        "label_bn": "ডট প্রোডাক্ট (u · v)",
+        "formula": "ux * vx + uy * vy"
+      },
+      {
+        "id": "matrix_output",
+        "label_bn": "১x২ ম্যাট্রিক্স রূপান্তর",
+        "formula": "[ux, uy] * [vx; vy]"
+      },
+      {
+        "id": "proj_length",
+        "label_bn": "অভিক্ষেপের দৈর্ঘ্য",
+        "formula": "Math.abs(dot) / Math.sqrt(ux*ux + uy*uy)"
+      }
+    ]
+  },
+  "visualizer_specs": {
+    "title": "Dual Vectors & Linear Combination Lab",
+    "modes": [
+      {
+        "id": "mode-linear-combo",
+        "name": "ভেক্টর সমাহার ও গ্রিড স্প্যান",
+        "default_c1": 1.5,
+        "default_c2": -0.8
+      },
+      {
+        "id": "mode-duality-projection",
+        "name": "ডুয়াল ভেক্টর ও অর্থোগোনাল প্রজেকশন",
+        "default_ux": 2.0,
+        "default_uy": 1.0
+      },
+      {
+        "id": "mode-matrix-collapse",
+        "name": "১-মাত্রিক সংখ্যা লাইনে সমতলের পতন",
+        "default_angle": 30
+      }
+    ]
+  },
+  "key_formulas": [
+    {
+      "name_bn": "রৈখিক সমাহার",
+      "latex": "\\vec{v} = c_1\\vec{v}_1 + c_2\\vec{v}_2"
+    },
+    {
+      "name_bn": "১x২ ম্যাট্রিক্স রূপান্তর",
+      "latex": "T(\\vec{v}) = \\begin{bmatrix} u_1 & u_2 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = u_1 x + u_2 y"
+    },
+    {
+      "name_bn": "ডট প্রোডাক্ট ও দ্বৈততা",
+      "latex": "\\vec{u} \\cdot \\vec{v} = u_1 x + u_2 y = \\|\\vec{u}\\| \\|\\vec{v}\\| \\cos\\theta"
+    },
+    {
+      "name_bn": "অর্থোগোনাল প্রজেকশন",
+      "latex": "\\text{comp}_{\\vec{u}}(\\vec{v}) = \\frac{\\vec{u} \\cdot \\vec{v}}{\\|\\vec{u}\\|}"
+    },
+    {
+      "name_bn": "রিস রিপ্রেজেন্টেশন",
+      "latex": "T(\\vec{v}) = \\langle \\vec{u}, \\vec{v} \\rangle"
+    }
+  ],
+  "glossary": [
+    {
+      "term_en": "Linear Combination",
+      "term_bn": "রৈখিক সমাহার",
+      "definition_bn": "ভেক্টরগুলোকে বিভিন্ন স্কেলার দ্বারা গুণ করে যোগ করার প্রক্রিয়া।"
+    },
+    {
+      "term_en": "Dual Vector",
+      "term_bn": "দ্বৈত ভেক্টর বা ডুয়াল ভেক্টর",
+      "definition_bn": "একটি রৈখিক রূপান্তরকে উপস্থাপনকারী ভেক্টর, যার সাথে ডট প্রোডাক্ট নিলে রূপান্তরের হুবহু মান পাওয়া যায়।"
+    },
+    {
+      "term_en": "Orthogonal Projection",
+      "term_bn": "লম্ব অভিক্ষেপ",
+      "definition_bn": "কোনো ভেক্টরকে অপর একটি রেখা বা তলের ওপর ৯০ ডিগ্রি কোণে ফেলার জ্যামিতিক প্রক্রিয়া।"
+    }
+  ],
+  "navigation": {
+    "prev_lesson": {
+      "id": "lesson_08",
+      "title_bn": "ব্যাসেল সমস্যা ও পাই স্কয়ার বাই ৬ এর সমাধান",
+      "href": "lesson_08.html"
+    },
+    "next_lesson": {
+      "id": "lesson_10",
+      "title_bn": "উচ্চতর বহুপদী সমীকরণ ও রুট খোঁজার রূপ",
+      "href": "lesson_10.html"
+    }
+  }
+}

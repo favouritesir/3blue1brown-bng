@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="গণিতের সবচেয়ে মোহনীয় সমীকরণ e^{iθ} = cos θ + i sin θ কেন সত্য? স্পর্শক বেগ, বৃত্তাকার গতি, টেলর ধারা এবং e^{iπ} + 1 = 0 এর দৃশ্যমান অনন্ত রহস্য।"/>
+<title>অয়লারের সূত্র ও ত্রিকোণমিতি | Euler's Formula and Trigonometry | লকডাউন ম্যাথ | ৩ব্লু১ব্রাউন বাংলা</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/lockdown_math/lesson_05/manifest.js?v=3"></script>
+
+<!-- ═══════════ SCRIPTS — strict L01 load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (LAST: parses the final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="লকডাউন ম্যাথ"
+  course-url="../../index.html#lockdown-math"
+  home-url="../../index.html"
+  chapter-num="০৫"
+  chapter-total="১০"
+  prev-url="lesson_04.html"
+  prev-title="পূর্ববর্তী অধ্যায়: জটিল সংখ্যার জ্যামিতিক রূপ ও গুণন"
+  next-url="lesson_06.html"
+  next-title="পরবর্তী অধ্যায়: অবিচ্ছিন্ন সম্ভাবনা ও ঘনত্ব অপেক্ষক"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="লকডাউন ম্যাথ"
+  course-url="../../index.html#lockdown-math"
+  chapter-label="অধ্যায় ০৫ · লকডাউন ম্যাথ ও বিশেষ জ্যামিতি"
+  title="অয়লারের সূত্র ও ত্রিকোণমিতি | Euler's Formula and Trigonometry"
+  desc="একটি কাল্পনিক সংখ্যাকে কোনো বাস্তব সূচকে বসালে ($e^{i\theta}$) কেন তা সোজা সামনের দিকে না বেড়ে জটিল সমতলে নিখুঁত বৃত্তাকার গতি তৈরি করে? রিচার্ড ফাইনম্যানের ভাষায় 'আমাদের রত্নভাণ্ডারের সবচেয়ে বিস্ময়কর সমীকরণ'—অয়লারের সূত্রকে ডেরিভেটিভ, বেগ ভেক্টর এবং টেলর ধারার মাধ্যমে অনুধাবন।"
+  video-src="../../media_vault/lockdown_math/lesson_05/experiments/3b1b_lockdown_05_full_dubbed.mp4"
+  yt-id="mvmuCPvRoWQ"
+  date="লকডাউন সেশন ৫ · ২০২০"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner
+      title="শিক্ষক অডিও বিবরণ ও লাইভ কারাওকে সহকারী"
+      desc="দরদী শিক্ষকের কণ্ঠে প্রতিটি অনুচ্ছেদ, গাণিতিক সূত্র ও চিত্র বিবরণ শুনুন — সাথে রিয়েলটাইম হাইলাইটার ও কন্ট্রোল।"
+      cta="🎙️ শিক্ষকের কণ্ঠে শুনুন">
+    </b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"    time-bn="০০:০০">অয়লারের সূত্রের পরিচিতি ও ফাইনম্যানের মুগ্ধতা</b1b-bookmark>
+      <b1b-bookmark time="28"  time-bn="০০:২৮">সূচকীয় ফাংশন e^t এর পরিবর্তনের হার ও বৃদ্ধির স্বভাব</b1b-bookmark>
+      <b1b-bookmark time="60" time-bn="০১:০০">কাল্পনিক ঘাত e^{it}: লম্ব বেগ ভেক্টর ও বৃত্তাকার পথ</b1b-bookmark>
+      <b1b-bookmark time="102" time-bn="০১:৪২">টেলর ধারার মাধ্যমে অয়লারের সূত্রের বীজগণিতীয় প্রমাণ</b1b-bookmark>
+      <b1b-bookmark time="155" time-bn="০২:৩৫">অয়লারের অভেদ: e^{iπ} + 1 = 0 এর গভীর দার্শনিক অর্থ</b1b-bookmark>
+      <b1b-bookmark time="184" time-bn="০৩:০৪">ত্রিকোণমিতিক সাইন ও কোসাইনের এক্সপোনেনশিয়াল রূপায়ন</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-euler-intro">১. গণিতের মোহনীয় রত্ন: অয়লারের সূত্রের বিস্ময়</a>
+      <a href="#sec-exp-growth">২. এক্সপোনেনশিয়াল ফাংশন ও বেগের সার্বক্ষণিক অনুপাত</a>
+      <a href="#sec-perpendicular-velocity">৩. লম্ব বেগ ভেক্টর: কেন কাল্পনিক ঘাত বৃত্ত তৈরি করে?</a>
+      <a href="#sec-taylor-proof">৪. টেলর ধারা: তিনটি অসীম ধারার জাদুকরী মিলন</a>
+      <a href="#sec-euler-identity">৫. অয়লারের অভেদ: পাঁচটি মৌলিক ধ্রুবকের একীভূত রূপ</a>
+      <a href="#sec-trig-exponential">৬. ত্রিকোণমিতি পুনর্গঠন: সাইন ও কোসাইনের এক্সপোনেনশিয়াল রূপ</a>
+      <a href="#sec-interactive-lab">৭. ইন্টারেক্টিভ অয়লার বৃত্ত ও বেগ ভেক্টর ল্যাব</a>
+      <a href="#sec-quizzes">৮. ধারণা যাচাই ও বহুনির্বাচনী কুইজ</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ NARRATED 1 — manifest cues: h2 + p×3 + formula-box×2 ═══ -->
+      <b1b-section id="sec-euler-intro" title="গণিতের মোহনীয় রত্ন: অয়লারের সূত্রের বিস্ময়">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="জটিল সমতলে একক বৃত্তে e^{iθ} বিন্দু ও অনুভূমিক-উল্লম্ব প্রক্ষেপণ" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <line x1="60" y1="160" x2="470" y2="160" stroke="#8b949e" stroke-width="1.5"/>
+              <line x1="320" y1="300" x2="320" y2="24" stroke="#8b949e" stroke-width="1.5"/>
+              <circle cx="320" cy="160" r="104" fill="none" stroke="#74c0e3" stroke-width="2"/>
+              <line x1="320" y1="160" x2="387" y2="80" stroke="#f6ad55" stroke-width="3"/>
+              <line x1="387" y1="160" x2="387" y2="80" stroke="#10b981" stroke-width="1.6" stroke-dasharray="5 4"/>
+              <line x1="320" y1="80" x2="387" y2="80" stroke="#10b981" stroke-width="1.6" stroke-dasharray="5 4"/>
+              <circle cx="387" cy="80" r="6" fill="#f6ad55"/>
+              <circle cx="216" cy="160" r="6" fill="#ef4444"/>
+              <g fill="#e2e8f0" font-size="14" font-family="sans-serif">
+                <text x="392" y="74">e^{iθ}</text>
+                <text x="392" y="154">cos θ</text>
+                <text x="330" y="76">i sin θ</text>
+                <text x="150" y="150">−1</text>
+                <text x="452" y="180">Re</text>
+                <text x="330" y="32">Im</text>
+              </g>
+              <text x="520" y="120" fill="#f6ad55" font-size="17" font-family="sans-serif">e^{iθ} = cos θ + i sin θ</text>
+              <text x="520" y="156" fill="#ef4444" font-size="16" font-family="sans-serif">θ = π ⇒ e^{iπ} + 1 = 0</text>
+              <text x="520" y="200" fill="#8b949e" font-size="13" font-family="sans-serif">দূরত্ব সর্বদা ১</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_05/experiments/3b1b_lockdown_05_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্র ১: জটিল সমতলে একক বৃত্তের ওপর $e^{i\theta}$ বিন্দু—কমলা তীরটি অবস্থান ভেক্টর, আর সবুজ ড্যাশড রেখাগুলো তার অনুভূমিক $\cos\theta$ ও উল্লম্ব $\sin\theta$ প্রক্ষেপণ। বৃত্তের বাম প্রান্তে $-1$ বিন্দুটিতে $\theta=\pi$ ঘটে, যেখান থেকে $e^{i\pi}+1=0$ জন্ম নেয়। লক্ষ্য করুন বিন্দুটি বৃত্তের বাইরে কখনো যায় না—কারণ কাল্পনিক ঘাতের গতি ব্যাসার্ধের দৈর্ঘ্য অপরিবর্তিত রেখে শুধু দিক ঘোরায়। এই একটিমাত্র ছবিই সূত্রের জ্যামিতিক অর্থ ধরে দেয়।</div>
+        </b1b-media-tab>
+
+        <p>অয়লারের সূত্র কাল্পনিক সূচক এবং ত্রিকোণমিতিক বৃত্তীয় গতির মধ্যকার সেতু。</p>
+        <p>কাল্পনিক ঘাত বারবার গুণন নয়, এটি সমতলে কণার অবিচ্ছিন্ন গতিপ্রবাহ।</p>
+        <p>অয়লারের অভেদ গণিতের পাঁচটি মৌলিক শাখাকে এক বিন্দুতে যুক্ত করে।</p>
+        <b1b-formula math="e^{i\theta} = \cos\theta + i\sin\theta"></b1b-formula>
+        <b1b-formula math="e^{i\pi} + 1 = 0"></b1b-formula>
+      </b1b-section>
+
+      <b1b-section id="sec-euler-intro-study" title="মুখস্থের বদলে অনুধাবন: ফাইনম্যানের রত্ন কেন বিস্ময়কর?" data-no-narration="true">
+        <b1b-quote author="রিচার্ড ফাইনম্যান">অয়লারের সূত্র গণিতের সমস্ত শাখা—বিশ্লেষণ, জ্যামিতি ও পাটিগণিতকে একক সুতায় বেঁধেছে। এটি আমাদের সমগ্র বৈজ্ঞানিক সংস্কৃতির সবচেয়ে নিখুঁত প্রতীক।</b1b-quote>
+        <p>গণিতের ইতিহাসে লিওনহার্ড অয়লারের (Leonhard Euler) সূত্র $e^{i\theta} = \cos\theta + i\sin\theta$ এর মতো গভীর ও রহস্যময় আবিষ্কার খুব কমই আছে। পদার্থবিজ্ঞানী রিচার্ড ফাইনম্যান একে অভিহিত করেছিলেন 'গণিতের সবচেয়ে অনন্য রত্ন' হিসেবে।</p>
+        <p>একটি সাধারণ ক্যালকুলেটরে যদি আপনি $2^3$ চাপেন, তবে তার অর্থ হলো ২-কে ৩ বার গুণ করা। কিন্তু যদি প্রশ্ন করা হয় $e$ এর মাথায় $i\pi$ বা কাল্পনিক সংখ্যা বসানোর অর্থ কী? কোনো সংখ্যাকে কাল্পনিক সংখ্যক বার গুণ করা বাস্তব কাণ্ডজ্ঞানে অর্থহীন শোনায়!</p>
+        <p>লকডাউন ম্যাথে গ্রান্ট স্যান্ডারসনের মূল বার্তা হলো: ঘাতকে কেবল বারবার গুণনের খাঁচায় আটকে রাখবেন না। ক্যালকুলাসে এক্সপোনেনশিয়াল ফাংশন $e^t$ হলো এমন এক অনন্য ডাইনামিক্যাল প্রক্রিয়া, যেখানে পরিবর্তনের তাৎক্ষণিক বেগ সর্বদা বর্তমান অবস্থানের সমানুপাতিক হয়।</p>
+        <b1b-callout type="blue" icon="💡" title="পাঁচটি মহাজাগতিক ধ্রুবকের মিলন">
+          <p>অয়লারের সমীকরণে রয়েছে বিশ্লেষণের ভিত্তি $e$, বীজগণিতের কাল্পনিক একক $i$, জ্যামিতির বৃত্তের প্রতীক $\pi$, পাটিগণিতের গুণন অভেদ $1$ এবং যোগের নিরপেক্ষ উপাদান $0$। পাঁচটি সম্পূর্ণ ভিন্ন জগতের ধ্রুবক একটিমাত্র সমীকরণে মিলে যায়—এই ঐক্যই ফাইনম্যানকে মুগ্ধ করেছিল।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 2 — manifest cues: h2 + p×3 + formula-box×2 ═══ -->
+      <b1b-section id="sec-exp-growth" title="এক্সপোনেনশিয়াল ফাংশন ও বেগের সার্বক্ষণিক অনুপাত">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="বাস্তব সূচকীয় বৃদ্ধি বক্ররেখা ও তার সমানুপাতিক বেগ" style="width:100%;height:auto;display:block">
+              <rect width="640" height="310" fill="#0f141c"/>
+              <line x1="48" y1="266" x2="300" y2="266" stroke="#8b949e" stroke-width="1.5"/>
+              <line x1="48" y1="266" x2="48" y2="26" stroke="#8b949e" stroke-width="1.5"/>
+              <path d="M48 264 Q 110 250 150 210 T 220 110 T 292 26" fill="none" stroke="#f6ad55" stroke-width="3"/>
+              <g stroke="#74c0e3" stroke-width="2" fill="none">
+                <line x1="106" y1="244" x2="130" y2="238"/><line x1="106" y1="244" x2="116" y2="230"/>
+                <line x1="180" y1="166" x2="208" y2="148"/><line x1="180" y1="166" x2="186" y2="140"/>
+                <line x1="252" y1="72" x2="284" y2="44"/><line x1="252" y1="72" x2="256" y2="42"/>
+              </g>
+              <g fill="#e2e8f0" font-size="13" font-family="sans-serif">
+                <text x="300" y="278">t →</text><text x="18" y="30">f(t)</text>
+              </g>
+              <text x="54" y="52" fill="#f6ad55" font-size="15" font-family="sans-serif">f(t) = e^{kt}</text>
+              <line x1="360" y1="250" x2="600" y2="250" stroke="#8b949e" stroke-width="1.5"/>
+              <line x1="480" y1="290" x2="480" y2="34" stroke="#8b949e" stroke-width="1.5"/>
+              <circle cx="480" cy="146" r="78" fill="none" stroke="#10b981" stroke-width="2"/>
+              <line x1="480" y1="146" x2="535" y2="91" stroke="#74c0e3" stroke-width="3"/>
+              <line x1="535" y1="91" x2="572" y2="54" stroke="#f6ad55" stroke-width="3"/>
+              <text x="366" y="32" fill="#e2e8f0" font-size="15" font-family="sans-serif">z'(t) = i · z(t)</text>
+              <text x="370" y="288" fill="#8b949e" font-size="13" font-family="sans-serif">বাস্তব বৃদ্ধি  ↔  কাল্পনিক ঘূর্ণন</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_05/experiments/3b1b_lockdown_05_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্র ২: বাঁ প্যানেলে দেখা যাচ্ছে বাস্তব সূচকীয় বৃদ্ধি—বক্ররেখা যত এগোয়, বেগ তত বাড়ে, কারণ বেগ সর্বদা অবস্থানের সমানুপাতিক। ডান প্যানেলে একই নিয়মে সূচক $i$ বসালে বেগ আর সামনের দিকে না গিয়ে অবস্থান থেকে ৯০° ঘুরে যায়, ফলে কণাটি বৃত্তে আবদ্ধ হয়। নীল তীর অবস্থান আর কমলা তীর তার লম্ব বেগ—দুটির দৈর্ঘ্য সমান, শুধু দিকে পার্থক্য। এই তুলনাটিই বুঝিয়ে দেয় কেন $e^t$ বাড়ে আর $e^{it}$ ঘোরে।</div>
+        </b1b-media-tab>
+
+        <p>এক্সপোনেনশিয়াল ফাংশনের মৌলিক ধর্ম হলো এর বেগ অবস্থানের সমানুপাতিক।</p>
+        <p>বাস্তব সূচকে বেগ অবস্থান ভেক্টরের দিকেই থাকে, ফলে দূরত্ব দ্রুত বৃদ্ধি পায়।</p>
+        <p>কাল্পনিক সূচকে বেগ অবস্থানের সাথে সমান্তরাল না হয়ে পরিবর্তিত দিকে ঘুরে যায়।</p>
+        <b1b-formula math="\frac{d}{dt}(e^{kt}) = k e^{kt}"></b1b-formula>
+        <b1b-formula math="\frac{d}{dt}(e^{it}) = i \cdot e^{it}"></b1b-formula>
+      </b1b-section>
+
+      <b1b-section id="sec-exp-growth-study" title="চক্রবৃদ্ধি সুদের গল্প: বেগ কীভাবে অবস্থানের ভাষা বলে?" data-no-narration="true">
+        <p>ক্যালকুলাসের দৃষ্টিতে $f(t) = e^{kt}$ ফাংশনটির সবচেয়ে গভীর পরিচয় হলো: এর অন্তরজ বা পরিবর্তনের হার সর্বদা ফাংশনটির বর্তমান মানের সমানুপাতিক।</p>
+        <p>$\frac{d}{dt}(e^{kt}) = k \cdot e^{kt}$।</p>
+        <p>ঠিক যেমন চক্রবৃদ্ধি সুদে জমার পরিমাণ যত বেড়ে যায়, সুদের হারও তত বাড়ে—প্রতি মুহূর্তে নতুন সুদ পুরোনো জমার ওপরই গণনা করা হয়। যদি $k$ একটি বাস্তব ধনাত্মক সংখ্যা হয় (যেমন $k = 1$), তবে সময় যত বাড়ে, বেগ তত বাড়ে, এবং কণাটি ধনাত্মক বাস্তব অক্ষ ধরে অসীমের দিকে তীব্র গতিতে ধাবিত হয়। এটিই হলো স্বাভাবিক সূচকীয় বৃদ্ধি (Exponential Growth)।</p>
+        <p>কিন্তু কী ঘটবে যদি ধ্রুবক $k$ বাস্তব সংখ্যা না হয়ে বিশুদ্ধ কাল্পনিক একক $i$ হয়? অর্থাৎ যদি আমাদের গতিপথের সমীকরণ হয় $z(t) = e^{it}$?</p>
+        <b1b-callout type="gold" icon="🔍" title="অন্তর্দৃষ্টি: অবস্থানের রূপান্তরই বেগ">
+          <p>ডিফারেনশিয়াল সমীকরণের ভাষায় $z'(t) = i z(t)$। এর অর্থ কণাটির বেগ ভেক্টর আর কিছুই নয়—তার বর্তমান অবস্থান ভেক্টরটিকে শুধু $i$ দিয়ে গুণ করা! বাস্তব $k$-তে বেগ একই দিকে বাড়ে, কাল্পনিক $i$-তে বেগ দিক বদলায়; এই একটিমাত্র পার্থক্য থেকে পুরো বৃত্তাকার গতির জন্ম।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 3 — manifest cues: h2 + p×3 + formula-box×2 ═══ -->
+      <b1b-section id="sec-perpendicular-velocity" title="লম্ব বেগ ভেক্টর: কেন কাল্পনিক ঘাত বৃত্ত তৈরি করে?">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="একক বৃত্তে অবস্থান ভেক্টর ও তার ৯০ ডিগ্রি লম্ব স্পর্শক বেগ ভেক্টর" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <line x1="55" y1="180" x2="360" y2="180" stroke="#8b949e" stroke-width="1.5"/>
+              <line x1="230" y1="300" x2="230" y2="20" stroke="#8b949e" stroke-width="1.5"/>
+              <circle cx="230" cy="180" r="110" fill="none" stroke="#74c0e3" stroke-width="2"/>
+              <line x1="230" y1="180" x2="308" y2="102" stroke="#74c0e3" stroke-width="3"/>
+              <line x1="308" y1="102" x2="374" y2="36" stroke="#f6ad55" stroke-width="3"/>
+              <path d="M298 102 L298 112 L308 112" fill="none" stroke="#e2e8f0" stroke-width="1.6"/>
+              <circle cx="308" cy="102" r="6" fill="#10b981"/>
+              <g fill="#e2e8f0" font-size="14" font-family="sans-serif">
+                <text x="312" y="98">z(t)</text>
+                <text x="376" y="32">z'(t) = i·z(t)</text>
+                <text x="380" y="60">৯০° লম্ব</text>
+                <text x="340" y="196">cos t</text>
+                <text x="238" y="92">sin t</text>
+              </g>
+              <text x="430" y="150" fill="#f6ad55" font-size="15" font-family="sans-serif">দূরত্বের পরিবর্তন = ০</text>
+              <text x="430" y="186" fill="#10b981" font-size="15" font-family="sans-serif">|e^{it}| = ১ (ধ্রুবক)</text>
+              <text x="430" y="222" fill="#8b949e" font-size="13" font-family="sans-serif">কেবল দিক বদলায়, মান নয়</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_05/experiments/3b1b_lockdown_05_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্র ৩: নীল তীরটি অবস্থান ভেক্টর $z(t)$, আর কমলা তীরটি তার বেগ $z'(t)=i\,z(t)$—$i$ দ্বারা গুণের অর্থই হলো ৯০° ঘোরানো, তাই বেগ সর্বদা স্পর্শক বরাবর থাকে। ছোট বর্গাকার চিহ্নটি লম্ব কোণ নির্দেশ করছে; বেগ ব্যাসার্ধের দিকে কোনো অংশ রাখে না, ফলে দূরত্বের পরিবর্তন শূন্য। চাঁদ যেমন কেন্দ্রমুখী টান সত্ত্বেও লম্ব বেগে কক্ষপথে ঘোরে, তেমনি এই কণাও একক বৃত্তে বন্দি। অনুভূমিক প্রক্ষেপণ $\cos t$ আর উল্লম্ব প্রক্ষেপণ $\sin t$—এভাবেই বৃত্তীয় গতি থেকে ত্রিকোণমিতি জন্ম নেয়।</div>
+        </b1b-media-tab>
+
+        <p>i দ্বারা গুণ করার কারণে বেগ সর্বদা অবস্থানের সাথে ঠিক ৯০° লম্ব থাকে।</p>
+        <p>লম্ব বেগ কখনোই ব্যাসার্ধের দৈর্ঘ্য পরিবর্তন করতে পারে না, কেবল দিক পরিবর্তন করে।</p>
+        <p>একক বৃত্তের গতির অনুভূমিক উপাদান হলো কোসাইন এবং উল্লম্ব উপাদান হলো সাইন।</p>
+        <b1b-formula math="\frac{d}{dt}|z|^2 = \frac{d}{dt}(z \bar{z}) = z' \bar{z} + z \bar{z}' = (iz)\bar{z} + z(-i\bar{z}) = 0"></b1b-formula>
+        <b1b-formula math="z(t) = (\text{অনুভূমিক প্রক্ষেপণ}) + i(\text{উল্লম্ব প্রক্ষেপণ}) = \cos t + i\sin t"></b1b-formula>
+      </b1b-section>
+
+      <b1b-section id="sec-perpendicular-velocity-study" title="কেন বৃত্তই বেছে নেয়: দূরত্বের অপরিবর্তনীয়তার প্রমাণ" data-no-narration="true">
+        <p>পূর্ববর্তী অধ্যায়ে আমরা শিখেছি: যেকোনো ভেক্টরকে $i$ দ্বারা গুণ করার অর্থ হলো তার দৈর্ঘ্য না বাড়িয়ে তাকে ঠিক ৯০ ডিগ্রি বামে (ঘড়ির কাঁটার বিপরীত দিকে) ঘুরিয়ে দেওয়া।</p>
+        <p>অতএব, $z'(t) = i \cdot z(t)$ সমীকরণটির ভৌত তাৎপর্য অপরিসীম! প্রতিটি মুহূর্তে কণাটির তাৎক্ষণিক বেগ ভেক্টর ($z'(t)$) তার অবস্থান ভেক্টরের ($z(t)$) সাথে অবিকল ৯০ ডিগ্রি কোণে অবস্থান করে।</p>
+        <p>পদার্থবিজ্ঞানের বৃত্তীয় গতি স্মরণ করুন: যখন কোনো কণার বেগ সর্বদা তার কেন্দ্রমুখী ব্যাসার্ধ ভেক্টরের সাথে লম্ব থাকে, তখন কণাটি কখনো কেন্দ্র থেকে দূরে সরে যেতে পারে না কিংবা কেন্দ্রের দিকে কাছে আসতে পারে না। দূরত্বের পরিবর্তন হার হয় শূন্য: $\frac{d}{dt}|z(t)|^2 = 0$।</p>
+        <p>সুতরাং কণাটি মূলবিন্দু থেকে ১ একক দূরত্বের গণ্ডিতে চিরকাল বন্দি থেকে ঠিক ১ রেডিয়ান/সেকেন্ড কৌণিক বেগে একটি নিখুঁত একক বৃত্ত বরাবর ঘুরতে বাধ্য হয়! সময় $t = \theta$ অতিবাহিত হলে কণাটির অবস্থান কোণ হবে ঠিক $\theta$, যার অনুভূমিক মান $\cos\theta$ এবং উল্লম্ব মান $\sin\theta$। এভাবেই প্রমাণিত হয় $e^{i\theta} = \cos\theta + i\sin\theta$!</p>
+        <b1b-callout type="blue" icon="🪐" title="মহাকর্ষ ও চাঁদের কক্ষপথের মতো">
+          <p>চাঁদ যেমন পৃথিবীর দিকে ধেয়ে না এসে চিরকাল বৃত্তাকার কক্ষপথে ঘোরে কারণ তার বেগ দূরত্বের সাথে লম্ব, ঠিক তেমনি কাল্পনিক একক $i$ অবস্থান ভেক্টরকে লম্ব বেগে ঠেলে দিয়ে এক অন্তহীন বৃত্তাকার নাচ উপহার দেয়!</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 4 — manifest cues: h2 + p×3 + formula-box×2 ═══ -->
+      <b1b-section id="sec-taylor-proof" title="টেলর ধারা: তিনটি অসীম ধারার জাদুকরী মিলন">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ই, কোসাইন ও সাইনের টেলর ধারা থেকে অয়লারের সূত্রের মিলন" style="width:100%;height:auto;display:block">
+              <rect width="640" height="330" fill="#0f141c"/>
+              <g font-family="sans-serif" font-size="15" fill="#e2e8f0">
+                <text x="30" y="46">e^x = 1 + x + x²/2! + x³/3! + x⁴/4! + ⋯</text>
+                <text x="30" y="104">cos x = 1 − x²/2! + x⁴/4! − x⁶/6! + ⋯</text>
+                <text x="30" y="162">sin x = x − x³/3! + x⁵/5! − x⁷/7! + ⋯</text>
+              </g>
+              <g stroke="#74c0e3" stroke-width="1.8" fill="none">
+                <path d="M300 100 Q 380 180 452 182"/>
+                <path d="M300 158 Q 380 190 452 190"/>
+              </g>
+              <g fill="#10b981" font-size="13" font-family="sans-serif">
+                <text x="330" y="136">জোড় ঘাত</text><text x="330" y="222">বিজোড় ঘাত</text>
+              </g>
+              <rect x="452" y="224" width="172" height="76" rx="8" fill="#1b2430" stroke="#f6ad55" stroke-width="2"/>
+              <text x="538" y="256" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">e^{iθ} =</text>
+              <text x="538" y="282" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">cos θ + i sin θ</text>
+              <text x="30" y="246" fill="#8b949e" font-size="14" font-family="sans-serif">i² = −1,  i³ = −i,  i⁴ = 1 …</text>
+              <text x="30" y="282" fill="#8b949e" font-size="14" font-family="sans-serif">চার ধাপে পুনরাবৃত্তি চিহ্নের ছন্দ তৈরি করে</text>
+              <text x="30" y="314" fill="#f6ad55" font-size="14" font-family="sans-serif">দুটি স্বাধীন ধারা নিখুঁতভাবে মিলে যায়!</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_05/experiments/3b1b_lockdown_05_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্র ৪: তিনটি ম্যাকলরিন ধারা—$e^x$, $\cos x$ ও $\sin x$—একই কাঠামো ভাগ করে। $x$-এর জায়গায় $i\theta$ বসালে $i$এর ঘাতের চার-ধাপের ছন্দ ($i^2=-1$, $i^3=-i$, $i^4=1$) ধারাটিকে ভেঙে দেয়: জোড় ঘাতগুলো বাস্তব $\cos\theta$ গঠন করে আর বিজোড় ঘাতগুলো $i$ সহগসহ $i\sin\theta$ গঠন করে। দুই দিকের চিহ্নের পর্যায়ক্রম অবিকল মিলে যাওয়ায় $e^{i\theta}=\cos\theta+i\sin\theta$ প্রমাণিত হয়। ছবিটি দেখলে বোঝা যায় এটি কোনো কাকতালীয় মিল নয়, বরং ঘাতের গাণিতিক ছন্দের স্বাভাবিক ফল।</div>
+        </b1b-media-tab>
+
+        <p>e^{iθ} এর টেলর ধারার জোড় ঘাতগুলো তৈরি করে cos(θ)।</p>
+        <p>বিজোড় ঘাতগুলো কাল্পনিক সহগসহ তৈরি করে i·sin(θ)।</p>
+        <p>অসীম ধারার বিশ্লেষণ প্রমাণ করে সূত্রটি সম্পূর্ণ গাণিতিকভাবে সুদৃঢ়।</p>
+        <b1b-formula math="e^{i\theta} = \sum_{n=0}^{\infty} \frac{(i\theta)^n}{n!} = 1 + i\theta - \frac{\theta^2}{2!} - i\frac{\theta^3}{3!} + \frac{\theta^4}{4!} + i\frac{\theta^5}{5!} - \cdots"></b1b-formula>
+        <b1b-formula math="e^{i\theta} = \left(1 - \frac{\theta^2}{2!} + \frac{\theta^4}{4!} - \cdots\right) + i\left(\theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \cdots\right) = \cos\theta + i\sin\theta"></b1b-formula>
+      </b1b-section>
+
+      <b1b-section id="sec-taylor-proof-study" title="অসীম ধারার হিসাব: চিহ্নের ছন্দ কীভাবে সাইন-কোসাইন হয়?" data-no-narration="true">
+        <p>জ্যামিতিক বৃত্তীয় গতির পাশাপাশি ক্যালকুলাসের টেলর ধারা (Taylor Series) অয়লারের সূত্রের দ্বিতীয় অকাট্য বীজগণিতীয় প্রমাণ হাজির করে।</p>
+        <p>আমরা জানি, বাস্তব মানের জন্য $e^x$, $\cos x$, এবং $\sin x$ এর ম্যাকলরিন বিস্তার হলো:</p>
+        <p>$e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} + \cdots$</p>
+        <p>$\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots$</p>
+        <p>$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots$</p>
+        <p>এখন $e^x$ এর ধারায় $x$ এর স্থলে $i\theta$ বসানো যাক: $i^2 = -1$, $i^3 = -i$, $i^4 = 1$, $i^5 = i$। ধারাটি স্বয়ংক্রিয়ভাবে দুটি সম্পূর্ণ আলাদা দলে বিভক্ত হয়ে যায়।</p>
+        <p>বাস্তব পদগুলো একত্রিত করলে পাওয়া যায়: $\left(1 - \frac{\theta^2}{2!} + \frac{\theta^4}{4!} - \cdots\right) = \cos\theta$।</p>
+        <p>এবং $i$ কমন নিয়ে কাল্পনিক পদগুলো একত্রিত করলে পাওয়া যায়: $i\left(\theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \cdots\right) = i\sin\theta$।</p>
+        <p>দুটি স্বাধীন অসীম ধারা পরস্পর নিখুঁতভাবে মিলে গিয়ে তৈরি করে অয়লারের অমল সমীকরণ!</p>
+        <b1b-callout type="gold" icon="🧩" title="নিখুঁত পাজলের মতো ফিট হওয়া">
+          <p>যদি $i$-এর ঘাতগুলো ৪টি ধাপে পুনরাবৃত্ত না হতো, তবে চিহ্নের এই নিখুঁত প্লাস-মাইনাস পর্যায়ক্রম কখনোই সাইন ও কোসাইনের অবিকল চিহ্নের সাথে মিলত না। টেলর ধারা আমাদের দেখায় যে জ্যামিতির বৃত্ত আর বীজগণিতের ধারা আসলে একই সত্যের দুটি ভাষা।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 5 — manifest cues: h2 + p×3 + formula-box×2 ═══ -->
+      <b1b-section id="sec-euler-identity" title="অয়লারের অভেদ: পাঁচটি মৌলিক ধ্রুবকের একীভূত রূপ">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="একক বৃত্তে অর্ধ-ঘূর্ণন: ১ থেকে -১, অয়লারের অভেদ" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <line x1="55" y1="180" x2="370" y2="180" stroke="#8b949e" stroke-width="1.5"/>
+              <line x1="230" y1="300" x2="230" y2="20" stroke="#8b949e" stroke-width="1.5"/>
+              <circle cx="230" cy="180" r="110" fill="none" stroke="#74c0e3" stroke-width="2"/>
+              <path d="M340 180 A110 110 0 0 0 120 180" fill="none" stroke="#f6ad55" stroke-width="3"/>
+              <path d="M126 146 L120 180 L154 174" fill="none" stroke="#f6ad55" stroke-width="2.5"/>
+              <circle cx="340" cy="180" r="6" fill="#10b981"/>
+              <circle cx="120" cy="180" r="6" fill="#ef4444"/>
+              <g fill="#e2e8f0" font-size="15" font-family="sans-serif">
+                <text x="346" y="170">1 = e^{i·0}</text>
+                <text x="72" y="170">−1 = e^{iπ}</text>
+                <text x="230" y="58">θ = π</text>
+              </g>
+              <text x="408" y="130" fill="#ef4444" font-size="20" font-family="sans-serif">e^{iπ} + 1 = 0</text>
+              <text x="408" y="174" fill="#e2e8f0" font-size="14" font-family="sans-serif">e · i · π · 1 · 0</text>
+              <text x="408" y="204" fill="#8b949e" font-size="13" font-family="sans-serif">পাঁচটি জগতের এক মিলন</text>
+              <text x="408" y="244" fill="#f6ad55" font-size="13" font-family="sans-serif">২π = পূর্ণ চক্রে ফিরে আসা</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_05/experiments/3b1b_lockdown_05_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্র ৫: একক বৃত্তে যাত্রা শুরু হয় $1$ বিন্দু থেকে; $\theta=\pi$ রেডিয়ান অর্ধ-ঘূর্ণনের পর কণা পৌঁছায় ঠিক $-1$ বিন্দুতে—তাই $e^{i\pi}=-1$। উভয় পক্ষে ১ যোগ করলেই জন্ম নেয় $e^{i\pi}+1=0$, যেখানে $e$, $i$, $\pi$, $1$ ও $0$—বিশ্লেষণ, বীজগণিত, জ্যামিতি ও পাটিগণিতের প্রতীক—এক বিন্দুতে মিলিত হয়। কমলা চাপটি ১৮০° ঘূর্ণন দেখাচ্ছে; আর একই গতি চালিয়ে $\theta=2\pi$-এ কণা আবার $1$-এ ফিরে আসে। এই ছবিটিই 'গণিতের সেরা সমীকরণ'-এর দার্শনিক সৌন্দর্য প্রকাশ করে।</div>
+        </b1b-media-tab>
+
+        <p>θ = π বসালে কণাটি জটিল সমতলে ঠিক ১৮০° ঘুরে বাস্তব অক্ষের -১ এ উপনীত হয়।</p>
+        <p>e^{iπ} = -1 হলো বৃত্তীয় ঘূর্ণন ও সূচকীয় ফাংশনের নিখুঁত মিলন।</p>
+        <p>e, i, π, 1, এবং 0 এর মেলবন্ধন গণিতের অনন্য ঐক্যের স্মারক।</p>
+        <b1b-formula math="e^{i\pi} + 1 = 0"></b1b-formula>
+        <b1b-formula math="e^{i\pi} = -1, \qquad e^{i 2\pi} = 1"></b1b-formula>
+      </b1b-section>
+
+      <b1b-section id="sec-euler-identity-study" title="সেরা সমীকরণের গল্প: ১৯৮৮ সালের সেই জরিপ" data-no-narration="true">
+        <p>অয়লারের সাধারণ সূত্রে যখন আমরা কোণ $\theta = \pi$ (১৮০ ডিগ্রি বা পাই রেডিয়ান) বসাই, তখন ঘটে সবচেয়ে ঐশ্বরিক ঘটনাটি।</p>
+        <p>$e^{i\pi} = \cos\pi + i\sin\pi$।</p>
+        <p>যেহেতু $\cos\pi = -1$ এবং $\sin\pi = 0$, সমীকরণটি দাঁড়ায়: $e^{i\pi} = -1$।</p>
+        <p>উভয় পক্ষে ১ যোগ করলে আমরা পাই সেই সুবিখ্যাত সমীকরণ: $e^{i\pi} + 1 = 0$।</p>
+        <p>বিজ্ঞানের ইতিহাসে সবচেয়ে নিখুঁত সৌন্দর্য হিসেবে গণ্য এই সমীকরণটি কেন এত শক্তিশালী? কারণ এটি সম্পূর্ণ ভিন্ন পাঁচটি জগতকে এক বিন্দুতে মিলিয়ে দিয়েছে: ক্যালকুলাসের ভিত্তি $e$, জটিল সংখ্যার পিতা $i$, বৃত্ত ও জ্যামিতির প্রতীক $\pi$, পূর্ণসংখ্যার ভিত্তি $1$, এবং শূন্যের মহাজাগতিক ধারণা $0$।</p>
+        <b1b-callout type="blue" icon="🌟" title="গণিতবিদদের ভোট">
+          <p>১৯৮৮ সালে 'ম্যাথমেটিক্যাল ইন্টেলিজেন্সার' জার্নাল বিশ্বজুড়ে গণিতবিদদের মধ্যে সর্বকালের সেরা সমীকরণ নির্বাচনের জন্য জরিপ চালায়। ম্যাক্সওয়েলের সমীকরণ কিংবা আইনস্টাইনের $E = mc^2$-কে পেছনে ফেলে অয়লারের এই অভেদটি বিপুল ভোটে প্রথম স্থান অধিকার করে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 6 — manifest cues: h2 + p×3 + formula-box×2 ═══ -->
+      <b1b-section id="sec-trig-exponential" title="ত্রিকোণমিতি পুনর্গঠন: সাইন ও কোসাইনের এক্সপোনেনশিয়াল রূপ">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="দুটি বিপরীতমুখী ঘূর্ণায়মান ফেজর যোগ হয়ে কোসাইন তরঙ্গ গঠন" style="width:100%;height:auto;display:block">
+              <rect width="640" height="310" fill="#0f141c"/>
+              <circle cx="150" cy="150" r="72" fill="none" stroke="#74c0e3" stroke-width="1.8"/>
+              <line x1="150" y1="150" x2="205" y2="100" stroke="#74c0e3" stroke-width="2.8"/>
+              <line x1="150" y1="150" x2="95" y2="100" stroke="#10b981" stroke-width="2.8"/>
+              <line x1="150" y1="150" x2="205" y2="100" stroke="#f6ad55" stroke-width="2" stroke-dasharray="4 3"/>
+              <g fill="#e2e8f0" font-size="13" font-family="sans-serif">
+                <text x="206" y="96">e^{iθ}</text><text x="36" y="96">e^{−iθ}</text>
+                <text x="118" y="34">বিপরীত ঘূর্ণন</text>
+              </g>
+              <line x1="268" y1="150" x2="600" y2="150" stroke="#8b949e" stroke-width="1.5"/>
+              <path d="M268 150 Q 300 46 332 150 T 396 150 T 460 150 T 524 150 T 588 150" fill="none" stroke="#f6ad55" stroke-width="2.8"/>
+              <text x="300" y="222" fill="#10b981" font-size="14" font-family="sans-serif">(e^{iθ}+e^{−iθ})/2 = cos θ</text>
+              <text x="300" y="252" fill="#74c0e3" font-size="14" font-family="sans-serif">(e^{iθ}−e^{−iθ})/2i = sin θ</text>
+              <text x="300" y="288" fill="#8b949e" font-size="13" font-family="sans-serif">কাল্পনিক অংশ বাতিল → বাস্তব তরঙ্গ</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_05/experiments/3b1b_lockdown_05_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্র ৬: একটি ফেজর $e^{i\theta}$ বামাবর্তে আর অন্যটি $e^{-i\theta}$ ডানাবর্তে ঘোরে। দুটিকে যোগ করলে তাদের কাল্পনিক উল্লম্ব অংশ পরস্পর বাতিল হয়ে শুধু বাস্তব অংশ থাকে—$2\cos\theta$—আর দুই দিয়ে ভাগ করলেই $\cos\theta$ পাই। একইভাবে বিয়োগ করলে বাস্তব অংশ কেটে যায় ও $2i\sin\theta$ বেঁচে থাকে। ছবির ডান পাশের সরল রেখাটি হলো সেই ফলস্বরূপ কোসাইন তরঙ্গ: দুটি ঘোরার সমষ্টি একটিমাত্র দোলনে রূপ নেয়।</div>
+        </b1b-media-tab>
+
+        <p>সাইন ও কোসাইন আসলে সূচকীয় ফাংশনের জটিল জোড়া ছাড়া আর কিছুই নয়।</p>
+        <p>বিপরীত ঘূর্ণনশীল দুটি জটিল ভেক্টরের যোগফল বাস্তব কোসাইন তরঙ্গ সৃষ্টি করে।</p>
+        <p>আধুনিক তরঙ্গবিজ্ঞান ও সিগন্যাল প্রসেসিং এই এক্সপোনেনশিয়াল রূপের ওপর প্রতিষ্ঠিত।</p>
+        <b1b-formula math="\cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}"></b1b-formula>
+        <b1b-formula math="\sin\theta = \frac{e^{i\theta} - e^{-i\theta}}{2i}"></b1b-formula>
+      </b1b-section>
+
+      <b1b-section id="sec-trig-exponential-study" title="পুনর্গঠন: কোসাইন ও সাইনের নতুন সংজ্ঞা" data-no-narration="true">
+        <p>অয়লারের সূত্র ত্রিকোণমিতিকে শুধু প্রমাণই করে না, ত্রিকোণমিতিকে সম্পূর্ণ নতুন সংজ্ঞায় পুনঃপ্রতিষ্ঠা করে।</p>
+        <p>বিবেচনা করুন: $e^{i\theta} = \cos\theta + i\sin\theta$, এবং কোণ উল্টো করলে $e^{-i\theta} = \cos(-\theta) + i\sin(-\theta) = \cos\theta - i\sin\theta$।</p>
+        <p>সমীকরণ দুটিকে একবার যোগ করলে কাল্পনিক অংশ কেটে যায়, ফলে পাওয়া যায় কোসাইনের এক্সপোনেনশিয়াল সংজ্ঞা: $\cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}$।</p>
+        <p>আর প্রথমটি থেকে দ্বিতীয়টি বিয়োগ করলে বাস্তব অংশ কেটে যায়, ফলে পাওয়া যায় সাইনের এক্সপোনেনশিয়াল সংজ্ঞা: $\sin\theta = \frac{e^{i\theta} - e^{-i\theta}}{2i}$।</p>
+        <p>এই সূত্র দুটি কোয়ান্টাম বলবিদ্যা, ফুরিয়ার রূপান্তর এবং তড়িৎ প্রকৌশলে অল্টারনেটিং কারেন্ট (AC Circuit) বিশ্লেষণে অপরিহার্য ভিত্তি হিসেবে কাজ করে।</p>
+        <b1b-callout type="gold" icon="⚡" title="আধুনিক পদার্থবিজ্ঞানের ভাষা">
+          <p>শ্রোডিঞ্জারের তরঙ্গ সমীকরণ $\hat{H}\Psi = i\hbar \frac{\partial\Psi}{\partial t}$ থেকে শুরু করে কোয়ান্টাম মেকানিক্সের সমস্ত তরঙ্গ অপেক্ষক অয়লারের সূত্রের এই এক্সপোনেনশিয়াল রূপেই লেখা হয়। সিগন্যাল প্রসেসিংয়ের ফুরিয়ার রূপান্তরও একই ধারণার ওপর দাঁড়িয়ে আছে—সব কম্পন আসলে ঘোরার সমষ্টি।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ INTERACTIVE LAB (non-narrated) — inside b1b-fullscreen ═══ -->
+      <b1b-section id="sec-interactive-lab" title="৭. ইন্টারেক্টিভ অয়লার বৃত্ত ও বেগ ভেক্টর ল্যাব" data-no-narration="true" data-widget-id="euler-circle-lab">
+        <p class="viz-intro">নিচের ইন্টারেক্টিভ ক্যানভাসটিতে একক বৃত্তে কণাটির অবস্থান $e^{i\theta}$ (নীল তীর) এবং তার স্পর্শক বেগ ভেক্টর $i e^{i\theta}$ (কমলা তীর) দেখানো হয়েছে। স্লাইডার টেনে কোণ $\theta$ পরিবর্তন করুন—লক্ষ্য করুন কীভাবে প্রতিটি অবস্থানে বেগ ভেক্টরটি অবস্থানের সাথে সর্বদা সুনির্দিষ্ট ৯০° লম্ব থাকে এবং কীভাবে অনুভূমিক মান $\cos\theta$ ও উল্লম্ব মান $\sin\theta$ পরিবর্তিত হয়:</p>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <div id="eulerVizWrapper">
+            <style>
+              #eulerVizWrapper .ev-tabs { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:14px; padding-right:140px; }
+              #eulerVizWrapper .ev-tab-btn { padding:8px 16px; border-radius:8px; border:1px solid var(--border); background:var(--bg-alt); color:var(--text-muted); font-weight:600; font-size:.9rem; cursor:pointer; font-family:inherit; }
+              #eulerVizWrapper .ev-tab-btn.active { background:var(--theme,#f6ad55); color:#0b0f19; border-color:var(--theme,#f6ad55); }
+              #eulerVizWrapper .ev-play { margin-left:auto; }
+              #eulerVizWrapper canvas { display:block; width:100%; height:420px; background:#0b0c10; border-radius:8px; border:1px solid var(--border); }
+              #eulerVizWrapper .ev-sliders { display:flex; flex-direction:column; gap:14px; margin-top:16px; background:var(--bg-alt); padding:16px 20px; border-radius:8px; border:1px solid var(--border); }
+              #eulerVizWrapper .ev-row { display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+              #eulerVizWrapper .ev-row label { font-weight:600; min-width:250px; }
+              #eulerVizWrapper .ev-row input[type=range] { flex:1; min-width:180px; accent-color:#f6ad55; }
+              #eulerVizWrapper .ev-badge { min-width:76px; font-family:monospace; font-weight:bold; padding:3px 8px; background:var(--bg-card); border:1px solid var(--border); border-radius:4px; text-align:center; color:#f6ad55; }
+              #eulerVizWrapper .ev-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin-top:16px; }
+              #eulerVizWrapper .ev-stat { background:var(--bg-alt); border:1px solid var(--border); border-left:3px solid #f6ad55; border-radius:8px; padding:12px 14px; }
+              #eulerVizWrapper .ev-stat span { display:block; font-size:.78rem; color:var(--text-muted); margin-bottom:4px; }
+              #eulerVizWrapper .ev-stat strong { font-size:1.05rem; color:#f6ad55; font-family:monospace; }
+              #eulerVizWrapper .ev-insight { margin-top:16px; padding:14px; background:var(--bg-alt); border:1px solid var(--border); border-radius:8px; color:var(--text); }
+            </style>
+            <div class="ev-tabs">
+              <button type="button" class="ev-tab-btn active" id="evModeCircle" data-mode-id="mode-circle">🌀 বৃত্ত ও বেগ</button>
+              <button type="button" class="ev-tab-btn" id="evModeProof" data-mode-id="mode-radius-proof">📐 ব্যাসার্ধের প্রমাণ</button>
+              <button type="button" class="ev-tab-btn ev-play" id="evPlay">▶ ঘূর্ণন চালু</button>
+            </div>
+            <canvas id="eulerCanvas" aria-label="ইন্টারেক্টিভ অয়লার বৃত্ত: অবস্থান, লম্ব বেগ ও প্রক্ষেপণ"></canvas>
+            <div class="ev-sliders">
+              <div class="ev-row">
+                <label for="sliderTheta">কোণ θ (রেডিয়ান) =</label>
+                <input type="range" id="sliderTheta" min="0" max="6.283" step="0.05" value="1.05"/>
+                <span class="ev-badge" id="evValTheta">১.০৫</span>
+              </div>
+              <div class="ev-row">
+                <label for="sliderSpeed">ঘূর্ণন বেগ ফ্যাক্টর ω =</label>
+                <input type="range" id="sliderSpeed" min="0.5" max="2.5" step="0.1" value="1.0"/>
+                <span class="ev-badge" id="evValSpeed">১.০</span>
+              </div>
+            </div>
+            <div class="ev-stats">
+              <div class="ev-stat" data-stat-id="statPos"><span>অবস্থান e^{iθ} = cos θ + i sin θ</span><strong id="statPos">0.50 + 0.87i</strong></div>
+              <div class="ev-stat" data-stat-id="statVel"><span>বেগ i·e^{iθ} = −sin θ + i cos θ</span><strong id="statVel">−0.87 + 0.50i</strong></div>
+              <div class="ev-stat" data-stat-id="statRadius"><span>দূরত্ব |e^{iθ}| = √(cos²θ + sin²θ)</span><strong id="statRadius">১.০০ (ধ্রুবক)</strong></div>
+              <div class="ev-stat" data-stat-id="statAngleDeg"><span>কোণ θ × 180 / π</span><strong id="statAngleDeg">৬০.০°</strong></div>
+            </div>
+            <div class="ev-insight" id="evInsight">💡 লক্ষ্য করুন: অবস্থান ভেক্টর ও বেগ ভেক্টরের ডট প্রোডাক্ট সর্বদা ০, যার মানে বেগ সর্বদা ব্যাসার্ধের সাথে ঠিক ৯০° সমকোণে অবস্থান করে!</div>
+          </div>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ QUIZZES (non-narrated) — exact JSON options + rich feedback ═══ -->
+      <b1b-section id="sec-quizzes" title="৮. ধারণা যাচাই ও বহুনির্বাচনী কুইজ" data-no-narration="true">
+        <b1b-quiz
+          question="❓ ১. জটিল সমতলে $z(t) = e^{it}$ গতিপথের প্রতিটি বিন্দুতে বেগ ভেক্টর $z'(t)$-এর দিক অবস্থান ভেক্টর $z(t)$-এর সাপেক্ষে কেমন হয়?"
+          correct="1"
+          correct-msg="একদম সঠিক! $z'(t) = i\cdot z(t)$। যেহেতু $i$ দিয়ে গুণ করলে ৯০° ঘূর্ণন ঘটে, তাই বেগ সর্বদা অবস্থানের সাথে ঠিক ৯০° কোণে লম্ব থাকে।"
+          wrong-msg="ভুল! বাস্তব সূচকে বেগ সমান্তরাল থাকে, কাল্পনিক সূচকে নয়।আরেকটি সাধারণ ভুল: এটি ত্বরণ ভেক্টরের বৈশিষ্ট্য হতে পারে, বেগের নয়। আর কণাটি ঘোরার সাথে সাথে বেগের দিক অবিচ্ছিন্নভাবে পরিবর্তিত হয়—তাই কখনো সর্বদা অনুভূমিক থাকে না। সঠিক উত্তর: অবস্থান ভেক্টরের সাথে ঠিক ৯০° লম্ব (স্পর্শক বরাবর)।"
+          reveal-msg="সঠিক উত্তর: অবস্থান ভেক্টরের সাথে ঠিক ৯০° লম্ব (স্পর্শক বরাবর)। ডেরিভেটিভ নিয়ম অনুসারে $\frac{d}{dt}(e^{it}) = i e^{it}$। যেকোনো ভেক্টরকে $i$ দ্বারা গুণ করলে তা দৈর্ঘ্যে অপরিবর্তিত থেকে ৯০° ঘোরে। সুতরাং বেগ ভেক্টর সর্বদা অবস্থান ভেক্টরের সাথে সমকোণে লম্ব থাকে।">
+          <div slot="option">অবস্থান ভেক্টরের সাথে একই দিকে (সমান্তরাল)</div>
+          <div slot="option">অবস্থান ভেক্টরের সাথে ঠিক ৯০° লম্ব (স্পর্শক বরাবর)</div>
+          <div slot="option">মূলবিন্দুর দিকে সরাসরি কেন্দ্রমুখী</div>
+          <div slot="option">সর্বদা অনুভূমিক অক্ষের সমান্তরাল</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ২. অয়লারের সূত্রানুসারে $e^{i\pi/2}$ এর মান কত?"
+          correct="1"
+          correct-msg="চমৎকার! অয়লারের সূত্র অনুসারে $e^{i\pi/2} = \cos(\pi/2) + i\sin(\pi/2) = 0 + i(1) = i$। $\pi/2$ রেডিয়ান মানে ৯০ ডিগ্রি—একক বৃত্তের বিন্দুটি সরাসরি উল্লম্ব কাল্পনিক অক্ষে ১ একক উচ্চতায় পড়ে।"
+          wrong-msg="ভুল! ১ হলো $e^{i\cdot 0}$ বা $e^{i\cdot 2\pi}$-এর মান; −১ হলো $e^{i\pi}$-এর মান; আর $−i$ হলো $e^{i\cdot 3\pi/2}$-এর মান। ৯০ ডিগ্রি কোণে বিন্দুটি কাল্পনিক অক্ষের +১ এ অবস্থান করে, তাই উত্তর $i$।"
+          reveal-msg="সঠিক উত্তর: $i$। $\pi/2$ রেডিয়ান হলো ৯০ ডিগ্রি কোণ। ৯০ ডিগ্রি কোণে একক বৃত্তের বিন্দুটি পড়ে সরাসরি উল্লম্ব কাল্পনিক অক্ষে ১ একক উচ্চতায়, যার মান হলো $i$।">
+          <div slot="option">$1$</div>
+          <div slot="option">$i$</div>
+          <div slot="option">$-1$</div>
+          <div slot="option">$-i$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৩. কোসাইনের এক্সপোনেনশিয়াল রূপ $\cos\theta$-এর সঠিক রাশিমালা কোনটি?"
+          correct="1"
+          correct-msg="অসাধারণ! $e^{i\theta} = \cos\theta + i\sin\theta$ এবং $e^{-i\theta} = \cos\theta - i\sin\theta$ যোগ করলে কাল্পনিক অংশ বাতিল হয়ে $2\cos\theta$ থাকে। অতএব $\cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}$।"
+          wrong-msg="ভুল! $\frac{e^{i\theta}-e^{-i\theta}}{2}$ হলো হাইপারবোলিক সাইনের মতো রাশি, কোসাইনের নয়; $\frac{e^{i\theta}-e^{-i\theta}}{2i}$ হলো সাইন $\sin\theta$-এর এক্সপোনেনশিয়াল রূপ; আর $e^{i\theta}+e^{-i\theta}$-কে অবশ্যই ২ দিয়ে ভাগ করতে হবে। মনে রেখো: যোগ → কোসাইন, বিয়োগ → সাইন।"
+          reveal-msg="সঠিক উত্তর: $\frac{e^{i\theta} + e^{-i\theta}}{2}$। $e^{i\theta} + e^{-i\theta} = (\cos\theta + i\sin\theta) + (\cos\theta - i\sin\theta) = 2\cos\theta$। অতএব $\cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}$।">
+          <div slot="option">$\frac{e^{i\theta} - e^{-i\theta}}{2}$</div>
+          <div slot="option">$\frac{e^{i\theta} + e^{-i\theta}}{2}$</div>
+          <div slot="option">$\frac{e^{i\theta} - e^{-i\theta}}{2i}$</div>
+          <div slot="option">$e^{i\theta} + e^{-i\theta}$</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ FORMULA REFERENCE & GLOSSARY (non-narrated) ═══ -->
+      <b1b-section id="sec-formulas-glossary" title="সূত্র সংগ্রহ ও পরিভাষা" data-no-narration="true">
+        <b1b-callout type="gold" icon="🧮" title="পাঁচটি গুরুত্বপূর্ণ সূত্র">
+          <p>অয়লারের মৌলিক সূত্র: $e^{i\theta} = \cos\theta + i\sin\theta$</p>
+          <p>অয়লারের অভেদ: $e^{i\pi} + 1 = 0$</p>
+          <p>বৃত্তীয় বেগ সমীকরণ: $\frac{d}{dt}(e^{it}) = i e^{it}$</p>
+          <p>কোসাইনের সূচকীয় রূপ: $\cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}$</p>
+          <p>সাইনের সূচকীয় রূপ: $\sin\theta = \frac{e^{i\theta} - e^{-i\theta}}{2i}$</p>
+        </b1b-callout>
+        <b1b-callout type="blue" icon="📖" title="পরিভাষা (Glossary)">
+          <p><strong>Euler's Formula — অয়লারের সূত্র:</strong> জটিল সূচক ও বৃত্তীয় ত্রিকোণমিতির মধ্যকার মৌলিক সমীকরণ: $e^{i\theta} = \cos\theta + i\sin\theta$।</p>
+          <p><strong>Euler's Identity — অয়লারের অভেদ:</strong> পাঁচটি প্রধান গাণিতিক ধ্রুবকের মিলনরূপ: $e^{i\pi} + 1 = 0$।</p>
+          <p><strong>Perpendicular Velocity — লম্ব বেগ:</strong> বেগ ভেক্টর সর্বদা অবস্থান ভেক্টরের সাথে সমকোণে অবস্থান করায় কণাটি বৃত্তাকার কক্ষপথে আবদ্ধ থাকে।</p>
+          <p><strong>Taylor Series — টেলর ধারা:</strong> কোনো ফাংশনকে তার ডেরিভেটিভসমূহের মাধ্যমে অসীম বহুপদী রাশিতে বিস্তার করার পদ্ধতি।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/lockdown_math/lesson_05/experiments/3b1b_lockdown_05_full_dubbed.mp4"
+    yt-id="mvmuCPvRoWQ"
+    title="অয়লারের সূত্র ও ত্রিকোণমিতি — অধ্যায় ০৫"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — লকডাউন ম্যাথ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_04.html"
+  prev-title="জটিল সংখ্যার জ্যামিতিক রূপ ও গুণন"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_06.html"
+  next-title="অবিচ্ছিন্ন সম্ভাবনা ও ঘনত্ব অপেক্ষক"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ PAGE-LOCAL EULER CIRCLE LAB CONTROLLER ═══════════
+     Scoped to #eulerVizWrapper; does not touch the shared component library. -->
+<script>
+(function () {
+  'use strict';
+  function initLab() {
+    const wrap = document.getElementById('eulerVizWrapper');
+    if (!wrap || wrap.dataset.inited) return;
+    wrap.dataset.inited = '1';
+
+    const $ = (id) => document.getElementById(id);
+    const canvas = $('eulerCanvas');
+    const thetaS = $('sliderTheta'), speedS = $('sliderSpeed');
+    if (!canvas || !thetaS || !speedS) return;
+    const ctx = canvas.getContext('2d');
+    const bn = (v) => String(v).replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[+d]);
+    let theta = parseFloat(thetaS.value);
+    let speed = parseFloat(speedS.value);
+    let playing = false, mode = 'circle', raf = 0, last = 0;
+
+    function resize() {
+      const dpr = window.devicePixelRatio || 1;
+      const w = canvas.clientWidth || 720, h = 420;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function fmt(v) { return (v >= 0 ? '+' : '−') + Math.abs(v).toFixed(2); }
+
+    function updateStats() {
+      const c = Math.cos(theta), s = Math.sin(theta);
+      $('evValTheta').textContent = bn(theta.toFixed(2));
+      $('evValSpeed').textContent = bn(speed.toFixed(1));
+      $('statPos').textContent = fmt(c) + ' ' + fmt(s) + 'i';
+      $('statVel').textContent = fmt(-s) + ' ' + fmt(c) + 'i';
+      $('statRadius').textContent = '১.০০ (ধ্রুবক)';
+      $('statAngleDeg').textContent = bn((theta * 180 / Math.PI).toFixed(1)) + '°';
+    }
+
+    function arrow(x1, y1, x2, y2, color, width) {
+      const a = Math.atan2(y2 - y1, x2 - x1), head = 12;
+      ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = width || 3;
+      ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x2, y2);
+      ctx.lineTo(x2 - head * Math.cos(a - 0.42), y2 - head * Math.sin(a - 0.42));
+      ctx.lineTo(x2 - head * Math.cos(a + 0.42), y2 - head * Math.sin(a + 0.42));
+      ctx.closePath(); ctx.fill();
+    }
+
+    function draw() {
+      const w = canvas.clientWidth || 720, h = 420;
+      ctx.clearRect(0, 0, w, h);
+      const cx = w / 2, cy = h / 2, R = Math.min(w, h) * 0.34;
+      const c = Math.cos(theta), s = Math.sin(theta);
+
+      ctx.strokeStyle = '#3a4658'; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(30, cy); ctx.lineTo(w - 30, cy); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(cx, 20); ctx.lineTo(cx, h - 20); ctx.stroke();
+      ctx.strokeStyle = '#74c0e3'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.stroke();
+
+      const px = cx + R * c, py = cy - R * s;
+      arrow(cx, cy, px, py, '#74c0e3', 3.5);
+      arrow(px, py, cx, py, '#10b981', 1.8);
+      arrow(cx, py, cx, cy, '#10b981', 1.8);
+
+      const vx = px - R * s, vy = py - R * c;
+      arrow(px, py, vx, vy, '#f6ad55', 3.5);
+
+      ctx.fillStyle = '#e2e8f0'; ctx.font = '14px sans-serif';
+      ctx.fillText('e^{iθ}', px + 8, py - 8);
+      ctx.fillText('cos θ', cx + 8, cy - 8);
+      ctx.fillText('i sin θ', cx + 8, cy - R * s / 2);
+      ctx.fillStyle = '#f6ad55';
+      ctx.fillText('i·e^{iθ}', vx + 8, vy - 8);
+
+      if (mode === 'proof') {
+        ctx.strokeStyle = 'rgba(246,173,85,0.55)'; ctx.lineWidth = 1;
+        for (let k = 0; k < 24; k++) {
+          const t = k * Math.PI / 12;
+          const rx = cx + R * Math.cos(t), ry = cy - R * Math.sin(t);
+          const rvx = -R * Math.sin(t), rvy = -R * Math.cos(t);
+          ctx.beginPath(); ctx.moveTo(rx, ry); ctx.lineTo(rx + rvx * 0.18, ry + rvy * 0.18); ctx.stroke();
+        }
+        ctx.fillStyle = '#10b981'; ctx.font = '13px sans-serif';
+        ctx.fillText('d|z|²/dt = 0  →  |e^{iθ}| = ১ (ধ্রুবক)', 30, h - 22);
+      } else {
+        ctx.fillStyle = '#8b949e'; ctx.font = '13px sans-serif';
+        ctx.fillText('ডট প্রোডাক্ট = ০  →  বেগ সর্বদা ৯০° লম্ব', 30, h - 22);
+      }
+    }
+
+    function loop(ts) {
+      if (!playing) return;
+      if (last) theta = (theta + (ts - last) / 1000 * 0.6 * speed) % (Math.PI * 2);
+      last = ts;
+      thetaS.value = String(theta);
+      updateStats(); draw();
+      raf = requestAnimationFrame(loop);
+    }
+
+    thetaS.addEventListener('input', () => { theta = parseFloat(thetaS.value); updateStats(); draw(); });
+    speedS.addEventListener('input', () => { speed = parseFloat(speedS.value); updateStats(); });
+    $('evPlay').addEventListener('click', () => {
+      playing = !playing;
+      $('evPlay').textContent = playing ? '⏸ থামুন' : '▶ ঘূর্ণন চালু';
+      if (playing) { last = 0; raf = requestAnimationFrame(loop); }
+      else cancelAnimationFrame(raf);
+    });
+    $('evModeCircle').addEventListener('click', () => {
+      mode = 'circle';
+      $('evModeCircle').classList.add('active');
+      $('evModeProof').classList.remove('active');
+      draw();
+    });
+    $('evModeProof').addEventListener('click', () => {
+      mode = 'proof';
+      $('evModeProof').classList.add('active');
+      $('evModeCircle').classList.remove('active');
+      draw();
+    });
+    window.addEventListener('resize', () => { resize(); draw(); });
+    resize(); updateStats(); draw();
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initLab);
+  else initLab();
+})();
+</script>
+
+</body>
+</html>

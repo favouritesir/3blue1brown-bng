@@ -1,0 +1,82 @@
+[
+  {
+    "lesson": 1,
+    "video_id": "Nbwv5wHQoj0",
+    "status": "ok",
+    "duration_sec": 3115.133,
+    "size_bytes": 57277958,
+    "error": null
+  },
+  {
+    "lesson": 2,
+    "video_id": "OkmNXy7er84",
+    "status": "ok",
+    "duration_sec": 674.724,
+    "size_bytes": 15978956,
+    "error": null
+  },
+  {
+    "lesson": 3,
+    "video_id": "M64HUIJFTZM",
+    "status": "ok",
+    "duration_sec": 962.267,
+    "size_bytes": 31878056,
+    "error": null
+  },
+  {
+    "lesson": 4,
+    "video_id": "ltLUadnCyi0",
+    "status": "ok",
+    "duration_sec": 2405.25,
+    "size_bytes": 133309313,
+    "error": null
+  },
+  {
+    "lesson": 5,
+    "video_id": "YtkIWDE36qU",
+    "status": "ok",
+    "duration_sec": 972.567,
+    "size_bytes": 10445442,
+    "error": null
+  },
+  {
+    "lesson": 6,
+    "video_id": "piJkuavhV50",
+    "status": "ok",
+    "duration_sec": 1781.633,
+    "size_bytes": 66138502,
+    "error": null
+  },
+  {
+    "lesson": 7,
+    "video_id": "bOXCLR3Wric",
+    "status": "ok",
+    "duration_sec": 2075.067,
+    "size_bytes": 21810618,
+    "error": null
+  },
+  {
+    "lesson": 8,
+    "video_id": "wTJI_WuZSwE",
+    "status": "ok",
+    "duration_sec": 1121.883,
+    "size_bytes": 51448812,
+    "error": null
+  },
+  {
+    "lesson": 9,
+    "video_id": "VvCytJvd4H0",
+    "status": "ok",
+    "duration_sec": 1176.842,
+    "size_bytes": 34975381,
+    "error": null
+  },
+  {
+    "lesson": 10,
+    "video_id": "-9OUyo8NFZg",
+    "status": "ok",
+    "duration_sec": 446.76,
+    "size_bytes": 6005191,
+    "error": null
+  }
+]

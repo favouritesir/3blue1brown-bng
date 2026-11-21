@@ -1,0 +1,239 @@
+{
+  "lesson_id": "lesson_09",
+  "chapter_num": 9,
+  "course_id": "linear_algebra",
+  "title_en": "Dot Products and Duality",
+  "title_bn": "ডট প্রোডাক্ট ও ডুয়ালিটি (দ্বৈততা)",
+  "subtitle_bn": "জ্যামিতিক প্রক্ষেপণ, বীজগাণিতিক সূত্র এবং একমাত্রিক রৈখিক রূপান্তরের গভীর ঐক্য",
+  "video_id": "LyGKycYT2v0",
+  "official_url": "https://www.3blue1brown.com/lessons/dot-products",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "14:33",
+    "prerequisites": [
+      "lesson_01",
+      "lesson_02",
+      "lesson_03",
+      "lesson_08"
+    ]
+  },
+  "epigraph": {
+    "quote": "Whenever you see a linear transformation whose output is the real number line, it is secretly the dot product with some vector.",
+    "quote_bn": "যখনই আপনি কোনো রৈখিক রূপান্তরকে একমাত্রিক বাস্তব সংখ্যা রেখায় ফলাফল প্রদান করতে দেখবেন, জেনে রাখবেন তার অন্তরালে কোনো না কোনো ভেক্টরের সাথে ডট প্রোডাক্ট লুকিয়ে আছে।",
+    "author": "Grant Sanderson"
+  },
+  "sections": [
+    {
+      "id": "sec_01_geometric_projection",
+      "title_bn": "১. ডট প্রোডাক্টের জ্যামিতিক প্রক্ষেপণ ও মৌলিক ধারণা",
+      "title_en": "Geometric Projection and the Dot Product",
+      "summary_bn": "একটি ভেক্টরের রেখার ওপর অপর ভেক্টরের লম্ব প্রক্ষেপণের দৈর্ঘ্য ও প্রথম ভেক্টরের দৈর্ঘ্যের গুণফলই হলো ডট প্রোডাক্ট।",
+      "key_takeaways": [
+        "ভেক্টর $\\vec{v}$ এর ওপর $\\vec{w}$ এর লম্ব প্রক্ষেপণ (Projection) টেনে তার দৈর্ঘ্যকে $\\|\\vec{v}\\|$ দিয়ে গুণ করলে ডট প্রোডাক্ট $\\vec{v} \\cdot \\vec{w}$ পাওয়া যায়।",
+        "ভেক্টর দুটির মধ্যবর্তী কোণ সূক্ষ্মকোণ ($\\theta < 90^\\circ$) হলে ডট প্রোডাক্ট ধনাত্মক, স্থূলকোণ ($\\theta > 90^\\circ$) হলে ঋণাত্মক।",
+        "ভেক্টর দুটি পরস্পরের লম্ব বা অর্থোগোনাল ($\\theta = 90^\\circ$) হলে প্রক্ষেপণের দৈর্ঘ্য শূন্য হওয়ায় ডট প্রোডাক্ট শূন্য হয়।"
+      ],
+      "formulas": [
+        {
+          "label": "ডট প্রোডাক্টের জ্যামিতিক সংজ্ঞা",
+          "katex": "\\vec{v} \\cdot \\vec{w} = \\|\\vec{v}\\| \\|\\vec{w}\\| \\cos\\theta"
+        },
+        {
+          "label": "লম্ব প্রক্ষেপণ ও স্কেলিং",
+          "katex": "\\text{proj}_{\\vec{v}}(\\vec{w}) = \\frac{\\vec{v} \\cdot \\vec{w}}{\\|\\vec{v}\\|} \\implies \\vec{v} \\cdot \\vec{w} = (\\text{Length of proj}) \\times \\|\\vec{v}\\|"
+        },
+        {
+          "label": "অর্থোগোনালিটি বা লম্ব শর্ত",
+          "katex": "\\vec{v} \\perp \\vec{w} \\iff \\vec{v} \\cdot \\vec{w} = 0"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_dot_projection",
+          "caption_bn": "ভেক্টর v এর ওপর ভেক্টর w এর লম্ব প্রক্ষেপণ ও ডট প্রোডাক্ট পরিমাপ",
+          "type": "svg",
+          "src": "figures/dot_product_projection.svg"
+        },
+        {
+          "id": "fig_dot_angles",
+          "caption_bn": "কোণের পরিবর্তনের সাথে ডট প্রোডাক্টের চিহ্নের পরিবর্তন (ধনাত্মক, শূন্য, ঋণাত্মক)",
+          "type": "svg",
+          "src": "figures/dot_product_signs.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "dot_product_projection_visualizer",
+        "initial_vectors": {
+          "v": [3, 1],
+          "w": [1, 2]
+        },
+        "description_bn": "ভেক্টর দুটিকে ঘুরিয়ে তাদের মধ্যবর্তী কোণ, প্রক্ষেপণের দৈর্ঘ্য এবং ডট প্রোডাক্টের তাৎক্ষণিক মান পর্যবেক্ষণ করুন।"
+      }
+    },
+    {
+      "id": "sec_02_symmetry_and_algebra",
+      "title_bn": "২. প্রতিসাম্যের রহস্য ও বীজগাণিতিক স্থানাঙ্ক সূত্র",
+      "title_en": "Symmetry and the Algebraic Coordinate Formula",
+      "summary_bn": "ডট প্রোডাক্টের প্রতিসাম্য v · w = w · v জ্যামিতিকভাবে সমান এবং বীজগাণিতিক সূত্র v_x w_x + v_y w_y এর সাথে গভীর সম্পর্কযুক্ত।",
+      "key_takeaways": [
+        "সমান দৈর্ঘ্যের দুটি ভেক্টরের ক্ষেত্রে কোণ দ্বিখণ্ডকের প্রতিসাম্য প্রমাণ করে যে $\\text{proj}_{\\vec{v}}\\vec{w} = \\text{proj}_{\\vec{w}}\\vec{v}$।",
+        "যেকোনো ভেক্টরকে স্কেল করলে উভয় দিক থেকেই ডট প্রোডাক্ট সমান অনুপাতে স্কেল হয়, যা সামগ্রিক প্রতিসাম্য প্রতিষ্ঠা করে।",
+        "বীজগাণিতিক সূত্রানুসারে: $\\vec{v} \\cdot \\vec{w} = v_x w_x + v_y w_y$, কিন্তু প্রক্ষেপণের জ্যামিতির সাথে স্থানাঙ্ক গুণনের সরাসরি কারণ অনাবিষ্কৃত থাকে।"
+      ],
+      "formulas": [
+        {
+          "label": "ডট প্রোডাক্টের প্রতিসাম্য নীতি",
+          "katex": "\\vec{v} \\cdot \\vec{w} = \\vec{w} \\cdot \\vec{v}"
+        },
+        {
+          "label": "দ্বিমাত্রিক কার্তেসীয় স্থানাঙ্ক সূত্র",
+          "katex": "\\begin{bmatrix} v_x \\\\ v_y \\end{bmatrix} \\cdot \\begin{bmatrix} w_x \\\\ w_y \\end{bmatrix} = v_x w_x + v_y w_y"
+        },
+        {
+          "label": "ত্রিমাত্রিক কার্তেসীয় সূত্র",
+          "katex": "\\begin{bmatrix} v_x \\\\ v_y \\\\ v_z \\end{bmatrix} \\cdot \\begin{bmatrix} w_x \\\\ w_y \\\\ w_z \\end{bmatrix} = v_x w_x + v_y w_y + v_z w_z"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_dot_symmetry",
+          "caption_bn": "একক ভেক্টরের দ্বিখণ্ডক রেখার সাপেক্ষে ডট প্রোডাক্টের নিখুঁত প্রতিসাম্য",
+          "type": "svg",
+          "src": "figures/dot_product_symmetry.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_03_linear_transformations_to_1d",
+      "title_bn": "৩. দ্বিমাত্রিক স্থান থেকে একমাত্রিক সংখ্যা রেখায় রৈখিক রূপান্তর",
+      "title_en": "Linear Transformations from 2D Space to 1D",
+      "summary_bn": "২D সমতল থেকে ১D সংখ্যা রেখায় যেকোনো রৈখিক রূপান্তরকে একটি ১×২ ম্যাট্রিক্স দ্বারা প্রকাশ করা হয়, যার কার্যপ্রণালী ডট প্রোডাক্টের অনুরূপ।",
+      "key_takeaways": [
+        "$\\mathbb{R}^2$ থেকে $\\mathbb{R}^1$ (বাস্তব সংখ্যা রেখা)-এ একটি রৈখিক রূপান্তর সমদূরবর্তী বিন্দুগুলোকে সমদূরবর্তী সংখ্যায় রূপান্তর করে।",
+        "এই রূপান্তর সম্পূর্ণ নির্ধারিত হয় ভিত্তি ভেক্টর $\\hat{i}$ এবং $\\hat{j}$ সংখ্যা রেখার কোন বিন্দুগুলোতে পৌঁছায় তার দ্বারা।",
+        "একটি $1 \\times 2$ ম্যাট্রিক্স $\\begin{bmatrix} u_x & u_y \\end{bmatrix}$ যেকোনো ভেক্টরের ওপর কাজ করে স্কেলার মান $u_x x + u_y y$ প্রদান করে।"
+      ],
+      "formulas": [
+        {
+          "label": "১×২ রূপান্তর ম্যাট্রিক্স গঠন",
+          "katex": "T: \\mathbb{R}^2 \\to \\mathbb{R}^1, \\quad T(\\hat{i}) = u_x, \\; T(\\hat{j}) = u_y \\implies M_T = \\begin{bmatrix} u_x & u_y \\end{bmatrix}"
+        },
+        {
+          "label": "ম্যাট্রিক্স ভেক্টর গুণন ও স্কেলার আউটপুট",
+          "katex": "\\begin{bmatrix} u_x & u_y \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = u_x x + u_y y"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_2d_to_1d_mapping",
+          "caption_bn": "দ্বিমাত্রিক গ্রিডের একমাত্রিক সংখ্যা রেখায় অবনমন ও রৈখিকতার শর্ত",
+          "type": "svg",
+          "src": "figures/2d_to_1d_linear_map.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_04_duality_and_riesz",
+      "title_bn": "৪. ডুয়ালিটি ও রিজ রিপ্রেজেন্টেশন উপপাদ্য",
+      "title_en": "Duality and the Visual Riesz Representation Theorem",
+      "summary_bn": "একটি সরলরেখার ওপর প্রক্ষেপণ একটি রৈখিক রূপান্তর; প্রতিসাম্য দেখায় যে এর রূপান্তর ম্যাট্রিক্স হলো ওই রেখার নির্দেশক ভেক্টরটির ট্রান্সপোজ।",
+      "key_takeaways": [
+        "কোনো একক ভেক্টর $\\hat{u}$-এর রেখার ওপর প্রক্ষেপণ একটি রৈখিক রূপান্তর, তাই এর একটি $1 \\times 2$ ম্যাট্রিক্স রূপ আছে।",
+        "প্রতিসাম্যের সাহায্যে দেখা যায়, $\\hat{i}$-এর প্রক্ষেপণ হলো $u_x$ এবং $\\hat{j}$-এর প্রক্ষেপণ হলো $u_y$; ফলে প্রক্ষেপণ ম্যাট্রিক্সটি হলো $\\begin{bmatrix} u_x & u_y \\end{bmatrix}$।",
+        "যেকোনো সাধারণ ভেক্টর $\\vec{v}$ এর ক্ষেত্রে দৈর্ঘ্য স্কেলিংয়ের কারণে প্রক্ষেপণ গুণফল দাঁড়ায় $v_x w_x + v_y w_y$।",
+        "ডুয়ালিটি নীতি: বহুমাত্রিক ভেক্টর স্থান থেকে ১D-তে প্রতিটি রৈখিক রূপান্তর একটি নির্দিষ্ট ভেক্টরের সাথে ডট প্রোডাক্টের সমতুল্য (Riesz Representation Theorem)।"
+      ],
+      "formulas": [
+        {
+          "label": "প্রক্ষেপণ ম্যাট্রিক্স ও ভিত্তি ভেক্টরের অবস্থান",
+          "katex": "P_{\\hat{u}}(\\hat{i}) = u_x, \\quad P_{\\hat{u}}(\\hat{j}) = u_y \\implies M_{\\text{proj}} = \\begin{bmatrix} u_x & u_y \\end{bmatrix}"
+        },
+        {
+          "label": "ডট প্রোডাক্ট ও প্রক্ষেপণের সম্পূর্ণ ঐক্য",
+          "katex": "\\vec{v} \\cdot \\vec{w} = \\begin{bmatrix} v_x & v_y \\end{bmatrix} \\begin{bmatrix} w_x \\\\ w_y \\end{bmatrix} = v_x w_x + v_y w_y = \\|\\vec{v}\\| \\|\\vec{w}\\| \\cos\\theta"
+        },
+        {
+          "label": "রিজ রিপ্রেজেন্টেশন উপপাদ্য (ডুয়ালিটি)",
+          "katex": "\\forall T \\in \\mathcal{L}(V, \\mathbb{R}), \\; \\exists! \\vec{v}_T \\in V \\text{ such that } T(\\vec{w}) = \\vec{v}_T \\cdot \\vec{w}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_duality_projection",
+          "caption_bn": "আই হ্যাট ও জে হ্যাটের প্রক্ষেপণ থেকে ইউ এক্স ও ইউ ওয়াই প্রাপ্তির প্রতিসাম্য",
+          "type": "svg",
+          "src": "figures/duality_projection_symmetry.svg"
+        },
+        {
+          "id": "fig_riesz_duality",
+          "caption_bn": "একমাত্রিক রৈখিক ফাংশনাল ও দ্বৈত ভেক্টরের নিখুঁত সংযোগ",
+          "type": "svg",
+          "src": "figures/riesz_representation_duality.svg"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_geometric_meaning",
+      "section_ref": "sec_01_geometric_projection",
+      "question_bn": "দুটি অশূন্য ভেক্টর $\\vec{v}$ এবং $\\vec{w}$-এর ডট প্রোডাক্ট $\\vec{v} \\cdot \\vec{w} = 0$ হলে তাদের জ্যামিতিক সম্পর্ক কী?",
+      "question_en": "If the dot product of two non-zero vectors is zero, what is their geometric relationship?",
+      "options": [
+        "ভেক্টর দুটি একই রেখা বরাবর সমান্তরাল",
+        "ভেক্টর দুটি পরস্পরের ওপর ঠিক লম্ব (অর্থোগোনাল বা ৯০ ডিগ্রি কোণে অবস্থিত)",
+        "ভেক্টর দুটি পরস্পর বিপরীতমুখী",
+        "ভেক্টর দুটির দৈর্ঘ্য সমান"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ডট প্রোডাক্টের জ্যামিতিক সংজ্ঞা হলো $\\vec{v} \\cdot \\vec{w} = \\|\\vec{v}\\| \\|\\vec{w}\\| \\cos\\theta$। যেহেতু ভেক্টর দুটি অশূন্য, তাই ডট প্রোডাক্ট শূন্য হওয়ার অর্থ হলো $\\cos\\theta = 0$, অর্থাৎ তাদের মধ্যবর্তী কোণ $\\theta = 90^\\circ$ বা তারা পরস্পরের ওপর লম্ব। এ অবস্থায় একটির ওপর অপরটির প্রক্ষেপণের দৈর্ঘ্য ঠিক শূন্য হয়।",
+      "explanation_en": "Since |v| and |w| are non-zero, v . w = 0 implies cos(theta) = 0, meaning theta = 90 degrees (perpendicular)."
+    },
+    {
+      "id": "quiz_02_dot_symmetry",
+      "section_ref": "sec_02_symmetry_and_algebra",
+      "question_bn": "যদি ভেক্টর $\\vec{v} = \\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}$ এবং $\\vec{w} = \\begin{bmatrix} -1 \\\\ 4 \\end{bmatrix}$ হয়, তবে $\\vec{v} \\cdot \\vec{w}$-এর মান কত হবে?",
+      "question_en": "If v = [2, 3] and w = [-1, 4], what is v . w?",
+      "options": [
+        "১০",
+        "১২",
+        "-২",
+        "১৪"
+      ],
+      "correct_index": 0,
+      "explanation_bn": "বীজগাণিতিক সূত্র অনুসারে: $\\vec{v} \\cdot \\vec{w} = v_x w_x + v_y w_y = (2)(-1) + (3)(4) = -2 + 12 = 10$। প্রতিসাম্যের কারণে $\\vec{w} \\cdot \\vec{v}$ হিসাব করলেও একই মান পাওয়া যাবে।",
+      "explanation_en": "v . w = (2)(-1) + (3)(4) = -2 + 12 = 10."
+    },
+    {
+      "id": "quiz_03_matrix_to_1d",
+      "section_ref": "sec_03_linear_transformations_to_1d",
+      "question_bn": "দ্বিমাত্রিক স্থান থেকে একমাত্রিক সংখ্যা রেখায় একটি রৈখিক রূপান্তরে যদি $\\hat{i}$ গিয়ে পৌঁছায় $3$-এ এবং $\\hat{j}$ গিয়ে পৌঁছায় $-2$-এ, তবে ভেক্টর $\\begin{bmatrix} 4 \\\\ 5 \\end{bmatrix}$-এর রূপান্তরিত মান কত হবে?",
+      "question_en": "In a linear map from 2D to 1D, if i-hat lands on 3 and j-hat lands on -2, where does vector [4, 5] land?",
+      "options": [
+        "২২",
+        "২",
+        "-২",
+        "৭"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "রূপান্তরটির ম্যাট্রিক্স হলো $M = \\begin{bmatrix} 3 & -2 \\end{bmatrix}$। সুতরাং ভেক্টরটির জন্য আউটপুট মান হবে: $\\begin{bmatrix} 3 & -2 \\end{bmatrix} \\begin{bmatrix} 4 \\\\ 5 \\end{bmatrix} = 3(4) + (-2)(5) = 12 - 10 = 2$।",
+      "explanation_en": "T([4, 5]) = 4*T(i) + 5*T(j) = 4(3) + 5(-2) = 12 - 10 = 2."
+    },
+    {
+      "id": "quiz_04_duality_principle",
+      "section_ref": "sec_04_duality_and_riesz",
+      "question_bn": "ডুয়ালিটি বা দ্বৈততার মূল অন্তর্দৃষ্টি (Visual Riesz Representation Theorem) অনুযায়ী নিচের কোন বক্তব্যটি সঠিক?",
+      "question_en": "According to the visual duality principle (Riesz Representation Theorem), which statement is true?",
+      "options": [
+        "সকল বর্গাকার ম্যাট্রিক্সের নির্ণায়ক সর্বদা ১ হতে বাধ্য",
+        "একটি বহুমাত্রিক স্থান থেকে বাস্তব সংখ্যা রেখায় যেকোনো রৈখিক রূপান্তরের ফলাফল ওই স্থানেরই একটি নির্দিষ্ট ভেক্টরের সাথে ডট প্রোডাক্টের সমান",
+        "ডট প্রোডাক্ট কেবল দ্বিমাত্রিক স্থানে সম্ভব, উচ্চতর মাত্রায় এর অস্তিত্ব নেই",
+        "একটি ১×২ ম্যাট্রিক্স এবং একটি কলাম ভেক্টর পরস্পর গুণ করা যায় না"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ডুয়ালিটির মূল তত্ত্ব হলো: বহুমাত্রিক ভেক্টর স্পেস থেকে একমাত্রিক সংখ্যা রেখায় প্রতিটি রৈখিক রূপান্তরের (Linear Functional) জন্য একটি অনন্য দ্বৈত ভেক্টর বিদ্যমান থাকে, যাতে রূপান্তরটি প্রয়োগ করা আর ওই দ্বৈত ভেক্টরের সাথে ডট প্রোডাক্ট নেওয়া হুবহু একই জ্যামিতিক ও বীজগাণিতিক প্রক্রিয়া। এটিই রিজ রিপ্রেজেন্টেশন থিওরেমের সারমর্ম।",
+      "explanation_en": "Every linear transformation from a vector space to 1D (the real numbers) corresponds uniquely to taking a dot product with a specific dual vector."
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "lesson_id": "lesson_07",
+  "chapter_num": 7,
+  "course_id": "linear_algebra",
+  "title_en": "Inverse matrices, column space and null space",
+  "title_bn": "বিপরীত ম্যাট্রিক্স, কলাম স্পেস ও শূন্য স্পেস",
+  "subtitle_bn": "রৈখিক সমীকরণ জোটের সমাধান, বিপরীত রূপান্তর এবং মাত্রা সংকোচনের জ্যামিতিক রহস্য",
+  "video_id": "uQhTuRlWM3E",
+  "official_url": "https://www.3blue1brown.com/lessons/inverse-matrices",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "12:09",
+    "prerequisites": [
+      "lesson_03",
+      "lesson_04",
+      "lesson_05",
+      "lesson_06"
+    ]
+  },
+  "epigraph": {
+    "quote": "To invert a matrix is to run time backwards, recovering where every vector stood before the transformation warped the space.",
+    "quote_bn": "ম্যাট্রিক্সকে বিপরীত করা মানে সময়কে উল্টো দিকে চালানো—স্থানটি বিকৃত হওয়ার পূর্বে প্রতিটি ভেক্টর ঠিক কোথায় দাঁড়িয়েছিল তা পুনরুদ্ধার করা।",
+    "author": "Grant Sanderson"
+  },
+  "sections": [
+    {
+      "id": "sec_01_linear_systems",
+      "title_bn": "1. জ্যামিতিক দৃষ্টিকোণ থেকে লিনিয়ার সমীকরণ জোট",
+      "title_en": "Linear Systems from a Geometric Perspective",
+      "summary_bn": "লিনিয়ার সমীকরণ জোটকে শুধুমাত্র প্রতীকের হিসাব হিসেবে না দেখে স্থান রূপান্তরের জ্যামিতিক প্রক্রিয়া হিসেবে অনুধাবন করা।",
+      "key_takeaways": [
+        "লিনিয়ার সমীকরণ জোটকে সংক্ষেপে ম্যাট্রিক্স-ভেক্টর সমীকরণ $A\\vec{x} = \\vec{v}$ আকারে প্রকাশ করা যায়।",
+        "ম্যাট্রিক্স $A$ একটি রৈখিক রূপান্তর নির্দেশ করে, যা অজানা ভেক্টর $\\vec{x}$-কে পরিচিত ভেক্টর $\\vec{v}$-তে রূপান্তরিত করে।",
+        "সমীকরণ সমাধানের জ্যামিতিক অর্থ হলো: কোন ইনপুট ভেক্টর $\\vec{x}$ রূপান্তরের পর নির্দিষ্ট ভেক্টর $\\vec{v}$-এর অবস্থানে গিয়ে পৌঁছায় তা খুঁজে বের করা।"
+      ],
+      "formulas": [
+        {
+          "label": "বীজগাণিতিক সমীকরণ জোট",
+          "katex": "\\begin{cases} 2x + 2y = -4 \\\\ x + 3y = -1 \\end{cases}"
+        },
+        {
+          "label": "ম্যাট্রিক্স-ভেক্টর রূপান্তর সমীকরণ",
+          "katex": "A\\vec{x} = \\vec{v} \\iff \\begin{bmatrix} 2 & 2 \\\\ 1 & 3 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} -4 \\\\ -1 \\end{bmatrix}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_linear_system_setup",
+          "caption_bn": "সমীকরণ জোটকে একটি একক ম্যাট্রিক্স রূপান্তর $A\\vec{x} = \\vec{v}$ রূপে প্রকাশ",
+          "type": "svg",
+          "src": "figures/linear_system_setup.svg"
+        },
+        {
+          "id": "fig_preimage_search",
+          "caption_bn": "কোন আদি ভেক্টর $\\vec{x}$ রূপান্তরের পর $\\vec{v}$-এ পতিত হয় তার অনুসন্ধান",
+          "type": "svg",
+          "src": "figures/preimage_search.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "linear_system_solver_visualizer",
+        "initial_matrix": [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "target_vector": [
+          -4,
+          -1
+        ],
+        "description_bn": "টার্গেট ভেক্টর $\\vec{v}$ নির্বাচন করে রূপান্তরের পূর্বাবস্থায় ইনপুট ভেক্টর $\\vec{x}$ এর অবস্থান প্রত্যক্ষ করুন।"
+      }
+    },
+    {
+      "id": "sec_02_inverse_matrices",
+      "title_bn": "2. বিপরীত ম্যাট্রিক্স: রূপান্তরকে পূর্বাবস্থায় ফিরিয়ে আনা",
+      "title_en": "The Inverse Matrix: Undoing the Transformation",
+      "summary_bn": "ডিটারমিন্যান্ট অশূন্য হলে রূপান্তরের বিপরীত প্রক্রিয়া হিসেবে বিপরীত ম্যাট্রিক্স $A^{-1}$ প্রয়োগ করে সরাসরি সমাধান নির্ণয় করা।",
+      "key_takeaways": [
+        "ডিটারমিন্যান্ট শূন্য না হলে ($\\det(A) \\neq 0$) স্থান সংকুচিত হয় না, ফলে রূপান্তরটিকে পূর্বাবস্থায় ফিরিয়ে আনা সম্ভব।",
+        "বিপরীত ম্যাট্রিক্স $A^{-1}$ হলো এমন একটি রূপান্তর যা $A$-এর প্রভাবকে পুরোপুরি বাতিল করে: $A^{-1}A = I$ (আইডেন্টিটি ম্যাট্রিক্স)।",
+        "লিনিয়ার সিস্টেম সমাধানের ক্ষেত্রে সমীকরণের উভয় পাশে $A^{-1}$ গুণ করলে অনন্য সমাধান পাওয়া যায়: $\\vec{x} = A^{-1}\\vec{v}$।",
+        "ডিটারমিন্যান্ট শূন্য হলে ($\\det(A) = 0$) স্থান চ্যাপ্টা হয়ে যায়; সংকুচিত রেখা বা বিন্দুকে আবার সমতলে ফিরিয়ে আনার কোনো একক বৈধ ফাংশন সম্ভব নয়, তাই $A^{-1}$ বিদ্যমান থাকে না।"
+      ],
+      "formulas": [
+        {
+          "label": "অভেদক বা আইডেন্টিটি রূপান্তর",
+          "katex": "A^{-1} A = I = \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}"
+        },
+        {
+          "label": "বিপরীত ম্যাট্রিক্স দ্বারা সমাধান",
+          "katex": "A\\vec{x} = \\vec{v} \\implies A^{-1}(A\\vec{x}) = A^{-1}\\vec{v} \\implies \\vec{x} = A^{-1}\\vec{v}"
+        },
+        {
+          "label": "ইনভার্স অস্তিত্বহীনতার শর্ত",
+          "katex": "\\det(A) = 0 \\iff A^{-1} \\text{ does not exist}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_inverse_transformation_undo",
+          "caption_bn": "বিপরীত রূপান্তর $A^{-1}$ স্থানকে আবার পূর্বের আকৃতিতে ফিরিয়ে আনে",
+          "type": "svg",
+          "src": "figures/inverse_transformation_undo.svg"
+        },
+        {
+          "id": "fig_squish_irreversible",
+          "caption_bn": "স্থান একবার সংকুচিত হয়ে রেখায় পরিণত হলে তাকে আর এককভাবে সমতলে রূপান্তর করা যায় না",
+          "type": "svg",
+          "src": "figures/squish_irreversible.svg"
+        }
+      ],
+      "interactive_widget": null
+    },
+    {
+      "id": "sec_03_rank_and_column_space",
+      "title_bn": "3. র‍্যাংক এবং কলাম স্পেস: রূপান্তরের সম্ভাব্য আউটপুট ক্ষেত্র",
+      "title_en": "Rank and Column Space",
+      "summary_bn": "রূপান্তরের পর সমস্ত সম্ভাব্য আউটপুট ভেক্টরের সেট হলো কলাম স্পেস, এবং এর মাত্রাকে বলা হয় ম্যাট্রিক্সের র‍্যাংক।",
+      "key_takeaways": [
+        "কলাম স্পেস ($\\text{Col}(A)$) হলো রূপান্তর প্রয়োগের পর প্রাপ্ত সমস্ত আউটপুট ভেক্টর $A\\vec{v}$-এর সমগ্র বিস্তার।",
+        "যেহেতু ম্যাট্রিক্সের কলামগুলো ভিত্তি ভেক্টরের রূপান্তরিত অবস্থান প্রকাশ করে, তাই কলাম স্পেস হলো ম্যাট্রিক্সের কলামগুলোর স্প্যান (Span)।",
+        "র‍্যাংক হলো এই আউটপুট কলাম স্পেসের মাত্রা (Dimension): আউটপুট রেখা হলে র‍্যাংক ১, সমতল হলে র‍্যাংক ২, পূর্ণ ত্রিমাত্রিক আয়তন হলে র‍্যাংক ৩।",
+        "র‍্যাংক কলাম সংখ্যার সমান হলে তাকে ফুল র‍্যাংক (Full Rank) বলা হয়।"
+      ],
+      "formulas": [
+        {
+          "label": "কলাম স্পেসের সংজ্ঞা",
+          "katex": "\\text{Col}(A) = \\text{Span}(\\text{col}_1(A), \\text{col}_2(A), \\dots, \\text{col}_n(A))"
+        },
+        {
+          "label": "র‍্যাংক ও কলাম স্পেসের মাত্রা",
+          "katex": "\\text{Rank}(A) = \\dim(\\text{Col}(A))"
+        },
+        {
+          "label": "ফুল র‍্যাংক শর্ত",
+          "katex": "\\text{Full Rank} \\iff \\text{Rank}(A_{n \\times n}) = n \\iff \\det(A) \\neq 0"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_column_space_span",
+          "caption_bn": "কলাম স্পেস হলো কলাম ভেক্টরগুলোর রৈখিক বিস্তার বা স্প্যান",
+          "type": "svg",
+          "src": "figures/column_space_span.svg"
+        },
+        {
+          "id": "fig_rank_visual_dimensions",
+          "caption_bn": "র‍্যাংক ১ (রেখা) বনাম র‍্যাংক ২ (সমতল) আউটপুট স্পেসের জ্যামিতিক রূপ",
+          "type": "svg",
+          "src": "figures/rank_visual_dimensions.svg"
+        }
+      ],
+      "interactive_widget": null
+    },
+    {
+      "id": "sec_04_null_space",
+      "title_bn": "4. নাল স্পেস বা শূন্য স্পেস: মূলবিন্দুতে সংকুচিত ভেক্টরের জগৎ",
+      "title_en": "The Null Space (Kernel) and Solution Geometry",
+      "summary_bn": "মাত্রা সংকোচনের ফলে যেসব ভেক্টর শূন্য ভেক্টরে পতিত হয় তাদের সেটই হলো নাল স্পেস, যা সমীকরণ সমাধানের স্বাধীনতা নির্দেশ করে।",
+      "key_takeaways": [
+        "নাল স্পেস বা শূন্য স্পেস ($\\text{Null}(A)$ বা Kernel) হলো সমস্ত ইনপুট ভেক্টর $\\vec{x}$-এর সেট যা রূপান্তরের পর মূলবিন্দুতে সংকুচিত হয়: $A\\vec{x} = \\vec{0}$।",
+        "দ্বিমাত্রিক স্থান সরলরেখায় সংকুচিত হলে একটি সম্পূর্ণ সরলরেখার সমস্ত ভেক্টর মূলবিন্দুতে গিয়ে মিশে যায়।",
+        "যদি $A\\vec{x} = \\vec{v}$-এর একটি নির্দিষ্ট সমাধান $\\vec{x}_0$ থাকে, তবে $\\vec{x}_0$ এর সাথে নাল স্পেসের যেকোনো ভেক্টর $\\vec{n}$ যোগ করলেও তা বৈধ সমাধান হবে: $A(\\vec{x}_0 + \\vec{n}) = \\vec{v}$।",
+        "র‍্যাংক-নালিটি উপপাদ্য (Rank-Nullity Theorem): ইনপুট মাত্রা = র‍্যাংক + নালিটি।"
+      ],
+      "formulas": [
+        {
+          "label": "নাল স্পেস বা কার্নেল সংজ্ঞা",
+          "katex": "\\text{Null}(A) = \\ker(A) = \\{ \\vec{x} \\in \\mathbb{R}^n : A\\vec{x} = \\vec{0} \\}"
+        },
+        {
+          "label": "সাধারণ সমাধান ও নাল স্পেস অফসেট",
+          "katex": "A\\vec{x} = \\vec{v} \\implies \\vec{x} = \\vec{x}_p + \\vec{x}_n, \\quad \\vec{x}_n \\in \\text{Null}(A)"
+        },
+        {
+          "label": "র‍্যাংক-নালিটি উপপাদ্য",
+          "katex": "\\text{Rank}(A) + \\text{Nullity}(A) = n \\quad (\\text{Dimension of Input Space})"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_null_space_collapse",
+          "caption_bn": "সমতলের একটি সম্পূর্ণ সরলরেখা সংকুচিত হয়ে মূলবিন্দুতে পতিত হচ্ছে",
+          "type": "svg",
+          "src": "figures/null_space_collapse.svg"
+        },
+        {
+          "id": "fig_solution_line_offset",
+          "caption_bn": "নাল স্পেসের সমান্তরাল রেখা বরাবর সমাধানের বিস্তার",
+          "type": "svg",
+          "src": "figures/solution_line_offset.svg"
+        }
+      ],
+      "interactive_widget": null
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_linear_system_geometry",
+      "section_ref": "sec_01_linear_systems",
+      "question_bn": "একটি রৈখিক সমীকরণ জোট $A\\vec{x} = \\vec{v}$-এর জ্যামিতিক তাৎপর্য কী?",
+      "question_en": "What is the geometric meaning of solving a linear system Ax = v?",
+      "options": [
+        "শুধুমাত্র সারি ও কলামের স্কেলার মান বিনিময় করা",
+        "এমন একটি আদি ভেক্টর $\\vec{x}$ খুঁজে বের করা, যা $A$ রূপান্তরের পর $\\vec{v}$-এর ওপর গিয়ে পড়ে",
+        "ম্যাট্রিক্স $A$-এর কর্ণের উপাদানগুলোর গুণফল নির্ণয় করা",
+        "ভেক্টর $\\vec{v}$-কে সমতলে ৯০ ডিগ্রি কোণে ঘুরিয়ে দেওয়া"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "জ্যামিতিক দৃষ্টিকোণ থেকে সমীকরণ জোট সমাধানের আসল অর্থ হলো এমন একটি ইনপুট ভেক্টর $\\vec{x}$ সন্ধান করা, যার ওপর ম্যাট্রিক্স রূপান্তর $A$ প্রয়োগ করলে তা ঠিক টার্গেট ভেক্টর $\\vec{v}$-তে রূপান্তরিত হয়।",
+      "explanation_en": "Geometrically, solving Ax = v means finding the input vector x that lands on vector v after transformation A is applied."
+    },
+    {
+      "id": "quiz_02_inverse_existence",
+      "section_ref": "sec_02_inverse_matrices",
+      "question_bn": "কোন শর্তে কোনো ম্যাট্রিক্স $A$-এর বিপরীত ম্যাট্রিক্স $A^{-1}$ নিশ্চিতভাবে বিদ্যমান থাকে?",
+      "question_en": "Under what condition does the inverse matrix A^(-1) exist?",
+      "options": [
+        "ম্যাট্রিক্সটির ডিটারমিন্যান্ট শূন্য হলে $(\\det(A) = 0)$",
+        "ম্যাট্রিক্সটির ডিটারমিন্যান্ট অশূন্য হলে $(\\det(A) \\neq 0)$",
+        "ম্যাট্রিক্সের সমস্ত উপাদান ধনাত্মক হলে",
+        "ম্যাট্রিক্সটির ট্রেস শূন্য হলে"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "যদি $\\det(A) \\neq 0$ হয়, তবে স্থান সংকুচিত হয় না। ফলে পুরো রূপান্তরটিকে আবার উল্টো দিকে চালিয়ে আদি অবস্থায় ফিরিয়ে আনা সম্ভব হয়, অর্থাৎ বিপরীত ম্যাট্রিক্স $A^{-1}$ বিদ্যমান থাকে।",
+      "explanation_en": "When det(A) != 0, space is not squished into a lower dimension, making the transformation fully reversible."
+    },
+    {
+      "id": "quiz_03_rank_meaning",
+      "section_ref": "sec_03_rank_and_column_space",
+      "question_bn": "একটি ৩×৩ ম্যাট্রিক্সের ক্ষেত্রে রূপান্তরের পর সমস্ত আউটপুট ভেক্টর একটি দ্বিমাত্রিক সমতলে সীমাবদ্ধ থাকলে ম্যাট্রিক্সটির র‍্যাংক কত?",
+      "question_en": "For a 3x3 matrix, if all output vectors land on a 2D plane, what is its rank?",
+      "options": [
+        "০",
+        "১",
+        "২",
+        "৩"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "র‍্যাংক হলো কলাম স্পেস বা আউটপুট স্থানের প্রকৃত মাত্রা। যেহেতু সমস্ত আউটপুট ভেক্টর একটি দ্বিমাত্রিক সমতল (2D plane) গঠন করে, তাই উক্ত রূপান্তরের র‍্যাংক হলো ২।",
+      "explanation_en": "Rank is the dimension of the column space (output space). Since the outputs form a 2D plane, the rank is 2."
+    },
+    {
+      "id": "quiz_04_null_space_property",
+      "section_ref": "sec_04_null_space",
+      "question_bn": "ম্যাট্রিক্সের নাল স্পেস (Null Space বা Kernel) বলতে কী বোঝায়?",
+      "question_en": "What is the null space (kernel) of a matrix?",
+      "options": [
+        "যে সমস্ত ভেক্টরের দৈর্ঘ্য এক একক",
+        "যে সমস্ত ইনপুট ভেক্টর রূপান্তরের পর মূলবিন্দু বা শূন্য ভেক্টরে $(\\vec{0})$ পরিণত হয়",
+        "ম্যাট্রিক্সের প্রধান কর্ণের বাইরে অবস্থিত উপাদানগুলো",
+        "যেসব ভেক্টর রূপান্তরের পরও সম্পূর্ণ অপরিবর্তিত থাকে"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "যে সমস্ত ভেক্টর $\\vec{x}$-এর ওপর রূপান্তর $A$ প্রয়োগ করলে ফলাফল সরাসরি শূন্য ভেক্টর পাওয়া যায় ($A\\vec{x} = \\vec{0}$), তাদের সমগ্র সেটকে বলা হয় নাল স্পেস বা কার্নেল।",
+      "explanation_en": "The null space is the set of all input vectors x that map to the zero vector (Ax = 0)."
+    }
+  ]
+}

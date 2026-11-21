@@ -1,0 +1,26 @@
+{
+  "engine": "Google AI Studio Voice Engine (generativelanguage.googleapis.com generateContent, responseModalities=[AUDIO])",
+  "requested_model": "gemini-3.8-flash-tts",
+  "takes": {
+    "Steve": {
+      "file": "D:\\0PEN CODE\\Dub Studio\\departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\audio_takes\\google_ai_studio_steve_master.wav",
+      "voice": "Orus",
+      "model_used": "gemini-3.8-flash-tts",
+      "bytes": 9275876,
+      "phrases": 40,
+      "chunks": 1,
+      "sha256": "bac2e6ed7c99d7ac461f3f22456e0f3cfdc80f3c82cffb4bd3af242edd72043e",
+      "attempts": 141
+    },
+    "Maggie": {
+      "file": "D:\\0PEN CODE\\Dub Studio\\departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\audio_takes\\google_ai_studio_maggie_master.wav",
+      "voice": "Aoede",
+      "model_used": "gemini-3.8-flash-tts",
+      "bytes": 1234916,
+      "phrases": 8,
+      "chunks": 1,
+      "sha256": "3e85c9dfe8c1142f4bc2df3ee2efc4ac6d61b5927635ee45b8fbcda2e96548a6",
+      "attempts": 1
+    }
+  }
+}

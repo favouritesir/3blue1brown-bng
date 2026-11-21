@@ -1,0 +1,164 @@
+[
+  {
+    "id": "sec-mystery",
+    "title": "অয়লার সংখ্যা 'ই' এবং ক্যালকুলাসের অমীমাংসিত প্রশ্ন",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "অয়লার সংখ্যা 'ই' এবং ক্যালকুলাসের অমীমাংসিত প্রশ্ন",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "chapter-quote",
+        "text": "\" \"Who has not been amazed to learn that the function y = e^x, like a phoenix rising again from its own ashes, is its own derivative?\" — কে না অবাক হয়েছেন যে <annotation>y = e^x</annotation> ফাংশনটি নিজের ছাই থেকে পুনর্জন্ম নেওয়া ফিনিক্সের মতো নিজেরই ডেরিভেটিভ? — Francois le Lionnais",
+        "math_attr": "",
+        "tex": "y = e^x"
+      },
+      {
+        "type": "p",
+        "text": "ক্যালকুলাস কোর্সে প্রায় প্রতিটি শিক্ষার্থীকেই একটি অদ্ভুত সংখ্যার সাথে পরিচিত হতে হয়—অয়লারের ধ্রুবক <annotation>e \\approx 2.71828</annotation>। কিন্তু শুরুতেই শিক্ষার্থীদের শেখানো হয় একটি শুষ্ক সূত্র: <annotation>e^t</annotation>-এর ডেরিভেটিভ নাকি হুবহু সে নিজেই; আর সূচকে ধ্রুবক <annotation>k</annotation> থাকলে চেইন রুল অনুযায়ী তা দাঁড়ায় <annotation>k e^{kt}</annotation>। গণিত কোনো অন্ধ মুখস্থবিদ্যার নাম নয়। তবে প্রশ্ন হলো—মহাবিশ্বে এমন কোনো চমৎকার সংখ্যা কেন থাকবে, যার বক্ররেখার প্রতিটি বিন্দুতে স্পর্শকের ঢাল তার তৎকালীন উচ্চতার হুবহু সমান? ই টু দ্য পাওয়ার টি-এর পরিবর্তনের হার সে নিজেই—কিন্তু প্রকৃতির এই পরম ভিত্তিটি কেন অন্য কোনো সংখ্যা না হয়ে ২.৭১৮২৮ হলো?",
+        "math_attr": "",
+        "tex": "e \\approx 2.71828 e^t k k e^{kt}"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\frac{d}{dt}\\left(e^{t}\\right) = e^{t}</annotation>",
+        "math_attr": "",
+        "tex": "\\frac{d}{dt}\\left(e^{t}\\right) = e^{t}"
+      },
+      {
+        "type": "callout",
+        "text": "🔍 অনুসন্ধানের পথ এই রহস্য উন্মোচন করতে হলে আমাদের ফিরে যেতে হবে ডেরিভেটিভের একেবারে মৌলিক সংজ্ঞায় এবং পরীক্ষা করতে হবে সাধারণ সূচকীয় ফাংশনগুলোকে—যেমন <annotation>2^t</annotation>, <annotation>7^t</annotation>। প্রথমে সরাসরি <annotation>e</annotation>-এর দিকে না তাকিয়ে <annotation>2^t</annotation>-এর মতো একটি সহজ ভিত্তি নিয়ে কাজ করাই হবে বুদ্ধিমানের কাজ। সেখান থেকে ধীরে ধীরে উঠে আসবে সেই বিশেষ ভিত্তিটি, যার জন্য এই অদ্ভুত সুন্দর সত্যটি প্রথমবারের মতো সত্য হয়ে দাঁড়ায়।",
+        "math_attr": "",
+        "tex": "2^t 7^t e 2^t"
+      }
+    ]
+  },
+  {
+    "id": "sec-proportional-growth",
+    "title": "Population Mass ও সূচকীয় ডেরিভেটিভ: 2^t থেকে 8^t",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "Population Mass ও সূচকীয় ডেরিভেটিভ: 2^t থেকে 8^t",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "প্রথমে <annotation>2^t</annotation> ফাংশনটিকে একটু আলাদা চোখে দেখি। ইনপুট <annotation>t</annotation> কে সময় (দিন) হিসেবে এবং আউটপুট <annotation>2^t</annotation> কে একদল অতি-উর্বর <annotation>\\pi</annotation>-জীবের মোট ভর হিসেবে কল্পনা করি—জনসংখ্যা নয়, কারণ ভর সরলভাবে ক্রমাগত বাড়ে। <annotation>t=0</annotation>-এ ভর <annotation>2^0=1</annotation>, একদিন পর <annotation>2^1=2</annotation>, দুই দিনে <annotation>2^2=4</annotation>—অর্থাৎ প্রতিদিন ভর দ্বিগুণ। এখন ডেরিভেটিভ <annotation>\\frac{dM}{dt}</annotation> মানে একই দিনের ভেতরে ভর বৃদ্ধির হার। দিন ২ থেকে ৩-এ ভর ৪ থেকে ৮ হয়, অর্থাৎ যোগ হয় ৪—ঠিক সেইদিনের শুরুর ভরের সমান! দিন ৩ থেকে ৪-এ যোগ হয় ৮, আবার শুরুর ভরের সমান। সাধারণভাবে একটি পূর্ণ দিনের বৃদ্ধি তার শুরুর ভরের সমান; তাই মনে হতে পারে <annotation>2^t</annotation>-এর ডেরিভেটিভও সে নিজেই। কিন্তু ডেরিভেটিভের জন্য আমাদের এক পূর্ণ দিন নয়, বরং অতিক্ষুদ্র <annotation>dt</annotation> সময়ের ব্যবধান—এক দশমাংশ, এক শতাংশ, এক বিলিয়নভাগ দিন—নিয়ে প্রশ্ন করতে হবে।",
+        "math_attr": "",
+        "tex": "2^t t 2^t \\pi t=0 2^0=1 2^1=2 2^2=4 \\frac{dM}{dt} 2^t dt"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>M(t)=2^{t},\\qquad \\frac{dM}{dt}=\\lim_{dt\\to 0}\\frac{2^{t+dt}-2^{t}}{dt}</annotation>",
+        "math_attr": "",
+        "tex": "M(t)=2^{t},\\qquad \\frac{dM}{dt}=\\lim_{dt\\to 0}\\frac{2^{t+dt}-2^{t}}{dt}"
+      },
+      {
+        "type": "p",
+        "text": "এখানেই সূচকের সবচেয়ে গুরুত্বপূর্ণ ধর্মটি কাজে আসে: <annotation>2^{t+dt}=2^t\\cdot 2^{dt}</annotation>। যোগজ সূচককে ভাগজ রূপে ভেঙে লবের দুটি পদেই <annotation>2^t</annotation> পাওয়া যায়, তাই একে সাধারণ উৎপাদক হিসেবে বাইরে নিয়ে আসা যায়। ফলে <annotation>\\frac{d}{dt}(2^t)=2^t\\left(\\lim_{dt\\to 0}\\frac{2^{dt}-1}{dt}\\right)</annotation>—ডেরিভেটিভটি আবার একটি এক্সপোনেনশিয়াল, শুধু একটি ধ্রুবক দিয়ে গুণিত।",
+        "math_attr": "",
+        "tex": "2^{t+dt}=2^t\\cdot 2^{dt} 2^t \\frac{d}{dt}(2^t)=2^t\\left(\\lim_{dt\\to 0}\\frac{2^{dt}-1}{dt}\\right)"
+      },
+      {
+        "type": "p",
+        "text": "আশ্চর্যের বিষয় হলো বন্ধনীর ভেতরের অংশে সময়ের চলক <annotation>t</annotation> সম্পূর্ণ অনুপস্থিত—এটি কেবল <annotation>dt</annotation>-র ওপর নির্ভর করে। <annotation>dt</annotation> অতি ক্ষুদ্র হলে এর মান দাঁড়ায় প্রায় <annotation>0.6931\\ldots</annotation>, যা <annotation>\\ln 2</annotation> নামে পরিচিত। একই হিসাবে ভিত্তি <annotation>3</annotation>-এর জন্য ধ্রুবক প্রায় <annotation>1.0986\\ldots</annotation> এবং ভিত্তি <annotation>8</annotation>-এর জন্য প্রায় <annotation>2.079</annotation>—ঠিক <annotation>0.6931</annotation>-এর তিনগুণ! অর্থাৎ বক্ররেখার যেকোনো বিন্দুতে প্রকৃত ডেরিভেটিভ আউটপুটের চেয়ে কিছুটা ছোট (ভিত্তি ২-এ), কারণ গুণক <annotation>1</annotation>-এর চেয়ে কম।",
+        "math_attr": "",
+        "tex": "t dt dt 0.6931\\ldots \\ln 2 3 1.0986\\ldots 8 2.079 0.6931 1"
+      },
+      {
+        "type": "callout",
+        "text": "🧭 মাইলফলক: ধ্রুবকটির সন্ধান ভিত্তি ২-এর সমানুপাতিক ধ্রুবক <annotation>0.6931 < 1</annotation> এবং ভিত্তি ৩-এর <annotation>1.0986 > 1</annotation>। সুতরাং ২ ও ৩-এর মাঝে অবশ্যই এমন একটি ভিত্তি আছে যার সমানুপাতিক ধ্রুবক ঠিক ১—সেই ভিত্তিটিই হলো অয়লারের সংখ্যা <annotation>e</annotation>। বন্ধনীর মান বের করতে <annotation>dt</annotation>-তে খুব ছোট সংখ্যা বসিয়ে ক্যালকুলেটরে হিসাব করলেই <annotation>0.6931\\ldots</annotation> ফিরে আসে—এই ছোট্ট Reveal-টি পুরো রহস্যের চাবিকাঠি।",
+        "math_attr": "",
+        "tex": "0.6931 < 1 1.0986 > 1 e dt 0.6931\\ldots"
+      }
+    ]
+  },
+  {
+    "id": "sec-compound-interest",
+    "title": "বার্নোলির চক্রবৃদ্ধি সুদ ও অবিচ্ছিন্ন সীমা",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "বার্নোলির চক্রবৃদ্ধি সুদ ও অবিচ্ছিন্ন সীমা",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "এই রহস্যময় ধ্রুবকের উৎপত্তি লক্ষ্য করা যায় ১৬৮৩ সালে জ্যাকব বার্নোলির একটি চক্রবৃদ্ধি-সুদের চিন্তন পরীক্ষায়। কল্পনা করুন একটি ব্যাংক বার্ষিক ১০০% সুদের অফার দিল এবং মূলধন ঠিক ১ ডলার। প্রশ্ন হলো—বছর শেষে কত টাকা পাওয়া যাবে, যদি সুদকে বারবার ভাগ করে ক্রমাগত যোগ করা হয়?",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "বছরে একবার চক্রবৃদ্ধি করলে পাওয়া যায় <annotation>(1+1)^1=2</annotation> ডলার; দুইবার করলে <annotation>(1+\\tfrac12)^2=2.25</annotation> ডলার; চারবার (ত্রৈমাসিক) করলে <annotation>(1+\\tfrac14)^4\\approx 2.4414</annotation> ডলার; আর বারোবার (মাসিক) করলে <annotation>(1+\\tfrac1{12})^{12}\\approx 2.613</annotation> ডলার। প্রতিবার ভাগ বাড়ানোর সাথে সাথে অর্থের পরিমাণও বাড়ছে—কিন্তু কি কখনো অসীমে পৌঁছাবে?",
+        "math_attr": "",
+        "tex": "(1+1)^1=2 (1+\\tfrac12)^2=2.25 (1+\\tfrac14)^4\\approx 2.4414 (1+\\tfrac1{12})^{12}\\approx 2.613"
+      },
+      {
+        "type": "p",
+        "text": "প্রতিদিন চক্রবৃদ্ধি করলে মেলে প্রায় <annotation>2.71845</annotation> ডলার; প্রতি ঘণ্টা, প্রতি মিনিট বা প্রতি ন্যানোসেকেন্ডে করলেও সংখ্যাটি আর বেশি বাড়ে না। এটি এক নির্দিষ্ট সীমায় এসে থিতু হয়—হয়ে ওঠে সেই বিখ্যাত সংখ্যা, যাকে আমরা অয়লারের সংখ্যা বলি। এই অবিচ্ছিন্ন সীমাটিই আসলে <annotation>e</annotation>-এর এক summation-বিহীন, আবিষ্কারমূলক সংজ্ঞা।",
+        "math_attr": "",
+        "tex": "2.71845 e"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>e=\\lim_{n\\to\\infty}\\left(1+\\frac{1}{n}\\right)^{n}\\approx 2.718281828\\ldots</annotation>",
+        "math_attr": "",
+        "tex": "e=\\lim_{n\\to\\infty}\\left(1+\\frac{1}{n}\\right)^{n}\\approx 2.718281828\\ldots"
+      },
+      {
+        "type": "callout",
+        "text": "🌱 প্রকৃতির গতিসীমা অবিরাম প্রতি মুহূর্তে চক্রবৃদ্ধি করলেও অর্থ কখনোই বিস্ফোরিত হয়ে অসীমে যায় না; বরং এটি মহাবিশ্বের এক অনন্য গাণিতিক সীমায় থিতু হয়—অয়লার সংখ্যা <annotation>e</annotation>। এই একই সীমা পরে এক্সপোনেনশিয়াল ফাংশনের ডেরিভেটিভের ক্ষেত্রেও ফিরে আসে, যা দেখায় যে ব্যাংকিং হিসাব আর ক্যালকুলাসের ঢাল একই গাণিতিক বস্তুর দুটি ভিন্ন মুখ।",
+        "math_attr": "",
+        "tex": "e"
+      }
+    ]
+  },
+  {
+    "id": "sec-chain-rule-growth",
+    "title": "চেইন রুল, প্রাকৃতিক লগ ও e^{kt}-এর মহিমা",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "চেইন রুল, প্রাকৃতিক লগ ও e^{kt}-এর মহিমা",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "বাস্তব জগতে বৃদ্ধির হার সবসময় ১০০% হয় না; হতে পারে শতকরা ৫ ভাগ কিংবা ৫০ ভাগ। যদি কোনো ব্যবস্থার অবিচ্ছিন্ন শতকরা হার হয় <annotation>k</annotation>, তবে <annotation>n</annotation> ভাগে ভাগ করে অবিচ্ছিন্ন সীমা নিলে <annotation>t</annotation> সময় পর রূপ হয় <annotation>e^{kt}</annotation>। আর এই <annotation>e^{ct}</annotation> ফর্মটিই প্রাকৃতিক প্রক্রিয়ার সার্বজনীন ভাষা—জনসংখ্যা বৃদ্ধি, গরম পানির ঠান্ডা হওয়া (নিউটনের সূত্র: তাপমাত্রার পার্থক্যের হার সেই পার্থক্যের সমানুপাতিক) এবং ব্যাংকে টাকার চক্রবৃদ্ধি—তিনটিতেই কোনো একটি-এর পরিবর্তনের হার তার বর্তমান পরিমাণের সমানুপাতিক।",
+        "math_attr": "",
+        "tex": "k n t e^{kt} e^{ct}"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\frac{d}{dt}\\left(e^{kt}\\right) = k\\,e^{kt}</annotation>",
+        "math_attr": "",
+        "tex": "\\frac{d}{dt}\\left(e^{kt}\\right) = k\\,e^{kt}"
+      },
+      {
+        "type": "p",
+        "text": "চেইন রুল অনুযায়ী ভেতরের ফাংশন <annotation>u=kt</annotation>-এর ডেরিভেটিভ <annotation>k</annotation> সামনে এসে গুণ হয়—অর্থাৎ এখানে <annotation>k</annotation> হলো সরাসরি অবিচ্ছিন্ন শতকরা বৃদ্ধির হার। তাই <annotation>\\frac{dN}{dt}=kN</annotation> রূপের যেকোনো ডিফারেনশিয়াল সমীকরণের সমাধান <annotation>N(t)=N_0 e^{kt}</annotation>: ব্যাকটেরিয়ার বংশবৃদ্ধি, তেজস্ক্রিয় পরমাণুর ক্ষয়, মহামারীর বিস্তার কিংবা ব্যাংক ব্যালেন্স—সবখানেই অয়লারের সংখ্যা <annotation>e</annotation> স্বয়ংক্রিয়ভাবে প্রধান চরিত্র হয়ে ওঠে।",
+        "math_attr": "",
+        "tex": "u=kt k k \\frac{dN}{dt}=kN N(t)=N_0 e^{kt} e"
+      },
+      {
+        "type": "p",
+        "text": "ভিন্ন ভিত্তিগুলো আসলে একে অপরের অনুভূমিকভাবে স্কেল করা রূপ: যেমন <annotation>2^{x}=4^{\\frac12 x}</annotation>। একইভাবে <annotation>e^{c\\cdot t}=2^{t}</annotation> লেখা যায় যখন <annotation>c\\approx 0.6931</annotation>—অর্থাৎ <annotation>e^{0.6931\\,t}=2^{t}</annotation>। এই <annotation>c</annotation>-টি ঠিক সেই রহস্যময় ধ্রুবক, যা লেখা হয় <annotation>\\ln 2</annotation>। সাধারণভাবে <annotation>3^{t}=e^{\\ln(3)t}</annotation> (যেখানে <annotation>\\ln 3=1.0986\\ldots</annotation>) এবং যেকোনো ভিত্তির জন্য <annotation>\\frac{d(a^{t})}{dt}=a^{t}\\ln(a)</annotation>। প্রতিটি ভিত্তি <annotation>a</annotation>-এর সাথে একটি করে 'প্রাকৃতিক লগ' <annotation>\\ln a</annotation> যুক্ত—এই বোঝাপড়াটিই রহস্যময় ধ্রুবকগুলোর পর্দা উন্মোচন করে।",
+        "math_attr": "",
+        "tex": "2^{x}=4^{\\frac12 x} e^{c\\cdot t}=2^{t} c\\approx 0.6931 e^{0.6931\\,t}=2^{t} c \\ln 2 3^{t}=e^{\\ln(3)t} \\ln 3=1.0986\\ldots \\frac{d(a^{t})}{dt}=a^{t}\\ln(a) a \\ln a"
+      },
+      {
+        "type": "callout",
+        "text": "✨ চূড়ান্ত দর্শন অয়লার সংখ্যা <annotation>e</annotation> মানুষের চাপিয়ে দেওয়া কোনো কৃত্রিম ধ্রুবক নয়; এটি মসৃণ, অবিচ্ছিন্ন পরিবর্তনের নিখুঁত প্রাকৃতিক ভাষা। সব এক্সপোনেনশিয়াল নিজের ডেরিভেটিভের সমানুপাতিক, কিন্তু শুধু <annotation>e</annotation>-ভিত্তিক ফাংশনটির ক্ষেত্রেই সেই সমানুপাতিক ধ্রুবক ঠিক ১—তাই <annotation>\\frac{d}{dt}(e^t)=e^t</annotation>। যেকোনো <annotation>a^t</annotation> কে <annotation>e^{c t}</annotation> আকারে লিখলে ডেরিভেটিভ নেওয়া সহজ হয়, আর <annotation>c</annotation>-টি তখন সরাসরি বোঝায় পরিবর্তনের তাৎক্ষণিক শতকরা হার।",
+        "math_attr": "",
+        "tex": "e e \\frac{d}{dt}(e^t)=e^t a^t e^{c t} c"
+      }
+    ]
+  }
+]

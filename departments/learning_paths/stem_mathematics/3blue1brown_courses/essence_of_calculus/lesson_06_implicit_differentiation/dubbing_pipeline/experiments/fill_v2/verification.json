@@ -1,0 +1,617 @@
+{
+  "experiment": "fill_v2 (heavy expansion + scale recomputed from rendered speech) - calculus lesson 06",
+  "lesson": "lesson_06_implicit_differentiation",
+  "video_id": "full_original",
+  "script_source": "audio manifest cues (alias-deduped): manifest.json",
+  "cue_count": 26,
+  "expected_cue_count": 26,
+  "failed_tts_cues": [],
+  "strategy": "26 manifest cues; heavy pedagogical expansion; scale from rendered speech; absolute sample offset; atempo in [0.82,2.2]; pad only; no truncation",
+  "sfx": "NONE -- clean speech only",
+  "voice": "bn-BD-PradeepNeural",
+  "max_tempo": 2.2,
+  "tempo_floor": 0.82,
+  "overrun_cues": 0,
+  "max_measured_drift_ms": 0.01,
+  "expansion_factor": 1.81887,
+  "usable_speech_sec": 918.937,
+  "rendered_total_initial_sec": 505.224,
+  "rendered_total_final_sec": 1153.536,
+  "timeline_scale_from_rendered": 0.798157,
+  "lead_in_sec": 2.5,
+  "tail_margin_sec": 3.0,
+  "video_duration_sec": 933.187,
+  "master_audio_duration_sec": 933.187,
+  "last_cue_end_sec": 930.187,
+  "tail_silence_sec": 3.0,
+  "speech_ends_before_video_end": true,
+  "median_fill": 0.9996,
+  "max_internal_gap_s": 0.0364,
+  "fill_policy_target": "median_fill >= 0.72 and max_internal_gap_s <= 1.5",
+  "fill_policy_met": true,
+  "silencedetect_noise_db": "-35dB",
+  "silencedetect_min_dur_s": 2.0,
+  "silencedetect_runs": [
+    [
+      0.0,
+      2.671,
+      2.671
+    ],
+    [
+      929.494,
+      933.13,
+      3.636
+    ]
+  ],
+  "silencedetect_internal_runs_gt2s": 0,
+  "video_src": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\calculus\\lesson_06\\original_source\\full_original.mp4",
+  "video_src_swapped": false,
+  "gates_pass": true,
+  "expansion_applied": [
+    {
+      "id": 1,
+      "natural_before": 5.424,
+      "natural_after": 21.24,
+      "target_sec": 9.866,
+      "passes": 1
+    },
+    {
+      "id": 2,
+      "natural_before": 12.504,
+      "natural_after": 28.752,
+      "target_sec": 22.743,
+      "passes": 1
+    },
+    {
+      "id": 3,
+      "natural_before": 20.712,
+      "natural_after": 50.544,
+      "target_sec": 37.672,
+      "passes": 2
+    },
+    {
+      "id": 4,
+      "natural_before": 31.944,
+      "natural_after": 62.304,
+      "target_sec": 58.102,
+      "passes": 2
+    },
+    {
+      "id": 5,
+      "natural_before": 27.816,
+      "natural_after": 60.24,
+      "target_sec": 50.594,
+      "passes": 2
+    },
+    {
+      "id": 6,
+      "natural_before": 22.896,
+      "natural_after": 55.656,
+      "target_sec": 41.645,
+      "passes": 2
+    },
+    {
+      "id": 7,
+      "natural_before": 28.128,
+      "natural_after": 58.32,
+      "target_sec": 51.161,
+      "passes": 2
+    },
+    {
+      "id": 8,
+      "natural_before": 12.936,
+      "natural_after": 26.568,
+      "target_sec": 23.529,
+      "passes": 1
+    },
+    {
+      "id": 9,
+      "natural_before": 4.92,
+      "natural_after": 22.32,
+      "target_sec": 8.949,
+      "passes": 1
+    },
+    {
+      "id": 10,
+      "natural_before": 22.704,
+      "natural_after": 54.216,
+      "target_sec": 41.296,
+      "passes": 2
+    },
+    {
+      "id": 11,
+      "natural_before": 25.152,
+      "natural_after": 57.744,
+      "target_sec": 45.748,
+      "passes": 2
+    },
+    {
+      "id": 12,
+      "natural_before": 17.712,
+      "natural_after": 34.464,
+      "target_sec": 32.216,
+      "passes": 1
+    },
+    {
+      "id": 13,
+      "natural_before": 24.24,
+      "natural_after": 57.648,
+      "target_sec": 44.089,
+      "passes": 2
+    },
+    {
+      "id": 14,
+      "natural_before": 12.792,
+      "natural_after": 27.192,
+      "target_sec": 23.267,
+      "passes": 1
+    },
+    {
+      "id": 15,
+      "natural_before": 6.192,
+      "natural_after": 21.432,
+      "target_sec": 11.262,
+      "passes": 1
+    },
+    {
+      "id": 16,
+      "natural_before": 19.896,
+      "natural_after": 49.56,
+      "target_sec": 36.188,
+      "passes": 2
+    },
+    {
+      "id": 17,
+      "natural_before": 4.68,
+      "natural_after": 19.776,
+      "target_sec": 8.512,
+      "passes": 1
+    },
+    {
+      "id": 18,
+      "natural_before": 23.04,
+      "natural_after": 51.6,
+      "target_sec": 41.907,
+      "passes": 2
+    },
+    {
+      "id": 19,
+      "natural_before": 24.096,
+      "natural_after": 50.496,
+      "target_sec": 43.827,
+      "passes": 2
+    },
+    {
+      "id": 20,
+      "natural_before": 28.752,
+      "natural_after": 56.016,
+      "target_sec": 52.296,
+      "passes": 2
+    },
+    {
+      "id": 21,
+      "natural_before": 5.304,
+      "natural_after": 19.92,
+      "target_sec": 9.647,
+      "passes": 1
+    },
+    {
+      "id": 22,
+      "natural_before": 22.536,
+      "natural_after": 50.496,
+      "target_sec": 40.99,
+      "passes": 2
+    },
+    {
+      "id": 23,
+      "natural_before": 24.432,
+      "natural_after": 49.464,
+      "target_sec": 44.439,
+      "passes": 2
+    },
+    {
+      "id": 24,
+      "natural_before": 6.336,
+      "natural_after": 18.024,
+      "target_sec": 11.524,
+      "passes": 1
+    },
+    {
+      "id": 25,
+      "natural_before": 40.248,
+      "natural_after": 87.648,
+      "target_sec": 73.206,
+      "passes": 3
+    },
+    {
+      "id": 26,
+      "natural_before": 29.832,
+      "natural_after": 61.896,
+      "target_sec": 54.261,
+      "passes": 2
+    }
+  ],
+  "cues": [
+    {
+      "id": 1,
+      "section": "sec_01_implicit_intro",
+      "expected_start_ms": 2500.0,
+      "actual_start_ms": 2500.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 21.24,
+      "target_sec": 16.953,
+      "fill_ratio": 0.999,
+      "internal_gap_s": 0.0171,
+      "placed_samples": 747627,
+      "expanded": true
+    },
+    {
+      "id": 2,
+      "section": "sec_01_implicit_intro",
+      "expected_start_ms": 19732.0,
+      "actual_start_ms": 19732.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 28.752,
+      "target_sec": 22.949,
+      "fill_ratio": 0.9993,
+      "internal_gap_s": 0.0162,
+      "placed_samples": 1012051,
+      "expanded": true
+    },
+    {
+      "id": 3,
+      "section": "sec_01_implicit_intro",
+      "expected_start_ms": 42960.0,
+      "actual_start_ms": 42960.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 50.544,
+      "target_sec": 40.342,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0156,
+      "placed_samples": 1779082,
+      "expanded": true
+    },
+    {
+      "id": 4,
+      "section": "sec_01_implicit_intro",
+      "expected_start_ms": 83582.0,
+      "actual_start_ms": 83582.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 62.304,
+      "target_sec": 49.728,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0198,
+      "placed_samples": 2193005,
+      "expanded": true
+    },
+    {
+      "id": 5,
+      "section": "sec_01_implicit_intro",
+      "expected_start_ms": 133589.0,
+      "actual_start_ms": 133589.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 60.24,
+      "target_sec": 48.081,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0199,
+      "placed_samples": 2120372,
+      "expanded": true
+    },
+    {
+      "id": 6,
+      "section": "sec_01_implicit_intro",
+      "expected_start_ms": 181950.0,
+      "actual_start_ms": 181950.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 55.656,
+      "target_sec": 44.422,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0171,
+      "placed_samples": 1959010,
+      "expanded": true
+    },
+    {
+      "id": 7,
+      "section": "sec_01_implicit_intro",
+      "expected_start_ms": 226651.0,
+      "actual_start_ms": 226651.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 58.32,
+      "target_sec": 46.549,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0204,
+      "placed_samples": 2052811,
+      "expanded": true
+    },
+    {
+      "id": 8,
+      "section": "sec_01_implicit_intro",
+      "expected_start_ms": 273479.0,
+      "actual_start_ms": 273479.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 26.568,
+      "target_sec": 21.205,
+      "fill_ratio": 0.9993,
+      "internal_gap_s": 0.0158,
+      "placed_samples": 935140,
+      "expanded": true
+    },
+    {
+      "id": 9,
+      "section": "sec_02_level_curves",
+      "expected_start_ms": 294964.0,
+      "actual_start_ms": 294963.99,
+      "drift_ms": -0.01,
+      "tempo": 1.2529,
+      "natural_sec": 22.32,
+      "target_sec": 17.815,
+      "fill_ratio": 0.9991,
+      "internal_gap_s": 0.0164,
+      "placed_samples": 785642,
+      "expanded": true
+    },
+    {
+      "id": 10,
+      "section": "sec_02_level_curves",
+      "expected_start_ms": 313058.0,
+      "actual_start_ms": 313058.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 54.216,
+      "target_sec": 43.273,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0145,
+      "placed_samples": 1908339,
+      "expanded": true
+    },
+    {
+      "id": 11,
+      "section": "sec_02_level_curves",
+      "expected_start_ms": 356610.0,
+      "actual_start_ms": 356610.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 57.744,
+      "target_sec": 46.089,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0189,
+      "placed_samples": 2032525,
+      "expanded": true
+    },
+    {
+      "id": 12,
+      "section": "sec_02_level_curves",
+      "expected_start_ms": 402978.0,
+      "actual_start_ms": 402978.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 34.464,
+      "target_sec": 27.508,
+      "fill_ratio": 0.9993,
+      "internal_gap_s": 0.02,
+      "placed_samples": 1213103,
+      "expanded": true
+    },
+    {
+      "id": 13,
+      "section": "sec_02_level_curves",
+      "expected_start_ms": 430766.0,
+      "actual_start_ms": 430766.01,
+      "drift_ms": 0.01,
+      "tempo": 1.2529,
+      "natural_sec": 57.648,
+      "target_sec": 46.012,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0144,
+      "placed_samples": 2029129,
+      "expanded": true
+    },
+    {
+      "id": 14,
+      "section": "sec_02_level_curves",
+      "expected_start_ms": 477057.0,
+      "actual_start_ms": 477057.01,
+      "drift_ms": 0.01,
+      "tempo": 1.2529,
+      "natural_sec": 27.192,
+      "target_sec": 21.703,
+      "fill_ratio": 0.9991,
+      "internal_gap_s": 0.0189,
+      "placed_samples": 957102,
+      "expanded": true
+    },
+    {
+      "id": 15,
+      "section": "sec_03_differential_balance",
+      "expected_start_ms": 499040.0,
+      "actual_start_ms": 499040.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 21.432,
+      "target_sec": 17.106,
+      "fill_ratio": 0.9989,
+      "internal_gap_s": 0.0192,
+      "placed_samples": 754375,
+      "expanded": true
+    },
+    {
+      "id": 16,
+      "section": "sec_03_differential_balance",
+      "expected_start_ms": 516425.0,
+      "actual_start_ms": 516424.99,
+      "drift_ms": -0.01,
+      "tempo": 1.2529,
+      "natural_sec": 49.56,
+      "target_sec": 39.557,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0149,
+      "placed_samples": 1744464,
+      "expanded": true
+    },
+    {
+      "id": 17,
+      "section": "sec_03_differential_balance",
+      "expected_start_ms": 556261.0,
+      "actual_start_ms": 556261.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 19.776,
+      "target_sec": 15.784,
+      "fill_ratio": 0.9988,
+      "internal_gap_s": 0.0185,
+      "placed_samples": 696074,
+      "expanded": true
+    },
+    {
+      "id": 18,
+      "section": "sec_03_differential_balance",
+      "expected_start_ms": 572325.0,
+      "actual_start_ms": 572325.01,
+      "drift_ms": 0.01,
+      "tempo": 1.2529,
+      "natural_sec": 51.6,
+      "target_sec": 41.185,
+      "fill_ratio": 0.9995,
+      "internal_gap_s": 0.0198,
+      "placed_samples": 1816258,
+      "expanded": true
+    },
+    {
+      "id": 19,
+      "section": "sec_03_differential_balance",
+      "expected_start_ms": 613789.0,
+      "actual_start_ms": 613789.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 50.496,
+      "target_sec": 40.304,
+      "fill_ratio": 0.9995,
+      "internal_gap_s": 0.0197,
+      "placed_samples": 1777406,
+      "expanded": true
+    },
+    {
+      "id": 20,
+      "section": "sec_03_differential_balance",
+      "expected_start_ms": 654372.0,
+      "actual_start_ms": 654372.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 56.016,
+      "target_sec": 44.71,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0156,
+      "placed_samples": 1971711,
+      "expanded": true
+    },
+    {
+      "id": 21,
+      "section": "sec_04_related_rates",
+      "expected_start_ms": 699361.0,
+      "actual_start_ms": 699361.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 19.92,
+      "target_sec": 15.899,
+      "fill_ratio": 0.9988,
+      "internal_gap_s": 0.0189,
+      "placed_samples": 701146,
+      "expanded": true
+    },
+    {
+      "id": 22,
+      "section": "sec_04_related_rates",
+      "expected_start_ms": 715540.0,
+      "actual_start_ms": 715540.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 50.496,
+      "target_sec": 40.304,
+      "fill_ratio": 0.9995,
+      "internal_gap_s": 0.0197,
+      "placed_samples": 1777406,
+      "expanded": true
+    },
+    {
+      "id": 23,
+      "section": "sec_04_related_rates",
+      "expected_start_ms": 756123.0,
+      "actual_start_ms": 756122.99,
+      "drift_ms": -0.01,
+      "tempo": 1.2529,
+      "natural_sec": 49.464,
+      "target_sec": 39.48,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0163,
+      "placed_samples": 1741068,
+      "expanded": true
+    },
+    {
+      "id": 24,
+      "section": "sec_04_related_rates",
+      "expected_start_ms": 795882.0,
+      "actual_start_ms": 795882.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 18.024,
+      "target_sec": 14.386,
+      "fill_ratio": 0.9975,
+      "internal_gap_s": 0.0364,
+      "placed_samples": 634423,
+      "expanded": true
+    },
+    {
+      "id": 25,
+      "section": "sec_04_related_rates",
+      "expected_start_ms": 810548.0,
+      "actual_start_ms": 810548.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2529,
+      "natural_sec": 87.648,
+      "target_sec": 69.957,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0197,
+      "placed_samples": 3085104,
+      "expanded": true
+    },
+    {
+      "id": 26,
+      "section": "sec_04_related_rates",
+      "expected_start_ms": 880784.0,
+      "actual_start_ms": 880783.99,
+      "drift_ms": -0.01,
+      "tempo": 1.2529,
+      "natural_sec": 61.896,
+      "target_sec": 49.403,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0148,
+      "placed_samples": 2178672,
+      "expanded": true
+    }
+  ],
+  "output_video": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\calculus\\lesson_06\\experiments\\fill_v2\\3b1b_calculus_06_full_dubbed_fill2.mp4",
+  "output_duration_sec": 933.132,
+  "output_size_bytes": 116985987,
+  "output_streams": [
+    {
+      "index": 0,
+      "codec_name": "vp9",
+      "codec_type": "video"
+    },
+    {
+      "index": 1,
+      "codec_name": "aac",
+      "codec_type": "audio"
+    }
+  ],
+  "volumedetect_intro_0_2s_db": -91.0,
+  "volumedetect_final_2s_db": -91.0
+}

@@ -1,0 +1,68 @@
+window.TEACHER_AUDIO_MANIFEST = {
+  "course": "lockdown_math",
+  "lesson": "lesson_10",
+  "voice": "bn-BD-PradeepNeural",
+  "mode": "authentic_teacher",
+  "sections": {
+    "sec-01-quadratic-symmetry": {
+      "title": "১. দ্বিঘাতের সরল প্রতিসাম্য: গড় ও দূরত্বের খেলা",
+      "audio_file": "sec-01-quadratic-symmetry.mp3",
+      "total_duration_ms": 4646.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "১. দ্বিঘাতের সরল প্রতিসাম্য: গড় ও দূরত্বের খেলা",
+          "start_ms": 0.0,
+          "end_ms": 4296.0,
+          "duration_ms": 4296.0
+        }
+      ]
+    },
+    "sec-02-depressed-cubic": {
+      "title": "২. ডিপ্রেসড কিউবিক: x² পদ অপসারণের চিশিরনহাউস কৌশল",
+      "audio_file": "sec-02-depressed-cubic.mp3",
+      "total_duration_ms": 5078.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "২. ডিপ্রেসড কিউবিক: x² পদ অপসারণের চিশিরনহাউস কৌশল",
+          "start_ms": 0.0,
+          "end_ms": 4728.0,
+          "duration_ms": 4728.0
+        }
+      ]
+    },
+    "sec-03-cardano-formula": {
+      "title": "৩. কার্দানোর কৌশল ও কাল্পনিক সংখ্যার ঐতিহাসিক জন্ম",
+      "audio_file": "sec-03-cardano-formula.mp3",
+      "total_duration_ms": 4694.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "৩. কার্দানোর কৌশল ও কাল্পনিক সংখ্যার ঐতিহাসিক জন্ম",
+          "start_ms": 0.0,
+          "end_ms": 4344.0,
+          "duration_ms": 4344.0
+        }
+      ]
+    },
+    "sec-04-quintic-wall": {
+      "title": "৪. ৫ ঘাতের অলঙ্ঘনীয় দেয়াল: অ্যাবেল ও গ্যালোয়ার প্রতিসাম্য",
+      "audio_file": "sec-04-quintic-wall.mp3",
+      "total_duration_ms": 4958.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "৪. ৫ ঘাতের অলঙ্ঘনীয় দেয়াল: অ্যাবেল ও গ্যালোয়ার প্রতিসাম্য",
+          "start_ms": 0.0,
+          "end_ms": 4608.0,
+          "duration_ms": 4608.0
+        }
+      ]
+    }
+  }
+};

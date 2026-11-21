@@ -1,0 +1,83 @@
+window.TEACHER_AUDIO_MANIFEST = {
+  "course": "lockdown_math",
+  "lesson": "lesson_01",
+  "voice": "bn-BD-PradeepNeural",
+  "mode": "authentic_teacher",
+  "sections": {
+    "sec-01-why-memorize": {
+      "title": "১. কেন অন্ধ মুখস্থ করা ক্ষতিকর?",
+      "audio_file": "sec-01-why-memorize.mp3",
+      "total_duration_ms": 3494.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "১. কেন অন্ধ মুখস্থ করা ক্ষতিকর?",
+          "start_ms": 0.0,
+          "end_ms": 3144.0,
+          "duration_ms": 3144.0
+        }
+      ]
+    },
+    "sec-02-completing-the-square": {
+      "title": "২. জ্যামিতিক বর্গ পূরণ (Completing the Square)",
+      "audio_file": "sec-02-completing-the-square.mp3",
+      "total_duration_ms": 4118.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "২. জ্যামিতিক বর্গ পূরণ (Completing the Square)",
+          "start_ms": 0.0,
+          "end_ms": 3768.0,
+          "duration_ms": 3768.0
+        }
+      ]
+    },
+    "sec-03-parabola-symmetry": {
+      "title": "৩. প্যারাবোলার প্রতিসাম্য ও শীর্ষবিন্দু (Vertex Symmetry)",
+      "audio_file": "sec-03-parabola-symmetry.mp3",
+      "total_duration_ms": 4862.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "৩. প্যারাবোলার প্রতিসাম্য ও শীর্ষবিন্দু (Vertex Symmetry)",
+          "start_ms": 0.0,
+          "end_ms": 4512.0,
+          "duration_ms": 4512.0
+        }
+      ]
+    },
+    "sec-04-quadratic-derivation": {
+      "title": "৪. সর্বজনীন দ্বিঘাত সূত্রের প্রাকৃতিক উন্মোচন",
+      "audio_file": "sec-04-quadratic-derivation.mp3",
+      "total_duration_ms": 4358.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "৪. সর্বজনীন দ্বিঘাত সূত্রের প্রাকৃতিক উন্মোচন",
+          "start_ms": 0.0,
+          "end_ms": 4008.0,
+          "duration_ms": 4008.0
+        }
+      ]
+    },
+    "sec-05-po-shen-loh-method": {
+      "title": "৫. পো-শেন লোহ্ (Po-Shen Loh) পদ্ধতি ও আধুনিক অন্তর্দৃষ্টি",
+      "audio_file": "sec-05-po-shen-loh-method.mp3",
+      "total_duration_ms": 5270.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "৫. পো শেন লোহ্ (Po Shen Loh) পদ্ধতি ও আধুনিক অন্তর্দৃষ্টি",
+          "start_ms": 0.0,
+          "end_ms": 4920.0,
+          "duration_ms": 4920.0
+        }
+      ]
+    }
+  }
+};

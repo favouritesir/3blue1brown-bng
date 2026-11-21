@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "model": "gh/auto (omniroute)",
+  "deliverables": {
+    "sfx_bells_isolated": "sfx_bells_isolated.wav",
+    "speech_isolated": "speech_isolated.wav"
+  },
+  "sample_rate": 44100,
+  "duration_seconds": 213.5307029478458,
+  "sfx_peak": 0.9440000057220459,
+  "sfx_rms": 0.036899715662002563,
+  "speech_peak": 0.9440000057220459,
+  "speech_rms": 0.11164747923612595,
+  "zero_hiss_gap_floor": 0.0,
+  "channels": 2,
+  "format": "24-bit PCM WAV"
+}

@@ -1,0 +1,1314 @@
+{
+  "lessons": {
+    "01": {
+      "lesson": "lesson_01",
+      "checks": {
+        "http_200": true,
+        "no_page_errors": true,
+        "dom_manifest_ids": true,
+        "dom_manifest_cue_counts": true,
+        "dom_manifest_cue_types": true,
+        "audio_binding": true,
+        "manifest_loaded": true,
+        "manifest_metadata": true,
+        "no_duplicate_sections": true,
+        "no_duplicate_cue_indices": true,
+        "no_quiz_media_types": true,
+        "valid_json": true,
+        "js_matches_json": true,
+        "js_preloaded": true,
+        "no_forbidden_labels": true,
+        "clean_scripts": true,
+        "mp3_nonzero_and_matching": true,
+        "350ms_gaps": true,
+        "manifest_version_bumped": true,
+        "placeholder_backed_up": true
+      },
+      "errors": [],
+      "info": {
+        "benign_console": [],
+        "console_errors": [],
+        "parity": {
+          "dom": [
+            {
+              "id": "sec-setup",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "cuesLoaded": 7,
+              "audioFile": "../../assets/audio/why_pi/lesson_01/sec_01_sec-setup.mp3"
+            },
+            {
+              "id": "sec-pattern",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "callout",
+                "p",
+                "formula-box"
+              ],
+              "cuesLoaded": 7,
+              "audioFile": "../../assets/audio/why_pi/lesson_01/sec_02_sec-pattern.mp3"
+            },
+            {
+              "id": "sec-hidden-circle",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "callout",
+                "p",
+                "formula-box",
+                "formula-box"
+              ],
+              "cuesLoaded": 8,
+              "audioFile": "../../assets/audio/why_pi/lesson_01/sec_03_sec-hidden-circle.mp3"
+            }
+          ],
+          "manifest": [
+            {
+              "id": "sec-setup",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "cues": 7,
+              "audioFile": "sec_01_sec-setup.mp3"
+            },
+            {
+              "id": "sec-pattern",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "callout",
+                "p",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "cues": 7,
+              "audioFile": "sec_02_sec-pattern.mp3"
+            },
+            {
+              "id": "sec-hidden-circle",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "callout",
+                "p",
+                "formula-box",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "cues": 8,
+              "audioFile": "sec_03_sec-hidden-circle.mp3"
+            }
+          ],
+          "hasStudioAudio": true,
+          "manifestCourse": "why_pi",
+          "manifestLesson": "lesson_01",
+          "manifestLoaded": true,
+          "manifestKeys": [
+            "sec-setup",
+            "sec-pattern",
+            "sec-hidden-circle"
+          ]
+        },
+        "non_narration_types": [],
+        "mp3_durations_ms": {
+          "sec-setup": 112896.0,
+          "sec-pattern": 114360.0,
+          "sec-hidden-circle": 121008.0
+        },
+        "section_count": 3,
+        "cue_count": 22,
+        "figure_count": 4,
+        "total_duration_s": 347.23
+      },
+      "all_passed": true
+    },
+    "02": {
+      "lesson": "lesson_02",
+      "checks": {
+        "http_200": true,
+        "no_page_errors": true,
+        "dom_manifest_ids": true,
+        "dom_manifest_cue_counts": true,
+        "dom_manifest_cue_types": true,
+        "audio_binding": true,
+        "manifest_loaded": true,
+        "manifest_metadata": true,
+        "no_duplicate_sections": true,
+        "no_duplicate_cue_indices": true,
+        "no_quiz_media_types": true,
+        "valid_json": true,
+        "js_matches_json": true,
+        "js_preloaded": true,
+        "no_forbidden_labels": true,
+        "clean_scripts": true,
+        "mp3_nonzero_and_matching": true,
+        "350ms_gaps": true,
+        "manifest_version_bumped": true,
+        "placeholder_backed_up": true
+      },
+      "errors": [],
+      "info": {
+        "benign_console": [],
+        "console_errors": [],
+        "parity": {
+          "dom": [
+            {
+              "id": "sec-conservation",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "cuesLoaded": 6,
+              "audioFile": "../../assets/audio/why_pi/lesson_02/sec_01_sec-conservation.mp3"
+            },
+            {
+              "id": "sec-phase-circle",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "cuesLoaded": 6,
+              "audioFile": "../../assets/audio/why_pi/lesson_02/sec_02_sec-phase-circle.mp3"
+            },
+            {
+              "id": "sec-momentum-line",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "callout",
+                "formula-box"
+              ],
+              "cuesLoaded": 6,
+              "audioFile": "../../assets/audio/why_pi/lesson_02/sec_03_sec-momentum-line.mp3"
+            },
+            {
+              "id": "sec-inscribed-angle",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "p",
+                "formula-box",
+                "formula-box"
+              ],
+              "cuesLoaded": 7,
+              "audioFile": "../../assets/audio/why_pi/lesson_02/sec_04_sec-inscribed-angle.mp3"
+            }
+          ],
+          "manifest": [
+            {
+              "id": "sec-conservation",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "cues": 6,
+              "audioFile": "sec_01_sec-conservation.mp3"
+            },
+            {
+              "id": "sec-phase-circle",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "cues": 6,
+              "audioFile": "sec_02_sec-phase-circle.mp3"
+            },
+            {
+              "id": "sec-momentum-line",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "callout",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "cues": 6,
+              "audioFile": "sec_03_sec-momentum-line.mp3"
+            },
+            {
+              "id": "sec-inscribed-angle",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "p",
+                "formula-box",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "cues": 7,
+              "audioFile": "sec_04_sec-inscribed-angle.mp3"
+            }
+          ],
+          "hasStudioAudio": true,
+          "manifestCourse": "why_pi",
+          "manifestLesson": "lesson_02",
+          "manifestLoaded": true,
+          "manifestKeys": [
+            "sec-conservation",
+            "sec-phase-circle",
+            "sec-momentum-line",
+            "sec-inscribed-angle"
+          ]
+        },
+        "non_narration_types": [],
+        "mp3_durations_ms": {
+          "sec-conservation": 84744.0,
+          "sec-phase-circle": 86568.0,
+          "sec-momentum-line": 92904.0,
+          "sec-inscribed-angle": 106608.0
+        },
+        "section_count": 4,
+        "cue_count": 25,
+        "figure_count": 4,
+        "total_duration_s": 369.7
+      },
+      "all_passed": true
+    },
+    "03": {
+      "lesson": "lesson_03",
+      "checks": {
+        "http_200": true,
+        "no_page_errors": true,
+        "dom_manifest_ids": true,
+        "dom_manifest_cue_counts": true,
+        "dom_manifest_cue_types": true,
+        "audio_binding": true,
+        "manifest_loaded": true,
+        "manifest_metadata": true,
+        "no_duplicate_sections": true,
+        "no_duplicate_cue_indices": true,
+        "no_quiz_media_types": true,
+        "valid_json": true,
+        "js_matches_json": true,
+        "js_preloaded": true,
+        "no_forbidden_labels": true,
+        "clean_scripts": true,
+        "mp3_nonzero_and_matching": true,
+        "350ms_gaps": true,
+        "manifest_version_bumped": true,
+        "placeholder_backed_up": true
+      },
+      "errors": [],
+      "info": {
+        "benign_console": [],
+        "console_errors": [],
+        "parity": {
+          "dom": [
+            {
+              "id": "sec-position-space",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "cuesLoaded": 6,
+              "audioFile": "../../assets/audio/why_pi/lesson_03/sec_01_sec-position-space.mp3"
+            },
+            {
+              "id": "sec-rescale",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "p",
+                "formula-box",
+                "formula-box"
+              ],
+              "cuesLoaded": 7,
+              "audioFile": "../../assets/audio/why_pi/lesson_03/sec_02_sec-rescale.mp3"
+            },
+            {
+              "id": "sec-unfold",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "callout",
+                "formula-box",
+                "formula-box"
+              ],
+              "cuesLoaded": 7,
+              "audioFile": "../../assets/audio/why_pi/lesson_03/sec_03_sec-unfold.mp3"
+            }
+          ],
+          "manifest": [
+            {
+              "id": "sec-position-space",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "cues": 6,
+              "audioFile": "sec_01_sec-position-space.mp3"
+            },
+            {
+              "id": "sec-rescale",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "p",
+                "formula-box",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "cues": 7,
+              "audioFile": "sec_02_sec-rescale.mp3"
+            },
+            {
+              "id": "sec-unfold",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "callout",
+                "formula-box",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "cues": 7,
+              "audioFile": "sec_03_sec-unfold.mp3"
+            }
+          ],
+          "hasStudioAudio": true,
+          "manifestCourse": "why_pi",
+          "manifestLesson": "lesson_03",
+          "manifestLoaded": true,
+          "manifestKeys": [
+            "sec-position-space",
+            "sec-rescale",
+            "sec-unfold"
+          ]
+        },
+        "non_narration_types": [],
+        "mp3_durations_ms": {
+          "sec-position-space": 81240.0,
+          "sec-rescale": 98448.0,
+          "sec-unfold": 96120.0
+        },
+        "section_count": 3,
+        "cue_count": 20,
+        "figure_count": 3,
+        "total_duration_s": 274.89
+      },
+      "all_passed": true
+    },
+    "04": {
+      "lesson": "lesson_04",
+      "checks": {
+        "http_200": true,
+        "no_page_errors": true,
+        "dom_manifest_ids": true,
+        "dom_manifest_cue_counts": true,
+        "dom_manifest_cue_types": true,
+        "audio_binding": true,
+        "manifest_loaded": true,
+        "manifest_metadata": true,
+        "no_duplicate_sections": true,
+        "no_duplicate_cue_indices": true,
+        "no_quiz_media_types": true,
+        "valid_json": true,
+        "js_matches_json": true,
+        "js_preloaded": true,
+        "no_forbidden_labels": true,
+        "clean_scripts": true,
+        "mp3_nonzero_and_matching": true,
+        "350ms_gaps": true,
+        "manifest_version_bumped": true,
+        "placeholder_backed_up": true
+      },
+      "errors": [],
+      "info": {
+        "benign_console": [],
+        "console_errors": [],
+        "parity": {
+          "dom": [
+            {
+              "id": "sec-basel-series",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "formula-box"
+              ],
+              "cuesLoaded": 5,
+              "audioFile": "../../assets/audio/why_pi/lesson_04/sec_01_sec-basel-series.mp3"
+            },
+            {
+              "id": "sec-inverse-squares",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "callout",
+                "formula-box",
+                "formula-box"
+              ],
+              "cuesLoaded": 7,
+              "audioFile": "../../assets/audio/why_pi/lesson_04/sec_02_sec-inverse-squares.mp3"
+            },
+            {
+              "id": "sec-result",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "cuesLoaded": 5,
+              "audioFile": "../../assets/audio/why_pi/lesson_04/sec_03_sec-result.mp3"
+            }
+          ],
+          "manifest": [
+            {
+              "id": "sec-basel-series",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "cues": 5,
+              "audioFile": "sec_01_sec-basel-series.mp3"
+            },
+            {
+              "id": "sec-inverse-squares",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "callout",
+                "formula-box",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "cues": 7,
+              "audioFile": "sec_02_sec-inverse-squares.mp3"
+            },
+            {
+              "id": "sec-result",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "cues": 5,
+              "audioFile": "sec_03_sec-result.mp3"
+            }
+          ],
+          "hasStudioAudio": true,
+          "manifestCourse": "why_pi",
+          "manifestLesson": "lesson_04",
+          "manifestLoaded": true,
+          "manifestKeys": [
+            "sec-basel-series",
+            "sec-inverse-squares",
+            "sec-result"
+          ]
+        },
+        "non_narration_types": [],
+        "mp3_durations_ms": {
+          "sec-basel-series": 71016.0,
+          "sec-inverse-squares": 91032.0,
+          "sec-result": 68496.0
+        },
+        "section_count": 3,
+        "cue_count": 17,
+        "figure_count": 3,
+        "total_duration_s": 229.8
+      },
+      "all_passed": true
+    },
+    "05": {
+      "lesson": "lesson_05",
+      "checks": {
+        "http_200": true,
+        "no_page_errors": true,
+        "dom_manifest_ids": true,
+        "dom_manifest_cue_counts": true,
+        "dom_manifest_cue_types": true,
+        "audio_binding": true,
+        "manifest_loaded": true,
+        "manifest_metadata": true,
+        "no_duplicate_sections": true,
+        "no_duplicate_cue_indices": true,
+        "no_quiz_media_types": true,
+        "valid_json": true,
+        "js_matches_json": true,
+        "js_preloaded": true,
+        "no_forbidden_labels": true,
+        "clean_scripts": true,
+        "mp3_nonzero_and_matching": true,
+        "350ms_gaps": true,
+        "manifest_version_bumped": true,
+        "placeholder_backed_up": true
+      },
+      "errors": [],
+      "info": {
+        "benign_console": [],
+        "console_errors": [],
+        "parity": {
+          "dom": [
+            {
+              "id": "sec-leibniz-series",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "formula-box",
+                "formula-box"
+              ],
+              "cuesLoaded": 6,
+              "audioFile": "../../assets/audio/why_pi/lesson_05/sec_01_sec-leibniz-series.mp3"
+            },
+            {
+              "id": "sec-circle-hidden",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "cuesLoaded": 5,
+              "audioFile": "../../assets/audio/why_pi/lesson_05/sec_02_sec-circle-hidden.mp3"
+            },
+            {
+              "id": "sec-primes",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "callout",
+                "formula-box"
+              ],
+              "cuesLoaded": 6,
+              "audioFile": "../../assets/audio/why_pi/lesson_05/sec_03_sec-primes.mp3"
+            }
+          ],
+          "manifest": [
+            {
+              "id": "sec-leibniz-series",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "formula-box",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "cues": 6,
+              "audioFile": "sec_01_sec-leibniz-series.mp3"
+            },
+            {
+              "id": "sec-circle-hidden",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "cues": 5,
+              "audioFile": "sec_02_sec-circle-hidden.mp3"
+            },
+            {
+              "id": "sec-primes",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "callout",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "cues": 6,
+              "audioFile": "sec_03_sec-primes.mp3"
+            }
+          ],
+          "hasStudioAudio": true,
+          "manifestCourse": "why_pi",
+          "manifestLesson": "lesson_05",
+          "manifestLoaded": true,
+          "manifestKeys": [
+            "sec-leibniz-series",
+            "sec-circle-hidden",
+            "sec-primes"
+          ]
+        },
+        "non_narration_types": [],
+        "mp3_durations_ms": {
+          "sec-leibniz-series": 86376.0,
+          "sec-circle-hidden": 59136.0,
+          "sec-primes": 87168.0
+        },
+        "section_count": 3,
+        "cue_count": 17,
+        "figure_count": 3,
+        "total_duration_s": 231.94
+      },
+      "all_passed": true
+    },
+    "06": {
+      "lesson": "lesson_06",
+      "checks": {
+        "http_200": true,
+        "no_page_errors": true,
+        "dom_manifest_ids": true,
+        "dom_manifest_cue_counts": true,
+        "dom_manifest_cue_types": true,
+        "audio_binding": true,
+        "manifest_loaded": true,
+        "manifest_metadata": true,
+        "no_duplicate_sections": true,
+        "no_duplicate_cue_indices": true,
+        "no_quiz_media_types": true,
+        "valid_json": true,
+        "js_matches_json": true,
+        "js_preloaded": true,
+        "no_forbidden_labels": true,
+        "clean_scripts": true,
+        "mp3_nonzero_and_matching": true,
+        "350ms_gaps": true,
+        "manifest_version_bumped": true,
+        "placeholder_backed_up": true
+      },
+      "errors": [],
+      "info": {
+        "benign_console": [],
+        "console_errors": [],
+        "parity": {
+          "dom": [
+            {
+              "id": "sec-bell-curve",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "cuesLoaded": 5,
+              "audioFile": "../../assets/audio/why_pi/lesson_06/sec_01_sec-bell-curve.mp3"
+            },
+            {
+              "id": "sec-integral-trick",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "p",
+                "formula-box",
+                "formula-box"
+              ],
+              "cuesLoaded": 7,
+              "audioFile": "../../assets/audio/why_pi/lesson_06/sec_02_sec-integral-trick.mp3"
+            },
+            {
+              "id": "sec-herschel-maxwell",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "callout",
+                "formula-box"
+              ],
+              "cuesLoaded": 6,
+              "audioFile": "../../assets/audio/why_pi/lesson_06/sec_03_sec-herschel-maxwell.mp3"
+            }
+          ],
+          "manifest": [
+            {
+              "id": "sec-bell-curve",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "cues": 5,
+              "audioFile": "sec_01_sec-bell-curve.mp3"
+            },
+            {
+              "id": "sec-integral-trick",
+              "types": [
+                "h2",
+                "p",
+                "p",
+                "figure",
+                "p",
+                "formula-box",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "cues": 7,
+              "audioFile": "sec_02_sec-integral-trick.mp3"
+            },
+            {
+              "id": "sec-herschel-maxwell",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "callout",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "cues": 6,
+              "audioFile": "sec_03_sec-herschel-maxwell.mp3"
+            }
+          ],
+          "hasStudioAudio": true,
+          "manifestCourse": "why_pi",
+          "manifestLesson": "lesson_06",
+          "manifestLoaded": true,
+          "manifestKeys": [
+            "sec-bell-curve",
+            "sec-integral-trick",
+            "sec-herschel-maxwell"
+          ]
+        },
+        "non_narration_types": [],
+        "mp3_durations_ms": {
+          "sec-bell-curve": 66480.0,
+          "sec-integral-trick": 97200.0,
+          "sec-herschel-maxwell": 87360.0
+        },
+        "section_count": 3,
+        "cue_count": 18,
+        "figure_count": 3,
+        "total_duration_s": 250.24
+      },
+      "all_passed": true
+    },
+    "07": {
+      "lesson": "lesson_07",
+      "checks": {
+        "http_200": true,
+        "no_page_errors": true,
+        "dom_manifest_ids": true,
+        "dom_manifest_cue_counts": true,
+        "dom_manifest_cue_types": true,
+        "audio_binding": true,
+        "manifest_loaded": true,
+        "manifest_metadata": true,
+        "no_duplicate_sections": true,
+        "no_duplicate_cue_indices": true,
+        "no_quiz_media_types": true,
+        "valid_json": true,
+        "js_matches_json": true,
+        "js_preloaded": true,
+        "no_forbidden_labels": true,
+        "clean_scripts": true,
+        "mp3_nonzero_and_matching": true,
+        "350ms_gaps": true,
+        "manifest_version_bumped": true,
+        "placeholder_backed_up": true
+      },
+      "errors": [],
+      "info": {
+        "benign_console": [],
+        "console_errors": [],
+        "parity": {
+          "dom": [
+            {
+              "id": "sec-wallis-product",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "cuesLoaded": 5,
+              "audioFile": "../../assets/audio/why_pi/lesson_07/sec_01_sec-wallis-product.mp3"
+            },
+            {
+              "id": "sec-sin-integrals",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "formula-box",
+                "formula-box"
+              ],
+              "cuesLoaded": 6,
+              "audioFile": "../../assets/audio/why_pi/lesson_07/sec_02_sec-sin-integrals.mp3"
+            },
+            {
+              "id": "sec-geometric-proof",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "callout",
+                "formula-box"
+              ],
+              "cuesLoaded": 6,
+              "audioFile": "../../assets/audio/why_pi/lesson_07/sec_03_sec-geometric-proof.mp3"
+            }
+          ],
+          "manifest": [
+            {
+              "id": "sec-wallis-product",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "cues": 5,
+              "audioFile": "sec_01_sec-wallis-product.mp3"
+            },
+            {
+              "id": "sec-sin-integrals",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "formula-box",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "cues": 6,
+              "audioFile": "sec_02_sec-sin-integrals.mp3"
+            },
+            {
+              "id": "sec-geometric-proof",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "callout",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "cues": 6,
+              "audioFile": "sec_03_sec-geometric-proof.mp3"
+            }
+          ],
+          "hasStudioAudio": true,
+          "manifestCourse": "why_pi",
+          "manifestLesson": "lesson_07",
+          "manifestLoaded": true,
+          "manifestKeys": [
+            "sec-wallis-product",
+            "sec-sin-integrals",
+            "sec-geometric-proof"
+          ]
+        },
+        "non_narration_types": [],
+        "mp3_durations_ms": {
+          "sec-wallis-product": 70032.0,
+          "sec-sin-integrals": 87480.0,
+          "sec-geometric-proof": 82776.0
+        },
+        "section_count": 3,
+        "cue_count": 17,
+        "figure_count": 3,
+        "total_duration_s": 239.55
+      },
+      "all_passed": true
+    },
+    "08": {
+      "lesson": "lesson_08",
+      "checks": {
+        "http_200": true,
+        "no_page_errors": true,
+        "dom_manifest_ids": true,
+        "dom_manifest_cue_counts": true,
+        "dom_manifest_cue_types": true,
+        "audio_binding": true,
+        "manifest_loaded": true,
+        "manifest_metadata": true,
+        "no_duplicate_sections": true,
+        "no_duplicate_cue_indices": true,
+        "no_quiz_media_types": true,
+        "valid_json": true,
+        "js_matches_json": true,
+        "js_preloaded": true,
+        "no_forbidden_labels": true,
+        "clean_scripts": true,
+        "mp3_nonzero_and_matching": true,
+        "350ms_gaps": true,
+        "manifest_version_bumped": true,
+        "placeholder_backed_up": true
+      },
+      "errors": [],
+      "info": {
+        "benign_console": [],
+        "console_errors": [],
+        "parity": {
+          "dom": [
+            {
+              "id": "sec-early-notation",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "formula-box"
+              ],
+              "cuesLoaded": 4,
+              "audioFile": "../../assets/audio/why_pi/lesson_08/sec_01_sec-early-notation.mp3"
+            },
+            {
+              "id": "sec-euler-pi",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "callout",
+                "formula-box"
+              ],
+              "cuesLoaded": 6,
+              "audioFile": "../../assets/audio/why_pi/lesson_08/sec_02_sec-euler-pi.mp3"
+            },
+            {
+              "id": "sec-today",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "cuesLoaded": 5,
+              "audioFile": "../../assets/audio/why_pi/lesson_08/sec_03_sec-today.mp3"
+            }
+          ],
+          "manifest": [
+            {
+              "id": "sec-early-notation",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "cues": 4,
+              "audioFile": "sec_01_sec-early-notation.mp3"
+            },
+            {
+              "id": "sec-euler-pi",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "callout",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "cues": 6,
+              "audioFile": "sec_02_sec-euler-pi.mp3"
+            },
+            {
+              "id": "sec-today",
+              "types": [
+                "h2",
+                "p",
+                "figure",
+                "p",
+                "formula-box"
+              ],
+              "indices": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "cues": 5,
+              "audioFile": "sec_03_sec-today.mp3"
+            }
+          ],
+          "hasStudioAudio": true,
+          "manifestCourse": "why_pi",
+          "manifestLesson": "lesson_08",
+          "manifestLoaded": true,
+          "manifestKeys": [
+            "sec-early-notation",
+            "sec-euler-pi",
+            "sec-today"
+          ]
+        },
+        "non_narration_types": [],
+        "mp3_durations_ms": {
+          "sec-early-notation": 49920.0,
+          "sec-euler-pi": 85128.0,
+          "sec-today": 67128.0
+        },
+        "section_count": 3,
+        "cue_count": 15,
+        "figure_count": 3,
+        "total_duration_s": 201.55
+      },
+      "all_passed": true
+    }
+  },
+  "summary": {
+    "passed": true,
+    "total_lessons": 8,
+    "total_cues": 151,
+    "total_figures": 26,
+    "total_duration_s": 2144.9
+  }
+}

@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3Blue1Brown বাংলা — মিশন কন্ট্রোল ও রিয়েলটাইম প্রোগ্রেস বোর্ড</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- KaTeX for formula previews -->
+  <link rel="stylesheet" href="assets/libs/katex/katex.min.css" />
+  <script defer src="assets/libs/katex/katex.min.js"></script>
+
+  <style>
+    /* CSS Variables & Theme Definitions */
+    :root {
+      --bg-base: #090d16;
+      --bg-surface: #0f172a;
+      --bg-card: #141e33;
+      --bg-card-hover: #1a2744;
+      --bg-glass: rgba(15, 23, 42, 0.75);
+      --border: #233554;
+      --border-subtle: #1e293b;
+      --border-focus: #38bdf8;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --primary: #38bdf8;
+      --primary-glow: rgba(56, 189, 248, 0.25);
+      --accent-pi-blue: #74C0E3;
+      --accent-pi-brown: #8C6239;
+      --success: #10b981;
+      --success-bg: rgba(16, 185, 129, 0.12);
+      --warning: #f59e0b;
+      --warning-bg: rgba(245, 158, 11, 0.12);
+      --info: #3b82f6;
+      --info-bg: rgba(59, 130, 246, 0.12);
+      --danger: #ef4444;
+      --purple: #a855f7;
+      --purple-bg: rgba(168, 85, 247, 0.12);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-pill: 9999px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-bengali: 'Hind Siliguri', sans-serif;
+      --font-mono: 'Fira Code', monospace;
+    }
+
+    [data-theme="light"] {
+      --bg-base: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-card: #f1f5f9;
+      --bg-card-hover: #e2e8f0;
+      --bg-glass: rgba(255, 255, 255, 0.85);
+      --border: #cbd5e1;
+      --border-subtle: #e2e8f0;
+      --border-focus: #0284c7;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #94a3b8;
+      --primary: #0284c7;
+      --primary-glow: rgba(2, 132, 199, 0.2);
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.15s ease;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .bn {
+      font-family: var(--font-bengali);
+    }
+
+    .mono {
+      font-family: var(--font-mono);
+    }
+
+    /* Ambient background grid */
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Layout Wrapper */
+    .dashboard-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 24px 20px 80px;
+    }
+
+    /* Header & Navigation Bar */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 16px 24px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+      backdrop-filter: blur(12px);
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .pi-logo {
+      width: 46px;
+      height: 46px;
+      cursor: pointer;
+      filter: drop-shadow(0 2px 8px rgba(116, 192, 227, 0.35));
+    }
+
+    .brand-text h1 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-text .sub-title {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-family: var(--font-bengali);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-live-pulse {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 2px 10px;
+      background: var(--success-bg);
+      border: 1px solid var(--success);
+      color: var(--success);
+      font-size: 0.72rem;
+      font-weight: 700;
+      border-radius: var(--radius-pill);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--success);
+      box-shadow: 0 0 8px var(--success);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.4); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .btn:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0284c7, #0ea5e9);
+      border-color: #38bdf8;
+      color: #ffffff;
+      box-shadow: 0 4px 12px var(--primary-glow);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #0369a1, #0284c7);
+      border-color: #7dd3fc;
+    }
+
+    .theme-toggle-btn {
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-md);
+    }
+
+    /* Metric Cards Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .metric-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px 22px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--card-accent, var(--primary));
+    }
+
+    .metric-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .metric-icon {
+      font-size: 1.25rem;
+      opacity: 0.8;
+    }
+
+    .metric-value {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text);
+      font-family: var(--font-mono);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .metric-sub {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .progress-bar-wrap {
+      width: 100%;
+      height: 6px;
+      background: var(--bg-card);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: var(--radius-pill);
+      background: linear-gradient(90deg, #38bdf8, #10b981);
+      transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Filter Controls Bar */
+    .controls-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding: 14px 20px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 8px 14px;
+      flex: 1;
+      max-width: 380px;
+    }
+
+    .search-box:focus-within {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 2px var(--primary-glow);
+    }
+
+    .search-input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-size: 0.9rem;
+      width: 100%;
+      font-family: var(--font-bengali);
+    }
+
+    .search-input::placeholder {
+      color: var(--text-dim);
+    }
+
+    .filter-tabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .filter-btn:hover {
+      background: var(--bg-card-hover);
+      color: var(--text);
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      color: #090d16;
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+
+    .filter-count {
+      padding: 1px 6px;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 0, 0, 0.2);
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+    }
+
+    /* Course Sections */
+    .course-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      margin-bottom: 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .course-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      background: linear-gradient(to right, var(--bg-surface), var(--bg-card));
+    }
+
+    .course-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .course-accent-pill {
+      width: 12px;
+      height: 38px;
+      border-radius: var(--radius-pill);
+      background: var(--course-accent, var(--primary));
+    }
+
+    .course-title-group h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .course-title-group .course-bn {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-family: var(--font-bengali);
+    }
+
+    .course-metrics-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .badge-completed {
+      background: var(--success-bg);
+      border: 1px solid var(--success);
+      color: var(--success);
+    }
+
+    .badge-live {
+      background: var(--info-bg);
+      border: 1px solid var(--info);
+      color: var(--info);
+    }
+
+    .badge-under-review {
+      background: rgba(251, 191, 36, 0.12);
+      border: 1px solid #fbbf24;
+      color: #fbbf24;
+    }
+
+    .badge-prod {
+      background: var(--warning-bg);
+      border: 1px solid var(--warning);
+      color: var(--warning);
+    }
+
+    .badge-planned {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+    }
+
+    /* Lessons Table / Card Grid */
+    .lessons-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .lessons-table th {
+      padding: 12px 20px;
+      background: var(--bg-card);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .lessons-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.88rem;
+      vertical-align: middle;
+    }
+
+    .lessons-table tr:hover td {
+      background: var(--bg-card-hover);
+    }
+
+    .lesson-num-badge {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--primary);
+      font-size: 0.82rem;
+      display: inline-block;
+    }
+
+    .lesson-title-cell {
+      max-width: 320px;
+    }
+
+    .lesson-en-title {
+      font-weight: 600;
+      color: var(--text);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .lesson-bn-title {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: var(--font-bengali);
+      display: block;
+    }
+
+    /* Matrix Check Indicators */
+    .feature-grid {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .feat-tag {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      cursor: help;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      position: relative;
+    }
+
+    .feat-tag.active {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: #38bdf8;
+      color: #38bdf8;
+    }
+
+    .feat-tag.active-green {
+      background: rgba(16, 185, 129, 0.15);
+      border-color: #10b981;
+      color: #10b981;
+    }
+
+    .feat-tag.active-purple {
+      background: rgba(168, 85, 247, 0.15);
+      border-color: #c084fc;
+      color: #c084fc;
+    }
+
+    .action-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .action-btn {
+      padding: 5px 10px;
+      font-size: 0.78rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+    }
+
+    .action-btn:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .action-btn.primary {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: #38bdf8;
+      color: #38bdf8;
+    }
+
+    .action-btn.primary:hover {
+      background: #38bdf8;
+      color: #090d16;
+    }
+
+    .action-btn.disabled {
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    /* Modal / Inspector Dialog */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      max-width: 720px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 28px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+    }
+
+    .modal-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      color: var(--text);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .lessons-table th:nth-child(4),
+      .lessons-table td:nth-child(4) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .controls-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .search-box {
+        max-width: 100%;
+      }
+      .lessons-table th:nth-child(3),
+      .lessons-table td:nth-child(3) {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<div class="dashboard-container">
+
+  <!-- ═══════════ TOP BAR ═══════════ -->
+  <header class="top-bar">
+    <div class="brand-section">
+      <!-- 3B1B Pi Creature SVG Logo -->
+      <a href="index.html" title="হোম পেজে ফিরে যান">
+        <svg class="pi-logo" viewBox="-50 -50 100 100" aria-label="৩ব্লু১ব্রাউন">
+          <path fill="#74C0E3" d="M 0 0 L 0 -50 A 50 50 0 1 1 -50 0 z"/>
+          <path fill="#8C6239" d="M 0 0 L 0 -50 A 50 50 0 0 0 -50 0 z"/>
+          <circle cx="0" cy="0" r="22" fill="#000"/>
+          <circle cx="-8" cy="-6" r="7" fill="#fff"/>
+          <circle cx="8" cy="-6" r="7" fill="#fff"/>
+          <circle cx="-7" cy="-6" r="3.5" fill="#000"/>
+          <circle cx="9" cy="-6" r="3.5" fill="#000"/>
+          <path d="M -10 6 Q 0 14 10 6" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </a>
+      <div class="brand-text">
+        <h1>
+          3Blue1Brown বাংলা মিশন কন্ট্রোল
+          <span class="badge-live-pulse"><span class="pulse-dot"></span> LIVE SCAN</span>
+        </h1>
+        <div class="sub-title">
+          <span>৩ব্লু১ব্রাউন বাংলা প্ল্যাটফর্ম ইঞ্জিনিয়ারিং ড্যাশবোর্ড</span>
+          <span>·</span>
+          <span class="mono">Edge-TTS bn-BD-PradeepNeural & KaTeX</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="btn" id="btnRefresh" title="প্ল্যাটফর্ম রি-স্ক্যান করুন">
+        <span>🔄</span> <span class="bn">স্ক্যান রিফ্রেশ</span>
+      </button>
+      <a href="index.html" class="btn" target="_blank">
+        <span>🌐</span> <span class="bn">ওয়েব প্ল্যাটফর্ম</span>
+      </a>
+      <a href="sandbox_components/demo_components.html" class="btn btn-primary" target="_blank">
+        <span>🧩</span> <span>কম্পোনেন্টস স্যান্ডবক্স</span>
+      </a>
+      <button class="btn theme-toggle-btn" id="themeToggle" title="থিম পরিবর্তন (Dark/Light)">
+        <span id="themeIcon">☀️</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════ METRICS SUMMARY CARDS ═══════════ -->
+  <div class="metrics-grid">
+    <div class="metric-card" style="--card-accent: #38bdf8;">
+      <div class="metric-top">
+        <span class="metric-label">মোট কারিকুলাম লেসন</span>
+        <span class="metric-icon">📚</span>
+      </div>
+      <div class="metric-value" id="statTotalLessons">53</div>
+      <div class="metric-sub">
+        <span>৬টি পূর্ণাঙ্গ সিরিজ ট্র্যাকিং</span>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" style="width: 100%;"></div>
+      </div>
+    </div>
+
+    <div class="metric-card" style="--card-accent: #10b981;">
+      <div class="metric-top">
+        <span class="metric-label">বাংলা মাস্টার স্ক্রিপ্ট</span>
+        <span class="metric-icon">📜</span>
+      </div>
+      <div class="metric-value" id="statMasterScripts">29</div>
+      <div class="metric-sub">
+        <span id="statScriptPct">54.7%</span> <span>অনুবাদিত ও প্যাডাগোজিকালি ভেরিফাইড</span>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="fillScript" style="width: 54.7%; background: #10b981;"></div>
+      </div>
+    </div>
+
+    <div class="metric-card" style="--card-accent: #f59e0b;">
+      <div class="metric-top">
+        <span class="metric-label">অডিও ম্যানিফেস্ট সিঙ্ক</span>
+        <span class="metric-icon">🎙️</span>
+      </div>
+      <div class="metric-value" id="statManifests">31</div>
+      <div class="metric-sub">
+        <span id="statManifestPct">58.5%</span> <span>ক্যারাওকে হাইলাইট সিঙ্ক রেডি</span>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="fillManifest" style="width: 58.5%; background: #f59e0b;"></div>
+      </div>
+    </div>
+
+    <div class="metric-card" style="--card-accent: #a855f7;">
+      <div class="metric-top">
+        <span class="metric-label">লাইভ এইচটিএমএল পেজ</span>
+        <span class="metric-icon">💻</span>
+      </div>
+      <div class="metric-value" id="statLivePages">10</div>
+      <div class="metric-sub">
+        <span>১০টি পেজ অ্যাক্টিভ ও ইন্টারঅ্যাক্টিভ</span>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="fillLive" style="width: 18.8%; background: #a855f7;"></div>
+      </div>
+    </div>
+
+    <div class="metric-card" style="--card-accent: #ec4899;">
+      <div class="metric-top">
+        <span class="metric-label">কম্পোনেন্টস আরকিটেকচার</span>
+        <span class="metric-icon">🧩</span>
+      </div>
+      <div class="metric-value" id="statComponents">১০ / ৫৩</div>
+      <div class="metric-sub">
+        <span>&lt;b1b-*&gt; স্যান্ডবক্স লাইব্রেরি প্রস্তুত</span>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" style="width: 19%; background: #ec4899;"></div>
+      </div>
+    </div>
+
+    <div class="metric-card" style="--card-accent: #3b82f6;">
+      <div class="metric-top">
+        <span class="metric-label">সামগ্রিক প্ল্যাটফর্ম প্রোগ্রেস</span>
+        <span class="metric-icon">🚀</span>
+      </div>
+      <div class="metric-value" id="statOverallPct">58%</div>
+      <div class="metric-sub">
+        <span>স্ক্রিপ্ট + ক্যারাওকে + কাটেক</span>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="fillOverall" style="width: 58%;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ FEATURE LEGEND BAR ═══════════ -->
+  <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 10px 18px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.78rem;">
+    <span style="font-weight: 700; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
+      <span>💡</span> <span>মেট্রিক্স নির্দেশিকা:</span>
+    </span>
+    <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; color: var(--text-dim);">
+      <span>📜 <strong>মাস্টার স্ক্রিপ্ট</strong> (১০০% 3B1B প্যারালাল ডায়ালগ)</span>
+      <span>🎙️ <strong>অডিও ম্যানিফেস্ট</strong> (Edge-TTS bn-BD-PradeepNeural ক্যারাওকে)</span>
+      <span>🔊 <strong>ফুল অডিও ডাব</strong> (মাস্টার MP3)</span>
+      <span>∑ <strong>KaTeX Math</strong> (অফলাইন ল্যাটেক্স)</span>
+      <span>❓ <strong>ইন্টারঅ্যাক্টিভ কুইজ</strong> (স্ব-মূল্যায়ন)</span>
+      <span>🧪 <strong>সিমুলেশন ল্যাব</strong> (ক্যানভাস ভিজ্যুয়ালাইজার)</span>
+      <span>🧩 <strong>ওয়েব কম্পোনেন্টস</strong> (&lt;b1b-*&gt; মডুলার আর্কিটেকচার)</span>
+    </div>
+  </div>
+
+  <!-- ═══════════ CONTROLS & FILTER BAR ═══════════ -->
+  <div class="controls-bar">
+    <div class="search-box">
+      <span>🔍</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="অধ্যায় বা বিষয়ের নাম খুঁজুন (বাংলা বা ইংরেজিতে)..." />
+    </div>
+
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">
+        <span>সকল কোর্স</span>
+        <span class="filter-count" id="countAll">53</span>
+      </button>
+      <button class="filter-btn" data-filter="linear_algebra">
+        <span>লিনিয়ার অ্যালজেব্রা</span>
+        <span class="filter-count">15</span>
+      </button>
+      <button class="filter-btn" data-filter="calculus">
+        <span>ক্যালকুলাস</span>
+        <span class="filter-count">12</span>
+      </button>
+      <button class="filter-btn" data-filter="neural_networks">
+        <span>নিউরাল নেটওয়ার্ক</span>
+        <span class="filter-count">4</span>
+      </button>
+      <button class="filter-btn" data-filter="differential_equations">
+        <span>ডিফারেনশিয়াল</span>
+        <span class="filter-count">6</span>
+      </button>
+      <button class="filter-btn" data-filter="probability">
+        <span>সম্ভাব্যতা</span>
+        <span class="filter-count">6</span>
+      </button>
+      <button class="filter-btn" data-filter="lockdown_math">
+        <span>লকডাউন ম্যাথ</span>
+        <span class="filter-count">10</span>
+      </button>
+      <button class="filter-btn" data-status="completed" style="margin-left: 8px; border-color: var(--success); color: var(--success);">
+        <span>✅ সম্পূর্ণ</span>
+      </button>
+      <button class="filter-btn" data-status="under_review" style="border-color: #fbbf24; color: #fbbf24;">
+        <span>🔍 আন্ডার রিভিউ</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════════ COURSES BOARD CONTAINER ═══════════ -->
+  <main id="coursesContainer">
+    <!-- Populated dynamically via board_data.json -->
+  </main>
+
+</div>
+
+<!-- ═══════════ DETAIL INSPECTION MODAL ═══════════ -->
+<div class="modal-overlay" id="inspectModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">লেসন বিস্তারিত পরিদর্শন</div>
+      <button class="modal-close" id="modalClose">&times;</button>
+    </div>
+    <div id="modalBody">
+      <!-- Dynamic detailed JSON & features view -->
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    'use strict';
+
+    // Theme state management
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+
+    function applyTheme(t) {
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('3b1b-theme', t);
+      themeIcon.textContent = t === 'light' ? '🌙' : '☀️';
+    }
+
+    const savedTheme = localStorage.getItem('3b1b-theme') || 'dark';
+    applyTheme(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    // Board Data state
+    let catalog = [];
+    let activeFilter = 'all';
+    let activeStatus = null;
+    let searchQuery = '';
+
+    const container = document.getElementById('coursesContainer');
+    const searchInput = document.getElementById('searchInput');
+
+    async function loadData() {
+      try {
+        const res = await fetch('board_data.json?v=' + Date.now());
+        catalog = await res.json();
+        updateSummaryStats();
+        renderBoard();
+      } catch (err) {
+        console.error('Failed to load board_data.json:', err);
+        container.innerHTML = `<div style="padding: 40px; text-align: center; color: var(--danger);">
+          <h3>ডাটা লোড করতে সমস্যা হয়েছে</h3>
+          <p>${err.message}</p>
+        </div>`;
+      }
+    }
+
+    function updateSummaryStats() {
+      let total = 0;
+      let scripts = 0;
+      let manifests = 0;
+      let live = 0;
+      let completed = 0;
+
+      catalog.forEach(c => {
+        c.lessons.forEach(l => {
+          total++;
+          if (l.has_master_script) scripts++;
+          if (l.has_manifest) manifests++;
+          if (l.has_html) live++;
+          if (l.status === 'completed') completed++;
+        });
+      });
+
+      document.getElementById('statTotalLessons').textContent = total;
+      document.getElementById('statMasterScripts').textContent = scripts;
+      document.getElementById('statManifests').textContent = manifests;
+      document.getElementById('statLivePages').textContent = live;
+
+      const scriptPct = ((scripts / total) * 100).toFixed(1);
+      const manifestPct = ((manifests / total) * 100).toFixed(1);
+      const overallPct = Math.round(((scripts * 0.3) + (manifests * 0.3) + (live * 0.4)) / total * 100);
+
+      document.getElementById('statScriptPct').textContent = scriptPct + '%';
+      document.getElementById('fillScript').style.width = scriptPct + '%';
+
+      document.getElementById('statManifestPct').textContent = manifestPct + '%';
+      document.getElementById('fillManifest').style.width = manifestPct + '%';
+
+      document.getElementById('statOverallPct').textContent = overallPct + '%';
+      document.getElementById('fillOverall').style.width = overallPct + '%';
+    }
+
+    function renderBoard() {
+      container.innerHTML = '';
+
+      catalog.forEach(course => {
+        if (activeFilter !== 'all' && course.id !== activeFilter) {
+          return;
+        }
+
+        // Filter lessons
+        const filteredLessons = course.lessons.filter(l => {
+          const matchesQuery = !searchQuery || 
+            l.title_en.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            l.title_bn.includes(searchQuery) ||
+            l.num.includes(searchQuery);
+
+          const matchesStatus = !activeStatus || l.status === activeStatus;
+
+          return matchesQuery && matchesStatus;
+        });
+
+        if (filteredLessons.length === 0 && (searchQuery || activeStatus)) {
+          return;
+        }
+
+        const section = document.createElement('section');
+        section.className = 'course-section';
+        section.style.setProperty('--course-accent', course.accent);
+
+        // Calculate progress for this course
+        const completedCount = course.lessons.filter(l => l.status === 'completed').length;
+        const totalCount = course.total;
+        const coursePct = Math.round((completedCount / totalCount) * 100);
+
+        section.innerHTML = `
+          <div class="course-header">
+            <div class="course-info">
+              <div class="course-accent-pill"></div>
+              <div class="course-title-group">
+                <h2>
+                  ${course.title}
+                  <span class="badge" style="background: rgba(56, 189, 248, 0.1); border: 1px solid ${course.accent}; color: ${course.accent};">
+                    ${course.badge}
+                  </span>
+                </h2>
+                <div class="course-bn">${course.title_bn} · ${course.total}টি লেসন</div>
+              </div>
+            </div>
+            <div class="course-metrics-badge">
+              <span class="badge badge-completed">${completedCount} / ${totalCount} চালু</span>
+              <span class="badge" style="background: var(--bg-card); color: var(--text-dim);">${coursePct}% সম্পন্ন</span>
+            </div>
+          </div>
+          <table class="lessons-table">
+            <thead>
+              <tr>
+                <th style="width: 70px;">নম্বর</th>
+                <th>অধ্যায়ের শিরোনাম</th>
+                <th style="width: 140px;">স্ট্যাটাস</th>
+                <th>ম্যাট্রিক্স ও আর্কিটেকচার ফিচার</th>
+                <th style="width: 220px; text-align: right;">অ্যাকশন</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${filteredLessons.map(l => {
+                let statusBadge = '';
+                if (l.status === 'completed') {
+                  statusBadge = '<span class="badge badge-completed">✅ সম্পূর্ণ ভেরিফাইড</span>';
+                } else if (l.status === 'under_review') {
+                  statusBadge = '<span class="badge badge-under-review">🔍 আন্ডার রিভিউ</span>';
+                } else {
+                  statusBadge = '<span class="badge badge-planned">🗓️ পরিকল্পিত</span>';
+                }
+
+                return `
+                  <tr>
+                    <td>
+                      <span class="lesson-num-badge">${l.num}</span>
+                    </td>
+                    <td class="lesson-title-cell">
+                      <span class="lesson-en-title">${l.title_en}</span>
+                      <span class="lesson-bn-title">${l.title_bn}</span>
+                    </td>
+                    <td>${statusBadge}</td>
+                    <td>
+                      <div class="feature-grid">
+                        <span class="feat-tag ${l.has_master_script ? 'active-green' : ''}" title="মাস্টার স্ক্রিপ্ট: ${l.has_master_script ? 'রেডি' : 'অনুপস্থিত'}">
+                          📜
+                        </span>
+                        <span class="feat-tag ${l.has_manifest ? 'active' : ''}" title="অডিও ম্যানিফেস্ট সিঙ্ক: ${l.has_manifest ? 'হ্যাঁ' : 'নেই'}">
+                          🎙️
+                        </span>
+                        <span class="feat-tag ${l.has_vault_mp3 ? 'active-purple' : ''}" title="সম্পূর্ণ বাংলা ডাব মাস্টার: ${l.has_vault_mp3 ? 'উপলব্ধ' : 'নেই'}">
+                          🔊
+                        </span>
+                        <span class="feat-tag ${l.has_katex ? 'active' : ''}" title="কাটেক গণিত সূত্র: ${l.has_katex ? 'সক্রিয়' : 'নেই'}">
+                          ∑
+                        </span>
+                        <span class="feat-tag ${l.has_quiz ? 'active-green' : ''}" title="ইন্টারঅ্যাক্টিভ কুইজ: ${l.has_quiz ? 'যুক্ত' : 'নেই'}">
+                          ❓
+                        </span>
+                        <span class="feat-tag ${l.has_lab ? 'active-purple' : ''}" title="ভিজ্যুয়ালাইজার / সিমুলেশন ল্যাব: ${l.has_lab ? 'সক্রিয়' : 'নেই'}">
+                          🧪
+                        </span>
+                        <span class="feat-tag ${l.uses_components ? 'active' : ''}" title="ওয়েব কম্পোনেন্টস &lt;b1b-*&gt;: ${l.uses_components ? 'মাইগ্রেটেড' : 'ক্লাসিক'}">
+                          🧩
+                        </span>
+                      </div>
+                    </td>
+                    <td style="text-align: right;">
+                      <div class="action-links" style="justify-content: flex-end;">
+                        ${l.has_html ? 
+                          `<a href="${l.html_path}" class="action-btn primary" target="_blank" title="লাইভ পেজ দেখুন">
+                            <span>🚀</span> <span>খুলুন</span>
+                          </a>` : 
+                          `<span class="action-btn disabled">অফলাইন</span>`
+                        }
+                        ${l.has_data ?
+                          `<a href="${l.data_path}" class="action-btn" target="_blank" title="ডাটা JSON দেখুন">
+                            <span>JSON</span>
+                          </a>` : ''
+                        }
+                        <button class="action-btn" onclick="inspectLesson('${course.id}', '${l.num}')" title="বিস্তারিত পরিদর্শন">
+                          <span>🔍</span>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                `;
+              }).join('')}
+            </tbody>
+          </table>
+        `;
+
+        container.appendChild(section);
+      });
+
+      if (container.children.length === 0) {
+        container.innerHTML = `
+          <div style="padding: 60px 20px; text-align: center; color: var(--text-dim);">
+            <div style="font-size: 2.5rem; margin-bottom: 12px;">🔎</div>
+            <h3>কোনো লেসন খুঁজে পাওয়া যায়নি</h3>
+            <p>অনুসন্ধান ফিল্টার পরিবর্তন করে আবার চেষ্টা করুন।</p>
+          </div>
+        `;
+      }
+    }
+
+    // Filter clicks
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        if (btn.dataset.filter) {
+          activeFilter = btn.dataset.filter;
+          activeStatus = null;
+        } else if (btn.dataset.status) {
+          activeStatus = btn.dataset.status;
+        }
+
+        renderBoard();
+      });
+    });
+
+    // Search input
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim();
+      renderBoard();
+    });
+
+    // Refresh button
+    document.getElementById('btnRefresh').addEventListener('click', () => {
+      const btn = document.getElementById('btnRefresh');
+      btn.style.opacity = '0.5';
+      loadData().then(() => {
+        btn.style.opacity = '1';
+      });
+    });
+
+    // Inspector Modal
+    window.inspectLesson = function(courseId, num) {
+      const course = catalog.find(c => c.id === courseId);
+      if (!course) return;
+      const lesson = course.lessons.find(l => l.num === num);
+      if (!lesson) return;
+
+      document.getElementById('modalTitle').textContent = `${course.title} — অধ্যায় ${lesson.num}`;
+      document.getElementById('modalBody').innerHTML = `
+        <div style="margin-bottom: 18px;">
+          <h3 style="color: var(--primary); margin-bottom: 4px;">${lesson.title_en}</h3>
+          <p style="font-family: var(--font-bengali); color: var(--text-muted); font-size: 1.1rem;">${lesson.title_bn}</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+          <div style="background: var(--bg-card); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <div style="font-size: 0.75rem; color: var(--text-dim);">ওয়েব পেজ পাথ</div>
+            <div class="mono" style="font-size: 0.85rem; color: ${lesson.has_html ? 'var(--success)' : 'var(--danger)'};">
+              ${lesson.html_path || 'Not created yet'}
+            </div>
+          </div>
+          <div style="background: var(--bg-card); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <div style="font-size: 0.75rem; color: var(--text-dim);">ডাটা সোর্স</div>
+            <div class="mono" style="font-size: 0.85rem; color: ${lesson.has_data ? 'var(--success)' : 'var(--danger)'};">
+              ${lesson.data_path || 'No separate data JSON'}
+            </div>
+          </div>
+          <div style="background: var(--bg-card); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <div style="font-size: 0.75rem; color: var(--text-dim);">অডিও ম্যানিফেস্ট (ক্যারাওকে)</div>
+            <div class="mono" style="font-size: 0.85rem; color: ${lesson.has_manifest ? 'var(--success)' : 'var(--danger)'};">
+              ${lesson.manifest_path || 'None'}
+            </div>
+          </div>
+          <div style="background: var(--bg-card); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <div style="font-size: 0.75rem; color: var(--text-dim);">মাস্টার অডিও সেগমেন্ট সংখ্যা</div>
+            <div class="mono" style="font-size: 0.85rem; color: var(--primary);">
+              ${lesson.audio_count} টি সেগমেন্ট MP3
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 14px;">
+          <h4 style="margin-bottom: 8px;">আর্কিটেকচার কমপ্লায়েন্স</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem;">
+            <li>${lesson.has_master_script ? '✅' : '❌'} বাংলা মাস্টার স্ক্রিপ্ট (Original 3B1B parity)</li>
+            <li>${lesson.has_manifest ? '✅' : '❌'} এজ-টিটিএস অডিও সিঙ্ক (bn-BD-PradeepNeural + Karaoke)</li>
+            <li>${lesson.has_katex ? '✅' : '❌'} কাটেক অফলাইন রেন্ডারিং (KaTeX v0.16.11)</li>
+            <li>${lesson.has_quiz ? '✅' : '❌'} স্ব-মূল্যায়ন গণিত কুইজ ইঞ্জিন</li>
+            <li>${lesson.has_lab ? '✅' : '❌'} ভিজ্যুয়ালাইজার / ইন্টারঅ্যাক্টিভ ক্যানভাস ল্যাব</li>
+            <li>${lesson.uses_components ? '✅' : '⚠️'} একক শেল ওয়েব কম্পোনেন্টস &lt;b1b-*&gt;</li>
+          </ul>
+        </div>
+
+        ${lesson.has_vault_mp3 ? `
+          <div style="margin-top: 20px; padding: 14px; background: var(--bg-card); border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <div style="font-weight: 700; margin-bottom: 8px; font-size: 0.85rem; color: var(--primary);">
+              🔊 ডাবিং মাস্টার অডিও শুনুন (Edge-TTS bn-BD-PradeepNeural):
+            </div>
+            <audio controls style="width: 100%; height: 36px;" src="media_vault/lesson_${lesson.num}/3b1b_lesson_${lesson.num}_bangla_master.mp3" preload="none"></audio>
+          </div>
+        ` : ''}
+      `;
+
+      document.getElementById('inspectModal').classList.add('open');
+    };
+
+    document.getElementById('modalClose').addEventListener('click', () => {
+      document.getElementById('inspectModal').classList.remove('open');
+    });
+
+    document.getElementById('inspectModal').addEventListener('click', (e) => {
+      if (e.target.id === 'inspectModal') {
+        document.getElementById('inspectModal').classList.remove('open');
+      }
+    });
+
+    // Initial load
+    loadData();
+
+  })();
+</script>
+
+</body>
+</html>

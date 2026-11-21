@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "engine_used": "dsp",
+  "engine_selection_reason": "DSP mode explicitly selected",
+  "execution_time_sec": 11.767,
+  "input_file": "D:\\Drive\\gub221902131\\My Drive\\my\\INS\\PaperClip-opencode\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\essence_of_linear_algebra\\lesson_01_vectors\\dubbing_pipeline\\3b1b_lesson_01_orig_audio.m4a",
+  "vocal_stem": "D:\\Drive\\gub221902131\\My Drive\\my\\INS\\PaperClip-opencode\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\essence_of_linear_algebra\\lesson_01_vectors\\dubbing_pipeline\\stems_isolated\\3b1b_lesson_01_orig_audio_vocal_isolated.wav",
+  "music_suppressed_stem": "D:\\Drive\\gub221902131\\My Drive\\my\\INS\\PaperClip-opencode\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\essence_of_linear_algebra\\lesson_01_vectors\\dubbing_pipeline\\stems_isolated\\3b1b_lesson_01_orig_audio_vocal_isolated.wav",
+  "residual_music_stem": "D:\\Drive\\gub221902131\\My Drive\\my\\INS\\PaperClip-opencode\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\essence_of_linear_algebra\\lesson_01_vectors\\dubbing_pipeline\\stems_isolated\\3b1b_lesson_01_orig_audio_music_extracted.wav",
+  "halal_audio_guarantee": {
+    "music_elimination_rating": "Compliant (Halal Audio Assured)",
+    "method": "Side-Channel Phase Inversion & Formant Bandpass Filtration",
+    "speech_intelligibility": "High"
+  },
+  "governor_metrics": {
+    "ram_before_percent": 96.2,
+    "ram_after_percent": 96.6,
+    "host_safety_preserved": true
+  }
+}

@@ -1,0 +1,604 @@
+{
+  "platform": "3Blue1Brown Bengali Web Platform",
+  "platform_bn": "৩ব্লু১ব্র.braveheart বাংলা",
+  "version": "1.1.0",
+  "generated": "2026-11-05",
+  "updated": "2026-11-05",
+  "source_of_truth": "https://www.3blue1brown.com/#lessons",
+  "note_en": "Bengali-dubbed videos exist only for linear_algebra lessons 01-05 (see production_audit_tracker.json). All other series are upcoming and link out to the official 3blue1brown.com topic pages in a new tab.",
+  "total_courses": 6,
+  "total_topic_collections": 21,
+  "courses": [
+    {
+      "id": "linear_algebra",
+      "title": "Essence of Linear Algebra",
+      "title_bn": "লিনিয়ার অ্যালজেব্রা",
+      "status": "completed",
+      "status_bn": "সম্পূর্ণ",
+      "lessons_total": 15,
+      "lessons_dubbed": 15,
+      "href": "courses/linear_algebra/index.html",
+      "external": false,
+      "official_url": "https://www.3blue1brown.com/?topic=linear-algebra",
+      "description_en": "Vectors, matrices, determinants, eigenvalues — the core of linear algebra made visual.",
+      "lessons": [
+        {
+          "id": "01",
+          "title_bn": "ভেক্টর আসলে কী?",
+          "title_en": "Vectors, what even are they?",
+          "href": "courses/linear_algebra/lesson_01.html",
+          "duration": "9:52"
+        },
+        {
+          "id": "02",
+          "title_bn": "রৈখিক সমন্বয়, স্প্যান এবং ভিত্তি ভেক্টর",
+          "title_en": "Linear combinations, span, and basis vectors",
+          "href": "courses/linear_algebra/lesson_02.html",
+          "duration": "9:59"
+        },
+        {
+          "id": "03",
+          "title_bn": "রৈখিক রূপান্তর ও ম্যাট্রিক্স",
+          "title_en": "Linear transformations and matrices",
+          "href": "courses/linear_algebra/lesson_03.html",
+          "duration": "10:53"
+        },
+        {
+          "id": "04",
+          "title_bn": "ম্যাট্রিক্স গুণন আসলে রূপান্তরের সংযোজন",
+          "title_en": "Matrix multiplication as composition",
+          "href": "courses/linear_algebra/lesson_04.html",
+          "duration": "10:00"
+        },
+        {
+          "id": "05",
+          "title_bn": "ত্রিমাত্রিক রৈখিক রূপান্তর",
+          "title_en": "Three-dimensional linear transformations",
+          "href": "courses/linear_algebra/lesson_05.html",
+          "duration": "4:46"
+        },
+        {
+          "id": "06",
+          "title_bn": "নির্ণায়ক বা ডিটারমিন্যান্টের জ্যামিতিক তাৎপর্য",
+          "title_en": "The Determinant",
+          "href": "courses/linear_algebra/lesson_06.html",
+          "duration": "10:03"
+        },
+        {
+          "id": "07",
+          "title_bn": "বিপরীত ম্যাট্রিক্স, কলাম স্পেস ও শূন্য স্পেস",
+          "title_en": "Inverse matrices, column space and null space",
+          "href": "courses/linear_algebra/lesson_07.html",
+          "duration": "12:09"
+        },
+        {
+          "id": "08",
+          "title_bn": "অসম আকারের ম্যাট্রিক্স ও মাত্রার রূপান্তর",
+          "title_en": "Nonsquare Matrices as Transformations Between Dimensions",
+          "href": "courses/linear_algebra/lesson_08.html",
+          "duration": "4:26"
+        },
+        {
+          "id": "09",
+          "title_bn": "ডট প্রোডাক্ট ও ডুয়ালিটি (দ্বৈততা)",
+          "title_en": "Dot Products and Duality",
+          "href": "courses/linear_algebra/lesson_09.html",
+          "duration": "14:33"
+        },
+        {
+          "id": "10",
+          "title_bn": "ক্রস গুণন ও জ্যামিতিক ওরিয়েন্টেশন",
+          "title_en": "Cross Products",
+          "href": "courses/linear_algebra/lesson_10.html",
+          "duration": "15:04"
+        },
+        {
+          "id": "11",
+          "title_bn": "রৈখিক রূপান্তরের আলোকে ক্রস প্রোডাক্ট ও ডুয়ালিটি",
+          "title_en": "Cross Products in the Light of Linear Transformations",
+          "href": "courses/linear_algebra/lesson_11.html",
+          "duration": "13:05"
+        },
+        {
+          "id": "12",
+          "title_bn": "ক্র্যামারের নিয়ম: একটি জ্যামিতিক ব্যাখ্যা",
+          "title_en": "Cramer's Rule, Explained Geometrically",
+          "href": "courses/linear_algebra/lesson_12.html",
+          "duration": "12:12"
+        },
+        {
+          "id": "13",
+          "title_bn": "ভিত্তি পরিবর্তন ও ভিন্ন দৃষ্টিভঙ্গির রূপান্তর",
+          "title_en": "Change of Basis",
+          "href": "courses/linear_algebra/lesson_13.html",
+          "duration": "12:50"
+        },
+        {
+          "id": "14",
+          "title_bn": "আইগেনভেক্টর ও আইগেনভ্যালু",
+          "title_en": "Eigenvectors and Eigenvalues",
+          "href": "courses/linear_algebra/lesson_14.html",
+          "duration": "17:15"
+        },
+        {
+          "id": "15",
+          "title_bn": "বিমূর্ত ভেক্টর স্পেস ও ফাংশন স্পেস",
+          "title_en": "Abstract Vector Spaces",
+          "href": "courses/linear_algebra/lesson_15.html",
+          "duration": "16:45"
+        }
+      ]
+    },
+    {
+      "id": "calculus",
+      "title": "Essence of Calculus",
+      "title_bn": "ক্যালকুলাসের মূল সারমর্ম",
+      "status": "completed",
+      "status_bn": "সম্পূর্ণ",
+      "lessons_total": 12,
+      "lessons_dubbed": 12,
+      "href": "courses/calculus/index.html",
+      "external": false,
+      "course_url": "courses/calculus/index.html",
+      "official_url": "https://www.3blue1brown.com/?topic=calculus",
+      "description_en": "Limits, derivatives, integrals and the fundamental theorem — calculus as a visual story.",
+      "lessons": [
+        {
+          "id": "01",
+          "title_bn": "অধ্যায় ০১: ক্যালকুলাসের মূল সারমর্ম — ক্ষেত্রফল ও ঢালের রহস্য",
+          "title_en": "The Essence of Calculus",
+          "href": "courses/calculus/lesson_01.html",
+          "duration": "17:04"
+        },
+        {
+          "id": "02",
+          "title_bn": "অধ্যায় ০২: অন্তরজের হেঁয়ালি — তাৎক্ষণিক বেগ ও পরিবর্তনের হার",
+          "title_en": "The Paradox of the Derivative",
+          "href": "courses/calculus/lesson_02.html",
+          "duration": "17:15"
+        },
+        {
+          "id": "03",
+          "title_bn": "জ্যামিতির মাধ্যমে অন্তরজের সূত্র",
+          "title_en": "Derivative formulas through geometry",
+          "href": "courses/calculus/lesson_03.html",
+          "duration": "18:15"
+        },
+        {
+          "id": "04",
+          "title_bn": "",
+          "title_en": "",
+          "href": "courses/calculus/lesson_04.html",
+          "duration": ""
+        },
+        {
+          "id": "05",
+          "title_bn": "অয়লার সংখ্যা e কেন এত বিশেষ? — অবিচ্ছিন্ন পরিবর্তনের মহাজাগতিক গতিসীমা",
+          "title_en": "What's so special about Euler's number e?",
+          "href": "courses/calculus/lesson_05.html",
+          "duration": "14:15"
+        },
+        {
+          "id": "06",
+          "title_bn": "অধ্যায় ০৬: অপ্রত্যক্ষ অন্তরীকরণ বা প্রচ্ছন্ন ব্যবকলন (Implicit Differentiation)",
+          "title_en": "Implicit Differentiation",
+          "href": "courses/calculus/lesson_06.html",
+          "duration": "15:35"
+        },
+        {
+          "id": "07",
+          "title_bn": "সীমা, ল'হোপিতালের নিয়ম ও এপসিলন-ডেল্টা",
+          "title_en": "Limits, L'Hôpital's rule, and epsilon-delta definitions",
+          "href": "courses/calculus/lesson_07.html",
+          "duration": "18:27"
+        },
+        {
+          "id": "08",
+          "title_bn": "অধ্যায় ০৮: যোগজীকরণ ও ক্যালকুলাসের মৌলিক উপপাদ্য (Integration & The Fundamental Theorem of Calculus)",
+          "title_en": "Integration and the fundamental theorem of calculus",
+          "href": "courses/calculus/lesson_08.html",
+          "duration": "20:45"
+        },
+        {
+          "id": "09",
+          "title_bn": "অধ্যায় ০৯: ক্ষেত্রফলের সাথে ঢালের কী সম্পর্ক? (What does area have to do with slope?)",
+          "title_en": "What does area have to do with slope?",
+          "href": "courses/calculus/lesson_09.html",
+          "duration": "13:21"
+        },
+        {
+          "id": "10",
+          "title_bn": "অধ্যায় ১০: টেইলর ধারা ও উচ্চতর সান্নিধ্যকরণ (Taylor series)",
+          "title_en": "Taylor series",
+          "href": "courses/calculus/lesson_10.html",
+          "duration": "22:19"
+        },
+        {
+          "id": "11",
+          "title_bn": "অধ্যায় ১১: ডি এক্স এর প্রকৃত অর্থ (What does dx really mean?)",
+          "title_en": "What does dx really mean?",
+          "href": "courses/calculus/lesson_11.html",
+          "duration": "19:40"
+        },
+        {
+          "id": "12",
+          "title_bn": "অধ্যায় ১২: ডিফারেনশিয়াল আসলে কী? (What is a differential?)",
+          "title_en": "What is a differential?",
+          "href": "courses/calculus/lesson_12.html",
+          "duration": "10:16"
+        }
+      ]
+    },
+    {
+      "id": "neural_networks",
+      "title": "Neural Networks",
+      "title_bn": "নিউরাল নেটওয়ার্ক",
+      "status": "completed",
+      "status_bn": "সম্পূর্ণ",
+      "lessons_total": 4,
+      "lessons_dubbed": 4,
+      "external": false,
+      "course_url": "courses/neural_networks/index.html",
+      "official_url": "https://www.3blue1brown.com/?topic=neural-networks",
+      "description_en": "How neural networks learn: multilayer perceptron, backpropagation, gradient descent, CNNs and transformers.",
+      "lessons": [
+        {
+          "id": "01",
+          "title_bn": "",
+          "title_en": "But what is a neural network? (Deep learning, chapter 1)",
+          "href": "courses/neural_networks/lesson_01.html",
+          "duration": ""
+        },
+        {
+          "id": "02",
+          "title_bn": "",
+          "title_en": "Gradient descent, how neural networks learn",
+          "href": "courses/neural_networks/lesson_02.html",
+          "duration": ""
+        },
+        {
+          "id": "03",
+          "title_bn": "",
+          "title_en": "What is backpropagation really doing?",
+          "href": "courses/neural_networks/lesson_03.html",
+          "duration": ""
+        },
+        {
+          "id": "04",
+          "title_bn": "",
+          "title_en": "Backpropagation calculus",
+          "href": "courses/neural_networks/lesson_04.html",
+          "duration": ""
+        }
+      ]
+    },
+    {
+      "id": "differential_equations",
+      "title": "Differential Equations",
+      "title_bn": "ডিফারেনশিয়াল সমীকরণ",
+      "status": "completed",
+      "status_bn": "সম্পূর্ণ",
+      "lessons_total": 6,
+      "lessons_dubbed": 6,
+      "href": "courses/differential_equations/index.html",
+      "external": false,
+      "official_url": "https://www.3blue1brown.com/?topic=differential-equations",
+      "description_en": "The language of change: ODEs, slope fields, pendulum dynamics, heat equation, and phase portraits made visual.",
+      "lessons": [
+        {
+          "id": "01",
+          "title_bn": "অধ্যায় ০১: ডিফারেনশিয়াল সমীকরণ কী? — পরিবর্তনের ভাষা",
+          "title_en": "Differential equations, studying the unsolvable",
+          "href": "courses/differential_equations/lesson_01.html",
+          "duration": "১৫:৩০"
+        },
+        {
+          "id": "02",
+          "title_bn": "অধ্যায় ০২: প্রথম ক্রমের অন্তরক সমীকরণ ও দিক ক্ষেত্র — পরিবর্তনের জ্যামিতিক মানচিত্র",
+          "title_en": "First Order Differential Equations & Slope Fields",
+          "href": "courses/differential_equations/lesson_02.html",
+          "duration": "১৮:৪০"
+        },
+        {
+          "id": "03",
+          "title_bn": "অধ্যায় ০৩: দোলন ও হারমোনিক স্পন্দন — স্প্রিং-ভর ব্যবস্থা, অবদমন ও অনুনাদ",
+          "title_en": "Oscillations, Damping, and Resonance",
+          "href": "courses/differential_equations/lesson_03.html",
+          "duration": "১৮:৫০"
+        },
+        {
+          "id": "04",
+          "title_bn": "অধ্যায় ০৪: আংশিক অন্তরক সমীকরণ ও সীমানা শর্ত (Partial Differential Equations and Boundary Conditions)",
+          "title_en": "Partial Differential Equations and Boundary Conditions",
+          "href": "courses/differential_equations/lesson_04.html",
+          "duration": "১৬:৪০"
+        },
+        {
+          "id": "05",
+          "title_bn": "অধ্যায় ০৫: তাপ সমীকরণ ও ফুরিয়ার রূপান্তর — সীমানা শর্ত ও হারমোনিক বিশ্লেষণ",
+          "title_en": "The Heat Equation and Fourier Transforms",
+          "href": "courses/differential_equations/lesson_05.html",
+          "duration": "১৫:৫০"
+        },
+        {
+          "id": "06",
+          "title_bn": "অধ্যায় ০৬: তরঙ্গ সমীকরণ ও কম্পন — স্থান ও কালের অবিরাম স্পন্দন",
+          "title_en": "The Wave Equation and Vibrations",
+          "href": "courses/differential_equations/lesson_06.html",
+          "duration": "১৮:৪০"
+        }
+      ]
+    },
+    {
+      "id": "lockdown_math",
+      "title": "Lockdown Math",
+      "title_bn": "লকডাউন ম্যাথ",
+      "status": "completed",
+      "status_bn": "সম্পূর্ণ",
+      "lessons_total": 10,
+      "lessons_dubbed": 10,
+      "href": "courses/lockdown_math/index.html",
+      "external": false,
+      "official_url": "https://www.3blue1brown.com/?topic=lockdown-math",
+      "description_en": "Special live-stream lessons on beautiful, surprising math.",
+      "lessons": [
+        {
+          "id": "01",
+          "title_bn": "দ্বিঘাত সমীকরণ সমাধানের জ্যামিতিক অন্তর্দৃষ্টি",
+          "title_en": "The quadratic formula explained geometrically",
+          "href": "courses/lockdown_math/lesson_01.html",
+          "duration": "1:05:00"
+        },
+        {
+          "id": "02",
+          "title_bn": "সূচকীয় বৃদ্ধি ও মহামারী মডেলিং",
+          "title_en": "Exponential growth and epidemics",
+          "href": "courses/lockdown_math/lesson_02.html",
+          "duration": "1:08:15"
+        },
+        {
+          "id": "03",
+          "title_bn": "দ্বিপদী বিন্যাস ও মুদ্রা নিক্ষেপের সম্ভাবনা",
+          "title_en": "Binomial distributions and coin flips",
+          "href": "courses/lockdown_math/lesson_03.html",
+          "duration": "1:07:30"
+        },
+        {
+          "id": "04",
+          "title_bn": "অধ্যায় ০৪: জটিল সংখ্যার জ্যামিতিক রূপ ও গুণনের রহস্য",
+          "title_en": "Complex Number Fundamentals & Geometric Multiplication",
+          "href": "courses/lockdown_math/lesson_04.html",
+          "duration": "1:12:00"
+        },
+        {
+          "id": "05",
+          "title_bn": "অধ্যায় ০৫: অয়লারের সূত্র ও ত্রিকোণমিতি",
+          "title_en": "Euler's Formula and Trigonometry",
+          "href": "courses/lockdown_math/lesson_05.html",
+          "duration": "1:08:30"
+        },
+        {
+          "id": "06",
+          "title_bn": "অধ্যায় ০৬: অবিচ্ছিন্ন সম্ভাবনা ও ঘনত্ব অপেক্ষক",
+          "title_en": "Continuous Probabilities and Probability Density",
+          "href": "courses/lockdown_math/lesson_06.html",
+          "duration": "1:15:00"
+        },
+        {
+          "id": "07",
+          "title_bn": "বৃত্তের ক্ষেত্রফল ও অন্তরজের জ্যামিতিক প্রমাণ",
+          "title_en": "Area and the derivative of a circle",
+          "href": "courses/lockdown_math/lesson_07.html",
+          "duration": "1:08:42"
+        },
+        {
+          "id": "08",
+          "title_bn": "ব্যাসেল সমস্যা ও পাই স্কয়ার বাই ৬ এর সমাধান",
+          "title_en": "Proof of the Basel problem",
+          "href": "courses/lockdown_math/lesson_08.html",
+          "duration": "1:02:18"
+        },
+        {
+          "id": "09",
+          "title_bn": "দ্বৈত ভেক্টর ও রৈখিক সমাহার",
+          "title_en": "Geometry of linear combinations and dual vectors",
+          "href": "courses/lockdown_math/lesson_09.html",
+          "duration": "1:05:40"
+        },
+        {
+          "id": "10",
+          "title_bn": "উচ্চতর বহুপদী সমীকরণ ও রুট খোঁজার রূপ",
+          "title_en": "Solving higher degree polynomials",
+          "href": "courses/lockdown_math/lesson_10.html",
+          "duration": "1:14:22"
+        }
+      ]
+    },
+    {
+      "id": "probability",
+      "title": "Essence of Probability",
+      "title_bn": "সম্ভাব্যতার মূলভাব",
+      "status": "completed",
+      "status_bn": "সম্পূর্ণ",
+      "lessons_total": 6,
+      "lessons_dubbed": 6,
+      "href": "courses/probability/index.html",
+      "external": false,
+      "official_url": "https://www.3blue1brown.com/?topic=probability",
+      "description_en": "Probability from first principles — the series on chance and uncertainty.",
+      "lessons": [
+        {
+          "id": "01",
+          "title_bn": "অধ্যায় ০১: সম্ভাব্যতা আসলে কী? — অনিশ্চয়তার জ্যামিতি ও প্যারাডক্স",
+          "title_en": "What Even is Probability? — The Geometry of Uncertainty",
+          "href": "courses/probability/lesson_01.html",
+          "duration": "15:00"
+        },
+        {
+          "id": "02",
+          "title_bn": "অধ্যায় ০২: বেজের সূত্র এবং মেডিকেল টেস্ট প্যারাডক্স — শর্তসাপেক্ষ সম্ভাব্যতা",
+          "title_en": "Bayes' Rule and the False Positive Paradox (Conditional Probability)",
+          "href": "courses/probability/lesson_02.html",
+          "duration": "16:20"
+        },
+        {
+          "id": "03",
+          "title_bn": "অধ্যায় ০৩: দ্বিপদী বিন্যাস ও প্যাসকেলের ত্রিভুজ — কয়েন টসের জ্যামিতি",
+          "title_en": "Binomial Distribution and Pascal's Triangle — Geometry of Coin Flips",
+          "href": "courses/probability/lesson_03.html",
+          "duration": "15:45"
+        },
+        {
+          "id": "04",
+          "title_bn": "অধ্যায় ০৪: অবিচ্ছিন্ন সম্ভাব্যতা ঘনত্ব ও নরমাল ডিস্ট্রিবিউশন",
+          "title_en": "Continuous Probability Distributions & Probability Density",
+          "href": "courses/probability/lesson_04.html",
+          "duration": "16:15"
+        },
+        {
+          "id": "05",
+          "title_bn": "অধ্যায় ০৫: মার্কভ চেইন, র‍্যান্ডম ওয়াক ও স্টেডি স্টেট",
+          "title_en": "Markov Chains, Random Walks, and Steady States",
+          "href": "courses/probability/lesson_05.html",
+          "duration": "16:45"
+        },
+        {
+          "id": "06",
+          "title_bn": "অধ্যায় ০৬: কেন্দ্রীয় সীমা উপপাদ্য — প্রকৃতির সার্বজনীন বেল কার্ভ",
+          "title_en": "The Central Limit Theorem — Why the Bell Curve Rules the Universe",
+          "href": "courses/probability/lesson_06.html",
+          "duration": "17:15"
+        }
+      ]
+    }
+  ],
+  "topic_collections": [
+    {
+      "id": "all",
+      "title": "All Topics",
+      "title_bn": "সকল বিষয়",
+      "url": "https://www.3blue1brown.com/#lessons"
+    },
+    {
+      "id": "best-of",
+      "title": "Best of 3Blue1Brown",
+      "title_bn": "সেরা ভিডিও",
+      "url": "https://www.3blue1brown.com/?topic=best-of"
+    },
+    {
+      "id": "neural-networks",
+      "title": "Neural Networks",
+      "title_bn": "নিউরাল নেটওয়ার্ক",
+      "url": "https://www.3blue1brown.com/?topic=neural-networks"
+    },
+    {
+      "id": "linear-algebra",
+      "title": "Linear Algebra",
+      "title_bn": "লিনিয়ার অ্যালজেব্রা",
+      "url": "https://www.3blue1brown.com/?topic=linear-algebra"
+    },
+    {
+      "id": "calculus",
+      "title": "Calculus",
+      "title_bn": "ক্যালকুলাস",
+      "url": "https://www.3blue1brown.com/?topic=calculus"
+    },
+    {
+      "id": "differential-equations",
+      "title": "Differential Equations",
+      "title_bn": "ডিফারেনশিয়াল সমীকরণ",
+      "url": "https://www.3blue1brown.com/?topic=differential-equations"
+    },
+    {
+      "id": "analysis",
+      "title": "Analysis",
+      "title_bn": "অ্যানালাইসিস",
+      "url": "https://www.3blue1brown.com/?topic=analysis"
+    },
+    {
+      "id": "physics",
+      "title": "Physics",
+      "title_bn": "পদার্থবিজ্ঞান",
+      "url": "https://www.3blue1brown.com/?topic=physics"
+    },
+    {
+      "id": "computer-science",
+      "title": "Computer Science",
+      "title_bn": "কম্পিউটার সায়েন্স",
+      "url": "https://www.3blue1brown.com/?topic=computer-science"
+    },
+    {
+      "id": "why-pi",
+      "title": "Why Pi?",
+      "title_bn": "কেন পাই",
+      "url": "https://www.3blue1brown.com/?topic=why-pi"
+    },
+    {
+      "id": "puzzles",
+      "title": "Puzzles",
+      "title_bn": "ধাঁধা",
+      "url": "https://www.3blue1brown.com/?topic=puzzles"
+    },
+    {
+      "id": "geometry",
+      "title": "Geometry",
+      "title_bn": "জ্যামিতি",
+      "url": "https://www.3blue1brown.com/?topic=geometry"
+    },
+    {
+      "id": "topology",
+      "title": "Topology",
+      "title_bn": "টপোলজি",
+      "url": "https://www.3blue1brown.com/?topic=topology"
+    },
+    {
+      "id": "fractals",
+      "title": "Fractals",
+      "title_bn": "ফ্র্যাক্টাল",
+      "url": "https://www.3blue1brown.com/?topic=fractals"
+    },
+    {
+      "id": "probability",
+      "title": "Probability",
+      "title_bn": "সম্ভাব্যতা",
+      "url": "https://www.3blue1brown.com/?topic=probability"
+    },
+    {
+      "id": "group-theory",
+      "title": "Group Theory",
+      "title_bn": "গ্রুপ তত্ত্ব",
+      "url": "https://www.3blue1brown.com/?topic=group-theory"
+    },
+    {
+      "id": "number-theory",
+      "title": "Number Theory",
+      "title_bn": "সংখ্যা তত্ত্ব",
+      "url": "https://www.3blue1brown.com/?topic=number-theory"
+    },
+    {
+      "id": "lockdown-math",
+      "title": "Lockdown Math",
+      "title_bn": "লকডাউন ম্যাথ",
+      "url": "https://www.3blue1brown.com/?topic=lockdown-math"
+    },
+    {
+      "id": "guest-videos",
+      "title": "Guest Videos",
+      "title_bn": "অতিথি ভিডিও",
+      "url": "https://www.3blue1brown.com/?topic=guest-videos"
+    },
+    {
+      "id": "talks",
+      "title": "Talks & Lectures",
+      "title_bn": "বক্তৃতা ও আলোচনা",
+      "url": "https://www.3blue1brown.com/?topic=talks"
+    },
+    {
+      "id": "other-channels",
+      "title": "On Other Channels",
+      "title_bn": "অন্যান্য চ্যানেলে",
+      "url": "https://www.3blue1brown.com/?topic=other-channels"
+    }
+  ],
+  "total_lessons": 53
+}

@@ -1,0 +1,125 @@
+window.TEACHER_AUDIO_MANIFEST = {
+  "course": "why_pi",
+  "lesson": "lesson_05",
+  "voice": "bn-BD-PradeepNeural",
+  "mode": "authentic_teacher",
+  "sections": {
+    "sec-leibniz-series": {
+      "title": "লাইবনিজের ধারা",
+      "audio_file": "sec_01_sec-leibniz-series.mp3",
+      "total_duration_ms": 20000.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "একটিমাত্র alternating ধারা—প্রথম দেখে মনে হয় বৃত্তের সাথে এর কোনো সম্পর্ক নেই—কিন্তু এর মান π/4।",
+          "start_ms": 0.0,
+          "end_ms": 4500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 1,
+          "type": "p",
+          "text": "ধারা $1-\\tfrac13+\\tfrac15-\\tfrac17+\\cdots=\\pi/4$।",
+          "start_ms": 5000.0,
+          "end_ms": 9500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 2,
+          "type": "p",
+          "text": "এটি $\\arctan(1)$ এর টেলর ধারা; $\\arctan(1)=\\pi/4$।",
+          "start_ms": 10000.0,
+          "end_ms": 14500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 3,
+          "type": "p",
+          "text": "ধারাটি খুব ধীরে converges—কয়েক লক্ষ পদ নিলেও কয়েকটি অঙ্কই পাওয়া যায়।",
+          "start_ms": 15000.0,
+          "end_ms": 19500.0,
+          "duration_ms": 4500.0
+        }
+      ]
+    },
+    "sec-circle-hidden": {
+      "title": "এখানেও একটা বৃত্ত",
+      "audio_file": "sec_02_sec-circle-hidden.mp3",
+      "total_duration_ms": 20000.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "arctan(1)-এর ৪৫° কোণের পেছনে আছে একটা বৃত্ত; ব্যস্ত-বর্গ আর বৃত্তের কোণ একসাথে মিলে পাই আনে।",
+          "start_ms": 0.0,
+          "end_ms": 4500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 1,
+          "type": "p",
+          "text": "$\\arctan(1)=45^\\circ=\\pi/4$—একটা বৃত্তের কোণ।",
+          "start_ms": 5000.0,
+          "end_ms": 9500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 2,
+          "type": "p",
+          "text": "ব্যাসেল সমস্যার মতোই এখানেও ব্যস্ত-বর্গ ও বৃত্তের মিল পাইকে প্রকাশ করে।",
+          "start_ms": 10000.0,
+          "end_ms": 14500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 3,
+          "type": "p",
+          "text": "ধারার কাঠামো বোঝা যায় একটা একক বৃত্তের ওপর ভিত্তি করে।",
+          "start_ms": 15000.0,
+          "end_ms": 19500.0,
+          "duration_ms": 4500.0
+        }
+      ]
+    },
+    "sec-primes": {
+      "title": "মৌলিক সংখ্যা ও জটিল তল",
+      "audio_file": "sec_03_sec-primes.mp3",
+      "total_duration_ms": 20000.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "পাইয়ের এই ধারার সাথে মৌলিক সংখ্যার একটা গাণিতিক সম্পর্ক আছে, যা জটিল সংখ্যা আর গauss-িয় পূর্ণসংখ্যার মাধ্যমে বোঝা যায়।",
+          "start_ms": 0.0,
+          "end_ms": 4500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 1,
+          "type": "p",
+          "text": "জটিল সংখ্যা $\\mathbb{C}$ তে গুণন মানে ঘূর্ণন ও স্কেলিং—বৃত্তের সাথে সরাসরি সম্পর্ক।",
+          "start_ms": 5000.0,
+          "end_ms": 9500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 2,
+          "type": "p",
+          "text": "মৌলিক সংখ্যাগুলোকে জটিল তলে বিন্যাস করলে পাইয়ের সাথে তাদের নিয়মিততা দেখা যায়।",
+          "start_ms": 10000.0,
+          "end_ms": 14500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 3,
+          "type": "p",
+          "text": "Gaussian integer-এর factorization পাই-সংক্রান্ত ধারার সাথে যুক্ত।",
+          "start_ms": 15000.0,
+          "end_ms": 19500.0,
+          "duration_ms": 4500.0
+        }
+      ]
+    }
+  }
+};

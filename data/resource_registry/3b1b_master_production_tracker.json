@@ -1,0 +1,2804 @@
+{
+  "platform": "3Blue1Brown",
+  "official_url": "https://www.3blue1brown.com",
+  "source_repo": "https://github.com/3b1b/3Blue1Brown.com",
+  "asset_bucket": "https://storage.googleapis.com/3blue1brown-website-bucket",
+  "topics_count": 20,
+  "topics": {
+    "best-of": {
+      "title": "Best Of",
+      "description": "A few hand-picked favorites",
+      "total_lessons": 14,
+      "lessons": [
+        {
+          "slug": "colliding-blocks-v2",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "print-gallery",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "holograms",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "cosmic-distance-1",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "hardest-problem",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "fourier-series",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "inscribed-rect-v2",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "shadows",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "wordle",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "essence-of-calculus",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "prime-spirals",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "newtons-fractal",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "zeta",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "fractal-dimension",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "neural-networks": {
+      "title": "Neural Networks",
+      "description": "The basics of neural networks, and the math behind how they learn",
+      "total_lessons": 11,
+      "lessons": [
+        {
+          "slug": "neural-networks",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "gradient-descent",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "neural-network-analysis",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "backpropagation",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "backpropagation-calculus",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "mini-llm",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "gpt",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "attention",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "mlp",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "cross-entropy",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "diffusion-models",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "linear-algebra": {
+      "title": "Linear Algebra",
+      "description": "An introduction to visualizing what matrices are really doing",
+      "total_lessons": 16,
+      "lessons": [
+        {
+          "slug": "vectors",
+          "status": "done",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": true,
+            "notes_mathjax": true,
+            "halal_dubbing": true,
+            "clean_music_free_vocal": true
+          }
+        },
+        {
+          "slug": "span",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "linear-transformations",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "matrix-multiplication",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "3d-transformations",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "determinant",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "inverse-matrices",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "nonsquare-matrices",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "dot-products",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "cross-products",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "cross-products-extended",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "cramers-rule",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "change-of-basis",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "eigenvalues",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "quick-eigen",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "abstract-vector-spaces",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "calculus": {
+      "title": "Calculus",
+      "description": "Visual introductions to the core ideas of derivatives, integrals, limits and more",
+      "total_lessons": 17,
+      "lessons": [
+        {
+          "slug": "essence-of-calculus",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "derivatives",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "derivatives-power-rule",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "derivatives-trig-functions",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "chain-rule-and-product-rule",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "eulers-number",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "implicit-differentiation",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "limits",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "epsilon-delta",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "l-hopitals-rule",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "integration",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "area-and-slope",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "higher-order-derivatives",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "taylor-series",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "taylor-series-geometric-view",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "derivatives-and-transforms",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "divergence-and-curl",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "differential-equations": {
+      "title": "Differential Equations",
+      "description": "A tour through some of the most beautiful methods for studying dynamic systems",
+      "total_lessons": 10,
+      "lessons": [
+        {
+          "slug": "differential-equations",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "pdes",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "heat-equation",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "fourier-series",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "complex-exponents",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "laplace-transform",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "laplace-for-odes",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "eulers-formula-dynamically",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "matrix-exponents",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "exponential-and-epidemics",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "analysis": {
+      "title": "Analysis",
+      "description": "Topics about functions, either complex or real valued",
+      "total_lessons": 10,
+      "lessons": [
+        {
+          "slug": "zeta",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "print-gallery",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "fourier-transforms",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "uncertainty-principle",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "fourier-series",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "borwein",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "convolutions",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "winding-numbers",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "inventing-math",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "music-and-measure-theory",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "physics": {
+      "title": "Physics",
+      "description": "An assortment of topics from physics",
+      "total_lessons": 13,
+      "lessons": [
+        {
+          "slug": "holograms",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "cosmic-distance-1",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "cosmic-distance-2",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "barber-pole-1",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "barber-pole-2",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "prism",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "refractive-index-questions",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "light-quantum-mechanics",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "uncertainty-principle",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "feynmans-lost-lecture",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "turbulence",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "brachistochrone",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "snells-law",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "computer-science": {
+      "title": "Computer Science",
+      "description": "An assortment of topics related to algorithms",
+      "total_lessons": 12,
+      "lessons": [
+        {
+          "slug": "entropy",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "cross-entropy",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "wordle",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "wordle-2",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "bitcoin",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "256-bit-security",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "epidemic-simulations",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "hamming-codes",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "hamming-codes-2",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "grover",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "grover-clarification",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "hanoi-and-sierpinski",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "why-pi": {
+      "title": "Why Pi",
+      "description": "Why does pi show up in so many unexpected places?",
+      "total_lessons": 8,
+      "lessons": [
+        {
+          "slug": "clacks",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "colliding-blocks-v2",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "clacks-via-light",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "basel-problem",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "leibniz-formula",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "gaussian-integral",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "wallis-product",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "pi-was-628",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "puzzles": {
+      "title": "Puzzles",
+      "description": "Challenging questions whose solutions have interesting twists and broader lessons",
+      "total_lessons": 10,
+      "lessons": [
+        {
+          "slug": "2025-p6",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "hardest-problem",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "windmills",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "shadows",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "moser-reboot",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "one-more-dim",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "subsets-puzzle",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "chessboard-puzzle",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "three-utilities",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "eulers-characteristic-formula",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "geometry": {
+      "title": "Geometry",
+      "description": "An assortment of topics related to geometry and higher dimensions",
+      "total_lessons": 6,
+      "lessons": [
+        {
+          "slug": "sphere-area",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "dandelin-spheres",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "spheres-talk",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "quaternions",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "quaternions-and-3d-rotation",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "higher-dimensions",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "topology": {
+      "title": "Topology",
+      "description": "Delightful proofs that showcase the true spirit of topology",
+      "total_lessons": 3,
+      "lessons": [
+        {
+          "slug": "inscribed-rect-v2",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "hairy-ball",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "borsuk-ulam",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "fractals": {
+      "title": "Fractals",
+      "description": "Fractals and chaotic dynamics",
+      "total_lessons": 4,
+      "lessons": [
+        {
+          "slug": "newtons-fractal",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "holomorphic-dynamics",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "fractal-dimension",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "hilbert-curve",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "probability": {
+      "title": "Probability",
+      "description": "An assortment of introductory ideas in probability",
+      "total_lessons": 9,
+      "lessons": [
+        {
+          "slug": "bayes-theorem",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "clt",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "gaussian-integral",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "convolutions2",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "gaussian-convolution",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "better-bayes",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "bayes-theorem-quick",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "binomial-distributions",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "pdfs",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "group-theory": {
+      "title": "Group Theory",
+      "description": "The study of symmetry",
+      "total_lessons": 2,
+      "lessons": [
+        {
+          "slug": "groups-and-monsters",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "eulers-formula-via-group-theory",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "number-theory": {
+      "title": "Number Theory",
+      "description": "Topics related to integer patterns and primes",
+      "total_lessons": 3,
+      "lessons": [
+        {
+          "slug": "prime-spirals",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "pythagorean-triples",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "leibniz-formula",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "lockdown-math": {
+      "title": "Lockdown Math",
+      "description": "A series of live-streamed lectures starting with foundational ideas in high school math, and exploring what interesting places they can lead to",
+      "total_lessons": 11,
+      "lessons": [
+        {
+          "slug": "lockdown-math-announcement",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "ldm-quadratic",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "ldm-trigonometry",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "ldm-complex-numbers",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "ldm-eulers-formula",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "ldm-imaginary-interest",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "ldm-logarithms",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "ldm-natural-logs",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "ldm-power-towers",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "ldm-i-to-i",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "ldm-tips-to-problem-solving",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "guest-videos": {
+      "title": "Guest Videos",
+      "description": "During some leave I took in 2025, I invited a few friends to post guest videos to the channel which I thought this audience would enjoy",
+      "total_lessons": 5,
+      "lessons": [
+        {
+          "slug": "diffusion-models",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "incomplete-cubes",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "phase-change",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "alpha-geometry",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "euclid",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "talks": {
+      "title": "Talks",
+      "description": "Various talks",
+      "total_lessons": 5,
+      "lessons": [
+        {
+          "slug": "harvey-mudd-speech",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "tedx-talk",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "transformers-talk",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "pedagogical-curse",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "ego-and-math",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    },
+    "videos-elsewhere": {
+      "title": "On other channels",
+      "description": "Videos I've made for other channels",
+      "total_lessons": 8,
+      "lessons": [
+        {
+          "slug": "bertrands-paradox",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "hyperdarts",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "prime-number-race",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "feynmans-lost-lecture",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "image-convolution",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "seam-carving",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "discrete-fourier-transform",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        },
+        {
+          "slug": "diffusion-equation",
+          "status": "pending",
+          "media_assets": {
+            "figures_svg": [],
+            "figures_mp4": [],
+            "has_video": true
+          },
+          "bangla_deliverables": {
+            "interactive_html": false,
+            "notes_mathjax": false,
+            "halal_dubbing": false,
+            "clean_music_free_vocal": false
+          }
+        }
+      ]
+    }
+  }
+}

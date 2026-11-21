@@ -1,0 +1,298 @@
+[
+  {
+    "id": "sec-composition",
+    "title": "১. রিক্যাপ ও রূপান্তরের সংযোজন — Composition of Transformations",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "১. রিক্যাপ ও রূপান্তরের সংযোজন — Composition of Transformations",
+        "tex": ""
+      },
+      {
+        "type": "chapter-quote",
+        "text": "\" ম্যাট্রিক্স গুণন কোনো খাপছাড়া বা মুখস্থ করার শুকনো অ্যালগরিদম নয়; এটি আসলে একটি রূপান্তরের ঠিক পর আরেকটি রূপান্তর প্রয়োগ করার জ্যামিতিক ফলশ্রুতি মাত্র। — Grant Sanderson",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "স্কুল-কলেজে আমাদের প্রায়শই ম্যাট্রিক্স গুণনের একটি অদ্ভুত ও যান্ত্রিক নিয়ম শেখানো হয়—“প্রথম ম্যাট্রিক্সের প্রতিটি সারি দিয়ে দ্বিতীয় ম্যাট্রিক্সের প্রতিটি কলামের উপাদান গুণ করে যোগ করো।” কিন্তু কেন? এই আপাতদৃষ্টিতে খাপছাড়া নিয়মটি আসলে কোথা থেকে এলো?",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "গত পর্বে আমরা দেখেছি যে প্রতিটি ম্যাট্রিক্স হলো দ্বিমাত্রিক বা ত্রিমাত্রিক স্থানকে রূপান্তরিত করার একটি একক জ্যামিতিক প্রক্রিয়া—যেখানে গ্রিড রেখাগুলো সর্বদা সমান্তরাল ও সমদূরবর্তী থাকে এবং মূলবিন্দু সম্পূর্ণ স্থির থাকে।",
+        "tex": ""
+      },
+      {
+        "type": "figure",
+        "text": "এই চিত্রে আগের পর্বের মূল কথাটিই মনে করিয়ে দেওয়া হয়েছে: একটি ম্যাট্রিক্স মানেই স্থানের একটি নির্দিষ্ট রৈখিক রূপান্তর। লক্ষ্য করুন ভিত্তি ভেক্টর দুটির নতুন অবস্থান থেকেই পুরো ম্যাট্রিক্সটি তৈরি হয়। গ্রিডের সমান্তরালতা অটল থাকায় আমরা জানি রূপান্তরটি রৈখিক। এই পুনরাবৃত্তিই পরবর্তী যুক্তির ভিত্তি।",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "কিন্তু বাস্তব জীবনে ও বিজ্ঞানে একটি রূপান্তর সম্পন্ন করার পর প্রায়শই তার ওপর আরেকটি রূপান্তর প্রয়োগ করার দরকার পড়ে। ধরা যাক, আপনি প্রথমে দ্বিমাত্রিক সমতলটিকে ঘড়ির কাঁটার বিপরীতে ৯০° কোণে ঘোরালেন (Rotation), এবং ঠিক তার পর সমতলটির ওপর একটি অনুভূমিক শিরিং বা মোচড় (Shear) প্রয়োগ করলেন।",
+        "tex": ""
+      },
+      {
+        "type": "figure",
+        "text": "এই চিত্রে স্থানটি প্রথমে ৯০° ঘুরছে, তারপর অনুভূমিকভাবে সরে যাচ্ছে—দুটি রূপান্তর ঠিক এই ক্রমেই ঘটছে। লক্ষ্য করুন প্রথম ধাপের ফলাফলই দ্বিতীয় ধাপের ইনপুট হয়ে যাচ্ছে। ক্রম বদলে দিলে চূড়ান্ত ছবি আলাদা হতো। এই ধারাবাহিকতাই ‘সংযোজন’ ধারণার মূল।",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "শুরু থেকে শেষ পর্যন্ত পুরো সম্মিলিত প্রভাবটি নিজেই আরেকটি সম্পূর্ণ নতুন রৈখিক রূপান্তর! এই যৌথ রূপান্তরটিকে গণিতের ভাষায় বলা হয় দুটি পৃথক রূপান্তরের সংযোজন (Composition)।",
+        "tex": ""
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\vec{v}\\;\\xrightarrow{\\quad B\\quad}\\;B\\vec{v}\\;\\xrightarrow{\\quad A\\quad}\\;A(B\\vec{v})=(AB)\\vec{v}</annotation>",
+        "tex": "\\vec{v}\\;\\xrightarrow{\\quad B\\quad}\\;B\\vec{v}\\;\\xrightarrow{\\quad A\\quad}\\;A(B\\vec{v})=(AB)\\vec{v}"
+      },
+      {
+        "type": "callout",
+        "text": "💡 কেন্দ্রীয় দর্শন লিনিয়ার অ্যালজেব্রার কেন্দ্রীয় দর্শনটি গভীরভাবে মনে রাখো: দুটি ম্যাট্রিক্সের গুণফল <annotation>AB</annotation> হলো সেই একক যৌগিক রূপান্তর, যা প্রথমে রূপান্তর <annotation>B</annotation> এবং ঠিক তার পর রূপান্তর <annotation>A</annotation> প্রয়োগ করলে সামগ্রিক স্থানে ঘটে থাকে। অর্থাৎ গুণন আসলে ‘পরপর প্রয়োগ’-এরই আরেক নাম।",
+        "tex": "AB B A"
+      }
+    ]
+  },
+  {
+    "id": "sec-matrix-multiplication",
+    "title": "২. ভিত্তি ভেক্টর ট্র্যাকিং ও ডান থেকে বামে পড়া — Composition is Multiplication",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "২. ভিত্তি ভেক্টর ট্র্যাকিং ও ডান থেকে বামে পড়া — Composition is Multiplication",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "যেহেতু দুটি ধারাবাহিক রৈখিক রূপান্তরের সমন্বয় নিজেও একটি খাঁটি রৈখিক রূপান্তর, তাই এর নিজস্ব একটি একক ২×২ ম্যাট্রিক্স থাকবে। সেই ম্যাট্রিক্সটি আমরা কীভাবে বের করব? বরাবরের মতোই শিশুতোষ সহজ: শুধুমাত্র লক্ষ্য করুন পুরো প্রক্রিয়ার শেষে আমাদের দুটি আদি ভিত্তি ভেক্টর <annotation>\\hat{i}</annotation> (আই হ্যাট) এবং <annotation>\\hat{j}</annotation> (জে হ্যাট) শেষমেশ কোথায় গিয়ে পৌঁছাল!",
+        "tex": "\\hat{i} \\hat{j}"
+      },
+      {
+        "type": "figure",
+        "text": "এই চিত্রে ঘূর্ণন ও শিরিং শেষে <annotation>\\hat{i}</annotation> পৌঁছায় <annotation>(1,1)</annotation>-এ এবং <annotation>\\hat{j}</annotation> পৌঁছায় <annotation>(-1,0)</annotation>-এ। এই দুটিমাত্র তথ্য রেকর্ড করেই পুরো যৌগিক ম্যাট্রিক্সটি লিখে ফেলা যায়। লক্ষ্য করুন <annotation>\\hat{j}</annotation>-এর <annotation>y</annotation>-স্থানাঙ্ক শূন্য হওয়ায় শিরিং তাকে অপরিবর্তিত রেখেছে। মাত্র দুটি ভেক্টরের এই হিসাবই অসীম তথ্যের বদলে কাজ করে।",
+        "tex": "\\hat{i} (1,1) \\hat{j} (-1,0) \\hat{j} y"
+      },
+      {
+        "type": "p",
+        "text": "আই হ্যাট (<annotation>\\hat{i}</annotation>)-এর গতিপথ: আদিতে <annotation>\\hat{i}=\\begin{bmatrix}1\\\\0\\end{bmatrix}</annotation> ছিল। ৯০° ঘড়ির কাঁটার বিপরীতে ঘোরার পর এটি পৌঁছে গেল <annotation>\\begin{bmatrix}0\\\\1\\end{bmatrix}</annotation>-এ। এবার এই ভেক্টরটির ওপর অনুভূমিক শিরিং প্রয়োগ করা হলে এর <annotation>x</annotation>-স্থানাঙ্ক তার <annotation>y</annotation>-স্থানাঙ্কের পরিমাণ ডানে সরে যায়—ফলে এটি শেষ পর্যন্ত অবতরণ করে <annotation>\\begin{bmatrix}1\\\\1\\end{bmatrix}</annotation>-এ! সুতরাং যৌথ ম্যাট্রিক্সের প্রথম কলাম হবে <annotation>\\begin{bmatrix}1\\\\1\\end{bmatrix}</annotation>।",
+        "tex": "\\hat{i} \\hat{i}=\\begin{bmatrix}1\\\\0\\end{bmatrix} \\begin{bmatrix}0\\\\1\\end{bmatrix} x y \\begin{bmatrix}1\\\\1\\end{bmatrix} \\begin{bmatrix}1\\\\1\\end{bmatrix}"
+      },
+      {
+        "type": "p",
+        "text": "জে হ্যাট (<annotation>\\hat{j}</annotation>)-এর গতিপথ: আদিতে <annotation>\\hat{j}=\\begin{bmatrix}0\\\\1\\end{bmatrix}</annotation> ছিল। ৯০° ঘোরার পর এটি পৌঁছে যায় <annotation>\\begin{bmatrix}-1\\\\0\\end{bmatrix}</annotation>-এ (ঋণাত্মক এক্স অক্ষ বরাবর)। যেহেতু এর <annotation>y</annotation>-স্থানাঙ্ক শূন্য, তাই অনুভূমিক শিরিং প্রয়োগ করলেও এটি হুবহু <annotation>\\begin{bmatrix}-1\\\\0\\end{bmatrix}</annotation>-এই অপরিবর্তিত থাকে! সুতরাং যৌথ ম্যাট্রিক্সের দ্বিতীয় কলাম হবে <annotation>\\begin{bmatrix}-1\\\\0\\end{bmatrix}</annotation>।",
+        "tex": "\\hat{j} \\hat{j}=\\begin{bmatrix}0\\\\1\\end{bmatrix} \\begin{bmatrix}-1\\\\0\\end{bmatrix} y \\begin{bmatrix}-1\\\\0\\end{bmatrix} \\begin{bmatrix}-1\\\\0\\end{bmatrix}"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}_{\\text{shear}}\\;\\begin{bmatrix}0&-1\\\\1&0\\end{bmatrix}_{\\text{rotation}}=\\begin{bmatrix}1&-1\\\\1&0\\end{bmatrix}</annotation>",
+        "tex": "\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}_{\\text{shear}}\\;\\begin{bmatrix}0&-1\\\\1&0\\end{bmatrix}_{\\text{rotation}}=\\begin{bmatrix}1&-1\\\\1&0\\end{bmatrix}"
+      },
+      {
+        "type": "p",
+        "text": "এবার একটি অতি গুরুত্বপূর্ণ বিষয় লক্ষ্য করো: আমরা যখন লিখি <annotation>AB\\vec{v}</annotation>, তখন প্রথমে কোন রূপান্তরটি কার্যকর হয়? <annotation>B</annotation> আগে, তারপর <annotation>A</annotation>! অর্থাৎ গুণনের এই লেখার ধারা ডান থেকে বামে পড়তে হয়—ভেক্টরের সবচেয়ে কাছে যে ম্যাট্রিক্স থাকে, সেটিই আগে কাজ করে।",
+        "tex": "AB\\vec{v} B A"
+      },
+      {
+        "type": "callout",
+        "text": "📐 ফাংশন নোটেশনের ঐতিহ্য বীজগণিতে আমরা যখন ফাংশনের কম্পোজিশন লিখি <annotation>f(g(x))</annotation>, তখন ইনপুট <annotation>x</annotation>-এর সবচেয়ে কাছে কে থাকে? অবশ্যই <annotation>g</annotation>! তাই আগে <annotation>g(x)</annotation> এর মান বের হয়, তারপর তার ফলাফলের ওপর <annotation>f</annotation> ফাংশন কাজ করে। ঠিক একইভাবে, ভেক্টর <annotation>\\vec{v}</annotation>-এর সাথে লেগে থাকা ডানপাশের ম্যাট্রিক্স <annotation>B</annotation> আগে কার্যকর হয়, এবং তার সামগ্রিক ফলাফলের ওপর বামপাশের ম্যাট্রিক্স <annotation>A</annotation> কাজ করে। হিব্রু কিংবা আরবি পাঠকদের জন্য ডান থেকে বামে পড়া স্বাভাবিক হলেও, বাকি বিশ্বের পাঠকদের এটি সতর্কতার সাথে মনে রাখতে হয়!",
+        "tex": "f(g(x)) x g g(x) f \\vec{v} B A"
+      }
+    ]
+  },
+  {
+    "id": "sec-tracking",
+    "title": "৩. নতুন ম্যাট্রিক্স গণনা — Computing the New Matrix",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৩. নতুন ম্যাট্রিক্স গণনা — Computing the New Matrix",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "যেহেতু দুটি ধারাবাহিক রৈখিক রূপান্তরের সমন্বয় নিজেও একটি খাঁটি রৈখিক রূপান্তর, তাই এর নিজস্ব একটি একক টু বাই টু ম্যাট্রিক্স থাকবে। সেই ম্যাট্রিক্সটি আমরা কীভাবে বের করব? বরাবরের মতোই শিশুতোষ সহজ: শুধুমাত্র লক্ষ্য করো পুরো প্রক্রিয়ার শেষে আমাদের দুটি আদি ভিত্তি ভেক্টর আই হ্যাট এবং জে হ্যাট শেষমেশ কোথায় গিয়ে পৌঁছাল!",
+        "tex": ""
+      },
+      {
+        "type": "figure",
+        "text": "এই চিত্রে ভিত্তি ভেক্টর দুটির চূড়ান্ত কলাম জোড়া লাগিয়ে যৌগিক ম্যাট্রিক্সটি গড়ে তোলা হয়েছে। লক্ষ্য করুন প্রথম কলাম আই হ্যাটের গন্তব্য <annotation>(1,1)</annotation> এবং দ্বিতীয় কলাম জে হ্যাটের গন্তব্য <annotation>(-1,0)</annotation>। কলাম দুটির ক্রম অদলবদল করলেই ভিন্ন রূপান্তর পাওয়া যেত। ছবিটি দেখায় যে ম্যাট্রিক্স গুণন আসলে কলাম-নির্মাণেরই এক রূপ।",
+        "tex": "(1,1) (-1,0)"
+      },
+      {
+        "type": "p",
+        "text": "আই হ্যাট ছিল এক শূন্য। নব্বই ডিগ্রি ঘোরার পর এটি পৌঁছায় শূন্য এক-এ। এবার অনুভূমিক শিরিং প্রয়োগ করলে এর <annotation>x</annotation>-স্থানাঙ্ক <annotation>y</annotation>-স্থানাঙ্কের পরিমাণ ডানে সরে গিয়ে চূড়ান্তভাবে অবতরণ করে এক, এক-এ! সুতরাং যৌথ ম্যাট্রিক্সের প্রথম কলাম হবে <annotation>\\begin{bmatrix}1\\\\1\\end{bmatrix}</annotation>।",
+        "tex": "x y \\begin{bmatrix}1\\\\1\\end{bmatrix}"
+      },
+      {
+        "type": "p",
+        "text": "আর জে হ্যাট ছিল শূন্য এক। নব্বই ডিগ্রি ঘোরার পর এটি পৌঁছায় মাইনাস এক শূন্য-তে। যেহেতু এর <annotation>y</annotation>-স্থানাঙ্ক শূন্য, তাই অনুভূমিক শিরিং প্রয়োগ করলেও এটি অপরিবর্তিত থাকে। ফলে দ্বিতীয় কলাম হয় <annotation>\\begin{bmatrix}-1\\\\0\\end{bmatrix}</annotation>।",
+        "tex": "y \\begin{bmatrix}-1\\\\0\\end{bmatrix}"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\underbrace{\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}}_{\\text{second: shear}}\\;\\underbrace{\\begin{bmatrix}0&-1\\\\1&0\\end{bmatrix}}_{\\text{first: rotation}}=\\underbrace{\\begin{bmatrix}1&-1\\\\1&0\\end{bmatrix}}_{\\text{combined}}</annotation>",
+        "tex": "\\underbrace{\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}}_{\\text{second: shear}}\\;\\underbrace{\\begin{bmatrix}0&-1\\\\1&0\\end{bmatrix}}_{\\text{first: rotation}}=\\underbrace{\\begin{bmatrix}1&-1\\\\1&0\\end{bmatrix}}_{\\text{combined}}"
+      },
+      {
+        "type": "p",
+        "text": "এবার একটি অতি গুরুত্বপূর্ণ বিষয় লক্ষ্য করো: আমরা যখন লিখি <annotation>AB\\vec{v}</annotation>, তখন প্রথমে কোন রূপান্তরটি কার্যকর হয়? বি আগে, তারপর এ! অর্থাৎ এটি ডান থেকে বামে পড়তে হয়। যেহেতু ভেক্টর <annotation>\\vec{v}</annotation> সবচেয়ে কাছে <annotation>B</annotation> আছে, তাই <annotation>B\\vec{v}</annotation> আগে তৈরি হয়, তারপর তার ওপর <annotation>A</annotation> বসে।",
+        "tex": "AB\\vec{v} \\vec{v} B B\\vec{v} A"
+      },
+      {
+        "type": "callout",
+        "text": "📐 ফাংশন নোটেশনের ঐতিহ্য ফাংশন নোটেশনের কথা ভাবুন: আমরা যখন <annotation>f</annotation> অব <annotation>g</annotation> অব <annotation>x</annotation> লিখি, ইনপুট <annotation>x</annotation>-এর সবচেয়ে কাছে থাকে <annotation>g</annotation>। তাই আগে <annotation>g</annotation> কার্যকর হয়, তারপর তার ওপর <annotation>f</annotation> কাজ করে। ঠিক তেমনি ভেক্টর <annotation>\\vec{v}</annotation>-এর সবচেয়ে কাছে থাকা ডানপাশের ম্যাট্রিক্স <annotation>B</annotation> আগে কাজ করে, আর বামপাশের ম্যাট্রিক্স <annotation>A</annotation> পরে কার্যকর হয়।",
+        "tex": "f g x x g g f \\vec{v} B A"
+      }
+    ]
+  },
+  {
+    "id": "sec-algebraic-view",
+    "title": "৪. সাধারণ রূপ ও গুণন সূত্র — General Form",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৪. সাধারণ রূপ ও গুণন সূত্র — General Form",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "এবার আসুন প্রতীকী বীজগণিত দিয়ে দেখা যাক যেকোনো দুটি সাধারণ টু বাই টু ম্যাট্রিক্সের জন্য সূত্রটি কীভাবে নিজে থেকেই বেরিয়ে আসে—কোনো সূত্র মুখস্থ না করেই!",
+        "tex": ""
+      },
+      {
+        "type": "figure",
+        "text": "এই ডায়াগ্রামে দুটি সাধারণ ম্যাট্রিক্স <annotation>M_1</annotation> ও <annotation>M_2</annotation>-র চলকগুলো দেখানো হয়েছে। প্রথমে যে ম্যাট্রিক্সটি প্রয়োগ হয় তার কলামগুলোই আই হ্যাট ও জে হ্যাটের নতুন অবস্থান। লক্ষ্য করুন আমরা দুটি কলামকে পরের ম্যাট্রিক্সের রৈখিক সমন্বয় হিসেবে লেখা হয়েছে—এতেই গুণন সূত্রটি নিজে থেকে বেরিয়ে আসে।",
+        "tex": "M_1 M_2"
+      },
+      {
+        "type": "p",
+        "text": "প্রথম রূপান্তর <annotation>M_1</annotation>-এর পর আই হ্যাট পৌঁছায় প্রথম কলাম <annotation>\\begin{bmatrix}e\\\\g\\end{bmatrix}</annotation>-এ। এর ওপর দ্বিতীয় রূপান্তর <annotation>M_2</annotation> প্রয়োগ করলে পাওয়া যায় <annotation>e\\begin{bmatrix}a\\\\c\\end{bmatrix}+g\\begin{bmatrix}b\\\\d\\end{bmatrix}=\\begin{bmatrix}ae+bg\\\\ce+dg\\end{bmatrix}</annotation>। এটিই গুণফল ম্যাট্রিক্সের প্রথম কলাম!",
+        "tex": "M_1 \\begin{bmatrix}e\\\\g\\end{bmatrix} M_2 e\\begin{bmatrix}a\\\\c\\end{bmatrix}+g\\begin{bmatrix}b\\\\d\\end{bmatrix}=\\begin{bmatrix}ae+bg\\\\ce+dg\\end{bmatrix}"
+      },
+      {
+        "type": "p",
+        "text": "একইভাবে, জে হ্যাট প্রথম রূপান্তরের পর পৌঁছায় দ্বিতীয় কলাম <annotation>\\begin{bmatrix}f\\\\h\\end{bmatrix}</annotation>-এ। এর ওপর <annotation>M_2</annotation> প্রয়োগ করলে পাওয়া যায় <annotation>f\\begin{bmatrix}a\\\\c\\end{bmatrix}+h\\begin{bmatrix}b\\\\d\\end{bmatrix}=\\begin{bmatrix}af+bh\\\\cf+dh\\end{bmatrix}</annotation>। এটি হলো গুণফল ম্যাট্রিক্সের দ্বিতীয় কলাম!",
+        "tex": "\\begin{bmatrix}f\\\\h\\end{bmatrix} M_2 f\\begin{bmatrix}a\\\\c\\end{bmatrix}+h\\begin{bmatrix}b\\\\d\\end{bmatrix}=\\begin{bmatrix}af+bh\\\\cf+dh\\end{bmatrix}"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}\\begin{bmatrix}e&f\\\\g&h\\end{bmatrix}=\\begin{bmatrix}ae+bg&af+bh\\\\ce+dg&cf+dh\\end{bmatrix}</annotation>",
+        "tex": "\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}\\begin{bmatrix}e&f\\\\g&h\\end{bmatrix}=\\begin{bmatrix}ae+bg&af+bh\\\\ce+dg&cf+dh\\end{bmatrix}"
+      },
+      {
+        "type": "p",
+        "text": "পাঠ্যবইয়ে যে বলা হয় “প্রথম ম্যাট্রিক্সের সারি দিয়ে দ্বিতীয় ম্যাট্রিক্সের কলামকে ডট গুণ করো”—তা মূলত এই ভিত্তি ভেক্টর রূপান্তরেরই সংক্ষিপ্ত হিসাব কৌশল! কিন্তু এর আসল হৃদয় হলো: দ্বিতীয় রূপান্তরের কলামগুলোকে প্রথম রূপান্তরের স্থানাঙ্ক দিয়ে স্কেল করে যোগ করা। জ্যামিতিক অর্থ বুঝে এই সূত্র মুখস্থ করলে তা অনেক বেশি টেকসই হয়।",
+        "tex": ""
+      },
+      {
+        "type": "figure",
+        "text": "চিত্রটি দেখায় আগে শিরিং ও পরে ঘূর্ণন করলে স্থানটি যে রূপ নেয়, আগে ঘূর্ণন ও পরে শিরিং করলে তার চেয়ে সম্পূর্ণ ভিন্ন আকৃতি তৈরি হয়। লক্ষ্য করুন আই হ্যাটের গন্তব্য <annotation>(1,1)</annotation> বদলে <annotation>(0,1)</annotation> হয়ে যাচ্ছে। ক্রমের এই পার্থক্যই প্রমাণ করে <annotation>AB</annotation> আর <annotation>BA</annotation> এক নয়। তাই গুণনের ক্রম কখনোই অবহেলা করা যায় না।",
+        "tex": "(1,1) (0,1) AB BA"
+      },
+      {
+        "type": "callout",
+        "text": "👟 জুতো ও মোজার কৌশল বাস্তব জীবনের একটি উদাহরণ চিন্তা করো: আগে জুতো পরে তারপর মোজা পরা, আর আগে মোজা পরে তারপর জুতো পরা কি এক কথা? কখনই না! ঠিক তেমনি জ্যামিতিক রূপান্তরের ক্রম উল্টে দিলে পুরো স্থানাঙ্ক ব্যবস্থা বদলে যায়—এক কথায় <annotation>AB \\neq BA</annotation>।",
+        "tex": "AB \\neq BA"
+      }
+    ]
+  },
+  {
+    "id": "sec-derivation",
+    "title": "৫. সাধারণ গুণন সূত্রের প্রতিপাদন — Deriving the Formula",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৫. সাধারণ গুণন সূত্রের প্রতিপাদন — Deriving the Formula",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "এবার আসুন প্রতীকী বীজগণিত দিয়ে দেখা যাক যেকোনো দুটি সাধারণ টু বাই টু ম্যাট্রিক্সের জন্য সূত্রটি কীভাবে নিজে থেকেই বেরিয়ে আসে—কোনো নিয়ম মুখস্থ না করেই!",
+        "tex": ""
+      },
+      {
+        "type": "figure",
+        "text": "এই চিত্রে দেখানো হয়েছে কীভাবে একটি ম্যাট্রিক্সের কলাম দুটিকে চলক দিয়ে লিখে পরের ম্যাট্রিক্সের সাথে গুণ করা হয়। লক্ষ্য করুন চূড়ান্ত ম্যাট্রিক্সের প্রতিটি উপাংশ আসলে দুটি পদ যোগ—একটিমাত্র ডট গুণন নয়। এই চিত্রটি সূত্রের প্রতিটি অংশের জ্যামিতিক উৎস খুঁজে দেয়।",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "ধরা যাক প্রথম রূপান্তর <annotation>M_1=\\begin{bmatrix}e&f\\\\g&h\\end{bmatrix}</annotation> এবং দ্বিতীয় রূপান্তর <annotation>M_2=\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}</annotation>। আমরা <annotation>M_2M_1</annotation>-এর যৌথ ম্যাট্রিক্স বের করতে চাই। প্রথম রূপান্তরের পর <annotation>\\hat{i}</annotation> পৌঁছায় <annotation>M_1</annotation>-এর প্রথম কলাম <annotation>\\begin{bmatrix}e\\\\g\\end{bmatrix}</annotation>-এ।",
+        "tex": "M_1=\\begin{bmatrix}e&f\\\\g&h\\end{bmatrix} M_2=\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix} M_2M_1 \\hat{i} M_1 \\begin{bmatrix}e\\\\g\\end{bmatrix}"
+      },
+      {
+        "type": "p",
+        "text": "এই <annotation>\\begin{bmatrix}e\\\\g\\end{bmatrix}</annotation> ভেক্টরটির ওপর <annotation>M_2</annotation> প্রয়োগ করলে আমরা জানি এটি হবে <annotation>M_2</annotation>-এর কলামগুলোর রৈখিক সমন্বয়: <annotation>e\\begin{bmatrix}a\\\\c\\end{bmatrix}+g\\begin{bmatrix}b\\\\d\\end{bmatrix}=\\begin{bmatrix}ae+bg\\\\ce+dg\\end{bmatrix}</annotation>। একইভাবে <annotation>\\hat{j}</annotation> থেকে পাই <annotation>f\\begin{bmatrix}a\\\\c\\end{bmatrix}+h\\begin{bmatrix}b\\\\d\\end{bmatrix}=\\begin{bmatrix}af+bh\\\\cf+dh\\end{bmatrix}</annotation>।",
+        "tex": "\\begin{bmatrix}e\\\\g\\end{bmatrix} M_2 M_2 e\\begin{bmatrix}a\\\\c\\end{bmatrix}+g\\begin{bmatrix}b\\\\d\\end{bmatrix}=\\begin{bmatrix}ae+bg\\\\ce+dg\\end{bmatrix} \\hat{j} f\\begin{bmatrix}a\\\\c\\end{bmatrix}+h\\begin{bmatrix}b\\\\d\\end{bmatrix}=\\begin{bmatrix}af+bh\\\\cf+dh\\end{bmatrix}"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}\\begin{bmatrix}e&f\\\\g&h\\end{bmatrix}=\\begin{bmatrix}ae+bg&af+bh\\\\ce+dg&cf+dh\\end{bmatrix}</annotation>",
+        "tex": "\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}\\begin{bmatrix}e&f\\\\g&h\\end{bmatrix}=\\begin{bmatrix}ae+bg&af+bh\\\\ce+dg&cf+dh\\end{bmatrix}"
+      },
+      {
+        "type": "p",
+        "text": "কিন্তু বাস্তব সংখ্যার গুণনের মতো ম্যাট্রিক্স গুণন কি বিনিময় বিধি মেনে চলে? কখনই নয়! <annotation>AB</annotation> সাধারণত <annotation>BA</annotation>-এর সমান হয় না। অর্থাৎ ম্যাট্রিক্স গুণন একটি বিনিময়হীন অপারেশন—এটি এই অধ্যায়ের সবচেয়ে গুরুত্বপূর্ণ উপলব্ধিগুলোর একটি।",
+        "tex": "AB BA"
+      },
+      {
+        "type": "figure",
+        "text": "আগে শিরিং ও পরে ঘূর্ণন করলে যে চিত্র পাওয়া যায়, আগে ঘূর্ণন ও পরে শিরিং করলে তার চেয়ে সম্পূর্ণ ভিন্ন আকৃতি তৈরি হয়। লক্ষ্য করুন গ্রিডের কাত হওয়ার দিক ও ভিত্তি ভেক্টরের গন্তব্য দুটোই আলাদা। একটিমাত্র ক্রম পরিবর্তনেই পুরো ফলাফল বদলে যাওয়া <annotation>AB \\neq BA</annotation>-র নিখুঁত জ্যামিতিক প্রমাণ।",
+        "tex": "AB \\neq BA"
+      },
+      {
+        "type": "callout",
+        "text": "👟 ক্রম কেন গুরুত্বপূর্ণ আগে জুতো পরে তারপর মোজা পরা, আর আগে মোজা পরে তারপর জুতো পরা কি এক কথা? কখনই না! ঠিক তেমনি জ্যামিতিক রূপান্তরের ক্রম উল্টে দিলে পুরো মহাবিশ্বের স্থানাঙ্ক ব্যবস্থা বদলে যায়। তাই সারি-কলামের সূত্র মুখস্থ করার আগে ক্রমের এই অর্থ বোঝা জরুরি।",
+        "tex": ""
+      }
+    ]
+  },
+  {
+    "id": "sec-associativity",
+    "title": "৭. সংযোগ বিধি — Associativity (\n(\n𝐴\n𝐵\n)\n𝐶\n=\n𝐴\n(\n𝐵\n𝐶\n)\n(AB)C=A(BC)\n)",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৭. সংযোগ বিধি — Associativity (<annotation>(AB)C = A(BC)</annotation>)",
+        "tex": "(AB)C = A(BC)"
+      },
+      {
+        "type": "p",
+        "text": "ম্যাট্রিক্স গুণন বিনিময় বিধি না মানলেও, এটি সংযোগ বিধি (Associative Property) নিখুঁতভাবে মেনে চলে। অর্থাৎ বন্ধনী কোথায় বসানো হোক না কেন, চূড়ান্ত যৌগিক ম্যাট্রিক্স একই থাকে।",
+        "tex": ""
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>(AB)C = A(BC)</annotation>",
+        "tex": "(AB)C = A(BC)"
+      },
+      {
+        "type": "p",
+        "text": "যদি আপনি স্কুল বা কলেজে বীজগণিতের সাহায্যে তিন-তিনটি ম্যাট্রিক্সের প্রতীকী গুণ করে এটি প্রমাণ করতে যান, তবে খাতার পর খাতা সমীকরণ লিখে হয়রান হয়ে যাবেন। কিন্তু জ্যামিতিক চোখে তাকালে এটি স্বতঃসিদ্ধভাবে জলের মতো পরিষ্কার!",
+        "tex": ""
+      },
+      {
+        "type": "figure",
+        "text": "এই অ্যানিমেশনে তিনটি রূপান্তর <annotation>C</annotation>, <annotation>B</annotation>, <annotation>A</annotation> পরপর স্থানটির ওপর প্রয়োগ হচ্ছে। লক্ষ্য করুন বন্ধনী কোথায় আছে তা নির্বিশেষে রূপান্তরের প্রবাহ অপরিবর্তিত—প্রথমে <annotation>C</annotation>, তারপর <annotation>B</annotation>, সবশেষে <annotation>A</annotation>। ঠিক এই অপরিবর্তিত ক্রমই <annotation>(AB)C=A(BC)</annotation>-কে স্বতঃসিদ্ধ করে তোলে। চিত্রটি জটিল বীজগণিতের বদলে একটিমাত্র দৃশ্যমান যুক্তি দেয়।",
+        "tex": "C B A C B A (AB)C=A(BC)"
+      },
+      {
+        "type": "p",
+        "text": "লক্ষ্য করুন: <annotation>(AB)C</annotation> মানে হলো—প্রথমে স্থানে রূপান্তর <annotation>C</annotation> ঘটাও, তারপর <annotation>AB</annotation>-এর সম্মিলিত প্রভাব একযোগে প্রয়োগ করো। আর <annotation>A(BC)</annotation> মানে হলো—প্রথমে ক্রমান্বয়ে রূপান্তর <annotation>C</annotation> এবং <annotation>B</annotation> ঘটাও, তারপর রূপান্তর <annotation>A</annotation> প্রয়োগ করো।",
+        "tex": "(AB)C C AB A(BC) C B A"
+      },
+      {
+        "type": "callout",
+        "text": "🔗 একই ক্রম, একই ফলাফল উভয় ক্ষেত্রেই মহাবিশ্বের স্থানটি ঠিক একই ক্রমে প্রথমে <annotation>C</annotation>, তারপর <annotation>B</annotation>, এবং সবশেষে <annotation>A</annotation>-এর মধ্য দিয়েই যাত্রা করছে! প্রয়োগের এই মৌলিক ক্রম যেহেতু একচুলও বদলায়নি, তাই উভয়ের চূড়ান্ত সম্মিলিত ম্যাট্রিক্স অভিন্ন হতে বাধ্য।",
+        "tex": "C B A"
+      },
+      {
+        "type": "p",
+        "text": "নিচের ইন্টারেক্টিভ সিমুলেটরে তোমরা নিজের হাতে রূপান্তরের ক্রম অদলবদল করে দেখো এবং কুইজগুলোর উত্তর দিয়ে তোমার ধারণা যাচাই করে নাও। শুভ পদচারণা!",
+        "tex": ""
+      }
+    ]
+  }
+]

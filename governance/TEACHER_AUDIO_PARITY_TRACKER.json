@@ -1,0 +1,171 @@
+{
+  "system_name": "3B1B Bengali Platform — Teacher Narration & Audio Parity Audit Tracker",
+  "last_audit_date": "2026-11-05",
+  "audit_standard": "Strict 1-to-1 Audio Cue to DOM Block Parity & EBU R128 Loudness",
+  "lessons": {
+    "linear_algebra_lesson_01": {
+      "course": "linear_algebra",
+      "lesson": "lesson_01",
+      "title": "ভেক্টরের সূচনা ও মূল দৃষ্টিভঙ্গি",
+      "sections_count": 6,
+      "total_cues": 50,
+      "parity_status": "VERIFIED_PERFECT_MATCH",
+      "gapless_timing_applied": true,
+      "audio_files": [
+        "sec_01_interpretations.mp3",
+        "sec_02_coordinates.mp3",
+        "sec_03_addition.mp3",
+        "sec_04_scalar.mp3",
+        "sec_05_basis.mp3",
+        "sec_06_visualizer.mp3"
+      ],
+      "section_parity": {
+        "sec-interpretations": {
+          "cues": 15,
+          "blocks": 15,
+          "status": "100% MATCH"
+        },
+        "sec-coordinates": {
+          "cues": 12,
+          "blocks": 12,
+          "status": "100% MATCH"
+        },
+        "sec-addition": {
+          "cues": 8,
+          "blocks": 8,
+          "status": "100% MATCH"
+        },
+        "sec-scalar": {
+          "cues": 6,
+          "blocks": 6,
+          "status": "100% MATCH"
+        },
+        "sec-basis": {
+          "cues": 7,
+          "blocks": 7,
+          "status": "100% MATCH"
+        },
+        "sec-visualizer": {
+          "cues": 2,
+          "blocks": 2,
+          "status": "100% MATCH"
+        }
+      }
+    },
+    "linear_algebra_lesson_02": {
+      "course": "linear_algebra",
+      "lesson": "lesson_02",
+      "title": "রৈখিক সমন্বয়, স্প্যান এবং ভিত্তি ভেক্টর",
+      "sections_count": 4,
+      "total_cues": 66,
+      "parity_status": "VERIFIED_PERFECT_MATCH",
+      "gapless_timing_applied": true,
+      "audio_files": [
+        "sec_01_basis.mp3",
+        "sec_02_linear_combinations.mp3",
+        "sec_03_span.mp3",
+        "sec_04_dependence.mp3"
+      ]
+    },
+    "linear_algebra_lesson_03": {
+      "course": "linear_algebra",
+      "lesson": "lesson_03",
+      "title": "রৈখিক রূপান্তর ও ম্যাট্রিক্সের জ্যামিতিক রূপ",
+      "sections_count": 4,
+      "total_cues": 64,
+      "parity_status": "VERIFIED_PERFECT_MATCH",
+      "gapless_timing_applied": true
+    },
+    "linear_algebra_lesson_04": {
+      "course": "linear_algebra",
+      "lesson": "lesson_04",
+      "title": "ম্যাট্রিক্স গুণন ও রূপান্তরের সংযোজন",
+      "sections_count": 4,
+      "total_cues": 52,
+      "parity_status": "VERIFIED_PERFECT_MATCH",
+      "gapless_timing_applied": true
+    },
+    "linear_algebra_lesson_05": {
+      "course": "linear_algebra",
+      "lesson": "lesson_05",
+      "title": "ত্রিমাত্রিক রৈখিক রূপান্তর",
+      "sections_count": 3,
+      "total_cues": 38,
+      "parity_status": "VERIFIED_PERFECT_MATCH",
+      "gapless_timing_applied": true
+    },
+    "calculus_lesson_01": {
+      "course": "calculus",
+      "lesson": "lesson_01",
+      "title": "ক্যালকুলাসের মূল সারমর্ম: ক্ষেত্রফল ও ঢালের রহস্য",
+      "sections_count": 3,
+      "total_cues": 24,
+      "parity_status": "VERIFIED_PERFECT_MATCH",
+      "gapless_timing_applied": true
+    },
+    "calculus_lesson_02": {
+      "course": "calculus",
+      "lesson": "lesson_02",
+      "title": "অবকলনের প্যারাডক্স ও তাৎক্ষণিক বেগ",
+      "sections_count": 4,
+      "total_cues": 32,
+      "parity_status": "VERIFIED_PERFECT_MATCH",
+      "gapless_timing_applied": true
+    },
+    "probability_lesson_02": {
+      "course": "probability",
+      "lesson": "lesson_02",
+      "title": "বেজের উপপাদ্য ও মেডিকেল টেস্ট প্যারাডক্স",
+      "sections_count": 4,
+      "total_cues": 45,
+      "parity_status": "VERIFIED_PERFECT_MATCH",
+      "gapless_timing_applied": true
+    },
+    "differential_equations_lesson_02": {
+      "course": "differential_equations",
+      "lesson": "lesson_02",
+      "title": "পেন্ডুলাম ও ফেজ স্পেস",
+      "sections_count": 4,
+      "total_cues": 36,
+      "parity_status": "VERIFIED_PERFECT_MATCH",
+      "gapless_timing_applied": true
+    },
+    "differential_equations_lesson_01": {
+      "course": "differential_equations",
+      "lesson": "lesson_01",
+      "title": "ডিফারেনশিয়াল সমীকরণ কী? (পরিবর্তনের ভাষা)",
+      "sections_count": 4,
+      "total_cues": 20,
+      "parity_status": "VERIFIED_PERFECT_MATCH",
+      "gapless_timing_applied": true,
+      "audio_files": [
+        "sec_01_intro.mp3",
+        "sec_02_rate_of_change.mp3",
+        "sec_03_slope_field.mp3",
+        "sec_04_euler_method.mp3"
+      ],
+      "section_parity": {
+        "sec-intro": {
+          "cues": 5,
+          "blocks": 5,
+          "status": "100% MATCH"
+        },
+        "sec-rate-of-change": {
+          "cues": 5,
+          "blocks": 5,
+          "status": "100% MATCH"
+        },
+        "sec-slope-field": {
+          "cues": 5,
+          "blocks": 5,
+          "status": "100% MATCH"
+        },
+        "sec-euler-method": {
+          "cues": 5,
+          "blocks": 5,
+          "status": "100% MATCH"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "index": 0,
+    "type": "h2",
+    "text": "নমুনা গড় ও আদর্শ বিচ্যুতি হ্রাসের নিয়ম (\\sigma / \\sqrt{n})",
+    "start_ms": 0.0,
+    "end_ms": 4536.0,
+    "duration_ms": 4536.0
+  },
+  {
+    "index": 1,
+    "type": "p",
+    "text": "স্ট্যান্ডার্ড এরর হলো নমুনা গড়ের নিজস্ব পরিমিত ব্যবধান: \\text{স্ট্যান্ডার্ড এরর} = \\sigma / \\sqrt{n}।",
+    "start_ms": 4886.0,
+    "end_ms": 11822.0,
+    "duration_ms": 6936.0
+  },
+  {
+    "index": 2,
+    "type": "p",
+    "text": "অনিশ্চয়তা অর্ধেকে নামাতে ৪ গুণ এবং দশমাংশে নামাতে ১০০ গুণ নমুনা প্রয়োজন হয়।",
+    "start_ms": 12172.0,
+    "end_ms": 18052.0,
+    "duration_ms": 5880.0
+  },
+  {
+    "index": 3,
+    "type": "p",
+    "text": "এই সমীকরণটিই নিশ্চিত করে যে তুলনামূলক ছোট নমুনা দিয়েও বিশাল জনগোষ্ঠীর বৈশিষ্ট্য নিখুঁতভাবে অনুমান করা সম্ভব।",
+    "start_ms": 18402.0,
+    "end_ms": 25842.0,
+    "duration_ms": 7440.0
+  },
+  {
+    "index": 4,
+    "type": "formula-box",
+    "text": "নমুনা গড়ের স্ট্যান্ডার্ড এরর (Standard Error): \\text{স্ট্যান্ডার্ড এরর}(\\bar{X}) = \\frac{\\sigma}{\\sqrt{n}}",
+    "start_ms": 26192.0,
+    "end_ms": 34088.0,
+    "duration_ms": 7896.0
+  },
+  {
+    "index": 5,
+    "type": "formula-box",
+    "text": "৯৫% আত্মবিশ্বাস ব্যবধান (95% Confidence Interval): \\text{CI}_{95\\%} = \\left \\bar{X} 1.96 \\frac{\\sigma}{\\sqrt{n}}, \\; \\bar{X} + 1.96 \\frac{\\sigma}{\\sqrt{n}} \\right",
+    "start_ms": 34438.0,
+    "end_ms": 50974.0,
+    "duration_ms": 16536.0
+  }
+]

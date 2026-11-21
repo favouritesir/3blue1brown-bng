@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অধ্যায় ০২: অন্তরজের হেঁয়ালি — তাৎক্ষণিক বেগ ও পরিবর্তনের হার | ৩ব্লু১ব্রাউন বাংলা</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/calculus/lesson_02/manifest.js?v=8"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order (identical to L01) ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="ক্যালকুলাসের মূল সারমর্ম"
+  course-url="../../index.html#calculus"
+  home-url="../../index.html"
+  chapter-num="০২"
+  chapter-total="১২"
+  prev-url="lesson_01.html"
+  prev-title="পূর্ববর্তী অধ্যায়: ক্যালকুলাসের মূল সারমর্ম"
+  next-url="lesson_03.html"
+  next-title="পরবর্তী অধ্যায়: জ্যামিতিক দৃষ্টিতে অন্তরীকরণের সূত্রাবলি"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="ক্যালকুলাসের মূল সারমর্ম"
+  course-url="../../index.html#calculus"
+  chapter-label="অধ্যায় ০২ · অন্তরজের হেঁয়ালি"
+  title="অধ্যায় ০২: অন্তরজের হেঁয়ালি — তাৎক্ষণিক বেগ ও পরিবর্তনের হার"
+  desc="সময়ের একটি স্থির মুহূর্তে কীভাবে গতি অবস্থান করে? ক্ষুদ্রাতিক্ষুদ্র পরিবর্তন dt, ds এবং জ্যামিতিক স্পর্শকের গভীর রহস্য।"
+  video-src="../../media_vault/calculus/lesson_02/experiments/fill_v2/3b1b_calculus_02_full_dubbed_fill2.mp4"
+  yt-id="9vKqVkMQHKk"
+  date="২৯ এপ্রিল, ২০১৭"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2017/eoc/chapter2.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">প্যারাডক্সের সূচনা ও একক মুহূর্ত</b1b-bookmark>
+      <b1b-bookmark time="146"  time-bn="০২:২৬">গাড়ি, s(t) ও বেগের লেখচিত্র</b1b-bookmark>
+      <b1b-bookmark time="292" time-bn="০৪:৫২">অবস্থান, বেগ ও স্ন্যাপশট প্যারাডক্স</b1b-bookmark>
+      <b1b-bookmark time="408" time-bn="০৬:৪৮">dt, ds ও ds/dt — পরিবর্তনের হার</b1b-bookmark>
+      <b1b-bookmark time="525" time-bn="০৮:৪৫">ছেদক থেকে স্পর্শক: ঋণাত্মক ঢালের অর্থ</b1b-bookmark>
+      <b1b-bookmark time="627" time-bn="১০:২৭">s=t³ এর অন্তরজ ১২ ও 3t²</b1b-bookmark>
+      <b1b-bookmark time="729" time-bn="১২:০৯">t=0-এ প্যারাডক্স ও শ্রেষ্ঠ সুষম আসন্নায়ন</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-paradox">১. তাৎক্ষণিক বেগ ও প্যারাডক্স</a>
+      <a href="#sec-derivative-meaning">২. ডেরিভেটিভ কী? dt ও ds-এর অনুপাত</a>
+      <a href="#sec-tangent-zoom">৩. জ্যামিতিক স্পর্শক ও বক্ররেখা জুম</a>
+      <a href="#sec-x2-geometry">৪. x²-এর অন্তরীকরণ জ্যামিতি</a>
+      <a href="#sec-example-t3">৫. উদাহরণ: s=t³ থেকে বেগ ১২ ও 3t²</a>
+      <a href="#sec-paradox-zero">৬. শূন্য সময়ের প্যারাডক্স (t=0)</a>
+      <a href="#sec-tangent-lab">৭. 🔬 ইন্টারেক্টিভ ল্যাব: ছেদক থেকে স্পর্শক</a>
+      <a href="#sec-quizzes">৮. অফিশিয়াল কুইজ ও স্ব-মূল্যায়ন</a>
+      <a href="#sec-figure-gallery">৯. অফিশিয়াল চিত্র গ্যালারি</a>
+      <a href="#sec-next-chapter">১০. পরবর্তী অধ্যায়</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ Narrated Section 1: 8 manifest cues ═══ -->
+      <b1b-section id="sec-paradox" title="১. তাৎক্ষণিক বেগ ও প্যারাডক্স (Instantaneous Velocity & The Paradox)">
+        <b1b-quote author="আলবার্ট আইনস্টাইন" text="যতদূর গণিতের তত্ত্বসমূহ বাস্তবতা সম্পর্কে, ততদূর সেগুলো নিশ্চিত নয়; আর যতদূর নিশ্চিত, ততদূর বাস্তবতা সম্পর্কে নয়।"></b1b-quote>
+
+        <p>শিক্ষার্থী বন্ধুরা, ক্যালকুলাসের দ্বিতীয় অধ্যায়ে তোমাদের স্বাগত জানাচ্ছি। ধরা যাক, তোমরা একটি সুন্দর হাইওয়ে দিয়ে গাড়ি চালিয়ে যাচ্ছ; হঠাৎ ড্যাশবোর্ডের স্পিডোমিটারের দিকে চোখ পড়ল এবং দেখলে কাঁটাটি ঠিক ষাট কিলোমিটার প্রতি ঘণ্টার ঘরে স্থির হয়ে আছে। আসল উদাহরণে গাড়িটি বিন্দু A থেকে শুরু করে গতি বাড়িয়ে শেষ পর্যন্ত ১০০ মিটার দূরের বিন্দু B-তে ১০ সেকেন্ডে থামে।</p>
+
+        <p>কিন্তু এই ষাট কিলোমিটার প্রতি ঘণ্টা আসলে কীসের পরিমাপ? আমরা ছোটবেলা থেকেই জানি, বেগ মানে অতিক্রান্ত দূরত্ব ভাগ প্রয়োজনীয় সময়—অর্থাৎ দূরত্বের পরিবর্তন $\Delta s$-কে সময়ের ব্যবধান $\Delta t$ দিয়ে ভাগ করলে গড় বেগ $v_{\text{avg}} = \frac{\Delta s}{\Delta t}$ পাওয়া যায়।</p>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-1.37.svg" alt="অতিক্রান্ত দূরত্বের বক্ররেখা" caption="এই লেখচিত্রে অনুভূমিক অক্ষে সময় $t$ (সেকেন্ড) এবং উল্লম্ব অক্ষে অতিক্রান্ত দূরত্ব $s(t)$ (মিটার) দেখানো হয়েছে। গাড়িটি ১০ সেকেন্ডে ১০০ মিটার পথ পাড়ি দিয়ে থামে, আর বক্ররেখার উচ্চতা সেই দূরত্বই নির্দেশ করে। $t=6$ সেকেন্ডে উচ্চতা ৭০ মিটারের কিছু বেশি—লক্ষ্য করুন বক্ররেখার ঢালই পরবর্তীতে বেগের ধারণা জন্ম দেবে।"></b1b-figure>
+
+        <b1b-media-tab active-tab="image" caption="এই অ্যানিমেশনে গাড়িটি স্থির অবস্থা থেকে গতি বাড়িয়ে আবার থেমে যায়, ঠিক যেমনটি ১০০ মিটারের যাত্রায় ঘটে। ছবি ও ভিডিও দুটোর মাধ্যমে দেখুন কীভাবে সময়ের সাথে সাথে বক্ররেখার ঢাল বদলাচ্ছে। এই ঢালের পরিবর্তনই আমাদের বেগের পরিবর্তন হিসেবে বোঝা যায়।">
+          <div slot="image"><img src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-1.08-1.21.svg" alt="গাড়ির চলন"></div>
+          <div slot="video"><video controls width="480" src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-1.08-1.21.mp4"></video></div>
+        </b1b-media-tab>
+
+        <p>এবার ভাবুন, যাত্রা শুরুর ঠিক পাঁচ সেকেন্ডের মাথার মতো একটি একক মুহূর্তের কথা। সেই মুহূর্তে সময়ের কোনো ব্যবধান নেই, অর্থাৎ $\Delta t = 0$ এবং গাড়িও কোনো দূরত্ব অতিক্রম করতে পারে না, ফলে $\Delta s = 0$। একটি স্থির ছবি (snapshot) দেখে বেগ বের করা যায় না—তাই দুটি সময়ের স্ন্যাপশট তুলনা করে $\frac{50-30}{5-4} = 20$ মিটার প্রতি সেকেন্ড হিসাব করা হয়; অথচ লেখচিত্র থেকে দেখা যায় $t=3$-এ গাড়িটি সবচেয়ে দ্রুত চলে!</p>
+
+        <b1b-callout type="gold" icon="⚠️" title="বিশেষ নোট: অবকলনের কেন্দ্রীয় প্যারাডক্স">
+          <p>একটি একক মুহূর্তে যদি পরিবর্তনই না ঘটে, তবে $\frac{0}{0}$ সম্পূর্ণ অনির্ণেয়! তবুও স্পিডোমিটার পরিষ্কারভাবে $60\ \text{km/h}$ দেখাচ্ছে। এই আপাত বৈপরীত্যই হলো অন্তরজের প্যারাডক্স—গতি মাপতে হলে দুটি সময় লাগবে, অথচ বেগ চাই একটি মুহূর্তে।</p>
+        </b1b-callout>
+
+        <p>এটিই হলো সেই বিখ্যাত প্যারাডক্স: একটি স্থির ছবিতে সবকিছু নিথর, কোনো গতি নেই, তাহলে গতির পরিমাপ কীভাবে একটি একক বিন্দুতে অবস্থান করতে পারে? এই ধাঁধার উত্তর খুঁজতেই জন্ম হয়েছিল ক্যালকুলাসের।</p>
+      </b1b-section>
+
+      <!-- ═══ Narrated Section 2: 8 manifest cues ═══ -->
+      <b1b-section id="sec-derivative-meaning" title="২. ডেরিভেটিভ কী? dt ও ds-এর অনুপাত (What is a Derivative?)">
+        <p>প্যারাডক্সটির চমৎকার সমাধান হলো: ক্যালকুলাস কখনো শূন্য দিয়ে শূন্যকে ভাগ করে না! বরং এটি এমন এক সীমাস্থ প্রক্রিয়ার কথা বলে যা শূন্যের দিকে ধাবমান—প্রথমে একটি সসীম ছোট সময় নেওয়া হয়, তারপর জিজ্ঞেস করা হয় সেটি শূন্যের কাছে গেলে উত্তর কী ধীরে ধীরে অভিমুখী হয়।</p>
+
+        <p>মনে করি, পাঁচ সেকেন্ড সময়ের পর আমরা অত্যন্ত ক্ষুদ্র একটি সময় ব্যবধান বিবেচনা করলাম, যাকে বলা হয় $dt$। এই অতি সংক্ষিপ্ত সময়ে গাড়িটি খুব সামান্য একটু পথ অতিক্রম করল, যাকে আমরা বলছি $ds$।</p>
+
+        <b1b-formula math="v_{\text{inst}} = \frac{ds}{dt} = \lim_{\Delta t \to 0} \frac{s(t + \Delta t) - s(t)}{\Delta t}"></b1b-formula>
+
+        <p>এখানে $dt$ কিন্তু শূন্য নয়, বরং শূন্যের খুব কাছাকাছি—হয়তো $0.001$ সেকেন্ড। বাস্তব স্পিডোমিটারও ঠিক এভাবে কাজ করে: ৩ সেকেন্ডে সেটি ৩ থেকে ৩.০১ সেকেন্ডের ব্যবধানে $\frac{20.21-20}{0.01}$ মিটার প্রতি সেকেন্ড হিসাব করে। এই অতি ক্ষুদ্র ব্যবধানে $\frac{ds}{dt}$ আমাদের একটি বাস্তব ও সুসংজ্ঞায়িত গড় বেগ প্রদান করে।</p>
+
+        <b1b-callout type="blue" icon="🔍" title="বিশেষ নোট: ডেরিভেটিভের মূল রহস্য">
+          <p>$dt$ কে যতই ক্ষুদ্র থেকে ক্ষুদ্রতর করা হোক না কেন, $\frac{ds}{dt}$ অনুপাতটি হারিয়ে যায় না; বরং এটি একটি সুনির্দিষ্ট স্থির মানের দিকে ধাবিত হয়। এই সীমাস্থ মানটিই হলো ডেরিভেটিভ বা তাৎক্ষণিক বেগ।</p>
+        </b1b-callout>
+
+        <p>তাই স্পিডোমিটার আসলে সময়ের একক মুহূর্তে গতি মাপে না; বরং অত্যন্ত ক্ষুদ্র সময় ব্যবধানে সম্ভাব্য পরিবর্তনের শ্রেষ্ঠ সুষম আসন্নায়ন (best constant approximation) নির্দেশ করে।</p>
+
+        <p>গণিতের ভাষায়, দূরত্ব ফাংশন $s(t)$-এর পরিবর্তনের হার হলো $\frac{ds}{dt}$—আর $\frac{ds}{dt}$ কে $t$-এর একটি ফাংশন হিসেবে ভাবা যায়। 'd' অক্ষরটি ব্যবহার করে আমরা ঘোষণা করি যে শেষ পর্যন্ত $dt \to 0$ দেখা হবে; এটি এসেছে 'difference' বা ক্ষুদ্র পার্থক্য থেকে।</p>
+      </b1b-section>
+
+      <!-- ═══ Narrated Section 3: 7 manifest cues ═══ -->
+      <b1b-section id="sec-tangent-zoom" title="৩. জ্যামিতিক স্পর্শক ও বক্ররেখা জুম (Geometric Tangent & Graph Zooming)">
+        <p>ডেরিভেটিভের এই ভাবনাটিকে জ্যামিতিক লেখচিত্রে কীভাবে কল্পনা করা যায়? ধরা যাক, অনুভূমিক সময় অক্ষে $t$ এবং উল্লম্ব অক্ষে দূরত্ব $s$ স্থাপন করে আমরা দূরত্বের বক্ররেখা $s(t)$ আঁকলাম।</p>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-5.50.svg" alt="t=3 বিন্দুতে dt ও ds দ্বারা গঠিত অন্তরক ত্রিভুজ" caption="চিত্রে $t=3$ বিন্দুর চারপাশে অতিক্ষুদ্র $dt$ এবং তার ফলে হওয়া $ds$ দেখানো হয়েছে। Anুভূমিক $dt$ হলো 'run', আর উল্লম্ব $ds$ হলো 'rise'—এই দুটির অনুপাতই rise-over-run বা ঢাল। বক্ররেখাটি বিভক্ত ছোট ত্রিভুজটির মাধ্যমে বোঝা যায় কেন $\frac{ds}{dt}$ আসলে একটি ঢাল।"></b1b-figure>
+
+        <b1b-media-tab active-tab="image" caption="এই অ্যানিমেশনে $dt$ কে ক্রমশ ছোট করা হচ্ছে; ফলে দুটি বিন্দু একে অপরের কাছে এসে ছেদকের ঢাল স্পর্শকের ঢালে রূপ নিচ্ছে। স্থির ছবি ও ভিডিও দুটো পাশাপাশি দেখে লক্ষ্য করুন বক্ররেখা কীভাবে সোজা রেখার মতো আচরণ করে। ঠিক এই রূপান্তরটিই ডেরিভেটিভের জ্যামিতিক মর্ম।">
+          <div slot="image"><img src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-8.03.svg" alt="dt শূন্যের দিকে ধাবমান"></div>
+          <div slot="video"><video controls width="480" src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-8.20-8.32.mp4"></video></div>
+        </b1b-media-tab>
+
+        <p>বক্ররেখার যেকোনো দুটি বিন্দুর মধ্যে যদি আমরা একটি ছেদক রেখা (secant line) টানি, তবে তার ঢাল হবে খাড়া উচ্চতা $\Delta s$ ভাগ আনুভূমিক দৈর্ঘ্য $\Delta t$—অর্থাৎ $\frac{s(t+\Delta t)-s(t)}{\Delta t}$।</p>
+
+        <p>এবার গ্রান্ট স্যান্ডারসনের অন্যতম প্রিয় কৌশলটি লক্ষ্য করুন: লেখচিত্রের একটি নির্দিষ্ট বিন্দুতে অসম্ভব জুম করতে থাকুন। যতই জুম করবেন, বাঁকা বক্ররেখাটি আর বাঁকা থাকবে না—দেখতে প্রায় নিখুঁত সরলরেখার মতো হয়ে যাবে, আর ছেদকটি স্পর্শকে (tangent) পরিণত হবে।</p>
+
+        <b1b-callout type="green" icon="📐" title="বিশেষ নোট: স্থানীয় রৈখিকতা (Local Linearity)">
+          <p>অত্যন্ত ক্ষুদ্র পরিসরে প্রতিটি মসৃণ বক্ররেখাই স্থানীয়ভাবে একটি সরলরেখা। সেই সরলরেখার ঢালই হলো ওই বিন্দুতে অঙ্কিত স্পর্শকের ঢাল—আর তা কিছুই নয়, $\frac{ds}{dt}$।</p>
+        </b1b-callout>
+
+        <p>অতএব স্পর্শকের ঢাল আর কিছুই নয়—তা হলো $\frac{ds}{dt}$। 'তাৎক্ষণিক হার' না বলে একে ধীরে ধীরে 'বিন্দুটির আশেপাশে শ্রেষ্ঠ সুষম আসন্নায়ন' হিসেবে ভাবা যায়; স্পর্শকের ঢালই পরিবর্তনের হারকে চোখে দেখার সবচেয়ে শক্তিশালী রূপ।</p>
+      </b1b-section>
+
+      <!-- ═══ Narrated Section 4: 9 manifest cues ═══ -->
+      <b1b-section id="sec-x2-geometry" title="৪. x²-এর অন্তরীকরণ জ্যামিতি (Geometry of the Derivative of x²)">
+        <p>চলুন এবার একটি বাস্তব বীজগণিতীয় ফাংশন $f(x) = x^2$ নিয়ে জ্যামিতিক পরীক্ষা চালানো যাক। মুখস্থ সূত্র বলছে এর ডেরিভেটিভ $2x$—কিন্তু কেন ঠিক $2x$?</p>
+
+        <b1b-figure alt="x বাহুবিশিষ্ট বর্গক্ষেত্রের দুই পাশে dx-প্রস্থের ফালি ও কোণায় ক্ষুদ্র বর্গ" caption="চিত্রে $x$ বাহুর বর্গক্ষেত্রটির ডান ও উপরের ধারে দুটি $x \times dx$ আয়তাকার ফালি যোগ হয়েছে, আর কোণে রয়েছে অতিক্ষুদ্র $(dx)^2$ বর্গ। মূল অংশ $x^2$ অপরিবর্তিত থাকে; শুধু এই তিনটি নতুন টুকরোই ক্ষেত্রফলের বৃদ্ধি $df$ গঠন করে। দুটি ফালিই সমান হওয়ায় '২' সংখ্যাটি এসেছে—এটি কোনো বিমূর্ত সহগ নয়, বরং দুই ধারের জ্যামিতি।">
+          <svg viewBox="0 0 460 320" style="width:100%;max-width:520px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;">
+            <rect x="60" y="230" width="200" height="60" fill="#f59e0b" opacity="0.55"/>
+            <rect x="60" y="30" width="200" height="200" fill="#74c0e3" opacity="0.28" stroke="#74c0e3" stroke-width="2"/>
+            <rect x="260" y="30" width="60" height="200" fill="#f59e0b" opacity="0.55" stroke="#fbbf24" stroke-width="2"/>
+            <rect x="260" y="230" width="60" height="60" fill="#10b981" opacity="0.7" stroke="#10b981" stroke-width="2"/>
+            <text x="160" y="140" fill="var(--text,#fff)" font-size="20" text-anchor="middle">x²</text>
+            <text x="290" y="140" fill="#fbbf24" font-size="16" text-anchor="middle">x·dx</text>
+            <text x="160" y="268" fill="#fbbf24" font-size="16" text-anchor="middle">x·dx</text>
+            <text x="290" y="268" fill="#080b12" font-size="13" text-anchor="middle">(dx)²</text>
+            <text x="290" y="18" fill="var(--text,#fff)" font-size="13" text-anchor="middle">dx</text>
+            <text x="42" y="140" fill="var(--text,#fff)" font-size="13" text-anchor="middle">x</text>
+          </svg>
+        </b1b-figure>
+
+        <p>কল্পনা করুন একটি বর্গক্ষেত্র, যার প্রতিটি বাহুর দৈর্ঘ্য $x$—তাহলে তার ক্ষেত্রফল $x^2$। এবার বর্গক্ষেত্রের দৈর্ঘ্য ও প্রস্থ উভয় দিকেই অতি সামান্য বৃদ্ধি $dx$ যোগ করা হলো।</p>
+
+        <p>প্রশ্ন হলো, ক্ষেত্রফলের মোট বৃদ্ধি $df$ কতটুকু হবে? চিত্রে তাকালে দেখা যায় নতুন ক্ষেত্রফল তিনটি অংশে বিভক্ত: উপরের প্রান্তে $x \times dx$, ডান প্রান্তে আরেকটি $x \times dx$, এবং কোণায় $(dx)^2$ নামক অতি ক্ষুদ্র বর্গক্ষেত্র।</p>
+
+        <b1b-formula math="df = (x + dx)^2 - x^2 = 2x \cdot dx + (dx)^2"></b1b-formula>
+
+        <p>এবার উভয়পক্ষকে $dx$ দিয়ে ভাগ করলে পরিবর্তনের হার$p পাওয়া যায়: $\frac{df}{dx} = 2x + dx$।</p>
+
+        <b1b-callout type="purple" icon="✨" title="বিশেষ নোট: ক্ষুদ্রাতিক্ষুদ্রের বিলোপ">
+          <p>$dx$ শূন্যের দিকে ধাবিত হলে একা পড়ে থাকা $dx$ পদটি নগণ্য হয়ে মিলিয়ে যায়, কিন্তু মূল দুই পাশের ফালির অনুপাত $2x$ অক্ষত থাকে। এই '২' আসলে বর্গক্ষেত্রের দুটি বর্ধনশীল ধারের প্রতীক।</p>
+        </b1b-callout>
+
+        <p>এভাবেই আমরা পাই $\frac{d}{dx}(x^2) = 2x$। এটি কোনো অলৌকিক জাদু নয়—বরং দুটি আয়তাকার ফালির উন্মোচিত জ্যামিতিক রূপ, যার সীমাস্থ অবস্থায় $\lim_{dx \to 0}(2x + dx) = 2x$।</p>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED: official worked example s=t³ ═══ -->
+      <b1b-section id="sec-example-t3" title="৫. উদাহরণ: s(t)=t³ — বেগ ১২ ও সাধারণ 3t²" data-no-narration="true">
+        <p>একটি নির্দিষ্ট উদাহরণ বিষয়টি পরিষ্কার করবে। ধরা যাক দূরত্ব ফাংশনটি ঠিক $s(t) = t^3$—অর্থাৎ ১ সেকেন্ডে ১ মিটার, ২ সেকেন্ডে ৮ মিটার।</p>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-10.50.svg" alt="s(t)=t³ বক্ররেখা ও t=2 বিন্দু" caption="এই বক্ররেখাটি $s(t)=t^3$ ফাংশনকে দেখায়, যার ওপর $t=2$ বিন্দুটি হাইলাইট করা হয়েছে। বক্ররেখা প্রথমে ক্রমশ খাড়া হচ্ছে—অর্থাৎ সময়ের সাথে বেগ বাড়ছে। এই বিন্দুতে স্পর্শকের ঢাল বের করাই আমাদের কাজ।"></b1b-figure>
+
+        <p>আমরা যদি $t=2$ সেকেন্ডে বেগ চাই, তবে $dt$ কে প্রথমে একটি বাস্তব ছোট সংখ্যা ধরে $\frac{ds}{dt}(2) = \frac{s(2+dt)-s(2)}{dt}$ লিখি। কারণ $s(t)=t^3$, তাই numerator হয় $(2+dt)^3 - 2^3$।</p>
+
+        <b1b-formula math="\frac{ds}{dt}(2) = \frac{(2+dt)^3 - 2^3}{dt}"></b1b-formula>
+
+        <p>এই রাশিটি বীজগণিতভাবে প্রসারিত করলে $2^3$ পদটি বাতিল হয়ে যায়; অবশিষ্ট সব পদে $dt$ থাকায় সেটি ভাগ করে দেওয়া যায়।</p>
+
+        <b1b-formula math="\frac{ds}{dt}(2) = \frac{2^3 + 3\cdot 2^2 dt + 3\cdot 2 (dt)^2 + (dt)^3 - 2^3}{dt}"></b1b-formula>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-12.09.svg" alt="t=2-এ আসন্ন বেগ" caption="চিত্রে $t=2$ থেকে $2+dt$ পর্যন্ত অতিক্ষুদ্র যাত্রা দেখানো হয়েছে, যার rise-over-run ঢাল আসন্ন বেগ দেয়। $dt$ ছোট হলে ছেদকের দুই বিন্দু কাছে আসে এবং ঢাল স্পর্শকের ঢালের কাছাকাছি পৌঁছায়। এই জ্যামিতিক দৃশ্যটি বীজগণিতের পদগুলোর অর্থ বুঝতে সাহায্য করে।"></b1b-figure>
+
+        <p>ভাগ করার পর পাই $\frac{ds}{dt}(2) = 3\cdot 2^2 + 3\cdot 2(dt) + (dt)^2$।unning এখন $dt \to 0$ করলে শেষ দুটি পদ বিলীন হয়ে কেবল $3\cdot 2^2 = 12$ বেঁচে থাকে।</p>
+
+        <b1b-formula math="\frac{ds}{dt}(2) = 3(2)^2 + 3(2)(dt) + (dt)^2 \;\xrightarrow{dt\to0}\; 12"></b1b-formula>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-12.59.svg" alt="t=2-এ স্পর্শকের ঢাল ১২" caption="অ্যানিমেশনে ছেদক ক্রমশ স্পর্শকে রূপ নিচ্ছে এবং $t=2$-এ তার ঢাল ঠিক $3\cdot2^2 = 12$ মিটার প্রতি সেকেন্ডে স্থির হচ্ছে। মনে রাখবেন ১২ হলো $t=2$-এর মান, $t=1$-এর নয়। এই চিত্রই পরবর্তী কুইজের ভিত্তি তৈরি করে।"></b1b-figure>
+
+        <p>অর্থাৎ $t=2$-এ স্পর্শকের ঢাল ঠিক ১২ মিটার প্রতি সেকেন্ড। আর $t=2$-এর কোনো বিশেষত্ব ছিল না—সাধারণভাবে $t^3$-এর অন্তরজ হলো $3t^2$।</p>
+
+        <b1b-formula math="\frac{ds}{dt}(t) = 3t^2"></b1b-formula>
+
+        <p>বাস্তবে ক্যালকুলাস শিক্ষার্থীরা প্রতিবার এই বীজগণিত না করে $3t^2$ সূত্রটি মুখস্থ করে—যেমনটি $x(y+z)=xy+xz$ জানা থাকে।</p>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-14.13-messy.svg" alt="dt-এর নির্দিষ্ট মানে জটিল রাশি" caption="যদি $dt=0.01$ এর মতো কোনো নির্দিষ্ট মান রাখা হয়, তবে $\frac{s(t+dt)-s(t)}{dt}$ রাশিটি বেশ জটিল থাকে। অসংখ্য পদ নিয়ে এই 'messy' অবস্থাই দেখানো হয়েছে। সীমার ধারণা না থাকলে হিসাব এতেই আটকে যেত।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-14.13-simple.svg" alt="dt→0-এ সরল 3t²" caption="কিন্তু $dt \to 0$ ধরলে অপ্রয়োজনীয় পদগুলো বাদ পড়ে কেবল $3t^2$ অবশিষ্ট থাকে—রাশিটি সরল ও পরিচিত হয়ে যায়। এই সরলীকরণই ক্যালকুলাসকে ব্যবহারিক করে তোলে। জটিলতা দূর হয় 'নির্দিষ্ট dt' বাদ দিয়ে 'যা অভিমুখী' তা ধরার কারণে।"></b1b-figure>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED: paradox at time zero ═══ -->
+      <b1b-section id="sec-paradox-zero" title="৬. শূন্য সময়ের প্যারাডক্স (The Paradox at Time Zero, t=0)" data-no-narration="true">
+        <p>এই উদাহরণটি $t=0$-এ প্যারাডক্সটি আরও পরিচ্ছন্নভাবে দেখায়। $s(t)=t^3$-এর অন্তরজ $3t^2$, তাই $t=0$-এ $\frac{ds}{dt}=3(0)^2=0$ মিটার প্রতি সেকেন্ড—স্পর্শক সম্পূর্ণ অনুভূমিক, ফলে মনে হয় গাড়িটি নড়ছে না।</p>
+
+        <b1b-formula math="\frac{ds}{dt}(0) = 3(0)^2 = 0\ \text{m/s}"></b1b-formula>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-14.44.svg" alt="t=0-এ gাড়ির অবস্থা" caption="চিত্রে $t=0$ বিন্দুতে বক্ররেখার স্পর্শক সমতল—অর্থাৎ অন্তরজ শূন্য। দেখে মনে হয় গাড়িটি স্থির, কিন্তু শূন্য ঢালের অর্থ কেবল 'আশেপাশে শ্রেষ্ঠ সুষম আসন্নায়ন ০'। এই চিত্রই প্যারাডক্সের কেন্দ্রে রয়েছে।"></b1b-figure>
+
+        <p>কিন্তু $t=0$ থেকে $t=0.1$ সেকেন্ডের মধ্যে গাড়িটি আসলেই $0.001$ মিটার নড়ে—খুবই ছোট, তবু শূন্য নয়; গড় বেগ মাত্র $0.01$ মিটার প্রতি সেকেন্ড। ক্রমশ ছোট nudges-এ এই অনুপাত ০-এর দিকে ধাবিত হয়, কিন্তু কখনোই ঠিক ০ হয় না।</p>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-15.59.svg" alt="0.1 সেকেন্ডে 0.001 মিটার চলন" caption="এই ছবিতে $t=0$ থেকে $0.1$ সেকেন্ডের ছোট ব্যবধানে $0.001$ মিটারের ক্ষুদ্র চলন দেখানো হয়েছে। দূরত্বের এই পরিবর্তন সময়ের পরিবর্তনের তুলনায় এত কম যে অনুপাতটি ০-এর কাছাকাছি পৌঁছে যায়। তবুও 'চলন' শব্দটি দুটি সময়ের মাঝেই অর্থবহ—একক মুহূর্তে নয়।"></b1b-figure>
+
+        <p>তাই 'তাৎক্ষণিক বেগ' শব্দটিকে গুরুত্ব সহকারে না নিয়ে একে 'পরিবর্তনের হারের শ্রেষ্ঠ সুষম আসন্নায়ন' হিসেবে ভাবাই শ্রেয়—গতি এমন কিছু যা দুটি সময়ের মধ্যেই ঘটে, একটি মুহূর্তে নয়।</p>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED: interactive lab, fullscreen ═══ -->
+      <b1b-section id="sec-tangent-lab" title="৭. 🔬 ইন্টারেক্টিভ ল্যাব: ছেদক থেকে স্পর্শক (Secant-to-Tangent Zoom)" data-no-narration="true">
+        <p>নিচের সিমুলেটরে $s(t)=\frac{1}{2}t^2$ বক্ররেখা নিয়ে খেলুন। $t$ বদলে বিন্দুটি সরান, $dt$ কমালে ছেদকের ঢাল স্পর্শকের ঢালের ($=t$) কাছে আসবে, আর জুম বাড়ালে বক্ররেখা সোজা দেখাবে।</p>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে ল্যাব">
+          <canvas id="tangentCanvas" width="900" height="460" style="display:block;width:100%;height:auto;background:#080b12;border-radius:8px;"></canvas>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:14px;">
+            <div><div style="font-size:.85rem;color:var(--text-muted);">সময় t: <b id="tLabTv">3.0</b></div><input type="range" id="tLabT" min="0" max="10" step="0.1" value="3" style="width:100%;"/></div>
+            <div><div style="font-size:.85rem;color:var(--text-muted);">ব্যবধান dt: <b id="tLabDtv">1.00</b></div><input type="range" id="tLabDt" min="0.01" max="2" step="0.01" value="1" style="width:100%;"/></div>
+            <div><div style="font-size:.85rem;color:var(--text-muted);">জুম: <b id="tLabZv">1×</b></div><input type="range" id="tLabZoom" min="1" max="50" step="1" value="1" style="width:100%;"/></div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px;">
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px;"><div style="font-size:.8rem;color:var(--text-muted);">ছেদকের ঢাল Δs/Δt</div><div id="tLabSec" style="font-size:1.2rem;font-weight:700;color:#fbbf24;">—</div></div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px;"><div style="font-size:.8rem;color:var(--text-muted);">স্পর্শকের ঢাল ds/dt</div><div id="tLabTan" style="font-size:1.2rem;font-weight:700;color:#10b981;">—</div></div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px;"><div style="font-size:.8rem;color:var(--text-muted);">পার্থক্য |Secant − Tangent|</div><div id="tLabErr" style="font-size:1.2rem;font-weight:700;color:#f87171;">—</div></div>
+          </div>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED: both official 3B1B quizzes ═══ -->
+      <b1b-section id="sec-quizzes" title="৮. স্ব-মূল্যায়ন: অফিশিয়াল কুইজ" data-no-narration="true">
+        <b1b-quiz
+          question="❓ স্পর্শকরেখার ঢাল ঋণাত্মক (negative) হলে তার অর্থ কী? (What does it mean if the slope of the tangent line is negative?)"
+          correct="2"
+          correct-msg="একদম সঠিক! ঋণাত্মক ঢাল মানে সময় বাড়লেও দূরত্ব s(t) কমছে—অর্থাৎ গাড়িটি পেছনের দিকে যাচ্ছে (going backwards)। খেয়াল করুন: শুধু 'ধীরে হওয়া' বা 'থেমে আসা'-তে ঢাল ঋণাত্মক হয় না, সেটিতে ঢাল ইতিবাচক থাকে কেবল ছোট হয়। ঢালের চিহ্নই গতির দিক নির্দেশ করে।"
+          wrong-msg="আবার ভাবুন: ঢাল = rise/run = ds/dt। ঋণাত্মক মানে ds ঋণাত্মক—সময় বাড়লেও দূরত্ব কমছে। 'ধীরে হওয়া' মানে ঢাল ছোট হওয়া, কিন্তু তা এখনো ধনাত্মক; রাস্তার গর্ত বা উল্টো অবস্থার সাথে এর কোনো যোগ নেই।"
+          reveal-msg="সঠিক উত্তর হলো: The car is going backwards — গাড়িটি পেছনের দিকে যাচ্ছে। ঋণাত্মক ds/dt মানে দূরত্ব হ্রাস, অর্থাৎ বিপরীত দিকে চলন।">
+          <div slot="option">গাড়ি ধীরে ধীরে থেমে যাচ্ছে (The car is slowing down.)</div>
+          <div slot="option">গাড়ি পেছনের দিকে যাচ্ছে (The car is going backwards.)</div>
+          <div slot="option">গাড়ি উল্টো দিকে মাথায় আছে (The car is upside down.)</div>
+          <div slot="option">রাস্তায় একটা গর্ত আছে (There is a hole in the road.)</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ s(t)=t³ হলে t=1 সেকেন্ডে গাড়ির বেগ কত? (What is the velocity of the car at time t=1?)"
+          correct="3"
+          correct-msg="অসাধারণ! t-কিউব (t³) ফাংশনের অন্তরজ হলো 3t-বর্গ (3t²), তাই t=1-এ বেগ = 3×1² = 3 মিটার প্রতি সেকেন্ড। মনে রাখবেন 12 হলো t=2-এর মান (3×2²=12)—t=1-এ নয়। ছোট উদাহরণ: ১ সেকেন্ডে দূরত্ব ১ মিটার, ২ সেকেন্ডে ৮ মিটার, আর স্পর্শকের ঢাল 3t² অনুযায়ী বাড়তে থাকে।"
+          wrong-msg="ধাপে ধাপে দেখি: ds/dt = 3t²। এখানে t=1 বসালে 3(1)² = 3। 2 মিটার/সে. হলো s(1)=1³-এর সাথে মিল দেখে ভুল ধারণা; 12 হলো t=2-এর মান; 9 হলো t=√3-এর মান—কোনোটিই t=1-এর নয়।"
+          reveal-msg="সঠিক উত্তর: 3 m/s — কারণ ds/dt = 3t² এবং t=1-এ 3(1)² = 3 মিটার প্রতি সেকেন্ড।">
+          <div slot="option">$2\ \frac{m}{s}$</div>
+          <div slot="option">$12\ \frac{m}{s}$</div>
+          <div slot="option">$3\ \frac{m}{s}$</div>
+          <div slot="option">$9\ \frac{m}{s}$</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED: remaining official figures ═══ -->
+      <b1b-section id="sec-figure-gallery" title="৯. অফিশিয়াল চিত্র গ্যালারি (সম্পূর্ণ অ্যাসেট)" data-no-narration="true">
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-1.05.jpg" alt="ক্যালকুলাসের কয়েকজন উদ্ভাবক" caption="ক্যালকুলাসের উদ্ভাবকদের এই ছবি আমাদের মনে করিয়ে দেয় যে অন্তরজের ধারণা এক রাতে আসেনি। নিউটন ও লাইবনিজের মতো বিজ্ঞানীরা 'অতি ক্ষুদ্র পরিবর্তন' নিয়ে দীর্ঘ চিন্তা করেছেন। পরবর্তী পাঠে আমরা তাদের দেওয়া সূত্রগুলোর জ্যামিতিক উৎস খুঁজব।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-1.43,1.50.svg" alt="t=6 সেকেন্ডে ৭০ মিটার" caption=" এই চিত্রে $t=6$ সেকেন্ডে গাড়ির অবস্থান দেখানো হয়েছে—বক্ররেখার উচ্চতা ৭০ মিটারের কিছু বেশি। লক্ষ্য করুন $s(t)$ কেবল একটি নির্দিষ্ট সময়ের দূরত্ব বলে দেয়। বেগ বের করতে হলে কাছাকাছি দুটি সময়ের দূরত্ব তুলনা করতে হবে।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-2.06-2.20.svg" alt="বিভিন্ন সময় ব্যবধানে বক্ররেখার ঢাল" caption="এখানে বিভিন্ন সময় ব্যবধানে rise-over-run হিসেবে ঢাল আলাদা করে দেখানো হয়েছে। শুরুর দিকে বক্ররেখা অগভীর, মাঝখানে খাড়া, শেষে আবার অগভীর—এই ঢালের ধরনই বেগের bump তৈরি করে। বক্ররেখার আকার থেকে বেগের আকার কীভাবে নির্ধারিত হয় তা এই ছবি বুঝতে সাহায্য করবে।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-2.43.svg" alt="দূরত্ব ও বেগের লেখচিত্র" caption="সবুজ bump-টি হলো বেগের লেখচিত্র $v(t)$, আর নীল বক্ররেখা হলো দূরত্ব $s(t)$। $t=0$-এর কাছে বেগ খুব কম, মাঝখানে সর্বোচ্চ, শেষে শূন্য—ঠিক যেমনটি গাড়ির চলনে দেখা যায়। দুই বক্ররেখার এই সম্পর্কই পুরো অধ্যায়ের কেন্দ্রীয় প্রশ্ন।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-2.57.svg" alt="দুইবার থামার বক্ররেখা" caption="এই ভিন্ন $s(t)$-এ গাড়ি ৫ সেকেন্ডেথেমে আবার ১০ সেকেন্ডে থামে—অর্থাৎ দুইটি আলাদা bump তৈরি হয়। দূরত্ব ফাংশন বদলালে বেগ ফাংশনও বদলায়। আমাদের লক্ষ্য হলো এই দুটির মধ্যকার নির্দিষ্ট গাণিতিক সম্পর্ক বোঝা।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-3.00-question.svg" alt="কোন সময়ে গাড়ি সবচেয়ে দ্রুত?" caption="প্রশ্ন করা হয়েছে: কোন সময়ে গাড়িটি সবচেয়ে দ্রুত চলে? উত্তর $t=3$—যেখানে $s(t)$ বক্ররেখা সবচেয়ে খাড়া। কিন্তু 'একক মুহূর্তে বেগ' বলে কিছু না থাকায় এই প্রশ্নটি আপাতদৃষ্টিতে অর্থহীন মনে হয়। এই অস্বচ্ছতাই প্যারাডক্সের জন্ম দেয়।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-3.00-answer.svg" alt="সর্বোচ্চ বেগের উত্তর t=3" caption="উত্তর ছবিতে $t=3$ বিন্দুতে সবুজ বেগ রেখা সর্বোচ্চ—অর্থাৎ সেখানে স্পর্শক সবচেয়ে খাড়া। দূরত্বের ঢাল ও বেগের মানের এই মিলই ইঙ্গিত দেয় যে বেগ আসলে ঢালের সমান। এখন প্রশ্ন: একক বিন্দুতে ঢাল কীভাবে নির্ধারণ করব?"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-3.38.svg" alt="একক স্ন্যাপশট" caption="গাড়ির একটি স্থির ছবি (snapshot) দেখে তার বেগ বলা যায় না—ছবিতে কোনো parিবর্তন দেখা যায় না। একক মুহূর্তে $\Delta s$ ও $\Delta t$ দুটোই শূন্য, তাই $\frac{0}{0}$ অনির্ণেয়। বেগ মাপতে হলে অবশ্যই দুটি সময়ের ছবি তুলনা করতে হবে।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-3.52.svg" alt="দুটি স্ন্যাপশটের তুলনা" caption="এখানে ৪ ও ৫ সেকেন্ডের দুটি স্ন্যাপশট দেখানো হয়েছে—দূরত্ব ৩০ মিটার থেকে ৫০ মিটারে গেছে। তুলনা করে $\frac{50-30}{5-4}=20$ মিটার প্রতি সেকেন্ড গড় বেগ পাওয়া যায়। গতি মাপার এই 'দুই বিন্দু' নীতিই ক্যালকুলাসের সীমার ভিত্তি।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-4.14.svg" alt="একক t-এ বেগ বের করার অসুবিধা" caption="আমরা চাই প্রতিটি $t$-এর সাথে একটি বেগ যুক্ত করতে, অথচ বেগ হিসাব করতে দুটি $t$ লাগবে। এই মৌলিক অসঙ্গতিই চিত্রটি তুলে ধরে। ক্যালকুলাসের inventors-রাও ঠিক এই বৈপরীত্যের মুখোমুখি হয়েছিলেন।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-4.45.svg" alt="বাস্তব স্পিডোমিটার" caption="বাস্তব স্পিডোমিটার কোনো একক মুহূর্তে গতি মাপে না; সেটি অত্যন্ত ছোট সময়ে অতিক্রান্ত দূরত্ব মেপে ভাগ করে। যান্ত্রিকভাবে এটি প্যারাডক্স এড়িয়ে চলে। এই বাস্তব কৌশলথেকেই আমরা $ds$ ও $dt$-এর ধারণা নিই।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-5.00.svg" alt="3 থেকে 3.01 সেকেন্ডের ব্যবধান" caption="স্পিডোমিটার ৩ সেকেন্ডে ৩.০১ সেকেন্ড পর্যন্ত $0.01$ সেকেন্ডের ব্যবধান নেয়। এই ছোট $dt$-তে দূরত্ব বৃদ্ধি হয় $20.21-20=0.21$ মিটার। ভাগ করে পাই প্রায় $21$ মিটার প্রতি সেকেন্ড—একটি বাস্তব, সুসংজ্ঞায়িত সংখ্যা।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-5.31.svg" alt="dt ও ds-এর চিত্র" caption="এখানে $dt$ হলো সময়ের ছোট ধাপ, আর $ds$ হলো দূরত্বের সংশ্লিষ্ট ছোট পরিবর্তন। $\frac{ds}{dt}$ মানে এই দুটির অনুপাত—অর্থাৎ বক্ররেখার rise-over-run। দ EF; এই চিত্রেই 'd' অক্ষরের অর্থ (ছোট পার্থক্য) স্পষ্ট হয়।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/derivatives/figure-6.05.svg" alt="t=6-এ জুম করা rise-over-run" caption="একই পদ্ধতি $t=6$-এও প্রয়োগ করা যায়—বিন্দুটিতে জুম করে $dt$ ও $ds$ নির্ধারণ করা হয়। $t=3$-এর মতো এখানেও $\frac{ds}{dt}$ একটি ঢাল। এইভাবে $\frac{ds}{dt}$ নিজেই $t$-এর একটি ফাংশন হয়ে যায়—আমাদের বেগ ফাংশন $v(t)$।"></b1b-figure>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED: next chapter ═══ -->
+      <b1b-section id="sec-next-chapter" title="১০. পরবর্তী অধ্যায়" data-no-narration="true">
+        <p>পরবর্তী অধ্যায়ে আমরা দেখব কীভাবে বিভিন্ন ফাংশনের অন্তরজ নির্ণয় করা যায়—বিশেষত $t^3$-এর মতো শক্তির ক্ষেত্রে $3t^2$ সূত্রটিকে জ্যামিতিকভাবে ব্যাখ্যা করা যায়। ছোট nudges-এর এই ধারণা অসংখ্য সুন্দর জ্যামিতিক অন্তর্দৃষ্টির দিকে খুলে যাবে।</p>
+        <p><a href="lesson_03.html"><strong>পরবর্তী অধ্যায়: জ্যামিতিক দৃষ্টিতে অন্তরীকরণের সূত্রাবলি (Power Rule through Geometry) →</strong></a></p>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/calculus/lesson_02/experiments/fill_v2/3b1b_calculus_02_full_dubbed_fill2.mp4"
+    yt-id="9vKqVkMQHKk"
+    title="অধ্যায় ০২: অন্তরজের হেঁয়ালি — The Paradox of the Derivative"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — ক্যালকুলাসের মূল সারমর্ম">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_01.html"
+  prev-title="ক্যালকুলাসের মূল সারমর্ম"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_03.html"
+  next-title="জ্যামিতিক দৃষ্টিতে অন্তরীকরণের সূত্রাবলি"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ TANGENT-ZOOM LAB CONTROLLER (page-local, no library change) ═══════════ -->
+<script>
+(function () {
+  function init() {
+    var cv = document.getElementById('tangentCanvas');
+    if (!cv || !cv.getContext) return;
+    var ctx = cv.getContext('2d');
+    var tS = document.getElementById('tLabT');
+    var dtS = document.getElementById('tLabDt');
+    var zS = document.getElementById('tLabZoom');
+    var tv = document.getElementById('tLabTv');
+    var dtv = document.getElementById('tLabDtv');
+    var zv = document.getElementById('tLabZv');
+    var oSec = document.getElementById('tLabSec');
+    var oTan = document.getElementById('tLabTan');
+    var oErr = document.getElementById('tLabErr');
+    if (!tS || !dtS || !zS) return;
+
+    function sfn(x) { return 0.5 * x * x; }
+
+    function draw() {
+      var W = cv.width, H = cv.height;
+      var t = parseFloat(tS.value), dt = parseFloat(dtS.value), zoom = parseFloat(zS.value);
+      if (tv) tv.textContent = t.toFixed(1);
+      if (dtv) dtv.textContent = dt.toFixed(2);
+      if (zv) zv.textContent = zoom + '×';
+
+      var half = 6 / zoom;
+      var x0 = t - half, x1 = t + half;
+      var yc = sfn(t);
+      var yhalf = 3 / zoom + 0.4;
+      var y0 = yc - yhalf, y1 = yc + yhalf;
+      function px(x) { return (x - x0) / (x1 - x0) * W; }
+      function py(y) { return H - (y - y0) / (y1 - y0) * H; }
+
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = '#080b12';
+      ctx.fillRect(0, 0, W, H);
+
+      ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+      ctx.lineWidth = 1;
+      for (var g = 0; g <= 8; g++) {
+        var gy = H * g / 8;
+        ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(W, gy); ctx.stroke();
+        var gx = W * g / 8;
+        ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, H); ctx.stroke();
+      }
+
+      ctx.beginPath();
+      for (var i = 0; i <= 240; i++) {
+        var x = x0 + (x1 - x0) * i / 240;
+        var X = px(x), Y = py(sfn(x));
+        if (i === 0) ctx.moveTo(X, Y); else ctx.lineTo(X, Y);
+      }
+      ctx.strokeStyle = '#74c0e3';
+      ctx.lineWidth = 2.6;
+      ctx.stroke();
+
+      var mSec = (sfn(t + dt) - sfn(t)) / dt;
+      var mTan = t;
+      var xa = Math.max(x0, t - half * 1.4), xb = Math.min(x1, t + half * 1.4 + dt);
+      function drawLine(m, color, dash) {
+        ctx.save();
+        ctx.setLineDash(dash || []);
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(px(xa), py(sfn(t) + m * (xa - t)));
+        ctx.lineTo(px(xb), py(sfn(t) + m * (xb - t)));
+        ctx.stroke();
+        ctx.restore();
+      }
+      drawLine(mSec, '#fbbf24', [6, 5]);
+      drawLine(mTan, '#10b981', []);
+
+      var pts = [[t, '#74c0e3'], [t + dt, '#fbbf24']];
+      for (var p = 0; p < pts.length; p++) {
+        ctx.beginPath();
+        ctx.arc(px(pts[p][0]), py(sfn(pts[p][0])), 4.5, 0, Math.PI * 2);
+        ctx.fillStyle = pts[p][1];
+        ctx.fill();
+      }
+
+      if (oSec) oSec.textContent = mSec.toFixed(3);
+      if (oTan) oTan.textContent = mTan.toFixed(3);
+      if (oErr) oErr.textContent = Math.abs(mSec - mTan).toFixed(3);
+    }
+
+    tS.addEventListener('input', draw);
+    dtS.addEventListener('input', draw);
+    zS.addEventListener('input', draw);
+    draw();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>

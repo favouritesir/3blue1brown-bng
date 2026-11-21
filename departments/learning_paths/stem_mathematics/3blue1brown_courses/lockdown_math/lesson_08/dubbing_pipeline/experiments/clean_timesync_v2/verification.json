@@ -1,0 +1,189 @@
+{
+  "experiment": "clean_timesync_v2 (lockdown_math_lesson_08 full-length, STRONG expansion, scale recomputed from rendered speech)",
+  "lesson": "lesson_08",
+  "course": "lockdown_math",
+  "video_id": "d-o3eB9sfls",
+  "script_source": "audio_manifest:manifest.json (alias-deduped)",
+  "cue_count": 4,
+  "expected_cue_count": 4,
+  "failed_tts_cues": [],
+  "strategy": "absolute sample offset (start*44100); atempo fit floor 0.82; pad only; no truncation",
+  "sfx": "NONE - clean speech only",
+  "voice": "bn-BD-PradeepNeural",
+  "min_tempo": 0.82,
+  "max_tempo": 2.2,
+  "overrun_cues": 0,
+  "max_measured_drift_ms": 0.01,
+  "timeline_scale": 0.750329,
+  "timeline_scale_initial_manifest": 4.40783,
+  "scale_recomputed_from_rendered_speech": true,
+  "rendered_natural_speech_total_sec": 1362.48,
+  "render_rounds": 1,
+  "lead_in_sec": 2.5,
+  "tail_margin_sec": 3.0,
+  "video_duration_sec": 1027.808,
+  "master_audio_duration_sec": 1027.808,
+  "last_cue_end_sec": 1024.809,
+  "tail_silence_sec": 2.999,
+  "speech_ends_before_video_end": true,
+  "fill_policy": {
+    "expand_target_fill": 0.98,
+    "target_natural_scale": 0.78,
+    "per_cue_target_sec": 327.663,
+    "median_fill": 0.9999,
+    "median_fill_target": 0.72,
+    "median_fill_ok": true,
+    "max_internal_gap_s": 0.8668,
+    "max_internal_gap_target": 1.5,
+    "max_internal_gap_ok": true,
+    "max_internal_silence_compression_s": 1.0
+  },
+  "quality_gate": {
+    "median_fill_ok": true,
+    "max_internal_gap_ok": true,
+    "passed": true
+  },
+  "median_fill": 0.9999,
+  "max_internal_gap_s": 0.8668,
+  "expanded_cues": [
+    {
+      "id": 1,
+      "section": "sec-01-basel-intro",
+      "cached": true,
+      "natural_before": 105.0,
+      "natural_after": 329.736,
+      "sentences_added": 28,
+      "final_chars": 4845,
+      "target_sec": 327.663
+    },
+    {
+      "id": 2,
+      "section": "sec-02-lighthouse-physics",
+      "cached": true,
+      "natural_before": 99.9,
+      "natural_after": 345.576,
+      "sentences_added": 36,
+      "final_chars": 5098,
+      "target_sec": 327.663
+    },
+    {
+      "id": 3,
+      "section": "sec-03-pythagorean-lighthouse",
+      "cached": true,
+      "natural_before": 100.0,
+      "natural_after": 342.0,
+      "sentences_added": 39,
+      "final_chars": 5010,
+      "target_sec": 327.663
+    },
+    {
+      "id": 4,
+      "section": "sec-04-circle-limit",
+      "cached": true,
+      "natural_before": 106.3,
+      "natural_after": 345.168,
+      "sentences_added": 41,
+      "final_chars": 5085,
+      "target_sec": 327.663
+    }
+  ],
+  "source_metadata_note": {
+    "youtube_id": "d-o3eB9sfls",
+    "source_url": "https://www.youtube.com/watch?v=d-o3eB9sfls",
+    "oembed_title": "Why is pi here?  And why is it squared?  A geometric answer to the Basel problem",
+    "oembed_author_name": "3Blue1Brown",
+    "oembed_author_url": "https://www.youtube.com/@3blue1brown",
+    "ytdlp_uploader": "3Blue1Brown",
+    "ytdlp_channel": "3Blue1Brown",
+    "verified_via": [
+      "yt-dlp --skip-download metadata (id/title/uploader/channel)",
+      "https://www.youtube.com/oEmbed endpoint (title + author_name)",
+      "ffprobe of the downloaded original_source/full_original.mp4"
+    ],
+    "note": "Official 3Blue1Brown (Grant Sanderson) source, confirmed by oEmbed title and uploader. lesson_08.json duration '1:02:18' is stale; the real video is ~1028 s and ffprobe of the original is authoritative.",
+    "teacher_audio_and_manifests_modified": false
+  },
+  "cues": [
+    {
+      "id": 1,
+      "section": "sec-01-basel-intro",
+      "expected_start_ms": 2500.0,
+      "actual_start_ms": 2500.0,
+      "drift_ms": 0.0,
+      "tempo": 1.3328,
+      "natural_sec": 329.736,
+      "target_sec": 247.41,
+      "fit_samples": 10908956,
+      "window_samples": 10910781,
+      "fill": 0.9998,
+      "max_internal_gap_s": 0.8466,
+      "placed_samples": 10910781,
+      "expanded": true
+    },
+    {
+      "id": 2,
+      "section": "sec-02-lighthouse-physics",
+      "expected_start_ms": 249910.0,
+      "actual_start_ms": 249910.0,
+      "drift_ms": 0.0,
+      "tempo": 1.3327,
+      "natural_sec": 345.576,
+      "target_sec": 259.296,
+      "fit_samples": 11433820,
+      "window_samples": 11434954,
+      "fill": 0.9999,
+      "max_internal_gap_s": 0.8396,
+      "placed_samples": 11434954,
+      "expanded": true
+    },
+    {
+      "id": 3,
+      "section": "sec-03-pythagorean-lighthouse",
+      "expected_start_ms": 509206.0,
+      "actual_start_ms": 509206.01,
+      "drift_ms": 0.01,
+      "tempo": 1.3328,
+      "natural_sec": 342.0,
+      "target_sec": 256.612,
+      "fit_samples": 11314847,
+      "window_samples": 11316589,
+      "fill": 0.9998,
+      "max_internal_gap_s": 0.8668,
+      "placed_samples": 11316589,
+      "expanded": true
+    },
+    {
+      "id": 4,
+      "section": "sec-04-circle-limit",
+      "expected_start_ms": 765819.0,
+      "actual_start_ms": 765819.0,
+      "drift_ms": 0.0,
+      "tempo": 1.3327,
+      "natural_sec": 345.168,
+      "target_sec": 258.99,
+      "fit_samples": 11420596,
+      "window_samples": 11421459,
+      "fill": 0.9999,
+      "max_internal_gap_s": 0.8454,
+      "placed_samples": 11421459,
+      "expanded": true
+    }
+  ],
+  "output_video": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\lockdown_math\\lesson_08\\experiments\\3b1b_lockdown_08_full_dubbed.mp4",
+  "output_duration_sec": 1027.743,
+  "output_size_bytes": 64473786,
+  "output_streams": [
+    {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_type": "video"
+    },
+    {
+      "index": 1,
+      "codec_name": "aac",
+      "codec_type": "audio"
+    }
+  ],
+  "volumedetect_intro_0_2s_db": -91.0,
+  "volumedetect_final_2s_db": -91.0
+}

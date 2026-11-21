@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>রৈখিক রূপান্তরের আলোকে ক্রস প্রোডাক্ট | Cross products in the light of linear transformations (Essence of linear algebra, chapter 11)</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/linear_algebra/lesson_11/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order (identical to lesson_01.html) ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+
+<style>
+  .lesson-figure svg, .media-tab-pane svg { width: 100%; height: auto; display: block; background: rgba(0,0,0,.18); border-radius: 10px; }
+  .lesson-figure svg text, .media-tab-pane svg text { font-family: inherit; }
+  .media-gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 18px; }
+  .cp-lab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 20px; align-items: start; }
+  .cp-lab-controls label { display: inline-block; min-width: 26px; font-weight: 700; color: var(--theme); }
+  .cp-lab-controls input[type="number"] { width: 66px; margin: 4px 10px 4px 0; padding: 6px; border-radius: 8px; border: 1px solid var(--border, #556); background: var(--bg-alt, #1a1a24); color: inherit; }
+  .cp-readout { display: inline-block; min-width: 92px; padding: 6px 10px; border-radius: 8px; background: var(--bg-alt, #1a1a24); font-family: monospace; }
+</style>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="লিনিয়ার অ্যালজেব্রা"
+  course-url="../../index.html#linear-algebra"
+  home-url="../../index.html"
+  chapter-num="১১"
+  chapter-total="০৫"
+  prev-url="lesson_10.html"
+  prev-title="ক্রস প্রোডাক্ট"
+  next-url="lesson_12.html"
+  next-title="পরবর্তী অধ্যায়: ক্র্যামারের নিয়ম"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="লিনিয়ার অ্যালজেব্রা"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ১১ · লিনিয়ার অ্যালজেব্রার সারমর্ম"
+  title="রৈখিক রূপান্তরের আলোকে ক্রস প্রোডাক্ট | Cross products in the light of linear transformations (Essence of linear algebra, chapter 11)"
+  desc="ক্রস প্রোডাক্টের আই-হ্যাট, জে-হ্যাট, কে-হ্যাট ডিটারমিন্যান্ট কৌশলের পেছনের গভীর কারণ—ডুয়ালিটি, ৩ডি থেকে ১ডি রৈখিক রূপান্তর, দ্বৈত ভেক্টর p এবং ডান হাতের নিয়মের ঐক্য।"
+  yt-id="BaM7OCEm3G0"
+  video-src="../../media_vault/lesson_11/experiments/fill_v2/3b1b_lesson_11_full_dubbed_fill2.mp4"
+  date="১ সেপ্টেম্বর, ২০১৬"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | Text adaptation: Kurt Bruns &amp; James Schloss | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2016/eola/chapter8.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">ক্রস প্রোডাক্টের রহস্য ও সিউডো-ডিটারমিন্যান্ট</b1b-bookmark>
+      <b1b-bookmark time="102"  time-bn="০১:৪২">ভিত্তি ভেক্টর বসানোর আসল কারণ</b1b-bookmark>
+      <b1b-bookmark time="198" time-bn="০৩:১৮">রূপান্তরের আলোকে ডুয়ালিটি</b1b-bookmark>
+      <b1b-bookmark time="280" time-bn="০৪:৪০">৩ডি থেকে ১ডি ফাংশন ও দ্বৈত ভেক্টর p</b1b-bookmark>
+      <b1b-bookmark time="374" time-bn="০৬:১৪">জ্যামিতিক প্রমাণ ও ডান হাতের নিয়ম</b1b-bookmark>
+      <b1b-bookmark time="374" time-bn="০৬:১৪">বীজগাণিতিক সমাপনী ও উপসংহার</b1b-bookmark>
+      <b1b-bookmark time="374" time-bn="০৬:১৪">অনুশীলন কুইজ</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-intro-formulas">০. সূত্রের গভীরে — আই হ্যাট, জে হ্যাট, কে হ্যাট</a>
+      <a href="#sec_01_cross_product_puzzle">১. ক্রস প্রোডাক্টের অদ্ভুত সূত্রের রহস্য</a>
+      <a href="#sec_02_volume_function">২. সামান্তরিক গোলকের আয়তন ও রৈখিক ফাংশন</a>
+      <a href="#sec_03_duality_and_dual_vector">৩. ডুয়ালিটি ও দ্বৈত ভেক্টর p</a>
+      <a href="#sec_04_geometric_proof_p">৪. জ্যামিতিক প্রমাণ — p-এর দৈর্ঘ্য ও দিক</a>
+      <a href="#sec_05_algebraic_synthesis">৫. বীজগাণিতিক সমাপনী</a>
+      <a href="#sec-media-gallery">চিত্র ও অ্যানিমেশন গ্যালারি</a>
+      <a href="#sec-practice-quizzes">অনুশীলন — অফিশিয়াল কুইজ</a>
+      <a href="#sec-conclusion">উপসংহার</a>
+      <a href="#sec-duality-lab">ইন্টারেক্টিভ ডুয়ালিটি ল্যাব</a>
+      <a href="#sec-cross-product-lab">ইন্টারেক্টিভ ক্রস প্রোডাক্ট ল্যাব</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ NON-NARRATED — official formulas / deep-dive (100% official content) ═══ -->
+      <b1b-section id="sec-intro-formulas" title="সূত্রের গভীরে — আই হ্যাট, জে হ্যাট, কে হ্যাট" data-no-narration="true">
+
+        <p>আগের অধ্যায়ে আমরা তিন-মাত্রিক ক্রস প্রোডাক্টের <strong>জ্যামিতিক</strong> রূপ দেখেছি। এখানে সেই একই ফলাফলকে বীজগাণিতিকভাবে লেখা হয়—প্রথম কলামে ভিত্তি ভেক্টর $\hat{i},\hat{j},\hat{k}$ বসিয়ে একটি $3\times3$ ছদ্ম-নির্ণায়ক হিসাব করা হয়।</p>
+
+        <b1b-formula math="\vec{v}\times\vec{w}=\det\begin{bmatrix}\hat{i}&v_1&w_1\\\hat{j}&v_2&w_2\\\hat{k}&v_3&w_3\end{bmatrix}=\hat{i}(v_2w_3-v_3w_2)+\hat{j}(v_3w_1-v_1w_3)+\hat{k}(v_1w_2-v_2w_1)"></b1b-formula>
+
+        <b1b-figure alt="সামান্তরিক ও তার ওপর লম্ব ক্রস প্রোডাক্ট ভেক্টর" caption="এই চিত্রে ভি ও ডব্লিউ দ্বারা গঠিত সামান্তরিকের ক্ষেত্রফলকে ভূমি হিসেবে ধরা হয়েছে এবং তার ওপর লম্ব দিকে ক্রস প্রোডাক্ট ভি ক্রস ডব্লিউ-এর তীর আঁকা হয়েছে। লক্ষ্য করুন তীরটির দৈর্ঘ্য ঠিক সেই ক্ষেত্রফলের সমান—এই একই বস্তুটি পরে আমরা দ্বৈত ভেক্টর পি হিসেবে চিহ্নিত করব। ভূমি ও লম্ব উচ্চতার এই সম্পর্কই জ্যামিতি ও বীজগণিতের মিলনবিন্দু, তাই চিত্রটি পুরো অধ্যায়ের রূপরেখা হিসেবে কাজ করে।">
+          <svg viewBox="0 0 620 300" role="img" aria-label="সামান্তরিক ও ক্রস প্রোডাক্ট">
+            <g stroke="rgba(150,160,190,.18)"><path d="M40 60H580M40 120H580M40 180H580M40 240H580"/><path d="M100 30V270M180 30V270M260 30V270M340 30V270M420 30V270M500 30V270"/></g>
+            <path d="M150 210 L330 170 L420 230 L240 270 Z" fill="#74c0e333" stroke="#74c0e3" stroke-width="2"/>
+            <path d="M150 210 L330 170" stroke="#69f0ae" stroke-width="4"/>
+            <path d="M150 210 L240 270" stroke="#ffb74d" stroke-width="4"/>
+            <text x="224" y="178" fill="#69f0ae" font-size="18">v</text>
+            <text x="176" y="250" fill="#ffb74d" font-size="18">w</text>
+            <path d="M285 190 L285 75" stroke="#b388ff" stroke-width="4"/>
+            <path d="M285 75 l-9 16 h18 z" fill="#b388ff"/>
+            <text x="296" y="96" fill="#b388ff" font-size="18">v × w</text>
+            <text x="300" y="196" fill="#b388ff" font-size="13">⊥ তল, দৈর্ঘ্য = ক্ষেত্রফল</text>
+          </svg>
+        </b1b-figure>
+
+        <b1b-callout type="gold" icon="🎯" title="অফিশিয়াল এপিগ্রাফ — পিয়ের দেলিগ্ন (Pierre Deligne)">
+          <p>“গ্রোথেন্ডিকের কাছ থেকে আমি আরও একটি কথা শিখেছি—প্রমাণের কঠিনতা নিয়ে গর্ব করা উচিত নয়; কঠিনতা মানে আমরা এখনো বুঝতে পারিনি। লক্ষ্য হলো এমন এক প্রাকৃতিক দৃশ্য আঁকা যার ভেতরে প্রমাণটি স্বতঃসিদ্ধ হয়ে ওঠে।” এই অধ্যায়ে আমরা ঠিক সেই কাজটি করব—ক্রস প্রোডাক্টের ‘জাদুকরি’ সূত্রটিকে এক সহজ রৈখিক-রূপান্তরের ছবিতে রূপ দেব।</p>
+        </b1b-callout>
+
+        <b1b-callout type="blue" icon="🔎" title="পাঠ্য-রূপান্তর (Text adaptation)">
+          <p>অফিশিয়াল পাঠ: Grant Sanderson · Text adaptation by Kurt Bruns &amp; James Schloss · Chapter 11, ১ সেপ্টেম্বর ২০১৬ · Source: 3b1b/videos, _2016/eola/chapter8.py। প্রয়োজনীয় পূর্বপাঠ: অধ্যায় ৫ (ডিটারমিন্যান্ট) ও অধ্যায় ৯ (ডট প্রোডাক্ট ও ডুয়ালিটি)।</p>
+        </b1b-callout>
+
+      </b1b-section>
+
+      <!-- ═══ NARRATED SECTION 1 — 6 manifest cues (sec_01_cross_product_puzzle) ═══ -->
+      <!-- Cue order: h2 · chapter-quote · p · p · insight-box · p -->
+      <b1b-section id="sec_01_cross_product_puzzle" title="ক্রস প্রোডাক্টের অদ্ভুত সূত্রের রহস্য ও গভীর জিজ্ঞাসা">
+
+        <b1b-quote author="পিয়ের দেলিগ্ন (Pierre Deligne)">গ্রোথেন্ডিকের কাছ থেকে আমি শিখেছি—প্রমাণের কঠিনতা নিয়ে গর্ব করা উচিত নয়; কঠিনতা মানে আমরা এখনো বুঝতে পারিনি। লক্ষ্য হলো এমন এক প্রাকৃতিক দৃশ্য আঁকা যার ভেতরে প্রমাণটি স্বতঃসিদ্ধ হয়ে ওঠে।</b1b-quote>
+
+        <p>গত অধ্যায়ে আমরা ক্রস প্রোডাক্টের জ্যামিতিক রূপটি দেখেছি: দুটি থ্রিডি ভেক্টর $\vec{v}$ ও $\vec{w}$-এর ক্রস প্রোডাক্ট এমন একটি নতুন ভেক্টর, যার দৈর্ঘ্য $\|\vec{v}\times\vec{w}\|=\|\vec{v}\|\|\vec{w}\|\sin\theta$—অর্থাৎ ওই দুই ভেক্টর দ্বারা গঠিত সামান্তরিকের ক্ষেত্রফল—এবং দিক ডান হাতের নিয়ম মেনে উভয়ের ওপর লম্ব।</p>
+
+        <p>কিন্তু ক্লাসরুমে হিসাব করার সময় একটি অদ্ভুত সূত্র শেখানো হয়: প্রথম সারিতে আই হ্যাট, জে হ্যাট ও কে হ্যাট লিখে $\vec{v}\times\vec{w}=\det\begin{bmatrix}\hat{i}&v_1&w_1\\\hat{j}&v_2&w_2\\\hat{k}&v_3&w_3\end{bmatrix}$ হিসাব করা হয়। সংখ্যার জায়গায় ভিত্তি ভেক্টর বসিয়ে ‘নম্বরের মতো’ আচরণ করানো—এই অদ্ভুততা কি শুধু মুখস্থ করার কৌশল?</p>
+
+        <b1b-callout type="purple" icon="🤔" title="কাকতালীয় কৌশল নাকি চিরন্তন জ্যামিতিক সত্য?">
+          <p>প্রশ্ন হলো: সংখ্যার বদলে ডিটারমিন্যান্টের ভেতরে $\hat{i},\hat{j},\hat{k}$ বসিয়ে দেওয়া কি কেবল কোনো গাণিতিক কারসাজি? নাকি এর পেছনে রৈখিক বীজগণিতের এমন এক গভীর সংযোগ লুকিয়ে আছে, যা একবার বুঝলে সূত্রটি আর ‘ট্রিক’ থাকবে না? উত্তর খুঁজতে আমাদের দরকার হবে অধ্যায় ৫-এর ডিটারমিন্যান্ট এবং অধ্যায় ৯-এর ডুয়ালিটি।</p>
+        </b1b-callout>
+
+        <p>আজকের পর্বে দেখব, এই রহস্যের চাবিকাঠি হলো <strong>ডুয়ালিটি বা দ্বৈততার নীতি</strong>—রৈখিক রূপান্তরের দৃষ্টিকোণ থেকে এই সূত্রটি একেবারেই সহজ ও অনিবার্য হয়ে ওঠে। ক্রস প্রোডাক্টকে একটি বিশেষ রৈখিক রূপান্তরের দ্বৈত ভেক্টর হিসেবে দেখলেই সবকিছু পরিষ্কার হয়।</p>
+
+      </b1b-section>
+
+      <!-- ═══ NARRATED SECTION 2 — 5 manifest cues (sec_02_volume_function) ═══ -->
+      <!-- Cue order: h2 · p · p · insight-box · figure -->
+      <b1b-section id="sec_02_volume_function" title="সামান্তরিক গোলকের আয়তন এবং ত্রিমাত্রিক রৈখিক ফাংশন">
+
+        <p>দুটি নির্দিষ্ট ভেক্টর $\vec{v}$ ও $\vec{w}$ নেওয়া যাক। এদের সাথে যেকোনো পরিবর্তনশীল ভেক্টর $\vec{u}$ যুক্ত করে একটি ফাংশন সংজ্ঞায়িত করি: $f(\vec{u})=\det\begin{bmatrix}u_1&v_1&w_1\\u_2&v_2&w_2\\u_3&v_3&w_3\end{bmatrix}$। এটি $\mathbb{R}^3\to\mathbb{R}$—অর্থাৎ ইনপুটে একটি ভেক্টর, আউটপুটে একটি বাস্তব সংখ্যা।</p>
+
+        <p>জ্যামিতিকভাবে এই ফাংশনটি $\vec{u},\vec{v},\vec{w}$ দ্বারা গঠিত সামান্তরিক গোলক বা প্যারালেলেপাইপেডের <strong>চিহ্নিত আয়তন</strong> বের করে। অধ্যায় ৫ থেকে আমরা জানি, তিনটি কলাম ভেক্টরের এই আয়তনই হলো তাদের $3\times3$ ম্যাট্রিক্সের নির্ণায়ক—ঋণাত্মক চিহ্নটি তিন ভেক্টরের ডান-হাতের ওরিয়েন্টেশন উল্টে যাওয়া নির্দেশ করে।</p>
+
+        <b1b-callout type="blue" icon="⚡" title="কেন এটি একটি রৈখিক রূপান্তর? (Insight)">
+          <p>সবচেয়ে গুরুত্বপূর্ণ কথা: ডিটারমিন্যান্ট তার যেকোনো একটি কলামের সাপেক্ষে পুরোপুরি রৈখিক (multilinear)। যেহেতু $\vec{v}$ ও $\vec{w}$ স্থির এবং শুধু $\vec{u}$ পরিবর্তনশীল, তাই $f(c\vec{u}_1+\vec{u}_2)=c\,f(\vec{u}_1)+f(\vec{u}_2)$—অর্থাৎ আমাদের হাতে আসলেই একটি $3$d$\to$১ডি রৈখিক রূপান্তর আছে!</p>
+        </b1b-callout>
+
+        <b1b-figure alt="ভেক্টর u, v, w দ্বারা গঠিত সামান্তরিক গোলক" caption="চিত্রে তিনটি ভেক্টর u, v ও w একসাথে একটি সামান্তরিক গোলক গঠন করেছে; এদের ডিটারমিন্যান্টই সেই গোলকের চিহ্নিত আয়তন। u-কে দ্বিগুণ করলে গোলকের আয়তনও দ্বিগুণ হয় এবং দুটি u-এর যোগফল নিলে আয়তন দুটির সমষ্টি পাওয়া যায়—এই দুটি পর্যবেক্ষণই f-এর রৈখিকতার চাক্ষুষ প্রমাণ। স্থির v ও w-এর দিকে তাকিয়ে বুঝুন কেন কেবল প্রথম কলামের ওপর ফাংশনটি নির্ভর করে।">
+          <svg viewBox="0 0 620 320" role="img" aria-label="সামান্তরিক গোলকের আয়তন">
+            <path d="M120 250 L300 200 L430 245 L250 300 Z" fill="#74c0e326" stroke="#74c0e3" stroke-width="2"/>
+            <path d="M120 250 L300 200 L300 90 L120 140 Z" fill="#b388ff26" stroke="#b388ff" stroke-width="2"/>
+            <path d="M300 200 L430 245 L430 135 L300 90 Z" fill="#69f0ae26" stroke="#69f0ae" stroke-width="2"/>
+            <path d="M120 140 L300 90 L430 135 L250 190 Z" fill="#ffb74d26" stroke="#ffb74d" stroke-width="2"/>
+            <path d="M120 250 L120 140" stroke="#ff8a80" stroke-width="3"/>
+            <path d="M120 250 L300 200" stroke="#69f0ae" stroke-width="4"/>
+            <path d="M120 250 L250 300" stroke="#ffb74d" stroke-width="4"/>
+            <path d="M120 250 L300 90" stroke="#b388ff" stroke-width="4"/>
+            <text x="286" y="194" fill="#69f0ae" font-size="17">v</text>
+            <text x="250" y="316" fill="#ffb74d" font-size="17">w</text>
+            <text x="304" y="104" fill="#b388ff" font-size="17">u</text>
+            <text x="330" y="60" fill="#e0e0e0" font-size="15">আয়তন = det[u v w]</text>
+          </svg>
+        </b1b-figure>
+
+      </b1b-section>
+
+      <!-- ═══ NARRATED SECTION 3 — 4 manifest cues (sec_03_duality_and_dual_vector) ═══ -->
+      <!-- Cue order: h2 · p · p · insight-box -->
+      <b1b-section id="sec_03_duality_and_dual_vector" title="ডুয়ালিটির ঐশ্বর্য ও দ্বৈত ভেক্টর p-এর অস্তিত্ব">
+
+        <p>অষ্টম ও নবম অধ্যায়ের ডুয়ালিটির কথা মনে করুন: যেকোনো স্থান থেকে সংখ্যা রেখায় যাওয়া একটি রৈখিক রূপান্তরকে এক-সারি ম্যাট্রিক্স দিয়ে লেখা যায়, আর সেই ম্যাট্রিক্সকে পাশে শুইয়ে দিলেই পাওয়া যায় একটি <strong>দ্বৈত ভেক্টর</strong>—রূপান্তরটি প্রয়োগ করা আর ওই ভেক্টরের সাথে ডট গুণন করা একই কাজ। দ্বিমাত্রিক ক্ষেত্রে $1\times2$ ম্যাট্রিক্স $[u_x\;u_y]$ আর ভেক্টর $\hat{u}$ এর ডট গুণন ছিল ঠিক এই একই সম্পর্কের প্রকাশ।</p>
+
+        <p>এখন একই কথা ত্রিমাত্রিক ক্ষেত্রে প্রয়োগ করি। আমাদের $f(\vec{u})$ একটি $3\to1$ রূপান্তর, তাই এটি একটি $1\times3$ ম্যাট্রিক্স দ্বারা প্রকাশিত হয়: $f(\vec{u})=\begin{bmatrix}p_1&p_2&p_3\end{bmatrix}\begin{bmatrix}u_1\\u_2\\u_3\end{bmatrix}=\vec{p}\cdot\vec{u}$। অর্থাৎ এমন একটি অনন্য ভেক্টর $\vec{p}$ অবশ্যই আছে, যার জন্য প্রতিটি $\vec{u}$-এর ক্ষেত্রে $\vec{p}\cdot\vec{u}=\det[\vec{u}\;\vec{v}\;\vec{w}]$ হয়।</p>
+
+        <b1b-callout type="gold" icon="✨" title="এখন একমাত্র কাজ — পি কে?">
+          <p>একদিকে $f(\vec{u})$ হলো $\vec{u},\vec{v},\vec{w}$-এর প্যারালেলেপাইপেডের আয়তন; অন্যদিকে ডুয়ালিটি বলছে, একই আয়তনকে সবসময় একটি নির্দিষ্ট ভেক্টর $\vec{p}$-এর সাথে $\vec{u}$-এর ডট গুণন হিসেবেও লেখা যায়। এখন প্রশ্ন: এই রহস্যময় ভেক্টর $\vec{p}$ আসলে কে, আর তার জ্যামিতিক বৈশিষ্ট্য কী? দুই ভাবে উত্তর খুঁজব—প্রথমে হিসাব করে, তারপর ছবি দিয়ে।</p>
+        </b1b-callout>
+
+      </b1b-section>
+
+      <!-- ═══ NARRATED SECTION 4 — 5 manifest cues (sec_04_geometric_proof_p) ═══ -->
+      <!-- Cue order: h2 · p · p · insight-box · formula-box -->
+      <b1b-section id="sec_04_geometric_proof_p" title="জ্যামিতিক প্রমাণ: ভেক্টর p-এর দৈর্ঘ্য ও দিক নির্ধারণ">
+
+        <p>জ্যামিতির মূল সূত্রে ফিরে যাই: যেকোনো সামান্তরিক গোলকের আয়তন = ভূমির ক্ষেত্রফল $\times$ লম্ব উচ্চতা। এখানে ভূমি হলো $\vec{v},\vec{w}$ দ্বারা গঠিত সামান্তরিক, যার ক্ষেত্রফল আমরা জানি; আর উচ্চতা হলো $\vec{v},\vec{w}$-এর তলের ওপর লম্ব রেখার দিকে $\vec{u}$-এর প্রক্ষেপণ বা প্রজেকশন $h$—অর্থাৎ $\text{Volume}=(\text{Base Area})\times h$।</p>
+
+        <p>এখন ডট গুণনের জ্যামিতিক রূপটি স্মরণ করুন: $\vec{p}\cdot\vec{u}=\|\vec{p}\|\cdot\text{proj}_{\vec{p}}(\vec{u})$—অর্থাৎ $\vec{p}$-এর দৈর্ঘ্যের সাথে $\vec{u}$-এর $\vec{p}$-এর দিকে লম্ব প্রক্ষেপণের গুণফল। এই দুটি রাশি প্রতিটি $\vec{u}$-এর জন্য সমান হতে হলে $\vec{p}$-কে অবশ্যই $\vec{v},\vec{w}$-এর তলের ওপর লম্ব হতে হবে এবং তার দৈর্ঘ্য হতে হবে ভূমির ক্ষেত্রফলের সমান।</p>
+
+        <b1b-callout type="green" icon="🖐️" title="ডান হাতের নিয়ম দিক নির্ধারণ করে">
+          <p>ঋণাত্মক ও ধনাত্মক আয়তনের অবস্থাও মেলাতে হবে: $\vec{p}\cdot\vec{u}$ ঋণাত্মক হবে ঠিক তখনি, যখন $\vec{u},\vec{v},\vec{w}$-এর ডান-হাতের ওরিয়েন্টেশন ঋণাত্মক—যেমন $\vec{v}$ ও $\vec{w}$ বদলালে চিহ্ন উল্টে যায়। তাই $\vec{p}$-এর অভিমুখও হতে হবে অবিকল ডান হাতের নিয়ম অনুযায়ী: তর্জনী $\vec{v}$, মধ্যমা $\vec{w}$ দিকে ধরলে বুঁড়ু $\vec{p}$-এর দিক দেখায়।</p>
+        </b1b-callout>
+
+        <b1b-formula math="\vec{p}\perp\operatorname{span}(\vec{v},\vec{w}),\qquad \|\vec{p}\|=\text{Area}(\vec{v},\vec{w})=\|\vec{v}\times\vec{w}\|\quad\Longrightarrow\quad \vec{p}=\vec{v}\times\vec{w}"></b1b-formula>
+
+      </b1b-section>
+
+      <!-- ═══ NARRATED SECTION 5 — 4 manifest cues (sec_05_algebraic_synthesis) ═══ -->
+      <!-- Cue order: h2 · p · p · insight-box -->
+      <b1b-section id="sec_05_algebraic_synthesis" title="বীজগাণিতিক সমাপনী: সিউডো-ডিটারমিন্যান্টের পরিপূর্ণ যৌক্তিকতা">
+
+        <p>এবার হিসাবটি মিলিয়ে নেওয়া যাক। তিন-বাই-তিন ডিটারমিন্যান্টকে প্রথম কলাম $\vec{u}$-এর সাপেক্ষে বিস্তার করলে পাই: $\det[\vec{u}\;\vec{v}\;\vec{w}]=u_1(v_2w_3-v_3w_2)+u_2(v_3w_1-v_1w_3)+u_3(v_1w_2-v_2w_1)$।</p>
+
+        <p>যেহেতু এটি $\vec{p}\cdot\vec{u}=p_1u_1+p_2u_2+p_3u_3$-এর সমান, তাই $u_1,u_2,u_3$-এর এই তিনটি সহগই হলো সরাসরি কাঙ্ক্ষিত ভেক্টর $\vec{p}$-এর তিনটি স্থানাঙ্ক: $\vec{p}=\begin{bmatrix}v_2w_3-v_3w_2\\v_3w_1-v_1w_3\\v_1w_2-v_2w_1\end{bmatrix}$।</p>
+
+        <b1b-callout type="purple" icon="🎩" title="জাদুকরি কৌশল নয়, ডুয়ালিটির প্রতিচ্ছবি">
+          <p>আর এই কারণেই পাঠ্যবইগুলোতে $\vec{u}$-এর জায়গায় প্রতীকীভাবে $\hat{i},\hat{j},\hat{k}$ লিখে দেওয়া হয়—বিস্তার করার পর স্বয়ংক্রিয়ভাবে ওই সহগগুলো ভেক্টর আকারে প্রকাশিত হয়। এটি কোনো জাদুকরি কৌশল নয়, বরং ডুয়ালিটির এক অনবদ্য গাণিতিক প্রতিচ্ছবি: বীজগণিত ও জ্যামিতি এখানে এক মোহনায় মিলিত হয়েছে।</p>
+        </b1b-callout>
+
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — official media gallery with image/video figures ═══ -->
+      <b1b-section id="sec-media-gallery" title="চিত্র ও অ্যানিমেশন গ্যালারি — ছবি ও গতিতে রূপান্তর" data-no-narration="true">
+        <div class="media-gallery-grid">
+
+          <b1b-media-tab active-tab="image" caption="এই চিত্রে ভি ও ডব্লিউ দ্বারা গঠিত সামান্তরিকের ক্ষেত্রফলই ক্রস প্রোডাক্টের দৈর্ঘ্য, আর তলের ওপর লম্ব তীরটি তার দিক। ছবি ও অ্যানিমেশন ট্যাব পাল্টিয়ে দেখুন কীভাবে ভি বা ডব্লিউ ঘোরালে লম্ব তীরের দিক ও মান বদলায়। লক্ষ্য করুন ডান হাতের নিয়ম সবসময় বজায় থাকে—এই দৃশ্যটিই পরবর্তীতে দ্বৈত ভেক্টর পি-এর জ্যামিতিক রূপ।">
+            <div slot="image"><svg viewBox="0 0 480 240" role="img" aria-label="সামান্তরিক ও লম্ব ভেক্টর"><path d="M70 180 L220 140 L300 200 L150 240 Z" fill="#74c0e333" stroke="#74c0e3" stroke-width="2"/><path d="M70 180 L220 140" stroke="#69f0ae" stroke-width="4"/><path d="M70 180 L150 240" stroke="#ffb74d" stroke-width="4"/><path d="M185 170 L185 55" stroke="#b388ff" stroke-width="4"/><path d="M185 55 l-9 16 h18 z" fill="#b388ff"/><text x="150" y="132" fill="#69f0ae" font-size="16">v</text><text x="100" y="222" fill="#ffb74d" font-size="16">w</text><text x="196" y="76" fill="#b388ff" font-size="16">v × w</text></svg></div>
+            <div slot="video"><svg viewBox="0 0 480 240" role="img" aria-label="অ্যানিমেটেড ক্রস প্রোডাক্ট"><path d="M70 180 L220 140 L300 200 L150 240 Z" fill="#74c0e333" stroke="#74c0e3" stroke-width="2"/><path d="M70 180 L220 140" stroke="#69f0ae" stroke-width="4"/><path d="M70 180 L150 240" stroke="#ffb74d" stroke-width="4"/><g><path d="M185 170 L185 55" stroke="#b388ff" stroke-width="4"/><path d="M185 55 l-9 16 h18 z" fill="#b388ff"/><animateTransform attributeName="transform" type="rotate" from="0 185 170" to="18 185 170" dur="2.4s" repeatCount="indefinite" autoReverse="true"/></g><text x="196" y="76" fill="#b388ff" font-size="16">v × w</text></svg></div>
+          </b1b-media-tab>
+
+          <b1b-media-tab active-tab="image" caption="ডান হাতের ছবিতে তর্জনী $\vec{v}$, মধ্যমা $\vec{w}$ আর বুঁড়ু $\vec{v}\times\vec{w}$-এর দিক দেখায়। বুঁড়ু যদি তলের ওপর ওঠে তবে আয়তন ধনাত্মক, নামলে ঋণাত্মক—এই চিহ্নই ডিটারমিন্যান্টের চিহ্ন। ভি ও ডব্লিউ অদলবদল করলে হাত উল্টে যায় এবং ক্রস প্রোডাক্টের চিহ্নও বদলে যায়, যা $\vec{v}\times\vec{w}=-\vec{w}\times\vec{v}$ কে ব্যাখ্যা করে।">
+            <div slot="image"><svg viewBox="0 0 480 240" role="img" aria-label="ডান হাতের নিয়ম"><circle cx="240" cy="120" r="62" fill="none" stroke="#96a0be" stroke-width="2"/><path d="M240 120 L320 80" stroke="#69f0ae" stroke-width="5"/><path d="M240 120 L300 160" stroke="#ffb74d" stroke-width="5"/><path d="M240 120 L240 36" stroke="#b388ff" stroke-width="5"/><path d="M240 36 l-9 16 h18 z" fill="#b388ff"/><text x="326" y="80" fill="#69f0ae" font-size="15">v</text><text x="306" y="168" fill="#ffb74d" font-size="15">w</text><text x="250" y="34" fill="#b388ff" font-size="15">v × w</text></svg></div>
+            <div slot="video"><svg viewBox="0 0 480 240" role="img" aria-label="অ্যানিমেটেড ডান হাত"><circle cx="240" cy="120" r="62" fill="none" stroke="#96a0be" stroke-width="2"/><path d="M240 120 L320 80" stroke="#69f0ae" stroke-width="5"/><path d="M240 120 L300 160" stroke="#ffb74d" stroke-width="5"/><g><path d="M240 120 L240 36" stroke="#b388ff" stroke-width="5"/><path d="M240 36 l-9 16 h18 z" fill="#b388ff"/><animateTransform attributeName="transform" type="rotate" from="0 240 120" to="10 240 120" dur="2s" repeatCount="indefinite" autoReverse="true"/></g><text x="250" y="34" fill="#b388ff" font-size="15">v × w</text></svg></div>
+          </b1b-media-tab>
+
+          <b1b-media-tab active-tab="image" caption="এই চিত্রে ২ডি স্থান থেকে সংখ্যা রেখায় একটি রৈখিক রূপান্তর দেখানো হয়েছে: প্রতিটি বিন্দুকে তির্যক রেখার ওপর লম্ব প্রক্ষেপণ করা হয়। সমদূরবর্তী বিন্দুগুলো প্রক্ষেপণের পরও সমদূরবর্তী সংখ্যায় পড়ে—এটিই রৈখিকতার চিহ্ন। ১×২ ম্যাট্রিক্সের দুটি সংখ্যা হলো যথাক্রমে আই হ্যাট ও জে হ্যাটের গন্তব্য, আর ম্যাট্রিক্সটিকে পাশে শুইয়ে দিলেই পাওয়া যায় দ্বৈত ভেক্টর $\hat{u}$—এই নীতিকেই আমরা ৩ডিতেও কাজে লাগাব।">
+            <div slot="image"><svg viewBox="0 0 480 240" role="img" aria-label="২ডি থেকে ১ডি প্রক্ষেপণ"><g stroke="rgba(150,160,190,.2)"><path d="M30 60H450M30 120H450M30 180H450"/><path d="M90 20V220M180 20V220M270 20V220M360 20V220"/></g><path d="M60 200 L420 60" stroke="#b388ff" stroke-width="3"/><path d="M180 60 L180 154" stroke="#ff8a80" stroke-width="2" stroke-dasharray="5 4"/><path d="M300 60 L300 104" stroke="#ff8a80" stroke-width="2" stroke-dasharray="5 4"/><circle cx="60" cy="200" r="5" fill="#fff"/><text x="332" y="52" fill="#b388ff" font-size="14">সংখ্যা রেখা</text></svg></div>
+            <div slot="video"><svg viewBox="0 0 480 240" role="img" aria-label="অ্যানিমেটেড প্রক্ষেপণ"><g stroke="rgba(150,160,190,.2)"><path d="M30 60H450M30 120H450M30 180H450"/></g><path d="M60 200 L420 60" stroke="#b388ff" stroke-width="3"/><g><path d="M180 60 L180 154" stroke="#ff8a80" stroke-width="2" stroke-dasharray="5 4"/><animate attributeName="d" values="M180 60 L180 154;M180 100 L180 154;M180 60 L180 154" dur="2.2s" repeatCount="indefinite"/></g><text x="332" y="52" fill="#b388ff" font-size="14">সংখ্যা রেখা</text></svg></div>
+          </b1b-media-tab>
+
+          <b1b-media-tab active-tab="image" caption="চিত্রে তিনটি কলাম u, v, w আয়তন বের করার জন্য সাজানো হয়েছে; ডিটারমিন্যান্টের মান হলো ওই তিন ভেক্টরের প্যারালেলেপাইপেডের চিহ্নিত আয়তন। প্রথম কলাম u-কে পরিবর্তনশীল ধরলেই আমরা ৩ডি থেকে ১ডি একটি রৈখিক রূপান্তর পাই—বাকি দুই কলাম v ও w স্থিত। পরের ধাপে এই রূপান্তরের ১×৩ ম্যাট্রিক্সটিকে দ্বৈত ভেক্টর p-তে রূপ দেওয়া হবে।">
+            <div slot="image"><svg viewBox="0 0 480 240" role="img" aria-label="১ বাই ৩ ম্যাট্রিক্স"><rect x="90" y="70" width="64" height="100" rx="6" fill="#1d3557" stroke="#74c0e3"/><rect x="180" y="70" width="64" height="100" rx="6" fill="#3d2c5a" stroke="#b388ff"/><rect x="270" y="70" width="64" height="100" rx="6" fill="#1b4332" stroke="#69f0ae"/><text x="112" y="132" fill="#74c0e3" font-size="20">u</text><text x="202" y="132" fill="#b388ff" font-size="20">v</text><text x="292" y="132" fill="#69f0ae" font-size="20">w</text><path d="M360 120 H420" stroke="#e94560" stroke-width="2"/><text x="392" y="106" fill="#e94560" font-size="15">det</text></svg></div>
+            <div slot="video"><svg viewBox="0 0 480 240" role="img" aria-label="অ্যানিমেটেড ডিটারমিন্যান্ট"><rect x="90" y="70" width="64" height="100" rx="6" fill="#1d3557" stroke="#74c0e3"/><rect x="180" y="70" width="64" height="100" rx="6" fill="#3d2c5a" stroke="#b388ff"/><rect x="270" y="70" width="64" height="100" rx="6" fill="#1b4332" stroke="#69f0ae"/><text x="112" y="132" fill="#74c0e3" font-size="20">u</text><text x="202" y="132" fill="#b388ff" font-size="20">v</text><text x="292" y="132" fill="#69f0ae" font-size="20">w</text><g><circle cx="420" cy="120" r="9" fill="#e94560"/><animate attributeName="r" values="6;12;6" dur="1.6s" repeatCount="indefinite"/></g></svg></div>
+          </b1b-media-tab>
+
+          <b1b-media-tab active-tab="image" caption="এই ছবিতে প্যারালেলেপাইপেডের আয়তনকে ‘ভূমির ক্ষেত্রফল × লম্ব উচ্চতা’ হিসেবে ভাঙা হয়েছে। লম্ব উচ্চতা হলো u-এর ওই অভিমুখে প্রক্ষেপণ—ঠিক যেমন ডট গুণনে $\vec{p}\cdot\vec{u}$ হয় $\|\vec{p}\|$ আর প্রক্ষেপণের গুণফল। দুই পদ্ধতির এই মিলই প্রমাণ করে যে $\vec{p}$ ছাড়া অন্য কোনো ভেক্টর হতে পারে না; এটি পি-এর দৈর্ঘ্য ও দিক নির্ধারণের চাবিকাঠি।">
+            <div slot="image"><svg viewBox="0 0 480 240" role="img" aria-label="আয়তন ও লম্ব প্রক্ষেপণ"><path d="M80 190 L230 150 L310 200 L160 240 Z" fill="#74c0e333" stroke="#74c0e3" stroke-width="2"/><path d="M80 190 L230 150" stroke="#69f0ae" stroke-width="4"/><path d="M80 190 L160 240" stroke="#ffb74d" stroke-width="4"/><path d="M195 175 L195 50" stroke="#b388ff" stroke-width="4"/><path d="M230 150 L230 60" stroke="#ff8a80" stroke-width="2" stroke-dasharray="5 4"/><text x="205" y="44" fill="#b388ff" font-size="15">p</text><text x="238" y="72" fill="#ff8a80" font-size="15">h = proj(u)</text></svg></div>
+            <div slot="video"><svg viewBox="0 0 480 240" role="img" aria-label="অ্যানিমেটেড প্রক্ষেপণ"><path d="M80 190 L230 150 L310 200 L160 240 Z" fill="#74c0e333" stroke="#74c0e3" stroke-width="2"/><path d="M80 190 L230 150" stroke="#69f0ae" stroke-width="4"/><path d="M80 190 L160 240" stroke="#ffb74d" stroke-width="4"/><path d="M195 175 L195 50" stroke="#b388ff" stroke-width="4"/><g><path d="M230 150 L230 60" stroke="#ff8a80" stroke-width="2" stroke-dasharray="5 4"/><animate attributeName="opacity" values="1;.3;1" dur="1.8s" repeatCount="indefinite"/></g><text x="205" y="44" fill="#b388ff" font-size="15">p</text></svg></div>
+          </b1b-media-tab>
+
+        </div>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — ALL official quizzes (exact options + rich Bengali feedback) ═══ -->
+      <b1b-section id="sec-practice-quizzes" title="অনুশীলন — অফিশিয়াল কুইজ (Practice)" data-no-narration="true">
+
+        <b1b-quiz
+          question="❓ নির্দিষ্ট ভেক্টর $\vec{v}$ ও $\vec{w}$-এর জন্য $f(\vec{u})=\det([\vec{u},\vec{v},\vec{w}])$ কেন একটি রৈখিক রূপান্তর (Linear Transformation)?"
+          correct="1"
+          correct-msg="ঠিক! ডিটারমিন্যান্ট তার যেকোনো একটি কলামের সাপেক্ষে মাল্টিলিনিয়ার—অর্থাৎ বাকি কলামগুলো স্থির থাকলে সেটি সেই কলামে রৈখিক। এখানে $\vec{v},\vec{w}$ স্থির, শুধু $\vec{u}$ পরিবর্তনশীল, তাই $f(c\vec{u}_1+\vec{u}_2)=c f(\vec{u}_1)+f(\vec{u}_2)$—সম্পূর্ণ রৈখিকতা প্রমাণিত।"
+          wrong-msg="মনে রেখো ডিটারমিন্যান্ট ঋণাত্মকও হতে পারে (ওরিয়েন্টেশন উল্টালে) এবং এটি ৩ডি থেকে ১ডি ফাংশন, ৩ডি থেকে ৩ডি নয়। মূল কারণ হলো একক কলামে মাল্টিলিনিয়ারিটি: $\vec{v},\vec{w}$ স্থির থাকলে শুধু $\vec{u}$-এর ওপর নির্ভর করে এমন ফাংশনটি রৈখিক।"
+          reveal-msg="সঠিক উত্তর: ডিটারমিন্যান্ট যেকোনো একটি কলামের সাপেক্ষে সম্পূর্ণরূপে মাল্টিলিনিয়ার, তাই $\vec{v},\vec{w}$ স্থির থাকলে $f(\vec{u})$ একটি রৈখিক রূপান্তর।">
+          <div slot="option">কারণ ডিটারমিন্যান্টের মান সবসময় একটি ধনাত্মক পূর্ণসংখ্যা হয়</div>
+          <div slot="option">কারণ ডিটারমিন্যান্ট যেকোনো একটি কলামের সাপেক্ষে সম্পূর্ণরূপে মাল্টিলিনিয়ার (Multilinear)</div>
+          <div slot="option">কারণ $\vec{v}$ এবং $\vec{w}$ সবসময় পরস্পরের ওপর লম্ব থাকে</div>
+          <div slot="option">কারণ এটি ত্রিমাত্রিক স্থানকে অন্য একটি ত্রিমাত্রিক স্থানে রূপান্তর করে</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ডুয়ালিটি (Duality) তত্ত্ব অনুযায়ী $\mathbb{R}^3\to\mathbb{R}$ যেকোনো লিনিয়ার রূপান্তর $f(\vec{u})$-এর ক্ষেত্রে কোনটি সত্য?"
+          correct="0"
+          correct-msg="অসাধারণ! ডুয়ালিটির মূল তত্ত্ব (রিজ রিপ্রেজেন্টেশন) হলো: $\mathbb{R}^n\to\mathbb{R}$ যেকোনো রৈখিক রূপান্তর একটি $1\times n$ ম্যাট্রিক্স দ্বারা প্রকাশিত হয়, যা স্বাভাবিকভাবেই একটি অনন্য দ্বৈত ভেক্টর $\vec{p}$-এর সাথে ডট গুণনের সমতুল্য—অর্থাৎ $f(\vec{u})=\vec{p}\cdot\vec{u}$। এখানে $\vec{p}$ ছাড়া অন্য কোনো ভেক্টর এই কাজ করতে পারে না।"
+          wrong-msg="ডুয়ালিটি ম্যাট্রিক্সের নির্ণায়ক বা মাত্রা নিয়ে নয়—এটি রূপান্তর ও ভেক্টরের মধ্যেকার আদান-প্রদান নিয়ে। $\mathbb{R}^3\to\mathbb{R}$ রূপান্তরের ম্যাট্রিক্স $3\times3$ নয় বরং $1\times3$; ডট গুণন যেকোনো মাত্রায় কাজ করে; আর এক-সারি ম্যাট্রিক্সের ব্যবহার মানেই স্ফুটনাকে বাধা দেওয়া নয়।"
+          reveal-msg="সঠিক উত্তর: এমন একটি অনন্য ভেক্টর $\vec{p}$ বিদ্যমান যার জন্য $f(\vec{u})=\vec{p}\cdot\vec{u}$—এটিই রিজ রিপ্রেজেন্টেশন উপপাদ্য।">
+          <div slot="option">এমন একটি অনন্য ভেক্টর $\vec{p}$ বিদ্যমান যার জন্য $f(\vec{u}) = \vec{p} \cdot \vec{u}$</div>
+          <div slot="option">রূপান্তরটির ডিটারমিন্যান্ট সবসময় শূন্য হতে হবে</div>
+          <div slot="option">রূপান্তরটিকে অবশ্যই একটি $3 \times 3$ বর্গাকার ম্যাট্রিক্স দ্বারা প্রকাশ করতে হবে</div>
+          <div slot="option">রূপান্তরটি কখনোই ইনভার্ট করা সম্ভব নয় কারণ এটি স্কেলার গ্রহণ করে ভেক্টর দেয়</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ সামান্তরিক গোলকের আয়তন $f(\vec{u})=\vec{p}\cdot\vec{u}$ সমীকরণে ভেক্টর $\vec{p}$-এর দৈর্ঘ্য $\|\vec{p}\|$ জ্যামিতিকভাবে কার সমান হতে হবে?"
+          correct="2"
+          correct-msg="নিখুঁত! আয়তন = ভূমির ক্ষেত্রফল $\times$ লম্ব উচ্চতা, আর $\vec{p}\cdot\vec{u}=\|\vec{p}\|\times$ লম্ব উচ্চতা। সব $\vec{u}$-এর জন্য সমান হতে হলে $\|\vec{p}\|$ অবশ্যই ভূমির ক্ষেত্রফলের সমান হতে হবে—আর ভূমিটি $\vec{v},\vec{w}$ দ্বারা গঠিত, তাই $\|\vec{p}\|=\|\vec{v}\times\vec{w}\|$।"
+          wrong-msg="চিন্তা করো: আয়তন আসলে ‘ভূমি × উচ্চতা’। ডট গুণনে উচ্চতা আসে $\vec{u}$-এর প্রক্ষেপণ থেকে, বাকি অংশ $\|\vec{p}\|$ কে ভূমির ক্ষেত্রফল হতেই হবে। $\vec{u}$-এর দৈর্ঘ্য বা দুই ভেক্টরের গড় কোনোটিই এখানে কাজ করে না—ভূমি তো শুধু $\vec{v}$ ও $\vec{w}$ দিয়েই তৈরি।"
+          reveal-msg="সঠিক উত্তর: $\vec{v}$ এবং $\vec{w}$ দ্বারা গঠিত সামান্তরিকের ক্ষেত্রফলের সমান—অর্থাৎ $\|\vec{p}\|=\|\vec{v}\times\vec{w}\|$।">
+          <div slot="option">ভেক্টর $\vec{u}$-এর দৈর্ঘ্যের সমান</div>
+          <div slot="option">$\vec{v}$ এবং $\vec{w}$-এর দৈর্ঘ্যের গাণিতিক গড়ের সমান</div>
+          <div slot="option">$\vec{v}$ এবং $\vec{w}$ দ্বারা গঠিত সামান্তরিকের ক্ষেত্রফলের সমান</div>
+          <div slot="option">সামান্তরিক গোলকের সমগ্র তলের ক্ষেত্রফলের সমান</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ক্রস প্রোডাক্টের সূত্রে প্রথম সারিতে $\hat{i},\hat{j},\hat{k}$ বসানোর মূল গাণিতিক তাৎপর্য কী?"
+          correct="1"
+          correct-msg="একদম সঠিক! $\det([\vec{u},\vec{v},\vec{w}])$ বিস্তার করলে $u_1,u_2,u_3$-এর সহগগুলোই হলো $\vec{p}$-এর স্থানাঙ্ক। প্রথম সারিতে $\hat{i},\hat{j},\hat{k}$ বসানোর অর্থ হলো—বিস্তারের পর সেই সহগগুলোকে স্বয়ংক্রিয়ভাবে একটি ভেক্টরে সংকলন করা। এটি কোনো মুখস্থ-কৌশল নয়, বরং ডুয়ালিটির সুন্দর এক অনবদ্য প্রকাশ।"
+          wrong-msg="এটা কোনো কৃত্রিম কৌশল নয়—আমরা দেখেছি সহগগুলোই $\vec{p}$-এর উপাদান। ডিটারমিন্যান্টে সাধারণ সংখ্যাও থাকে; আর $\hat{i},\hat{j},\hat{k}$ প্রতীক হওয়ায় ম্যাট্রিক্সে কোনো ‘সংখ্যাগত’ পরিবর্তন হয় না—বদল শুধু ব্যাখ্যার দিকে, যা আমাদের ফলাফলকে ভেক্টর আকারে দেয়।"
+          reveal-msg="সঠিক উত্তর: এটি প্রথম কলামের $u_1,u_2,u_3$-এর সহগগুলোকে স্বয়ংক্রিয়ভাবে একটি সংকলিত ভেক্টরে রূপান্তর করার মার্জিত গাণিতিক প্রকাশ।">
+          <div slot="option">এটি শুধুমাত্র ছাত্রছাত্রীদের মুখস্থ করানোর একটি কৃত্রিম কৌশল যার কোনো তাত্ত্বিক ভিত্তি নেই</div>
+          <div slot="option">এটি প্রথম কলামের $u_1, u_2, u_3$-এর সহগগুলোকে স্বয়ংক্রিয়ভাবে একটি সংকলিত ভেক্টরে রূপান্তর করার একটি মার্জিত গাণিতিক প্রকাশ</div>
+          <div slot="option">কারণ ডিটারমিন্যান্ট কখনো সাধারণ সংখ্যা ছাড়া গণনা করা যায় না</div>
+          <div slot="option">কারণ $\hat{i}, \hat{j}, \hat{k}$-এর মান সবসময় ১ তাই ম্যাট্রিক্সের কোনো পরিবর্তন হয় না</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ অফিশিয়াল অনুশীলন: চিত্রে $\vec{v}\times\vec{w}$ ভেক্টরটি ডান হাতের নিয়ম মেনে সঠিকভাবে আঁকা হয়েছে কি? (Does the right-hand rule confirm that the cross product $\vec{v}\times\vec{w}$ is drawn in the illustration above correctly?)"
+          correct="0"
+          correct-msg="হ্যাঁ! তর্জনী $\vec{v}$ দিকে, মধ্যমা $\vec{w}$ দিকে ধরলে বুঁড়ু $\vec{v}\times\vec{w}$-এর দিক দেখায়—চিত্রে ঠিক সেই অভিমুখেই তীর আঁকা আছে। মনে রেখো $\vec{v}$ ও $\vec{w}$ অদলবদল করলে বুঁড়ু উল্টো দিকে যাবে: $\vec{w}\times\vec{v}=-(\vec{v}\times\vec{w})$।"
+          wrong-msg="আবার চেষ্টা করো: ডান হাতের তর্জনী প্রথম ভেক্টর $\vec{v}$, মধ্যমা দ্বিতীয় ভেক্টর $\vec{w}$ দিকে রেখে বুঁড়ু যেদিকে যায়, সেটিই $\vec{v}\times\vec{w}$। ছবির তীরের সাথে মিলিয়ে দেখো—দিক মেলে কি না, এবং কোন ভেক্টর প্রথমে ছিল তা ভুলো না।"
+          reveal-msg="সঠিক উত্তর Yes—ডান হাতের তর্জনী $\vec{v}$, মধ্যমা $\vec{w}$ হলে বুঁড়ু চিত্রের তীরের দিকেই নির্দেশ করে।">
+          <div slot="option">Yes</div>
+          <div slot="option">No</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ অফিশিয়াল অনুশীলন: $\begin{bmatrix}0\\2\\-1\end{bmatrix}\times\begin{bmatrix}-2\\-1\\1\end{bmatrix}$ এর মান কত? (What is this cross product as illustrated by the diagram?)"
+          correct="0"
+          correct-msg="অসাধারণ! $\hat{i}$ উপাদান $2(1)-(-1)(-1)=1$, $\hat{j}$ উপাদান $(-1)(-2)-0(1)=2$, এবং $\hat{k}$ উপাদান $0(-1)-2(-2)=4$—সুতরাং ফল $[1,2,4]$। সাধারণ ভুল হলো মাঝের উপাদানের চিহ্ন বদলে $[1,-2,4]$ লেখা: মনে রেখো $\hat{j}$-এর সহগ হলো $v_3w_1-v_1w_3$, অর্থাৎ বিয়োগটা $\hat{i}$-এর মতোই আগে-পরে সাজিয়ে নিতে হয়।"
+          wrong-msg="ধাপে ধাপে হিসাব করো: $\hat{i}=(2)(1)-(-1)(-1)=1$, $\hat{j}=(-1)(-2)-(0)(1)=2$, $\hat{k}=(0)(-1)-(2)(-2)=4$। $[1,-2,4]$ হলো $\hat{j}$-এর চিহ্নের ক্লাসিক ভুল; $[1,2,-4]$ বা $[1,2,4]$ নয়—$\hat{k}$ সবসময় $0\times(-1)-2\times(-2)=4$ দেয়।"
+          reveal-msg="সঠিক উত্তর $\begin{bmatrix}1\\2\\4\end{bmatrix}$—প্রথম কলামে $\hat{i},\hat{j},\hat{k}$ বসিয়ে ডিটারমিন্যান্ট বিস্তার করলেই পাওয়া যায়।">
+          <div slot="option">$\begin{bmatrix}1\\2\\4\end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix}1\\-2\\4\end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix}-1\\-2\\-4\end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix}-1\\-2\\4\end{bmatrix}$</div>
+        </b1b-quiz>
+
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — official conclusion (100% content) ═══ -->
+      <b1b-section id="sec-conclusion" title="উপসংহার" data-no-narration="true">
+
+        <p>সংক্ষেপে বললে: আমরা ৩ডি স্থান থেকে সংখ্যা রেখায় একটি রৈখিক রূপান্তর সংজ্ঞায়িত করলাম, যেটি $\vec{v}$ ও $\vec{w}$-এর ওপর নির্ভর করে। তারপর এই রূপান্তরের দ্বৈত ভেক্টরটিকে দুই ভাবে দেখলাম—একদিকে হিসাব করে $\hat{i},\hat{j},\hat{k}$ কৌশল দিয়ে, অন্যদিকে জ্যামিতিকভাবে। দুটি পদ্ধতি একই ভেক্টর $\vec{v}\times\vec{w}$-এ পৌঁছাল।</p>
+
+        <p>জ্যামিতিক চোখে এই দ্বৈত ভেক্টর $\vec{v}$ ও $\vec{w}$-এর ওপর লম্ব, এর দৈর্ঘ্য তাদের সামান্তরিকের ক্ষেত্রফলের সমান, আর দিক ডান হাতের নিয়ম দ্বারা নির্ধারিত। হিসাবের চোখে এটি হলো ডিটারমিন্যান্টে $\hat{i},\hat{j},\hat{k}$ বসিয়ে পাওয়া সহগগুলোর সংকলন—দুটোই একই বস্তুর দুই রূপ।</p>
+
+        <b1b-callout type="green" icon="🔗" title="পরবর্তী অধ্যায়ের দিকে">
+          <p>ফর্মুলা মুখস্থ করার বদলে রূপান্তরের দৃষ্টিকোণ থেকে ক্রস প্রোডাক্টকে বোঝা আমাদের অনেক গভীর অন্তর্দৃষ্টি দেয়। পরবর্তীতে আপনারা দুটি গুরুত্বপূর্ণ ধারণা দেখবেন—<a href="lesson_12.html"><strong>ক্র্যামারের নিয়ম (Cramer's rule)</strong></a> এবং <strong>ভিত্তি পরিবর্তন (Change of basis)</strong>। <a href="lesson_10.html"><strong>← আগের অধ্যায়: ক্রস প্রোডাক্ট</strong></a></p>
+        </b1b-callout>
+
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — interactive duality lab in fullscreen ═══ -->
+      <b1b-section id="sec-duality-lab" title="ইন্টারেক্টিভ ডুয়ালিটি ল্যাব (Interactive 2D Duality Lab)" data-no-narration="true">
+        <p class="viz-intro">নিচের সমতলে লাল বিন্দুটি টেনে $\vec{v}$ বদলান এবং স্লাইডার দিয়ে তাকে স্কেল করুন। লক্ষ্য করুন কীভাবে তির্যক সংখ্যা রেখার ওপর প্রক্ষেপণ একটি $1\times2$ ম্যাট্রিক্স—অর্থাৎ দ্বৈত ভেক্টর $\hat{u}$-এর সাথে ডট গুণন—হিসেবে একই ফল দেয়। পূর্ণস্ক্রিন বাটনে চাপ দিয়ে ল্যাবটি বড় করে দেখতে পারেন।</p>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="3,2"></b1b-vector-plane>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — interactive 3d-to-1d lab in fullscreen ═══ -->
+      <b1b-section id="sec-cross-product-lab" title="ইন্টারেক্টিভ ক্রস প্রোডাক্ট ল্যাব (3d→1d Transformation)" data-no-narration="true">
+        <p class="viz-intro">এই ল্যাবে $\vec{u},\vec{v},\vec{w}$-এর স্থানাঙ্ক বদলিয়ে দেখুন কীভাবে $\det[\vec{u}\;\vec{v}\;\vec{w}]$ আর $\vec{p}\cdot\vec{u}$ ($=\vec{v}\times\vec{w}$ এর সাথে ডট গুণন) হুবহু একই মান দেয়। ধনাত্মক/ঋণাত্মক চিহ্নটি ডান হাতের ওরিয়েন্টেশন নির্দেশ করে—$\vec{v}$ ও $\vec{w}$ অদলবদল করলেই চিহ্ন উল্টে যাবে।</p>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <div class="cp-lab-grid">
+            <div class="cp-lab-controls">
+              <p><strong>ভেক্টরের স্থানাঙ্ক পরিবর্তন করুন:</strong></p>
+              <p><label>u =</label> x<input id="cp-u-x" type="number" value="1"/> y<input id="cp-u-y" type="number" value="1"/> z<input id="cp-u-z" type="number" value="2"/></p>
+              <p><label>v =</label> x<input id="cp-v-x" type="number" value="2"/> y<input id="cp-v-y" type="number" value="0"/> z<input id="cp-v-z" type="number" value="1"/></p>
+              <p><label>w =</label> x<input id="cp-w-x" type="number" value="0"/> y<input id="cp-w-y" type="number" value="2"/> z<input id="cp-w-z" type="number" value="1"/></p>
+            </div>
+            <div class="cp-lab-controls">
+              <p>$\det[\vec{u}\;\vec{v}\;\vec{w}] = <span class="cp-readout" id="cp-det-out">—</span>$</p>
+              <p>$\vec{p}=\vec{v}\times\vec{w} = <span class="cp-readout" id="cp-p-out">—</span>$</p>
+              <p>$\vec{p}\cdot\vec{u} = <span class="cp-readout" id="cp-dot-out">—</span>$</p>
+              <svg viewBox="0 0 460 90" role="img" aria-label="ডিটারমিন্যান্টের চিহ্ন">
+                <line x1="40" y1="45" x2="420" y2="45" stroke="#96a0be" stroke-width="2"/>
+                <line x1="260" y1="30" x2="260" y2="60" stroke="#fff" stroke-width="2"/>
+                <rect id="cp-bar" x="260" y="36" width="2" height="18" fill="#69f0ae"/>
+                <text x="44" y="28" fill="#ff8a80" font-size="14">− ঋণাত্মক</text>
+                <text x="330" y="28" fill="#69f0ae" font-size="14">ধনাত্মক +</text>
+              </svg>
+            </div>
+          </div>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    yt-id="BaM7OCEm3G0"
+    video-src="../../media_vault/lesson_11/experiments/fill_v2/3b1b_lesson_11_full_dubbed_fill2.mp4"
+    title="রৈখিক রূপান্তরের আলোকে ক্রস প্রোডাক্ট — অধ্যায় ১১"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — লিনিয়ার অ্যালজেব্রা">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_10.html"
+  prev-title="ক্রস প্রোডাক্ট"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_12.html"
+  next-title="ক্র্যামারের নিয়ম, জ্যামিতিকভাবে ব্যাখ্যা"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- Page-local lab logic: scoped to this lesson only, no shared-library changes. -->
+<script>
+(function () {
+  function el(id) { return document.getElementById(id); }
+  function det(u, v, w) {
+    return u[0] * (v[1] * w[2] - v[2] * w[1]) +
+           u[1] * (v[2] * w[0] - v[0] * w[2]) +
+           u[2] * (v[0] * w[1] - v[1] * w[0]);
+  }
+  function read(prefix) {
+    return [Number(el('cp-' + prefix + '-x').value), Number(el('cp-' + prefix + '-y').value), Number(el('cp-' + prefix + '-z').value)];
+  }
+  function update() {
+    if (!el('cp-det-out')) return;
+    var u = read('u'), v = read('v'), w = read('w');
+    var p = [v[1] * w[2] - v[2] * w[1], v[2] * w[0] - v[0] * w[2], v[0] * w[1] - v[1] * w[0]];
+    var d = det(u, v, w);
+    var dot = p[0] * u[0] + p[1] * u[1] + p[2] * u[2];
+    el('cp-det-out').textContent = String(d);
+    el('cp-dot-out').textContent = String(dot);
+    el('cp-p-out').textContent = '[' + p.join(', ') + ']';
+    var len = Math.min(180, Math.max(2, Math.abs(d) * 18));
+    var bar = el('cp-bar');
+    bar.setAttribute('width', String(len));
+    bar.setAttribute('x', d >= 0 ? '260' : String(260 - len));
+    bar.setAttribute('fill', d >= 0 ? '#69f0ae' : '#ff8a80');
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    ['u', 'v', 'w'].forEach(function (pr) {
+      ['x', 'y', 'z'].forEach(function (ax) {
+        var node = el('cp-' + pr + '-' + ax);
+        if (node) node.addEventListener('input', update);
+      });
+    });
+    update();
+  });
+})();
+</script>
+
+</body>
+</html>

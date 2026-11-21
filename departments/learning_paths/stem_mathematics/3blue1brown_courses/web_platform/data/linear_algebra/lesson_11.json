@@ -1,0 +1,257 @@
+{
+  "lesson_id": "lesson_11",
+  "chapter_num": 11,
+  "course_id": "linear_algebra",
+  "title_en": "Cross Products in the Light of Linear Transformations",
+  "title_bn": "রৈখিক রূপান্তরের আলোকে ক্রস প্রোডাক্ট ও ডুয়ালিটি",
+  "subtitle_bn": "সামান্তরিক গোলকের আয়তন, লিনিয়ার ফাংশনাল ও ডুয়ালিটির জাদুকরী সংযোগে ক্রস প্রোডাক্টের ভিত্তি",
+  "video_id": "BaM7OCEm3G0",
+  "official_url": "https://www.3blue1brown.com/lessons/cross-products-extended",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "13:05",
+    "prerequisites": [
+      "lesson_06",
+      "lesson_08",
+      "lesson_09",
+      "lesson_10"
+    ]
+  },
+  "epigraph": {
+    "quote": "Whenever you see an algebraic formula that feels like magic or a trick, look for the geometric transformation beneath it.",
+    "quote_bn": "যখনই কোনো বীজগাণিতিক সূত্রকে জাদুকরি বা চাতুর্যপূর্ণ মনে হবে, তখনই তার গভীরে লুকিয়ে থাকা জ্যামিতিক রূপান্তরটি অনুসন্ধান করুন।",
+    "author": "Grant Sanderson"
+  },
+  "sections": [
+    {
+      "id": "sec_01_cross_product_puzzle",
+      "title_bn": "১. ক্রস প্রোডাক্টের অদ্ভুত সূত্রের রহস্য ও গভীর জিজ্ঞাসা",
+      "title_en": "The Cross Product Mystery & Formula",
+      "summary_bn": "প্রথাগত তিন বাই তিন সিউডো-ডিটারমিন্যান্ট সূত্রের পেছনের অন্তর্নিহিত জ্যামিতিক তাৎপর্য আবিষ্কারের সূচনা।",
+      "key_takeaways": [
+        "জ্যামিতিকভাবে $\\vec{v} \\times \\vec{w}$-এর মান হলো সামান্তরিকের ক্ষেত্রফল এবং দিক হলো তলের ওপর লম্ব।",
+        "বীজগাণিতিকভাবে পাঠ্যবইয়ে প্রথম সারিতে $\\hat{i}, \\hat{j}, \\hat{k}$ বসিয়ে ডিটারমিন্যান্ট হিসাব করা হয়।",
+        "ভিত্তি ভেক্টরকে সংখ্যার মতো ডিটারমিন্যান্টে বসানো কোনো কাকতালীয় কৌশল নয়, এটি ডুয়ালিটির সুনির্দিষ্ট বহিঃপ্রকাশ।"
+      ],
+      "formulas": [
+        {
+          "label": "ক্রস প্রোডাক্টের জ্যামিতিক মান ও দিক",
+          "katex": "\\|\\vec{v} \\times \\vec{w}\\| = \\|\\vec{v}\\| \\|\\vec{w}\\| \\sin(\\theta) = \\text{Area}(\\text{Parallelogram})"
+        },
+        {
+          "label": "পাঠ্যপুস্তকের সিউডো-ডিটারমিন্যান্ট সূত্র",
+          "katex": "\\vec{v} \\times \\vec{w} = \\det \\begin{bmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ v_1 & v_2 & v_3 \\\\ w_1 & w_2 & w_3 \\end{bmatrix}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_cross_product_parallelogram",
+          "caption_bn": "দুটি ভেক্টর v ও w দ্বারা গঠিত সামান্তরিকের ক্ষেত্রফল এবং লম্ব ভেক্টর v × w",
+          "type": "svg",
+          "src": "figures/cross_product_parallelogram.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_02_volume_function",
+      "title_bn": "২. সামান্তরিক গোলকের আয়তন এবং ত্রিমাত্রিক রৈখিক ফাংশন",
+      "title_en": "Parallelepiped Volume and 3D Linear Function",
+      "summary_bn": "নির্ধারিত ভেক্টর v ও w-এর সাথে যেকোনো পরিবর্তনশীল u যুক্ত করে সামান্তরিক গোলকের চিহ্নিত আয়তন পরিমাপের লিনিয়ার ম্যাপিং।",
+      "key_takeaways": [
+        "ফাংশন $f(\\vec{u}) = \\det([\\vec{u}, \\vec{v}, \\vec{w}])$ হলো ত্রিমাত্রিক স্থান $\\mathbb{R}^3$ থেকে $\\mathbb{R}$-এ একটি রৈখিক রূপান্তর।",
+        "ডিটারমিন্যান্ট যেকোনো একক কলামের সাপেক্ষে লিনিয়ার হওয়ায় স্কেলিং ও যোগফলের বৈশিষ্ট্য অক্ষুণ্ণ থাকে: $f(c\\vec{u}_1 + \\vec{u}_2) = c f(\\vec{u}_1) + f(\\vec{u}_2)$।",
+        "চিহ্নিত আয়তন ঋণাত্মক হতে পারে যদি $\\vec{u}, \\vec{v}, \\vec{w}$ ডান হাতের নিয়ম উল্টে দেয়।"
+      ],
+      "formulas": [
+        {
+          "label": "আয়তন ফাংশনের ডিটারমিন্যান্ট রূপ",
+          "katex": "f(\\vec{u}) = \\det \\begin{bmatrix} u_1 & v_1 & w_1 \\\\ u_2 & v_2 & w_2 \\\\ u_3 & v_3 & w_3 \\end{bmatrix}"
+        },
+        {
+          "label": "ফাংশনাল লিনিয়ারিটি ধর্ম",
+          "katex": "f(c \\vec{u}) = c f(\\vec{u}), \\quad f(\\vec{u}_1 + \\vec{u}_2) = f(\\vec{u}_1) + f(\\vec{u}_2)"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_parallelepiped_volume",
+          "caption_bn": "ভেক্টর u, v এবং w দ্বারা গঠিত সামান্তরিক গোলক (Parallelepiped)",
+          "type": "svg",
+          "src": "figures/parallelepiped_volume.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_03_duality_and_dual_vector",
+      "title_bn": "৩. ডুয়ালিটির ঐশ্বর্য ও দ্বৈত ভেক্টর p-এর অস্তিত্ব",
+      "title_en": "Duality and the Existence of Dual Vector p",
+      "summary_bn": "R^3 থেকে R-এ যেকোনো লিনিয়ার রূপান্তরের সাথে ডট গুণন সম্পর্কযুক্ত হওয়ায় একটি অনন্য ভেক্টর p-এর আবশ্যিক উদ্ভব।",
+      "key_takeaways": [
+        "ডুয়ালিটি নীতি অনুযায়ী $\\mathbb{R}^3 \\to \\mathbb{R}$ রৈখিক রূপান্তরকে একটি $1 \\times 3$ রো ম্যাট্রিক্স দ্বারা উপস্থাপন করা যায়।",
+        "যেকোনো $1 \\times 3$ ম্যাট্রিক্স গুণন একটি অনন্য ভেক্টর $\\vec{p}$-এর সাথে ডট গুণনের সমতুল্য।",
+        "অতএব একটি নির্দিষ্ট ভেক্টর $\\vec{p}$ বিদ্যমান যার জন্য $f(\\vec{u}) = \\vec{p} \\cdot \\vec{u} = \\det([\\vec{u}, \\vec{v}, \\vec{w}])$।"
+      ],
+      "formulas": [
+        {
+          "label": "ডুয়ালিটি ও রো ম্যাট্রিক্স সমতুল্যতা",
+          "katex": "f(\\vec{u}) = \\begin{bmatrix} p_1 & p_2 & p_3 \\end{bmatrix} \\begin{bmatrix} u_1 \\\\ u_2 \\\\ u_3 \\end{bmatrix} = \\vec{p} \\cdot \\vec{u}"
+        },
+        {
+          "label": "মৌলিক ডুয়ালিটি সমীকরণ",
+          "katex": "\\vec{p} \\cdot \\vec{u} = \\det \\begin{bmatrix} u_1 & v_1 & w_1 \\\\ u_2 & v_2 & w_2 \\\\ u_3 & v_3 & w_3 \\end{bmatrix}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_duality_matrix_vector",
+          "caption_bn": "রৈখিক রূপান্তর (1x3 ম্যাট্রিক্স) এবং ভেক্টর ডট গুণনের মাঝে ডুয়ালিটি সংযোগ",
+          "type": "svg",
+          "src": "figures/duality_matrix_vector.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_04_geometric_proof_p",
+      "title_bn": "৪. জ্যামিতিক প্রমাণ: ভেক্টর p-এর দৈর্ঘ্য ও দিক নির্ধারণ",
+      "title_en": "Geometric Proof: Identifying Vector p as v × w",
+      "summary_bn": "আয়তনের সূত্র 'ভূমি গুণ উচ্চতা' এবং ডট গুণনের প্রক্ষেপণ নীতি মিলিয়ে প্রমাণ যে p হলো স্বয়ং v × w।",
+      "key_takeaways": [
+        "প্যারালেলেপাইপেডের আয়তন = (ভূমির ক্ষেত্রফল) $\\times$ (লম্ব উচ্চতা $h$)।",
+        "ডট গুণন $\\vec{p} \\cdot \\vec{u} = \\|\\vec{p}\\| \\cdot (\\vec{u}\\text{-এর } \\vec{p}\\text{-এর দিকে প্রক্ষেপণ})$।",
+        "এই দুটি রাশি সব $\\vec{u}$-এর জন্য সমান হতে হলে $\\vec{p}$-কে অবশ্যই $\\vec{v}$ ও $\\vec{w}$-এর তলের ওপর লম্ব হতে হবে এবং $\\|\\vec{p}\\| = \\text{ভূমির ক্ষেত্রফল}$ হতে হবে।",
+        "সুতরাং জ্যামিতিকভাবে $\\vec{p} = \\vec{v} \\times \\vec{w}$।"
+      ],
+      "formulas": [
+        {
+          "label": "আয়তন ও ডট গুণন অভিন্নতা",
+          "katex": "\\text{Volume} = (\\text{Base Area}) \\cdot \\text{proj}_{\\perp}(\\vec{u}) = \\|\\vec{p}\\| \\cdot \\text{proj}_{\\vec{p}}(\\vec{u})"
+        },
+        {
+          "label": "ভেক্টর p-এর চূড়ান্ত জ্যামিতিক পরিচয়",
+          "katex": "\\vec{p} \\perp \\text{span}(\\vec{v}, \\vec{w}), \\quad \\|\\vec{p}\\| = \\|\\vec{v} \\times \\vec{w}\\| \\implies \\vec{p} = \\vec{v} \\times \\vec{w}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_volume_height_projection",
+          "caption_bn": "ভূমির ক্ষেত্রফল এবং লম্ব উচ্চতার প্রক্ষেপণের মাধ্যমে ভেক্টর p-এর অভিমুখ নির্ণয়",
+          "type": "svg",
+          "src": "figures/volume_height_projection.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "cross_product_duality_3d_lab",
+        "description_bn": "৩D স্পেসে u, v, w নিয়ন্ত্রণ করে সামান্তরিক গোলকের আয়তন এবং p ভেক্টরের সাথে তার ডট গুণন প্রত্যক্ষ করুন।",
+        "initial_vectors": {
+          "v": [
+            2,
+            0,
+            1
+          ],
+          "w": [
+            0,
+            2,
+            1
+          ],
+          "u": [
+            1,
+            1,
+            2
+          ]
+        }
+      }
+    },
+    {
+      "id": "sec_05_algebraic_synthesis",
+      "title_bn": "৫. বীজগাণিতিক সমাপনী: সিউডো-ডিটারমিন্যান্টের পরিপূর্ণ যৌক্তিকতা",
+      "title_en": "Algebraic Synthesis: The Pseudo-Determinant Justified",
+      "summary_bn": "প্রথম কলামের সাপেক্ষে বিস্তার করে u-এর সহগগুলো থেকে সরাসরি ক্রস প্রোডাক্টের স্থানাঙ্ক প্রাপ্তির নিখুঁত মেলবন্ধন।",
+      "key_takeaways": [
+        "ডিটারমিন্যান্টকে প্রথম কলামের সাপেক্ষে বিস্তার করলে $u_1, u_2, u_3$-এর সহগগুলোই হয় $\\vec{p}$-এর স্থানাঙ্ক।",
+        "প্রথম সারিতে $\\hat{i}, \\hat{j}, \\hat{k}$ বসানো কোনো কৌতুক নয়—এটি হলো $u$-এর সহগগুলোকে একবারে ভেক্টর আকারে সংকলনের স্বতঃস্ফূর্ত উপায়।",
+        "বীজগণিত এবং জ্যামিতি ডুয়ালিটির সূত্রে এসে এক মোহনায় মিলিত হয়েছে।"
+      ],
+      "formulas": [
+        {
+          "label": "সহগ বিস্তার ও p-এর উপাদান",
+          "katex": "\\det \\begin{bmatrix} u_1 & v_1 & w_1 \\\\ u_2 & v_2 & w_2 \\\\ u_3 & v_3 & w_3 \\end{bmatrix} = u_1 (v_2 w_3 - v_3 w_2) + u_2 (v_3 w_1 - v_1 w_3) + u_3 (v_1 w_2 - v_2 w_1)"
+        },
+        {
+          "label": "ভেক্টর p তথা v × w-এর পূর্ণ বীজগণিত",
+          "katex": "\\vec{p} = \\begin{bmatrix} v_2 w_3 - v_3 w_2 \\\\ v_3 w_1 - v_1 w_3 \\\\ v_1 w_2 - v_2 w_1 \\end{bmatrix} = (v_2 w_3 - v_3 w_2)\\hat{i} + (v_3 w_1 - v_1 w_3)\\hat{j} + (v_1 w_2 - v_2 w_1)\\hat{k}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_cofactor_synthesis",
+          "caption_bn": "প্রথম কলামের সহগ বিস্তার থেকে দ্বৈত ভেক্টর p-এর উপাদান গঠনের বীজগণিতীয় ছক",
+          "type": "svg",
+          "src": "figures/cofactor_synthesis.svg"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_function_linearity",
+      "section_ref": "sec_02_volume_function",
+      "question_bn": "নির্দিষ্ট ভেক্টর $\\vec{v}$ এবং $\\vec{w}$-এর জন্য $f(\\vec{u}) = \\det([\\vec{u}, \\vec{v}, \\vec{w}])$ কেন একটি রৈখিক রূপান্তর (Linear Transformation)?",
+      "question_en": "Why is the function f(u) = det([u, v, w]) a linear transformation for fixed vectors v and w?",
+      "options": [
+        "কারণ ডিটারমিন্যান্টের মান সবসময় একটি ধনাত্মক পূর্ণসংখ্যা হয়",
+        "কারণ ডিটারমিন্যান্ট যেকোনো একটি কলামের সাপেক্ষে সম্পূর্ণরূপে মাল্টিলিনিয়ার (Multilinear)",
+        "কারণ $\\vec{v}$ এবং $\\vec{w}$ সবসময় পরস্পরের ওপর লম্ব থাকে",
+        "কারণ এটি ত্রিমাত্রিক স্থানকে অন্য একটি ত্রিমাত্রিক স্থানে রূপান্তর করে"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ম্যাট্রিক্সের ডিটারমিন্যান্ট তার যেকোনো একটি একক কলামের সাপেক্ষে লিনিয়ার (Multilinear property)। যেহেতু $\\vec{v}$ এবং $\\vec{w}$ স্থির এবং শুধুমাত্র $\\vec{u}$ পরিবর্তনশীল, তাই $f(c\\vec{u}_1 + \\vec{u}_2) = c f(\\vec{u}_1) + f(\\vec{u}_2)$ সম্পূর্ণরূপে বজায় থাকে।",
+      "explanation_en": "Determinant is multilinear in each column. With v and w fixed, the function is strictly linear with respect to u."
+    },
+    {
+      "id": "quiz_02_duality_existence",
+      "section_ref": "sec_03_duality_and_dual_vector",
+      "question_bn": "ডুয়ালিটি (Duality) তত্ত্ব অনুসারে $\\mathbb{R}^3 \\to \\mathbb{R}$ যেকোনো লিনিয়ার রূপান্তর $f(\\vec{u})$-এর ক্ষেত্রে কোনটি সত্য?",
+      "question_en": "According to duality, what is true for any linear transformation f(u) from R^3 to R?",
+      "options": [
+        "এমন একটি অনন্য ভেক্টর $\\vec{p}$ বিদ্যমান যার জন্য $f(\\vec{u}) = \\vec{p} \\cdot \\vec{u}$",
+        "রূপান্তরটির ডিটারমিন্যান্ট সবসময় শূন্য হতে হবে",
+        "রূপান্তরটিকে অবশ্যই একটি $3 \\times 3$ বর্গাকার ম্যাট্রিক্স দ্বারা প্রকাশ করতে হবে",
+        "রূপান্তরটি কখনোই ইনভার্ট করা সম্ভব নয় কারণ এটি স্কেলার গ্রহণ করে ভেক্টর দেয়"
+      ],
+      "correct_index": 0,
+      "explanation_bn": "ডুয়ালিটির মূল তত্ত্ব (রিস রিপ্রেজেন্টেশন) হলো: $\\mathbb{R}^n \\to \\mathbb{R}$ যেকোনো রৈখিক রূপান্তর একটি $1 \\times n$ ম্যাট্রিক্স দ্বারা প্রকাশিত হয়, যা স্বাভাবিকভাবেই একটি অনন্য দ্বৈত ভেক্টর $\\vec{p}$-এর সাথে সাধারণ ডট গুণনের সমতুল্য।",
+      "explanation_en": "By duality, every linear functional on R^3 is represented by a unique vector p via the dot product p . u."
+    },
+    {
+      "id": "quiz_03_vector_p_length",
+      "section_ref": "sec_04_geometric_proof_p",
+      "question_bn": "সামান্তরিক গোলকের আয়তন $f(\\vec{u}) = \\vec{p} \\cdot \\vec{u}$ সমীকরণে ভেক্টর $\\vec{p}$-এর দৈর্ঘ্য $\\|\\vec{p}\\|$ জ্যামিতিকভাবে কার সমান হতে হবে?",
+      "question_en": "In the equation f(u) = p . u = Volume, what must the magnitude ||p|| be equal to geometrically?",
+      "options": [
+        "ভেক্টর $\\vec{u}$-এর দৈর্ঘ্যের সমান",
+        "$\\vec{v}$ এবং $\\vec{w}$-এর দৈর্ঘ্যের গাণিতিক গড়ের সমান",
+        "$\\vec{v}$ এবং $\\vec{w}$ দ্বারা গঠিত সামান্তরিকের ক্ষেত্রফলের সমান",
+        "সামান্তরিক গোলকের সমগ্র তলের ক্ষেত্রফলের সমান"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "আয়তন = ভূমির ক্ষেত্রফল $\\times$ লম্ব উচ্চতা। আর $\\vec{p} \\cdot \\vec{u} = \\|\\vec{p}\\| \\times$ লম্ব উচ্চতা। এই দুটি সমীকরণ সকল $\\vec{u}$-এর জন্য সত্য হতে হলে $\\|\\vec{p}\\|$-কে অবশ্যই ভূমির ক্ষেত্রফল অর্থাৎ $\\|\\vec{v} \\times \\vec{w}\\|$-এর সমান হতে হবে।",
+      "explanation_en": "Volume = (Base Area) * (Height) = ||p|| * (Height). For this to hold for all u, ||p|| must equal the base area spanned by v and w."
+    },
+    {
+      "id": "quiz_04_pseudo_determinant_basis",
+      "section_ref": "sec_05_algebraic_synthesis",
+      "question_bn": "ক্রস প্রোডাক্টের সূত্রে প্রথম সারিতে $\\hat{i}, \\hat{j}, \\hat{k}$ বসানোর মূল গাণিতিক তাৎপর্য কী?",
+      "question_en": "What is the true mathematical significance of placing i-hat, j-hat, and k-hat in the first row of the cross product formula?",
+      "options": [
+        "এটি শুধুমাত্র ছাত্রছাত্রীদের মুখস্থ করানোর একটি কৃত্রিম কৌশল যার কোনো তাত্ত্বিক ভিত্তি নেই",
+        "এটি প্রথম কলামের $u_1, u_2, u_3$-এর সহগগুলোকে স্বয়ংক্রিয়ভাবে একটি সংকলিত ভেক্টরে রূপান্তর করার একটি মার্জিত গাণিতিক প্রকাশ",
+        "কারণ ডিটারমিন্যান্ট কখনো সাধারণ সংখ্যা ছাড়া গণনা করা যায় না",
+        "কারণ $\\hat{i}, \\hat{j}, \\hat{k}$-এর মান সবসময় ১ তাই ম্যাট্রিক্সের কোনো পরিবর্তন হয় না"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "আমরা দেখেছি $\\det([\\vec{u}, \\vec{v}, \\vec{w}])$ বিস্তার করলে $u_1, u_2, u_3$-এর সহগগুলোই হলো $\\vec{p}$-এর স্থানাঙ্ক। প্রথম সারিতে $\\hat{i}, \\hat{j}, \\hat{k}$ প্রতিস্থাপন করার মাধ্যমে বিস্তারটি স্বয়ংক্রিয়ভাবে সেই সহগগুলোকে নিয়ে পূর্ণ ভেক্টর $\\vec{p} = \\vec{v} \\times \\vec{w}$ আকারে উপস্থাপন করে।",
+      "explanation_en": "The expansion coefficients of u_1, u_2, u_3 are the components of p. Placing basis vectors in their slots directly compiles those components into vector p."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="চুলে ঢাকা গোলক ও একটিমাত্র চুলের ঘূর্ণি">
+  <defs>
+    <radialGradient id="g" cx="38%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#3b82a6"/>
+      <stop offset="100%" stop-color="#123044"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="420" fill="#0d1117"/>
+  <circle cx="320" cy="210" r="140" fill="url(#g)" stroke="#74c0e3" stroke-width="2"/>
+  <g stroke="#f2c14e" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M320 70 l0 -34"/><path d="M362 74 l14 -30"/><path d="M400 90 l24 -24"/>
+    <path d="M430 118 l30 -16"/><path d="M450 158 l34 -6"/><path d="M456 210 l36 0"/>
+    <path d="M448 262 l34 10"/><path d="M424 306 l28 22"/><path d="M388 336 l18 30"/>
+    <path d="M344 350 l6 34"/><path d="M296 350 l-6 34"/><path d="M252 336 l-18 30"/>
+    <path d="M214 306 l-28 22"/><path d="M190 262 l-34 10"/><path d="M184 210 l-36 0"/>
+    <path d="M190 158 l-34 -6"/><path d="M210 118 l-30 -16"/><path d="M240 90 l-24 -24"/>
+    <path d="M278 74 l-14 -30"/>
+  </g>
+  <g stroke="#ff6b6b" stroke-width="3.5" fill="none" stroke-linecap="round">
+    <path d="M320 210 C 296 188, 302 160, 326 158 C 350 156, 356 180, 338 192 C 326 200, 316 194, 320 186"/>
+    <path d="M320 210 C 348 224, 352 252, 328 260 C 304 268, 296 246, 314 236"/>
+  </g>
+  <circle cx="320" cy="210" r="7" fill="#ff6b6b"/>
+  <text x="320" y="30" fill="#e8eef5" font-size="20" text-anchor="middle" font-family="sans-serif">স্পর্শক ভেক্টর ক্ষেত্র — কোথাও না কোথাও শূন্য আবশ্যক</text>
+  <text x="320" y="402" fill="#9fb3c8" font-size="16" text-anchor="middle" font-family="sans-serif">লাল ঘূর্ণিটি হলো “কাউলিক” — ভেক্টরের মান এখানে শূন্য</text>
+</svg>

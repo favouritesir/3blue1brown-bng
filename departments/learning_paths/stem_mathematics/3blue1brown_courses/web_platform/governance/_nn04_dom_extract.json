@@ -1,0 +1,431 @@
+{
+  "hasStudioAudio": true,
+  "manifestPresent": true,
+  "sectionEls": [
+    {
+      "id": "sec-intro-toy-network",
+      "noNarration": null
+    },
+    {
+      "id": "sec-chain-rule-derivation",
+      "noNarration": null
+    },
+    {
+      "id": "sec-generalization-layers",
+      "noNarration": null
+    },
+    {
+      "id": "sec-matrix-formulation",
+      "noNarration": null
+    },
+    {
+      "id": "sec-lab",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-quizzes",
+      "noNarration": "true"
+    }
+  ],
+  "dom": [
+    {
+      "id": "sec-intro-toy-network",
+      "title": "একক নিউরনের খেলনা নেটওয়ার্কে চেইন রুল",
+      "blocks": [
+        {
+          "type": "h2",
+          "normType": "h2",
+          "calloutClasses": [],
+          "tex": [],
+          "text": "একক নিউরনের খেলনা নেটওয়ার্কে চেইন রুল"
+        },
+        {
+          "type": "chapter-quote",
+          "normType": "chapter-quote",
+          "calloutClasses": [],
+          "tex": [],
+          "text": "\"\n\nক্যালকুলাস হলো প্রকৃতির পরিবর্তনশীল রূপকে বোঝার অনুবীক্ষণ যন্ত্র; আর ব্যাকপ্রপাগেশন হলো লক্ষ লক্ষ প্যারামিটারের বিশৃঙ্খলাকে নিখুঁত সুরে বাঁধার অদৃশ্য কাণ্ডারি।\n\n— Grant Sanderson · Neural Networks, Chapter 4"
+        },
+        {
+          "type": "p",
+          "normType": "p",
+          "calloutClasses": [],
+          "tex": [
+            "\\nabla C",
+            "\\frac{\\partial C}{\\partial w}",
+            "\\frac{\\partial C}{\\partial b}"
+          ],
+          "text": "সরলীকরণ: এক লাইনে সাজানো নিউরন শৃঙ্খল। পূর্ববর্তী অধ্যায়ে আমরা ব্যাকপ্রপাগেশনের ধারণাটি চাক্ষুষভাবে বুঝেছিলাম—কীভাবে প্রতিটি ট্রেনিং উদাহরণ কস্ট কমানোর জন্য প্রতিটি ওজন ও বায়াসকে সামান্য নাড়াচাড়া বা 'নাজ' (nudge) করার প্রস্তাব দেয়। কিন্তু আধুনিক ডিপ লার্নিং ফ্রেমওয়ার্কগুলো (যেমন PyTorch বা TensorFlow) কীভাবে ঠিক এই গ্রেডিয়েন্ট ভেক্টরটি হুবহু নিখুঁতভাবে গণনা করে? এর উত্তর লুকিয়ে রয়েছে বিশুদ্ধ ক্যালকুলাসে। আমাদের লক্ষ্য হলো \n∇\n𝐶\n∇C গ্রেডিয়েন্ট ভেক্টরের প্রতিটি উপাংশ \n∂\n𝐶\n∂\n𝑤\n∂w\n∂C\n\t​\n\n ও \n∂\n𝐶\n∂\n𝑏\n∂b\n∂C\n\t​\n\n নির্ণয় করা; সবচেয়ে সহজ খেলনা নেটওয়ার্কে প্রতি লেয়ারে একটিমাত্র নিউরন—মোট তিনটি ওজন ও তিনটি বায়াস নিয়ে হিসাবটি শুরু করব।"
+        },
+        {
+          "type": "p",
+          "normType": "p",
+          "calloutClasses": [],
+          "tex": [
+            "L-1",
+            "L",
+            "a^{(L-1)}",
+            "w^{(L)}",
+            "b^{(L)}",
+            "z^{(L)}",
+            "a^{(L)}",
+            "C_0"
+          ],
+          "text": "শুরুতেই শত শত নিউরন আর জটিল সাবস্ক্রিপ্টের গোলকধাঁধায় না জড়িয়ে আমরা একদম সবচেয়ে সহজ খেলনা নেটওয়ার্কটি বিবেচনা করব: যেখানে প্রতিটি লেয়ারে রয়েছে মাত্র একটি করে নিউরন। লেয়ার \n𝐿\n−\n1\nL−1 থেকে লেয়ার \n𝐿\nL-এর শেষ রূপান্তরটিতে তিনটি উপাদান কাজ করে: পূর্ববর্তী অ্যাক্টিভেশন \n𝑎\n(\n𝐿\n−\n1\n)\na\n(L−1)\n, সংযোগকারী ওজন \n𝑤\n(\n𝐿\n)\nw\n(L)\n, এবং বায়াস \n𝑏\n(\n𝐿\n)\nb\n(L)\n। এই তিনটি থেকে যথাক্রমে ওয়েটেড সমষ্টি \n𝑧\n(\n𝐿\n)\nz\n(L)\n, সিগময়েড অ্যাক্টিভেশন \n𝑎\n(\n𝐿\n)\na\n(L)\n এবং একক উদাহরণের স্কয়ার্ড এরর \n𝐶\n0\nC\n0\n\t​\n\n তৈরি হয়।"
+        },
+        {
+          "type": "formula-box",
+          "normType": "formula-box",
+          "calloutClasses": [],
+          "tex": [
+            "z^{(L)} = w^{(L)}a^{(L-1)} + b^{(L)}, \\qquad a^{(L)} = \\sigma\\!\\left(z^{(L)}\\right) = \\frac{1}{1+e^{-z^{(L)}}}, \\qquad C_0 = \\left(a^{(L)}-y\\right)^2"
+          ],
+          "text": "𝑧\n(\n𝐿\n)\n=\n𝑤\n(\n𝐿\n)\n𝑎\n(\n𝐿\n−\n1\n)\n+\n𝑏\n(\n𝐿\n)\n,\n𝑎\n(\n𝐿\n)\n=\n𝜎\n(\n𝑧\n(\n𝐿\n)\n)\n=\n1\n1\n+\n𝑒\n−\n𝑧\n(\n𝐿\n)\n,\n𝐶\n0\n=\n(\n𝑎\n(\n𝐿\n)\n−\n𝑦\n)\n2\nz\n(L)\n=w\n(L)\na\n(L−1)\n+b\n(L)\n,a\n(L)\n=σ(z\n(L)\n)=\n1+e\n−z\n(L)\n1\n\t​\n\n,C\n0\n\t​\n\n=(a\n(L)\n−y)\n2"
+        },
+        {
+          "type": "callout-purple",
+          "normType": "callout",
+          "calloutClasses": [
+            "callout-purple"
+          ],
+          "tex": [
+            "w^{(L)}",
+            "z^{(L)}",
+            "z^{(L)}",
+            "a^{(L)}",
+            "a^{(L)}",
+            "C_0"
+          ],
+          "text": "🔗 কার্যকারণ ও নির্ভরশীলতার শিকল (DEPENDENCY CHAIN)\n\nওজন \n𝑤\n(\n𝐿\n)\nw\n(L)\n সামান্য পরিবর্তন করলে পরিবর্তিত হয় \n𝑧\n(\n𝐿\n)\nz\n(L)\n; \n𝑧\n(\n𝐿\n)\nz\n(L)\n পরিবর্তিত হলে পরিবর্তিত হয় অ্যাক্টিভেশন \n𝑎\n(\n𝐿\n)\na\n(L)\n; এবং অ্যাক্টিভেশন \n𝑎\n(\n𝐿\n)\na\n(L)\n পরিবর্তিত হলে সরাসরি পরিবর্তিত হয় আমাদের কস্ট \n𝐶\n0\nC\n0\n\t​\n\n। এই শৃঙ্খলটিই ক্যালকুলাসের চেইন রুল প্রয়োগের আদর্শ ক্ষেত্র: ছোট একটি নাজের প্রভাব তিনটি ধাপ ধরে গুণ হয়ে শেষ পর্যন্ত কস্টে পৌঁছায়।"
+        }
+      ]
+    },
+    {
+      "id": "sec-chain-rule-derivation",
+      "title": "আংশিক অন্তরজের ব্যবচ্ছেদ ও তিন পদের গুণফল",
+      "blocks": [
+        {
+          "type": "h2",
+          "normType": "h2",
+          "calloutClasses": [],
+          "tex": [],
+          "text": "আংশিক অন্তরজের ব্যবচ্ছেদ ও তিন পদের গুণফল"
+        },
+        {
+          "type": "p",
+          "normType": "p",
+          "calloutClasses": [],
+          "tex": [
+            "\\frac{\\partial C_0}{\\partial w^{(L)}}",
+            "\\frac{\\partial C_0}{\\partial w^{(L)}} = \\frac{\\partial z^{(L)}}{\\partial w^{(L)}} \\cdot \\frac{\\partial a^{(L)}}{\\partial z^{(L)}} \\cdot \\frac{\\partial C_0}{\\partial a^{(L)}}"
+          ],
+          "text": "চেইন রুলের সাহায্যে ওজনের সংবেদনশীলতা নির্ণয়। আমাদের লক্ষ্য হলো ওজনের সাপেক্ষে কস্টের আংশিক অন্তরজ \n∂\n𝐶\n0\n∂\n𝑤\n(\n𝐿\n)\n∂w\n(L)\n∂C\n0\n\t​\n\n\t​\n\n নির্ণয় করা। ক্যালকুলাসের চেইন রুল অনুসারে, এই অন্তরজটি তিনটি পৃথক অনুপাতের নিরবচ্ছিন্ন গুণফল হিসেবে ভেঙে যায়: \n∂\n𝐶\n0\n∂\n𝑤\n(\n𝐿\n)\n=\n∂\n𝑧\n(\n𝐿\n)\n∂\n𝑤\n(\n𝐿\n)\n⋅\n∂\n𝑎\n(\n𝐿\n)\n∂\n𝑧\n(\n𝐿\n)\n⋅\n∂\n𝐶\n0\n∂\n𝑎\n(\n𝐿\n)\n∂w\n(L)\n∂C\n0\n\t​\n\n\t​\n\n=\n∂w\n(L)\n∂z\n(L)\n\t​\n\n⋅\n∂z\n(L)\n∂a\n(L)\n\t​\n\n⋅\n∂a\n(L)\n∂C\n0\n\t​\n\n\t​\n\n। আসুন এই তিনটি অনুপাতকে পৃথকভাবে বিশ্লেষণ ও প্রমাণ করি।"
+        },
+        {
+          "type": "formula-box",
+          "normType": "formula-box",
+          "calloutClasses": [],
+          "tex": [
+            "\\frac{\\partial C_0}{\\partial a^{(L)}} = \\frac{d}{da^{(L)}}\\left(a^{(L)}-y\\right)^2 = 2\\left(a^{(L)}-y\\right)"
+          ],
+          "text": "∂\n𝐶\n0\n∂\n𝑎\n(\n𝐿\n)\n=\n𝑑\n𝑑\n𝑎\n(\n𝐿\n)\n(\n𝑎\n(\n𝐿\n)\n−\n𝑦\n)\n2\n=\n2\n(\n𝑎\n(\n𝐿\n)\n−\n𝑦\n)\n∂a\n(L)\n∂C\n0\n\t​\n\n\t​\n\n=\nda\n(L)\nd\n\t​\n\n(a\n(L)\n−y)\n2\n=2(a\n(L)\n−y)"
+        },
+        {
+          "type": "formula-box",
+          "normType": "formula-box",
+          "calloutClasses": [],
+          "tex": [
+            "\\frac{\\partial a^{(L)}}{\\partial z^{(L)}} = \\sigma'\\!\\left(z^{(L)}\\right) = \\sigma\\!\\left(z^{(L)}\\right)\\!\\left(1-\\sigma\\!\\left(z^{(L)}\\right)\\right), \\qquad \\frac{\\partial z^{(L)}}{\\partial w^{(L)}} = \\frac{\\partial}{\\partial w^{(L)}}\\left(w^{(L)}a^{(L-1)}+b^{(L)}\\right) = a^{(L-1)}"
+          ],
+          "text": "∂\n𝑎\n(\n𝐿\n)\n∂\n𝑧\n(\n𝐿\n)\n=\n𝜎\n′\n(\n𝑧\n(\n𝐿\n)\n)\n=\n𝜎\n(\n𝑧\n(\n𝐿\n)\n)\n(\n1\n−\n𝜎\n(\n𝑧\n(\n𝐿\n)\n)\n)\n,\n∂\n𝑧\n(\n𝐿\n)\n∂\n𝑤\n(\n𝐿\n)\n=\n∂\n∂\n𝑤\n(\n𝐿\n)\n(\n𝑤\n(\n𝐿\n)\n𝑎\n(\n𝐿\n−\n1\n)\n+\n𝑏\n(\n𝐿\n)\n)\n=\n𝑎\n(\n𝐿\n−\n1\n)\n∂z\n(L)\n∂a\n(L)\n\t​\n\n=σ\n′\n(z\n(L)\n)=σ(z\n(L)\n)(1−σ(z\n(L)\n)),\n∂w\n(L)\n∂z\n(L)\n\t​\n\n=\n∂w\n(L)\n∂\n\t​\n\n(w\n(L)\na\n(L−1)\n+b\n(L)\n)=a\n(L−1)"
+        },
+        {
+          "type": "p",
+          "normType": "p",
+          "calloutClasses": [],
+          "tex": [
+            "\\frac{\\partial C_0}{\\partial w^{(L)}} = a^{(L-1)} \\, \\sigma'\\!\\left(z^{(L)}\\right) \\cdot 2\\left(a^{(L)}-y\\right)",
+            "a^{(L-1)}",
+            "a^{(L-1)}=0",
+            "a^{(L)}",
+            "y",
+            "2(a^{(L)}-y)"
+          ],
+          "text": "তিনটি পদকে একসাথে গুণ করলে ওজনের চূড়ান্ত গ্রেডিয়েন্ট পাই:\n∂\n𝐶\n0\n∂\n𝑤\n(\n𝐿\n)\n=\n𝑎\n(\n𝐿\n−\n1\n)\n𝜎\n′\n(\n𝑧\n(\n𝐿\n)\n)\n⋅\n2\n(\n𝑎\n(\n𝐿\n)\n−\n𝑦\n)\n∂w\n(L)\n∂C\n0\n\t​\n\n\t​\n\n=a\n(L−1)\nσ\n′\n(z\n(L)\n)⋅2(a\n(L)\n−y)\nলক্ষ্য করুন, ওজনের পরিবর্তনশীলতা সরাসরি পূর্ববর্তী নিউরনের উজ্জ্বলতা \n𝑎\n(\n𝐿\n−\n1\n)\na\n(L−1)\n-এর সমানুপাতিক! ইনপুট নিউরন শূন্য হলে (\n𝑎\n(\n𝐿\n−\n1\n)\n=\n0\na\n(L−1)\n=0) ওজন কোটি কোটি গুণ পরিবর্তন করলেও কস্টে কোনো পরিবর্তন আসবে না। আর নেটওয়ার্কের অনুমান \n𝑎\n(\n𝐿\n)\na\n(L)\n যদি কাঙ্ক্ষিত লক্ষ্য \n𝑦\ny থেকে অনেক দূরে থাকে, তবে প্রথম পদ \n2\n(\n𝑎\n(\n𝐿\n)\n−\n𝑦\n)\n2(a\n(L)\n−y) বড় হয়ে বড় পদক্ষেপ নিতে বাধ্য করে।"
+        },
+        {
+          "type": "callout-blue",
+          "normType": "callout",
+          "calloutClasses": [
+            "callout-blue"
+          ],
+          "tex": [
+            "\\frac{\\partial z^{(L)}}{\\partial b^{(L)}} = 1",
+            "\\frac{\\partial C_0}{\\partial b^{(L)}} = 1 \\cdot \\sigma'\\!\\left(z^{(L)}\\right) \\cdot 2\\left(a^{(L)}-y\\right)",
+            "a^{(L-1)}",
+            "z"
+          ],
+          "text": "🧮 বায়াসের গ্রেডিয়েন্ট: ∂Z/∂B = 1\n\nবায়াস ও পূর্ববর্তী অ্যাক্টিভেশনের পরিবর্তনশীলতা। বায়াসের জন্য চেইন রুল হুবহু এক, কেবল শেষ ডেরিভেটিভটি বদলে যায়: \n∂\n𝑧\n(\n𝐿\n)\n∂\n𝑏\n(\n𝐿\n)\n=\n1\n∂b\n(L)\n∂z\n(L)\n\t​\n\n=1। ফলে বায়াস গ্রেডিয়েন্ট দাঁড়ায়\n∂\n𝐶\n0\n∂\n𝑏\n(\n𝐿\n)\n=\n1\n⋅\n𝜎\n′\n(\n𝑧\n(\n𝐿\n)\n)\n⋅\n2\n(\n𝑎\n(\n𝐿\n)\n−\n𝑦\n)\n∂b\n(L)\n∂C\n0\n\t​\n\n\t​\n\n=1⋅σ\n′\n(z\n(L)\n)⋅2(a\n(L)\n−y)\nঅর্থাৎ ওজনের গ্রেডিয়েন্টের সাথে একমাত্র পার্থক্য হলো এখানে পূর্ববর্তী অ্যাক্টিভেশনের \n𝑎\n(\n𝐿\n−\n1\n)\na\n(L−1)\n পরিবর্তে ১ বসে—বায়াসের নাজ সরাসরি \n𝑧\nz-কে নাড়ায়, তাই ইনপুটের মানের ওপর নির্ভর করে না।"
+        },
+        {
+          "type": "p",
+          "normType": "p",
+          "calloutClasses": [],
+          "tex": [
+            "a^{(L-1)}",
+            "\\frac{\\partial z^{(L)}}{\\partial a^{(L-1)}} = w^{(L)}",
+            "\\frac{\\partial C_0}{\\partial a^{(L-1)}} = w^{(L)} \\cdot \\sigma'\\!\\left(z^{(L)}\\right) \\cdot 2\\left(a^{(L)}-y\\right)",
+            "a^{(L-1)}",
+            "w^{(L-1)}",
+            "b^{(L-1)}",
+            "\\frac{\\partial C}{\\partial w}",
+            "\\frac{\\partial C}{\\partial b}",
+            "C=\\frac{1}{n}\\sum_k C_k",
+            "C_k"
+          ],
+          "text": "আর ব্যাকপ্রপাগেশনের সবচেয়ে জাদুকরী ধাপটি ঘটে যখন আমরা পূর্ববর্তী অ্যাক্টিভেশন \n𝑎\n(\n𝐿\n−\n1\n)\na\n(L−1)\n-এর সাপেক্ষে অন্তরজ নিই। যেহেতু \n∂\n𝑧\n(\n𝐿\n)\n∂\n𝑎\n(\n𝐿\n−\n1\n)\n=\n𝑤\n(\n𝐿\n)\n∂a\n(L−1)\n∂z\n(L)\n\t​\n\n=w\n(L)\n, তাই\n∂\n𝐶\n0\n∂\n𝑎\n(\n𝐿\n−\n1\n)\n=\n𝑤\n(\n𝐿\n)\n⋅\n𝜎\n′\n(\n𝑧\n(\n𝐿\n)\n)\n⋅\n2\n(\n𝑎\n(\n𝐿\n)\n−\n𝑦\n)\n∂a\n(L−1)\n∂C\n0\n\t​\n\n\t​\n\n=w\n(L)\n⋅σ\n′\n(z\n(L)\n)⋅2(a\n(L)\n−y)\nএকবার পেছনের অ্যাক্টিভেশন \n𝑎\n(\n𝐿\n−\n1\n)\na\n(L−1)\n-এর সাপেক্ষে কস্টের সংবেদনশীলতা জেনে গেলে, হুবহু একই চেইন রুল পুনরাবৃত্তি করে আমরা \n𝑤\n(\n𝐿\n−\n1\n)\nw\n(L−1)\n ও \n𝑏\n(\n𝐿\n−\n1\n)\nb\n(L−1)\n-এর গ্রেডিয়েন্টও বের করে ফেলতে পারি—এভাবে সব লেয়ারের \n∂\n𝐶\n∂\n𝑤\n∂w\n∂C\n\t​\n\n ও \n∂\n𝐶\n∂\n𝑏\n∂b\n∂C\n\t​\n\n নির্ণয় করে পুরো গ্রেডিয়েন্ট ভেক্টর গঠন করা যায়। সমস্ত ট্রেনিং ডেটার কস্ট \n𝐶\n=\n1\n𝑛\n∑\n𝑘\n𝐶\n𝑘\nC=\nn\n1\n\t​\n\n∑\nk\n\t​\n\nC\nk\n\t​\n\n হলে এর ডেরিভেটিভও ওই সব \n𝐶\n𝑘\nC\nk\n\t​\n\n-এর ডেরিভেট"
+        }
+      ]
+    },
+    {
+      "id": "sec-generalization-layers",
+      "title": "বহু নিউরন লেয়ারে সাধারণীকরণ ও এরর টার্ম δ",
+      "blocks": [
+        {
+          "type": "h2",
+          "normType": "h2",
+          "calloutClasses": [],
+          "tex": [],
+          "text": "বহু নিউরন লেয়ারে সাধারণীকরণ ও এরর টার্ম δ"
+        },
+        {
+          "type": "p",
+          "normType": "p",
+          "calloutClasses": [],
+          "tex": [
+            "w_{jk}^{(l)}",
+            "(l-1)",
+            "k",
+            "l",
+            "j",
+            "j",
+            "k"
+          ],
+          "text": "সূচক বিন্যাস: j, k ও l এর সুসংহত জগৎ। বাস্তব নিউরাল নেটওয়ার্কে প্রতি স্তরে বহু নিউরন অবস্থান করে। এই বহুমাত্রিক সম্পর্কের জন্য আমরা সুনির্দিষ্ট সূচক (Index) ব্যবহার করি: \n𝑤\n𝑗\n𝑘\n(\n𝑙\n)\nw\njk\n(l)\n\t​\n\n হলো লেয়ার \n(\n𝑙\n−\n1\n)\n(l−1)-এর \n𝑘\nk-তম নিউরন থেকে লেয়ার \n𝑙\nl-এর \n𝑗\nj-তম নিউরনের সংযোগকারী ওজন—গন্তব্য নিউরন \n𝑗\nj প্রথমে, উৎস নিউরন \n𝑘\nk পরে।"
+        },
+        {
+          "type": "formula-box",
+          "normType": "formula-box",
+          "calloutClasses": [],
+          "tex": [
+            "z_j^{(l)} = \\sum_k w_{jk}^{(l)} a_k^{(l-1)} + b_j^{(l)}, \\quad a_j^{(l)} = \\sigma\\!\\left(z_j^{(l)}\\right), \\qquad C_0 = \\sum_{j=0}^{n_L-1}\\left(a_j^{(L)}-y_j\\right)^2"
+          ],
+          "text": "𝑧\n𝑗\n(\n𝑙\n)\n=\n∑\n𝑘\n𝑤\n𝑗\n𝑘\n(\n𝑙\n)\n𝑎\n𝑘\n(\n𝑙\n−\n1\n)\n+\n𝑏\n𝑗\n(\n𝑙\n)\n,\n𝑎\n𝑗\n(\n𝑙\n)\n=\n𝜎\n(\n𝑧\n𝑗\n(\n𝑙\n)\n)\n,\n𝐶\n0\n=\n∑\n𝑗\n=\n0\n𝑛\n𝐿\n−\n1\n(\n𝑎\n𝑗\n(\n𝐿\n)\n−\n𝑦\n𝑗\n)\n2\nz\nj\n(l)\n\t​\n\n=\nk\n∑\n\t​\n\nw\njk\n(l)\n\t​\n\na\nk\n(l−1)\n\t​\n\n+b\nj\n(l)\n\t​\n\n,a\nj\n(l)\n\t​\n\n=σ(z\nj\n(l)\n\t​\n\n),C\n0\n\t​\n\n=\nj=0\n∑\nn\nL\n\t​\n\n−1\n\t​\n\n(a\nj\n(L)\n\t​\n\n−y\nj\n\t​\n\n)\n2"
+        },
+        {
+          "type": "callout-gold",
+          "normType": "callout",
+          "calloutClasses": [
+            "callout-gold"
+          ],
+          "tex": [
+            "\\delta_j^{(l)} \\equiv \\frac{\\partial C_0}{\\partial z_j^{(l)}}",
+            "l",
+            "j",
+            "L",
+            "\\delta_j^{(L)} = \\frac{\\partial C_0}{\\partial a_j^{(L)}}\\frac{\\partial a_j^{(L)}}{\\partial z_j^{(L)}} = 2(a_j^{(L)}-y_j)\\sigma'(z_j^{(L)})"
+          ],
+          "text": "Δ এরর টার্ম (ERROR TERM) Δ-এর অবতরণ\n\nএরর টার্ম (Error Term) δ-এর অবতরণ। গাণিতিক সমীকরণগুলোকে সংহত ও দৃষ্টিগ্রাহ্য রাখতে আমরা প্রতিটি নিউরনের জন্য একটি মধ্যবর্তী পরিবর্তনশীল মান সংজ্ঞায়িত করি:\n𝛿\n𝑗\n(\n𝑙\n)\n≡\n∂\n𝐶\n0\n∂\n𝑧\n𝑗\n(\n𝑙\n)\nδ\nj\n(l)\n\t​\n\n≡\n∂z\nj\n(l)\n\t​\n\n∂C\n0\n\t​\n\n\t​\n\nএকে বলা হয় লেয়ার \n𝑙\nl-এর \n𝑗\nj-তম নিউরনের এরর বা ত্রুটি। আউটপুট লেয়ার \n𝐿\nL-এর ক্ষেত্রে এটি সরাসরি ক্যালকুলাস থেকে পাওয়া যায়: \n𝛿\n𝑗\n(\n𝐿\n)\n=\n∂\n𝐶\n0\n∂\n𝑎\n𝑗\n(\n𝐿\n)\n∂\n𝑎\n𝑗\n(\n𝐿\n)\n∂\n𝑧\n𝑗\n(\n𝐿\n)\n=\n2\n(\n𝑎\n𝑗\n(\n𝐿\n)\n−\n𝑦\n𝑗\n)\n𝜎\n′\n(\n𝑧\n𝑗\n(\n𝐿\n)\n)\nδ\nj\n(L)\n\t​\n\n=\n∂a\nj\n(L)\n\t​\n\n∂C\n0\n\t​\n\n\t​\n\n∂z\nj\n(L)\n\t​\n\n∂a\nj\n(L)\n\t​\n\n\t​\n\n=2(a\nj\n(L)\n\t​\n\n−y\nj\n\t​\n\n)σ\n′\n(z\nj\n(L)\n\t​\n\n)।"
+        },
+        {
+          "type": "p",
+          "normType": "p",
+          "calloutClasses": [],
+          "tex": [
+            "\\frac{\\partial C_0}{\\partial w_{jk}^{(l)}} = \\frac{\\partial z_j^{(l)}}{\\partial w_{jk}^{(l)}} \\cdot \\frac{\\partial C_0}{\\partial z_j^{(l)}} = a_k^{(l-1)} \\cdot \\delta_j^{(l)}, \\qquad \\frac{\\partial C_0}{\\partial b_j^{(l)}} = \\delta_j^{(l)}"
+          ],
+          "text": "এই এরর টার্মের সাহায্যে প্রতিটি ওজনের আংশিক অন্তরজ এক অপূর্ব সংক্ষিপ্ত রূপ লাভ করে:\n∂\n𝐶\n0\n∂\n𝑤\n𝑗\n𝑘\n(\n𝑙\n)\n=\n∂\n𝑧\n𝑗\n(\n𝑙\n)\n∂\n𝑤\n𝑗\n𝑘\n(\n𝑙\n)\n⋅\n∂\n𝐶\n0\n∂\n𝑧\n𝑗\n(\n𝑙\n)\n=\n𝑎\n𝑘\n(\n𝑙\n−\n1\n)\n⋅\n𝛿\n𝑗\n(\n𝑙\n)\n,\n∂\n𝐶\n0\n∂\n𝑏\n𝑗\n(\n𝑙\n)\n=\n𝛿\n𝑗\n(\n𝑙\n)\n∂w\njk\n(l)\n\t​\n\n∂C\n0\n\t​\n\n\t​\n\n=\n∂w\njk\n(l)\n\t​\n\n∂z\nj\n(l)\n\t​\n\n\t​\n\n⋅\n∂z\nj\n(l)\n\t​\n\n∂C\n0\n\t​\n\n\t​\n\n=a\nk\n(l−1)\n\t​\n\n⋅δ\nj\n(l)\n\t​\n\n,\n∂b\nj\n(l)\n\t​\n\n∂C\n0\n\t​\n\n\t​\n\n=δ\nj\n(l)\n\t​\n\nঅর্থাৎ ওজনের গ্রেডিয়েন্ট = পূর্ববর্তী অ্যাক্টিভেশন × বর্তমান এরর টার্ম, আর বায়াসের গ্রেডিয়েন্ট = শুধু এরর টার্ম।"
+        },
+        {
+          "type": "p",
+          "normType": "p",
+          "calloutClasses": [],
+          "tex": [
+            "l-1",
+            "k"
+          ],
+          "text": "মাল্টিভ্যারিয়েবল চেইন রুল ও রিকার্সন। কিন্তু যখন আমরা এই এররকে পেছনের হিডেন লেয়ার \n𝑙\n−\n1\nl−1-এ টেনে নিয়ে আসতে চাই, তখন একটি নিউরন \n𝑘\nk পরবর্তী লেয়ারের সমস্ত নিউরনকে প্রভাবিত করে। ফলে মাল্টিভ্যারিয়েবল চেইন রুল অনুযায়ী তাদের সমষ্টি নিতে হয়—এইখানেই জন্ম নেয় ব্যাকপ্রপাগেশনের মূল পুনরাবৃত্তিমূলক সূত্র।"
+        },
+        {
+          "type": "formula-box",
+          "normType": "formula-box",
+          "calloutClasses": [],
+          "tex": [
+            "\\delta_k^{(l-1)} = \\left(\\sum_j w_{jk}^{(l)} \\delta_j^{(l)}\\right) \\sigma'\\!\\left(z_k^{(l-1)}\\right)"
+          ],
+          "text": "𝛿\n𝑘\n(\n𝑙\n−\n1\n)\n=\n(\n∑\n𝑗\n𝑤\n𝑗\n𝑘\n(\n𝑙\n)\n𝛿\n𝑗\n(\n𝑙\n)\n)\n𝜎\n′\n(\n𝑧\n𝑘\n(\n𝑙\n−\n1\n)\n)\nδ\nk\n(l−1)\n\t​\n\n=(\nj\n∑\n\t​\n\nw\njk\n(l)\n\t​\n\nδ\nj\n(l)\n\t​\n\n)σ\n′\n(z\nk\n(l−1)\n\t​\n\n)"
+        }
+      ]
+    },
+    {
+      "id": "sec-matrix-formulation",
+      "title": "ম্যাট্রিক্স-ভেক্টর রূপ ও গণনামূলক যুগান্তকারী দক্ষতা",
+      "blocks": [
+        {
+          "type": "h2",
+          "normType": "h2",
+          "calloutClasses": [],
+          "tex": [],
+          "text": "ম্যাট্রিক্স-ভেক্টর রূপ ও গণনামূলক যুগান্তকারী দক্ষতা"
+        },
+        {
+          "type": "p",
+          "normType": "p",
+          "calloutClasses": [],
+          "tex": [
+            "\\sum_j w_{jk}^{(l)} \\delta_j^{(l)}",
+            "\\mathbf{W}^{(l)}",
+            "\\boldsymbol{\\delta}^{(l)}"
+          ],
+          "text": "ম্যাট্রিক্স গুণনে ব্যাকওয়ার্ড পাসের সংহত রূপ। সমীকরণ ১২-এর দিকে মনোযোগ দিলে দেখতে পাবেন: \n∑\n𝑗\n𝑤\n𝑗\n𝑘\n(\n𝑙\n)\n𝛿\n𝑗\n(\n𝑙\n)\n∑\nj\n\t​\n\nw\njk\n(l)\n\t​\n\nδ\nj\n(l)\n\t​\n\n রাশিটি আসলে ওজন ম্যাট্রিক্স \n𝑊\n(\n𝑙\n)\nW\n(l)\n-এর ট্রান্সপোজের সাথে এরর ভেক্টর \n𝛿\n(\n𝑙\n)\nδ\n(l)\n-এর ম্যাট্রিক্স গুণন! একক নিউরনের চেইন রুল এখন পুরো স্তরজুড়ে একসাথে প্রয়োগ করা যায়—প্রতিটি পৃথক হিসাবকে ভেক্টর ও ম্যাট্রিক্সে মোড়ানোই এই রূপান্তরের মর্ম।"
+        },
+        {
+          "type": "formula-box",
+          "normType": "formula-box",
+          "calloutClasses": [],
+          "tex": [
+            "\\boldsymbol{\\delta}^{(l-1)} = \\left(\\left(\\mathbf{W}^{(l)}\\right)^T \\boldsymbol{\\delta}^{(l)}\\right) \\odot \\sigma'\\!\\left(\\mathbf{z}^{(l-1)}\\right), \\qquad \\frac{\\partial C_0}{\\partial \\mathbf{W}^{(l)}} = \\boldsymbol{\\delta}^{(l)} \\left(\\mathbf{a}^{(l-1)}\\right)^T"
+          ],
+          "text": "𝛿\n(\n𝑙\n−\n1\n)\n=\n(\n(\n𝑊\n(\n𝑙\n)\n)\n𝑇\n𝛿\n(\n𝑙\n)\n)\n⊙\n𝜎\n′\n(\n𝑧\n(\n𝑙\n−\n1\n)\n)\n,\n∂\n𝐶\n0\n∂\n𝑊\n(\n𝑙\n)\n=\n𝛿\n(\n𝑙\n)\n(\n𝑎\n(\n𝑙\n−\n1\n)\n)\n𝑇\nδ\n(l−1)\n=((W\n(l)\n)\nT\nδ\n(l)\n)⊙σ\n′\n(z\n(l−1)\n),\n∂W\n(l)\n∂C\n0\n\t​\n\n\t​\n\n=δ\n(l)\n(a\n(l−1)\n)\nT"
+        },
+        {
+          "type": "p",
+          "normType": "p",
+          "calloutClasses": [],
+          "tex": [
+            "\\epsilon",
+            "\\frac{C(w+\\epsilon)-C(w)}{\\epsilon}"
+          ],
+          "text": "এই অ্যালগরিদম কেন ডিপ লার্নিংয়ের ইতিহাসে সবচেয়ে বৈপ্লবিক উদ্ভাবন? প্রথাগতভাবে প্রতিটি ওজনকে \n𝜖\nϵ পরিমাণ নাড়িয়ে সংখ্যাত্মক ডেরিভেটিভ বের করতে গেলে (\n𝐶\n(\n𝑤\n+\n𝜖\n)\n−\n𝐶\n(\n𝑤\n)\n𝜖\nϵ\nC(w+ϵ)−C(w)\n\t​\n\n) একটিমাত্র পদক্ষেপের জন্য তেরো হাজার বার ফরোয়ার্ড পাস চালাতে হতো! কিন্তু ম্যাট্রিক্স গুণন ও চেইন রুলের এই সংহত রূপই সমস্ত হিসাবকে একযোগে সম্পন্ন করে—ব്യাকপ্রপাগেশনের আসল শক্তি এখানেই।"
+        },
+        {
+          "type": "callout-purple",
+          "normType": "callout",
+          "calloutClasses": [
+            "callout-purple"
+          ],
+          "tex": [
+            "\\epsilon"
+          ],
+          "text": "⚡ কম্পিউটেশনAL শ্রেষ্ঠত্ব: ১৩,০০০ বনাম ১\n\nআমাদের MNIST নেটওয়ার্কে মোট ১৩,০০২টি ওজন ও বায়াস রয়েছে। যদি আপনি সংখ্যাত্মকভাবে প্রতিটি ওজনকে \n𝜖\nϵ পরিমাণ বাড়িয়ে ডেরিভেটিভ মাপতে যেতেন, তবে গ্রেডিয়েন্ট ডিসেন্টের একটিমাত্র পদক্ষেপের জন্যই তেরো হাজার বার ফরোয়ার্ড পাস চালাতে হতো!\n\nব্যাকপ্রপাগেশনের জাদু: একটিমাত্র ব্যাকওয়ার্ড পাসে সমস্ত ১৩,০০২টি প্যারামিটারের বিশ্লেষণাত্মক নিখুঁত গ্রেডিয়েন্ট এক লহমায় নির্ণয় করা যায়—ঠিক একটি ফরোয়ার্ড পাসের সমান সামান্য খরচে! ম্যাট্রিক্স গুণন, ডেরিভেটিভ ও চেইন রুলের এই সংমিশ্রণই আধুনিক ডিপ লার্নিংয়ের বিস্ময়কর প্রযুক্তির ভিত্তি।"
+        },
+        {
+          "type": "p",
+          "normType": "p",
+          "calloutClasses": [],
+          "tex": [
+            "C_0",
+            "m",
+            "\\mathbf{W}^{(l)} \\leftarrow \\mathbf{W}^{(l)} - \\frac{\\eta}{m} \\sum_{x \\in \\text{batch}} \\frac{\\partial C_x}{\\partial \\mathbf{W}^{(l)}}"
+          ],
+          "text": "স্টোকাস্টিক গ্রেডিয়েন্ট ডিসেন্ট (SGD) ও মিনি-ব্যাচ। যেহেতু একক উদাহরণের কস্ট \n𝐶\n0\nC\n0\n\t​\n\n অনেক কোলাহলপূর্ণ (noisy) হতে পারে, তাই বাস্তব প্রশিক্ষণে আমরা \n𝑚\nm আকারের একটি ছোট মিনি-ব্যাচের সমস্ত নমুনার গ্রেডিয়েন্ট গড় করে ওজন হালনাগাদ করি:\n𝑊\n(\n𝑙\n)\n←\n𝑊\n(\n𝑙\n)\n−\n𝜂\n𝑚\n∑\n𝑥\n∈\nbatch\n∂\n𝐶\n𝑥\n∂\n𝑊\n(\n𝑙\n)\nW\n(l)\n←W\n(l)\n−\nm\nη\n\t​\n\nx∈batch\n∑\n\t​\n\n∂W\n(l)\n∂C\nx\n\t​\n\n\t​\n\nআমরা মিনি-ব্যাচের সমস্ত ট্রেনিং উদাহরণের গ্রেডিয়েন্ট গড় করে ওজন ও বায়াস আপডেট করি। নিচের ইন্টারেক্টিভ ল্যাবে আপনারা লাইভ ব্যাকপ্রপাগেশন এবং ক্যালকুলাসের প্রতিটি ধাপ পরীক্ষা করে দেখতে পারেন—ম্যাট্রিক্স গুণন আর চেইন রুল কীভাবে বাস্তব মডেল প্রশিক্ষণে রূপ নেয় তা সেখানে প্রত্যক্ষ করা যাবে।"
+        }
+      ]
+    }
+  ],
+  "engine": [
+    {
+      "id": "sec-intro-toy-network",
+      "blockCount": 6,
+      "cueCount": 6,
+      "audioFile": "../../assets/audio/neural_networks/lesson_04/sec_01_toy_network.mp3",
+      "types": [
+        "h2",
+        "chapter-quote",
+        "p",
+        "p",
+        "formula-box",
+        "callout"
+      ],
+      "rawTypes": [
+        "h2",
+        "chapter-quote",
+        "p",
+        "p",
+        "formula-box",
+        "callout-purple"
+      ]
+    },
+    {
+      "id": "sec-chain-rule-derivation",
+      "blockCount": 7,
+      "cueCount": 7,
+      "audioFile": "../../assets/audio/neural_networks/lesson_04/sec_02_chain_rule.mp3",
+      "types": [
+        "h2",
+        "p",
+        "formula-box",
+        "formula-box",
+        "p",
+        "callout",
+        "p"
+      ],
+      "rawTypes": [
+        "h2",
+        "p",
+        "formula-box",
+        "formula-box",
+        "p",
+        "callout-blue",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-generalization-layers",
+      "blockCount": 7,
+      "cueCount": 7,
+      "audioFile": "../../assets/audio/neural_networks/lesson_04/sec_03_generalization.mp3",
+      "types": [
+        "h2",
+        "p",
+        "formula-box",
+        "callout",
+        "p",
+        "p",
+        "formula-box"
+      ],
+      "rawTypes": [
+        "h2",
+        "p",
+        "formula-box",
+        "callout-gold",
+        "p",
+        "p",
+        "formula-box"
+      ]
+    },
+    {
+      "id": "sec-matrix-formulation",
+      "blockCount": 6,
+      "cueCount": 6,
+      "audioFile": "../../assets/audio/neural_networks/lesson_04/sec_04_matrix_vector.mp3",
+      "types": [
+        "h2",
+        "p",
+        "formula-box",
+        "p",
+        "callout",
+        "p"
+      ],
+      "rawTypes": [
+        "h2",
+        "p",
+        "formula-box",
+        "p",
+        "callout-purple",
+        "p"
+      ]
+    }
+  ],
+  "page_errors": []
+}

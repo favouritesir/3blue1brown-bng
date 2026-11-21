@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ডিফারেনশিয়াল সমীকরণের মূলভাব — ৩ব্লু১ব্রাউন বাংলা</title>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<style>
+  .course-hero {
+    padding: 100px 24px 48px;
+    background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.18), rgba(20, 184, 166, 0.08) 45%, transparent 70%);
+    text-align: center;
+  }
+  .course-badge {
+    display: inline-block;
+    padding: 5px 16px;
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid var(--border-theme);
+    border-radius: 20px;
+    color: var(--theme);
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .course-title {
+    font-size: 2.7rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: var(--text);
+    letter-spacing: -0.5px;
+  }
+  .course-sub {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 720px;
+    margin: 0 auto 28px;
+    line-height: 1.75;
+  }
+  .course-stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .c-stat {
+    text-align: center;
+  }
+  .c-stat-val {
+    font-size: 1.55rem;
+    font-weight: bold;
+    color: var(--theme);
+  }
+  .c-stat-lbl {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .chapters-container {
+    max-width: 980px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+  }
+  .chapter-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .chapter-row {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 26px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+  .chapter-row:hover {
+    border-color: var(--theme);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+  }
+  .chapter-row.featured {
+    border-color: var(--border-theme);
+    background: linear-gradient(90deg, rgba(56, 189, 248, 0.04), var(--bg-card) 60%);
+  }
+  .chapter-row.featured::before {
+    content: "লাইভ পাঠ";
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: #10b981;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 12px;
+  }
+  .ch-num {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--theme);
+    min-width: 52px;
+    text-align: center;
+    opacity: 0.9;
+  }
+  .ch-body {
+    flex: 1;
+  }
+  .ch-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .ch-desc {
+    font-size: 0.98rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+  .ch-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .ch-tag {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+  }
+  .ch-tag.highlight {
+    background: rgba(116, 192, 227, 0.15);
+    color: var(--theme);
+    border-color: var(--border-theme);
+  }
+  .ch-action {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--theme);
+    font-weight: bold;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+  .ch-action.disabled {
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+</style>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../../index.html">
+      <svg class="pi-logo" viewBox="-50 -50 100 100" aria-label="৩ব্লু১ব্রাউন">
+        <path fill="#74C0E3" d="M 0 0 L 0 -50 A 50 50 0 1 1 -50 0 z"/>
+        <path fill="#8C6239" d="M 0 0 L 0 -50 A 50 50 0 0 0 -50 0 z"/>
+        <circle cx="0" cy="0" r="22" fill="#000"/>
+        <circle cx="-8" cy="-6" r="7" fill="#fff"/>
+        <circle cx="8" cy="-6" r="7" fill="#fff"/>
+        <circle cx="-7" cy="-6" r="3.5" fill="#000"/>
+        <circle cx="9" cy="-6" r="3.5" fill="#000"/>
+        <path d="M -10 6 Q 0 14 10 6" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-title">৩ব্লু১ব্রাউন বাংলা</span>
+        <span class="logo-sub">ডিফারেনশিয়াল সমীকরণ</span>
+      </div>
+    </a>
+
+    <div class="nav-breadcrumb">
+      <a href="../../index.html">হোম</a>
+      <span>/</span>
+      <span>ডিফারেনশিয়াল সমীকরণ</span>
+    </div>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" onclick="toggleTheme()" title="থিম পরিবর্তন">🌙</button>
+      <a href="lesson_01.html" style="background:var(--theme); color:#000; padding:6px 18px; border-radius:20px; font-weight:bold; font-size:0.85rem;">শুরু করুন →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="course-hero">
+  <div class="course-badge">সম্পূর্ণ বাংলায় ভিজ্যুয়ালাইজড ও অ্যানিমেটেড</div>
+  <h1 class="course-title">ডিফারেনশিয়াল সমীকরণের মূলভাব</h1>
+  <p class="course-sub">Essence of Differential Equations — গ্রান্ট স্যান্ডারসনের সুপ্রসিদ্ধ সিরিজ। মহাবিশ্বের গতি, স্পন্দন, তরঙ্গ ও তাপের গাণিতিক ভাষা। জটিল সূত্র মুখস্থ করার বদলে জ্যামিতিক স্লোপ ফিল্ড, ফেজ স্পেস ও কণা গতিপথের মাধ্যমে পরিবর্তনের নিয়ম প্রত্যক্ষ করুন।</p>
+  
+  <div class="course-stats-bar">
+    <div class="c-stat">
+      <div class="c-stat-val">৫টি</div>
+      <div class="c-stat-lbl">মৌলিক অধ্যায়</div>
+    </div>
+    <div class="c-stat">
+      <div class="c-stat-val">৮৪+ মিনিট</div>
+      <div class="c-stat-lbl">১০৮০পি অ্যানিমেশন</div>
+    </div>
+    <div class="c-stat">
+      <div class="c-stat-val">১০০%</div>
+      <div class="c-stat-lbl">অফলাইন KaTeX গণিত</div>
+    </div>
+    <div class="c-stat">
+      <div class="c-stat-val">লাইভ ল্যাব</div>
+      <div class="c-stat-lbl">ক্যানভাস সিমুলেটর</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CHAPTERS LIST ═══════════ -->
+<main class="chapters-container">
+  <div class="chapter-grid">
+
+    <a href="lesson_01.html" class="chapter-row">
+      <div class="ch-num">০১</div>
+      <div class="ch-body">
+        <h2 class="ch-title">অধ্যায় ০১: ডিফারেনশিয়াল সমীকরণ কী? — পরিবর্তনের ভাষা (Differential equations, studying the unsolvable)</h2>
+        <p class="ch-desc">সাধারণ বীজগণিতে অজানা হলো একটি সংখ্যা, কিন্তু ডিফারেনশিয়াল সমীকরণে অজানা হলো একটি ফাংশন। dy/dt = y এর চলক পৃথকীকরণ প্রতিপাদন, এক্সপোনেনশিয়াল বৃদ্ধি ও ক্ষয়, দিক ক্ষেত্র (Slope Fields) এবং স্টেট স্পেসের জ্যামিতি।</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ ১৫:৩০</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_02.html" class="chapter-row">
+      <div class="ch-num">০২</div>
+      <div class="ch-body">
+        <h2 class="ch-title">অধ্যায় ০২: প্রথম ক্রমের অন্তরক সমীকরণ ও দিক ক্ষেত্র — পরিবর্তনের জ্যামিতিক মানচিত্র (First Order Differential Equations &amp; Slope Fields)</h2>
+        <p class="ch-desc">বীজগণিতের সূত্রের আগে জ্যামিতিক অন্তর্দৃষ্টি: ডেরিভেটিভ $\frac{dy}{dt} = f(t,y)$, সমতলে দিক ক্ষেত্রের খরস্রোতা নদী, ইন্টিগ্রেশন কার্ভ পরিবার এবং পিকার্ড-লিন্ডেলফ অনন্যতার অলঙ্ঘনীয় নীতি</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ ১৮:৪০</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_03.html" class="chapter-row">
+      <div class="ch-num">০৩</div>
+      <div class="ch-body">
+        <h2 class="ch-title">অধ্যায় ০৩: দোলন ও হারমোনিক স্পন্দন — স্প্রিং-ভর ব্যবস্থা, অবদমন ও অনুনাদ (Oscillations, Damping, and Resonance)</h2>
+        <p class="ch-desc">হুকের সূত্র থেকে অবদমিত স্পন্দন: চারিত্রিক সমীকরণ $r^2 + 2\gamma r + \omega_0^2 = 0$, ফেজ সমতলে সর্পিল স্পাইরাল, এবং চালক কম্পাঙ্কে রেজোন্যান্সের মহাজাগতিক সুর</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ ১৮:৫০</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_04.html" class="chapter-row">
+      <div class="ch-num">০৪</div>
+      <div class="ch-body">
+        <h2 class="ch-title">অধ্যায় ০৪: আংশিক অন্তরক সমীকরণ ও সীমানা শর্ত (Partial Differential Equations and Boundary Conditions)</h2>
+        <p class="ch-desc">স্থান ও কালের যুগল নৃত্য: স্থানিক বনাম কালিক অন্তরজ ($\frac{\partial u}{\partial t}$ বনাম $\frac{\partial^2 u}{\partial x^2}$), বক্রতা ও স্থানীয় প্রতিবেশীর গড়, ডিরিখলে ও নিউম্যান সীমানা শর্ত, এবং জোসেফ ফুরিয়ারের অমর হ</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ ১৬:৪০</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_05.html" class="chapter-row">
+      <div class="ch-num">০৫</div>
+      <div class="ch-body">
+        <h2 class="ch-title">অধ্যায় ০৫: তাপ সমীকরণ ও ফুরিয়ার রূপান্তর — সীমানা শর্ত ও হারমোনিক বিশ্লেষণ (The Heat Equation and Fourier Transforms)</h2>
+        <p class="ch-desc">সীমানা শর্তের ভৌত প্রভাব, চলক পৃথকীকরণ, সাইন হারমোনিক্সের তীব্র সূচকীয় ক্ষয় এবং অসীম ডোমেইনে ফুরিয়ার রূপান্তর ও গাউসিয়ান তাপীয় কার্নেল</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ ১৫:৫০</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_06.html" class="chapter-row">
+      <div class="ch-num">০৬</div>
+      <div class="ch-body">
+        <h2 class="ch-title">অধ্যায় ০৬: তরঙ্গ সমীকরণ ও কম্পন — স্থান ও কালের অবিরাম স্পন্দন (The Wave Equation and Vibrations)</h2>
+        <p class="ch-desc">সময়ের দ্বিতীয় অন্তরজ কীভাবে ক্ষয়হীন তরঙ্গের জন্ম দেয়, টানটান তারের নিউটনীয় ব্যবকলন, স্থির তরঙ্গের সুরের হারমোনিক্স এবং দ্য&#x27;আলেমবার্টের বিপরীতমুখী তরঙ্গের অমর সমাধান $f(x - ct) + g(x + ct)$</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ ১৮:৪০</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+  </div>
+</main>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="site-footer">
+  <p>৩ব্লু১ব্রাউন বাংলা · মূল রচনা: Grant Sanderson · অফলাইন গণিত: KaTeX v0.16.11 · স্টুডিও-গ্রেড বাংলা প্ল্যাটফর্ম</p>
+</footer>
+
+</body>
+</html>

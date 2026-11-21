@@ -1,0 +1,206 @@
+{
+  "dom": [
+    {
+      "id": "sec-wave-intro",
+      "noNarration": false,
+      "types": [
+        "h2",
+        "chapter-quote",
+        "p",
+        "p",
+        "figure",
+        "p",
+        "formula-box",
+        "callout-gold"
+      ],
+      "tex": [
+        [
+          "\\frac{\\partial^2 u}{\\partial t^2} = c^2 \\frac{\\partial^2 u}{\\partial x^2}"
+        ]
+      ]
+    },
+    {
+      "id": "sec-wave-derivation",
+      "noNarration": false,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "figure",
+        "p",
+        "formula-box",
+        "p",
+        "callout-blue"
+      ],
+      "tex": [
+        [
+          "F_{\\text{net, vertical}} \\approx T \\left( \\left.\\frac{\\partial u}{\\partial x}\\right|_{x+\\Delta x} - \\left.\\frac{\\partial u}{\\partial x}\\right|_x \\right) \\approx T \\frac{\\partial^2 u}{\\partial x^2} \\Delta x"
+        ]
+      ]
+    },
+    {
+      "id": "sec-standing-waves",
+      "noNarration": false,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "formula-box",
+        "p",
+        "figure",
+        "callout-purple"
+      ],
+      "tex": [
+        [
+          "u(x, t) = X(x)T(t) \\implies \\frac{1}{c^2}\\frac{T''(t)}{T(t)} = \\frac{X''(x)}{X(x)} = -k^2"
+        ]
+      ]
+    },
+    {
+      "id": "sec-dalembert",
+      "noNarration": false,
+      "types": [
+        "h2",
+        "p",
+        "formula-box",
+        "p",
+        "figure",
+        "callout-green"
+      ],
+      "tex": [
+        [
+          "u(x, t) = f(x - ct) + g(x + ct)"
+        ]
+      ]
+    },
+    {
+      "id": "sec-energy-harmonics",
+      "noNarration": false,
+      "types": [
+        "h2",
+        "p",
+        "formula-box",
+        "p",
+        "figure",
+        "callout-gold"
+      ],
+      "tex": [
+        [
+          "\\frac{dE}{dt} = \\int_0^L \\left[ \\mu \\frac{\\partial u}{\\partial t}\\frac{\\partial^2 u}{\\partial t^2} + T \\frac{\\partial u}{\\partial x}\\frac{\\partial^2 u}{\\partial x \\partial t} \\right] dx = 0"
+        ]
+      ]
+    },
+    {
+      "id": "sec-figures",
+      "noNarration": true,
+      "types": [
+        "h2",
+        "p"
+      ],
+      "tex": []
+    },
+    {
+      "id": "sec-interactive-lab",
+      "noNarration": true,
+      "types": [
+        "h2",
+        "p",
+        "formula-box",
+        "callout-blue"
+      ],
+      "tex": [
+        [
+          "c = \\sqrt{\\frac{T}{\\mu}}, \\quad \\omega_n = \\frac{n\\pi c}{L}, \\quad u(x,t) = f(x-ct) + g(x+ct), \\quad \\frac{dE}{dt}=0"
+        ]
+      ]
+    },
+    {
+      "id": "sec-quizzes",
+      "noNarration": true,
+      "types": [
+        "h2",
+        "p"
+      ],
+      "tex": []
+    }
+  ],
+  "engine": [
+    {
+      "id": "sec-wave-intro",
+      "blockCount": 8,
+      "cueCount": 8,
+      "audioFile": "../../assets/audio/differential_equations/lesson_06/sec_01_wave_intro.mp3",
+      "types": [
+        "h2",
+        "chapter-quote",
+        "p",
+        "p",
+        "figure",
+        "p",
+        "formula-box",
+        "callout-gold"
+      ]
+    },
+    {
+      "id": "sec-wave-derivation",
+      "blockCount": 8,
+      "cueCount": 8,
+      "audioFile": "../../assets/audio/differential_equations/lesson_06/sec_02_wave_derivation.mp3",
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "figure",
+        "p",
+        "formula-box",
+        "p",
+        "callout-blue"
+      ]
+    },
+    {
+      "id": "sec-standing-waves",
+      "blockCount": 7,
+      "cueCount": 7,
+      "audioFile": "../../assets/audio/differential_equations/lesson_06/sec_03_standing_waves.mp3",
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "formula-box",
+        "p",
+        "figure",
+        "callout-purple"
+      ]
+    },
+    {
+      "id": "sec-dalembert",
+      "blockCount": 6,
+      "cueCount": 6,
+      "audioFile": "../../assets/audio/differential_equations/lesson_06/sec_04_dalembert.mp3",
+      "types": [
+        "h2",
+        "p",
+        "formula-box",
+        "p",
+        "figure",
+        "callout-green"
+      ]
+    },
+    {
+      "id": "sec-energy-harmonics",
+      "blockCount": 6,
+      "cueCount": 6,
+      "audioFile": "../../assets/audio/differential_equations/lesson_06/sec_05_energy_harmonics.mp3",
+      "types": [
+        "h2",
+        "p",
+        "formula-box",
+        "p",
+        "figure",
+        "callout-gold"
+      ]
+    }
+  ],
+  "hasStudioAudio": true,
+  "manifestPresent": true
+}

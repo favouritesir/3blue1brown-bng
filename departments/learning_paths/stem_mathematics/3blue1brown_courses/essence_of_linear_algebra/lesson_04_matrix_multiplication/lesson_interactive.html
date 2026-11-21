@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>৩ব্লু১ব্রাউন: রূপান্তরের সংযোজন ও ম্যাট্রিক্স গুণন সিমুলেটর | বাংলা রিসোর্স ফ্যাক্টরি</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root {
+      --bg-dark: #080c14;
+      --bg-card: #0f172a;
+      --border-color: #334155;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-purple: #c084fc;
+      --accent-rose: #f43f5e;
+      --text-main: #f8fafc;
+      --text-dim: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Hind Siliguri', sans-serif;
+      padding: 1.5rem;
+      line-height: 1.6;
+    }
+    .container { max-width: 1250px; margin: 0 auto; }
+    header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.65rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: 1.85rem;
+      background: linear-gradient(90deg, #38bdf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 1.5rem;
+    }
+    @media (max-width: 950px) {
+      .grid-layout { grid-template-columns: 1fr; }
+    }
+    .canvas-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    canvas {
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 720px;
+      height: 500px;
+    }
+    .timeline-bar {
+      width: 100%;
+      max-width: 720px;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .timeline-bar input[type="range"] {
+      flex: 1;
+      accent-color: var(--accent-cyan);
+    }
+    .step-labels {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 720px;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-top: 0.25rem;
+    }
+    .controls-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .card {
+      background: #020617;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      margin-bottom: 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .matrix-pair-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+    .mini-matrix {
+      display: inline-block;
+      border-left: 2px solid #64748b;
+      border-right: 2px solid #64748b;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .matrix-inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+    }
+    .matrix-inputs input {
+      width: 48px;
+      background: #0f172a;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 4px;
+      text-align: center;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    button {
+      background: #1e293b;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.45rem 0.8rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    button:hover {
+      background: #334155;
+      border-color: var(--accent-cyan);
+    }
+    button.primary {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      border-color: #38bdf8;
+      color: #fff;
+    }
+    button.primary:hover {
+      background: linear-gradient(135deg, #0369a1, #075985);
+    }
+    .status-text {
+      font-size: 0.88rem;
+      color: var(--accent-amber);
+      margin-top: 0.4rem;
+      min-height: 1.4rem;
+    }
+    .vector-legend {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .color-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .info-box {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      background: rgba(15, 23, 42, 0.6);
+      border-left: 3px solid var(--accent-purple);
+      padding: 0.6rem 0.8rem;
+      border-radius: 0 6px 6px 0;
+    }
+    .math-display {
+      text-align: center;
+      font-size: 0.92rem;
+      overflow-x: auto;
+      padding: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <span class="badge">৩ব্লু১ব্রাউন • লিনিয়ার বীজগণিত • লেসন ০৪</span>
+    <h1>রূপান্তরের সংযোজন হিসেবে ম্যাট্রিক্স গুণন (Matrix Composition)</h1>
+    <p style="color: var(--text-dim); font-size: 0.95rem;">
+      দুটি রৈখিক রূপান্তরকে ধারাবাহিকভাবে প্রয়োগ করার জ্যামিতিক প্রভাব এবং কেন ম্যাট্রিক্স গুণন ডান থেকে বামে কাজ করে তা স্বচক্ষে প্রত্যক্ষ করুন।
+    </p>
+  </header>
+
+  <div class="grid-layout">
+    <!-- বাম পাশ: ক্যানভাস ও রূপান্তর ভিউয়ার -->
+    <div class="canvas-panel">
+      <canvas id="gridCanvas" width="720" height="500"></canvas>
+      
+      <div class="timeline-bar">
+        <button id="btnPlay" class="primary">অ্যানিমেশন প্লে করুন</button>
+        <button id="btnReset">রিসেট</button>
+        <input type="range" id="progressSlider" min="0" max="2" step="0.01" value="0">
+      </div>
+      <div class="step-labels">
+        <span>শুরুর গ্রিড (t = 0.0)</span>
+        <span>প্রথম রূপান্তর M₁ (t = 1.0)</span>
+        <span>সংযোজিত রূপান্তর M₂M₁ (t = 2.0)</span>
+      </div>
+
+      <div class="vector-legend">
+        <div class="legend-item">
+          <div class="color-dot" style="background: var(--accent-emerald);"></div>
+          <span>\(\hat{\imath}\) (সবুজ বেসিস)</span>
+        </div>
+        <div class="legend-item">
+          <div class="color-dot" style="background: var(--accent-rose);"></div>
+          <span>\(\hat{\jmath}\) (লাল বেসিস)</span>
+        </div>
+        <div class="legend-item">
+          <div class="color-dot" style="background: var(--accent-cyan);"></div>
+          <span>\(\vec{v}\) নমুনা ভেক্টর \([1, 1]^T\)</span>
+        </div>
+      </div>
+      
+      <div class="status-text" id="statusMessage">
+        বর্তমান অবস্থান: আদি সমতল (Identity Grid)
+      </div>
+    </div>
+
+    <!-- ডান পাশ: ম্যাট্রিক্স ইনপুট ও বিশ্লেষণ -->
+    <div class="controls-panel">
+      <!-- প্রিসেট নির্বাচন -->
+      <div class="card">
+        <div class="card-title">স্ট্যান্ডার্ড প্রিসেট নির্বাচন</div>
+        <div class="btn-group">
+          <button id="presetRotShear" class="primary">ঘূর্ণন ৯০° ➔ শিয়ার (3B1B)</button>
+          <button id="presetShearRot">শিয়ার ➔ ঘূর্ণন ৯০° (Order Matters!)</button>
+          <button id="presetCommutative">ঘূর্ণন ➔ স্কেলিং (Commutative)</button>
+        </div>
+      </div>
+
+      <!-- ম্যাট্রিক্স মান ও গুণফল সমীকরণ -->
+      <div class="card">
+        <div class="card-title">
+          <span>রূপান্তর ম্যাট্রিক্স দ্বয় (\(M_2 M_1\))</span>
+          <span style="font-size: 0.75rem; color: var(--accent-amber);">ডান থেকে বামে পড়া হয়</span>
+        </div>
+        
+        <div class="matrix-pair-container">
+          <!-- M2 (বাম ম্যাট্রিক্স: শিয়ার / দ্বিতীয় রূপান্তর) -->
+          <div style="text-align: center;">
+            <div style="font-size: 0.8rem; color: var(--accent-purple); margin-bottom: 2px;">M₂ (দ্বিতীয়)</div>
+            <div class="mini-matrix">
+              <div class="matrix-inputs">
+                <input type="number" id="m2_00" value="1" step="0.5">
+                <input type="number" id="m2_01" value="1" step="0.5">
+                <input type="number" id="m2_10" value="0" step="0.5">
+                <input type="number" id="m2_11" value="1" step="0.5">
+              </div>
+            </div>
+          </div>
+
+          <span style="font-size: 1.3rem; font-weight: bold; color: var(--text-dim);">×</span>
+
+          <!-- M1 (ডান ম্যাট্রিক্স: ঘূর্ণন / প্রথম রূপান্তর) -->
+          <div style="text-align: center;">
+            <div style="font-size: 0.8rem; color: var(--accent-amber); margin-bottom: 2px;">M₁ (প্রথম)</div>
+            <div class="mini-matrix">
+              <div class="matrix-inputs">
+                <input type="number" id="m1_00" value="0" step="0.5">
+                <input type="number" id="m1_01" value="-1" step="0.5">
+                <input type="number" id="m1_10" value="1" step="0.5">
+                <input type="number" id="m1_11" value="0" step="0.5">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="math-display" id="productMath">
+          <!-- Dynamically updated MathJax -->
+          \[
+          M_2 M_1 = \begin{bmatrix}1 & -1 \\ 1 & 0\end{bmatrix}
+          \]
+        </div>
+      </div>
+
+      <!-- নন-কমিউটেটিভিটি পরীক্ষক -->
+      <div class="card">
+        <div class="card-title">ক্রম পরিবর্তনের প্রভাব (\(M_1 M_2 \stackrel{?}{=} M_2 M_1\))</div>
+        <div id="commutativityBox" style="font-size: 0.82rem; color: var(--text-dim); line-height: 1.5;">
+          <!-- dynamic update -->
+        </div>
+        <div style="margin-top: 0.6rem;">
+          <button id="btnSwapOrder" style="width: 100%;">ম্যাট্রিক্সের ক্রম অদল-বদল করুন (Swap Order)</button>
+        </div>
+      </div>
+
+      <!-- অ্যাসোসিয়েটিভিটি ডেমো -->
+      <div class="card">
+        <div class="card-title">অ্যাসোসিয়েটিভিটি বা সংযোজন বিধি</div>
+        <p style="font-size: 0.82rem; color: var(--text-dim); margin-bottom: 0.4rem;">
+          তিনটি রূপান্তর \(A, B, C\) থাকলে:
+        </p>
+        <div class="math-display" style="font-size: 0.85rem; padding: 0.2rem 0;">
+          \[ (A B) C = A (B C) \]
+        </div>
+        <div class="info-box" style="margin-top: 0.4rem;">
+          রূপান্তরের ক্ষেত্রে বন্ধনী যেখানেই দিন না কেন, ভৌতভাবে প্রথমে \(C\), তারপর \(B\), তারপর \(A\) প্রয়োগ হয়। ফলে ফলাফল অবিকল এক থাকে।
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const canvas = document.getElementById('gridCanvas');
+  const ctx = canvas.getContext('2d');
+  const slider = document.getElementById('progressSlider');
+  const btnPlay = document.getElementById('btnPlay');
+  const btnReset = document.getElementById('btnReset');
+  const statusMsg = document.getElementById('statusMessage');
+  const productMath = document.getElementById('productMath');
+  const commutativityBox = document.getElementById('commutativityBox');
+
+  // Matrix inputs
+  const m1_inputs = [
+    [document.getElementById('m1_00'), document.getElementById('m1_01')],
+    [document.getElementById('m1_10'), document.getElementById('m1_11')]
+  ];
+  const m2_inputs = [
+    [document.getElementById('m2_00'), document.getElementById('m2_01')],
+    [document.getElementById('m2_10'), document.getElementById('m2_11')]
+  ];
+
+  let isPlaying = false;
+  let animProgress = 0.0;
+  let animSpeed = 0.012;
+
+  function getM1() {
+    return [
+      [parseFloat(m1_inputs[0][0].value) || 0, parseFloat(m1_inputs[0][1].value) || 0],
+      [parseFloat(m1_inputs[1][0].value) || 0, parseFloat(m1_inputs[1][1].value) || 0]
+    ];
+  }
+
+  function getM2() {
+    return [
+      [parseFloat(m2_inputs[0][0].value) || 0, parseFloat(m2_inputs[0][1].value) || 0],
+      [parseFloat(m2_inputs[1][0].value) || 0, parseFloat(m2_inputs[1][1].value) || 0]
+    ];
+  }
+
+  function multiplyMatrices(A, B) {
+    return [
+      [A[0][0]*B[0][0] + A[0][1]*B[1][0], A[0][0]*B[0][1] + A[0][1]*B[1][1]],
+      [A[1][0]*B[0][0] + A[1][1]*B[1][0], A[1][0]*B[0][1] + A[1][1]*B[1][1]]
+    ];
+  }
+
+  function lerpMatrix(A, B, t) {
+    return [
+      [A[0][0] + (B[0][0] - A[0][0]) * t, A[0][1] + (B[0][1] - A[0][1]) * t],
+      [A[1][0] + (B[1][0] - A[1][0]) * t, A[1][1] + (B[1][1] - A[1][1]) * t]
+    ];
+  }
+
+  function transformPoint(M, x, y) {
+    return {
+      x: M[0][0] * x + M[0][1] * y,
+      y: M[1][0] * x + M[1][1] * y
+    };
+  }
+
+  const identity = [
+    [1, 0],
+    [0, 1]
+  ];
+
+  function updateMathDisplay() {
+    const M1 = getM1();
+    const M2 = getM2();
+    const M2M1 = multiplyMatrices(M2, M1);
+    const M1M2 = multiplyMatrices(M1, M2);
+
+    productMath.innerHTML = `\\[
+      M_2 M_1 = \\begin{bmatrix} ${M2[0][0]} & ${M2[0][1]} \\\\ ${M2[1][0]} & ${M2[1][1]} \\end{bmatrix}
+      \\begin{bmatrix} ${M1[0][0]} & ${M1[0][1]} \\\\ ${M1[1][0]} & ${M1[1][1]} \\end{bmatrix}
+      = \\begin{bmatrix} \\mathbf{${M2M1[0][0].toFixed(2)}} & \\mathbf{${M2M1[0][1].toFixed(2)}} \\\\ \\mathbf{${M2M1[1][0].toFixed(2)}} & \\mathbf{${M2M1[1][1].toFixed(2)}} \\end{bmatrix}
+    \\]`;
+
+    const isCommutative = (
+      Math.abs(M2M1[0][0] - M1M2[0][0]) < 1e-4 &&
+      Math.abs(M2M1[0][1] - M1M2[0][1]) < 1e-4 &&
+      Math.abs(M2M1[1][0] - M1M2[1][0]) < 1e-4 &&
+      Math.abs(M2M1[1][1] - M1M2[1][1]) < 1e-4
+    );
+
+    if (isCommutative) {
+      commutativityBox.innerHTML = `
+        <span style="color: var(--accent-emerald); font-weight: 600;">✓ বিনিময়যোগ্য (Commutes!)</span><br>
+        এখানে \(M_2 M_1 = M_1 M_2\)। উভয়ের ফলাফল অবিকল এক।
+      `;
+    } else {
+      commutativityBox.innerHTML = `
+        <span style="color: var(--accent-rose); font-weight: 600;">✗ বিনিময়যোগ্য নয় (Does NOT commute!)</span><br>
+        \(M_2 M_1 = \\begin{bmatrix} ${M2M1[0][0].toFixed(1)} & ${M2M1[0][1].toFixed(1)} \\\\ ${M2M1[1][0].toFixed(1)} & ${M2M1[1][1].toFixed(1)} \\end{bmatrix}\) কিন্তু 
+        \(M_1 M_2 = \\begin{bmatrix} ${M1M2[0][0].toFixed(1)} & ${M1M2[0][1].toFixed(1)} \\\\ ${M1M2[1][0].toFixed(1)} & ${M1M2[1][1].toFixed(1)} \\end{bmatrix}\)। রূপান্তরের ক্রম উল্টে দিলে স্থান ভিন্ন আকার নেয়।
+      `;
+    }
+
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise([productMath, commutativityBox]);
+    }
+  }
+
+  function drawGrid() {
+    const width = canvas.width;
+    const height = canvas.height;
+    const originX = width / 2;
+    const originY = height / 2;
+    const scale = 50; // pixels per unit
+
+    ctx.clearRect(0, 0, width, height);
+
+    const t = parseFloat(slider.value);
+    const M1 = getM1();
+    const M2 = getM2();
+    const composite = multiplyMatrices(M2, M1);
+
+    let currentM;
+    if (t <= 1.0) {
+      currentM = lerpMatrix(identity, M1, t);
+      statusMsg.innerHTML = `ধাপ ১: আদি গ্রিড থেকে প্রথম রূপান্তর \\(M_1\\) প্রয়োগ হচ্ছে (অগ্রগতি: ${(t*100).toFixed(0)}%)`;
+    } else {
+      currentM = lerpMatrix(M1, composite, t - 1.0);
+      statusMsg.innerHTML = `ধাপ ২: মধ্যবর্তী গ্রিডে দ্বিতীয় রূপান্তর \\(M_2\\) প্রয়োগ হচ্ছে (অগ্রগতি: ${((t-1)*100).toFixed(0)}%)`;
+    }
+
+    // Function to convert mathematical coords to canvas coords
+    function toCanvas(pt) {
+      const trans = transformPoint(currentM, pt.x, pt.y);
+      return {
+        x: originX + trans.x * scale,
+        y: originY - trans.y * scale
+      };
+    }
+
+    // Draw background grid lines
+    ctx.lineWidth = 1;
+    const gridRange = 7;
+    for (let i = -gridRange; i <= gridRange; i++) {
+      // vertical lines (varying y)
+      ctx.beginPath();
+      ctx.strokeStyle = (i === 0) ? '#475569' : '#1e293b';
+      const pStartV = toCanvas({x: i, y: -gridRange});
+      const pEndV = toCanvas({x: i, y: gridRange});
+      ctx.moveTo(pStartV.x, pStartV.y);
+      ctx.lineTo(pEndV.x, pEndV.y);
+      ctx.stroke();
+
+      // horizontal lines (varying x)
+      ctx.beginPath();
+      ctx.strokeStyle = (i === 0) ? '#475569' : '#1e293b';
+      const pStartH = toCanvas({x: -gridRange, y: i});
+      const pEndH = toCanvas({x: gridRange, y: i});
+      ctx.moveTo(pStartH.x, pStartH.y);
+      ctx.lineTo(pEndH.x, pEndH.y);
+      ctx.stroke();
+    }
+
+    // Function to draw arrow
+    function drawArrow(fromX, fromY, toX, toY, color, width=3) {
+      const headlen = 10;
+      const angle = Math.atan2(toY - fromY, toX - fromX);
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.fillStyle = color;
+      ctx.lineWidth = width;
+      ctx.moveTo(fromX, fromY);
+      ctx.lineTo(toX, toY);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(toX, toY);
+      ctx.lineTo(toX - headlen * Math.cos(angle - Math.PI / 6), toY - headlen * Math.sin(angle - Math.PI / 6));
+      ctx.lineTo(toX - headlen * Math.cos(angle + Math.PI / 6), toY - headlen * Math.sin(angle + Math.PI / 6));
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    // Draw basis vector i-hat (starts at (1,0))
+    const pOrigin = toCanvas({x: 0, y: 0});
+    const pI = toCanvas({x: 1, y: 0});
+    drawArrow(pOrigin.x, pOrigin.y, pI.x, pI.y, '#10b981', 3.5);
+
+    // Draw basis vector j-hat (starts at (0,1))
+    const pJ = toCanvas({x: 0, y: 1});
+    drawArrow(pOrigin.x, pOrigin.y, pJ.x, pJ.y, '#f43f5e', 3.5);
+
+    // Draw test vector v = [1, 1]
+    const pV = toCanvas({x: 1, y: 1});
+    drawArrow(pOrigin.x, pOrigin.y, pV.x, pV.y, '#38bdf8', 2.5);
+
+    // Label coordinates
+    ctx.font = '12px Segoe UI, sans-serif';
+    ctx.fillStyle = '#10b981';
+    ctx.fillText(`î (${(currentM[0][0]).toFixed(1)}, ${(currentM[1][0]).toFixed(1)})`, pI.x + 8, pI.y - 8);
+
+    ctx.fillStyle = '#f43f5e';
+    ctx.fillText(`ĵ (${(currentM[0][1]).toFixed(1)}, ${(currentM[1][1]).toFixed(1)})`, pJ.x + 8, pJ.y - 8);
+
+    ctx.fillStyle = '#38bdf8';
+    const vTrans = transformPoint(currentM, 1, 1);
+    ctx.fillText(`v (${(vTrans.x).toFixed(1)}, ${(vTrans.y).toFixed(1)})`, pV.x + 8, pV.y - 8);
+  }
+
+  function animationLoop() {
+    if (isPlaying) {
+      animProgress += animSpeed;
+      if (animProgress > 2.0) {
+        animProgress = 2.0;
+        isPlaying = false;
+        btnPlay.textContent = 'আবার দেখুন';
+      }
+      slider.value = animProgress;
+      drawGrid();
+      requestAnimationFrame(animationLoop);
+    }
+  }
+
+  btnPlay.addEventListener('click', () => {
+    if (parseFloat(slider.value) >= 2.0) {
+      slider.value = 0;
+    }
+    isPlaying = true;
+    animProgress = parseFloat(slider.value);
+    btnPlay.textContent = 'চলছে...';
+    animationLoop();
+  });
+
+  btnReset.addEventListener('click', () => {
+    isPlaying = false;
+    slider.value = 0;
+    btnPlay.textContent = 'অ্যানিমেশন প্লে করুন';
+    drawGrid();
+  });
+
+  slider.addEventListener('input', () => {
+    isPlaying = false;
+    btnPlay.textContent = 'অ্যানিমেশন প্লে করুন';
+    drawGrid();
+  });
+
+  // Attach matrix input changes
+  [...m1_inputs.flat(), ...m2_inputs.flat()].forEach(inp => {
+    inp.addEventListener('input', () => {
+      updateMathDisplay();
+      drawGrid();
+    });
+  });
+
+  // Presets
+  document.getElementById('presetRotShear').addEventListener('click', () => {
+    // M1 = 90 deg rotation
+    m1_inputs[0][0].value = 0;  m1_inputs[0][1].value = -1;
+    m1_inputs[1][0].value = 1;  m1_inputs[1][1].value = 0;
+    // M2 = Shear
+    m2_inputs[0][0].value = 1;  m2_inputs[0][1].value = 1;
+    m2_inputs[1][0].value = 0;  m2_inputs[1][1].value = 1;
+    updateMathDisplay();
+    slider.value = 0;
+    drawGrid();
+  });
+
+  document.getElementById('presetShearRot').addEventListener('click', () => {
+    // M1 = Shear
+    m1_inputs[0][0].value = 1;  m1_inputs[0][1].value = 1;
+    m1_inputs[1][0].value = 0;  m1_inputs[1][1].value = 1;
+    // M2 = 90 deg rotation
+    m2_inputs[0][0].value = 0;  m2_inputs[0][1].value = -1;
+    m2_inputs[1][0].value = 1;  m2_inputs[1][1].value = 0;
+    updateMathDisplay();
+    slider.value = 0;
+    drawGrid();
+  });
+
+  document.getElementById('presetCommutative').addEventListener('click', () => {
+    // M1 = 90 deg rotation
+    m1_inputs[0][0].value = 0;  m1_inputs[0][1].value = -1;
+    m1_inputs[1][0].value = 1;  m1_inputs[1][1].value = 0;
+    // M2 = Uniform Scaling by 1.5
+    m2_inputs[0][0].value = 1.5; m2_inputs[0][1].value = 0;
+    m2_inputs[1][0].value = 0;   m2_inputs[1][1].value = 1.5;
+    updateMathDisplay();
+    slider.value = 0;
+    drawGrid();
+  });
+
+  document.getElementById('btnSwapOrder').addEventListener('click', () => {
+    const tempM1 = getM1();
+    const tempM2 = getM2();
+    // Swap values in inputs
+    m1_inputs[0][0].value = tempM2[0][0]; m1_inputs[0][1].value = tempM2[0][1];
+    m1_inputs[1][0].value = tempM2[1][0]; m1_inputs[1][1].value = tempM2[1][1];
+
+    m2_inputs[0][0].value = tempM1[0][0]; m2_inputs[0][1].value = tempM1[0][1];
+    m2_inputs[1][0].value = tempM1[1][0]; m2_inputs[1][1].value = tempM1[1][1];
+
+    updateMathDisplay();
+    slider.value = 0;
+    drawGrid();
+  });
+
+  // Initialize
+  updateMathDisplay();
+  drawGrid();
+</script>
+
+</body>
+</html>

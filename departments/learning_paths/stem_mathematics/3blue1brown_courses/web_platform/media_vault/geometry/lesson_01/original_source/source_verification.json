@@ -1,0 +1,44 @@
+{
+  "lesson": "lesson_01",
+  "video_id": "GNcFjFmqEc8",
+  "official_url": "https://www.youtube.com/watch?v=GNcFjFmqEc8",
+  "oembed": {
+    "title": "But why is a sphere's surface area four times its shadow?",
+    "author_name": "3Blue1Brown",
+    "author_url": "https://www.youtube.com/@3blue1brown"
+  },
+  "downloaded_file": "departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\geometry\\lesson_01\\original_source\\full_original.mp4",
+  "file_size_bytes": 84233692,
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "av1",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "60/1"
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "avg_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "950.462404",
+      "size": "84233692"
+    }
+  },
+  "ffprobe_duration_sec": 950.462404,
+  "ffprobe_video_streams": 1,
+  "is_3b1b": true,
+  "verified_via": [
+    "oEmbed author_name=3Blue1Brown",
+    "yt-dlp metadata channel=3Blue1Brown",
+    "ffprobe of downloaded original"
+  ]
+}

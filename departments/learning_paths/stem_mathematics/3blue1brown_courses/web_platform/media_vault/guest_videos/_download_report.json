@@ -1,0 +1,27 @@
+[
+  {
+    "lesson": 1,
+    "status": "FAILED",
+    "error": "ERROR: [youtube] iv-5mZ_9CPY: Requested format is not available. Use --list-formats for a list of available formats"
+  },
+  {
+    "lesson": 2,
+    "status": "FAILED",
+    "error": "ERROR: [youtube] _BrFKp-U8GI: Requested format is not available. Use --list-formats for a list of available formats"
+  },
+  {
+    "lesson": 3,
+    "status": "FAILED",
+    "error": "ERROR: [youtube] itRV2jEtV8Q: Requested format is not available. Use --list-formats for a list of available formats"
+  },
+  {
+    "lesson": 4,
+    "status": "FAILED",
+    "error": "ERROR: [youtube] 4NlrfOl0l8U: Requested format is not available. Use --list-formats for a list of available formats"
+  },
+  {
+    "lesson": 5,
+    "status": "FAILED",
+    "error": "ERROR: [youtube] M-MgQC6z3VU: Requested format is not available. Use --list-formats for a list of available formats"
+  }
+]

@@ -1,0 +1,762 @@
+{
+  "lessons": {
+    "01": {
+      "errors": [],
+      "tags": [
+        "b1b-article",
+        "b1b-back-to-top",
+        "b1b-bookmarks",
+        "b1b-callout",
+        "b1b-chapter-nav",
+        "b1b-figure",
+        "b1b-footer",
+        "b1b-formula",
+        "b1b-fullscreen",
+        "b1b-hero-player",
+        "b1b-narration-banner",
+        "b1b-navbar",
+        "b1b-quiz",
+        "b1b-quote",
+        "b1b-search-overlay",
+        "b1b-section",
+        "b1b-stepper",
+        "b1b-toc-sidebar",
+        "b1b-vector-decomposer",
+        "b1b-vector-plane",
+        "b1b-watch-panel"
+      ],
+      "tag_parity": true,
+      "counts": {
+        "b1b-search-overlay": 1,
+        "b1b-navbar": 1,
+        "b1b-hero-player": 1,
+        "b1b-narration-banner": 1,
+        "b1b-bookmarks": 1,
+        "b1b-toc-sidebar": 1,
+        "b1b-article": 1,
+        "b1b-watch-panel": 1,
+        "b1b-chapter-nav": 1,
+        "b1b-footer": 1,
+        "b1b-back-to-top": 1
+      },
+      "singletons_ok": true,
+      "all_registered": true,
+      "narrated_ids": [
+        "sec-hidden-circle",
+        "sec-pattern",
+        "sec-setup"
+      ],
+      "manifest_keys": [
+        "sec-hidden-circle",
+        "sec-pattern",
+        "sec-setup"
+      ],
+      "narrated_ok": true,
+      "manifest_loaded": true,
+      "video_ok": true,
+      "hero_video": "../../media_vault/why_pi/lesson_01/experiments/3b1b_why_pi_01_full_dubbed.mp4",
+      "quiz_count": 1,
+      "quiz_render_ok": true,
+      "quiz_click": [
+        {
+          "quiz": 0,
+          "picked": 1,
+          "correct": 1,
+          "show": true,
+          "cls": "quiz-feedback show correct-fb",
+          "text": "✅ ঠিক! ১০০ : ১ ভর অনুপাতে ৩১টি সংঘর্ষ হয়—π-র প্রথম দুই অঙ্ক ৩.১।",
+          "ok": true
+        }
+      ],
+      "quiz_ok": true,
+      "rendered_figures": 4,
+      "rendered_formula": 4,
+      "katex": 23,
+      "ok": true
+    },
+    "02": {
+      "errors": [],
+      "tags": [
+        "b1b-article",
+        "b1b-back-to-top",
+        "b1b-bookmarks",
+        "b1b-callout",
+        "b1b-chapter-nav",
+        "b1b-figure",
+        "b1b-footer",
+        "b1b-formula",
+        "b1b-fullscreen",
+        "b1b-hero-player",
+        "b1b-narration-banner",
+        "b1b-navbar",
+        "b1b-quiz",
+        "b1b-quote",
+        "b1b-search-overlay",
+        "b1b-section",
+        "b1b-stepper",
+        "b1b-toc-sidebar",
+        "b1b-vector-decomposer",
+        "b1b-vector-plane",
+        "b1b-watch-panel"
+      ],
+      "tag_parity": true,
+      "counts": {
+        "b1b-search-overlay": 1,
+        "b1b-navbar": 1,
+        "b1b-hero-player": 1,
+        "b1b-narration-banner": 1,
+        "b1b-bookmarks": 1,
+        "b1b-toc-sidebar": 1,
+        "b1b-article": 1,
+        "b1b-watch-panel": 1,
+        "b1b-chapter-nav": 1,
+        "b1b-footer": 1,
+        "b1b-back-to-top": 1
+      },
+      "singletons_ok": true,
+      "all_registered": true,
+      "narrated_ids": [
+        "sec-conservation",
+        "sec-inscribed-angle",
+        "sec-momentum-line",
+        "sec-phase-circle"
+      ],
+      "manifest_keys": [
+        "sec-conservation",
+        "sec-inscribed-angle",
+        "sec-momentum-line",
+        "sec-phase-circle"
+      ],
+      "narrated_ok": true,
+      "manifest_loaded": true,
+      "video_ok": true,
+      "hero_video": "../../media_vault/why_pi/lesson_02/experiments/3b1b_why_pi_02_full_dubbed.mp4",
+      "quiz_count": 1,
+      "quiz_render_ok": true,
+      "quiz_click": [
+        {
+          "quiz": 0,
+          "picked": 1,
+          "correct": 1,
+          "show": true,
+          "cls": "quiz-feedback show correct-fb",
+          "text": "✅ সঠিক! অন্তর্লিখিত কোণের উপপাদ্য অনুযায়ী প্রতিটি লাফ 2θ চাপ জুড়ে যায়।",
+          "ok": true
+        }
+      ],
+      "quiz_ok": true,
+      "rendered_figures": 4,
+      "rendered_formula": 5,
+      "katex": 51,
+      "ok": true
+    },
+    "03": {
+      "errors": [],
+      "tags": [
+        "b1b-article",
+        "b1b-back-to-top",
+        "b1b-bookmarks",
+        "b1b-callout",
+        "b1b-chapter-nav",
+        "b1b-figure",
+        "b1b-footer",
+        "b1b-formula",
+        "b1b-fullscreen",
+        "b1b-hero-player",
+        "b1b-narration-banner",
+        "b1b-navbar",
+        "b1b-quiz",
+        "b1b-quote",
+        "b1b-search-overlay",
+        "b1b-section",
+        "b1b-stepper",
+        "b1b-toc-sidebar",
+        "b1b-vector-decomposer",
+        "b1b-vector-plane",
+        "b1b-watch-panel"
+      ],
+      "tag_parity": true,
+      "counts": {
+        "b1b-search-overlay": 1,
+        "b1b-navbar": 1,
+        "b1b-hero-player": 1,
+        "b1b-narration-banner": 1,
+        "b1b-bookmarks": 1,
+        "b1b-toc-sidebar": 1,
+        "b1b-article": 1,
+        "b1b-watch-panel": 1,
+        "b1b-chapter-nav": 1,
+        "b1b-footer": 1,
+        "b1b-back-to-top": 1
+      },
+      "singletons_ok": true,
+      "all_registered": true,
+      "narrated_ids": [
+        "sec-position-space",
+        "sec-rescale",
+        "sec-unfold"
+      ],
+      "manifest_keys": [
+        "sec-position-space",
+        "sec-rescale",
+        "sec-unfold"
+      ],
+      "narrated_ok": true,
+      "manifest_loaded": true,
+      "video_ok": true,
+      "hero_video": "../../media_vault/why_pi/lesson_03/experiments/3b1b_why_pi_03_full_dubbed.mp4",
+      "quiz_count": 1,
+      "quiz_render_ok": true,
+      "quiz_click": [
+        {
+          "quiz": 0,
+          "picked": 0,
+          "correct": 0,
+          "show": true,
+          "cls": "quiz-feedback show correct-fb",
+          "text": "✅ ঠিক! \n𝜋\nπ অতিক্রম না করে θ কে যতবার যোগ করা যায়, ততবার প্রতিফলন—অর্থাৎ \n⌊\n𝜋\n/\n",
+          "ok": true
+        }
+      ],
+      "quiz_ok": true,
+      "rendered_figures": 3,
+      "rendered_formula": 5,
+      "katex": 35,
+      "ok": true
+    },
+    "04": {
+      "errors": [],
+      "tags": [
+        "b1b-article",
+        "b1b-back-to-top",
+        "b1b-bookmarks",
+        "b1b-callout",
+        "b1b-chapter-nav",
+        "b1b-figure",
+        "b1b-footer",
+        "b1b-formula",
+        "b1b-fullscreen",
+        "b1b-hero-player",
+        "b1b-narration-banner",
+        "b1b-navbar",
+        "b1b-quiz",
+        "b1b-quote",
+        "b1b-search-overlay",
+        "b1b-section",
+        "b1b-stepper",
+        "b1b-toc-sidebar",
+        "b1b-vector-decomposer",
+        "b1b-vector-plane",
+        "b1b-watch-panel"
+      ],
+      "tag_parity": true,
+      "counts": {
+        "b1b-search-overlay": 1,
+        "b1b-navbar": 1,
+        "b1b-hero-player": 1,
+        "b1b-narration-banner": 1,
+        "b1b-bookmarks": 1,
+        "b1b-toc-sidebar": 1,
+        "b1b-article": 1,
+        "b1b-watch-panel": 1,
+        "b1b-chapter-nav": 1,
+        "b1b-footer": 1,
+        "b1b-back-to-top": 1
+      },
+      "singletons_ok": true,
+      "all_registered": true,
+      "narrated_ids": [
+        "sec-basel-series",
+        "sec-inverse-squares",
+        "sec-result"
+      ],
+      "manifest_keys": [
+        "sec-basel-series",
+        "sec-inverse-squares",
+        "sec-result"
+      ],
+      "narrated_ok": true,
+      "manifest_loaded": true,
+      "video_ok": true,
+      "hero_video": "../../media_vault/why_pi/lesson_04/experiments/3b1b_why_pi_04_full_dubbed.mp4",
+      "quiz_count": 1,
+      "quiz_render_ok": true,
+      "quiz_click": [
+        {
+          "quiz": 0,
+          "picked": 1,
+          "correct": 1,
+          "show": true,
+          "cls": "quiz-feedback show correct-fb",
+          "text": "✅ চমৎকার! \n1\n+\n1\n4\n+\n1\n9\n+\n⋯\n=\n𝜋\n2\n/\n6\n≈\n1.6449\n1+\n4\n1\n\t​\n\n+\n9\n1\n\t​\n\n+⋯=π\n2\n/6≈1",
+          "ok": true
+        }
+      ],
+      "quiz_ok": true,
+      "rendered_figures": 3,
+      "rendered_formula": 4,
+      "katex": 35,
+      "ok": true
+    },
+    "05": {
+      "errors": [],
+      "tags": [
+        "b1b-article",
+        "b1b-back-to-top",
+        "b1b-bookmarks",
+        "b1b-callout",
+        "b1b-chapter-nav",
+        "b1b-figure",
+        "b1b-footer",
+        "b1b-formula",
+        "b1b-fullscreen",
+        "b1b-hero-player",
+        "b1b-narration-banner",
+        "b1b-navbar",
+        "b1b-quiz",
+        "b1b-quote",
+        "b1b-search-overlay",
+        "b1b-section",
+        "b1b-stepper",
+        "b1b-toc-sidebar",
+        "b1b-vector-decomposer",
+        "b1b-vector-plane",
+        "b1b-watch-panel"
+      ],
+      "tag_parity": true,
+      "counts": {
+        "b1b-search-overlay": 1,
+        "b1b-navbar": 1,
+        "b1b-hero-player": 1,
+        "b1b-narration-banner": 1,
+        "b1b-bookmarks": 1,
+        "b1b-toc-sidebar": 1,
+        "b1b-article": 1,
+        "b1b-watch-panel": 1,
+        "b1b-chapter-nav": 1,
+        "b1b-footer": 1,
+        "b1b-back-to-top": 1
+      },
+      "singletons_ok": true,
+      "all_registered": true,
+      "narrated_ids": [
+        "sec-circle-hidden",
+        "sec-leibniz-series",
+        "sec-primes"
+      ],
+      "manifest_keys": [
+        "sec-circle-hidden",
+        "sec-leibniz-series",
+        "sec-primes"
+      ],
+      "narrated_ok": true,
+      "manifest_loaded": true,
+      "video_ok": true,
+      "hero_video": "../../media_vault/why_pi/lesson_05/experiments/3b1b_why_pi_05_full_dubbed.mp4",
+      "quiz_count": 1,
+      "quiz_render_ok": true,
+      "quiz_click": [
+        {
+          "quiz": 0,
+          "picked": 1,
+          "correct": 1,
+          "show": true,
+          "cls": "quiz-feedback show correct-fb",
+          "text": "✅ ঠিক! \narctan\n⁡\n(\n1\n)\n=\n𝜋\n/\n4\narctan(1)=π/4, তাই ধারার মান \n𝜋\n/\n4\nπ/4।",
+          "ok": true
+        }
+      ],
+      "quiz_ok": true,
+      "rendered_figures": 3,
+      "rendered_formula": 4,
+      "katex": 32,
+      "ok": true
+    },
+    "06": {
+      "errors": [],
+      "tags": [
+        "b1b-article",
+        "b1b-back-to-top",
+        "b1b-bookmarks",
+        "b1b-callout",
+        "b1b-chapter-nav",
+        "b1b-figure",
+        "b1b-footer",
+        "b1b-formula",
+        "b1b-fullscreen",
+        "b1b-hero-player",
+        "b1b-narration-banner",
+        "b1b-navbar",
+        "b1b-quiz",
+        "b1b-quote",
+        "b1b-search-overlay",
+        "b1b-section",
+        "b1b-stepper",
+        "b1b-toc-sidebar",
+        "b1b-vector-decomposer",
+        "b1b-vector-plane",
+        "b1b-watch-panel"
+      ],
+      "tag_parity": true,
+      "counts": {
+        "b1b-search-overlay": 1,
+        "b1b-navbar": 1,
+        "b1b-hero-player": 1,
+        "b1b-narration-banner": 1,
+        "b1b-bookmarks": 1,
+        "b1b-toc-sidebar": 1,
+        "b1b-article": 1,
+        "b1b-watch-panel": 1,
+        "b1b-chapter-nav": 1,
+        "b1b-footer": 1,
+        "b1b-back-to-top": 1
+      },
+      "singletons_ok": true,
+      "all_registered": true,
+      "narrated_ids": [
+        "sec-bell-curve",
+        "sec-herschel-maxwell",
+        "sec-integral-trick"
+      ],
+      "manifest_keys": [
+        "sec-bell-curve",
+        "sec-herschel-maxwell",
+        "sec-integral-trick"
+      ],
+      "narrated_ok": true,
+      "manifest_loaded": true,
+      "video_ok": true,
+      "hero_video": "../../media_vault/why_pi/lesson_06/experiments/3b1b_why_pi_06_full_dubbed.mp4",
+      "quiz_count": 1,
+      "quiz_render_ok": true,
+      "quiz_click": [
+        {
+          "quiz": 0,
+          "picked": 1,
+          "correct": 1,
+          "show": true,
+          "cls": "quiz-feedback show correct-fb",
+          "text": "✅ ঠিক! দ্বিমাত্রিক কৌশলে \n𝐼\n2\n=\n𝜋\nI\n2\n=π, তাই \n𝐼\n=\n𝜋\nI=\nπ\n\t​\n\n।",
+          "ok": true
+        }
+      ],
+      "quiz_ok": true,
+      "rendered_figures": 3,
+      "rendered_formula": 4,
+      "katex": 35,
+      "ok": true
+    },
+    "07": {
+      "errors": [],
+      "tags": [
+        "b1b-article",
+        "b1b-back-to-top",
+        "b1b-bookmarks",
+        "b1b-callout",
+        "b1b-chapter-nav",
+        "b1b-figure",
+        "b1b-footer",
+        "b1b-formula",
+        "b1b-fullscreen",
+        "b1b-hero-player",
+        "b1b-narration-banner",
+        "b1b-navbar",
+        "b1b-quiz",
+        "b1b-quote",
+        "b1b-search-overlay",
+        "b1b-section",
+        "b1b-stepper",
+        "b1b-toc-sidebar",
+        "b1b-vector-decomposer",
+        "b1b-vector-plane",
+        "b1b-watch-panel"
+      ],
+      "tag_parity": true,
+      "counts": {
+        "b1b-search-overlay": 1,
+        "b1b-navbar": 1,
+        "b1b-hero-player": 1,
+        "b1b-narration-banner": 1,
+        "b1b-bookmarks": 1,
+        "b1b-toc-sidebar": 1,
+        "b1b-article": 1,
+        "b1b-watch-panel": 1,
+        "b1b-chapter-nav": 1,
+        "b1b-footer": 1,
+        "b1b-back-to-top": 1
+      },
+      "singletons_ok": true,
+      "all_registered": true,
+      "narrated_ids": [
+        "sec-geometric-proof",
+        "sec-sin-integrals",
+        "sec-wallis-product"
+      ],
+      "manifest_keys": [
+        "sec-geometric-proof",
+        "sec-sin-integrals",
+        "sec-wallis-product"
+      ],
+      "narrated_ok": true,
+      "manifest_loaded": true,
+      "video_ok": true,
+      "hero_video": "../../media_vault/why_pi/lesson_07/experiments/3b1b_why_pi_07_full_dubbed.mp4",
+      "quiz_count": 1,
+      "quiz_render_ok": true,
+      "quiz_click": [
+        {
+          "quiz": 0,
+          "picked": 1,
+          "correct": 1,
+          "show": true,
+          "cls": "quiz-feedback show correct-fb",
+          "text": "✅ সঠিক! ওয়ালিস গুণফলের মান \n𝜋\n/\n2\nπ/2।",
+          "ok": true
+        }
+      ],
+      "quiz_ok": true,
+      "rendered_figures": 3,
+      "rendered_formula": 4,
+      "katex": 38,
+      "ok": true
+    },
+    "08": {
+      "errors": [],
+      "tags": [
+        "b1b-article",
+        "b1b-back-to-top",
+        "b1b-bookmarks",
+        "b1b-callout",
+        "b1b-chapter-nav",
+        "b1b-figure",
+        "b1b-footer",
+        "b1b-formula",
+        "b1b-fullscreen",
+        "b1b-hero-player",
+        "b1b-narration-banner",
+        "b1b-navbar",
+        "b1b-quiz",
+        "b1b-quote",
+        "b1b-search-overlay",
+        "b1b-section",
+        "b1b-stepper",
+        "b1b-toc-sidebar",
+        "b1b-vector-decomposer",
+        "b1b-vector-plane",
+        "b1b-watch-panel"
+      ],
+      "tag_parity": true,
+      "counts": {
+        "b1b-search-overlay": 1,
+        "b1b-navbar": 1,
+        "b1b-hero-player": 1,
+        "b1b-narration-banner": 1,
+        "b1b-bookmarks": 1,
+        "b1b-toc-sidebar": 1,
+        "b1b-article": 1,
+        "b1b-watch-panel": 1,
+        "b1b-chapter-nav": 1,
+        "b1b-footer": 1,
+        "b1b-back-to-top": 1
+      },
+      "singletons_ok": true,
+      "all_registered": true,
+      "narrated_ids": [
+        "sec-early-notation",
+        "sec-euler-pi",
+        "sec-today"
+      ],
+      "manifest_keys": [
+        "sec-early-notation",
+        "sec-euler-pi",
+        "sec-today"
+      ],
+      "narrated_ok": true,
+      "manifest_loaded": true,
+      "video_ok": true,
+      "hero_video": "../../media_vault/why_pi/lesson_08/experiments/3b1b_why_pi_08_full_dubbed.mp4",
+      "quiz_count": 1,
+      "quiz_render_ok": true,
+      "quiz_click": [
+        {
+          "quiz": 0,
+          "picked": 1,
+          "correct": 1,
+          "show": true,
+          "cls": "quiz-feedback show correct-fb",
+          "text": "✅ ঠিক! অয়লার কখনো π দিয়ে 2π ≈ ৬.২৮৩ বোঝাতেন—তাই পাই প্রায় ৬.২৮ হয়ে যেতে পারত।",
+          "ok": true
+        }
+      ],
+      "quiz_ok": true,
+      "rendered_figures": 3,
+      "rendered_formula": 3,
+      "katex": 21,
+      "ok": true
+    }
+  },
+  "index": {
+    "errors": [],
+    "chapter_rows": 8,
+    "ok": true
+  },
+  "data": {
+    "01": {
+      "course_id": "why_pi",
+      "sections": [
+        "sec-hidden-circle",
+        "sec-pattern",
+        "sec-setup"
+      ],
+      "manifest_sections": [
+        "sec-hidden-circle",
+        "sec-pattern",
+        "sec-setup"
+      ],
+      "quizzes": 1,
+      "js_matches_json": true,
+      "ok": true
+    },
+    "02": {
+      "course_id": "why_pi",
+      "sections": [
+        "sec-conservation",
+        "sec-inscribed-angle",
+        "sec-momentum-line",
+        "sec-phase-circle"
+      ],
+      "manifest_sections": [
+        "sec-conservation",
+        "sec-inscribed-angle",
+        "sec-momentum-line",
+        "sec-phase-circle"
+      ],
+      "quizzes": 2,
+      "js_matches_json": true,
+      "ok": true
+    },
+    "03": {
+      "course_id": "why_pi",
+      "sections": [
+        "sec-position-space",
+        "sec-rescale",
+        "sec-unfold"
+      ],
+      "manifest_sections": [
+        "sec-position-space",
+        "sec-rescale",
+        "sec-unfold"
+      ],
+      "quizzes": 1,
+      "js_matches_json": true,
+      "ok": true
+    },
+    "04": {
+      "course_id": "why_pi",
+      "sections": [
+        "sec-basel-series",
+        "sec-inverse-squares",
+        "sec-result"
+      ],
+      "manifest_sections": [
+        "sec-basel-series",
+        "sec-inverse-squares",
+        "sec-result"
+      ],
+      "quizzes": 1,
+      "js_matches_json": true,
+      "ok": true
+    },
+    "05": {
+      "course_id": "why_pi",
+      "sections": [
+        "sec-circle-hidden",
+        "sec-leibniz-series",
+        "sec-primes"
+      ],
+      "manifest_sections": [
+        "sec-circle-hidden",
+        "sec-leibniz-series",
+        "sec-primes"
+      ],
+      "quizzes": 1,
+      "js_matches_json": true,
+      "ok": true
+    },
+    "06": {
+      "course_id": "why_pi",
+      "sections": [
+        "sec-bell-curve",
+        "sec-herschel-maxwell",
+        "sec-integral-trick"
+      ],
+      "manifest_sections": [
+        "sec-bell-curve",
+        "sec-herschel-maxwell",
+        "sec-integral-trick"
+      ],
+      "quizzes": 1,
+      "js_matches_json": true,
+      "ok": true
+    },
+    "07": {
+      "course_id": "why_pi",
+      "sections": [
+        "sec-geometric-proof",
+        "sec-sin-integrals",
+        "sec-wallis-product"
+      ],
+      "manifest_sections": [
+        "sec-geometric-proof",
+        "sec-sin-integrals",
+        "sec-wallis-product"
+      ],
+      "quizzes": 1,
+      "js_matches_json": true,
+      "ok": true
+    },
+    "08": {
+      "course_id": "why_pi",
+      "sections": [
+        "sec-early-notation",
+        "sec-euler-pi",
+        "sec-today"
+      ],
+      "manifest_sections": [
+        "sec-early-notation",
+        "sec-euler-pi",
+        "sec-today"
+      ],
+      "quizzes": 1,
+      "js_matches_json": true,
+      "ok": true
+    }
+  },
+  "summary": {
+    "gold_errors": [],
+    "gold_tags": [
+      "b1b-article",
+      "b1b-back-to-top",
+      "b1b-bookmarks",
+      "b1b-callout",
+      "b1b-chapter-nav",
+      "b1b-figure",
+      "b1b-footer",
+      "b1b-formula",
+      "b1b-fullscreen",
+      "b1b-hero-player",
+      "b1b-narration-banner",
+      "b1b-navbar",
+      "b1b-quiz",
+      "b1b-quote",
+      "b1b-search-overlay",
+      "b1b-section",
+      "b1b-stepper",
+      "b1b-toc-sidebar",
+      "b1b-vector-decomposer",
+      "b1b-vector-plane",
+      "b1b-watch-panel"
+    ],
+    "passed": true
+  }
+}

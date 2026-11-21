@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>তথ্য তত্ত্ব দিয়ে ওয়ার্ডল সমাধান | Solving Wordle using information theory</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/computer_science/lesson_04/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="কম্পিউটার বিজ্ঞান"
+  course-url="../../index.html#computer-science"
+  home-url="../../index.html"
+  chapter-num="০৪"
+  chapter-total="১৩"
+  prev-url="lesson_03.html"
+  prev-title="পাঠ্যকে প্রতি অক্ষরে ১ বিটে সংকুচিত করা | কম্প্রেশন হলো বুদ্ধিমত্তা, পর্ব ৩"
+  next-url="lesson_05.html"
+  next-title="অপেক্ষা করুন, সেরা ওয়ার্ডল opener ''crane'' নয়…"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="কম্পিউটার বিজ্ঞান"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৪ · কম্পিউটার বিজ্ঞান"
+  title="তথ্য তত্ত্ব দিয়ে ওয়ার্ডল সমাধান | Solving Wordle using information theory"
+  desc="শ্যানন এন্ট্রপি, তথ্য লাভ ও সিদ্ধান্ত বৃক্ষ—একটি ওয়ার্ডল সলভার তৈরির গল্প দিয়ে তথ্য তত্ত্ব।"
+  video-src="../../media_vault/computer_science/lesson_04/experiments/3b1b_computer_science_04_full_dubbed.mp4"
+  yt-id="v68zYyaEmEA"
+  date="৬ ফেব্রুয়ারি, ২০২২"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2022/wordle/simulations.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">ওয়ার্ডলের নিয়ম</b1b-bookmark>
+      <b1b-bookmark time="70" time-bn="০১:১০">তথ্য লাভ</b1b-bookmark>
+      <b1b-bookmark time="160" time-bn="০২:৪০">এন্ট্রপি হিসাব</b1b-bookmark>
+      <b1b-bookmark time="260" time-bn="০৪:২০">crane</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-game">১. ওয়ার্ডল ও একটি স্বাভাবিক প্রশ্ন</a>
+      <a href="#sec-info">২. একটি অনুমান কত তথ্য দেয়</a>
+      <a href="#sec-entropy">৩. এন্ট্রপি হিসাব করে অনুমান বাছাই</a>
+      <a href="#sec-crane">৪. কেন ''crane'' একটি ভালো শব্দ</a>
+      <a href="#sec-strategy">৫. কৌশল ও সীমাবদ্ধতা</a>
+      <a href="#sec-lab">ইন্টারেক্টিভ — নিজের অনুমান যাচাই</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+    <b1b-section id="sec-game" title="১. ওয়ার্ডল ও একটি স্বাভাবিক প্রশ্ন">
+        <p>ওয়ার্ডলে আমরা ছয় বারে একটি পাঁচ-অক্ষরের শব্দ গুশে করি। প্রতিটি অনুমানের পর সবুজ, হলুদ ও ধূসর রঙ আমাদের কিছু তথ্য দেয়। প্রশ্ন হলো—কোন শব্দ দিয়ে শুরু করলে গড়ে সবচেয়ে বেশি তথ্য পাওয়া যায়?</p>
+        <b1b-figure src="../../assets/figures/cs04/cs04_f01.svg" alt="wordle-colors" caption="ওয়ার্ডলের প্রথম অনুমান ও রঙের প্রতিক্রিয়া"></b1b-figure>
+        <b1b-callout type="blue" icon="🎯" title="সমস্যা">
+          <p>কোন অনুমান সবচেয়ে ''তথ্যবহুল?' এর উত্তর দিতে আমাদের লাগবে শ্যাননের এন্ট্রপি।</p>
+        </b1b-callout>
+    </b1b-section>
+
+    <b1b-section id="sec-info" title="২. একটি অনুমান কত তথ্য দেয়">
+        <p>প্রতিটি অনুমানের ফলাফল একাধিক ''প্যাটার্ন''-এর একটি। যদি কোনো প্যাটার্ন খুব সম্ভাবনাময় হয়, সেটি কম তথ্য দেয়; বিরল প্যাটার্ন বেশি তথ্য দেয়। গড় তথ্য লাভ হলো সম্ভাবনা দ্বারা ওজন করা বিস্ময়।</p>
+        <b1b-formula math="IG(g) \;=\; -\sum_{o} p(o)\log_2 p(o)"></b1b-formula>
+        <b1b-figure src="../../assets/figures/cs04/cs04_f02.svg" alt="info-gain" caption="বিভিন্ন অনুমানের তথ্য লাভের তুলনা"></b1b-figure>
+        <p>অর্থাৎ যে অনুমানের ফলাফলগুলোর বন্টন যত ''সমান'', সেটি তত বেশি তথ্য দেয়—ঠিক যেমন সমান সম্ভাবনার এন্ট্রপি সর্বোচ্চ।</p>
+    </b1b-section>
+
+    <b1b-section id="sec-entropy" title="৩. এন্ট্রপি হিসাব করে অনুমান বাছাই">
+        <p>প্রতিটি সম্ভাব্য প্রথম শব্দের জন্য আমরা সমস্ত উত্তর শব্দের বিরুদ্ধে তার প্যাটার্ন বন্টন বের করি, তারপর এন্ট্রপি হিসাব করি। যে শব্দের এন্ট্রপি সবচেয়ে বেশি, সেটিই সেরা প্রথম অনুমান।</p>
+        <b1b-figure src="../../assets/figures/cs04/cs04_f03.svg" alt="wordle-ranking" caption="হাজারো সম্ভাব্য শব্দের এন্ট্রপি র্যাঙ্কিং"></b1b-figure>
+        <b1b-quote author="Claude Shannon">সেরা প্রশ্ন সেটিই যার উত্তর আমাদের সবচেয়ে বেশি অজানা তথ্য দেয়।</b1b-quote>
+
+        <b1b-quiz
+          question="❓ ওয়ার্ডলে কোন অনুমান ''সেরা'' বলে বিবেচিত হয়?"
+          correct="0"
+          correct-msg="সঠিক! সর্বোচ্চ এন্ট্রপি মানে সবচেয়ে বেশি গড় তথ্য লাভ।"
+          wrong-msg="আমরা তথ্য লাভ (এন্ট্রপি) বাড়াতে চাই, সবুজের সংখ্যা নয়।"
+          reveal-msg="সঠিক উত্তর: যার এন্ট্রপি সর্বোচ্চ।">
+          <div slot="option">যার এন্ট্রপি সর্বোচ্চ</div>
+          <div slot="option">যাতে সবুজ অক্ষর সবচেয়ে বেশি</div>
+          <div slot="option">যেটি সবচেয়ে ছোট</div>
+          <div slot="option">যেটি প্রথমে মনে আসে</div>
+        </b1b-quiz>
+    </b1b-section>
+
+    <b1b-section id="sec-crane" title="৪. কেন ''crane'' একটি ভালো শব্দ">
+        <p>গণনায় দেখা যায় ''crane''-এর মতো শব্দের প্রথম ধাপে প্রায় ৫.৯ বিট তথ্য পাওয়া যায়—যা তথ্য তত্ত্বের সর্বোচ্চ সীমার কাছাকাছি। এর কারণ হলো এর অক্ষরগুলো সাধারণ এবং সুবিতরিত।</p>
+        <b1b-figure src="../../assets/figures/cs04/cs04_f04.svg" alt="crane-tree" caption="''crane'' দিয়ে শুরু করার ফলাফল বৃক্ষ"></b1b-figure>
+        <p>তবে শুধু তথ্য লাভই সব কিছু নয়—পরের পাঠে আমরা দেখব এই ''সেরা'' শব্দের ধারণা কীভাবে বদলায়।</p>
+    </b1b-section>
+
+    <b1b-section id="sec-strategy" title="৫. কৌশল ও সীমাবদ্ধতা">
+        <p>সর্বোচ্চ এন্ট্রপি নির্বাচন একটি ''দ্বাপদ'' কৌশল—এটি গড়ে ভালো করলেও প্রতিটি খেলায় সেরা নয়। বাস্তবে খেলার গভীরতা ও শেষ উত্তরের সম্ভাবনাও বিবেচনা করতে হয়।</p>
+        <b1b-figure src="../../assets/figures/cs04/cs04_f05.svg" alt="wordle-tree" caption="ওয়ার্ডল সলভারের সিদ্ধান্ত বৃক্ষ"></b1b-figure>
+        <b1b-callout type="green" icon="🌱" title="ভবিষ্যতের দিকে">
+          <p>তথ্য তত্ত্ব আমাদের এক ''নীতি'' দেয়, কিন্তু সেই নীতিটি কখন ভুল—তা নিয়ে পরবর্তী পাঠ।</p>
+        </b1b-callout>
+    </b1b-section>
+
+    <b1b-section id="sec-lab" title="৬. ইন্টারেক্টিভ — নিজের অনুমান যাচাই" data-no-narration="true">
+      <p class="viz-intro">নিচের ইন্টারেক্টিভ উপাদান ও কুইজের মাধ্যমে পাঠের ধারণা নিজে যাচাই করুন।</p>
+      <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+        <figure class="interactive-figure"><img src="../../assets/figures/cs04/cs04_f06.svg" alt="এন্ট্রপি ও তথ্য লাভ—অ্যাকশনে"/><figcaption>এন্ট্রপি ও তথ্য লাভ—অ্যাকশনে</figcaption></figure>
+      </b1b-fullscreen>
+
+        <b1b-quiz
+          question="❓ দুটি ফলাফলের সম্ভাবনা যদি ০.৫ ও ০.৫ হয়, তাতে কত বিট তথ্য পাই?"
+          correct="1"
+          correct-msg="সঠিক! সমান দুটি ফলাফলের এন্ট্রপি $\log_2 2=1$ বিট।"
+          wrong-msg="সমান সম্ভাবনার দুটি বিকল্প মানে ১ বিট।"
+          reveal-msg="সঠিক উত্তর: ১ বিট।">
+          <div slot="option">০.৫ বিট</div>
+          <div slot="option">১ বিট</div>
+          <div slot="option">২ বিট</div>
+          <div slot="option">০ বিট</div>
+        </b1b-quiz>
+    </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/computer_science/lesson_04/experiments/3b1b_computer_science_04_full_dubbed.mp4"
+    yt-id="v68zYyaEmEA"
+    title="তথ্য তত্ত্ব দিয়ে ওয়ার্ডল সমাধান — অধ্যায় ০৪"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — কম্পিউটার বিজ্ঞান">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_03.html"
+  prev-title="পাঠ্যকে প্রতি অক্ষরে ১ বিটে সংকুচিত করা | কম্প্রেশন হলো বুদ্ধিমত্তা, পর্ব ৩"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_05.html"
+  next-title="অপেক্ষা করুন, সেরা ওয়ার্ডল opener ''crane'' নয়…"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

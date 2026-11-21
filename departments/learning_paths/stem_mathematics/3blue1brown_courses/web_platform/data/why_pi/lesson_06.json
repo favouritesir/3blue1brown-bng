@@ -1,0 +1,132 @@
+{
+  "lesson_id": "lesson_06",
+  "chapter_num": 6,
+  "course_id": "why_pi",
+  "title_en": "Why π is in the normal distribution (beyond integral tricks)",
+  "title_bn": "স্বাভাবিক বণ্টনে পাই কেন?",
+  "subtitle_bn": "গাউসিয়ান ইন্টিগ্রাল $\\int e^{-x^2}dx=\\sqrt{\\pi}$ এর পেছনের কৌশল এবং বেল-আকৃতির বণ্টন কেন স্বাভাবিক তা ব্যাখ্যা",
+  "official_url": "https://www.3blue1brown.com/lessons/gaussian-integral",
+  "video_src": "../../media_vault/why_pi/lesson_06/experiments/3b1b_why_pi_06_full_dubbed.mp4",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "22:44",
+    "date": "২ এপ্রিল, ২০২৩",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "The Gaussian integral is where the bell curve meets the circle.",
+    "quote_bn": "গাউসিয়ান ইন্টিগ্রালেই বেল-বক্ররেখা বৃত্তের সাথে মেলে।",
+    "author": "Grant Sanderson"
+  },
+  "sections": [
+    {
+      "id": "sec-bell-curve",
+      "title_bn": "বেল-আকৃতি ও গাউসিয়ান",
+      "title_en": "The Bell Curve and the Gaussian",
+      "summary_bn": "প্রকৃতির অসংখ্য পরিমাপ বেল-আকৃতির বণ্টন অনুসরণ করে—এবং তার সূত্রে হঠাৎ √π কোথা থেকে এসে যায়?",
+      "key_takeaways": [
+        "স্বাভাবিক বণ্টনের ঘনত্ব $f(x)\\propto e^{-x^2/2}$।",
+        "সম্পূর্ণ বক্ররেখার নিচের ক্ষেত্রফল ১ হতে হলে একটা স্কেলিং ধ্রুবক লাগে।",
+        "সেই ধ্রুবকের ভেতরেই লুকিয়ে আছে $\\sqrt{2\\pi}$—অর্থাৎ পাই।"
+      ],
+      "formulas": [
+        {
+          "label": "স্বাভাবিক বণ্টন",
+          "katex": "f(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_gauss_bell",
+          "caption_bn": "বেল-আকৃতির বক্ররেখা ও তার নিচের ক্ষেত্রফল",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_06/fig_gauss_bell.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-integral-trick",
+      "title_bn": "ইন্টিগ্রালের কৌশল",
+      "title_en": "The Classic Integration Trick",
+      "summary_bn": "$e^{-x^2}$ কে সরাসরি ইন্টিগ্রেট করা যায় না; কিন্তু দুইটি কপি নিয়ে দ্বিমাত্রিক ক্ষেত্রে নিলে পোলার কোঅর্ডিনেটে সহজে হয়ে যায়।",
+      "key_takeaways": [
+        "ধরি $I=\\int_{-\\infty}^{\\infty}e^{-x^2}dx$। তবে $I^2=\\iint e^{-(x^2+y^2)}dx\\,dy$।",
+        "পোলার কোঅর্ডিনেটে $x^2+y^2=r^2$ আর $dx\\,dy=r\\,dr\\,d\\theta$।",
+        "ফলাফল $I^2=\\pi$, অর্থাৎ $I=\\sqrt{\\pi}$।"
+      ],
+      "formulas": [
+        {
+          "label": "গাউসিয়ান ইন্টিগ্রাল",
+          "katex": "I=\\int_{-\\infty}^{\\infty}e^{-x^2}dx=\\sqrt{\\pi}"
+        },
+        {
+          "label": "দ্বিমাত্রিক কৌশল",
+          "katex": "I^2=\\int_0^{2\\pi}\\!\\!\\int_0^{\\infty} e^{-r^2}r\\,dr\\,d\\theta=\\pi"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_gauss_polar",
+          "caption_bn": "দ্বিমাত্রিক ক্ষেত্রে পোলার কোঅর্ডিনেট—পাই এখান থেকে আসে",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_06/fig_gauss_polar.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-herschel-maxwell",
+      "title_bn": "কেন এই বণ্টন স্বাভাবিক?",
+      "title_en": "The Herschel–Maxwell Derivation",
+      "summary_bn": "কয়েকটি স্বাভাবিক শর্ত (দিক-নিরপেক্ষতা, স্থান-নিরপেক্ষতা, স্বাধীনতা) থেকেই বেল-আকৃতির বণ্টন এবং তার স্কেলিং বের করা যায়—তাই √π-র উপস্থিতি যুক্তিসঙ্গত।",
+      "key_takeaways": [
+        "ভুলের পরিমাপ সব দিকে একই রকম হলে (দিক-নিরপেক্ষ) $x$ ও $y$ আলাদা হয়।",
+        "স্বাধীন উপাদানের ক্ষেত্রে $f(x)f(y)$ শুধু $x^2+y^2$-র ওপর নির্ভর করলে $f$ অবশ্যই $e^{-cx^2}$।",
+        "এই ডেরিভেশন বোঝায় কেন ইন্টিগ্রালের কৌশল কেবল কাকতালীয় নয়।"
+      ],
+      "formulas": [
+        {
+          "label": "ফলাফল",
+          "katex": "f(x)=A e^{-cx^2}\\;\\Rightarrow\\;\\int f = A\\sqrt{\\pi/c}=1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_gauss_normal",
+          "caption_bn": "স্বাভাবিক শর্ত থেকে বেল-বক্ররেখার উৎপত্তি",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_06/fig_gauss_normal.svg"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_gauss_value",
+      "course_id": "why_pi",
+      "lesson_id": "lesson_06",
+      "section_ref": "sec-integral-trick",
+      "question_bn": "গাউসিয়ান ইন্টিগ্রাল $\\int_{-\\infty}^{\\infty}e^{-x^2}dx$ এর মান কত?",
+      "question_en": "What is the value of the Gaussian integral?",
+      "options": [
+        "$\\pi$",
+        "$\\sqrt{\\pi}$",
+        "$\\pi^2$",
+        "$\\sqrt{2\\pi}$"
+      ],
+      "options_bn": [
+        "$\\pi$",
+        "$\\sqrt{\\pi}$",
+        "$\\pi^2$",
+        "$\\sqrt{2\\pi}$"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ঠিক! দ্বিমাত্রিক কৌশলে $I^2=\\pi$, তাই $I=\\sqrt{\\pi}$।",
+      "explanation_en": "",
+      "hint": "আগে $I^2$ হিসাব করো—সেটা হয় π।",
+      "hints": [
+        "আগে $I^2$ হিসাব করো—সেটা হয় π।"
+      ]
+    }
+  ]
+}

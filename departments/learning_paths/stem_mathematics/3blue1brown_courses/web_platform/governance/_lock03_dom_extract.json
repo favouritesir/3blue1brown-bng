@@ -1,0 +1,171 @@
+{
+  "sectionEls": [
+    {
+      "id": "sec-01-coin-toss-foundations",
+      "noNarration": null
+    },
+    {
+      "id": "sec-01-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-02-combinations-and-paths",
+      "noNarration": null
+    },
+    {
+      "id": "sec-02-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-03-pascals-triangle",
+      "noNarration": null
+    },
+    {
+      "id": "sec-03-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-04-binomial-pmf-and-moments",
+      "noNarration": null
+    },
+    {
+      "id": "sec-04-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-05-galton-board-and-clt",
+      "noNarration": null
+    },
+    {
+      "id": "sec-05-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-interactive-lab",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-quizzes",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-formulas-glossary",
+      "noNarration": "true"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-01-coin-toss-foundations",
+      "title": "১. মুদ্রা নিক্ষেপের প্রাথমিক জগত ও সম্ভাবনার স্পেস",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "১. মুদ্রা নিক্ষেপের প্রাথমিক জগত ও সম্ভাবনার স্পেস"
+        }
+      ]
+    },
+    {
+      "id": "sec-02-combinations-and-paths",
+      "title": "২. সমাবেশ\n(\n𝑛\n𝑘\n)\n(\nk\nn\n\t​\n\n)\nএবং গ্রিডে পথ গণনার জ্যামিতি",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "২. সমাবেশ\n(\n𝑛\n𝑘\n)\n(\nk\nn\n\t​\n\n)\nএবং গ্রিডে পথ গণনার জ্যামিতি"
+        }
+      ]
+    },
+    {
+      "id": "sec-03-pascals-triangle",
+      "title": "৩. প্যাসকেলের ত্রিভুজের জাদুকরী প্রতিসাম্য",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "৩. প্যাসকেলের ত্রিভুজের জাদুকরী প্রতিসাম্য"
+        }
+      ]
+    },
+    {
+      "id": "sec-04-binomial-pmf-and-moments",
+      "title": "৪. দ্বিপদী সম্ভাব্যতা ফাংশন (PMF), গড় ও ভেদাঙ্ক",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "৪. দ্বিপদী সম্ভাব্যতা ফাংশন (PMF), গড় ও ভেদাঙ্ক"
+        }
+      ]
+    },
+    {
+      "id": "sec-05-galton-board-and-clt",
+      "title": "৫. গ্যালটন বোর্ড ও গাউসিয়ান বেল কার্ভের রূপান্তর",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "৫. গ্যালটন বোর্ড ও গাউসিয়ান বেল কার্ভের রূপান্তর"
+        }
+      ]
+    }
+  ],
+  "engine": [
+    {
+      "id": "sec-01-coin-toss-foundations",
+      "blockCount": 1,
+      "types": [
+        "h2"
+      ]
+    },
+    {
+      "id": "sec-02-combinations-and-paths",
+      "blockCount": 1,
+      "types": [
+        "h2"
+      ]
+    },
+    {
+      "id": "sec-03-pascals-triangle",
+      "blockCount": 1,
+      "types": [
+        "h2"
+      ]
+    },
+    {
+      "id": "sec-04-binomial-pmf-and-moments",
+      "blockCount": 1,
+      "types": [
+        "h2"
+      ]
+    },
+    {
+      "id": "sec-05-galton-board-and-clt",
+      "blockCount": 1,
+      "types": [
+        "h2"
+      ]
+    }
+  ],
+  "manifestPresent": true,
+  "manifestKeys": [
+    "sec-01-coin-toss-foundations",
+    "sec-02-combinations-and-paths",
+    "sec-03-pascals-triangle",
+    "sec-04-binomial-pmf-and-moments",
+    "sec-05-galton-board-and-clt"
+  ],
+  "page_errors": [],
+  "console_errors": [
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND"
+  ]
+}

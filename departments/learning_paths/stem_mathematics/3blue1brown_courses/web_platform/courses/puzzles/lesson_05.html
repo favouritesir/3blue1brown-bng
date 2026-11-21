@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>এই প্যাটার্ন ভেঙে পড়ে — কিন্তু কারণ আছে | This pattern breaks, but for a good reason | Moser&#x27;s circle problem</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/puzzles/lesson_05/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="ধাঁধা"
+  course-url="index.html"
+  home-url="../../index.html"
+  chapter-num="০৫"
+  chapter-total="১০"
+  prev-url="lesson_04.html"
+  prev-title="পূর্ববর্তী: অ্যালিস, বব ও ঘনকের গড় ছায়া"
+  next-url="lesson_06.html"
+  next-title="পরবর্তী: বাক্সের বাইরে ভাবার পাঁচটি ধাঁধা"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="ধাঁধা"
+  course-url="index.html"
+  chapter-label="অধ্যায় ০৫ · ধাঁধা"
+  title="এই প্যাটার্ন ভেঙে পড়ে — কিন্তু কারণ আছে | This pattern breaks, but for a good reason | Moser&#x27;s circle problem"
+  desc="বৃত্তের বিন্দুকে রেখা দিয়ে জোড়া দিলে যতগুলো অঞ্চল তৈরি হয় — এক সময় প্যাটার্ন ভেঙে পড়ে। কেন?"
+  video-src="../../media_vault/puzzles/lesson_05/experiments/3b1b_puzzles_05_full_dubbed.mp4"
+  yt-id="YtkIWDE36qU"
+  date="১ জুলাই, ২০২৩"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">প্রলোভনসংকুল প্যাটার্ন</b1b-bookmark>
+      <b1b-bookmark time="51" time-bn="০০:৫১">সঠিক গণনা</b1b-bookmark>
+      <b1b-bookmark time="100" time-bn="০১:৪০">কেন ৩২ নয়</b1b-bookmark>
+      <b1b-bookmark time="143" time-bn="০২:২৩">সাধারণীকরণ</b1b-bookmark>
+      <b1b-bookmark time="182" time-bn="০৩:০২">শিক্ষণীয় বিষয়</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-pattern">প্রলোভনসংকুল প্যাটার্ন</a>
+      <a href="#sec-count">সঠিক গণনা</a>
+      <a href="#sec-break">কেন ৩২ নয়</a>
+      <a href="#sec-general">সাধারণীকরণ</a>
+      <a href="#sec-takeaway">শিক্ষণীয় বিষয়</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <b1b-section id="sec-pattern" title="প্রলোভনসংকুল প্যাটার্ন">
+        <p>বৃত্তের উপর n টি বিন্দু নিয়ে প্রতি জোড়াকে রেখা দিয়ে জোড়া দিন। সর্বোচ্চ কতগুলো অঞ্চল তৈরি হয়? প্রথম কয়েকটি উত্তর: ১, ২, ৪, ৮, ১৬।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_05/f01_circle.svg" alt="বৃত্ত ও রেখা" caption="বৃত্তের বিন্দুগুলোকে জোড়া দেওয়া রেখাগুলো অঞ্চল তৈরি করে"></b1b-figure>
+        <p>স্বাভাবিকভাবেই মনে হয় পরবর্তী উত্তর ৩২ হবে। কিন্তু ৬টি বিন্দুর ক্ষেত্রে পাওয়া যায় ৩১ — প্যাটার্ন ভেঙে পড়ে।</p>
+        <b1b-callout type="gold" icon="⚡" title="আশ্চর্য">
+          <p>১, ২, ৪, ৮, ১৬, … ৩১ — প্রথম পাঁচটি ক্ষেত্রে ২-র ঘাত, ষষ্ঠে নয়। গণিতে এমন “ভাঙা প্যাটার্ন” অন্য কিছু শিখায়।</p>
+        </b1b-callout>
+      </b1b-section>
+      <b1b-section id="sec-count" title="সঠিক গণনা">
+        <p>প্রতিটি নতুন রেখা যতগুলো পুরনো রেখাকে ছেদ করে, ততগুলো নতুন অঞ্চল যোগ করে। মোট অঞ্চল = শুরুর ১ + রেখার সংখ্যা + ছেদবিন্দুর সংখ্যা।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_05/f02_chords.svg" alt="জ্যা ও ছেদবিন্দু" caption="প্রতিটি ছেদবিন্দু নতুন অঞ্চল তৈরি করে"></b1b-figure>
+        <p>রেখার সংখ্যা C(n,2)। ছেদবিন্দুর সংখ্যা C(n,4) — কারণ যেকোনো চার বিন্দু থেকে ঠিক একটি ছেদবিন্দু পাওয়া যায়।</p>
+        <b1b-formula math="R(n)=\binom{n}{4}+\binom{n}{2}+1"></b1b-formula>
+      </b1b-section>
+      <b1b-section id="sec-break" title="কেন ৩২ নয়">
+        <p>n = 6-এ C(6,4) = 15, C(6,2) = 15। সুতরাং R = 15 + 15 + 1 = 31, 32 নয়।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_05/f03_break.svg" alt="ভাঙা প্যাটার্ন" caption="১, ২, ৪, ৮, ১৬, ৩১ — ষষ্ঠ পদে ২-র ঘাত ভেঙে পড়ে"></b1b-figure>
+        <b1b-quiz
+          question="❓ বৃত্তের ৬টি বিন্দু দিয়ে সর্বোচ্চ কতগুলো অঞ্চল তৈরি হয়?"
+          correct="1"
+          correct-msg="চমৎকার! R(6) = C(6,4) + C(6,2) + 1 = 15 + 15 + 1 = 31। ২-র ঘাত-ধারণা এখানে ভেঙে পড়ে।"
+          wrong-msg="আবার ভেবে দেখুন। ইঙ্গিত: C(6,4) = 15 এবং C(6,2) = 15 — যোগ করে ১ বাড়ান।"
+          reveal-msg="সঠিক উত্তর: ৩১">
+          <div slot="option">৩২</div>
+          <div slot="option">৩১</div>
+          <div slot="option">৩০</div>
+          <div slot="option">৬৪</div>
+        </b1b-quiz>
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin: 24px 0 12px; color: var(--theme);">গভীর কারণ</h3>
+        <p>২-র ঘাত আসত যদি প্রতিটি নতুন বিন্দু আগের সব রেখাকে নতুনভাবে ছেদ করত। কিন্তু ৬টি বিন্দুতে কিছু ছেদ একই জায়গায় মিলে যায় — এই “সংঘর্ষ”-এই ৩২ কে ৩১ করে দেয়।</p>
+      </b1b-section>
+      <b1b-section id="sec-general" title="সাধারণীকরণ">
+        <p>মোজারের মূল প্রশ্ন ছিল বৃত্ত নয়, গোলক: গোলকের বিন্দুগুলোকে বড় বৃত্ত দিয়ে ভাগ করলে কতগুলো অঞ্চল? সেখানেও একই ধরনের বহুপদী উত্তর আসে।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_05/f04_sphere.svg" alt="গোলকে ভাগ" caption="গোলকের উপর বৃহত্তম বৃত্ত দিয়ে পৃষ্ঠ ভাগ করা"></b1b-figure>
+        <p>এখানে শিক্ষা হলো — “প্যাটার্ন দেখে উত্তর বলা” এবং “গঠন বুঝে উত্তর বের করা” এক জিনিস নয়। দ্বিতীয়টি কঠিন, কিন্তু নির্ভরযোগ্য।</p>
+      </b1b-section>
+      <b1b-section id="sec-takeaway" title="শিক্ষণীয় বিষয়">
+        <p>গণিতবিদেরা প্যাটার্ন ভাঙাকে ব্যর্থতা হিসেবে দেখেন না; এটি নতুন গঠন আবিষ্কারের সংকেত।</p>
+        <p>পরবর্তী পাঠে আমরা দেখব কীভাবে উচ্চ মাত্রা ব্যবহার করে এ ধরনের জ্যামিতিক জটিলতা সরল করা যায়।</p>
+      </b1b-section>
+
+      <!-- ═══ Practice — excluded from narration ═══ -->
+      <b1b-section id="sec-practice" title="অনুশীলন ও সারসংক্ষেপ" data-no-narration="true">
+        <p>পাঠের মূল ধারণাটি নিজের ভাষায় বলে দেখুন, তারপর নিচের প্রশ্নের উত্তর দিন।</p>
+        <b1b-quiz
+          question="❓ এই পাঠের মূল ধারণা কোনটি?"
+          correct="1"
+          correct-msg="চমৎকার! এই কোর্সজুড়ে আমরা দেখেছি — ইনভ্যারিয়েন্ট, কোডিং, জ্যামিতি বা টপোলজি যাই হোক, সঠিক দৃষ্টিভঙ্গিই সমাধানের চাবি।"
+          wrong-msg="আবার ভেবে দেখুন। ইঙ্গিত: “দৃষ্টিভঙ্গি” শব্দটি মনে রাখুন।"
+          reveal-msg="সঠিক উত্তর: সঠিক দৃষ্টিভঙ্গি বা কাঠামো খুঁজে পেলে কঠিন ধাঁধাও সরল হয়">
+          <div slot="option">ধাঁধা মানেই ভাগ্যের ব্যাপার</div>
+          <div slot="option">সঠিক দৃষ্টিভঙ্গি বা কাঠামো খুঁজে পেলে কঠিন ধাঁধাও সরল হয়</div>
+          <div slot="option">সব উত্তর মুখস্থ করতে হয়</div>
+          <div slot="option">গণিত কেবল সংখ্যা নিয়ে কাজ করে</div>
+        </b1b-quiz>
+        <b1b-callout type="green" icon="✅" title="পরবর্তী পাঠ">
+          <p>পরবর্তী অধ্যায়ে আমরা আরেকটি ধাঁধা নিয়ে কাজ করব। প্রতিটি পাঠেই নতুন একটি দৃষ্টিভঙ্গি যোগ হবে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/puzzles/lesson_05/experiments/3b1b_puzzles_05_full_dubbed.mp4"
+    yt-id="YtkIWDE36qU"
+    title="এই প্যাটার্ন ভেঙে পড়ে — কিন্তু কারণ আছে | This pattern breaks, but for a good reason | Moser&#x27;s circle problem"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — ধাঁধা">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_04.html"
+  prev-title="পূর্ববর্তী: অ্যালিস, বব ও ঘনকের গড় ছায়া"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_06.html"
+  next-title="পরবর্তী: বাক্সের বাইরে ভাবার পাঁচটি ধাঁধা"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

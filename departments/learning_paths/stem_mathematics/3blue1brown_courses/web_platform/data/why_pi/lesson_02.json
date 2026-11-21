@@ -1,0 +1,184 @@
+{
+  "lesson_id": "lesson_02",
+  "chapter_num": 2,
+  "course_id": "why_pi",
+  "title_en": "Why colliding blocks compute pi",
+  "title_bn": "সংঘর্ষরত ব্লকরা কীভাবে পাই গণনা করে",
+  "subtitle_bn": "বেগ-ফেজ স্পেস, শক্তি ও ভরবেগের সংরক্ষণ এবং অন্তর্লিখিত কোণ—এই টুলগুলো দিয়ে পাইয়ের আবির্ভাবের পেছনের পদার্থবিজ্ঞান খোলা",
+  "official_url": "https://www.3blue1brown.com/lessons/colliding-blocks-v2",
+  "video_src": "../../media_vault/why_pi/lesson_02/experiments/3b1b_why_pi_02_full_dubbed.mp4",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "10:46",
+    "date": "১৩ মার্চ, ২০২৫",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "A change of perspective is worth 80 IQ points.",
+    "quote_bn": "দৃষ্টিভঙ্গির একটা বদল ৮০ আইকিউ পয়েন্টের মতো।",
+    "author": "Alan Kay"
+  },
+  "sections": [
+    {
+      "id": "sec-conservation",
+      "title_bn": "শক্তি ও ভরবেগের সংরক্ষণ",
+      "title_en": "Conservation of Energy and Momentum",
+      "summary_bn": "সংঘর্ষের পর ব্লকদের বেগ বের করতে হলে শক্তি ও ভরবেগ—এই দুটি সংরক্ষণ আইনই যথেষ্ট।",
+      "key_takeaways": [
+        "মোট গতিশক্তি $\\tfrac12 m_1 v_1^2+\\tfrac12 m_2 v_2^2$ সংঘর্ষের সময় ধ্রুবক থাকে।",
+        "মোট ভরবেগ $m_1 v_1+m_2 v_2$ ব্লক-সংঘর্ষে ধ্রুবক, কিন্তু দেয়ালে ঠুকে ছোট ব্লকের ভরবেগ বদলায়।",
+        "দুটি অজানা বেগ ও দুটি সমীকরণ—তাই সমাধান নির্ণেয়।"
+      ],
+      "formulas": [
+        {
+          "label": "গতিশক্তি ও ভরবেগ",
+          "katex": "E=\\tfrac12 m_1 v_1^2+\\tfrac12 m_2 v_2^2,\\qquad p=m_1 v_1+m_2 v_2"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_v2_conservation",
+          "caption_bn": "দুটি সংরক্ষণ আইনই বেগের পরিবর্তন নির্ধারণ করে",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_02/fig_v2_conservation.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-phase-circle",
+      "title_bn": "বেগ-ফেজ স্পেসে বৃত্ত",
+      "title_en": "The Circle in Velocity Phase Space",
+      "summary_bn": "বেগগুলোকে স্থানাঙ্ক ধরে শক্তির সমীকরণ আঁকলে একটি উপবৃত্ত পাই; ভর দিয়ে স্কেল করলে সেটি হয়ে যায় নিখুঁত বৃত্ত।",
+      "key_takeaways": [
+        "$x=\\sqrt{m_1}v_1$, $y=\\sqrt{m_2}v_2$ স্কেলে শক্তির সমীকরণ হয় $x^2+y^2=\\text{const}$—একটি বৃত্ত।",
+        "বৃত্তের ওপর প্রতিটি বিন্দু এক জোড়া বেগের প্রতিনিধিত্ব করে যারা একই শক্তি বহন করে।",
+        "শুরুতে বড় ব্লক বাঁ dικে যাচ্ছে (x ঋণাত্মক) আর ছোটটি স্থির (y = 0)—অর্থাৎ বৃত্তের বাঁ-প্রান্তে আছি।"
+      ],
+      "formulas": [
+        {
+          "label": "স্কেল করা স্থানাঙ্কে বৃত্ত",
+          "katex": "x=\\sqrt{m_1}v_1,\\;y=\\sqrt{m_2}v_2\\;\\Rightarrow\\;\\tfrac12(x^2+y^2)=E"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_v2_circle",
+          "caption_bn": "উপবৃত্তকে স্কেল করে নিখুঁত বৃত্ত বানানো হলো",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_02/fig_v2_circle.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-momentum-line",
+      "title_bn": "ভরবেগের রেখা ও ফেজের লাফ",
+      "title_en": "The Momentum Line and Phase Jumps",
+      "summary_bn": "ভরবেগের সংরক্ষণ একটি সরলরেখা দিয়ে প্রকাশ পায়; বৃত্ত আর রেখার ছেদবিন্দুই বলে দেয় সংঘর্ষের পরের বেগ।",
+      "key_takeaways": [
+        "স্কেল করা অক্ষে $\\sqrt{m_1}x+\\sqrt{m_2}y=\\text{const}$ একটি সরলরেখা, যার ঢাল $-\\sqrt{m_1/m_2}$।",
+        "বৃত্ত ও রেখার দুটি ছেদবিন্দুর মাঝেই সংঘর্ষের আগে-পরে বেগের লাফ ঘটে।",
+        "ছোট ব্লক দেয়ালে ঠুকে $y$-এর চিহ্ন বদলায়—ফেজ ডায়াগ্রামে x-অক্ষের সাপেক্ষে প্রতিফলন।"
+      ],
+      "formulas": [
+        {
+          "label": "ভরবেগ সংরক্ষণের রেখা",
+          "katex": "\\sqrt{m_1}\\,x+\\sqrt{m_2}\\,y=\\text{const},\\qquad \\text{slope}=-\\sqrt{\\tfrac{m_1}{m_2}}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_v2_line",
+          "caption_bn": "বৃত্ত আর ভরবেগের রেখার ছেদবিন্দুতেই লাফ ঘটে",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_02/fig_v2_line.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-inscribed-angle",
+      "title_bn": "অন্তর্লিখিত কোণ ও থিটা হিসাব",
+      "title_en": "Inscribed Angle and Computing Theta",
+      "summary_bn": "প্রতিটি লাফ বৃত্তে সমান 2θ চাপ তৈরি করে; θ = arctan(√(m₂/m₁)) ছোট হলে তার মান প্রায়ই √(−) হয়, আর তাই অঙ্কগুলো পাইয়ের মতো দেখায়।",
+      "key_takeaways": [
+        "অন্তর্লিখিত কোণের উপপাদ্য অনুযায়ী প্রতিটি লাফের মাঝের চাপ $2\\theta$ রেডিয়ান।",
+        "মোট চাপ $2\\pi$ অতিক্রম না করা পর্যন্ত লাফ চলে: $N\\cdot\\theta<\\pi$।",
+        "$\\theta=\\arctan\\!\\left(\\sqrt{m_2/m_1}\\right)$, আর ছোট $x$-এর জন্য $\\arctan x\\approx x$—তাই ভর ১০০-এর ঘাত হলে অঙ্কগুলো পাইয়ের মতো হয়।"
+      ],
+      "formulas": [
+        {
+          "label": "থিটার মান",
+          "katex": "\\theta=\\arctan\\!\\left(\\sqrt{\\tfrac{m_2}{m_1}}\\right)\\approx\\sqrt{\\tfrac{m_2}{m_1}}"
+        },
+        {
+          "label": "সংঘর্ষের সংখ্যা",
+          "katex": "N\\cdot\\theta<\\pi\\;\\Rightarrow\\;N=\\left\\lfloor\\tfrac{\\pi}{\\theta}\\right\\rfloor"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_v2_theta",
+          "caption_bn": "সমান চাপ 2θ আর π-র সাথে তুলনা",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_02/fig_v2_theta.svg"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_v2_theta",
+      "course_id": "why_pi",
+      "lesson_id": "lesson_02",
+      "section_ref": "sec-inscribed-angle",
+      "question_bn": "ভর অনুপাত ১০০ : ১ হলে ফেজ ডায়াগ্রামে θ-র মান কত?",
+      "question_en": "For a 100:1 mass ratio, what is the angle theta?",
+      "options": [
+        "$\\arctan(1/10)$",
+        "$\\arctan(10)$",
+        "$\\pi/10$",
+        "$1/100$"
+      ],
+      "options_bn": [
+        "$\\arctan(1/10)$",
+        "$\\arctan(10)$",
+        "$\\pi/10$",
+        "$1/100$"
+      ],
+      "correct_index": 0,
+      "explanation_bn": "ঠিক! θ = arctan(√(m₂/m₁)) = arctan(1/10), কারণ √(1/100) = 1/10।",
+      "explanation_en": "",
+      "hint": "θ = arctan(√(m₂/m₁)) সূত্রটি প্রয়োগ করো।",
+      "hints": [
+        "θ = arctan(√(m₂/m₁)) সূত্রটি প্রয়োগ করো।"
+      ]
+    },
+    {
+      "id": "quiz_v2_arc",
+      "course_id": "why_pi",
+      "lesson_id": "lesson_02",
+      "section_ref": "sec-inscribed-angle",
+      "question_bn": "প্রতিটি সংঘর্ষ বৃত্তে কত radian চাপ তৈরি করে?",
+      "question_en": "How much arc (in radians) does each collision cover?",
+      "options": [
+        "$\\theta$",
+        "$2\\theta$",
+        "$\\pi$",
+        "$2\\pi$"
+      ],
+      "options_bn": [
+        "$\\theta$",
+        "$2\\theta$",
+        "$\\pi$",
+        "$2\\pi$"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "সঠিক! অন্তর্লিখিত কোণের উপপাদ্য অনুযায়ী প্রতিটি লাফ 2θ চাপ জুড়ে যায়।",
+      "explanation_en": "",
+      "hint": "অন্তর্লিখিত কোণ = θ, কেন্দ্রীয় কোণ = 2θ।",
+      "hints": [
+        "অন্তর্লিখিত কোণ = θ, কেন্দ্রীয় কোণ = 2θ।"
+      ]
+    }
+  ]
+}

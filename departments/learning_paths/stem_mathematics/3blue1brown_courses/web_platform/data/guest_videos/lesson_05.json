@@ -1,0 +1,241 @@
+{
+  "lesson_id": "lesson_05",
+  "chapter_num": 5,
+  "course_id": "guest_videos",
+  "title_en": "What was Euclid really doing? | Guest video by Ben Syversen",
+  "title_bn": "ইউক্লিড আসলে কী করছিলেন?",
+  "subtitle_bn": "ইউক্লিডের এলিমেন্টস, রুলার ও কম্পাস নির্মাণ, এবং স্বতঃসিদ্ধ পদ্ধতির প্রকৃত উদ্দেশ্য — এক ঐতিহাসিক ও দার্শনিক অন্বেষণ",
+  "video_id": "M-MgQC6z3VU",
+  "youtube_id": "M-MgQC6z3VU",
+  "author": "Ben Syversen",
+  "official_url": "https://www.3blue1brown.com/lessons/euclid",
+  "oembed": {
+    "url": "https://www.youtube.com/watch?v=M-MgQC6z3VU",
+    "author_name": "3Blue1Brown",
+    "author_url": "https://www.youtube.com/@3blue1brown",
+    "verified": true
+  },
+  "meta": {
+    "credits": "Ben Syversen",
+    "author": "Ben Syversen",
+    "author_bn": "বেন সাইভারসেন (Ben Syversen)",
+    "host_channel": "3Blue1Brown",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "২২:৪৯",
+    "description_en": "The history of Euclid's Elements and the real role ruler-and-compass constructions served.",
+    "date_published": "১৭ সেপ্টেম্বর, ২০২৫",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "There is no royal road to geometry — only a patient one, built from axioms.",
+    "quote_bn": "জ্যামিতিতে কোনো রাজা-পথ নেই — আছে শুধু একটি ধৈর্যশীল পথ, যা স্বতঃসিদ্ধ দিয়ে গড়া।",
+    "author": "Ben Syversen (বেন সাইভারসেন)"
+  },
+  "sections": [
+    {
+      "id": "sec-01-elements",
+      "title_bn": "এলিমেন্টস: এক অসাধারণ বই",
+      "title_en": "The Elements: an extraordinary book",
+      "summary_bn": "খ্রিস্টপূর্ব ৩০০ অব্দে রচিত ইউক্লিডের এলিমেন্টস দুই হাজার বছর ধরে গণিত শিক্ষার ভিত্তি — কিন্তু এর প্রকৃত উদ্দেশ্য কী ছিল?",
+      "key_takeaways": [
+        "এলিমেন্টস ১৩টি খণ্ডে বিভক্ত, যেখানে সংজ্ঞা, স্বতঃসিদ্ধ ও উপপাদ্যের একটি সুসংগঠিত ক্রম রয়েছে।",
+        "এটি শুধু ফলাফলের সংগ্রহ নয় — এটি একটি পদ্ধতির প্রদর্শনী, যেখানে প্রতিটি বিবৃতি আগেরটির ওপর ভিত্তি করে।",
+        "বইটির শৈলী এত প্রভাবশালী যে পরবর্তী দুই সহস্রাব্দে গণিত লেখার ধরনই বদলে দিয়েছে।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_elements",
+          "caption_bn": "ইউক্লিডের এলিমেন্টস",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_05/fig_elements.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "figure",
+        "p",
+        "callout",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-02-postulates",
+      "title_bn": "পাঁচটি স্বতঃসিদ্ধ ও নির্মাণের নিয়ম",
+      "title_en": "The five postulates and the rules of construction",
+      "summary_bn": "ই�ক্লিড শুরু করেছেন পাঁচটি স্বতঃসিদ্ধ দিয়ে — সরল রেখা, বৃত্ত ও কয়েকটি মৌলিক অনুমান, যার ওপর পুরো কাঠামো দাঁড়িয়ে।",
+      "key_takeaways": [
+        "প্রথম স্বতঃসিদ্ধ: যেকোনো দুটি বিন্দুর মধ্যে একটি সরল রেখা টানা যায়।",
+        "দ্বিতীয়: যেকোনো সরল রেখা উভয় দিকে অসীমভাবে বাড়ানো যায়। তৃতীয়: যেকোনো কেন্দ্র ও ব্যাসার্ধ দিয়ে বৃত্ত আঁকা যায়।",
+        "চতুর্থ ও পঞ্চম স্বতঃসিদ্ধ সমকোণ ও সমান্তরাল রেখা সম্পর্কে — পঞ্চমটি পরে সমান্তরাল তত্ত্বের জন্ম দেয়।"
+      ],
+      "formulas": [
+        {
+          "label": "মৌলিক নির্মাণ নিয়ম",
+          "katex": "\\text{রেখা: } \\overline{AB}\\quad\\text{বৃত্ত: } \\odot(O,r)"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_postulates",
+          "caption_bn": "পাঁচটি স্বতঃসিদ্ধের চিত্র",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_05/fig_postulates.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "formula",
+        "figure",
+        "p",
+        "callout",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-03-construction",
+      "title_bn": "নির্মাণ কেন? ফলাফল নয়, উপায়",
+      "title_en": "Why constructions? The method, not the result",
+      "summary_bn": "ইউক্লিডের কাছে কোনো বস্তুর 'অস্তিত্ব' মানে হলো তাকে রুলার ও কম্পাস দিয়ে তৈরি করা যায় — অঙ্কন itself হলো প্রমাণ।",
+      "key_takeaways": [
+        "গ্রীক গণিতে 'নির্মাণযোগ্যতা' ছিল অস্তিত্বের মানদণ্ড — আঁকতে না পারলে সেটি বিবেচনাযোগ্য নয়।",
+        "প্রতিটি উপপাদ্যের সাথে একটি নির্মাণ-পদ্ধতি থাকে: প্রথমে অঙ্কন, তারপর যুক্তি দিয়ে সেটির সত্যতা প্রমাণ।",
+        "এই কারণে ইউক্লিডের জ্যামিতি হলো 'গতিশীল' — এতে কেবল চিত্র নয়, কীভাবে চিত্রটি তৈরি হয় তাও আছে।"
+      ],
+      "formulas": [
+        {
+          "label": "সমবাহু ত্রিভুজ নির্মাণ",
+          "katex": "C=\\odot(A,AB)\\cap\\odot(B,AB)"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_construct",
+          "caption_bn": "সমদ্বিভুজক নির্মাণ",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_05/fig_construct.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "figure",
+        "p",
+        "formula",
+        "callout",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-04-legacy",
+      "title_bn": "স্বতঃসিদ্ধ পদ্ধতি ও ইউক্লিডের উত্তরাধিকার",
+      "title_en": "The axiomatic method and Euclid's legacy",
+      "summary_bn": "ইউক্লিডের আসল উত্তরাধিকার হলো স্বতঃসিদ্ধ পদ্ধতি — এক ধরনের চিন্তার কাঠামো, যা গণিতের বাইরেও বিজ্ঞান ও দর্শনে ছড়িয়ে পড়েছে।",
+      "key_takeaways": [
+        "স্বতঃসিদ্ধ পদ্ধতি: কয়েকটি স্বীকৃত সত্য থেকে যুক্তি দিয়ে বাকি সব বের করা।",
+        "এই পদ্ধতি নিউটনের বলবিদ্যা, আইনস্টাইনের আপেক্ষিকতা এমনকি কম্পিউটার বিজ্ঞানেও প্রয়োগ হয়েছে।",
+        "ইউক্লিড শিখিয়েছেন শুধু জ্যামিতি নয় — কীভাবে কোনো বিষয়কে যুক্তিপূর্ণভাবে ভাবতে হয়।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_legacy",
+          "caption_bn": "স্বতঃসিদ্ধ থেকে উপপাদ্য — জ্ঞানের কাঠামো",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_05/fig_legacy.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "figure",
+        "quote",
+        "p",
+        "p"
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_postulate",
+      "section_ref": "sec-02-postulates",
+      "question_bn": "ইউক্লিডের প্রথম তিনটি স্বতঃসিদ্ধ কোন দুটি হাতিয়ারের ওপর ভিত্তি করে?",
+      "question_en": "Which two tools underlie Euclid's first three postulates?",
+      "options": [
+        "রুলার ও কম্পাস",
+        "থার্মোমিটার ও ঘড়ি",
+        "স্কেল ও প্রTRACTOR",
+        "ক্যালকুলেটর"
+      ],
+      "options_bn": [
+        "রুলার ও কম্পাস",
+        "থার্মোমিটার ও ঘড়ি",
+        "স্কেল ও প্রTRACTOR",
+        "ক্যালকুলেটর"
+      ],
+      "correct_index": 0,
+      "explanation_bn": "দুটি বিন্দুর মাঝে রেখা টানা (রুলার) ও যেকোনো কেন্দ্র-ব্যাসার্ধ দিয়ে বৃত্ত আঁকা (কম্পাস) — এই দুটি নিয়মই প্রথম তিনটি স্বতঃসিদ্ধের ভিত্তি।",
+      "explanation_en": "দুটি বিন্দুর মাঝে রেখা টানা (রুলার) ও যেকোনো কেন্দ্র-ব্যাসার্ধ দিয়ে বৃত্ত আঁকা (কম্পাস) — এই দুটি নিয়মই প্রথম তিনটি স্বতঃসিদ্ধের ভিত্তি।",
+      "hint": "রেখা আর বৃত্তের কথা ভাবুন।",
+      "hints": [
+        "রেখা আর বৃত্তের কথা ভাবুন।"
+      ]
+    },
+    {
+      "id": "quiz_02_axiom",
+      "section_ref": "sec-04-legacy",
+      "question_bn": "ইউক্লিডের সবচেয়ে বড় অবদান কী?",
+      "question_en": "What was Euclid's greatest contribution?",
+      "options": [
+        "কয়েকটি নতুন উপপাদ্য আবিষ্কার",
+        "স্বতঃসিদ্ধ পদ্ধতি — যুক্তিপূর্ণ কাঠামোর ভিত্তি",
+        "কম্পাস আবিষ্কার",
+        "জ্যামিতি বন্ধ করে দেওয়া"
+      ],
+      "options_bn": [
+        "কয়েকটি নতুন উপপাদ্য আবিষ্কার",
+        "স্বতঃসিদ্ধ পদ্ধতি — যুক্তিপূর্ণ কাঠামোর ভিত্তি",
+        "কম্পাস আবিষ্কার",
+        "জ্যামিতি বন্ধ করে দেওয়া"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "তার শ্রেষ্ঠ অবদান হলো পদ্ধতিটি — কয়েকটি স্বতঃসিদ্ধ থেকে যুক্তি দিয়ে বাকি সব বের করার এই কাঠামো, যা পরবর্তী গণিতের ভিত্তি হয়ে উঠেছে।",
+      "explanation_en": "তার শ্রেষ্ঠ অবদান হলো পদ্ধতিটি — কয়েকটি স্বতঃসিদ্ধ থেকে যুক্তি দিয়ে বাকি সব বের করার এই কাঠামো, যা পরবর্তী গণিতের ভিত্তি হয়ে উঠেছে।",
+      "hint": "উপপাদ্যের চেয়ে পদ্ধতির কথা ভাবুন।",
+      "hints": [
+        "উপপাদ্যের চেয়ে পদ্ধতির কথা ভাবুন।"
+      ]
+    }
+  ],
+  "lab": {
+    "title": "ইন্টারেক্টিভ ল্যাব: কম্পাস ও রুলার",
+    "desc_bn": "দুটি বিন্দু বেছে কম্পাস ও রুলার ব্যবহার করে দেখুন কীভাবে একটি নির্মাণ ধাপে ধাপে সম্পন্ন হয়।",
+    "data_no_narration": true
+  },
+  "narration_manifest": "assets/audio/guest_videos/lesson_05/manifest.json",
+  "video_src": "../../media_vault/guest_videos/lesson_05/experiments/3b1b_guest_videos_05_full_dubbed.mp4",
+  "figure_assets": [
+    {
+      "id": "fig_elements",
+      "caption_bn": "ইউক্লিডের এলিমেন্টস",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_05/fig_elements.svg"
+    },
+    {
+      "id": "fig_postulates",
+      "caption_bn": "পাঁচটি স্বতঃসিদ্ধের চিত্র",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_05/fig_postulates.svg"
+    },
+    {
+      "id": "fig_construct",
+      "caption_bn": "সমদ্বিভুজক নির্মাণ",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_05/fig_construct.svg"
+    },
+    {
+      "id": "fig_legacy",
+      "caption_bn": "স্বতঃসিদ্ধ থেকে উপপাদ্য — জ্ঞানের কাঠামো",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_05/fig_legacy.svg"
+    }
+  ]
+}

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>গ্রেডিয়েন্ট ডিসেন্ট: নিউরাল নেটওয়ার্ক কীভাবে শেখে? | Gradient descent, how neural networks learn</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/neural_networks/lesson_02/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict L01 load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="নিউরাল নেটওয়ার্ক ও ডিপ লার্নিং"
+  course-url="../../index.html#neural-networks"
+  home-url="../../index.html"
+  chapter-num="০২"
+  chapter-total="০৮"
+  prev-url="lesson_01.html"
+  prev-title="পূর্ববর্তী অধ্যায়: নিউরাল নেটওয়ার্ক আসলে কী?"
+  next-url="lesson_03.html"
+  next-title="পরবর্তী অধ্যায়: ব্যাকপ্রপাগেশন আসলে কী করে?"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="নিউরাল নেটওয়ার্ক ও ডিপ লার্নিং"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০২ · নিউরাল নেটওয়ার্ক ও ডিপ লার্নিং"
+  title="গ্রেডিয়েন্ট ডিসেন্ট: নিউরাল নেটওয়ার্ক কীভাবে শেখে? | Gradient descent, how neural networks learn"
+  desc="কস্ট ফাংশন, ১৩,০০২ মাত্রার ল্যান্ডস্কেপ, ঋণাত্মক গ্রেডিয়েন্ট ভেক্টর ও মিনি-ব্যাচ স্টোকাস্টিক গ্রেডিয়েন্ট ডিসেন্ট (SGD)।"
+  video-src="../../media_vault/neural_networks/lesson_02/experiments/3b1b_nn_02_full_dubbed.mp4"
+  yt-id="IHZwWFHWa-w"
+  date="১৬ অক্টোবর, ২০১৭"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর ও ডাবিং: STEM মাল্টিমোডাল টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2017/nn/part2.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner
+      title="শিক্ষক অডিও বিবরণ ও লাইভ কারাওকে সহকারী"
+      desc="কস্ট ফাংশন, স্কয়ার্ড এরর, ১৩,০০২-মাত্রার ঢালু ল্যান্ডস্কেপ, ঋণাত্মক গ্রেডিয়েন্ট ও লার্নিং রেট — প্রতিটি ধাপ দরদী শিক্ষকের কণ্ঠে শুনুন।">
+    </b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">ভূমিকা: নেটওয়ার্ককে শেখানোর চ্যালেঞ্জ</b1b-bookmark>
+      <b1b-bookmark time="99"  time-bn="০১:৩৯">কস্ট ফাংশন ও ভুলের পরিমাপ</b1b-bookmark>
+      <b1b-bookmark time="208" time-bn="০৩:২৮">বহুমাত্রিক অপ্টিমাইজেশন ল্যান্ডস্কেপ</b1b-bookmark>
+      <b1b-bookmark time="335" time-bn="০৫:৩৫">গ্রেডিয়েন্ট ভেক্টর (∇C) ও ডিসেন্ট</b1b-bookmark>
+      <b1b-bookmark time="452" time-bn="০৭:৩২">লোকাল মিনিমা বনাম লার্নিং রেট</b1b-bookmark>
+      <b1b-bookmark time="528" time-bn="০৮:৪৮">স্টোকাস্টিক গ্রেডিয়েন্ট ডিসেন্ট (SGD)</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-official-recap">অফিশিয়াল রিক্যাপ: ৭৮৪ পিক্সেল থেকে ১৩,০০২ ডায়াল</a>
+      <a href="#sec-learning-paradox">নেটওয়ার্ককে শেখানোর রহস্য ও কস্ট ফাংশনের প্রয়োজনীয়তা</a>
+      <a href="#sec-cost-function">কস্ট ফাংশন: নেটওয়ার্কের ব্যর্থতার গাণিতিক পরিমাপ</a>
+      <a href="#sec-gradient-descent-intuition">গ্রেডিয়েন্ট ডিসেন্ট: অন্ধের উপত্যকা আরোহণ ও অবরোহণ</a>
+      <a href="#sec-multivariable-gradient">বহুমাত্রিক গ্রেডিয়েন্ট ভেক্টর (∇C) ও আপডেটের জ্যামিতি</a>
+      <a href="#sec-learning-rate-landscape">লার্নিং রেট ও জটিল ল্যান্ডস্কেপের সংকট</a>
+      <a href="#sec-mini-batch-sgd">স্টোকাস্টিক গ্রেডিয়েন্ট ডিসেন্ট (SGD) ও মিনি-ব্যাচ</a>
+      <a href="#sec-official-gallery">অফিশিয়াল চিত্র সংগ্রহ: ভুল পরিমাপ থেকে নুডজ</a>
+      <a href="#sec-practice-lab">অনুশীলন: কুইজ ও গ্রেডিয়েন্ট ডিসেন্ট ল্যাব</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ NON-NARRATED — official recap & chapter epigraph ═══ -->
+      <b1b-section id="sec-official-recap" title="অফিশিয়াল রিক্যাপ: ৭৮৪ পিক্সেল থেকে ১৩,০০২ ডায়াল" data-no-narration="true">
+        <b1b-quote author="Grant Sanderson">মেশিন লার্নিংয়ে শেখা মানে কোনো রহস্যময় জাদু নয়—এটি ১৩,০০০ মাত্রার একটি ঘন কুয়াশাচ্ছন্ন পাহাড়ি উপত্যকায় চোখ বেঁধে দাঁড়িয়ে কেবল পায়ের নিচে মাটির ঢাল মেপে মেপে সবচেয়ে গভীর খাদে নেমে আসার এক অবিচল অভিযাত্রা।</b1b-quote>
+
+        <p>আগের পাঠে আমরা হাতের লেখা সংখ্যা চেনার এই 'হেলো ওয়ার্ল্ড' সমস্যাটির কাঠামো তৈরি করেছি। প্রতিটি ছবি ২৮×২৮ পিক্সেলের গ্রিডে আঁকা, এবং প্রতিটি পিক্সেলের ০.০ থেকে ১.০-এর মধ্যে একটিমাত্র গ্রেস্কেল মান ইনপুট লেয়ারের ৭৮৪টি নিউরনের অ্যাক্টিভেশন নির্ধারণ করে।</p>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/three-3s.jpg" alt="বিভিন্ন হাতের লেখা ৩" caption="এই ছবিতে একই সংখ্যা ৩-এর কয়েকটি সম্পূর্ণ ভিন্ন হাতের লেখা দেখা যাচ্ছে। পিক্সেলের অবস্থান আলাদা হলেও আমাদের চোখ একই বিমূর্ত প্যাটার্ন ধরে ফেলে—নেটওয়ার্কের কাজও ঠিক এই অদৃশ্য মিলটি বের করা। লক্ষ্য করুন কোনো একটি নির্দিষ্ট পিক্সেলই সংখ্যাটির পরিচয় নয়, বরং পিক্সেলগুলোর সমন্বিত বিন্যাসই আসল তথ্য।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/pixels-as-input.jpg" alt="পিক্সেল থেকে ইনপুট নিউরন" caption="চিত্রে দেখানো হয়েছে কীভাবে ২৮×২৮ গ্রিডের প্রতিটি পিক্সেল সরাসরি ইনপুট লেয়ারের একটি নির্দিষ্ট নিউরনে মান দেয়। উজ্জ্বল পিক্সেল বেশি অ্যাক্টিভেশন আর অন্ধকার পিক্সেল কম অ্যাক্টিভেশন হিসেবে পড়া হয়। এই রূপান্তরটিই ছবির ভিজ্যুয়াল তথ্যকে গাণিতিক ভেক্টরে পরিণত করে।"></b1b-figure>
+
+        <p>পরবর্তী প্রতিটি লেয়ারের নিউরনের অ্যাক্টিভেশন আগের লেয়ারের সব অ্যাক্টিভেশনের একটি ওয়েটেড সাম আর একটি বায়াসের ওপর নির্ভর করে, তারপর সেই যোগফলকে সিগময়েড বা ReLU-এর মতো অরৈখিক ফাংশন দিয়ে মোড়া হয়। আউটপুট লেয়ারের দশটি নিউরনের মধ্যে যেটি সবচেয়ে উজ্জ্বল, নেটওয়ার্ক ঠিক সেই ডিজিটটিকে বেছে নেয়।</p>
+
+        <b1b-media-tab active-tab="image" caption="চিত্র ও ভিডিও দুই মাধ্যমেই দেখুন কীভাবে ইনপুট পিক্সেলের মান স্তর পর স্তর ছড়িয়ে শেষে আউটপুট নিউরনে পৌঁছায়। লক্ষ্য করুন প্রতিটি ধাপ সম্পূর্ণরূপে ওজন ও বায়াস দ্বারা নির্ধারিত—এখানে কোনো লেখা নিয়ম বা কনডিশনাল লজিক নেই। ভিডিও ট্যাবে এই প্রবাহের গতি আরও স্পষ্ট হবে।">
+          <div slot="image"><img src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/recap-propagation.jpg" alt="স্তর পর স্তর অ্যাক্টিভেশনের প্রবাহ"/></div>
+          <div slot="video"><video controls width="480" preload="none" src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/balls-rolling-down.mp4"></video></div>
+        </b1b-media-tab>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/layer-hypothesis.jpg" alt="প্রান্ত থেকে লুপ থেকে ডিজিট" caption="এই চিত্রে স্তরবিন্যাসের পেছনের অনুমানটি আঁকা আছে: দ্বিতীয় স্তর সরল প্রান্ত (edge) খুঁজে নেয়, তৃতীয় স্তর সেই প্রান্ত থেকে লুপ ও রেখা গড়ে তোলে, আর শেষ স্তর সেই অংশগুলো জোড়া লাগিয়ে পুরো ডিজিট চিনে নেয়। এই ধাপে ভাগ করার কারণেই ৭৮৪-মাত্রার ইনপুট সমস্যাটি ব্যবস্থাপনাযোগ্য লাগে। মনে রাখবেন এটি একটি অনুপ্রেরণামূলক অনুমান, কঠোর প্রমাণ নয়—নেটওয়ার্ক নিজেই ঠিক করে কোন স্তর কী শিখবে।"></b1b-figure>
+
+        <p>মেশিন লার্নিংয়ের সবচেয়ে বড় পার্থক্য হলো এখানে কাজের নির্দেশনা সরাসরি লেখা হয় না। বরং লেবেলযুক্ত উদাহরণের একটি সংগ্রহ দেওয়া হয় এবং ১৩,০০২টি ওজন-বায়াস এমনভাবে বদলানো হয় যাতে নেটওয়ার্ক সেই উদাহরণগুলোতে ভালো করে। এই লেবেলযুক্ত ছবির সংগ্রহই ট্রেনিং ডেটা নামে পরিচিত।</p>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/training-data.jpg" alt="লেবেলযুক্ত ট্রেনিং ছবি" caption="চিত্রে প্রতিটি হস্তাক্ষর ছবির সাথে তার সঠিক ডিজিটের লেবেল যুক্ত করা আছে। নেটওয়ার্ক কখনোই লেবেল দেখে ভবিষ্যতে উত্তর দেয় না; লেবেল শুধু প্রশিক্ষণের সময় ভুল মাপতে কাজে লাগে। এই আলাদা করে রাখাটাই নিশ্চিত করে যে মডেলটি শুধু মুখস্থ নয়, বরং প্যাটার্ন শিখছে।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/training-vs-testing.jpg" alt="প্রশিক্ষণ ও পরীক্ষার ডেটা" caption="এখানে পুরো ডেটাসেটকে দুই ভাগে ভাগ করা হয়েছে—একভাগ দিয়ে নেটওয়ার্ক শিখছে, অন্য ভাগ আগে কখনো দেখাইনি এমন ছবি দিয়ে পরীক্ষা করছে। যদি শিখে নেওয়া প্যাটার্ন নতুন ছবিতেও কাজ করে, তবেই বোঝা যাবে generalizes হয়েছে। এই পরীক্ষাই মুখস্থকরণ (overfitting) আর আসল শেখার মাঝে পার্থক্য গড়ে দেয়।"></b1b-figure>
+
+        <p>MNIST ডাটাবেসে দশ হাজারেরও বেশি লেবেলযুক্ত হস্তাক্ষর ছবি বিনামূল্যে পাওয়া যায়, তাই এই পরীক্ষা চালানো সম্ভব হয়। 'শেখা' শব্দটি কিছুটা রহস্যময় শোনালেও এর পেছনের বাস্তবতা হলো—একটি নির্দিষ্ট ফাংশনের সর্বনিম্ন বিন্দু খোঁজা, অর্থাৎ এক ধরনের ক্যালকুলাস অনুশীলন।</p>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/finding-minima.jpg" alt="নিচের দিকে খোঁজা" caption="চিত্রে একটি বক্ররেখার ওপর বারবার নিচের দিকে পা দিয়ে নামার চিত্র দেখানো হয়েছে। শেখা মানে ঠিক এই ক্রিয়া—বর্তমান অবস্থান থেকে কস্ট কমানোর দিকে ধীরে ধীরে এগোনো। বাঁকা পাহাড়ি ভূসংস্থানে গন্তব্য হলো কোনো উপত্যকার তল, সবার নিচের বিন্দু নয়; এই সীমাবদ্ধতাই পরে লোকাল মিনিমা নামে পরিচিত।"></b1b-figure>
+      </b1b-section>
+
+      <!-- ═══ Narrated Section 1 — 5 manifest cues: h2 · p · p · figure · callout ═══ -->
+      <b1b-section id="sec-learning-paradox" title="১৩,০০২টি ডায়ালকে টিউন করার বাস্তব সমস্যা">
+        <p>প্রথম অধ্যায়ে আমরা দেখেছি কীভাবে হস্তাক্ষর ডিজিট শনাক্ত করতে একটি ক্লাসিক মাল্টিলেয়ার পারসেপট্রন আর্কিটেকচার গড়ে তোলা হয়—২৮×২৮ পিক্সেলের ৭৮৪টি ইনপুট নিউরন, দুটি ১৬ নিউরনের হিডেন লেয়ার এবং আউটপুটে ১০টি নিউরন। সেখানে সর্বমোট সংযোগকারী ওজন ১২,৯৬০টি এবং বায়াস রয়েছে ৪২টি। অর্থাৎ মোট ১৩,০০২টি পরিবর্তনযোগ্য প্যারামিটার বা স্বাধীন ‘ডায়াল’ রয়েছে।</p>
+
+        <p>শুরুতে যখন এই সমস্ত ওজন ও বায়াস সম্পূর্ণ র‍্যান্ডমভাবে মান ধারণ করে, তখন নেটওয়ার্কের কার্যকারিতা একেবারেই হতাশাজনক হয়। একটি ৩-এর ছবি দিলে হয়তো আউটপুটে ৮ বা ৫ নম্বর নিউরনটি প্রজ্জ্বলিত হয়ে ওঠে, আবার কখনো সমস্ত আউটপুটই আবর্জনার মতো সমান মান প্রদর্শন করে। প্রশ্ন হলো: কম্পিউটার কীভাবে নিজে নিজে এই ১৩,০০২টি নব এমন নিখুঁতভাবে ঘুরিয়ে নেবে যেন নেটওয়ার্কটি যেকোনো হাতের লেখা সঠিক নির্ভুলতায় চিনতে পারে?</p>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/random-trash.jpg" alt="র‍্যান্ডম প্যারামিটারে বিশৃঙ্খল আউটপুট" caption="চিত্র ১: বাঁদিকে র‍্যান্ডম ওজন-বায়াসে আউটপুট লেয়ারের দশটি নিউরন প্রায় একই রকম অগোছালো মান দিচ্ছে, ফলে ৩ চেনাও সম্ভব হচ্ছে না। ডানদিকে প্রশিক্ষিত নেটওয়ার্কে ৩-সূচক নিউরনটি সুস্পষ্টভাবে উজ্জ্বল আর বাকিরা নিভে গেছে। এই তুলনাটিই বোঝায় কেন প্রথমে ‘কতটা ভুল হচ্ছে’ তা মাপার ব্যবস্থা দরকার—সেই মাপ না থাকলে ওজন ঠিক করার কোনো লক্ষ্যই থাকবে না।"></b1b-figure>
+
+        <b1b-callout type="purple" icon="🎯" title="শেখার মূল সংজ্ঞার্থ">
+          <p>ডিপ লার্নিংয়ে শেখা (Learning) কোনো রহস্যময় ভাবাবেগ নয়; এটি নিরেট একটি গাণিতিক অপ্টিমাইজেশন প্রক্রিয়া। আমাদের এমন একটি ব্যবস্থা তৈরি করতে হবে যা নেটওয়ার্কের বর্তমান পারফরম্যান্সকে একটি একক সংখ্যায় পরিমাপ করে বলে দেবে: ‘তুমি কতটা ভুল করছ’।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Narrated Section 2 — 6 manifest cues: h2 · p · p · p · p · callout ═══ -->
+      <b1b-section id="sec-cost-function" title="স্কয়ার্ড এরর লস ও সামগ্রিক কস্ট">
+        <p>একটি একক ট্রেনিং উদাহরণের কথা ভাবুন। ধরুন আমরা ইনপুটে একটি ৩-এর ছবি দিয়েছি। আমাদের কাঙ্ক্ষিত লক্ষ্য হলো ৩ সূচকের আউটপুট নিউরনটির মান হবে ১.০, এবং বাকি নয়টি নিউরনের (০, ১, ২, ৪, ৫, ৬, ৭, ৮, ৯) মান হবে ঠিক ০.০। কিন্তু আমাদের আনট্রেইনড নেটওয়ার্ক প্রতিটি নিউরনে কোনো না কোনো বিভ্রান্তিকর আউটপুট $a_j$ দিচ্ছে।</p>
+
+        <p>আমরা প্রতিটি আউটপুট নিউরনের প্রাপ্ত অ্যাক্টিভেশন $a_j$ থেকে তার কাঙ্ক্ষিত মান $y_j$-এর পার্থক্য নিয়ে তাকে বর্গ করি, এবং দশটি নিউরনের জন্য সেই মানগুলোকে যোগ করি। একে বলা হয় একটি একক উদাহরণের স্কয়ার্ড এরর (Squared Error): $$C_0 = \sum_{j=0}^{9} \left(a_j^{(L)} - y_j\right)^2$$ বর্গ নেওয়ার কারণে ধনাত্মক ও ঋণাত্মক ভুল একে অপরকে বাতিল না করে যোগ হয়, আর বড় ভুল ছোট ভুলের চেয়ে অনেক বেশি শাস্তি পায়।</p>
+
+        <p>নেটওয়ার্ক যদি ছবিটিকে পুরোপুরি ভুল চিনে থাকে, তবে এই সমষ্টির মান অনেক বড় হয়। আর নেটওয়ার্ক যদি আত্মবিশ্বাসের সাথে সঠিক উত্তর দেয়, তবে এই মানটি শূন্যের অত্যন্ত কাছাকাছি নেমে আসে। কিন্তু কেবল একটি ছবির ভুল কমালেই চলবে না; আমাদের কাছে হস্তাক্ষরের ৬০,০০০টি লেবেলযুক্ত ট্রেনিং ছবি রয়েছে।</p>
+
+        <p>পুরো ডেটাসেটের সমস্ত ট্রেনিং ছবির ভুলের গড় নিলে আমরা পাই সামগ্রিক কস্ট ফাংশন $C(\mathbf{W}, \mathbf{b})$: $$C(\mathbf{W}, \mathbf{b}) = \frac{1}{N} \sum_{i=1}^{N} C_i = \frac{1}{N} \sum_{i=1}^{N} \sum_{j=0}^{9} \left(a_{i,j}^{(L)} - y_{i,j}\right)^2$$ এই গড় নিশ্চিত করে যে একটি ছবিতে ভালো করে অন্য নব্বইটিতে খারাপ করে ফেললে চলবে না—লক্ষ্য হলো সবগুলোতেই গড়ে ভালো করা।</p>
+
+        <b1b-callout type="blue" icon="🔍" title="ইনপুট বনাম ভ্যারিয়েবল">
+          <p>মনে রাখবেন, ট্রেনিং ডেটা (৬০,০০০ ছবি ও লেবেল) এখানে স্থির ধ্রুবক। কস্ট ফাংশনটির আসল চলক বা স্বাধীন ভ্যারিয়েবল হলো নেটওয়ার্কের সমস্ত ওজন ও বায়াস। অর্থাৎ $C$ হলো ১৩,০০২টি চলকের একটি দানবীয় বাস্তব ফাংশন: $C: \mathbb{R}^{13002} \to \mathbb{R}$।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Narrated Section 3 — 6 manifest cues: h2 · p · figure · p · p · figure ═══ -->
+      <b1b-section id="sec-gradient-descent-intuition" title="১ মাত্রা ও ২ মাত্রায় বল গড়িয়ে নামার দৃশ্যকল্প">
+        <p>১৩,০০২ মাত্রার চিন্তা মানুষের মস্তিষ্কের পক্ষে অসম্ভব। তাই আসুন কল্পনাকে নামিয়ে আনি মাত্র একটি চলকের সাধারণ ফাংশন $C(w)$-তে। আপনি যদি এই বক্ররেখার কোনো এক বিন্দুতে দাঁড়িয়ে থাকেন এবং কস্ট কমাতে চান, তবে কোন দিকে যাবেন?</p>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/single-input-cost.jpg" alt="এক-ইনপুট কস্ট বক্ররেখা" caption="চিত্র ২: অনুভূমিক অক্ষে একটিমাত্র প্যারামিটার $w$ আর উল্লম্ব অক্ষে কস্ট $C(w)$ দেখানো হয়েছে। বক্ররেখার যে বিন্দুতে দাঁড়িয়ে আছি, তার স্পর্শকের ঢালই বলে দেয় কোন দিকে গেলে কস্ট কমবে—ঋণাত্মক ঢালে ডানে, ধনাত্মক ঢালে বাঁয়ে। লক্ষ্য করুন বক্ররেখা একাধিক উপত্যকা তৈরি করে, তাই শুরুর বিন্দুর ওপর নির্ভর করে আমরা কোন তলিতে পৌঁছাব।"></b1b-figure>
+
+        <b1b-media-tab active-tab="image" caption="এই চিত্রে বক্ররেখা বরাবর বারবার ঢাল মেপে নিচের দিকে পা দেওয়ার প্রক্রিয়া দেখা যাচ্ছে; ভিডিও ট্যাবে একই ধাপ অ্যানিমেশনে চলে। মনে রাখবেন আমরা সরাসরি সর্বনিম্ন বিন্দুটি হিসাব করছি না—শুধু প্রতি মুহূর্তে 'এখান থেকে কোন দিকে নামা যায়' সেটাই জিজ্ঞেস করছি। এই স্থানীয় সিদ্ধান্তগুলোই জমা হয়ে একটি উপত্যকার তলিতে পৌঁছে দেয়।">
+          <div slot="image"><img src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/follow-slope.jpg" alt="ঢাল অনুসরণ করে নামা"/></div>
+          <div slot="video"><video controls width="480" preload="none" src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/balls-rolling-down.mp4"></video></div>
+        </b1b-media-tab>
+
+        <p>ক্যালকুলাস আমাদের শেখায় যে কোনো বিন্দুতে স্পর্শকের ঢাল $\frac{dC}{dw}$ নির্দেশ করে $w$ সামান্য বাড়ালে কস্ট বাড়বে না কমবে। ঢাল যদি ধনাত্মক হয়, তবে $w$ কমালে কস্ট কমবে। ঢাল যদি ঋণাত্মক হয়, তবে $w$ বাড়ালে কস্ট কমবে। অর্থাৎ, সবসময় ঢালের বিপরীত চিহ্নে পদক্ষেপ নিতে হবে: $$w_{t+1} = w_t - \eta \frac{dC}{dw}$$ এখানে $\eta$ (ইটা) হলো লার্নিং রেট—ধাপের আকার নিয়ন্ত্রক ছোট ধ্রুবক।</p>
+
+        <p>এখন কল্পনা করুন দুটি ইনপুট চলক $C(w_1, w_2)$। এর লেখচিত্র হবে ত্রিমাত্রিক স্থানে একটি পাহাড়ি উপত্যকার মতো ভূসংস্থান। আপনি যদি এই পাহাড়ের কোনো ঢালে একটি ভারী মার্বেল বল ছেড়ে দেন, তবে মাধ্যাকর্ষণ বলটিকে সবচেয়ে খাড়া ঢাল বরাবর নিচের উপত্যকায় গড়িয়ে নিয়ে যাবে। ঠিক এই কাজটিই করে গ্রেডিয়েন্ট ডিসেন্ট।</p>
+
+        <b1b-media-tab active-tab="image" caption="ছবি ও ভিডিওতে দেখা যাচ্ছে ধাপের আকার ঢালের সমানুপাতিক হলে খাড়া জায়গায় বড় আর সমতল জায়গায় ছোট পদক্ষেপ নেওয়া হয়। এর ফলে তলির কাছে এসে অ্যালগরিদম নিজেই ধীর হয়ে যায় এবং অপ্রয়োজনীয়ভাবে ওপারের দেয়ালে উঠে না। লার্নিং রেট খুব বড় হলে এই সুরক্ষা ভেঙে পড়ে—সেটি পরের অংশে দেখব।">
+          <div slot="image"><img src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/follow-slope.jpg" alt="ঢালের সমানুপাতিক ধাপ"/></div>
+          <div slot="video"><video controls width="480" preload="none" src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/proportional-to-slope.mp4"></video></div>
+        </b1b-media-tab>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/2-input-cost.jpg" alt="দ্বিমাত্রিক কস্ট সারফেস" caption="চিত্র ৩: দুটি প্যারামিটার নিলে কস্ট ফাংশন একটি সারফেস তৈরি করে, আর তার ওপর থাকা কনট্যুর রেখাগুলো একই কস্টের জায়গা চিহ্নিত করে। হলুদ তীরটি সবচেয়ে খাড়া নামার দিক নির্দেশ করছে—অর্থাৎ গ্রেডিয়েন্টের ঠিক বিপরীত দিক। কনট্যুরের লম্ব বরাবর এই নামাই যত বার করি, তত কম কস্টের রেখায় পৌঁছে যাই।"></b1b-figure>
+      </b1b-section>
+
+      <!-- ═══ Narrated Section 4 — 6 manifest cues: h2 · p · p · callout · p · p ═══ -->
+      <b1b-section id="sec-multivariable-gradient" title="গ্রেডিয়েন্টের গাণিতিক রূপ ও দিকবিন্যাস">
+        <p>মাল্টিভ্যারিয়েবল ক্যালকুলাসে কোনো বহুমাত্রিক ফাংশনের গ্রেডিয়েন্ট $\nabla C$ হলো এমন একটি ভেক্টর, যা ফাংশনটির সমস্ত আংশিক অন্তরজ (Partial Derivatives) ধারণ করে: $$\nabla C = \begin{bmatrix} \frac{\partial C}{\partial w_1} \\ \frac{\partial C}{\partial w_2} \\ \vdots \\ \frac{\partial C}{\partial w_m} \\ \frac{\partial C}{\partial b_1} \\ \vdots \end{bmatrix}$$ আমাদের ক্ষেত্রে এই ভেক্টরে ঠিক ১৩,০০২টি উপাংশ থাকে—প্রতিটি ওজন ও বায়াসের জন্য একটিমাত্র।</p>
+
+        <p>জ্যামিতিকভাবে গ্রেডিয়েন্ট ভেক্টর $\nabla C$-এর দুটি অত্যন্ত শক্তিশালী ধর্ম রয়েছে। প্রথমত, এটি নির্দেশ করে কোন দিকে পা বাড়ালে কস্ট সবচেয়ে দ্রুত বাড়বে; দ্বিতীয়ত, এর দৈর্ঘ্য বলে দেয় সেই সবচেয়ে খাড়া ঢালটি ঠিক কতখানি খাড়া।</p>
+
+        <b1b-callout type="gold" icon="🧭" title="গ্রেডিয়েন্টের দুটি মৌলিক জ্যামিতিক বৈশিষ্ট্য">
+          <p><strong>১. সর্বাধিক বৃদ্ধির দিক:</strong> গ্রেডিয়েন্ট ভেক্টর $\nabla C$ ইনপুট স্থানে সেই সুনির্দিষ্ট দিক নির্দেশ করে যেদিকে পা বাড়ালে কস্ট সবচেয়ে দ্রুত বৃদ্ধি পাবে।</p>
+          <p><strong>২. মানের মাত্রা:</strong> গ্রেডিয়েন্টের দৈর্ঘ্য $\|\nabla C\|$ নির্দেশ করে ঢালটি ঠিক কতটা খাড়া। খাড়া পাহাড়ে মান বিশাল, আর সমতল উপত্যকায় মান শূন্যের কাছাকাছি—তাই একই সূত্র নিজেই ধাপের আকারও নিয়ন্ত্রণ করে।</p>
+        </b1b-callout>
+
+        <p>যেহেতু আমাদের লক্ষ্য কস্ট বাড়ানো নয় বরং কমানো, তাই আমরা পা ফেলি ঠিক ঋণাত্মক গ্রেডিয়েন্ট $-\nabla C$-এর দিকে—অর্থাৎ সবচেয়ে খাড়া অবরোহণের দিকে (Steepest Descent)। পুরো ১৩,০০২টি প্যারামিটারের ভেক্টর $\boldsymbol{\theta}$ হালনাগাদ করার সমীকরণটি দাঁড়ায়: $$\boldsymbol{\theta}_{t+1} = \boldsymbol{\theta}_t - \eta \nabla C(\boldsymbol{\theta}_t)$$ প্রতিটি পুনরাবৃত্তিতে লার্নিং রেট $\eta$ দিয়ে গুণ করে আমরা এই বিশাল ভেক্টরের ধাপটি ছোট বা বড় করি।</p>
+
+        <p>প্রতিটি আপডেটে কোনো প্যারামিটার কতটা বদলাবে, তা নির্ভর করে তার আংশিক অন্তরজের ওপর। যে ওজন সামান্য নড়ালে কস্টের বিশাল পরিবর্তন ঘটে, গ্রেডিয়েন্ট ভেক্টরে তার উপাংশের মান অনেক বড় হয়; ফলে অ্যালগরিদম তাকে বেশি অগ্রাধিকার দিয়ে দ্রুত সংশোধন করে। অন্যভাবে বললে, $-\nabla C$ হলো ১৩,০০২টি নুডজের একটি তালিকা, যার প্রতিটি ঘটকের চিহ্ন বলে ‘কমাও না বাড়াও’ আর তার মাত্রা বলে ‘কে কতটা গুরুত্বপূর্ণ’।</p>
+      </b1b-section>
+
+      <!-- ═══ Narrated Section 5 — 4 manifest cues: h2 · p · figure · p ═══ -->
+      <b1b-section id="sec-learning-rate-landscape" title="ধাপের আকার এবং লোকাল মিনিমার চ্যালেঞ্জ">
+        <p>গ্রেডিয়েন্ট ডিসেন্টের সাফল্য গভীরভাবে নির্ভর করে লার্নিং রেট বা স্টেপ সাইজ $\eta$-এর ওপর। যদি লার্নিং রেট অতিরিক্ত ছোট হয়, তবে পাহাড়ি ঢাল বেয়ে নামতে নেটওয়ার্কের অনন্তকাল সময় লেগে যাবে। অন্যদিকে $\eta$ যদি অতিরিক্ত বড় হয়, তবে পদক্ষেপ এত বিশাল হবে যে বলটি উপত্যকা পার হয়ে উল্টো পাশের দেয়ালে আঘাত হানবে এবং কস্ট কমার বদলে বিস্ফোরিত হয়ে অসীমে ছুটে যাবে (Divergence)।</p>
+
+        <b1b-figure alt="তিনটি লার্নিং রেটের তুলনা: মন্থর, আদর্শ ও বিস্ফোরক" caption="চিত্র ৪: একই $C(w)=w^2$ উপত্যকায় তিনটি ভিন্ন লার্নিং রেটের পথ দেখানো হয়েছে। ছোট $\eta$-এর হলুদ পথ ধীরে ধীরে এগোলেও তলিতে পৌঁছাতে অনেক পুনরাবৃত্তি লাগে; মাঝারি $\eta$-এর সবুজ পথ সরাসরি তলিতে নামে; আর বড় $\eta$-এর লাল পথ ওপারের দেয়ালে লাফ দিয়ে দোলে। এই চিত্রটি মনে রাখলে ‘ধাপ কত বড় হওয়া উচিত’ প্রশ্নটির স্পষ্ট উত্তর মেলে।">
+          <svg viewBox="0 0 680 300" role="img" aria-label="বিভিন্ন লার্নিং রেটে গ্রেডিয়েন্ট ডিসেন্টের তিনটি পথ">
+            <rect width="680" height="300" rx="12" fill="#0b0d14" stroke="#2d2b45" stroke-width="1.5"/>
+            <path d="M60 40 L60 260 L640 260" fill="none" stroke="#64748b" stroke-width="1.5"/>
+            <path d="M95 60 Q350 285 605 60" fill="none" stroke="#a855f7" stroke-width="2.5"/>
+            <g fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M520 90 L500 100 L482 112 L466 126 L452 142 L440 160 L430 179 L422 198" stroke="#facc15"/>
+              <path d="M520 90 L470 118 L420 152 L370 186 L350 215" stroke="#4ade80"/>
+              <path d="M520 90 L420 152 L520 90 L420 152 L520 90 L420 152" stroke="#f87171"/>
+            </g>
+            <g fill="#f8fafc" font-family="sans-serif" font-size="14">
+              <text x="70" y="30">C(w)</text><text x="620" y="282">w</text>
+              <text x="80" y="225" fill="#facc15">η ছোট → মন্থর</text>
+              <text x="80" y="248" fill="#4ade80">η মাঝারি → সঠিক</text>
+              <text x="450" y="248" fill="#f87171">η বড় → দোলন/বিস্ফোরণ</text>
+            </g>
+          </svg>
+        </b1b-figure>
+
+        <p>এছাড়াও বাস্তব নিউরাল নেটওয়ার্কের কস্ট সারফেস কোনো নিখুঁত মিষ্টি বাটির মতো উত্তল (Convex) নয়। এটি অসংখ্য উঁচু টিলা, স্যাডল পয়েন্ট (Saddle Points) এবং স্থানীয় সর্বনিম্ন বিন্দু বা লোকাল মিনিমা (Local Minima)-তে পূর্ণ। তবে আশ্চর্য হলেও সত্যি—উচ্চমাত্রিক স্থানে (যেমন ১৩,০০০ মাত্রায়) সব দিক থেকে একসাথে আটকানো লোকাল মিনিমা অত্যন্ত বিরল; বেশিরভাগ আপাত সমতল বিন্দুই স্যাডল পয়েন্ট, যেখান থেকে অন্তত কয়েকটি দিকে নামার পথ উন্মুক্ত থাকে।</p>
+      </b1b-section>
+
+      <!-- ═══ Narrated Section 6 — 5 manifest cues: h2 · p · p · p · callout ═══ -->
+      <b1b-section id="sec-mini-batch-sgd" title="কেন পুরো ডেটাসেট একসাথে গণনা অবাস্তব?">
+        <p>সমীকরণ ২-এ আমরা দেখেছি যে নিখুঁত গ্রেডিয়েন্ট $\nabla C$ গণনা করতে হলে সমস্ত ৬০,০০০ ট্রেনিং ছবির জন্য আলাদা আলাদা গ্রেডিয়েন্ট বের করে তাদের গড় নিতে হয়। গ্রেডিয়েন্ট ডিসেন্টের একটিমাত্র ক্ষুদ্র পদক্ষেপ নেওয়ার জন্য ৬০,০০০টি ছবির ফরোয়ার্ড ও ব্যাকওয়ার্ড গণনা কম্পিউটারের জন্য অকল্পনীয়ভাবে ধীরগতির ও অপব্যয়ী।</p>
+
+        <p>এই সমস্যার চমৎকার সমাধান হলো স্টোকাস্টিক গ্রেডিয়েন্ট ডিসেন্ট (Stochastic Gradient Descent বা SGD)। আমরা পুরো ট্রেনিং ডেটাসেটকে এলোমেলোভাবে ছোট ছোট দলে বা মিনি-ব্যাচে (Mini-batch) ভাগ করে ফেলি—সাধারণত প্রতি ব্যাচে ৩২, ৬৪ বা ১২৮টি ছবি থাকে। $$\nabla C_{\text{batch}} = \frac{1}{m} \sum_{k=1}^{m} \nabla C_{x_k}$$ এই ছোট গড়টি প্রকৃত গ্রেডিয়েন্টের একটি দ্রুত ও বিশ্বাসযোগ্য আসন্ন মান দেয়।</p>
+
+        <p>প্রতিটি মিনি-ব্যাচের হিসাব শেষ হওয়ার সাথে সাথেই ওজন ও বায়াসগুলো সাথে সাথে হালনাগাদ করা হয়। যদিও এই পদক্ষেপগুলো সামান্য কোলাহলপূর্ণ বা আঁকাবাঁকা পথে এগোয়, তবে সামগ্রিকভাবে পথটি ঠিকই গভীর উপত্যকার দিকে ধাবিত হয়। এই র্যান্ডমনেস বা কোলাহল আসলে নেটওয়ার্ককে অগভীর লোকাল মিনিমা থেকে লাফিয়ে বের হয়ে আরও ভালো সমাধানে পৌঁছাতে সাহায্য করে—একজন মাতাল মানুষ যেমন আঁকাবাঁকা পথে নামলেও শেষ পর্যন্ত উপত্যকাতেই পৌঁছায়।</p>
+
+        <b1b-callout type="purple" icon="🔗" title="পরবর্তী অধ্যায়ের সেতু: ব্যাকপ্রপাগেশনের আগমন">
+          <p>আমরা জানলাম যে $-\nabla C$ দিকে পা ফেললেই নেটওয়ার্ক শেখে। কিন্তু প্রশ্ন রয়েই গেল: প্রতিটি ছবির জন্য এই ১৩,০০২টি আংশিক অন্তরজ $\frac{\partial C}{\partial w}$ এবং $\frac{\partial C}{\partial b}$ কম্পিউটার ঠিক কীভাবে দ্রুত ও নির্ভুলভাবে গণনা করে? সেই জাদুকরী অ্যালগরিদমের নামই ব্যাকপ্রপাগেশন (Backpropagation), যা আমাদের পরবর্তী অধ্যায়ের মূল বিষয়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — official figure gallery (zero text dropping) ═══ -->
+      <b1b-section id="sec-official-gallery" title="অফিশিয়াল চিত্র সংগ্রহ: ভুল পরিমাপ থেকে নুডজ" data-no-narration="true">
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/weights-and-biases.jpg" alt="ওজন ও বায়াস নেটওয়ার্কের আচরণ নির্ধারণ করে" caption="চিত্রে দুটি নিউরনের মাঝের সংযোগ শক্তি আর প্রতিটি নিউরনের বায়াস আলাদা করে চিহ্নিত করা আছে। ওজন মানে ট্রানজিশনের শক্তি, আর বায়াস মানে নিউরনটির স্বাভাবিক প্রবণতা—কতটা সহজে সে জ্বলে ওঠে। নেটওয়ার্কের পুরো আচরণ এই দুই ধরনের সংখ্যার ওপরেই নির্ভর করে, তাই শেষমেশ শেখা মানে এই সংখ্যাগুলোরই সমন্বয় ঠিক করা।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/cost-of-difference.jpg" alt="ফলাফলের সাথে সঠিক উত্তরের তুলনা" caption="এখানে নেটওয়ার্কের আউটপুট আর কাঙ্ক্ষিত আউটপুট পাশাপাশি দেখা যাচ্ছে। কম্পিউটারকে বলা হচ্ছে—বেশিরভাগ নিউরন ০ হওয়া উচিত, কেবল ৩-সূচক নিউরন ১ হওয়া উচিত, কিন্তু তুমি সম্পূর্ণ আবর্জনা দিয়েছ। এই তুলনাটিকে সংখ্যায় রূপ দিতেই কস্ট ফাংশনের প্রয়োজন হয়।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/cost-calculation.jpg" alt="বর্গের সমষ্টি হিসেবে কস্ট" caption="চিত্রে প্রতিটি আউটপুট নিউরনের জন্য (প্রাপ্ত − কাঙ্ক্ষিত)² হিসাব করে সবগুলো যোগ করা দেখানো হয়েছে। বর্গ নেওয়ায় ঋণাত্মক পার্থক্য ধনাত্মক হয় এবং বড় ভুলের অবদান ছোট ভুলের চেয়ে অনেক বেশি পড়ে। ফলে নিখুঁত উত্তরের কস্ট ০, আর ভুল উত্তরের কস্ট বড়—একটিমাত্র সংখ্যায় পুরো কর্মক্ষমতার ছবি পাওয়া যায়।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/cost-ranking-question.jpg" alt="একটি ৪-এর জন্য কস্টের ক্রম নির্ণয়ের অফিশিয়াল কুইজ চিত্র" caption="এই অফিশিয়াল চিত্রে ইনপুট ৪ আর A, B, C, D—চারটি সম্ভাব্য আউটপুট দেখানো আছে। সঠিক উত্তর হলো B > C > A > D, অর্থাৎ B সবচেয়ে কম কস্ট (প্রায় নিখুঁত) আর D সবচেয়ে বেশি কস্ট। নিচের কুইজে এই ক্রমটি নিজে বেছে নিয়ে ব্যাখ্যাটি দেখুন।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/cost-function.jpg" alt="কস্ট ফাংশন ওজন-বায়াস ইনপুট নেয়" caption="চিত্রে দেখানো হয়েছে কস্ট ফাংশনের ইনপুট হলো নেটওয়ার্কের ১৩,০০২টি ওজন ও বায়াস, আর সমস্ত ট্রেনিং ছবি এর ভেতরে ধ্রুবক হিসেবে ঢুকে থাকে। আউটপুট মাত্র একটি সংখ্যা—ওই ওজনগুলো কতটা খারাপ কাজ করছে। এই কারণেই মূল নেটওয়ার্ক ফাংশনের ওপর কস্ট ফাংশন আরেক স্তর জটিলতা যোগ করে।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/negative-gradient.jpg" alt="গ্রেডিয়েন্ট উপরের দিকে, ঋণাত্মক গ্রেডিয়েন্ট নিচের দিকে" caption="এখানে ∇C তীরটি সবচেয়ে খাড়া আরোহণের দিক দেখাচ্ছে, আর −∇C তীর তার ঠিক উল্টো দিকে—অর্থাৎ সবচেয়ে দ্রুত নামার দিক। গ্রেডিয়েন্টের দৈর্ঘ্য ঢালের খাড়াতা মাপে, তাই একই সূত্র আমাদের দিক ও ধাপ—দুটোই দেয়। এই ছবিটিই গ্রেডিয়েন্ট ডিসেন্টের পুরো জ্যামিতিক মর্ম।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/gradient-descent.jpg" alt="নিচের দিকে হেঁটে কস্ট কমানো" caption="চিত্রে দেখা যাচ্ছে বারবার নিচের দিকের তীর অনুসরণ করে কস্ট কমানোর পুনরাবৃত্তি। প্রতিটি ধাপে নতুন অবস্থান থেকে গ্রেডিয়েন্ট আবার হিসাব করা হয়, ফলে পথটি সরলরেখা নয় বরং বক্ররেখা বরাবর বাঁকতে থাকে। এই পুনরাবৃত্তিটিই 'গ্রেডিয়েন্ট ডিসেন্ট' নামে পরিচিত।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/weights-and-gradient.jpg" alt="ওজনের ভেক্টর ও ঋণাত্মক গ্রেডিয়েন্টের নুডজ ভেক্টর" caption="বাঁদিকের কলামে পুরো নেটওয়ার্কের ১৩,০০২টি ওজন-বায়াস সাজানো, আর ডানদিকে ঋণাত্মক গ্রেডিয়েন্টের ১৩,০০২টি ঘটক—প্রতিটি ঘটক বাঁদিকের সংখ্যার জন্য নুডজের নির্দেশ। চিহ্ন বলে ওজনটি কমাতে হবে নাকি বাড়াতে, আর মাত্রা বলে কতটা জোরে বদলাতে হবে। এই উপস্থাপনাটি ১৩,০০২-মাত্রার জ্যামিতিকে সাধারণ তালিকায় রূপ দেয়।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/gradient-explained.jpg" alt="গ্রেডিয়েন্ট ঘটকের চিহ্ন ও আপেক্ষিক মাত্রা" caption="চিত্রে গ্রেডিয়েন্টের প্রতিটি ঘটক দুটি তথ্য বহন করছে—ওপর-নিচের চিহ্ন আর আপেক্ষিক আকার। বড় ঘটক বোঝায় ওই ওজনটি কস্টের ওপর বেশি প্রভাব রাখে, ছোট ঘটক বোঝায় তার প্রভাব কম। তাই গ্রেডিয়েন্ট শুধু দিক নয়, বরং কোন পরিবর্তন বেশি ‘ব্যাং ফর দ্য বাক’ দেবে তাও এনকোড করে।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/weight-importance.jpg" alt="কিছু সংযোগ অন্যদের চেয়ে বেশি গুরুত্বপূর্ণ" caption="এই ছবিতে নেটওয়ার্কের কিছু সংযোগ মোটা করে দেখানো হয়েছে—এগুলো ৩ চেনার ক্ষেত্রে বেশি গুরুত্ব বহন করে। যদি ৩-এর আকারের ওপর ভিত্তি করে সিদ্ধান্ত নিতে হয়, তবে সেই অঞ্চলের ওজন সামান্য নড়ালেও কস্ট অনেক বদলায়। গ্রেডিয়েন্ট ঠিক এই আপেক্ষিক গুরুত্বকে সংখ্যায় প্রকাশ করে।"></b1b-figure>
+
+        <b1b-figure src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2017/gradient-descent/nudges-on-network.jpg" alt="নুডজ নেটওয়ার্কের আচরণ বদলায়" caption="শেষ চিত্রে ঋণাত্মক গ্রেডিয়েন্টের নুডজগুলো আসল নেটওয়ার্কে প্রয়োগ হতে দেখা যাচ্ছে। প্রতিটি ওজন-বায়াস সামান্য সরে যাওয়ায় আউটপুটের অ্যাক্টিভেশন বদলায় এবং কস্ট কমে। শেখা মানে আসলে এই নুডজগুলোরই পুনরাবৃত্ত প্রয়োগ—কোনো রহস্যময় সচেতনতা নয়।"></b1b-figure>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — quizzes + fullscreen lab ═══ -->
+      <b1b-section id="sec-practice-lab" title="অনুশীলন: কুইজ ও গ্রেডিয়েন্ট ডিসেন্ট ল্যাব" data-no-narration="true">
+
+        <b1b-quiz
+          question="❓ ধরা যাক নেটওয়ার্ককে একটি 4-এর ছবি দেখানো হয়েছে। উপরের চারটি আউটপুট (A, B, C, D)-এর কস্টের ক্রম কী? (Suppose the network is shown an image of a 4. Rank the costs associated with each of the possible outputs.)"
+          correct="1"
+          correct-msg="ঠিকই! সঠিক ক্রম B > C > A > D। B-তে ৪-সূচক নিউরনটি উজ্জ্বল আর বাকিরা নিভে আছে—অর্থাৎ কাঙ্ক্ষিত [0,0,0,0,1,0,0,0,0,0]-এর প্রায় হুবহু মিল, তাই কস্ট সবচেয়ে কম। C-তে সব নিউরনই কিছুটা জ্বলজ্বল করছে, ফলে বাকি নয়টির ছোট ছোট ভুল যোগ হয়ে A-র চেয়ে কম কস্ট দেয়—A-তে ৪-সূচক নিউরনটি সম্পূর্ণ নিভে আছে, যা সবচেয়ে বড় একক ভুল। D সবচেয়ে খারাপ, কারণ সেটি ভুল নয়টি নিউরনকে জ্বালিয়ে দিয়েছে আর আসল ৪-সূচক নিউরনটিকে নিভিয়ে রেখেছে—প্রতিটি ভুলের বর্গ যোগ হয়ে কস্ট প্রায় সবচেয়ে বড় দাঁড়ায়।"
+          wrong-msg="কস্ট মানে (প্রাপ্ত অ্যাক্টিভেশন − কাঙ্ক্ষিত অ্যাক্টিভেশন)-এর বর্গের সমষ্টি। 4-এর ক্ষেত্রে কাঙ্ক্ষিত হলো শুধু ৪-সূচক নিউরন ১ আর বাকি নয়টি ০। প্রথমে দেখুন কোনটিতে ৪-টি জ্বলে আছে, তারপর বাকি নয়টির ভুলের যোগ তুলনা করুন—B প্রায় নিখুঁত, D সবচেয়ে বিশৃঙ্খল।"
+          reveal-msg="সঠিক উত্তর: B > C > A > D। অর্থাৎ কস্ট সবচেয়ে কম B-র, তারপর C, তারপর A, আর সবচেয়ে বেশি D-র।">
+          <div slot="option">B &gt; A &gt; C &gt; D</div>
+          <div slot="option">B &gt; C &gt; A &gt; D</div>
+          <div slot="option">D &gt; A &gt; C &gt; B</div>
+          <div slot="option">D &gt; C &gt; A &gt; B</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ নিউরাল নেটওয়ার্কে কস্ট ফাংশনের (Cost Function) প্রধান ভূমিকা কী?"
+          correct="1"
+          correct-msg="চমৎকার! কস্ট ফাংশন হলো নেটওয়ার্কের ভুলের পরিমাপক। এটি সমস্ত ট্রেনিং ছবির আউটপুট ও কাঙ্ক্ষিত লক্ষ্যের দূরত্বের গড় নিয়ে একটি একক স্কেলার মান তৈরি করে, যা কমানোই আমাদের মূল লক্ষ্য। এই একক সংখ্যা না থাকলে ১৩,০০২টি ডায়াল কোন দিকে ঘুরাতে হবে তা বলা অসম্ভব হতো।"
+          wrong-msg="কস্ট ফাংশন পিক্সেল বাড়ায় না, বায়াস দ্বিগুণ করে না কিংবা ম্যাট্রিক্স উল্টে দেয় না। এটি শুধু একটিই কাজ করে—বর্তমান প্যারামিটারে নেটওয়ার্ক কতটা ভুল করছে তা একটি সংখ্যায় প্রকাশ করা।"
+          reveal-msg="সঠিক উত্তর: বর্তমান প্যারামিটারে নেটওয়ার্কের সামগ্রিক ত্রুটি বা ব্যর্থতাকে একটি একক সংখ্যায় পরিমাপ করা।">
+          <div slot="option">প্রতিটি নিউরনের বায়াসকে দ্বিগুণ করা</div>
+          <div slot="option">বর্তমান প্যারামিটারে নেটওয়ার্কের সামগ্রিক ত্রুটি বা ব্যর্থতাকে একটি একক সংখ্যায় পরিমাপ করা</div>
+          <div slot="option">ইনপুট ছবির পিক্সেল রেজোলিউশন বাড়ানো</div>
+          <div slot="option">সবগুলো ওজন ম্যাট্রিক্সকে উল্টে দেওয়া</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ গ্রেডিয়েন্ট ভেক্টর (∇C) জ্যামিতিকভাবে কোন দিকটি নির্দেশ করে এবং গ্রেডিয়েন্ট ডিসেন্টে আমরা কোন দিকে পদক্ষেপ নিই?"
+          correct="2"
+          correct-msg="সঠিক! মাল্টিভ্যারিয়েবল ক্যালকুলাস অনুসারে ∇C নির্দেশ করে সবচেয়ে খাড়া আরোহণের দিক (steepest ascent)—সেদিকে গেলে কস্ট দ্রুত বাড়ে। যেহেতু আমরা কস্ট কমাতে চাই, তাই পা ফেলি ঋণাত্মক গ্রেডিয়েন্ট (−∇C) বরাবর, অর্থাৎ সবচেয়ে খাড়া অবরোহণের দিকে। ∇C-র দৈর্ঘ্য আবার ঢালের খাড়াতাও মাপে, ফলে একটিমাত্র ভেক্টর দিক ও ধাপ—দুটোই দেয়।"
+          wrong-msg="গ্রেডিয়েন্ট কখনো র্যান্ডম দিক নির্দেশ করে না এবং সবসময় শূন্য থাকে না—শূন্য হলো তুমি ঠিক তলিতে বা স্যাডলে দাঁড়িয়ে আছো। মনে রাখো: ∇C = উপরের দিক, −∇C = নিচের দিক, আর ধাপ = −η∇C।"
+          reveal-msg="সঠিক উত্তর: ∇C সর্বাধিক বৃদ্ধির দিক নির্দেশ করে এবং আমরা তার ঠিক বিপরীত (−∇C) দিকে পদক্ষেপ নিই।">
+          <div slot="option">∇C সর্বাধিক হ্রাসের দিক নির্দেশ করে এবং আমরা ∇C এর দিকে যাই</div>
+          <div slot="option">∇C যেকোনো র্যান্ডম দিক নির্দেশ করে এবং আমরা লম্ব বরাবর যাই</div>
+          <div slot="option">∇C ফাংশনের সর্বাধিক বৃদ্ধির দিক নির্দেশ করে এবং আমরা তার ঠিক বিপরীত (-∇C) দিকে পদক্ষেপ নিই</div>
+          <div slot="option">∇C সবসময় শূন্য থাকে এবং আমরা কোনো পদক্ষেপ নিই না</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ মিনি-ব্যাচ স্টোকাস্টিক গ্রেডিয়েন্ট ডিসেন্টে (Mini-batch SGD) পুরো ডেটাসেটের পরিবর্তে কেন ছোট ব্যাচ ব্যবহার করা হয়?"
+          correct="0"
+          correct-msg="ঠিক! ৬০,০০০ ছবির সম্পূর্ণ হিসাব নিয়ে মাত্র এক কদম এগোনো চরম অপব্যয়ী। ছোট মিনি-ব্যাচ (যেমন ৩২ বা ৬৪টি ছবি) গ্রেডিয়েন্টের একটি দ্রুত ও নির্ভরযোগ্য আসন্ন মান দেয়, ফলে নেটওয়ার্ক অনেক দ্রুত প্রশিক্ষিত হয়। এই কোলাহলপূর্ণ পথ আসলে অগভীর লোকাল মিনিমা থেকে বের হয়ে আরও ভালো সমাধান খুঁজতে সাহায্য করে।"
+          wrong-msg="ছোট ব্যাচ ব্যবহার করলে ভুল হয়েই—সে কারণে এদের আসন্ন (approximate) গ্রেডিয়েন্ট বলা হয়। কিন্তু ওজনের সংখ্যা কমে না, সিগময়েডের বড় ব্যাচে সমস্যাও নেই; আসল কারণ হলো গণনার গতি ও খরচ।"
+          reveal-msg="সঠিক উত্তর: কম্পিউটেশনাল গতি বহুগুণ বাড়াতে এবং প্রতি পদক্ষেপে সমস্ত ডেটার ভারী হিসাব এড়াতে।">
+          <div slot="option">কম্পিউটেশনাল গতি বহুগুণ বাড়াতে এবং প্রতি পদক্ষেপে সমস্ত ডেটার ভারী হিসাব এড়াতে</div>
+          <div slot="option">কারণ ছোট ব্যাচ ব্যবহার করলে কখনো কোনো ভুল হয় না</div>
+          <div slot="option">যাতে নেটওয়ার্কের ওজনের সংখ্যা কমে যায়</div>
+          <div slot="option">কারণ সিগময়েড ফাংশন বড় ব্যাচ সমর্থন করে না</div>
+        </b1b-quiz>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে ল্যাব দেখুন">
+          <div class="viz-wrapper" style="padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--bg-alt);">
+            <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:12px;">
+              <strong>🧪 গ্রেডিয়েন্ট ডিসেন্ট ভ্যালি সিমুলেটর</strong>
+              <label>লার্নিং রেট (η): <input id="gdEta" type="range" min="0.01" max="1.2" step="0.01" value="0.15"/></label>
+              <label>ব্যাচ: <select id="gdBatch"><option value="1">১ (SGD)</option><option value="32" selected>৩২ (মিনি-ব্যাচ)</option><option value="0">Full (পূর্ণ ব্যাচ)</option></select></label>
+              <button id="gdStep" type="button">এক ধাপ</button>
+              <button id="gdAuto" type="button">স্বয়ংক্রিয়</button>
+              <button id="gdReset" type="button">↺ রিসেট</button>
+              <span id="gdReadout" aria-live="polite"></span>
+            </div>
+            <canvas id="gdCanvas" width="680" height="300" style="width:100%;max-width:760px;background:#0b0d14;border-radius:10px;"></canvas>
+            <p style="font-size:0.86rem;color:var(--text-muted);">সবুজ পথ আদর্শ ধাপ, হলুদ পথ মন্থর আর লাল পথ বিস্ফোরক লার্নিং রেট দেখায়। স্লাইডার বদলে নিজের পথটি তৈরি করুন—মনে রাখবেন প্রতিটি নতুন ধাপ আগের অবস্থানের ঢাল থেকে শুরু হয়, কখনো ক্রমবর্ধমান নয়।</p>
+          </div>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/neural_networks/lesson_02/experiments/3b1b_nn_02_full_dubbed.mp4"
+    yt-id="IHZwWFHWa-w"
+    title="গ্রেডিয়েন্ট ডিসেন্ট: নিউরাল নেটওয়ার্ক কীভাবে শেখে? — অধ্যায় ২"
+    subtitle="অফিশিয়াল 3Blue1Brown অ্যানিমেশন। কস্ট ফাংশন, ঢাল অনুসরণ, ∇C ও মিনি-ব্যাচ SGD—ধাপে ধাপে দেখা যাবে।"
+    playlist-title="📋 প্লেলিস্ট — নিউরাল নেটওয়ার্ক ও ডিপ লার্নিং">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_01.html"
+  prev-title="নিউরাল নেটওয়ার্ক আসলে কী?"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_03.html"
+  next-title="ব্যাকপ্রপাগেশন আসলে কী করে?"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- Page-local controller for the gradient-descent lab (no shared-library edits). -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const cv = document.getElementById('gdCanvas');
+  if (!cv || !cv.getContext) return;
+  const ctx = cv.getContext('2d');
+  const etaEl = document.getElementById('gdEta');
+  const batchEl = document.getElementById('gdBatch');
+  const readout = document.getElementById('gdReadout');
+  const W = cv.width, H = cv.height;
+  let w = 4.0;
+  let trail = [];
+  let timer = null;
+
+  const X = v => 60 + (v + 5) / 10 * 560;
+  const Y = c => 250 - Math.min(c, 25) / 25 * 200;
+  const cost = x => x * x;
+
+  function step() {
+    const noise = batchEl.value === '1' ? (Math.random() - 0.5) * 0.9
+                : batchEl.value === '32' ? (Math.random() - 0.5) * 0.18 : 0;
+    const grad = 2 * w + noise;
+    w = Math.max(-5, Math.min(5, w - parseFloat(etaEl.value) * grad));
+    trail.push(w);
+    if (trail.length > 60) trail.shift();
+    draw();
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#0b0d14';
+    ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = '#64748b';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(60, 30); ctx.lineTo(60, 260); ctx.lineTo(640, 260); ctx.stroke();
+    ctx.strokeStyle = '#a855f7'; ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    for (let x = -5; x <= 5; x += 0.05) {
+      const px = X(x), py = Y(cost(x));
+      if (x === -5) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.stroke();
+    ctx.fillStyle = '#facc15';
+    for (const p of trail) { ctx.beginPath(); ctx.arc(X(p), Y(cost(p)), 2.2, 0, 7); ctx.fill(); }
+    ctx.fillStyle = '#4ade80';
+    ctx.beginPath(); ctx.arc(X(w), Y(cost(w)), 7, 0, 7); ctx.fill();
+    ctx.fillStyle = '#f8fafc'; ctx.font = '14px sans-serif';
+    ctx.fillText('C(w) = w²', 70, 26);
+    if (readout) readout.textContent = 'w = ' + w.toFixed(3) + '  ·  C = ' + cost(w).toFixed(3);
+  }
+
+  function reset() {
+    w = 4.0; trail = [];
+    if (timer) { clearInterval(timer); timer = null; }
+    const auto = document.getElementById('gdAuto');
+    if (auto) auto.textContent = 'স্বয়ংক্রিয়';
+    draw();
+  }
+
+  document.getElementById('gdStep').addEventListener('click', step);
+  document.getElementById('gdReset').addEventListener('click', reset);
+  document.getElementById('gdAuto').addEventListener('click', function () {
+    if (timer) { clearInterval(timer); timer = null; this.textContent = 'স্বয়ংক্রিয়'; }
+    else { timer = setInterval(step, 120); this.textContent = '⏸ থামান'; }
+  });
+  etaEl.addEventListener('input', draw);
+  draw();
+});
+</script>
+
+</body>
+</html>

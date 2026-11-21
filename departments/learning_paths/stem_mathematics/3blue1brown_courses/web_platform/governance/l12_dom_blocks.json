@@ -1,0 +1,151 @@
+[
+  {
+    "id": "sec_01_linear_systems_and_area",
+    "title": "১. সমীকরণ জোট ও ক্ষেত্রফল স্থানাঙ্কের জ্যামিতিক ধারণা",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "১. সমীকরণ জোট ও ক্ষেত্রফল স্থানাঙ্কের জ্যামিতিক ধারণা",
+        "tex": ""
+      },
+      {
+        "type": "chapter-quote",
+        "text": "\" জেরি: আহ, তুমি পাগল! ক্র্যামার: আমি কি পাগল? নাকি আমি এতটাই সুস্থ যে তুমি আমার মাথা ঘুরিয়ে দিয়েছ? জেরি: এটা অসম্ভব! ক্র্যামার: অসম্ভব নাকি? নাকি এতটাই সম্ভব যে তোমার মাথা লাট্টুর মতো ঘুরছে? — জেরি ও ক্র্যামার (Seinfeld)",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "আগের অধ্যায়ে আমরা রৈখিক সমীকরণ জোট নিয়ে কথা বলেছিলাম, কিন্তু সেই সমাধানগুলো আসলে কীভাবে হিসাব করা যায় সেটি কিছুটা এড়িয়েই গিয়েছিলাম। সংখ্যা-গণনা আমরা সাধারণত কম্পিউটারের হাতে ছেড়ে দিই, তবুও এই হিসাবের পদ্ধতিগুলোর ভেতরে ঢুকে দেখা আমাদের বোঝাপড়ার এক কড়া পরীক্ষা। এখানে আমরা সেই পদ্ধতিগুলোরই একটির—ক্র্যামারের নিয়মের—পেছনের জ্যামিতি বর্ণনা করব। এর জন্য ডিটারমিন্যান্ট, ডট প্রডাক্ট ও রৈখিক সিস্টেমের ধারণা আগে থেকে জানা থাকলে ভালো। আর আগেভাগেই বলে রাখি: ক্র্যামারের নিয়ম সমাধান হিসাবের সেরা উপায় নয়; বিশেষ করে বড় ম্যাট্রিক্সের ক্ষেত্রে গাউসিয়ান এলিমিনেশন অনেক দ্রুত। তবুও এটি শেখার কারণ হলো—এটি তত্ত্বের ধারণাগুলোকে একে অপরের সাথে যুক্ত দেখায়, আর চূড়ান্ত ফলাফলটি আশ্চর্যজনকভাবে সুন্দর।",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "আমাদের সেটআপ হবে একটি রৈখিক সমীকরণ জোট—ধরা যাক দুটি অজানা চলক <annotation>x</annotation> ও <annotation>y</annotation> এবং দুটি সমীকরণ। নীতিগতভাবে একই কথা যেকোনো সংখ্যক চলক ও সমান সংখ্যক সমীকরণের ক্ষেত্রেও প্রযোজ্য, কিন্তু ছোট উদাহরণ মনে রাখা সহজ। আগের অধ্যায়ের মতোই এখানেও একটি পরিচিত ম্যাট্রিক্স এক অজানা ইনপুট ভেক্টর <annotation>\\begin{bmatrix} x \\\\ y \\end{bmatrix}</annotation>-কে রূপান্তরিত করে, আর আমরা আউটপুটটি আগে থেকে জানি—এই ক্ষেত্রে <annotation>\\begin{bmatrix} -4 \\\\ -2 \\end{bmatrix}</annotation>। ম্যাট্রিক্সের কলামগুলো আমাদের বলে দেয় ইনপুট স্পেসের ভিত্তি ভেক্টরগুলো কোথায় পড়ছে। তাহলে এই পাজলটি হলো: কোন ইনপুট <annotation>\\begin{bmatrix} x \\\\ y \\end{bmatrix}</annotation> দিলে এই আউটপুট <annotation>\\begin{bmatrix} -4 \\\\ -2 \\end{bmatrix}</annotation> পাওয়া যাবে? <annotation>A\\vec{x}=\\vec{v}</annotation> লেখার অর্থই হলো কলাম ভেক্টরগুলোর এমন একটি রৈখিক সমন্বয় খোঁজা যা <annotation>\\vec v</annotation>-কে তৈরি করে।",
+        "tex": "x y \\begin{bmatrix} x \\\\ y \\end{bmatrix} \\begin{bmatrix} -4 \\\\ -2 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} \\begin{bmatrix} -4 \\\\ -2 \\end{bmatrix} A\\vec{x}=\\vec{v} \\vec v"
+      },
+      {
+        "type": "callout",
+        "text": "💡 একটি বৈপ্লবিক প্রশ্ন: স্থানাঙ্ক আসলে কী? আপনি হয়তো বলবেন, স্থানাঙ্ক মানে গ্রিডের ওপর লেখা দুটি সংখ্যা। কিন্তু জ্যামিতিকভাবে ভাবুন: ভেক্টর <annotation>\\vec{x}</annotation> আর ওয়াই অক্ষের একক ভেক্টর <annotation>\\hat{j}</annotation> দিয়ে গঠিত একটি সামান্তরিক আঁকলে তার ক্ষেত্রফল কত হবে? এই প্রশ্নটিই পরবর্তী ধাপের চাবিকাঠি।",
+        "tex": "\\vec{x} \\hat{j}"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\text{Area}(\\vec{x},\\hat{j})=\\det\\begin{bmatrix} x & 0 \\\\ y & 1 \\end{bmatrix}=x\\cdot 1-0\\cdot y=x</annotation>",
+        "tex": "\\text{Area}(\\vec{x},\\hat{j})=\\det\\begin{bmatrix} x & 0 \\\\ y & 1 \\end{bmatrix}=x\\cdot 1-0\\cdot y=x"
+      },
+      {
+        "type": "p",
+        "text": "<annotation>\\hat{j}</annotation>-এর দৈর্ঘ্য ঠিক এক একক—সেটি সামান্তরিকের ভূমি। আর ওয়াই অক্ষ থেকে <annotation>\\vec{x}</annotation>-এর শীর্ষবিন্দুর লম্ব দূরত্ব হলো তার এক্স-স্থানাঙ্ক <annotation>x</annotation>; ফলে ভূমি গুণ উচ্চতা <annotation>=1\\times x=x</annotation>। ডিটারমিন্যান্ট হিসাব করলেও একই ফল: <annotation>x\\cdot 1-0\\cdot y=x</annotation>। একইভাবে <annotation>\\hat{i}</annotation> ও <annotation>\\vec{x}</annotation> দ্বারা গঠিত সামান্তরিকের ভূমি ১ ও উচ্চতা <annotation>y</annotation>, তাই তার ক্ষেত্রফল <annotation>\\det\\begin{bmatrix}1 & x\\\\0 & y\\end{bmatrix}=y</annotation>। অর্থাৎ প্রতিটি স্থানাঙ্ক আসলে একক ভিত্তি ভেক্টরের সাথে গঠিত একটি সামান্তরিকের ক্ষেত্রফল—এই উপলব্ধিটিই ক্র্যামারের নিয়মের দরজা খুলে দেবে।",
+        "tex": "\\hat{j} \\vec{x} x =1\\times x=x x\\cdot 1-0\\cdot y=x \\hat{i} \\vec{x} y \\det\\begin{bmatrix}1 & x\\\\0 & y\\end{bmatrix}=y"
+      }
+    ]
+  },
+  {
+    "id": "sec_02_transformation_scaling",
+    "title": "২. রৈখিক রূপান্তর ও ক্ষেত্রফল স্কেলিং নীতি",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "২. রৈখিক রূপান্তর ও ক্ষেত্রফল স্কেলিং নীতি",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "এবার চলুন পূর্বের পাঠগুলো থেকে আমাদের স্মরণ করা সবচেয়ে শক্তিশালী জ্যামিতিক ধারণাটি আবার প্রয়োগ করি—রৈখিক রূপান্তর আর ডিটারমিন্যান্টের অর্থ কী? ডিটারমিন্যান্ট কেবল একটি সূত্র নয়; এটি বলে দেয় কোনো রূপান্তর সমতলের ক্ষেত্রফলকে কত গুণ বাড়ায় বা কমায়। এই ধারণাটিকে কাজে লাগালেই আমাদের পাজলের সমাধানের পথ খুলে যাবে।",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "যখন আমরা একটি <annotation>2\\times 2</annotation> ম্যাট্রিক্স <annotation>A</annotation> দিয়ে পুরো সমতলকে রূপান্তর করি, তখন আই হ্যাট চলে যায় ম্যাট্রিক্সের প্রথম কলাম <annotation>A\\hat{i}</annotation>-তে এবং জে হ্যাট চলে যায় দ্বিতীয় কলাম <annotation>A\\hat{j}</annotation>-তে। আর আমাদের অজানা ভেক্টর <annotation>\\vec{x}</annotation> রূপান্তরিত হয়ে সরাসরি নোঙর ফেলে লক্ষ্য ভেক্টর <annotation>\\vec v</annotation>-তে: <annotation>A\\vec x=\\vec v</annotation>। অর্থাৎ আউটপুট স্পেসে আমরা কলাম আর আউটপুট ভেক্টর—দুটোই দেখতে পাই।",
+        "tex": "2\\times 2 A A\\hat{i} A\\hat{j} \\vec{x} \\vec v A\\vec x=\\vec v"
+      },
+      {
+        "type": "callout",
+        "text": "📐 একক বর্গ থেকে সামান্তরিক রূপান্তরের আগে <annotation>\\hat{i}</annotation> ও <annotation>\\hat{j}</annotation> দ্বারা গঠিত একক বর্গের ক্ষেত্রফল ছিল ঠিক ১ বর্গ একক। রূপান্তরের পর এটি কলাম ভেক্টরদ্বয়ের সামান্তরিকে পরিণত হয়, যার ক্ষেত্রফল দাঁড়ায় <annotation>\\det(A)</annotation>। রৈখিকতার কারণে গ্রিডরেখাগুলো সবসময় সমান্তরাল ও সমদূরবর্তী থাকে—তাই এই একই গুণক সমতলের প্রতিটি আকৃতির ক্ষেত্রে প্রযোজ্য।",
+        "tex": "\\hat{i} \\hat{j} \\det(A)"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\text{Area}\\big(A(\\mathcal{S})\\big)=\\det(A)\\times \\text{Area}(\\mathcal{S})</annotation>",
+        "tex": "\\text{Area}\\big(A(\\mathcal{S})\\big)=\\det(A)\\times \\text{Area}(\\mathcal{S})"
+      }
+    ]
+  },
+  {
+    "id": "sec_03_cramers_rule_proof",
+    "title": "৩. ক্র্যামারের নিয়মের জ্যামিতিক প্রমাণ: ২D ও ৩D জগৎ",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৩. ক্র্যামারের নিয়মের জ্যামিতিক প্রমাণ: ২D ও ৩D জগৎ",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "এখন আগের দুটি ধারণা একসাথে যুক্ত করুন। ইনপুট স্পেসে <annotation>\\vec{x}</annotation> ও <annotation>\\hat{j}</annotation> দ্বারা গঠিত সামান্তরিকটির আদি ক্ষেত্রফল ছিল ঠিক <annotation>x</annotation>—কারণ ভূমি <annotation>\\hat{j}</annotation> একক দৈর্ঘ্যের এবং লম্ব উচ্চতা <annotation>x</annotation>। রূপান্তরের পর এই সামান্তরিকটির কী ঘটবে?",
+        "tex": "\\vec{x} \\hat{j} x \\hat{j} x"
+      },
+      {
+        "type": "p",
+        "text": "রূপান্তরের পর <annotation>\\vec{x}</annotation> পরিণত হয় লক্ষ্য ভেক্টর <annotation>\\vec{v}</annotation>-তে এবং <annotation>\\hat{j}</annotation> পরিণত হয় <annotation>A\\hat{j}</annotation>-তে, অর্থাৎ ম্যাট্রিক্সের দ্বিতীয় কলামে। ফলে নতুন সামান্তরিকটি গঠিত হয়েছে <annotation>\\vec v</annotation> ও ম্যাট্রিক্সের দ্বিতীয় কলাম দ্বারা—দুটোই আমাদের আউটপুট স্পেসে দৃশ্যমান। <annotation>[\\vec{x},\\hat{j}]\\xrightarrow{A}[\\vec{v},A\\hat{j}]</annotation> রূপান্তরটি সরাসরি সমাধানের দিকে ইঙ্গিত করে।",
+        "tex": "\\vec{x} \\vec{v} \\hat{j} A\\hat{j} \\vec v [\\vec{x},\\hat{j}]\\xrightarrow{A}[\\vec{v},A\\hat{j}]"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\det(A_1)=\\det\\big[\\vec v,\\;A\\hat j\\big]=\\det\\begin{bmatrix} v_1 & b \\\\ v_2 & d \\end{bmatrix}</annotation>",
+        "tex": "\\det(A_1)=\\det\\big[\\vec v,\\;A\\hat j\\big]=\\det\\begin{bmatrix} v_1 & b \\\\ v_2 & d \\end{bmatrix}"
+      },
+      {
+        "type": "callout",
+        "text": "🔑 অনুপাতটিই ক্র্যামারের নিয়ম আমাদের ক্ষেত্রফল-স্কেলিং নীতি বলছে: রূপান্তরের পর ক্ষেত্রফল আগের চেয়ে ঠিক <annotation>\\det(A)</annotation> গুণ বড় হয়। সুতরাং <annotation>\\det(A_1)=\\det(A)\\cdot x</annotation>; উভয় পাশ <annotation>\\det(A)</annotation> দিয়ে ভাগ করলেই উন্মোচিত হয় সেই বিখ্যাত সূত্র—<annotation>x=\\dfrac{\\det(A_1)}{\\det(A)}</annotation>। অর্থাৎ মূল ম্যাট্রিক্সের প্রথম কলামে <annotation>\\vec v</annotation> বসিয়ে যে ডিটারমিন্যান্ট পাই, তাকে মূল ডিটারমিন্যান্ট দিয়ে ভাগ করলেই <annotation>x</annotation>।",
+        "tex": "\\det(A) \\det(A_1)=\\det(A)\\cdot x \\det(A) x=\\dfrac{\\det(A_1)}{\\det(A)} \\vec v x"
+      },
+      {
+        "type": "p",
+        "text": "হুবহু একই যুক্তি <annotation>y</annotation>-এর ক্ষেত্রেও প্রযোজ্য। সে ক্ষেত্রে আদি সামান্তরিক <annotation>\\hat i</annotation> ও <annotation>\\vec x</annotation> দ্বারা গঠিত ছিল, যার ক্ষেত্রফল <annotation>y</annotation>; রূপান্তরের পর এটি হয় <annotation>A\\hat i</annotation> ও <annotation>\\vec v</annotation> দ্বারা গঠিত—অর্থাৎ প্রথম কলাম অপরিবর্তিত রেখে দ্বিতীয় কলামে <annotation>\\vec v</annotation> বসানো হয়। তাই <annotation>y=\\dfrac{\\det(A_2)}{\\det(A)}</annotation>।",
+        "tex": "y \\hat i \\vec x y A\\hat i \\vec v \\vec v y=\\dfrac{\\det(A_2)}{\\det(A)}"
+      },
+      {
+        "type": "p",
+        "text": "ত্রিমাত্রিক জগতে একই ঘটনা ঘটে, শুধু সামান্তরিকের বদলে প্যারালেলেপিপেডের আয়তন ব্যবহৃত হয়। আদি আয়তন যদি কোনো স্থানাঙ্ক <annotation>x_i</annotation>-র সমান হয়, রূপান্তরের পর তা <annotation>\\det(A)</annotation> গুণ বেড়ে যায়; সেই নতুন আয়তন মূল ডিটারমিন্যান্ট দিয়ে ভাগ করলেই <annotation>x_i=\\dfrac{\\det(A_i)}{\\det(A)}</annotation>। এখানে <annotation>A_i</annotation> হলো সেই ম্যাট্রিক্স যার <annotation>i</annotation>-তম কলামে <annotation>\\vec v</annotation> বসানো হয়েছে—এটিই সাধারণ <annotation>n</annotation>-মাত্রিক ক্র্যামারের নিয়ম।",
+        "tex": "x_i \\det(A) x_i=\\dfrac{\\det(A_i)}{\\det(A)} A_i i \\vec v n"
+      }
+    ]
+  },
+  {
+    "id": "sec_04_computational_reality",
+    "title": "৪. অ্যালগরিদমিক বাস্তবতা ও তাত্ত্বিক সৌন্দর্য",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৪. অ্যালগরিদমিক বাস্তবতা ও তাত্ত্বিক সৌন্দর্য",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "ক্র্যামারের নিয়ম এত সুন্দর হওয়া সত্ত্বেও কম্পিউটার বিজ্ঞানীরা বড় আকারের সমীকরণ জোট সমাধানে এটি সচরাচর ব্যবহার করেন না। এর কারণ হলো গাণনিক অ্যালগরিদমের দক্ষতা: সৌন্দর্য আর গতি সবসময় এক পথে হাঁটে না।",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "<annotation>n</annotation> ক্রমের একটি জোট ক্র্যামারের নিয়মে সমাধান করতে হলে মোট <annotation>n+1</annotation> টি পৃথক ডিটারমিন্যান্ট হিসাব করতে হয়। অন্যদিকে গাউসিয়ান এলিমিনেশন বা রো-রিডাকশন মাত্র <annotation>O(n^3)</annotation> অপারেশনে সরাসরি সব চলকের মান দিয়ে দেয়—বড় ম্যাট্রিক্সে এই পার্থক্য দারুণ প্রভাব ফেলে।",
+        "tex": "n n+1 O(n^3)"
+      },
+      {
+        "type": "callout",
+        "text": "💎 কম্পিউটারের হিসাবের বাইরে বিশুদ্ধ গণিতে ক্র্যামারের গুরুত্ব অপরিসীম। এটি কোনো ধাপ-ভিত্তিক অ্যালগরিদম নয়, বরং সমাধানের একটি সরাসরি রুদ্ধ-রূপ (closed-form) সূত্র: <annotation>x_i=\\det(A_i)/\\det(A)</annotation>। এই রূপটি আমাদের দেখায় সমাধানটি আসলে ডিটারমিন্যান্টের একটি জ্যামিতিক অনুপাত মাত্র।",
+        "tex": "x_i=\\det(A_i)/\\det(A)"
+      },
+      {
+        "type": "p",
+        "text": "যদি লক্ষ্য ভেক্টর <annotation>\\vec v</annotation> সামান্য একটু বদলায়, তবে সমাধানে কত পরিবর্তন আসবে—ক্র্যামারের সূত্রকে ডেরিভেটিভ করে তা তাৎক্ষণিকভাবে বোঝা যায়: <annotation>\\dfrac{\\partial x_i}{\\partial v_j}=\\dfrac{C_{ji}}{\\det(A)}=(A^{-1})_{ij}</annotation>। এটি ইনভার্স ম্যাট্রিক্স, সংবেদনশীলতা বিশ্লেষণ ও ক্যালকুলাসের অন্তরকলনকে লিনিয়ার অ্যালজেব্রার সাথে এক সুতোয় গেঁথে দেয়।",
+        "tex": "\\vec v \\dfrac{\\partial x_i}{\\partial v_j}=\\dfrac{C_{ji}}{\\det(A)}=(A^{-1})_{ij}"
+      },
+      {
+        "type": "p",
+        "text": "সুতরাং পরবর্তী বার যখনই ক্র্যামারের নিয়ম দেখবেন, কোনো যান্ত্রিক সূত্র ভাববেন না। মনে রাখবেন: এটি আসলে দুটি (বা আরও বেশি) সামান্তরিকের ক্ষেত্রফলের এক অতুলনীয় জ্যামিতিক অনুপাত—একটি স্থানাঙ্ক যা আগে কেবল সংখ্যা মনে হতো, তা আজ ক্ষেত্রফলের ভাষায় বলা যায়।",
+        "tex": ""
+      }
+    ]
+  }
+]

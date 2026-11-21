@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>৩ব্লু১ব্রাউন: ভেক্টর আসলে কী? | বাংলা রিসোর্স ফ্যাক্টরি</title>
+  <!-- MathJax for crystal clear mathematical equations -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root {
+      --bg-dark: #090d16;
+      --bg-card: #121827;
+      --bg-card-hover: #1b2438;
+      --border-color: #243049;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-purple: #a855f7;
+      --text-main: #f8fafc;
+      --text-dim: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Hind Siliguri', sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-math { background: rgba(56, 189, 248, 0.15); color: var(--accent-cyan); border: 1px solid rgba(56, 189, 248, 0.3); }
+    .badge-brf { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-source { background: rgba(168, 85, 247, 0.15); color: var(--accent-purple); border: 1px solid rgba(168, 85, 247, 0.3); }
+
+    h1 {
+      font-size: 2.2rem;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, #38bdf8, #a7f3d0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--text-dim);
+      font-size: 1.05rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      color: var(--accent-cyan);
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .three-perspectives {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .perspective-item {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.25rem;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .perspective-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-cyan);
+    }
+
+    .perspective-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .visual-container {
+      background: #060911;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+
+    .interactive-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .control-label {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    .slider {
+      accent-color: var(--accent-cyan);
+      cursor: pointer;
+    }
+
+    .note-box {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 4px solid var(--accent-amber);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.25rem 0;
+      font-size: 0.95rem;
+    }
+
+    .note-box strong { color: var(--accent-amber); }
+
+    .formula-box {
+      background: #0d1322;
+      border: 1px dashed var(--accent-cyan);
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+      text-align: center;
+      font-size: 1.15rem;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="badge-group">
+        <span class="badge badge-source">3Blue1Brown Adaptation</span>
+        <span class="badge badge-math">Essence of Linear Algebra</span>
+        <span class="badge badge-brf">লেসন ০১ • ইন্টারেক্টিভ কোর্স</span>
+      </div>
+      <h1>ভেক্টর আসলে কী? (Vectors, What Even Are They?)</h1>
+      <p class="subtitle">জ্যামিতিক স্বজ্ঞা, স্থানাঙ্ক ব্যবস্থা এবং ত্রিমুখী রূপরেখার সহজবোধ্য বাংলা পাঠ</p>
+    </header>
+
+    <!-- Section 1 -->
+    <div class="card">
+      <h2>📐 ১. ভেক্টরকে দেখার ৩টি ভিন্ন দৃষ্টিকোণ</h2>
+      <p>৩ব্লু১ব্রাউন-এর মূল দর্শন হলো—কোনো সূত্র মুখস্থ করার আগে তার পেছনের মূল চিত্রটি মনের ভেতর স্পষ্ট করা। ভেক্টরকে সাধারণত তিনটি আলাদা পেশাজীবী দল তিনটি ভিন্ন রূপে দেখে:</p>
+
+      <div class="three-perspectives">
+        <div class="perspective-item" style="border-top: 3px solid #38bdf8;">
+          <div class="perspective-title" style="color: #38bdf8;">🔭 পদার্থবিজ্ঞানী</div>
+          <p style="font-size: 0.9rem; color: #cbd5e1;">স্থানের মাঝে একটি <strong>তীরচিহ্ন (Arrow)</strong>। এর কেবল দুটি জিনিস থাকে: <strong>মান বা দৈর্ঘ্য (Magnitude)</strong> এবং <strong>দিক (Direction)</strong>। এটিকে মহাশূন্যের যেখানেই সরান না কেন, এটি অপরিবর্তিত থাকে।</p>
+        </div>
+
+        <div class="perspective-item" style="border-top: 3px solid #10b981;">
+          <div class="perspective-title" style="color: #10b981;">💻 কম্পিউটার বিজ্ঞানী</div>
+          <p style="font-size: 0.9rem; color: #cbd5e1;">সংখ্যার একটি <strong>সুশৃঙ্খল তালিকা (Ordered List)</strong>। যেমন কোনো শিক্ষার্থীর গ্রেড, বয়স এবং রোল নম্বরকে এক সারিতে সাজালে <code style="color: #10b981;">[3.8, 16, 5]</code> একটি ত্রিমাত্রিক ভেক্টর তৈরি করে।</p>
+        </div>
+
+        <div class="perspective-item" style="border-top: 3px solid #a855f7;">
+          <div class="perspective-title" style="color: #a855f7;">🧙‍♂️ গণিতবিদ</div>
+          <p style="font-size: 0.9rem; color: #cbd5e1;">গণিতবিদরা উভয়ের মেলবন্ধন ঘটান। যেকোনো কিছুকে ভেক্টর বলা যাবে যদি তার ওপর <strong>যোগ</strong> \((v + w)\) এবং সংখ্যার <strong>গুণ</strong> \((c \cdot v)\) সঠিকভাবে কাজ করে।</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Interactive Vector Canvas -->
+    <div class="card">
+      <h2>🎯 ২. স্থানাঙ্ক ব্যবস্থার সাথে সংযোগ ও লাইভ ভেক্টর ডায়াগ্রাম</h2>
+      <p>রৈখিক বীজগণিতে আমরা ভেক্টরের লেজকে সব সময় <strong>মূলবিন্দু \((0, 0)\)</strong>-তে নোঙর করে রাখি। নিচে একটি ইন্টারেক্টিভ ভেক্টর দেওয়া হলো—স্লাইডার নাড়িয়ে দেখুন ভেক্টর কীভাবে জ্যামিতিকভাবে রূপান্তরিত হয়:</p>
+
+      <div class="visual-container">
+        <svg id="vectorSvg" viewBox="0 0 500 350" width="100%" height="320" style="overflow: visible;">
+          <!-- Grid -->
+          <g stroke="#1a233a" stroke-width="1">
+            <line x1="50" y1="50" x2="450" y2="50"/>
+            <line x1="50" y1="110" x2="450" y2="110"/>
+            <line x1="50" y1="170" x2="450" y2="170"/>
+            <line x1="50" y1="230" x2="450" y2="230"/>
+            <line x1="50" y1="290" x2="450" y2="290"/>
+            <line x1="110" y1="30" x2="110" y2="310"/>
+            <line x1="170" y1="30" x2="170" y2="310"/>
+            <line x1="230" y1="30" x2="230" y2="310"/>
+            <line x1="290" y1="30" x2="290" y2="310"/>
+            <line x1="350" y1="30" x2="350" y2="310"/>
+            <line x1="410" y1="30" x2="410" y2="310"/>
+          </g>
+
+          <!-- Axes Origin at (170, 230) -->
+          <line x1="70" y1="230" x2="450" y2="230" stroke="#475569" stroke-width="2"/>
+          <line x1="170" y1="310" x2="170" y2="50" stroke="#475569" stroke-width="2"/>
+          <text x="445" y="245" fill="#94a3b8" font-size="12">X</text>
+          <text x="175" y="60" fill="#94a3b8" font-size="12">Y</text>
+          <text x="155" y="245" fill="#64748b" font-size="11">(0,0)</text>
+
+          <!-- Dashed Step lines -->
+          <line id="stepX" x1="170" y1="230" x2="350" y2="230" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4"/>
+          <line id="stepY" x1="350" y1="230" x2="350" y2="110" stroke="#10b981" stroke-width="2" stroke-dasharray="4,4"/>
+
+          <!-- Dynamic Arrow -->
+          <line id="vectorArrow" x1="170" y1="230" x2="346" y2="114" stroke="#38bdf8" stroke-width="4"/>
+          <!-- Arrow head polygon -->
+          <polygon id="arrowHead" points="350,110 338,114 344,122" fill="#38bdf8"/>
+
+          <circle id="targetPoint" cx="350" cy="110" r="5" fill="#38bdf8" stroke="#ffffff" stroke-width="2"/>
+          <text id="coordText" x="360" y="105" fill="#f8fafc" font-size="14" font-weight="bold">(3, 2)</text>
+        </svg>
+
+        <div class="interactive-controls">
+          <div>
+            <span class="control-label">X মান: </span>
+            <input type="range" id="xSlider" class="slider" min="-2" max="4" value="3" step="1">
+            <span id="xVal" style="color: var(--accent-amber); font-weight: bold;">+3</span>
+          </div>
+          <div>
+            <span class="control-label">Y মান: </span>
+            <input type="range" id="ySlider" class="slider" min="-2" max="3" value="2" step="1">
+            <span id="yVal" style="color: var(--accent-emerald); font-weight: bold;">+2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="formula-box">
+        গাণিতিক ম্যাট্রিক্স রূপ: 
+        \[
+        \vec{v} = \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} <span id="mathX">3</span> \\ <span id="mathY">2</span> \end{bmatrix}
+        \]
+      </div>
+    </div>
+
+    <!-- Section 3: Deep Dive Note -->
+    <div class="card">
+      <h2>💡 ৩. গভীর পাঠ ও বিশ্লেষণ নোট (Concept Deep Dive)</h2>
+
+      <div class="note-box">
+        <strong>১. লেজ কেন মূলবিন্দুতেই? (Origin Anchor Rule):</strong><br>
+        সাধারণ পদার্থবিজ্ঞানে ভেক্টরকে আপনি খাতার যেকোনো প্রান্তে আঁকতে পারেন। কিন্তু লিনিয়ার বীজগণিতে সব ভেক্টরের প্রারম্ভিক বিন্দু বা লেজকে আমরা \((0, 0)\)-তে ফিক্স রাখি। কারণ ম্যাট্রিক্স যখন পুরো স্পেসকে মোচড় দেয় (Transformation), তখন মূলবিন্দু অপরিবর্তিত থাকে এবং ভেক্টরের শীর্ষবিন্দুগুলো নতুন মান নির্দেশ করে।
+      </div>
+
+      <div class="note-box">
+        <strong>২. স্কেলিং ও স্কেলারের রহস্য:</strong><br>
+        সংখ্যার গুণকে কেন "স্কেলার গুণন" বলা হয়? কারণ সংখ্যা দিয়ে ভেক্টরকে গুণ করলে তার দৈর্ঘ্য প্রসারিত (Stretch), সংকুচিত (Squish) কিংবা উল্টো দিকে ঘুরে যায়—অর্থাৎ আকারের স্কেলিং ঘটে। সংখ্যা নিজেই হলো একটি <em>স্কেলার (Scaler)</em>।
+      </div>
+    </div>
+
+    <footer>
+      বাংলা রিসোর্স ফ্যাক্টরি (BRF) • ৩ব্লু১ব্রাউন অ্যাডাপ্টেশন উইং • লোকাল পিসি ও গিটহাব পেজ রেডি
+    </footer>
+  </div>
+
+  <script>
+    const originX = 170;
+    const originY = 230;
+    const scale = 60; // 60px per unit
+
+    const xSlider = document.getElementById('xSlider');
+    const ySlider = document.getElementById('ySlider');
+    const xVal = document.getElementById('xVal');
+    const yVal = document.getElementById('yVal');
+    const mathX = document.getElementById('mathX');
+    const mathY = document.getElementById('mathY');
+
+    const stepX = document.getElementById('stepX');
+    const stepY = document.getElementById('stepY');
+    const vectorArrow = document.getElementById('vectorArrow');
+    const targetPoint = document.getElementById('targetPoint');
+    const coordText = document.getElementById('coordText');
+    const arrowHead = document.getElementById('arrowHead');
+
+    function update() {
+      const x = parseInt(xSlider.value);
+      const y = parseInt(ySlider.value);
+
+      xVal.innerText = (x >= 0 ? '+' : '') + x;
+      yVal.innerText = (y >= 0 ? '+' : '') + y;
+      mathX.innerText = x;
+      mathY.innerText = y;
+
+      const px = originX + (x * scale);
+      const py = originY - (y * scale);
+
+      stepX.setAttribute('x2', px);
+
+      stepY.setAttribute('x1', px);
+      stepY.setAttribute('x2', px);
+      stepY.setAttribute('y2', py);
+
+      targetPoint.setAttribute('cx', px);
+      targetPoint.setAttribute('cy', py);
+
+      coordText.setAttribute('x', px + 10);
+      coordText.setAttribute('y', py - 5);
+      coordText.innerText = `(${x}, ${y})`;
+
+      // Arrow angle
+      const angle = Math.atan2(py - originY, px - originX);
+      const arrowLength = Math.hypot(px - originX, py - originY);
+
+      if (arrowLength > 5) {
+        vectorArrow.setAttribute('x2', px - 8 * Math.cos(angle));
+        vectorArrow.setAttribute('y2', py - 8 * Math.sin(angle));
+
+        // Arrow head points
+        const p1x = px;
+        const p1y = py;
+        const p2x = px - 14 * Math.cos(angle - Math.PI / 6);
+        const p2y = py - 14 * Math.sin(angle - Math.PI / 6);
+        const p3x = px - 14 * Math.cos(angle + Math.PI / 6);
+        const p3y = py - 14 * Math.sin(angle + Math.PI / 6);
+
+        arrowHead.setAttribute('points', `${p1x},${p1y} ${p2x},${p2y} ${p3x},${p3y}`);
+        arrowHead.style.display = 'block';
+      } else {
+        arrowHead.style.display = 'none';
+      }
+    }
+
+    xSlider.addEventListener('input', update);
+    ySlider.addEventListener('input', update);
+    update();
+  </script>
+</body>
+</html>

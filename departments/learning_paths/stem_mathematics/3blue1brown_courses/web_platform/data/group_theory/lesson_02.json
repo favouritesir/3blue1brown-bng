@@ -1,0 +1,297 @@
+{
+  "lesson_id": "lesson_02",
+  "chapter_num": 2,
+  "course_id": "group_theory",
+  "title_en": "Euler's formula with introductory group theory",
+  "title_bn": "ইউলারের সূত্র গ্রুপ তত্ত্বের মাধ্যমে",
+  "subtitle_bn": "$e^{\\pi i}=-1$ কেন সত্য—গ্রুপ তত্ত্বের চোখে সংখ্যা, ঘাত ও হোমোমরফিজম",
+  "video_id": "mvmuCPvRoWQ",
+  "official_url": "https://www.3blue1brown.com/lessons/eulers-formula-via-group-theory",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "~২০ মি.",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "A few perspectives from group theory can make Euler's formula a bit more intuitive.",
+    "quote_bn": "গ্রুপ তত্ত্বের কয়েকটি দৃষ্টিভঙ্গি ইউলারের সূত্রটিকে কিছুটা বেশি স্বজ্ঞাত করে তোলে।",
+    "author": "Grant Sanderson (গ্রান্ট স্যান্ডারসন)"
+  },
+  "sections": [
+    {
+      "id": "sec-intro",
+      "title_bn": "১. ইউলারের সূত্রের পরিচিতি",
+      "title_en": "Euler's Formula",
+      "summary_bn": "$e^{\\pi i}=-1$—এই বিখ্যাত সমীকরণের পেছনের অন্তর্দৃষ্টি গ্রুপ তত্ত্ব থেকে আসে।",
+      "key_takeaways": [
+        "এটি কোনো আনুষ্ঠানিক প্রমাণ নয়, বরং একটি অন্তর্দৃষ্টি।",
+        "লক্ষ্য—সংখ্যা ও বীজগণিত সম্পর্কে চিন্তার ধরন বদলানো।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_sec-intro_1",
+          "caption_bn": "$e^{\\pi i}=-1$—গ্রুপ তত্ত্বের দৃষ্টিতে",
+          "type": "svg",
+          "src": "figures/gt_02/topic_intro.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-square",
+      "title_bn": "২. বর্গক্ষেত্রের গ্রুপ",
+      "title_en": "Square Group",
+      "summary_bn": "বর্গক্ষেত্রের ৮টি প্রতিসাম্য নিয়ে গড়ে ওঠে ডাইহেড্রাল গ্রুপ $D_4$।",
+      "key_takeaways": [
+        "৯০° ঘোরানো ও উল্টানোর মতো কাজগুলোই প্রতিসাম্য।",
+        "কিছু না করা including ৮টি কাজ নিয়ে $D_4$ গ্রুপ।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_sec-square_1",
+          "caption_bn": "বর্গের ৮টি প্রতিসাম্য—কিছু না করা, ৩টি ঘূর্ণন ও ৪টি উল্টানো",
+          "type": "svg",
+          "src": "figures/gt_02/square_symmetries.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-circle",
+      "title_bn": "৩. বৃত্তের গ্রুপ",
+      "title_en": "Circle Group",
+      "summary_bn": "বৃত্তের সব ঘূর্ণন নিয়ে গড়ে ওঠা অসীম গ্রুপ—প্রতিটি কাজ বৃত্তের এক বিন্দু দিয়ে চেনা যায়।",
+      "key_takeaways": [
+        "বর্গ সসীম, বৃত্তের ঘূর্ণন গ্রুপ অসীম।",
+        "$0$ থেকে $2\\pi$ রেডিয়ানের প্রতিটি কাজ বৃত্তের এক বিন্দুতে মিলে।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_sec-circle_1",
+          "caption_bn": "বৃত্তের ঘূর্ণন গ্রুপ—অবিচ্ছিন্ন $0$ থেকে $2\\pi$",
+          "type": "svg",
+          "src": "figures/gt_02/rotation_group.svg"
+        },
+        {
+          "id": "fig_sec-circle_3",
+          "caption_bn": "একটি চিহ্নিত বিন্দু ঘূর্ণনকে শনাক্ত করতে সাহায্য করে",
+          "type": "svg",
+          "src": "figures/gt_02/arbitrary_point.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-composing",
+      "title_bn": "৪. প্রতিসাম্যের সংযোজন",
+      "title_en": "Composing Symmetries",
+      "summary_bn": "দুটি কাজ একের পর এক প্রয়োগ করাই গ্রুপের আসল হৃদয়।",
+      "key_takeaways": [
+        "বর্গে ঘোরানো + উল্টানো = অন্য একটি প্রতিফলন।",
+        "বৃত্তে $270^\\circ+120^\\circ=30^\\circ$।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_sec-composing_1",
+          "caption_bn": "ঘোরানোর পর উল্টানো = কর্ণ বরাবর উল্টানো",
+          "type": "svg",
+          "src": "figures/gt_02/rot_plus_flip.svg"
+        },
+        {
+          "id": "fig_sec-composing_3",
+          "caption_bn": "বৃত্তে দুই ঘূর্ণনের সংযোজন",
+          "type": "svg",
+          "src": "figures/gt_02/circle_double_rotation.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-additive",
+      "title_bn": "৫. সংখ্যার যোগ গ্রুপ",
+      "title_en": "Additive Group for Numbers",
+      "summary_bn": "সংখ্যারেখা বা জটিল তলে সরণের কাজগুলো নিয়ে গড়ে ওঠে যোগ গ্রুপ।",
+      "key_takeaways": [
+        "$0$ থেকে শুরু করে সরণগুলো বাস্তব সংখ্যার যোগ গ্রুপ।",
+        "জটিল তলে সরণ মানে জটিল সংখ্যা যোগ।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_sec-additive_1",
+          "caption_bn": "সংখ্যারেখার সব সরণ নিয়ে গড়ে ওঠা গ্রুপ",
+          "type": "svg",
+          "src": "figures/gt_02/line_symmetries.svg"
+        },
+        {
+          "id": "fig_sec-additive_3",
+          "caption_bn": "বাস্তব সংখ্যার যোগ গ্রুপ—সরণের যোগ",
+          "type": "svg",
+          "src": "figures/gt_02/additive_group_reals.svg"
+        },
+        {
+          "id": "fig_sec-additive_5",
+          "caption_bn": "জটিল তলে সরণের সংযোজন = জটিল সংখ্যা যোগ",
+          "type": "svg",
+          "src": "figures/gt_02/adding_complex.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-multiplicative",
+      "title_bn": "৬. গুণ গ্রুপ",
+      "title_en": "Multiplicative Group for Numbers",
+      "summary_bn": "০ স্থির রেখে প্রসারণ ও ঘোরানো—সংখ্যার গুণ গ্রুপ, যার শূন্য দিয়ে গুণ অন্তর্ভুক্ত নয়।",
+      "key_takeaways": [
+        "১-এ থাকা বিন্দু কোথায় যায় তা দেখে প্রসারণ চেনা যায়।",
+        "$i$ দিয়ে গুণ মানে ৯০° ঘোরানো; $i\\cdot i=-1$।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_sec-multiplicative_1",
+          "caption_bn": "৩ গুণ প্রসার—$1$ থেকে $3$",
+          "type": "svg",
+          "src": "figures/gt_02/stretch_3.svg"
+        },
+        {
+          "id": "fig_sec-multiplicative_4",
+          "caption_bn": "$i$ দিয়ে গুণ = ৯০° ঘোরানো; দুইবার = ১৮০°",
+          "type": "svg",
+          "src": "figures/gt_02/i_rotation.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-exponents",
+      "title_bn": "৭. ঘাত আসলে কী?",
+      "title_en": "What are Exponents?",
+      "summary_bn": "$2^{x+y}=2^x2^y$ বৈশিষ্ট্যের পেছনে রয়েছে যোগ-গ্রুপ থেকে গুণ-গ্রুপে হোমোমরফিজম।",
+      "key_takeaways": [
+        "ঘাতের সংজ্ঞা এমনভাবে বাড়ানো হয় যেন $2^{x+y}=2^x2^y$ টিকে থাকে।",
+        "গঠন সংরক্ষণকারী মানচিত্র = হোমোমরফিজম।"
+      ],
+      "formulas": [
+        {
+          "label": "ঘাতের বৈশিষ্ট্য",
+          "katex": "2^{x+y}=2^{x}\\cdot2^{y}"
+        },
+        {
+          "label": "হোমোমরফিজম",
+          "katex": "\\exp(x+y)=\\exp(x)\\cdot\\exp(y)"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_sec-exponents_2",
+          "caption_bn": "যোগ-গ্রুপ থেকে গুণ-গ্রুপে গঠন-সংরক্ষণকারী মানচিত্র",
+          "type": "svg",
+          "src": "figures/gt_02/homomorphism.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-conclusion",
+      "title_bn": "৮. জটিল ঘাত ও উপসংহার",
+      "title_en": "Complex Exponentiation & Conclusion",
+      "summary_bn": "$e^x$ উল্লম্ব সরণকে ঘোরানোয় রূপ দেয়—$\\pi i$ হয় $\\pi$ রেডিয়ান, অর্থাৎ $-1$।",
+      "key_takeaways": [
+        "$e$ বিশেষ কারণ ১ একক উল্লম্ব সরণ → ঠিক ১ রেডিয়ান।",
+        "$\\pi i$ → $\\pi$ রেডিয়ান = $-1$।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_sec-conclusion_1",
+          "caption_bn": "উল্লম্ব সরণ → একক বৃত্তে ঘোরানো",
+          "type": "svg",
+          "src": "figures/gt_02/imaginary_axis.svg"
+        },
+        {
+          "id": "fig_sec-conclusion_3",
+          "caption_bn": "$e^x$: ১ একক উল্লম্ব সরণ = ১ রেডিয়ান",
+          "type": "svg",
+          "src": "figures/gt_02/ex.svg"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_square_compose",
+      "section_ref": "sec-composing",
+      "question_bn": "❓ বর্গকে ১৮০° ঘোরে উল্লম্ব রেখা বরাবর উল্টালে কোন কাজের সমান হবে?",
+      "question_en": "Rotate the square 180° then flip around a vertical line — which action is it equivalent to?",
+      "options": [
+        "৯০° সঘনবর্তী ঘোরানো",
+        "৯০° বামাবর্তী ঘোরানো",
+        "অনুভূমিক রেখা বরাবর উল্টানো",
+        "কিছু না করা"
+      ],
+      "options_bn": [
+        "৯০° সঘনবর্তী ঘোরানো",
+        "৯০° বামাবর্তী ঘোরানো",
+        "অনুভূমিক রেখা বরাবর উল্টানো",
+        "কিছু না করা"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "$(x,y)\\to(-x,-y)\\to(x,-y)$—অর্থাৎ $x$-অক্ষ বরাবর প্রতিফলন, অথবা অনুভূমিক রেখা বরাবর উল্টানো।",
+      "explanation_en": "Rotate the square 180° then flip around a vertical line — which action is it equivalent to?",
+      "hint": "প্রথমে ১৮০° ঘোরালে $(x,y)\\to(-x,-y)$; তারপর উল্লম্ব অক্ষে উল্টালে $(x,-y)$।",
+      "hints": [
+        "প্রথমে ১৮০° ঘোরালে $(x,y)\\to(-x,-y)$; তারপর উল্লম্ব অক্ষে উল্টালে $(x,-y)$।"
+      ]
+    },
+    {
+      "id": "quiz_02_complex_add",
+      "section_ref": "sec-additive",
+      "question_bn": "❓ $(-6+2i)+(4-3i)=?$",
+      "question_en": "(-6+2i)+(4-3i)=?",
+      "options": [
+        "$-2-1i$",
+        "$-18+26i$",
+        "$2+1i$",
+        "$i$"
+      ],
+      "options_bn": [
+        "$-2-1i$",
+        "$-18+26i$",
+        "$2+1i$",
+        "$i$"
+      ],
+      "correct_index": 0,
+      "explanation_bn": "বাস্তব অংশ: $-6+4=-2$; কাল্পনিক অংশ: $2-3=-1$। ফল $-2-i$।",
+      "explanation_en": "(-6+2i)+(4-3i)=?",
+      "hint": "বাস্তব ও কাল্পনিক অংশ আলাদাভাবে যোগ করুন।",
+      "hints": [
+        "বাস্তব ও কাল্পনিক অংশ আলাদাভাবে যোগ করুন।"
+      ]
+    },
+    {
+      "id": "quiz_03_complex_scale",
+      "section_ref": "sec-multiplicative",
+      "question_bn": "❓ $2+1i$ বিন্দুকে $-4-2i$ বিন্দুতে নিতে কোন গুণ-কাজ প্রয়োগ করব?",
+      "question_en": "What group action moves the point 2+1i to -4-2i?",
+      "options": [
+        "$-2$ দিয়ে গুণ (২ গুণ প্রসার + ১৮০° ঘোরানো)",
+        "$2$ দিয়ে গুণ",
+        "$i$ দিয়ে গুণ (৯০° ঘোরানো)",
+        "$-i$ দিয়ে গুণ"
+      ],
+      "options_bn": [
+        "$-2$ দিয়ে গুণ (২ গুণ প্রসার + ১৮০° ঘোরানো)",
+        "$2$ দিয়ে গুণ",
+        "$i$ দিয়ে গুণ (৯০° ঘোরানো)",
+        "$-i$ দিয়ে গুণ"
+      ],
+      "correct_index": 0,
+      "explanation_bn": "$(2+i)\\cdot(-2)=-4-2i$। অর্থাৎ ২ গুণ প্রসার আর ১৮০° ঘোরানো—একই কাজ।",
+      "explanation_en": "What group action moves the point 2+1i to -4-2i?",
+      "hint": "$-4-2i=-2(2+i)$ কি লক্ষ্য করেছেন?",
+      "hints": [
+        "$-4-2i=-2(2+i)$ কি লক্ষ্য করেছেন?"
+      ]
+    }
+  ]
+}

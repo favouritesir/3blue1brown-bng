@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>কম্পমান চার্জ কীভাবে আলো তৈরি করে | How wiggling charges give rise to light (3Blue1Brown Physics)</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/physics/lesson_05/manifest.js?v=1"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="পদার্থবিজ্ঞান"
+  course-url="../../index.html#physics"
+  home-url="../../index.html"
+  chapter-num="০৫"
+  chapter-total="১৩"
+  prev-url="lesson_04.html"
+  prev-title="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_06.html"
+  next-title="পরবর্তী অধ্যায়"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="পদার্থবিজ্ঞান"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৫ · পদার্থবিজ্ঞান"
+  title="কম্পমান চার্জ কীভাবে আলো তৈরি করে | How wiggling charges give rise to light"
+  desc="ত্বরান্বিত চার্জের বিলম্বিত প্রভাব, দুই ধরনের বৃত্তাকার পোলারাইজেশন এবং আগের পাঠের বার্বার পোল এফেক্টের ব্যাখ্যা।"
+  video-src="../../media_vault/physics/lesson_05/experiments/3b1b_physics_05_full_dubbed.mp4"
+  yt-id="aXRTczANuIs"
+  date="৩১ আগস্ট, ২০২৩"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">আলোর উৎস — কম্পমান চার্জ</b1b-bookmark>
+      <b1b-bookmark time="24" time-bn="০০:২৪">বিলম্বিত প্রভাব</b1b-bookmark>
+      <b1b-bookmark time="56" time-bn="০০:৫৬">দুই ধরনের বৃত্তাকার পোলারাইজেশন</b1b-bookmark>
+      <b1b-bookmark time="84" time-bn="০১:২৪">বার্বার পোল পুনরায় ব্যাখ্যা</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-bp2-intro">আলোর উৎস — কম্পমান চার্জ</a>
+      <a href="#sec-bp2-retarded">বিলম্বিত প্রভাব</a>
+      <a href="#sec-bp2-circular">দুই ধরনের বৃত্তাকার পোলারাইজেশন</a>
+      <a href="#sec-bp2-synthesis">বার্বার পোল পুনরায় ব্যাখ্যা</a>
+      <a href="#sec-visualizer">ইন্টারেক্টিভ ল্যাব</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ আলোর উৎস — কম্পমান চার্জ ═══ -->
+      <b1b-section id="sec-bp2-intro" title="আলোর উৎস — কম্পমান চার্জ">
+        <p>আগের পাঠে আমরা দেখেছিলাম চিনির দ্রবণ পোলারাইজেশনের দিক ঘোরায়। কিন্তু সেই ঘূর্ণন আসলে কী? এর উত্তর পেতে আমাদের যেতে হয় আলোর উৎসের কাছে। আইনস্টাইনের বিশেষ আপেক্ষিকতা থেকে জানা যায় — স্থির বা সুষম গতিশীল চার্জ কেবল স্থির ক্ষেত্র বহন করে; আলো তৈরি হয় যখন কোনো চার্জ <strong>ত্বরান্বিত</strong> হয়।</p>
+        <b1b-figure src="../../assets/figures/phys_05/fig_01.svg" alt="radiating charge" caption="দোলন করা একটি চার্জ থেকে বের হওয়া তড়িৎ-চুম্বকীয় তরঙ্গ"></b1b-figure>
+        <b1b-quiz
+          question="❓ কোন ধরনের চার্জ থেকে আলো নির্গত হয়?"
+          correct="2"
+          correct-msg="সঠিক! কেবল ত্বরান্বিত চার্জই তড়িৎ-চুম্বকীয় তরঙ্গ নির্গত করে।"
+          wrong-msg="স্থির বা সুষম গতিশীল চার্জ কেবল স্থির ক্ষেত্র রাখে; বিকিরণ লাগে ত্বরান্বিত চার্জ।"
+          reveal-msg="সঠিক উত্তর: ত্বরান্বিত চার্জ।"
+          data-no-narration="true">
+          <div slot="option">স্থির চার্জ</div>
+          <div slot="option">সুষম বেগে চলা চার্জ</div>
+          <div slot="option">ত্বরান্বিত চার্জ</div>
+          <div slot="option">নিরপেক্ষ কণা</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ বিলম্বিত প্রভাব ═══ -->
+      <b1b-section id="sec-bp2-retarded" title="বিলম্বিত প্রভাব">
+        <p>একটি চার্জ দূরে আছে। আপনি যদি সেখানকার বৈদ্যুতিক ক্ষেত্র মাপেন, তবে সেটি চার্জের বর্তমান অবস্থার ওপর নির্ভর করে না — নির্ভর করে সেই সময়ের অবস্থার ওপর যখন সংকেতটি বেরিয়েছিল। আলোর বেগ সীমিত হওয়ায় একটা বিলম্ব হয়। এই বিলম্বিত প্রভাবের গাণিতিক রূপকেই বলা হয় retarded potential, আর ত্বরান্বিত চার্জের ক্ষেত্রে এর দূর-প্রযোজ্য অংশটি হলো বিকিরণ।</p>
+        <b1b-formula math="\mathbf{E}_{\mathrm{rad}} \propto \frac{\mathbf{a}(t_r)}{c^2 r}"></b1b-formula>
+        <b1b-callout type="blue" icon="⏱️" title="সংকেতের বিলম্ব">
+          <p>আপনি সূর্যকে যেমন দেখছেন, সেটি আসলে ৮ মিনিট আগের সূর্য। আলোর এই সীমিত বেগই বিলম্বিত তরঙ্গের উৎস।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ দুই ধরনের বৃত্তাকার পোলারাইজেশন ═══ -->
+      <b1b-section id="sec-bp2-circular" title="দুই ধরনের বৃত্তাকার পোলারাইজেশন">
+        <p>একটি রৈখিকভাবে পোলারাইজড তরঙ্গকে দুইটি বৃত্তাকার পোলারাইজড তরঙ্গের যোগফল হিসেবে ভাঙা যায় — একটি ডানদিকে ঘোরে, অন্যটি বাঁদিকে। ভ্যাকুয়ামে দুইটির বেগ একই, তাই তাদের যোগফল একই রৈখিক দিক বজায় রাখে। কিন্তু চিনির দ্রবণের মতো chiral মাধ্যমে দুই উপাদানের বেগ আলাদা হয়। ফলে দশার পার্থক্য ক্রমশ বদলায় এবং যোগফলের রৈখিক দিক ঘুরতে থাকে।</p>
+        <b1b-formula math="\theta = \tfrac12(\phi_L - \phi_R)"></b1b-formula>
+        <b1b-figure src="../../assets/figures/phys_05/fig_02.svg" alt="circular decomposition" caption="ডান ও বাঁ বৃত্তাকার উপাদান মিলে রৈখিক পোলারাইজেশন"></b1b-figure>
+        <b1b-quiz
+          question="❓ রৈখিক পোলারাইজেশনকে কীভাবে ভাঙা যায়?"
+          correct="0"
+          correct-msg="চমৎকার! একটি রৈখিক তরঙ্গ = ডান-ঘূর্ণী + বাঁ-ঘূর্ণী বৃত্তাকার তরঙ্গের superposition।"
+          wrong-msg="ডান ও বাঁ বৃত্তাকার উপাদানের দশা মিলে রৈখিক কম্পন তৈরি করে।"
+          reveal-msg="সঠিক উত্তর: দুই বৃত্তাকার পোলারাইজেশনের যোগফল।"
+          data-no-narration="true">
+          <div slot="option">দুই বৃত্তাকার পোলারাইজেশনের যোগফল হিসেবে</div>
+          <div slot="option">দুই স্থির ক্ষেত্রের যোগফল হিসেবে</div>
+          <div slot="option">শুধু একটি বৃত্তাকার হিসেবে</div>
+          <div slot="option">দুই লাল রশ্মি হিসেবে</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ বার্বার পোল পুনরায় ব্যাখ্যা ═══ -->
+      <b1b-section id="sec-bp2-synthesis" title="বার্বার পোল পুনরায় ব্যাখ্যা">
+        <p>এখন পুরো চিত্রটি পরিষ্কার। ত্বরান্বিত চার্জ তরঙ্গ নির্গত করে; সেই তরঙ্গ chiral মাধ্যমে প্রবেশ করলে এর দুই বৃত্তাকার উপাদান ভিন্ন বেগে চলে; ফলে রৈখিক দিক ঘোরে; আর ঘূর্ণনের পরিমাণ রঙের ওপর নির্ভর করায় পর্দায় দেখা যায় বার্বার পোলের মতো কাত স্ট্রাইপ।</p>
+        <b1b-callout type="gold" icon="🔗" title="বড় ধারণা">
+          <p>রৈখিক পোলারাইজেশন আসলে দুই বৃত্তাকারের superposition — এই এক ধারণা অপটিক্স, কোয়ান্টাম বলবিজ্ঞান ও কণা পদার্থবিজ্ঞানে বারবার কাজে লাগে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Interactive lab — excluded from narration ═══ -->
+      <b1b-section id="sec-visualizer" title="বৃত্তাকার পোলারাইজেশন সিমুলেটর" data-no-narration="true">
+        <p class="viz-intro">এই ইন্টারেক্টিভ ল্যাবটি ব্যবহার করে ধারণাটি নিজে পরীক্ষা করে দেখুন। প্যারামিটার বদলে ফলাফলের পরিবর্তন পর্যবেক্ষণ করুন।</p>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="3,-2"></b1b-vector-plane>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/physics/lesson_05/experiments/3b1b_physics_05_full_dubbed.mp4"
+    yt-id="aXRTczANuIs"
+    title="কম্পমান চার্জ কীভাবে আলো তৈরি করে — অধ্যায় ০৫"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — পদার্থবিজ্ঞান">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_04.html"
+  prev-title="পূর্ববর্তী অধ্যায়"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_06.html"
+  next-title="পরবর্তী অধ্যায়"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

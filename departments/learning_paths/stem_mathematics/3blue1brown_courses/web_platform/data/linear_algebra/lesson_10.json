@@ -1,0 +1,266 @@
+{
+  "lesson_id": "lesson_10",
+  "chapter_num": 10,
+  "course_id": "linear_algebra",
+  "title_en": "Cross Products",
+  "title_bn": "ক্রস গুণন ও জ্যামিতিক ওরিয়েন্টেশন",
+  "subtitle_bn": "সামান্তরিকের ক্ষেত্রফল, ডান হাত নিয়ম, ৩D ডিটারমিন্যান্ট এবং ডুয়ালিটির অনুপম দর্শন",
+  "video_id": "eu6i7WJeinw",
+  "official_url": "https://www.3blue1brown.com/lessons/cross-products",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "15:04",
+    "prerequisites": [
+      "lesson_06",
+      "lesson_07",
+      "lesson_08",
+      "lesson_09"
+    ]
+  },
+  "epigraph": {
+    "quote": "Mathematics is the art of giving the same name to different things.",
+    "quote_bn": "গণিত হলো আপাতদৃষ্টিতে সম্পূর্ণ ভিন্ন জিনিসের অন্তরালে লুকিয়ে থাকা একই সত্তাকে একই নামে চেনার শিল্প।",
+    "author": "Henri Poincaré"
+  },
+  "sections": [
+    {
+      "id": "sec_01_geometric_definition",
+      "title_bn": "১. ক্রস প্রোডাক্টের জ্যামিতিক সংজ্ঞা ও সামান্তরিকের ক্ষেত্রফল",
+      "title_en": "Geometric Definition & Parallelogram Area",
+      "summary_bn": "ত্রিমাত্রিক স্থানে দুটি ভেক্টরের ক্রস প্রোডাক্ট হলো একটি নতুন তৃতীয় ভেক্টর যার দৈর্ঘ্য তাদের দ্বারা গঠিত সামান্তরিকের ক্ষেত্রফলের সমান এবং দিক উভয়ের সাথে লম্ব।",
+      "key_takeaways": [
+        "ক্রস প্রোডাক্ট $\\vec{v} \\times \\vec{w}$ হলো একটি ত্রিমাত্রিক ভেক্টর যা $\\vec{v}$ এবং $\\vec{w}$ উভয়ের সাথেই সমকোণে (লম্বভাবে) অবস্থান করে।",
+        "এই ভেক্টরের মান বা দৈর্ঘ্য $\\|\\vec{v} \\times \\vec{w}\\|$ নিখুঁতভাবে $\\vec{v}$ ও $\\vec{w}$ দ্বারা আবদ্ধ সামান্তরিকের ক্ষেত্রফল নির্দেশ করে: $\\|\\vec{v}\\| \\|\\vec{w}\\| \\sin(\\theta)$।",
+        "দিক নির্ধারণের জন্য ডান হাত নিয়ম (Right-hand rule) ব্যবহৃত হয়: তর্জনী $\\vec{v}$ বরাবর, মধ্যমা $\\vec{w}$ বরাবর প্রসারিত করলে বৃদ্ধাঙ্গুলি নির্দেশ করে $\\vec{v} \\times \\vec{w}$ এর দিক।",
+        "যদি ভেক্টরদ্বয় পরস্পর সমান্তরাল বা রৈখিকভাবে নির্ভরশীল হয়, তবে তাদের গঠিত সামান্তরিকের ক্ষেত্রফল শূন্য হয় এবং ফলে ক্রস প্রোডাক্ট হয় শূন্য ভেক্টর $\\vec{0}$।"
+      ],
+      "formulas": [
+        {
+          "label": "ক্রস প্রোডাক্টের পরম মান ও ক্ষেত্রফল সূত্র",
+          "katex": "\\|\\vec{v} \\times \\vec{w}\\| = \\|\\vec{v}\\| \\|\\vec{w}\\| \\sin(\\theta) = \\text{Area}(\\text{Parallelogram})"
+        },
+        {
+          "label": "লম্ব অবস্থানের শর্ত (অর্থোগোনালিটি)",
+          "katex": "(\\vec{v} \\times \\vec{w}) \\cdot \\vec{v} = 0 \\quad \\text{এবং} \\quad (\\vec{v} \\times \\vec{w}) \\cdot \\vec{w} = 0"
+        },
+        {
+          "label": "সমান্তরাল ভেক্টরের ক্রস গুণন",
+          "katex": "\\vec{v} \\parallel \\vec{w} \\implies \\theta \\in \\{0, \\pi\\} \\implies \\vec{v} \\times \\vec{w} = \\vec{0}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_cross_product_geometry",
+          "caption_bn": "ভেক্টর ভি এবং ডব্লিউ দ্বারা গঠিত সামান্তরিক ও লম্ব ক্রস প্রোডাক্ট ভেক্টর",
+          "type": "svg",
+          "src": "figures/cross_product_geometry.svg"
+        },
+        {
+          "id": "fig_right_hand_rule_3d",
+          "caption_bn": "ডান হাত নিয়মের সাহায্যে ক্রস প্রোডাক্টের দিক নির্ধারণের চিত্ররূপ",
+          "type": "svg",
+          "src": "figures/right_hand_rule_3d.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "cross_product_parallelogram_visualizer",
+        "initial_vectors": {
+          "v": [
+            2.5,
+            0.0,
+            0.0
+          ],
+          "w": [
+            1.0,
+            2.0,
+            0.0
+          ]
+        },
+        "description_bn": "ভেক্টর ভি এবং ডব্লিউ এর স্থানাঙ্ক পরিবর্তন করে সামান্তরিকের ক্ষেত্রফল এবং লম্ব ভেক্টরের দৈর্ঘ্য ও অভিমুখ পর্যবেক্ষণ করুন।"
+      }
+    },
+    {
+      "id": "sec_02_2d_orientation_determinant",
+      "title_bn": "২. টুডি সমতলে ক্ষেত্রফল, নির্ণায়ক ও দিকবিন্যাস",
+      "title_en": "2D Parallelogram Area, Determinants & Orientation",
+      "summary_bn": "টুডি সমতলে দুটি ভেক্টরের নির্ণায়ক তাদের চিহ্নযুক্ত ক্ষেত্রফল দেয়। ভেক্টরের ক্রম পরিবর্তন করলে ক্ষেত্রফলের চিহ্ন বদলে যায়, যা ক্রস গুণনের অ্যান্টি-কমিউটেটিভিটি ব্যাখ্যা করে।",
+      "key_takeaways": [
+        "টুডি সমতলে $\\vec{v} = [v_1, v_2]^T$ ও $\\vec{w} = [w_1, w_2]^T$ দ্বারা গঠিত সামান্তরিকের ক্ষেত্রফল হলো তাদের ২×২ ম্যাট্রিক্সের নির্ণায়ক।",
+        "ডিটারমিন্যান্টের চিহ্ন নির্দেশ করে সমতলের ওরিয়েন্টেশন বা দিকবিন্যাস: ঘড়ির বিপরীত দিকে ঘূর্ণন ধনাত্মক চিহ্ন নির্দেশ করে।",
+        "ভেক্টরের ক্রম পরিবর্তন করলে ক্ষেত্রফলের মান একই থাকে কিন্তু ওরিয়েন্টেশন উল্টে ঋণাত্মক হয়: $\\det[\\vec{w}, \\vec{v}] = -\\det[\\vec{v}, \\vec{w}]$।",
+        "এই নীতি থেকেই প্রমাণিত হয় ক্রস প্রোডাক্টের প্রতিক্রমবিনিময়শীলতা (Anticommutativity): $\\vec{v} \\times \\vec{w} = -(\\vec{w} \\times \\vec{v})$।",
+        "টুডিতে আউটপুট হলো একটি স্কেলার (ক্ষেত্রফল), কিন্তু থ্রিডিতে সমতলের ত্রিমাত্রিক অবস্থান বোঝাতে আউটপুট হিসেবে লম্ব ভেক্টরের প্রয়োজন হয়।"
+      ],
+      "formulas": [
+        {
+          "label": "টুডিতে চিহ্নযুক্ত ক্ষেত্রফল",
+          "katex": "\\det \\begin{bmatrix} v_1 & w_1 \\\\ v_2 & w_2 \\end{bmatrix} = v_1 w_2 - v_2 w_1"
+        },
+        {
+          "label": "অ্যান্টি-কমিউটেটিভিটি সম্পর্ক",
+          "katex": "\\vec{v} \\times \\vec{w} = -(\\vec{w} \\times \\vec{v})"
+        },
+        {
+          "label": "স্ব-ক্রস গুণন নীতি",
+          "katex": "\\vec{v} \\times \\vec{v} = \\vec{0}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_2d_orientation_flip",
+          "caption_bn": "ভেক্টরের ক্রম পরিবর্তনে টুডি সমতলে ওরিয়েন্টেশন উল্টে যাওয়ার জ্যামিতিক দৃশ্য",
+          "type": "svg",
+          "src": "figures/2d_orientation_flip.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_03_3d_determinant_formula",
+      "title_bn": "৩. ত্রিমাত্রিক নির্ণায়ক সংকেত ও বীজগাণিতিক গণনা",
+      "title_en": "3D Determinant Formula & Algebraic Computation",
+      "summary_bn": "প্রথম সারিতে ভিত্তি ভেক্টর î, ĵ, k̂ স্থাপন করে ৩×৩ নির্ণায়কের বিস্তারের মাধ্যমে ক্রস প্রোডাক্টের স্থানাঙ্ক নিখুঁতভাবে গণনা করা হয়।",
+      "key_takeaways": [
+        "ক্রস প্রোডাক্ট নির্ণয়ের বহুল প্রচলিত স্মৃতিসহায়ক রূপটি হলো একটি ৩×৩ ডিটারমিন্যান্ট যার প্রথম সারিতে থাকে একক ভেক্টর $\\hat{i}, \\hat{j}, \\hat{k}$।",
+        "দ্বিতীয় সারিতে বসে $\\vec{v}$-এর স্থানাঙ্ক $(v_1, v_2, v_3)$ এবং তৃতীয় সারিতে বসে $\\vec{w}$-এর স্থানাঙ্ক $(w_1, w_2, w_3)$।",
+        "প্রথম সারি বরাবর ল্যাপলাস বিস্তার করলে প্রতিটি একক ভেক্টরের সহগ হিসেবে ২×২ সাব-ডিটারমিন্যান্ট তৈরি হয়।",
+        "বীজগাণিতিক এই প্রক্রিয়ায় প্রাপ্ত স্থানাঙ্কগুলো জ্যামিতিক ক্ষেত্রফল ও লম্ব দিকের সাথে শতভাগ নিখুঁতভাবে মিলে যায়।"
+      ],
+      "formulas": [
+        {
+          "label": "৩×৩ স্মৃতিসহায়ক ডিটারমিন্যান্ট সংকেত",
+          "katex": "\\vec{v} \\times \\vec{w} = \\det \\begin{bmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ v_1 & v_2 & v_3 \\\\ w_1 & w_2 & w_3 \\end{bmatrix}"
+        },
+        {
+          "label": "প্রথম সারি বরাবর বিস্তার",
+          "katex": "= \\hat{i} \\det \\begin{bmatrix} v_2 & v_3 \\\\ w_2 & w_3 \\end{bmatrix} - \\hat{j} \\det \\begin{bmatrix} v_1 & v_3 \\\\ w_1 & w_3 \\end{bmatrix} + \\hat{k} \\det \\begin{bmatrix} v_1 & v_2 \\\\ w_1 & w_2 \\end{bmatrix}"
+        },
+        {
+          "label": "বিশ্লেষিত উপাদান ভেক্টর রূপ",
+          "katex": "= \\begin{bmatrix} v_2 w_3 - v_3 w_2 \\\\ v_3 w_1 - v_1 w_3 \\\\ v_1 w_2 - v_2 w_1 \\end{bmatrix}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_determinant_expansion_tree",
+          "caption_bn": "ভিত্তি ভেক্টর ও ২×২ সাব-ডিটারমিন্যান্টের সহগ গঠনের বিশ্লেষণ",
+          "type": "svg",
+          "src": "figures/determinant_expansion_tree.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_04_duality_perspective",
+      "title_bn": "৪. ডুয়ালিটি ও রৈখিক রূপান্তরের গভীর ঐক্য",
+      "title_en": "Cross Products Through the Lens of Duality",
+      "summary_bn": "প্যারালেলেপিপেডের আয়তনকে একটি রৈখিক রূপান্তর হিসেবে দেখলে ডুয়ালিটি উপপাদ্যের সাহায্যে প্রমাণিত হয় কেন এই নির্ণায়ক ঠিক ক্ষেত্রফল ও লম্ব ভেক্টর তৈরি করে।",
+      "key_takeaways": [
+        "একটি ফাংশন সংজ্ঞায়িত করুন $T(\\vec{u}) = \\det[\\vec{u}, \\vec{v}, \\vec{w}]$, যা $\\vec{u}$ ইনপুট নিয়ে $\\vec{u}, \\vec{v}, \\vec{w}$ দ্বারা গঠিত প্যারালেলেপিপেডের চিহ্নযুক্ত আয়তন দেয়।",
+        "ডিটারমিন্যান্টের কলাম-রৈখিকতার কারণে এটি $\\mathbb{R}^3 \\to \\mathbb{R}$ একটি খাঁটি রৈখিক রূপান্তর।",
+        "ডুয়ালিটি (রিস রিপ্রেজেন্টেশন) উপপাদ্য অনুযায়ী, এমন একটি রূপান্তরকে অবশ্যই একটি নির্দিষ্ট ভেক্টর $\\vec{p}$-এর সাথে ডট প্রোডাক্ট রূপে লেখা যায়: $T(\\vec{u}) = \\vec{p} \\cdot \\vec{u}$।",
+        "প্যারালেলেপিপেডের আয়তন = (ভূমির ক্ষেত্রফল) $\\times$ (ভূমির লম্ব দিকে $\\vec{u}$-এর অভিক্ষেপ)। অন্যদিকে $\\vec{p} \\cdot \\vec{u} = \\|\\vec{p}\\| \\times (\\vec{p}$ বরাবর $\\vec{u}$-এর অভিক্ষেপ)।",
+        "এই সমতা সকল $\\vec{u}$-এর জন্য সত্য হতে হলে $\\vec{p}$-কে অবশ্যই ভূমির লম্ব হতে হবে এবং $\\|\\vec{p}\\|$ হতে হবে সামান্তরিকের ক্ষেত্রফলের সমান!",
+        "এই অনন্য ডুয়াল ভেক্টর $\\vec{p}$-ই হলো ক্রস প্রোডাক্ট $\\vec{v} \\times \\vec{w}$।"
+      ],
+      "formulas": [
+        {
+          "label": "আয়তন নির্দেশক রৈখিক রূপান্তর",
+          "katex": "T(\\vec{u}) = \\det \\begin{bmatrix} u_1 & v_1 & w_1 \\\\ u_2 & v_2 & w_2 \\\\ u_3 & v_3 & w_3 \\end{bmatrix}"
+        },
+        {
+          "label": "ডুয়াল ভেক্টর রূপান্তর সমীকরণ",
+          "katex": "T(\\vec{u}) = \\vec{p} \\cdot \\vec{u} = \\text{Volume}(\\vec{u}, \\vec{v}, \\vec{w})"
+        },
+        {
+          "label": "জ্যামিতিক অভিক্ষেপ ও সমতা",
+          "katex": "\\|\\vec{p}\\| \\cdot \\text{proj}_{\\vec{p}}(\\vec{u}) = \\text{Area}(\\vec{v}, \\vec{w}) \\cdot \\text{proj}_{\\vec{n}}(\\vec{u}) \\implies \\vec{p} = \\vec{v} \\times \\vec{w}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_duality_parallelepiped_volume",
+          "caption_bn": "প্যারালেলেপিপেডের আয়তন, লম্ব অভিক্ষেপ এবং ডুয়াল ভেক্টর পি এর জ্যামিতিক মেলবন্ধন",
+          "type": "svg",
+          "src": "figures/duality_parallelepiped_volume.svg"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_cross_product_magnitude",
+      "section_ref": "sec_01_geometric_definition",
+      "question_bn": "ত্রিমাত্রিক স্থানে দুটি ভেক্টর $\\vec{v} = \\begin{bmatrix} 3 \\\\ 0 \\\\ 0 \\end{bmatrix}$ এবং $\\vec{w} = \\begin{bmatrix} 0 \\\\ 4 \\\\ 0 \\end{bmatrix}$ দেওয়া আছে। এদের ক্রস প্রোডাক্টের মান $\\|\\vec{v} \\times \\vec{w}\\|$ কত?",
+      "question_en": "Given two 3D vectors v = [3, 0, 0]^T and w = [0, 4, 0]^T, what is the magnitude ||v x w||?",
+      "options": [
+        "০",
+        "৭",
+        "১২",
+        "৫"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "ভেক্টরদ্বয় যথাক্রমে এক্স-অক্ষ এবং ওয়াই-অক্ষ বরাবর অবস্থিত, অর্থাৎ তাদের মধ্যবর্তী কোণ $\\theta = 90^\\circ$। গঠিত সামান্তরিকটি একটি আয়তক্ষেত্র যার বাহুদ্বয় ৩ ও ৪। সুতরাং ক্ষেত্রফল ও ক্রস প্রোডাক্টের মান হবে $\\|\\vec{v}\\| \\|\\vec{w}\\| \\sin(90^\\circ) = 3 \\times 4 \\times 1 = 12$।",
+      "explanation_en": "The vectors lie along x and y axes, so theta = 90 deg. The area of the rectangle spanned is 3 * 4 = 12, which equals the magnitude ||v x w||."
+    },
+    {
+      "id": "quiz_02_anticommutativity",
+      "section_ref": "sec_02_2d_orientation_determinant",
+      "question_bn": "যদি $\\vec{a} \\times \\vec{b} = \\begin{bmatrix} 2 \\\\ -5 \\\\ 3 \\end{bmatrix}$ হয়, তবে $\\vec{b} \\times \\vec{a}$ ভেক্টরটির মান কী হবে?",
+      "question_en": "If a x b = [2, -5, 3]^T, what is b x a?",
+      "options": [
+        "$\\begin{bmatrix} 2 \\\\ -5 \\\\ 3 \\end{bmatrix}$",
+        "$\\begin{bmatrix} -2 \\\\ 5 \\\\ -3 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 0 \\\\ 0 \\\\ 0 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 3 \\\\ -5 \\\\ 2 \\end{bmatrix}$"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ক্রস গুণন প্রতিক্রমবিনিময়শীল বা অ্যান্টি-কমিউটেটিভ ধর্ম মেনে চলে: $\\vec{b} \\times \\vec{a} = -(\\vec{a} \\times \\vec{b})$। ভেক্টরের প্রতিটি উপাদানকে $-1$ দিয়ে গুণ করলে পাওয়া যায় $[-2, 5, -3]^T$।",
+      "explanation_en": "Cross product is anticommutative: b x a = -(a x b). Multiplying each component by -1 gives [-2, 5, -3]^T."
+    },
+    {
+      "id": "quiz_03_determinant_computation",
+      "section_ref": "sec_03_3d_determinant_formula",
+      "question_bn": "ভেক্টর $\\hat{i}$ এবং $\\hat{j}$-এর ক্রস প্রোডাক্ট $\\hat{i} \\times \\hat{j}$ হিসাব করলে নিচের কোন ভেক্টরটি পাওয়া যায়?",
+      "question_en": "Computing the cross product i-hat x j-hat yields which unit vector?",
+      "options": [
+        "$\\hat{k}$",
+        "$-\\hat{k}$",
+        "$\\vec{0}$",
+        "$\\hat{i} + \\hat{j}$"
+      ],
+      "correct_index": 0,
+      "explanation_bn": "ডান হাত নিয়ম অথবা ৩×৩ ডিটারমিন্যান্ট সূত্র প্রয়োগ করলে: এক্স অক্ষ বরাবর তর্জনী এবং ওয়াই অক্ষ বরাবর মধ্যমা নির্দেশ করলে বৃদ্ধাঙ্গুলি সরাসরি পজিটিভ জেড-অক্ষ বরাবর অর্থাৎ $\\hat{k}$ অভিমুখে নির্দেশ করে। এছাড়া এদের দৈর্ঘ্য ১ এবং সামান্তরিকের ক্ষেত্রফল ১ হওয়ায় $\\hat{i} \\times \\hat{j} = \\hat{k}$।",
+      "explanation_en": "By the right-hand rule or determinant expansion, i-hat along x and j-hat along y points thumb directly along the positive z-axis, yielding k-hat."
+    },
+    {
+      "id": "quiz_04_duality_concept",
+      "section_ref": "sec_04_duality_perspective",
+      "question_bn": "ডুয়ালিটির দৃষ্টিতে ক্রস প্রোডাক্ট $\\vec{v} \\times \\vec{w}$ আসলে কোন রৈখিক রূপান্তরের ডুয়াল ভেক্টর?",
+      "question_en": "Through the lens of duality, the cross product v x w is the dual vector of which linear transformation?",
+      "options": [
+        "যে রূপান্তরটি যেকোনো ভেক্টর $\\vec{u}$-কে তার দৈর্ঘ্যে স্কেল করে",
+        "যে রূপান্তরটি যেকোনো ইনপুট ভেক্টর $\\vec{u}$-কে $\\vec{u}, \\vec{v}, \\vec{w}$ দ্বারা গঠিত প্যারালেলেপিপেডের আয়তনে ম্যাপ করে",
+        "যে রূপান্তরটি সমতলকে ৯০ ডিগ্রি কোণে ঘুরিয়ে দেয়",
+        "যে রূপান্তরটি সকল ভেক্টরকে মূলবিন্দুতে সংকুচিত করে"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ডুয়ালিটির বিশ্লেষণে $T(\\vec{u}) = \\det[\\vec{u}, \\vec{v}, \\vec{w}]$ হলো একটি রৈখিক রূপান্তর যা $\\vec{u}, \\vec{v}, \\vec{w}$ দ্বারা গঠিত প্যারালেলেপিপেডের চিহ্নযুক্ত আয়তন গণনা করে। রিস উপপাদ্য অনুযায়ী এই রূপান্তরের সংশ্লিষ্ট অনন্য ডুয়াল ভেক্টর $\\vec{p}$ (যেখানে $T(\\vec{u}) = \\vec{p} \\cdot \\vec{u}$) হলো মূলত ক্রস প্রোডাক্ট $\\vec{v} \\times \\vec{w}$।",
+      "explanation_en": "The linear map T(u) = det[u, v, w] computes the signed volume of the parallelepiped formed by u, v, w. By duality, the unique vector p satisfying T(u) = p . u is the cross product v x w."
+    },
+    {
+      "id": "quiz_05_parallel_vectors",
+      "section_ref": "sec_01_geometric_definition",
+      "question_bn": "যদি দুটি অশূন্য ভেক্টর $\\vec{v}$ এবং $\\vec{w}$-এর ক্রস গুণন শূন্য ভেক্টর হয় $(\\vec{v} \\times \\vec{w} = \\vec{0})$, তবে তাদের জ্যামিতিক সম্পর্ক কী?",
+      "question_en": "If two non-zero vectors satisfy v x w = 0, what is their geometric relationship?",
+      "options": [
+        "ভেক্টরদ্বয় একে অপরের ওপর সমকোণে লম্ব",
+        "ভেক্টরদ্বয় পরস্পর সমান্তরাল বা একই সরলরেখায় অবস্থিত",
+        "ভেক্টরদ্বয়ের মান সমান কিন্তু দিক বিপরীত নয়",
+        "ভেক্টরদ্বয় ত্রিমাত্রিক স্থানের ভিত্তি গঠন করে"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ক্রস প্রোডাক্টের মান $\\|\\vec{v} \\times \\vec{w}\\| = \\|\\vec{v}\\| \\|\\vec{w}\\| \\sin(\\theta)$। যেহেতু ভেক্টর দুটি অশূন্য, তাই ক্রস গুণফল শূন্য হওয়ার একমাত্র শর্ত হলো $\\sin(\\theta) = 0$, যার অর্থ $\\theta = 0^\\circ$ বা $180^\\circ$। অর্থাৎ ভেক্টরদ্বয় পরস্পর সমান্তরাল এবং তাদের দ্বারা কোনো বাস্তব সামান্তরিক ক্ষেত্র তৈরি হয় না।",
+      "explanation_en": "||v x w|| = ||v|| ||w|| sin(theta) = 0 implies sin(theta) = 0 since vectors are non-zero. Thus theta is 0 or 180 degrees, meaning the vectors are collinear/parallel."
+    }
+  ]
+}

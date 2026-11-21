@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>পোলারাইজড আলোর পরীক্ষা | বার্বার পোল এফেক্ট | This tests your understanding of light | The barber pole effect (3Blue1Brown Physics)</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/physics/lesson_04/manifest.js?v=1"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="পদার্থবিজ্ঞান"
+  course-url="../../index.html#physics"
+  home-url="../../index.html"
+  chapter-num="০৪"
+  chapter-total="১৩"
+  prev-url="lesson_03.html"
+  prev-title="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_05.html"
+  next-title="পরবর্তী অধ্যায়"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="পদার্থবিজ্ঞান"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৪ · পদার্থবিজ্ঞান"
+  title="পোলারাইজড আলোর পরীক্ষা | বার্বার পোল এফেক্ট | This tests your understanding of light | The barber pole effect"
+  desc="polarized আলো চিনির দ্রবণের মধ্য দিয়ে গেলে কেন কাত স্ট্রাইপ দেখা যায় — মেরুকরণ ঘূর্ণনের চমৎকার খেলা।"
+  video-src="../../media_vault/physics/lesson_04/experiments/3b1b_physics_04_full_dubbed.mp4"
+  yt-id="QCX62YJCmGk"
+  date="১ সেপ্টেম্বর, ২০২৩"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">বার্বার পোল এফেক্টের রহস্য</b1b-bookmark>
+      <b1b-bookmark time="24" time-bn="০০:২৪">মেরুকরণ (Polarization) কী?</b1b-bookmark>
+      <b1b-bookmark time="57" time-bn="০০:৫৭">চিনি কীভাবে দিক ঘোরায়</b1b-bookmark>
+      <b1b-bookmark time="76" time-bn="০১:১৬">কালারের খেলা</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-bp1-demo">বার্বার পোল এফেক্টের রহস্য</a>
+      <a href="#sec-bp1-polarization">মেরুকরণ (Polarization) কী?</a>
+      <a href="#sec-bp1-rotation">চিনি কীভাবে দিক ঘোরায়</a>
+      <a href="#sec-bp1-colors">কালারের খেলা</a>
+      <a href="#sec-visualizer">ইন্টারেক্টিভ ল্যাব</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ বার্বার পোল এফেক্টের রহস্য ═══ -->
+      <b1b-section id="sec-bp1-demo" title="বার্বার পোল এফেক্টের রহস্য">
+        <p>এই ভিডিওতে একটি চমৎকার পরীক্ষা দেখা যায়। সাদা আলোকে প্রথমে পোলারাইজার দিয়ে এক দিকে মেরুকরণ করা হয়, তারপর সেটি চিনির দ্রবণের একটি টিউবের মধ্য দিয়ে পাঠানো হয়। সবশেষে দ্বিতীয় একটি পোলারাইজার দিয়ে দেখা হয়। ফলে স্ক্রিনে সাদা-কালো কাত স্ট্রাইপের একটি নিদর্শন ফুটে ওঠে — ঠিক বার্বারের পোলের মতো। কেন?</p>
+        <b1b-figure src="../../assets/figures/phys_04/fig_01.svg" alt="barber pole stripes" caption="পোলারাইজার → চিনির দ্রবণ → অ্যানালাইজার → কাত স্ট্রাইপ"></b1b-figure>
+        <b1b-quiz
+          question="❓ ম্যালাসের সূত্রে ৬০° কোণ হলে তীব্রতা কত?"
+          correct="2"
+          correct-msg="সঠিক! cos²(60°) = (1/2)² = 1/4, তাই I = I₀/4।"
+          wrong-msg="I = I₀cos²theta। cos 60° = 0.5, বর্গ করলে 0.25।"
+          reveal-msg="সঠিক উত্তর: I₀/4।"
+          data-no-narration="true">
+          <div slot="option">I₀</div>
+          <div slot="option">I₀/2</div>
+          <div slot="option">I₀/4</div>
+          <div slot="option">শূন্য</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ মেরুকরণ (Polarization) কী? ═══ -->
+      <b1b-section id="sec-bp1-polarization" title="মেরুকরণ (Polarization) কী?">
+        <p>আলো তড়িৎ-চুম্বকীয় তরঙ্গ; এর তড়িৎ ক্ষেত্র সব দিকে কাঁপতে পারে। যখন বলি আলো <strong>লিনিয়ার পোলারাইজড</strong>, বোঝায় এর ক্ষেত্র শুধু একটিমাত্র দিকে কাঁপছে। একটি পোলারাইজার হলো এক ধরনের ফিল্টার — এটি শুধু নির্দিষ্ট দিকের কম্পনকে অতিক্রম করতে দেয়, বাকি দিকগুলোকে ব্লক করে।</p>
+        <b1b-formula math="I = I_0\cos^2\theta"></b1b-formula>
+        <b1b-figure src="../../assets/figures/phys_04/fig_02.svg" alt="Malus law" caption="পোলারাইজারের দিকের সাথে আলোর ক্ষেত্রের কোণ"></b1b-figure>
+        <b1b-callout type="blue" icon="💡" title="দুই পোলারাইজার">
+          <p>দুইটি পোলারাইজারের দিক যদি ৯০° ঘুরানো হয়, তবে প্রথমটির চলে আসা আলো দ্বিতীয়টি সম্পূর্ণ ব্লক করে — পর্দা অন্ধকার হয়ে যায়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ চিনি কীভাবে দিক ঘোরায় ═══ -->
+      <b1b-section id="sec-bp1-rotation" title="চিনি কীভাবে দিক ঘোরায়">
+        <p>চিনির দ্রবণ <strong>অপটিক্যালি অ্যাক্টিভ</strong> — এর অণুগুলোর একদিকে ঘুরানো গঠন থাকে (chiral)। ফলে এই দ্রবণের মধ্য দিয়ে যাওয়া রৈখিক পোলারাইজেশনের দিক ক্রমশ ঘুরতে থাকে। ঘূর্ণনের পরিমাণ নির্ভর করে দ্রবণের ঘনত্ব ও টিউবের দৈর্ঘ্যের ওপর।</p>
+        <b1b-formula math="\theta = [\alpha]\, l\, c"></b1b-formula>
+        <b1b-quiz
+          question="❓ চিনির দ্রবণে মেরুকরণ দিক ঘোরার কারণ কী?"
+          correct="1"
+          correct-msg="হ্যাঁ! চিনির অণুর chiral গঠনই আলোর মেরুকরণ দিক ঘোরায়।"
+          wrong-msg="অপটিক্যাল অ্যাক্টিভিটি আসে অণুর অসম গঠন থেকে।"
+          reveal-msg="সঠিক উত্তর: অণুর chiral গঠন।"
+          data-no-narration="true">
+          <div slot="option">চিনির রঙ</div>
+          <div slot="option">অণুর chiral গঠন</div>
+          <div slot="option">দ্রবণের তাপমাত্রা</div>
+          <div slot="option">টিউবের বেধ</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ কালারের খেলা ═══ -->
+      <b1b-section id="sec-bp1-colors" title="কালারের খেলা">
+        <p>সাদা আলোর ভেতরে সব রঙ আছে, আর প্রতিটি রঙের তরঙ্গদৈর্ঘ্য আলাদা। চিনির দ্রবণে প্রতিটি রঙের মেরুকরণ দিক ভিন্ন পরিমাণে ঘোরে — নীল আলো বেশি ঘোরে, লাল কম। তখন অ্যানালাইজারের নির্দিষ্ট দিকের সাথে যে রঙের দিক মিলে যায়, সেই রঙ পর্দায় উজ্জ্বল দেখায়। দ্রবণের ঘনত্ব টিউবের ওপর ধরে বদলালে ঘূর্ণন কোণ বদলায় — ফলে দেখা যায় কাত কাত স্ট্রাইপ, ঠিক বার্বার পোলের মতো।</p>
+        <b1b-figure src="../../assets/figures/phys_04/fig_03.svg" alt="color stripes" caption="বিভিন্ন রঙের আলোর ভিন্ন ঘূর্ণনের কারণে কাত স্ট্রাইপ"></b1b-figure>
+        <b1b-callout type="gold" icon="🎨" title="একটি সুন্দর সংযোগ">
+          <p>দুইটি ধারণা এখানে মিলেছে — পোলারাইজেশন ও রঙের ওপর নির্ভরশীলতা (dispersion)। পরবর্তী পাঠে দেখব কীভাবে ত্বরান্বিত চার্জ থেকে বের হওয়া আলো এই ঘূর্ণনকে ব্যাখ্যা করে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Interactive lab — excluded from narration ═══ -->
+      <b1b-section id="sec-visualizer" title="মেরুকরণ ঘূর্ণন সিমুলেটর — কোণ বদলে স্ট্রাইপ দেখুন" data-no-narration="true">
+        <p class="viz-intro">এই ইন্টারেক্টিভ ল্যাবটি ব্যবহার করে ধারণাটি নিজে পরীক্ষা করে দেখুন। প্যারামিটার বদলে ফলাফলের পরিবর্তন পর্যবেক্ষণ করুন।</p>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="3,-2"></b1b-vector-plane>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/physics/lesson_04/experiments/3b1b_physics_04_full_dubbed.mp4"
+    yt-id="QCX62YJCmGk"
+    title="পোলারাইজড আলোর পরীক্ষা | বার্বার পোল এফেক্ট — অধ্যায় ০৪"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — পদার্থবিজ্ঞান">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_03.html"
+  prev-title="পূর্ববর্তী অধ্যায়"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_05.html"
+  next-title="পরবর্তী অধ্যায়"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

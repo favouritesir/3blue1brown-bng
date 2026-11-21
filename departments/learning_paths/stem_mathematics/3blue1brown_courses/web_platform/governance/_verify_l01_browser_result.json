@@ -1,0 +1,193 @@
+{
+  "manifestCourse": "linear_algebra",
+  "manifestLesson": "lesson_01",
+  "manifestSections": [
+    "sec-interpretations",
+    "sec-coordinates",
+    "sec-addition",
+    "sec-scalar",
+    "sec-basis",
+    "sec-conclusion"
+  ],
+  "manifestSectionCount": 6,
+  "domSections": [
+    {
+      "id": "sec-interpretations",
+      "title": "ভেক্টরের তিনটি দৃষ্টিভঙ্গি",
+      "dom_blocks": 15,
+      "manifest_cues": 15,
+      "audio_file": "../../assets/audio/linear_algebra/lesson_01/sec_01_sec-interpretations.mp3",
+      "cue_types": [
+        "h2",
+        "chapter-quote",
+        "p",
+        "figure",
+        "p",
+        "figure",
+        "callout",
+        "figure",
+        "p",
+        "figure",
+        "callout",
+        "formula-box",
+        "callout",
+        "figure",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-coordinates",
+      "title": "কোঅর্ডিনেট সিস্টেম ও মূলবিন্দু",
+      "dom_blocks": 20,
+      "manifest_cues": 20,
+      "audio_file": "../../assets/audio/linear_algebra/lesson_01/sec_02_sec-coordinates.mp3",
+      "cue_types": [
+        "h2",
+        "p",
+        "figure",
+        "p",
+        "figure",
+        "p",
+        "figure",
+        "p",
+        "figure",
+        "p",
+        "figure",
+        "p",
+        "figure",
+        "formula-box",
+        "p",
+        "p",
+        "p",
+        "p",
+        "figure",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-addition",
+      "title": "ভেক্টর যোগ — জ্যামিতিক ও সংখ্যাতাত্ত্বিক রূপ",
+      "dom_blocks": 16,
+      "manifest_cues": 16,
+      "audio_file": "../../assets/audio/linear_algebra/lesson_01/sec_03_sec-addition.mp3",
+      "cue_types": [
+        "h2",
+        "p",
+        "h3",
+        "p",
+        "figure",
+        "p",
+        "figure",
+        "p",
+        "p",
+        "figure",
+        "p",
+        "figure",
+        "p",
+        "figure",
+        "p",
+        "formula-box"
+      ]
+    },
+    {
+      "id": "sec-scalar",
+      "title": "স্কেলার গুণন — প্রসারণ, সংকোচন ও বিপরীতকরণ",
+      "dom_blocks": 10,
+      "manifest_cues": 10,
+      "audio_file": "../../assets/audio/linear_algebra/lesson_01/sec_04_sec-scalar.mp3",
+      "cue_types": [
+        "h2",
+        "p",
+        "figure",
+        "p",
+        "figure",
+        "p",
+        "figure",
+        "p",
+        "p",
+        "formula-box"
+      ]
+    },
+    {
+      "id": "sec-basis",
+      "title": "ভিত্তি ভেক্টর — আই হ্যাট ও জে হ্যাট",
+      "dom_blocks": 7,
+      "manifest_cues": 7,
+      "audio_file": "../../assets/audio/linear_algebra/lesson_01/sec_05_sec-basis.mp3",
+      "cue_types": [
+        "h2",
+        "p",
+        "formula-box",
+        "p",
+        "formula-box",
+        "callout",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-conclusion",
+      "title": "উপসংহার",
+      "dom_blocks": 5,
+      "manifest_cues": 5,
+      "audio_file": "../../assets/audio/linear_algebra/lesson_01/sec_06_sec-conclusion.mp3",
+      "cue_types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "p"
+      ]
+    }
+  ],
+  "totalDomBlocks": 73,
+  "totalBoundCues": 73,
+  "totalManifestCues": 73,
+  "duplicateTexts": 0,
+  "quizMediaTypes": [],
+  "labelPrefixCues": 0,
+  "nonPositiveCueSpans": 0,
+  "scriptSrc": [
+    "../../assets/audio/linear_algebra/lesson_01/manifest.js?v=7"
+  ],
+  "studioAudio": true,
+  "mp3_http_check": [
+    {
+      "section": "sec-interpretations",
+      "file": "sec_01_sec-interpretations.mp3",
+      "status": 200,
+      "content_length": 1434380
+    },
+    {
+      "section": "sec-coordinates",
+      "file": "sec_02_sec-coordinates.mp3",
+      "status": 200,
+      "content_length": 1760732
+    },
+    {
+      "section": "sec-addition",
+      "file": "sec_03_sec-addition.mp3",
+      "status": 200,
+      "content_length": 1372844
+    },
+    {
+      "section": "sec-scalar",
+      "file": "sec_04_sec-scalar.mp3",
+      "status": 200,
+      "content_length": 812252
+    },
+    {
+      "section": "sec-basis",
+      "file": "sec_05_sec-basis.mp3",
+      "status": 200,
+      "content_length": 426188
+    },
+    {
+      "section": "sec-conclusion",
+      "file": "sec_06_sec-conclusion.mp3",
+      "status": 200,
+      "content_length": 659564
+    }
+  ],
+  "console_errors": [],
+  "page_errors": []
+}

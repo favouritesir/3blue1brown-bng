@@ -1,0 +1,67 @@
+{
+  "channel": "chrome (headless=True)",
+  "sections": 6,
+  "cues": 36,
+  "per_section": {
+    "sec-discrete-to-continuous": 6,
+    "sec-zero-prob-paradox": 6,
+    "sec-density-concept": 6,
+    "sec-uniform-exponential": 6,
+    "sec-cdf-calculus": 6,
+    "sec-clt-emergence": 6
+  },
+  "manifest_keys": 6,
+  "dom_manifest_1to1": true,
+  "duplicates": 0,
+  "disallowed_types": 0,
+  "quiz_media_tab_types": 0,
+  "forbidden_label_hits": 0,
+  "natural_figure_phrasing_cues": 34,
+  "h2_key_phrase_woven": true,
+  "phonetic_safeguards_ok": true,
+  "prosody_h2": [
+    "-5%",
+    "+2Hz",
+    "+0%"
+  ],
+  "prosody_figure": [
+    "-4%",
+    "+0Hz",
+    "+0%"
+  ],
+  "prosody_formula": [
+    "-8%",
+    "+0Hz",
+    "+0%"
+  ],
+  "prosody_p": [
+    "+2%",
+    "+0Hz",
+    "+0%"
+  ],
+  "prosody_callout": [
+    "+0%",
+    "+0Hz",
+    "+0%"
+  ],
+  "prosody_conclusion": [
+    "-3%",
+    "+0Hz",
+    "+0%"
+  ],
+  "gap_ms": 350.0,
+  "js_page_errors": 0,
+  "narration_console_errors": 0,
+  "preexisting_media_console_errors": 15,
+  "mp3_nonzero": true,
+  "mp3_browser_loadable": true,
+  "json_valid": true,
+  "manifest_js_matches_json": true,
+  "sidecars_in_sync": true,
+  "manifest_version": [
+    2
+  ],
+  "total_duration_ms": 752628.0,
+  "total_duration_s": 752.63,
+  "ok": true
+}

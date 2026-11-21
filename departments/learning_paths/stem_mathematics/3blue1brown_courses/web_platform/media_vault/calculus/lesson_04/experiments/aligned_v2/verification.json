@@ -1,0 +1,10 @@
+{
+  "master": "departments/learning_paths/stem_mathematics/3blue1brown_courses\\essence_of_calculus\\lesson_04_chain_rule\\dubbing_pipeline\\3b1b_calculus_l04_bangla_master_script.json",
+  "original": "departments/learning_paths/stem_mathematics/3blue1brown_courses/web_platform/media_vault/calculus/lesson_04/original_source/full_original.mp4",
+  "output": "departments/learning_paths/stem_mathematics/3blue1brown_courses/web_platform/media_vault/calculus/lesson_04/experiments/aligned_v2/3b1b_calculus_04_aligned.mp4",
+  "cues": 40,
+  "video_duration": 955.594014,
+  "output_duration": 955.555313,
+  "drift_vs_master_s": 0.0,
+  "policy": "alignment-preserving absolute-sample placement"
+}

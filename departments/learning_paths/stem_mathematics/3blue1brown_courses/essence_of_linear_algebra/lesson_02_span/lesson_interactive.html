@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>৩ব্লু১ব্রাউন: লিনিয়ার কম্বিনেশন, স্প্যান ও বেসিস ভেক্টর | বাংলা রিসোর্স ফ্যাক্টরি</title>
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root {
+      --bg-dark: #080c14;
+      --bg-card: #0f172a;
+      --bg-card-hover: #1e293b;
+      --border-color: #334155;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-purple: #c084fc;
+      --accent-rose: #f43f5e;
+      --text-main: #f8fafc;
+      --text-dim: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Hind Siliguri', sans-serif;
+      line-height: 1.6;
+      padding: 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.65rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-math { background: rgba(56, 189, 248, 0.15); color: var(--accent-cyan); border: 1px solid rgba(56, 189, 248, 0.3); }
+    .badge-brf { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-status { background: rgba(192, 132, 252, 0.15); color: var(--accent-purple); border: 1px solid rgba(192, 132, 252, 0.3); }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #38bdf8, #a7f3d0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--text-dim);
+      font-size: 1.05rem;
+    }
+
+    /* Layout Grid */
+    .app-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .app-grid { grid-template-columns: 1fr; }
+    }
+
+    .canvas-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    canvas {
+      background: #050811;
+      border-radius: 0.75rem;
+      border: 1px solid #1e293b;
+      cursor: crosshair;
+      width: 100%;
+      max-width: 700px;
+      height: 520px;
+    }
+
+    .controls-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .control-group {
+      background: #090e1c;
+      border: 1px solid #1e293b;
+      padding: 1rem;
+      border-radius: 0.75rem;
+    }
+
+    .control-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .slider-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .slider-row:last-child { margin-bottom: 0; }
+
+    .slider-label {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    input[type=range] {
+      width: 100%;
+      accent-color: var(--accent-cyan);
+    }
+
+    /* Live Output Status */
+    .status-box {
+      border-radius: 0.75rem;
+      padding: 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .status-independent {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+    }
+    .status-dependent {
+      background: rgba(244, 63, 94, 0.12);
+      border: 1px solid rgba(244, 63, 94, 0.35);
+      color: #fb7185;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: #1e293b;
+      color: #f8fafc;
+      border: 1px solid var(--border-color);
+      padding: 0.5rem 0.85rem;
+      border-radius: 0.5rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn:hover {
+      background: #334155;
+      border-color: var(--accent-cyan);
+    }
+
+    /* Concept Section */
+    .content-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .content-section h2 {
+      color: var(--accent-cyan);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    .formula-display {
+      background: #090e1c;
+      border-left: 4px solid var(--accent-cyan);
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    footer {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="badge-group">
+      <span class="badge badge-math">3Blue1Brown Chapter 2</span>
+      <span class="badge badge-brf">বাংলা রিসোর্স ফ্যাক্টরি</span>
+      <span class="badge badge-status">ইন্টারেক্টিভ লার্নিং টুল</span>
+    </div>
+    <h1>লিনিয়ার কম্বিনেশন, স্প্যান এবং বেসিস ভেক্টর</h1>
+    <p class="subtitle">Linear Combinations, Span, and Basis Vectors — ভিজ্যুয়াল সিমুলেটর ও ইন্টারেক্টিভ কনসেপ্ট ল্যাব</p>
+  </header>
+
+  <div class="app-grid">
+    <!-- Interactive Canvas -->
+    <div class="canvas-card">
+      <canvas id="vectorCanvas" width="700" height="520"></canvas>
+      <div style="margin-top: 0.75rem; display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-dim);">
+        <span><strong style="color: var(--accent-emerald);">■</strong> ভেক্টর $\vec{v}$</span>
+        <span><strong style="color: var(--accent-purple);">■</strong> ভেক্টর $\vec{w}$</span>
+        <span><strong style="color: var(--accent-amber);">■</strong> লিনিয়ার কম্বিনেশন $\vec{u} = a\vec{v} + b\vec{w}$</span>
+        <span><strong style="color: #64748b;">⋯</strong> স্প্যান রিজিয়ন</span>
+      </div>
+    </div>
+
+    <!-- Controls Panel -->
+    <div class="controls-card">
+      <!-- State Indicator -->
+      <div id="statusBox" class="status-box status-independent">
+        <div id="statusTitle" style="font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem;">লিনিয়ারলি ইনডিপেনডেন্ট (Linearly Independent)</div>
+        <div id="statusDesc" style="font-size: 0.85rem; opacity: 0.9;">ভেক্টরদ্বয় ভিন্ন দিকে নির্দেশ করছে। এদের লিনিয়ার কম্বিনেশন সম্পূর্ণ ২ডি তল ($\mathbb{R}^2$) স্প্যান করে।</div>
+      </div>
+
+      <!-- Basis Vector 1 (v) -->
+      <div class="control-group">
+        <div class="control-title" style="color: var(--accent-emerald);">
+          <span>ভেক্টর $\vec{v}$ কনফিগারেশন</span>
+          <span id="vCoord">[1.0, 1.0]</span>
+        </div>
+        <div class="slider-row">
+          <div class="slider-label"><span>$v_x$ (এক্স-স্থানাঙ্ক):</span> <span id="vxVal">1.0</span></div>
+          <input type="range" id="vx" min="-4" max="4" step="0.5" value="1">
+        </div>
+        <div class="slider-row">
+          <div class="slider-label"><span>$v_y$ (ওয়াই-স্থানাঙ্ক):</span> <span id="vyVal">1.0</span></div>
+          <input type="range" id="vy" min="-4" max="4" step="0.5" value="1">
+        </div>
+      </div>
+
+      <!-- Basis Vector 2 (w) -->
+      <div class="control-group">
+        <div class="control-title" style="color: var(--accent-purple);">
+          <span>ভেক্টর $\vec{w}$ কনফিগারেশন</span>
+          <span id="wCoord">[-1.0, 1.0]</span>
+        </div>
+        <div class="slider-row">
+          <div class="slider-label"><span>$w_x$ (এক্স-স্থানাঙ্ক):</span> <span id="wxVal">-1.0</span></div>
+          <input type="range" id="wx" min="-4" max="4" step="0.5" value="-1">
+        </div>
+        <div class="slider-row">
+          <div class="slider-label"><span>$w_y$ (ওয়াই-স্থানাঙ্ক):</span> <span id="wyVal">1.0</span></div>
+          <input type="range" id="wy" min="-4" max="4" step="0.5" value="1">
+        </div>
+      </div>
+
+      <!-- Scalar Multipliers -->
+      <div class="control-group">
+        <div class="control-title" style="color: var(--accent-amber);">
+          <span>স্কেলার মাল্টিপ্লায়ার (Scalars $a, b$)</span>
+        </div>
+        <div class="slider-row">
+          <div class="slider-label"><span>স্কেলার $a$ (scales $\vec{v}$):</span> <span id="aVal">1.5</span></div>
+          <input type="range" id="aScale" min="-3" max="3" step="0.1" value="1.5">
+        </div>
+        <div class="slider-row">
+          <div class="slider-label"><span>স্কেলার $b$ (scales $\vec{w}$):</span> <span id="bVal">1.0</span></div>
+          <input type="range" id="bScale" min="-3" max="3" step="0.1" value="1.0">
+        </div>
+      </div>
+
+      <!-- Presets -->
+      <div class="control-group">
+        <div class="control-title">কুইক প্রিসেটস (Quick Presets)</div>
+        <div class="btn-group">
+          <button class="btn" onclick="setPreset('standard')">Standard Basis (î, ĵ)</button>
+          <button class="btn" onclick="setPreset('dependent')">Collinear (Dependent)</button>
+          <button class="btn" onclick="setPreset('orthogonal')">Orthogonal (লম্ব)</button>
+          <button class="btn" onclick="toggleSpanGrid()" id="spanToggleBtn">স্প্যান গ্রিড: চালু</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Deep Explanations -->
+  <div class="content-section">
+    <h2>গাণিতিক অন্তর্দৃষ্টি ও মূল সমীকরণ</h2>
+    <p>যেকোনো দুটি ভেক্টর $\vec{v}$ ও $\vec{w}$-এর ক্ষেত্রে লিনিয়ার কম্বিনেশন হলো:</p>
+    <div class="formula-display">
+      $$
+      \vec{u} = a\vec{v} + b\vec{w} = a \begin{bmatrix} v_x \\ v_y \end{bmatrix} + b \begin{bmatrix} w_x \\ w_y \end{bmatrix} = \begin{bmatrix} a v_x + b w_x \\ a v_y + b w_y \end{bmatrix}
+      $$
+    </div>
+    <p>ভেক্টরদ্বয় লিনিয়ারলি ইন্ডিপেনডেন্ট কিনা তা তাদের নির্ণায়ক (Determinant) দ্বারা সরাসরি নির্ধারিত হয়:</p>
+    <div class="formula-display">
+      $$
+      \det([\vec{v}, \vec{w}]) = v_x w_y - v_y w_x \neq 0 \implies \text{Full 2D Span } (\mathbb{R}^2)
+      $$
+      $$
+      \det([\vec{v}, \vec{w}]) = 0 \implies \text{Collinear / 1D Line Span}
+      $$
+    </div>
+  </div>
+
+  <footer>
+    <p>বাংলা রিসোর্স ফ্যাক্টরি (Bangla Resource Factory) &bull; ওপেন এডুকেশন ইনিশিয়েটিভ ২০২৬ &bull; 3Blue1Brown অরিজিনাল লেসন অ্যাডাপ্টেশন</p>
+  </footer>
+</div>
+
+<script>
+  const canvas = document.getElementById('vectorCanvas');
+  const ctx = canvas.getContext('2d');
+
+  let showSpanGrid = true;
+
+  // Sliders & elements
+  const vxSlider = document.getElementById('vx');
+  const vySlider = document.getElementById('vy');
+  const wxSlider = document.getElementById('wx');
+  const wySlider = document.getElementById('wy');
+  const aSlider = document.getElementById('aScale');
+  const bSlider = document.getElementById('bScale');
+
+  const vxVal = document.getElementById('vxVal');
+  const vyVal = document.getElementById('vyVal');
+  const wxVal = document.getElementById('wxVal');
+  const wyVal = document.getElementById('wyVal');
+  const aVal = document.getElementById('aVal');
+  const bVal = document.getElementById('bVal');
+  const vCoord = document.getElementById('vCoord');
+  const wCoord = document.getElementById('wCoord');
+
+  const statusBox = document.getElementById('statusBox');
+  const statusTitle = document.getElementById('statusTitle');
+  const statusDesc = document.getElementById('statusDesc');
+
+  function update() {
+    const vx = parseFloat(vxSlider.value);
+    const vy = parseFloat(vySlider.value);
+    const wx = parseFloat(wxSlider.value);
+    const wy = parseFloat(wySlider.value);
+    const a = parseFloat(aSlider.value);
+    const b = parseFloat(bSlider.value);
+
+    vxVal.textContent = vx.toFixed(1);
+    vyVal.textContent = vy.toFixed(1);
+    wxVal.textContent = wx.toFixed(1);
+    wyVal.textContent = wy.toFixed(1);
+    aVal.textContent = a.toFixed(1);
+    bVal.textContent = b.toFixed(1);
+
+    vCoord.textContent = `[${vx.toFixed(1)}, ${vy.toFixed(1)}]`;
+    wCoord.textContent = `[${wx.toFixed(1)}, ${wy.toFixed(1)}]`;
+
+    // Compute determinant
+    const det = vx * wy - vy * wx;
+    const isDependent = Math.abs(det) < 0.001;
+
+    if (isDependent) {
+      statusBox.className = "status-box status-dependent";
+      statusTitle.textContent = "লিনিয়ারলি ডিপেনডেন্ট (Linearly Dependent)";
+      statusDesc.textContent = "ভেক্টরদ্বয় একই সরলরেখা বরাবর সারিবদ্ধ (Collinear)। কোনো নতুন মাত্রা তৈরি হচ্ছে না; এদের স্প্যান কেবল একটি একক রেখা!";
+    } else {
+      statusBox.className = "status-box status-independent";
+      statusTitle.textContent = "লিনিয়ারলি ইনডিপেনডেন্ট (Linearly Independent)";
+      statusDesc.textContent = "ভেক্টরদ্বয় পরস্পর স্বাধীন। স্কেলার $a$ ও $b$-এর মান পরিবর্তনের মাধ্যমে আপনি ২ডি তলের প্রতিটি বিন্দুতে পৌঁছাতে পারবেন!";
+    }
+
+    render(vx, vy, wx, wy, a, b, isDependent);
+  }
+
+  function render(vx, vy, wx, wy, a, b, isDependent) {
+    const w = canvas.width;
+    const h = canvas.height;
+    const cx = w / 2;
+    const cy = h / 2;
+    const scale = 40; // 40px = 1 unit
+
+    ctx.clearRect(0, 0, w, h);
+
+    // Draw Grid
+    ctx.strokeStyle = '#1e293b';
+    ctx.lineWidth = 1;
+    for (let x = cx % scale; x < w; x += scale) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, h);
+      ctx.stroke();
+    }
+    for (let y = cy % scale; y < h; y += scale) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(w, y);
+      ctx.stroke();
+    }
+
+    // Axes
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(0, cy); ctx.lineTo(w, cy);
+    ctx.moveTo(cx, 0); ctx.lineTo(cx, h);
+    ctx.stroke();
+
+    // Span visualization (Grid transformed by v and w)
+    if (showSpanGrid) {
+      ctx.save();
+      ctx.lineWidth = 1;
+      if (isDependent) {
+        // Draw collinear span line
+        ctx.strokeStyle = 'rgba(244, 63, 94, 0.4)';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        const dirX = vx !== 0 ? vx : wx;
+        const dirY = vy !== 0 ? vy : wy;
+        if (dirX !== 0 || dirY !== 0) {
+          ctx.moveTo(cx - dirX * 1000, cy + dirY * 1000);
+          ctx.lineTo(cx + dirX * 1000, cy - dirY * 1000);
+          ctx.stroke();
+        }
+      } else {
+        // Draw coordinate grid formed by v and w
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.12)';
+        for (let i = -10; i <= 10; i++) {
+          ctx.beginPath();
+          ctx.moveTo(cx + (i * vx - 10 * wx) * scale, cy - (i * vy - 10 * wy) * scale);
+          ctx.lineTo(cx + (i * vx + 10 * wx) * scale, cy - (i * vy + 10 * wy) * scale);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(cx + (-10 * vx + i * wx) * scale, cy - (-10 * vy + i * wy) * scale);
+          ctx.lineTo(cx + (10 * vx + i * wx) * scale, cy - (10 * vy + i * wy) * scale);
+          ctx.stroke();
+        }
+      }
+      ctx.restore();
+    }
+
+    // Scaled vectors: a*v and b*w
+    const avX = a * vx;
+    const avY = a * vy;
+    const bwX = b * wx;
+    const bwY = b * wy;
+
+    // Intermediate dashed vector lines for addition
+    ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)';
+    ctx.setLineDash([5, 5]);
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(cx + avX * scale, cy - avY * scale);
+    ctx.lineTo(cx + (avX + bwX) * scale, cy - (avY + bwY) * scale);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(cx + bwX * scale, cy - bwY * scale);
+    ctx.lineTo(cx + (avX + bwX) * scale, cy - (avY + bwY) * scale);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Draw Vector v (emerald)
+    drawArrow(cx, cy, cx + vx * scale, cy - vy * scale, '#10b981', 3, 'v');
+    // Draw Vector w (purple)
+    drawArrow(cx, cy, cx + wx * scale, cy - wy * scale, '#c084fc', 3, 'w');
+
+    // Draw Resultant Vector u = a*v + b*w (amber)
+    const uX = avX + bwX;
+    const uY = avY + bwY;
+    drawArrow(cx, cy, cx + uX * scale, cy - uY * scale, '#f59e0b', 4, 'u = av + bw');
+
+    // Draw Points at the tips
+    drawPoint(cx + uX * scale, cy - uY * scale, '#f59e0b', 5);
+  }
+
+  function drawArrow(fromx, fromy, tox, toy, color, width, label) {
+    const headlen = 10;
+    const dx = tox - fromx;
+    const dy = toy - fromy;
+    const angle = Math.atan2(dy, dx);
+
+    ctx.strokeStyle = color;
+    ctx.fillStyle = color;
+    ctx.lineWidth = width;
+
+    ctx.beginPath();
+    ctx.moveTo(fromx, fromy);
+    ctx.lineTo(tox, toy);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(tox, toy);
+    ctx.lineTo(tox - headlen * Math.cos(angle - Math.PI / 6), toy - headlen * Math.sin(angle - Math.PI / 6));
+    ctx.lineTo(tox - headlen * Math.cos(angle + Math.PI / 6), toy - headlen * Math.sin(angle + Math.PI / 6));
+    ctx.closePath();
+    ctx.fill();
+
+    if (label) {
+      ctx.font = 'bold 13px sans-serif';
+      ctx.fillText(label, tox + 8, toy - 8);
+    }
+  }
+
+  function drawPoint(x, y, color, radius) {
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  function setPreset(type) {
+    if (type === 'standard') {
+      vxSlider.value = 1; vySlider.value = 0;
+      wxSlider.value = 0; wySlider.value = 1;
+      aSlider.value = 2; bSlider.value = 1.5;
+    } else if (type === 'dependent') {
+      vxSlider.value = 2; vySlider.value = 1;
+      wxSlider.value = -2; wySlider.value = -1;
+      aSlider.value = 1; bSlider.value = 0.5;
+    } else if (type === 'orthogonal') {
+      vxSlider.value = 2; vySlider.value = 1;
+      wxSlider.value = -1; wySlider.value = 2;
+      aSlider.value = 1.5; bSlider.value = 1.2;
+    }
+    update();
+  }
+
+  function toggleSpanGrid() {
+    showSpanGrid = !showSpanGrid;
+    document.getElementById('spanToggleBtn').textContent = `স্প্যান গ্রিড: ${showSpanGrid ? 'চালু' : 'বন্ধ'}`;
+    update();
+  }
+
+  [vxSlider, vySlider, wxSlider, wySlider, aSlider, bSlider].forEach(s => s.addEventListener('input', update));
+
+  update();
+</script>
+</body>
+</html>

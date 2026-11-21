@@ -1,0 +1,182 @@
+[
+  {
+    "id": "sec-implicit-intro",
+    "title": "১. প্রত্যক্ষ বনাম প্রচ্ছন্ন সমীকরণ এবং বৃত্তের ঢাল (Explicit vs. Implicit Equations)",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "১. প্রত্যক্ষ বনাম প্রচ্ছন্ন সমীকরণ এবং বৃত্তের ঢাল (Explicit vs. Implicit Equations)",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "chapter-quote",
+        "text": "\" “Do not ask whether a statement is true until you know what it means.” — Errett Bishopযখন সম্পর্কগুলো স্পষ্ট নয় বরং প্রচ্ছন্ন থাকে, তখনও পরিবর্তন তার আপন নিয়মে সুনির্দিষ্ট থাকে। — গ্রান্ট স্যান্ডারসন (৩ব্লু১ব্রাউন) — Errett Bishop · গ্রান্ট স্যান্ডারসন (৩ব্লু১ব্রাউন)",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "সাধারণ ক্যালকুলাস কোর্সে আমরা শিখি কীভাবে <annotation>y = x^2</annotation> কিংবা <annotation>y = \\sin(x)</annotation>-এর মতো ফাংশনগুলোর অন্তরজ বা ডেরিভেটিভ নির্ণয় করতে হয়। এই প্রতিটি ক্ষেত্রে <annotation>y</annotation> রাশিটি <annotation>x</annotation>-এর একটি স্পষ্ট বা প্রত্যক্ষ (Explicit) ফাংশন হিসেবে সরাসরি দেওয়া থাকে। আপনি একটি <annotation>x</annotation> ইনপুট দেন এবং একক নির্দিষ্ট <annotation>y</annotation> মান ফলাফল হিসেবে বেরিয়ে আসে।",
+        "math_attr": "",
+        "tex": "y = x^2 y = \\sin(x) y x x y"
+      },
+      {
+        "type": "p",
+        "text": "কিন্তু গণিত ও বিজ্ঞানের বহু বাস্তবিক ঘটনায় <annotation>x</annotation> এবং <annotation>y</annotation> সমীকরণের ভেতর একে অপরকে জড়িয়ে থাকে, যেখানে <annotation>y</annotation>-কে রূপার থালায় সাজিয়ে একপাশে আলাদা করে দেওয়া থাকে না। যেমন ব্যাসার্ধ <annotation>5</annotation> বিশিষ্ট একটি বৃত্তের ধ্রুপদী সমীকরণ: <annotation>x^2 + y^2 = 25</annotation>। এখানে বিন্দুটি একটি শর্ত মেনে চলার মাধ্যমে প্রচ্ছন্ন বা অপ্রত্যক্ষভাবে (Implicitly) সংজ্ঞায়িত হচ্ছে। প্রচলিত পদ্ধতিতে উভয় পক্ষে অন্তরীকরণ করে <annotation>\\frac{d}{dx}(x^2+y^2)=\\frac{d}{dx}(25)</annotation> থেকে <annotation>2x + 2y\\frac{dy}{dx}=0</annotation>, অর্থাৎ <annotation>\\frac{dy}{dx}=-\\frac{x}{y}</annotation> পাওয়া যায়।",
+        "math_attr": "",
+        "tex": "x y y 5 x^2 + y^2 = 25 \\frac{d}{dx}(x^2+y^2)=\\frac{d}{dx}(25) 2x + 2y\\frac{dy}{dx}=0 \\frac{dy}{dx}=-\\frac{x}{y}"
+      },
+      {
+        "type": "figure",
+        "text": "x y (3, 4) r = 5 tangent: dy/dx = -3/4 x² + y² = 25 এই চিত্রে মূলবিন্দুকে কেন্দ্র করে ব্যাসার্ধ ৫-এর বৃত্তটি আঁকা হয়েছে; নীল ব্যাসার্ধ রেখাটি <annotation>(3,4)</annotation> বিন্দুতে পৌঁছেছে এবং হলুদ স্পর্শক রেখাটি সেই বিন্দুতে বৃত্তকে স্পর্শ করেছে। লক্ষ্য করুন স্পর্শকের ঢাল <annotation>\\\\frac{dy}{dx}=-\\\\frac{x}{y}=-\\\\frac{3}{4}</annotation>—ঋণাত্মক karena বিন্দুটি উপরের ডান দিকে অবস্থিত। বৃত্তের প্রতিটি বিন্দুতেই এই ধরনের একটি সুস্পষ্ট স্পর্শক থাকলেও সমগ্র বক্ররেখাটি কোনো একক ফাংশনের লেখচিত্র নয়; এই পার্থক্যটাই প্রচ্ছন্ন ব্যবকলনের প্রয়োজনীয়তা তৈরি করে।",
+        "math_attr": "",
+        "tex": "(3,4) \\\\frac{dy}{dx}=-\\\\frac{x}{y}=-\\\\frac{3}{4}"
+      },
+      {
+        "type": "p",
+        "text": "বৃত্তটির দিকে তাকালে দেখা যায়, এর পরিধির প্রতিটি বিন্দুতেই সুস্পষ্ট একটি স্পর্শক রেখা বিদ্যমান। প্রচলিত পাঠ্যবইয়ে উভয় পক্ষে <annotation>x</annotation>-এর সাপেক্ষে অন্তরজ নিয়ে চেইন রুল প্রয়োগের মাধ্যমে <annotation>\\frac{dy}{dx}=-\\frac{x}{y}</annotation> পাওয়া যায়। <annotation>(3,4)</annotation> বিন্দুতে এর মান <annotation>-\\frac{3}{4}</annotation>। কিন্তু বীজগাণিতিক এই প্রক্রিয়ার অন্তর্নিহিত জ্যামিতি ঠিক কী?",
+        "math_attr": "",
+        "tex": "x \\frac{dy}{dx}=-\\frac{x}{y} (3,4) -\\frac{3}{4}"
+      },
+      {
+        "type": "callout",
+        "text": "🔍 বিশেষ নোট: প্রচ্ছন্ন সম্পর্কের প্রকৃতি প্রত্যক্ষ ফাংশনে একটি ইনপুটের জন্য একটিমাত্র আউটপুট মেলে। কিন্তু বৃত্তের সমীকরণ উল্লম্ব রেখা পরীক্ষা (Vertical Line Test) উত্তীর্ণ হয় না, কারণ প্রতিটি <annotation>x</annotation>-এর জন্য দুটি মান <annotation>y=\\pm\\sqrt{25-x^2}</annotation> থাকে। তাই পুরো সম্পর্কটিকে অবিভাজ্য রেখে অন্তরীকরণ করাই হলো প্রচ্ছন্ন ব্যবকলন। এখানে <annotation>x</annotation> কোনো ইনপুট এবং <annotation>y</annotation> কোনো আউটপুট নয়—দুটিই পরস্পরনির্ভর চলক মাত্র।",
+        "math_attr": "",
+        "tex": "x y=\\pm\\sqrt{25-x^2} x y"
+      },
+      {
+        "type": "p",
+        "text": "বীজগাণিতিক কৌশল জানা থাকলেও, একে অর্থপূর্ণ করতে আমাদের তাকাতে হবে ত্রিমাত্রিক ভূদৃশ্যের সমউচ্চতা রেখার দিকে। সেখানেই <annotation>dx</annotation> ও <annotation>dy</annotation> কীভাবে একে অপরের সাথে আবদ্ধ হয় তা স্বচ্ছ হয়ে ওঠে।",
+        "math_attr": "",
+        "tex": "dx dy"
+      }
+    ]
+  },
+  {
+    "id": "sec-level-curves",
+    "title": "২. সমউচ্চতা রেখা বা লেভেল কার্ভ হিসেবে সমীকরণ দেখা (Equations as Level Curves)",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "২. সমউচ্চতা রেখা বা লেভেল কার্ভ হিসেবে সমীকরণ দেখা (Equations as Level Curves)",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "গভীর বাস্তবিক অন্তর্দৃষ্টি পেতে চলুন প্রশ্নটিকে নতুন করে সাজানো যাক। <annotation>x</annotation> এবং <annotation>y</annotation>-কে কেবল ইনপুট আর আউটপুট না ভেবে, <annotation>x^2+y^2</annotation>-কে দ্বিমাত্রিক সমতলের প্রতিটি বিন্দুর ওপর একটি উচ্চতা ফাংশন হিসেবে কল্পনা করুন। ত্রিমাত্রিক স্থানে এটি একটি গোলাকার বাটি বা প্যারাবোলয়েড (Circular Paraboloid) তল তৈরি করে, যার কোনো বিন্দুর উচ্চতা মূলবিন্দু থেকে তার দূরত্বের বর্গ।",
+        "math_attr": "",
+        "tex": "x y x^2+y^2"
+      },
+      {
+        "type": "figure",
+        "text": "plane z = 25 dz = 0 level curve z = x² + y² চিত্রটি একটি ত্রিমাত্রিক বাটির মতো প্যারাবোলয়েড তল <annotation>z=x^2+y^2</annotation> দেখাচ্ছে, যার ওপর দিয়ে ২৫ উচ্চতায় একটি অনুভূমিক সমতল কাটা হয়েছে। সেই ছেদরেখাটি হলো আমাদের পরিচিত বৃত্ত <annotation>x^2+y^2=25</annotation>। লক্ষ্য করুন বাটির কেন্দ্র থেকে দূরে গেলে উচ্চতা বাড়ছে, কিন্তু ছেদরেখার ওপর প্রতিটি বিন্দুর উচ্চতা অবিকল ২৫-এ থাকছে—এই ধ্রুবকতাই লেভেল কার্ভের সংজ্ঞা এবং পরবর্তী যুক্তির ভিত্তি।",
+        "math_attr": "",
+        "tex": "z=x^2+y^2 x^2+y^2=25"
+      },
+      {
+        "type": "p",
+        "text": "এখন <annotation>x^2+y^2=25</annotation> সমীকরণটি নির্দেশ করছে: এই বাটিটির ওপর ঠিক ২৫ একক উচ্চতায় কোন কোন বিন্দু অবস্থান করছে? আপনি যদি ২৫ উচ্চতায় একটি অনুভূমিক সমতল দিয়ে বাটিটিকে কেটে ফেলেন, তবে তার প্রস্থচ্ছেদ বা সমউচ্চতা রেখাটিই (Level Curve বা Contour Line) হলো আমাদের সেই বৃত্ত!",
+        "math_attr": "",
+        "tex": "x^2+y^2=25"
+      },
+      {
+        "type": "callout",
+        "text": "🧭 বিশেষ নোট: উচ্চতা অপরিবর্তিত থাকার নিয়ম আপনি যখন এই বৃত্তাকার পরিধি বরাবর পা ফেলেন, তখন আপনি সমউচ্চতার রেখায় অবস্থান করছেন। ফলে আপনার উচ্চতার কোনো পরিবর্তন হয় না—অর্থাৎ উচ্চতার মোট পরিবর্তন <annotation>\\Delta z</annotation> বা <annotation>dz</annotation> অবিকল শূন্য। বাটির ওপর অন্য কোনো দিকে হাঁটলে উচ্চতা বদলাত, কিন্তু সমউচ্চতা রেখা বরাবর হাঁটলে সবসময়ই <annotation>dz=0</annotation>।",
+        "math_attr": "",
+        "tex": "\\Delta z dz dz=0"
+      },
+      {
+        "type": "p",
+        "text": "উচ্চতার কোনো পরিবর্তন হতে পারবে না—অর্থাৎ রাশির সামগ্রিক ডিফারেনশিয়াল বৃদ্ধি হতে হবে অবিকল শূন্য! এই একক পর্যবেক্ষণ থেকেই <annotation>2x\\,dx+2y\\,dy=0</annotation> সমীকরণটির জন্ম।",
+        "math_attr": "",
+        "tex": "2x\\,dx+2y\\,dy=0"
+      }
+    ]
+  },
+  {
+    "id": "sec-differential-balance",
+    "title": "৩. ডিফারেনশিয়াল ভারসাম্য: 2x dx + 2y dy = 0 (Stepping Along the Curve)",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৩. ডিফারেনশিয়াল ভারসাম্য: 2x dx + 2y dy = 0 (Stepping Along the Curve)",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "কল্পনা করুন আপনি বৃত্তের পরিধি বরাবর অতি ক্ষুদ্র একটি ধাপ এগিয়ে গেলেন। এর ফলে আনুভূমিক অক্ষে পরিবর্তন ঘটল <annotation>dx</annotation> এবং উল্লম্ব অক্ষে পরিবর্তন ঘটল <annotation>dy</annotation>। উচ্চতা ফাংশনে <annotation>x^2</annotation> পদের কারণে পরিবর্তন ঘটে <annotation>2x\\,dx</annotation> পরিমাণ এবং <annotation>y^2</annotation> পদের কারণে পরিবর্তন ঘটে <annotation>2y\\,dy</annotation> পরিমাণ।",
+        "math_attr": "",
+        "tex": "dx dy x^2 2x\\,dx y^2 2y\\,dy"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>2x\\,dx + 2y\\,dy = 0</annotation>",
+        "math_attr": "",
+        "tex": "2x\\,dx + 2y\\,dy = 0"
+      },
+      {
+        "type": "p",
+        "text": "কিন্তু যেহেতু আপনি বৃত্তের ওপরই অবস্থান করছেন এবং উচ্চতা ২৫-এ স্থির রয়েছে, তাই এই দুই পরিবর্তনের যোগফল হতে হবে ঠিক শূন্য! পক্ষান্তর করলেই পাওয়া যায় <annotation>2y\\,dy=-2x\\,dx</annotation>, অর্থাৎ স্পর্শক ঢাল <annotation>\\frac{dy}{dx}=-\\frac{x}{y}</annotation>। এখানে <annotation>x</annotation> এবং <annotation>y</annotation> উভয় চলককেই সমান মর্যাদায় স্বাধীন জ্যামিতিক দিক হিসেবে দেখা হয়।",
+        "math_attr": "",
+        "tex": "2y\\,dy=-2x\\,dx \\frac{dy}{dx}=-\\frac{x}{y} x y"
+      },
+      {
+        "type": "figure",
+        "text": "(3, 4) slope 4/3 slope -3/4 product = -1 → perpendicular এই চিত্রে <annotation>(3,4)</annotation> বিন্দুতে দুটি রেখা দেখা যাচ্ছে—সবুজ ব্যাসার্ধ রেখার ঢাল <annotation>\\\\frac{4}{3}</annotation> এবং হলুদ স্পর্শক রেখার ঢাল <annotation>-\\\\frac{3}{4}</annotation>। বিন্দুতে অঙ্কিত ছোট বর্গাকৃতি চিহ্নটি তাদের মধ্যকার <annotation>90°</annotation> কোণ নির্দেশ করছে। ঢাল দুটির গুণফল <annotation>\\\\left(\\\\frac{4}{3}\\\\right)\\\\left(-\\\\frac{3}{4}\\\\right)=-1</annotation>, যা জ্যামিতিকভাবে প্রমাণ করে যে বৃত্তের স্পর্শক সবসময় ব্যাসার্ধের লম্ব—এই উপলব্ধিই প্রচ্ছন্ন ব্যবকলনের জ্যামিতিক অর্থ।",
+        "math_attr": "",
+        "tex": "(3,4) \\\\frac{4}{3} -\\\\frac{3}{4} 90° \\\\left(\\\\frac{4}{3}\\\\right)\\\\left(-\\\\frac{3}{4}\\\\right)=-1"
+      },
+      {
+        "type": "callout",
+        "text": "📐 বিশেষ জ্যামিতিক তাৎপর্য: ব্যাসার্ধ ও স্পর্শকের লম্বতা বৃত্তের পরিধির যেকোনো বিন্দু <annotation>(x,y)</annotation>-তে মূলবিন্দু থেকে ব্যাসার্ধ ভেক্টরের ঢাল হলো <annotation>\\frac{y}{x}</annotation>। আর আমাদের প্রাপ্ত স্পর্শকের ঢাল হলো <annotation>-\\frac{x}{y}</annotation>। এই দুই ঢালের গুণফল <annotation>\\left(\\frac{y}{x}\\right)\\times\\left(-\\frac{x}{y}\\right)=-1</annotation>, যা অকাট্যভাবে প্রমাণ করে যে বৃত্তের স্পর্শক রেখা ব্যাসার্ধের সাথে সর্বদাই সমকোণে বা লম্বভাবে অবস্থান করে। শীর্ষবিন্দুতে <annotation>x=0</annotation> হওয়ায় ঢাল <annotation>0</annotation> (অনুভূমিক), আর পার্শ্ববিন্দুতে <annotation>y=0</annotation> হওয়ায় স্পর্শক খাড়া উল্লম্ব বা অনির্ণেয়।",
+        "math_attr": "",
+        "tex": "(x,y) \\frac{y}{x} -\\frac{x}{y} \\left(\\frac{y}{x}\\right)\\times\\left(-\\frac{x}{y}\\right)=-1 x=0 0 y=0"
+      }
+    ]
+  },
+  {
+    "id": "sec-related-rates",
+    "title": "৪. সম্পর্কিত পরিবর্তনের হার: দেয়াল বেয়ে পিছলে পড়া মই (Related Rates & Slipping Ladder)",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৪. সম্পর্কিত পরিবর্তনের হার: দেয়াল বেয়ে পিছলে পড়া মই (Related Rates & Slipping Ladder)",
+        "math_attr": "",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "এই অন্তর্দৃষ্টিকে বাস্তব জীবনের একটি সমস্যায় প্রয়োগ করা যাক: সম্পর্কিত পরিবর্তনের হার (Related Rates)। মনে করি <annotation>5</annotation> মিটার দৈর্ঘ্যের একটি মই উলম্ব দেয়ালের সাথে হেলান দিয়ে দাঁড় করানো আছে, যার শীর্ষ প্রথমে <annotation>4</annotation> মিটার উঁচুতে আছে; পিথাগোরাসের উপপাদ্য অনুযায়ী তখন গোড়া দেয়াল থেকে <annotation>3</annotation> মিটার দূরে থাকে এবং সর্বদাই <annotation>x^2+y^2=5^2=25</annotation> প্রযোজ্য।",
+        "math_attr": "",
+        "tex": "5 4 3 x^2+y^2=5^2=25"
+      },
+      {
+        "type": "figure",
+        "text": "dy/dt = -1 m/s dx/dt = 4/3 m/s 5 m y = 4 x = 3 x² + y² = 25 চিত্রে ৫ মিটারের মইটি দেয়ালের সাথে হেলান দিয়ে আছে—ভূমি থেকে গোড়ার দূরত্ব <annotation>x=3</annotation> মিটার এবং দেয়াল বরাবর শীর্ষের উচ্চতা <annotation>y=4</annotation> মিটার। লাল তীর <annotation>dy/dt=-1</annotation> মিটার/সেকেন্ড দিয়ে শীর্ষের নিচের দিকের গতি আর সবুজ তীর <annotation>dx/dt=\\\\frac{4}{3}</annotation> মিটার/সেকেন্ড দিয়ে গোড়ার দূরে যাওয়ার গতি দেখাচ্ছে। মইয়ের দৈর্ঘ্য অপরিবর্তিত থাকায় এই দুই হার পিথাগোরাস সম্পর্কের মাধ্যমে আবদ্ধ—একটি হার জানলে অন্যটি নির্ণয় করা যায়।",
+        "math_attr": "",
+        "tex": "x=3 y=4 dy/dt=-1 dx/dt=\\\\frac{4}{3}"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>2x \\frac{dx}{dt} + 2y \\frac{dy}{dt} = 0</annotation>",
+        "math_attr": "",
+        "tex": "2x \\frac{dx}{dt} + 2y \\frac{dy}{dt} = 0"
+      },
+      {
+        "type": "p",
+        "text": "অবশ্যি মইয়ের শীর্ষ <annotation>1</annotation> মিটার/সেকেন্ড বেগে নামছে, অর্থাৎ <annotation>\\frac{dy}{dt}=-1</annotation>। বর্তমান অবস্থায় <annotation>x=3</annotation>, <annotation>y=4</annotation> বসালে <annotation>2(3)\\frac{dx}{dt}+2(4)(-1)=0</annotation> থেকে <annotation>\\frac{dx}{dt}=\\frac{4}{3}</annotation> মিটার/সেকেন্ড পাওয়া যায়—গোড়াটি দেয়াল থেকে প্রতি সেকেন্ডে <annotation>1.33</annotation> মিটার করে দূরে সরে যাচ্ছে। এই <annotation>dx/dt=4/3</annotation> ফলাফলটিই মূল অফিশিয়াল উদাহরণ। বিকল্পভাবে যদি গোড়ার বেগকে ধ্রুব <annotation>1</annotation> মিটার/সেকেন্ড ধরা হয়, তবে <annotation>\\frac{dy}{dt}=-\\frac{x}{y}\\cdot 1=-\\frac{3}{4}=-0.75</annotation> মিটার/সেকেন্ড হবে। দুই ক্ষেত্রেই একই ভারসাম্য সমীকরণ কাজ করে—শুধু কোন হারকে ইনপুট হিসেবে নেওয়া হয় তা বদলায়।",
+        "math_attr": "",
+        "tex": "1 \\frac{dy}{dt}=-1 x=3 y=4 2(3)\\frac{dx}{dt}+2(4)(-1)=0 \\frac{dx}{dt}=\\frac{4}{3} 1.33 dx/dt=4/3 1 \\frac{dy}{dt}=-\\frac{x}{y}\\cdot 1=-\\frac{3}{4}=-0.75"
+      },
+      {
+        "type": "callout",
+        "text": "⚠️ বিশেষ অন্তর্দৃষ্টি: অন্তিম পতনের অসীম ত্বরণ লক্ষ্য করুন, যখন গোড়া ধ্রুব বেগে দূরে সরে যায় তখন <annotation>\\frac{dy}{dt}=-\\frac{x}{y}\\frac{dx}{dt}</annotation>। মইটি যখন মাটির কাছাকাছি পৌঁছে যায় (<annotation>y\\to 0</annotation>), তখন এই ভগ্নাংশের হর শূন্যের দিকে চলে যাওয়ায় শীর্ষবিন্দুর নিম্নমুখী বেগ মাইনাস অসীমের দিকে ধাবিত হয়! মাটিতে আছড়ে পড়ার মুহূর্তে মইটির ওপরের প্রান্ত ভয়াবহ ক্ষিপ্র গতিতে ধসে পড়ে—যদিও গোড়ার গতি সম্পূর্ণ ধ্রুব ছিল।",
+        "math_attr": "",
+        "tex": "\\frac{dy}{dt}=-\\frac{x}{y}\\frac{dx}{dt} y\\to 0"
+      }
+    ]
+  }
+]

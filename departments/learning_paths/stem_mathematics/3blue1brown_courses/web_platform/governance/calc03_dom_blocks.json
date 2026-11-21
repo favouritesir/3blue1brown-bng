@@ -1,0 +1,196 @@
+[
+  {
+    "id": "sec-x2-geometry",
+    "title": "১. ক্ষেত্রফল বৃদ্ধি ও x²-এর অন্তরজ (Area Growth & The Derivative of x²)",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "১. ক্ষেত্রফল বৃদ্ধি ও x²-এর অন্তরজ (Area Growth & The Derivative of x²)",
+        "tex": ""
+      },
+      {
+        "type": "chapter-quote",
+        "text": "\" “You know, for a mathematician, he did not have enough imagination. But he has become a poet and now he is fine.” — অর্থাৎ: দেখুন, একজন গণিতবিদের কাছে তাঁর কল্পনা যথেষ্ট ছিল না; কিন্তু তিনি এখন কবি হয়ে গেছেন, আর এখন সব ঠিক আছে। — ডেভিড হিলবার্ট (David Hilbert)",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "আগের অধ্যায়ে আমরা অন্তরজ ও পরিবর্তনের হারের সম্পর্ক জানলাম; এখন আমরা দেখব কীভাবে দেওয়া সূত্রগুলো আবৃত্তি না করে আবিষ্কার করা যায়। একজন সাধারণ ক্যালকুলাস শিক্ষার্থীকে হয়তো <annotation>\\frac{\\sin(x)}{x^2}</annotation>-এর মতো কোনো ফাংশনের অন্তরজ বের করতে বলা হয়—অথচ কোনো বাস্তব প্রসঙ্গ বা ভৌত প্রক্রিয়ার ইঙ্গিত দেওয়া হয় না। এটি ভুল নয়: যেমন গুণন সারণি মুখস্থ করে আমরা জটিল গণিতের দিকে অগ্রসর হই, তেমনি অন্তরজের সূত্র মুখস্থ করাও এক ধাপের কাজ; কিন্তু আমাদের লক্ষ্য হলো সূত্রগুলো এমনভাবে বোঝা যেন সেগুলো আমরা নিজেরাই আবিষ্কার করতে পারি।",
+        "tex": "\\frac{\\sin(x)}{x^2}"
+      },
+      {
+        "type": "p",
+        "text": "চলুন সবচেয়ে পরিচিত ফাংশন <annotation>f(x)=x^2</annotation> দিয়ে শুরু করি। একে আপনি কার্তেসীয় তলে একটি পরাবৃত্ত (প্যারাবোলা) হিসেবে না দেখে, আক্ষরিক অর্থেই <annotation>x</annotation> বাহুবিশিষ্ট একটি বর্গের ক্ষেত্রফল হিসেবে কল্পনা করুন—তাহলে <annotation>x</annotation> বদলালে ক্ষেত্রফল কীভাবে বদলায় তা সরাসরি চোখে দেখা যাবে।",
+        "tex": "f(x)=x^2 x x"
+      },
+      {
+        "type": "figure",
+        "text": "এই চিত্রে <annotation>x</annotation> বাহুবিশিষ্ট বর্গক্ষেত্রটির ডান ও উপরের ধারে <annotation>dx</annotation> প্রস্থ যোগ করা হয়েছে। নীল মূল অংশ <annotation>x^2</annotation> অপরিবর্তিত থাকে, আর হলুদ ফালি দুটি ও কোণার সবুজ বর্গটি নতুন করে যোগ হওয়া ক্ষেত্রফল <annotation>df</annotation>। লক্ষ্য করুন দুটি ফালি একই আকারের—এই সমানতাই পরবর্তীতে '২' সহগের জন্ম দেবে।",
+        "tex": "x dx x^2 df"
+      },
+      {
+        "type": "p",
+        "text": "বর্গের বাহু <annotation>x</annotation>-কে <annotation>dx</annotation> পরিমাণ বাড়ালে ক্ষেত্রফলের মোট বৃদ্ধি <annotation>df</annotation> তিনটি অংশ নিয়ে গঠিত হয়: ডান ধারে <annotation>x\\cdot dx</annotation>, উপরের ধারে আরেকটি <annotation>x\\cdot dx</annotation>, এবং কোণায় অতিক্ষুদ্র <annotation>(dx)^2</annotation> বর্গ। উদাহরণস্বরূপ <annotation>x=3</annotation> ও <annotation>dx=0.01</annotation> হলে ফালি দুটির মোট ক্ষেত্রফল <annotation>2\\cdot3\\cdot0.01=0.06</annotation>—অর্থাৎ <annotation>dx</annotation>-এর প্রায় ৬ গুণ; আর <annotation>x=2</annotation> হলে তা <annotation>0.04</annotation>, অর্থাৎ <annotation>dx</annotation>-এর ৪ গুণ।",
+        "tex": "x dx df x\\cdot dx x\\cdot dx (dx)^2 x=3 dx=0.01 2\\cdot3\\cdot0.01=0.06 dx x=2 0.04 dx"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>df = 2x \\cdot dx + (dx)^2 \\quad\\Longrightarrow\\quad \\frac{df}{dx} = \\frac{2x\\,dx + (dx)^2}{dx} = 2x + dx \\;\\xrightarrow{dx\\to0}\\; 2x</annotation>",
+        "tex": "df = 2x \\cdot dx + (dx)^2 \\quad\\Longrightarrow\\quad \\frac{df}{dx} = \\frac{2x\\,dx + (dx)^2}{dx} = 2x + dx \\;\\xrightarrow{dx\\to0}\\; 2x"
+      },
+      {
+        "type": "callout",
+        "text": "💡 জ্যামিতিক অন্তর্দৃষ্টি: '২' কোথা থেকে এলো? <annotation>2x</annotation> আসলে বর্গের সেই দুটি ধারের মোট দৈর্ঘ্য যেদিকে নতুন ফালি যুক্ত হচ্ছে—ডানে <annotation>x</annotation> এবং উপরে <annotation>x</annotation>। <annotation>(dx)^2</annotation> পদটি <annotation>dx</annotation>-এর চেয়েও অনেক ছোট, তাই <annotation>dx\\to0</annotation> হলে সেটি শূন্যে মিলিয়ে যায়; কিন্তু <annotation>2x</annotation> অক্ষত থাকে। সুতরাং <annotation>\\frac{d}{dx}(x^2)=2x</annotation> কোনো যান্ত্রিক নিয়ম নয়, বরং একটি বাড়ন্ত বর্গের স্বাভাবিক জ্যামিতি।",
+        "tex": "2x x x (dx)^2 dx dx\\to0 2x \\frac{d}{dx}(x^2)=2x"
+      },
+      {
+        "type": "p",
+        "text": "অতএব পাই <annotation>\\frac{d}{dx}(x^2)=2x</annotation>—লেখচিত্রের ঢাল <annotation>x=0</annotation>-এ শূন্য, <annotation>x=1</annotation>-এ কিছুটা খাড়া, <annotation>x=2</annotation>-এ আরও খাড়া; আর বর্গের জ্যামিতি ঠিক এই ক্রমবৃদ্ধিই প্রকাশ করে। লেখচিত্র দেখে হিসাব শুরু না করে আমরা বরং ফাংশনের আসল অর্থের দিকে তাকালাম—এই অভ্যাসটি পরবর্তী সব সূত্রে কাজে আসবে।",
+        "tex": "\\frac{d}{dx}(x^2)=2x x=0 x=1 x=2"
+      }
+    ]
+  },
+  {
+    "id": "sec-x3-volume",
+    "title": "২. আয়তন বৃদ্ধি ও x³-এর অন্তরজ (Volume Growth & The Derivative of x³)",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "২. আয়তন বৃদ্ধি ও x³-এর অন্তরজ (Volume Growth & The Derivative of x³)",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "এবার এক মাত্রা উপরে উঠে <annotation>f(x)=x^3</annotation> নিয়ে ভাবা যাক। থ্রিডিতে এটি স্বাভাবিকভাবেই <annotation>x</annotation> বাহুবিশিষ্ট একটি নিরেট ঘনকের আয়তন—আগের বর্গের কথা মনে রেখে এখন ঘনকটির বাহু <annotation>dx</annotation> পরিমাণ বাড়ালে আয়তন কীভাবে বদলায় তা দেখব।",
+        "tex": "f(x)=x^3 x dx"
+      },
+      {
+        "type": "figure",
+        "text": "চিত্রটি <annotation>x</annotation> বাহুর ঘনকের সাথে <annotation>dx</annotation> যোগ করার পরে যোগ হওয়া নতুন আয়তন দেখায়। সবচেয়ে বড় তিনটি পাতলা স্ল্যাব ঘনকের তিনটি উন্মুক্ত তলে লেগে আছে, আর ধারে রয়েছে সরু দণ্ড ও কোণায় ছোট ঘনক। <annotation>dx</annotation> সীমায় ছোট হলে স্ল্যাব তিনিটিই পুরো বৃদ্ধির প্রায় ১০০ শতাংশ হয়ে যায়—ছবিটি সেই কারণেই 'তলের নীতি' শেখায়।",
+        "tex": "x dx dx"
+      },
+      {
+        "type": "p",
+        "text": "আয়তন বৃদ্ধির সিংহভাগ আসে তিনটি উন্মুক্ত পৃষ্ঠতলে যুক্ত হওয়া পাতলা স্ল্যাব থেকে—প্রতিটির ক্ষেত্রফল <annotation>x^2</annotation> ও পুরুত্ব <annotation>dx</annotation>, ফলে প্রতিটির আয়তন <annotation>x^2\\cdot dx</annotation> এবং তিনটির মোট <annotation>3x^2\\,dx</annotation>। বর্গে যেমন দুটি ধার ছিল, ঘনকে তেমনি তিনটি তল; এই রূপান্তরেই সম্ভাব্য উত্তরের ধারণা তৈরি হয়।",
+        "tex": "x^2 dx x^2\\cdot dx 3x^2\\,dx"
+      },
+      {
+        "type": "p",
+        "text": "এছাড়া ঘনকের ধার বরাবর তিনটি সরু দণ্ড আছে, যাদের আয়তন <annotation>x\\,(dx)^2</annotation>, আর শীর্ষে <annotation>(dx)^3</annotation> আয়তনের এক ছোট ঘনক। কিন্তু <annotation>dx</annotation> দিয়ে ভাগ করার সময় এদের মধ্যে এখনো <annotation>dx</annotation> থেকে যায়, তাই সীমাস্থ অবস্থায় এগুলো শূন্যে মিলিয়ে যায়—টিকে থাকে শুধু <annotation>3x^2\\,dx</annotation> পদটি।",
+        "tex": "x\\,(dx)^2 (dx)^3 dx dx 3x^2\\,dx"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>df = 3x^2\\,dx + 3x(dx)^2 + (dx)^3 \\quad\\Longrightarrow\\quad \\frac{df}{dx} = 3x^2 + 3x\\,dx + (dx)^2 \\;\\xrightarrow{dx\\to0}\\; 3x^2</annotation>",
+        "tex": "df = 3x^2\\,dx + 3x(dx)^2 + (dx)^3 \\quad\\Longrightarrow\\quad \\frac{df}{dx} = 3x^2 + 3x\\,dx + (dx)^2 \\;\\xrightarrow{dx\\to0}\\; 3x^2"
+      },
+      {
+        "type": "callout",
+        "text": "📐 বিশেষ নোট: মাত্রার বিলোপ নীতি যেকোনো পদে <annotation>dx</annotation>-এর ঘাত ১-এর বেশি হলেই সেটি সীমায় মারা যায়; কেবল প্রথম ঘাতের পদটি বেঁচে থাকে। দ্বিমাত্রিক বর্গের দুটি ধার দিয়েছিল <annotation>2x</annotation>, আর ত্রিমাত্রিক ঘনকের তিনটি তল দিল <annotation>3x^2</annotation>—মাত্রা বদলালেও জ্যামিতির এই সামঞ্জস্য অটুট থাকে।",
+        "tex": "dx 2x 3x^2"
+      },
+      {
+        "type": "p",
+        "text": "সুতরাং <annotation>\\frac{d}{dx}(x^3)=3x^2</annotation>; লেখচিত্রে <annotation>x^3</annotation>-এর ঢাল বাঁদিকে কম, মূলবিন্দুতে শূন্য এবং ডানদিকে ক্রমশ বাড়তে থাকে—ঠিক <annotation>3x^2</annotation>-এর মতো। কিন্তু শুধু লেখচিত্র দেখে আমরা কখনোই নির্দিষ্ট <annotation>3x^2</annotation> রাশিটি পেতাম না; সেটি পেতে হলো ঘনকের আসল অর্থের দিকে তাকাতে।",
+        "tex": "\\frac{d}{dx}(x^3)=3x^2 x^3 3x^2 3x^2"
+      }
+    ]
+  },
+  {
+    "id": "sec-power-rule",
+    "title": "৩. সার্বজনীন পাওয়ার রুল, 1/x ও √x (Power Rule & Other Exponents)",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৩. সার্বজনীন পাওয়ার রুল, 1/x ও √x (Power Rule & Other Exponents)",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "এই পর্যন্ত দেখা প্যাটার্নটিকে সাধারণীকরণ করাই হলো পাওয়ার রুল। <annotation>x^n</annotation>-কে <annotation>n</annotation> মাত্রার এক হাইপারকিউব বা <annotation>n</annotation> সংখ্যক <annotation>x</annotation>-এর গুণফল হিসেবে ভাবুন—চার বা পাঁচ মাত্রা কল্পনা করা কঠিন, তাই আমরা বীজগণিতের মাধ্যমে ধারাটি বাড়িয়ে নিই: <annotation>(x+dx)^1=x+1\\cdot dx</annotation>, <annotation>(x+dx)^2=x^2+2x\\,dx+(dx)^2</annotation>, <annotation>(x+dx)^3=x^3+3x^2dx+\\dots</annotation>, <annotation>(x+dx)^4=x^4+4x^3dx+\\dots</annotation>, <annotation>(x+dx)^5=x^5+5x^4dx+\\dots</annotation>—প্রতিটিতে কমলা রঙের প্রথম পদটিই হলো আমাদের চাইছে এমন অংশ।",
+        "tex": "x^n n n x (x+dx)^1=x+1\\cdot dx (x+dx)^2=x^2+2x\\,dx+(dx)^2 (x+dx)^3=x^3+3x^2dx+\\dots (x+dx)^4=x^4+4x^3dx+\\dots (x+dx)^5=x^5+5x^4dx+\\dots"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\frac{d}{dx}\\left(x^n\\right) = n\\,x^{\\,n-1}</annotation>",
+        "tex": "\\frac{d}{dx}\\left(x^n\\right) = n\\,x^{\\,n-1}"
+      },
+      {
+        "type": "p",
+        "text": "প্রতিটি <annotation>x</annotation> যখন <annotation>dx</annotation> পরিমাণ বাড়ে, তখন <annotation>n</annotation>টি উৎপাদকের প্রতিটি পালাক্রমে <annotation>x^{n-1}\\cdot dx</annotation> পরিমাণ যোগ করে—সব মিলিয়ে <annotation>n</annotation>টি সমমানের টুকরো, অর্থাৎ হার <annotation>n x^{n-1}</annotation>। ঘাতটি নিচে নামে ও এক কমে যায়; একে আমরা সাধারণত 'ঘাত hopping down' বলে মনে রাখি, কিন্তু তার পেছনে রয়েছে এই জ্যামিতিক যুক্তি।",
+        "tex": "x dx n x^{n-1}\\cdot dx n n x^{n-1}"
+      },
+      {
+        "type": "p",
+        "text": "সবচেয়ে আশ্চর্যজনক বিষয় হলো এই নিয়ম ঋণাত্মক ও ভগ্নাংশ ঘাতের ক্ষেত্রেও চলে। <annotation>f(x)=\\frac{1}{x}=x^{-1}</annotation>-এর কথা নিন: এখানে <annotation>n=-1</annotation>, তাই নিয়ম অনুযায়ী উত্তর <annotation>-1\\cdot x^{-2}=-\\frac{1}{x^2}</annotation>—কিন্তু আসল মজা হলো এটি জ্যামিতিকভাও সত্য।",
+        "tex": "f(x)=\\frac{1}{x}=x^{-1} n=-1 -1\\cdot x^{-2}=-\\frac{1}{x^2}"
+      },
+      {
+        "type": "figure",
+        "text": "এই চিত্রে একটি ছোট আয়তক্ষেত্রের 'জলাশয়' দেখানো হয়েছে যার মোট ক্ষেত্রফল সর্বদা ১। প্রস্থ <annotation>x</annotation> বাড়ালে উচ্চতা <annotation>y</annotation> কমে যায়, কারণ <annotation>x\\cdot y=1</annotation> স্থির থাকতে হবে। চিত্রের এই অনুপাতটি মনে রাখলে <annotation>-\\frac{1}{x^2}</annotation> ফলাফলটি আপনি নিজেই অনুমান করতে পারবেন।",
+        "tex": "x y x\\cdot y=1 -\\frac{1}{x^2}"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>x\\,y = 1 \\;\\Longrightarrow\\; x\\,dy + y\\,dx = 0 \\;\\Longrightarrow\\; \\frac{dy}{dx} = -\\frac{y}{x} = -\\frac{1}{x^2} = -1\\cdot x^{-2}</annotation>",
+        "tex": "x\\,y = 1 \\;\\Longrightarrow\\; x\\,dy + y\\,dx = 0 \\;\\Longrightarrow\\; \\frac{dy}{dx} = -\\frac{y}{x} = -\\frac{1}{x^2} = -1\\cdot x^{-2}"
+      },
+      {
+        "type": "callout",
+        "text": "🌟 ভগ্নাংশ ঘাত ও বর্গমূল: √x-এর অন্তরজ একটি বর্গের ক্ষেত্রফল যদি <annotation>x</annotation> হয়, তবে তার বাহু <annotation>s=\\sqrt{x}=x^{1/2}</annotation>, অর্থাৎ <annotation>x=s^2</annotation>—এটি তো আমরা আগেই জেনেছি! তাই <annotation>dx=2s\\,ds</annotation> এবং <annotation>\\frac{ds}{dx}=\\frac{1}{2s}=\\frac{1}{2\\sqrt{x}}=\\frac{1}{2}x^{-1/2}</annotation>। এখানে <annotation>dx</annotation> দৈর্ঘ্য নয়, **ক্ষেত্রফল** বোঝায়; এই একটিমাত্র ধারণা বদলালেই পাওয়ার রুল সঙ্গে সঙ্গে সঠিক ফল দেয়।",
+        "tex": "x s=\\sqrt{x}=x^{1/2} x=s^2 dx=2s\\,ds \\frac{ds}{dx}=\\frac{1}{2s}=\\frac{1}{2\\sqrt{x}}=\\frac{1}{2}x^{-1/2} dx"
+      },
+      {
+        "type": "p",
+        "text": "এভাবেই বীজগণিতের আপাত শুষ্ক সূত্রগুলো জ্যামিতির পরশে প্রাণ পায়: ধনাত্মক, ঋণাত্মক কিংবা ভগ্নাংশ—যেকোনো ঘাতের ক্ষেত্রে <annotation>\\frac{d}{dx}(x^n)=nx^{n-1}</annotation> একইভাবে কাজ করে। পরবর্তীতে ত্রিকোণমিতিক ফাংশনের ক্ষেত্রেও এই 'ছোট পরিবর্তনের' ধারণা আমাদের সাহায্য করবে।",
+        "tex": "\\frac{d}{dx}(x^n)=nx^{n-1}"
+      }
+    ]
+  },
+  {
+    "id": "sec-trig-sine",
+    "title": "৪. একক বৃত্ত ও সাইন এক্সের অন্তরজ (The Unit Circle & The Derivative of sin x)",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৪. একক বৃত্ত ও সাইন এক্সের অন্তরজ (The Unit Circle & The Derivative of sin x)",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "এখন গণিতের অন্যতম নান্দনিক প্রমাণের দিকে যাব: কেন <annotation>\\frac{d}{dx}\\sin(x)=\\cos(x)</annotation>? একে বুঝতে ১ ব্যাসার্ধের একটি একক বৃত্ত (unit circle) কল্পনা করুন—কোণ <annotation>x</annotation> (রেডিয়ানে) এবং বৃত্তের ওপর ওই বিন্দুর অবস্থানই সবকিছু নির্ধারণ করে।",
+        "tex": "\\frac{d}{dx}\\sin(x)=\\cos(x) x"
+      },
+      {
+        "type": "figure",
+        "text": "1 sin x cos x dx x চিত্রে ব্যাসার্ধ ১-এর বৃত্তে <annotation>x</annotation> কোণে একটি বিন্দু আছে, যার উল্লম্ব উচ্চতা <annotation>\\sin(x)</annotation> ও অনুভূমিক দূরত্ব <annotation>\\cos(x)</annotation>। কোণটিকে <annotation>dx</annotation> পরিমাণ বাড়ালে বিন্দুটি পরিধি বরাবর সরে যায় এবং একটি অতিক্ষুদ্র সমকোণী ত্রিভুজ তৈরি হয়। এই ছোট ত্রিভুজটি মূল ত্রিভুজের সদৃশ—কেবল ৯০ ডিগ্রি ঘুরানো; সেই সাদৃশ্যটিই উত্তরের চাবিকাঠি।",
+        "tex": "x \\sin(x) \\cos(x) dx"
+      },
+      {
+        "type": "p",
+        "text": "একক বৃত্তে <annotation>x</annotation> রেডিয়ান কোণ হলে পরিধি বরাবর চাপের দৈর্ঘ্যও ঠিক <annotation>x</annotation>—এই সুন্দর সম্পর্কের কারণে কোণ বাড়ালে বিন্দুটি চাপ বরাবর <annotation>dx</annotation> দূরত্ব সরে যায়। আমাদের প্রশ্ন: এই সরণের ফলে উল্লম্ব উচ্চতা <annotation>\\sin(x)</annotation> কতটা বদলায়, অর্থাৎ <annotation>d(\\sin x)</annotation> কত?",
+        "tex": "x x dx \\sin(x) d(\\sin x)"
+      },
+      {
+        "type": "p",
+        "text": "সরণের জায়গায় যখন আমরা জুম করি, তখন বাঁকা চাপটি একটি সোজা রেখার মতো দেখায়—ঠিক যেন <annotation>dx</annotation> দৈর্ঘ্যের একটি অতিভুজ। এই ক্ষুদ্র ত্রিভুজের খাড়া উল্লম্ব বাহুটিই হলো উচ্চতার পরিবর্তন <annotation>d(\\sin x)</annotation>, আর অতিভুজ হলো <annotation>dx</annotation>।",
+        "tex": "dx d(\\sin x) dx"
+      },
+      {
+        "type": "callout",
+        "text": "🔍 বিশেষ নোট: ঘূর্ণিত সদৃশ ত্রিভুজ বৃত্তের স্পর্শক ব্যাসার্ধের সাথে সমকোণে থাকে, তাই এই পুঁচকে ত্রিভুজটি মূল ত্রিভুজটির সদৃশ—শুধু ৯০ ডিগ্রি ঘুরে আছে। ফলে <annotation>\\frac{\\text{উল্লম্ব বাহু}}{\\text{অতিভুজ}}=\\frac{d(\\sin x)}{dx}</annotation>-অনুপাতটি মূল ত্রিভুজের অনুভূমিক বাহু <annotation>\\cos(x)</annotation>-এর সমান হয়ে যায়। জ্যামিতির এই এক কৌশলেই পুরো সূত্রটি প্রমাণিত হয়।",
+        "tex": "\\frac{\\text{উল্লম্ব বাহু}}{\\text{অতিভুজ}}=\\frac{d(\\sin x)}{dx} \\cos(x)"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\frac{d(\\sin x)}{dx} = \\cos(x), \\qquad \\frac{d(\\cos x)}{dx} = -\\sin(x)</annotation>",
+        "tex": "\\frac{d(\\sin x)}{dx} = \\cos(x), \\qquad \\frac{d(\\cos x)}{dx} = -\\sin(x)"
+      },
+      {
+        "type": "p",
+        "text": "অতএব দেখতে পাচ্ছেন, ক্যালকুলাসের প্রতিটি সূত্র আসলে জ্যামিতির বৃদ্ধি, রূপান্তর ও সীমাস্থ ভারসাম্যের এক অনুপম গল্প। সূত্রগুলো আর স্মৃতির বোঝা নয়—তা আপনার ভাবনার সহজাত অংশ হয়ে যায়, যখনই আপনি তাদের পেছনের ছোট পরিবর্তনগুলো দেখতে পান।",
+        "tex": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,1267 @@
+{
+  "lesson_01": {
+    "sections": [
+      {
+        "id": "sec-setup",
+        "title": "ধাঁধাটির সেটআপ",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "ধাঁধাটির সেটআপ",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "কল্পনা করুন একদিকে একটি দেয়াল, তার সামনে ছোট একটি ব্লক এবং তার ডানে অনেক বড় একটি ব্লক। বড় ব্লকটি বাঁ দিকে ধেয়ে আসছে, ছোট ব্লকটি প্রথমে সম্পূর্ণ স্থির। আমরা একধরনের আদর্শ পদার্থবিদ: মেঝেতে কোনো ঘর্ষণ নেই, আর প্রতিটি সংঘর্ষ সম্পূর্ণ স্থিতিস্থাপক—অর্থাৎ সংঘর্ষে কোনো শক্তি নষ্ট হয় না।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "দেয়াল, ছোট ব্লক ও বড় ব্লক—ধাঁধাটির আদি অবস্থা",
+            "katex": null,
+            "math": null,
+            "caption": "দেয়াল, ছোট ব্লক ও বড় ব্লক—ধাঁধাটির আদি অবস্থা"
+          },
+          {
+            "type": "p",
+            "text": "সবচেয়ে সোজা ক্ষেত্রটি হলো দুই ব্লকের ভর সমান হওয়া। প্রথম ব্লকটি তার সম্পূর্ণ ভরবেগ দ্বিতীয়টিকে দিয়ে দেয়, দ্বিতীয়টি দেয়ালে ঠুকে ফিরে আসে, আবার প্রথমটির সাথে ধাক্কা খায়—আর প্রথমটি সোজা অসীমের দিকে চলে যায়। মোট তিনটি 'ক্ল্যাক' শোনা যায়।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "সমান ভরের ব্লক: মোট তিনটি সংঘর্ষ",
+            "katex": null,
+            "math": null,
+            "caption": "সমান ভরের ব্লক: মোট তিনটি সংঘর্ষ"
+          },
+          {
+            "type": "p",
+            "text": "কিন্তু যদি প্রথম ব্লকের ভর দ্বিতীয়টির চেয়ে ১০০ গুণ হয়? তখন ছোট ব্লকটি দেয়াল আর বড় ব্লকের মাঝে বারবার ছড়া খেয়ে ধীরে ধীরে বড় ব্লকের ভরবেগকে উল্টে দেয়। কতবার সংঘর্ষ হবে? উত্তরটা সহজে অনুমেয় নয়।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝑁\n=\n3\n(\n𝑚\n1\n=\n𝑚\n2\n)\nN=3(m\n1\n\t​\n\n=m\n2\n\t​\n\n)",
+            "katex": "𝑁\n=\n3\n(\n𝑚\n1\n=\n𝑚\n2\n)\nN=3(m\n1\n\t​\n\n=m\n2\n\t​\n\n)",
+            "math": "N = 3 \\quad (m_1 = m_2)",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-pattern",
+        "title": "অঙ্কগুলোর অপ্রত্যাশিত প্যাটার্ন",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "অঙ্কগুলোর অপ্রত্যাশিত প্যাটার্ন",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "আসুন ভরের অনুপাতটা বাড়িয়ে দেখি। ১০০ গুণ হলে ৩১টি সংঘর্ষ। ১০,০০০ গুণ হলে ৩১৪টি। ১০ লক্ষ গুণ হলে ৩,১৪১টি। আপনি কি প্যাটার্নটা দেখতে পাচ্ছেন?",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "ভর বাড়ার সাথে সংঘর্ষের সংখ্যা পাইয়ের অঙ্ক ধরে নেয়",
+            "katex": null,
+            "math": null,
+            "caption": "ভর বাড়ার সাথে সংঘর্ষের সংখ্যা পাইয়ের অঙ্ক ধরে নেয়"
+          },
+          {
+            "type": "p",
+            "text": "যখনই বড় ব্লকের ভর ছোটটির ১০০-এর কোনো ঘাত, তখনই মোট সংঘর্ষের সংখ্যা পাইয়ের (π ≈ 3.14159…) প্রথম অঙ্কগুলোর মতো হয়। এটি প্রথম শুনে আমাকেও হতবাক করে দিয়েছিল—ধন্যবাদ ভিউয়ার Henry Kavle-কে এই তথ্যটি শেয়ার করার জন্য; মূল আবিষ্কার গণিতবিদ Gregory Galperin-এর (১৯৯৫, প্রকাশ ২০০৩)।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "callout",
+            "text": "⚡ কেন এটা বিস্ময়কর?\n\nপাই সাধারণত কোনো অবিচ্ছিন্ন জ্যামিতিক পরিমাণ—বৃত্তের পরিধি আর ব্যাসের অনুপাত—বর্ণনা করে। কিন্তু এখানে এর দশমিক অঙ্কগুলো একটা পূর্ণসংখ্যা গণনা করছে! এমন অদ্ভুত উপায়ে পাইয়ের আবির্ভাব সত্যিই মানুষকে অবাক করে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "অবশ্যই, এটা পাই হিসাব করার ব্যবহারিক উপায় নয়। ২০টি অঙ্ক পেতে বড় ব্লকের ভর ছোটটির ১০০ কোটি কোটি কোটি কোটি গুণ হতে হবে—আমাদের ছায়াপথের কেন্দ্রের অতিপ্রকৃত কৃষ্ণগহ্বরের চেয়েও অনেক বেশি! তবু প্রশ্নটা থেকে যায়: এখানে পাই আসছে কেন?",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝑚\n1\n𝑚\n2\n=\n10\n0\n𝑑\n−\n1\n⟹\n𝑁\n≈\n⌊\n1\n0\n𝑑\n𝜋\n⌋\nm\n2\n\t​\n\nm\n1\n\t​\n\n\t​\n\n=100\nd−1\n⟹N≈⌊10\nd\nπ⌋",
+            "katex": "𝑚\n1\n𝑚\n2\n=\n10\n0\n𝑑\n−\n1\n⟹\n𝑁\n≈\n⌊\n1\n0\n𝑑\n𝜋\n⌋\nm\n2\n\t​\n\nm\n1\n\t​\n\n\t​\n\n=100\nd−1\n⟹N≈⌊10\nd\nπ⌋",
+            "math": "\\frac{m_1}{m_2}=100^{\\,d-1}\\;\\Longrightarrow\\; N \\approx \\lfloor 10^{d}\\,\\pi\\rfloor",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-hidden-circle",
+        "title": "লুকোনো বৃত্ত ও শক্তির সংরক্ষণ",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "লুকোনো বৃত্ত ও শক্তির সংরক্ষণ",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "এই ধাঁধার মূল কথা হলো: যেখানে পাই আছে, সেখানে একটা লুকোনো বৃত্ত আছে। এই ক্ষেত্রে সেই বৃত্তটা লুকিয়ে আছে শক্তির সংরক্ষণের ভেতরে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "যেকোনো মুহূর্তে দুই ব্লকের মোট গতিশক্তি \n1\n2\n𝑚\n1\n𝑣\n1\n2\n+\n1\n2\n𝑚\n2\n𝑣\n2\n2\n2\n1\n\t​\n\nm\n1\n\t​\n\nv\n1\n2\n\t​\n\n+\n2\n1\n\t​\n\nm\n2\n\t​\n\nv\n2\n2\n\t​\n\n—আর সংঘর্ষের পরও এই মান অপরিবর্তিত থাকে। এখন যদি অক্ষদুটিকে এভাবে স্কেল করি: \n𝑥\n=\n𝑚\n1\n𝑣\n1\nx=\nm\n1\n\t​\n\n\t​\n\nv\n1\n\t​\n\n এবং \n𝑦\n=\n𝑚\n2\n𝑣\n2\ny=\nm\n2\n\t​\n\n\t​\n\nv\n2\n\t​\n\n, তবে সমীকরণটা দাঁড়ায় \n1\n2\n(\n𝑥\n2\n+\n𝑦\n2\n)\n=\nধ্রুবক\n2\n1\n\t​\n\n(x\n2\n+y\n2\n)=ধ্রুবক—অর্থাৎ একটি বৃত্ত!",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "বেগ-ফেজ স্পেসে শক্তির সংরক্ষণ একটি বৃত্ত তৈরি করে",
+            "katex": null,
+            "math": null,
+            "caption": "বেগ-ফেজ স্পেসে শক্তির সংরক্ষণ একটি বৃত্ত তৈরি করে"
+          },
+          {
+            "type": "callout",
+            "text": "🔵 পরবর্তী দুটি পাঠে\n\nএই বৃত্তের ওপর দুটি ভিন্ন উপায়ে চলন করে দেখা যাবে কেন সংঘর্ষের সংখ্যা পাইয়ের অঙ্ক দেয়। পরবর্তী পাঠে আমরা বেগ-ফেজ স্পেস (velocity phase space) ব্যবহার করব, আর তারপরের পাঠে দেখব একই সমস্যা আলোর রশ্মির মতো আচরণ করে। দুটিই সমান সুন্দর।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "সংক্ষেপে: ব্লকগুলোর গতি নির্ধারণ করে শক্তি ও ভরবেগ—এই দুটি সংরক্ষণ আইন। আর এই আইনগুলোকেই একটা জ্যামিতিক ছবিতে রূপ দিয়েই পাইয়ের রহস্যের উত্তর মিলবে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "1\n2\n𝑚\n1\n𝑣\n1\n2\n+\n1\n2\n𝑚\n2\n𝑣\n2\n2\n=\nconst\n⇒\n1\n2\n(\n𝑥\n2\n+\n𝑦\n2\n)\n=\nconst\n2\n1\n\t​\n\nm\n1\n\t​\n\nv\n1\n2\n\t​\n\n+\n2\n1\n\t​\n\nm\n2\n\t​\n\nv\n2\n2\n\t​\n\n=const⇒\n2\n1\n\t​\n\n(x\n2\n+y\n2\n)=const",
+            "katex": "1\n2\n𝑚\n1\n𝑣\n1\n2\n+\n1\n2\n𝑚\n2\n𝑣\n2\n2\n=\nconst\n⇒\n1\n2\n(\n𝑥\n2\n+\n𝑦\n2\n)\n=\nconst\n2\n1\n\t​\n\nm\n1\n\t​\n\nv\n1\n2\n\t​\n\n+\n2\n1\n\t​\n\nm\n2\n\t​\n\nv\n2\n2\n\t​\n\n=const⇒\n2\n1\n\t​\n\n(x\n2\n+y\n2\n)=const",
+            "math": "\\tfrac12 m_1 v_1^2+\\tfrac12 m_2 v_2^2=\\text{const}\\;\\Rightarrow\\; \\tfrac12(x^2+y^2)=\\text{const}",
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝑥\n=\n𝑚\n1\n𝑣\n1\n,\n𝑦\n=\n𝑚\n2\n𝑣\n2\nx=\nm\n1\n\t​\n\n\t​\n\nv\n1\n\t​\n\n,y=\nm\n2\n\t​\n\n\t​\n\nv\n2\n\t​",
+            "katex": "𝑥\n=\n𝑚\n1\n𝑣\n1\n,\n𝑦\n=\n𝑚\n2\n𝑣\n2\nx=\nm\n1\n\t​\n\n\t​\n\nv\n1\n\t​\n\n,y=\nm\n2\n\t​\n\n\t​\n\nv\n2\n\t​",
+            "math": "x=\\sqrt{m_1}\\,v_1,\\qquad y=\\sqrt{m_2}\\,v_2",
+            "caption": null
+          }
+        ]
+      }
+    ],
+    "katexCount": 23,
+    "manifestLoaded": true,
+    "errors": []
+  },
+  "lesson_02": {
+    "sections": [
+      {
+        "id": "sec-conservation",
+        "title": "শক্তি ও ভরবেগের সংরক্ষণ",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "শক্তি ও ভরবেগের সংরক্ষণ",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "আমাদের আসলে কী দরকার? সংঘর্ষের ঠিক পরে দুই ব্লকের বেগ কত—তা বের করা। এর চাবিকাঠি হলো দুটি সংরক্ষণ আইন: শক্তি আর ভরবেগ।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "ব্লক দুটির ভর \n𝑚\n1\n,\n𝑚\n2\nm\n1\n\t​\n\n,m\n2\n\t​\n\n এবং বেগ \n𝑣\n1\n,\n𝑣\n2\nv\n1\n\t​\n\n,v\n2\n\t​\n\n। মোট গতিশক্তি \n1\n2\n𝑚\n1\n𝑣\n1\n2\n+\n1\n2\n𝑚\n2\n𝑣\n2\n2\n2\n1\n\t​\n\nm\n1\n\t​\n\nv\n1\n2\n\t​\n\n+\n2\n1\n\t​\n\nm\n2\n\t​\n\nv\n2\n2\n\t​\n\n—ব্লকগুলো যতই ধাক্কা খাক, এই মান একই থাকতে হবে। মোট ভরবেগ \n𝑚\n1\n𝑣\n1\n+\n𝑚\n2\n𝑣\n2\nm\n1\n\t​\n\nv\n1\n\t​\n\n+m\n2\n\t​\n\nv\n2\n\t​\n\n-ও ব্লক সংঘর্ষে অপরিবর্তিত থাকে; শুধু ছোট ব্লক দেয়ালে ঠুকে তার ভরবেগ দেয়ালে দিয়ে দেয় (দেয়ালের ভর অসীম বলে নড়ে না)।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "দুটি সংরক্ষণ আইনই বেগের পরিবর্তন নির্ধারণ করে",
+            "katex": null,
+            "math": null,
+            "caption": "দুটি সংরক্ষণ আইনই বেগের পরিবর্তন নির্ধারণ করে"
+          },
+          {
+            "type": "p",
+            "text": "দুটি অজানা, দুটি সমীকরণ—কাজটা সম্ভব। কিন্তু সরাসরি বীজগণিতের বদলে আমরা একটা ছবি আঁকব। আর সেই ছবিই পাইয়ের দিকে নিয়ে যাবে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝐸\n=\n1\n2\n𝑚\n1\n𝑣\n1\n2\n+\n1\n2\n𝑚\n2\n𝑣\n2\n2\n,\n𝑝\n=\n𝑚\n1\n𝑣\n1\n+\n𝑚\n2\n𝑣\n2\nE=\n2\n1\n\t​\n\nm\n1\n\t​\n\nv\n1\n2\n\t​\n\n+\n2\n1\n\t​\n\nm\n2\n\t​\n\nv\n2\n2\n\t​\n\n,p=m\n1\n\t​\n\nv\n1\n\t​\n\n+m\n2\n\t​\n\nv\n2\n\t​",
+            "katex": "𝐸\n=\n1\n2\n𝑚\n1\n𝑣\n1\n2\n+\n1\n2\n𝑚\n2\n𝑣\n2\n2\n,\n𝑝\n=\n𝑚\n1\n𝑣\n1\n+\n𝑚\n2\n𝑣\n2\nE=\n2\n1\n\t​\n\nm\n1\n\t​\n\nv\n1\n2\n\t​\n\n+\n2\n1\n\t​\n\nm\n2\n\t​\n\nv\n2\n2\n\t​\n\n,p=m\n1\n\t​\n\nv\n1\n\t​\n\n+m\n2\n\t​\n\nv\n2\n\t​",
+            "math": "E=\\tfrac12 m_1 v_1^2+\\tfrac12 m_2 v_2^2,\\qquad p=m_1 v_1+m_2 v_2",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-phase-circle",
+        "title": "বেগ-ফেজ স্পেসে বৃত্ত",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "বেগ-ফেজ স্পেসে বৃত্ত",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "প্রথমে শক্তির সমীকরণটার দিকে তাকাই। \n𝑣\n1\nv\n1\n\t​\n\n আর \n𝑣\n2\nv\n2\n\t​\n\n তো বদলাচ্ছে—তাই একটা সমতল আঁকি যার x-অক্ষ \n𝑣\n1\nv\n1\n\t​\n\n আর y-অক্ষ \n𝑣\n2\nv\n2\n\t​\n\n বোঝায়। তখন \n1\n2\n𝑚\n1\n𝑣\n1\n2\n+\n1\n2\n𝑚\n2\n𝑣\n2\n2\n=\nconst\n2\n1\n\t​\n\nm\n1\n\t​\n\nv\n1\n2\n\t​\n\n+\n2\n1\n\t​\n\nm\n2\n\t​\n\nv\n2\n2\n\t​\n\n=const একটি উপবৃত্ত (ellipse) হয়।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "কিন্তু আমরা পাইয়ের খোঁজে আছি—তাই অক্ষদুটো এভাবে পাল্টাই: x-এ \n𝑣\n1\nv\n1\n\t​\n\n-এর বদলে \n𝑚\n1\n𝑣\n1\nm\n1\n\t​\n\n\t​\n\nv\n1\n\t​\n\n আর y-তে \n𝑚\n2\n𝑣\n2\nm\n2\n\t​\n\n\t​\n\nv\n2\n\t​\n\n। তখন সমীকরণটা সোজা \n1\n2\n(\n𝑥\n2\n+\n𝑦\n2\n)\n=\nconst\n2\n1\n\t​\n\n(x\n2\n+y\n2\n)=const—একটি নিখুঁত বৃত্ত!",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "উপবৃত্তকে স্কেল করে নিখুঁত বৃত্ত বানানো হলো",
+            "katex": null,
+            "math": null,
+            "caption": "উপবৃত্তকে স্কেল করে নিখুঁত বৃত্ত বানানো হলো"
+          },
+          {
+            "type": "p",
+            "text": "বৃত্তের প্রতিটি বিন্দু এমন এক জোড়া বেগ যারা একই পরিমাণ শক্তি বহন করে। শুরুতে আমরা বৃত্তের সবচেয়ে বাঁ-প্রান্তে আছি: বড় ব্লক বাঁ দিকে যাচ্ছে (\n𝑥\n<\n0\nx<0) আর ছোটটি স্থির (\n𝑦\n=\n0\ny=0)।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝑥\n=\n𝑚\n1\n𝑣\n1\n,\n𝑦\n=\n𝑚\n2\n𝑣\n2\n⇒\n1\n2\n(\n𝑥\n2\n+\n𝑦\n2\n)\n=\n𝐸\nx=\nm\n1\n\t​\n\n\t​\n\nv\n1\n\t​\n\n,y=\nm\n2\n\t​\n\n\t​\n\nv\n2\n\t​\n\n⇒\n2\n1\n\t​\n\n(x\n2\n+y\n2\n)=E",
+            "katex": "𝑥\n=\n𝑚\n1\n𝑣\n1\n,\n𝑦\n=\n𝑚\n2\n𝑣\n2\n⇒\n1\n2\n(\n𝑥\n2\n+\n𝑦\n2\n)\n=\n𝐸\nx=\nm\n1\n\t​\n\n\t​\n\nv\n1\n\t​\n\n,y=\nm\n2\n\t​\n\n\t​\n\nv\n2\n\t​\n\n⇒\n2\n1\n\t​\n\n(x\n2\n+y\n2\n)=E",
+            "math": "x=\\sqrt{m_1}v_1,\\;y=\\sqrt{m_2}v_2\\;\\Rightarrow\\;\\tfrac12(x^2+y^2)=E",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-momentum-line",
+        "title": "ভরবেগের রেখা ও ফেজের লাফ",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "ভরবেগের রেখা ও ফেজের লাফ",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "শক্তি বলছে আমাদের বৃত্তের ওপর থাকতে হবে। কিন্তু কোন বিন্দুতে যাব? সেটা ঠিক করে ভরবেগ। স্কেল করা অক্ষে \n𝑚\n1\n𝑣\n1\n+\n𝑚\n2\n𝑣\n2\n=\nconst\nm\n1\n\t​\n\nv\n1\n\t​\n\n+m\n2\n\t​\n\nv\n2\n\t​\n\n=const হয় \n𝑚\n1\n𝑥\n+\n𝑚\n2\n𝑦\n=\nconst\nm\n1\n\t​\n\n\t​\n\nx+\nm\n2\n\t​\n\n\t​\n\ny=const—একটি সরলরেখা, যার ঢাল \n−\n𝑚\n1\n/\n𝑚\n2\n−\nm\n1\n\t​\n\n/m\n2\n\t​\n\n\t​\n\n।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "বৃত্ত আর এই রেখার ছেদে ঠিক দুটি বিন্দু। এর একটি আগের অবস্থা, অন্যটি সংঘর্ষের পরের অবস্থা। দেয়ালে ঠুকে ছোট ব্লকের বেগের চিহ্ন বদলায়—ছবিতে এটা x-অক্ষের ওপর প্রতিফলনের মতো। এইভাবে বারবার লাফ দিয়ে আমরা বৃত্তের ওপর ঘুরে বেড়াই, যতক্ষণ না দুই বেগই ধনাত্মক হয় আর বড় ব্লক ছোটটিকে অতিক্রম করে যায়।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "বৃত্ত আর ভরবেগের রেখার ছেদবিন্দুতেই লাফ ঘটে",
+            "katex": null,
+            "math": null,
+            "caption": "বৃত্ত আর ভরবেগের রেখার ছেদবিন্দুতেই লাফ ঘটে"
+          },
+          {
+            "type": "callout",
+            "text": "🗺️ ফেজ ডায়াগ্রামের ক্ষমতা\n\nসিস্টেমের অবস্থাকে একটা বিন্দু দিয়ে প্রকাশ করলে গতীয় প্রশ্নগুলো জ্যামিতিক প্রশ্ন হয়ে যায়। শক্তির মতো গতীয় ধারণা হয়ে যায় বৃত্ত; আর সংঘর্ষ গণনা হয়ে যায় বৃত্তের ওপর লাফের সংখ্যা গণনা।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝑚\n1\n𝑥\n+\n𝑚\n2\n𝑦\n=\nconst\n,\nslope\n=\n−\n𝑚\n1\n𝑚\n2\nm\n1\n\t​\n\n\t​\n\nx+\nm\n2\n\t​\n\n\t​\n\ny=const,slope=−\nm\n2\n\t​\n\nm\n1\n\t​\n\n\t​\n\n\t​",
+            "katex": "𝑚\n1\n𝑥\n+\n𝑚\n2\n𝑦\n=\nconst\n,\nslope\n=\n−\n𝑚\n1\n𝑚\n2\nm\n1\n\t​\n\n\t​\n\nx+\nm\n2\n\t​\n\n\t​\n\ny=const,slope=−\nm\n2\n\t​\n\nm\n1\n\t​\n\n\t​\n\n\t​",
+            "math": "\\sqrt{m_1}\\,x+\\sqrt{m_2}\\,y=\\text{const},\\qquad \\text{slope}=-\\sqrt{\\tfrac{m_1}{m_2}}",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-inscribed-angle",
+        "title": "অন্তর্লিখিত কোণ ও থিটা হিসাব",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "অন্তর্লিখিত কোণ ও থিটা হিসাব",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "এখন আসল প্রশ্ন: সংঘর্ষের সংখ্যা কত? ছবিটার দিকে গভীরভাবে তাকালে দেখা যায় বিন্দুগুলোর মাঝের চাপগুলো প্রায় সমান। অন্তর্লিখিত কোণের উপপাদ্য ব্যবহার করে দেখা যায় প্রতিটি লাফ ঠিক \n2\n𝜃\n2θ রেডিয়ান চাপ তৈরি করে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "তাই প্রশ্নটা দাঁড়ায়: \n2\n𝜃\n2θ কে কতবার যোগ করলে \n2\n𝜋\n2π অতিক্রম করবে না? সরল করে লেখা যায় \n𝑁\n⋅\n𝜃\n<\n𝜋\nN⋅θ<π। এখন \n𝜃\nθ হিসাব করি: ভরবেগের রেখার ঢাল \n−\n𝑚\n1\n/\n𝑚\n2\n−\nm\n1\n\t​\n\n/m\n2\n\t​\n\n\t​\n\n হওয়ায় \n𝜃\n=\narctan\n⁡\n(\n𝑚\n2\n/\n𝑚\n1\n)\nθ=arctan(\nm\n2\n\t​\n\n/m\n1\n\t​\n\n\t​\n\n)।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "সমান চাপ 2θ আর π-র সাথে তুলনা",
+            "katex": null,
+            "math": null,
+            "caption": "সমান চাপ 2θ আর π-র সাথে তুলনা"
+          },
+          {
+            "type": "p",
+            "text": "ভর অনুপাত ১০,০০০ : ১ হলে \n𝑚\n2\n/\n𝑚\n1\n=\n1\n/\n100\nm\n2\n\t​\n\n/m\n1\n\t​\n\n\t​\n\n=1/100, আর \narctan\n⁡\n(\n1\n/\n100\n)\n≈\n0.01\narctan(1/100)≈0.01। তখন \n314\n×\n0.01\n=\n3.14\n<\n𝜋\n314×0.01=3.14<π কিন্তু \n315\n×\n0.01\n=\n3.15\n>\n𝜋\n315×0.01=3.15>π—অর্থাৎ ৩১৪টি সংঘর্ষ। ছোট \n𝑥\nx-এর জন্য \narctan\n⁡\n𝑥\n≈\n𝑥\narctanx≈x হওয়াতেই পাইয়ের অঙ্কগুলো এভাবে ফুটে ওঠে!",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝜃\n=\narctan\n⁡\n(\n𝑚\n2\n𝑚\n1\n)\n≈\n𝑚\n2\n𝑚\n1\nθ=arctan(\nm\n1\n\t​\n\nm\n2\n\t​\n\n\t​\n\n\t​\n\n)≈\nm\n1\n\t​\n\nm\n2\n\t​\n\n\t​\n\n\t​",
+            "katex": "𝜃\n=\narctan\n⁡\n(\n𝑚\n2\n𝑚\n1\n)\n≈\n𝑚\n2\n𝑚\n1\nθ=arctan(\nm\n1\n\t​\n\nm\n2\n\t​\n\n\t​\n\n\t​\n\n)≈\nm\n1\n\t​\n\nm\n2\n\t​\n\n\t​\n\n\t​",
+            "math": "\\theta=\\arctan\\!\\left(\\sqrt{\\tfrac{m_2}{m_1}}\\right)\\approx\\sqrt{\\tfrac{m_2}{m_1}}",
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝑁\n⋅\n𝜃\n<\n𝜋\n⇒\n𝑁\n=\n⌊\n𝜋\n𝜃\n⌋\nN⋅θ<π⇒N=⌊\nθ\nπ\n\t​\n\n⌋",
+            "katex": "𝑁\n⋅\n𝜃\n<\n𝜋\n⇒\n𝑁\n=\n⌊\n𝜋\n𝜃\n⌋\nN⋅θ<π⇒N=⌊\nθ\nπ\n\t​\n\n⌋",
+            "math": "N\\cdot\\theta<\\pi\\;\\Rightarrow\\;N=\\left\\lfloor\\tfrac{\\pi}{\\theta}\\right\\rfloor",
+            "caption": null
+          }
+        ]
+      }
+    ],
+    "katexCount": 51,
+    "manifestLoaded": true,
+    "errors": []
+  },
+  "lesson_03": {
+    "sections": [
+      {
+        "id": "sec-position-space",
+        "title": "অবস্থান-ফেজ স্পেস",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "অবস্থান-ফেজ স্পেস",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "আগের পাঠে আমরা এমন একটা সমতল ব্যবহার করেছিলাম যার প্রতিটি বিন্দু দুই ব্লকের বেগ প্রকাশ করে। এবার অন্য something চেষ্টা করি: বিন্দুটা যেন দুই ব্লকের অবস্থান প্রকাশ করে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "ধরি x-অক্ষ দেয়াল থেকে বড় ব্লকের বাঁ প্রান্তের দূরত্ব \n𝑑\n1\nd\n1\n\t​\n\n, আর y-অক্ষ দেয়াল থেকে ছোট ব্লকের ডান প্রান্তের দূরত্ব \n𝑑\n2\nd\n2\n\t​\n\n। যখন \n𝑑\n1\n=\n𝑑\n2\nd\n1\n\t​\n\n=d\n2\n\t​\n\n, অর্থাৎ \n𝑥\n=\n𝑦\nx=y রেখায়, ব্লকদুটি ধাক্কা খায়। নিচের সীমানা বোঝায় ছোট ব্লক দেয়ালে ঠুকে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "অবস্থান-ফেজ স্পেসে দুই ব্লকের গতি একটা বিন্দুর পথ",
+            "katex": null,
+            "math": null,
+            "caption": "অবস্থান-ফেজ স্পেসে দুই ব্লকের গতি একটা বিন্দুর পথ"
+          },
+          {
+            "type": "p",
+            "text": "ব্লকগুলো নড়ার সাথে সাথে আমাদের বিন্দুটা এই দুই সীমানার মাঝে ছড়া খায়—ঠিক যেন দুইটা আয়নার মাঝে একটা আলোর রশ্মি! কিন্তু একটা সমস্যা আছে: সাধারণ আয়নায় আপতন কোণ ও প্রতিফলন কোণ সমান, কিন্তু এখানে তা নয়।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝑑\n1\n=\n𝑑\n2\n⇒\n𝑥\n=\n𝑦\nd\n1\n\t​\n\n=d\n2\n\t​\n\n⇒x=y",
+            "katex": "𝑑\n1\n=\n𝑑\n2\n⇒\n𝑥\n=\n𝑦\nd\n1\n\t​\n\n=d\n2\n\t​\n\n⇒x=y",
+            "math": "d_1=d_2\\;\\Rightarrow\\;x=y",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-rescale",
+        "title": "ভর দিয়ে অক্ষ স্কেল করা",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "ভর দিয়ে অক্ষ স্কেল করা",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "অ্যানালজিটা ঠিক করতে আমরা আগের মতোই অক্ষ স্কেল করি: \n𝑥\n=\n𝑚\n1\n𝑑\n1\nx=\nm\n1\n\t​\n\n\t​\n\nd\n1\n\t​\n\n আর \n𝑦\n=\n𝑚\n2\n𝑑\n2\ny=\nm\n2\n\t​\n\n\t​\n\nd\n2\n\t​\n\n। প্রথমে মনে হতে পারে এটা একটা এলোমেলো কাজ, কিন্তু শক্তি ও ভরবেগের সাথে মিলিয়ে দেখলে সব জায়গায় পড়ে যায়।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "বিন্দুটির “বেগ” \n𝑥\n˙\n=\n𝑚\n1\n𝑣\n1\nx\n˙\n=\nm\n1\n\t​\n\n\t​\n\nv\n1\n\t​\n\n, \n𝑦\n˙\n=\n𝑚\n2\n𝑣\n2\ny\n˙\n\t​\n\n=\nm\n2\n\t​\n\n\t​\n\nv\n2\n\t​\n\n। পাইথাগোরাসে \n𝑥\n˙\n2\n+\n𝑦\n˙\n2\n=\n2\n𝐸\nx\n˙\n2\n+\ny\n˙\n\t​\n\n2\n\t​\n\n=\n2E\n\t​\n\n—অর্থাৎ ধ্রুবক। অপটিক্যাল ভাষায়: আলোর বেগ সব জায়গায় একই।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "স্কেলের পর সীমানা দুটো আয়নার মতো কাজ করে",
+            "katex": null,
+            "math": null,
+            "caption": "স্কেলের পর সীমানা দুটো আয়নার মতো কাজ করে"
+          },
+          {
+            "type": "p",
+            "text": "আর ভরবেগ \n𝑚\n1\n𝑣\n1\n+\n𝑚\n2\n𝑣\n2\n=\nconst\nm\n1\n\t​\n\nv\n1\n\t​\n\n+m\n2\n\t​\n\nv\n2\n\t​\n\n=const কে ডট প্রোডাক্ট হিসেবে লিখলে দেখা যায় বিন্দুটা যে কোণে আয়নায় আছড়ে পড়ে, সেই কোণেই ফিরে আসে। অর্থাৎ দুই সীমানা সত্যিই আয়না! যান্ত্রিক আইনগুলো অপটিক্যাল আইন হয়ে গেল—কি অদ্ভুত কিন্তু সুন্দর!",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝑥\n=\n𝑚\n1\n𝑑\n1\n,\n𝑦\n=\n𝑚\n2\n𝑑\n2\nx=\nm\n1\n\t​\n\n\t​\n\nd\n1\n\t​\n\n,y=\nm\n2\n\t​\n\n\t​\n\nd\n2\n\t​",
+            "katex": "𝑥\n=\n𝑚\n1\n𝑑\n1\n,\n𝑦\n=\n𝑚\n2\n𝑑\n2\nx=\nm\n1\n\t​\n\n\t​\n\nd\n1\n\t​\n\n,y=\nm\n2\n\t​\n\n\t​\n\nd\n2\n\t​",
+            "math": "x=\\sqrt{m_1}\\,d_1,\\qquad y=\\sqrt{m_2}\\,d_2",
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝑥\n˙\n2\n+\n𝑦\n˙\n2\n=\n2\n𝐸\n=\nconst\nx\n˙\n2\n+\ny\n˙\n\t​\n\n2\n\t​\n\n=\n2E\n\t​\n\n=const",
+            "katex": "𝑥\n˙\n2\n+\n𝑦\n˙\n2\n=\n2\n𝐸\n=\nconst\nx\n˙\n2\n+\ny\n˙\n\t​\n\n2\n\t​\n\n=\n2E\n\t​\n\n=const",
+            "math": "\\sqrt{\\dot x^2+\\dot y^2}=\\sqrt{2E}=\\text{const}",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-unfold",
+        "title": "আয়না “খুলে” সোজা রশ্মি",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "আয়না “খুলে” সোজা রশ্মি",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "আয়নার মাঝে রশ্মি গণনা করা কঠিন। কিন্তু একটা চতুর কৌশল আছে: রশ্মি প্রতিফলিত হচ্ছে ভেবে না, বরং পুরো বিশ্বটাকেই উল্টিয়ে দিন। তখন রশ্মিটা সোজা চলতে থাকে এবং পরপর কয়েকটা “লুকিং-গ্লাস” ইউনিভার্সে প্রবেশ করে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "আয়না খুলে দিলে রশ্মি কাঁচের টুকরোর মাঝ দিয়ে সোজা যায়",
+            "katex": null,
+            "math": null,
+            "caption": "আয়না খুলে দিলে রশ্মি কাঁচের টুকরোর মাঝ দিয়ে সোজা যায়"
+          },
+          {
+            "type": "p",
+            "text": "আসল বাঁকা পথ আর কাল্পনিক সোজা পথের তুলনা করলে দেখা যায়: সংঘর্ষ গণনা হয়ে গেছে কতগুলো কাঁচের টুকরো অতিক্রম করেছে তা গণনা। আয়নাদুটোর মাঝের কোণ θ হলে, \n𝜋\nπ অতিক্রম না করে θ কে কতবার যোগ করা যায়—সেটাই আয়নের সংখ্যা: \n𝑁\n=\n⌊\n𝜋\n/\n𝜃\n⌋\nN=⌊π/θ⌋।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "callout",
+            "text": "💡 কোথায় পাই এলো?\n\n𝜃\n=\narctan\n⁡\n𝑚\n2\n/\n𝑚\n1\nθ=arctan\nm\n2\n\t​\n\n/m\n1\n\t​\n\n\t​\n\n ছোট হলে \n𝜃\n≈\n𝑚\n2\n/\n𝑚\n1\nθ≈\nm\n2\n\t​\n\n/m\n1\n\t​\n\n\t​\n\n। ভর ১০০-এর ঘাত হলে \n𝜋\n/\n𝜃\nπ/θ জাতীয় এই গণনাই পাইয়ের অঙ্কগুলোকে বের bring করে দেয়—যা আগের পাঠেও দেখেছি।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝜃\n=\narctan\n⁡\n𝑚\n2\n𝑚\n1\nθ=arctan\nm\n1\n\t​\n\nm\n2\n\t​\n\n\t​\n\n\t​",
+            "katex": "𝜃\n=\narctan\n⁡\n𝑚\n2\n𝑚\n1\nθ=arctan\nm\n1\n\t​\n\nm\n2\n\t​\n\n\t​\n\n\t​",
+            "math": "\\theta=\\arctan\\!\\sqrt{\\tfrac{m_2}{m_1}}",
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝑁\n=\n⌊\n𝜋\n𝜃\n⌋\nN=⌊\nθ\nπ\n\t​\n\n⌋",
+            "katex": "𝑁\n=\n⌊\n𝜋\n𝜃\n⌋\nN=⌊\nθ\nπ\n\t​\n\n⌋",
+            "math": "N=\\left\\lfloor\\frac{\\pi}{\\theta}\\right\\rfloor",
+            "caption": null
+          }
+        ]
+      }
+    ],
+    "katexCount": 35,
+    "manifestLoaded": true,
+    "errors": [
+      "[console] Permissions policy violation: compute-pressure is not allowed in this document."
+    ]
+  },
+  "lesson_04": {
+    "sections": [
+      {
+        "id": "sec-basel-series",
+        "title": "ব্যাসেল সমস্যা",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "ব্যাসেল সমস্যা",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "১৬৪৪ সাল থেকে গণিতবিদরা একটা প্রশ্ন নিয়ে কাজ করছিলেন: \n1\n+\n1\n4\n+\n1\n9\n+\n1\n16\n+\n⋯\n1+\n4\n1\n\t​\n\n+\n9\n1\n\t​\n\n+\n16\n1\n\t​\n\n+⋯ অর্থাৎ \n∑\n𝑛\n=\n1\n∞\n1\n𝑛\n2\n∑\nn=1\n∞\n\t​\n\nn\n2\n1\n\t​\n\n এর মান কত? প্রতিটি পদ একের পর এক ছোট হয়ে যাচ্ছে, কিন্তু যোগফল কোথায় গিয়ে থামে?",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "১৭৩৪ সালে অয়লার দেখালেন মানটা \n𝜋\n2\n/\n6\nπ\n2\n/6। কিন্তু কেন পাই? আর তাও আবার বর্গ (\n𝜋\n2\nπ\n2\n)? প্রচলিত বীজগাণিতিক প্রমাণে এটা বোঝা কঠিন। এখানে আমরা দেখব একটা জ্যামিতিক প্রমাণ যেখানে পাইটা সামনাসামনি দেখা যায়।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "বর্গের ব্যস্তনের যোগফল π²/৬",
+            "katex": null,
+            "math": null,
+            "caption": "বর্গের ব্যস্তনের যোগফল π²/৬"
+          },
+          {
+            "type": "formula-box",
+            "text": "∑\n𝑛\n=\n1\n∞\n1\n𝑛\n2\n=\n𝜋\n2\n6\nn=1\n∑\n∞\n\t​\n\nn\n2\n1\n\t​\n\n=\n6\nπ\n2\n\t​",
+            "katex": "∑\n𝑛\n=\n1\n∞\n1\n𝑛\n2\n=\n𝜋\n2\n6\nn=1\n∑\n∞\n\t​\n\nn\n2\n1\n\t​\n\n=\n6\nπ\n2\n\t​",
+            "math": "\\sum_{n=1}^{\\infty}\\frac{1}{n^2}=\\frac{\\pi^2}{6}",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-inverse-squares",
+        "title": "ব্যস্ত-বর্গ ও জ্যামিতি",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "ব্যস্ত-বর্গ ও জ্যামিতি",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "ব্যাসেল ধারার পদগুলো ব্যস্ত-বর্গের (inverse square)। প্রকৃতিতেও ব্যস্ত-বর্গ সূত্র দেখা যায়: কোনো উৎস থেকে দূরত্ব \n𝑟\nr-এ গেলে তার তীব্রতা \n1\n/\n𝑟\n2\n1/r\n2\n হারে কমে। কারণ শক্তি একটা বৃত্তের পরিধি \n2\n𝜋\n𝑟\n2πr জুড়ে ছড়িয়ে পড়ে—আর sector-এর ক্ষেত্রফল \n1\n2\n𝑟\n2\n𝜃\n2\n1\n\t​\n\nr\n2\nθ।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "বৃত্তাকার ছড়ানোর হিসাবেই পাই আসে",
+            "katex": null,
+            "math": null,
+            "caption": "বৃত্তাকার ছড়ানোর হিসাবেই পাই আসে"
+          },
+          {
+            "type": "p",
+            "text": "এই \n𝑟\n2\nr\n2\n আর \n𝜋\nπ এর সংমিশ্রণই ইঙ্গিত দেয়: ধারার উত্তরে \n𝜋\n2\nπ\n2\n থাকতে পারে। কিন্তু এটা ইঙ্গিত মাত্র—আমাদের চাই একটা নিখুঁত প্রমাণ, যেখানে প্রতিটি পদ একটা জ্যামিতিক বস্তুর সাথে মেলে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "callout",
+            "text": "📐 জ্যামিতিক দৃষ্টিভঙ্গি\n\nসরাসরি যোগ করার বদলে আমরা প্রতিটি \n1\n/\n𝑛\n2\n1/n\n2\n কে একটা উপবৃত্তের (ellipse) বা বৃত্তের ক্ষেত্রফলের সাথে মিলিয়ে দেখি। তখন অসীম যোগটা হয়ে যায় একটা মসৃণ বক্ররেখার নিচের ক্ষেত্রফল—আর সেই ক্ষেত্রফলেই লুকিয়ে আছে \n𝜋\n2\n/\n6\nπ\n2\n/6।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝐼\n(\n𝑟\n)\n∝\n1\n𝑟\n2\nI(r)∝\nr\n2\n1\n\t​",
+            "katex": "𝐼\n(\n𝑟\n)\n∝\n1\n𝑟\n2\nI(r)∝\nr\n2\n1\n\t​",
+            "math": "I(r)\\propto\\frac{1}{r^2}",
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝐶\n=\n2\n𝜋\n𝑟\nC=2πr",
+            "katex": "𝐶\n=\n2\n𝜋\n𝑟\nC=2πr",
+            "math": "C=2\\pi r",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-result",
+        "title": "উত্তর: π²/6",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "উত্তর: π²/6",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "জ্যামিতিক ছবিটিকে যতক্ষণ কাগজে কলমে এগিয়ে নিয়ে যাই, ততক্ষণে দেখা যায় অসীম পদগুলোর যোগফল ঠিক \n𝜋\n2\n/\n6\nπ\n2\n/6। \n𝜋\nπ যেটা এসেছে বৃত্ত থেকে, আর তার বর্গ এসেছে দুই মাত্রার ক্ষেত্রফলের হিসাব থেকে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "ধারার মান π²/6—পাই বর্গাকৃত",
+            "katex": null,
+            "math": null,
+            "caption": "ধারার মান π²/6—পাই বর্গাকৃত"
+          },
+          {
+            "type": "p",
+            "text": "এই প্রমাণের সৌন্দর্য হলো এটা শুধু “উত্তর কী” বলেই থামে না, বরং “কেন পাই” প্রশ্নেরও সরাসরি জবাব দেয়। পরবর্তী পাঠে আমরা আরেকটি বিখ্যাত ধারা—লাইবনিজের সূত্র—দেখব, যেখানে পাই আবারও অপ্রত্যাশিত ভাবে আবির্ভূত হয়।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "∑\n𝑛\n=\n1\n∞\n1\n𝑛\n2\n=\n𝜋\n2\n6\n≈\n1.644934\nn=1\n∑\n∞\n\t​\n\nn\n2\n1\n\t​\n\n=\n6\nπ\n2\n\t​\n\n≈1.644934",
+            "katex": "∑\n𝑛\n=\n1\n∞\n1\n𝑛\n2\n=\n𝜋\n2\n6\n≈\n1.644934\nn=1\n∑\n∞\n\t​\n\nn\n2\n1\n\t​\n\n=\n6\nπ\n2\n\t​\n\n≈1.644934",
+            "math": "\\sum_{n=1}^{\\infty}\\frac{1}{n^{2}}=\\frac{\\pi^{2}}{6}\\approx 1.644934",
+            "caption": null
+          }
+        ]
+      }
+    ],
+    "katexCount": 35,
+    "manifestLoaded": true,
+    "errors": []
+  },
+  "lesson_05": {
+    "sections": [
+      {
+        "id": "sec-leibniz-series",
+        "title": "লাইবনিজের ধারা",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "লাইবনিজের ধারা",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "দেখে মনে হয় না কিছু—\n1\n−\n1\n3\n+\n1\n5\n−\n1\n7\n+\n1\n9\n−\n⋯\n1−\n3\n1\n\t​\n\n+\n5\n1\n\t​\n\n−\n7\n1\n\t​\n\n+\n9\n1\n\t​\n\n−⋯। ছোট ছোট ভগ্নাংশের একটা alternating যোগ। কিন্তু বিস্ময়করভাবে এর মান \n𝜋\n/\n4\nπ/4!",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "রহস্যটার চাবি \narctan\n⁡\narctan ফাংশনে লুকিয়ে আছে। টেলর ধারায় \narctan\n⁡\n(\n𝑥\n)\n=\n𝑥\n−\n𝑥\n3\n3\n+\n𝑥\n5\n5\n−\n⋯\narctan(x)=x−\n3\nx\n3\n\t​\n\n+\n5\nx\n5\n\t​\n\n−⋯। এখানে \n𝑥\n=\n1\nx=1 বসালেই পাই \narctan\n⁡\n(\n1\n)\n=\n𝜋\n/\n4\narctan(1)=π/4। কিন্তু তখন প্রশ্ন দাঁড়ায়—\narctan\n⁡\narctan এ আবার পাই এলো কেন?",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "alternating ধারার যোগফল π/4",
+            "katex": null,
+            "math": null,
+            "caption": "alternating ধারার যোগফল π/4"
+          },
+          {
+            "type": "formula-box",
+            "text": "1\n−\n1\n3\n+\n1\n5\n−\n1\n7\n+\n⋯\n=\n𝜋\n4\n1−\n3\n1\n\t​\n\n+\n5\n1\n\t​\n\n−\n7\n1\n\t​\n\n+⋯=\n4\nπ\n\t​",
+            "katex": "1\n−\n1\n3\n+\n1\n5\n−\n1\n7\n+\n⋯\n=\n𝜋\n4\n1−\n3\n1\n\t​\n\n+\n5\n1\n\t​\n\n−\n7\n1\n\t​\n\n+⋯=\n4\nπ\n\t​",
+            "math": "1-\\frac13+\\frac15-\\frac17+\\cdots=\\frac{\\pi}{4}",
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "arctan\n⁡\n(\n𝑥\n)\n=\n𝑥\n−\n𝑥\n3\n3\n+\n𝑥\n5\n5\n−\n⋯\narctan(x)=x−\n3\nx\n3\n\t​\n\n+\n5\nx\n5\n\t​\n\n−⋯",
+            "katex": "arctan\n⁡\n(\n𝑥\n)\n=\n𝑥\n−\n𝑥\n3\n3\n+\n𝑥\n5\n5\n−\n⋯\narctan(x)=x−\n3\nx\n3\n\t​\n\n+\n5\nx\n5\n\t​\n\n−⋯",
+            "math": "\\arctan(x)=x-\\frac{x^3}{3}+\\frac{x^5}{5}-\\cdots",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-circle-hidden",
+        "title": "এখানেও একটা বৃত্ত",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "এখানেও একটা বৃত্ত",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "arctan\n⁡\n(\n1\n)\narctan(1) মানে হলো ৪৫° কোণ—একটা বৃত্তের ঠিক চার ভাগের এক ভাগ, অর্থাৎ \n𝜋\n/\n4\nπ/4 রেডিয়ান। তাই ধারাটির উত্তরে পাই থাকাটা আর এত অদ্ভুত নয়: এখানেও একটা বৃত্ত লুকিয়ে আছে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "৪৫° কোণ—একক বৃত্তের চার ভাগের এক ভাগ",
+            "katex": null,
+            "math": null,
+            "caption": "৪৫° কোণ—একক বৃত্তের চার ভাগের এক ভাগ"
+          },
+          {
+            "type": "p",
+            "text": "ব্যাসেল সমস্যার মতোই এখানেও ব্যস্ত-বর্গ পদগুলো (\n1\n,\n1\n/\n3\n,\n1\n/\n5\n,\n…\n1,1/3,1/5,…) আর বৃত্তের কোণের হিসাব একসাথে মিলে পাইকে বের করে আনে। কিন্তু এই গল্পে আরেকটা unexpected অধ্যায় আছে—মৌলিক সংখ্যা।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "arctan\n⁡\n(\n1\n)\n=\n𝜋\n4\n=\n4\n5\n∘\narctan(1)=\n4\nπ\n\t​\n\n=45\n∘",
+            "katex": "arctan\n⁡\n(\n1\n)\n=\n𝜋\n4\n=\n4\n5\n∘\narctan(1)=\n4\nπ\n\t​\n\n=45\n∘",
+            "math": "\\arctan(1)=\\frac{\\pi}{4}=45^\\circ",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-primes",
+        "title": "মৌলিক সংখ্যা ও জটিল তল",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "মৌলিক সংখ্যা ও জটিল তল",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "জটিল সংখ্যার তলে কোনো সংখ্যা দিয়ে গুণ করার মানে হলো ঘূর্ণন ও স্কেলিং—আর ঘূর্ণন মানেই বৃত্ত। তাই অয়লারের বিখ্যাত \n𝑒\n𝑖\n𝜋\n=\n−\n1\ne\niπ\n=−1 সমীকরণটা আসলে বৃত্তের এক আধ-ঘূর্ণনের গল্প।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "জটিল তলে মৌলিক সংখ্যা ও ঘূর্ণন",
+            "katex": null,
+            "math": null,
+            "caption": "জটিল তলে মৌলিক সংখ্যা ও ঘূর্ণন"
+          },
+          {
+            "type": "p",
+            "text": "মৌলিক সংখ্যাগুলোকে জটিল তলে বসিয়ে দেখলে তাদের একটা নিয়মিততা ফুটে ওঠে, যা আবার \n𝜋\nπ-র সাথে যুক্ত। এইভাবে একটিমাত্র alternating ধারা আমাদের নিয়ে যায় বৃত্ত, জটিল সংখ্যা আর মৌলিক সংখ্যার—এক অদ্ভুত মিলনের জগতে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "callout",
+            "text": "🔢 সংখ্যা তত্ত্বের সাথে সেতু\n\nলাইবনিজের এই ধারা দেখায় জটিল সংখ্যার গুণন আর মৌলিক সংখ্যার factorization—দুটো মিলে পাই-সংক্রান্ত সূত্র তৈরি করে। গণিতের বিভিন্ন শাখা যে আসলে একে অপরের সাথে যুক্ত, এর চেয়ে ভালো উদাহরণ কমই পাওয়া যায়।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝑒\n𝑖\n𝜃\n=\ncos\n⁡\n𝜃\n+\n𝑖\nsin\n⁡\n𝜃\n,\n𝑒\n𝑖\n𝜋\n=\n−\n1\ne\niθ\n=cosθ+isinθ,e\niπ\n=−1",
+            "katex": "𝑒\n𝑖\n𝜃\n=\ncos\n⁡\n𝜃\n+\n𝑖\nsin\n⁡\n𝜃\n,\n𝑒\n𝑖\n𝜋\n=\n−\n1\ne\niθ\n=cosθ+isinθ,e\niπ\n=−1",
+            "math": "e^{i\\theta}=\\cos\\theta+i\\sin\\theta,\\quad e^{i\\pi}=-1",
+            "caption": null
+          }
+        ]
+      }
+    ],
+    "katexCount": 32,
+    "manifestLoaded": true,
+    "errors": []
+  },
+  "lesson_06": {
+    "sections": [
+      {
+        "id": "sec-bell-curve",
+        "title": "বেল-আকৃতি ও গাউসিয়ান",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "বেল-আকৃতি ও গাউসিয়ান",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "মানুষের উচ্চতা, পরীক্ষার নম্বর, ত্রুটির পরিমাপ—অসংখ্য জিনিস বেল-আকৃতির (bell-shaped) বণ্টন অনুসরণ করে। এর সূত্র \n𝑓\n(\n𝑥\n)\n∝\n𝑒\n−\n𝑥\n2\n/\n2\nf(x)∝e\n−x\n2\n/2\n। কিন্তু বক্ররেখার নিচের মোট ক্ষেত্রফল তো ১ হতে হবে—তাই একটা স্কেলিং ধ্রুবক লাগে \n1\n𝜎\n2\n𝜋\nσ\n2π\n\t​\n\n1\n\t​\n\n।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "বেল-আকৃতির বক্ররেখা ও তার নিচের ক্ষেত্রফল",
+            "katex": null,
+            "math": null,
+            "caption": "বেল-আকৃতির বক্ররেখা ও তার নিচের ক্ষেত্রফল"
+          },
+          {
+            "type": "p",
+            "text": "এই \n2\n𝜋\n2π\n\t​\n\n কোথা থেকে এলো? উত্তরটা আছে গাউসিয়ান ইন্টিগ্রালে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝑓\n(\n𝑥\n)\n=\n1\n𝜎\n2\n𝜋\n𝑒\n−\n(\n𝑥\n−\n𝜇\n)\n2\n2\n𝜎\n2\nf(x)=\nσ\n2π\n\t​\n\n1\n\t​\n\ne\n−\n2σ\n2\n(x−μ)\n2\n\t​",
+            "katex": "𝑓\n(\n𝑥\n)\n=\n1\n𝜎\n2\n𝜋\n𝑒\n−\n(\n𝑥\n−\n𝜇\n)\n2\n2\n𝜎\n2\nf(x)=\nσ\n2π\n\t​\n\n1\n\t​\n\ne\n−\n2σ\n2\n(x−μ)\n2\n\t​",
+            "math": "f(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-integral-trick",
+        "title": "ইন্টিগ্রালের কৌশল",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "ইন্টিগ্রালের কৌশল",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "𝑒\n−\n𝑥\n2\ne\n−x\n2\n এর anticivative কোনো সাধারণ ফাংশন নেই—সরাসরি ইন্টিগ্রেট করা যায় না। ক্লাসিক কৌশল হলো একটা কপি নিয়ে গুণ করা: \n𝐼\n2\n=\n(\n∫\n𝑒\n−\n𝑥\n2\n𝑑\n𝑥\n)\n(\n∫\n𝑒\n−\n𝑦\n2\n𝑑\n𝑦\n)\n=\n∬\n𝑒\n−\n(\n𝑥\n2\n+\n𝑦\n2\n)\n𝑑\n𝑥\n𝑑\n𝑦\nI\n2\n=(∫e\n−x\n2\ndx)(∫e\n−y\n2\ndy)=∬e\n−(x\n2\n+y\n2\n)\ndxdy।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "এখন পোলার কোঅর্ডিনেটে যাই: \n𝑥\n2\n+\n𝑦\n2\n=\n𝑟\n2\nx\n2\n+y\n2\n=r\n2\n, ক্ষেত্রফল উপাদান \n𝑑\n𝑥\n𝑑\n𝑦\n=\n𝑟\n𝑑\n𝑟\n𝑑\n𝜃\ndxdy=rdrdθ। তখন \n𝐼\n2\n=\n∫\n0\n2\n𝜋\n∫\n0\n∞\n𝑒\n−\n𝑟\n2\n𝑟\n𝑑\n𝑟\n𝑑\n𝜃\n=\n(\n2\n𝜋\n)\n(\n1\n2\n)\n=\n𝜋\nI\n2\n=∫\n0\n2π\n\t​\n\n∫\n0\n∞\n\t​\n\ne\n−r\n2\nrdrdθ=(2π)(\n2\n1\n\t​\n\n)=π। সুতরাং \n𝐼\n=\n𝜋\nI=\nπ\n\t​\n\n!",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "দ্বিমাত্রিক ক্ষেত্রে পোলার কোঅর্ডিনেট—পাই এখান থেকে আসে",
+            "katex": null,
+            "math": null,
+            "caption": "দ্বিমাত্রিক ক্ষেত্রে পোলার কোঅর্ডিনেট—পাই এখান থেকে আসে"
+          },
+          {
+            "type": "p",
+            "text": "পাই এসেছে \n2\n𝜋\n2π কোণ থেকে—অর্থাৎ একটা বৃত্ত থেকে। বেল-বক্ররেখা আর বৃত্তের এই মিলনই ইন্টিগ্রালে \n𝜋\nπ\n\t​\n\n আনে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝐼\n=\n∫\n−\n∞\n∞\n𝑒\n−\n𝑥\n2\n𝑑\n𝑥\n=\n𝜋\nI=∫\n−∞\n∞\n\t​\n\ne\n−x\n2\ndx=\nπ\n\t​",
+            "katex": "𝐼\n=\n∫\n−\n∞\n∞\n𝑒\n−\n𝑥\n2\n𝑑\n𝑥\n=\n𝜋\nI=∫\n−∞\n∞\n\t​\n\ne\n−x\n2\ndx=\nπ\n\t​",
+            "math": "I=\\int_{-\\infty}^{\\infty}e^{-x^2}dx=\\sqrt{\\pi}",
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝐼\n2\n=\n∫\n0\n2\n𝜋\n∫\n0\n∞\n𝑒\n−\n𝑟\n2\n𝑟\n𝑑\n𝑟\n𝑑\n𝜃\n=\n𝜋\nI\n2\n=∫\n0\n2π\n\t​\n\n∫\n0\n∞\n\t​\n\ne\n−r\n2\nrdrdθ=π",
+            "katex": "𝐼\n2\n=\n∫\n0\n2\n𝜋\n∫\n0\n∞\n𝑒\n−\n𝑟\n2\n𝑟\n𝑑\n𝑟\n𝑑\n𝜃\n=\n𝜋\nI\n2\n=∫\n0\n2π\n\t​\n\n∫\n0\n∞\n\t​\n\ne\n−r\n2\nrdrdθ=π",
+            "math": "I^2=\\int_0^{2\\pi}\\!\\!\\int_0^{\\infty} e^{-r^2}r\\,dr\\,d\\theta=\\pi",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-herschel-maxwell",
+        "title": "কেন এই বণ্টন স্বাভাবিক?",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "কেন এই বণ্টন স্বাভাবিক?",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "ইন্টিগ্রালের কৌশলটা দেখে মনে হতে পারে এটা শুধুই একটা চতুর trick। কিন্তু Herschel–Maxwell ডেরিভেশন দেখায় এই বণ্টন কেন স্বাভাবিক: ভুলের পরিমাপ দিক-নিরপেক্ষ, জায়গা-নিরপেক্ষ এবং পরস্পর স্বাধীন হলেই গণিতের নিয়ম বাধ্য হয়ে \n𝑓\n(\n𝑥\n)\n=\n𝐴\n𝑒\n−\n𝑐\n𝑥\n2\nf(x)=Ae\n−cx\n2\n রূপ নেয়।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "স্বাভাবিক শর্ত থেকে বেল-বক্ররেখার উৎপত্তি",
+            "katex": null,
+            "math": null,
+            "caption": "স্বাভাবিক শর্ত থেকে বেল-বক্ররেখার উৎপত্তি"
+          },
+          {
+            "type": "p",
+            "text": "তাই \n𝜋\nπ\n\t​\n\n কোথাও জোর করে আনা হয়নি—এটা সেইসব স্বাভাবিক শর্তেরই ফল। বৃত্ত, বেল-বক্ররেখা আর পাই—এ তিনের এই মিলনই এই পাঠের মূল কথা।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "callout",
+            "text": "🔔 মনে রাখার মতো কথা\n\nবেল-আকৃতির বক্ররেখার নিচের ক্ষেত্রফল ১ রাখতে যে স্কেলিং ধ্রুবকটি লাগে, তার ভেতরেই \n2\n𝜋\n2π\n\t​\n\n লুকিয়ে আছে। অর্থাৎ পরিসংখ্যানের এই সুপরিচিত সূত্রের পেছনে আছে একটা বৃত্ত—আর সেটাই পাই-র উৎস।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝑓\n(\n𝑥\n)\n=\n𝐴\n𝑒\n−\n𝑐\n𝑥\n2\n⇒\n∫\n𝑓\n=\n𝐴\n𝜋\n/\n𝑐\n=\n1\nf(x)=Ae\n−cx\n2\n⇒∫f=A\nπ/c\n\t​\n\n=1",
+            "katex": "𝑓\n(\n𝑥\n)\n=\n𝐴\n𝑒\n−\n𝑐\n𝑥\n2\n⇒\n∫\n𝑓\n=\n𝐴\n𝜋\n/\n𝑐\n=\n1\nf(x)=Ae\n−cx\n2\n⇒∫f=A\nπ/c\n\t​\n\n=1",
+            "math": "f(x)=A e^{-cx^2}\\;\\Rightarrow\\;\\int f = A\\sqrt{\\pi/c}=1",
+            "caption": null
+          }
+        ]
+      }
+    ],
+    "katexCount": 35,
+    "manifestLoaded": true,
+    "errors": []
+  },
+  "lesson_07": {
+    "sections": [
+      {
+        "id": "sec-wallis-product",
+        "title": "ওয়ালিস গুণফল",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "ওয়ালিস গুণফল",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "১৬৫৫ সালে John Wallis একটা বিস्मয়কর সম্পর্ক লিখেছিলেন: \n2\n1\n⋅\n2\n3\n⋅\n4\n3\n⋅\n4\n5\n⋅\n6\n5\n⋅\n6\n7\n⋯\n=\n𝜋\n2\n1\n2\n\t​\n\n⋅\n3\n2\n\t​\n\n⋅\n3\n4\n\t​\n\n⋅\n5\n4\n\t​\n\n⋅\n5\n6\n\t​\n\n⋅\n7\n6\n\t​\n\n⋯=\n2\nπ\n\t​\n\n। সব পদ সরল ভগ্নাংশ, কিন্তু ফলাফল পাই!",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "সরল ভগ্নাংশের গুণফল π/2",
+            "katex": null,
+            "math": null,
+            "caption": "সরল ভগ্নাংশের গুণফল π/2"
+          },
+          {
+            "type": "p",
+            "text": "ওয়ালিস নিজে এইটা প্রমাণ করতে পারেননি। আজ আমরা দেখব একটা জ্যামিতিক প্রমাণ, যার মূলে আছে \nsin\n⁡\n𝑛\n𝑥\nsin\nn\nx এর ইন্টিগ্রাল।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝜋\n2\n=\n∏\n𝑛\n=\n1\n∞\n2\n𝑛\n2\n𝑛\n−\n1\n⋅\n2\n𝑛\n2\n𝑛\n+\n1\n=\n2\n1\n⋅\n2\n3\n⋅\n4\n3\n⋅\n4\n5\n⋯\n2\nπ\n\t​\n\n=\nn=1\n∏\n∞\n\t​\n\n2n−1\n2n\n\t​\n\n⋅\n2n+1\n2n\n\t​\n\n=\n1\n2\n\t​\n\n⋅\n3\n2\n\t​\n\n⋅\n3\n4\n\t​\n\n⋅\n5\n4\n\t​\n\n⋯",
+            "katex": "𝜋\n2\n=\n∏\n𝑛\n=\n1\n∞\n2\n𝑛\n2\n𝑛\n−\n1\n⋅\n2\n𝑛\n2\n𝑛\n+\n1\n=\n2\n1\n⋅\n2\n3\n⋅\n4\n3\n⋅\n4\n5\n⋯\n2\nπ\n\t​\n\n=\nn=1\n∏\n∞\n\t​\n\n2n−1\n2n\n\t​\n\n⋅\n2n+1\n2n\n\t​\n\n=\n1\n2\n\t​\n\n⋅\n3\n2\n\t​\n\n⋅\n3\n4\n\t​\n\n⋅\n5\n4\n\t​\n\n⋯",
+            "math": "\\frac{\\pi}{2}=\\prod_{n=1}^{\\infty}\\frac{2n}{2n-1}\\cdot\\frac{2n}{2n+1}=\\frac21\\cdot\\frac23\\cdot\\frac43\\cdot\\frac45\\cdots",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-sin-integrals",
+        "title": "sin^n-এর ইন্টিগ্রাল",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "sin^n-এর ইন্টিগ্রাল",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "ধরি \n𝐼\n𝑛\n=\n∫\n0\n𝜋\nsin\n⁡\n𝑛\n𝑥\n𝑑\n𝑥\nI\nn\n\t​\n\n=∫\n0\nπ\n\t​\n\nsin\nn\nxdx। আংশিক ইন্টিগ্রেশন দিয়ে পাই সুন্দর একটা পুনরাবৃত্তি: \n𝐼\n𝑛\n=\n𝑛\n−\n1\n𝑛\n𝐼\n𝑛\n−\n2\nI\nn\n\t​\n\n=\nn\nn−1\n\t​\n\nI\nn−2\n\t​\n\n। অর্থাৎ \n𝐼\n2\n=\n1\n2\n𝐼\n0\nI\n2\n\t​\n\n=\n2\n1\n\t​\n\nI\n0\n\t​\n\n, \n𝐼\n4\n=\n3\n4\n𝐼\n2\nI\n4\n\t​\n\n=\n4\n3\n\t​\n\nI\n2\n\t​\n\n, \n𝐼\n6\n=\n5\n6\n𝐼\n4\nI\n6\n\t​\n\n=\n6\n5\n\t​\n\nI\n4\n\t​\n\n—এইভাবে চলতে থাকে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "sin^n বক্ররেখার নিচের ক্ষেত্রফল থেকে গুণফল",
+            "katex": null,
+            "math": null,
+            "caption": "sin^n বক্ররেখার নিচের ক্ষেত্রফল থেকে গুণফল"
+          },
+          {
+            "type": "p",
+            "text": "এই অনুপাতগুলোকে বারবার বসালে ওয়ালিসের \n2\n1\n⋅\n2\n3\n⋅\n4\n3\n⋯\n1\n2\n\t​\n\n⋅\n3\n2\n\t​\n\n⋅\n3\n4\n\t​\n\n⋯ পদগুলো তৈরি হয়। কিন্তু \n𝐼\n0\n=\n𝜋\nI\n0\n\t​\n\n=π কোথা থেকে এলো? সেটা এলো \nsin\n⁡\n0\n𝑥\n=\n1\nsin\n0\nx=1 কে \n0\n0 থেকে \n𝜋\nπ পর্যন্ত ইন্টিগ্রেট করে—অর্থাৎ \n𝜋\nπ দৈর্ঘ্যের একটা আয়তক্ষেত্রের ক্ষেত্রফল থেকে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝐼\n𝑛\n=\n∫\n0\n𝜋\nsin\n⁡\n𝑛\n𝑥\n𝑑\n𝑥\n=\n𝑛\n−\n1\n𝑛\n𝐼\n𝑛\n−\n2\nI\nn\n\t​\n\n=∫\n0\nπ\n\t​\n\nsin\nn\nxdx=\nn\nn−1\n\t​\n\nI\nn−2\n\t​",
+            "katex": "𝐼\n𝑛\n=\n∫\n0\n𝜋\nsin\n⁡\n𝑛\n𝑥\n𝑑\n𝑥\n=\n𝑛\n−\n1\n𝑛\n𝐼\n𝑛\n−\n2\nI\nn\n\t​\n\n=∫\n0\nπ\n\t​\n\nsin\nn\nxdx=\nn\nn−1\n\t​\n\nI\nn−2\n\t​",
+            "math": "I_n=\\int_0^{\\pi}\\sin^n x\\,dx=\\frac{n-1}{n}I_{n-2}",
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝐼\n2\n𝑛\n=\n𝜋\n⋅\n1\n⋅\n3\n⋅\n5\n⋯\n(\n2\n𝑛\n−\n1\n)\n2\n⋅\n4\n⋅\n6\n⋯\n(\n2\n𝑛\n)\nI\n2n\n\t​\n\n=π⋅\n2⋅4⋅6⋯(2n)\n1⋅3⋅5⋯(2n−1)\n\t​",
+            "katex": "𝐼\n2\n𝑛\n=\n𝜋\n⋅\n1\n⋅\n3\n⋅\n5\n⋯\n(\n2\n𝑛\n−\n1\n)\n2\n⋅\n4\n⋅\n6\n⋯\n(\n2\n𝑛\n)\nI\n2n\n\t​\n\n=π⋅\n2⋅4⋅6⋯(2n)\n1⋅3⋅5⋯(2n−1)\n\t​",
+            "math": "I_{2n}=\\pi\\cdot\\frac{1\\cdot3\\cdot5\\cdots(2n-1)}{2\\cdot4\\cdot6\\cdots(2n)}",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-geometric-proof",
+        "title": "জ্যামিতিক প্রমাণ ও জটিল সংখ্যা",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "জ্যামিতিক প্রমাণ ও জটিল সংখ্যা",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "জটিল সংখ্যার তলে \nsin\n⁡\n𝑥\nsinx-কে তার শূন্যবিন্দুগুলো দিয়ে প্রকাশ করা যায়। এই গুণনরূপ আর বৃত্তের ক্ষেত্রফলের হিসাব একসাথে করে দেখা যায় ওয়ালিসের গুণফল ঠিক \n𝜋\n/\n2\nπ/2।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "বৃত্তের জ্যামিতি থেকেই পাই আসে",
+            "katex": null,
+            "math": null,
+            "caption": "বৃত্তের জ্যামিতি থেকেই পাই আসে"
+          },
+          {
+            "type": "p",
+            "text": "এই প্রমাণ আবার একই কথা মনে করিয়ে দেয়: পাই যেখানেই আবির্ভূত হোক, তার পেছনে কোথাও না কোথাও একটা বৃত্ত থাকেই।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "callout",
+            "text": "✅ ওয়ালিস গুণফলের তাৎপর্য\n\nসরল ভগ্নাংশের একটা অসীম গুণফলের মান \n𝜋\n/\n2\nπ/2—এটা দেখে মনে হয় কাকতালীয়, কিন্তু মূলে আছে \nsin\n⁡\n𝑛\n𝑥\nsin\nn\nx-এর ইন্টিগ্রালের পুনরাবৃত্তি সূত্র আর বৃত্তের জ্যামিতি। গুণফলটির প্রতিটি পদ আসলে একটা জ্যামিতিক অনুপাত।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "∏\n𝑛\n=\n1\n∞\n2\n𝑛\n2\n𝑛\n−\n1\n⋅\n2\n𝑛\n2\n𝑛\n+\n1\n=\n𝜋\n2\nn=1\n∏\n∞\n\t​\n\n2n−1\n2n\n\t​\n\n⋅\n2n+1\n2n\n\t​\n\n=\n2\nπ\n\t​",
+            "katex": "∏\n𝑛\n=\n1\n∞\n2\n𝑛\n2\n𝑛\n−\n1\n⋅\n2\n𝑛\n2\n𝑛\n+\n1\n=\n𝜋\n2\nn=1\n∏\n∞\n\t​\n\n2n−1\n2n\n\t​\n\n⋅\n2n+1\n2n\n\t​\n\n=\n2\nπ\n\t​",
+            "math": "\\prod_{n=1}^{\\infty}\\frac{2n}{2n-1}\\cdot\\frac{2n}{2n+1}=\\frac{\\pi}{2}",
+            "caption": null
+          }
+        ]
+      }
+    ],
+    "katexCount": 38,
+    "manifestLoaded": true,
+    "errors": []
+  },
+  "lesson_08": {
+    "sections": [
+      {
+        "id": "sec-early-notation",
+        "title": "প্রথম দিকের চিহ্ন",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "প্রথম দিকের চিহ্ন",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "আজ আমরা π মানে বৃত্তের পরিধি আর ব্যাসের অনুপাত—প্রায় ৩.১৪১৫৯। কিন্তু এই প্রতীকটা সবসময় এ অর্থে ব্যবহৃত হয়নি। ১৭০৬ সালে William Jones প্রথম π অক্ষরটি ব্যবহার করেন, আর অয়লার পরে এটিকে জনপ্রিয় করেন।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "পাই-র আধুনিক প্রতীকের উৎপত্তি",
+            "katex": null,
+            "math": null,
+            "caption": "পাই-র আধুনিক প্রতীকের উৎপত্তি"
+          },
+          {
+            "type": "formula-box",
+            "text": "𝜋\n=\nperimeter\ndiameter\n≈\n3.14159\nπ=\ndiameter\nperimeter\n\t​\n\n≈3.14159",
+            "katex": "𝜋\n=\nperimeter\ndiameter\n≈\n3.14159\nπ=\ndiameter\nperimeter\n\t​\n\n≈3.14159",
+            "math": "\\pi=\\frac{\\text{perimeter}}{\\text{diameter}}\\approx 3.14159",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-euler-pi",
+        "title": "অয়লারের দুই মান",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "অয়লারের দুই মান",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "অয়লারের লেখা পড়লে অদ্ভুত একটা ব্যাপার দেখা যায়: তিনি π দিয়ে মাঝে মাঝে ৬.২৮ (বৃত্তের perimeter) আবার মাঝে মাঝে ৩.১৪ (ব্যাসের অনুপাত) বোঝাতেন। অর্থাৎ ইতিহাসে পাইয়ের মান আজকের 2π ≈ ৬.২৮৩১৮৫ হয়ে যেতে পারত!",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "অয়লারের π—দুইটি সম্ভাব্য অর্থ",
+            "katex": null,
+            "math": null,
+            "caption": "অয়লারের π—দুইটি সম্ভাব্য অর্থ"
+          },
+          {
+            "type": "p",
+            "text": "কেন এটা হলো? কারণ বৃত্তের সব সূত্রে \n2\n𝜋\n2π বারবার আসে—পরিধি \n2\n𝜋\n𝑟\n2πr, একটি পূর্ণ ঘূর্ণন \n2\n𝜋\n2π রেডিয়ান। অনেকের মতে ২ সংখ্যা নিয়ে π-কে সংজ্ঞায়িত করা হলে অনেক কিছু সহজ হতো।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "callout",
+            "text": "🤔 কেন ঐকমত্য গুরুত্বপূর্ণ?\n\nআজ আমরা π = ৩.১৪ তেই ঐকমত্য করেছি। তবে 2π-র জন্য τ (tau) ব্যবহারের প্রস্তাব এখনো আছে। এই পাঠটা আমাদের মনে করিয়ে দেয়: গণিতের প্রতীক ও সংজ্ঞা মানুষের বেছে নেওয়া চুক্তি, প্রকৃতির কোনো পরম সত্য নয়।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝜋\n≈\n3.14159\nbefore\n2\n𝜋\n≈\n6.28319\nπ≈3.14159before2π≈6.28319",
+            "katex": "𝜋\n≈\n3.14159\nbefore\n2\n𝜋\n≈\n6.28319\nπ≈3.14159before2π≈6.28319",
+            "math": "\\pi\\approx 3.14159\\quad\\text{before}\\quad 2\\pi\\approx 6.28319",
+            "caption": null
+          }
+        ]
+      },
+      {
+        "id": "sec-today",
+        "title": "আজকের ঐকমত্য ও টাউ (τ) প্রস্তাব",
+        "nodes": [
+          {
+            "type": "h2",
+            "text": "আজকের ঐকমত্য ও টাউ (τ) প্রস্তাব",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "p",
+            "text": "ইতিহাসে π কয়েকবার অর্থ বদলেছে। আজ আমরা ঐকমত্য করেছি π = ৩.১৪১৫৯…, অর্থাৎ পরিধি আর ব্যাসের অনুপাত। কিন্তু 2π-র জন্য τ (tau) নামক একক চিহ্নের প্রস্তাব এখনো আছে—কারণ একটি পূর্ণ ঘূর্ণনের কোণ, তরঙ্গের চক্র ইত্যাদিতে 2π বারবার আসে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "figure",
+            "text": "π বনাম τ—দুইটি প্রস্তাবিত ভিত্তি",
+            "katex": null,
+            "math": null,
+            "caption": "π বনাম τ—দুইটি প্রস্তাবিত ভিত্তি"
+          },
+          {
+            "type": "p",
+            "text": "এই আলোচনার শিক্ষা হলো: গণিতের প্রতীক মানুষের বেছে নেওয়া চুক্তি। কোনটা “প্রকৃতির পরম সত্য” তা নয়, বরং কোনটা ব্যবহারে বেশি সুবিধাজনক—সেটাই নির্ধারণ করে কোন ঐকমত্য টিকে থাকে।",
+            "katex": null,
+            "math": null,
+            "caption": null
+          },
+          {
+            "type": "formula-box",
+            "text": "𝜏\n=\n2\n𝜋\n≈\n6.283185\nτ=2π≈6.283185",
+            "katex": "𝜏\n=\n2\n𝜋\n≈\n6.283185\nτ=2π≈6.283185",
+            "math": "\\tau = 2\\pi \\approx 6.283185",
+            "caption": null
+          }
+        ]
+      }
+    ],
+    "katexCount": 21,
+    "manifestLoaded": true,
+    "errors": []
+  }
+}

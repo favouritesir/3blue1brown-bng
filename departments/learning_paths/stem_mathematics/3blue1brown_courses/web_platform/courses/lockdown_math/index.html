@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>লকডাউন ম্যাথ ও বিশেষ জ্যামিতি — ৩ব্লু১ব্রাউন বাংলা</title>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<style>
+  .course-hero {
+    padding: 100px 24px 48px;
+    background: radial-gradient(circle at 50% 20%, rgba(246, 173, 85, 0.16), transparent 70%);
+    text-align: center;
+  }
+  .course-badge {
+    display: inline-block;
+    padding: 5px 16px;
+    background: rgba(246, 173, 85, 0.15);
+    border: 1px solid rgba(246, 173, 85, 0.4);
+    border-radius: 20px;
+    color: var(--theme-gold);
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .course-title {
+    font-size: 2.7rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: var(--text);
+    line-height: 1.25;
+  }
+  .course-sub {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 720px;
+    margin: 0 auto 30px;
+    line-height: 1.75;
+  }
+  .course-stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .c-stat {
+    text-align: center;
+  }
+  .c-stat-val {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--theme-gold);
+  }
+  .c-stat-lbl {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .chapters-container {
+    max-width: 980px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+  }
+  .chapter-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .chapter-row {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 24px 28px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+  .chapter-row.active-lesson {
+    border-color: rgba(246, 173, 85, 0.6);
+    box-shadow: 0 4px 24px rgba(246, 173, 85, 0.12);
+  }
+  .chapter-row.active-lesson::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: var(--theme-gold);
+  }
+  .chapter-row:hover {
+    border-color: var(--theme-gold);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+  }
+  .ch-num {
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: var(--theme-gold);
+    min-width: 52px;
+    text-align: center;
+    opacity: 0.9;
+  }
+  .ch-body {
+    flex: 1;
+  }
+  .ch-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .ch-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .status-pill-live {
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 10px;
+    border-radius: 12px;
+    background: rgba(16, 185, 129, 0.18);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.35);
+  }
+  .status-pill-upcoming {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+  .ch-desc {
+    font-size: 0.96rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .ch-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .ch-tag {
+    font-size: 0.78rem;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+  }
+  .ch-action {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--theme-gold);
+    font-weight: bold;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+  .ch-action-upcoming {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+  }
+</style>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../../index.html">
+      <svg class="pi-logo" viewBox="-50 -50 100 100" aria-label="৩ব্লু১ব্রাউন">
+        <path fill="#74C0E3" d="M 0 0 L 0 -50 A 50 50 0 1 1 -50 0 z"/>
+        <path fill="#8C6239" d="M 0 0 L 0 -50 A 50 50 0 0 0 -50 0 z"/>
+        <circle cx="0" cy="0" r="22" fill="#000"/>
+        <circle cx="-8" cy="-6" r="7" fill="#fff"/>
+        <circle cx="8" cy="-6" r="7" fill="#fff"/>
+        <circle cx="-7" cy="-6" r="3.5" fill="#000"/>
+        <circle cx="9" cy="-6" r="3.5" fill="#000"/>
+        <path d="M -10 6 Q 0 14 10 6" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-title">৩ব্লু১ব্রাউন বাংলা</span>
+        <span class="logo-sub">লকডাউন ম্যাথ</span>
+      </div>
+    </a>
+
+    <div class="nav-breadcrumb">
+      <a href="../../index.html">হোম</a>
+      <span>/</span>
+      <span>লকডাউন ম্যাথ ও বিশেষ জ্যামিতি</span>
+    </div>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" onclick="toggleTheme()" title="থিম পরিবর্তন">🌙</button>
+      <a href="lesson_01.html" style="background:var(--theme-gold); color:#000; padding:6px 18px; border-radius:20px; font-weight:bold; font-size:0.88rem; transition:transform 0.2s ease;">শুরু করুন (অধ্যায় ০১) →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="course-hero">
+  <div class="course-badge">গভীর গণিতিক অন্তর্দৃষ্টি ও জ্যামিতিক সৌন্দর্য</div>
+  <h1 class="course-title">লকডাউন ম্যাথ ও বিশেষ জ্যামিতি</h1>
+  <p class="course-sub">Lockdown Math — গ্রান্ট স্যান্ডারসনের সরাসরি সম্প্রচারিত ঐতিহাসিক লেকচার সিরিজ। সূত্র মুখস্থ করার মানসিকতা ভেঙে জ্যামিতিক প্রতিসাম্য, দ্বিপদী বিন্যাস, অয়লারের সূত্র এবং পোলার সর্পিলের প্রকৃত রস আস্বাদন করুন।</p>
+  
+  <div class="course-stats-bar">
+    <div class="c-stat">
+      <div class="c-stat-val">১০টি</div>
+      <div class="c-stat-lbl">পূর্ণাঙ্গ অধ্যায়</div>
+    </div>
+    <div class="c-stat">
+      <div class="c-stat-val">১০০%</div>
+      <div class="c-stat-lbl">অফলাইন KaTeX ম্যাথ</div>
+    </div>
+    <div class="c-stat">
+      <div class="c-stat-val">HTML5</div>
+      <div class="c-stat-lbl">ইন্টারেক্টিভ ল্যাব</div>
+    </div>
+    <div class="c-stat">
+      <div class="c-stat-val">০টি</div>
+      <div class="c-stat-lbl">অযথা অন্ধ মুখস্থ</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CHAPTERS LIST ═══════════ -->
+<main class="chapters-container">
+  <div class="chapter-grid">
+
+    <a href="lesson_01.html" class="chapter-row">
+      <div class="ch-num">০১</div>
+      <div class="ch-body">
+        <h2 class="ch-title">দ্বিঘাত সমীকরণ সমাধানের জ্যামিতিক অন্তর্দৃষ্টি (The quadratic formula explained geometrically)</h2>
+        <p class="ch-desc">অন্ধভাবে সূত্র মুখস্থ না করে জ্যামিতিক বর্গ পূরণ, প্যারাবোলার প্রতিসাম্য অক্ষ, শীর্ষবিন্দু ও পো-শেন লোহ্ পদ্ধতির মাধ্যমে দ্বিঘাত সূত্রের প্রকৃত উন্মোচন</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ 1:05:00</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_02.html" class="chapter-row">
+      <div class="ch-num">০২</div>
+      <div class="ch-body">
+        <h2 class="ch-title">সূচকীয় বৃদ্ধি ও মহামারী মডেলিং (Exponential growth and epidemics)</h2>
+        <p class="ch-desc">রৈখিক স্বজ্ঞার সীমাবদ্ধতা, দ্বিগুণের সময়, লজিস্টিক এস-কার্ভ, ইনফ্লেকশন পয়েন্ট এবং মহামারী নিয়ন্ত্রণের গাণিতিক অন্তর্দৃষ্টি</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ 1:08:15</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_03.html" class="chapter-row">
+      <div class="ch-num">০৩</div>
+      <div class="ch-body">
+        <h2 class="ch-title">দ্বিপদী বিন্যাস ও মুদ্রা নিক্ষেপের সম্ভাবনা (Binomial distributions and coin flips)</h2>
+        <p class="ch-desc">মুদ্রা নিক্ষেপ থেকে প্যাসকেলের ত্রিভুজ, গ্যালটন বোর্ডের মার্বেল পথ, কম্বিনেটোরিক্স এবং গাউসিয়ান বেল কার্ভের প্রথম আবির্ভাব</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ 1:07:30</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_04.html" class="chapter-row">
+      <div class="ch-num">০৪</div>
+      <div class="ch-body">
+        <h2 class="ch-title">অধ্যায় ০৪: জটিল সংখ্যার জ্যামিতিক রূপ ও গুণনের রহস্য (Complex Number Fundamentals &amp; Geometric Multiplication)</h2>
+        <p class="ch-desc">কাল্পনিক সংখ্যা i কোনো বিমূর্ত কল্পনা নয়—এটি সমতলে ৯০ ডিগ্রি ঘূর্ণন! আর্গাঁ সমতল, স্কেলিং ও রোটেশনের দ্বৈত নৃত্য এবং জটিল সংখ্যা দিয়ে ত্রিকোণমিতি জয়ের শিল্প</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ 1:12:00</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_05.html" class="chapter-row">
+      <div class="ch-num">০৫</div>
+      <div class="ch-body">
+        <h2 class="ch-title">অধ্যায় ০৫: অয়লারের সূত্র ও ত্রিকোণমিতি (Euler&#x27;s Formula and Trigonometry)</h2>
+        <p class="ch-desc">গণিতের সবচেয়ে মোহনীয় সমীকরণ e^{iθ} = cos(θ) + i sin(θ) কেন সত্য? স্পর্শক বেগ, বৃত্তাকার গতি, টেলর ধারা এবং e^{iπ} + 1 = 0 এর দৃশ্যমান অনন্ত রহস্য</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ 1:08:30</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_06.html" class="chapter-row">
+      <div class="ch-num">০৬</div>
+      <div class="ch-body">
+        <h2 class="ch-title">অধ্যায় ০৬: অবিচ্ছিন্ন সম্ভাবনা ও ঘনত্ব অপেক্ষক (Continuous Probabilities and Probability Density)</h2>
+        <p class="ch-desc">একক বিন্দুর সম্ভাবনা কেন শূন্য? পিএমএফ থেকে পিডিএফ রূপান্তর, বক্ররেখার নিচের ক্ষেত্রফল, ইউনিফর্ম ও এক্সপোনেনশিয়াল মডেল এবং সেন্ট্রাল লিমিট থিওরেমের অমর অন্তর্দৃষ্টি</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ 1:15:00</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_07.html" class="chapter-row">
+      <div class="ch-num">০৭</div>
+      <div class="ch-body">
+        <h2 class="ch-title">বৃত্তের ক্ষেত্রফল ও অন্তরজের জ্যামিতিক প্রমাণ (Area and the derivative of a circle)</h2>
+        <p class="ch-desc">বৃত্তের ক্ষেত্রফল πr² এর অন্তরজ কেন ঠিক পরিধি ২πr হয়? বলয় আনরোলিং, গোলকের আয়তন এবং ক্যালকুলাসের সার্বজনীন প্রতিসাম্য</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ 1:08:42</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_08.html" class="chapter-row">
+      <div class="ch-num">০৮</div>
+      <div class="ch-body">
+        <h2 class="ch-title">ব্যাসেল সমস্যা ও পাই স্কয়ার বাই ৬ এর সমাধান (Proof of the Basel problem)</h2>
+        <p class="ch-desc">কেন সকল বর্গসংখ্যার ব্যস্তানুপাতিক অসীম যোগফল π²/৬ হয়? বাতিঘরের আলোর উজ্জ্বলতা, পিথাগোরাস উপপাদ্য এবং অয়লারের ঐতিহাসিক আবিষ্কার</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ 1:02:18</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_09.html" class="chapter-row">
+      <div class="ch-num">০৯</div>
+      <div class="ch-body">
+        <h2 class="ch-title">দ্বৈত ভেক্টর ও রৈখিক সমাহার (Geometry of linear combinations and dual vectors)</h2>
+        <p class="ch-desc">ভেক্টর ও ম্যাট্রিক্সকে দুটি ভিন্ন দৃষ্টিতে দেখা: ডট প্রোডাক্ট কীভাবে ১-মাত্রিক রৈখিক রূপান্তরে রূপ নেয় এবং দ্বৈততার জ্যামিতিক সৌন্দর্য</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ 1:05:40</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_10.html" class="chapter-row">
+      <div class="ch-num">১০</div>
+      <div class="ch-body">
+        <h2 class="ch-title">উচ্চতর বহুপদী সমীকরণ ও রুট খোঁজার রূপ (Solving higher degree polynomials)</h2>
+        <p class="ch-desc">ত্রিঘাত ও চতুর্ঘাত সমীকরণ সমাধানের জ্যামিতিক কৌশল, জটিল তলে মূলের সরণ এবং পঞ্চঘাত সমীকরণের অলঙ্ঘনীয় দেয়াল</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ 1:14:22</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+  </div>
+</main>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="site-footer">
+  <p>৩ব্লু১ব্রাউন বাংলা · মূল রচনা ও উপস্থাপনা: Grant Sanderson · অফলাইন গণিত: KaTeX v0.16.11</p>
+  <p><a href="../../index.html">← মূল ড্যাশবোর্ডে ফিরে যান</a></p>
+</footer>
+
+</body>
+</html>

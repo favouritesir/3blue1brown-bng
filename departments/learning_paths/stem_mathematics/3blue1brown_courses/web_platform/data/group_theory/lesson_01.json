@@ -1,0 +1,238 @@
+{
+  "lesson_id": "lesson_01",
+  "chapter_num": 1,
+  "course_id": "group_theory",
+  "title_en": "Group theory, abstraction, and the 196,883-dimensional monster",
+  "title_bn": "গ্রুপ তত্ত্ব, বিমূর্ততা ও ১৯৬,৮৮৩-মাত্রিক মনস্টার",
+  "subtitle_bn": "প্রতিসাম্য, গ্রুপ তত্ত্ব, আইসোমরফিজম এবং মনস্টার গ্রুপের পরিচিতি",
+  "video_id": "mH0oCDa74tE",
+  "official_url": "https://www.3blue1brown.com/lessons/groups-and-monsters",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "~২৫ মি.",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "The axioms for a group are short and natural... hidden behind these axioms is the monster simple group.",
+    "quote_bn": "গ্রুপের স্বত্বগুলো সংক্ষিপ্ত ও স্বাভাবিক... কিন্তু এর পেছনে লুকিয়ে আছে মনস্টার সিম্পল গ্রুপ।",
+    "author": "Richard Borcherds (রিচার্ড বোচার্ডস)"
+  },
+  "sections": [
+    {
+      "id": "sec-intro",
+      "title_bn": "১. আমার প্রিয় মেগা-সংখ্যা",
+      "title_en": "My Favorite Mega Number",
+      "summary_bn": "একটি অসাধারণ বৃহৎ সংখ্যা—প্রায় ৮×১০^৫৩—যা মনস্টার গ্রুপের আকার।",
+      "key_takeaways": [
+        "এই সংখ্যাটি বৃহস্পতি গ্রহের পরমাণুর সংখ্যার কাছাকাছি।",
+        "এটি মনস্টার নামক গ্রুপের আকার।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_sec-intro_2",
+          "caption_bn": "বৃহস্পতি গ্রহ—এই সংখ্যাটি আনুমানিক বৃহস্পতির পরমাণুর সংখ্যার কাছাকাছি",
+          "type": "svg",
+          "src": "figures/gt_01/jupiter.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-definition",
+      "title_bn": "২. গ্রুপের স্বজ্ঞাত সংজ্ঞা",
+      "title_en": "Intuitive Definition of a Group",
+      "summary_bn": "প্রতিসাম্য হলো এমন কাজ যা কোনো বস্তুকে অপরিবর্তিত রেখে করা যায়; এই কাজের সংগ্রহই গ্রুপ।",
+      "key_takeaways": [
+        "তুষারকণার ১২টি প্রতিসাম্য নিয়ে গড়ে ওঠে $D_6$ গ্রুপ।",
+        "'কিছু না করা' কাজটি সব গ্রুপেরই অংশ।",
+        "permutation গ্রুপ $S_n$ অন্য সব গ্রুপকে আবদ্ধ করে।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_sec-definition_1",
+          "caption_bn": "প্রতিফলনের পরও মুখটি আগের মতোই দেখায়",
+          "type": "svg",
+          "src": "figures/gt_01/symmetric_face.svg"
+        },
+        {
+          "id": "fig_sec-definition_3",
+          "caption_bn": "তুষারকণার একাধিক ঘূর্ণন ও প্রতিফলন প্রতিসাম্য",
+          "type": "svg",
+          "src": "figures/gt_01/snowflake.svg"
+        },
+        {
+          "id": "fig_sec-definition_6",
+          "caption_bn": "বিভিন্ন গ্রুপের 'প্রাণীশালা'—প্রতিটি নাম এক ধরনের প্রতিসাম্য",
+          "type": "svg",
+          "src": "figures/gt_01/zoo_groups.svg"
+        },
+        {
+          "id": "fig_sec-definition_8",
+          "caption_bn": "ঘনকের ২৪টি ঘূর্ণন গঠন রক্ষা করে",
+          "type": "svg",
+          "src": "figures/gt_01/cube_rotation.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-axioms",
+      "title_bn": "৩. গ্রুপের গাণিতিক সংজ্ঞা",
+      "title_en": "Mathematical Definition of a Group",
+      "summary_bn": "চারটি স্বত্ব—আবদ্ধতা, সহযোগিতা, একত্ব ও বিপরীত—একটি গ্রুপকে সংজ্ঞায়িত করে।",
+      "key_takeaways": [
+        "বাইনারি অপারেটর $\\circ$ দুটি উপাদান থেকে তৃতীয় একটি তৈরি করে।",
+        "গুণন সারণিই গ্রুপের গঠন বর্ণনা করে।"
+      ],
+      "formulas": [
+        {
+          "label": "বাইনারি অপারেটর",
+          "katex": "a\\circ b = c"
+        },
+        {
+          "label": "সহযোগিতার স্বত্ব",
+          "katex": "(r_{60^\\circ}\\circ r_{60^\\circ})\\circ r_{60^\\circ}=r_{60^\\circ}\\circ(r_{60^\\circ}\\circ r_{60^\\circ})=r_{180^\\circ}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_sec-axioms_3",
+          "caption_bn": "প্রতিসাম্য কাজের সংযোজন সবসময় আরেকটি প্রতিসাম্য কাজ",
+          "type": "svg",
+          "src": "figures/gt_01/closure.svg"
+        },
+        {
+          "id": "fig_sec-axioms_6",
+          "caption_bn": "বর্গক্ষেত্রের প্রতিসাম্যের ৮×৮ গুণন সারণি",
+          "type": "svg",
+          "src": "figures/gt_01/multiplication_table.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-isomorphism",
+      "title_bn": "৪. বিভিন্ন গ্রুপের তুলনা ও আইসোমরফিজম",
+      "title_en": "Comparing Different Groups & Isomorphism",
+      "summary_bn": "আইসোমরফিজম মানে দুই গ্রুপের একই অন্তর্নিহিত গঠন—গ্রুপ তত্ত্বের সবচেয়ে গুরুত্বপূর্ণ ধারণা।",
+      "key_takeaways": [
+        "ঘনকের ঘূর্ণন ও ৪টি বস্তুর permutation আইসোমরফিক।",
+        "গ্রুপ কোনো নির্দিষ্ট বস্তুর প্রতিসাম্য নয়, বরং একটি বিমূর্ত রূপ।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_sec-isomorphism_1",
+          "caption_bn": "ঘনকের ঘূর্ণন আর ৪টি বিন্দুর permutation—আসলে একই গঠন",
+          "type": "svg",
+          "src": "figures/gt_01/cube_4perm.svg"
+        },
+        {
+          "id": "fig_sec-isomorphism_4",
+          "caption_bn": "'৩' যেমন সব ত্রয়ীর সারাংশ, গ্রুপও তেমনি প্রতিসাম্যের বিমূর্ত রূপ",
+          "type": "svg",
+          "src": "figures/gt_01/abstract_3.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-monster",
+      "title_bn": "৫. মনস্টার",
+      "title_en": "The Monster",
+      "summary_bn": "সরল গ্রুপের শ্রেণীবিভাগ, ২৬টি sporadic গ্রুপ এবং ১৯৬,৮৮৩-মাত্রিক মনস্টার।",
+      "key_takeaways": [
+        "১৮টি অসীম পরিবার + ২৬টি sporadic গ্রুপ।",
+        "মনস্টার ১৯৬,৮৮৩ মাত্রায় কাজ করে।",
+        "moonshine-এর মাধ্যমে মডুলার ফর্মের সাথে সংযোগ।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_sec-monster_2",
+          "caption_bn": "সরল গ্রুপের শ্রেণীবিভাগ—পর্যায় সারণির মতো",
+          "type": "svg",
+          "src": "figures/gt_01/classification.svg"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_star_symmetries",
+      "section_ref": "sec-definition",
+      "question_bn": "❓ ১টি পাঁচ-কোণা তারার কতগুলো প্রতিসাম্য (ঘূর্ণন ও উল্টানো) আছে?",
+      "question_en": "How many symmetries (rotations and flips) does a 5 pointed star have?",
+      "options": [
+        "১",
+        "৫",
+        "৬",
+        "১০",
+        "১২"
+      ],
+      "options_bn": [
+        "১",
+        "৫",
+        "৬",
+        "১০",
+        "১২"
+      ],
+      "correct_index": 3,
+      "explanation_bn": " পাঁচ-কোণা তারার ৫টি ঘূর্ণন (০°, ৭২°, ১৪৪°, ২১৬°, ২৮৮°) এবং ৫টি প্রতিফলন—মোট ১০টি কাজ। এটি $D_5$ গ্রুপ।",
+      "explanation_en": "How many symmetries (rotations and flips) does a 5 pointed star have?",
+      "hint": "ঘূর্ণনের সংখ্যার সমান সংখ্যক উল্টানোও থাকে।",
+      "hints": [
+        "ঘূর্ণনের সংখ্যার সমান সংখ্যক উল্টানোও থাকে।"
+      ]
+    },
+    {
+      "id": "quiz_02_largest_group",
+      "section_ref": "sec-definition",
+      "question_bn": "❓ কোন গ্রুপটি বৃহত্তম?",
+      "question_en": "Which group is the largest?",
+      "options": [
+        "ঘনকের ঘূর্ণন প্রতিসাম্য",
+        "অষ্টভুজের শুধু ঘূর্ণন",
+        "অষ্টভুজের শুধু প্রতিফলন",
+        "৮টি মুক্ত বিন্দুর প্রতিসাম্য"
+      ],
+      "options_bn": [
+        "ঘনকের ঘূর্ণন প্রতিসাম্য",
+        "অষ্টভুজের শুধু ঘূর্ণন",
+        "অষ্টভুজের শুধু প্রতিফলন",
+        "৮টি মুক্ত বিন্দুর প্রতিসাম্য"
+      ],
+      "correct_index": 3,
+      "explanation_bn": "৮টি মুক্ত বিন্দুর permutation গ্রুপের আকার $8!=40320$—বাকি সবগুলোর চেয়ে অনেক বড় (ঘনক ২৪, অষ্টভুজ ৮)।",
+      "explanation_en": "Which group is the largest?",
+      "hint": "মুক্ত বিন্দু মানে কোনো গঠন রক্ষা করতে হবে না—সব বিন্যাসই চলে।",
+      "hints": [
+        "মুক্ত বিন্দু মানে কোনো গঠন রক্ষা করতে হবে না—সব বিন্যাসই চলে।"
+      ]
+    },
+    {
+      "id": "quiz_03_square_product",
+      "section_ref": "sec-axioms",
+      "question_bn": "❓ বর্গের ক্ষেত্রে $r$ = ৯০° ঘোরানো, $s$ = x-অক্ষ বরাবর প্রতিফলন। তবে $r^3srs$ এর মান কী?",
+      "question_en": "Let r = 90° rotation, s = reflection across x-axis. What is r^3srs?",
+      "options": [
+        "$1$",
+        "$r$",
+        "$r^2$",
+        "$r^3s$"
+      ],
+      "options_bn": [
+        "$1$",
+        "$r$",
+        "$r^2$",
+        "$r^3s$"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "ডান থেকে বাঁয়ে পড়ি: $srs=r^{-1}=r^3$। তাই $r^3\\cdot(srs)=r^3\\cdot r^3=r^6=r^2$ (যেহেতু $r^4=1$)।",
+      "explanation_en": "Let r = 90° rotation, s = reflection across x-axis. What is r^3srs?",
+      "hint": "প্রতিফলন-ঘোরানো-প্রতিফলন = বিপরীত ঘোরানো ($r^{-1}$)।",
+      "hints": [
+        "প্রতিফলন-ঘোরানো-প্রতিফলন = বিপরীত ঘোরানো ($r^{-1}$)।"
+      ]
+    }
+  ]
+}

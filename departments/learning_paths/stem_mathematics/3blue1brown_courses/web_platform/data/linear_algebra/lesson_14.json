@@ -1,0 +1,264 @@
+{
+  "lesson_id": "lesson_14",
+  "chapter_num": 14,
+  "course_id": "linear_algebra",
+  "title_en": "Eigenvectors and Eigenvalues",
+  "title_bn": "আইগেনভেক্টর ও আইগেনভ্যালু",
+  "subtitle_bn": "নিজস্ব স্প্যানে অবিচল থাকা ভেক্টর ও স্কেলিং গুণক: $A\\vec{v} = \\lambda \\vec{v}$ সমীকরণের গভীর জ্যামিতিক অন্তর্দৃষ্টি",
+  "video_id": "PFDu9oVAE-g",
+  "official_url": "https://www.3blue1brown.com/lessons/eigenvalues",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "17:15",
+    "prerequisites": [
+      "lesson_01",
+      "lesson_02",
+      "lesson_03",
+      "lesson_04",
+      "lesson_05",
+      "lesson_07",
+      "lesson_13"
+    ]
+  },
+  "epigraph": {
+    "quote": "Most vectors get knocked off their span during a transformation. Those that stay on their own span are special: their direction does not change, they only scale. These are eigenvectors.",
+    "quote_bn": "রূপান্তরের তীব্র ঝড়ে প্রায় প্রতিটি ভেক্টর তার নিজস্ব স্প্যান বা সরলরেখা থেকে ছিটকে পড়ে। কিন্তু যে বিরল ভেক্টরগুলো নিজেদের স্প্যানে অবিচল থেকে কেবল সংকুচিত বা প্রসারিত হয়, তারাই হলো আইগেনভেক্টর।",
+    "author": "Grant Sanderson"
+  },
+  "sections": [
+    {
+      "id": "sec_01_geometric_intuition",
+      "title_bn": "১. জ্যামিতিক অন্তর্দৃষ্টি: নিজস্ব স্প্যান বা রেখায় স্থির থাকা ভেক্টর",
+      "title_en": "Geometric Intuition: Vectors That Remain on Their Own Span",
+      "summary_bn": "একটি লিনিয়ার রূপান্তর কীভাবে স্থানকে বাঁকায় এবং কেন কিছু ভেক্টর দিক অপরিবর্তিত রেখে শুধুমাত্র স্কেল হয়।",
+      "key_takeaways": [
+        "একটি লিনিয়ার রূপান্তর অধিকাংশ ভেক্টরকে তাদের আদি স্প্যান রেখা থেকে বিচ্যুত করে সম্পূর্ণ নতুন কোণে ঘুরিয়ে দেয়।",
+        "যেসব ভেক্টর রূপান্তরের পরেও তাদের মূলবিন্দুগামী নিজস্ব সরলরেখা বা স্প্যানের ওপরেই অবস্থান করে, তাদের আইগেনভেক্টর (Eigenvector) বলা হয়।",
+        "আইগেনভ্যালু (Eigenvalue, $\\lambda$) হলো সেই স্কেলিং গুণক, যা পরিমাপ করে ভেক্টরটি কত গুণ লম্বা, খাটো বা বিপরীতমুখী হলো।",
+        "আইগেনভ্যালু ধনাত্মক হলে ভেক্টরের দিক একই থাকে, ঋণাত্মক হলে দিক ১৮০° বিপরীতমুখী হয়, এবং শূন্য হলে ভেক্টরটি মূলবিন্দুতে নিষ্পেষিত হয়।"
+      ],
+      "formulas": [
+        {
+          "label": "আইগেনভেক্টর ও আইগেনভ্যালুর মূল সংজ্ঞা সমীকরণ",
+          "katex": "A\\vec{v} = \\lambda \\vec{v}"
+        },
+        {
+          "label": "স্প্যান অপরিবর্তিত থাকার শর্ত (Collinear Action)",
+          "katex": "\\text{Span}(A\\vec{v}) = \\text{Span}(\\vec{v}) \\quad (\\vec{v} \\neq \\vec{0})"
+        },
+        {
+          "label": "স্কেলিং গুণক ও দিকের সম্পর্ক",
+          "katex": "\\lambda > 0 \\implies \\text{একই দিক}, \\quad \\lambda < 0 \\implies \\text{বিপরীতমুখী দিক}, \\quad |\\lambda| > 1 \\implies \\text{প্রসারণ}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_eigenvector_span_line",
+          "caption_bn": "রূপান্তরের পর সাধারণ ভেক্টরগুলো দিক পরিবর্তন করলেও আইগেনভেক্টর কীভাবে তার নিজস্ব অক্ষ বা স্প্যানের ওপরেই অবস্থান করে",
+          "type": "svg",
+          "src": "figures/eigenvectors_geometric_span.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "eigenvector_visualizer_2d",
+        "initial_matrix": [
+          [3, 1],
+          [0, 2]
+        ],
+        "description_bn": "ম্যাট্রিক্সের উপাদান পরিবর্তন করুন এবং ভেক্টরটিকে বৃত্তাকারে ঘুরিয়ে দেখুন কোন কোন কোণে পৌঁছালে ভেক্টরটি রূপান্তরের পরেও একই সরলরেখায় অবস্থান করে।"
+      }
+    },
+    {
+      "id": "sec_02_characteristic_equation",
+      "title_bn": "২. চারিত্রিক সমীকরণ: নির্ণায়ক শূন্য হওয়ার বীজগণিত",
+      "title_en": "The Characteristic Equation: det(A - lambda I) = 0",
+      "summary_bn": "$A\\vec{v} = \\lambda \\vec{v}$ সমীকরণকে $(A - \\lambda I)\\vec{v} = \\vec{0}$ রূপে প্রকাশ করে নির্ণায়কের সাহায্যে আইগেনভ্যালু সমাধানের পদ্ধতি।",
+      "key_takeaways": [
+        "ম্যাট্রিক্স গুণন এবং স্কেলার গুণনকে একীভূত করতে সমীকরণের ডান পাশে আইডেন্টিটি ম্যাট্রিক্স $I$ যুক্ত করা হয়: $\\lambda \\vec{v} = (\\lambda I)\\vec{v}$।",
+        "সমীকরণটি পুনর্বিন্যাস করলে পাই $(A - \\lambda I)\\vec{v} = \\vec{0}$, যা একটি হোমোজেনিয়াস লিনিয়ার সিস্টেম।",
+        "অশূন্য ভেক্টর $\\vec{v} \\neq \\vec{0}$-এর অস্তিত্ব থাকার জন্য $(A - \\lambda I)$ ম্যাট্রিক্সটিকে স্থান চ্যাপ্টা করতে হবে, যার অর্থ এর ডিটারমিন্যান্ট শূন্য হতে হবে।",
+        "চারিত্রিক সমীকরণ $\\det(A - \\lambda I) = 0$ সমাধান করে প্রথমে আইগেনভ্যালু $\\lambda$ পাওয়া যায়, এবং পরে নাল-স্পেস বের করে আইগেনভেক্টর নির্ণয় করা হয়।"
+      ],
+      "formulas": [
+        {
+          "label": "বীজগাণিতিক রূপান্তর",
+          "katex": "A\\vec{v} = \\lambda I \\vec{v} \\iff (A - \\lambda I)\\vec{v} = \\vec{0}"
+        },
+        {
+          "label": "চারিত্রিক সমীকরণ (Characteristic Equation)",
+          "katex": "\\det(A - \\lambda I) = 0"
+        },
+        {
+          "label": "2x2 ম্যাট্রিক্সের জন্য নির্ণায়ক বিস্তার",
+          "katex": "\\det\\begin{bmatrix} a - \\lambda & b \\\\ c & d - \\lambda \\end{bmatrix} = (a - \\lambda)(d - \\lambda) - bc = 0"
+        },
+        {
+          "label": "ট্রেস ও ডিটারমিন্যান্টের মাধ্যমে দ্বিঘাত সমীকরণ",
+          "katex": "\\lambda^2 - \\text{Tr}(A)\\lambda + \\det(A) = 0"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_matrix_nullspace_collapse",
+          "caption_bn": "(A - lambda I) ম্যাট্রিক্স কীভাবে পুরো দ্বিমাত্রিক স্থানকে চ্যাপ্টা করে এক মাত্রার সরলরেখায় পরিণত করে",
+          "type": "svg",
+          "src": "figures/characteristic_equation_collapse.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_03_special_transformations",
+      "title_bn": "৩. বিশেষ রূপান্তর: ঘূর্ণন, শিয়ার এবং বাস্তব আইগেনভ্যালুর অনুপস্থিতি",
+      "title_en": "Special Transformations: Rotations, Shears, and Complex Eigenvalues",
+      "summary_bn": "যেসব রূপান্তরের কোনো বাস্তব আইগেনভেক্টর থাকে না এবং যেসব ক্ষেত্রে কেবল একটি বা অসীম সংখ্যক আইগেনভেক্টর থাকে।",
+      "key_takeaways": [
+        "দ্বিমাত্রিক সমতলে ৯০° বা যেকোনো অ-১৮০° ঘূর্ণনে প্রতিটি ভেক্টর দিক পরিবর্তন করে, তাই কোনো বাস্তব আইগেনভেক্টর বা আইগেনভ্যালু থাকে না।",
+        "ঘূর্ণন ম্যাট্রিক্সের চারিত্রিক সমীকরণ সমাধান করলে কাল্পনিক বা জটিল সংখ্যার আইগেনভ্যালু ($\\lambda = \\pm i$) পাওয়া যায়, যা জ্যামিতিক ঘূর্ণনেরই প্রতীক।",
+        "শিয়ার (Shear) রূপান্তরে কেবল একটি অক্ষের ভেক্টরগুলো স্থির থাকে, ফলে এর কেবল একটিমাত্র স্বাধীন আইগেনভেক্টর রেখা থাকে যার $\\lambda = 1$।",
+        "স্কেলিং ম্যাট্রিক্সে ($cI$) সমতলের প্রতিটি ভেক্টরই একই $\\lambda = c$ সহ আইগেনভেক্টর হয়।"
+      ],
+      "formulas": [
+        {
+          "label": "৯০° ঘূর্ণন ম্যাট্রিক্স ও জটিল আইগেনভ্যালু",
+          "katex": "R_{90^\\circ} = \\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix} \\implies \\det\\begin{bmatrix} -\\lambda & -1 \\\\ 1 & -\\lambda \\end{bmatrix} = \\lambda^2 + 1 = 0 \\implies \\lambda = \\pm i"
+        },
+        {
+          "label": "তির্যক বা শিয়ার ম্যাট্রিক্স",
+          "katex": "S = \\begin{bmatrix} 1 & 1 \\\\ 0 & 1 \\end{bmatrix} \\implies (1 - \\lambda)^2 = 0 \\implies \\lambda = 1 \\text{ (Multiplicity 2, একক আইগেন-রেখা)}"
+        },
+        {
+          "label": "সমরূপ স্কেলিং ম্যাট্রিক্স",
+          "katex": "\\begin{bmatrix} k & 0 \\\\ 0 & k \\end{bmatrix}\\vec{v} = k\\vec{v} \\quad (\\forall \\vec{v} \\in \\mathbb{R}^2)"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_rotation_no_eigenvectors",
+          "caption_bn": "ঘূর্ণনের ক্ষেত্রে কোনো ভেক্টরই আদি স্প্যানে থাকে না বনাম শিয়ার রূপান্তরের একক আইগেন রেখা",
+          "type": "svg",
+          "src": "figures/special_eigen_cases.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_04_3d_rotations_and_eigenbasis",
+      "title_bn": "৪. থ্রিডি ঘূর্ণন অক্ষ ও আইগেনভিত্তি: কর্ণ ম্যাট্রিক্সের জাদু",
+      "title_en": "3D Rotation Axis and Eigenbasis: The Power of Diagonalization",
+      "summary_bn": "ত্রিমাত্রিক স্থানে ঘূর্ণন অক্ষের আইগেনভেক্টর রূপ এবং ভিত্তি পরিবর্তনের মাধ্যমে ম্যাট্রিক্স কর্ণায়ন ($A = V \\Lambda V^{-1}$)।",
+      "key_takeaways": [
+        "ত্রিমাত্রিক স্থানে যেকোনো ঘূর্ণনে একটি সরলরেখা সম্পূর্ণ অপরিবর্তিত থাকে—এই ঘূর্ণন অক্ষটিই হলো $\\lambda = 1$ বিশিষ্ট আইগেনভেক্টর।",
+        "ঘূর্ণনের জটিল কোণ বিশ্লেষণের চেয়ে তার ঘূর্ণন অক্ষ (আইগেনভেক্টর) খুঁজে বের করা জ্যামিতিকভাবে অনেক বেশি শক্তিশালী ও স্পষ্ট।",
+        "যদি একটি ম্যাট্রিক্সের পর্যাপ্ত স্বাধীন আইগেনভেক্টর থাকে, তবে তাদের ভিত্তি ভেক্টর ধরে গঠিত ভিত্তিকে আইগেনবেসিস (Eigenbasis) বলে।",
+        "আইগেনবেসিসের দৃষ্টিতে মূল ম্যাট্রিক্সটি একটি সাধারণ ডায়াগনাল (কর্ণ) ম্যাট্রিক্সে পরিণত হয়, যার ফলে ম্যাট্রিক্সের উচ্চঘাত ($A^n = V \\Lambda^n V^{-1}$) নিমেষেই নির্ণয় করা যায়।"
+      ],
+      "formulas": [
+        {
+          "label": "থ্রিডি ঘূর্ণন অক্ষের সমীকরণ",
+          "katex": "R_{\\text{3D}}\\vec{v}_{\\text{axis}} = 1 \\cdot \\vec{v}_{\\text{axis}}"
+        },
+        {
+          "label": "ম্যাট্রিক্স কর্ণায়ন সমীকরণ (Diagonalization)",
+          "katex": "A = V \\Lambda V^{-1}, \\quad \\text{যেখানে } \\Lambda = \\begin{bmatrix} \\lambda_1 & 0 \\\\ 0 & \\lambda_2 \\end{bmatrix}"
+        },
+        {
+          "label": "উচ্চঘাত নির্ণয়ে আইগেনবেসিসের সুবিধা",
+          "katex": "A^{k} = (V \\Lambda V^{-1})^k = V \\Lambda^k V^{-1} = V \\begin{bmatrix} \\lambda_1^k & 0 \\\\ 0 & \\lambda_2^k \\end{bmatrix} V^{-1}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_3d_rotation_eigenaxis",
+          "caption_bn": "ত্রিমাত্রিক ঘূর্ণনে ঘূর্ণন অক্ষের অবিচল অবস্থান এবং আইগেনভিত্তির স্থানাঙ্ক ব্যবস্থা",
+          "type": "svg",
+          "src": "figures/3d_eigenaxis_and_eigenbasis.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "diagonalization_power_sandbox",
+        "initial_matrix": [
+          [3, 1],
+          [0, 2]
+        ],
+        "description_bn": "আইগেনবেসিসে রূপান্তর ম্যাট্রিক্সকে কর্ণায়ন করে দেখুন কীভাবে ম্যাট্রিক্সের ঘাত নির্ণয় জটিল গুণন থেকে সাধারণ সংখ্যায় রূপ নেয়।"
+      }
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_eigenvector_definition",
+      "section_ref": "sec_01_geometric_intuition",
+      "question_bn": "একটি লিনিয়ার রূপান্তরের ক্ষেত্রে কোনো অশূন্য ভেক্টর $\\vec{v}$-কে আইগেনভেক্টর বলার জ্যামিতিক শর্ত কোনটি?",
+      "question_en": "What is the geometric condition for a non-zero vector v to be an eigenvector of a linear transformation?",
+      "options": [
+        "রূপান্তরের পর ভেক্টরটির দৈর্ঘ্য সবসময় অপরিবর্তিত থাকতে হবে",
+        "রূপান্তরের পর ভেক্টরটি তার আদি দিক বা স্প্যান সরলরেখাতেই অবস্থান করবে, কেবল স্কেলিং ঘটতে পারে",
+        "ভেক্টরটি অন্য সকল ভেক্টরের সাথে সর্বদা ৯০° কোণে অবস্থান করবে",
+        "ভেক্টরটির ডিটারমিন্যান্টের মান অবশ্যই শূন্য হতে হবে"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "আইগেনভেক্টরের মূল জ্যামিতিক বৈশিষ্ট্য হলো $A\\vec{v} = \\lambda \\vec{v}$, অর্থাৎ রূপান্তরটি ভেক্টরটির দিক পরিবর্তন করতে পারে না; ভেক্টরটি মূলবিন্দুগামী তার আদি সরলরেখাতেই থেকে কেবল $\\lambda$ গুণ প্রসারিত, সংকুচিত বা বিপরীতমুখী হয়।",
+      "explanation_en": "An eigenvector remains on its own original span line under the transformation, scaled by the factor lambda."
+    },
+    {
+      "id": "quiz_02_characteristic_equation_condition",
+      "section_ref": "sec_02_characteristic_equation",
+      "question_bn": "আইগেনভ্যালু নির্ণয়ের জন্য আমরা কেন $\\det(A - \\lambda I) = 0$ সমীকরণটি সমাধান করি?",
+      "question_en": "Why do we solve det(A - lambda I) = 0 to find eigenvalues?",
+      "options": [
+        "যাতে রূপান্তর ম্যাট্রিক্সের ট্রেস অপরিবর্তিত থাকে",
+        "কারণ কোনো অশূন্য ভেক্টর $\\vec{v}$-এর জন্য $(A - \\lambda I)\\vec{v} = \\vec{0}$ তখনই সম্ভব, যখন ম্যাট্রিক্সটি স্থানকে চ্যাপ্টা করে এবং এর নির্ণায়ক শূন্য হয়",
+        "কারণ ডিটারমিন্যান্ট শূন্য না হলে ভেক্টরের দৈর্ঘ্য অসীম হয়ে যায়",
+        "এটি কেবল কাল্পনিক আইগেনভ্যালু দূর করার জন্য ব্যবহৃত হয়"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "$(A - \\lambda I)\\vec{v} = \\vec{0}$ সমীকরণে যদি $\\det(A - \\lambda I) \\neq 0$ হতো, তবে এর ইনভার্স থাকত এবং একমাত্র সমাধান হতো তুচ্ছ $\\vec{v} = \\vec{0}$। তাই একটি বাস্তব অশূন্য আইগেনভেক্টরের উপস্থিতির জন্য ম্যাট্রিক্সটির স্থানকে চ্যাপ্টা করতে হবে, যার অর্থ $\\det(A - \\lambda I) = 0$।",
+      "explanation_en": "For a non-zero vector v to be squished to zero by (A - lambda I), the transformation must compress space into a lower dimension, requiring its determinant to be zero."
+    },
+    {
+      "id": "quiz_03_rotation_eigenvalues",
+      "section_ref": "sec_03_special_transformations",
+      "question_bn": "দ্বিমাত্রিক সমতলে মূলবিন্দুর সাপেক্ষে ৯০° ঘড়ির বিপরীত ঘূর্ণনের রূপান্তর ম্যাট্রিক্সের ক্ষেত্রে নিচের কোনটি সত্য?",
+      "question_en": "Which of the following is true for a 90-degree counterclockwise 2D rotation matrix?",
+      "options": [
+        "এর দুটি বাস্তব আইগেনভ্যালু হলো $\\lambda = 1, -1$",
+        "সমতলের প্রতিটি ভেক্টরই এর আইগেনভেক্টর",
+        "এর কোনো বাস্তব আইগেনভেক্টর নেই, এবং এর আইগেনভ্যালু হলো জটিল সংখ্যা $\\lambda = \\pm i$",
+        "এর কেবল একটি আইগেনভেক্টর অক্ষ বিদ্যমান যা এক্স অক্ষ বরাবর অবস্থান করে"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "৯০° ঘূর্ণনে প্রতিটি ভেক্টর তার আদি সরলরেখা থেকে লম্বভাবে সরে যায়, ফলে কোনো বাস্তব ভেক্টর তার নিজস্ব স্প্যানে থাকে না। চারিত্রিক সমীকরণ $\\lambda^2 + 1 = 0$ সমাধান করলে জটিল আইগেনভ্যালু $\\lambda = \\pm i$ পাওয়া যায়।",
+      "explanation_en": "Since every vector is rotated away from its span by 90 degrees, no real eigenvectors exist; the characteristic equation yields lambda = +/- i."
+    },
+    {
+      "id": "quiz_04_3d_rotation_axis_eigenvalue",
+      "section_ref": "sec_04_3d_rotations_and_eigenbasis",
+      "question_bn": "ত্রিমাত্রিক স্থানে মূলবিন্দুগামী যেকোনো অক্ষের সাপেক্ষে আবর্তনের ক্ষেত্রে ঘূর্ণন অক্ষটির সাথে সম্পর্কিত আইগেনভ্যালু $\\lambda$-এর মান কত?",
+      "question_en": "For any 3D rotation about an axis through the origin, what is the eigenvalue lambda associated with the rotation axis?",
+      "options": [
+        "$\\lambda = 0$",
+        "$\\lambda = 1$",
+        "$\\lambda = -1$",
+        "$\\lambda = \\pi$"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ঘূর্ণনের সময় ঘূর্ণন অক্ষের ওপর অবস্থিত ভেক্টরগুলোর দিকও বদলায় না এবং দৈর্ঘ্যও বিন্দুমাত্র পরিবর্তিত হয় না। অর্থাৎ $R\\vec{v} = 1 \\cdot \\vec{v}$, তাই ঘূর্ণন অক্ষের আইগেনভ্যালু সর্বদা $\\lambda = 1$।",
+      "explanation_en": "Vectors along the axis of rotation remain completely unchanged in direction and magnitude, meaning R v = 1*v, so lambda = 1."
+    },
+    {
+      "id": "quiz_05_eigenbasis_diagonalization",
+      "section_ref": "sec_04_3d_rotations_and_eigenbasis",
+      "question_bn": "যদি কোনো রূপান্তর ম্যাট্রিক্স $A$-কে তার আইগেনভেক্টরগুলো দিয়ে গঠিত ভিত্তি বা আইগেনবেসিসের দৃষ্টিতে প্রকাশ করা হয়, তবে নতুন ম্যাট্রিক্সটির রূপ কেমন হয়?",
+      "question_en": "If a transformation matrix A is expressed in terms of an eigenbasis formed by its eigenvectors, what form does the new matrix take?",
+      "options": [
+        "এটি একটি শূন্য ম্যাট্রিক্সে পরিণত হয়",
+        "এটি একটি অ্যান্টি-সিমেট্রিক ম্যাট্রিক্স হয়",
+        "এটি একটি ডায়াগনাল বা কর্ণ ম্যাট্রিক্স হয় যার প্রধান কর্ণে আইগেনভ্যালুগুলো অবস্থান করে",
+        "এটি অপরিবর্তিত থেকে মূল ম্যাট্রিক্সের মতোই থাকে"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "যেহেতু ভিত্তি ভেক্টরগুলো প্রত্যেকেই আইগেনভেক্টর, রূপান্তরের পর প্রথম ভিত্তি ভেক্টর কেবল $\\lambda_1$ গুণ এবং দ্বিতীয়টি কেবল $\\lambda_2$ গুণ লম্বা হয়। ফলে ম্যাট্রিক্সের কলামগুলো হয় $\\begin{bmatrix}\\lambda_1 \\\\ 0\\end{bmatrix}$ এবং $\\begin{bmatrix}0 \\\\ \\lambda_2\\end{bmatrix}$, যা একটি কর্ণ ম্যাট্রিক্স $\\Lambda$।",
+      "explanation_en": "In the eigenbasis, each basis vector is simply scaled by its eigenvalue without mixing coordinates, yielding a diagonal matrix with eigenvalues on the main diagonal."
+    }
+  ]
+}

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অধ্যায় ১১ — ডি এক্স এর প্রকৃত অর্থ (What does dx really mean?) | ৩ব্লু১ব্রাউন বাংলা</title>
+
+<!-- ═══════════ STYLES (shared library only — no per-lesson design override) ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded, synchronous — zero-CORS narration) ═══════════ -->
+<script src="../../assets/audio/calculus/lesson_11/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict canonical load order (Lesson 01 template) ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (LAST: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+
+<style>
+  /* Lab-only layout helpers (no design override of the component library). */
+  .calc-lab { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+  .calc-canvas { display: block; width: 100%; height: auto; min-height: 360px; background: #080b12; border-radius: 10px; }
+  [data-theme="light"] .calc-canvas { background: #f8fafc; }
+  .calc-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 16px; }
+  .calc-control label { display: flex; justify-content: space-between; font-size: .9rem; font-weight: 600; margin-bottom: 6px; }
+  .calc-control input[type=range] { width: 100%; }
+  .calc-val { color: var(--theme, #06b6d4); font-family: monospace; }
+  .calc-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 16px; }
+  .calc-stat { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+  .calc-stat span { display: block; font-size: .8rem; color: var(--text-muted); margin-bottom: 4px; }
+  .calc-stat strong { font-size: 1.05rem; color: var(--theme, #06b6d4); }
+  .calc-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .calc-actions button {
+    background: rgba(6,182,212,.14); color: var(--theme, #06b6d4); border: 1px solid rgba(6,182,212,.4);
+    border-radius: 8px; padding: 7px 12px; font-weight: 700; cursor: pointer; font-family: inherit;
+  }
+</style>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="ক্যালকুলাসের মূল সারমর্ম"
+  course-url="../../index.html#calculus"
+  home-url="../../index.html"
+  chapter-num="১১"
+  chapter-total="১২"
+  prev-url="lesson_10.html"
+  prev-title="১০ — টেইলর ধারা ও উচ্চতর সান্নিধ্যকরণ"
+  next-url="lesson_12.html"
+  next-title="১২ — ডিফারেনশিয়াল আসলে কী?"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="ক্যালকুলাসের মূল সারমর্ম"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ১১ · ক্যালকুলাসের মূল সারমর্ম"
+  title="অধ্যায় ১১: ডি এক্স এর প্রকৃত অর্থ (What does dx really mean?)"
+  desc="গণিত শিক্ষকরা বারবার সতর্ক করেন: 'dy/dx কোনো সাধারণ ভগ্নাংশ নয়!' অথচ চেইন রুল থেকে শুরু করে প্রতিস্থাপন পদ্ধতিতে আমরা একে সাধারণ ভগ্নাংশের মতোই কাটাকাটি করি। কেন? ডেরিভেটিভকে বিবর্ধন ও স্থানীয় রৈখিকতা হিসেবে দেখার মাধ্যমে এই হেঁয়ালির সমাধান।"
+  video-src="../../media_vault/calculus/lesson_11/experiments/3b1b_calculus_11_full_dubbed.mp4"
+  yt-id="CfW845LNObM"
+  date="১২ মে, ২০১৭"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="মূল পাঠ: Grant Sanderson (3Blue1Brown) · বাংলা রূপান্তর ও পাঠ্য বিন্যাস: STEM ম্যাথমেটিক্স উইং"
+  github-url="https://github.com/3b1b/videos/blob/master/_2017/eoc/chapter12.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"    time-bn="০০:০০">ডি এক্স-এর হেঁয়ালি ও গণিতের ফলপ্রসূ মিথ্যা</b1b-bookmark>
+      <b1b-bookmark time="112"  time-bn="০১:৫২">স্পর্শক রেখার জগতে dx ও dy</b1b-bookmark>
+      <b1b-bookmark time="224"  time-bn="০৩:৪৪">ত্রুটি বিলোপ ও (dx)²-এর বিলুপ্তি</b1b-bookmark>
+      <b1b-bookmark time="315"  time-bn="০৫:১৫">সমাকলনে dx: আয়তক্ষেত্রের প্রস্থ</b1b-bookmark>
+      <b1b-bookmark time="406"  time-bn="০৬:৪৬">আধুনিক ডিফারেনশিয়াল ফর্ম</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-the-dx-paradox">১. ডি এক্স-এর হেঁয়ালি ও গণিতের সবচেয়ে ফলপ্রসূ মিথ্যা</a>
+      <a href="#sec-tangent-line-geometry">২. স্পর্শক রেখার জগতে dx ও dy</a>
+      <a href="#sec-error-and-vanishing">৩. ত্রুটি বিলোপ ও উচ্চতর ঘাত</a>
+      <a href="#sec-dx-in-integration">৪. সমাকলনে dx</a>
+      <a href="#sec-modern-perspective">৫. আধুনিক গণিতে dx</a>
+      <a href="#sec-magnification">৬. ডেরিভেটিভ হিসেবে বিবর্ধন: df = f'(x)·dx</a>
+      <a href="#sec-figures">৭. চিত্র-সহায়ক ব্যাখ্যা</a>
+      <a href="#sec-labs">৮. ইন্টারেক্টিভ ল্যাব</a>
+      <a href="#sec-quizzes">৯. ধারণা যাচাই: ৩টি কুইজ</a>
+      <a href="#sec-reference">১০. সূত্র ও পরিভাষা</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ NARRATED 1 — sec-the-dx-paradox | manifest cues: h2, chapter-quote, p, p, p, formula-box, callout, p (8) ═══ -->
+      <b1b-section id="sec-the-dx-paradox" title="১. ডি এক্স-এর হেঁয়ালি ও গণিতের সবচেয়ে ফলপ্রসূ মিথ্যা (The Paradox of dx)">
+        <b1b-quote author="গ্রান্ট স্যান্ডারসন (৩ব্লু১ব্রাউন)">লাইবনিজের $dx$ প্রতীকটি কোনো যাদুকরী বিভ্রান্তি নয়; এটি গণিতের সবচেয়ে সুবিধাজনক ও গভীর সংকেত যা জটিল সত্যকে সহজাত অনুভূতিতে রূপ দেয়।</b1b-quote>
+
+        <p>ক্যালকুলাসের ক্লাসরুমে প্রায় প্রতিটি শিক্ষার্থী একটি গভীর দ্বন্দ্বে পড়ে। শিক্ষক যখন বোর্ডে লেখেন $\frac{dy}{dx} = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$, তখন তিনি কঠোর গলায় বলেন: 'মনে রাখবে, $\frac{dy}{dx}$ কোনো একক ভগ্নাংশ নয়! এটি একটি একক অপারেটর বা চিহ্নের মতো।' কিন্তু পরের ক্লাসেই যখন চেইন রুল বা ইন্টিগ্রেশন বাই সাবস্টিটিউশন শেখানো হয়, তখন উভয় পক্ষে নিশ্চিন্তে $dx$ গুণ করা হয় এবং কাটাকাটি করা হয়: $\frac{dy}{dt} = \frac{dy}{dx} \cdot \frac{dx}{dt}$!</p>
+
+        <p>যদি $dx$ কোনো পৃথক সংখ্যা না-ই হবে, তবে একে কীভাবে আলাদা করা যায়? আবার $dx$ যদি একটি সাধারণ সংখ্যাই হয়, তবে তাকে সাধারণ ভগ্নাংশ বলতে এত দ্বিধা কেন?</p>
+
+        <p>এই প্রশ্নের গভীরে রয়েছে গণিতের তিন শতাব্দীর দার্শনিক বিবর্তন। নিউটন ও লাইবনিজ যখন ১৬৮০-র দশকে ক্যালকুলাস সৃষ্টি করেন, তখন তারা $dx$ ও $dy$-কে বিবেচনা করেছিলেন 'ইনফিনিটেসিমাল' (Infinitesimal) বা অসীম ক্ষুদ্র অথচ অশূন্য রাশি হিসেবে।</p>
+
+        <b1b-formula math="\frac{dy}{dx} = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} \quad \text{বনাম} \quad dy = f'(x)\,dx" caption="সীমার কঠোর অনুপাত বনাম লাইবনিজের পৃথক ডিফারেনশিয়াল প্রতীক।"></b1b-formula>
+
+        <b1b-callout type="gold" icon="⚠️" title="দার্শনিক দ্বন্দ্ব: অশূন্য কিন্তু ক্ষুদ্রতর">
+          <p>যদি $dx$ শূন্য হয়, তবে ভাগফল অনির্ণেয় $\frac{0}{0}$। আর যদি $dx$ শূন্য না হয়, তবে হিসাবের শেষে আমরা $dx$-যুক্ত পদগুলোকে হাওয়ায় উড়িয়ে দিই কোন অধিকারে? দার্শনিক বিশপ বার্কলি ১৮ শতকে এদের ব্যঙ্গ করেছিলেন 'বিদায়ী রাশির প্রেতাত্মা' বলে।</p>
+        </b1b-callout>
+
+        <p>এই দ্বন্দ্ব মেটাতে কশি এবং ভাইয়ারস্ট্রাস আনলেন সীমার কঠোর সংজ্ঞা, কিন্তু লাইবনিজের সহজ প্রতীকবাদ আজও অমর হয়ে আছে।</p>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 2 — sec-tangent-line-geometry | manifest cues: h2, p, p, p, p, formula-box, callout (7) ═══ -->
+      <b1b-section id="sec-tangent-line-geometry" title="২. স্পর্শক রেখার জগতে $dx$ ও $dy$ (Tangent Line Geometry)">
+        <p>গ্রান্ট স্যান্ডারসন এবং আধুনিক আধুনিক জ্যামিতিক ক্যালকুলাসের দৃষ্টিকোণ থেকে $dx$-এর সবচেয়ে সুন্দর ও সন্তোষজনক ব্যাখ্যাটি হলো: স্পর্শক রেখার ওপর পরিবর্তন।</p>
+
+        <p>ধরা যাক একটি মসৃণ বক্ররেখা $y = f(x)$। লেখচিত্রের যেকোনো নির্দিষ্ট বিন্দু $(x_0, y_0)$-তে আমরা একটি স্পর্শক সরলরেখা (Tangent Line) টানলাম।</p>
+
+        <p>এখন আমরা ইনপুটকে সামান্য পরিমাণ নাড়া দিলাম। এই আনুভূমিক নাড়াচাড়াকে আমরা বলছি $\Delta x$ বা $dx$। লক্ষ্য করুন: $dx$ কিন্তু কোনো অলৌকিক অসীম ক্ষুদ্র ভূত নয়; এটি একটি বাস্তব, দৃশ্যমান, সসীম সংখ্যা—যেমন $0.1$ বা $0.001$!</p>
+
+        <p>এবার গুরুত্বপূর্ণ পার্থক্যটি খেয়াল করুন: ইনপুট $dx$ সরলে মূল বক্ররেখা বরাবর যে উল্লম্ব পরিবর্তন হয়, তা হলো $\Delta y = f(x+dx) - f(x)$। কিন্তু স্পর্শক সরলরেখা বরাবর যে উল্লম্ব পরিবর্তন হয়, ঠিক তাকেই বলা হয় $dy$!</p>
+
+        <b1b-formula math="\Delta y = f(x + dx) - f(x) \quad (\text{বক্ররেখা বরাবর প্রকৃত পরিবর্তন}) \qquad;\qquad dy = f'(x)\,dx \quad (\text{স্পর্শক সরলরেখা বরাবর আনুমানিক পরিবর্তন})" caption="বাঁদিকে আসল ফাংশনের উল্লম্ব বৃদ্ধি; ডানদিকে স্পর্শক রেখার ওপর রৈখিক উল্লম্ব পরিবর্তন, যেখানে অনুপাত $\frac{dy}{dx}$ নিখুঁতভাবে ঢাল $f'(x)$।"></b1b-formula>
+
+        <b1b-callout type="blue" icon="📐" title="বিরাট অন্তর্দৃষ্টি: স্পর্শকের ঢাল একটি সত্যিকারের ভগ্নাংশ!">
+          <p>স্পর্শক সরলরেখার জগতে $dx$ এবং $dy$ উভয়ই দুটি সাধারণ বাস্তব দৈর্ঘ্য। এবং স্পর্শক রেখার খাড়া দৈর্ঘ্য $dy$-কে ভূমির দৈর্ঘ্য $dx$ দিয়ে ভাগ করলে তা অবিকল ঢাল $f'(x)$ দেয়! স্পর্শকের তলে $\frac{dy}{dx}$ শতভাগ একটি খাঁটি ভগ্নাংশ!</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 3 — sec-error-and-vanishing | manifest cues: h2, p, p, p, p, formula-box, callout, p (8) ═══ -->
+      <b1b-section id="sec-error-and-vanishing" title="৩. ত্রুটি বিলোপ ও উচ্চতর ঘাত: কেন $(dx)^2$ হারিয়ে যায়? (Vanishing Higher Powers)">
+        <p>এখন প্রশ্ন হলো: প্রকৃত পরিবর্তন $\Delta y$ এবং স্পর্শকের পরিবর্তন $dy$-এর মধ্যে যে ফাঁক বা ত্রুটি থাকে, সেটি কত বড়?</p>
+
+        <p>টেইলর উপপাদ্য এবং বহুপদী বিশ্লেষণ থেকে আমরা জানি: $\Delta y = f'(x)\,dx + \frac{1}{2}f''(x)(dx)^2 + \mathcal{O}((dx)^3)$।</p>
+
+        <p>অর্থাৎ $\Delta y - dy = \frac{1}{2}f''(x)(dx)^2$। এই পার্থক্যটি সরাসরি $(dx)^2$-এর সমানুপাতিক!</p>
+
+        <p>এবার সংখ্যার স্কেলিং নিয়ে ভাবুন: যদি $dx = 0.01$ হয়, তবে $(dx)^2 = 0.0001$। অর্থাৎ প্রথম ক্রমের পরিবর্তনের তুলনায় ত্রুটিটি একশ গুণ দ্রুত সংকুচিত হয়। $dx \to 0$ সীমাতে ত্রুটির অনুপাত $\frac{\Delta y - dy}{dx} \to 0$ হয়ে যায়।</p>
+
+        <b1b-formula math="\Delta y - dy = \mathcal{O}((dx)^2) \implies \lim_{dx \to 0} \frac{\Delta y - dy}{dx} = 0 \qquad;\qquad \frac{\Delta y}{\Delta x} = \frac{dy + \mathcal{O}((dx)^2)}{dx} = \frac{dy}{dx} + \mathcal{O}(dx) \xrightarrow{dx \to 0} f'(x)" caption="প্রথম ক্রমের পরিবর্তনের তুলনায় বক্রতার ত্রুটি দ্রুততর হারে শূন্যে মিলিয়ে যায়; সীমাস্থ অবস্থায় বক্ররেখার ঢাল ও স্পর্শক রেখার ঢাল অভিন্ন হয়ে ওঠে।"></b1b-formula>
+
+        <b1b-callout type="green" icon="✂️" title="কেন বীজগণিতীয় কাটাকাটি কাজ করে?">
+          <p>কারণ চেইন রুল বা সাবস্টিটিউশনে আমরা মূলত স্পর্শকীয় রৈখিক রূপান্তরগুলোকে পরস্পরের সাথে গুণ করি। রৈখিক জগতে ভগ্নাংশ কাটাকাটি সম্পূর্ণ সুসংগত।</p>
+        </b1b-callout>
+
+        <p>তাহলে সমাকলনে $\int f(x)\,dx$ চিহ্নের ভেতর $dx$ কী অর্থ বহন করে?</p>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 4 — sec-dx-in-integration | manifest cues: h2, p, p, p, p, formula-box, callout (7) ═══ -->
+      <b1b-section id="sec-dx-in-integration" title="৪. সমাকলনে $dx$: কেবল প্রতীক নয়, আয়তক্ষেত্রের বাস্তব প্রস্থ (dx in Integration)">
+        <p>অনেক শিক্ষার্থী মনে করেন সমাকলন বা ইন্টিগ্রালে $\int \dots dx$ কেবল একটি সমাপ্তি ব্র্যাকেটের মতো—যা নির্দেশ করে চলকটি কোন অক্ষ বরাবর। কিন্তু এটি তার চেয়ে বহু গুণ বেশি জীবন্ত!</p>
+
+        <p>রিম্যান সমষ্টিতে আমরা ব্যবধিটিকে অসংখ্য ক্ষুদ্র অংশে ভাগ করি, যার প্রতিটির প্রস্থ $\Delta x$। প্রতিটি সরু আয়তক্ষেত্রের ক্ষেত্রফল হলো উচ্চতা $\times$ প্রস্থ $= f(x)\,\Delta x$।</p>
+
+        <p>লাইবনিজ যখন ইন্টিগ্রাল চিহ্ন $\int$ উদ্ভাবন করেন, তিনি লাতিন 'Summa' (যোগফল) শব্দের বড়হাতের $S$-কে টেনে লম্বা করেছিলেন। আর $dx$ হলো সেই রিম্যান ফালির অতি ক্ষুদ্র ভিত্তি বা প্রস্থ।</p>
+
+        <p>ফলে $\int f(x)\,dx$ কোনো অলীক প্রতীক নয়; এটি অসীম সংখ্যক ক্ষেত্রফল ফালি $f(x) \cdot dx$-এর একটি বাস্তব ধারাবাহিক যোগফল। যখন আমরা চলক প্রতিস্থাপন করি ($u = g(x) \implies du = g'(x)\,dx$), আমরা মূলত এক্স-অক্ষের ফালির প্রস্থকে ইউ-অক্ষের ফালির প্রস্থের সাথে স্কেল করে নিচ্ছি।</p>
+
+        <b1b-formula math="\int_a^b f(x)\,dx = \lim_{\Delta x \to 0} \sum_{i=1}^n f(x_i)\,\Delta x \qquad;\qquad du = \frac{du}{dx}\,dx \implies \int f(g(x))g'(x)\,dx = \int f(u)\,du" caption="রিম্যান যোগফলের সীমায় ভিত্তি $\Delta x$ সরাসরি ডিফারেনশিয়াল $dx$-এ রূপান্তরিত হয়; চলক পরিবর্তনের সময় ডিফারেনশিয়াল স্কেলিংয়ের জ্যামিতিক রূপ।"></b1b-formula>
+
+        <b1b-callout type="purple" icon="📏" title="মাত্রা বা এককের সৌন্দর্য (Dimensional Analysis)">
+          <p>পদার্থবিজ্ঞানে $dx$-এর ভৌত গুরুত্ব অপরিসীম। যদি $v(t)$ হয় মিটার প্রতি সেকেন্ডে বেগ এবং $dt$ হয় সেকেন্ডে সময়, তবে $v(t)\,dt$-এর একক দাঁড়ায় $(\text{m/s}) \times \text{s} = \text{m}$ (মিটার)! $dt$ না থাকলে সমাকলনের কোনো সঠিক ভৌত মাত্রা থাকত না।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 5 — sec-modern-perspective | manifest cues: h2, p, p, p, formula-box, callout (6) ═══ -->
+      <b1b-section id="sec-modern-perspective" title="৫. আধুনিক গণিতে $dx$: স্পর্শক ভেক্টর ও ডিফারেনশিয়াল ফর্ম (Modern Differential Forms)">
+        <p>বিশ শতকের আধুনিক গণিতবিদরা $dx$-এর এই ধারণাকে আরও এক ধাপ এগিয়ে নিয়ে গেছেন যাকে বলা হয় ডিফারেনশিয়াল ফর্ম (Differential Forms)।</p>
+
+        <p>সেখানে $dx$-কে দেখা হয় একটি পরিমাপক যন্ত্র বা রৈখিক ফাংশনাল (Covector / 1-form) হিসেবে। আপনি এটিকে একটি স্পর্শক ভেক্টর ইনপুট দেবেন, আর এটি আপনাকে বলে দেবে সেই ভেক্টরটি এক্স-অক্ষ বরাবর কতটুকু প্রসারিত হয়েছে।</p>
+
+        <p>অতএব, $dx$ কোনো একক অচল ধারণা নয়। এটি একাধারে: ১. ইনপুটের একটি ছোট বাস্তব বিচ্যুতি (Small finite nudge)। ২. স্পর্শক রেখা বরাবর রৈখিক আসন্নায়নের ভিত্তি (Tangent coordinate)। ৩. সমাকলন ফালির অতি ক্ষুদ্র প্রস্থ ও মাত্রিক রূপক (Measure of integration)। ৪. বহুমাত্রিক জ্যামিতিতে ভেক্টর পরিমাপক কভেক্টর বা ওয়ান-ফর্ম (Differential 1-form)।</p>
+
+        <b1b-formula math="dx(\mathbf{v}) = v_x \quad (\text{স্পর্শক ভেক্টরের অনুভূমিক উপাংশ পরিমাপক ওয়ান-ফর্ম})" caption="আধুনিক ব্যবকলনীয় জ্যামিতিতে ডিফারেনশিয়াল ফর্মের সংজ্ঞা।"></b1b-formula>
+
+        <b1b-callout type="gold" icon="😌" title="উপসংহার: ভয়হীন $dx$">
+          <p>পরের বার যখন কেউ বলবে 'dy/dx ভগ্নাংশ নয়', তখন মনে মনে হাসুন। কারণ আপনি জানেন, স্পর্শকের রৈখিক জগতে এটি একটি নিখুঁত ভগ্নাংশ, এবং সীমার মাধ্যমে এটি মহাবিশ্বের পরিবর্তনের হারকে নির্ভুলভাবে ধরে রাখে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — derivative as magnification / local linearity ═══ -->
+      <b1b-section id="sec-magnification" title="৬. ডেরিভেটিভ হিসেবে বিবর্ধন: স্থানীয় রৈখিকতা ও $df = f'(x)\,dx$" data-no-narration="true">
+        <p>এই অধ্যায়ের কেন্দ্রীয় ভাবনাটি আরও এক ধাপ এগিয়ে নেওয়া যাক। ডেরিভেটিভকে দুটি পৃথক নাড়া $df$ ও $dx$-এর অনুপাত হিসেবে না দেখে দেখা যায় একটি <strong>বিবর্ধন গুণক (magnification factor)</strong> হিসেবে: কোনো বিন্দুতে বক্ররেখার ওপর যতই জুম করা হোক না কেন, সেটি শেষ পর্যন্ত একটি সরলরেখার মতো দেখা যায়–এইভারই হলো স্থানীয় রৈখিকতা (local linearity)। সেই সরলরেখার ঢালই হলো $f'(x)$, এবং এই ঢালটি হলো সেই স্কেলিং যা ছোট $dx$-কে সংশ্লিষ্ট $df$-এ রূপ দেয়।</p>
+
+        <b1b-media-tab active-tab="image" caption="চিত্রে নীল বক্ররেখার ওপর একটি বিন্দুতে হলুদ স্পর্শক টানা হয়েছে; সবুজ অনুভূমিক অংশটি $dx$ আর তার ওপরের সবুজ উল্লম্ব অংশটি স্পর্শক বরাবর $df$। গোলাপি ড্যাশড অংশটি আসল বক্ররেখার $dy$–দুটির ফাঁকই হলো $(dx)^2$ আকারের ত্রুটি। ভিডিও ট্যাবে মূল অ্যানিমেশনে এই জুমিং ও স্কেলিংয়ের গতি দেখা যাবে।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHJlY3Qgd2lkdGg9IjQ4MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNDYiIHkxPSIyNjIiIHgyPSI0NTIiIHkyPSIyNjIiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQ2IiB5MT0iMjYyIiB4Mj0iNDYiIHkyPSIyNiIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNTAgMjMyIFEgMTcwIDYwIDI1MCAxMTggVCA0NTAgNDQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM4YmRmOCIgc3Ryb2tlLXdpZHRoPSIzIi8+PGxpbmUgeDE9IjE4MCIgeTE9IjE2OCIgeDI9IjMzMCIgeTI9IjkyIiBzdHJva2U9IiNmYmJmMjQiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9IjI1MCIgY3k9IjEzMCIgcj0iNSIgZmlsbD0iI2Y0NzJiNiIvPjxsaW5lIHgxPSIyNTAiIHkxPSIxMzAiIHgyPSIzMTAiIHkyPSIxMzAiIHN0cm9rZT0iIzM0ZDM5OSIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjMxMCIgeTE9IjEzMCIgeDI9IjMxMCIgeTI9IjEwMCIgc3Ryb2tlPSIjMzRkMzk5IiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMzEwIiB5MT0iMTAwIiB4Mj0iMzEwIiB5Mj0iODgiIHN0cm9rZT0iI2Y0NzJiNiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtZGFzaGFycmF5PSI0IDMiLz48dGV4dCB4PSIyNTgiIHk9IjE0OCIgZmlsbD0iIzM0ZDM5OSIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmR4PC90ZXh0Pjx0ZXh0IHg9IjMxNiIgeT0iMTE4IiBmaWxsPSIjMzRkMzk5IiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+ZGY8L3RleHQ+PHRleHQgeD0iMzE2IiB5PSI4NiIgZmlsbD0iI2Y0NzJiNiIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmR5PC90ZXh0Pjx0ZXh0IHg9IjYwIiB5PSI1MiIgZmlsbD0iIzM4YmRmOCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmYoeCkgPSB4XjI8L3RleHQ+PHRleHQgeD0iMTk2IiB5PSI4NCIgZmlsbD0iI2ZiYmYyNCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnRhbmdlbnQ8L3RleHQ+PHRleHQgeD0iNTIiIHk9IjI4NiIgZmlsbD0iIzk0YTNiOCIgZm9udC1zaXplPSIxMiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPjA8L3RleHQ+" alt="বক্ররেখা, স্পর্শক, dx, df ও dy-এর তুলনা"/>
+          </div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/CfW845LNObM?start=120" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="ডেরিভেটিভকে বিবর্ধন হিসেবে দেখা — Chapter 12"></iframe></div>
+        </b1b-media-tab>
+
+        <b1b-formula math="df = f'(x)\,dx \qquad;\qquad \frac{df}{dx} = f'(x)" caption="স্থানীয় রৈখিক আসন্নায়নে ডেরিভেটিভ হলো সেই গুণক যা ইনপুটের ক্ষুদ্র পরিবর্তন $dx$-কে আউটপুটের সংশ্লিষ্ট পরিবর্তন $df$-এ মানচিত্রিত করে।"></b1b-formula>
+
+        <p>জুম করার সাথে সাথে বক্রতা অদৃশ্য হয়ে যায়—ঠিক যেমন একটি গোলকের ক্ষুদ্র অংশ সমতল দেখা যায়। তাই $f'(x)$ কেবল ঢাল নয়; এটি সেই <em>স্থানীয় স্কেলিং ফ্যাক্টর</em> যা নির্ধারণ করে কতখানি প্রসারিত বা সংকুচিত হয়ে $dx$ থেকে $df$ তৈরি হবে। ঋণাত্মক $f'(x)$ মানে দিক উল্টে যাওয়া, শূন্যের কাছাকাছি মানে প্রায় অচল—এই উপলব্ধিই চেইন রুলের গিয়ার-অনুপাত জ্যামিতিকে স্বাভাবিক করে তোলে।</p>
+
+        <b1b-media-tab active-tab="image" caption="বাঁদিকের বাঁকা বক্ররেখাটিকে লেন্সের ভেতরে বাড়ালে সেটি সরলরেখায় রূপ নিচ্ছে—এই ঘটনাই local linearity। লাল বিন্দুটি হলো প্রসঙ্গ বিন্দু $x_0$, আর সবুজ রেখাটি হলো স্পর্শক; ভিডিও ট্যাবে এই জুম প্রক্রিয়া ধাপে ধাপে দেখা যাবে।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHJlY3Qgd2lkdGg9IjQ4MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMwYjEyMjAiLz48cGF0aCBkPSJNNDAgMjIwIFEgMTMwIDQwIDIxMCAxNzAgVCAzMDAgMTAwIiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGJkZjgiIHN0cm9rZS13aWR0aD0iMyIvPjxjaXJjbGUgY3g9IjE3MCIgY3k9IjE1MCIgcj0iNzIiIGZpbGw9IiMwZjIwMzMiIHN0cm9rZT0iI2ZiYmYyNCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjExMiIgeTE9IjE3OCIgeDI9IjIyOCIgeTI9IjEyMiIgc3Ryb2tlPSIjMzRkMzk5IiBzdHJva2Utd2lkdGg9IjMiLz48Y2lyY2xlIGN4PSIxNzAiIGN5PSIxNTAiIHI9IjQiIGZpbGw9IiNmNDcyYjYiLz48bGluZSB4MT0iMTcwIiB5MT0iNzgiIHgyPSIxNzAiIHkyPSIyMjIiIHN0cm9rZT0iIzQ3NTU2OSIgc3Ryb2tlLWRhc2hhcnJheT0iNCA0Ii8+PGxpbmUgeDE9Ijk4IiB5MT0iMTUwIiB4Mj0iMjQyIiB5Mj0iMTUwIiBzdHJva2U9IiM0NzU1NjkiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIvPjx0ZXh0IHg9IjMwMCIgeT0iMTQwIiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+em9vbSBpbjwvdGV4dD48dGV4dCB4PSIzMDAiIHk9IjE2NiIgZmlsbD0iIzM0ZDM5OSIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmN1cnZlIC0+IGxpbmU8L3RleHQ+PHRleHQgeD0iNTIiIHk9IjI4NiIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxMyIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmxvY2FsIGxpbmVhcml0eTwvdGV4dD4=" alt="বক্ররেখার ওপর জুম করে স্পর্শক রেখার স্থানীয় রৈখিকতা দেখা"/>
+          </div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/CfW845LNObM?start=300" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="স্থানীয় রৈখিকতা ও জুম"></iframe></div>
+        </b1b-media-tab>
+
+        <b1b-callout type="blue" icon="🔍" title="এক লাইনে মূল বার্তা">
+          <p>$\frac{dy}{dx}$ কে ভগ্নাংশ ভাবা ভুল নয়—শুধু একে অবশ্যই <strong>স্পর্শকের রৈখিক জগতের</strong> ভগ্নাংশ হিসেবে বুঝতে হবে। সীমাস্থ অবস্থায় সেই রৈখিক অনুপাতই মূল বক্ররেখার প্রকৃত পরিবর্তনের হারকে নির্ভুলভাবে ধরে রাখে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — figure explanations (rule 6: 2–4 sentence pedagogical captions) ═══ -->
+      <b1b-section id="sec-figures" title="৭. চিত্র-সহায়ক ব্যাখ্যা: ডি এক্সের চারটি রূপ" data-no-narration="true">
+        <p>নিচের চিত্রগুলো অধ্যায়ের চারটি কেন্দ্রীয় ধারণাকে দৃশ্যমান করে: ত্রুটির $(dx)^2$ হারে বিলুপ্তি, সমাকলন ফালির প্রস্থ হিসেবে $dx$, চেইন রুলের গিয়ার-অনুপাত, এবং ওয়ান-ফর্ম হিসেবে $dx$। প্রতিটি চিত্রের সঙ্গে তার পেডাগোজিক্যাল ব্যাখ্যা দেওয়া হলো।</p>
+
+        <b1b-figure src="data:image/svg+xml;base64,PHJlY3Qgd2lkdGg9IjQ4MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iMzAiIHkxPSIxNTAiIHgyPSIyMzAiIHkyPSIxNTAiIHN0cm9rZT0iIzMzNDE1NSIvPjxsaW5lIHgxPSIyNTAiIHkxPSIxNTAiIHgyPSI0NTAiIHkyPSIxNTAiIHN0cm9rZT0iIzMzNDE1NSIvPjxwYXRoIGQ9Ik0zMCAyMTAgUSAxMzAgNDAgMjMwIDcwIiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGJkZjgiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIxMjAiIHkxPSIxMjgiIHgyPSIxODAiIHkyPSI5OCIgc3Ryb2tlPSIjZmJiZjI0IiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMTUwIiB5MT0iMTI4IiB4Mj0iMTUwIiB5Mj0iMTA2IiBzdHJva2U9IiNmNDcyYjYiIHN0cm9rZS13aWR0aD0iNSIvPjxwYXRoIGQ9Ik0yNTAgMjEwIFEgMzUwIDQwIDQ1MCA3MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzhiZGY4IiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMzMwIiB5MT0iMTI4IiB4Mj0iMzYwIiB5Mj0iMTEzIiBzdHJva2U9IiNmYmJmMjQiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIzNDUiIHkxPSIxMjgiIHgyPSIzNDUiIHkyPSIxMjAiIHN0cm9rZT0iI2Y0NzJiNiIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHRleHQgeD0iNDIiIHk9IjQwIiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+ZHggPSAwLjE8L3RleHQ+PHRleHQgeD0iMjYyIiB5PSI0MCIgZmlsbD0iI2ZiYmYyNCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmR4ID0gMC4wMTwvdGV4dD48dGV4dCB4PSI2MCIgeT0iMjUwIiBmaWxsPSIjZjQ3MmI2IiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+ZXJyb3IgfiAoZHgpXjI8L3RleHQ+PHRleHQgeD0iMjcyIiB5PSIyNTAiIGZpbGw9IiMzNGQzOTkiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5lcnJvciAtPiAwPC90ZXh0Pg==" alt="dx ছোট হলে স্পর্শক ও বক্ররেখার ফাঁক (dx)² হারে কমে যায়" caption="দুটি প্যানেলে একই বক্ররেখা দেখা যাচ্ছে—বাঁদিকে $dx = 0.1$, ডানদিকে $dx = 0.01$। গোলাপি উল্লম্ব রেখাটি স্পর্শক ($dy$) ও বক্ররেখা ($\Delta y$)-এর মধ্যকার ত্রুটি; দ্বিতীয় প্যানেলে তা অনেক ছোট। লক্ষ্য করুন ত্রুটি $dx$-এর চেয়ে অনেক দ্রুত কমছে—কারণ এটি $(dx)^2$-এর সমানুপাতিক, আর এজন্যই সীমায় ভগ্নাংশটি নিখুঁত হয়।"></b1b-figure>
+
+        <b1b-figure src="data:image/svg+xml;base64,PHJlY3Qgd2lkdGg9IjQ4MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNDYiIHkxPSIyNjIiIHgyPSI0NTIiIHkyPSIyNjIiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQ2IiB5MT0iMjYyIiB4Mj0iNDYiIHkyPSIyNiIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNTAgMjQ1IFEgMjAwIDMwIDQ1MCA2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIzOGJkZjgiIHN0cm9rZS13aWR0aD0iMyIvPjxyZWN0IHg9IjUyIiB5PSIyMjciIHdpZHRoPSIzMCIgaGVpZ2h0PSIxOCIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iMC4yOCIgc3Ryb2tlPSIzNGQzOTkiIHN0cm9rZS13aWR0aD0iMSIvPjxyZWN0IHg9Ijg1IiB5PSIyMDUiIHdpZHRoPSIzMCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iMC4yOCIgc3Ryb2tlPSIzNGQzOTkiIHN0cm9rZS13aWR0aD0iMSIvPjxyZWN0IHg9IjExOCIgeT0iMTg4IiB3aWR0aD0iMzAiIGhlaWdodD0iNTciIGZpbGw9IiMxMGI5ODEiIG9wYWNpdHk9IjAuMjgiIHN0cm9rZT0iIzM0ZDM5OSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHJlY3QgeD0iMTUxIiB5PSIxNzMiIHdpZHRoPSIzMCIgaGVpZ2h0PSI3MiIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iMC4yOCIgc3Ryb2tlPSIzNGQzOTkiIHN0cm9rZS13aWR0aD0iMSIvPjxyZWN0IHg9IjE4NCIgeT0iMTU5IiB3aWR0aD0iMzAiIGhlaWdodD0iODYiIGZpbGw9IiMxMGI5ODEiIG9wYWNpdHk9IjAuMjgiIHN0cm9rZT0iIzM0ZDM5OSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHJlY3QgeD0iMjE3IiB5PSIxNDciIHdpZHRoPSIzMCIgaGVpZ2h0PSI5OCIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iMC4yOCIgc3Ryb2tlPSIzNGQzOTkiIHN0cm9rZS13aWR0aD0iMSIvPjxyZWN0IHg9IjI1MCIgeT0iMTM0IiB3aWR0aD0iMzAiIGhlaWdodD0iMTExIiBmaWxsPSIjMTBiOTgxIiBvcGFjaXR5PSIwLjI4IiBzdHJva2U9IiMzNGQzOTkiIHN0cm9rZS13aWR0aD0iMSIvPjxyZWN0IHg9IjI4MyIgeT0iMTIzIiB3aWR0aD0iMzAiIGhlaWdodD0iMTIyIiBmaWxsPSIjMTBiOTgxIiBvcGFjaXR5PSIwLjI4IiBzdHJva2U9IiMzNGQzOTkiIHN0cm9rZS13aWR0aD0iMSIvPjxyZWN0IHg9IjMxNiIgeT0iMTExIiB3aWR0aD0iMzAiIGhlaWdodD0iMTM0IiBmaWxsPSIjMTBiOTgxIiBvcGFjaXR5PSIwLjI4IiBzdHJva2U9IiMzNGQzOTkiIHN0cm9rZS13aWR0aD0iMSIvPjxyZWN0IHg9IjM0OSIgeT0iMTAxIiB3aWR0aD0iMzAiIGhlaWdodD0iMTQ0IiBmaWxsPSIjMTBiOTgxIiBvcGFjaXR5PSIwLjI4IiBzdHJva2U9IiMzNGQzOTkiIHN0cm9rZS13aWR0aD0iMSIvPjxyZWN0IHg9IjM4MiIgeT0iOTAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxNTUiIGZpbGw9IiMxMGI5ODEiIG9wYWNpdHk9IjAuMjgiIHN0cm9rZT0iIzM0ZDM5OSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHJlY3QgeD0iNDE1IiB5PSI4MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjE2NSIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iMC4yOCIgc3Ryb2tlPSIzNGQzOTkiIHN0cm9rZS13aWR0aD0iMSIvPjx0ZXh0IHg9IjYwIiB5PSI1MCIgZmlsbD0iIzM0ZDM5OSIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmhlaWdodCBmKHgpICB4ICB3aWR0aCBkeDwvdGV4dD48dGV4dCB4PSI2MCIgeT0iMjg0IiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjEzIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+c3VtIGYoeClkeCAtPiBpbnRlZ3JhbDwvdGV4dD4=" alt="রিম্যান ফালি: উচ্চতা f(x) ও প্রস্থ dx" caption="ছবিতে বক্ররেখার নিচে সরু সরু সবুজ আয়তক্ষেত্র দেখা যাচ্ছে—প্রতিটির উচ্চতা $f(x)$ এবং প্রস্থ $dx$। তাই প্রতিটির ক্ষেত্রফল $f(x)\,dx$, আর সবগুলোর যোগফল সীমাস্থে $\int f(x)\,dx$। এখানেই $dx$ কেবল একটি প্রতীক নয়, বরং ফালির বাস্তব প্রস্থ ও এককের ধারক।"></b1b-figure>
+
+        <b1b-media-tab active-tab="image" caption="তিনটি সংখ্যারেখা t, x ও y-কে গিয়ারের মতো যুক্ত দেখানো হয়েছে: dx/dt দিয়ে x চলে, dy/dx দিয়ে y চলে, ফলে dy/dt = (dy/dx)(dx/dt)। রৈখিক আসন্নায়নে ভগ্নাংশ কাটাকাটি আসলে এই গিয়ার-অনুপাতেরই বীজগণিত। ভিডিও ট্যাবে চেইন রুলের এই দৃশ্যায়ন দেখুন।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHJlY3Qgd2lkdGg9IjQ4MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNDAiIHkxPSI3MCIgeDI9IjQ0MCIgeTI9IjcwIiBzdHJva2U9IiM5NGEzYjgiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjE1MCIgeDI9IjQ0MCIgeTI9IjE1MCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSIyMzAiIHgyPSI0NDAiIHkyPSIyMzAiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iNDAiIHk9IjUyIiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+dDwvdGV4dD48dGV4dCB4PSI0MCIgeT0iMTMyIiBmaWxsPSIjMzRkMzk5IiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+eDwvdGV4dD48dGV4dCB4PSI0MCIgeT0iMjEyIiBmaWxsPSIjZjQ3MmI2IiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+eTwvdGV4dD48cGF0aCBkPSJNMTcwIDcwIEwyMDAgNzAiIHN0cm9rZT0iI2ZiYmYyNCIgc3Ryb2tlLXdpZHRoPSIzIi8+PHBhdGggZD0iTTE3MCAxNTAgTDIxMCAxNTAiIHN0cm9rZT0iIzM0ZDM5OSIgc3Ryb2tlLXdpZHRoPSIzIi8+PHBhdGggZD0iTTE3MCAyMzAgTDE5MCAyMzAiIHN0cm9rZT0iI2Y0NzJiNiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMjMwIiB5PSI3OCIgZmlsbD0iI2ZiYmYyNCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmR4L2R0PC90ZXh0Pjx0ZXh0IHg9IjI0MCIgeT0iMTU4IiBmaWxsPSIjMzRkMzk5IiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+ZHkvZHg8L3RleHQ+PHRleHQgeD0iMjE1IiB5PSIyMzgiIGZpbGw9IiNmNDcyYjYiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5keS9kdDwvdGV4dD48dGV4dCB4PSI3MCIgeT0iMjg1IiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjE0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+ZHkvZHQgPSAoZHkvZHgpKGR4L2R0KTwvdGV4dD4=" alt="t, x, y সংখ্যারেখা ও গিয়ার অনুপাত"/>
+          </div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/CfW845LNObM?start=540" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="চেইন রুল: গিয়ার ও ভগ্নাংশ"></iframe></div>
+        </b1b-media-tab>
+
+        <b1b-figure src="data:image/svg+xml;base64,PHJlY3Qgd2lkdGg9IjQ4MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNDYiIHkxPSIyNjIiIHgyPSI0NTIiIHkyPSIyNjIiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQ2IiB5MT0iMjYyIiB4Mj0iNDYiIHkyPSIyNiIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDYiIHkxPSIyNjIiIHgyPSIzMDAiIHkyPSIyNjIiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtZGFzaGFycmF5PSI0IDQiLz48bGluZSB4MT0iMjIwIiB5MT0iMjYyIiB4Mj0iMjIwIiB5Mj0iOTYiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtZGFzaGFycmF5PSI0IDQiLz48bGluZSB4MT0iNDYiIHkxPSIyNjIiIHgyPSIzMDAiIHkyPSI5NiIgc3Ryb2tlPSIjZmJiZjI0IiBzdHJva2Utd2lkdGg9IjMiLz48Y2lyY2xlIGN4PSIzMDAiIGN5PSI5NiIgcj0iNSIgZmlsbD0iI2ZiYmYyNCIvPjxsaW5lIHgxPSIyMjAiIHkxPSIyNjIiIHgyPSIzMDAiIHkyPSIyNjIiIHN0cm9rZT0iIzM0ZDM5OSIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMjMyIiB5PSIyODIiIGZpbGw9IiMzNGQzOTkiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5keCh2KSA9IHZfeDwvdGV4dD48dGV4dCB4PSIzMTAiIHk9IjkwIiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+djwvdGV4dD48dGV4dCB4PSI1MiIgeT0iNTAiIGZpbGw9IiNlMmU4ZjAiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5jb3ZlY3RvciAxLWZvcm08L3RleHQ+" alt="স্পর্শক ভেক্টর v ও dx(v) = v_x ওয়ান-ফর্ম" caption="আধুনিক ভাষায় $dx$ একটি ওয়ান-ফর্ম: এটি একটি স্পর্শক ভেক্টর $v$ নিয়ে তার এক্স-উপাংশ $v_x$ ফেরত দেয়। ছবিতে হলুদ ভেক্টর $v$ আর সবুজ অংশ তার অনুভূমিক প্রক্ষেপণ। এই দৃষ্টিভঙ্গিতে $dx$ একটি পরিমাপক যন্ত্র—এই অধ্যায়ের শেষের আধুনিক উপসংহার।"></b1b-figure>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — fullscreen interactive labs ═══ -->
+      <b1b-section id="sec-labs" title="৮. ইন্টারেক্টিভ ল্যাব: জুম অন্বেষক ও গিয়ার মেশিন" data-no-narration="true">
+        <p>নিচের দুটি ল্যাব স্লাইডার ঘুরিয়ে তত্ত্বকে নিজের হাতে যাচাই করার সুযোগ দেয়। প্রথম ল্যাবে $dx$ কমালে $\Delta y$ কীভাবে $dy = f'(x)\,dx$-এর কাছে পৌঁছায় দেখুন; দ্বিতীয় ল্যাবে $\frac{dy}{dt} = \frac{dy}{dx}\cdot\frac{dx}{dt}$ গিয়ার অনুপাতের মতো কাজ করে।</p>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে জুম ল্যাব দেখুন">
+          <calc-dx-zoom-lab></calc-dx-zoom-lab>
+        </b1b-fullscreen>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে গিয়ার ল্যাব দেখুন">
+          <calc-chain-gear-lab></calc-chain-gear-lab>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — 3 official quizzes with exact options + rich Bengali feedback ═══ -->
+      <b1b-section id="sec-quizzes" title="৯. ধারণা যাচাই: ৩টি ইন্টারেক্টিভ কুইজ" data-no-narration="true">
+        <b1b-quiz
+          question="❓ ১. গ্রান্ট স্যান্ডারসনের জ্যামিতিক বিশ্লেষণে, মূল বক্ররেখার উল্লম্ব বৃদ্ধি $\Delta y$ এবং ডিফারেনশিয়াল $dy$-এর মধ্যে মূল তফাত কী?"
+          correct="2"
+          correct-msg="অসাধারণ ও নির্ভুল! স্পর্শক রেখা বরাবর পরিবর্তনের অনুপাত $\frac{dy}{dx}$ নিখুঁতভাবে ঢাল নির্দেশ করে, আর বক্ররেখার পার্থক্যে উচ্চতর ঘাত $(dx)^2$ যুক্ত থাকে। অন্য বিকল্পগুলোও দেখে নিন: $\Delta y$ কেবল পূর্ণসংখ্যার জন্য প্রযোজ্য এবং $dy$ দশমিকের জন্য — ভুল! উভয় পরিবর্তনই বাস্তব সংখ্যা। $\Delta y$ এবং $dy$ সব সময় অক্ষরে অক্ষরে সম্পূর্ণ সমান — ভুল! শুধুমাত্র সরলরেখার ক্ষেত্রে তারা সমান হয়। $dy$ সর্বদা অসীম কিন্তু $\Delta y$ সসীম — ভুল! $dy$ কোনো অসীম সংখ্যা নয়, এটি একটি সসীম ক্ষুদ্র দৈর্ঘ্য।"
+          wrong-msg="আবার ভাবুন: $\Delta y$ হলো বক্ররেখা বরাবর প্রকৃত উল্লম্ব পরিবর্তন $f(x+dx)-f(x)$, আর $dy$ হলো ওই বিন্দুতে অঙ্কিত স্পর্শক সরলরেখা বরাবর রৈখিক পরিবর্তন $f'(x)\,dx$। কেবল সরলরেখার ক্ষেত্রে এরা সমান; বক্ররেখায় ফাঁকটি $(dx)^2$ আকারের। মনে রাখবেন—$dy$ কোনো অসীম সংখ্যা নয়, এটি একটি সসীম ক্ষুদ্র দৈর্ঘ্য।"
+          reveal-msg="সঠিক উত্তর: তৃতীয় বিকল্প — $\Delta y$ হলো বক্ররেখা বরাবর প্রকৃত উল্লম্ব পরিবর্তন, আর $dy$ হলো স্পর্শক সরলরেখা বরাবর রৈখিক পরিবর্তন। ইনপুট $dx$ নাড়া দিলে স্পর্শক বরাবর সরণ হয় $dy = f'(x)\,dx$, আর মূল বক্ররেখা বরাবর প্রকৃত সরণ হয় $\Delta y = f(x+dx) - f(x)$।">
+          <div slot="option">$\Delta y$ কেবল পূর্ণসংখ্যার জন্য প্রযোজ্য এবং $dy$ দশমিকের জন্য</div>
+          <div slot="option">$\Delta y$ এবং $dy$ সব সময় অক্ষরে অক্ষরে সম্পূর্ণ সমান</div>
+          <div slot="option">$\Delta y$ হলো বক্ররেখা বরাবর প্রকৃত উল্লম্ব পরিবর্তন, আর $dy$ হলো ওই বিন্দুতে অঙ্কিত স্পর্শক সরলরেখা বরাবর রৈখিক পরিবর্তন</div>
+          <div slot="option">$dy$ সর্বদা অসীম কিন্তু $\Delta y$ সসীম</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ২. ইনপুট পরিবর্তন $dx = 0.01$ হলে বক্ররেখা ও স্পর্শকের মধ্যকার ত্রুটি $\Delta y - dy$ সাধারণত কোন ঘাতের সমানুপাতিক হারে হ্রাস পায়?"
+          correct="1"
+          correct-msg="একেবারে সঠিক! টেইলর উপপাদ্য অনুযায়ী অবশিষ্টাংশ $\approx \frac{1}{2}f''(x)(dx)^2$, যা $dx$-এর চেয়েও বহুগুণ দ্রুত শূন্যে মিলিয়ে যায়। $dx = 0.01$ হলে $(dx)^2 = 0.0001$ — অর্থাৎ প্রথম ক্রমের চেয়ে একশ গুণ ছোট ত্রুটি।"
+          wrong-msg="প্রথম ঘাত $(dx)^1$ ভুল — প্রথম ঘাতের অংশটি স্পর্শকের ঢাল দ্বারা ইতিমধ্যেই অপসারিত হয়ে যায়। 'ধ্রুবক থাকে' ও '$\sqrt{dx}$ হারে বাড়ে' — দুটিও ভুল: $dx$ কমলে ত্রুটি তীব্র গতিতে শূন্যের দিকে ধাবিত হয়। সঠিক উত্তর হলো $dx$-এর দ্বিতীয় ঘাত $(dx)^2$।"
+          reveal-msg="সঠিক উত্তর: দ্বিতীয় বিকল্প — $dx$-এর দ্বিতীয় ঘাত $(dx)^2$। প্রথম ডেরিভেটিভ স্পর্শকের ঢালকে মেলায়, তাই অবশিষ্ট ত্রুটি দ্বিতীয় ডেরিভেটিভ ও $(dx)^2$-এর ওপর নির্ভর করে: $\Delta y - dy \approx \frac{1}{2}f''(x)(dx)^2$।">
+          <div slot="option">$dx$ এর প্রথম ঘাত $(dx)^1$</div>
+          <div slot="option">$dx$ এর দ্বিতীয় ঘাত $(dx)^2$</div>
+          <div slot="option">এটি ধ্রুবক থাকে এবং কখনো কমে না</div>
+          <div slot="option">এটি $\sqrt{dx}$ হারে বাড়ে</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৩. সমাকলনের প্রতীকে $\int f(x)\,dx$-এ $dx$-এর ভূমিকা সম্পর্কে কোন উক্তিটি সবচেয়ে সঠিক?"
+          correct="0"
+          correct-msg="চমৎকার ও সম্পূর্ণ সঠিক! এটি ক্ষেত্রফল নির্ণয়ে উচ্চতা $f(x)$-এর সাথে গুণ হয়ে ক্ষুদ্র ফালির ক্ষেত্রফল $f(x)\,dx$ তৈরি করে। বাকি বিকল্পগুলো ভুল: কেবল বন্ধনী চিহ্ন ভাবলে চলক প্রতিস্থাপন ও ভৌত এককের তাৎপর্য বোঝা যায় না; শূন্য দিয়ে গুণ করলে সমগ্র ইন্টিগ্রাল শূন্য হয়ে যেত; আর ক্ষেত্রফলের চিহ্ন নির্ভর করে $f(x)$-এর চিহ্নের ওপর, $dx$-এর ওপর নয়।"
+          wrong-msg="লাইবনিজ রিম্যান সমষ্টির প্রস্থ $\Delta x$-কে অবিচ্ছিন্ন সীমার মধ্যে ধরে রাখতে $dx$ প্রতীক ব্যবহার করেন। এটি কেবল বন্ধনী নয় — এটি প্রতিটি সরু আয়তাকার ফালির প্রস্থ নির্দেশ করে এবং ভৌত মাত্রার সামঞ্জস্য ($(\text{m/s})\times \text{s} = \text{m}$) নিশ্চিত করে। সঠিক উত্তর হলো প্রথম বিকল্প।"
+          reveal-msg="সঠিক উত্তর: প্রথম বিকল্প — এটি রিম্যান যোগফলের প্রতিটি সরু আয়তাকার ফালির প্রস্থ নির্দেশ করে এবং ভৌত মাত্রার সামঞ্জস্য নিশ্চিত করে। $dx$ উচ্চতার সাথে গুণ হয়ে প্রকৃত ক্ষেত্রফল ফালি $f(x)\,dx$ দেয়; $\int$ চিহ্নটি ল্যাটিন Summa থেকে এসেছে।">
+          <div slot="option">এটি রিম্যান যোগফলের প্রতিটি সরু আয়তাকার ফালির প্রস্থ নির্দেশ করে এবং ভৌত মাত্রার সামঞ্জস্য নিশ্চিত করে</div>
+          <div slot="option">এটি কেবল একটি বন্ধনী চিহ্ন ছাড়া আর কিছুই নয়</div>
+          <div slot="option">এর মান সর্বদা নিখুঁত শূন্য</div>
+          <div slot="option">এটি নির্দেশ করে যে সমাকলনের মান সর্বদা ঋণাত্মক হবে</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — formula & glossary reference ═══ -->
+      <b1b-section id="sec-reference" title="১০. মূল সূত্র ও পরিভাষা" data-no-narration="true">
+        <b1b-formula math="\frac{dy}{dx} = \lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x} \quad;\quad dy = f'(x)\,dx \quad;\\quad \Delta y - dy = \mathcal{O}((dx)^2)"></b1b-formula>
+        <b1b-formula math="\int_a^b f(x)\,dx = \lim_{\Delta x\to 0}\sum_i f(x_i)\Delta x \quad;\quad \frac{dy}{dt} = \frac{dy}{dx}\cdot\frac{dx}{dt} \quad;\quad dx(\mathbf{v}) = v_x"></b1b-formula>
+        <b1b-callout type="blue" icon="📚" title="পরিভাষা">
+          <p><strong>ডিফারেনশিয়াল ($dx$, $dy$):</strong> স্পর্শকের রৈখিক জগতে ইনপুট ও আউটপুটের ক্ষুদ্র বাস্তব দৈর্ঘ্য। <strong>স্থানীয় রৈখিকতা:</strong> বক্ররেখার কাছাকাছি জুম করলে স্পর্শক রেখার মতো দেখা। <strong>বিবর্ধন গুণক:</strong> $f'(x)$ — সেই স্কেলিং যা $dx$-কে $df$-এ রূপ দেয়। <strong>রিম্যান সমষ্টি:</strong> $\Delta x$ প্রস্থের ফালির ক্ষেত্রফলের যোগফল, সীমায় $\int f(x)\,dx$। <strong>ওয়ান-ফর্ম:</strong> $dx$ হলো স্পর্শক ভেক্টরের এক্স-উপাংশ পরিমাপক কভেক্টর।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/calculus/lesson_11/experiments/3b1b_calculus_11_full_dubbed.mp4"
+    yt-id="CfW845LNObM"
+    title="অধ্যায় ১১: ডি এক্স এর প্রকৃত অর্থ — The other way to visualize derivatives"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — ক্যালকুলাস সিরিজ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_10.html"
+  prev-title="টেইলর ধারা ও উচ্চতর সান্নিধ্যকরণ"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_12.html"
+  next-title="ডিফারেনশিয়াল আসলে কী?"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ PAGE-LOCAL LAB COMPONENTS (new components only; no library override/patch) ═══════════ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Lab 1: tangent vs curve zoom explorer ── */
+  class CalcDxZoomLab extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.rendered) return;
+      this.dataset.rendered = '1';
+      this.innerHTML = `
+        <div class="calc-lab">
+          <canvas class="calc-canvas" width="900" height="420"></canvas>
+          <div class="calc-controls">
+            <div class="calc-control"><label><span>বিন্দু x</span><span class="calc-val" data-for="x">২.০০</span></label><input type="range" class="x" min="0.4" max="3" step="0.05" value="2"/></div>
+            <div class="calc-control"><label><span>ব্যবধান dx</span><span class="calc-val" data-for="dx">০.২০</span></label><input type="range" class="dx" min="0.01" max="1" step="0.01" value="0.2"/></div>
+          </div>
+          <div class="calc-actions">
+            <button type="button" class="preset" data-x="2" data-dx="0.5">স্থূল dx = 0.5</button>
+            <button type="button" class="preset" data-x="2" data-dx="0.1">মাঝারি dx = 0.1</button>
+            <button type="button" class="preset" data-x="2" data-dx="0.01">সূক্ষ্ম dx = 0.01</button>
+          </div>
+          <div class="calc-stats">
+            <div class="calc-stat"><span>স্পর্শক ঢাল f'(x) = 2x</span><strong class="stat-slope">—</strong></div>
+            <div class="calc-stat"><span>df = f'(x)·dx</span><strong class="stat-df">—</strong></div>
+            <div class="calc-stat"><span>Δy = f(x+dx) − f(x)</span><strong class="stat-dy">—</strong></div>
+            <div class="calc-stat"><span>ত্রুটি Δy − df ≈ (dx)²</span><strong class="stat-err">—</strong></div>
+          </div>
+        </div>`;
+      this._canvas = this.querySelector('.calc-canvas');
+      this._ctx = this._canvas.getContext('2d');
+      this._x = this.querySelector('.x');
+      this._dx = this.querySelector('.dx');
+      const draw = () => this._draw();
+      this._x.addEventListener('input', () => { this.querySelector('[data-for="x"]').textContent = parseFloat(this._x.value).toFixed(2); draw(); });
+      this._dx.addEventListener('input', () => { this.querySelector('[data-for="dx"]').textContent = parseFloat(this._dx.value).toFixed(2); draw(); });
+      this.querySelectorAll('.preset').forEach(b => b.addEventListener('click', () => {
+        this._x.value = b.dataset.x; this._dx.value = b.dataset.dx;
+        this.querySelector('[data-for="x"]').textContent = parseFloat(b.dataset.x).toFixed(2);
+        this.querySelector('[data-for="dx"]').textContent = parseFloat(b.dataset.dx).toFixed(2);
+        draw();
+      }));
+      window.addEventListener('resize', () => this._resize());
+      window.addEventListener('b1b-fullscreen-change', () => this._resize());
+      this._resize();
+      requestAnimationFrame(() => this._resize());
+    }
+
+    _resize() {
+      if (!this._canvas) return;
+      const w = this._canvas.parentElement.clientWidth || 900;
+      this._canvas.width = w;
+      this._canvas.height = Math.max(360, Math.min(520, w * 0.46));
+      this._draw();
+    }
+
+    _draw() {
+      const ctx = this._ctx; if (!ctx) return;
+      const W = this._canvas.width, H = this._canvas.height;
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#080b12' : '#f8fafc'; ctx.fillRect(0, 0, W, H);
+
+      const x = parseFloat(this._x.value), dx = parseFloat(this._dx.value);
+      const f = t => 0.18 * t * t;
+      const slope = 0.36 * x;
+      const df = slope * dx;
+      const dy = f(x + dx) - f(x);
+      this.querySelector('.stat-slope').textContent = slope.toFixed(3);
+      this.querySelector('.stat-df').textContent = df.toFixed(4);
+      this.querySelector('.stat-dy').textContent = dy.toFixed(4);
+      this.querySelector('.stat-err').textContent = (dy - df).toFixed(5);
+
+      const ox = 60, oy = H - 56, sx = (W - 130) / 4.2, sy = (H - 110) / 2.4;
+      const fx = t => ox + t * sx, fy = v => oy - v * sy;
+      ctx.strokeStyle = dark ? '#64748b' : '#334155'; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(ox, 22); ctx.lineTo(ox, oy); ctx.lineTo(W - 26, oy); ctx.stroke();
+
+      ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 3; ctx.beginPath();
+      for (let t = 0; t <= 4.1; t += 0.03) { const px = fx(t), py = fy(f(t)); t === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py); }
+      ctx.stroke();
+
+      const x2 = Math.min(4.1, x + dx);
+      ctx.fillStyle = 'rgba(6,182,212,.18)'; ctx.beginPath();
+      ctx.moveTo(fx(x), oy); ctx.lineTo(fx(x), fy(f(x)));
+      for (let t = x; t <= x2; t += 0.01) ctx.lineTo(fx(t), fy(f(t)));
+      ctx.lineTo(fx(x2), oy); ctx.closePath(); ctx.fill();
+
+      ctx.strokeStyle = '#fbbf24'; ctx.lineWidth = 2.5; ctx.beginPath();
+      ctx.moveTo(fx(Math.max(0, x - 1.0)), fy(f(x) - slope * 1.0));
+      ctx.lineTo(fx(Math.min(4.1, x + 1.0)), fy(f(x) + slope * 1.0)); ctx.stroke();
+
+      ctx.strokeStyle = '#34d399'; ctx.lineWidth = 2; ctx.beginPath();
+      ctx.moveTo(fx(x), fy(f(x))); ctx.lineTo(fx(x2), fy(f(x)));
+      ctx.lineTo(fx(x2), fy(f(x) + df)); ctx.stroke();
+      ctx.strokeStyle = '#f472b6'; ctx.lineWidth = 2; ctx.setLineDash([5, 4]); ctx.beginPath();
+      ctx.moveTo(fx(x2), fy(f(x) + df)); ctx.lineTo(fx(x2), fy(f(x2))); ctx.stroke(); ctx.setLineDash([]);
+
+      ctx.font = '13px sans-serif'; ctx.fillStyle = dark ? '#e2e8f0' : '#0f172a';
+      ctx.fillText('f(x) = 0.18x²', fx(2.5), fy(f(2.5)) - 12);
+      ctx.fillStyle = '#fbbf24'; ctx.fillText('tangent  f\'(x) = ' + slope.toFixed(2), fx(Math.max(0, x - 0.9)), fy(f(x) - slope * 0.9) - 8);
+      ctx.fillStyle = '#34d399'; ctx.fillText('df = ' + df.toFixed(3), fx(x) + 6, fy(f(x)) + 18);
+      ctx.fillStyle = '#f472b6'; ctx.fillText('Δy − df ≈ (dx)²', fx(x2) + 6, fy(f(x2)) - 6);
+    }
+  }
+
+  /* ── Lab 2: chain-rule gear / fraction machine ── */
+  class CalcChainGearLab extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.rendered) return;
+      this.dataset.rendered = '1';
+      this.innerHTML = `
+        <div class="calc-lab">
+          <canvas class="calc-canvas" width="900" height="420"></canvas>
+          <div class="calc-controls">
+            <div class="calc-control"><label><span>dx/dt (t → x)</span><span class="calc-val" data-for="a">১.৫০</span></label><input type="range" class="a" min="0.2" max="3" step="0.05" value="1.5"/></div>
+            <div class="calc-control"><label><span>dy/dx (x → y)</span><span class="calc-val" data-for="b">২.০০</span></label><input type="range" class="b" min="0.2" max="3" step="0.05" value="2"/></div>
+          </div>
+          <div class="calc-actions">
+            <button type="button" class="play">▶ গিয়ার ঘোরান</button>
+            <button type="button" class="reset">↺ রিসেট</button>
+          </div>
+          <div class="calc-stats">
+            <div class="calc-stat"><span>dx/dt</span><strong class="stat-a">—</strong></div>
+            <div class="calc-stat"><span>dy/dx</span><strong class="stat-b">—</strong></div>
+            <div class="calc-stat"><span>dy/dt = (dy/dx)(dx/dt)</span><strong class="stat-c">—</strong></div>
+          </div>
+        </div>`;
+      this._canvas = this.querySelector('.calc-canvas');
+      this._ctx = this._canvas.getContext('2d');
+      this._a = this.querySelector('.a');
+      this._b = this.querySelector('.b');
+      this._angleA = 0; this._angleB = 0; this._angleC = 0; this._playing = false; this._raf = null; this._last = 0;
+      const draw = () => this._draw();
+      this._a.addEventListener('input', () => { this.querySelector('[data-for="a"]').textContent = parseFloat(this._a.value).toFixed(2); draw(); });
+      this._b.addEventListener('input', () => { this.querySelector('[data-for="b"]').textContent = parseFloat(this._b.value).toFixed(2); draw(); });
+      const playBtn = this.querySelector('.play');
+      playBtn.addEventListener('click', () => {
+        if (this._playing) { cancelAnimationFrame(this._raf); this._playing = false; playBtn.textContent = '▶ গিয়ার ঘোরান'; return; }
+        this._playing = true; playBtn.textContent = '⏸ বিরতি'; this._last = 0;
+        const loop = ts => {
+          if (!this._last) this._last = ts;
+          const dt = Math.min(50, ts - this._last) / 1000; this._last = ts;
+          const av = parseFloat(this._a.value) * 0.6, bv = parseFloat(this._b.value) * 0.6;
+          this._angleA += av * dt; this._angleB += bv * dt; this._angleC += av * bv * dt;
+          this._draw();
+          if (this._playing) this._raf = requestAnimationFrame(loop);
+        };
+        this._raf = requestAnimationFrame(loop);
+      });
+      this.querySelector('.reset').addEventListener('click', () => {
+        if (this._playing) { cancelAnimationFrame(this._raf); this._playing = false; playBtn.textContent = '▶ গিয়ার ঘোরান'; }
+        this._angleA = this._angleB = this._angleC = 0; this._draw();
+      });
+      window.addEventListener('resize', () => this._resize());
+      window.addEventListener('b1b-fullscreen-change', () => this._resize());
+      this._resize();
+      requestAnimationFrame(() => this._resize());
+    }
+
+    _resize() {
+      if (!this._canvas) return;
+      const w = this._canvas.parentElement.clientWidth || 900;
+      this._canvas.width = w;
+      this._canvas.height = Math.max(360, Math.min(520, w * 0.46));
+      this._draw();
+    }
+
+    _gear(cx, cy, r, angle, color, teeth) {
+      const ctx = this._ctx;
+      ctx.strokeStyle = color; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke();
+      for (let i = 0; i < teeth; i++) {
+        const a = angle + i * (Math.PI * 2 / teeth);
+        ctx.beginPath();
+        ctx.moveTo(cx + Math.cos(a) * (r - 4), cy + Math.sin(a) * (r - 4));
+        ctx.lineTo(cx + Math.cos(a) * (r + 9), cy + Math.sin(a) * (r + 9)); ctx.stroke();
+      }
+      ctx.beginPath(); ctx.arc(cx, cy, 5, 0, Math.PI * 2); ctx.fillStyle = color; ctx.fill();
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + Math.cos(angle) * (r - 8), cy + Math.sin(angle) * (r - 8)); ctx.stroke();
+    }
+
+    _draw() {
+      const ctx = this._ctx; if (!ctx) return;
+      const W = this._canvas.width, H = this._canvas.height;
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#080b12' : '#f8fafc'; ctx.fillRect(0, 0, W, H);
+
+      const a = parseFloat(this._a.value), b = parseFloat(this._b.value), c = a * b;
+      this.querySelector('.stat-a').textContent = a.toFixed(2);
+      this.querySelector('.stat-b').textContent = b.toFixed(2);
+      this.querySelector('.stat-c').textContent = c.toFixed(3);
+
+      const cy = H * 0.44, r = Math.min(46, H * 0.11);
+      const xs = [W * 0.18, W * 0.5, W * 0.82];
+      ctx.font = 'bold 15px sans-serif';
+      ['t', 'x', 'y'].forEach((label, i) => {
+        ctx.fillStyle = dark ? '#e2e8f0' : '#0f172a';
+        ctx.fillText('number line ' + label, xs[i] - 48, 30);
+        ctx.strokeStyle = dark ? '#64748b' : '#334155'; ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.moveTo(xs[i] - 100, H - 60); ctx.lineTo(xs[i] + 100, H - 60); ctx.stroke();
+      });
+
+      this._gear(xs[0], cy, r, this._angleA, '#fbbf24', 10);
+      this._gear(xs[1], cy, r, this._angleB, '#34d399', 12);
+      this._gear(xs[2], cy, r, this._angleC, '#f472b6', 14);
+
+      ctx.lineWidth = 2; ctx.setLineDash([6, 5]);
+      ctx.strokeStyle = '#fbbf24'; ctx.beginPath(); ctx.moveTo(xs[0] + r + 10, cy); ctx.lineTo(xs[1] - r - 10, cy); ctx.stroke();
+      ctx.strokeStyle = '#34d399'; ctx.beginPath(); ctx.moveTo(xs[1] + r + 10, cy); ctx.lineTo(xs[2] - r - 10, cy); ctx.stroke();
+      ctx.setLineDash([]);
+
+      ctx.textAlign = 'center'; ctx.font = '14px sans-serif';
+      ctx.fillStyle = '#fbbf24'; ctx.fillText('dx/dt = ' + a.toFixed(2), (xs[0] + xs[1]) / 2, cy - 14);
+      ctx.fillStyle = '#34d399'; ctx.fillText('dy/dx = ' + b.toFixed(2), (xs[1] + xs[2]) / 2, cy - 14);
+      ctx.fillStyle = dark ? '#e2e8f0' : '#0f172a'; ctx.font = 'bold 17px sans-serif';
+      ctx.fillText('dy/dt = (dy/dx)(dx/dt) = ' + c.toFixed(3), W / 2, H - 22);
+      ctx.textAlign = 'left';
+    }
+  }
+
+  if (!customElements.get('calc-dx-zoom-lab')) customElements.define('calc-dx-zoom-lab', CalcDxZoomLab);
+  if (!customElements.get('calc-chain-gear-lab')) customElements.define('calc-chain-gear-lab', CalcChainGearLab);
+})();
+</script>
+
+</body>
+</html>

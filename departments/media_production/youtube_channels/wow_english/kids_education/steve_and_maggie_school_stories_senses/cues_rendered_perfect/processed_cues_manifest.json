@@ -1,0 +1,434 @@
+[
+  {
+    "id": 1,
+    "speaker": "Steve",
+    "start": 2.2,
+    "end": 6.3,
+    "duration": 4.1,
+    "actual_dur": 4.078594,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_001_Steve.wav"
+  },
+  {
+    "id": 2,
+    "speaker": "Steve",
+    "start": 6.4,
+    "end": 8.5,
+    "duration": 2.1,
+    "actual_dur": 2.093515,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_002_Steve.wav"
+  },
+  {
+    "id": 3,
+    "speaker": "Steve",
+    "start": 8.6,
+    "end": 10.2,
+    "duration": 1.6,
+    "actual_dur": 1.575442,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_003_Steve.wav"
+  },
+  {
+    "id": 4,
+    "speaker": "Steve",
+    "start": 10.3,
+    "end": 12.3,
+    "duration": 2.0,
+    "actual_dur": 2.0,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_004_Steve.wav"
+  },
+  {
+    "id": 5,
+    "speaker": "Steve",
+    "start": 12.4,
+    "end": 13.6,
+    "duration": 1.2,
+    "actual_dur": 1.175692,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_005_Steve.wav"
+  },
+  {
+    "id": 6,
+    "speaker": "Steve",
+    "start": 13.6,
+    "end": 17.0,
+    "duration": 3.4,
+    "actual_dur": 3.4,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_006_Steve.wav"
+  },
+  {
+    "id": 7,
+    "speaker": "Steve",
+    "start": 17.1,
+    "end": 19.5,
+    "duration": 2.4,
+    "actual_dur": 2.385964,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_007_Steve.wav"
+  },
+  {
+    "id": 8,
+    "speaker": "Steve",
+    "start": 19.6,
+    "end": 24.5,
+    "duration": 4.9,
+    "actual_dur": 4.882812,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_008_Steve.wav"
+  },
+  {
+    "id": 9,
+    "speaker": "Steve",
+    "start": 24.6,
+    "end": 30.0,
+    "duration": 5.4,
+    "actual_dur": 5.381134,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_009_Steve.wav"
+  },
+  {
+    "id": 10,
+    "speaker": "Steve",
+    "start": 30.1,
+    "end": 36.5,
+    "duration": 6.4,
+    "actual_dur": 6.382358,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_010_Steve.wav"
+  },
+  {
+    "id": 11,
+    "speaker": "Steve",
+    "start": 36.6,
+    "end": 38.2,
+    "duration": 1.6,
+    "actual_dur": 1.586054,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_011_Steve.wav"
+  },
+  {
+    "id": 12,
+    "speaker": "Maggie",
+    "start": 38.3,
+    "end": 43.5,
+    "duration": 5.2,
+    "actual_dur": 5.166213,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_012_Maggie.wav"
+  },
+  {
+    "id": 13,
+    "speaker": "Maggie",
+    "start": 43.6,
+    "end": 45.7,
+    "duration": 2.1,
+    "actual_dur": 2.084331,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_013_Maggie.wav"
+  },
+  {
+    "id": 14,
+    "speaker": "Steve",
+    "start": 45.8,
+    "end": 46.5,
+    "duration": 0.7,
+    "actual_dur": 0.686054,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_014_Steve.wav"
+  },
+  {
+    "id": 15,
+    "speaker": "Maggie",
+    "start": 46.6,
+    "end": 50.8,
+    "duration": 4.2,
+    "actual_dur": 4.167755,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_015_Maggie.wav"
+  },
+  {
+    "id": 16,
+    "speaker": "Steve",
+    "start": 51.0,
+    "end": 57.5,
+    "duration": 6.5,
+    "actual_dur": 6.474399,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_016_Steve.wav"
+  },
+  {
+    "id": 17,
+    "speaker": "Maggie",
+    "start": 57.6,
+    "end": 64.5,
+    "duration": 6.9,
+    "actual_dur": 6.88678,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_017_Maggie.wav"
+  },
+  {
+    "id": 18,
+    "speaker": "Steve",
+    "start": 65.0,
+    "end": 67.8,
+    "duration": 2.8,
+    "actual_dur": 2.783583,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_018_Steve.wav"
+  },
+  {
+    "id": 19,
+    "speaker": "Steve",
+    "start": 68.0,
+    "end": 72.8,
+    "duration": 4.8,
+    "actual_dur": 4.755669,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_019_Steve.wav"
+  },
+  {
+    "id": 20,
+    "speaker": "Steve",
+    "start": 73.0,
+    "end": 78.8,
+    "duration": 5.8,
+    "actual_dur": 5.70449,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_020_Steve.wav"
+  },
+  {
+    "id": 21,
+    "speaker": "Steve",
+    "start": 79.0,
+    "end": 82.5,
+    "duration": 3.5,
+    "actual_dur": 3.48644,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_021_Steve.wav"
+  },
+  {
+    "id": 22,
+    "speaker": "Steve",
+    "start": 82.6,
+    "end": 86.5,
+    "duration": 3.9,
+    "actual_dur": 3.885692,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_022_Steve.wav"
+  },
+  {
+    "id": 23,
+    "speaker": "Steve",
+    "start": 86.6,
+    "end": 93.8,
+    "duration": 7.2,
+    "actual_dur": 7.176871,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_023_Steve.wav"
+  },
+  {
+    "id": 24,
+    "speaker": "Maggie",
+    "start": 94.0,
+    "end": 97.5,
+    "duration": 3.5,
+    "actual_dur": 3.471338,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_024_Maggie.wav"
+  },
+  {
+    "id": 25,
+    "speaker": "Steve",
+    "start": 97.6,
+    "end": 101.8,
+    "duration": 4.2,
+    "actual_dur": 4.173605,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_025_Steve.wav"
+  },
+  {
+    "id": 26,
+    "speaker": "Steve",
+    "start": 102.0,
+    "end": 107.8,
+    "duration": 5.8,
+    "actual_dur": 5.786349,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_026_Steve.wav"
+  },
+  {
+    "id": 27,
+    "speaker": "Steve",
+    "start": 108.0,
+    "end": 116.0,
+    "duration": 8.0,
+    "actual_dur": 7.974195,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_027_Steve.wav"
+  },
+  {
+    "id": 28,
+    "speaker": "Steve",
+    "start": 116.2,
+    "end": 121.0,
+    "duration": 4.8,
+    "actual_dur": 4.781882,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_028_Steve.wav"
+  },
+  {
+    "id": 29,
+    "speaker": "Steve",
+    "start": 121.1,
+    "end": 127.8,
+    "duration": 6.7,
+    "actual_dur": 6.661587,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_029_Steve.wav"
+  },
+  {
+    "id": 30,
+    "speaker": "Steve",
+    "start": 128.0,
+    "end": 130.8,
+    "duration": 2.8,
+    "actual_dur": 2.776077,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_030_Steve.wav"
+  },
+  {
+    "id": 31,
+    "speaker": "Steve",
+    "start": 131.0,
+    "end": 135.2,
+    "duration": 4.2,
+    "actual_dur": 4.179048,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_031_Steve.wav"
+  },
+  {
+    "id": 32,
+    "speaker": "Steve",
+    "start": 135.4,
+    "end": 142.5,
+    "duration": 7.1,
+    "actual_dur": 7.058821,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_032_Steve.wav"
+  },
+  {
+    "id": 33,
+    "speaker": "Steve",
+    "start": 143.5,
+    "end": 152.0,
+    "duration": 8.5,
+    "actual_dur": 8.481723,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_033_Steve.wav"
+  },
+  {
+    "id": 34,
+    "speaker": "Steve",
+    "start": 153.0,
+    "end": 159.8,
+    "duration": 6.8,
+    "actual_dur": 6.776893,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_034_Steve.wav"
+  },
+  {
+    "id": 35,
+    "speaker": "Steve",
+    "start": 160.0,
+    "end": 163.5,
+    "duration": 3.5,
+    "actual_dur": 3.475057,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_035_Steve.wav"
+  },
+  {
+    "id": 36,
+    "speaker": "Steve",
+    "start": 164.0,
+    "end": 170.2,
+    "duration": 6.2,
+    "actual_dur": 6.173651,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_036_Steve.wav"
+  },
+  {
+    "id": 37,
+    "speaker": "Steve",
+    "start": 170.3,
+    "end": 175.5,
+    "duration": 5.2,
+    "actual_dur": 5.173764,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_037_Steve.wav"
+  },
+  {
+    "id": 38,
+    "speaker": "Steve",
+    "start": 176.0,
+    "end": 180.5,
+    "duration": 4.5,
+    "actual_dur": 4.476077,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_038_Steve.wav"
+  },
+  {
+    "id": 39,
+    "speaker": "Steve",
+    "start": 180.8,
+    "end": 185.9,
+    "duration": 5.1,
+    "actual_dur": 5.083311,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_039_Steve.wav"
+  },
+  {
+    "id": 40,
+    "speaker": "Maggie",
+    "start": 186.0,
+    "end": 189.8,
+    "duration": 3.8,
+    "actual_dur": 3.771179,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_040_Maggie.wav"
+  },
+  {
+    "id": 41,
+    "speaker": "Maggie",
+    "start": 190.0,
+    "end": 194.2,
+    "duration": 4.2,
+    "actual_dur": 4.180408,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_041_Maggie.wav"
+  },
+  {
+    "id": 42,
+    "speaker": "Steve",
+    "start": 194.3,
+    "end": 195.4,
+    "duration": 1.1,
+    "actual_dur": 1.071134,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_042_Steve.wav"
+  },
+  {
+    "id": 43,
+    "speaker": "Maggie",
+    "start": 195.5,
+    "end": 197.0,
+    "duration": 1.5,
+    "actual_dur": 1.477188,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_043_Maggie.wav"
+  },
+  {
+    "id": 44,
+    "speaker": "Steve",
+    "start": 197.1,
+    "end": 200.2,
+    "duration": 3.1,
+    "actual_dur": 3.075374,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_044_Steve.wav"
+  },
+  {
+    "id": 45,
+    "speaker": "Steve",
+    "start": 200.5,
+    "end": 204.4,
+    "duration": 3.9,
+    "actual_dur": 3.881542,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_045_Steve.wav"
+  },
+  {
+    "id": 46,
+    "speaker": "Steve",
+    "start": 204.5,
+    "end": 206.8,
+    "duration": 2.3,
+    "actual_dur": 2.290635,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_046_Steve.wav"
+  },
+  {
+    "id": 47,
+    "speaker": "Steve",
+    "start": 206.9,
+    "end": 209.4,
+    "duration": 2.5,
+    "actual_dur": 2.476984,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_047_Steve.wav"
+  },
+  {
+    "id": 48,
+    "speaker": "Steve",
+    "start": 209.5,
+    "end": 213.5,
+    "duration": 4.0,
+    "actual_dur": 3.99059,
+    "file": "departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\cues_rendered_perfect\\fitted_cue_048_Steve.wav"
+  }
+]

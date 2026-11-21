@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ফ্র্যাক্টাল সাধারণত স্ব-সদৃশ নয় | Fractals are typically not self-similar</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/fractals/lesson_03/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<b1b-search-overlay></b1b-search-overlay>
+
+<b1b-navbar
+  course-title="ফ্র্যাক্টাল"
+  course-url="../../courses/fractals/index.html"
+  home-url="../../index.html"
+  chapter-num="৩"
+  chapter-total="০৪"
+  prev-url="lesson_02.html"
+  prev-title="পূর্ববর্তী: নিউটনের কাজ থেকে কীভাবে ম্যান্ডেলব্রোট সেটের জন্ম হয়"
+  next-url="lesson_04.html"
+  next-title="পরবর্তী: হিলবার্টের বক্ররেখা: অসীম গণিত কি কাজে লাগে?"
+  active-mode="read">
+</b1b-navbar>
+
+<b1b-hero-player
+  course-title="ফ্র্যাক্টাল"
+  course-url="index.html"
+  chapter-label="অধ্যায় ৩ · ফ্র্যাক্টাল সিরিজ"
+  title="ফ্র্যাক্টাল সাধারণত স্ব-সদৃশ নয় | Fractals are typically not self-similar"
+  desc="ফ্র্যাক্টাল নিয়ে প্রচলিত ভুল ধারণা ভেঙে ফেলা — স্ব-সদৃশতা নয়, বরং স্কেলিংয়ের নিয়ম ও ভগ্নাংশ মাত্রা হলো আসল বিষয়"
+  video-src="../../media_vault/fractals/lesson_03/experiments/3b1b_fractals_03_full_dubbed.mp4"
+  yt-id="gB9n2gHsHN4"
+  date="২৭ জানুয়ারি, ২০১৭"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2017/fractal_dimension.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<div class="lesson-body">
+  <div class="read-mode">
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">প্রচলিত ভুল ধারণা</b1b-bookmark>
+      <b1b-bookmark time="63" time-bn="০১:০৩">মাত্রা কী?</b1b-bookmark>
+      <b1b-bookmark time="127" time-bn="০২:০৭">স্কেলিং সূত্র</b1b-bookmark>
+      <b1b-bookmark time="203" time-bn="০৩:২৩">অ-স্ব-সদৃশ ফ্র্যাক্টাল</b1b-bookmark>
+      <b1b-bookmark time="271" time-bn="০৪:৩১">উপকূলের কাহিনী</b1b-bookmark>
+      <b1b-bookmark time="333" time-bn="০৫:৩৩">উপসংহার</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-misconception">একটি প্রচলিত ভুল ধারণা</a>
+      <a href="#sec-dimension">মাত্রা আসলে কী?</a>
+      <a href="#sec-scaling">স্কেলিং নিয়ম ও সূত্র</a>
+      <a href="#sec-not-selfsimilar">স্ব-সদৃশ নয় এমন ফ্র্যাক্টাল</a>
+      <a href="#sec-coast">উপকূলের কাহিনী</a>
+      <a href="#sec-conclusion">উপসংহার</a>
+      <a href="#sec-lab">ইন্টারেক্টিভ ল্যাব ও কুইজ</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <b1b-section id="sec-misconception" title="একটি প্রচলিত ভুল ধারণা">
+        <p>ফ্র্যাক্টাল শব্দটি শুনলে অনেকের মনে প্রথমেই যে ছবি ভেসে ওঠে, তা হলো — জুম করলে আবার একই আকৃতি দেখা যাবে। এই ধারণা কিছু কিছু ক্ষেত্রে সত্য, যেমন Sierpinski ত্রিভুজ। কিন্তু অধিকাংশ ফ্র্যাক্টালের ক্ষেত্রে এটি ভুল।</p>
+        <b1b-figure alt="শিক্ষণীয় চিত্র" caption="Sierpinski ত্রিভুজ — প্রতিটি ছোট ত্রিভুজ পুরো আকৃতির হুবহু প্রতিলিপি, তাই এটি স্ব-সদৃশ ফ্র্যাক্টাল।">
+<svg viewBox="0 0 400 240" role="img" aria-label="শিক্ষণীয় চিত্র" style="width:100%;max-width:680px;display:block;margin:0 auto;background:#121821;border-radius:12px"><line x1="20" y1="12" x2="20" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="60" y1="12" x2="60" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="100" y1="12" x2="100" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="140" y1="12" x2="140" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="180" y1="12" x2="180" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="220" y1="12" x2="220" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="260" y1="12" x2="260" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="300" y1="12" x2="300" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="340" y1="12" x2="340" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="380" y1="12" x2="380" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="20" x2="388" y2="20" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="60" x2="388" y2="60" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="100" x2="388" y2="100" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="140" x2="388" y2="140" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="180" x2="388" y2="180" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="220" x2="388" y2="220" stroke="#2b3547" stroke-width="1"/><polygon points="200,20 189.6875,32.5 210.3125,32.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="189.6875,32.5 179.375,45.0 200.0,45.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="210.3125,32.5 200.0,45.0 220.625,45.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="179.375,45.0 169.0625,57.5 189.6875,57.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="169.0625,57.5 158.75,70.0 179.375,70.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="189.6875,57.5 179.375,70.0 200.0,70.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="220.625,45.0 210.3125,57.5 230.9375,57.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="210.3125,57.5 200.0,70.0 220.625,70.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="230.9375,57.5 220.625,70.0 241.25,70.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="158.75,70.0 148.4375,82.5 169.0625,82.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="148.4375,82.5 138.125,95.0 158.75,95.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="169.0625,82.5 158.75,95.0 179.375,95.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="138.125,95.0 127.8125,107.5 148.4375,107.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="127.8125,107.5 117.5,120.0 138.125,120.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="148.4375,107.5 138.125,120.0 158.75,120.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="179.375,95.0 169.0625,107.5 189.6875,107.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="169.0625,107.5 158.75,120.0 179.375,120.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="189.6875,107.5 179.375,120.0 200.0,120.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="241.25,70.0 230.9375,82.5 251.5625,82.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="230.9375,82.5 220.625,95.0 241.25,95.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="251.5625,82.5 241.25,95.0 261.875,95.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="220.625,95.0 210.3125,107.5 230.9375,107.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="210.3125,107.5 200.0,120.0 220.625,120.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="230.9375,107.5 220.625,120.0 241.25,120.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="261.875,95.0 251.5625,107.5 272.1875,107.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="251.5625,107.5 241.25,120.0 261.875,120.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="272.1875,107.5 261.875,120.0 282.5,120.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="117.5,120.0 107.1875,132.5 127.8125,132.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="107.1875,132.5 96.875,145.0 117.5,145.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="127.8125,132.5 117.5,145.0 138.125,145.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="96.875,145.0 86.5625,157.5 107.1875,157.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="86.5625,157.5 76.25,170.0 96.875,170.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="107.1875,157.5 96.875,170.0 117.5,170.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="138.125,145.0 127.8125,157.5 148.4375,157.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="127.8125,157.5 117.5,170.0 138.125,170.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="148.4375,157.5 138.125,170.0 158.75,170.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="76.25,170.0 65.9375,182.5 86.5625,182.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="65.9375,182.5 55.625,195.0 76.25,195.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="86.5625,182.5 76.25,195.0 96.875,195.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="55.625,195.0 45.3125,207.5 65.9375,207.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="45.3125,207.5 35,220 55.625,220.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="65.9375,207.5 55.625,220.0 76.25,220.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="96.875,195.0 86.5625,207.5 107.1875,207.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="86.5625,207.5 76.25,220.0 96.875,220.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="107.1875,207.5 96.875,220.0 117.5,220.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="158.75,170.0 148.4375,182.5 169.0625,182.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="148.4375,182.5 138.125,195.0 158.75,195.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="169.0625,182.5 158.75,195.0 179.375,195.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="138.125,195.0 127.8125,207.5 148.4375,207.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="127.8125,207.5 117.5,220.0 138.125,220.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="148.4375,207.5 138.125,220.0 158.75,220.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="179.375,195.0 169.0625,207.5 189.6875,207.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="169.0625,207.5 158.75,220.0 179.375,220.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="189.6875,207.5 179.375,220.0 200.0,220.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="282.5,120.0 272.1875,132.5 292.8125,132.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="272.1875,132.5 261.875,145.0 282.5,145.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="292.8125,132.5 282.5,145.0 303.125,145.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="261.875,145.0 251.5625,157.5 272.1875,157.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="251.5625,157.5 241.25,170.0 261.875,170.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="272.1875,157.5 261.875,170.0 282.5,170.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="303.125,145.0 292.8125,157.5 313.4375,157.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="292.8125,157.5 282.5,170.0 303.125,170.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="313.4375,157.5 303.125,170.0 323.75,170.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="241.25,170.0 230.9375,182.5 251.5625,182.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="230.9375,182.5 220.625,195.0 241.25,195.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="251.5625,182.5 241.25,195.0 261.875,195.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="220.625,195.0 210.3125,207.5 230.9375,207.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="210.3125,207.5 200.0,220.0 220.625,220.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="230.9375,207.5 220.625,220.0 241.25,220.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="261.875,195.0 251.5625,207.5 272.1875,207.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="251.5625,207.5 241.25,220.0 261.875,220.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="272.1875,207.5 261.875,220.0 282.5,220.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="323.75,170.0 313.4375,182.5 334.0625,182.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="313.4375,182.5 303.125,195.0 323.75,195.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="334.0625,182.5 323.75,195.0 344.375,195.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="303.125,195.0 292.8125,207.5 313.4375,207.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="292.8125,207.5 282.5,220.0 303.125,220.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="313.4375,207.5 303.125,220.0 323.75,220.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="344.375,195.0 334.0625,207.5 354.6875,207.5" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="334.0625,207.5 323.75,220.0 344.375,220.0" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/><polygon points="354.6875,207.5 344.375,220.0 365,220" fill="#74c0e3" fill-opacity="0.25" stroke="#74c0e3" stroke-width="1"/></svg>
+        </b1b-figure>
+        <p>ধরুন আপনি একটি নদীর তীর বা মেঘের ছবি দেখছেন। জুম করলে কি আগের ছবির হুবহু প্রতিলিপি পাওয়া যায়? না। তবুও এগুলো ফ্র্যাক্টাল — কারণ এগুলোর জটিলতা দেখার মাপাঙ্কের ওপর নির্ভর করে।</p>
+        <b1b-callout type="blue" icon="💡" title="আসল সংজ্ঞা">
+          <p>ফ্র্যাক্টালের সংজ্ঞা স্ব-সদৃশতার ওপর নয়, বরং স্কেলিংয়ের ওপর নির্ভর করে। যদি কোনো আকৃতির বিশদতা বা জটিলতা মাপাঙ্ক পরিবর্তনের সাথে সাথে নতুন করে ফুটে ওঠে, তবেই সেটি ফ্র্যাক্টাল।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <b1b-section id="sec-dimension" title="মাত্রা আসলে কী?">
+        <p>মাত্রা মানে কী? বিন্দুর মাত্রা শূন্য, সোজা রেখার এক, সমতলের দুই, আর আমাদের চারপাশের স্থানের তিন। এই পূর্ণসংখ্যার মাত্রাগুলো আমাদের কাছে স্বাভাবিক। কিন্তু গণিতের কিছু আকৃতি আছে যারা এই শ্রেণিতে বসে না।</p>
+        <b1b-figure alt="শিক্ষণীয় চিত্র" caption="একটি কাটা-ছেঁড়া উপকূলরেখা — সোজা রেখা নয়, আবার পুরো তলও নয়; এর মাত্রা ১ ও ২ এর মাঝখানে।">
+<svg viewBox="0 0 400 240" role="img" aria-label="শিক্ষণীয় চিত্র" style="width:100%;max-width:680px;display:block;margin:0 auto;background:#121821;border-radius:12px"><line x1="20" y1="12" x2="20" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="60" y1="12" x2="60" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="100" y1="12" x2="100" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="140" y1="12" x2="140" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="180" y1="12" x2="180" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="220" y1="12" x2="220" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="260" y1="12" x2="260" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="300" y1="12" x2="300" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="340" y1="12" x2="340" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="380" y1="12" x2="380" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="20" x2="388" y2="20" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="60" x2="388" y2="60" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="100" x2="388" y2="100" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="140" x2="388" y2="140" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="180" x2="388" y2="180" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="220" x2="388" y2="220" stroke="#2b3547" stroke-width="1"/><polyline points="15,120 33,131 51,120 69,131 87,120 105,131 123,120 141,131 159,120 177,131 195,120 213,131 231,120 249,131 267,120 285,131 303,120 321,131 339,120 357,131 375,120" fill="none" stroke="#f7c948" stroke-width="2.5"/><line x1="15" y1="120" x2="390" y2="120" stroke="#74c0e3" stroke-width="1" stroke-dasharray="4,4"/></svg>
+        </b1b-figure>
+        <p>Koch বক্ররেখা দেখুন। এটি সোজা রেখা দিয়ে শুরু হয়, কিন্তু বারবার তার মাঝখানে নতুন খাঁজ তৈরি করে। শেষ ফলাফল একটি রেখা হলেও সাধারণ রেখার চেয়ে অনেক বেশি জটিল। এর মাত্রা ১ এর বেশি কিন্তু ২ এর কম।</p>
+        <b1b-callout type="gold" icon="📐" title="ভগ্নাংশ মাত্রা">
+          <p>ফ্র্যাক্টালের মাত্রা একটি ভগ্নাংশ বা অ-পূর্ণসংখ্যা হতে পারে। এটি বোঝায় যে আকৃতিটি কতটা 'স্থান দখল' করে — একটি রেখার চেয়ে বেশি, কিন্তু একটি পূর্ণ তলের চেয়ে কম।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <b1b-section id="sec-scaling" title="স্কেলিং নিয়ম ও সূত্র">
+        <p>এখন আসুন একটিমাত্র সূত্র শিখি। ধরুন আপনি একটি আকৃতিকে s গুণ ছোট করে দেখছেন। যদি তখন আগের চেয়ে N গুণ বেশি অংশ দেখা যায়, তবে আকৃতির মাত্রা D হবে log N ভাগ log s।</p>
+        <b1b-figure alt="শিক্ষণীয় চিত্র" caption="Koch বক্ররেখা — প্রতিটি খাঁজে রেখাটি তিনভাগে ভেঙে মাঝখানে নতুন অংশ যোগ হয়; তাই ১ থেকে ৪ গুণ অংশ বাড়ে।">
+<svg viewBox="0 0 400 240" role="img" aria-label="শিক্ষণীয় চিত্র" style="width:100%;max-width:680px;display:block;margin:0 auto;background:#121821;border-radius:12px"><line x1="20" y1="12" x2="20" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="60" y1="12" x2="60" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="100" y1="12" x2="100" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="140" y1="12" x2="140" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="180" y1="12" x2="180" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="220" y1="12" x2="220" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="260" y1="12" x2="260" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="300" y1="12" x2="300" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="340" y1="12" x2="340" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="380" y1="12" x2="380" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="20" x2="388" y2="20" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="60" x2="388" y2="60" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="100" x2="388" y2="100" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="140" x2="388" y2="140" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="180" x2="388" y2="180" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="220" x2="388" y2="220" stroke="#2b3547" stroke-width="1"/><polyline points="30.0,175.0 42.6,175.0 48.9,164.1 55.2,175.0 67.8,175.0 74.1,164.1 67.8,153.2 80.4,153.2 86.7,142.3 93.0,153.2 105.6,153.2 99.3,164.1 105.6,175.0 118.1,175.0 124.4,164.1 130.7,175.0 143.3,175.0 149.6,164.1 143.3,153.2 155.9,153.2 162.2,142.3 155.9,131.4 143.3,131.4 149.6,120.5 143.3,109.6 155.9,109.6 162.2,98.7 168.5,109.6 181.1,109.6 187.4,98.7 181.1,87.8 193.7,87.8 200.0,76.9 206.3,87.8 218.9,87.8 212.6,98.7 218.9,109.6 231.5,109.6 237.8,98.7 244.1,109.6 256.7,109.6 250.4,120.5 256.7,131.4 244.1,131.4 237.8,142.3 244.1,153.2 256.7,153.2 250.4,164.1 256.7,175.0 269.3,175.0 275.6,164.1 281.9,175.0 294.4,175.0 300.7,164.1 294.4,153.2 307.0,153.2 313.3,142.3 319.6,153.2 332.2,153.2 325.9,164.1 332.2,175.0 344.8,175.0 351.1,164.1 357.4,175.0 370.0,175.0" fill="none" stroke="#74c0e3" stroke-width="2.5"/><line x1="30" y1="215" x2="370" y2="215" stroke="#4ecdc4" stroke-width="2.5" stroke-dasharray="5,4"/></svg>
+        </b1b-figure>
+        <b1b-formula math="D = \frac{\log N}{\log s}"></b1b-formula>
+        <p>Koch বক্ররেখায় প্রতিটি রেখা তিনভাগে ভাগ করা হয় ও মাঝখানে নতুন খাঁজ বসানো হয় — অর্থাৎ s = 3 আর N = 4। তাই D = log 4 / log 3, যার মান প্রায় ১.২৬। Sierpinski ত্রিভুজে s = 2, N = 3 — মাত্রা প্রায় ১.৫৮৫।</p>
+        <b1b-callout type="green" icon="🧮" title="মাত্রা কেন কাজে লাগে?">
+          <p>মাত্রা আমাদের বলে দেয় আকৃতিটি কতখানি 'ভরে' আছে। মাত্রা যত বাড়বে, আকৃতি তত বেশি জায়গা দখল করবে। একটি সোজা রেখার মাত্রা ১, কিন্তু Koch বক্ররেখার ১.২৬ — মানে এটি সোজা রেখার চেয়ে বেশি জটিল।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <b1b-section id="sec-not-selfsimilar" title="স্ব-সদৃশ নয় এমন ফ্র্যাক্টাল">
+        <p>আমরা আগের এক পাঠে নিউটনের ফ্র্যাক্টাল দেখেছি। সেটির সীমানায় জুম করলে নতুন নতুন কাঠামো ফুটে ওঠে, কিন্তু কোনো স্তরই আগের স্তরের হুবহু প্রতিলিপি নয়। তবুও এটি একটি ফ্র্যাক্টাল।</p>
+        <b1b-figure alt="শিক্ষণীয় চিত্র" caption="একটি অ-স্ব-সদৃশ ফ্র্যাক্টালের সীমানা — প্রতি স্তরে নতুন রূপ, পুরোনোর হুবহু প্রতিলিপি নয়।">
+<svg viewBox="0 0 400 240" role="img" aria-label="শিক্ষণীয় চিত্র" style="width:100%;max-width:680px;display:block;margin:0 auto;background:#121821;border-radius:12px"><line x1="20" y1="12" x2="20" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="60" y1="12" x2="60" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="100" y1="12" x2="100" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="140" y1="12" x2="140" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="180" y1="12" x2="180" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="220" y1="12" x2="220" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="260" y1="12" x2="260" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="300" y1="12" x2="300" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="340" y1="12" x2="340" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="380" y1="12" x2="380" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="20" x2="388" y2="20" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="60" x2="388" y2="60" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="100" x2="388" y2="100" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="140" x2="388" y2="140" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="180" x2="388" y2="180" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="220" x2="388" y2="220" stroke="#2b3547" stroke-width="1"/><rect x="30" y="20" width="340" height="200" fill="none" stroke="#74c0e3" stroke-width="2" stroke-opacity="0.90"/><rect x="95" y="50" width="210" height="140" fill="none" stroke="#74c0e3" stroke-width="2" stroke-opacity="0.72"/><rect x="150" y="82" width="100" height="76" fill="none" stroke="#74c0e3" stroke-width="2" stroke-opacity="0.54"/><rect x="180" y="102" width="40" height="36" fill="none" stroke="#74c0e3" stroke-width="2" stroke-opacity="0.36"/><circle cx="200" cy="120" r="3" fill="#f7c948"/></svg>
+        </b1b-figure>
+        <p>এখানেই প্রচলিত ভুল ধারণা ভেঙে পড়ে। স্ব-সদৃশতা একটি বিশেষ ক্ষেত্র মাত্র — যেমন Sierpinski ত্রিভুজ বা Koch বক্ররেখা। কিন্তু সাধারণ ফ্র্যাক্টালের সংজ্ঞা তার চেয়ে অনেক বিস্তৃত। যেকোনো আকৃতির মাত্রা যদি পূর্ণসংখ্যা না হয়, তবেই সেটি ফ্র্যাক্টাল।</p>
+        <b1b-quote author="বাংলা STEM পাঠ প্রস্তুতি দল">ফ্র্যাক্টাল হওয়ার শর্ত হলো মাত্রা — প্রতিলিপি নয়।</b1b-quote>
+        <b1b-callout type="purple" icon="🔍" title="মনে রাখুন">
+          <p>হুবহু প্রতিলিপি দেখা গেলে সেটি 'স্ব-সদৃশ' ফ্র্যাক্টাল। কিন্তু হুবহু প্রতিলিপি না দেখা গেলেও আকৃতিটি ফ্র্যাক্টাল হতে পারে — যদি তার মাত্রা ভগ্নাংশ হয়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <b1b-section id="sec-coast" title="উপকূলের কাহিনী">
+        <p>ধরুন আপনি একটি দ্বীপের উপকূল মাপছেন। এক কিলোমিটার দণ্ড দিয়ে মাপলে এক জবাব পাবেন। এক মিটার দণ্ড দিয়ে মাপলে অন্য জবাব পাবেন — অনেক বেশি দৈর্ঘ্য। কারণ ছোট দণ্ড দিয়ে আপনি ছোট ছোট ভাঁজগুলোও ধরতে পারবেন।</p>
+        <b1b-figure alt="শিক্ষণীয় চিত্র" caption="উপকূলরেখা — বড় দণ্ড দিয়ে মাপলে সোজা দেখায়, ছোট দণ্ডে উঠে আসে নতুন নতুন ভাঁজ।">
+<svg viewBox="0 0 400 240" role="img" aria-label="শিক্ষণীয় চিত্র" style="width:100%;max-width:680px;display:block;margin:0 auto;background:#121821;border-radius:12px"><line x1="20" y1="12" x2="20" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="60" y1="12" x2="60" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="100" y1="12" x2="100" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="140" y1="12" x2="140" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="180" y1="12" x2="180" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="220" y1="12" x2="220" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="260" y1="12" x2="260" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="300" y1="12" x2="300" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="340" y1="12" x2="340" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="380" y1="12" x2="380" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="20" x2="388" y2="20" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="60" x2="388" y2="60" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="100" x2="388" y2="100" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="140" x2="388" y2="140" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="180" x2="388" y2="180" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="220" x2="388" y2="220" stroke="#2b3547" stroke-width="1"/><polyline points="15,120 33,131 51,120 69,131 87,120 105,131 123,120 141,131 159,120 177,131 195,120 213,131 231,120 249,131 267,120 285,131 303,120 321,131 339,120 357,131 375,120" fill="none" stroke="#f7c948" stroke-width="2.5"/><line x1="15" y1="120" x2="390" y2="120" stroke="#74c0e3" stroke-width="1" stroke-dasharray="4,4"/></svg>
+        </b1b-figure>
+        <p>এই ঘটনাই coastline paradox নামে পরিচিত। সকল বাস্তব প্রাকৃতিক আকৃতি — মেঘ, পর্বত, নদী, গাছের ডাল — ঠিক এইভাবেই আচরণ করে। তাই ফ্র্যাক্টাল জ্যামিতি কেবল তাত্ত্বিক নয়, বাস্তব জগতের ভাষা।</p>
+        <b1b-callout type="red" icon="🌊" title="বাস্তব প্রয়োগ">
+          <p>ফ্র্যাক্টাল মাত্রা ব্যবহার করে মেঘের ঘনত্ব, টিউমারের আকৃতি, শহরের বৃদ্ধি এমনকি স্টক মার্কেটের ওঠানামাও বিশ্লেষণ করা হয়। মাত্রা হলো জটিলতার একটি সংখ্যাসূচক পরিমাপ।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <b1b-section id="sec-conclusion" title="উপসংহার">
+        <p>আজ আমরা শিখলাম ফ্র্যাক্টাল মানে হুবহু প্রতিলিপি নয়। আসল কথা হলো স্কেলিং — কোনো আকৃতির জটিলতা যখন দেখার মাপাঙ্কের ওপর নির্ভর করে, তখনই সেটি ফ্র্যাক্টাল। আর এর মাত্রা হলো log N ভাগ log s।</p>
+        <p>পরবর্তী পাঠে আমরা হিলবার্ট বক্ররেখার কথা শুনব — একটি বক্ররেখা যা সীমার অর্থে পুরো একটি বর্গক্ষেত্র ভরে দেয়। <a href='lesson_04.html'><strong>পরবর্তী অধ্যায়: হিলবার্টের বক্ররেখা</strong></a></p>
+      </b1b-section>
+
+      <!-- ═══ Interactive lab & quizzes — excluded from narration ═══ -->
+      <b1b-section id="sec-lab" title="ইন্টারেক্টিভ ল্যাব ও কুইজ" data-no-narration="true">
+        <p class="viz-intro">সমতলের বিন্দুটি টেনে বিভিন্ন অবস্থান বেছে নিন। ছোট স্কেলে কীভাবে নতুন কাঠামো ফুটে ওঠে তা পর্যবেক্ষণ করুন — ঠিক যেমন ফ্র্যাক্টালের ক্ষেত্রে মাপাঙ্ক বদলালে নতুন বিশদতা দেখা যায়।</p>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="2,1"></b1b-vector-plane>
+        </b1b-fullscreen>
+
+        <b1b-quiz
+          question="❓ Koch বক্ররেখার মাত্রা কত?"
+          correct="1"
+          correct-msg="সঠিক! প্রতি ধাপে ৩ গুণ ছোট করলে ৪ গুণ বেশি অংশ পাই — তাই D = log 4 / log 3 ≈ 1.26।"
+          wrong-msg="মনে রাখবেন: Koch বক্ররেখায় s = 3 ও N = 4। সূত্র D = log N / log s প্রয়োগ করুন।"
+          reveal-msg="সঠিক উত্তর: log 4 / log 3 ≈ ১.২৬।">
+          <div slot="option">১</div>
+          <div slot="option">log 4 / log 3 ≈ ১.২৬</div>
+          <div slot="option">log 3 / log 2 ≈ ১.৫৮</div>
+          <div slot="option">২</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ফ্র্যাক্টালের আসল সংজ্ঞা কোনটি?"
+          correct="1"
+          correct-msg="চমৎকার! ফ্র্যাক্টালের সংজ্ঞা হলো এর মাত্রা পূর্ণসংখ্যা নয় — স্ব-সদৃশতা একটি বিশেষ ক্ষেত্র মাত্র।"
+          wrong-msg="স্ব-সদৃশতা সব ফ্র্যাক্টালে থাকে না। আসল বিষয় হলো ভগ্নাংশ মাত্রা।"
+          reveal-msg="সঠিক উত্তর: ভগ্নাংশ মাত্রা থাকে।">
+          <div slot="option">জুম করলে হুবহু আগের মতো দেখায়</div>
+          <div slot="option">ভগ্নাংশ মাত্রা থাকে</div>
+          <div slot="option">সবসময় ত্রিভুজাকার</div>
+          <div slot="option">শুধু কম্পিউটারে আঁকা যায়</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ উপকূলরেখার দৈর্ঘ্য মাপার দণ্ড ছোট করলে কী হয়?"
+          correct="1"
+          correct-msg="ঠিক! ছোট দণ্ড দিয়ে বেশি ভাঁজ ধরা পড়ে — ফলে মোট দৈর্ঘ্য বাড়তেই থাকে। একে coastline paradox বলে।"
+          wrong-msg="ছোট মাপার দণ্ড নতুন নতুন ভাঁজ প্রকাশ করে, তাই দৈর্ঘ্য বাড়ে — কমে না।"
+          reveal-msg="সঠিক উত্তর: দৈর্ঘ্য বাড়তে থাকে।">
+          <div slot="option">দৈর্ঘ্য কমে যায়</div>
+          <div slot="option">দৈর্ঘ্য বাড়তে থাকে</div>
+          <div slot="option">কোনো পরিবর্তন হয় না</div>
+          <div slot="option">দৈর্ঘ্য শূন্য হয়</div>
+        </b1b-quiz>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <b1b-watch-panel
+    video-src="../../media_vault/fractals/lesson_03/experiments/3b1b_fractals_03_full_dubbed.mp4"
+    yt-id="gB9n2gHsHN4"
+    title="ফ্র্যাক্টাল সাধারণত স্ব-সদৃশ নয় — অধ্যায় ৩"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — ফ্র্যাক্টাল">
+    <a class="playlist-item" href="lesson_01.html">
+      <div class="playlist-num">১</div>
+      <div class="playlist-item-info"><div class="playlist-item-title">নিউটনের ফ্র্যাক্টাল (যা নিউটন কখনো জানতেন না)</div>
+      <div class="playlist-item-meta">অধ্যায় ১</div></div>
+    </a>
+    <a class="playlist-item" href="lesson_02.html">
+      <div class="playlist-num">২</div>
+      <div class="playlist-item-info"><div class="playlist-item-title">নিউটনের কাজ থেকে কীভাবে ম্যান্ডেলব্রোট সেটের জন্ম হয়</div>
+      <div class="playlist-item-meta">অধ্যায় ২</div></div>
+    </a>
+    <a class="playlist-item active" href="lesson_03.html">
+      <div class="playlist-num">৩</div>
+      <div class="playlist-item-info"><div class="playlist-item-title">ফ্র্যাক্টাল সাধারণত স্ব-সদৃশ নয়</div>
+      <div class="playlist-item-meta">অধ্যায় ৩</div></div>
+    </a>
+    <a class="playlist-item" href="lesson_04.html">
+      <div class="playlist-num">৪</div>
+      <div class="playlist-item-info"><div class="playlist-item-title">হিলবার্টের বক্ররেখা: অসীম গণিত কি কাজে লাগে?</div>
+      <div class="playlist-item-meta">অধ্যায় ৪</div></div>
+    </a>
+  </b1b-watch-panel>
+</div><!-- /lesson-body -->
+
+<b1b-chapter-nav
+  prev-url="lesson_02.html"
+  prev-title="নিউটনের কাজ থেকে কীভাবে ম্যান্ডেলব্রোট সেটের জন্ম হয়"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_04.html"
+  next-title="হিলবার্টের বক্ররেখা: অসীম গণিত কি কাজে লাগে?"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

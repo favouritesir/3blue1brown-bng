@@ -1,0 +1,393 @@
+{
+  "course": "puzzles",
+  "build": "expressive_teacher_audio",
+  "voice": "bn-BD-PradeepNeural",
+  "verification_browser": "headless Chrome channel=chrome",
+  "lessons": [
+    {
+      "lesson": "lesson_01",
+      "sections": 5,
+      "cues": 22,
+      "per_section": {
+        "sec-im-o": 5,
+        "sec-deconstruct": 6,
+        "sec-intuition": 4,
+        "sec-perspective": 4,
+        "sec-takeaway": 3
+      },
+      "figure_cues": 3,
+      "katex_annotations": 0,
+      "duration_s": 266.54,
+      "mp3_files": 5,
+      "backup": [
+        "manifest.js",
+        "manifest.json"
+      ],
+      "manifest_version": [
+        2
+      ],
+      "dom_manifest_1to1": true,
+      "duplicates": 0,
+      "quiz_media_tab_types": 0,
+      "forbidden_label_hits": 0,
+      "js_page_errors": 0,
+      "console_errors_narration": 0,
+      "mp3_nonzero": true,
+      "mp3_browser_loadable": true,
+      "json_valid": true,
+      "manifest_js_matches_json": true,
+      "no_narration_sections": [
+        "sec-practice"
+      ],
+      "verified": true
+    },
+    {
+      "lesson": "lesson_02",
+      "sections": 5,
+      "cues": 26,
+      "per_section": {
+        "sec-problem": 6,
+        "sec-2d": 6,
+        "sec-reframe": 6,
+        "sec-3d": 5,
+        "sec-takeaway": 3
+      },
+      "figure_cues": 4,
+      "katex_annotations": 2,
+      "duration_s": 292.37,
+      "mp3_files": 5,
+      "backup": [
+        "manifest.js",
+        "manifest.json"
+      ],
+      "manifest_version": [
+        2
+      ],
+      "dom_manifest_1to1": true,
+      "duplicates": 0,
+      "quiz_media_tab_types": 0,
+      "forbidden_label_hits": 0,
+      "js_page_errors": 0,
+      "console_errors_narration": 0,
+      "mp3_nonzero": true,
+      "mp3_browser_loadable": true,
+      "json_valid": true,
+      "manifest_js_matches_json": true,
+      "no_narration_sections": [
+        "sec-practice"
+      ],
+      "verified": true
+    },
+    {
+      "lesson": "lesson_03",
+      "sections": 5,
+      "cues": 24,
+      "per_section": {
+        "sec-im-o": 5,
+        "sec-question": 5,
+        "sec-invariant": 5,
+        "sec-solution": 5,
+        "sec-takeaway": 4
+      },
+      "figure_cues": 4,
+      "katex_annotations": 0,
+      "duration_s": 242.83,
+      "mp3_files": 5,
+      "backup": [
+        "manifest.js",
+        "manifest.json"
+      ],
+      "manifest_version": [
+        2
+      ],
+      "dom_manifest_1to1": true,
+      "duplicates": 0,
+      "quiz_media_tab_types": 0,
+      "forbidden_label_hits": 0,
+      "js_page_errors": 0,
+      "console_errors_narration": 0,
+      "mp3_nonzero": true,
+      "mp3_browser_loadable": true,
+      "json_valid": true,
+      "manifest_js_matches_json": true,
+      "no_narration_sections": [
+        "sec-practice"
+      ],
+      "verified": true
+    },
+    {
+      "lesson": "lesson_04",
+      "sections": 5,
+      "cues": 23,
+      "per_section": {
+        "sec-question": 5,
+        "sec-alice": 5,
+        "sec-bob": 5,
+        "sec-answer": 5,
+        "sec-takeaway": 3
+      },
+      "figure_cues": 4,
+      "katex_annotations": 3,
+      "duration_s": 217.74,
+      "mp3_files": 5,
+      "backup": [
+        "manifest.js",
+        "manifest.json"
+      ],
+      "manifest_version": [
+        2
+      ],
+      "dom_manifest_1to1": true,
+      "duplicates": 0,
+      "quiz_media_tab_types": 0,
+      "forbidden_label_hits": 0,
+      "js_page_errors": 0,
+      "console_errors_narration": 0,
+      "mp3_nonzero": true,
+      "mp3_browser_loadable": true,
+      "json_valid": true,
+      "manifest_js_matches_json": true,
+      "no_narration_sections": [
+        "sec-practice"
+      ],
+      "verified": true
+    },
+    {
+      "lesson": "lesson_05",
+      "sections": 5,
+      "cues": 22,
+      "per_section": {
+        "sec-pattern": 5,
+        "sec-count": 5,
+        "sec-break": 5,
+        "sec-general": 4,
+        "sec-takeaway": 3
+      },
+      "figure_cues": 4,
+      "katex_annotations": 1,
+      "duration_s": 205.85,
+      "mp3_files": 5,
+      "backup": [
+        "manifest.js",
+        "manifest.json"
+      ],
+      "manifest_version": [
+        2
+      ],
+      "dom_manifest_1to1": true,
+      "duplicates": 0,
+      "quiz_media_tab_types": 0,
+      "forbidden_label_hits": 0,
+      "js_page_errors": 0,
+      "console_errors_narration": 0,
+      "mp3_nonzero": true,
+      "mp3_browser_loadable": true,
+      "json_valid": true,
+      "manifest_js_matches_json": true,
+      "no_narration_sections": [
+        "sec-practice"
+      ],
+      "verified": true
+    },
+    {
+      "lesson": "lesson_06",
+      "sections": 5,
+      "cues": 21,
+      "per_section": {
+        "sec-intro": 5,
+        "sec-shadow": 4,
+        "sec-knot": 5,
+        "sec-encoding": 4,
+        "sec-takeaway": 3
+      },
+      "figure_cues": 4,
+      "katex_annotations": 0,
+      "duration_s": 178.76,
+      "mp3_files": 5,
+      "backup": [
+        "manifest.js",
+        "manifest.json"
+      ],
+      "manifest_version": [
+        2
+      ],
+      "dom_manifest_1to1": true,
+      "duplicates": 0,
+      "quiz_media_tab_types": 0,
+      "forbidden_label_hits": 0,
+      "js_page_errors": 0,
+      "console_errors_narration": 0,
+      "mp3_nonzero": true,
+      "mp3_browser_loadable": true,
+      "json_valid": true,
+      "manifest_js_matches_json": true,
+      "no_narration_sections": [
+        "sec-practice"
+      ],
+      "verified": true
+    },
+    {
+      "lesson": "lesson_07",
+      "sections": 5,
+      "cues": 23,
+      "per_section": {
+        "sec-puzzle": 5,
+        "sec-gf": 5,
+        "sec-coeff": 6,
+        "sec-olympiad": 4,
+        "sec-takeaway": 3
+      },
+      "figure_cues": 4,
+      "katex_annotations": 1,
+      "duration_s": 219.23,
+      "mp3_files": 5,
+      "backup": [
+        "manifest.js",
+        "manifest.json"
+      ],
+      "manifest_version": [
+        2
+      ],
+      "dom_manifest_1to1": true,
+      "duplicates": 0,
+      "quiz_media_tab_types": 0,
+      "forbidden_label_hits": 0,
+      "js_page_errors": 0,
+      "console_errors_narration": 0,
+      "mp3_nonzero": true,
+      "mp3_browser_loadable": true,
+      "json_valid": true,
+      "manifest_js_matches_json": true,
+      "no_narration_sections": [
+        "sec-practice"
+      ],
+      "verified": true
+    },
+    {
+      "lesson": "lesson_08",
+      "sections": 5,
+      "cues": 23,
+      "per_section": {
+        "sec-puzzle": 5,
+        "sec-bits": 5,
+        "sec-xor": 6,
+        "sec-proof": 4,
+        "sec-takeaway": 3
+      },
+      "figure_cues": 4,
+      "katex_annotations": 2,
+      "duration_s": 229.33,
+      "mp3_files": 5,
+      "backup": [
+        "manifest.js",
+        "manifest.json"
+      ],
+      "manifest_version": [
+        2
+      ],
+      "dom_manifest_1to1": true,
+      "duplicates": 0,
+      "quiz_media_tab_types": 0,
+      "forbidden_label_hits": 0,
+      "js_page_errors": 0,
+      "console_errors_narration": 0,
+      "mp3_nonzero": true,
+      "mp3_browser_loadable": true,
+      "json_valid": true,
+      "manifest_js_matches_json": true,
+      "no_narration_sections": [
+        "sec-practice"
+      ],
+      "verified": true
+    },
+    {
+      "lesson": "lesson_09",
+      "sections": 5,
+      "cues": 23,
+      "per_section": {
+        "sec-puzzle": 5,
+        "sec-euler": 5,
+        "sec-bipartite": 5,
+        "sec-torus": 5,
+        "sec-takeaway": 3
+      },
+      "figure_cues": 4,
+      "katex_annotations": 2,
+      "duration_s": 223.12,
+      "mp3_files": 5,
+      "backup": [
+        "manifest.js",
+        "manifest.json"
+      ],
+      "manifest_version": [
+        2
+      ],
+      "dom_manifest_1to1": true,
+      "duplicates": 0,
+      "quiz_media_tab_types": 0,
+      "forbidden_label_hits": 0,
+      "js_page_errors": 0,
+      "console_errors_narration": 0,
+      "mp3_nonzero": true,
+      "mp3_browser_loadable": true,
+      "json_valid": true,
+      "manifest_js_matches_json": true,
+      "no_narration_sections": [
+        "sec-practice"
+      ],
+      "verified": true
+    },
+    {
+      "lesson": "lesson_10",
+      "sections": 5,
+      "cues": 24,
+      "per_section": {
+        "sec-formula": 6,
+        "sec-tree": 5,
+        "sec-dual": 5,
+        "sec-generalize": 5,
+        "sec-takeaway": 3
+      },
+      "figure_cues": 4,
+      "katex_annotations": 3,
+      "duration_s": 217.63,
+      "mp3_files": 5,
+      "backup": [
+        "manifest.js",
+        "manifest.json"
+      ],
+      "manifest_version": [
+        2
+      ],
+      "dom_manifest_1to1": true,
+      "duplicates": 0,
+      "quiz_media_tab_types": 0,
+      "forbidden_label_hits": 0,
+      "js_page_errors": 0,
+      "console_errors_narration": 0,
+      "mp3_nonzero": true,
+      "mp3_browser_loadable": true,
+      "json_valid": true,
+      "manifest_js_matches_json": true,
+      "no_narration_sections": [
+        "sec-practice"
+      ],
+      "verified": true
+    }
+  ],
+  "totals": {
+    "lessons": 10,
+    "sections": 50,
+    "cues": 231,
+    "figure_cues": 39,
+    "katex_annotations": 14,
+    "duration_s": 2293.4,
+    "mp3_files": 50,
+    "duplicates": 0,
+    "quiz_media_tab_types": 0,
+    "forbidden_label_hits": 0,
+    "js_page_errors": 0,
+    "narration_console_errors": 0,
+    "all_verified": true
+  }
+}

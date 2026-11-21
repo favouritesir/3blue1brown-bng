@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>বিটকয়েন আসলে কীভাবে কাজ করে? | But how does bitcoin actually work?</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/computer_science/lesson_06/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="কম্পিউটার বিজ্ঞান"
+  course-url="../../index.html#computer-science"
+  home-url="../../index.html"
+  chapter-num="০৬"
+  chapter-total="১৩"
+  prev-url="lesson_05.html"
+  prev-title="অপেক্ষা করুন, সেরা ওয়ার্ডল opener ''crane'' নয়…"
+  next-url="lesson_07.html"
+  next-title="২৫৬-বিট নিরাপত্তা আসলে কত নিরাপদ?"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="কম্পিউটার বিজ্ঞান"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৬ · কম্পিউটার বিজ্ঞান"
+  title="বিটকয়েন আসলে কীভাবে কাজ করে? | But how does bitcoin actually work?"
+  desc="হ্যাশ ফাংশন, পাবলিক-প্রাইভেট কী, ডিজিটাল স্বাক্ষর, প্রুফ-অফ-ওয়ার্ক ও ব্লকচেইন—ডাবল-স্পেন্ডিং সমস্যার কৌশলগত সমাধান।"
+  video-src="../../media_vault/computer_science/lesson_06/experiments/3b1b_computer_science_06_full_dubbed.mp4"
+  yt-id="bBC-nXj3Ng4"
+  date="৭ জুলাই, ২০১৭"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2017/crypto.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">মূল সমস্যা</b1b-bookmark>
+      <b1b-bookmark time="90" time-bn="০১:৩০">হ্যাশ</b1b-bookmark>
+      <b1b-bookmark time="200" time-bn="০৩:২০">কী ও স্বাক্ষর</b1b-bookmark>
+      <b1b-bookmark time="310" time-bn="০৫:১০">ব্লকচেইন</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-problem">১. মূল সমস্যা: ডাবল স্পেন্ডিং</a>
+      <a href="#sec-hash">২. ক্রিপ্টোগ্রাফিক হ্যাশ</a>
+      <a href="#sec-keys">৩. পাবলিক-প্রাইভেট কী ও স্বাক্ষর</a>
+      <a href="#sec-chain">৪. ব্লকচেইন ও প্রুফ-অফ-ওয়ার্ক</a>
+      <a href="#sec-attack">৫. ৫১% আক্রমণ ও নিরাপত্তা</a>
+      <a href="#sec-lab">ইন্টারেক্টিভ — হ্যাশ খেলুন</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+    <b1b-section id="sec-problem" title="১. মূল সমস্যা: ডাবল স্পেন্ডিং">
+        <p>ডিজিটাল অর্থের সবচেয়ে বড় সমস্যা হলো—একই টাকা দুইবার খরচ করা। ডিজিটাল ফাইল তো কপি করা যায়। বিটকয়েন এই সমস্যার সমাধান করেছে কোনো কেন্দ্রীয় কর্তৃপক্ষ ছাড়াই।</p>
+        <b1b-figure src="../../assets/figures/cs06/cs06_f01.svg" alt="double-spend" caption="একই ডিজিটাল টোকেন দুইবার পাঠানোর চেষ্টা"></b1b-figure>
+        <b1b-callout type="blue" icon="🔑" title="প্রশ্ন">
+          <p>কে বলবে কোন লেনদেন আগে এসেছে, আর কোনটি বাতিল? এর উত্তরই ব্লকচেইন।</p>
+        </b1b-callout>
+    </b1b-section>
+
+    <b1b-section id="sec-hash" title="২. ক্রিপ্টোগ্রাফিক হ্যাশ">
+        <p>হ্যাশ ফাংশন যেকোনো বার্তাকে একটি নির্দিষ্ট দৈর্ঘ্যের ''ডিজিটাল আঙুলের ছাপ'' দেয়। ইনপুটের সামান্য পরিবর্তনেও আউটপুট সম্পূর্ণ বদলে যায়, কিন্তু আউটপুট থেকে ইনপুট বের করা প্রায় অসম্ভব।</p>
+        <b1b-formula math="y = H(m), \qquad H(m') \neq H(m)\ \text{যদি } m'\neq m"></b1b-formula>
+        <b1b-figure src="../../assets/figures/cs06/cs06_f02.svg" alt="hash-avalanche" caption="হ্যাশ ফাংশনের ''অ্যাভালান্স'' প্রভাব"></b1b-figure>
+        <p>বিটকয়েনে SHA-256 হ্যাশ ব্যবহৃত হয়—প্রতিটি ব্লক তার আগের ব্লকের হ্যাশ ধারণ করে, ফলে পুরো শৃঙ্খল একটির সাথে অন্যটি আবদ্ধ।</p>
+    </b1b-section>
+
+    <b1b-section id="sec-keys" title="৩. পাবলিক-প্রাইভেট কী ও স্বাক্ষর">
+        <p>প্রতি ব্যবহারকারীর একটি গোপন কী (Secret_key) থাকে, যা দিয়ে তিনি লেনদেনে ''স্বাক্ষর'' করেন। অন্যরা প্রকাশ্য কী (Public_key) দিয়ে সেই স্বাক্ষর যাচাই করতে পারেন—কিন্তু স্বাক্ষর থেকে গোপন কী বের করতে পারেন না।</p>
+        <b1b-figure src="../../assets/figures/cs06/cs06_f03.svg" alt="digital-signature" caption="ডিজিটাল স্বাক্ষর—স্বাক্ষর ও যাচাই"></b1b-figure>
+        <b1b-quote author="Satoshi Nakamoto">বিশ্বাসের প্রয়োজনীয়তা কমানোই হলো ক্রিপ্টোগ্রাফির কাজ।</b1b-quote>
+
+        <b1b-quiz
+          question="❓ বিটকয়েনে লেনদেন কে যাচাই ও রেকর্ড করে?"
+          correct="1"
+          correct-msg="সঠিক! বিকেন্দ্রীভূত মাইনাররা লেনদেন যাচাই করে ব্লকচেইনে যোগ করেন।"
+          wrong-msg="বিটকয়েনের কোনো কেন্দ্রীয় কর্তৃপক্ষ নেই—তাহলে কে?"
+          reveal-msg="সঠিক উত্তর: মাইনারদের নেটওয়ার্ক।">
+          <div slot="option">কেন্দ্রীয় ব্যাংক</div>
+          <div slot="option">মাইনারদের নেটওয়ার্ক</div>
+          <div slot="option">বিটকয়েনের সিইও</div>
+          <div slot="option">যে টাকা পাঠায়</div>
+        </b1b-quiz>
+    </b1b-section>
+
+    <b1b-section id="sec-chain" title="৪. ব্লকচেইন ও প্রুফ-অফ-ওয়ার্ক">
+        <p>নতুন ব্লক যোগ করতে মাইনারদের একটি কঠিন গাণিতিক পাজল সমাধান করতে হয়—একে বলা হয় প্রুফ-অফ-ওয়ার্ক। এতে কম্পিউটারের শক্তি খরচ হয়, তাই নতুন ব্লক তৈরি দামী; ফলে ইতিহাস বদলানোও দামী।</p>
+        <b1b-figure src="../../assets/figures/cs06/cs06_f04.svg" alt="blockchain" caption="ব্লকচেইন—পরপর সংযুক্ত ব্লক"></b1b-figure>
+        <b1b-formula math="H(\text{block}) &lt; \text{target}"></b1b-formula>
+        <p>সবার কাছে পুরো শৃঙ্খলের কপি থাকে। কেউ ইতিহাস বদলালে অন্যরা সেই অসম্মত কপি প্রত্যাখ্যান করে। বিশ্বাস আসে ব্যাপক গণনার শক্তি থেকে।</p>
+    </b1b-section>
+
+    <b1b-section id="sec-attack" title="৫. ৫১% আক্রমণ ও নিরাপত্তা">
+        <p>যদি কোনো একক পক্ষ বিশ্বের অর্ধেকের বেশি কম্পিউটিং শক্তি দখল করে, তবে সে নিজের ইচ্ছামতো শৃঙ্খল বদলাতে পারে—একে ৫১% আক্রমণ বলে। বাস্তবে এত শক্তি সংগ্রহ করা অত্যন্ত ব্যয়বহুল।</p>
+        <b1b-figure src="../../assets/figures/cs06/cs06_f05.svg" alt="51-attack" caption="বিকেন্দ্রীভূত নেটওয়ার্ক ও আক্রমণের সম্ভাবনা"></b1b-figure>
+        <b1b-callout type="gold" icon="🔒" title="সারাংশ">
+          <p>বিটকয়েনের নিরাপত্তা আসে গণিত ও অর্থনীতির মিশ্রণ থেকে—কোনো একক ব্যক্তির উপর নির্ভরতা নয়।</p>
+        </b1b-callout>
+    </b1b-section>
+
+    <b1b-section id="sec-lab" title="৬. ইন্টারেক্টিভ — হ্যাশ খেলুন" data-no-narration="true">
+      <p class="viz-intro">নিচের ইন্টারেক্টিভ উপাদান ও কুইজের মাধ্যমে পাঠের ধারণা নিজে যাচাই করুন।</p>
+      <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+        <figure class="interactive-figure"><img src="../../assets/figures/cs06/cs06_f06.svg" alt="হ্যাশ ও ব্লকচেইন—এক নজরে"/><figcaption>হ্যাশ ও ব্লকচেইন—এক নজরে</figcaption></figure>
+      </b1b-fullscreen>
+
+        <b1b-quiz
+          question="❓ ব্লকচেইনে প্রতিটি ব্লক কী ধারণ করে?"
+          correct="1"
+          correct-msg="সঠিক! আগের ব্লকের হ্যাশ ধারণ করার কারণেই শৃঙ্খলটি অভিন্ন।"
+          wrong-msg="ব্লকগুলো কীভাবে যুক্ত হয়? আগের ব্লকের কী দ্বারা?"
+          reveal-msg="সঠিক উত্তর: আগের ব্লকের হ্যাশ।">
+          <div slot="option">শুধু নতুন লেনদেন</div>
+          <div slot="option">আগের ব্লকের হ্যাশ</div>
+          <div slot="option">শুধু তারিখ</div>
+          <div slot="option">পুরো ইন্টারনেট</div>
+        </b1b-quiz>
+    </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/computer_science/lesson_06/experiments/3b1b_computer_science_06_full_dubbed.mp4"
+    yt-id="bBC-nXj3Ng4"
+    title="বিটকয়েন আসলে কীভাবে কাজ করে? — অধ্যায় ০৬"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — কম্পিউটার বিজ্ঞান">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_05.html"
+  prev-title="অপেক্ষা করুন, সেরা ওয়ার্ডল opener ''crane'' নয়…"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_07.html"
+  next-title="২৫৬-বিট নিরাপত্তা আসলে কত নিরাপদ?"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

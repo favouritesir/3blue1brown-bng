@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>তিনটি ইউটিলিটির ধাঁধা | The three utilities puzzle</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/puzzles/lesson_09/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="ধাঁধা"
+  course-url="index.html"
+  home-url="../../index.html"
+  chapter-num="০৯"
+  chapter-total="১০"
+  prev-url="lesson_08.html"
+  prev-title="পূর্ববর্তী: অসম্ভব দাবার বোর্ড ধাঁধা"
+  next-url="lesson_10.html"
+  next-title="পরবর্তী: অয়লারের বৈশিষ্ট্য সূত্র ও গ্রাফ ডুয়ালিটি"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="ধাঁধা"
+  course-url="index.html"
+  chapter-label="অধ্যায় ০৯ · ধাঁধা"
+  title="তিনটি ইউটিলিটির ধাঁধা | The three utilities puzzle"
+  desc="তিনটি বাড়ি ও তিনটি পরিষেবা — রেখা না কাটিয়ে সব যুক্ত করা যাবে কি? উত্তর লুকানো আছে টপোলজিতে।"
+  video-src="../../media_vault/puzzles/lesson_09/experiments/3b1b_puzzles_09_full_dubbed.mp4"
+  yt-id="VvCytJvd4H0"
+  date="২৩ ডিসেম্বর, ২০১৭"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">ধাঁধাটি</b1b-bookmark>
+      <b1b-bookmark time="48" time-bn="০০:৪৮">অয়লারের সূত্র</b1b-bookmark>
+      <b1b-bookmark time="97" time-bn="০১:৩৭">দ্বিপাক্ষিকে সীমাবদ্ধতা</b1b-bookmark>
+      <b1b-bookmark time="151" time-bn="০২:৩১">টোরাসে সমাধান</b1b-bookmark>
+      <b1b-bookmark time="198" time-bn="০৩:১৮">শিক্ষণীয় বিষয়</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-puzzle">ধাঁধাটি</a>
+      <a href="#sec-euler">অয়লারের সূত্র</a>
+      <a href="#sec-bipartite">দ্বিপাক্ষিকে সীমাবদ্ধতা</a>
+      <a href="#sec-torus">টোরাসে সমাধান</a>
+      <a href="#sec-takeaway">শিক্ষণীয় বিষয়</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <b1b-section id="sec-puzzle" title="ধাঁধাটি">
+        <p>তিনটি বাড়ি আছে — গ্যাস, পানি ও বিদ্যুৎ কোম্পানির সাথে প্রতিটিকে সংযুক্ত করতে হবে। শর্ত: কোনো দুটি তার যেন ছেদ না করে। সমতলে কি এটি সম্ভব?</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_09/f01_utilities.svg" alt="তিন বাড়ি তিন পরিষেবা" caption="বাড়ি ও পরিষেবা — রেখা কাটা ছাড়া সংযোগ"></b1b-figure>
+        <p>দেখে সহজ মনে হলেও বারবার চেষ্টা করলে দেখা যায় — একটির পর একটির মতো করে সব সংযোগ করা যায় না; শেষটি আটকে যায়।</p>
+        <b1b-callout type="blue" icon="📚" title="ইতিহাস">
+          <p>এই K₃,₃ গ্রাফ-টি গ্রাফ তত্ত্বের বিখ্যাত উদাহরণ — কুরাটোভস্কির উপপাদ্য অনুযায়ী এটি সবচেয়ে ছোট অ-সমতলিক গ্রাফ।</p>
+        </b1b-callout>
+      </b1b-section>
+      <b1b-section id="sec-euler" title="অয়লারের সূত্র">
+        <p>যেকোনো সংযুক্ত সমতলিক গ্রাফের জন্য V − E + F = 2, যেখানে V = শীর্ষ, E = ধার, F = ফলক (বাইরের অঞ্চলসহ)।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_09/f02_graph.svg" alt="গ্রাফ" caption="শীর্ষ, ধার ও ফলক — অয়লারের সূত্রের উপাদান"></b1b-figure>
+        <b1b-formula math="V-E+F=2"></b1b-formula>
+        <p>প্রতিটি ফলকে অন্তত ৩টি ধার থাকে; প্রতিটি ধার দুটি ফলকের সীমানা। এখানে 3F ≤ 2E → F ≤ 2E/3। বসিয়ে পাই E ≤ 3V − 6।</p>
+      </b1b-section>
+      <b1b-section id="sec-bipartite" title="দ্বিপাক্ষিকে সীমাবদ্ধতা">
+        <p>এখানে প্রতিটি ধার একটি বাড়ি থেকে একটি পরিষেবার দিকে যায় — কোনো ধার বাড়ি-বাড়ি বা পরিষেবা-পরিষেবার মধ্যে নয়। এমন গ্রাফে প্রতিটি ফলক অন্তত ৪টি ধার দ্বারা বেষ্টিত।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_09/f03_bipartite.svg" alt="দ্বিপাক্ষিক গ্রাফ" caption="বাড়ি ও পরিষেবা দুই পাশে — ধার শুধু পারাপারে"></b1b-figure>
+        <b1b-quiz
+          question="❓ সমতলে K₃,₃ অঙ্কন কেন অসম্ভব?"
+          correct="0"
+          correct-msg="চমৎকার! দ্বিপাক্ষিক সমতলিক গ্রাফে E ≤ 2V − 4। K₃,₃-এ V=6, E=9 কিন্তু 2V−4=8 — ৯ ≤ ৮ মিথ্যা, তাই অঙ্কন অসম্ভব।"
+          wrong-msg="আবার ভেবে দেখুন। ইঙ্গিত: V = 6, E = 9 — E ≤ 2V − 4 চেক করুন।"
+          reveal-msg="সঠিক উত্তর: কারণে ৯ &gt; ২×৬ − ৪ = 8, অর্থাৎ E ≤ 2V − 4 লঙ্ঘন হয়">
+          <div slot="option">কারণে ৯ &gt; ২×৬ − ৪ = 8, অর্থাৎ E ≤ 2V − 4 লঙ্ঘন হয়</div>
+          <div slot="option">কারণ ৯ &lt; ৮</div>
+          <div slot="option">কারণ গ্রাফে ৬টি ধার আছে</div>
+          <div slot="option">কারণ অয়লারের সূত্র K₃,₃-এ কাজ করে না</div>
+        </b1b-quiz>
+        <b1b-formula math="4F\le 2E\;\Rightarrow\;F\le E/2\;\Rightarrow\;E\le 2V-4"></b1b-formula>
+        <p>K₃,₃-এ V = 6, E = 9। কিন্তু E ≤ 2V − 4 = 8 হওয়া উচিত — ৯ ≤ ৮ মিথ্যা। সুতরাং সমতলে অঙ্কন অসম্ভব।</p>
+      </b1b-section>
+      <b1b-section id="sec-torus" title="টোরাসে সমাধান">
+        <p>যদি “সমতল”ের বদলে নলাকার পৃষ্ঠ (টোরাস) ব্যবহার করি, তখন সূত্র V − E + F = 0 হয়ে যায়। তখন নতুন সীমাবদ্ধতা E ≤ 2V, আর K₃,₃-এ ৯ ≤ ১২ — সম্ভব!</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_09/f04_torus.svg" alt="টোরাস" caption="নলাকার পৃষ্ঠে তিন বাড়ি ও তিন পরিষেবা সংযুক্ত"></b1b-figure>
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin: 24px 0 12px; color: var(--theme);">টপোলজির পাঠ</h3>
+        <p>একই গ্রাফ একটি পৃষ্ঠে অসম্ভব, অন্য পৃষ্ঠে সম্ভব — অর্থাৎ সম্ভবত্ব নির্ভর করে স্থানের আকৃতির উপর, কেবল সংখ্যার উপর নয়।</p>
+      </b1b-section>
+      <b1b-section id="sec-takeaway" title="শিক্ষণীয় বিষয়">
+        <p>অয়লারের সূত্র কেবল সূত্র মুখস্থ করার বিষয় নয়; এটি সমতলের “ক্ষমতা” সম্পর্কে এক ধরনের হিসাব।</p>
+        <p>পরবর্তী পাঠে আমরা এই সূত্রের একটি সুন্দর প্রমাণ দেখব — স্প্যানিং ট্রি ও গ্রাফ ডুয়ালিটি ব্যবহার করে।</p>
+      </b1b-section>
+
+      <!-- ═══ Practice — excluded from narration ═══ -->
+      <b1b-section id="sec-practice" title="অনুশীলন ও সারসংক্ষেপ" data-no-narration="true">
+        <p>পাঠের মূল ধারণাটি নিজের ভাষায় বলে দেখুন, তারপর নিচের প্রশ্নের উত্তর দিন।</p>
+        <b1b-quiz
+          question="❓ এই পাঠের মূল ধারণা কোনটি?"
+          correct="1"
+          correct-msg="চমৎকার! এই কোর্সজুড়ে আমরা দেখেছি — ইনভ্যারিয়েন্ট, কোডিং, জ্যামিতি বা টপোলজি যাই হোক, সঠিক দৃষ্টিভঙ্গিই সমাধানের চাবি।"
+          wrong-msg="আবার ভেবে দেখুন। ইঙ্গিত: “দৃষ্টিভঙ্গি” শব্দটি মনে রাখুন।"
+          reveal-msg="সঠিক উত্তর: সঠিক দৃষ্টিভঙ্গি বা কাঠামো খুঁজে পেলে কঠিন ধাঁধাও সরল হয়">
+          <div slot="option">ধাঁধা মানেই ভাগ্যের ব্যাপার</div>
+          <div slot="option">সঠিক দৃষ্টিভঙ্গি বা কাঠামো খুঁজে পেলে কঠিন ধাঁধাও সরল হয়</div>
+          <div slot="option">সব উত্তর মুখস্থ করতে হয়</div>
+          <div slot="option">গণিত কেবল সংখ্যা নিয়ে কাজ করে</div>
+        </b1b-quiz>
+        <b1b-callout type="green" icon="✅" title="পরবর্তী পাঠ">
+          <p>পরবর্তী অধ্যায়ে আমরা আরেকটি ধাঁধা নিয়ে কাজ করব। প্রতিটি পাঠেই নতুন একটি দৃষ্টিভঙ্গি যোগ হবে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/puzzles/lesson_09/experiments/3b1b_puzzles_09_full_dubbed.mp4"
+    yt-id="VvCytJvd4H0"
+    title="তিনটি ইউটিলিটির ধাঁধা | The three utilities puzzle"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — ধাঁধা">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_08.html"
+  prev-title="পূর্ববর্তী: অসম্ভব দাবার বোর্ড ধাঁধা"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_10.html"
+  next-title="পরবর্তী: অয়লারের বৈশিষ্ট্য সূত্র ও গ্রাফ ডুয়ালিটি"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

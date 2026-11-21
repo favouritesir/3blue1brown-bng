@@ -1,0 +1,1118 @@
+[
+  {
+    "word": " Oh,",
+    "start": 0.0,
+    "end": 0.68,
+    "prob": 0.134
+  },
+  {
+    "word": " look,",
+    "start": 1.42,
+    "end": 2.64,
+    "prob": 0.66
+  },
+  {
+    "word": " it's",
+    "start": 3.18,
+    "end": 3.7,
+    "prob": 0.971
+  },
+  {
+    "word": " a",
+    "start": 3.7,
+    "end": 4.02,
+    "prob": 0.967
+  },
+  {
+    "word": " pencil,",
+    "start": 4.02,
+    "end": 4.84,
+    "prob": 0.966
+  },
+  {
+    "word": " pencil,",
+    "start": 5.24,
+    "end": 6.94,
+    "prob": 0.836
+  },
+  {
+    "word": " pencil.",
+    "start": 7.66,
+    "end": 9.3,
+    "prob": 0.908
+  },
+  {
+    "word": " Yeah.",
+    "start": 9.88,
+    "end": 10.68,
+    "prob": 0.814
+  },
+  {
+    "word": " Oh,",
+    "start": 11.68,
+    "end": 12.7,
+    "prob": 0.23
+  },
+  {
+    "word": " pencil,",
+    "start": 13.6,
+    "end": 14.08,
+    "prob": 0.982
+  },
+  {
+    "word": " pencil,",
+    "start": 14.54,
+    "end": 15.26,
+    "prob": 0.994
+  },
+  {
+    "word": " pencil.",
+    "start": 15.64,
+    "end": 16.44,
+    "prob": 0.97
+  },
+  {
+    "word": " Hey,",
+    "start": 17.12,
+    "end": 17.54,
+    "prob": 0.97
+  },
+  {
+    "word": " look,",
+    "start": 17.98,
+    "end": 18.5,
+    "prob": 0.992
+  },
+  {
+    "word": " what",
+    "start": 19.04,
+    "end": 19.12,
+    "prob": 0.99
+  },
+  {
+    "word": " is",
+    "start": 19.12,
+    "end": 19.4,
+    "prob": 0.991
+  },
+  {
+    "word": " it?",
+    "start": 19.4,
+    "end": 19.7,
+    "prob": 0.997
+  },
+  {
+    "word": " It's",
+    "start": 20.06,
+    "end": 20.56,
+    "prob": 0.989
+  },
+  {
+    "word": " an",
+    "start": 20.56,
+    "end": 20.96,
+    "prob": 0.962
+  },
+  {
+    "word": " eraser,",
+    "start": 20.96,
+    "end": 21.72,
+    "prob": 0.916
+  },
+  {
+    "word": " eraser,",
+    "start": 22.36,
+    "end": 23.0,
+    "prob": 0.968
+  },
+  {
+    "word": " eraser.",
+    "start": 23.54,
+    "end": 24.28,
+    "prob": 0.975
+  },
+  {
+    "word": " Say",
+    "start": 24.82,
+    "end": 25.08,
+    "prob": 0.986
+  },
+  {
+    "word": " with",
+    "start": 25.08,
+    "end": 25.28,
+    "prob": 0.829
+  },
+  {
+    "word": " me,",
+    "start": 25.28,
+    "end": 25.52,
+    "prob": 0.999
+  },
+  {
+    "word": " eraser,",
+    "start": 26.02,
+    "end": 26.42,
+    "prob": 0.946
+  },
+  {
+    "word": " eraser,",
+    "start": 27.3,
+    "end": 27.96,
+    "prob": 0.973
+  },
+  {
+    "word": " eraser.",
+    "start": 28.34,
+    "end": 29.28,
+    "prob": 0.948
+  },
+  {
+    "word": " Eraser,",
+    "start": 31.72,
+    "end": 32.8,
+    "prob": 0.62
+  },
+  {
+    "word": " eraser,",
+    "start": 33.0,
+    "end": 33.68,
+    "prob": 0.489
+  },
+  {
+    "word": " eraser.",
+    "start": 33.68,
+    "end": 34.28,
+    "prob": 0.928
+  },
+  {
+    "word": " Find",
+    "start": 36.06,
+    "end": 36.98,
+    "prob": 0.855
+  },
+  {
+    "word": " the",
+    "start": 36.98,
+    "end": 37.32,
+    "prob": 0.979
+  },
+  {
+    "word": " ruler.",
+    "start": 37.32,
+    "end": 37.78,
+    "prob": 0.959
+  },
+  {
+    "word": " Find",
+    "start": 38.28,
+    "end": 38.56,
+    "prob": 0.418
+  },
+  {
+    "word": " the",
+    "start": 38.56,
+    "end": 38.9,
+    "prob": 0.907
+  },
+  {
+    "word": " ruler.",
+    "start": 38.9,
+    "end": 39.36,
+    "prob": 0.989
+  },
+  {
+    "word": " Find,",
+    "start": 39.9,
+    "end": 39.96,
+    "prob": 0.439
+  },
+  {
+    "word": " find,",
+    "start": 39.96,
+    "end": 41.08,
+    "prob": 0.991
+  },
+  {
+    "word": " find",
+    "start": 41.34,
+    "end": 41.86,
+    "prob": 0.994
+  },
+  {
+    "word": " the",
+    "start": 41.86,
+    "end": 43.04,
+    "prob": 0.123
+  },
+  {
+    "word": " ruler.",
+    "start": 43.04,
+    "end": 44.4,
+    "prob": 0.998
+  },
+  {
+    "word": " Find,",
+    "start": 46.7,
+    "end": 47.78,
+    "prob": 0.404
+  },
+  {
+    "word": " find,",
+    "start": 47.78,
+    "end": 48.86,
+    "prob": 0.996
+  },
+  {
+    "word": " find.",
+    "start": 48.86,
+    "end": 49.44,
+    "prob": 0.991
+  },
+  {
+    "word": " Wow,",
+    "start": 50.2,
+    "end": 51.28,
+    "prob": 0.465
+  },
+  {
+    "word": " look,",
+    "start": 52.26,
+    "end": 52.76,
+    "prob": 0.985
+  },
+  {
+    "word": " it's",
+    "start": 53.12,
+    "end": 53.62,
+    "prob": 0.987
+  },
+  {
+    "word": " a",
+    "start": 53.62,
+    "end": 53.96,
+    "prob": 0.976
+  },
+  {
+    "word": " ruler.",
+    "start": 53.96,
+    "end": 54.66,
+    "prob": 0.992
+  },
+  {
+    "word": " Ruler,",
+    "start": 54.66,
+    "end": 55.96,
+    "prob": 0.337
+  },
+  {
+    "word": " ruler,",
+    "start": 60.2,
+    "end": 60.2,
+    "prob": 0.337
+  },
+  {
+    "word": " ruler.",
+    "start": 60.2,
+    "end": 60.2,
+    "prob": 0.973
+  },
+  {
+    "word": " Yeah.",
+    "start": 60.2,
+    "end": 60.26,
+    "prob": 0.018
+  },
+  {
+    "word": " Ruler,",
+    "start": 61.02,
+    "end": 61.72,
+    "prob": 0.955
+  },
+  {
+    "word": " ruler,",
+    "start": 62.1,
+    "end": 62.92,
+    "prob": 0.992
+  },
+  {
+    "word": " ruler.",
+    "start": 63.42,
+    "end": 64.3,
+    "prob": 0.997
+  },
+  {
+    "word": " Look,",
+    "start": 65.02,
+    "end": 65.34,
+    "prob": 0.95
+  },
+  {
+    "word": " look,",
+    "start": 65.74,
+    "end": 66.4,
+    "prob": 0.987
+  },
+  {
+    "word": " look.",
+    "start": 66.62,
+    "end": 67.0,
+    "prob": 0.948
+  },
+  {
+    "word": " Oh,",
+    "start": 67.4,
+    "end": 67.78,
+    "prob": 0.505
+  },
+  {
+    "word": " it's",
+    "start": 67.96,
+    "end": 68.72,
+    "prob": 0.971
+  },
+  {
+    "word": " a",
+    "start": 68.72,
+    "end": 69.4,
+    "prob": 0.613
+  },
+  {
+    "word": " pen.",
+    "start": 69.4,
+    "end": 70.7,
+    "prob": 0.945
+  },
+  {
+    "word": " Pen.",
+    "start": 72.24,
+    "end": 73.6,
+    "prob": 0.249
+  },
+  {
+    "word": " Pen.",
+    "start": 75.62,
+    "end": 76.32,
+    "prob": 0.913
+  },
+  {
+    "word": " Pen.",
+    "start": 77.44,
+    "end": 78.36,
+    "prob": 0.902
+  },
+  {
+    "word": " Pen.",
+    "start": 78.36,
+    "end": 79.64,
+    "prob": 0.291
+  },
+  {
+    "word": " Pen,",
+    "start": 80.56,
+    "end": 81.7,
+    "prob": 0.852
+  },
+  {
+    "word": " pen,",
+    "start": 81.7,
+    "end": 84.14,
+    "prob": 0.931
+  },
+  {
+    "word": " pen.",
+    "start": 84.22,
+    "end": 85.38,
+    "prob": 0.991
+  },
+  {
+    "word": " Look,",
+    "start": 85.96,
+    "end": 87.1,
+    "prob": 0.976
+  },
+  {
+    "word": " it's",
+    "start": 87.56,
+    "end": 88.12,
+    "prob": 0.983
+  },
+  {
+    "word": " a",
+    "start": 88.12,
+    "end": 88.4,
+    "prob": 0.993
+  },
+  {
+    "word": " book,",
+    "start": 88.4,
+    "end": 88.88,
+    "prob": 0.987
+  },
+  {
+    "word": " book,",
+    "start": 89.28,
+    "end": 90.46,
+    "prob": 0.988
+  },
+  {
+    "word": " book.",
+    "start": 90.94,
+    "end": 91.84,
+    "prob": 0.993
+  },
+  {
+    "word": " Yeah.",
+    "start": 92.22,
+    "end": 92.82,
+    "prob": 0.709
+  },
+  {
+    "word": " A",
+    "start": 93.4,
+    "end": 93.62,
+    "prob": 0.397
+  },
+  {
+    "word": " book,",
+    "start": 93.62,
+    "end": 96.14,
+    "prob": 0.994
+  },
+  {
+    "word": " book,",
+    "start": 96.76,
+    "end": 97.98,
+    "prob": 0.495
+  },
+  {
+    "word": " book.",
+    "start": 98.46,
+    "end": 100.7,
+    "prob": 0.998
+  },
+  {
+    "word": " Oh,",
+    "start": 101.5,
+    "end": 102.4,
+    "prob": 0.726
+  },
+  {
+    "word": " look,",
+    "start": 102.42,
+    "end": 102.84,
+    "prob": 0.99
+  },
+  {
+    "word": " it's",
+    "start": 103.32,
+    "end": 103.78,
+    "prob": 0.996
+  },
+  {
+    "word": " a",
+    "start": 103.78,
+    "end": 104.1,
+    "prob": 0.994
+  },
+  {
+    "word": " bag.",
+    "start": 104.1,
+    "end": 104.74,
+    "prob": 0.744
+  },
+  {
+    "word": " Bag,",
+    "start": 104.74,
+    "end": 104.96,
+    "prob": 0.038
+  },
+  {
+    "word": " bag,",
+    "start": 105.1,
+    "end": 106.18,
+    "prob": 0.794
+  },
+  {
+    "word": " bag,",
+    "start": 106.5,
+    "end": 107.04,
+    "prob": 0.933
+  },
+  {
+    "word": " bag.",
+    "start": 107.04,
+    "end": 107.42,
+    "prob": 0.507
+  },
+  {
+    "word": " Yeah,",
+    "start": 107.68,
+    "end": 108.4,
+    "prob": 0.763
+  },
+  {
+    "word": " it's",
+    "start": 108.92,
+    "end": 109.56,
+    "prob": 0.989
+  },
+  {
+    "word": " a",
+    "start": 109.56,
+    "end": 110.0,
+    "prob": 0.993
+  },
+  {
+    "word": " bag.",
+    "start": 110.0,
+    "end": 110.64,
+    "prob": 0.983
+  },
+  {
+    "word": " Hey,",
+    "start": 111.22,
+    "end": 111.6,
+    "prob": 0.907
+  },
+  {
+    "word": " bag,",
+    "start": 112.4,
+    "end": 112.92,
+    "prob": 0.957
+  },
+  {
+    "word": " bag,",
+    "start": 113.26,
+    "end": 114.62,
+    "prob": 0.99
+  },
+  {
+    "word": " bag.",
+    "start": 114.76,
+    "end": 115.78,
+    "prob": 0.964
+  },
+  {
+    "word": " What",
+    "start": 116.14,
+    "end": 116.68,
+    "prob": 0.992
+  },
+  {
+    "word": " is",
+    "start": 116.68,
+    "end": 117.0,
+    "prob": 0.997
+  },
+  {
+    "word": " it?",
+    "start": 117.0,
+    "end": 117.3,
+    "prob": 0.999
+  },
+  {
+    "word": " It's",
+    "start": 117.74,
+    "end": 118.18,
+    "prob": 0.982
+  },
+  {
+    "word": " paper,",
+    "start": 118.18,
+    "end": 118.76,
+    "prob": 0.982
+  },
+  {
+    "word": " paper,",
+    "start": 119.12,
+    "end": 120.14,
+    "prob": 0.998
+  },
+  {
+    "word": " paper.",
+    "start": 120.54,
+    "end": 121.74,
+    "prob": 0.996
+  },
+  {
+    "word": " Yeah,",
+    "start": 122.28,
+    "end": 123.04,
+    "prob": 0.542
+  },
+  {
+    "word": " it's",
+    "start": 123.7,
+    "end": 124.2,
+    "prob": 0.992
+  },
+  {
+    "word": " paper",
+    "start": 124.2,
+    "end": 124.7,
+    "prob": 0.997
+  },
+  {
+    "word": " for",
+    "start": 124.7,
+    "end": 125.42,
+    "prob": 0.883
+  },
+  {
+    "word": " you.",
+    "start": 125.42,
+    "end": 126.0,
+    "prob": 0.999
+  },
+  {
+    "word": " Paper,",
+    "start": 126.84,
+    "end": 127.3,
+    "prob": 0.957
+  },
+  {
+    "word": " paper,",
+    "start": 127.76,
+    "end": 128.7,
+    "prob": 0.999
+  },
+  {
+    "word": " paper.",
+    "start": 129.0,
+    "end": 129.78,
+    "prob": 0.998
+  },
+  {
+    "word": " This,",
+    "start": 130.78,
+    "end": 131.32,
+    "prob": 0.384
+  },
+  {
+    "word": " this,",
+    "start": 131.72,
+    "end": 132.56,
+    "prob": 0.954
+  },
+  {
+    "word": " this",
+    "start": 133.06,
+    "end": 133.7,
+    "prob": 0.982
+  },
+  {
+    "word": " is",
+    "start": 133.7,
+    "end": 134.38,
+    "prob": 0.846
+  },
+  {
+    "word": " a",
+    "start": 134.38,
+    "end": 134.66,
+    "prob": 0.982
+  },
+  {
+    "word": " pen.",
+    "start": 134.66,
+    "end": 134.9,
+    "prob": 0.979
+  },
+  {
+    "word": " These,",
+    "start": 135.52,
+    "end": 135.94,
+    "prob": 0.955
+  },
+  {
+    "word": " these,",
+    "start": 136.48,
+    "end": 137.32,
+    "prob": 0.98
+  },
+  {
+    "word": " these",
+    "start": 137.84,
+    "end": 138.42,
+    "prob": 0.987
+  },
+  {
+    "word": " are",
+    "start": 138.42,
+    "end": 139.3,
+    "prob": 0.951
+  },
+  {
+    "word": " pens.",
+    "start": 139.3,
+    "end": 139.96,
+    "prob": 0.968
+  },
+  {
+    "word": " Yeah.",
+    "start": 140.46,
+    "end": 140.84,
+    "prob": 0.475
+  },
+  {
+    "word": " These,",
+    "start": 142.78,
+    "end": 143.86,
+    "prob": 0.77
+  },
+  {
+    "word": " these,",
+    "start": 144.68,
+    "end": 145.36,
+    "prob": 0.988
+  },
+  {
+    "word": " these.",
+    "start": 145.98,
+    "end": 146.52,
+    "prob": 0.978
+  },
+  {
+    "word": " I",
+    "start": 147.14,
+    "end": 147.4,
+    "prob": 0.992
+  },
+  {
+    "word": " can't",
+    "start": 147.4,
+    "end": 147.82,
+    "prob": 0.995
+  },
+  {
+    "word": " see.",
+    "start": 147.82,
+    "end": 148.28,
+    "prob": 0.701
+  },
+  {
+    "word": " Oh,",
+    "start": 148.9,
+    "end": 149.16,
+    "prob": 0.638
+  },
+  {
+    "word": " I",
+    "start": 149.42,
+    "end": 149.9,
+    "prob": 0.995
+  },
+  {
+    "word": " can't",
+    "start": 149.9,
+    "end": 150.38,
+    "prob": 0.997
+  },
+  {
+    "word": " see.",
+    "start": 150.38,
+    "end": 150.86,
+    "prob": 0.959
+  },
+  {
+    "word": " Ow.",
+    "start": 151.22,
+    "end": 151.46,
+    "prob": 0.401
+  },
+  {
+    "word": " I",
+    "start": 152.74,
+    "end": 153.62,
+    "prob": 0.082
+  },
+  {
+    "word": " can",
+    "start": 153.62,
+    "end": 154.88,
+    "prob": 0.99
+  },
+  {
+    "word": " see,",
+    "start": 154.88,
+    "end": 155.44,
+    "prob": 0.973
+  },
+  {
+    "word": " see,",
+    "start": 155.68,
+    "end": 156.32,
+    "prob": 0.9
+  },
+  {
+    "word": " see,",
+    "start": 156.92,
+    "end": 157.12,
+    "prob": 0.824
+  },
+  {
+    "word": " you.",
+    "start": 157.64,
+    "end": 158.16,
+    "prob": 0.933
+  },
+  {
+    "word": " Hi.",
+    "start": 158.16,
+    "end": 159.24,
+    "prob": 0.076
+  },
+  {
+    "word": " See,",
+    "start": 160.06,
+    "end": 160.8,
+    "prob": 0.462
+  },
+  {
+    "word": " see,",
+    "start": 161.18,
+    "end": 162.66,
+    "prob": 0.934
+  },
+  {
+    "word": " see.",
+    "start": 162.66,
+    "end": 164.98,
+    "prob": 0.932
+  },
+  {
+    "word": " Ah,",
+    "start": 165.4,
+    "end": 165.94,
+    "prob": 0.354
+  },
+  {
+    "word": " smell",
+    "start": 166.44,
+    "end": 166.98,
+    "prob": 0.993
+  },
+  {
+    "word": " the",
+    "start": 166.98,
+    "end": 167.68,
+    "prob": 0.537
+  },
+  {
+    "word": " flower.",
+    "start": 167.68,
+    "end": 168.32,
+    "prob": 0.831
+  },
+  {
+    "word": " Smell.",
+    "start": 168.92,
+    "end": 169.38,
+    "prob": 0.929
+  },
+  {
+    "word": " Smell.",
+    "start": 169.96,
+    "end": 171.24,
+    "prob": 0.973
+  },
+  {
+    "word": " Smell.",
+    "start": 172.76,
+    "end": 174.04,
+    "prob": 0.899
+  },
+  {
+    "word": " Oh,",
+    "start": 175.94,
+    "end": 177.22,
+    "prob": 0.065
+  },
+  {
+    "word": " oh.",
+    "start": 179.4,
+    "end": 179.58,
+    "prob": 0.371
+  },
+  {
+    "word": " Smell.",
+    "start": 180.94,
+    "end": 181.92,
+    "prob": 0.966
+  },
+  {
+    "word": " Smell.",
+    "start": 182.42,
+    "end": 183.32,
+    "prob": 0.99
+  },
+  {
+    "word": " Smell.",
+    "start": 184.26,
+    "end": 184.78,
+    "prob": 0.775
+  },
+  {
+    "word": " Taste",
+    "start": 185.14,
+    "end": 185.6,
+    "prob": 0.808
+  },
+  {
+    "word": " test.",
+    "start": 185.6,
+    "end": 186.02,
+    "prob": 0.854
+  },
+  {
+    "word": " Okay,",
+    "start": 186.02,
+    "end": 186.66,
+    "prob": 0.297
+  },
+  {
+    "word": " Maggie.",
+    "start": 186.66,
+    "end": 186.94,
+    "prob": 0.031
+  },
+  {
+    "word": " Oh,",
+    "start": 187.92,
+    "end": 188.9,
+    "prob": 0.168
+  },
+  {
+    "word": " I",
+    "start": 189.94,
+    "end": 190.38,
+    "prob": 0.929
+  },
+  {
+    "word": " can",
+    "start": 190.38,
+    "end": 190.56,
+    "prob": 0.991
+  },
+  {
+    "word": " taste.",
+    "start": 190.56,
+    "end": 190.88,
+    "prob": 0.994
+  },
+  {
+    "word": " Taste,",
+    "start": 191.49,
+    "end": 192.08,
+    "prob": 0.82
+  },
+  {
+    "word": " taste.",
+    "start": 192.26,
+    "end": 192.7,
+    "prob": 0.986
+  },
+  {
+    "word": " Apple.",
+    "start": 193.53,
+    "end": 194.12,
+    "prob": 0.555
+  },
+  {
+    "word": " Yeah.",
+    "start": 194.8,
+    "end": 195.18,
+    "prob": 0.768
+  },
+  {
+    "word": " Taste",
+    "start": 195.66,
+    "end": 195.78,
+    "prob": 0.749
+  },
+  {
+    "word": " time.",
+    "start": 195.78,
+    "end": 196.4,
+    "prob": 0.935
+  },
+  {
+    "word": " Okay.",
+    "start": 197.18,
+    "end": 197.52,
+    "prob": 0.235
+  },
+  {
+    "word": " I",
+    "start": 198.62,
+    "end": 198.9,
+    "prob": 0.552
+  },
+  {
+    "word": " can",
+    "start": 198.9,
+    "end": 201.14,
+    "prob": 0.98
+  },
+  {
+    "word": " taste.",
+    "start": 201.14,
+    "end": 201.72,
+    "prob": 0.996
+  },
+  {
+    "word": " Taste,",
+    "start": 202.2,
+    "end": 202.82,
+    "prob": 0.987
+  },
+  {
+    "word": " taste.",
+    "start": 203.28,
+    "end": 203.38,
+    "prob": 0.988
+  },
+  {
+    "word": " What?",
+    "start": 203.86,
+    "end": 205.0,
+    "prob": 0.437
+  },
+  {
+    "word": " Chili.",
+    "start": 205.48,
+    "end": 205.7,
+    "prob": 0.732
+  },
+  {
+    "word": " Oh.",
+    "start": 206.46,
+    "end": 206.76,
+    "prob": 0.427
+  },
+  {
+    "word": " Taste.",
+    "start": 209.22,
+    "end": 209.84,
+    "prob": 0.856
+  },
+  {
+    "word": " Taste.",
+    "start": 210.76,
+    "end": 211.34,
+    "prob": 0.99
+  },
+  {
+    "word": " Taste.",
+    "start": 212.34,
+    "end": 212.56,
+    "prob": 0.988
+  },
+  {
+    "word": " Taste.",
+    "start": 212.56,
+    "end": 213.0,
+    "prob": 0.016
+  }
+]

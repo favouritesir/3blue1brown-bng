@@ -1,0 +1,132 @@
+{
+  "lesson_id": "lesson_07",
+  "chapter_num": 7,
+  "course_id": "why_pi",
+  "title_en": "The Wallis product for pi, proved geometrically",
+  "title_bn": "পাই-র জন্য ওয়ালিস গুণফল — একটি জ্যামিতিক প্রমাণ",
+  "subtitle_bn": "$\\frac{\\pi}{2}=\\frac21\\cdot\\frac23\\cdot\\frac43\\cdot\\frac45\\cdots$ — এই অসীম গুণফলটির জ্যামিতিক প্রমাণ ও জটিল সংখ্যার কৌশল",
+  "official_url": "https://www.3blue1brown.com/lessons/wallis-product",
+  "video_src": "../../media_vault/why_pi/lesson_07/experiments/3b1b_why_pi_07_full_dubbed.mp4",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "15:08",
+    "date": "২০ এপ্রিল, ২০১৮",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "A product of simple fractions equals pi over two.",
+    "quote_bn": "সরল ভগ্নাংশের একটা গুণফল সমান পাই-র অর্ধেক।",
+    "author": "Grant Sanderson"
+  },
+  "sections": [
+    {
+      "id": "sec-wallis-product",
+      "title_bn": "ওয়ালিস গুণফল",
+      "title_en": "The Wallis Product",
+      "summary_bn": "১৬৫৫ সালে John Wallis আবিষ্কার করেন এই অদ্ভুত গুণফলটির মান π/2—কিন্তু প্রমাণ ছাড়াই।",
+      "key_takeaways": [
+        "$g$ুণফল $\\frac21\\cdot\\frac23\\cdot\\frac43\\cdot\\frac45\\cdots=\\frac{\\pi}{2}$।",
+        "জোড় ও বেজোড় সংখ্যার একটি সুন্দর বিন্যাস এর পদগুলো তৈরি করে।",
+        "3Blue1Brown এই গুণফলের একটা জ্যামিতিক প্রমাণ দেখান।"
+      ],
+      "formulas": [
+        {
+          "label": "ওয়ালিস গুণফল",
+          "katex": "\\frac{\\pi}{2}=\\prod_{n=1}^{\\infty}\\frac{2n}{2n-1}\\cdot\\frac{2n}{2n+1}=\\frac21\\cdot\\frac23\\cdot\\frac43\\cdot\\frac45\\cdots"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_wallis_product",
+          "caption_bn": "সরল ভগ্নাংশের গুণফল π/2",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_07/fig_wallis_product.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-sin-integrals",
+      "title_bn": "sin^n-এর ইন্টিগ্রাল",
+      "title_en": "Integrals of sin to the n",
+      "summary_bn": "$\\int_0^{\\pi}\\sin^n x\\,dx$ এর ধারাবাহিক মানগুলোর অনুপাত থেকেই ওয়ালিসের ভগ্নাংশগুলো বেরিয়ে আসে।",
+      "key_takeaways": [
+        "$I_n=\\int_0^{\\pi}\\sin^n x\\,dx$ এর পুনরাবৃত্তি সূত্র $I_n=\\frac{n-1}{n}I_{n-2}$।",
+        "এই অনুপাতগুলোই ওয়ালিস গুণফলের পদ $\\frac{2n}{2n-1}\\cdot\\frac{2n}{2n+1}$ তৈরি করে।",
+        "জ্যামিতিকভাবে $I_n$ হলো একটা বৃত্ত-সম্পর্কিত আকৃতির ক্ষেত্রফল।"
+      ],
+      "formulas": [
+        {
+          "label": "পুনরাবৃত্তি সূত্র",
+          "katex": "I_n=\\int_0^{\\pi}\\sin^n x\\,dx=\\frac{n-1}{n}I_{n-2}"
+        },
+        {
+          "label": "জোড় ঘাতের মান",
+          "katex": "I_{2n}=\\pi\\cdot\\frac{1\\cdot3\\cdot5\\cdots(2n-1)}{2\\cdot4\\cdot6\\cdots(2n)}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_wallis_sin",
+          "caption_bn": "sin^n বক্ররেখার নিচের ক্ষেত্রফল থেকে গুণফল",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_07/fig_wallis_sin.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-geometric-proof",
+      "title_bn": "জ্যামিতিক প্রমাণ ও জটিল সংখ্যা",
+      "title_en": "The Geometric Proof and Complex Numbers",
+      "summary_bn": "বৃত্তের ক্ষেত্রফল ও জটিল সংখ্যার ব্যবহার করে $\\pi/2$ কে এই গুণফলের সাথে মিলিয়ে দেখানো যায়—পাই আবারো বৃত্ত থেকে জন্ম নেয়।",
+      "key_takeaways": [
+        "$\\sin x$-এর শূন্যবিন্দুগুলোর বিন্যাস গুণফলটির সাথে মেলে।",
+        "জটিল তলে বৃত্তের বিন্দুগুলোর গুণন পাই-সংক্রান্ত সূত্র দেয়।",
+        "প্রমাণের শেষে $\\pi/2$ ঠিক ওয়ালিসের গুণফলের সমান দাঁড়ায়।"
+      ],
+      "formulas": [
+        {
+          "label": "চূড়ান্ত ফলাফল",
+          "katex": "\\prod_{n=1}^{\\infty}\\frac{2n}{2n-1}\\cdot\\frac{2n}{2n+1}=\\frac{\\pi}{2}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_wallis_circle",
+          "caption_bn": "বৃত্তের জ্যামিতি থেকেই পাই আসে",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_07/fig_wallis_circle.svg"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_wallis_value",
+      "course_id": "why_pi",
+      "lesson_id": "lesson_07",
+      "section_ref": "sec-geometric-proof",
+      "question_bn": "ওয়ালিস গুণফল $\\frac21\\cdot\\frac23\\cdot\\frac43\\cdots$ এর মান কত?",
+      "question_en": "What is the value of the Wallis product?",
+      "options": [
+        "$\\pi$",
+        "$\\pi/2$",
+        "$\\pi^2/6$",
+        "$2/\\pi$"
+      ],
+      "options_bn": [
+        "$\\pi$",
+        "$\\pi/2$",
+        "$\\pi^2/6$",
+        "$2/\\pi$"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "সঠিক! ওয়ালিস গুণফলের মান $\\pi/2$।",
+      "explanation_en": "",
+      "hint": "উত্তরটা পাই-র অর্ধেক।",
+      "hints": [
+        "উত্তরটা পাই-র অর্ধেক।"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+window.TEACHER_AUDIO_MANIFEST = {
+  "course": "why_pi",
+  "lesson": "lesson_08",
+  "voice": "bn-BD-PradeepNeural",
+  "mode": "authentic_teacher",
+  "sections": {
+    "sec-early-notation": {
+      "title": "প্রথম দিকের চিহ্ন",
+      "audio_file": "sec_01_sec-early-notation.mp3",
+      "total_duration_ms": 20000.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "পাইয়ের আধুনিক প্রতীক ব্যবহার শুরু হয় ১৮শ শতাব্দীতে; তার আগে বৃত্ত-ধ্রুবক বোঝাতে বিভিন্ন অক্ষর ব্যবহৃত হতো।",
+          "start_ms": 0.0,
+          "end_ms": 4500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 1,
+          "type": "p",
+          "text": "ওয়ালিস ও অন্যরা বৃত্তের পরিধি/ব্যাস অনুপাত বোঝাতে বিভিন্ন চিহ্ন ব্যবহার করতেন।",
+          "start_ms": 5000.0,
+          "end_ms": 9500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 2,
+          "type": "p",
+          "text": "১৭০৬ সালে William Jones প্রথম π চিহ্নটি ব্যবহার করেন।",
+          "start_ms": 10000.0,
+          "end_ms": 14500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 3,
+          "type": "p",
+          "text": "অয়লার ১৭৩০-এর দশকে এই চিহ্নকে জনপ্রিয় করেন।",
+          "start_ms": 15000.0,
+          "end_ms": 19500.0,
+          "duration_ms": 4500.0
+        }
+      ]
+    },
+    "sec-euler-pi": {
+      "title": "অয়লারের দুই মান",
+      "audio_file": "sec_02_sec-euler-pi.mp3",
+      "total_duration_ms": 20000.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "অয়লার কখনো π দিয়ে ৩.১৪ বোঝাতেন, আবার কখনো ৬.২৮—অর্থাৎ আজকের 2π। ইতিহাসে পাই প্রায় ৬.২৮ হয়ে যেতে পারত!",
+          "start_ms": 0.0,
+          "end_ms": 4500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 1,
+          "type": "p",
+          "text": "অয়লার π দিয়ে বৃত্তের perimeter (≈ ৬.২৮) ও diameter (≈ ৩.১৪)—দুটোই বোঝাতেন।",
+          "start_ms": 5000.0,
+          "end_ms": 9500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 2,
+          "type": "p",
+          "text": "তাঁর লেখায় কোথাও $\\pi$ মানে ৬.২৮ আবার কোথাও ৩.১৪—প্রসঙ্গভেদে অর্থ বদলাতো।",
+          "start_ms": 10000.0,
+          "end_ms": 14500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 3,
+          "type": "p",
+          "text": "আজকের সুবিধाजনক ঐকমত্যেই π = ৩.১৪, আর 2π-র জন্য অনেকে τ প্রস্তাব করেন।",
+          "start_ms": 15000.0,
+          "end_ms": 19500.0,
+          "duration_ms": 4500.0
+        }
+      ]
+    },
+    "sec-today": {
+      "title": "আজকের ঐকমত্য ও টাউ (τ) প্রস্তাব",
+      "audio_file": "sec_03_sec-today.mp3",
+      "total_duration_ms": 20000.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "আজ π = ৩.১৪-এ ঐকমত্য; তবে 2π-র জন্য τ ব্যবহারের প্রস্তাব গণিত সম্প্রদায়ে আলোচিত।",
+          "start_ms": 0.0,
+          "end_ms": 4500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 1,
+          "type": "p",
+          "text": "আন্তর্জাতিক ঐকমত্যে π = ৩.১৪১৫৯…, পরিধি/ব্যাস।",
+          "start_ms": 5000.0,
+          "end_ms": 9500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 2,
+          "type": "p",
+          "text": "প্রস্তাবিত τ = 2π ≈ ৬.২৮৩১৮৫; একটি পূর্ণ ঘূর্ণন = τ রেডিয়ান।",
+          "start_ms": 10000.0,
+          "end_ms": 14500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 3,
+          "type": "p",
+          "text": "কোনটা “সঠিক” তা নয়—কোনটা বেশি সুবিধাজনক তা নিয়েই আলোচনা।",
+          "start_ms": 15000.0,
+          "end_ms": 19500.0,
+          "duration_ms": 4500.0
+        }
+      ]
+    }
+  }
+};

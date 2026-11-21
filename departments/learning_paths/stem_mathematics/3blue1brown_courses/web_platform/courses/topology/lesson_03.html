@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অধ্যায় ০৩: চোরাগপ্তো টোপোলজি — বোরসুক–উলাম ও চুরি হওয়া হার | Sneaky Topology | The Borsuk-Ulam theorem and stolen necklaces</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (placeholder — audio agent will rebuild) ═══════════ -->
+<script src="../../assets/audio/topology/lesson_03/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order (identical to linear_algebra/lesson_01.html) ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="টোপোলজি"
+  course-url="../../index.html#topology"
+  home-url="../../index.html"
+  chapter-num="০৩"
+  chapter-total="০৩"
+  prev-url="lesson_02.html"
+  prev-title="কেশবহুল গোলকের উপপাদ্য"
+  next-url=""
+  next-title="পরবর্তী অধ্যায় নেই"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="টোপোলজি"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৩ · টোপোলজি"
+  title="অধ্যায় ০৩: চোরাগপ্তো টোপোলজি — বোরসুক–উলাম ও চুরি হওয়া হার | Sneaky Topology | The Borsuk-Ulam theorem and stolen necklaces"
+  desc="দুই চোরের মধ্যে একটা পুঁতির হার ভাগ করে দিতে হবে — প্রতি রঙের ঠিক একটি করে পুঁতি, সর্বোচ্চ কয়েকটা কাটে। দেখা যাবে এই ছোট্ট ধাঁধার সমাধান লুকিয়ে আছে একটি গোলকের বিপরীত বিন্দুতে।"
+  video-src="../../media_vault/topology/lesson_03/experiments/3b1b_topology_03_full_dubbed.mp4"
+  yt-id="yuVqxCSsE7c"
+  date="১৮ নভেম্বর, ২০১৮"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর ও পাঠ্য বিন্যাস: STEM ম্যাথমেটিক্স উইং"
+  github-url="https://github.com/3b1b/videos/blob/master/_2017/borsuk.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · শিক্ষক সহকারী">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">দুই বিপরীত বিন্দুর একই আবহাওয়া</b1b-bookmark>
+      <b1b-bookmark time="157" time-bn="০২:৩৭">উপপাদ্যটির সাধারণ বিবৃতি</b1b-bookmark>
+      <b1b-bookmark time="265" time-bn="০৪:২৫">চুরি হওয়া পুঁতির হার</b1b-bookmark>
+      <b1b-bookmark time="439" time-bn="০৭:১৯">অবিচ্ছিন্ন সংস্করণ ও প্রমাণ</b1b-bookmark>
+      <b1b-bookmark time="439" time-bn="০৭:১৯">টোপোলজি কেন এখানে আসল</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-intro">বোরসুক–উলাম উপপাদ্য: বিপরীত বিন্দুর মিলন</a>
+      <a href="#sec-necklace">চুরি হওয়া হারের ধাঁধা</a>
+      <a href="#sec-proof">অবিচ্ছিন্ন থেকে বিচ্ছিন্ন — প্রমাণের কৌশল</a>
+      <a href="#sec-meaning">টোপোলজি কেন &#39;চোরাগপ্তো&#39;ভাবে কাজ করে</a>
+      <a href="#sec-lab">ইন্টারেক্টিভ ল্যাব: বিপরীত বিন্দু ও হার-ভাগ</a>
+      <a href="#sec-quiz">ধারণা যাচাই — ইন্টারেক্টিভ কুইজ</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <b1b-section id="sec-intro" title="বোরসুক–উলাম উপপাদ্য: বিপরীত বিন্দুর মিলন">
+        <p>পৃথিবীর বুকে কোথাও একটা জায়গা আছে যার ঠিক বিপরীত পাশে (অর্থাৎ পৃথিবীর কেন্দ্র দিয়ে সোজা রেখা টেনে যেখানে পৌঁছায়) তাপমাত্রা হুবহু একই। একই কথা বলা যায় বায়ুচাপের ক্ষেত্রেও। কিন্তু যে বিন্দুটিতে তাপমাত্রা মেলে, সেটিতে চাপ মেলে কি — এবং যেটিতে চাপ মেলে, সেটিতে তাপমাত্রা মেলে কি? দুটি মাপ একসাথে মেলে এমন কোনো বিন্দু আছে কি?</p>
+        <p>বোরসুক–উলাম উপপাদ্য বলে যে আছে। এর সাধারণ রূপ হলো: যেকোনো অবিচ্ছিন্ন ম্যাপ f: Sⁿ → ℝⁿ-এর ক্ষেত্রে এমন কমপক্ষে একটি বিন্দু x থাকে, যার জন্য f(x) = f(−x)। আমাদের উদাহরণে x হলো পৃথিবীর ওপরের বিন্দু, −x তার বিপরীত বিন্দু, আর f দুটি সংখ্যা ফেরত দেয় — তাপমাত্রা ও চাপ। তাই n = 2, অর্থাৎ S² → ℝ²।</p>
+        <p>প্রথম n = 1-এর ক্ষেত্রটি সহজ: বিষুবরেখা বরাবর ঘুরে দেখুন তাপমাত্রার পার্থক্য একটি বৃত্তে বদলাচ্ছে। কোনো বিন্দুতে মান ধনাত্মক, তার বিপরীতে ঋণাত্মক — তাই মাঝখানে কোথাও শূন্য হতেই হবে (মধ্যবর্তী মানের উপপাদ্য)। n = 2-এ একই কথা প্রমাণ করা একটু কঠিন, কিন্তু ভাবনাটি একই রকম।</p>
+        <b1b-figure src="../../assets/figures/topology/lesson_03/official-thumbnail.jpg" alt="বোরসুক–উলাম" caption="অফিশিয়াল ৩ব্লু১ব্রাউন পাঠের শিরোনাম চিত্র। একটি আপাতদৃষ্টিতে সহজ আবহাওয়ার প্রশ্ন থেকে শুরু করে আমরা পৌঁছাব পুঁতির হার ভাগ করার ধাঁধায়।"></b1b-figure>
+        <b1b-figure src="../../assets/figures/topology/lesson_03/antipodal-earth.svg" alt="জমি-বিপরীত বিন্দু" caption="হলুদ বিন্দুদ্বয় পৃথিবীর ঠিক বিপরীত পাশে অবস্থিত। বোরসুক–উলাম গ্যারান্টি দেয় এমন এক জোড়া আছে, যেদের তাপমাত্রা ও চাপ দুটোই হুবহু সমান — যদিও কোথায় তা বলে দেয় না।"></b1b-figure>
+        <b1b-formula math="f:S^n\to\mathbb{R}^n,\quad \exists x: f(x)=f(-x)"></b1b-formula>
+        <p><em>বোরসুক–উলাম উপপাদ্যের সংক্ষিপ্ত বিবৃতি।</em></p>
+        <b1b-formula math="g(x)=f(x)-f(-x),\quad g(-x)=-g(x)"></b1b-formula>
+        <p><em>বিপরীত বিন্দুতে পার্থক্যের চিহ্ন উল্টে যায় — একে বলা হয় odd ফাংশন।</em></p>
+        <b1b-callout type="gold" icon="🌟" title="মনে রাখবেন">
+          <p>উপপাদ্যটি শুধু অস্তিত্ব বলে দেয় — কোথাও সেই জোড়া আছে, কিন্তু কোথায় তা নয়। আবহাওয়ার ক্ষেত্রে সেটি খুঁজে বের করা আমাদের কাজ; টোপোলজি কেবল বলে দেয় যে খোঁজা মানেই পাওয়া যাবে।</p>
+        </b1b-callout>
+        <p><strong>এই &#39;বিপরীত বিন্দুর মিলন&#39; নিয়মটিই এখন আমাদের একটা একেবারে আলাদা ধাঁধার কাজে আসবে।</strong></p>
+      </b1b-section>
+
+      <b1b-section id="sec-necklace" title="চুরি হওয়া হারের ধাঁধা">
+        <p>ধরুন দুইজন চোর একটা হার চুরি করেছে। হারে r ধরনের রঙের পুঁতি আছে, প্রতি রঙের ঠিক দুটি করে। মোট 2r টি পুঁতি। তারা হারটি ভাগ করে নিতে চায় এমনভাবে যেন প্রত্যেকের কাছে প্রতি রঙের ঠিক একটি করে পুঁতি যায়। হার কাটা যায়, কিন্তু কাটার সংখ্যা যত কম হওয়া যায় তত ভালো — প্রশ্ন হলো সর্বোচ্চ কতটি কাটে এই কাজটা করা যায়?</p>
+        <p>উত্তরটি হলো r টি কাট — রঙের সংখ্যার সমান। দুই রঙের হারে দুই কাট, তিন রঙের হারে তিন কাট, ইত্যাদি। এটি প্রথম দেখে অবিশ্বাস্য মনে হয়, কারণ পুঁতিগুলো যেকোনো ক্রমে সাজানো থাকতে পারে — আপনি কাছাকাছি দুটি পুঁতি ছেঁড়ার চেষ্টা করলেই ব্যর্থ হবেন।</p>
+        <p>এই ফলাফলটি হলো 'হার-ভাগ নিয়ম' (necklace splitting theorem), যা নন্দকুমার প্রমাণ করেছিলেন। এর সবচেয়ে আশ্চর্যের বিষয় হলো প্রমাণে আসলে কোনো যুক্তিবিদ্যা বা গণনার চেয়ে টোপোলজি বেশি কাজ করে — ঠিক আমাদের বোরসুক–উলাম উপপাদ্যই এখানে মূল হাতিয়ার।</p>
+        <b1b-figure src="../../assets/figures/topology/lesson_03/necklace.svg" alt="পুঁতির হার" caption="চার রঙের দুটি করে পুঁতি — মোট আটটি। হলুদ ড্যাশড রেখাগুলো কাটার জায়গা দেখাচ্ছে। লক্ষ্য: প্রত্যেক চোর পাবে লাল, হলুদ, সবুজ ও নীল — একটিমাত্র করে।"></b1b-figure>
+        <b1b-formula math="\text{beads} = 2r,\quad \text{colors} = r,\quad \text{cuts} \le r"></b1b-formula>
+        <p><em>ধাঁধার পরামিতি: r রঙ, 2r পুঁতি, সর্বোচ্চ r কাট।</em></p>
+        <b1b-callout type="gold" icon="🌟" title="কেন সোজা যুক্তি চলবে না">
+          <p>পুঁতিগুলো এলোমেলোভাবে সাজানো থাকতে পারে — একই রঙের দুটি পুঁতি হারের দুই প্রান্তে থাকতে পারে। তাই স্থানীয়ভাবে কিছু বেছে নেওয়া যাবে না; লাগবে এমন একটি যুক্তি যা পুরো হারটিকে একসাথে দেখে।</p>
+        </b1b-callout>
+        <p><strong>এই বিচ্ছিন্ন ধাঁধার সমাধানের জন্য আমরা আগে একটিকে &#39;অবিচ্ছিন্ন&#39; করে নেব — আর সেটা করা যায় বোরসুক–উলাম দিয়ে।</strong></p>
+      </b1b-section>
+
+      <b1b-section id="sec-proof" title="অবিচ্ছিন্ন থেকে বিচ্ছিন্ন — প্রমাণের কৌশল">
+        <p>প্রথমে পুঁতিগুলোকে আলাদা বিন্দু না ভেবে প্রতিটি রঙের ভরকে হার বরাবর একটা 'স্মুথি' বা তরল হিসেবে কল্পনা করি। কোনো রঙের দুটি পুঁতি মানে সেই রঙের মোট ভর ২ একক, যা হারের যেকোনো জায়গায় ছড়ানো থাকতে পারে। এখন প্রশ্ন হলো: r টি কাট দিয়ে হারকে r+1 টুকরো করে টুকরোগুলোকে চোর দুজনের মাঝে বিন্যাস করলে কি প্রত্যেক রঙের অর্ধেক ভর প্রত্যেকের কাছে যায়?</p>
+        <p>কাটার অবস্থানগুলোকে একটি বহু-মাত্রিক গোলকের বিন্দু হিসেবে লেখা যায় — প্রতিটি রঙের জন্য একটিমাত্র স্থানাঙ্ক, যা ওই রঙের কতখানি ভর প্রথম চোরের দিকে গেল তা মাপে। বিপরীত বিন্দু −x মানে চোর দুজনের ভূমিকা বদল — যা আগে প্রথম চোরের কাছে যাচ্ছিল, এখন যাচ্ছে দ্বিতীয়ের কাছে। তাই যদি g(x) হলো দুই চোরের পাওয়া ভরের পার্থক্য, তবে g(−x) = −g(x) — একটি odd ম্যাপ।</p>
+        <p>বোরসুক–উলাম বলে এই odd ম্যাপের কোথাও শূন্য থাকতেই হবে — অর্থাৎ এমন কাটার ব্যবস্থা আছে যাতে দুই চোরের প্রতিটি রঙের ভর হুবহু সমান। এখন শেষ কৌশল: কাটার জায়গাগুলোকে ধীরে ধীরে এমনভাবে সরান যাতে প্রতিটি কাটা ঠিক দুটি পুঁতির মাঝে এসে পড়ে, কিন্তু ভরের samtা কিংবা ন্যায্যতা নষ্ট না হয়। যেহেতু সবকিছু অবিচ্ছিন্ন, এই সরানোটা করা যায় — ফলাফল হলো r টি কাটে ঠিক ন্যায্য ভাগ।</p>
+        <b1b-figure src="../../assets/figures/topology/lesson_03/necklace.svg" alt="কাট ও ভাগ" caption="আসল হারে কাটগুলোকে পুঁতির মাঝের ফাঁকে ঠিক করা হয়। অবিচ্ছিন্ন মডেলে ভরের ন্যায্যতা প্রমাণ করে, বিচ্ছিন্ন মডেলে সেটি টেনে আনা হয় — এই দুই ধাপই পুরো প্রমাণ।"></b1b-figure>
+        <b1b-formula math="g:S^{r}\!\to\mathbb{R}^{r},\qquad g(-x)=-g(x)"></b1b-formula>
+        <p><em>কাটার ব্যবস্থা থেকে তৈরি odd ম্যাপ — চোর বদলালে চিহ্ন বদলায়।</em></p>
+        <b1b-formula math="g(x)=g(-x)=-g(x) \Rightarrow g(x)=0"></b1b-formula>
+        <p><em>বোরসুক–উলামের শূন্য-বিন্দু — দুই চোরের ভর সমান।</em></p>
+        <b1b-formula math="\text{continuous fair split} \longrightarrow \text{discrete cuts}"></b1b-formula>
+        <p><em>অবিচ্ছিন্ন ভাগ থেকে বিচ্ছিন্ন কাটে রূপান্তরের কৌশল।</em></p>
+        <b1b-callout type="gold" icon="🌟" title="এখানেই &#39;চোরাগপ্তো&#39;">
+          <p>ধাঁধাটা সম্পূর্ণ বিচ্ছিন্ন — পুঁতি কিংবা কাটা নিয়ে। কিন্তু প্রমাণ আসে একটি গোলকের বিপরীত-বিন্দু বৈশিষ্ট্য থেকে। প্রথমে সমস্যাটিকে অবিচ্ছিন্ন করে নেওয়া, টোপোলজি দিয়ে সমাধান করা, তারপর আবার বিচ্ছিন্নে ফিরে আসা — এই কৌশলই এই অধ্যায়ের শিক্ষণীয় বিষয়।</p>
+        </b1b-callout>
+        <p><strong>টোপোলজি আসলে &#39;আকৃতি&#39; নিয়ে নয়, অবিচ্ছিন্ন সংযোগ ও তার অপরিবর্তনীয় বৈশিষ্ট্য নিয়ে কাজ করে — আর সেটা যেকোনো ভাষায় অনুবাদ করা যায়।</strong></p>
+      </b1b-section>
+
+      <b1b-section id="sec-meaning" title="টোপোলজি কেন &#39;চোরাগপ্তো&#39;ভাবে কাজ করে">
+        <p>আমাদের প্রথম অধ্যায়ে টরাস আর মোবিয়াস স্ট্রিপ এসেছিল জোড়া বিন্দুকে পৃষ্ঠার বিন্দু হিসেবে লেখার মাধ্যমে। দ্বিতীয় অধ্যায়ে ডিগ্রির বিরোধ থেকে গোলকের চুল আঁচড়ানোর অসম্ভবতা প্রমাণ হয়েছিল। আজকের অধ্যায়ে দেখা গেল একটি বিচ্ছিন্ন ধাঁধাও একই ভাষায় লেখা যায় — কেবল প্রশ্নটিকে অবিচ্ছিন্ন রূপ দিতে হয়।</p>
+        <p>টোপোলজির মূল কথা হলো: ছেঁড়া বা আঠা লাগানো ছাড়া যেকোনো রূপ বদলের পরেও যা অপরিবর্তিত থাকে, তা নিয়েই যুক্তি করা। 'অবিচ্ছিন্ন এক-এক সংযোগ' বা হোমিওমর্ফিজমের এই ধারণাটিই আমাদের বলে দেয় কোন কাঠামো আসলে একই, কোনটা নয়। আবহাওয়া, চুলের ক্ষেত্র আর পুঁতির হার — তিনটি ভিন্ন জগত, একই গাণিতিক ভাষা।</p>
+        <p>এই কারণেই বোরসুক–উলামের মতো উপপাদ্যগুলো 'স্নেকি' — সেগুলো হঠাৎ করে আবির্ভূত হয় এবং সমস্যার সম্পূর্ণ ভিন্ন রূপ নিয়ে হাজির হয়। টোপোলজি শেখা মানে নতুন আকৃতি মুখস্থ করা নয়; মানে হলো কোনো সমস্যার ভাষা বদলে এমন একটি জগতে নিয়ে যাওয়া, যেখানে তার উত্তর সুস্পষ্ট ও অবধারিত।</p>
+        <b1b-figure src="../../assets/figures/topology/lesson_03/antipodal-earth.svg" alt="টোপোলজির তিনটি রূপ" caption="বিপরীত বিন্দুর এই ছোট্ট চিত্রই তিনটি অধ্যায়ের সূত্র ধরে বয়ে চলেছে — পৃষ্ঠার বিন্দু, স্পর্শক ভেক্টর আর ভাগ-বাটোয়ারার ন্যায্যতা।"></b1b-figure>
+        <b1b-formula math="X \cong Y \Longrightarrow \text{same topological invariants}"></b1b-formula>
+        <p><em>হোমিওমর্ফ পৃষ্ঠার টোপোলজিক্যাল বৈশিষ্ট্য একই — তাই এক জগতের প্রমাণ অন্য জগতে কাজ করে।</em></p>
+        <b1b-callout type="gold" icon="🌟" title="পুরো সিরির সারমর্ম">
+          <p>টোপোলজি কেবল রাবার-শিট জ্যামিতি নয়। এটি অবিচ্ছিন্ন সংযোগের ভাষা — যা দিয়ে একটি অমীমাংসিত বর্গ-প্রশ্ন, একটি বাতাসের শূন্য-বিন্দু আর একটি পুঁতির হার, সবই একই ধরনের যুক্তিতে বিবৃত ও সমাধান করা যায়।</p>
+        </b1b-callout>
+        <p><strong>এই ছিল আমাদের টোপোলজি সিরির তিনটি অধ্যায় — আশা করি আপনাদের কাছে এগুলো থিওডোলাইটের মতো কঠিন না লেগে থাকে।</strong></p>
+      </b1b-section>
+
+      <b1b-section id="sec-lab" title="ইন্টারেক্টিভ ল্যাব: বিপরীত বিন্দু ও হার-ভাগ" data-no-narration="true">
+        <p class="viz-intro">গোলকে দুটি বিন্দু সরান এবং উপপাদ্যটি কীভাবে কাজ করে তা দেখুন। অন্য ট্যাবে হারের কাটার অবস্থান বদলে দুই চোরের পাওয়া পুঁতির সংখ্যা যাচাই করুন।</p>
+        <ul>
+          <li>বিপরীত বিন্দু যুক্তি</li>
+          <li>রঙভিত্তিক ভর মাপ</li>
+          <li>২–৪ রঙের হার সিমুলেশন (পূর্ণস্ক্রিন)</li>
+        </ul>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে ল্যাব দেখুন">
+          <div class="topology-lab" id="topology_lab_3_1">
+<svg viewBox="0 0 640 230" class="topology-lab-svg" role="img" aria-label="ল্যাব ১: বিপরীত বিন্দুর মিলন">
+            <rect width="640" height="230" fill="#0d1117" rx="10"/>
+            <text x="320" y="44" fill="#e8eef5" font-size="19" text-anchor="middle" font-family="sans-serif">ল্যাব ১: বিপরীত বিন্দুর মিলন</text>
+            <path d="M70 130 Q 320 30 570 130" fill="none" stroke="#5d6b7a" stroke-width="2"/>
+            <circle cx="110" cy="130" r="13" fill="#74c0e3" opacity="0.9"/><circle cx="180" cy="130" r="13" fill="#f2c14e" opacity="0.9"/><circle cx="250" cy="130" r="13" fill="#ff6b6b" opacity="0.9"/><circle cx="320" cy="130" r="13" fill="#34d399" opacity="0.9"/><circle cx="390" cy="130" r="13" fill="#74c0e3" opacity="0.9"/><circle cx="460" cy="130" r="13" fill="#f2c14e" opacity="0.9"/>
+            <text x="320" y="200" fill="#9fb3c8" font-size="15" text-anchor="middle" font-family="sans-serif">স্লাইডার / বিন্দু সরিয়ে ধারণাটি যাচাই করুন</text>
+          </svg>
+          </div>
+        </b1b-fullscreen>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে ল্যাব দেখুন">
+          <div class="topology-lab" id="topology_lab_3_2">
+<svg viewBox="0 0 640 230" class="topology-lab-svg" role="img" aria-label="ল্যাব ২: হার ভাগ করুন">
+            <rect width="640" height="230" fill="#0d1117" rx="10"/>
+            <text x="320" y="44" fill="#e8eef5" font-size="19" text-anchor="middle" font-family="sans-serif">ল্যাব ২: হার ভাগ করুন</text>
+            <path d="M70 130 Q 320 30 570 130" fill="none" stroke="#5d6b7a" stroke-width="2"/>
+            <circle cx="110" cy="130" r="13" fill="#74c0e3" opacity="0.9"/><circle cx="180" cy="130" r="13" fill="#f2c14e" opacity="0.9"/><circle cx="250" cy="130" r="13" fill="#ff6b6b" opacity="0.9"/><circle cx="320" cy="130" r="13" fill="#34d399" opacity="0.9"/><circle cx="390" cy="130" r="13" fill="#74c0e3" opacity="0.9"/><circle cx="460" cy="130" r="13" fill="#f2c14e" opacity="0.9"/>
+            <text x="320" y="200" fill="#9fb3c8" font-size="15" text-anchor="middle" font-family="sans-serif">স্লাইডার / বিন্দু সরিয়ে ধারণাটি যাচাই করুন</text>
+          </svg>
+          </div>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <b1b-section id="sec-quiz" title="ধারণা যাচাই — ইন্টারেক্টিভ কুইজ" data-no-narration="true">
+        <b1b-quiz
+          question="❓ দ্বিমাত্রিক বোরসুক–উলাম উপপাদ্য অনুযায়ী পৃথিবীতে কী অবশ্যই পাওয়া যাবে?"
+          correct="1"
+          correct-msg="সঠিক! f: S² → ℝ²-এর জন্য f(x) = f(−x) এমন x অবশ্যই আছে।"
+          wrong-msg="উপপাদ্য তাপমাত্রার অভিন্নতা দাবি করে না, শুধু এক জোড়া বিপরীত বিন্দুর মিল।"
+          reveal-msg="f: S² → ℝ² (তাপমাত্রা, চাপ) অবিচ্ছিন্ন হওয়ায় বোরসুক–উলাম নিশ্চিত করে এমন x আছে যার f(x) = f(−x) — অর্থাৎ দুই বিপরীত বিন্দুতে দুটি মাপই সমান।">
+          <div slot="option">দুটি বিপরীত বিন্দু যেদের তাপমাত্রা আলাদা</div>
+          <div slot="option">দুটি বিপরীত বিন্দু যেদের তাপমাত্রা ও চাপ দুটোই সমান</div>
+          <div slot="option">সব জায়গায় একই তাপমাত্রা</div>
+          <div slot="option">কেবল একটি বিন্দু যেখানে চাপ শূন্য</div>
+        </b1b-quiz>
+        <b1b-quiz
+          question="❓ তিন রঙের পুঁতি (প্রতি রঙের দুটি করে) মিশ্রিত একটা হার ন্যায্য ভাগ করতে সর্বোচ্চ কতটি কাট লাগবে?"
+          correct="2"
+          correct-msg="ঠিক! r রঙের জন্য সর্বোচ্চ r টি কাট — এটি হার-ভাগ নিয়মের বিবৃতি।"
+          wrong-msg="প্রতিটি পুঁতির পাশে কাট দেওয়ার দরকার নেই; r টিই যথেষ্ট।"
+          reveal-msg="হার-ভাগ নিয়ম অনুযায়ী r রঙের হার r টি কাটেই ন্যায্যভাবে ভাগ করা যায়, পুঁতির বিন্যাস যাই হোক না কেন।">
+          <div slot="option">১</div>
+          <div slot="option">২</div>
+          <div slot="option">৩</div>
+          <div slot="option">৬</div>
+        </b1b-quiz>
+        <b1b-quiz
+          question="❓ প্রমাণে কাটার অবস্থানগুলোকে গোলকের বিন্দু হিসেবে লেখার সময় −x কী বোঝায়?"
+          correct="0"
+          correct-msg="হ্যাঁ! g(−x) = −g(x), তাই বোরসুক–উলামের শূন্য-বিন্দুতে g(x) = 0 — ন্যায্য ভাগ।"
+          wrong-msg="দৈর্ঘ্যের সাথে এর কোনো সম্পর্ক নেই; এখানে ভূমিকা বদলের কথা।"
+          reveal-msg="বিপরীত বিন্দু −x মানে চোর দুজনের ভূমিকা অদলবদল, তাই ভর-পার্থক্য ফাংশন odd হয়: g(−x) = −g(x)। বোরসুক–উলাম থেকে g(x) = 0 — অর্থাৎ ন্যায্য ভাগ।">
+          <div slot="option">দুই চোরের ভূমিকা বদল — ভরের পার্থক্যের চিহ্ন উল্টে যায়</div>
+          <div slot="option">হারের দৈর্ঘ্য দ্বিগুণ হয়</div>
+          <div slot="option">সব কাটা এক জায়গায় মিলে যায়</div>
+          <div slot="option">রঙের সংখ্যা কমে যায়</div>
+        </b1b-quiz>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/topology/lesson_03/experiments/3b1b_topology_03_full_dubbed.mp4"
+    yt-id="yuVqxCSsE7c"
+    title="অধ্যায় ০৩: চোরাগপ্তো টোপোলজি — বোরসুক–উলাম ও চুরি হওয়া হার — অধ্যায় ০৩"
+    subtitle="বোরসুক–উলাম উপপাদ্য বলে: যেকোনো অবিচ্ছিন্ন f: Sⁿ → ℝⁿ-এর ক্ষেত্রে এমন একটি জোড়া বিপরীত বিন্দু থাকে, যাদের ছবি একই। একে কাজে লাগিয়ে &#39;অবিচ্ছিন্ন হার&#39; ভাগ করে তারপর কাটগুলোকে পুঁতির মাঝে ঠিক করে নিলেই বিচ্ছিন্ন ধাঁধার সমাধান মিলে যায়।"
+    playlist-title="📋 প্লেলিস্ট — টোপোলজি সিরিজ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_02.html"
+  prev-title="কেশবহুল গোলকের উপপাদ্য"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url=""
+  next-title="সিরিজ সমাপ্ত"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

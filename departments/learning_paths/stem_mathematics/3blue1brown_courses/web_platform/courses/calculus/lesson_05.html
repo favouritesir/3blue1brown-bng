@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অধ্যায় ০৫ — অয়লার সংখ্যা e কেন এত বিশেষ? | ৩ব্লু১ব্রাউন বাংলা</title>
+
+<!-- ═══════════ STYLES (shared library only — no per-lesson design override) ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded, synchronous — zero-CORS narration) ═══════════ -->
+<script src="../../assets/audio/calculus/lesson_05/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict canonical load order (Lesson 01 template) ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (LAST: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+
+<style>
+  /* Lab-only layout helpers (no design override of the component library). */
+  .calc-lab { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+  .calc-canvas { display: block; width: 100%; height: auto; min-height: 360px; background: #080b12; border-radius: 10px; }
+  [data-theme="light"] .calc-canvas { background: #f8fafc; }
+  .calc-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 16px; }
+  .calc-control label { display: flex; justify-content: space-between; font-size: .9rem; font-weight: 600; margin-bottom: 6px; }
+  .calc-control input[type=range] { width: 100%; }
+  .calc-val { color: var(--theme, #38bdf8); font-family: monospace; }
+  .calc-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 16px; }
+  .calc-stat { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+  .calc-stat span { display: block; font-size: .8rem; color: var(--text-muted); margin-bottom: 4px; }
+  .calc-stat strong { font-size: 1.05rem; color: var(--theme, #38bdf8); }
+  .calc-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .calc-actions button, .viz-tool-btn {
+    background: rgba(56,189,248,.14); color: var(--theme, #38bdf8); border: 1px solid rgba(56,189,248,.4);
+    border-radius: 8px; padding: 7px 12px; font-weight: 700; cursor: pointer; font-family: inherit;
+  }
+</style>
+</head>
+<body class="mode-read">
+
+<b1b-search-overlay></b1b-search-overlay>
+
+<b1b-navbar
+  course-title="ক্যালকুলাসের মূল সারমর্ম"
+  course-url="../../index.html#calculus"
+  home-url="../../index.html"
+  chapter-num="০৫"
+  chapter-total="১২"
+  prev-url="lesson_04.html"
+  prev-title="পূর্ববর্তী অধ্যায়: চেইন রুল ও প্রোডাক্ট রুল"
+  next-url="lesson_06.html"
+  next-title="পরবর্তী অধ্যায়: ইমপ্লিসিট ডিফারেনশিয়েশন"
+  active-mode="read">
+</b1b-navbar>
+
+<b1b-hero-player
+  course-title="ক্যালকুলাসের মূল সারমর্ম"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৫ · ক্যালকুলাসের মূল সারমর্ম"
+  title="অধ্যায় ০৫: অয়লার সংখ্যা e কেন এত বিশেষ? — অবিচ্ছিন্ন পরিবর্তনের মহাজাগতিক গতিসীমা"
+  desc="2^t-এর ডেরিভেটিভ থেকে শুরু করে অদ্ভুত ধ্রুবক 0.6931..., ভিত্তি 3 ও 8-এর রহস্য, অয়লার সংখ্যা e ≈ 2.71828, প্রাকৃতিক লগারিদম এবং কেন e^{ct} প্রাকৃতিক বৃদ্ধির সার্বজনীন ভাষা।"
+  video-src="../../media_vault/calculus/lesson_05/experiments/fill_v2/3b1b_calculus_05_full_dubbed_fill2.mp4"
+  yt-id="m2MIpDrF7Es"
+  date="২ মে, ২০১৭"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="মূল পাঠ: Grant Sanderson (3Blue1Brown) · টেক্সট adaptation: Kurt Bruns · বাংলা রূপান্তর ও পাঠ্য বিন্যাস: STEM ম্যাথমেটিক্স উইং"
+  github-url="https://www.3blue1brown.com/lessons/eulers-number"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<div class="lesson-body">
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">অয়লারের সংখ্যার রহস্য ও ফিনিক্সের উপমা</b1b-bookmark>
+      <b1b-bookmark time="93"  time-bn="০১:৩৩"> population mass ও 2^t-এর ডেরিভেটিভ</b1b-bookmark>
+      <b1b-bookmark time="265" time-bn="০৪:২৫">ভিন্ন ভিত্তি: 3, 8 ও রহস্যময় ধ্রুবক</b1b-bookmark>
+      <b1b-bookmark time="372" time-bn="০৬:১২">e ≈ 2.71828, প্রাকৃতিক লগ ও e^{kt}</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-mystery">১. অয়লার সংখ্যা 'ই' ও ক্যালকুলাসের রহস্য</a>
+      <a href="#sec-proportional-growth">২. Population mass ও 2^t-এর ডেরিভেটিভ</a>
+      <a href="#sec-compound-interest">৩. বার্নোলির চক্রবৃদ্ধি সুদ ও অবিচ্ছিন্ন সীমা</a>
+      <a href="#sec-chain-rule-growth">৪. চেইন রুল, প্রাকৃতিক লগ ও e^{kt}</a>
+      <a href="#sec-figure-gallery">৫. চিত্র সংগ্রহ: ছবি ও অ্যানিমেশন</a>
+      <a href="#sec-labs">৬. ইন্টারেক্টিভ ল্যাব (ফুলস্ক্রিন)</a>
+      <a href="#sec-quizzes">৭. ধারণা যাচাই: ৪টি কুইজ</a>
+      <a href="#sec-footnotes">৮. পাদটীকা</a>
+      <a href="#sec-reference">৯. সূত্র ও প্রধান শিক্ষণীয় বিষয়</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ NARRATED 1 — sec-mystery | manifest cues: h2, chapter-quote, p, formula-box, callout (5) ═══ -->
+      <b1b-section id="sec-mystery" title="অয়লার সংখ্যা 'ই' এবং ক্যালকুলাসের অমীমাংসিত প্রশ্ন">
+        <b1b-quote author="Francois le Lionnais">"Who has not been amazed to learn that the function y = e^x, like a phoenix rising again from its own ashes, is its own derivative?" — কে না অবাক হয়েছেন যে $y = e^x$ ফাংশনটি নিজের ছাই থেকে পুনর্জন্ম নেওয়া ফিনিক্সের মতো নিজেরই ডেরিভেটিভ?</b1b-quote>
+
+        <p>ক্যালকুলাস কোর্সে প্রায় প্রতিটি শিক্ষার্থীকেই একটি অদ্ভুত সংখ্যার সাথে পরিচিত হতে হয়—অয়লারের ধ্রুবক $e \approx 2.71828$। কিন্তু শুরুতেই শিক্ষার্থীদের শেখানো হয় একটি শুষ্ক সূত্র: $e^t$-এর ডেরিভেটিভ নাকি হুবহু সে নিজেই; আর সূচকে ধ্রুবক $k$ থাকলে চেইন রুল অনুযায়ী তা দাঁড়ায় $k e^{kt}$। গণিত কোনো অন্ধ মুখস্থবিদ্যার নাম নয়। তবে প্রশ্ন হলো—মহাবিশ্বে এমন কোনো চমৎকার সংখ্যা কেন থাকবে, যার বক্ররেখার প্রতিটি বিন্দুতে স্পর্শকের ঢাল তার তৎকালীন উচ্চতার হুবহু সমান? ই টু দ্য পাওয়ার টি-এর পরিবর্তনের হার সে নিজেই—কিন্তু প্রকৃতির এই পরম ভিত্তিটি কেন অন্য কোনো সংখ্যা না হয়ে ২.৭১৮২৮ হলো?</p>
+
+        <b1b-formula math="\frac{d}{dt}\left(e^{t}\right) = e^{t}"></b1b-formula>
+
+        <b1b-callout type="gold" icon="🔍" title="অনুসন্ধানের পথ">
+          <p>এই রহস্য উন্মোচন করতে হলে আমাদের ফিরে যেতে হবে ডেরিভেটিভের একেবারে মৌলিক সংজ্ঞায় এবং পরীক্ষা করতে হবে সাধারণ সূচকীয় ফাংশনগুলোকে—যেমন $2^t$, $7^t$। প্রথমে সরাসরি $e$-এর দিকে না তাকিয়ে $2^t$-এর মতো একটি সহজ ভিত্তি নিয়ে কাজ করাই হবে বুদ্ধিমানের কাজ। সেখান থেকে ধীরে ধীরে উঠে আসবে সেই বিশেষ ভিত্তিটি, যার জন্য এই অদ্ভুত সুন্দর সত্যটি প্রথমবারের মতো সত্য হয়ে দাঁড়ায়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 2 — sec-proportional-growth | manifest cues: h2, p, formula-box, p, p, callout (6) ═══ -->
+      <b1b-section id="sec-proportional-growth" title="Population Mass ও সূচকীয় ডেরিভেটিভ: 2^t থেকে 8^t">
+        <p>প্রথমে $2^t$ ফাংশনটিকে একটু আলাদা চোখে দেখি। ইনপুট $t$ কে সময় (দিন) হিসেবে এবং আউটপুট $2^t$ কে একদল অতি-উর্বর $\pi$-জীবের <strong>মোট ভর</strong> হিসেবে কল্পনা করি—জনসংখ্যা নয়, কারণ ভর সরলভাবে ক্রমাগত বাড়ে। $t=0$-এ ভর $2^0=1$, একদিন পর $2^1=2$, দুই দিনে $2^2=4$—অর্থাৎ প্রতিদিন ভর দ্বিগুণ। এখন ডেরিভেটিভ $\frac{dM}{dt}$ মানে একই দিনের ভেতরে ভর বৃদ্ধির হার। দিন ২ থেকে ৩-এ ভর ৪ থেকে ৮ হয়, অর্থাৎ যোগ হয় ৪—ঠিক সেইদিনের শুরুর ভরের সমান! দিন ৩ থেকে ৪-এ যোগ হয় ৮, আবার শুরুর ভরের সমান। সাধারণভাবে একটি পূর্ণ দিনের বৃদ্ধি তার শুরুর ভরের সমান; তাই মনে হতে পারে $2^t$-এর ডেরিভেটিভও সে নিজেই। কিন্তু ডেরিভেটিভের জন্য আমাদের এক পূর্ণ দিন নয়, বরং অতিক্ষুদ্র $dt$ সময়ের ব্যবধান—এক দশমাংশ, এক শতাংশ, এক বিলিয়নভাগ দিন—নিয়ে প্রশ্ন করতে হবে।</p>
+
+        <b1b-formula math="M(t)=2^{t},\qquad \frac{dM}{dt}=\lim_{dt\to 0}\frac{2^{t+dt}-2^{t}}{dt}"></b1b-formula>
+
+        <p>এখানেই সূচকের সবচেয়ে গুরুত্বপূর্ণ ধর্মটি কাজে আসে: $2^{t+dt}=2^t\cdot 2^{dt}$। যোগজ সূচককে ভাগজ রূপে ভেঙে লবের দুটি পদেই $2^t$ পাওয়া যায়, তাই একে সাধারণ উৎপাদক হিসেবে বাইরে নিয়ে আসা যায়। ফলে $\frac{d}{dt}(2^t)=2^t\left(\lim_{dt\to 0}\frac{2^{dt}-1}{dt}\right)$—ডেরিভেটিভটি আবার একটি এক্সপোনেনশিয়াল, শুধু একটি ধ্রুবক দিয়ে গুণিত।</p>
+
+        <p>আশ্চর্যের বিষয় হলো বন্ধনীর ভেতরের অংশে সময়ের চলক $t$ সম্পূর্ণ অনুপস্থিত—এটি কেবল $dt$-র ওপর নির্ভর করে। $dt$ অতি ক্ষুদ্র হলে এর মান দাঁড়ায় প্রায় $0.6931\ldots$, যা $\ln 2$ নামে পরিচিত। একই হিসাবে ভিত্তি $3$-এর জন্য ধ্রুবক প্রায় $1.0986\ldots$ এবং ভিত্তি $8$-এর জন্য প্রায় $2.079$—ঠিক $0.6931$-এর তিনগুণ! অর্থাৎ বক্ররেখার যেকোনো বিন্দুতে প্রকৃত ডেরিভেটিভ আউটপুটের চেয়ে কিছুটা <strong>ছোট</strong> (ভিত্তি ২-এ), কারণ গুণক $1$-এর চেয়ে কম।</p>
+
+        <b1b-callout type="blue" icon="🧭" title="মাইলফলক: ধ্রুবকটির সন্ধান">
+          <p>ভিত্তি ২-এর সমানুপাতিক ধ্রুবক $0.6931 < 1$ এবং ভিত্তি ৩-এর $1.0986 > 1$। সুতরাং ২ ও ৩-এর মাঝে অবশ্যই এমন একটি ভিত্তি আছে যার সমানুপাতিক ধ্রুবক ঠিক ১—সেই ভিত্তিটিই হলো অয়লারের সংখ্যা $e$। বন্ধনীর মান বের করতে $dt$-তে খুব ছোট সংখ্যা বসিয়ে ক্যালকুলেটরে হিসাব করলেই $0.6931\ldots$ ফিরে আসে—এই ছোট্ট Reveal-টি পুরো রহস্যের চাবিকাঠি।</p>
+        </b1b-callout>
+
+        <!-- Image/Video figures (media tabs are not narration cue blocks) -->
+        <b1b-media-tab active-tab="image" caption="এই চিত্রে π-জীবের মোট ভর $2^t$ দিন ০ থেকে ৩ পর্যন্ত ১, ২, ৪, ৮ হিসেবে বাড়ছে। প্রতিটি স্তম্ভ আগেরটির ঠিক দ্বিগুণ, তাই বৃদ্ধি রেখা সোজা নয়—একটি বক্ররেখা। লক্ষ্য করুন শেষ দিনে নতুন করে যোগ হওয়া ভর ৪, ঠিক সেই দিনের শুরুর ভরের সমান; এই পর্যবেক্ষণই ডেরিভেটিভের ধারণার প্রথম ইশারা। ভিডিও ট্যাবে মূল অ্যানিমেশনে ভর কীভাবে ক্রমাগত বাড়ে তা দেখা যাবে।">
+          <div slot="image">
+            <svg viewBox="0 0 460 280" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="2^t population mass bar chart">
+              <rect width="460" height="280" fill="#0b1220"/>
+              <line x1="48" y1="232" x2="442" y2="232" stroke="#94a3b8" stroke-width="2"/>
+              <line x1="48" y1="232" x2="48" y2="26" stroke="#94a3b8" stroke-width="2"/>
+              <rect x="80" y="207" width="52" height="25" fill="#38bdf8"/>
+              <rect x="170" y="182" width="52" height="50" fill="#34d399"/>
+              <rect x="260" y="132" width="52" height="100" fill="#fbbf24"/>
+              <rect x="350" y="32" width="52" height="200" fill="#f472b6"/>
+              <text x="106" y="200" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="sans-serif">1</text>
+              <text x="196" y="175" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="sans-serif">2</text>
+              <text x="286" y="125" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="sans-serif">4</text>
+              <text x="376" y="25" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="sans-serif">8</text>
+              <text x="106" y="252" fill="#94a3b8" font-size="13" text-anchor="middle" font-family="sans-serif">t=0</text>
+              <text x="196" y="252" fill="#94a3b8" font-size="13" text-anchor="middle" font-family="sans-serif">t=1</text>
+              <text x="286" y="252" fill="#94a3b8" font-size="13" text-anchor="middle" font-family="sans-serif">t=2</text>
+              <text x="376" y="252" fill="#94a3b8" font-size="13" text-anchor="middle" font-family="sans-serif">t=3</text>
+              <text x="150" y="20" fill="#fbbf24" font-size="14" font-family="sans-serif">mass = 2^t</text>
+            </svg>
+          </div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/m2MIpDrF7Es?start=40" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="Population mass — মূল অ্যানিমেশন"></iframe></div>
+        </b1b-media-tab>
+
+        <b1b-media-tab active-tab="image" caption="চিত্রে দিন ২ থেকে ৩-এর এক-দিনের ব্যবধানটি হলুদ তীর দিয়ে দেখানো হয়েছে: ভর ৪ থেকে ৮ হওয়ায় যোগ হয় ৪, যা দিনের শুরুর ভরের সমান। পরের দিন একই নিয়মে ৮ থেকে ১৬ হওয়ায় যোগ হয় ৮। এই 'পূর্ণ দিনের বৃদ্ধি = শুরুর ভর' ধর্মটি সত্য হলেও অতিক্ষুদ্র সময়ে তা আর হুবহু সত্য থাকে না—এইখান থেকেই $0.6931$-এর মতো ধ্রুবকের জন্ম। ভিডিও ট্যাবে এই ধাপগুলোর গতি দেখলে পার্থক্যটি স্পষ্ট হবে।">
+          <div slot="image">
+            <svg viewBox="0 0 460 260" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="full day growth equals starting mass">
+              <rect width="460" height="260" fill="#0b1220"/>
+              <text x="24" y="36" fill="#e2e8f0" font-size="15" font-family="sans-serif">Day 2 → 3</text>
+              <circle cx="90" cy="120" r="34" fill="none" stroke="#38bdf8" stroke-width="3"/>
+              <text x="90" y="128" fill="#38bdf8" font-size="22" text-anchor="middle" font-family="sans-serif">4</text>
+              <line x1="140" y1="120" x2="300" y2="120" stroke="#fbbf24" stroke-width="3"/>
+              <polygon points="300,120 286,112 286,128" fill="#fbbf24"/>
+              <text x="220" y="108" fill="#fbbf24" font-size="14" text-anchor="middle" font-family="sans-serif">+4 masses</text>
+              <circle cx="360" cy="120" r="48" fill="none" stroke="#f472b6" stroke-width="3"/>
+              <text x="360" y="128" fill="#f472b6" font-size="26" text-anchor="middle" font-family="sans-serif">8</text>
+              <text x="230" y="208" fill="#a7f3d0" font-size="14" text-anchor="middle" font-family="sans-serif">growth over a full day = mass at the start of the day</text>
+            </svg>
+          </div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/m2MIpDrF7Es?start=100" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="Full-day growth equals starting mass"></iframe></div>
+        </b1b-media-tab>
+
+        <b1b-media-tab active-tab="image" caption="এখানে $2^t$ বক্ররেখার ওপর একটি বিন্দুতে স্পর্শক আঁকা হয়েছে; হলুদ খাড়া রেখাটি সেই বিন্দুর উচ্চতা $2^t$ এবং নীল স্পর্শকের ঢাল তার চেয়ে কিছুটা কম। কারণ ভিত্তি ২-এর ক্ষেত্রে ঢাল = $0.6931\times 2^t$। এই দৃশ্যটিই বোঝায় কেন প্রশ্নের সঠিক উত্তর 'ডেরিভেটিভ আউটপুটের চেয়ে ছোট'—ভিডিও ট্যাবে অ্যানিমেশনটি আরও স্পষ্ট করে তুলবে।">
+          <div slot="image">
+            <svg viewBox="0 0 460 290" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="derivative smaller than output">
+              <rect width="460" height="290" fill="#0b1220"/>
+              <line x1="46" y1="250" x2="440" y2="250" stroke="#94a3b8" stroke-width="2"/>
+              <line x1="46" y1="250" x2="46" y2="24" stroke="#94a3b8" stroke-width="2"/>
+              <path d="M46 250 Q 250 235 420 40" fill="none" stroke="#34d399" stroke-width="3"/>
+              <line x1="170" y1="248" x2="330" y2="176" stroke="#38bdf8" stroke-width="3"/>
+              <circle cx="250" cy="212" r="6" fill="#fbbf24"/>
+              <line x1="250" y1="212" x2="250" y2="60" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5 4"/>
+              <text x="262" y="90" fill="#fbbf24" font-size="14" font-family="sans-serif">height 2^t</text>
+              <text x="300" y="168" fill="#38bdf8" font-size="13" font-family="sans-serif">slope = 0.6931·2^t</text>
+              <text x="60" y="40" fill="#a7f3d0" font-size="14" font-family="sans-serif">y = 2^t</text>
+            </svg>
+          </div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/m2MIpDrF7Es?start=185" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="Derivative versus output"></iframe></div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 3 — sec-compound-interest | manifest cues: h2, p, p, p, formula-box, callout (6) ═══ -->
+      <b1b-section id="sec-compound-interest" title="বার্নোলির চক্রবৃদ্ধি সুদ ও অবিচ্ছিন্ন সীমা">
+        <p>এই রহস্যময় ধ্রুবকের উৎপত্তি লক্ষ্য করা যায় ১৬৮৩ সালে জ্যাকব বার্নোলির একটি চক্রবৃদ্ধি-সুদের চিন্তন পরীক্ষায়। কল্পনা করুন একটি ব্যাংক বার্ষিক ১০০% সুদের অফার দিল এবং মূলধন ঠিক ১ ডলার। প্রশ্ন হলো—বছর শেষে কত টাকা পাওয়া যাবে, যদি সুদকে বারবার ভাগ করে ক্রমাগত যোগ করা হয়?</p>
+
+        <p>বছরে একবার চক্রবৃদ্ধি করলে পাওয়া যায় $(1+1)^1=2$ ডলার; দুইবার করলে $(1+\tfrac12)^2=2.25$ ডলার; চারবার (ত্রৈমাসিক) করলে $(1+\tfrac14)^4\approx 2.4414$ ডলার; আর বারোবার (মাসিক) করলে $(1+\tfrac1{12})^{12}\approx 2.613$ ডলার। প্রতিবার ভাগ বাড়ানোর সাথে সাথে অর্থের পরিমাণও বাড়ছে—কিন্তু কি কখনো অসীমে পৌঁছাবে?</p>
+
+        <p>প্রতিদিন চক্রবৃদ্ধি করলে মেলে প্রায় $2.71845$ ডলার; প্রতি ঘণ্টা, প্রতি মিনিট বা প্রতি ন্যানোসেকেন্ডে করলেও সংখ্যাটি আর বেশি বাড়ে না। এটি এক নির্দিষ্ট সীমায় এসে থিতু হয়—হয়ে ওঠে সেই বিখ্যাত সংখ্যা, যাকে আমরা অয়লারের সংখ্যা বলি। এই অবিচ্ছিন্ন সীমাটিই আসলে $e$-এর এক summation-বিহীন, আবিষ্কারমূলক সংজ্ঞা।</p>
+
+        <b1b-formula math="e=\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^{n}\approx 2.718281828\ldots"></b1b-formula>
+
+        <b1b-callout type="green" icon="🌱" title="প্রকৃতির গতিসীমা">
+          <p>অবিরাম প্রতি মুহূর্তে চক্রবৃদ্ধি করলেও অর্থ কখনোই বিস্ফোরিত হয়ে অসীমে যায় না; বরং এটি মহাবিশ্বের এক অনন্য গাণিতিক সীমায় থিতু হয়—অয়লার সংখ্যা $e$। এই একই সীমা পরে এক্সপোনেনশিয়াল ফাংশনের ডেরিভেটিভের ক্ষেত্রেও ফিরে আসে, যা দেখায় যে ব্যাংকিং হিসাব আর ক্যালকুলাসের ঢাল একই গাণিতিক বস্তুর দুটি ভিন্ন মুখ।</p>
+        </b1b-callout>
+
+        <b1b-media-tab active-tab="image" caption="চিত্রে $(1+1/n)^n$-এর মান $n$ বাড়ানোর সাথে সাথে $e \approx 2.71828$-এর দিকে নিচ থেকে অভিসৃত হচ্ছে—$n=1$-এ ২, $n=12$-এ $2.61$, $n=365$-এ $2.7145$। হলুদ অনুভূমিক রেখাটি সেই অপরিবর্তনীয় সীমা $e$ নির্দেশ করছে; কতক্ষণ চক্রবৃদ্ধি করা হোক না কেন, বক্ররেখা কখনোই এর ওপরে যাবে না। নিচের ল্যাব দিয়ে $n$ নিজে বদলে এই অভিসরণ প্রত্যক্ষ করা যায়। ভিডিও ট্যাবে মূল অ্যানিমেশন এই ধাপগুলো দেখায়।">
+          <div slot="image">
+            <svg viewBox="0 0 460 280" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="compound interest converging to e">
+              <rect width="460" height="280" fill="#0b1220"/>
+              <line x1="50" y1="240" x2="440" y2="240" stroke="#94a3b8" stroke-width="2"/>
+              <line x1="50" y1="240" x2="50" y2="24" stroke="#94a3b8" stroke-width="2"/>
+              <line x1="50" y1="60" x2="440" y2="60" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6 4"/>
+              <text x="300" y="52" fill="#fbbf24" font-size="13" font-family="sans-serif">e = 2.71828...</text>
+              <path d="M60 170 Q 160 96 280 72 T 430 62" fill="none" stroke="#38bdf8" stroke-width="3"/>
+              <circle cx="105" cy="138" r="4" fill="#f472b6"/>
+              <circle cx="180" cy="94" r="4" fill="#f472b6"/>
+              <circle cx="280" cy="72" r="4" fill="#f472b6"/>
+              <text x="60" y="264" fill="#94a3b8" font-size="12" font-family="sans-serif">n=1</text>
+              <text x="160" y="264" fill="#94a3b8" font-size="12" font-family="sans-serif">n=12</text>
+              <text x="270" y="264" fill="#94a3b8" font-size="12" font-family="sans-serif">n=365</text>
+              <text x="60" y="34" fill="#e2e8f0" font-size="13" font-family="sans-serif">(1+1/n)^n</text>
+            </svg>
+          </div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/m2MIpDrF7Es?start=250" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="Bernoulli compound interest"></iframe></div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 4 — sec-chain-rule-growth | manifest cues: h2, p, formula-box, p, p, callout (6) ═══ -->
+      <b1b-section id="sec-chain-rule-growth" title="চেইন রুল, প্রাকৃতিক লগ ও e^{kt}-এর মহিমা">
+        <p>বাস্তব জগতে বৃদ্ধির হার সবসময় ১০০% হয় না; হতে পারে শতকরা ৫ ভাগ কিংবা ৫০ ভাগ। যদি কোনো ব্যবস্থার অবিচ্ছিন্ন শতকরা হার হয় $k$, তবে $n$ ভাগে ভাগ করে অবিচ্ছিন্ন সীমা নিলে $t$ সময় পর রূপ হয় $e^{kt}$। আর এই $e^{ct}$ ফর্মটিই প্রাকৃতিক প্রক্রিয়ার সার্বজনীন ভাষা—জনসংখ্যা বৃদ্ধি, গরম পানির ঠান্ডা হওয়া (নিউটনের সূত্র: তাপমাত্রার পার্থক্যের হার সেই পার্থক্যের সমানুপাতিক) এবং ব্যাংকে টাকার চক্রবৃদ্ধি—তিনটিতেই কোনো একটি-এর পরিবর্তনের হার তার বর্তমান পরিমাণের সমানুপাতিক।</p>
+
+        <b1b-formula math="\frac{d}{dt}\left(e^{kt}\right) = k\,e^{kt}"></b1b-formula>
+
+        <p>চেইন রুল অনুযায়ী ভেতরের ফাংশন $u=kt$-এর ডেরিভেটিভ $k$ সামনে এসে গুণ হয়—অর্থাৎ এখানে $k$ হলো সরাসরি অবিচ্ছিন্ন শতকরা বৃদ্ধির হার। তাই $\frac{dN}{dt}=kN$ রূপের যেকোনো ডিফারেনশিয়াল সমীকরণের সমাধান $N(t)=N_0 e^{kt}$: ব্যাকটেরিয়ার বংশবৃদ্ধি, তেজস্ক্রিয় পরমাণুর ক্ষয়, মহামারীর বিস্তার কিংবা ব্যাংক ব্যালেন্স—সবখানেই অয়লারের সংখ্যা $e$ স্বয়ংক্রিয়ভাবে প্রধান চরিত্র হয়ে ওঠে।</p>
+
+        <p>ভিন্ন ভিত্তিগুলো আসলে একে অপরের অনুভূমিকভাবে স্কেল করা রূপ: যেমন $2^{x}=4^{\frac12 x}$। একইভাবে $e^{c\cdot t}=2^{t}$ লেখা যায় যখন $c\approx 0.6931$—অর্থাৎ $e^{0.6931\,t}=2^{t}$। এই $c$-টি ঠিক সেই রহস্যময় ধ্রুবক, যা লেখা হয় $\ln 2$। সাধারণভাবে $3^{t}=e^{\ln(3)t}$ (যেখানে $\ln 3=1.0986\ldots$) এবং যেকোনো ভিত্তির জন্য $\frac{d(a^{t})}{dt}=a^{t}\ln(a)$। প্রতিটি ভিত্তি $a$-এর সাথে একটি করে 'প্রাকৃতিক লগ' $\ln a$ যুক্ত—এই বোঝাপড়াটিই রহস্যময় ধ্রুবকগুলোর পর্দা উন্মোচন করে।</p>
+
+        <b1b-callout type="purple" icon="✨" title="চূড়ান্ত দর্শন">
+          <p>অয়লার সংখ্যা $e$ মানুষের চাপিয়ে দেওয়া কোনো কৃত্রিম ধ্রুবক নয়; এটি মসৃণ, অবিচ্ছিন্ন পরিবর্তনের নিখুঁত প্রাকৃতিক ভাষা। সব এক্সপোনেনশিয়াল নিজের ডেরিভেটিভের সমানুপাতিক, কিন্তু শুধু $e$-ভিত্তিক ফাংশনটির ক্ষেত্রেই সেই সমানুপাতিক ধ্রুবক ঠিক ১—তাই $\frac{d}{dt}(e^t)=e^t$। যেকোনো $a^t$ কে $e^{c t}$ আকারে লিখলে ডেরিভেটিভ নেওয়া সহজ হয়, আর $c$-টি তখন সরাসরি বোঝায় পরিবর্তনের তাৎক্ষণিক শতকরা হার।</p>
+        </b1b-callout>
+
+        <b1b-media-tab active-tab="image" caption="চিত্রে $e^t$ বক্ররেখার তিনটি বিন্দুতে স্পর্শক আঁকা হয়েছে; প্রতিটি ক্ষেত্রেই স্পর্শকের ঢাল তার বিন্দুর উচ্চতার হুবহু সমান—এই কারণে $\frac{d}{dt}(e^t)=e^t$। বাঁ পাশের ছোট ত্রিভুজগুলো 'rise over run' দেখায় যে ঢাল আর উচ্চতার অনুপাত ঠিক ১। ভিডিও ট্যাবে এই স্পর্শকগুলোর গতি দেখলে বক্ররেখার এই অনন্য বৈশিষ্ট্যটি আরও দৃঢ় হবে।">
+          <div slot="image">
+            <svg viewBox="0 0 460 290" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="tangent slope equals height for e^t">
+              <rect width="460" height="290" fill="#0b1220"/>
+              <line x1="46" y1="252" x2="440" y2="252" stroke="#94a3b8" stroke-width="2"/>
+              <line x1="46" y1="252" x2="46" y2="22" stroke="#94a3b8" stroke-width="2"/>
+              <path d="M46 250 Q 260 235 430 30" fill="none" stroke="#34d399" stroke-width="3"/>
+              <line x1="110" y1="244" x2="180" y2="226" stroke="#38bdf8" stroke-width="2"/>
+              <line x1="200" y1="212" x2="285" y2="166" stroke="#38bdf8" stroke-width="2"/>
+              <line x1="305" y1="138" x2="385" y2="60" stroke="#38bdf8" stroke-width="2"/>
+              <circle cx="150" cy="235" r="4" fill="#fbbf24"/>
+              <circle cx="245" cy="189" r="4" fill="#fbbf24"/>
+              <circle cx="345" cy="99" r="4" fill="#fbbf24"/>
+              <text x="60" y="40" fill="#a7f3d0" font-size="14" font-family="sans-serif">y = e^t : slope = height</text>
+            </svg>
+          </div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/m2MIpDrF7Es?start=360" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="Euler number tangent slope equals height"></iframe></div>
+        </b1b-media-tab>
+
+        <b1b-media-tab active-tab="image" caption="এই চিত্রে $2^x$ (নীল) ও $4^{x/2}$ (কমলা) একই বক্ররেখার ওপর চাপ দিয়ে দেখা যায়—ভিত্তি বদলে শুধু অনুভূমিক স্কেলিং হয়, আকার বদলায় না। নিচের লেখায় সেই একই কৌশলে $2^t$ কে $e^{0.6931 t}$ আকারে লেখা হয়েছে; $e$ বক্ররেখা ২-এর মানে পৌঁছাতে যত সময় নেয় (প্রায় ০.৬৯৩), ঠিক ততটাই হলো সেই স্কেলিং ধ্রুবক। ভিডিও ট্যাবে জুম করে এই রূপান্তরের হিসাব দেখা যাবে।">
+          <div slot="image">
+            <svg viewBox="0 0 460 280" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="base rewriting 2^x = 4^{x/2}">
+              <rect width="460" height="280" fill="#0b1220"/>
+              <line x1="50" y1="240" x2="440" y2="240" stroke="#94a3b8" stroke-width="2"/>
+              <line x1="50" y1="240" x2="50" y2="24" stroke="#94a3b8" stroke-width="2"/>
+              <path d="M50 240 Q 250 220 430 50" fill="none" stroke="#38bdf8" stroke-width="4"/>
+              <path d="M50 240 Q 250 220 430 50" fill="none" stroke="#fbbf24" stroke-width="2" stroke-dasharray="7 6"/>
+              <line x1="230" y1="226" x2="230" y2="80" stroke="#a7f3d0" stroke-width="2" stroke-dasharray="4 4"/>
+              <text x="240" y="96" fill="#a7f3d0" font-size="13" font-family="sans-serif">x = 0.693</text>
+              <text x="60" y="40" fill="#38bdf8" font-size="14" font-family="sans-serif">2^x = 4^(x/2) = e^(0.6931x)</text>
+            </svg>
+          </div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/m2MIpDrF7Es?start=455" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="Rewriting bases with e"></iframe></div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED: pure-image figure gallery (b1b-figure component) ═══ -->
+      <b1b-section id="sec-figure-gallery" title="🖼️ চিত্র সংগ্রহ: অয়লার সংখ্যার দৃশ্যাবলী" data-no-narration="true">
+        <p class="viz-intro">নিচের চিত্রগুলোতে রহস্যময় ধ্রুবকগুলোর আচরণ ও প্রাকৃতিক বৃদ্ধির তিনটি উদাহরণ এক নজরে দেখা যায়। প্রতিটি চিত্রের ক্যাপশনে কী আঁকা আছে, কী লক্ষ্য করতে হবে এবং কেন তা গুরুত্বপূর্ণ—তা ব্যাখ্যা করা হয়েছে।</p>
+
+        <b1b-figure
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDAgMjgwIiB3aWR0aD0iNDQwIiBoZWlnaHQ9IjI4MCI+PHJlY3Qgd2lkdGg9IjQ0MCIgaGVpZ2h0PSIyODAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNTAiIHkxPSIyNDAiIHgyPSI0MjAiIHkyPSIyNDAiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjUwIiB5MT0iMjQwIiB4Mj0iNTAiIHkyPSIzMCIgc3Ryb2tlPSIiOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNTAgMjQwIFEgMjQwIDIyMCA0MTAgNDQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM4YmRmOCIgc3Ryb2tlLXdpZHRoPSIzIi8+PHBhdGggZD0iTTUwIDI0MCBRIDI0MCAyMjAgNDEwIDQ0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzNGQzOTkiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWRhc2hhcnJheT0iNiA2Ii8+PHRleHQgeD0iNjUiIHk9IjQwIiBmaWxsPSIjZjhiZjI0IiBmb250LXNpemU9IjE0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+YmFzZSAyOiAwLjY5MzE8L3RleHQ+PHRleHQgeD0iNjUiIHk9IjYwIiBmaWxsPSIjMzRkMzk5IiBmb250LXNpemU9IjE0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+YmFzZSAzOiAxLjA5ODY8L3RleHQ+PC9zdmc+"
+          alt="ভিত্তি ২ ও ৩-এর জন্য ভিন্ন সমানুপাতিক ধ্রুবক"
+          caption="এই চিত্রে ভিত্তি ২ (নীল) ও ভিত্তি ৩ (সবুজ) এক্সপোনেনশিয়াল বক্ররেখা পাশাপাশি দেখা যায়; প্রতিটির ঢাল তার উচ্চতার যথাক্রমে $0.6931$ ও $1.0986$ গুণ। লক্ষ্য করুন ভিত্তি ২-এর ধ্রুবক ১-এর চেয়ে ছোট—তাই তার ডেরিভেটিভ আউটপুটের চেয়ে ছোট—আর ভিত্তি ৩-এর ধ্রুবক ১-এর চেয়ে বড়। এই দুটির মাঝখানে কোথাও অবশ্যই এমন একটি ভিত্তি আছে যার ধ্রুবক ঠিক ১; সেটিই হলো $e$।">
+        </b1b-figure>
+
+        <b1b-figure
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDAgMjgwIiB3aWR0aD0iNDQwIiBoZWlnaHQ9IjI4MCI+PHJlY3Qgd2lkdGg9IjQ0MCIgaGVpZ2h0PSIyODAiIGZpbGw9IiMwYjEyMjAiLz48dGV4dCB4PSIyMjAiIHk9IjQwIiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+cmF0ZSBvZiBjaGFuZ2Ug4oCgIGN1cnJlbnQgYW1vdW50PC90ZXh0PjxwYXRoIGQ9Ik00MCAyMDAgTDEyMCAxNDAgTDIwMCAxMDAgTDI4MCA2MCAgTDM2MCAzNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzhiZGY4IiBzdHJva2Utd2lkdGg9IjMiLz48Y2lyY2xlIGN4PSIxMjAiIGN5PSIxNDAiIHI9IjYiIGZpbGw9IiNmYmJmMjQiLz48Y2lyY2xlIGN4PSIyODAiIGN5PSI2MCIgcj0iNiIgZmlsbD0iI2ZiYmYyNCIvPjx0ZXh0IHg9IjIyMCIgeD0iMjIwIiB5PSIyNDAiIGZpbGw9IiNjNmM3ZDAiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5wb3B1bGF0aW9uIC8gY29vbGluZyAvIGludGVyZXN0PC90ZXh0Pjwvc3ZnPg=="
+          alt="পরিবর্তনের হার বর্তমান পরিমাণের সমানুপাতিক"
+          caption="চিত্রটি একটিমাত্র ধারণার তিনটি রূপ দেখায়: বক্ররেখার ওপর প্রতিটি বিন্দুতে 'পরিবর্তনের হার' সরাসরি 'বর্তমান পরিমাণের' সমানুপাতিক। জনসংখ্যা বাড়ছে, গরম পানি ঠান্ডা হচ্ছে আর ব্যাংক ব্যালেন্স সুদে বাড়ছে—আকার আলাদা হলেও গাণিতিক নিয়ম একই। এই কারণেই তিন ক্ষেত্রেই সমাধান $e^{ct}$ আকারে লেখা হয়, যেখানে $c$ হলো সেই সমানুপাতিকতার ধ্রুবক।">
+        </b1b-figure>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED: labs in b1b-fullscreen ═══ -->
+      <b1b-section id="sec-labs" title="🔬 ইন্টারেক্টিভ ল্যাব: চক্রবৃদ্ধির সীমা ও এক্সপোনেনশিয়াল ঢাল" data-no-narration="true">
+        <p class="viz-intro">নিচের দুটি ল্যাবের স্লাইডার ঘুরিয়ে দেখুন কীভাবে $(1+1/n)^n$ ধীরে ধীরে $e$-এর দিকে এগিয়ে যায়, এবং যেকোনো ভিত্তি $a$-এর জন্য ঢাল আর উচ্চতার অনুপাত ঠিক $\ln a$ হয়। প্রতিটি ল্যাব পূর্ণস্ক্রিনে খোলা যায়।</p>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে সীমা ল্যাব দেখুন">
+          <euler-limit-lab></euler-limit-lab>
+        </b1b-fullscreen>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে ঢাল ল্যাব দেখুন">
+          <exp-derivative-lab></exp-derivative-lab>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED: all official quizzes with exact options + rich Bengali feedback ═══ -->
+      <b1b-section id="sec-quizzes" title="ধারণা যাচাই: ৪টি ইন্টারেক্টিভ কুইজ" data-no-narration="true">
+
+        <b1b-quiz
+          question="❓ প্লটের যেকোনো বিন্দুতে $2^t$-এর প্রকৃত ডেরিভেটিভ (ঢাল) কি ফাংশনের আউটপুটের চেয়ে ছোট না বড়? (Looking at any point on the plot, will the actual derivative be smaller or larger than the output of the function?)"
+          correct="0"
+          correct-msg="ঠিক বলেছ! ভিত্তি ২-এর ক্ষেত্রে $\frac{d}{dt}(2^t)=0.6931\ldots\times 2^t$। যেহেতু $0.6931 < 1$, তাই যেকোনো বিন্দুতে স্পর্শকের ঢাল সেই বিন্দুর উচ্চতা $2^t$-এর চেয়ে কিছুটা ছোট। পূর্ণ এক দিনে বৃদ্ধি শুরুর ভরের সমান হলেও, অতিক্ষুদ্র $dt$-তে হার কমে যায়—এই সূক্ষ্ম পার্থক্যটিই পুরো অধ্যায়ের চাবিকাঠি।"
+          wrong-msg="আবার ভাবো: এক দিনের মতো বড় ব্যবধানে বৃদ্ধি শুরুর ভরের সমান মনে হলেও, অতিক্ষুদ্র $dt$-তে হার $0.6931\times 2^t$ হয়ে যায়। যেহেতু $0.6931<1$, ডেরিভেটিভ আউটপুটের চেয়ে <strong>ছোট</strong>—বড় নয়।"
+          reveal-msg="সঠিক উত্তর: 'The derivative at a point will be smaller than the output of the function.' কারণ $\frac{d}{dt}(2^t)=2^t\ln 2$ এবং $\ln 2\approx 0.6931<1$।">
+          <div slot="option">The derivative at a point will be smaller than the output of the function.</div>
+          <div slot="option">The derivative at a point will be larger than the output of the function.</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ডেরিভেটিভের অভিব্যক্তিতে $2^t$ বাইরে নেওয়ার পর বন্ধনিতে থাকে $\frac{2^{dt}-1}{dt}$। $dt$-তে খুব ছোট সংখ্যা বসালে এর মান কত? (What happens if you plug in a very small value for dt to approximate this term?)"
+          correct="0"
+          correct-msg="দারুণ! ক্যালকুলেটরে $dt=0.0001$ বসালেই $\frac{2^{dt}-1}{dt}\approx 0.69317$ ফিরে আসে; সীমাস্থে এটি $\ln 2 = 0.69314718056\ldots$। তাই $\frac{d}{dt}(2^t)=0.6931\ldots\times 2^t$—ডেরিভেটিভটি নিজেরই একটি ধ্রুবক-গুণিত রূপ।"
+          wrong-msg="এই বন্ধনির মান $t$-এর ওপর নির্ভর করে না, শুধু $dt$-এর ওপর। $dt\to 0$ করলে $\frac{2^{dt}-1}{dt}\to\ln 2\approx 0.6931$—না ১, না ২.০৭৯।"
+          reveal-msg="Reveal: $\lim_{dt\to 0}\frac{2^{dt}-1}{dt}=\ln 2\approx 0.6931\ldots$। এটি ভিত্তি ২-এর 'রহস্যময় ধ্রুবক'—আর একই নিয়মে ভিত্তি ৩-এর জন্য $\ln 3\approx 1.0986$ ও ভিত্তি ৮-এর জন্য $3\ln 2\approx 2.079$।">
+          <div slot="option">প্রায় $0.6931\ldots$ (অর্থাৎ $\ln 2$)</div>
+          <div slot="option">ঠিক ১</div>
+          <div slot="option">প্রায় $2.079$</div>
+          <div slot="option">প্রায় $0.5$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ যদি কোনো ব্যাকটেরিয়ার কলোনির তাৎক্ষণিক বৃদ্ধির হার $\frac{dN}{dt}=0.05\,N$ হয়, তবে এর সঠিক আকার $N(t)$ কোনটি?"
+          correct="1"
+          correct-msg="চমৎকার! যেকোনো ব্যবস্থার বৃদ্ধির হার বর্তমান আকারের সমানুপাতিক ($\frac{dN}{dt}=kN$) হলে তার প্রাকৃতিক সমাধান $N(t)=N_0 e^{kt}$। এখানে $k=0.05$, তাই $N(t)=N_0 e^{0.05t}$—ভিত্তি ২ বা $(0.05)^t$ নয়, বরং অয়লার সংখ্যা $e$-ভিত্তিক এক্সপোনেনশিয়াল।"
+          wrong-msg="মনে রেখো $\frac{dN}{dt}=kN$-এর সমাধান সর্বদা $N_0 e^{kt}$ হয়। $2^{0.05t}$-এর ডেরিভেটিভে অতিরিক্ত $\ln 2$ গুণক আসবে; $(0.05)^t$ তো ক্রমেই কমে যাবে; আর $N_0+0.05t$ তো রৈখিক।"
+          reveal-msg="সঠিক উত্তর: $N(t)=N_0\cdot e^{0.05t}$। কারণ $\frac{d}{dt}\left(e^{0.05t}\right)=0.05\,e^{0.05t}$—চেইন রুলে $k=0.05$ সামনে এসে গুণ হয়, ঠিক যেমনটি প্রশ্নে চাওয়া হয়েছে।">
+          <div slot="option">$N(t) = N_0 \cdot 2^{0.05t}$</div>
+          <div slot="option">$N(t) = N_0 \cdot e^{0.05t}$</div>
+          <div slot="option">$N(t) = N_0 \cdot (0.05)^t$</div>
+          <div slot="option">$N(t) = N_0 + 0.05t$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ কেন $e$-কে এক্সপোনেনশিয়াল ফাংশনের সবচেয়ে প্রাকৃতিক ভিত্তি ধরা হয়?"
+          correct="2"
+          correct-msg="ঠিকই! ভিত্তি $e$-এর বিশেষত্ব হলো এর সমানুপাতিক ধ্রুবক $\lim_{dt\to 0}\frac{e^{dt}-1}{dt}$ এর মান নিখুঁতভাবে ১; ফলে $\frac{d}{dt}(e^t)=e^t$—ডেরিভেটিভ কোনো অতিরিক্ত গুণক ছাড়াই সরাসরি মূল ফাংশনের সমান হয়। প্রতিটি বিন্দুতে ঢাল তার উচ্চতার হুবহু সমান—এই কারণেই $e$ মুখস্থের বোঝা কমিয়ে দেয়।"
+          wrong-msg="$e$ কোনো পূর্ণসংখ্যা নয় ($e\approx 2.71828$), পাই-এর সমানও নয় ($\pi\approx 3.14159$), আর কেবল ব্যাংকিংয়েও ব্যবহৃত হয় না। এর আসল পরিচয় হলো $\frac{d}{dt}(e^t)=e^t$—ঢাল = উচ্চতা।"
+          reveal-msg="সঠিক উত্তর: 'কারণ $\frac{d}{dt}(e^t)=e^t$, অর্থাৎ প্রতিটি বিন্দুতে ঢাল তার বর্তমান উচ্চতার হুবহু সমান।' অন্য সব ভিত্তিতে একটি করে $\ln a$ গুণক থাকে; শুধু $a=e$-এ সেটি ১ হয়।">
+          <div slot="option">কারণ e একটি পূর্ণসংখ্যা</div>
+          <div slot="option">কারণ এর মান পাই (pi)-এর সমান</div>
+          <div slot="option">কারণ $\frac{d}{dt}(e^t)=e^t$, অর্থাৎ প্রতিটি বিন্দুতে ঢাল তার বর্তমান উচ্চতার হুবহু সমান</div>
+          <div slot="option">কারণ এটি কেবল ব্যাংকিং হিসাবে ব্যবহৃত হয়</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED: official footnotes ═══ -->
+      <b1b-section id="sec-footnotes" title="পাদটীকা" data-no-narration="true">
+        <ol>
+          <li>গুরুত্বপূর্ণ পর্যবেক্ষণ: এই সমানুপাতিক ধ্রুবকগুলো লগারিদম ফাংশনের মতো আচরণ করে—বাস্তবে এগুলো প্রাকৃতিক লগ ফাংশনেরই আউটপুট। এমন একটি ফাংশন খুঁজে পেলে যার $f(1)=0$, $f(2)=0.6931$, $f(3)=1.099$ ইত্যাদি, আপনি প্রাকৃতিক লগারিদম আবিষ্কার করেছেন—এবং এক্সপোনেনশিয়াল ফাংশন ও অয়লার সংখ্যার দিকে যাওয়ার একটি পথ খুঁজে পেয়েছেন।</li>
+          <li>অন্য একটি প্রশ্ন, যা আসলভাবেই এই রহস্যময় ধ্রুবকগুলো ব্যাখ্যা করে: এমন কোনো ভিত্তি আছে কি যার জন্য সমানুপাতিক ধ্রুবক ঠিক ১, অর্থাৎ $M(t)=a^t$-এর ডেরিভেটিভ শুধু সমানুপাতিক নয় বরং সমান? এর উত্তরই হলো $e$।</li>
+          <li>$e$ কেন এই নির্দিষ্ট ভিত্তি? এটা জিজ্ঞেস করা একই রকম যেন জিজ্ঞেস করা হয়—$\pi$ কেন বৃত্তের পরিধি ও ব্যাসের অনুপাত? মূলত এই বৈশিষ্ট্যটিই $e$-কে সংজ্ঞায়িত করে।</li>
+        </ol>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED: formula reference + key takeaways ═══ -->
+      <b1b-section id="sec-reference" title="মূল সূত্র ও প্রধান শিক্ষণীয় বিষয়" data-no-narration="true">
+        <ul>
+          <li><strong>সাধারণ নিয়ম:</strong> যেকোনো ভিত্তি $b$-এর সূচকীয় ফাংশনের পরিবর্তনের হার সর্বদা তার বর্তমান মানের সমানুপাতিক—$\frac{d}{dt}(b^t)=C\,b^t$।</li>
+          <li><strong>ধ্রুবকের মান:</strong> ভিত্তি ২-এর জন্য $C=\ln 2\approx 0.6931$, ভিত্তি ৩-এর জন্য $\ln 3\approx 1.0986$, ভিত্তি ৮-এর জন্য $\ln 8=3\ln 2\approx 2.079$।</li>
+          <li><strong>অয়লার সংখ্যা:</strong> $e=\lim_{n\to\infty}\left(1+\frac1n\right)^n\approx 2.71828$, যার জন্য $\frac{d}{dt}(e^t)=e^t$—ঢাল = উচ্চতা।</li>
+          <li><strong>চেইন রুল:</strong> $\frac{d}{dt}\left(e^{kt}\right)=k\,e^{kt}$; এখানে $k$ হলো তাৎক্ষণিক শতকরা বৃদ্ধির হার।</li>
+          <li><strong>ভিত্তি পুনর্লিখন:</strong> $a^t=e^{t\ln a}$, তাই $\frac{d}{dt}(a^t)=a^t\ln a$; বিশেষ ক্ষেত্রে $2^t=e^{0.6931t}$ ও $3^t=e^{1.0986t}$।</li>
+          <li><strong>কেন গুরুত্বপূর্ণ:</strong> জনসংখ্যা বৃদ্ধি, নিউটনের শীতলতার নিয়ম ও চক্রবৃদ্ধি সুদ—সব ক্ষেত্রেই পরিবর্তনের হার বর্তমান পরিমাণের সমানুপাতিক, তাই সমাধান $e^{ct}$ আকারে লেখা হয়।</li>
+        </ul>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <b1b-watch-panel
+    video-src="../../media_vault/calculus/lesson_05/experiments/fill_v2/3b1b_calculus_05_full_dubbed_fill2.mp4"
+    yt-id="m2MIpDrF7Es"
+    title="অয়লার সংখ্যা e কেন এত বিশেষ? — অধ্যায় ৫"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — ক্যালকুলাসের মূল সারমর্ম">
+  </b1b-watch-panel>
+</div><!-- /lesson-body -->
+
+<b1b-chapter-nav
+  prev-url="lesson_04.html"
+  prev-title="চেইন রুল ও প্রোডাক্ট রুল"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_06.html"
+  next-title="ইমপ্লিসিট ডিফারেনশিয়েশন"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- Page-local lab components (new components only; no library override/patch). -->
+<script>
+(function () {
+  'use strict';
+
+  class EulerLimitLab extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.rendered) return;
+      this.dataset.rendered = '1';
+      this.innerHTML = `
+        <div class="calc-lab">
+          <canvas class="calc-canvas" width="900" height="420"></canvas>
+          <div class="calc-controls">
+            <div class="calc-control"><label><span>ভাগের সংখ্যা (n)</span><span class="calc-val" data-for="n">১২</span></label><input type="range" class="n" min="1" max="365" step="1" value="12"/></div>
+            <div class="calc-control"><label><span>সুদের হার (k)</span><span class="calc-val" data-for="rate">১০০%</span></label><input type="range" class="rate" min="0.25" max="2" step="0.05" value="1"/></div>
+          </div>
+          <div class="calc-actions">
+            <button type="button" class="preset" data-n="1">n = ১ (বার্ষিক)</button>
+            <button type="button" class="preset" data-n="12">n = ১২ (মাসিক)</button>
+            <button type="button" class="preset" data-n="365">n = ৩৬৫ (দৈনিক)</button>
+            <button type="button" class="play">▶ অটো প্লে</button>
+          </div>
+          <div class="calc-stats">
+            <div class="calc-stat"><span>(1 + k/n)^n</span><strong class="stat-val">—</strong></div>
+            <div class="calc-stat"><span>সীমাস্থ e^k</span><strong class="stat-limit">—</strong></div>
+            <div class="calc-stat"><span>ত্রুটি (e^k − মান)</span><strong class="stat-err">—</strong></div>
+          </div>
+        </div>`;
+      this._canvas = this.querySelector('.calc-canvas');
+      this._ctx = this._canvas.getContext('2d');
+      this._n = this.querySelector('.n');
+      this._rate = this.querySelector('.rate');
+      this._playing = false; this._raf = null;
+
+      const draw = () => this._draw();
+      this._n.addEventListener('input', () => { this.querySelector('[data-for="n"]').textContent = this._n.value; draw(); });
+      this._rate.addEventListener('input', () => { this.querySelector('[data-for="rate"]').textContent = Math.round(this._rate.value * 100) + '%'; draw(); });
+      this.querySelectorAll('.preset').forEach(b => b.addEventListener('click', () => {
+        this._n.value = b.dataset.n;
+        this.querySelector('[data-for="n"]').textContent = b.dataset.n;
+        draw();
+      }));
+      const playBtn = this.querySelector('.play');
+      playBtn.addEventListener('click', () => {
+        if (this._playing) { cancelAnimationFrame(this._raf); this._playing = false; playBtn.textContent = '▶ অটো প্লে'; return; }
+        this._playing = true; playBtn.textContent = '⏸ বিরতি';
+        const loop = () => {
+          let v = parseInt(this._n.value, 10) + 1;
+          if (v > 365) v = 1;
+          this._n.value = v;
+          this.querySelector('[data-for="n"]').textContent = v;
+          draw();
+          if (this._playing) this._raf = requestAnimationFrame(loop);
+        };
+        this._raf = requestAnimationFrame(loop);
+      });
+      window.addEventListener('resize', () => this._resize());
+      window.addEventListener('b1b-fullscreen-change', () => this._resize());
+      this._resize();
+    }
+
+    _resize() {
+      if (!this._canvas) return;
+      const w = this._canvas.parentElement.clientWidth || 900;
+      this._canvas.width = w;
+      this._canvas.height = Math.max(360, Math.min(520, w * 0.46));
+      this._draw();
+    }
+
+    _draw() {
+      const ctx = this._ctx; if (!ctx) return;
+      const W = this._canvas.width, H = this._canvas.height;
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#080b12' : '#f8fafc'; ctx.fillRect(0, 0, W, H);
+
+      const n = parseInt(this._n.value, 10);
+      const k = parseFloat(this._rate.value);
+      const limit = Math.exp(k);
+      const value = Math.pow(1 + k / n, n);
+      this.querySelector('.stat-val').textContent = value.toFixed(6);
+      this.querySelector('.stat-limit').textContent = 'e^' + k.toFixed(2) + ' = ' + limit.toFixed(6);
+      this.querySelector('.stat-err').textContent = (limit - value).toFixed(6);
+
+      const x0 = 56, y0 = H - 48, x1 = W - 30, y1 = 40;
+      ctx.strokeStyle = dark ? '#94a3b8' : '#475569'; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y0); ctx.moveTo(x0, y0); ctx.lineTo(x0, y1); ctx.stroke();
+
+      const logMax = Math.log(365);
+      const px = v => x0 + (Math.log(v) / logMax) * (x1 - x0);
+      const py = v => y0 - ((v - 1) / (Math.exp(2) - 1)) * (y0 - y1);
+
+      // convergence curve (1+k/n)^n for n = 1..365
+      ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 2.5; ctx.beginPath();
+      for (let i = 1; i <= 365; i++) {
+        const v = Math.pow(1 + k / i, i);
+        const X = px(i), Y = py(v);
+        if (i === 1) ctx.moveTo(X, Y); else ctx.lineTo(X, Y);
+      }
+      ctx.stroke();
+
+      // limit line e^k
+      ctx.strokeStyle = '#fbbf24'; ctx.lineWidth = 2; ctx.setLineDash([6, 5]);
+      ctx.beginPath(); ctx.moveTo(x0, py(limit)); ctx.lineTo(x1, py(limit)); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = '#fbbf24'; ctx.font = '13px sans-serif';
+      ctx.fillText('e^' + k.toFixed(2) + ' = ' + limit.toFixed(4), x1 - 170, py(limit) - 8);
+
+      // current marker
+      ctx.fillStyle = '#f472b6';
+      ctx.beginPath(); ctx.arc(px(n), py(value), 6, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = dark ? '#e2e8f0' : '#0f172a'; ctx.font = '13px sans-serif';
+      ctx.fillText('n=' + n + '  →  ' + value.toFixed(4), px(n) + 10, py(value) - 10);
+
+      ctx.fillStyle = dark ? '#94a3b8' : '#475569'; ctx.font = '12px sans-serif';
+      ctx.fillText('n (log scale)', x1 - 110, y0 + 24);
+      ctx.fillText('(1 + k/n)^n', x0 + 8, y1 + 12);
+    }
+  }
+
+  class ExpDerivativeLab extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.rendered) return;
+      this.dataset.rendered = '1';
+      this.innerHTML = `
+        <div class="calc-lab">
+          <canvas class="calc-canvas" width="900" height="420"></canvas>
+          <div class="calc-controls">
+            <div class="calc-control"><label><span>ভিত্তি (a)</span><span class="calc-val" data-for="base">২.০০</span></label><input type="range" class="base" min="1.2" max="8" step="0.05" value="2"/></div>
+            <div class="calc-control"><label><span>বিন্দু (t)</span><span class="calc-val" data-for="t">১.৫০</span></label><input type="range" class="t" min="0" max="3" step="0.05" value="1.5"/></div>
+          </div>
+          <div class="calc-actions">
+            <button type="button" class="preset" data-a="2">a = ২ (ln2≈0.693)</button>
+            <button type="button" class="preset" data-a="2.71828">a = e (ln=১)</button>
+            <button type="button" class="preset" data-a="8">a = ৮ (ln8≈2.079)</button>
+          </div>
+          <div class="calc-stats">
+            <div class="calc-stat"><span>উচ্চতা a^t</span><strong class="stat-height">—</strong></div>
+            <div class="calc-stat"><span>ঢাল = a^t·ln(a)</span><strong class="stat-slope">—</strong></div>
+            <div class="calc-stat"><span>অনুপাত ln(a)</span><strong class="stat-ratio">—</strong></div>
+          </div>
+        </div>`;
+      this._canvas = this.querySelector('.calc-canvas');
+      this._ctx = this._canvas.getContext('2d');
+      this._base = this.querySelector('.base');
+      this._t = this.querySelector('.t');
+
+      const draw = () => this._draw();
+      this._base.addEventListener('input', () => { this.querySelector('[data-for="base"]').textContent = parseFloat(this._base.value).toFixed(2); draw(); });
+      this._t.addEventListener('input', () => { this.querySelector('[data-for="t"]').textContent = parseFloat(this._t.value).toFixed(2); draw(); });
+      this.querySelectorAll('.preset').forEach(b => b.addEventListener('click', () => {
+        this._base.value = b.dataset.a;
+        this.querySelector('[data-for="base"]').textContent = parseFloat(b.dataset.a).toFixed(2);
+        draw();
+      }));
+      window.addEventListener('resize', () => this._resize());
+      window.addEventListener('b1b-fullscreen-change', () => this._resize());
+      this._resize();
+    }
+
+    _resize() {
+      if (!this._canvas) return;
+      const w = this._canvas.parentElement.clientWidth || 900;
+      this._canvas.width = w;
+      this._canvas.height = Math.max(360, Math.min(520, w * 0.46));
+      this._draw();
+    }
+
+    _draw() {
+      const ctx = this._ctx; if (!ctx) return;
+      const W = this._canvas.width, H = this._canvas.height;
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#080b12' : '#f8fafc'; ctx.fillRect(0, 0, W, H);
+
+      const a = parseFloat(this._base.value);
+      const t0 = parseFloat(this._t.value);
+      const lnA = Math.log(a);
+      const h = Math.pow(a, t0);
+      const slope = h * lnA;
+      this.querySelector('.stat-height').textContent = h.toFixed(4);
+      this.querySelector('.stat-slope').textContent = slope.toFixed(4);
+      this.querySelector('.stat-ratio').textContent = lnA.toFixed(4);
+
+      const x0 = 56, y0 = H - 48, x1 = W - 30, y1 = 40;
+      ctx.strokeStyle = dark ? '#94a3b8' : '#475569'; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y0); ctx.moveTo(x0, y0); ctx.lineTo(x0, y1); ctx.stroke();
+
+      const tMax = 3, yMax = Math.pow(8, 3);
+      const px = v => x0 + (v / tMax) * (x1 - x0);
+      const py = v => y0 - (v / yMax) * (y0 - y1);
+
+      ctx.strokeStyle = '#34d399'; ctx.lineWidth = 2.5; ctx.beginPath();
+      for (let i = 0; i <= 200; i++) {
+        const t = (i / 200) * tMax;
+        const X = px(t), Y = py(Math.pow(a, t));
+        if (i === 0) ctx.moveTo(X, Y); else ctx.lineTo(X, Y);
+      }
+      ctx.stroke();
+
+      // tangent at t0: y = h + slope*(t - t0)
+      ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 2; ctx.beginPath();
+      const da = 0.6;
+      ctx.moveTo(px(Math.max(0, t0 - da)), py(h + slope * (Math.max(0, t0 - da) - t0)));
+      ctx.lineTo(px(Math.min(tMax, t0 + da)), py(h + slope * (Math.min(tMax, t0 + da) - t0)));
+      ctx.stroke();
+
+      ctx.fillStyle = '#fbbf24';
+      ctx.beginPath(); ctx.arc(px(t0), py(h), 6, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = dark ? '#e2e8f0' : '#0f172a'; ctx.font = '13px sans-serif';
+      ctx.fillText('a^t = ' + h.toFixed(3), px(t0) + 10, py(h) - 10);
+      ctx.fillStyle = '#38bdf8';
+      ctx.fillText('slope = ' + slope.toFixed(3), x0 + 12, y1 + 18);
+      ctx.fillText('ln(a) = ' + lnA.toFixed(4) + (Math.abs(lnA - 1) < 0.002 ? '  ← a = e, slope = height!' : ''), x0 + 12, y1 + 40);
+
+      ctx.fillStyle = dark ? '#94a3b8' : '#475569'; ctx.font = '12px sans-serif';
+      ctx.fillText('time t', x1 - 60, y0 + 24);
+    }
+  }
+
+  if (!customElements.get('euler-limit-lab')) customElements.define('euler-limit-lab', EulerLimitLab);
+  if (!customElements.get('exp-derivative-lab')) customElements.define('exp-derivative-lab', ExpDerivativeLab);
+})();
+</script>
+</body>
+</html>

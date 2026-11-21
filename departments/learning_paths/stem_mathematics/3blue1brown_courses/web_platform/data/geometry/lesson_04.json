@@ -1,0 +1,178 @@
+{
+  "lesson_id": "lesson_04",
+  "chapter_num": 4,
+  "course_id": "geometry",
+  "title_en": "Visualizing quaternions (4d numbers) with stereographic projection",
+  "title_bn": "কোয়াটারনিয়ন — চতুর্মাত্রিক সংখ্যার দৃশ্যায়ন",
+  "subtitle_bn": "স্টেরিওগ্রাফিক প্রক্ষেপণ ও হুপফ ফাইব্রেশনের মাধ্যমে ৪-মাত্রিক সংখ্যাকে দেখা",
+  "video_id": "d4EgbgTm0Bg",
+  "official_url": "https://www.3blue1brown.com/lessons/quaternions",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "book chapter",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "Imagination is more important than knowledge.",
+    "quote_bn": "কল্পনাই জ্ঞানের চেয়ে গুরুত্বপূর্ণ।",
+    "author": "অ্যালবার্ট আইনস্টাইন"
+  },
+  "sections": [
+    {
+      "id": "sec-intro",
+      "title_bn": "ভূমিকা — কোয়াটারনিয়ন কী?",
+      "title_en": "What is a Quaternion?",
+      "summary_bn": "তিনটি কাল্পনিক একক i, j, k নিয়ে গঠিত চার-পদ সংখ্যা—যা i²=j²=k²=ijk=−1 মেনে চলে।",
+      "key_takeaways": [
+        "কোয়াটারনিয়ন হলো $a+bi+cj+dk$ আকারের সংখ্যা—চারটি বাস্তব সংখ্যার এক জোড়া।",
+        "হ্যামিলটন ১৮৪৩ সালে এই নিয়মগুলো আবিষ্কার করেছিলেন: $i^2=j^2=k^2=ijk=-1$।",
+        "গুণন অবিনিময়ী (non-commutative): $ij=k$ কিন্তু $ji=-k$।"
+      ],
+      "formulas": [
+        {
+          "label": "মৌলিক নিয়ম",
+          "katex": "i^2=j^2=k^2=ijk=-1,\\ ij=k,\\ ji=-k"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_quaternion-units",
+          "caption_bn": "কোয়াটারনিয়ন একক",
+          "type": "svg",
+          "src": "figures/quaternion-units.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-complex",
+      "title_bn": "জটিল সংখ্যা ও ঘূর্ণন",
+      "title_en": "Complex Numbers & Rotation",
+      "summary_bn": "জটিল সংখ্যার গুণন কীভাবে সমতলে ঘূর্ণন তৈরি করে—এই পুনরালোচনা ৪-মাত্রিক ধারণার ভিত্তি তৈরি করে।",
+      "key_takeaways": [
+        "$e^{i\\theta}$ দিয়ে গুণ করলে সমতলে $\\theta$ কোণে ঘোরে।",
+        "জটিল সংখ্যার গুণনফল হলো একক বৃত্তের (S¹) ওপর একটি বিন্দু—এক মাত্রার উপবৃত্ত।",
+        "কোয়াটারনিয়নের ক্ষেত্রে এককগুলো গড়ে তোলে ত্রিমাত্রিক গোলক S³।"
+      ],
+      "formulas": [
+        {
+          "label": "জটিল ঘূর্ণন",
+          "katex": "z\\mapsto e^{i\\theta}z"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_complex-rotation",
+          "caption_bn": "জটিল ঘূর্ণন",
+          "type": "svg",
+          "src": "figures/complex-rotation.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-stereographic",
+      "title_bn": "স্টেরিওগ্রাফিক প্রক্ষেপণ",
+      "title_en": "Stereographic Projection",
+      "summary_bn": "ত্রিমাত্রিক গোলক S³-কে আমাদের ত্রিমাত্রিক স্থানে প্রক্ষেপণ করে কোয়াটারনিয়নকে ‘দেখা’ যায়।",
+      "key_takeaways": [
+        "২D গোলক S²-কে সমতলে প্রক্ষেপণ করে আমরা মানচিত্র বানাই—একই কৌশল S³-তেও কাজ করে।",
+        "প্রক্ষেপণের ফলে একটি বিন্দু (উত্তর মেরু) বাদ যায়; বাকিরা এক-to-one ভাবে 3D স্থানে পড়ে।",
+        "ফলে প্রতিটি কোয়াটারনিয়ন একটি 3D বিন্দু হয়ে দৃশ্যমান হয়।"
+      ],
+      "formulas": [
+        {
+          "label": "একক গোলক",
+          "katex": "a^2+b^2+c^2+d^2=1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_stereographic-2d",
+          "caption_bn": "স্টেরিওগ্রাফিক প্রক্ষেপণ",
+          "type": "svg",
+          "src": "figures/stereographic-2d.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-visualize",
+      "title_bn": "হুপফ ফাইব্রেশন ও গুণন",
+      "title_en": "Hopf Fibration",
+      "summary_bn": "প্রক্ষেপিত চিত্রে কোয়াটারনিয়ন গুণন ঘূর্ণনের মতো দেখা যায়—বৃত্তের ‘কোষ’গুলো একে অপরের ভেতরে প্রবেশ করে।",
+      "key_takeaways": [
+        "$S^3$-কে অসংখ্য বৃত্তে ভাগ করা যায়—হুপফ ফাইব্রেশন।",
+        "প্রক্ষেপণের পর এই বৃত্তগুলো পরস্পর-সংযুক্ত ‘টোরাস’ আকারে দেখা যায়।",
+        "বাম-গুণন ও ডান-গুণন দুই ধরনের ঘূর্ণন তৈরি করে—এটি কোয়াটারনিয়নের বিশেষত্ব।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_hopf-fibration",
+          "caption_bn": "হুপফ ফাইব্রেশন",
+          "type": "svg",
+          "src": "figures/hopf-fibration.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-why",
+      "title_bn": "কেন কোয়াটারনিয়ন?",
+      "title_en": "Why Quaternions?",
+      "summary_bn": "ত্রিমাত্রিক ঘূর্ণনকে সরল, মসৃণ ও গিম্বাল-লকমুক্তভাবে প্রকাশ করাই কোয়াটারনিয়নের শক্তি।",
+      "key_takeaways": [
+        "ইউলার কোণে ‘গিম্বাল লক’ নামক সমস্যা হয়—কোয়াটারনিয়নে তা হয় না।",
+        "দুটি ঘূর্ণনের সংযোজন কোয়াটারনিয়ন গুণন হিসেবে সহজে লেখা যায়।",
+        "গ্রাফিক্স ও রোবোটিক্সে মসৃণ ইন্টারপোলেশন (slerp)-এর জন্য কোয়াটারনিয়ন ব্যবহৃত হয়।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_gimbal-lock",
+          "caption_bn": "গিম্বাল লক",
+          "type": "svg",
+          "src": "figures/gimbal-lock.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-conclusion",
+      "title_bn": "উপসংহার",
+      "title_en": "Conclusion",
+      "summary_bn": "৪-মাত্রিক সংখ্যা কল্পনা করে আমরা ত্রিমাত্রিক ঘূর্ণনের ওপর নতুন দৃষ্টি পেলাম।",
+      "key_takeaways": [
+        "স্টেরিওগ্রাফিক প্রক্ষেপণ ৪-মাত্রিক বস্তুকে দৃশ্যমান করে।",
+        "কোয়াটারনিয়নের অবিনিময়ী গুণন ঘূর্ণনের দুটি দিক প্রকাশ করে।",
+        "পরবর্তী পাঠে আমরা কোয়াটারনিয়ন দিয়ে 3D ঘূর্ণনের গাণিতিক সূত্র বিশদভাবে দেখব।"
+      ],
+      "formulas": [],
+      "figures": []
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_visualize",
+      "section_ref": "sec-visualize",
+      "question_bn": "$ij$ ও $ji$—কোয়াটারনিয়নের এই দুটি গুণনফলের সম্পর্ক কী?",
+      "question_en": "$ij$ ও $ji$—কোয়াটারনিয়নের এই দুটি গুণনফলের সম্পর্ক কী?",
+      "options": [
+        "$ij=ji$",
+        "$ij=-ji$",
+        "$ij=ji=1$",
+        "$ij=0$"
+      ],
+      "options_bn": [
+        "$ij=ji$",
+        "$ij=-ji$",
+        "$ij=ji=1$",
+        "$ij=0$"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "কোয়াটারনিয়ন গুণন অবিনিময়ী। $ij=k$ কিন্তু $ji=-k$, তাই $ij=-ji$।",
+      "explanation_en": "কোয়াটারনিয়ন গুণন অবিনিময়ী। $ij=k$ কিন্তু $ji=-k$, তাই $ij=-ji$।",
+      "hint": "গুণনের ক্রম বদলালে চিহ্ন বদলায়—এই নিয়মটি মনে রাখুন।",
+      "hints": [
+        "গুণনের ক্রম বদলালে চিহ্ন বদলায়—এই নিয়মটি মনে রাখুন।"
+      ]
+    }
+  ]
+}

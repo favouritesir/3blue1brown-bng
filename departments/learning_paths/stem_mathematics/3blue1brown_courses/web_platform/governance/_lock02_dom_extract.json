@@ -1,0 +1,202 @@
+{
+  "sectionEls": [
+    {
+      "id": "sec-calendar-puzzle",
+      "noNarration": null
+    },
+    {
+      "id": "sec-clock-modulo",
+      "noNarration": null
+    },
+    {
+      "id": "sec-leap-years",
+      "noNarration": null
+    },
+    {
+      "id": "sec-doomsday-trick",
+      "noNarration": null
+    },
+    {
+      "id": "sec-01-linear-vs-exponential",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-02-doubling-time",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-03-epidemic-differential-model",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-04-logistic-s-curve",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-05-flattening-the-curve",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-interactive-lab",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-quizzes",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-formulas-glossary",
+      "noNarration": "true"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-calendar-puzzle",
+      "title": "১. রৈখিক বিভ্রম ও চালের দানার চিরন্তন ধাঁধা",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "১. রৈখিক বিভ্রম ও চালের দানার চিরন্তন ধাঁধা"
+        },
+        {
+          "type": "chapter-quote",
+          "text": "\"\n\nমানবজাতির সবচেয়ে বড় সীমাবদ্ধতা হলো সূচকীয় ফাংশনের গভীর রূপটি অনুধাবন করতে আমাদের মস্তিষ্কের তীব্র অক্ষমতা।\n\n— আলবার্ট অ্যালেন বার্টলেট (Albert A. Bartlett)"
+        },
+        {
+          "type": "p",
+          "text": "মানুষের মস্তিষ্ক বিবর্তনগতভাবে রৈখিক চিন্তায় অভ্যস্ত। আমরা যখন হাঁটি, প্রতি পদক্ষেপে ১ মিটার করে এগোই: ৩০টি পদক্ষেপে আমরা যাই ঠিক ৩০ মিটার। কিন্তু যদি প্রতিটি পদক্ষেপে আমাদের দূরত্বের পরিমাপ দ্বিগুণ হতো—প্রথম ধাপে ১ মিটার, দ্বিতীয় ধাপে ২ মিটার, তৃতীয় ধাপে ৪ মিটার—তাহলে ৩০তম পদক্ষেপে আমরা ঠিক কতটা দূর অতিক্রম করতাম?"
+        },
+        {
+          "type": "p",
+          "text": "অনেকেই ভাবেন হয়তো কয়েক কিলোমিটার। কিন্তু বাস্তব সত্য হলো, \n2\n29\n2\n29\n মিটার মানে প্রায় ৫৩ কোটি ৬৮ লক্ষ মিটার—যা পৃথিবীকে ১৩ বার প্রদক্ষিণ করে চাঁদে পৌঁছানোর দূরত্বেরও বেশি! এটিই হলো সূচকীয় বৃদ্ধির বিস্ফোরক ক্ষমতা।"
+        }
+      ]
+    },
+    {
+      "id": "sec-clock-modulo",
+      "title": "২. দ্বিগুণের সময় ও ৭০-এর নিয়ম (Doubling Time & Rule of 70)",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "২. দ্বিগুণের সময় ও ৭০-এর নিয়ম (Doubling Time & Rule of 70)"
+        },
+        {
+          "type": "p",
+          "text": "সূচকীয় বৃদ্ধিকে পরিমাপ করার সবচেয়ে কার্যকর মানসিক মানদণ্ড হলো 'দ্বিগুণের সময়' বা Doubling Time (\n𝑇\n𝑑\nT\nd\n\t​\n\n)। এটি হলো সেই নির্দিষ্ট সময়কাল, যার মধ্যে মোট আক্রান্ত বা যেকোনো রাশির পরিমাণ ঠিক দ্বিগুণ হয়ে যায়।"
+        },
+        {
+          "type": "p",
+          "text": "যদি কোনো মহামারী প্রতি ৩ দিনে দ্বিগুণ হয়, তবে এর অর্থ হলো: আজ ১,০০০ জন আক্রান্ত থাকলে ৩ দিন পর তা হবে ২,০০০ জন, ৬ দিন পর ৪,০০০ জন, ৯ দিন পর ৮,০০০ জন এবং মাত্র ১ মাস পর (১০টি ডাবলিং পিরিয়ড) আক্রান্তের সংখ্যা ১,০০০ থেকে ১ কোটি অতিক্রম করবে (\n1000\n×\n2\n10\n=\n1\n,\n024\n,\n000\n1000×2\n10\n=1,024,000)!"
+        }
+      ]
+    },
+    {
+      "id": "sec-leap-years",
+      "title": "৩. সংক্রমণের গাণিতিক মেকানিক্স ও ডিফারেনশিয়াল মডেল",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "৩. সংক্রমণের গাণিতিক মেকানিক্স ও ডিফারেনশিয়াল মডেল"
+        },
+        {
+          "type": "p",
+          "text": "ধরা যাক, যেকোনো মুহূর্তে মোট আক্রান্তের সংখ্যা \n𝑁\nN। গড়ে প্রতিটি আক্রান্ত ব্যক্তি প্রতিদিন \n𝐸\nE সংখ্যক মানুষের সংস্পর্শে আসে, এবং প্রতিটি সংস্পর্শে ভাইরাস ছড়ানোর সম্ভাবনা \n𝑝\np। তাহলে প্রতিদিন একজন আক্রান্ত ব্যক্তি গড়ে \n𝐸\n×\n𝑝\nE×p সংখ্যক নতুন ব্যক্তিকে সংক্রামিত করে।"
+        },
+        {
+          "type": "p",
+          "text": "সুতরাং, \n𝑁\nN সংখ্যক মানুষের দ্বারা প্রতিদিন মোট নতুন আক্রান্তের সংখ্যা হবে \n𝑑\n𝑁\n𝑑\n𝑡\n=\n(\n𝐸\n⋅\n𝑝\n)\n⋅\n𝑁\n=\n𝑘\n𝑁\ndt\ndN\n\t​\n\n=(E⋅p)⋅N=kN। ক্যালকুলাসের দৃষ্টিতে এটি প্রকৃতির সবচেয়ে মৌলিক ও বিশুদ্ধ সমীকরণ: কোনো রাশির পরিবর্তনের হার যখন তার বর্তমান পরিমাণের সরাসরি সমানুপাতিক হয়, তখন তার বৃদ্ধির একমাত্র গাণিতিক পথ হলো এক্সপোনেনশিয়াল বিস্তার!"
+        }
+      ]
+    },
+    {
+      "id": "sec-doomsday-trick",
+      "title": "৪. লজিস্টিক এস-কার্ভ, ইনফ্লেকশন ও কার্ভ ফ্ল্যাটেনিং",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "৪. লজিস্টিক এস-কার্ভ, ইনফ্লেকশন ও কার্ভ ফ্ল্যাটেনিং"
+        },
+        {
+          "type": "p",
+          "text": "লক্ষ্য করুন, যখন \n𝑁\nN খুবই ছোট (\n𝑁\n≈\n0\nN≈0), তখন বন্ধনীর পদটি \n(\n1\n−\n𝑁\n𝐾\n)\n≈\n1\n(1−\nK\nN\n\t​\n\n)≈1, অর্থাৎ বিস্তার পুরোপুরি সূচকীয় \n𝑑\n𝑁\n𝑑\n𝑡\n≈\n𝑟\n𝑁\ndt\ndN\n\t​\n\n≈rN। কিন্তু আক্রান্তের সংখ্যা যখন ঠিক মোট জনসংখ্যার অর্ধেকের মাথায় (\n𝑁\n=\n𝐾\n/\n2\nN=K/2) পৌঁছায়, তখন বৃদ্ধির বেগ সর্বোচ্চ সীমায় পৌঁছায়। একে বলে ইনফ্লেকশন পয়েন্ট (Inflection Point)। এর পর থেকে বৃদ্ধির গতি ক্রমশ মন্থর হতে হতে চূড়ান্ত সীমা \n𝐾\nK-তে গিয়ে স্থিতিশীল হয়ে পড়ে, যা একটি সুন্দর 'S' আকৃতির বক্ররেখা (Sigmoid Curve) তৈরি করে।"
+        },
+        {
+          "type": "p",
+          "text": "যেহেতু সূচকীয় ফাংশনে \n𝑟\nr সূচকে (Exponent-এ) অবস্থান করে, তাই \n𝑟\nr-এর একটি অতি সামান্য হ্রাস সময় গড়ানোর সাথে সাথে ফলাফলকে রৈখিকভাবে নয়, বরং বহুগুণে কমিয়ে দেয়! ১ দিন আগে কোনো হস্তক্ষেপ নিলে যে সুফল পাওয়া যায়, মহামারী তুঙ্গে ওঠার পর ২০ দিন চেষ্টা করলেও সেই একই সুফল অর্জন করা অসম্ভব হয়ে পড়ে।"
+        }
+      ]
+    }
+  ],
+  "engine": [
+    {
+      "id": "sec-calendar-puzzle",
+      "blockCount": 4,
+      "cueCount": 4,
+      "audioFile": "../../assets/audio/lockdown_math/lesson_02/sec_01_calendar_puzzle.mp3",
+      "types": [
+        "h2",
+        "chapter-quote",
+        "p",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-clock-modulo",
+      "blockCount": 3,
+      "cueCount": 3,
+      "audioFile": "../../assets/audio/lockdown_math/lesson_02/sec_02_clock_modulo.mp3",
+      "types": [
+        "h2",
+        "p",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-leap-years",
+      "blockCount": 3,
+      "cueCount": 3,
+      "audioFile": "../../assets/audio/lockdown_math/lesson_02/sec_03_leap_years.mp3",
+      "types": [
+        "h2",
+        "p",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-doomsday-trick",
+      "blockCount": 3,
+      "cueCount": 3,
+      "audioFile": "../../assets/audio/lockdown_math/lesson_02/sec_04_doomsday_trick.mp3",
+      "types": [
+        "h2",
+        "p",
+        "p"
+      ]
+    }
+  ],
+  "manifestPresent": true,
+  "manifestKeys": [
+    "sec-calendar-puzzle",
+    "sec-clock-modulo",
+    "sec-leap-years",
+    "sec-doomsday-trick"
+  ],
+  "page_errors": [],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)"
+  ]
+}

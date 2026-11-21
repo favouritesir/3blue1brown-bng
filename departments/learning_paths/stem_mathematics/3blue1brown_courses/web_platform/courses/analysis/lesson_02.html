@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ছবির লগারিদম কীভাবে (এবং কেন) নেবেন | How (and why) to take a logarithm of an image</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/analysis/lesson_02/manifest.js?v=8"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="বিশ্লেষণ"
+  course-url="../../index.html#analysis"
+  home-url="../../index.html"
+  chapter-num="০২"
+  chapter-total="১০"
+  prev-url="lesson_01.html"
+  prev-title="পূর্ববর্তী অধ্যায়: রিম্যান জেটা ফাংশন ও বিশ্লেষণীয় ধারাবাহিকতা"
+  next-url="lesson_03.html"
+  next-title="পরবর্তী অধ্যায়: ফুরিয়ার ট্রান্সফর্ম আসলে কী? — এক দৃশ্যমান পরিচয়"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="বিশ্লেষণ"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০২ · বিশ্লেষণ"
+  title="ছবির লগারিদম কীভাবে (এবং কেন) নেবেন | How (and why) to take a logarithm of an image"
+  desc="এশারের «Print Gallery» চিত্রের ভেতরের অসম্ভব ঘূর্ণন আর জটিল লগারিদমের সুন্দর সংযোগ"
+  video-src="../../media_vault/analysis/lesson_02/experiments/3b1b_analysis_02_full_dubbed.mp4"
+  yt-id="ldxFjLJ3rVY"
+  date="২১ মার্চ, ২০২৬"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://www.3blue1brown.com/lessons/print-gallery"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">একটি ছবি যার ভেতরে ছবি আছে</b1b-bookmark>
+      <b1b-bookmark time="82" time-bn="০১:২২">লগ-পোলার রূপান্তর: ঘূর্ণন আর স্কেলিংয়ের জগৎ</b1b-bookmark>
+      <b1b-bookmark time="167" time-bn="০২:৪৭">জটিল লগারিদমের বহু রূপ</b1b-bookmark>
+      <b1b-bookmark time="232" time-bn="০৩:৫২">তাহলে ছবির লগারিদম নেওয়া মানে কী?</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-print-escher">একটি ছবি যার ভেতরে ছবি আছে</a>
+      <a href="#sec-print-log-polar">লগ-পোলার রূপান্তর: ঘূর্ণন আর স্কেলিংয়ের জগৎ</a>
+      <a href="#sec-print-complex-log">জটিল লগারিদমের বহু রূপ</a>
+      <a href="#sec-print-image-log">তাহলে ছবির লগারিদম নেওয়া মানে কী?</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ একটি ছবি যার ভেতরে ছবি আছে ═══ -->
+      <b1b-section id="sec-print-escher" title="একটি ছবি যার ভেতরে ছবি আছে">
+        <b1b-quote author="Grant Sanderson">এশারের «প্রিন্ট গ্যালারি»-র গভীরে তাকালে জটিল বিশ্লেষণের মূল ধারণাগুলোর এক ভ্রমণ শুরু হয়।</b1b-quote>
+        <p>মরিস এশারের «প্রিন্ট গ্যালারি»-তে একজন মানুষ একটি ছাপার দোকানে দাঁড়িয়ে ছবি দেখছেন — আর সেই ছবির ভেতরে আবার সেই দোকান, আবার সেই মানুষ, ক্রমাগত ছোট হয়ে ঘুরতে থাকে। চোখে মনে হয় কোনো এক বিন্দুতে সবকিছুই অসম্ভবভাবে মিলে গেছে।</p>
+        <b1b-figure src="../../assets/figures/an_02/fig_02_01.svg" alt="ক্রমান্বয়ে ঘুরে ছোট হতে থাকা ছবির ভেতরের ছবি" caption="ক্রমান্বয়ে ঘুরে ছোট হতে থাকা ছবির ভেতরের ছবি"></b1b-figure>
+        <p>এই অদ্ভুত ধারাবাহিকতা কীভাবে তৈরি করা যায়? সাধারণ স্কেলিং বা ঘূর্ণন দিয়ে নয় — কিন্তু জটিল সংখ্যার লগারিদম নামক একটিমাত্র অপারেশন এই ছবির গাণিতিক কাঠামোকে সুন্দরভাবে ব্যাখ্যা করে।</p>
+        <b1b-callout type="gold" icon="📌" title="এশার কি গণিত জানতেন?">
+          <p>এশার নিজে গণিতবিদ ছিলেন না, কিন্তু তাঁর চিত্রে সামঞ্জস্য, প্রতিসাম্য ও অসীমের যে অনুভূতি আছে তা গণিতবিদদের দীর্ঘদিন ধরে আকর্ষণ করে এসেছে। এই পাঠে আমরা সেই অনুভূতির পেছনের সূত্রটি খুঁজে বের করব।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ লগ-পোলার রূপান্তর: ঘূর্ণন আর স্কেলিংয়ের জগৎ ═══ -->
+      <b1b-section id="sec-print-log-polar" title="লগ-পোলার রূপান্তর: ঘূর্ণন আর স্কেলিংয়ের জগৎ">
+        <p>ধরুন একটি বিন্দুর ধ্রুবক $r$ ও $\theta$। সাধারণ মেরু অক্ষাংশে $r$ হলো দূরত্ব, $\theta$ হলো কোণ। এখন নতুন করে লিখি: $\rho=\log r$। তাহলে মূলবিন্দুর কাছাকাছি যাওয়া মানে $\rho\to-\infty$ — অর্থাৎ অসীম দূরে চলে যাওয়া।</p>
+        <b1b-figure src="../../assets/figures/an_02/fig_02_02.svg" alt="সাধারণ মেরু গ্রিড লগ-পোলার স্থানে সমান্তরাল রেখায় রূপান্তরিত" caption="সাধারণ মেরু গ্রিড লগ-পোলার স্থানে সমান্তরাল রেখায় রূপান্তরিত"></b1b-figure>
+        <b1b-formula math="w=\log z=\ln|z|+i\arg(z)"></b1b-formula>
+        <p>এই রূপান্তরে বৃত্তগুলো হয়ে যায় উল্লম্ব রেখা আর রশ্মিগুলো হয়ে যায় অনুভূমিক রেখা। কেন? কারণ $\ln r$ যোগ হওয়া মানে $r$-এর গুণ — অর্থাৎ স্কেলিং এখন অনুবাদ (translation) হয়ে গেছে; আর কোণ যোগ হওয়া মানে ঘূর্ণন, সেটিও এখন অনুবাদ।</p>
+        <b1b-callout type="gold" icon="📌" title="স্কেলিং + ঘূর্ণন = সরণ">
+          <p>জটিল তলে $z\mapsto az$ (যেখানে $a$ জটিল) একসাথে প্রসারণ ও ঘূর্ণন করে। লগারিদম নেওয়ার পর এই জটিল গুণন হয়ে যায় $\log z+\log a$ — একটি সাধারণ সরণ। এই কারণেই লগারিদম এত শক্তিশালী।</p>
+        </b1b-callout>
+
+        <!-- Quiz quiz-print-log -->
+        <b1b-quiz
+          question="❓ জটিল লগারিদমে $\log z$-এর দুটি মান কত দ্বারা আলাদা?"
+          correct="2"
+          correct-msg="হ্যাঁ! কোণ $2\pi$ বাড়লে একই বিন্দু পাওয়া যায়, তাই $\log z$-এর মান $2\pi i$ করে বদলায়।"
+          wrong-msg="কোণের এক পূর্ণ ঘূর্ণন $2\pi$ — জটিল রূপে সেটিই $2\pi i$।"
+          reveal-msg="সঠিক উত্তর: $2\pi i$ দ্বারা।">
+          <div slot="option">$2$ দ্বারা</div>
+          <div slot="option">$\pi$ দ্বারা</div>
+          <div slot="option">$2\pi i$ দ্বারা</div>
+          <div slot="option">$i$ দ্বারা</div>
+        </b1b-quiz>
+
+        <!-- Quiz quiz-print-scale -->
+        <b1b-quiz
+          question="❓ লগ-পোলার স্থানে মূল তলে কোনো বস্তুকে দ্বিগুণ প্রসারিত করলে কী হয়?"
+          correct="1"
+          correct-msg="ঠিক! $\ln(2r)=\ln r+\ln 2$ — অর্থাৎ প্রসারণ হয়ে যায় অনুভূমিক সরণে।"
+          wrong-msg="লগারিদম গুণকে যোগে বদলে দেয়, তাই $\ln r$ এর সাথে $\ln 2$ যোগ হয়।"
+          reveal-msg="সঠিক উত্তর: এক ধ্রুবক ($\ln 2$) দ্বারা ডানে সরণ।">
+          <div slot="option">এক ধ্রুবক দ্বারা উপরে সরণ</div>
+          <div slot="option">এক ধ্রুবক দ্বারা ডানে সরণ</div>
+          <div slot="option">কোণ ৯০° ঘোরে</div>
+          <div slot="option">কিছুই বদলায় না</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ জটিল লগারিদমের বহু রূপ ═══ -->
+      <b1b-section id="sec-print-complex-log" title="জটিল লগারিদমের বহু রূপ">
+        <p>একটি ধাপ আগে এগোনোর আগে একটা সমস্যা আছে। কোণ $\theta$ তো একাধিক মান নিতে পারে: $\theta$, $\theta+2\pi$, $\theta+4\pi$ — সবগুলোই একই বিন্দু নির্দেশ করে। তাই $\log z$-এর অসংখ্য মান আছে, পরস্পর $2\pi i$ দ্বারা আলাদা।</p>
+        <b1b-formula math="\log z=\ln|z|+i(\theta+2\pi k),\qquad k\in\mathbb{Z}"></b1b-formula>
+        <b1b-figure src="../../assets/figures/an_02/fig_02_03.svg" alt="একই বিন্দুর বিভিন্ন শাখা — $2\pi i$ করে উপরে সরে যাওয়া" caption="একই বিন্দুর বিভিন্ন শাখা — $2\pi i$ করে উপরে সরে যাওয়া"></b1b-figure>
+        <p>এই «বহু-মান» বৈশিষ্ট্যটিকে এড়াতে আমরা একটিমাত্র শাখা বেছে নিই (principal branch)। কিন্তু এশারের ছবিতে ঠিক এই বহুত্বটিই কাজে লাগে — বিভিন্ন শাখার মাঝে $2\pi i$ ডেটা দিয়ে ছবির স্তরগুলোর মাঝে সামঞ্জস্য আনা হয়।</p>
+      </b1b-section>
+
+      <!-- ═══ তাহলে ছবির লগারিদম নেওয়া মানে কী? ═══ -->
+      <b1b-section id="sec-print-image-log" title="তাহলে ছবির লগারিদম নেওয়া মানে কী?">
+        <p>একটি ছবি মূলত একটি ফাংশন $f(z)$ — প্রতিটি বিন্দুতে রংয়ের তথ্য। ছবির লগারিদম নেওয়া মানে ইনপুট স্থানকে লগ-পোলার স্থানে নিয়ে যাওয়া: $f(e^w)$। তখন মূলবিন্দুর চারপাশের আবর্তস্থল একটি অনন্ত স্ট্রিপে রূপান্তরিত হয়।</p>
+        <b1b-figure src="../../assets/figures/an_02/fig_02_04.svg" alt="মূলবিন্দুর আশেপাশের অঞ্চল একটিমাত্র অনন্ত স্ট্রিপে প্রসারিত" caption="মূলবিন্দুর আশেপাশের অঞ্চল একটিমাত্র অনন্ত স্ট্রিপে প্রসারিত"></b1b-figure>
+        <b1b-callout type="green" icon="🌟" title="কেন এই রূপান্তর দরকার?">
+          <p>অনেক সমস্যায় মূলবিন্দুর কাছে আচরণ বোঝা কঠিন — সবকিছু সেখানে চেপে যায়। লগারিদম সেই চাপা অঞ্চলটিকে টেনে প্রসারিত করে, ফলে সূক্ষ্ম গঠন স্পষ্ট হয়ে ওঠে। একই কৌশল ফুরিয়ার ট্রান্সফর্ম ও জেটা ফাংশনেও বারবার ফিরে আসে।</p>
+        </b1b-callout>
+        <p>এশারের ছবির ক্ষেত্রে এই স্ট্রিপের উপর দিয়ে ছবিটিকে সরানো হয় — এক স্তর থেকে পরের স্তরে $2\pi i$ করে সরে গিয়ে ঠিক সেই ঘোরার অনুভূতি তৈরি হয়, যা আমরা প্রথমে দেখেছিলাম। গণিত আর শিল্পের এই মيلনই এই পাঠের সারাংশ।</p>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/analysis/lesson_02/experiments/3b1b_analysis_02_full_dubbed.mp4"
+    yt-id="ldxFjLJ3rVY"
+    title="ছবির লগারিদম কীভাবে (এবং কেন) নেবেন — অধ্যায় ০২"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — বিশ্লেষণ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_01.html"
+  prev-title="রিম্যান জেটা ফাংশন ও বিশ্লেষণীয় ধারাবাহিকতা"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_03.html"
+  next-title="ফুরিয়ার ট্রান্সফর্ম আসলে কী? — এক দৃশ্যমান পরিচয়"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

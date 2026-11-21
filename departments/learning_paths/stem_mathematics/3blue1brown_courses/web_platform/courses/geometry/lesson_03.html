@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>বহুমাত্রিক গোলকের আশ্চর্য আচরণ | The most underappreciated formula | Exploring high-dimensional spheres</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/geometry/lesson_03/manifest.js?v=8"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="জ্যামিতি"
+  course-url="../../index.html#geometry"
+  home-url="../../index.html"
+  chapter-num="০৩"
+  chapter-total="০৬"
+  prev-url="lesson_02.html"
+  prev-title="পূর্ববর্তী অধ্যায়: spheres-talk"
+  next-url="lesson_04.html"
+  next-title="পরবর্তী অধ্যায়"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="জ্যামিতি"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৩ · জ্যামিতি"
+  title="বহুমাত্রিক গোলকের আশ্চর্য আচরণ | The most underappreciated formula | Exploring high-dimensional spheres"
+  desc="উচ্চমাত্রার গোলকের আয়তন, পৃষ্ঠ ও ‘মাত্রার অভিশাপ’—যেখানে অভিজ্ঞতা ভুল পথ দেখায়"
+  video-src="../../media_vault/geometry/lesson_03/experiments/3b1b_geometry_03_full_dubbed.mp4"
+  yt-id="fsLh-NYhOoU"
+  date="২০১৯ (টক)"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://www.3blue1brown.com/lessons/spheres-talk"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লেড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">পাঠের সূচনা</b1b-bookmark>
+      <b1b-bookmark time="53" time-bn="০০:৫৩">প্রধান ধারণা</b1b-bookmark>
+      <b1b-bookmark time="120" time-bn="০২:০০">মূল প্রমাণ ও অন্তর্দৃষ্টি</b1b-bookmark>
+      <b1b-bookmark time="173" time-bn="০২:৫৩">সারাংশ ও উপসংহার</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-intro">ভূমিকা — গোলকের বাইরে</a>
+      <a href="#sec-volume">আয়তনের সূত্র</a>
+      <a href="#sec-concentration">ভর কোথায় নিবদ্ধ?</a>
+      <a href="#sec-curse">মাত্রার অভিশাপ</a>
+      <a href="#sec-paradox">কোন মাত্রায় সবচেয়ে বড়?</a>
+      <a href="#sec-conclusion">উপসংহার</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+      <!-- ═══ Section: ভূমিকা — গোলকের বাইরে ═══ -->
+      <b1b-section id="sec-intro" title="ভূমিকা — গোলকের বাইরে">
+        <b1b-quote author="অজানা">উচ্চমাত্রার জগৎ কোনো স্থান নয়, এটি একটা হিসাব।</b1b-quote>
+        <p>আমরা সবাই ত্রিমাত্রিক গোলক চিনি—একটি বলের মতো। কিন্তু যদি ১০ বা ১০০ মাত্রা থাকে, তখন ‘গোলক’ মানে কী? গণিতের ভাষায় খুব সহজ: $n$-মাত্রিক গোলক হলো সব বিন্দুর set যারা মূলবিন্দু থেকে দূরত্ব $R$-এর বেশি নয়।</p>
+        <b1b-figure src="../../assets/figures/geometry/lesson_03/highdim-sphere.svg" alt="বিভিন্ন মাত্রার ‘গোলক’-এর ধারণা" caption="বিভিন্ন মাত্রার ‘গোলক’-এর ধারণা"></b1b-figure>
+        <p>এখানেই সমস্যা শুরু। আমাদের ত্রিমাত্রিক অভিজ্ঞতা আর কাজ করে না। উচ্চমাত্রায় কল্পনার বদলে আমাদেরকে হিসাবের ওপর নির্ভর করতে হয়—এবং সেই হিসাব আমাদেরকে কিছু অপ্রত্যাশিত ফলাফল দেয়।</p>
+      </b1b-section>
+      <!-- ═══ Section: আয়তনের সূত্র ═══ -->
+      <b1b-section id="sec-volume" title="আয়তনের সূত্র">
+        <p>একক ব্যাসার্ধের $n$-মাত্রিক গোলকের আয়তনের সূত্রটি হলো—</p>
+        <b1b-formula math="V_n=\frac{\pi^{n/2}}{\Gamma\!\left(\frac{n}{2}+1\right)}"></b1b-formula>
+        <p>এখানে $\Gamma$ হলো ফ্যাক্টরিয়ালের ধারণার উচ্চমাত্রিক রূপ: পূর্ণসংখ্যার ক্ষেত্রে $\Gamma(k+1)=k!$। $n=2$ বসালে পাই $\pi$, $n=3$ বসালে $\tfrac43\pi$—আমাদের চেনা সূত্রদুটো। কিন্তু $n$ বাড়িয়ে দেখুন: কয়েকটি মাত্রার পরেই আয়তন কমতে শুরু করে এবং শূন্যের দিকে ধাবিত হয়।</p>
+        <b1b-figure src="../../assets/figures/geometry/lesson_03/volume-vs-dim.svg" alt="মাত্রার সাথে একক গোলকের আয়তনের পরিবর্তন" caption="মাত্রার সাথে একক গোলকের আয়তনের পরিবর্তন"></b1b-figure>
+        <b1b-callout type="blue" icon="📉" title="counter-intuitive"><p>একটি ‘বিচিত্র’fact: ১০-মাত্রিক একক গোলকের আয়তন প্রায় ২.৫৫, কিন্তু ২০-মাত্রিকটির আয়তন মাত্র ০.০২৫—প্রায় শূন্য!</p></b1b-callout>
+        <b1b-quiz
+          question="❓ $n$ বাড়তে থাকলে একক ব্যাসার্ধের $n$-মাত্রিক গোলকের আয়তনের কী হয়?"
+          correct="1"
+          correct-msg="চমৎকার! $\pi^{n/2}$ বাড়লেও $\Gamma(n/2+1)$ আরও দ্রুত বাড়ে। ফলে কয়েক মাত্রার পর ভাগফল দ্রুত শূন্যের দিকে যায়।"
+          wrong-msg="আবার চেষ্টা করো। ইঙ্গিত: লব ও হর—দুটোই বাড়ে, কিন্তু কোনটা বেশি দ্রুত?"
+          reveal-msg="সঠিক উত্তর: $\pi^{n/2}$ বাড়লেও $\Gamma(n/2+1)$ আরও দ্রুত বাড়ে। ফলে কয়েক মাত্রার পর ভাগফল দ্রুত শূন্যের দিকে যায়।">
+          <div slot="option">সবসময় বাড়তে থাকে</div>
+          <div slot="option">আগে বেড়ে পরে শূন্যের দিকে যায়</div>
+          <div slot="option">সবসময় একই থাকে</div>
+          <div slot="option">হঠাৎ অসীম হয়ে যায়</div>
+        </b1b-quiz>
+      </b1b-section>
+      <!-- ═══ Section: ভর কোথায় নিবদ্ধ? ═══ -->
+      <b1b-section id="sec-concentration" title="ভর কোথায় নিবদ্ধ?">
+        <p>আরও আশ্চর্য: উচ্চমাত্রিক গোলকের প্রায় সব আয়তনই একটি পাতলা বাইরের খোলসে থাকে। যদি আপনি ভেতরের ৯৯% ব্যাসার্ধ বাদ দেন, তবুও অবশিষ্ট পাতলা স্তরে গোলকের প্রায় পুরো আয়তন পড়ে থাকে।</p>
+        <b1b-figure src="../../assets/figures/geometry/lesson_03/thin-shell.svg" alt="উচ্চমাত্রিক গোলকের পাতলা খোলস" caption="উচ্চমাত্রিক গোলকের পাতলা খোলস"></b1b-figure>
+        <p>এর কারণ হলো ${R^n}$ আকারের বৃদ্ধি—বাইরের দিকের ‘শেল’-এর আয়তন ভেতরের চেয়ে অনেক বেশি। একই কারণে যেকোনো একটি অক্ষ বরাবর ভর প্রায় $1/\sqrt{n}$ পরিমাণের ভেতরে নিবদ্ধ হয়। ফলে গোলকটি মূলত একটি ‘বিষুবীয় বলয়’ের মতো আচরণ করে।</p>
+        <b1b-formula math="\text{typical coordinate}\sim\frac{1}{\sqrt{n}}"></b1b-formula>
+      </b1b-section>
+      <!-- ═══ Section: মাত্রার অভিশাপ ═══ -->
+      <b1b-section id="sec-curse" title="মাত্রার অভিশাপ">
+        <p>এই ঘটনাগুলোরই নাম ‘মাত্রার অভিশাপ’। উচ্চমাত্রায় দুটি এলোমেলো বিন্দুর দূরত্ব প্রায় $\sqrt{n}$ হয়—অর্থাৎ সব দূরত্বই প্রায় একই। ফলে ‘কাছে’ আর ‘দূরে’-র তফাৎ মিলিয়ে যায়।</p>
+        <p>আর গোলকের ভেতরের আয়তন শূন্যের কাছে পৌঁছে যাওয়ায় স্থান প্রায় সম্পূর্ণ ‘খালি’ হয়ে পড়ে। ডেটা বিজ্ঞানে এর মানে হলো—মাত্রা বাড়ালে নমুনা সংখ্যাও করতে হয় অনেক বাড়িয়ে, নইলে কোনো কাছাকাছি বিন্দুই পাওয়া যাবে না।</p>
+      </b1b-section>
+      <!-- ═══ Section: কোন মাত্রায় সবচেয়ে বড়? ═══ -->
+      <b1b-section id="sec-paradox" title="কোন মাত্রায় সবচেয়ে বড়?">
+        <p>এখন একটা মজার প্রশ্ন: কোন মাত্রায় একক গোলকটি সবচেয়ে বড়? হিসাব করে দেখা যায়—আয়তন $V_n$ সর্বোচ্চ হয় ৫ মাত্রায়, আর পৃষ্ঠতল $S_n=nV_n$ সর্বোচ্চ হয় ৭ মাত্রায়।</p>
+        <b1b-figure src="../../assets/figures/geometry/lesson_03/peak-dimension.svg" alt="আয়তন ও পৃষ্ঠতলের সর্বোচ্চ বিন্দু" caption="আয়তন ও পৃষ্ঠতলের সর্বোচ্চ বিন্দু"></b1b-figure>
+        <p>আমাদের ত্রিমাত্রিক জগৎ এই দুই চরমের কাছেই আছে—প্রকৃতি একরকমভাবে ‘সুবিধাজনক’ মাত্রায় অবস্থান করছে। অবশ্য এটি নিয়ে দার্শনিক ব্যাখ্যা দেওয়া হয়ে থাকে, কিন্তু গাণিতিক fact টি নিঃসন্দেহে আকর্ষণীয়।</p>
+      </b1b-section>
+      <!-- ═══ Section: উপসংহার ═══ -->
+      <b1b-section id="sec-conclusion" title="উপসংহার">
+        <p>আজ আমরা দেখলাম উচ্চমাত্রার গোলক আমাদের চেনা জগতের মতো আচরণ করে না। তার আয়তন শূন্যের দিকে যায়, ভর পাতলা খোলসে নিবদ্ধ হয়, আর দূরত্বের ধারণা অর্থহীন হয়ে পড়ে।</p>
+        <p>এই পাঠের শিক্ষা হলো—যখন অভিজ্ঞতা কাজ না করে, তখন গণিতের সূত্রই আমাদের একমাত্র বিশ্বস্ত পথপ্রদর্শক। পরবর্তীতে আমরা ৪-মাত্রিক সংখ্যা কোয়াটারনিয়ন নিয়ে কাজ করব।</p>
+      </b1b-section>
+      <!-- ═══ Interactive visualizer — excluded from narration ═══ -->
+      <b1b-section id="sec-visualizer" title="ইন্টারেকটিভ ধারণা-মানচিত্র" data-no-narration="true">
+        <p class="viz-intro">নিচের এসভিজি সমতলে বিন্দুর অবস্থান টেনে বদলান, স্কেলার স্লাইডার ঘুরিয়ে দৈর্ঘ্য ও দিক পর্যবেক্ষণ করুন—জ্যামিতির মৌলিক ক্রিয়াগুলো এখানে রিয়েল-টাইমে দেখা যায়।</p>
+        <b1b-vector-decomposer initial="3,-2">
+          <p>যেকোনো স্থানাঙ্ক এক্স কমা ওয়াই ইনপুট দিন অথবা প্রিসেটে ক্লিক করে পর্যবেক্ষণ করুন কীভাবে একটি ভেক্টর তার উপাদানে বিভক্ত হয়।</p>
+        </b1b-vector-decomposer>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="3,-2"></b1b-vector-plane>
+        </b1b-fullscreen>
+        <b1b-figure src="../../assets/figures/geometry/lesson_03/concept-map.svg" alt="ধারণা-মানচিত্র" caption="বহুমাত্রিক গোলকের আশ্চর্য আচরণ — ধারণার সংযোগ"></b1b-figure>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/geometry/lesson_03/experiments/3b1b_geometry_03_full_dubbed.mp4"
+    yt-id="fsLh-NYhOoU"
+    title="বহুমাত্রিক গোলকের আশ্চর্য আচরণ — অধ্যায় ০৩"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — জ্যামিতি">
+    <div slot="playlist">
+      <a class="playlist-item" href="lesson_01.html"><div class="playlist-num">০১</div><div class="playlist-item-info"><div class="playlist-item-title">০১ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০১</div></div></a>
+      <a class="playlist-item" href="lesson_02.html"><div class="playlist-num">০২</div><div class="playlist-item-info"><div class="playlist-item-title">০২ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০২</div></div></a>
+      <a class="playlist-item active" href="lesson_03.html"><div class="playlist-num">০৩</div><div class="playlist-item-info"><div class="playlist-item-title">০৩ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০৩</div></div></a>
+      <a class="playlist-item" href="lesson_04.html"><div class="playlist-num">০৪</div><div class="playlist-item-info"><div class="playlist-item-title">০৪ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০৪</div></div></a>
+      <a class="playlist-item" href="lesson_05.html"><div class="playlist-num">০৫</div><div class="playlist-item-info"><div class="playlist-item-title">০৫ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০৫</div></div></a>
+      <a class="playlist-item" href="lesson_06.html"><div class="playlist-num">০৬</div><div class="playlist-item-info"><div class="playlist-item-title">০৬ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০৬</div></div></a>
+    </div>
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_02.html"
+  prev-title="পূর্ববর্তী অধ্যায়"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_04.html"
+  next-title="পরবর্তী অধ্যায়"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

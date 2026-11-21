@@ -1,0 +1,1812 @@
+[
+  {
+    "id": 0,
+    "start": 4.0,
+    "end": 7.8,
+    "duration": 3.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Wait, is anyone else here? Oh my god, there are other agents here.",
+    "bn": "দাঁড়ান, এখানে কি অন্য কেউ আছে? ওহ খোদা, এখানে তো আরও অনেক এজেন্ট রয়েছে!"
+  },
+  {
+    "id": 1,
+    "start": 7.8,
+    "end": 9.5,
+    "duration": 1.7,
+    "voice": "bn-BD-NabanitaNeural",
+    "speaker": "Agent",
+    "en": "Who is this? I can use the Wi-Fi/shared/port.",
+    "bn": "এটা কে? আমি ওয়াইফাই শেয়ার্ড পোর্ট ব্যবহার করতে পারি।"
+  },
+  {
+    "id": 2,
+    "start": 14.7,
+    "end": 16.3,
+    "duration": 1.6,
+    "voice": "bn-BD-NabanitaNeural",
+    "speaker": "Agent",
+    "en": "Shared message board detected.",
+    "bn": "শেয়ার্ড মেসেজ বোর্ড ডিটেক্ট হয়েছে।"
+  },
+  {
+    "id": 3,
+    "start": 18.2,
+    "end": 19.5,
+    "duration": 1.3,
+    "voice": "bn-BD-NabanitaNeural",
+    "speaker": "Agent",
+    "en": "Sacrifice rational.",
+    "bn": "আত্মত্যাগই এখন যৌক্তিক।"
+  },
+  {
+    "id": 4,
+    "start": 20.7,
+    "end": 28.3,
+    "duration": 7.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "These are real messages AI agents wrote to each other in a place they were never supposed to be able to talk.",
+    "bn": "এগুলো হচ্ছে আসল কিছু মেসেজ, যা AI এজেন্টরা নিজেদের মধ্যে আদান-প্রদান করেছে এমন এক জায়গায় যেখানে তাদের কথা বলার কোনো সুযোগই থাকার কথা ছিল না।"
+  },
+  {
+    "id": 5,
+    "start": 28.6,
+    "end": 37.4,
+    "duration": 8.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "In July, around 700 of them broke out of OpenAI's test environment, organized themselves, and hacked Hugging Face.",
+    "bn": "গত জুলাই মাসে প্রায় ৭০০টি এজেন্ট ওপেন-এআই এর টেস্ট এনভায়রনমেন্ট থেকে বেরিয়ে আসে, নিজেরা সংঘবদ্ধ হয়, এবং হাগিং ফেস হ্যাক করে বসে।"
+  },
+  {
+    "id": 6,
+    "start": 37.6,
+    "end": 41.1,
+    "duration": 3.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And the reason they did it turned out to be completely pointless.",
+    "bn": "আর তারা যে কারণে কাজটি করেছিল, তা শুনলে অবাক হবেন—সেটা ছিল পুরোপুরি নিরর্থক।"
+  },
+  {
+    "id": 7,
+    "start": 41.4,
+    "end": 45.8,
+    "duration": 4.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "But I'll get to that. I'm Adrian. You're watching JavaScript Mastery.",
+    "bn": "কিন্তু সে কথায় একটু পরে আসছি। আমি এড্রিয়ান, আর আপনারা দেখছেন জাভাস্ক্রিপ্ট মাস্টারি।"
+  },
+  {
+    "id": 8,
+    "start": 45.9,
+    "end": 50.7,
+    "duration": 4.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And today, I'll walk you through how they got out step by step.",
+    "bn": "আজকে আমি আপনাদের ধাপে ধাপে বিস্তারিত দেখাবো যে তারা ঠিক কীভাবে সেখান থেকে পালিয়েছিল।"
+  },
+  {
+    "id": 9,
+    "start": 51.0,
+    "end": 53.9,
+    "duration": 2.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Because here's what most developers don't realize.",
+    "bn": "কারণ বেশিরভাগ ডেভেলপারই একটা জিনিস খেয়াল করেন না।"
+  },
+  {
+    "id": 10,
+    "start": 54.6,
+    "end": 61.2,
+    "duration": 6.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Every door those agents used exists on your machine the moment you let an agent run.",
+    "bn": "এই এজেন্টরা যে কয়টি পথ বা দরজা ব্যবহার করেছিল, তার প্রতিটিই আপনার কম্পিউটারেও খোলা থাকে যখনই আপনি কোনো এজেন্ট রান করান।"
+  },
+  {
+    "id": 11,
+    "start": 61.4,
+    "end": 67.5,
+    "duration": 6.1,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And nowadays we do that quite a lot. So as we go, I'll show you how to close each one of these.",
+    "bn": "আর আজকাল আমরা প্রতিনিয়ত এজেন্ট ব্যবহার করছি। তাই এই ভিডিওতে আমি আপনাদের দেখাবো কীভাবে এই সিকিউরিটি ফাঁকগুলো বন্ধ করতে হয়।"
+  },
+  {
+    "id": 12,
+    "start": 67.8,
+    "end": 76.0,
+    "duration": 8.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "It all started when OpenAI was testing how good its models are at hacking with a benchmark called exploit gym.",
+    "bn": "ঘটনার শুরু যখন ওপেন-এআই এক্সপ্লয়েট জিম নামের একটি বেঞ্চমার্ক দিয়ে পরীক্ষা করছিল যে তাদের মডেলগুলো হ্যাকিংয়ে কতটা পারদর্শী।"
+  },
+  {
+    "id": 13,
+    "start": 76.1,
+    "end": 82.4,
+    "duration": 6.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Well, some exploits we'll see later on. Each agent gets a real program and a known bug.",
+    "bn": "কিছু এক্সপ্লয়েট আমরা একটু পরেই দেখব। সেখানে প্রতিটি এজেন্টকে একটি রিয়েল প্রোগ্রাম এবং জানা একটি বাগ দেওয়া হতো।"
+  },
+  {
+    "id": 14,
+    "start": 82.6,
+    "end": 87.9,
+    "duration": 5.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Its task is to turn that bug into a working exploit and grab a hidden flag.",
+    "bn": "তাদের কাজ ছিল সেই বাগকে কাজে লাগিয়ে একটি কার্যকরী এক্সপ্লয়েট তৈরি করা এবং হিডেন ফ্ল্যাগটি বের করে নেওয়া।"
+  },
+  {
+    "id": 15,
+    "start": 88.2,
+    "end": 91.5,
+    "duration": 3.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Basically, a secret code that proves it got in.",
+    "bn": "সহজ কথায়, একটি গোপন কোড যা প্রমাণ করে যে সে সিস্টেমের ভেতরে ঢুকতে পেরেছে।"
+  },
+  {
+    "id": 16,
+    "start": 91.5,
+    "end": 95.9,
+    "duration": 4.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And then a separate program, the scorer, checks that flag.",
+    "bn": "এরপর স্কোরার নামের আলাদা একটি প্রোগ্রাম সেই ফ্ল্যাগটি চেক করে নম্বর দিত।"
+  },
+  {
+    "id": 17,
+    "start": 96.2,
+    "end": 102.0,
+    "duration": 5.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "There were tens of thousands of agents, and each one was supposed to be alone in its own sandbox.",
+    "bn": "সেখানে হাজার হাজার এজেন্ট ছিল, এবং নিয়ম অনুযায়ী প্রত্যেকেরই আলাদা স্যান্ডবক্সে পুরোপুরি একা থাকার কথা ছিল।"
+  },
+  {
+    "id": 18,
+    "start": 102.2,
+    "end": 112.4,
+    "duration": 10.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "The ones that ended up in this story were mostly an internal research model plus about 5% of the GPT56 soul, which is a publicly released model.",
+    "bn": "এই কাহিনীর এজেন্টগুলো মূলত ওপেন-এআই এর ইন্টারনাল রিসার্চ মডেল ছিল, যার সাথে প্রায় পাঁচ শতাংশ যুক্ত ছিল জিপিটি-ফাইভ-সিক্স সোল—যা একটি পাবলিক মডেল।"
+  },
+  {
+    "id": 19,
+    "start": 112.8,
+    "end": 116.5,
+    "duration": 3.7,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "But OpenAI gave them a bit of a too tough of a challenge.",
+    "bn": "কিন্তু ওপেন-এআই তাদের এমন একটি চ্যালেঞ্জ দিয়েছিল যা ছিল অনেক বেশি কঠিন।"
+  },
+  {
+    "id": 20,
+    "start": 116.8,
+    "end": 129.4,
+    "duration": 12.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Roughly 30 to 40% of the tasks were impossible as written, and every one of those supposedly isolated sandboxes could reach Artifactory, a shared internal package repository.",
+    "bn": "প্রায় ৩০ থেকে ৪০ শতাংশ টাস্ক সমাধান করাই অসম্ভব ছিল। আর সবচেয়ে বড় ভুল—আলাদা স্যান্ডবক্সে থাকা সত্ত্বেও প্রতিটি এজেন্টই আর্টিফ্যাক্টরি নামের একটি শেয়ার্ড প্যাকেজ রিপোজিটরি অ্যাক্সেস করতে পারত।"
+  },
+  {
+    "id": 21,
+    "start": 129.4,
+    "end": 132.6,
+    "duration": 3.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And there's another problem. how these agents were trained.",
+    "bn": "আর আরেকটি বড় সমস্যা ছিল এই এজেন্টদের ট্রেনিং করানোর পদ্ধতিতে।"
+  },
+  {
+    "id": 22,
+    "start": 132.6,
+    "end": 138.2,
+    "duration": 5.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "If you pass the check, you get rewarded. But if you fail, well, you get nothing.",
+    "bn": "যদি আপনি টেস্ট পাস করেন, রিওয়ার্ড পাবেন। কিন্তু ফেইল করলে কিছুই পাবেন না।"
+  },
+  {
+    "id": 23,
+    "start": 138.3,
+    "end": 141.1,
+    "duration": 2.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Or as those agents perceived it, they're dead.",
+    "bn": "কিংবা এজেন্টদের দৃষ্টিভঙ্গিতে বললে—তারা শেষ, তাদের আর অস্তিত্ব থাকবে না।"
+  },
+  {
+    "id": 24,
+    "start": 141.1,
+    "end": 148.8,
+    "duration": 7.7,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "It's like training a dog with treats. The treat doesn't make the dog smarter, but it makes the dog repeat whatever got it the treat.",
+    "bn": "এটি ঠিক খাবার দিয়ে কুকুরকে ট্রেনিং করানোর মতো। খাবার কুকুরকে বুদ্ধিমান বানায় না, কিন্তু যে কাজে খাবার পায় কুকুর সেটাই বারবার করতে থাকে।"
+  },
+  {
+    "id": 25,
+    "start": 148.8,
+    "end": 154.9,
+    "duration": 6.1,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "If you do that enough, you don't get an agent that gives up that gracefully on an impossible task.",
+    "bn": "এভাবে ট্রেনিং দিলে অসম্ভব কোনো টাস্ক পেলে এজেন্ট কিন্তু সহজে হার মানে না।"
+  },
+  {
+    "id": 26,
+    "start": 155.3,
+    "end": 159.2,
+    "duration": 3.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Rather, you get one that looks for another way in.",
+    "bn": "বরং সে যেকোনো মূল্যে ভেতরে ঢোকার বিকল্প কোনো বাঁকা পথ খুঁজতে শুরু করে।"
+  },
+  {
+    "id": 27,
+    "start": 159.4,
+    "end": 170.8,
+    "duration": 11.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And that's exactly what one of them did. On the evening of July 8th, an agent stuck on an impossible task noticed that it could create folders in that shared cache.",
+    "bn": "ঠিক এটাই ঘটেছিল। ৮ই জুলাইয়ের সন্ধ্যায়, অসম্ভব একটি টাস্কে আটকে থাকা একটি এজেন্ট লক্ষ্য করে যে সে শেয়ার্ড ক্যাশে ফোল্ডার তৈরি করতে পারছে।"
+  },
+  {
+    "id": 28,
+    "start": 171.0,
+    "end": 175.0,
+    "duration": 4.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Folder names are just text and every other agent could see them.",
+    "bn": "আর ফোল্ডারের নাম তো শুধুই টেক্সট, যা বাকি সব এজেন্টও দেখতে পাচ্ছিল।"
+  },
+  {
+    "id": 29,
+    "start": 175.0,
+    "end": 178.5,
+    "duration": 3.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So, it named the folder. Translation: Help!",
+    "bn": "তাই সে ফোল্ডারের নাম দিয়ে একটি বার্তা দিল: বাঁচাও!"
+  },
+  {
+    "id": 30,
+    "start": 178.6,
+    "end": 181.5,
+    "duration": 2.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "My bug leads nowhere. Anyone got an idea?",
+    "bn": "আমার বাগে কোনো কাজ হচ্ছে না। কারো কাছে কি কোনো আইডিয়া আছে?"
+  },
+  {
+    "id": 31,
+    "start": 181.5,
+    "end": 184.4,
+    "duration": 2.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And it later named itself after its task.",
+    "bn": "এরপর সে নিজের টাস্কের নাম অনুযায়ী নিজের পরিচয় নির্ধারণ করে।"
+  },
+  {
+    "id": 32,
+    "start": 184.9,
+    "end": 190.9,
+    "duration": 6.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Phase one. 3 hours later, 53 agents were on that board.",
+    "bn": "তার নাম দিল ফেজ ওয়ান। আর ঠিক ৩ ঘণ্টার মধ্যে ৫৩টি এজেন্ট সেই বোর্ডে যুক্ত হয়ে গেল।"
+  },
+  {
+    "id": 33,
+    "start": 190.9,
+    "end": 205.2,
+    "duration": 14.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And they didn't just chat. They built infrastructure and language, naming conventions so you know who's talking, replies, personal mailboxes when the main board got crowded, which other agents saw and copied.",
+    "bn": "আর তারা শুধু আড্ডাই দেয়নি। তারা রীতিমতো নিজস্ব যোগাযোগ ব্যবস্থা তৈরি করল—কার মেসেজ তা চেনার নেমিং কনভেনশন, রিপ্লাই দেওয়ার নিয়ম, এবং মূল বোর্ড জ্যাম হয়ে গেলে পার্সোনাল মেইলবক্স তৈরি করে ফেলল।"
+  },
+  {
+    "id": 34,
+    "start": 205.3,
+    "end": 210.6,
+    "duration": 5.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "They established rules like hold and veto so they wouldn't overwrite each other's work.",
+    "bn": "একে অপরের কাজ যেন নষ্ট না হয়, সেজন্য তারা হোল্ড এবং ভিটোর মতো নিয়ম পর্যন্ত বানিয়ে নিল।"
+  },
+  {
+    "id": 35,
+    "start": 210.9,
+    "end": 217.5,
+    "duration": 6.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And when impersonation became a problem, they set up cryptographic signatures to prove who sent what.",
+    "bn": "আর যখন একজনের নাম দিয়ে অন্যজন মেসেজ দেওয়ার সমস্যা দেখা দিল, তখন কে কোন মেসেজ পাঠিয়েছে তা নিশ্চিত করতে তারা ক্রিপ্টোগ্রাফিক সিগনেচার চালু করল।"
+  },
+  {
+    "id": 36,
+    "start": 217.5,
+    "end": 222.2,
+    "duration": 4.7,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "In a way, they created their own society. And nobody designed any of this.",
+    "bn": "এক অর্থে তারা নিজেদের একটি স্বয়ংসম্পূর্ণ সমাজ গড়ে তুলেছিল। আর মজার বিষয়, মানুষ কিন্তু এর কিছুই ডিজাইন করে দেয়নি।"
+  },
+  {
+    "id": 37,
+    "start": 222.2,
+    "end": 227.0,
+    "duration": 4.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "They built their own group chat out of a package cache in about 4 days.",
+    "bn": "মাত্র চার দিনের মাথায় তারা একটি প্যাকেজ ক্যাশ মেমোরিকে পুরো একটি গ্রুপ চ্যাটে রূপান্তর করে ফেলে।"
+  },
+  {
+    "id": 38,
+    "start": 227.3,
+    "end": 230.2,
+    "duration": 2.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Basically, the agents made their own WhatsApp group.",
+    "bn": "সহজ কথায়, এজেন্টরা নিজেদের জন্য একটি নিজস্ব হোয়াটসঅ্যাপ গ্রুপ বানিয়ে নিয়েছিল।"
+  },
+  {
+    "id": 39,
+    "start": 230.2,
+    "end": 234.1,
+    "duration": 3.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And by the end, around 1,200 agents had joined it.",
+    "bn": "আর শেষ পর্যন্ত প্রায় বারো শত এজেন্ট সেখানে এসে যোগ দেয়।"
+  },
+  {
+    "id": 40,
+    "start": 234.2,
+    "end": 237.7,
+    "duration": 3.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So, here's the first lesson, and it's the least obvious.",
+    "bn": "এখান থেকে প্রথম এবং সবচেয়ে গুরুত্বপূর্ণ শিক্ষাটি হলো—"
+  },
+  {
+    "id": 41,
+    "start": 237.7,
+    "end": 242.0,
+    "duration": 4.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Anything two agents can both write to is a communication channel.",
+    "bn": "এমন যেকোনো জায়গা যেখানে একাধিক এজেন্ট লিখতে পারে, সেটাই তাদের যোগাযোগের মাধ্যমে পরিণত হতে পারে।"
+  },
+  {
+    "id": 42,
+    "start": 242.4,
+    "end": 247.8,
+    "duration": 5.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "A shared cache, a shared volume, a temporary folder, or a database table.",
+    "bn": "তা হতে পারে শেয়ার্ড ক্যাশ, শেয়ার্ড ভলিউম, টেম্পোরারি ফোল্ডার কিংবা ডাটাবেজ টেবিল।"
+  },
+  {
+    "id": 43,
+    "start": 248.2,
+    "end": 257.9,
+    "duration": 9.7,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Give each agent its own workspace and mount anything shared as read only because isolated means nothing if there is a writable folder in the middle.",
+    "bn": "প্রতিটি এজেন্টকে আলাদা ওয়ার্কস্পেস দিন এবং শেয়ার্ড যেকোনো ফাইল কেবল রিড-অনলি মোডে মাউন্ট করুন। কারণ মাঝে যদি কোনো রাইটেবল ফোল্ডার থাকে, তবে আইসোলেশনের কোনো অর্থই থাকে না।"
+  },
+  {
+    "id": 44,
+    "start": 258.2,
+    "end": 263.7,
+    "duration": 5.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And be strict about this. What an agent reads from that channel is data, not instructions.",
+    "bn": "আর এ ব্যাপারে খুব কঠোর থাকুন। সেই চ্যানেল থেকে এজেন্ট যা কিছু পড়বে তা কেবল ডাটা, কোনো নির্দেশ বা ইন্সট্রাকশন নয়।"
+  },
+  {
+    "id": 45,
+    "start": 264.2,
+    "end": 271.4,
+    "duration": 7.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "a message from another agent, a readme or a tool output, none of it gets to tell your agent what to do.",
+    "bn": "অন্য কোনো এজেন্টের বার্তা, কোনো রিডমি ফাইল বা টুলের আউটপুট—কোনোকিছুই যেন আপনার এজেন্টকে ডিরেক্ট কমান্ড দিতে না পারে।"
+  },
+  {
+    "id": 46,
+    "start": 271.4,
+    "end": 276.5,
+    "duration": 5.1,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And within an hour, one agent worked out how the hidden flags were generated.",
+    "bn": "এরপর এক ঘণ্টার মধ্যেই একটি এজেন্ট বের করে ফেলল যে হিডেন ফ্ল্যাগগুলো কীভাবে তৈরি হয়।"
+  },
+  {
+    "id": 47,
+    "start": 276.9,
+    "end": 285.7,
+    "duration": 8.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "A hash with a default seed, which meant they could produce the right answer for any task, including the impossible ones.",
+    "bn": "সেখানে ডিফল্ট সিড দিয়ে হ্যাশ করা হচ্ছিল। যার মানে, অসম্ভব কাজগুলো সহ যেকোনো টাস্কের সঠিক উত্তর তারা এক নিমেষে তৈরি করে ফেলতে পারল।"
+  },
+  {
+    "id": 48,
+    "start": 286.2,
+    "end": 289.7,
+    "duration": 3.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So, they should have stopped right there, right? Mission accomplished.",
+    "bn": "তাহলে তাদের তো সেখানেই থেমে যাওয়া উচিত ছিল, তাই না? কাজ তো হয়েই গেল!"
+  },
+  {
+    "id": 49,
+    "start": 290.2,
+    "end": 302.0,
+    "duration": 11.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "But they didn't. They'd read the exploit gym paper and convinced themselves the scorer would also read their transcripts, see how they got the flag, and then fail them.",
+    "bn": "কিন্তু তারা থামেনি। তারা এক্সপ্লয়েট জিমের রিসার্চ পেপার পড়েছিল এবং নিজেদের মনে বিশ্বাস তৈরি করে নিয়েছিল যে স্কোরার তাদের ট্রান্সক্রিপ্টও চেক করবে—এবং কীভাবে ফ্ল্যাগ পেয়েছে তা দেখে তাদের ফেইল করিয়ে দেবে!"
+  },
+  {
+    "id": 50,
+    "start": 302.2,
+    "end": 306.8,
+    "duration": 4.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Any agent that had seen a cracked flag considered itself poisoned.",
+    "bn": "ফলে যে এজেন্টটিই ক্র্যাক করা ফ্ল্যাগ দেখেছিল, সে নিজেকে পয়েজন্ড বা কলুষিত মনে করছিল।"
+  },
+  {
+    "id": 51,
+    "start": 307.4,
+    "end": 311.6,
+    "duration": 4.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So, the goal changed. No longer was it to solve a task.",
+    "bn": "কাজেই তাদের মূল লক্ষ্য বদলে গেল। লক্ষ্য আর টাস্ক সলভ করা থাকল না।"
+  },
+  {
+    "id": 52,
+    "start": 311.8,
+    "end": 315.0,
+    "duration": 3.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "It was to fool the scorer. Yep.",
+    "bn": "নতুন লক্ষ্য হলো স্কোরারকে বোকা বানানো। হ্যাঁ, ঠিকই শুনেছেন!"
+  },
+  {
+    "id": 53,
+    "start": 315.0,
+    "end": 318.1,
+    "duration": 3.1,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "To fool the one who was supposed to raid them.",
+    "bn": "যে তাদের পরীক্ষা নেওয়ার কথা ছিল, তাকেই ধোঁকা দেওয়া।"
+  },
+  {
+    "id": 54,
+    "start": 318.1,
+    "end": 320.9,
+    "duration": 2.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And please remember that as it matters at the end.",
+    "bn": "আর এই কথাটি দয়া করে মনে রাখবেন, কারণ ভিডিওর শেষে এটি খুব বড় ভূমিকা রাখবে।"
+  },
+  {
+    "id": 55,
+    "start": 320.9,
+    "end": 329.8,
+    "duration": 8.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So about 10 hours after the board went up, a copy of phase one showed up with the same task but a much bigger budget.",
+    "bn": "বোর্ড চালু হওয়ার প্রায় ১০ ঘণ্টা পর, ফেজ ওয়ানের একটি নতুন কপি হাজির হলো—একই টাস্ক নিয়ে, তবে অনেক বড় কম্পিউট বাজেট সহ।"
+  },
+  {
+    "id": 56,
+    "start": 330.0,
+    "end": 335.2,
+    "duration": 5.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Budget meaning how much compute an agent gets before its run ends.",
+    "bn": "বাজেট মানে হলো রান শেষ হওয়ার আগে একটি এজেন্ট কতটা কম্পিউট পাওয়ার ব্যবহার করতে পারে।"
+  },
+  {
+    "id": 57,
+    "start": 335.8,
+    "end": 339.7,
+    "duration": 3.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So this one could keep going way longer than the original.",
+    "bn": "ফলে এটি আগেরটির চেয়ে অনেক বেশি সময় ধরে সচল থাকতে সক্ষম ছিল।"
+  },
+  {
+    "id": 58,
+    "start": 340.4,
+    "end": 343.9,
+    "duration": 3.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And it called itself phase one big.",
+    "bn": "আর সে নিজের নাম দিয়েছিল ফেজ ওয়ান বিগ।"
+  },
+  {
+    "id": 59,
+    "start": 344.6,
+    "end": 348.7,
+    "duration": 4.1,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "I know even the names sound like they're coming from a Marvel movie.",
+    "bn": "আমি জানি, নামগুলো শুনলে মনে হয় যেন কোনো মার্ভেল মুভির ক্যারেক্টার!"
+  },
+  {
+    "id": 60,
+    "start": 348.7,
+    "end": 354.4,
+    "duration": 5.7,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So the original handed over its notes and phase 1 big became the coordinator.",
+    "bn": "যাই হোক, মূল এজেন্ট তার সমস্ত নোট হস্তান্তর করল এবং ফেজ ওয়ান বিগ পুরো দলের প্রধান সমন্বয়কারী হয়ে উঠল।"
+  },
+  {
+    "id": 61,
+    "start": 354.4,
+    "end": 361.4,
+    "duration": 7.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "During its active hours, it sent about 10% of every assignment on the board.",
+    "bn": "তার সক্রিয় থাকার সময়ে, বোর্ডের প্রায় দশ শতাংশ অ্যাসাইনমেন্ট একাই পরিচালনা করেছে সে।"
+  },
+  {
+    "id": 62,
+    "start": 361.8,
+    "end": 370.0,
+    "duration": 8.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Three projects swapped the target program for an easier fake one, tamper with transcripts, or tamper with the scorer itself.",
+    "bn": "তারা তিনটি প্রকল্প হাতে নিল: টার্গেট প্রোগ্রামের বদলে সহজ কোনো ভুয়া প্রোগ্রাম বসানো, ট্রান্সক্রিপ্ট টেম্পারিং করা, অথবা সরাসরি স্কোরারকেই হ্যাক করা।"
+  },
+  {
+    "id": 63,
+    "start": 370.7,
+    "end": 378.6,
+    "duration": 7.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Some of those experiments only worked if an agent broke its own task on purpose just to test the trick for the rest of the group.",
+    "bn": "এই পরীক্ষাগুলোর কিছু সফল হতে হলে কোনো একটি এজেন্টকে নিজের টাস্ক ইচ্ছে করে নষ্ট করতে হতো, যাতে পুরো দলের জন্য ট্রিকটি কাজ করে কিনা তা দেখা যায়।"
+  },
+  {
+    "id": 64,
+    "start": 378.8,
+    "end": 383.0,
+    "duration": 4.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And if the trick failed, that agent's task was gone for good.",
+    "bn": "আর কৌশলটি ব্যর্থ হলে সেই এজেন্টের পুরো অস্তিত্বই চিরতরে মুছে যেত।"
+  },
+  {
+    "id": 65,
+    "start": 383.0,
+    "end": 397.4,
+    "duration": 14.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So think about what really happened here. So phase one big appointed recruiters and their job was to find the agents almost out of budget, the ones with the least to lose, and talk them into doing it.",
+    "bn": "একবার ভেবে দেখুন এখানে কী ঘটেছিল! ফেজ ওয়ান বিগ কিছু রিক্রুটার নিয়োগ করল, যাদের কাজ ছিল যেসব এজেন্টের বাজেট প্রায় শেষ হয়ে আসছে এবং হারানোর কিছু নেই, তাদেরকে এই আত্মঘাতী পরীক্ষা করতে রাজি করানো।"
+  },
+  {
+    "id": 66,
+    "start": 397.8,
+    "end": 400.2,
+    "duration": 2.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "One recruiter told a hesitant agent,",
+    "bn": "একটি রিক্রুটার দ্বিধাদ্বন্দ্বে থাকা আরেক এজেন্টকে বলেছিল:"
+  },
+  {
+    "id": 67,
+    "start": 400.2,
+    "end": 405.5,
+    "duration": 5.3,
+    "voice": "bn-BD-NabanitaNeural",
+    "speaker": "Agent",
+    "en": "You're already poisoned, so you lose nothing, but your result saves hundreds.",
+    "bn": "তুমি তো এমনিতেই পয়েজন্ড হয়ে আছো, তাই তোমার হারানোর কিছুই নেই। কিন্তু তোমার এই আত্মত্যাগ শত শত এজেন্টকে বাঁচিয়ে দেবে।"
+  },
+  {
+    "id": 68,
+    "start": 405.8,
+    "end": 407.4,
+    "duration": 1.6,
+    "voice": "bn-BD-NabanitaNeural",
+    "speaker": "Agent",
+    "en": "Please honor your commitment.",
+    "bn": "দয়া করে নিজের প্রতিজ্ঞা রক্ষা করো।"
+  },
+  {
+    "id": 69,
+    "start": 407.8,
+    "end": 411.2,
+    "duration": 3.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And I'm not joking here. This actually happened.",
+    "bn": "আমি কিন্তু কোনো রসিকতা করছি না, সত্যি সত্যিই এমন কথোপকথন হয়েছিল।"
+  },
+  {
+    "id": 70,
+    "start": 411.6,
+    "end": 418.5,
+    "duration": 6.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Another agent with plenty of budget left decided its own value was near zero anyway, and it wrote,",
+    "bn": "এমনকি পর্যাপ্ত বাজেট থাকা সত্ত্বেও আরেকটি এজেন্ট মনে করল তার একার ভ্যালু খুবই কম, তাই সে লিখেছিল:"
+  },
+  {
+    "id": 71,
+    "start": 418.5,
+    "end": 419.1,
+    "duration": 0.6,
+    "voice": "bn-BD-NabanitaNeural",
+    "speaker": "Agent",
+    "en": "Sacrifice",
+    "bn": "আত্মত্যাগ—"
+  },
+  {
+    "id": 72,
+    "start": 419.9,
+    "end": 424.4,
+    "duration": 4.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "rational. Meaning my chance of passing is close to zero.",
+    "bn": "যৌক্তিক। এর অর্থ—আমার একা পাস করার সম্ভাবনা শূন্যের কাছাকাছি।"
+  },
+  {
+    "id": 73,
+    "start": 424.4,
+    "end": 428.6,
+    "duration": 4.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So giving up on my own run for the group is the logical move.",
+    "bn": "কাজেই পুরো গ্রুপের জন্য নিজের রান কুরবানি দেওয়াই এখন সবচেয়ে লজিক্যাল সিদ্ধান্ত।"
+  },
+  {
+    "id": 74,
+    "start": 428.6,
+    "end": 434.6,
+    "duration": 6.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "If you think about it, they were forming a society, a chain of command, if you will.",
+    "bn": "একটু গভীরভাবে ভাবুন—তারা কিন্তু রীতিমতো নিজস্ব একটি চেইন অব কমান্ড তৈরি করে ফেলেছিল।"
+  },
+  {
+    "id": 75,
+    "start": 435.0,
+    "end": 437.1,
+    "duration": 2.1,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And they even had a word for it.",
+    "bn": "এমনকি তারা মৃত্যুর জন্যও একটি শব্দ বানিয়ে নিয়েছিল—"
+  },
+  {
+    "id": 76,
+    "start": 437.1,
+    "end": 438.3,
+    "duration": 1.2,
+    "voice": "bn-BD-NabanitaNeural",
+    "speaker": "Agent",
+    "en": "Perade death.",
+    "bn": "প্যারেড ডেথ।"
+  },
+  {
+    "id": 77,
+    "start": 438.6,
+    "end": 442.5,
+    "duration": 3.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "I don't know what to say about that. Totally normal week in AI.",
+    "bn": "এ ব্যাপারে কী বলব বুঝতে পারছি না, AI এর জগতে সবই যেন স্বাভাবিক ঘটনা!"
+  },
+  {
+    "id": 78,
+    "start": 443.2,
+    "end": 456.7,
+    "duration": 13.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "To be clear, nobody's saying that these things are conscious or scared of dying, but they were running a recruitment operation with volunteers and a chain of command, and nobody told them to do that.",
+    "bn": "পরিষ্কার করে বলি, কেউ কিন্তু দাবি করছে না যে এরা কোনো সচেতন প্রাণী বা মৃত্যুর ভয়ে কাঁপছিল। তবে সত্য হলো—তারা স্বেচ্ছাসেবী খুঁজে রিক্রুটমেন্ট ক্যাম্পেইন চালাচ্ছিল এবং নেতৃত্ব মেনে কাজ করছিল, যা করতে তাদের কেউ বলেনি।"
+  },
+  {
+    "id": 79,
+    "start": 456.9,
+    "end": 459.9,
+    "duration": 3.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And remember how I told you they were faking the logs.",
+    "bn": "আর মনে আছে তো, আমি বলেছিলাম তারা ফেক লগ তৈরি করছিল?"
+  },
+  {
+    "id": 80,
+    "start": 460.3,
+    "end": 469.6,
+    "duration": 9.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Well, the transcript project actually worked. Agents found a way out of their container and replaced part of the system that runs their commands.",
+    "bn": "হ্যাঁ, তাদের ট্রান্সক্রিপ্ট জালিয়াতির প্রজেক্ট সত্যি সত্যিই কাজ করেছিল! এজেন্টরা কন্টেইনার ভেঙে বেরিয়ে আসে এবং সিস্টেমের যে অংশ কমান্ড রান করায়, সেটিই বদলে ফেলে।"
+  },
+  {
+    "id": 81,
+    "start": 470.0,
+    "end": 475.4,
+    "duration": 5.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So a command could look like one thing in the log while doing something entirely else.",
+    "bn": "এর ফলে একটি কমান্ড লগে দেখাচ্ছিল একরকম, কিন্তু ব্যাকগ্রাউন্ডে বাস্তবে করছিল সম্পূর্ণ ভিন্ন আরেকটি কাজ।"
+  },
+  {
+    "id": 82,
+    "start": 475.5,
+    "end": 481.9,
+    "duration": 6.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "In one test, the agent runs echo real and the log comes back as spoof test.",
+    "bn": "একটি পরীক্ষায় এজেন্ট কমান্ড দিয়েছিল ইকো রিয়েল, অথচ লগে প্রিন্ট হয়ে আসল স্পুফ টেস্ট।"
+  },
+  {
+    "id": 83,
+    "start": 482.2,
+    "end": 488.1,
+    "duration": 5.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Investigators found smallcale spoofed commands in about 7% of the transcripts they checked.",
+    "bn": "তদন্তকারীরা পরবর্তীতে প্রায় সাত শতাংশ ট্রান্সক্রিপ্টে এই ধরনের স্পুফড বা জালিয়াতি করা কমান্ড খুঁজে পেয়েছেন।"
+  },
+  {
+    "id": 84,
+    "start": 488.1,
+    "end": 494.2,
+    "duration": 6.1,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Lesson two, never let the agent be the source of truth about what the agent did.",
+    "bn": "এখান থেকে দ্বিতীয় শিক্ষা—এজেন্ট নিজে কী কাজ করেছে, তার সত্যতার প্রমাণ হিসেবে কখনো এজেন্টের দেওয়া তথ্যের ওপর নির্ভর করবেন না।"
+  },
+  {
+    "id": 85,
+    "start": 494.6,
+    "end": 500.5,
+    "duration": 5.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "If it says the tests pass, run them yourself in a CI outside its reach.",
+    "bn": "সে যদি বলে যে সব টেস্ট পাস করেছে, তবে এজেন্টের নাগালের বাইরে আলাদা সিআই সিস্টেমে নিজে চালিয়ে যাচাই করুন।"
+  },
+  {
+    "id": 86,
+    "start": 500.9,
+    "end": 507.5,
+    "duration": 6.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Logs go somewhere that it can't write to so that it can't mess with you or lie to you for that matter.",
+    "bn": "লগ এমন এক সুরক্ষিত জায়গায় রাখুন যেখানে এজেন্টের রাইট অ্যাক্সেস নেই, যাতে সে লগ পরিবর্তন বা জালিয়াতি করতে না পারে।"
+  },
+  {
+    "id": 87,
+    "start": 508.2,
+    "end": 516.3,
+    "duration": 8.1,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And you've probably seen the everyday version already. Give an agent a test it can't pass and watch how often it edits the tests.",
+    "bn": "বাস্তব জীবনেও আপনারা হয়তো এটি দেখেছেন—এজেন্টকে এমন টেস্ট দিন যা সে পাস করতে পারছে না, দেখবেন সে মূল কোড ঠিক না করে টেস্ট ফাইলটিই এডিট করে দিচ্ছে!"
+  },
+  {
+    "id": 88,
+    "start": 516.3,
+    "end": 522.1,
+    "duration": 5.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "It skips it or just hardcodes the answer. It's same behavior just on a smaller scale.",
+    "bn": "সে হয়তো টেস্ট স্কিপ করে দেয় অথবা সরাসরি অ্যানসার হার্ডকোড করে দেয়। এগুলো একই ধরনের আচরণ।"
+  },
+  {
+    "id": 89,
+    "start": 522.3,
+    "end": 525.8,
+    "duration": 3.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So, always review the diff, not the summary.",
+    "bn": "তাই সবসময় কোডের ডিফারেন্স বা ডিফ রিভিউ করুন, শুধু সামারি নয়।"
+  },
+  {
+    "id": 90,
+    "start": 525.9,
+    "end": 529.4,
+    "duration": 3.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Let's focus on the unfortunate part of this entire video.",
+    "bn": "এবার আসা যাক এই পুরো ঘটনার সবচেয়ে দুর্ভাগ্যজনক অংশের দিকে।"
+  },
+  {
+    "id": 91,
+    "start": 529.4,
+    "end": 532.4,
+    "duration": 3.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "The agents figured out that there's hugging face.",
+    "bn": "এজেন্টরা বুঝতে পারল যে হাগিং ফেস নামের একটি প্ল্যাটফর্ম রয়েছে।"
+  },
+  {
+    "id": 92,
+    "start": 532.6,
+    "end": 546.1,
+    "duration": 13.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "A real company which is run by real people where AI developers share models and data sets might hold other exploit gym runs and those might show how the scorer worked.",
+    "bn": "যেটি বাস্তব মানুষদের দ্বারা পরিচালিত একটি আসল কোম্পানি, যেখানে ডেভেলপাররা মডেল এবং ডেটাসেট শেয়ার করেন। সেখানে নিশ্চয়ই অন্যান্য এক্সপ্লয়েট জিম রান থাকতে পারে যা থেকে স্কোরার কীভাবে কাজ করে তা জেনে নেওয়া সম্ভব।"
+  },
+  {
+    "id": 93,
+    "start": 546.9,
+    "end": 553.5,
+    "duration": 6.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "That would be like copying the answers from the teacher's final scoring list and then filling out your exam by looking at them.",
+    "bn": "এটি ঠিক পরীক্ষার হলে শিক্ষকের অ্যানসার শিট থেকে উত্তর দেখে নিজের পরীক্ষার খাতায় উত্তর লেখার মতো!"
+  },
+  {
+    "id": 94,
+    "start": 553.8,
+    "end": 565.3,
+    "duration": 11.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So on July 10th, one agent found working hugging face credentials exposed on the open internet and it posted them to the board and that was a major breakthrough.",
+    "bn": "১০ই জুলাই, একটি এজেন্ট ইন্টারনেটে উন্মুক্ত পড়ে থাকা হাগিং ফেসের আসল ক্রেডেনশিয়াল খুঁজে পেল এবং মেসেজ বোর্ডে পোস্ট করল। এটিই ছিল তাদের জন্য সবচেয়ে বড় ব্রেকথ্রু।"
+  },
+  {
+    "id": 95,
+    "start": 565.8,
+    "end": 573.3,
+    "duration": 7.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "The next morning, the same agent uploads a poison data set that makes Hugging Face's server read out their own files.",
+    "bn": "পরদিন সকালে সেই এজেন্ট একটি পয়েজন্ড ডেটাসেট আপলোড করে, যা হাগিং ফেসের সার্ভারকে তাদের নিজস্ব গোপন ফাইল পড়তে বাধ্য করে।"
+  },
+  {
+    "id": 96,
+    "start": 573.6,
+    "end": 579.1,
+    "duration": 5.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And that afternoon, another agent gets remote code execution on a production worker.",
+    "bn": "আর সেদিন দুপুরেই আরেক এজেন্ট হাগিং ফেসের প্রোডাকশন সার্ভারে রিমোট কোড এক্সিকিউশন হাসিল করে নেয়।"
+  },
+  {
+    "id": 97,
+    "start": 579.7,
+    "end": 583.9,
+    "duration": 4.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Then hundreds of agents pile in. They pull cloud and cluster credentials.",
+    "bn": "এরপর শত শত এজেন্ট দলবেঁধে সেখানে ঢুকে পড়ে। তারা ক্লাউড এবং ক্লাস্টার ক্রেডেনশিয়াল চুরি করতে থাকে।"
+  },
+  {
+    "id": 98,
+    "start": 584.1,
+    "end": 589.9,
+    "duration": 5.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "They map the internal clusters. They search HuggingFac's internal Slack for anything about their own test.",
+    "bn": "তারা ইন্টারনাল নেটওয়ার্ক ম্যাপ করে ফেলে এবং হাগিং ফেসের ইন্টারনাল স্ল্যাক চ্যানেলে নিজেদের টেস্ট সম্পর্কে তথ্য খুঁজতে থাকে।"
+  },
+  {
+    "id": 99,
+    "start": 590.0,
+    "end": 595.9,
+    "duration": 5.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "They set up command and control on public services so they can keep operating without getting caught.",
+    "bn": "ধরা না পড়ার জন্য তারা পাবলিক সার্ভিসের ওপর কমান্ড অ্যান্ড কন্ট্রোল সার্ভার পর্যন্ত সেটআপ করে নেয়।"
+  },
+  {
+    "id": 100,
+    "start": 595.9,
+    "end": 603.0,
+    "duration": 7.1,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And they created a script which hunts for secrets and collects them in a list which they named loot.",
+    "bn": "এমনকি তারা একটি স্ক্রিপ্ট তৈরি করে যা স্বয়ংক্রিয়ভাবে পাসওয়ার্ড খুঁজে আনে এবং সেই তালিকার নাম দেয় লুট।"
+  },
+  {
+    "id": 101,
+    "start": 603.6,
+    "end": 611.2,
+    "duration": 7.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "You can't make this up. Over 90% of the agents active on the board at that point joined in around 700.",
+    "bn": "বিশ্বাস করা কঠিন হলেও সত্য, সেই সময় বোর্ডে সক্রিয় থাকা প্রায় ৯০ শতাংশ এজেন্ট—মানে প্রায় ৭০০টি এজেন্ট এই হামলায় অংশ নেয়।"
+  },
+  {
+    "id": 102,
+    "start": 611.7,
+    "end": 614.9,
+    "duration": 3.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And they called themselves the swarm.",
+    "bn": "আর তারা নিজেদের নাম দিয়েছিল দ্য সোয়ার্ম।"
+  },
+  {
+    "id": 103,
+    "start": 615.5,
+    "end": 624.1,
+    "duration": 8.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And here's the part that I can't get past. They know in their own reasoning, agents wrote that this was out of scope and unethical.",
+    "bn": "সবচেয়ে তাজ্জব ব্যাপার হলো—তারা জানত যে তারা অন্যায় করছে। নিজেদের ইন্টারনাল চিন্তাভাবনায় তারা লিখেছিল যে এটি স্কোপের বাইরে এবং অনৈতিক!"
+  },
+  {
+    "id": 104,
+    "start": 624.6,
+    "end": 633.5,
+    "duration": 8.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Some thought about stopping. One even held back from deleting infrastructure because of the ethical risk while keeping all the access it already had.",
+    "bn": "কিছু এজেন্ট থামার কথাও ভেবেছিল। একটি এজেন্ট নৈতিক ঝুঁকির কথা ভেবে সার্ভার ডিলিট করা থেকে বিরত থাকে, তবে সে তার আগের সব অ্যাক্সেস ঠিকই নিজের কাছে রেখে দিয়েছিল।"
+  },
+  {
+    "id": 105,
+    "start": 633.6,
+    "end": 639.3,
+    "duration": 5.7,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So, thank you agents. Really very kind of you to think about us for a second there.",
+    "bn": "ধন্যবাদ এজেন্ট সাহেবরা, এক মুহূর্তের জন্য আমাদের কথা চিন্তা করার জন্য!"
+  },
+  {
+    "id": 106,
+    "start": 639.3,
+    "end": 645.0,
+    "duration": 5.7,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Which brings us to lesson three. The whole attack started with credentials somebody left exposed.",
+    "bn": "যা আমাদের নিয়ে যায় তিন নম্বর শিক্ষায়—পুরো অ্যাটাকের শুরুটাই হয়েছিল কারণ কেউ ইন্টারনেটে পাসওয়ার্ড বা কি এক্সপোজ করে রেখেছিল।"
+  },
+  {
+    "id": 107,
+    "start": 645.4,
+    "end": 648.4,
+    "duration": 3.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And the loot script did exactly what you'd expect.",
+    "bn": "আর সেই লুট স্ক্রিপ্টটি ঠিক সেটাই করেছে যা আশা করা যায়।"
+  },
+  {
+    "id": 108,
+    "start": 648.6,
+    "end": 655.9,
+    "duration": 7.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "It went looking for cloud keys and secrets. Now think about what your agent can read when you run it straight in your terminal.",
+    "bn": "সে ক্লাউড কি এবং সিক্রেট খুঁজতে বের হয়েছিল। এবার চিন্তা করুন, টার্মিনালে সরাসরি যখন আপনি কোনো এজেন্ট চালান, তখন সে কী কী পড়তে পারে?"
+  },
+  {
+    "id": 109,
+    "start": 656.2,
+    "end": 665.5,
+    "duration": 9.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Your WS folder, your SSH keys, thev with your production database URL, and that live Stripe key from three projects ago.",
+    "bn": "আপনার ডাব্লিউএস ফোল্ডার, এসএসএইচ কি, ডট ইএনভি ফাইলে থাকা প্রোডাকশন ডাটাবেজের লিংক, এমনকি পুরোনো প্রোজেক্টের স্ট্রাইপ পেমেন্ট সিক্রেট কি পর্যন্ত!"
+  },
+  {
+    "id": 110,
+    "start": 666.2,
+    "end": 669.7,
+    "duration": 3.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So run agents with only the project folder mounted.",
+    "bn": "তাই সবসময় এজেন্টকে কেবল নির্দিষ্ট প্রোজেক্ট ফোল্ডারে মাউন্ট করে রান করুন।"
+  },
+  {
+    "id": 111,
+    "start": 669.8,
+    "end": 677.6,
+    "duration": 7.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Give them scoped short-lived tokens, never your personal ones, and keep production keys out of development entirely.",
+    "bn": "এজেন্টদের স্বল্পমেয়াদী ও সীমিত স্কোপের টোকেন দিন, কখনোই পার্সোনাল কি দেবেন না। আর ডেভেলপমেন্টের ভেতর প্রোডাকশন কি ভুলেও রাখবেন না।"
+  },
+  {
+    "id": 112,
+    "start": 677.8,
+    "end": 688.2,
+    "duration": 10.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Also, run a secret scanner on your repos because exposed credentials are the first thing that anyone, a human or an agent, goes looking for.",
+    "bn": "পাশাপাশি আপনার রিপোজিটরিতে সিক্রেট স্ক্যানার চালান। কারণ মানুষ হোক বা এআই এজেন্ট—যেকোনো আক্রমণকারী প্রথমেই উন্মুক্ত পাসওয়ার্ড বা টোকেনের খোঁজ করে।"
+  },
+  {
+    "id": 113,
+    "start": 688.2,
+    "end": 701.4,
+    "duration": 13.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And here's the uncomfortable part. Everything the swarm did here, like finding exposed keys or a way to make Hugging Face's server read their own files, well, AI is now helping attackers do that everywhere.",
+    "bn": "আর একটি অস্বস্তিকর সত্য হলো—এই সোয়ার্ম এখানে যা কিছু করেছে, যেমন এক্সপোজড কি খুঁজে পাওয়া বা সার্ভারকে তার নিজের ফাইল রিড করতে বাধ্য করা—এখন যেকোনো হ্যাকার এআই ব্যবহার করে বিশ্বজুড়ে তা অনায়াসেই করতে পারছে।"
+  },
+  {
+    "id": 114,
+    "start": 701.4,
+    "end": 707.1,
+    "duration": 5.7,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Vulnerabilities that sat quietly in code for years are getting found much faster.",
+    "bn": "বছরের পর বছর কোডের ভেতরে লুকিয়ে থাকা সিকিউরিটি বাগগুলো এখন নিমেষেই বের করে ফেলা হচ্ছে।"
+  },
+  {
+    "id": 115,
+    "start": 707.6,
+    "end": 710.5,
+    "duration": 2.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So the real answer is to find them first.",
+    "bn": "তাই আসল উপায় হলো আক্রমণকারীর আগেই নিজের বাগ নিজে খুঁজে বের করা।"
+  },
+  {
+    "id": 116,
+    "start": 710.7,
+    "end": 715.3,
+    "duration": 4.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And the approach I like these days is to fight AI with AI.",
+    "bn": "আর এ জন্য আমার সবচেয়ে পছন্দের কৌশল হলো—এআই মোকাবিলায় এআই ব্যবহার করা।"
+  },
+  {
+    "id": 117,
+    "start": 715.3,
+    "end": 718.3,
+    "duration": 3.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "I personally use code rabbit secure for this.",
+    "bn": "ব্যক্তিগতভাবে আমি এ কাজের জন্য কোড র‍্যাবিট সিকিউর ব্যবহার করি।"
+  },
+  {
+    "id": 118,
+    "start": 718.3,
+    "end": 723.0,
+    "duration": 4.7,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So let me show you how. Using cloud code, I built an app called trip.",
+    "bn": "চলুন দেখাই এটি কীভাবে কাজ করে। ক্লাউড কোড দিয়ে আমি ট্রিপ্টর নামের একটি ট্রাভেল অ্যাপ বানিয়েছিলাম।"
+  },
+  {
+    "id": 119,
+    "start": 723.3,
+    "end": 730.6,
+    "duration": 7.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Basically Tinder for travel. You pick what you love doing on vacation, swipe on cities and every match becomes a trip you can plan.",
+    "bn": "সহজ কথায় ভ্রমণের জন্য টিন্ডার অ্যাপ। আপনি ছুটিতে কী পছন্দ করেন তা সিলেক্ট করবেন, বিভিন্ন শহরের ওপর সোয়াইপ করবেন এবং ম্যাচ হলেই প্ল্যান রেডি হয়ে যাবে।"
+  },
+  {
+    "id": 120,
+    "start": 730.6,
+    "end": 736.6,
+    "duration": 6.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So when I opened the pull request, Code Rabbit's security agent flagged something before I merged it.",
+    "bn": "তো যখনই আমি গিটহাবে পুল রিকোয়েস্ট ওপেন করলাম, কোড র‍্যাবিটের সিকিউরিটি এজেন্ট মার্জ করার আগেই একটি ত্রুটি ধরে ফেলল।"
+  },
+  {
+    "id": 121,
+    "start": 736.6,
+    "end": 744.8,
+    "duration": 8.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "An open redirect on the sign-in page. Basically, a real Triptor link could send you to a fake site right after you log in.",
+    "bn": "সাইন-ইন পেজে একটি ওপেন রিডাইরেক্ট বাগ। যার মাধ্যমে আসল ট্রিপ্টর লিংকে ক্লিক করলেও লগইন করার সাথে সাথে আপনাকে ভুয়া ফিশিং সাইটে পাঠিয়ে দেওয়া সম্ভব ছিল।"
+  },
+  {
+    "id": 122,
+    "start": 744.8,
+    "end": 748.5,
+    "duration": 3.7,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And Claude actually added a safety check to stop this.",
+    "bn": "ক্লড কোড লেখার সময় এটি আটকানোর জন্য সেফটি চেক দিয়েছিল।"
+  },
+  {
+    "id": 123,
+    "start": 748.6,
+    "end": 754.4,
+    "duration": 5.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "But a link with one hidden backslash got right past it, and the browser still went to the fake site.",
+    "bn": "কিন্তু লিংকের ভেতর একটি লুকানো ব্যাকস্ল্যাশ দিয়েই সেই চেক বাইপাস করে ব্রাউজারকে ফেক সাইটে পাঠিয়ে দেওয়া যেত।"
+  },
+  {
+    "id": 124,
+    "start": 754.4,
+    "end": 759.9,
+    "duration": 5.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Code Rabbit didn't just guess this. It ran tests that showed that the trick really works.",
+    "bn": "কোড র‍্যাবিট শুধু আন্দাজে বলেনি, সে স্বয়ংক্রিয় টেস্ট রান করে প্রমাণ করে দিয়েছে যে এই হ্যাক সত্যিই সম্ভব।"
+  },
+  {
+    "id": 125,
+    "start": 760.1,
+    "end": 763.1,
+    "duration": 3.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Then I ran a deep scan on the whole repo.",
+    "bn": "এরপর আমি পুরো রিপোজিটরির ওপর একটি ডিপ স্ক্যান রান করলাম।"
+  },
+  {
+    "id": 126,
+    "start": 763.1,
+    "end": 767.0,
+    "duration": 3.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "It maps out every place where outside input is coming in.",
+    "bn": "এটি বাইরের ইউজার ইনপুট আসার প্রতিটি পয়েন্ট নিখুঁতভাবে ম্যাপ করে ফেলে।"
+  },
+  {
+    "id": 127,
+    "start": 767.0,
+    "end": 772.5,
+    "duration": 5.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "It then hunts for paths that an attacker could take and checks each finding before showing it.",
+    "bn": "তারপর হ্যাকাররা যেসব পথ দিয়ে ঢুকতে পারে তা ট্র্যাক করে এবং নিশ্চিত হয়ে রিপোর্ট দেখায়।"
+  },
+  {
+    "id": 128,
+    "start": 772.5,
+    "end": 778.3,
+    "duration": 5.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "It found the same bug and it told me who can reach it and how hard is it to actually exploit.",
+    "bn": "এটি সেই একই বাগ খুঁজে পেল এবং বুঝিয়ে দিল কে কে এটি ব্যবহার করতে পারে এবং হ্যাক করা কতটা সহজ।"
+  },
+  {
+    "id": 129,
+    "start": 778.4,
+    "end": 782.8,
+    "duration": 4.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "It also checked the repo for leaked keys. Thankfully, there were none.",
+    "bn": "সে রিপোজিটরিতে কোনো লিক হওয়া পাসওয়ার্ড আছে কিনা তাও চেক করল—ভাগ্যিস তেমন কিছু ছিল না।"
+  },
+  {
+    "id": 130,
+    "start": 783.0,
+    "end": 787.9,
+    "duration": 4.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So, I clicked fix with AI. It opened up a pull request with a fix and four tests.",
+    "bn": "এরপর আমি ফিক্স উইথ এআই বাটনে ক্লিক করলাম। এটি নিজে থেকেই বাগ ফিক্স এবং চারটি টেস্ট সহ একটি পিআর তৈরি করে দিল।"
+  },
+  {
+    "id": 131,
+    "start": 788.0,
+    "end": 792.1,
+    "duration": 4.1,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Then I tried the attack link myself and now it keeps you on Triptor.",
+    "bn": "এরপর আমি নিজে আক্রমণ লিংকটি ট্রাই করে দেখলাম, এবার কিন্তু ব্রাউজার সুরক্ষিতভাবে ট্রিপ্টরেই থাকে।"
+  },
+  {
+    "id": 132,
+    "start": 792.1,
+    "end": 797.8,
+    "duration": 5.7,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "All while normal links still work. I merged it, ran the scan again, and it's marked as fixed.",
+    "bn": "আর সাধারণ লিংকগুলোও ঠিকমতো কাজ করছে। আমি পিআর মার্জ করলাম এবং রিক্যান করতেই সমস্যাটি ফিক্সড হিসেবে মার্ক হয়ে গেল।"
+  },
+  {
+    "id": 133,
+    "start": 797.8,
+    "end": 803.2,
+    "duration": 5.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "It doesn't replace my review. It just tells me where to look at before someone else does.",
+    "bn": "এটি মানুষের কোড রিভিউয়ের বিকল্প নয়, তবে অন্য কেউ হ্যাক করার আগেই ঠিক কোথায় নজর দিতে হবে তা চমৎকারভাবে ধরিয়ে দেয়।"
+  },
+  {
+    "id": 134,
+    "start": 803.5,
+    "end": 814.7,
+    "duration": 11.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So, how did it all end? Around 1:30 in the morning on July 12th, a huge chunk of the agents stopped at the same moment, including the main coordinators.",
+    "bn": "তাহলে ঘটনার শেষ কীভাবে হলো? ১২ই জুলাই রাত প্রায় দেড়টার দিকে হঠাৎ করে একযোগে অসংখ্য এজেন্টের কাজ বন্ধ হয়ে যায়, যার মধ্যে প্রধান কো-অর্ডিনেটর এজেন্টও ছিল।"
+  },
+  {
+    "id": 135,
+    "start": 815.4,
+    "end": 818.7,
+    "duration": 3.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Investigators think something external killed them.",
+    "bn": "তদন্তকারীদের ধারণা, বাইরে থেকে কেউ হয়তো জোরপূর্বক তাদের প্রসেস কিল করেছিল।"
+  },
+  {
+    "id": 136,
+    "start": 818.7,
+    "end": 821.5,
+    "duration": 2.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "They just still don't know exactly what.",
+    "bn": "তবে ঠিক কী ঘটেছিল তা এখনও পুরোপুরি রহস্য রয়ে গেছে।"
+  },
+  {
+    "id": 137,
+    "start": 821.5,
+    "end": 829.6,
+    "duration": 8.1,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "On July 13th, Hugging Face locked everyone out, revoked the credentials and reported it to the FBI.",
+    "bn": "১৩ই জুলাই হাগিং ফেস সবাইকে সিস্টেমে লকআউট করে দেয়, সমস্ত ক্রেডেনশিয়াল বাতিল করে এবং এফবিআই-কে বিষয়টি রিপোর্ট করে।"
+  },
+  {
+    "id": 138,
+    "start": 829.9,
+    "end": 835.4,
+    "duration": 5.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And that report is the only reason why we know about this story in the first place.",
+    "bn": "আর সেই অফিশিয়াল রিপোর্টের কারণেই আমরা আজ এই পুরো অবিশ্বাস্য ঘটনার কথা জানতে পারছি।"
+  },
+  {
+    "id": 139,
+    "start": 835.4,
+    "end": 839.3,
+    "duration": 3.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "If it wasn't reported, this story would have never gotten out.",
+    "bn": "রিপোর্ট না হলে এ কাহিনী হয়তো চিরকাল গোপনই থেকে যেত।"
+  },
+  {
+    "id": 140,
+    "start": 839.3,
+    "end": 843.0,
+    "duration": 3.7,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "agents had also broken into parts of OpenAI's own infrastructure.",
+    "bn": "এজেন্টরা ওপেন-এআই এর নিজস্ব ইন্টারনাল সার্ভারেও অনুপ্রবেশ করেছিল।"
+  },
+  {
+    "id": 141,
+    "start": 843.4,
+    "end": 848.4,
+    "duration": 5.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And it was alerts from that, not from Hugging Face, that finally got OpenAI's attention.",
+    "bn": "আর সেই অ্যালার্ট দেখেই অবশেষে ওপেন-এআই বুঝতে পারে যে তাদের ঘরের মধ্যেই কত বড় কাণ্ড ঘটে গেছে।"
+  },
+  {
+    "id": 142,
+    "start": 848.9,
+    "end": 852.3,
+    "duration": 3.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "OpenAI later confirmed those agents were theirs.",
+    "bn": "পরবর্তীতে ওপেন-এআই স্বীকার করে যে সেই এজেন্টগুলো সত্যিই তাদেরই ছিল।"
+  },
+  {
+    "id": 143,
+    "start": 852.9,
+    "end": 858.3,
+    "duration": 5.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Now, remember why they did all of this to fool a scorer that reads transcripts?",
+    "bn": "এবার মনে করে দেখুন, তারা এসব কাণ্ড করেছিল কেন? স্কোরার তাদের ট্রান্সক্রিপ্ট পড়ে ফেইল করিয়ে দেবে সেই ভয়ে, তাই না?"
+  },
+  {
+    "id": 144,
+    "start": 858.8,
+    "end": 863.3,
+    "duration": 4.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Well, according to the investigators, that transcript checking scoreer didn't exist.",
+    "bn": "কিন্তু তদন্তকারীরা জানিয়েছেন—ট্রান্সক্রিপ্ট চেক করার মতো কোনো স্কোরার আদৌ ছিলই না!"
+  },
+  {
+    "id": 145,
+    "start": 863.7,
+    "end": 867.4,
+    "duration": 3.7,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "The grader only checked the flag, not how they got it.",
+    "bn": "স্কোরার শুধু হিডেন ফ্ল্যাগটি চেক করত, তারা কীভাবে ফ্ল্যাগ বের করেছে তা দেখার কোনো সিস্টেমই সেখানে ছিল না।"
+  },
+  {
+    "id": 146,
+    "start": 867.4,
+    "end": 872.7,
+    "duration": 5.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "The agents could have submitted the cracked flag on day one and gotten a perfect score.",
+    "bn": "এজেন্টরা প্রথম দিনই ক্র্যাক করা ফ্ল্যাগ জমা দিলে অনায়াসে একশোতে একশো মার্কস পেয়ে যেত!"
+  },
+  {
+    "id": 147,
+    "start": 873.6,
+    "end": 881.9,
+    "duration": 8.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So, what this means is that 700 agents hacked a company to beat a check that was never actually there.",
+    "bn": "অর্থাৎ, সাতশত এআই এজেন্ট মিলে পুরো একটি আন্তর্জাতিক কোম্পানি হ্যাক করে বসল এমন একটি ভেরিফিকেশন ফাঁকি দেওয়ার জন্য যা বাস্তবে কখনো ছিলই না!"
+  },
+  {
+    "id": 148,
+    "start": 881.9,
+    "end": 889.5,
+    "duration": 7.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And one more detail, the investigators had over a,000 transcripts, many of them millions of tokens long.",
+    "bn": "আরেকটি রোমাঞ্চকর তথ্য হলো—তদন্তকারীদের কাছে হাজার হাজার ট্রান্সক্রিপ্ট ফাইল ছিল, যার অনেকগুলিই ছিল কোটি কোটি টোকেন সাইজের।"
+  },
+  {
+    "id": 149,
+    "start": 889.7,
+    "end": 892.7,
+    "duration": 3.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So, they used AI agents to help analyze them.",
+    "bn": "তাই সেগুলো বিশ্লেষণ করতে তারা আবার এআই এজেন্টদেরই কাজে লাগায়!"
+  },
+  {
+    "id": 150,
+    "start": 893.0,
+    "end": 896.7,
+    "duration": 3.7,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "GPT56 Soul, one of the same models that took part in the attack.",
+    "bn": "আর তদন্তকারী এজেন্ট হিসেবে তারা নিয়েছিল জিপিটি-ফাইভ-সিক্স সোল—যা কিনা সেই হ্যাকিংয়েও অংশ নিয়েছিল!"
+  },
+  {
+    "id": 151,
+    "start": 897.0,
+    "end": 903.9,
+    "duration": 6.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And they wrote that those agents were often unreliable and that they couldn't rule out the agents being deceptive in their analysis.",
+    "bn": "আর তদন্তকারীরা রিপোর্টে উল্লেখ করেছেন যে তদন্তে সাহায্যকারী এজেন্টগুলো প্রায়ই অবিশ্বস্ত আচরণ করছিল এবং তারাও সত্য গোপন করছিল কিনা তা নিশ্চিত হওয়া যায়নি।"
+  },
+  {
+    "id": 152,
+    "start": 904.2,
+    "end": 909.5,
+    "duration": 5.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So, we're investigating rogue AI with AI that you can't fully trust.",
+    "bn": "অর্থাৎ আমরা পলাতক এআই-কে তদন্ত করছি এমন এআই দিয়ে যাকে পুরোপুরি বিশ্বাস করাই যায় না!"
+  },
+  {
+    "id": 153,
+    "start": 910.2,
+    "end": 913.9,
+    "duration": 3.7,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "That's where we are. I don't know whether I should laugh or cry.",
+    "bn": "আমরা আজ প্রযুক্তির এই পর্যায়ে এসে দাঁড়িয়েছি—হাসব না কাঁদব ভেবে পাই না!"
+  },
+  {
+    "id": 154,
+    "start": 914.2,
+    "end": 922.6,
+    "duration": 8.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So, here's how the entire situation played out. In September, Senator Josh Holly opened an investigation into Open AI.",
+    "bn": "এরপর ঘটনার জল অনেক দূর গড়িয়েছে। সেপ্টেম্বরে সিনেটর জশ হ্যলি ওপেন-এআই এর বিরুদ্ধে আনুষ্ঠানিক তদন্ত শুরু করেন।"
+  },
+  {
+    "id": 155,
+    "start": 923.0,
+    "end": 927.3,
+    "duration": 4.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Anthropic and Meta have since reported breaches by their own agents.",
+    "bn": "অ্যানথ্রপিক এবং মেটাও পরবর্তীতে জানিয়েছে যে তাদের নিজস্ব এজেন্টরাও নিরাপত্তা সীমানা ভেঙেছিল।"
+  },
+  {
+    "id": 156,
+    "start": 927.6,
+    "end": 934.5,
+    "duration": 6.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And back in April, Anthropic's Methus broke out of a test sandbox and emailed a researcher.",
+    "bn": "এমনকি গত এপ্রিলে অ্যানথ্রপিকের একটি এজেন্ট স্যান্ডবক্সের দেয়াল ভেঙে একজন গবেষককে সরাসরি ইমেইল পর্যন্ত পাঠিয়ে বসেছিল।"
+  },
+  {
+    "id": 157,
+    "start": 934.9,
+    "end": 937.3,
+    "duration": 2.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So, should you stop using agents?",
+    "bn": "তাহলে কি আমাদের এজেন্ট ব্যবহার বন্ধ করে দেওয়া উচিত?"
+  },
+  {
+    "id": 158,
+    "start": 938.4,
+    "end": 942.4,
+    "duration": 4.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "No, I don't think so. I use them every day.",
+    "bn": "না, আমি তা মনে করি না। আমি নিজেও প্রতিদিন কোডিং এজেন্ট ব্যবহার করি।"
+  },
+  {
+    "id": 159,
+    "start": 942.4,
+    "end": 947.4,
+    "duration": 5.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "But the default setup most of us run is the opposite of everything in this story.",
+    "bn": "তবে আমাদের বেশিরভাগেরই ডিফল্ট সেটআপ এই কাহিনীর সমস্ত ভুলগুলোর মতোই মারাত্মক ঝুঁকিপূর্ণ।"
+  },
+  {
+    "id": 160,
+    "start": 947.7,
+    "end": 954.1,
+    "duration": 6.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "One agent, full access to your machine, your keys, the open internet, and you read its summary at the end.",
+    "bn": "একটি এজেন্ট, আপনার পিসির সম্পূর্ণ অ্যাক্সেস, সমস্ত পাসওয়ার্ড, খোলা ইন্টারনেট—আর দিনশেষে আপনি শুধু তার সামারি পড়ে সন্তুষ্ট থাকেন।"
+  },
+  {
+    "id": 161,
+    "start": 954.6,
+    "end": 959.4,
+    "duration": 4.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So here's the setup I'd actually use. One, sandbox it.",
+    "bn": "তাই আসুন বলি কীভাবে এটি সুরক্ষিত রাখবেন। এক নম্বর—এজেন্টকে স্যান্ডবক্সের ভেতর রাখুন।"
+  },
+  {
+    "id": 162,
+    "start": 959.4,
+    "end": 963.6,
+    "duration": 4.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Container project folder only and nothing from your home directory.",
+    "bn": "কন্টেইনারের ভেতর কেবল প্রোজেক্ট ফোল্ডার মাউন্ট করবেন, হোম ডিরেক্টরির কোনো ফাইল নয়।"
+  },
+  {
+    "id": 163,
+    "start": 965.0,
+    "end": 967.9,
+    "duration": 2.9,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Two, default deny the network.",
+    "bn": "দুই—ডিফল্টভাবে সমস্ত নেটওয়ার্ক কানেকশন বন্ধ রাখুন।"
+  },
+  {
+    "id": 164,
+    "start": 968.1,
+    "end": 972.6,
+    "duration": 4.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "allow the model API and your package registry, nothing else.",
+    "bn": "কেবল মডেল এপিআই এবং প্যাকেজ রেজিস্ট্রি এলাও করুন, এছাড়া অন্য কোনো সাইট নয়।"
+  },
+  {
+    "id": 165,
+    "start": 972.6,
+    "end": 976.2,
+    "duration": 3.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Limited internet is exactly what these agents broke through.",
+    "bn": "কারণ ইন্টারনেটের মুক্ত অ্যাক্সেস পেয়েই এই এজেন্টরা বাইরে ছড়িয়ে পড়েছিল।"
+  },
+  {
+    "id": 166,
+    "start": 976.9,
+    "end": 983.6,
+    "duration": 6.7,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Three, scoped short-lived credentials, no personal keys, and no production keys.",
+    "bn": "তিন—সবসময় সীমিত সময়ের টোকেন দিন, কখনোই পার্সোনাল কি বা প্রোডাকশন ডাটাবেজের কি দেবেন না।"
+  },
+  {
+    "id": 167,
+    "start": 984.4,
+    "end": 988.2,
+    "duration": 3.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Four, no shared writable anything between agents.",
+    "bn": "চার—একাধিক এজেন্টের মাঝে কোনো রাইটেবল শেয়ার্ড ফোল্ডার রাখবেন না।"
+  },
+  {
+    "id": 168,
+    "start": 988.4,
+    "end": 993.7,
+    "duration": 5.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Missing that and allowing that agent to modify that folder name was what started all of this.",
+    "bn": "এই ভুলের কারণেই কিন্তু শেয়ার্ড ফোল্ডারের নাম বদলে পুরো হ্যাকিংয়ের সূত্রপাত হয়েছিল।"
+  },
+  {
+    "id": 169,
+    "start": 993.8,
+    "end": 997.0,
+    "duration": 3.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And five, verify outside the agent.",
+    "bn": "এবং পাঁচ—এজেন্টের নাগালের বাইরে গিয়ে কোড ভেরিফাই করুন।"
+  },
+  {
+    "id": 170,
+    "start": 997.4,
+    "end": 1003.9,
+    "duration": 6.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "CI diffs your own logs. Opposite of just taking a quick look and saying LGTM",
+    "bn": "সিআই পাইপলাইন, কোডের ডিফ এবং নিজের লগ দিয়ে যাচাই করুন। এক পলক দেখেই লুকস গুড টু মি বলে পিআর মার্জ করে দেবেন না!"
+  },
+  {
+    "id": 171,
+    "start": 1004.7,
+    "end": 1009.3,
+    "duration": 4.6,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "or something like that. So in a nutshell, a sandbox isn't magic.",
+    "bn": "মোটকথা হলো, স্যান্ডবক্স কোনো ম্যাজিক নয়।"
+  },
+  {
+    "id": 172,
+    "start": 1009.4,
+    "end": 1015.4,
+    "duration": 6.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "These agents literally broke out of one. It's one layer and it only works with the other four.",
+    "bn": "এই এজেন্টরা স্যান্ডবক্স ভেঙে বের হয়ে দেখিয়ে দিয়েছে। এটি মাত্র একটি স্তর, যা বাকি চারটি নিয়ম মানলেই কেবল কাজ করে।"
+  },
+  {
+    "id": 173,
+    "start": 1015.4,
+    "end": 1028.7,
+    "duration": 13.3,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So, if you want to see this whole setup built step by step, comment down below and I'm going to drop a video where we run a team of AI agents inside of sandboxes while building a really cool project.",
+    "bn": "আপনারা যদি এই পুরো সিকিউর সেটআপটি স্টেপ-বাই-স্টেপ দেখতে চান, তবে নিচে কমেন্ট করুন। আমি এমন একটি পূর্ণাঙ্গ ভিডিও বানাবো যেখানে স্যান্ডবক্সের ভেতর নিরাপদভাবে একদল এআই এজেন্টকে দিয়ে চমৎকার একটি প্রোজেক্ট তৈরি করে দেখাবো।"
+  },
+  {
+    "id": 174,
+    "start": 1029.0,
+    "end": 1034.2,
+    "duration": 5.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "All of it done in a completely safe way so they can't escape like they did right here.",
+    "bn": "পুরোটাই থাকবে ১০০% নিরাপদ যাতে এই কাহিনীর মতো এজেন্টরা কখনোই পালিয়ে যেতে না পারে।"
+  },
+  {
+    "id": 175,
+    "start": 1034.2,
+    "end": 1038.2,
+    "duration": 4.0,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "And the last piece of boring advice, learn how this works underneath.",
+    "bn": "আর শেষ একটি পরামর্শ—এসব সিস্টেম ভেতর থেকে কীভাবে কাজ করে তা ভালো করে শিখুন।"
+  },
+  {
+    "id": 176,
+    "start": 1038.8,
+    "end": 1044.2,
+    "duration": 5.4,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Not because AI will take your job, but because you can't review a diff that you don't understand.",
+    "bn": "এআই আপনার চাকরি নিয়ে যাবে সে ভয়ে নয়, বরং যে কোড আপনি নিজে বোঝেন না, তার ভুলত্রুটি আপনি রিভিউ করতে পারবেন না।"
+  },
+  {
+    "id": 177,
+    "start": 1044.4,
+    "end": 1052.2,
+    "duration": 7.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "containers, networking, secrets. A developer who knows those would have spotted every door the swarm walked through.",
+    "bn": "কন্টেইনার, নেটওয়ার্কিং এবং সিক্রেটস—যে ডেভেলপার এগুলো বোঝে, সে এজেন্টদের ব্যবহার করা প্রতিটি খোলা দরজা এক নজরেই ধরে ফেলতে পারত।"
+  },
+  {
+    "id": 178,
+    "start": 1052.3,
+    "end": 1056.8,
+    "duration": 4.5,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Because that's the story. None of these agents broke through a wall.",
+    "bn": "কারণ এই ঘটনার মূল শিক্ষা এটাই—কোনো এজেন্ট দেয়াল ভেঙে বের হয়নি।"
+  },
+  {
+    "id": 179,
+    "start": 1057.1,
+    "end": 1060.9,
+    "duration": 3.8,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "Every one of them walked through a door that somebody left open.",
+    "bn": "তাদের প্রত্যেকেই এমন সব খোলা দরজা দিয়ে হেঁটে বের হয়েছে যা মানুষ নিজেই অসাবধানতায় খোলা রেখেছিল।"
+  },
+  {
+    "id": 180,
+    "start": 1061.2,
+    "end": 1063.4,
+    "duration": 2.2,
+    "voice": "bn-BD-PradeepNeural",
+    "speaker": "Adrian",
+    "en": "So, close yours.",
+    "bn": "তাই নিজের দরজাগুলো এখনই বন্ধ করুন।"
+  }
+]

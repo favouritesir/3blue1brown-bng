@@ -1,0 +1,171 @@
+{
+  "sectionEls": [
+    {
+      "id": "sec-01-why-memorize",
+      "noNarration": null
+    },
+    {
+      "id": "sec-01-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-02-completing-the-square",
+      "noNarration": null
+    },
+    {
+      "id": "sec-02-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-03-parabola-symmetry",
+      "noNarration": null
+    },
+    {
+      "id": "sec-03-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-04-quadratic-derivation",
+      "noNarration": null
+    },
+    {
+      "id": "sec-04-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-05-po-shen-loh-method",
+      "noNarration": null
+    },
+    {
+      "id": "sec-05-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-interactive-lab",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-quizzes",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-formulas-glossary",
+      "noNarration": "true"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-01-why-memorize",
+      "title": "১. কেন অন্ধ মুখস্থ করা ক্ষতিকর?",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "১. কেন অন্ধ মুখস্থ করা ক্ষতিকর?"
+        }
+      ]
+    },
+    {
+      "id": "sec-02-completing-the-square",
+      "title": "২. জ্যামিতিক বর্গ পূরণ (Completing the Square)",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "২. জ্যামিতিক বর্গ পূরণ (Completing the Square)"
+        }
+      ]
+    },
+    {
+      "id": "sec-03-parabola-symmetry",
+      "title": "৩. প্যারাবোলার প্রতিসাম্য ও শীর্ষবিন্দু (Vertex Symmetry)",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "৩. প্যারাবোলার প্রতিসাম্য ও শীর্ষবিন্দু (Vertex Symmetry)"
+        }
+      ]
+    },
+    {
+      "id": "sec-04-quadratic-derivation",
+      "title": "৪. সর্বজনীন দ্বিঘাত সূত্রের প্রাকৃতিক উন্মোচন",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "৪. সর্বজনীন দ্বিঘাত সূত্রের প্রাকৃতিক উন্মোচন"
+        }
+      ]
+    },
+    {
+      "id": "sec-05-po-shen-loh-method",
+      "title": "৫. পো-শেন লোহ্ (Po-Shen Loh) পদ্ধতি ও আধুনিক অন্তর্দৃষ্টি",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "৫. পো-শেন লোহ্ (Po-Shen Loh) পদ্ধতি ও আধুনিক অন্তর্দৃষ্টি"
+        }
+      ]
+    }
+  ],
+  "engine": [
+    {
+      "id": "sec-01-why-memorize",
+      "blockCount": 1,
+      "types": [
+        "h2"
+      ]
+    },
+    {
+      "id": "sec-02-completing-the-square",
+      "blockCount": 1,
+      "types": [
+        "h2"
+      ]
+    },
+    {
+      "id": "sec-03-parabola-symmetry",
+      "blockCount": 1,
+      "types": [
+        "h2"
+      ]
+    },
+    {
+      "id": "sec-04-quadratic-derivation",
+      "blockCount": 1,
+      "types": [
+        "h2"
+      ]
+    },
+    {
+      "id": "sec-05-po-shen-loh-method",
+      "blockCount": 1,
+      "types": [
+        "h2"
+      ]
+    }
+  ],
+  "manifestPresent": true,
+  "manifestKeys": [
+    "sec-01-why-memorize",
+    "sec-02-completing-the-square",
+    "sec-03-parabola-symmetry",
+    "sec-04-quadratic-derivation",
+    "sec-05-po-shen-loh-method"
+  ],
+  "page_errors": [],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)",
+    "Failed to load resource: the server responded with a status of 404 (File not found)"
+  ]
+}

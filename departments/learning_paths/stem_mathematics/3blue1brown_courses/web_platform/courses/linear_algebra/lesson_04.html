@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ম্যাট্রিক্স গুণন আসলে রূপান্তরের সংযোজন | Matrix multiplication as composition (Essence of linear algebra, chapter 4)</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- Scoped layout fix: reserve room for <b1b-fullscreen>'s toggle button so it
+     never covers the composition lab's preset buttons or status badge. -->
+<style>
+  #sec-visualizer .b1b-fs-host > .viz-wrapper > .viz-header { padding-right: 140px; }
+  .comp-formula-wrap { display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; background:var(--bg-alt); border:1px solid var(--border); padding:14px 18px; border-radius:var(--radius-md); margin-bottom:14px; font-size:0.95rem; }
+  .comp-matrix { display:inline-grid; grid-template-columns:1fr 1fr; gap:4px 10px; padding:4px 10px; border-left:3px solid; border-right:3px solid; border-radius:4px; font-family:monospace; font-size:1.05rem; font-weight:bold; text-align:center; min-width:74px; background:rgba(0,0,0,0.25); }
+  .comp-matrix.m-first  { border-color:#4fc3f7; color:#4fc3f7; }
+  .comp-matrix.m-second { border-color:#69f0ae; color:#69f0ae; }
+  .comp-matrix.m-res    { border-color:#ffd54f; color:#ffd54f; }
+  .comp-slider-box { display:flex; align-items:center; gap:12px; flex-wrap:wrap; width:100%; margin-top:6px; }
+  .comp-slider-box label { font-size:0.85rem; color:var(--text-muted); min-width:150px; }
+  .comp-slider-box input[type=range] { flex:1; min-width:140px; accent-color:var(--theme); }
+  .comp-slider-val { font-size:0.85rem; font-weight:700; color:#ffd54f; min-width:80px; font-variant-numeric:tabular-nums; }
+</style>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/linear_algebra/lesson_04/manifest.js?v=3"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order (identical to Lesson 01) ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="লিনিয়ার অ্যালজেব্রা"
+  course-url="../../index.html#linear-algebra"
+  home-url="../../index.html"
+  chapter-num="০৪"
+  chapter-total="০৫"
+  prev-url="lesson_03.html"
+  prev-title="পূর্ববর্তী অধ্যায়: রৈখিক রূপান্তর ও ম্যাট্রিক্স"
+  next-url="lesson_05.html"
+  next-title="পরবর্তী অধ্যায়: ত্রিমাত্রিক রৈখিক রূপান্তর"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="লিনিয়ার অ্যালজেব্রা"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৪ · লিনিয়ার অ্যালজেব্রার সারমর্ম"
+  title="ম্যাট্রিক্স গুণন আসলে রূপান্তরের সংযোজন | Matrix multiplication as composition (Essence of linear algebra, chapter 4)"
+  desc="ম্যাট্রিক্স গুণন কোনো মুখস্থ করার শুকনো অ্যালগরিদম নয়—এটি এক রূপান্তরের ঠিক পর আরেক রূপান্তর প্রয়োগের জ্যামিতিক ফলশ্রুতি। কেন ডান থেকে বামে পড়তে হয় এবং কেন $AB \neq BA$, তা জানুন এই পাঠে।"
+  video-src="../../media_vault/lesson_04/experiments/fill_v2/3b1b_lesson_04_full_dubbed_fill2.mp4"
+  yt-id="XkY2DOUCWMU"
+  date="৮ আগস্ট, ২০১৬"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="টেক্সট অ্যাডাপ্টেশন: River Way | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2016/eola/chapter4.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">পুনরাবৃত্তি ও ভিত্তি ভেক্টর</b1b-bookmark>
+      <b1b-bookmark time="102" time-bn="০১:৪২">দুটি রূপান্তরের সংযোজন (ঘূর্ণন অতঃপর শিরিং)</b1b-bookmark>
+      <b1b-bookmark time="219" time-bn="০৩:৩৯">ডান থেকে বামে পড়ার কারণ ($AB\vec{v}$)</b1b-bookmark>
+      <b1b-bookmark time="318" time-bn="০৫:১৮">সাংখ্যিক গণনা পদ্ধতি</b1b-bookmark>
+      <b1b-bookmark time="428" time-bn="০৭:০৮">সাধারণ প্রতীকী বীজগণিত ও গুণন সূত্র</b1b-bookmark>
+      <b1b-bookmark time="530" time-bn="০৮:৫০">সারির সাথে কলামের ডট গুণন</b1b-bookmark>
+      <b1b-bookmark time="530" time-bn="০৮:৫০">বিনিময়হীনতা ($AB \neq BA$)</b1b-bookmark>
+      <b1b-bookmark time="530" time-bn="০৮:৫০">সংযোগ বিধি ($A(BC) = (AB)C$)</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-recap">Recap: ভিত্তি ও Emil Artin-এর উদ্ধৃতি</a>
+      <a href="#sec-composition">১. রূপান্তরের সংযোজন (Composition of Transformations)</a>
+      <a href="#sec-matrix-multiplication">২. ভিত্তি ভেক্টর ট্র্যাকিং ও ডান থেকে বামে পড়া</a>
+      <a href="#sec-tracking">৩. নতুন ম্যাট্রিক্স গণনা (Computing the New Matrix)</a>
+      <a href="#sec-algebraic-view">৪. সাধারণ রূপ ও গুণন সূত্র (General Form)</a>
+      <a href="#sec-derivation">৫. সূত্রের প্রতিপাদন (Derivation)</a>
+      <a href="#sec-noncommutativity">৬. বিনিময়হীনতা (Noncommutativity)</a>
+      <a href="#sec-associativity">৭. সংযোগ বিধি (Associativity)</a>
+      <a href="#sec-conclusion">৮. উপসংহার (Conclusion)</a>
+      <a href="#sec-visualizer">ইন্টারেক্টিভ কম্পোজিশন সিমুলেটর ল্যাব</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ Official section: Recap + Emil Artin epigraph — non-narrated ═══ -->
+      <b1b-section id="sec-recap" title="Recap: এক রূপান্তর থেকে আরেক রূপান্তর" data-no-narration="true">
+        <b1b-quote author="Emil Artin">আমার অভিজ্ঞতায়, ম্যাট্রিক্সগুলোকে বাদ দিয়ে লিখলে ম্যাট্রিক্স সংক্রান্ত প্রমাণ অর্ধেক সংক্ষিপ্ত হয়ে যায়। <em>“It is my experience that proofs involving matrices can be shortened by 50% if one throws the matrices out.”</em></b1b-quote>
+
+        <p>আগের অধ্যায়ে আমরা দেখেছি—রৈখিক রূপান্তর হলো ভেক্টরের ওপর একটি ফাংশন, আর ম্যাট্রিক্স হলো সেই রূপান্তরের সংক্ষিপ্ত লিখিত রূপ; এর কলাম দুটি বলে দেয় ভিত্তি ভেক্টর $\hat{i}$ ও $\hat{j}$ কোথায় অবতরণ করেছে। এই অধ্যায়ে আমরা দেখব কীভাবে একটি রূপান্তরের ঠিক পর আরেকটি রূপান্তর প্রয়োগ করলে তার সম্মিলিত প্রভাবকেও একটিমাত্র ম্যাট্রিক্স দিয়ে লেখা যায়—কোনো নতুন নিয়ম মুখস্থ না করেই।</p>
+
+        <b1b-formula math="\vec{v}=\begin{bmatrix}x\\y\end{bmatrix}\;\longmapsto\;A\vec{v}=x\begin{bmatrix}a\\c\end{bmatrix}+y\begin{bmatrix}b\\d\end{bmatrix}"></b1b-formula>
+
+        <b1b-callout type="blue" icon="📌" title="এই অধ্যায়ের কেন্দ্রীয় প্রশ্ন">
+          <p>স্কুলে শেখানো হয়—“প্রথম ম্যাট্রিক্সের সারি দিয়ে দ্বিতীয়টির কলাম গুণ করে যোগ করো।” কিন্তু কেন? এই অধ্যায়ের পুরো আলোচনার উদ্দেশ্য হলো দেখানো যে এই নিয়মটি কোনো যান্ত্রিক আবিষ্কার নয়, বরং রূপান্তরের ধারাবাহিক প্রয়োগেরই স্বাভাবিক বীজগাণিতিক রূপ।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Section: Composition — 10 manifest cues ═══ -->
+      <b1b-section id="sec-composition" title="১. রিক্যাপ ও রূপান্তরের সংযোজন — Composition of Transformations">
+        <b1b-quote author="Grant Sanderson">ম্যাট্রিক্স গুণন কোনো খাপছাড়া বা মুখস্থ করার শুকনো অ্যালগরিদম নয়; এটি আসলে একটি রূপান্তরের ঠিক পর আরেকটি রূপান্তর প্রয়োগ করার জ্যামিতিক ফলশ্রুতি মাত্র।</b1b-quote>
+
+        <p>স্কুল-কলেজে আমাদের প্রায়শই ম্যাট্রিক্স গুণনের একটি অদ্ভুত ও যান্ত্রিক নিয়ম শেখানো হয়—<em>“প্রথম ম্যাট্রিক্সের প্রতিটি সারি দিয়ে দ্বিতীয় ম্যাট্রিক্সের প্রতিটি কলামের উপাদান গুণ করে যোগ করো।”</em> কিন্তু কেন? এই আপাতদৃষ্টিতে খাপছাড়া নিয়মটি আসলে কোথা থেকে এলো?</p>
+
+        <p>গত পর্বে আমরা দেখেছি যে প্রতিটি ম্যাট্রিক্স হলো দ্বিমাত্রিক বা ত্রিমাত্রিক স্থানকে রূপান্তরিত করার একটি একক জ্যামিতিক প্রক্রিয়া—যেখানে গ্রিড রেখাগুলো সর্বদা সমান্তরাল ও সমদূরবর্তী থাকে এবং মূলবিন্দু সম্পূর্ণ স্থির থাকে।</p>
+
+        <b1b-figure src="../../assets/figures/la_04/recap1.jpg" alt="আগের পর্বের রূপান্তরের পুনরাবৃত্তি" caption="এই চিত্রে আগের পর্বের মূল কথাটিই মনে করিয়ে দেওয়া হয়েছে: একটি ম্যাট্রিক্স মানেই স্থানের একটি নির্দিষ্ট রৈখিক রূপান্তর। লক্ষ্য করুন ভিত্তি ভেক্টর দুটির নতুন অবস্থান থেকেই পুরো ম্যাট্রিক্সটি তৈরি হয়। গ্রিডের সমান্তরালতা অটল থাকায় আমরা জানি রূপান্তরটি রৈখিক। এই পুনরাবৃত্তিই পরবর্তী যুক্তির ভিত্তি।"></b1b-figure>
+
+        <p>কিন্তু বাস্তব জীবনে ও বিজ্ঞানে একটি রূপান্তর সম্পন্ন করার পর প্রায়শই তার ওপর <strong>আরেকটি রূপান্তর</strong> প্রয়োগ করার দরকার পড়ে। ধরা যাক, আপনি প্রথমে দ্বিমাত্রিক সমতলটিকে ঘড়ির কাঁটার বিপরীতে ৯০° কোণে ঘোরালেন (Rotation), এবং ঠিক তার পর সমতলটির ওপর একটি অনুভূমিক শিরিং বা মোচড় (Shear) প্রয়োগ করলেন।</p>
+
+        <b1b-figure src="../../assets/figures/la_04/rotate_shear_sequence.svg" alt="ঘূর্ণন অতঃপর শিরিং রূপান্তরের ধারাবাহিক প্রয়োগ" caption="এই চিত্রে স্থানটি প্রথমে ৯০° ঘুরছে, তারপর অনুভূমিকভাবে সরে যাচ্ছে—দুটি রূপান্তর ঠিক এই ক্রমেই ঘটছে। লক্ষ্য করুন প্রথম ধাপের ফলাফলই দ্বিতীয় ধাপের ইনপুট হয়ে যাচ্ছে। ক্রম বদলে দিলে চূড়ান্ত ছবি আলাদা হতো। এই ধারাবাহিকতাই ‘সংযোজন’ ধারণার মূল।"></b1b-figure>
+
+        <b1b-media-tab active-tab="image" caption="একই ঘূর্ণন-অতঃপর-শিরিং প্রক্রিয়া এখানে চলন্ত অ্যানিমেশনে দেখা যাচ্ছে। ছবি আর ভিডিওর মাঝে টগল করে দেখুন কীভাবে প্রতিটি মুহূর্তে পুরো গ্রিড একসাথে বিকৃত হয়ে নতুন আকার নিচ্ছে। শিরিংয়ের সময় উপরের বিন্দুগুলো ডানে সরল—এই সরণই পরে আমাদের গুণন সূত্রের উপাংশ তৈরি করবে।">
+          <div slot="image"><img src="../../assets/figures/la_04/rotate_shear_composition.svg" alt="ঘূর্ণন ও শিরিংয়ের সংযুক্ত প্রভাব"/></div>
+          <div slot="video"><video loop muted playsinline controls src="../../assets/figures/la_04/rotate_shear_composition.mp4"></video></div>
+        </b1b-media-tab>
+
+        <p>শুরু থেকে শেষ পর্যন্ত পুরো সম্মিলিত প্রভাবটি নিজেই আরেকটি সম্পূর্ণ নতুন রৈখিক রূপান্তর! এই যৌথ রূপান্তরটিকে গণিতের ভাষায় বলা হয় দুটি পৃথক রূপান্তরের <strong>সংযোজন (Composition)</strong>।</p>
+
+        <b1b-formula math="\vec{v}\;\xrightarrow{\quad B\quad}\;B\vec{v}\;\xrightarrow{\quad A\quad}\;A(B\vec{v})=(AB)\vec{v}"></b1b-formula>
+
+        <b1b-callout type="gold" icon="💡" title="কেন্দ্রীয় দর্শন">
+          <p>লিনিয়ার অ্যালজেব্রার কেন্দ্রীয় দর্শনটি গভীরভাবে মনে রাখো: দুটি ম্যাট্রিক্সের গুণফল $AB$ হলো সেই একক যৌগিক রূপান্তর, যা প্রথমে রূপান্তর $B$ এবং ঠিক তার পর রূপান্তর $A$ প্রয়োগ করলে সামগ্রিক স্থানে ঘটে থাকে। অর্থাৎ গুণন আসলে ‘পরপর প্রয়োগ’-এরই আরেক নাম।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Section: Matrix multiplication — 8 manifest cues ═══ -->
+      <b1b-section id="sec-matrix-multiplication" title="২. ভিত্তি ভেক্টর ট্র্যাকিং ও ডান থেকে বামে পড়া — Composition is Multiplication">
+        <p>যেহেতু দুটি ধারাবাহিক রৈখিক রূপান্তরের সমন্বয় নিজেও একটি খাঁটি রৈখিক রূপান্তর, তাই এর নিজস্ব একটি একক ২×২ ম্যাট্রিক্স থাকবে। সেই ম্যাট্রিক্সটি আমরা কীভাবে বের করব? বরাবরের মতোই শিশুতোষ সহজ: <strong>শুধুমাত্র লক্ষ্য করুন পুরো প্রক্রিয়ার শেষে আমাদের দুটি আদি ভিত্তি ভেক্টর $\hat{i}$ (আই হ্যাট) এবং $\hat{j}$ (জে হ্যাট) শেষমেশ কোথায় গিয়ে পৌঁছাল!</strong></p>
+
+        <b1b-figure src="../../assets/figures/la_04/rotate_shear_record.svg" alt="ভিত্তি ভেক্টরের চূড়ান্ত অবস্থান লিপিবদ্ধকরণ" caption="এই চিত্রে ঘূর্ণন ও শিরিং শেষে $\hat{i}$ পৌঁছায় $(1,1)$-এ এবং $\hat{j}$ পৌঁছায় $(-1,0)$-এ। এই দুটিমাত্র তথ্য রেকর্ড করেই পুরো যৌগিক ম্যাট্রিক্সটি লিখে ফেলা যায়। লক্ষ্য করুন $\hat{j}$-এর $y$-স্থানাঙ্ক শূন্য হওয়ায় শিরিং তাকে অপরিবর্তিত রেখেছে। মাত্র দুটি ভেক্টরের এই হিসাবই অসীম তথ্যের বদলে কাজ করে।"></b1b-figure>
+
+        <p><strong>আই হ্যাট ($\hat{i}$)-এর গতিপথ:</strong> আদিতে $\hat{i}=\begin{bmatrix}1\\0\end{bmatrix}$ ছিল। ৯০° ঘড়ির কাঁটার বিপরীতে ঘোরার পর এটি পৌঁছে গেল $\begin{bmatrix}0\\1\end{bmatrix}$-এ। এবার এই ভেক্টরটির ওপর অনুভূমিক শিরিং প্রয়োগ করা হলে এর $x$-স্থানাঙ্ক তার $y$-স্থানাঙ্কের পরিমাণ ডানে সরে যায়—ফলে এটি শেষ পর্যন্ত অবতরণ করে $\begin{bmatrix}1\\1\end{bmatrix}$-এ! সুতরাং যৌথ ম্যাট্রিক্সের প্রথম কলাম হবে $\begin{bmatrix}1\\1\end{bmatrix}$।</p>
+
+        <p><strong>জে হ্যাট ($\hat{j}$)-এর গতিপথ:</strong> আদিতে $\hat{j}=\begin{bmatrix}0\\1\end{bmatrix}$ ছিল। ৯০° ঘোরার পর এটি পৌঁছে যায় $\begin{bmatrix}-1\\0\end{bmatrix}$-এ (ঋণাত্মক এক্স অক্ষ বরাবর)। যেহেতু এর $y$-স্থানাঙ্ক শূন্য, তাই অনুভূমিক শিরিং প্রয়োগ করলেও এটি হুবহু $\begin{bmatrix}-1\\0\end{bmatrix}$-এই অপরিবর্তিত থাকে! সুতরাং যৌথ ম্যাট্রিক্সের দ্বিতীয় কলাম হবে $\begin{bmatrix}-1\\0\end{bmatrix}$।</p>
+
+        <b1b-formula math="\begin{bmatrix}1&1\\0&1\end{bmatrix}_{\text{shear}}\;\begin{bmatrix}0&-1\\1&0\end{bmatrix}_{\text{rotation}}=\begin{bmatrix}1&-1\\1&0\end{bmatrix}"></b1b-formula>
+
+        <p>এবার একটি অতি গুরুত্বপূর্ণ বিষয় লক্ষ্য করো: আমরা যখন লিখি $AB\vec{v}$, তখন প্রথমে কোন রূপান্তরটি কার্যকর হয়? <strong>$B$ আগে, তারপর $A$!</strong> অর্থাৎ গুণনের এই লেখার ধারা ডান থেকে বামে পড়তে হয়—ভেক্টরের সবচেয়ে কাছে যে ম্যাট্রিক্স থাকে, সেটিই আগে কাজ করে।</p>
+
+        <b1b-callout type="blue" icon="📐" title="ফাংশন নোটেশনের ঐতিহ্য">
+          <p>বীজগণিতে আমরা যখন ফাংশনের কম্পোজিশন লিখি $f(g(x))$, তখন ইনপুট $x$-এর সবচেয়ে কাছে কে থাকে? অবশ্যই $g$! তাই আগে $g(x)$ এর মান বের হয়, তারপর তার ফলাফলের ওপর $f$ ফাংশন কাজ করে। ঠিক একইভাবে, ভেক্টর $\vec{v}$-এর সাথে লেগে থাকা ডানপাশের ম্যাট্রিক্স $B$ আগে কার্যকর হয়, এবং তার সামগ্রিক ফলাফলের ওপর বামপাশের ম্যাট্রিক্স $A$ কাজ করে। হিব্রু কিংবা আরবি পাঠকদের জন্য ডান থেকে বামে পড়া স্বাভাবিক হলেও, বাকি বিশ্বের পাঠকদের এটি সতর্কতার সাথে মনে রাখতে হয়!</p>
+        </b1b-callout>
+
+        <b1b-quiz
+          question="❓ গাণিতিক প্রকাশ $A B \vec{v}$-এ ভেক্টর $\vec{v}$-এর ওপর কোন রূপান্তরটি আগে কার্যকর হবে?"
+          correct="2"
+          correct-msg="চমৎকার! ম্যাট্রিক্স গুণন ডান থেকে বামে কার্যকর হয়। সুতরাং $AB\vec{v}$-এর অর্থ প্রথমে ভেক্টর $\vec{v}$-এর ওপর $B$ প্রয়োগ করা এবং তারপর প্রাপ্ত ফলাফলের ওপর $A$ প্রয়োগ করা।"
+          wrong-msg="ফাংশন লেখার নিয়মের কথা ভাবুন: $f(g(x))$-এ কোন ফাংশনটি আগে এক্সের ওপর কাজ করে? যেটি ভেতরে থাকে, সেটিই আগে।"
+          reveal-msg="সঠিক উত্তর: প্রথমে রূপান্তর $B$ কার্যকর হবে, তারপর রূপান্তর $A$। ফাংশন কম্পোজিশন নোটেশনের ঐতিহ্যের কারণে ম্যাট্রিক্স গুণন সর্বদা ডান থেকে বামে হিসাব করা হয়।">
+          <div slot="option">প্রথমে $A$, তারপর $B$</div>
+          <div slot="option">উভয় রূপান্তর একসাথে একই মুহূর্তে</div>
+          <div slot="option">প্রথমে $B$, তারপর $A$</div>
+          <div slot="option">যেকোনোটি আগে করা যায়, কোনো পার্থক্য নেই</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ Section: Computing the New Matrix — 8 manifest cues ═══ -->
+      <b1b-section id="sec-tracking" title="৩. নতুন ম্যাট্রিক্স গণনা — Computing the New Matrix">
+        <p>যেহেতু দুটি ধারাবাহিক রৈখিক রূপান্তরের সমন্বয় নিজেও একটি খাঁটি রৈখিক রূপান্তর, তাই এর নিজস্ব একটি একক টু বাই টু ম্যাট্রিক্স থাকবে। সেই ম্যাট্রিক্সটি আমরা কীভাবে বের করব? বরাবরের মতোই শিশুতোষ সহজ: শুধুমাত্র লক্ষ্য করো পুরো প্রক্রিয়ার শেষে আমাদের দুটি আদি ভিত্তি ভেক্টর আই হ্যাট এবং জে হ্যাট শেষমেশ কোথায় গিয়ে পৌঁছাল!</p>
+
+        <b1b-figure src="../../assets/figures/la_04/compound_multiply.svg" alt="ভিত্তি ভেক্টর থেকে যৌগিক ম্যাট্রিক্স গঠন" caption="এই চিত্রে ভিত্তি ভেক্টর দুটির চূড়ান্ত কলাম জোড়া লাগিয়ে যৌগিক ম্যাট্রিক্সটি গড়ে তোলা হয়েছে। লক্ষ্য করুন প্রথম কলাম আই হ্যাটের গন্তব্য $(1,1)$ এবং দ্বিতীয় কলাম জে হ্যাটের গন্তব্য $(-1,0)$। কলাম দুটির ক্রম অদলবদল করলেই ভিন্ন রূপান্তর পাওয়া যেত। ছবিটি দেখায় যে ম্যাট্রিক্স গুণন আসলে কলাম-নির্মাণেরই এক রূপ।"></b1b-figure>
+
+        <p>আই হ্যাট ছিল এক শূন্য। নব্বই ডিগ্রি ঘোরার পর এটি পৌঁছায় শূন্য এক-এ। এবার অনুভূমিক শিরিং প্রয়োগ করলে এর $x$-স্থানাঙ্ক $y$-স্থানাঙ্কের পরিমাণ ডানে সরে গিয়ে চূড়ান্তভাবে অবতরণ করে এক, এক-এ! সুতরাং যৌথ ম্যাট্রিক্সের প্রথম কলাম হবে $\begin{bmatrix}1\\1\end{bmatrix}$।</p>
+
+        <p>আর জে হ্যাট ছিল শূন্য এক। নব্বই ডিগ্রি ঘোরার পর এটি পৌঁছায় মাইনাস এক শূন্য-তে। যেহেতু এর $y$-স্থানাঙ্ক শূন্য, তাই অনুভূমিক শিরিং প্রয়োগ করলেও এটি অপরিবর্তিত থাকে। ফলে দ্বিতীয় কলাম হয় $\begin{bmatrix}-1\\0\end{bmatrix}$।</p>
+
+        <b1b-formula math="\underbrace{\begin{bmatrix}1&1\\0&1\end{bmatrix}}_{\text{second: shear}}\;\underbrace{\begin{bmatrix}0&-1\\1&0\end{bmatrix}}_{\text{first: rotation}}=\underbrace{\begin{bmatrix}1&-1\\1&0\end{bmatrix}}_{\text{combined}}"></b1b-formula>
+
+        <p>এবার একটি অতি গুরুত্বপূর্ণ বিষয় লক্ষ্য করো: আমরা যখন লিখি $AB\vec{v}$, তখন প্রথমে কোন রূপান্তরটি কার্যকর হয়? বি আগে, তারপর এ! অর্থাৎ এটি ডান থেকে বামে পড়তে হয়। যেহেতু ভেক্টর $\vec{v}$ সবচেয়ে কাছে $B$ আছে, তাই $B\vec{v}$ আগে তৈরি হয়, তারপর তার ওপর $A$ বসে।</p>
+
+        <b1b-callout type="blue" icon="📐" title="ফাংশন নোটেশনের ঐতিহ্য">
+          <p>ফাংশন নোটেশনের কথা ভাবুন: আমরা যখন $f$ অব $g$ অব $x$ লিখি, ইনপুট $x$-এর সবচেয়ে কাছে থাকে $g$। তাই আগে $g$ কার্যকর হয়, তারপর তার ওপর $f$ কাজ করে। ঠিক তেমনি ভেক্টর $\vec{v}$-এর সবচেয়ে কাছে থাকা ডানপাশের ম্যাট্রিক্স $B$ আগে কাজ করে, আর বামপাশের ম্যাট্রিক্স $A$ পরে কার্যকর হয়।</p>
+        </b1b-callout>
+
+        <b1b-quiz
+          question="❓ অফিশিয়ал 3B1B প্রশ্ন: গুণফলটি নির্ণয় করো — $\begin{bmatrix} 0 & 2 \\ 1 & 0 \end{bmatrix}\begin{bmatrix} 1 & -2 \\ 1 & 0 \end{bmatrix}$"
+          correct="0"
+          correct-msg="চমৎকার! প্রথম সারি: $0\cdot 1+2\cdot 1=2$ এবং $0\cdot(-2)+2\cdot 0=0$। দ্বিতীয় সারি: $1\cdot 1+0\cdot 1=1$ এবং $1\cdot(-2)+0\cdot 0=-2$। সুতরাং গুণফল $\begin{bmatrix}2&0\\1&-2\end{bmatrix}$।"
+          wrong-msg="মনে রাখো: ডানের ম্যাট্রিক্সের প্রতিটি কলামকে বাঁয়ের ম্যাট্রিক্স দিয়ে রূপান্তর করতে হয়। প্রতিটি কলামের সাথে সারির ডট গুণন করো—সারি দিয়ে কলাম, কলাম দিয়ে সারি নয়।"
+          reveal-msg="সঠিক উত্তর $\begin{bmatrix}2&0\\1&-2\end{bmatrix}$ — প্রথম কলাম $\begin{bmatrix}2\\1\end{bmatrix}$ এবং দ্বিতীয় কলাম $\begin{bmatrix}0\\-2\end{bmatrix}$।">
+          <div slot="option">$\begin{bmatrix} 2 & 0 \\ 1 & -2 \end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix} 0 & -2 \\ 1 & 0 \end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix} 1 & -2 \\ 0 & 2 \end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix} 3 & -2 \\ 2 & 1 \end{bmatrix}$</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ Section: General Form — 9 manifest cues ═══ -->
+      <b1b-section id="sec-algebraic-view" title="৪. সাধারণ রূপ ও গুণন সূত্র — General Form">
+        <p>এবার আসুন প্রতীকী বীজগণিত দিয়ে দেখা যাক যেকোনো দুটি সাধারণ টু বাই টু ম্যাট্রিক্সের জন্য সূত্রটি কীভাবে নিজে থেকেই বেরিয়ে আসে—কোনো সূত্র মুখস্থ না করেই!</p>
+
+        <b1b-figure src="../../assets/figures/la_04/multiplication_matrices.svg" alt="সাধারণ প্রতীকী ম্যাট্রিক্স গুণন" caption="এই ডায়াগ্রামে দুটি সাধারণ ম্যাট্রিক্স $M_1$ ও $M_2$-র চলকগুলো দেখানো হয়েছে। প্রথমে যে ম্যাট্রিক্সটি প্রয়োগ হয় তার কলামগুলোই আই হ্যাট ও জে হ্যাটের নতুন অবস্থান। লক্ষ্য করুন আমরা দুটি কলামকে পরের ম্যাট্রিক্সের রৈখিক সমন্বয় হিসেবে লেখা হয়েছে—এতেই গুণন সূত্রটি নিজে থেকে বেরিয়ে আসে।">
+        </b1b-figure>
+
+        <p>প্রথম রূপান্তর $M_1$-এর পর আই হ্যাট পৌঁছায় প্রথম কলাম $\begin{bmatrix}e\\g\end{bmatrix}$-এ। এর ওপর দ্বিতীয় রূপান্তর $M_2$ প্রয়োগ করলে পাওয়া যায় $e\begin{bmatrix}a\\c\end{bmatrix}+g\begin{bmatrix}b\\d\end{bmatrix}=\begin{bmatrix}ae+bg\\ce+dg\end{bmatrix}$। এটিই গুণফল ম্যাট্রিক্সের প্রথম কলাম!</p>
+
+        <p>একইভাবে, জে হ্যাট প্রথম রূপান্তরের পর পৌঁছায় দ্বিতীয় কলাম $\begin{bmatrix}f\\h\end{bmatrix}$-এ। এর ওপর $M_2$ প্রয়োগ করলে পাওয়া যায় $f\begin{bmatrix}a\\c\end{bmatrix}+h\begin{bmatrix}b\\d\end{bmatrix}=\begin{bmatrix}af+bh\\cf+dh\end{bmatrix}$। এটি হলো গুণফল ম্যাট্রিক্সের দ্বিতীয় কলাম!</p>
+
+        <b1b-formula math="\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}e&f\\g&h\end{bmatrix}=\begin{bmatrix}ae+bg&af+bh\\ce+dg&cf+dh\end{bmatrix}"></b1b-formula>
+
+        <p>পাঠ্যবইয়ে যে বলা হয় “প্রথম ম্যাট্রিক্সের সারি দিয়ে দ্বিতীয় ম্যাট্রিক্সের কলামকে ডট গুণ করো”—তা মূলত এই ভিত্তি ভেক্টর রূপান্তরেরই সংক্ষিপ্ত হিসাব কৌশল! কিন্তু এর আসল হৃদয় হলো: <em>দ্বিতীয় রূপান্তরের কলামগুলোকে প্রথম রূপান্তরের স্থানাঙ্ক দিয়ে স্কেল করে যোগ করা।</em> জ্যামিতিক অর্থ বুঝে এই সূত্র মুখস্থ করলে তা অনেক বেশি টেকসই হয়।</p>
+
+        <b1b-figure src="../../assets/figures/la_04/rotate_shear_swap.svg" alt="ক্রম পরিবর্তনের ফলশ্রুতি: ঘূর্ণন ও শিরিং-এর অদলবদল" caption="চিত্রটি দেখায় আগে শিরিং ও পরে ঘূর্ণন করলে স্থানটি যে রূপ নেয়, আগে ঘূর্ণন ও পরে শিরিং করলে তার চেয়ে সম্পূর্ণ ভিন্ন আকৃতি তৈরি হয়। লক্ষ্য করুন আই হ্যাটের গন্তব্য $(1,1)$ বদলে $(0,1)$ হয়ে যাচ্ছে। ক্রমের এই পার্থক্যই প্রমাণ করে $AB$ আর $BA$ এক নয়। তাই গুণনের ক্রম কখনোই অবহেলা করা যায় না।"></b1b-figure>
+
+        <b1b-callout type="gold" icon="👟" title="জুতো ও মোজার কৌশল">
+          <p>বাস্তব জীবনের একটি উদাহরণ চিন্তা করো: আগে জুতো পরে তারপর মোজা পরা, আর আগে মোজা পরে তারপর জুতো পরা কি এক কথা? কখনই না! ঠিক তেমনি জ্যামিতিক রূপান্তরের ক্রম উল্টে দিলে পুরো স্থানাঙ্ক ব্যবস্থা বদলে যায়—এক কথায় $AB \neq BA$।</p>
+        </b1b-callout>
+
+        <b1b-quiz
+          question="❓ অফিশিয়াল 3B1B প্রশ্ন: গুণফলটি নির্ণয় করো — $\begin{bmatrix} -3 & 1 \\ 2 & 5 \end{bmatrix}\begin{bmatrix} 5 & 3 \\ 7 & -3 \end{bmatrix}$"
+          correct="0"
+          correct-msg="একদম সঠিক! $(-3)\cdot 5+1\cdot 7=-15+7=-8$; $(-3)\cdot 3+1\cdot(-3)=-9-3=-12$; $2\cdot 5+5\cdot 7=10+35=45$; $2\cdot 3+5\cdot(-3)=6-15=-9$। সুতরাং গুণফল $\begin{bmatrix}-8&-12\\45&-9\end{bmatrix}$।"
+          wrong-msg="প্রতিটি উপাংশ আলাদাভাবে হিসাব করো: প্রথম সারি, প্রথম কলাম = $(-3)(5)+(1)(7)$। অন্য তিনটিও একই নিয়মে বের করো; সারিকে কলামের সাথে ডট গুণ করতে ভুলো না।"
+          reveal-msg="সঠিক উত্তর $\begin{bmatrix}-8&-12\\45&-9\end{bmatrix}$ — সূত্র $\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}e&f\\g&h\end{bmatrix}$-এ মান বসিয়ে পাওয়া যায়।">
+          <div slot="option">$\begin{bmatrix} -8 & -12 \\ 45 & -9 \end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix} -8 & 12 \\ 45 & 9 \end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix} -15 & 7 \\ 10 & 35 \end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix} 8 & 12 \\ -45 & 9 \end{bmatrix}$</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ Section: Derivation — 9 manifest cues ═══ -->
+      <b1b-section id="sec-derivation" title="৫. সাধারণ গুণন সূত্রের প্রতিপাদন — Deriving the Formula">
+        <p>এবার আসুন প্রতীকী বীজগণিত দিয়ে দেখা যাক যেকোনো দুটি সাধারণ টু বাই টু ম্যাট্রিক্সের জন্য সূত্রটি কীভাবে নিজে থেকেই বেরিয়ে আসে—কোনো নিয়ম মুখস্থ না করেই!</p>
+
+        <b1b-figure src="../../assets/figures/la_04/compound_multiply.svg" alt="সাধারণ ২×২ ম্যাট্রিক্স গুণনের রূপ" caption="এই চিত্রে দেখানো হয়েছে কীভাবে একটি ম্যাট্রিক্সের কলাম দুটিকে চলক দিয়ে লিখে পরের ম্যাট্রিক্সের সাথে গুণ করা হয়। লক্ষ্য করুন চূড়ান্ত ম্যাট্রিক্সের প্রতিটি উপাংশ আসলে দুটি পদ যোগ—একটিমাত্র ডট গুণন নয়। এই চিত্রটি সূত্রের প্রতিটি অংশের জ্যামিতিক উৎস খুঁজে দেয়।">
+        </b1b-figure>
+
+        <p>ধরা যাক প্রথম রূপান্তর $M_1=\begin{bmatrix}e&f\\g&h\end{bmatrix}$ এবং দ্বিতীয় রূপান্তর $M_2=\begin{bmatrix}a&b\\c&d\end{bmatrix}$। আমরা $M_2M_1$-এর যৌথ ম্যাট্রিক্স বের করতে চাই। প্রথম রূপান্তরের পর $\hat{i}$ পৌঁছায় $M_1$-এর প্রথম কলাম $\begin{bmatrix}e\\g\end{bmatrix}$-এ।</p>
+
+        <p>এই $\begin{bmatrix}e\\g\end{bmatrix}$ ভেক্টরটির ওপর $M_2$ প্রয়োগ করলে আমরা জানি এটি হবে $M_2$-এর কলামগুলোর রৈখিক সমন্বয়: $e\begin{bmatrix}a\\c\end{bmatrix}+g\begin{bmatrix}b\\d\end{bmatrix}=\begin{bmatrix}ae+bg\\ce+dg\end{bmatrix}$। একইভাবে $\hat{j}$ থেকে পাই $f\begin{bmatrix}a\\c\end{bmatrix}+h\begin{bmatrix}b\\d\end{bmatrix}=\begin{bmatrix}af+bh\\cf+dh\end{bmatrix}$।</p>
+
+        <b1b-formula math="\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}e&f\\g&h\end{bmatrix}=\begin{bmatrix}ae+bg&af+bh\\ce+dg&cf+dh\end{bmatrix}"></b1b-formula>
+
+        <p>কিন্তু বাস্তব সংখ্যার গুণনের মতো ম্যাট্রিক্স গুণন কি বিনিময় বিধি মেনে চলে? কখনই নয়! $AB$ সাধারণত $BA$-এর সমান হয় না। অর্থাৎ ম্যাট্রিক্স গুণন একটি বিনিময়হীন অপারেশন—এটি এই অধ্যায়ের সবচেয়ে গুরুত্বপূর্ণ উপলব্ধিগুলোর একটি।</p>
+
+        <b1b-figure src="../../assets/figures/la_04/rotate_shear_swap.svg" alt="ক্রম উল্টে দিলে ভিন্ন ফলাফল" caption="আগে শিরিং ও পরে ঘূর্ণন করলে যে চিত্র পাওয়া যায়, আগে ঘূর্ণন ও পরে শিরিং করলে তার চেয়ে সম্পূর্ণ ভিন্ন আকৃতি তৈরি হয়। লক্ষ্য করুন গ্রিডের কাত হওয়ার দিক ও ভিত্তি ভেক্টরের গন্তব্য দুটোই আলাদা। একটিমাত্র ক্রম পরিবর্তনেই পুরো ফলাফল বদলে যাওয়া $AB \neq BA$-র নিখুঁত জ্যামিতিক প্রমাণ।">
+        </b1b-figure>
+
+        <b1b-callout type="gold" icon="👟" title="ক্রম কেন গুরুত্বপূর্ণ">
+          <p>আগে জুতো পরে তারপর মোজা পরা, আর আগে মোজা পরে তারপর জুতো পরা কি এক কথা? কখনই না! ঠিক তেমনি জ্যামিতিক রূপান্তরের ক্রম উল্টে দিলে পুরো মহাবিশ্বের স্থানাঙ্ক ব্যবস্থা বদলে যায়। তাই সারি-কলামের সূত্র মুখস্থ করার আগে ক্রমের এই অর্থ বোঝা জরুরি।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Official section: Noncommutativity — non-narrated (extra quizzes) ═══ -->
+      <b1b-section id="sec-noncommutativity" title="৬. বিনিময়হীনতা — Noncommutativity ($AB \neq BA$)" data-no-narration="true">
+        <p>বাস্তব সংখ্যার সাধারণ গুণনে $2\times 3 = 3\times 2 = 6$। কিন্তু স্থানিক রূপান্তরের ক্ষেত্রে ক্রম অদলবদল করলে মহাজাগতিক বিশৃঙ্খলা তৈরি হয়! আগের উদাহরণে আমরা প্রথমে ৯০° ঘুরিয়ে তারপর শিরিং দিয়েছিলাম, ফলে $\hat{i}$ পৌঁছেছিল $(1,1)$-এ। এবার ক্রম উল্টে দিন: আগে অনুভূমিক শিরিং করুন, তারপর ৯০° ঘোরান। শিরিংয়ের সময় $\hat{i}$ তার নিজের জায়গায় $(1,0)$-তেই স্থির থাকে; এবার ৯০° ঘোরালে এটি গিয়ে পৌঁছায় $(0,1)$-এ। পূর্বের $(1,1)$ এবং বর্তমানের $(0,1)$ সম্পূর্ণ ভিন্ন দুটি ভেক্টর!</p>
+
+        <b1b-formula math="AB\neq BA\qquad(\text{ম্যাট্রিক্স গুণন বিনিময় বিধি মেনে চলে না})"></b1b-formula>
+
+        <b1b-quiz
+          question="❓ সত্য বা মিথ্যা: যেকোনো দুটি বর্গ ম্যাট্রিক্স $A$ এবং $B$-এর জন্য সর্বদাই $AB = BA$ সত্য।"
+          correct="1"
+          correct-msg="একদম সঠিক! ম্যাট্রিক্স গুণন সাধারণ সংখ্যার মতো বিনিময় বিধি মেনে চলে না ($AB \neq BA$), কারণ জ্যামিতিকভাবে রূপান্তরের ক্রম পরিবর্তনের ফলে চূড়ান্ত স্থান সম্পূর্ণ ভিন্ন আকার ধারণ করে।"
+          wrong-msg="ভেবে দেখুন, ৯০° ঘূর্ণন করে শিরিং দিলে স্থানটি যেখানে পৌঁছায়, আগে শিরিং করে পরে ৯০° ঘোরালে কি হুবহু একই স্থানাঙ্ক পাওয়া যায়?"
+          reveal-msg="সঠিক উত্তর: মিথ্যা ($AB$ সাধারণত $BA$-এর সমান হয় না)। এটিকে ম্যাট্রিক্সের বিনিময়হীনতা (Non-Commutativity) বলা হয়।">
+          <div slot="option">সত্য — সাধারণ সংখ্যার গুণনের মতোই এটি সর্বদাই সমান হয়</div>
+          <div slot="option">মিথ্যা — ম্যাট্রিক্স গুণন ক্রমনির্ভর ($AB \neq BA$)</div>
+        </b1b-quiz>
+
+        <b1b-callout type="green" icon="🔁" title="বিশেষ ব্যতিক্রম: ঐডেন্টিটি ও স্কেলিং ম্যাট্রিক্স">
+          <p>একটি বিশেষ ম্যাট্রিক্স হলো ঐডেন্টিটি ম্যাট্রিক্স $I$ — এটি কিছুই করে না; যেকোনো ম্যাট্রিক্স $M$-এর সাথে গুণ করলে শুধু $M$-ই পাওয়া যায়। একইভাবে দুই অক্ষ-ই সমান পরিমাণে স্কেল করলে পাওয়া যায় $aI$; এই রকম ম্যাট্রিক্স সব ম্যাট্রিক্সের সাথেই বিনিময়যোগ্য।</p>
+        </b1b-callout>
+
+        <b1b-formula math="I=\begin{bmatrix}1&0\\0&1\end{bmatrix},\quad IM=MI=M\,;\qquad aI=\begin{bmatrix}a&0\\0&a\end{bmatrix},\quad aI\cdot M=M\cdot aI=aM"></b1b-formula>
+
+        <b1b-quiz
+          question="❓ অফিশিয়াল 3B1B প্রশ্ন: ৯০° ঘূর্ণন $R=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$ এবং দ্বিগুণ স্কেলিং $S=\begin{bmatrix}2&0\\0&2\end{bmatrix}$ — এদের ক্রম বদলে ($RS$ বনাম $SR$) ফলাফল কি বদলাবে?"
+          correct="1"
+          correct-msg="ঠিক! স্কেলিং ম্যাট্রিক্স $aI$ যেকোনো ম্যাট্রিক্সের সাথে বিনিময়যোগ্য: $aI\cdot M=M\cdot aI=aM$। তাই $RS=SR=2R$। কিন্তু এটি একটি বিশেষ ব্যতিক্রম—সাধারণ ম্যাট্রিক্সের ক্ষেত্রে $AB\neq BA$।"
+          wrong-msg="মনে রাখো: সমান স্কেলিং $aI$ সব দিকে একইভাবে প্রসারিত করে, তাই ঘূর্ণনের আগে বা পরে প্রয়োগ করলে একই ফল। কিন্তু শিরিংয়ের মতো অসম রূপান্তরের ক্ষেত্রে ক্রম গুরুত্বপূর্ণ।"
+          reveal-msg="সঠিক উত্তর: না, ফলাফল বদলাবে না। $S=2I$ একটি স্কেলিং ম্যাট্রিক্স, এবং $aI$ সব ম্যাট্রিক্সের সাথে বিনিময়যোগ্য। তবে সাধারণভাবে $AB \neq BA$—যেমন শিরিং ও ঘূর্ণনের ক্রম বদলালে ফলাফল বদলায়।">
+          <div slot="option">হ্যাঁ, বদলাবে — ম্যাট্রিক্স গুণন সবসময় বিনিময়হীন</div>
+          <div slot="option">না, বদলাবে না — স্কেলিং ম্যাট্রিক্স $aI$ যেকোনো ম্যাট্রিক্সের সাথে বিনিময়যোগ্য</div>
+          <div slot="option">হ্যাঁ, কারণ ঘূর্ণন ও স্কেলিং একই রকম রূপান্তর</div>
+          <div slot="option">শুধু তখনই বদলাবে যখন স্কেলিং ঋণাত্মক হয়</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ Section: Associativity — 8 manifest cues ═══ -->
+      <b1b-section id="sec-associativity" title="৭. সংযোগ বিধি — Associativity ($(AB)C = A(BC)$)">
+        <p>ম্যাট্রিক্স গুণন বিনিময় বিধি না মানলেও, এটি <strong>সংযোগ বিধি (Associative Property)</strong> নিখুঁতভাবে মেনে চলে। অর্থাৎ বন্ধনী কোথায় বসানো হোক না কেন, চূড়ান্ত যৌগিক ম্যাট্রিক্স একই থাকে।</p>
+
+        <b1b-formula math="(AB)C = A(BC)"></b1b-formula>
+
+        <p>যদি আপনি স্কুল বা কলেজে বীজগণিতের সাহায্যে তিন-তিনটি ম্যাট্রিক্সের প্রতীকী গুণ করে এটি প্রমাণ করতে যান, তবে খাতার পর খাতা সমীকরণ লিখে হয়রান হয়ে যাবেন। কিন্তু জ্যামিতিক চোখে তাকালে এটি স্বতঃসিদ্ধভাবে জলের মতো পরিষ্কার!</p>
+
+        <figure class="lesson-figure">
+          <video loop muted playsinline controls src="../../assets/figures/la_04/associativity.mp4"></video>
+          <figcaption>এই অ্যানিমেশনে তিনটি রূপান্তর $C$, $B$, $A$ পরপর স্থানটির ওপর প্রয়োগ হচ্ছে। লক্ষ্য করুন বন্ধনী কোথায় আছে তা নির্বিশেষে রূপান্তরের প্রবাহ অপরিবর্তিত—প্রথমে $C$, তারপর $B$, সবশেষে $A$। ঠিক এই অপরিবর্তিত ক্রমই $(AB)C=A(BC)$-কে স্বতঃসিদ্ধ করে তোলে। চিত্রটি জটিল বীজগণিতের বদলে একটিমাত্র দৃশ্যমান যুক্তি দেয়।</figcaption>
+        </figure>
+
+        <p>লক্ষ্য করুন: $(AB)C$ মানে হলো—প্রথমে স্থানে রূপান্তর $C$ ঘটাও, তারপর $AB$-এর সম্মিলিত প্রভাব একযোগে প্রয়োগ করো। আর $A(BC)$ মানে হলো—প্রথমে ক্রমান্বয়ে রূপান্তর $C$ এবং $B$ ঘটাও, তারপর রূপান্তর $A$ প্রয়োগ করো।</p>
+
+        <b1b-callout type="blue" icon="🔗" title="একই ক্রম, একই ফলাফল">
+          <p>উভয় ক্ষেত্রেই মহাবিশ্বের স্থানটি ঠিক একই ক্রমে প্রথমে $C$, তারপর $B$, এবং সবশেষে $A$-এর মধ্য দিয়েই যাত্রা করছে! প্রয়োগের এই মৌলিক ক্রম যেহেতু একচুলও বদলায়নি, তাই উভয়ের চূড়ান্ত সম্মিলিত ম্যাট্রিক্স অভিন্ন হতে বাধ্য।</p>
+        </b1b-callout>
+
+        <p>নিচের ইন্টারেক্টিভ সিমুলেটরে তোমরা নিজের হাতে রূপান্তরের ক্রম অদলবদল করে দেখো এবং কুইজগুলোর উত্তর দিয়ে তোমার ধারণা যাচাই করে নাও। শুভ পদচারণা!</p>
+
+        <b1b-quiz
+          question="❓ সংযোগ বিধি $(AB)C = A(BC)$ সম্পর্কে নিচের কোন উক্তিটি জ্যামিতিকভাবে সত্য?"
+          correct="0"
+          correct-msg="চমৎকার অন্তর্দৃষ্টি! $(AB)C$ এবং $A(BC)$ উভয়ই মহাবিশ্বের স্থানে একই তিনটি রূপান্তর হুবহু একই ক্রমে ($C \to B \to A$) সম্পন্ন করে। তাই বন্ধনীর অবস্থান ফলাফলে কোনো পরিবর্তন আনতে পারে না।"
+          wrong-msg="একটু চিন্তা করুন: তিনটি রূপান্তরের প্রয়োগের সময়কাল ও ক্রম কি এখানে বদলে গেছে, নাকি শুধু হিসাবের বন্ধনী আগে-পরে হয়েছে?"
+          reveal-msg="সঠিক উত্তর: সংযোগ বিধি সর্বদাই সত্য — $(AB)C = A(BC)$। রূপান্তরের জ্যামিতিক প্রয়োগের ক্রম অপরিবর্তিত থাকায় এটি স্বতঃসিদ্ধ সত্য।">
+          <div slot="option">এটি সর্বদাই সত্য, কারণ তিনটি রূপান্তরের সার্বিক প্রয়োগের ক্রম অপরিবর্তিত থাকে</div>
+          <div slot="option">এটি কখনোই সত্য নয়, কারণ ম্যাট্রিক্স গুণন বিনিময় বিধি মানে না</div>
+          <div slot="option">এটি কেবল তখনই সত্য হয় যখন ম্যাট্রিক্সগুলোর ডিটারমিন্যান্ট শূন্য হয়</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ Official section: Conclusion — non-narrated ═══ -->
+      <b1b-section id="sec-conclusion" title="৮. উপসংহার — Conclusion" data-no-narration="true">
+        <p>ম্যাট্রিক্স গুণন কেবল একটি হিসাবের কৌশল নয়—এটি একটি মানসিক হাতিয়ার। একে ব্যবহার করে আমরা নির্ণায়ক (determinant), আইগেনভ্যালু (eigenvalue), এবং রৈখিক সমীকরণের ব্যবস্থা—এই সবকিছুকে একই জ্যামিতিক দৃষ্টিতে দেখতে পারি। যখনই কোনো জটিল রূপান্তরকে ছোট ছোট অংশে ভেঙে বুঝতে হয়, তখন এই ‘পরপর প্রয়োগ’ের ধারণাই কাজে আসে।</p>
+
+        <p>কম্পিউটার গ্রাফিক্স ও রোবোটিক্সে এই ধারণা প্রতিদিন ব্যবহৃত হয়: একটিমাত্র ম্যাট্রিক্স দিয়ে পুরো স্থানকে ঘোরানো, স্কেল করা বা সরানো যায়, আর কয়েকটি ম্যাট্রিক্স গুণ করে জটিল চলনকে একক রূপান্তরে রূপ দেওয়া যায়। Grant Sanderson যেভাবে বলেন—ম্যাট্রিক্সকে বাদ দিয়ে চিন্তা করলেই প্রমাণ ছোট হয়; কিন্তু ম্যাট্রিক্সকে বোঝা ছাড়া সেই চিন্তাও সম্ভব নয়।</p>
+
+        <b1b-callout type="gold" icon="🎯" title="পরবর্তী পর্বে">
+          <p>পরবর্তী অধ্যায়ে আমরা <a href="lesson_05.html"><strong>ত্রিমাত্রিক রৈখিক রূপান্তর</strong></a> নিয়ে কাজ করব, যেখানে এই একই ধারণাগুলো তিন মাত্রায় প্রসারিত হবে। তার আগে নিচের ল্যাবটিতে ক্রম অদলবদল করে $AB \neq BA$ নিজের চোখে যাচাই করে নাও।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Interactive lab — non-narrated ═══ -->
+      <b1b-section id="sec-visualizer" title="ইন্টারেক্টিভ কম্পোজিশন সিমুলেটর ল্যাব" data-no-narration="true">
+        <p class="viz-intro">নিচের ল্যাবটিতে দুটি রূপান্তরের ধারাবাহিক সংযোজন নিজের চোখে পর্যবেক্ষণ করুন। অ্যানিমেশন প্লে করে দেখুন কীভাবে প্রথম রূপান্তরের পর দ্বিতীয় রূপান্তরটি প্রযুক্ত হয়ে একক কম্পোজিট ফলাফল তৈরি করে, এবং “উভয়ের ক্রম অদলবদল” বোতামে ক্লিক করে যাচাই করুন কেন $AB \neq BA$!</p>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <div class="viz-wrapper" id="compVizWrapper">
+            <div class="viz-header">
+              <div class="viz-header-left">
+                <span>🔬 ম্যাট্রিক্স কম্পোজিশন ল্যাব — $M_2 \times M_1$ রূপান্তরের যৌথ প্রয়োগ</span>
+              </div>
+              <div class="viz-header-tools">
+                <button type="button" class="viz-tool-btn" onclick="loadComboPreset('rot_shear')">ঘূর্ণন অতঃপর শিরিং</button>
+                <button type="button" class="viz-tool-btn" onclick="loadComboPreset('shear_rot')">শিরিং অতঃপর ঘূর্ণন</button>
+                <button type="button" class="viz-tool-btn" onclick="swapVisualizerOrder()">উভয়ের ক্রম অদলবদল ⇄</button>
+              </div>
+            </div>
+
+            <div class="comp-formula-wrap">
+              <span style="color:#ffd54f; font-weight:700;">যৌথ ম্যাট্রিক্স C = </span>
+              <div class="comp-matrix m-second" title="২য় রূপান্তর (Second)">
+                <span id="m2a">1.0</span><span id="m2b">1.0</span>
+                <span id="m2c">0.0</span><span id="m2d">1.0</span>
+              </div>
+              <span style="color:var(--text-muted); font-size:1.3rem; font-weight:bold;">&times;</span>
+              <div class="comp-matrix m-first" title="১ম রূপান্তর (First)">
+                <span id="m1a">0.0</span><span id="m1b">-1.0</span>
+                <span id="m1c">1.0</span><span id="m1d">0.0</span>
+              </div>
+              <span style="color:var(--text-muted); font-size:1.3rem; font-weight:bold;">=</span>
+              <div class="comp-matrix m-res" title="চূড়ান্ত যৌগিক রূপান্তর (Combined)">
+                <span id="mca">1.0</span><span id="mcb">-1.0</span>
+                <span id="mcc">1.0</span><span id="mcd">0.0</span>
+              </div>
+            </div>
+
+            <div class="viz-canvas-container">
+              <canvas class="viz-canvas" id="compInteractiveCanvas"></canvas>
+            </div>
+
+            <div class="viz-controls">
+              <div class="comp-slider-box">
+                <label>ধাপ অগ্রগতি (ধাপ ১: নীল $\to$ ধাপ ২: সবুজ):</label>
+                <input type="range" id="stageSlider" min="0" max="2" step="0.01" value="2.0"/>
+                <span class="comp-slider-val" id="stageSliderVal">ধাপ ২ (১০০%)</span>
+                <button type="button" class="viz-tool-btn" id="playStageBtn" onclick="togglePlayStageAnimation()" style="background:var(--theme); color:#000; font-weight:700;">পরপর অ্যানিমেট করুন ▶</button>
+              </div>
+              <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:0.8rem; color:var(--text-muted); margin-top:8px;">
+                <span>🔵 <strong>ধাপ ১ (০.০ থেকে ১.০):</strong> ১ম রূপান্তর ($M_1$) কার্যকর</span>
+                <span>🟢 <strong>ধাপ ২ (১.০ থেকে ২.০):</strong> ২য় রূপান্তর ($M_2$) সমন্বিত</span>
+                <span>🟡 <strong>হলুদ ও লাল তীর:</strong> রূপান্তরিত $\hat{i}$ ও $\hat{j}$</span>
+              </div>
+            </div>
+            <div class="viz-info" id="compCanvasInfo">
+              💡 "উভয়ের ক্রম অদলবদল" বোতামে ক্লিক করে দেখুন কেন $AB \neq BA$ — গ্রিড সম্পূর্ণ ভিন্ন অবস্থানে শেষ হয়!
+            </div>
+          </div>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/lesson_04/experiments/fill_v2/3b1b_lesson_04_full_dubbed_fill2.mp4"
+    yt-id="XkY2DOUCWMU"
+    title="ম্যাট্রিক্স গুণন আসলে রূপান্তরের সংযোজন | Matrix multiplication as composition — অধ্যায় ৪"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — লিনিয়ার অ্যালজেব্রা">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_03.html"
+  prev-title="রৈখিক রূপান্তর ও ম্যাট্রিক্স"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_05.html"
+  next-title="ত্রিমাত্রিক রৈখিক রূপান্তর"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ INTERACTIVE COMPOSITION SIMULATOR (page-scoped) ═══════════ -->
+<script>
+(function () {
+  const canvas = document.getElementById('compInteractiveCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  let W = canvas.parentElement.clientWidth || 640;
+  let H = 440;
+  canvas.width = W;
+  canvas.height = H;
+
+  function onResize() {
+    W = canvas.parentElement.clientWidth || 640;
+    canvas.width = W;
+    draw();
+  }
+  window.addEventListener('resize', onResize);
+
+  const CX = function () { return W / 2; };
+  const CY = function () { return H / 2; };
+  const SCALE = 42;
+
+  function toScreen(gx, gy) { return [CX() + gx * SCALE, CY() - gy * SCALE]; }
+
+  let M1 = { a: 0, b: -1, c: 1, d: 0, name: 'ঘূর্ণন (Rotation)' };
+  let M2 = { a: 1, b: 1, c: 0, d: 1, name: 'শিরিং (Shear)' };
+  let stepProgress = 2.0;
+  let isPlaying = false;
+  let animId = null;
+
+  const slider = document.getElementById('stageSlider');
+  const sliderVal = document.getElementById('stageSliderVal');
+
+  if (slider) {
+    slider.addEventListener('input', function () {
+      stepProgress = parseFloat(slider.value);
+      updateStepLabel();
+      draw();
+    });
+  }
+
+  function updateStepLabel() {
+    if (!sliderVal) return;
+    if (stepProgress <= 1.0) {
+      sliderVal.textContent = 'ধাপ ১ (' + Math.round(stepProgress * 100) + '%)';
+    } else {
+      sliderVal.textContent = 'ধাপ ২ (' + Math.round((stepProgress - 1.0) * 100) + '%)';
+    }
+  }
+
+  function updateFormulaRibbon() {
+    const ids = ['m1a','m1b','m1c','m1d','m2a','m2b','m2c','m2d','mca','mcb','mcc','mcd'];
+    const els = {};
+    ids.forEach(function (id) { els[id] = document.getElementById(id); });
+
+    ['a','b','c','d'].forEach(function (k) {
+      if (els['m1' + k]) els['m1' + k].textContent = M1[k].toFixed(1);
+      if (els['m2' + k]) els['m2' + k].textContent = M2[k].toFixed(1);
+    });
+
+    const ca = M2.a * M1.a + M2.b * M1.c;
+    const cb = M2.a * M1.b + M2.b * M1.d;
+    const cc = M2.c * M1.a + M2.d * M1.c;
+    const cd = M2.c * M1.b + M2.d * M1.d;
+    [['mca',ca],['mcb',cb],['mcc',cc],['mcd',cd]].forEach(function (pair) {
+      if (els[pair[0]]) els[pair[0]].textContent = pair[1].toFixed(1);
+    });
+  }
+
+  window.loadComboPreset = function (type) {
+    if (type === 'rot_shear') {
+      M1 = { a: 0, b: -1, c: 1, d: 0, name: 'ঘূর্ণন (Rotation)' };
+      M2 = { a: 1, b: 1, c: 0, d: 1, name: 'শিরিং (Shear)' };
+    } else if (type === 'shear_rot') {
+      M1 = { a: 1, b: 1, c: 0, d: 1, name: 'শিরিং (Shear)' };
+      M2 = { a: 0, b: -1, c: 1, d: 0, name: 'ঘূর্ণন (Rotation)' };
+    }
+    updateFormulaRibbon();
+    stepProgress = 2.0;
+    if (slider) slider.value = 2.0;
+    updateStepLabel();
+    draw();
+  };
+
+  window.swapVisualizerOrder = function () {
+    const temp = M1;
+    M1 = M2;
+    M2 = temp;
+    updateFormulaRibbon();
+    stepProgress = 2.0;
+    if (slider) slider.value = 2.0;
+    updateStepLabel();
+    draw();
+  };
+
+  window.togglePlayStageAnimation = function () {
+    const btn = document.getElementById('playStageBtn');
+    if (isPlaying) {
+      isPlaying = false;
+      cancelAnimationFrame(animId);
+      if (btn) btn.textContent = 'পরপর অ্যানিমেট করুন ▶';
+      return;
+    }
+    isPlaying = true;
+    if (btn) btn.textContent = 'থামান ❚❚';
+    stepProgress = 0.0;
+
+    function step() {
+      stepProgress += 0.016;
+      if (stepProgress >= 2.0) {
+        stepProgress = 2.0;
+        isPlaying = false;
+        if (btn) btn.textContent = 'পুনরায় চালান ↺';
+      }
+      if (slider) slider.value = stepProgress;
+      updateStepLabel();
+      draw();
+      if (isPlaying) animId = requestAnimationFrame(step);
+    }
+    animId = requestAnimationFrame(step);
+  };
+
+  function drawArrow(sx, sy, ex, ey, color, width) {
+    width = width || 2.5;
+    const dx = ex - sx, dy = ey - sy;
+    const len = Math.sqrt(dx * dx + dy * dy);
+    if (len < 2) return;
+    const angle = Math.atan2(dy, dx);
+    const hs = 10;
+    ctx.save();
+    ctx.strokeStyle = color;
+    ctx.fillStyle = color;
+    ctx.lineWidth = width;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(sx, sy);
+    ctx.lineTo(ex, ey);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(ex, ey);
+    ctx.lineTo(ex - hs * Math.cos(angle - 0.45), ey - hs * Math.sin(angle - 0.45));
+    ctx.lineTo(ex - hs * Math.cos(angle + 0.45), ey - hs * Math.sin(angle + 0.45));
+    ctx.closePath();
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function draw() {
+    const isDark = document.documentElement.classList.contains('dark') ||
+      document.documentElement.getAttribute('data-theme') === 'dark';
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = isDark ? '#090912' : '#f8fafc';
+    ctx.fillRect(0, 0, W, H);
+
+    const cx = CX(), cy = CY();
+    let curA, curB, curC, curD;
+    if (stepProgress <= 1.0) {
+      const t = stepProgress;
+      curA = (1 - t) + t * M1.a;
+      curB = t * M1.b;
+      curC = t * M1.c;
+      curD = (1 - t) + t * M1.d;
+    } else {
+      const t = stepProgress - 1.0;
+      const finalA = M2.a * M1.a + M2.b * M1.c;
+      const finalB = M2.a * M1.b + M2.b * M1.d;
+      const finalC = M2.c * M1.a + M2.d * M1.c;
+      const finalD = M2.c * M1.b + M2.d * M1.d;
+      curA = (1 - t) * M1.a + t * finalA;
+      curB = (1 - t) * M1.b + t * finalB;
+      curC = (1 - t) * M1.c + t * finalC;
+      curD = (1 - t) * M1.d + t * finalD;
+    }
+
+    function applyTrans(x, y) {
+      return { x: curA * x + curB * y, y: curC * x + curD * y };
+    }
+
+    ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)';
+    ctx.lineWidth = 1;
+    for (let x = cx % SCALE; x < W; x += SCALE) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+    }
+    for (let y = cy % SCALE; y < H; y += SCALE) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+    }
+
+    const range = 8;
+    ctx.strokeStyle = stepProgress <= 1.0
+      ? (isDark ? 'rgba(79,195,247,0.25)' : 'rgba(2,132,199,0.28)')
+      : (isDark ? 'rgba(105,240,174,0.25)' : 'rgba(16,185,129,0.28)');
+    ctx.lineWidth = 1.2;
+    for (let gx = -range; gx <= range; gx++) {
+      const p1 = applyTrans(gx, -range), p2 = applyTrans(gx, range);
+      const s1 = toScreen(p1.x, p1.y), s2 = toScreen(p2.x, p2.y);
+      ctx.beginPath(); ctx.moveTo(s1[0], s1[1]); ctx.lineTo(s2[0], s2[1]); ctx.stroke();
+    }
+    for (let gy = -range; gy <= range; gy++) {
+      const p1 = applyTrans(-range, gy), p2 = applyTrans(range, gy);
+      const s1 = toScreen(p1.x, p1.y), s2 = toScreen(p2.x, p2.y);
+      ctx.beginPath(); ctx.moveTo(s1[0], s1[1]); ctx.lineTo(s2[0], s2[1]); ctx.stroke();
+    }
+
+    const xa1 = toScreen(-range, 0), xa2 = toScreen(range, 0);
+    ctx.strokeStyle = 'rgba(255,213,79,0.45)';
+    ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(xa1[0], xa1[1]); ctx.lineTo(xa2[0], xa2[1]); ctx.stroke();
+
+    const ya1 = toScreen(0, -range), ya2 = toScreen(0, range);
+    ctx.strokeStyle = 'rgba(233,69,96,0.45)';
+    ctx.beginPath(); ctx.moveTo(ya1[0], ya1[1]); ctx.lineTo(ya2[0], ya2[1]); ctx.stroke();
+
+    const origin = toScreen(0, 0);
+    const ti = applyTrans(1, 0), tj = applyTrans(0, 1);
+    const tix = toScreen(ti.x, ti.y), tjx = toScreen(tj.x, tj.y);
+
+    drawArrow(origin[0], origin[1], tix[0], tix[1], '#ffd54f', 3.5);
+    ctx.fillStyle = '#ffd54f';
+    ctx.font = 'bold 13px sans-serif';
+    ctx.fillText('(AB)î [' + curA.toFixed(1) + ', ' + curC.toFixed(1) + ']', tix[0] + 8, tix[1] - 6);
+
+    drawArrow(origin[0], origin[1], tjx[0], tjx[1], '#e94560', 3.5);
+    ctx.fillStyle = '#e94560';
+    ctx.fillText('(AB)ĵ [' + curB.toFixed(1) + ', ' + curD.toFixed(1) + ']', tjx[0] + 8, tjx[1] - 6);
+
+    ctx.fillStyle = isDark ? 'rgba(255,255,255,0.85)' : 'rgba(15,23,42,0.85)';
+    ctx.font = '12px sans-serif';
+    ctx.fillText(stepProgress <= 1.0
+      ? 'ধাপ ১: ১ম রূপান্তর [' + M1.name + '] কার্যকর হচ্ছে'
+      : 'ধাপ ২: ২য় রূপান্তর [' + M2.name + '] এর সাথে যুক্ত হচ্ছে', 14, 26);
+  }
+
+  window.addEventListener('themeChanged', draw);
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (m) {
+      if (m.type === 'attributes' && (m.attributeName === 'data-theme' || m.attributeName === 'class')) draw();
+    });
+  });
+  observer.observe(document.documentElement, { attributes: true });
+
+  updateFormulaRibbon();
+  draw();
+})();
+</script>
+
+</body>
+</html>

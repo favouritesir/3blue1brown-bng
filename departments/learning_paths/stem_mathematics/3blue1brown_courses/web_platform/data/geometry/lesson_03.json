@@ -1,0 +1,176 @@
+{
+  "lesson_id": "lesson_03",
+  "chapter_num": 3,
+  "course_id": "geometry",
+  "title_en": "The most underappreciated formula | Exploring high-dimensional spheres",
+  "title_bn": "বহুমাত্রিক গোলকের আশ্চর্য আচরণ",
+  "subtitle_bn": "উচ্চমাত্রার গোলকের আয়তন, পৃষ্ঠ ও ‘মাত্রার অভিশাপ’—যেখানে অভিজ্ঞতা ভুল পথ দেখায়",
+  "video_id": "fsLh-NYhOoU",
+  "official_url": "https://www.3blue1brown.com/lessons/spheres-talk",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "book chapter",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "The world of higher dimensions is not a place, it is a calculation.",
+    "quote_bn": "উচ্চমাত্রার জগৎ কোনো স্থান নয়, এটি একটা হিসাব।",
+    "author": "অজানা"
+  },
+  "sections": [
+    {
+      "id": "sec-intro",
+      "title_bn": "ভূমিকা — গোলকের বাইরে",
+      "title_en": "Beyond the Sphere",
+      "summary_bn": "আমরা ত্রিমাত্রিক গোলক চিনি; কিন্তু ১০ বা ১০০ মাত্রার গোলকের আচরণ কেমন?",
+      "key_takeaways": [
+        "$n$-মাত্রিক গোলক হলো বিন্দু-সেট যারা মূলবিন্দু থেকে দূরত্ব $\\le R$।",
+        "আমাদের ত্রিমাত্রিক অভিজ্ঞতা উচ্চমাত্রায় কাজ করে না—এখানে গণিতই একমাত্র পথপ্রদর্শক।",
+        "এই পাঠে আমরা দেখব আয়তন কীভাবে হঠাৎ শূন্যের দিকে ধাবিত হয়।"
+      ],
+      "formulas": [
+        {
+          "label": "n-মাত্রিক গোলক",
+          "katex": "\\{x\\in\\mathbb{R}^n:\\|x\\|\\le R\\}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_highdim-sphere",
+          "caption_bn": "উচ্চমাত্রিক গোলক",
+          "type": "svg",
+          "src": "figures/highdim-sphere.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-volume",
+      "title_bn": "আয়তনের সূত্র",
+      "title_en": "The Volume Formula",
+      "summary_bn": "গামা ফাংশন ব্যবহার করে $n$-মাত্রিক একক গোলকের আয়তনের একটি সুন্দর সূত্র পাওয়া যায়।",
+      "key_takeaways": [
+        "$V_n(R)=\\dfrac{\\pi^{n/2}}{\\Gamma(n/2+1)}R^n$।",
+        "$n=2$ তে $\\pi R^2$, $n=3$ তে $\\tfrac43\\pi R^3$—আমাদের পরিচित সূত্রগুলো ফিরে আসে।",
+        "$n$ বাড়তে থাকলে আয়তন আগে বেড়ে, তারপর দ্রুত শূন্যের দিকে যায়।"
+      ],
+      "formulas": [
+        {
+          "label": "আয়তন সূত্র",
+          "katex": "V_n(R)=\\frac{\\pi^{n/2}}{\\Gamma(n/2+1)}R^n"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_volume-vs-dim",
+          "caption_bn": "আয়তন বনাম মাত্রা",
+          "type": "svg",
+          "src": "figures/volume-vs-dim.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-concentration",
+      "title_bn": "ভর কোথায় নিবদ্ধ?",
+      "title_en": "Where the Mass Lives",
+      "summary_bn": "উচ্চমাত্রায় গোলকের প্রায় সব আয়তন একটি পাতলা খোলসে ও বিষুবীয় অঞ্চলে নিবদ্ধ থাকে।",
+      "key_takeaways": [
+        "ব্যাসার্ধের ভগ্নাংশ $\\sqrt{n}$-এর মতো বাড়ে—অর্থাৎ বেশিরভাগ বিন্দু পৃষ্ঠের কাছে থাকে।",
+        "যেকোনো নির্দিষ্ট অক্ষের দিকে ভর প্রায় $\\pm 1/\\sqrt{n}$ এর ভেতরে থাকে।",
+        "ত্রিমাত্রিক অভিজ্ঞতার বিপরীতে—এখানে গোলকের ‘ভেতর’ প্রায় খালি।"
+      ],
+      "formulas": [
+        {
+          "label": "সাধারণ স্থানাঙ্ক",
+          "katex": "x_i\\sim 1/\\sqrt{n}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_thin-shell",
+          "caption_bn": "পাতলা খোলস",
+          "type": "svg",
+          "src": "figures/thin-shell.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-curse",
+      "title_bn": "মাত্রার অভিশাপ",
+      "title_en": "Curse of Dimensionality",
+      "summary_bn": "উচ্চমাত্রায় দূরত্ব, আয়তন ও নমুনা নেওয়া—সবকিছুই আমাদের অভিজ্ঞতার বাইরে চলে যায়।",
+      "key_takeaways": [
+        "দুটি এলোমেলো বিন্দুর দূরত্ব প্রায় $\\sqrt{n}$-এর কাছাকাছি হয়—তফাৎ কমে আসে।",
+        "সব বিন্দুতে ‘খালি জায়গা’ বেড়ে যায়—তাই ডেটা ঘন হওয়া কঠিন হয়।",
+        "মেশিন লার্নিং ও পরিসংখ্যানে এই সমস্যা ‘curse of dimensionality’ নামে পরিচিত।"
+      ],
+      "formulas": [],
+      "figures": []
+    },
+    {
+      "id": "sec-paradox",
+      "title_bn": "কোন মাত্রায় সবচেয়ে বড়?",
+      "title_en": "The Peak Dimension",
+      "summary_bn": "একক গোলকের আয়তন ৫ মাত্রায়, আর পৃষ্ঠতল ৭ মাত্রায় সর্বোচ্চ হয়—একটি অদ্ভুত fact।",
+      "key_takeaways": [
+        "আয়তন $V_n$ সর্বোচ্চ হয় $n=5$-এ (প্রায় ৫.২৬)।",
+        "পৃষ্ঠতল $S_n=nV_n$ সর্বোচ্চ হয় $n=7$-এ (প্রায় ৩৩.১)।",
+        "এই ‘সর্বোচ্চ বিন্দু’-র কারণ $\\pi$ ও $\\Gamma$ একে অপরের সাথে প্রতিদ্বন্দ্বিতা করে।"
+      ],
+      "formulas": [
+        {
+          "label": "পৃষ্ঠতল",
+          "katex": "S_n=nV_n=\\frac{2\\pi^{n/2}}{\\Gamma(n/2)}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_peak-dimension",
+          "caption_bn": "সর্বোচ্চ মাত্রা",
+          "type": "svg",
+          "src": "figures/peak-dimension.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-conclusion",
+      "title_bn": "উপসংহার",
+      "title_en": "Conclusion",
+      "summary_bn": "উচ্চমাত্রার গোলক আমাদের অভিজ্ঞতাকে চ্যালেঞ্জ করে—এবং গণিতকে করে সত্যের একমাত্র মাপকাঠি।",
+      "key_takeaways": [
+        "আয়তন শূন্যের দিকে যায়, ভর পৃষ্ঠে নিবদ্ধ হয়, দূরত্ব সমান হয়ে যায়।",
+        "অভিজ্ঞতার ওপর ভিত্তি করে উচ্চমাত্রা বোঝা যায় না—হিসাবই পথ দেখায়।",
+        "পরবর্তী পাঠে আমরা কোয়াটারনিয়ন নিয়ে ৪ মাত্রার সংখ্যার সাথে পরিচিত হব।"
+      ],
+      "formulas": [],
+      "figures": []
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_volume",
+      "section_ref": "sec-volume",
+      "question_bn": "$n$ বাড়তে থাকলে একক ব্যাসার্ধের $n$-মাত্রিক গোলকের আয়তনের কী হয়?",
+      "question_en": "$n$ বাড়তে থাকলে একক ব্যাসার্ধের $n$-মাত্রিক গোলকের আয়তনের কী হয়?",
+      "options": [
+        "সবসময় বাড়তে থাকে",
+        "আগে বেড়ে পরে শূন্যের দিকে যায়",
+        "সবসময় একই থাকে",
+        "হঠাৎ অসীম হয়ে যায়"
+      ],
+      "options_bn": [
+        "সবসময় বাড়তে থাকে",
+        "আগে বেড়ে পরে শূন্যের দিকে যায়",
+        "সবসময় একই থাকে",
+        "হঠাৎ অসীম হয়ে যায়"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "$\\pi^{n/2}$ বাড়লেও $\\Gamma(n/2+1)$ আরও দ্রুত বাড়ে। ফলে কয়েক মাত্রার পর ভাগফল দ্রুত শূন্যের দিকে যায়।",
+      "explanation_en": "$\\pi^{n/2}$ বাড়লেও $\\Gamma(n/2+1)$ আরও দ্রুত বাড়ে। ফলে কয়েক মাত্রার পর ভাগফল দ্রুত শূন্যের দিকে যায়।",
+      "hint": "লব ও হর—দুটোই বাড়ে, কিন্তু কোনটা বেশি দ্রুত?",
+      "hints": [
+        "লব ও হর—দুটোই বাড়ে, কিন্তু কোনটা বেশি দ্রুত?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "lesson_id": "lesson_05",
+  "chapter_num": 5,
+  "course_id": "why_pi",
+  "title_en": "Pi hiding in prime regularities",
+  "title_bn": "মৌলিক সংখ্যার নিয়মিততায় লুকোনো পাই",
+  "subtitle_bn": "১ − ১/৩ + ১/৫ − ১/৭ + … সূত্রটির পেছনে লুকিয়ে আছে বৃত্ত, মৌলিক সংখ্যা এবং জটিল সংখ্যা",
+  "official_url": "https://www.3blue1brown.com/lessons/leibniz-formula",
+  "video_src": "../../media_vault/why_pi/lesson_05/experiments/3b1b_why_pi_05_full_dubbed.mp4",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "17:29",
+    "date": "১৯ মে, ২০১৭",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "Pi hides in the most unlikely of places.",
+    "quote_bn": "পাই সবচেয়ে অপ্রত্যাশিত জায়গায় লukিয়ে থাকে।",
+    "author": "Grant Sanderson"
+  },
+  "sections": [
+    {
+      "id": "sec-leibniz-series",
+      "title_bn": "লাইবনিজের ধারা",
+      "title_en": "Leibniz's Alternating Series",
+      "summary_bn": "একটিমাত্র alternating ধারা—প্রথম দেখে মনে হয় বৃত্তের সাথে এর কোনো সম্পর্ক নেই—কিন্তু এর মান π/4।",
+      "key_takeaways": [
+        "ধারা $1-\\tfrac13+\\tfrac15-\\tfrac17+\\cdots=\\pi/4$।",
+        "এটি $\\arctan(1)$ এর টেলর ধারা; $\\arctan(1)=\\pi/4$।",
+        "ধারাটি খুব ধীরে converges—কয়েক লক্ষ পদ নিলেও কয়েকটি অঙ্কই পাওয়া যায়।"
+      ],
+      "formulas": [
+        {
+          "label": "লাইবনিজ সূত্র",
+          "katex": "1-\\frac13+\\frac15-\\frac17+\\cdots=\\frac{\\pi}{4}"
+        },
+        {
+          "label": "আরকট্যা-র টেলর ধারা",
+          "katex": "\\arctan(x)=x-\\frac{x^3}{3}+\\frac{x^5}{5}-\\cdots"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_leibniz_series",
+          "caption_bn": "alternating ধারার যোগফল π/4",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_05/fig_leibniz_series.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-circle-hidden",
+      "title_bn": "এখানেও একটা বৃত্ত",
+      "title_en": "A Circle Hiding Here Too",
+      "summary_bn": "arctan(1)-এর ৪৫° কোণের পেছনে আছে একটা বৃত্ত; ব্যস্ত-বর্গ আর বৃত্তের কোণ একসাথে মিলে পাই আনে।",
+      "key_takeaways": [
+        "$\\arctan(1)=45^\\circ=\\pi/4$—একটা বৃত্তের কোণ।",
+        "ব্যাসেল সমস্যার মতোই এখানেও ব্যস্ত-বর্গ ও বৃত্তের মিল পাইকে প্রকাশ করে।",
+        "ধারার কাঠামো বোঝা যায় একটা একক বৃত্তের ওপর ভিত্তি করে।"
+      ],
+      "formulas": [
+        {
+          "label": "বৃত্তের কোণ",
+          "katex": "\\arctan(1)=\\frac{\\pi}{4}=45^\\circ"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_leibniz_circle",
+          "caption_bn": "৪৫° কোণ—একক বৃত্তের চার ভাগের এক ভাগ",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_05/fig_leibniz_circle.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-primes",
+      "title_bn": "মৌলিক সংখ্যা ও জটিল তল",
+      "title_en": "Primes and the Complex Plane",
+      "summary_bn": "পাইয়ের এই ধারার সাথে মৌলিক সংখ্যার একটা গাণিতিক সম্পর্ক আছে, যা জটিল সংখ্যা আর গauss-িয় পূর্ণসংখ্যার মাধ্যমে বোঝা যায়।",
+      "key_takeaways": [
+        "জটিল সংখ্যা $\\mathbb{C}$ তে গুণন মানে ঘূর্ণন ও স্কেলিং—বৃত্তের সাথে সরাসরি সম্পর্ক।",
+        "মৌলিক সংখ্যাগুলোকে জটিল তলে বিন্যাস করলে পাইয়ের সাথে তাদের নিয়মিততা দেখা যায়।",
+        "Gaussian integer-এর factorization পাই-সংক্রান্ত ধারার সাথে যুক্ত।"
+      ],
+      "formulas": [
+        {
+          "label": "জটিল একক",
+          "katex": "e^{i\\theta}=\\cos\\theta+i\\sin\\theta,\\quad e^{i\\pi}=-1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_leibniz_primes",
+          "caption_bn": "জটিল তলে মৌলিক সংখ্যা ও ঘূর্ণন",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_05/fig_leibniz_primes.svg"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_leibniz_sum",
+      "course_id": "why_pi",
+      "lesson_id": "lesson_05",
+      "section_ref": "sec-leibniz-series",
+      "question_bn": "লাইবনিজের ধারা $1-\\tfrac13+\\tfrac15-\\cdots$ এর মান কত?",
+      "question_en": "What is the value of the Leibniz series?",
+      "options": [
+        "$\\pi/2$",
+        "$\\pi/4$",
+        "$\\pi^2/6$",
+        "$1/\\pi$"
+      ],
+      "options_bn": [
+        "$\\pi/2$",
+        "$\\pi/4$",
+        "$\\pi^2/6$",
+        "$1/\\pi$"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ঠিক! $\\arctan(1)=\\pi/4$, তাই ধারার মান $\\pi/4$।",
+      "explanation_en": "",
+      "hint": "arctan(1) = π/4 সূত্রটি মনে রাখো।",
+      "hints": [
+        "arctan(1) = π/4 সূত্রটি মনে রাখো।"
+      ]
+    }
+  ]
+}

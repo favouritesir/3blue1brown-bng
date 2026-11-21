@@ -1,0 +1,50 @@
+[
+  {
+    "index": 0,
+    "type": "h2",
+    "text": "কেন্দ্রীয় সীমা উপপাদ্যের আনুষ্ঠানিক গাণিতিক রূপ",
+    "start_ms": 0.0,
+    "end_ms": 3600.0,
+    "duration_ms": 3600.0
+  },
+  {
+    "index": 1,
+    "type": "p",
+    "text": "আদি চলকগুলোর সসীম গড় \\mu এবং সসীম ভেদাঙ্ক \\sigma^2 থাকাই উপপাদ্যের একমাত্র মূল শর্ত।",
+    "start_ms": 3950.0,
+    "end_ms": 10262.0,
+    "duration_ms": 6312.0
+  },
+  {
+    "index": 2,
+    "type": "p",
+    "text": "নমুনা গড়ের প্রত্যাশিত মান আদি পপুলেশন গড়ের সমান: E\\bar{X} = \\mu।",
+    "start_ms": 10612.0,
+    "end_ms": 15652.0,
+    "duration_ms": 5040.0
+  },
+  {
+    "index": 3,
+    "type": "p",
+    "text": "নমুনা গড়ের বিস্তৃতি বা আদর্শ বিচ্যুতি সরাসরি \\sqrt{n} দ্বারা ভাগ হয়ে নাটকীয়ভাবে সংকুচিত হয়।",
+    "start_ms": 16002.0,
+    "end_ms": 22746.0,
+    "duration_ms": 6744.0
+  },
+  {
+    "index": 4,
+    "type": "formula-box",
+    "text": "কেন্দ্রীয় সীমা উপপাদ্যের প্রমাণীকরণ রূপ (Z Score): Z_n = \\frac{\\bar{X}_n \\mu}{\\frac{\\sigma}{\\sqrt{n}}} = \\frac{S_n n\\mu}{\\sigma \\sqrt{n}} \\xrightarrow{d} \\mathcal{N}(0, 1)",
+    "start_ms": 23096.0,
+    "end_ms": 36296.0,
+    "duration_ms": 13200.0
+  },
+  {
+    "index": 5,
+    "type": "formula-box",
+    "text": "নমুনা গড়ের বণ্টন (আসন্নায়ন): \\bar{X}_n \\sim \\mathcal{N}\\left(\\mu, \\frac{\\sigma^2}{n}\\right) \\qquad (\\text{যথেষ্ট বড় } n \\text{ এর জন্য, } n \\ge 30)",
+    "start_ms": 36646.0,
+    "end_ms": 48814.0,
+    "duration_ms": 12168.0
+  }
+]

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="পৃথিবীর বাতাসের অদ্ভুত বিন্দু">
+  <defs>
+    <radialGradient id="earth" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#2f7fa8"/>
+      <stop offset="100%" stop-color="#122e42"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="420" fill="#0d1117"/>
+  <circle cx="320" cy="215" r="140" fill="url(#earth)" stroke="#74c0e3" stroke-width="2"/>
+  <g stroke="#74c0e3" stroke-width="1" fill="none" opacity="0.55">
+    <ellipse cx="320" cy="215" rx="140" ry="46"/>
+    <ellipse cx="320" cy="215" rx="140" ry="96"/>
+    <ellipse cx="320" cy="215" rx="52" ry="140"/>
+    <ellipse cx="320" cy="215" rx="104" ry="140"/>
+    <line x1="180" y1="215" x2="460" y2="215"/>
+  </g>
+  <g stroke="#f2c14e" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#a)">
+    <path d="M232 168 q40 -22 76 -4"/><path d="M352 150 q40 6 62 34"/>
+    <path d="M430 240 q-26 32 -66 36"/><path d="M260 276 q-36 -14 -52 -44"/>
+  </g>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#f2c14e"/></marker></defs>
+  <circle cx="320" cy="215" r="9" fill="#ff6b6b"/>
+  <circle cx="320" cy="215" r="17" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="392" y1="250" x2="332" y2="222" stroke="#ff6b6b" stroke-width="2"/>
+  <text x="470" y="252" fill="#ff9b9b" font-size="17" font-family="sans-serif">অনুভূমিক বাতাস = ০</text>
+  <text x="320" y="30" fill="#e8eef5" font-size="20" text-anchor="middle" font-family="sans-serif">পৃথিবীতে সবসময় কমপক্ষে একটি বিন্দু আছে যেখানে বাতাস নেই</text>
+  <text x="320" y="402" fill="#9fb3c8" font-size="16" text-anchor="middle" font-family="sans-serif">গোলকের উপরিভাগে স্পর্শক ভেক্টর ক্ষেত্রের অবশ্যই একটি শূন্য থাকে</text>
+</svg>

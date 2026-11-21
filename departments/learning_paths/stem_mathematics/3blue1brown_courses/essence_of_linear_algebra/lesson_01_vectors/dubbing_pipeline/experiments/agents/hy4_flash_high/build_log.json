@@ -1,0 +1,125 @@
+{
+  "agent": "A / hy4_flash_high",
+  "experiment": "short_review_cues_01-10_clean_v2",
+  "audio_source": "re-assembled from clean_timesync_v2/raw/raw_001..raw_010.mp3 (clean v2 TTS, no SFX) because clean_timesync_v2/master.mp3 was never generated",
+  "strategy": "absolute sample offset (round(start*44100)); atempo fit (no truncation); pad only; 12ms raised-cosine fades; NO SFX stem",
+  "cue_count": 10,
+  "overrun_cues": 0,
+  "max_measured_drift_ms": 0.0,
+  "canvas_duration_sec": 70.68,
+  "peak_before_norm": 0.506927,
+  "peak_after_norm": 0.506927,
+  "video_stream": "original 3b1b_lesson_01_bangla_dubbed_video.mp4 :: -map 0:v:0 -c:v copy (NO re-encode)",
+  "cues": [
+    {
+      "id": 1,
+      "expected_start_ms": 10920.0,
+      "actual_start_ms": 10920.0,
+      "drift_ms": 0.0,
+      "tempo": 1.1442,
+      "natural_sec": 4.92,
+      "target_sec": 4.3,
+      "placed_samples": 189630,
+      "overrun": false
+    },
+    {
+      "id": 2,
+      "expected_start_ms": 15720.0,
+      "actual_start_ms": 15720.0,
+      "drift_ms": 0.0,
+      "tempo": 1.1709,
+      "natural_sec": 4.824,
+      "target_sec": 4.12,
+      "placed_samples": 181692,
+      "overrun": false
+    },
+    {
+      "id": 3,
+      "expected_start_ms": 20380.0,
+      "actual_start_ms": 20380.0,
+      "drift_ms": 0.0,
+      "tempo": 1.5625,
+      "natural_sec": 9.528,
+      "target_sec": 6.098,
+      "placed_samples": 268922,
+      "overrun": false
+    },
+    {
+      "id": 4,
+      "expected_start_ms": 26478.0,
+      "actual_start_ms": 26478.0,
+      "drift_ms": 0.0,
+      "tempo": 1.6367,
+      "natural_sec": 5.928,
+      "target_sec": 3.622,
+      "placed_samples": 159730,
+      "overrun": false
+    },
+    {
+      "id": 5,
+      "expected_start_ms": 30880.0,
+      "actual_start_ms": 30880.0,
+      "drift_ms": 0.0,
+      "tempo": 1.7114,
+      "natural_sec": 6.024,
+      "target_sec": 3.52,
+      "placed_samples": 155232,
+      "overrun": false
+    },
+    {
+      "id": 6,
+      "expected_start_ms": 34940.0,
+      "actual_start_ms": 34940.0,
+      "drift_ms": 0.0,
+      "tempo": 1.2788,
+      "natural_sec": 10.512,
+      "target_sec": 8.22,
+      "placed_samples": 362502,
+      "overrun": false
+    },
+    {
+      "id": 7,
+      "expected_start_ms": 44040.0,
+      "actual_start_ms": 44040.0,
+      "drift_ms": 0.0,
+      "tempo": 1.112,
+      "natural_sec": 6.672,
+      "target_sec": 6,
+      "placed_samples": 264600,
+      "overrun": false
+    },
+    {
+      "id": 8,
+      "expected_start_ms": 51720.0,
+      "actual_start_ms": 51720.0,
+      "drift_ms": 0.0,
+      "tempo": 1.8245,
+      "natural_sec": 7.152,
+      "target_sec": 3.92,
+      "placed_samples": 172872,
+      "overrun": false
+    },
+    {
+      "id": 9,
+      "expected_start_ms": 55640.0,
+      "actual_start_ms": 55640.0,
+      "drift_ms": 0.0,
+      "tempo": 1.1191,
+      "natural_sec": 7.968,
+      "target_sec": 7.12,
+      "placed_samples": 313992,
+      "overrun": false
+    },
+    {
+      "id": 10,
+      "expected_start_ms": 63020.0,
+      "actual_start_ms": 63020.0,
+      "drift_ms": 0.0,
+      "tempo": 1.4332,
+      "natural_sec": 8.112,
+      "target_sec": 5.66,
+      "placed_samples": 249606,
+      "overrun": false
+    }
+  ]
+}

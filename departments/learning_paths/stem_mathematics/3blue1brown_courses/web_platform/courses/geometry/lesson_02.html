@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>শঙ্কু কাটলে উপবৃত্ত কেন পাই? | Why slicing a cone gives an ellipse</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/geometry/lesson_02/manifest.js?v=8"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="জ্যামিতি"
+  course-url="../../index.html#geometry"
+  home-url="../../index.html"
+  chapter-num="০২"
+  chapter-total="০৬"
+  prev-url="lesson_01.html"
+  prev-title="পূর্ববর্তী অধ্যায়: dandelin-spheres"
+  next-url="lesson_03.html"
+  next-title="পরবর্তী অধ্যায়"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="জ্যামিতি"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০২ · জ্যামিতি"
+  title="শঙ্কু কাটলে উপবৃত্ত কেন পাই? | Why slicing a cone gives an ellipse"
+  desc="ড্যান্ডেলিন গোলকের সাহায্যে উপবৃত্তের নাভি-ধর্মের এক সুন্দর জ্যামিতিক প্রমাণ"
+  video-src="../../media_vault/geometry/lesson_02/experiments/3b1b_geometry_02_full_dubbed.mp4"
+  yt-id="pQa_tWZmlGs"
+  date="১ আগস্ট, ২০১৮"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2018/dandelin.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লেড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">পাঠের সূচনা</b1b-bookmark>
+      <b1b-bookmark time="60" time-bn="০১:০০">প্রধান ধারণা</b1b-bookmark>
+      <b1b-bookmark time="107" time-bn="০১:৪৭">মূল প্রমাণ ও অন্তর্দৃষ্টি</b1b-bookmark>
+      <b1b-bookmark time="175" time-bn="০২:৫৫">সারাংশ ও উপসংহার</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-intro">ভূমিকা — কনিক সেকশন</a>
+      <a href="#sec-cone-setup">শঙ্কু কাটার সেটাপ</a>
+      <a href="#sec-dandelin">ড্যান্ডেলিন গোলক</a>
+      <a href="#sec-proof">প্রমাণ — দূরত্বের সমষ্টি ধ্রুবক</a>
+      <a href="#sec-other-conics">অন্যান্য কনিক</a>
+      <a href="#sec-conclusion">উপসংহার</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+      <!-- ═══ Section: ভূমিকা — কনিক সেকশন ═══ -->
+      <b1b-section id="sec-intro" title="ভূমিকা — কনিক সেকশন">
+        <b1b-quote author="Henri Poincaré (অঁরি পয়েনকেয়ার)">জ্যামিতি হলো ভুলভাবে আঁকা চিত্র থেকে সঠিক যুক্তি বের করার শিল্প।</b1b-quote>
+        <p>দুই হাজার বছর আগে গ্রিক গণিতবিদরা লক্ষ্য করেছিলেন—একটি শঙ্কুকে বিভিন্ন কোণে কাটলে বিভিন্ন বক্র পাওয়া যায়। সোজা কাটলে বৃত্ত, কিছু ঢালু কাটলে উপবৃত্ত, আরও ঢালু কাটলে পরাবৃত্ত।</p>
+        <b1b-figure src="../../assets/figures/geometry/lesson_02/cone-slices.svg" alt="শঙ্কুকে বিভিন্ন কোণে কাটা" caption="শঙ্কুকে বিভিন্ন কোণে কাটা"></b1b-figure>
+        <p>আমাদের প্রশ্ন: কাটা তলের ওপর যে বক্রটি তৈরি হয়, তা কেন ঠিক একটি উপবৃত্ত? উপবৃত্ত আবার তাকেই বলি যার কোনো বিন্দু থেকে দুটি নির্দিষ্ট নাভির (focus) দূরত্বের সমষ্টি সব জায়গায় একই।</p>
+        <b1b-formula math="PF_1+PF_2=2a=\text{constant}"></b1b-formula>
+      </b1b-section>
+      <!-- ═══ Section: শঙ্কু কাটার সেটাপ ═══ -->
+      <b1b-section id="sec-cone-setup" title="শঙ্কু কাটার সেটাপ">
+        <p>ধরা যাক একটি ডান-বৃত্তাকার শঙ্কু। এর অক্ষের সাথে পাশগুলো একই কোণ $\alpha$ তৈরি করে। এখন একটি তল দিয়ে শঙ্কুটিকে এমনভাবে কাটি যে তলটি শঙ্কুর দুই পাশকেই ছেদ করে—কিন্তু কোনো স্ল্যান্ট লাইনের সমান্তরাল নয়। ফলে ছেদটি একটি বন্ধ বক্র হয়।</p>
+        <b1b-figure src="../../assets/figures/geometry/lesson_02/cone-plane.svg" alt="শঙ্�ু ও কাটা তল" caption="শঙ্�ু ও কাটা তল"></b1b-figure>
+        <p>এই বক্রের ওপর যেকোনো বিন্দু $P$ নিন। আমরা দেখাব যে $P$ থেকে দুটি বিশেষ বিন্দুর দূরত্বের সমষ্টি $P$-র অবস্থান নির্বিশেষে একই থাকে। সেই দুটি বিশেষ বিন্দুই হবে উপবৃত্তের নাভি।</p>
+      </b1b-section>
+      <!-- ═══ Section: ড্যান্ডেলিন গোলক ═══ -->
+      <b1b-section id="sec-dandelin" title="ড্যান্ডেলিন গোলক">
+        <p>১৮২২ সালে বেলজিয়ান গণিতবিদ জার্মেইন ড্যান্ডেলিন এক বিস্ময়কর কৌশল দেখান। কাটা তলের ওপরে শঙ্কুর ভেতরে একটি গোলক ঢোকান যাতে সেটি শঙ্কুর পাশকেও এবং কাটা তলকেও স্পর্শ করে। তলের নিচে আরেকটি একইরকম গোলক বসানো যায়।</p>
+        <b1b-figure src="../../assets/figures/geometry/lesson_02/dandelin-two-spheres.svg" alt="শঙ্কুর ভেতরে দুটি ড্যান্ডেলিন গোলক" caption="শঙ্কুর ভেতরে দুটি ড্যান্ডেলিন গোলক"></b1b-figure>
+        <p>ওপরের গোলকটি তলকে যে বিন্দুতে স্পর্শ করে তাকেই বলি $F_1$, নিচেরটির স্পর্শবিন্দু $F_2$। দাবি: এই দুটিই উপবৃত্তের নাভি। প্রমাণের জন্য আমাদের একটিমাত্র সরল facts লাগবে—কোনো বাহ্যিক বিন্দু থেকে একটি গোলকে আঁকা দুটি স্পর্শ-রেখার দৈর্ঘ্য সমান।</p>
+        <b1b-callout type="blue" icon="📐" title="স্পর্শ-রেখার নিয়ম"><p>বিন্দু $P$ থেকে গোলকে দুটো স্পর্শ-রেখা আঁকলে দুটির দৈর্ঘ্য সমান হয়। কারণ দুটি স্পর্শবিন্দু ও কেন্দ্র নিয়ে গড়ে ওঠা ডান-ত্রিভুজ দুটো সর্বसमান।</p></b1b-callout>
+      </b1b-section>
+      <!-- ═══ Section: প্রমাণ — দূরত্বের সমষ্টি ধ্রুবক ═══ -->
+      <b1b-section id="sec-proof" title="প্রমাণ — দূরত্বের সমষ্টি ধ্রুবক">
+        <p>এখন $P$ বিন্দু থেকে ওপরের গোলকের স্পর্শ-বৃত্ত পর্যন্ত শঙ্কুর পাশ বরাবর একটি সরলরেখা আঁকুন। ধরুন এর দৈর্ঘ্য $t_1$। আবার $P$ থেকে সরাসরি $F_1$ পর্যন্ত দূরত্ব—এটিও ওই গোলকের ওপর একটি স্পর্শ-রেখা। তাই স্পর্শ-নিয়মে $PF_1=t_1$।</p>
+        <b1b-figure src="../../assets/figures/geometry/lesson_02/proof-tangent.svg" alt="স্পর্শ-রেখা ও দূরত্বের সমানতা" caption="স্পর্শ-রেখা ও দূরত্বের সমানতা"></b1b-figure>
+        <p>একই যুক্তিতে নিচের গোলকের জন্য $PF_2=t_2$, যেখানে $t_2$ হলো $P$ থেকে নিচের স্পর্শ-বৃত্ত পর্যন্ত শঙ্কুর পাশের দৈর্ঘ্য। এখন $PF_1+PF_2=t_1+t_2$—অর্থাৎ দুই স্পর্শ-বৃত্তের মধ্যকার পাশের মোট দৈর্ঘ্য।</p>
+        <b1b-formula math="PF_1+PF_2=t_1+t_2=2a=\text{const}"></b1b-formula>
+        <b1b-callout type="gold" icon="🎯" title="কেন ধ্রুবক?"><p>দুই স্পর্শ-বৃত্ত শঙ্কুর ওপর স্থির অবস্থানে থাকে। তাই তাদের মধ্যকার পাশের দূরত্ব $t_1+t_2$ সব $P$-র জন্য একই—ঠিক উপবৃত্তের সংজ্ঞা অনুযায়ী।</p></b1b-callout>
+        <p>অর্থাৎ কাটা তলের ওপরের বক্রের প্রতিটি বিন্দু থেকে $F_1$ ও $F_2$-র দূরত্বের সমষ্টি একই। এই ধর্মই বলে ওটি একটি উপবৃত্ত—এবং $F_1,F_2$ তার নাভি। প্রমাণ সম্পূর্ণ!</p>
+        <b1b-quiz
+          question="❓ $P$ বিন্দু থেকে ওপরের ড্যান্ডেলিন গোলকের স্পর্শ-বৃত্ত ও $F_1$ নাভির দূরত্ব কীভাবে সম্পর্কিত?"
+          correct="1"
+          correct-msg="চমৎকার! $P$ থেকে একই গোলকে আঁকা দুটি স্পর্শ-রেখার দৈর্ঘ্য সমান—এই স্পর্শ-নিয়ম থেকেই $PF_1=t_1$।"
+          wrong-msg="আবার চেষ্টা করো। ইঙ্গিত: একটি বিন্দু থেকে একটি বৃত্তে আঁকা দুটি স্পর্শ-রেখার দৈর্ঘ্যের কথা মনে করুন।"
+          reveal-msg="সঠিক উত্তর: $P$ থেকে একই গোলকে আঁকা দুটি স্পর্শ-রেখার দৈর্ঘ্য সমান—এই স্পর্শ-নিয়ম থেকেই $PF_1=t_1$।">
+          <div slot="option">$PF_1$ সবসময় বেশি</div>
+          <div slot="option">দুটি দূরত্ব সমান</div>
+          <div slot="option">$PF_1$ সবসময় কম</div>
+          <div slot="option">কোনো সম্পর্ক নেই</div>
+        </b1b-quiz>
+      </b1b-section>
+      <!-- ═══ Section: অন্যান্য কনিক ═══ -->
+      <b1b-section id="sec-other-conics" title="অন্যান্য কনিক">
+        <p>কাটা তলের কোণ যদি ঠিক শঙ্কুর পাশের সমান হয়, তবে বক্রটি আর বন্ধ হয় না—পাওয়া যায় পরাবৃত্ত। আরও ঢালু হলে শঙ্কুর দুই পাশকেই ছেদ করে অতিবৃত্তের দুটি শাখা তৈরি হয়।</p>
+        <b1b-figure src="../../assets/figures/geometry/lesson_02/other-conics.svg" alt="উপবৃত্ত, পরাবৃত্ত ও অতিবৃত্ত" caption="উপবৃত্ত, পরাবৃত্ত ও অতিবৃত্ত"></b1b-figure>
+        <p>ড্যান্ডেলিনের মূল ধারণা এখানেও কাজ করে: উপযুক্ত গোলক আর স্পর্শ-রেখার নিয়ম ব্যবহার করে প্রতিটি কনিকের নাভি-ধর্ম বের করা যায়। একই জ্যামিতিক ভাষা তিনটি ভিন্ন বক্রকে এক সুতোয় বেঁধে দেয়।</p>
+      </b1b-section>
+      <!-- ═══ Section: উপসংহার ═══ -->
+      <b1b-section id="sec-conclusion" title="উপসংহার">
+        <p>আজ আমরা দেখলাম কীভাবে দুটি গোলক শঙ্কুর ভেতরে বসিয়ে একটি দীর্ঘ বীজগাণিতিক প্রমাণকে মাত্র কয়েক লাইনের জ্যামিতিতে রূপ দেওয়া যায়। স্পর্শ-রেখার সমান দৈর্ঘ্যের মতো একটি সরল facts জন্ম দেয় উপবৃত্তের সম্পূর্ণ নাভি-তত্ত্বের।</p>
+        <p>পরবর্তী পাঠে আমরা ছেড়ে যাব ত্রিমাত্রিক জগৎকে—আরও উঁচু মাত্রার গোলক নিয়ে কাজ করব, যেখানে আমাদের অভিজ্ঞতা আমাদেরকে প্রায়ই ভুলিয়ে দেয়।</p>
+      </b1b-section>
+      <!-- ═══ Interactive visualizer — excluded from narration ═══ -->
+      <b1b-section id="sec-visualizer" title="ইন্টারেকটিভ ধারণা-মানচিত্র" data-no-narration="true">
+        <p class="viz-intro">নিচের এসভিজি সমতলে বিন্দুর অবস্থান টেনে বদলান, স্কেলার স্লাইডার ঘুরিয়ে দৈর্ঘ্য ও দিক পর্যবেক্ষণ করুন—জ্যামিতির মৌলিক ক্রিয়াগুলো এখানে রিয়েল-টাইমে দেখা যায়।</p>
+        <b1b-vector-decomposer initial="3,-2">
+          <p>যেকোনো স্থানাঙ্ক এক্স কমা ওয়াই ইনপুট দিন অথবা প্রিসেটে ক্লিক করে পর্যবেক্ষণ করুন কীভাবে একটি ভেক্টর তার উপাদানে বিভক্ত হয়।</p>
+        </b1b-vector-decomposer>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="3,-2"></b1b-vector-plane>
+        </b1b-fullscreen>
+        <b1b-figure src="../../assets/figures/geometry/lesson_02/concept-map.svg" alt="ধারণা-মানচিত্র" caption="শঙ্কু কাটলে উপবৃত্ত কেন পাই? — ধারণার সংযোগ"></b1b-figure>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/geometry/lesson_02/experiments/3b1b_geometry_02_full_dubbed.mp4"
+    yt-id="pQa_tWZmlGs"
+    title="শঙ্কু কাটলে উপবৃত্ত কেন পাই? — অধ্যায় ০২"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — জ্যামিতি">
+    <div slot="playlist">
+      <a class="playlist-item" href="lesson_01.html"><div class="playlist-num">০১</div><div class="playlist-item-info"><div class="playlist-item-title">০১ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০১</div></div></a>
+      <a class="playlist-item active" href="lesson_02.html"><div class="playlist-num">০২</div><div class="playlist-item-info"><div class="playlist-item-title">০২ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০২</div></div></a>
+      <a class="playlist-item" href="lesson_03.html"><div class="playlist-num">০৩</div><div class="playlist-item-info"><div class="playlist-item-title">০৩ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০৩</div></div></a>
+      <a class="playlist-item" href="lesson_04.html"><div class="playlist-num">০৪</div><div class="playlist-item-info"><div class="playlist-item-title">০৪ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০৪</div></div></a>
+      <a class="playlist-item" href="lesson_05.html"><div class="playlist-num">০৫</div><div class="playlist-item-info"><div class="playlist-item-title">০৫ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০৫</div></div></a>
+      <a class="playlist-item" href="lesson_06.html"><div class="playlist-num">০৬</div><div class="playlist-item-info"><div class="playlist-item-title">০৬ নম্বর পাঠ</div><div class="playlist-item-meta">অধ্যায় ০৬</div></div></a>
+    </div>
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_01.html"
+  prev-title="পূর্ববর্তী অধ্যায়"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_03.html"
+  next-title="পরবর্তী অধ্যায়"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

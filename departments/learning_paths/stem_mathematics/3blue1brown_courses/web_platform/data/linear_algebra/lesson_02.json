@@ -1,0 +1,311 @@
+{
+  "lesson_id": "lesson_02",
+  "chapter_num": 2,
+  "course_id": "linear_algebra",
+  "title_en": "Linear combinations, span, and basis vectors",
+  "title_bn": "রৈখিক সমন্বয়, স্প্যান এবং ভিত্তি ভেক্টর",
+  "subtitle_bn": "ভিত্তি ভেক্টর, রৈখিক সমন্বয় ও স্প্যানের জ্যামিতিক তাৎপর্য এবং রৈখিক স্বাধীনতা ও নির্ভরশীলতা",
+  "video_id": "k7RM-ot2NWY",
+  "official_url": "https://www.3blue1brown.com/lessons/span",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "9:59",
+    "prerequisites": [
+      "lesson_01"
+    ]
+  },
+  "epigraph": {
+    "quote": "Mathematics requires a small amount of imaginative freedom, not genius — though in excess, that freedom becomes insanity.",
+    "quote_bn": "গণিতের জন্য সামান্য কল্পনাপ্রসূত স্বাধীনতার প্রয়োজন হয়, প্রতিভার নয় — তবে অতিরিক্ত মাত্রায় সেই স্বাধীনতাই হয় উন্মাদনা।",
+    "author": "Angus K. Rodgers"
+  },
+  "sections": [
+    {
+      "id": "sec_01_basis_vectors",
+      "title_bn": "১. ভিত্তি ভেক্টর — স্থানাঙ্ক যখন স্কেলার",
+      "title_en": "Basis Vectors — Coordinates as Scalars",
+      "summary_bn": "স্থানাঙ্ককে কেবল দুটি সংখ্যার জোড়া হিসেবে না দেখে ভিত্তি ভেক্টরদ্বয়ের স্কেলিং ফ্যাক্টর হিসেবে উপলব্ধি করার গভীর জ্যামিতিক দৃষ্টিভঙ্গি।",
+      "key_takeaways": [
+        "দ্বিমাত্রিক স্থানাঙ্ক ব্যবস্থায় দুটি প্রমিত একক ভেক্টর থাকে: x-অক্ষ বরাবর î এবং y-অক্ষ বরাবর ĵ।",
+        "যেকোনো ভেক্টরের স্থানাঙ্ক (x, y) আসলে নির্দেশ করে î ভেক্টরটিকে কতটুকু প্রসারিত (stretch) এবং ĵ ভেক্টরটিকে কতটুকু প্রসারিত বা সংকুচিত (squish) করে যোগ করা হয়েছে।",
+        "সংখ্যার মাধ্যমে ভেক্টর উপস্থাপনের সম্পূর্ণ ধারণাটি নির্ভর করে আপনি কোন ভিত্তি ভেক্টর জোড়া বেছে নিয়েছেন তার ওপর।",
+        "ভিন্ন একজোড়া অ-সমান্তরাল ভিত্তি ভেক্টর নির্বাচন করলে একটি সম্পূর্ণ নতুন ও বৈধ স্থানাঙ্ক ব্যবস্থা তৈরি হয়।"
+      ],
+      "formulas": [
+        {
+          "label": "প্রমিত ভিত্তি ভেক্টর",
+          "katex": "\\hat{i} = \\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix}, \\quad \\hat{j} = \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix}"
+        },
+        {
+          "label": "ভিত্তি ভেক্টরের স্কেলার সমন্বয় হিসেবে ভেক্টর",
+          "katex": "\\vec{v} = \\begin{bmatrix} x \\\\ y \\end{bmatrix} = x\\hat{i} + y\\hat{j} = x\\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix} + y\\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix}"
+        },
+        {
+          "label": "নির্দিষ্ট উদাহরণ",
+          "katex": "\\begin{bmatrix} 3 \\\\ -2 \\end{bmatrix} = 3\\hat{i} + (-2)\\hat{j} = 3\\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix} + (-2)\\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_unit_vectors",
+          "caption_bn": "প্রমিত একক ভিত্তি ভেক্টর আই হ্যাট (î) এবং জে হ্যাট (ĵ)",
+          "type": "svg",
+          "src": "../../assets/figures/la_02/UnitVectors.svg"
+        },
+        {
+          "id": "fig_coords_as_scalars",
+          "caption_bn": "স্থানাঙ্ক আসলে ভিত্তি ভেক্টরকে স্কেল করার পরিমাপক",
+          "type": "svg",
+          "src": "../../assets/figures/la_02/VectorCoordinatesAsScalarsOfUnitVectors.svg"
+        },
+        {
+          "id": "fig_different_basis",
+          "caption_bn": "বিকল্প ভিত্তি ভেক্টর নির্বাচন করে সম্পূর্ণ নতুন স্থানাঙ্ক ব্যবস্থা তৈরি",
+          "type": "svg",
+          "src": "../../assets/figures/la_02/DifferentBasisVectors.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_02_linear_combinations",
+      "title_bn": "২. রৈখিক সমন্বয় (Linear Combinations)",
+      "title_en": "Linear Combinations",
+      "summary_bn": "দুটি বা ততোধিক ভেক্টরকে স্কেলার দিয়ে গুণ করে যোগ করার প্রক্রিয়া এবং কেন একে 'রৈখিক' বলা হয় তার সুস্পষ্ট ব্যাখ্যা।",
+      "key_takeaways": [
+        "দুটি ভেক্টর v⃗ ও w⃗-কে স্কেলার a ও b দ্বারা স্কেল করে যোগ করার অপারেশন av⃗ + bw⃗-কে বলা হয় রৈখিক সমন্বয় (Linear Combination)।",
+        "এখানে 'রৈখিক' শব্দটি এসেছে কারণ ভেক্টরগুলোর ওপর কেবল স্কেলিং ও সাধারণ যোগ প্রযোজ্য—কোনো গুণফল, বর্গ বা ত্রিকোণমিতিক ফাংশন নেই।",
+        "স্কেলার a ও b-কে স্বাধীনভাবে পরিবর্তন করলে প্রাপ্ত ভেক্টরের শীর্ষবিন্দু স্থানে নতুন নতুন বিন্দু তৈরি করে।"
+      ],
+      "formulas": [
+        {
+          "label": "রৈখিক সমন্বয়ের সাধারণ রূপ",
+          "katex": "a\\vec{v} + b\\vec{w} = a\\begin{bmatrix} v_1 \\\\ v_2 \\end{bmatrix} + b\\begin{bmatrix} w_1 \\\\ w_2 \\end{bmatrix} = \\begin{bmatrix} av_1 + bw_1 \\\\ av_2 + bw_2 \\end{bmatrix}"
+        },
+        {
+          "label": "এন-সংখ্যক ভেক্টরের রৈখিক সমন্বয়",
+          "katex": "c_1\\vec{v}_1 + c_2\\vec{v}_2 + \\dots + c_n\\vec{v}_n = \\sum_{i=1}^{n} c_i\\vec{v}_i"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_linear_comb_desc",
+          "caption_bn": "দুটি ভেক্টরের রৈখিক সমন্বয়ের জ্যামিতিক রূপ",
+          "type": "svg",
+          "src": "../../assets/figures/la_02/LinearCombinationWithDescription.svg"
+        },
+        {
+          "id": "fig_linear_comb_vectors_lines",
+          "caption_bn": "স্কেলার পরিবর্তনের মাধ্যমে উৎপন্ন ভেক্টরের বিচরণ",
+          "type": "svg",
+          "src": "../../assets/figures/la_02/LinearCombinationVectorsAndLines.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_03_span",
+      "title_bn": "৩. স্প্যান — রৈখিক সমন্বয়ের জগৎ",
+      "title_en": "The Span of Vectors",
+      "summary_bn": "কোনো ভেক্টর সেটের সমস্ত সম্ভাব্য রৈখিক সমন্বয় মিলে যে স্থানটি গঠিত হয়, তাই হলো তাদের স্প্যান।",
+      "key_takeaways": [
+        "ভেক্টর সেটের স্প্যান (Span) হলো তাদের মাধ্যমে পৌঁছানো সম্ভব এমন সমস্ত সম্ভাব্য ভেক্টরের সংকলন।",
+        "দ্বিমাত্রিক স্থানে দুটি অ-সমান্তরাল ভেক্টরের স্প্যান হলো সম্পূর্ণ দ্বিমাত্রিক সমতল ℝ²।",
+        "দুটি সমান্তরাল বা একই রেখায় অবস্থিত ভেক্টরের স্প্যান হলো কেবল মূলবিন্দুগামী একটি একক সরলরেখা।",
+        "উভয় ভেক্টরই শূন্য ভেক্টর হলে স্প্যান কেবল একটি বিন্দু (মূলবিন্দু)।",
+        "একক ভেক্টরকে সাধারণত তীর (arrow) হিসেবে এবং ভেক্টরের সমগ্র স্প্যান বা সংগ্রহকে শীর্ষবিন্দুর সমষ্টি (points) হিসেবে চিন্তা করা সুবিধাজনক।"
+      ],
+      "formulas": [
+        {
+          "label": "দুটি ভেক্টরের স্প্যানের সেট সংজ্ঞা",
+          "katex": "\\text{Span}(\\vec{v}, \\vec{w}) = \\{ a\\vec{v} + b\\vec{w} \\mid a, b \\in \\mathbb{R} \\}"
+        },
+        {
+          "label": "একক অশূন্য ভেক্টরের স্প্যান (একটি সরলরেখা)",
+          "katex": "\\text{Span}(\\vec{v}) = \\{ c\\vec{v} \\mid c \\in \\mathbb{R} \\}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_span_linear_comb",
+          "caption_bn": "দুটি ভেক্টরের স্প্যান পুরো দ্বিমাত্রিক সমতল ঢেকে ফেলে",
+          "type": "svg",
+          "src": "../../assets/figures/la_02/SpanOfLinearCombination.svg"
+        },
+        {
+          "id": "fig_point_line",
+          "caption_bn": "তীরচিহ্নের পরিবর্তে শীর্ষবিন্দুকে বিন্দু হিসেবে ভাবলে স্প্যান একটি সরলরেখা",
+          "type": "svg",
+          "src": "../../assets/figures/la_02/point_line.jpg"
+        },
+        {
+          "id": "fig_point_space",
+          "caption_bn": "সমগ্র সমতলের সমস্ত ভেক্টরের শীর্ষবিন্দুর সমাবেশ একটি অবিচ্ছিন্ন সমতল চাদর",
+          "type": "svg",
+          "src": "../../assets/figures/la_02/point_space.jpg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "span_and_linear_dependence_visualizer",
+        "initial_vectors": {
+          "v": [2.0, 1.0],
+          "w": [0.5, 1.5]
+        },
+        "description_bn": "ভেক্টর v⃗ ও w⃗-এর শীর্ষবিন্দু টেনে নাড়িয়ে দেখুন কখন তাদের স্প্যান পুরো সমতল হয় আর কখন একটিমাত্র সরলরেখায় পরিণত হয়।"
+      }
+    },
+    {
+      "id": "sec_04_span_3d",
+      "title_bn": "৪. ত্রিমাত্রিক স্থানে স্প্যান ও অতিরিক্ত ভেক্টরের ভূমিকা",
+      "title_en": "Span in Three Dimensions & Adding Vectors",
+      "summary_bn": "ত্রিমাত্রিক স্থানে দুটি ও তিনটি ভেক্টরের স্প্যানের রূপ এবং তৃতীয় ভেক্টর যুক্ত করার ফলে কীভাবে নতুন মাত্রা অর্জিত হয় বা অপচয় ঘটে।",
+      "key_takeaways": [
+        "ত্রিমাত্রিক স্থানে দুটি অ-সমান্তরাল ভেক্টরের স্প্যান পুরো থ্রিডি স্পেস নয়, বরং মূলবিন্দুগামী একটি সমতল চাদর (2D Flat Sheet in 3D)।",
+        "একটি তৃতীয় ভেক্টর যোগ করলে দুটি ঘটনা ঘটতে পারে: যদি এটি প্রথম দুটি ভেক্টরের সমতলেই থাকে, তবে স্প্যান বাড়বে না (একই সমতলে সীমাবদ্ধ থাকবে)।",
+        "যদি তৃতীয় ভেক্টরটি সমতলের বাইরে কোনো স্বতন্ত্র দিকে নির্দেশ করে, তবে এটি সমতলটিকে পুরো ত্রিমাত্রিক স্থানে ঝাড়ু দিয়ে সমগ্র ℝ³ পূর্ণ করে ফেলে।"
+      ],
+      "formulas": [
+        {
+          "label": "ত্রিমাত্রিক স্থানে ৩টি ভেক্টরের স্প্যান",
+          "katex": "\\text{Span}(\\vec{u}, \\vec{v}, \\vec{w}) = \\{ a\\vec{u} + b\\vec{v} + c\\vec{w} \\mid a, b, c \\in \\mathbb{R} \\}"
+        },
+        {
+          "label": "সমগ্র ত্রিমাত্রিক স্থানের শর্ত",
+          "katex": "\\text{Span}(\\vec{u}, \\vec{v}, \\vec{w}) = \\mathbb{R}^3 \\iff \\vec{w} \\notin \\text{Span}(\\vec{u}, \\vec{v})"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_span_two_in_3d",
+          "caption_bn": "ত্রিমাত্রিক স্থানে দুটি ভেক্টরের স্প্যান একটি সমতল চাদর",
+          "type": "svg",
+          "src": "../../assets/figures/la_02/SpanOfTwoVectorsIn3d.svg"
+        },
+        {
+          "id": "fig_third_in_span",
+          "caption_bn": "তৃতীয় ভেক্টর সমতলের ওপর থাকলে স্প্যান বৃদ্ধি পায় না",
+          "type": "svg",
+          "src": "../../assets/figures/la_02/ThirdVectorIsInSpan.svg"
+        },
+        {
+          "id": "fig_third_not_in_span",
+          "caption_bn": "তৃতীয় ভেক্টর সমতলের বাইরে থাকলে সমগ্র ত্রিমাত্রিক স্থান স্প্যান হয়",
+          "type": "svg",
+          "src": "../../assets/figures/la_02/ThirdVectorIsNotInSpan.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_05_linear_independence",
+      "title_bn": "৫. রৈখিক নির্ভরতা বনাম স্বাধীনতা ও ভিত্তির প্রকৃত সংজ্ঞা",
+      "title_en": "Linear Independence vs. Dependence & The Formal Definition of Basis",
+      "summary_bn": "কখন একটি ভেক্টর অতিরিক্ত বা অপ্রয়োজনীয় এবং কখন প্রতিটি ভেক্টর নতুন মাত্রা যোগ করে—তার আনুষ্ঠানিক ও জ্যামিতিক ব্যাখ্যা।",
+      "key_takeaways": [
+        "রৈখিকভাবে নির্ভরশীল (Linearly Dependent): ভেক্টরগুলোর মধ্যে অন্তত একটি ভেক্টর যদি অন্যগুলোর রৈখিক সমন্বয় হয়, অর্থাৎ তাকে সরিয়ে নিলেও স্প্যান একই থাকে।",
+        "রৈখিকভাবে স্বাধীন (Linearly Independent): প্রতিটি ভেক্টর একটি সত্যিকারের নতুন মাত্রা যোগ করে; কোনো ভেক্টরকেই বাকিগুলোর সমন্বয় হিসেবে তৈরি করা যায় না।",
+        "ভিত্তির সুনির্দিষ্ট সংজ্ঞা (Basis): কোনো ভেক্টর স্পেসের ভিত্তি হলো এমন একটি রৈখিকভাবে স্বাধীন ভেক্টরের সেট, যার স্প্যান সম্পূর্ণ ভেক্টর স্পেসটি।"
+      ],
+      "formulas": [
+        {
+          "label": "রৈখিক স্বাধীনতার শর্ত",
+          "katex": "c_1\\vec{v}_1 + c_2\\vec{v}_2 + \\dots + c_n\\vec{v}_n = \\vec{0} \\implies c_1 = c_2 = \\dots = c_n = 0"
+        },
+        {
+          "label": "রৈখিক নির্ভরশীলতার সমতুল্য শর্ত",
+          "katex": "\\exists c_i \\neq 0 \\quad \\text{such that} \\quad c_1\\vec{v}_1 + c_2\\vec{v}_2 + \\dots + c_n\\vec{v}_n = \\vec{0}"
+        },
+        {
+          "label": "একটি ভেক্টর অন্যগুলোর সমন্বয়",
+          "katex": "\\vec{v}_k = \\sum_{i \\neq k} a_i \\vec{v}_i \\iff \\vec{v}_k \\in \\text{Span}(\\{\\vec{v}_i\\}_{i \\neq k})"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_linearly_dependent_2d",
+          "caption_bn": "দ্বিমাত্রিক স্থানে রৈখিকভাবে নির্ভরশীল তিনটি ভেক্টর",
+          "type": "svg",
+          "src": "../../assets/figures/la_02/LinearlyDependent.svg"
+        },
+        {
+          "id": "fig_linearly_dependent_3d",
+          "caption_bn": "ত্রিমাত্রিক স্থানে একই সমতলে অবস্থান করায় রৈখিকভাবে নির্ভরশীল তিনটি ভেক্টর",
+          "type": "svg",
+          "src": "../../assets/figures/la_02/LinearlyDependent3d.svg"
+        },
+        {
+          "id": "fig_linearly_independent_3d",
+          "caption_bn": "ত্রিমাত্রিক স্থানে রৈখিকভাবে স্বাধীন তিনটি ভেক্টর যা পুরো ℝ³ স্প্যান করে",
+          "type": "svg",
+          "src": "../../assets/figures/la_02/LinearlyIndependent3d.svg"
+        },
+        {
+          "id": "fig_orthogonal_basis",
+          "caption_bn": "লম্ব ভিত্তি (Orthogonal Basis) যা গণনার জন্য সবচেয়ে সহজ ও সুবিধাজনক",
+          "type": "svg",
+          "src": "../../assets/figures/la_02/OrthogonalBasis.svg"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_linear_combination_eval",
+      "section_ref": "sec_02_linear_combinations",
+      "question_bn": "যদি $\\vec{v} = \\begin{bmatrix}1\\\\2\\end{bmatrix}$ এবং $\\vec{w} = \\begin{bmatrix}3\\\\1\\end{bmatrix}$ হয়, তবে রৈখিক সমন্বয় $2\\vec{v} + (-1)\\vec{w}$-এর মান কত?",
+      "question_en": "If v = [1, 2]^T and w = [3, 1]^T, what is the linear combination 2v + (-1)w?",
+      "options": [
+        "$\\begin{bmatrix}5 \\\\ 3\\end{bmatrix}$",
+        "$\\begin{bmatrix}1 \\\\ 5\\end{bmatrix}$",
+        "$\\begin{bmatrix}-1 \\\\ 3\\end{bmatrix}$",
+        "$\\begin{bmatrix}4 \\\\ -1\\end{bmatrix}$"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "প্রতিটি উপাদান আলাদাভাবে স্কেল করে যোগ করতে হবে: এক্স উপাদান $= 2(1) + (-1)(3) = 2 - 3 = -1$; এবং ওয়াই উপাদান $= 2(2) + (-1)(1) = 4 - 1 = 3$। সুতরাং ফলাফল হলো $\\begin{bmatrix}-1\\\\3\\end{bmatrix}$।",
+      "explanation_en": "Compute component-wise: x = 2(1) - 3 = -1, y = 2(2) - 1 = 3, yielding [-1, 3]^T."
+    },
+    {
+      "id": "quiz_02_span_collinear",
+      "section_ref": "sec_03_span",
+      "question_bn": "ভেক্টর $\\begin{bmatrix}3\\\\-2\\end{bmatrix}$ এবং $\\begin{bmatrix}-6\\\\4\\end{bmatrix}$-এর স্প্যান (Span) আসলে জ্যামিতিকভাবে কী নির্দেশ করে?",
+      "question_en": "What is the geometric span of [3, -2]^T and [-6, 4]^T?",
+      "options": [
+        "মূলবিন্দুতে অবস্থিত একটিমাত্র বিন্দু (A single point)",
+        "মূলবিন্দুগামী একটি একমাত্রিক সরলরেখা (A line through the origin)",
+        "সম্পূর্ণ দ্বিমাত্রিক সমতল (The full 2D plane)",
+        "ত্রিমাত্রিক স্থানের একটি সমতল চাদর"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "লক্ষ্য করুন যে দ্বিতীয় ভেক্টরটি প্রথম ভেক্টরের হুবহু স্কেলার গুণিতক: $\\begin{bmatrix}-6\\\\4\\end{bmatrix} = -2\\begin{bmatrix}3\\\\-2\\end{bmatrix}$। যেহেতু দুটি ভেক্টর একই সরলরেখায় অবস্থিত (কলিনিয়ার), তাই তাদের কোনো রৈখিক সমন্বয়ই সেই রেখার বাইরে যেতে পারে না। ফলে তাদের স্প্যান হলো মূলবিন্দুগামী একটি একক সরলরেখা।",
+      "explanation_en": "Because [-6, 4]^T = -2 * [3, -2]^T, both vectors lie on the exact same line. Thus, their span is strictly a 1D line passing through the origin."
+    },
+    {
+      "id": "quiz_03_linear_dependence_test",
+      "section_ref": "sec_05_linear_independence",
+      "question_bn": "নিচের কোন ভেক্টর জোড়াটি রৈখিকভাবে নির্ভরশীল (Linearly Dependent)?",
+      "question_en": "Which of the following pairs of vectors is linearly dependent?",
+      "options": [
+        "$\\begin{bmatrix}2\\\\1\\end{bmatrix}$ এবং $\\begin{bmatrix}4\\\\2\\end{bmatrix}$",
+        "$\\begin{bmatrix}1\\\\0\\end{bmatrix}$ এবং $\\begin{bmatrix}0\\\\1\\end{bmatrix}$",
+        "$\\begin{bmatrix}1\\\\2\\end{bmatrix}$ এবং $\\begin{bmatrix}3\\\\1\\end{bmatrix}$",
+        "$\\begin{bmatrix}1\\\\1\\end{bmatrix}$ এবং $\\begin{bmatrix}-1\\\\1\\end{bmatrix}$"
+      ],
+      "correct_index": 0,
+      "explanation_bn": "দুটি অশূন্য ভেক্টর রৈখিকভাবে নির্ভরশীল হবে যদি এবং কেবল যদি তাদের একটি অপরটির স্কেলার গুণিতক হয় (অর্থাৎ তারা সমান্তরাল)। এখানে $\\begin{bmatrix}4\\\\2\\end{bmatrix} = 2\\begin{bmatrix}2\\\\1\\end{bmatrix}$। অন্য তিনটি জোড়ায় কোনো ভেক্টর অপরটির গুণিতক নয় এবং তারা পুরো দ্বিমাত্রিক স্থান স্প্যান করতে সক্ষম স্বাধীন ভেক্টর।",
+      "explanation_en": "[4, 2]^T = 2 * [2, 1]^T, making them scalar multiples of each other and therefore linearly dependent."
+    },
+    {
+      "id": "quiz_04_3d_basis_requirement",
+      "section_ref": "sec_05_linear_independence",
+      "question_bn": "ত্রিমাত্রিক স্থান $\\mathbb{R}^3$-এর জন্য একটি ভিত্তি (Basis) গঠন করতে ঠিক কতটি রৈখিকভাবে স্বাধীন ভেক্টর থাকা আবশ্যক?",
+      "question_en": "How many linearly independent vectors are required to form a basis for 3D space R^3?",
+      "options": [
+        "১টি ভেক্টর",
+        "২টি ভেক্টর",
+        "ঠিক ৩টি ভেক্টর",
+        "যেকোনো সংখ্যক ভেক্টর"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "যেকোনো ভেক্টর স্পেসের ডাইমেনশন বা মাত্রা হলো তার একটি ভিত্তিতে থাকা ভেক্টরের সংখ্যা। ত্রিমাত্রিক স্থানে ২টি স্বাধীন ভেক্টর কেবল একটি ২ডি সমতল তৈরি করে, পুরো স্থান স্প্যান করতে পারে না। ৪ বা ততোধিক ভেক্টর নিলে তারা অবশ্যই নির্ভরশীল হয়ে পড়ে। তাই $\\mathbb{R}^3$-এর একটি ভিত্তিতে ঠিক ৩টি রৈখিকভাবে স্বাধীন ভেক্টর থাকা আবশ্যক।",
+      "explanation_en": "The dimension of R^3 is 3, which fundamentally means every basis for R^3 must contain exactly 3 linearly independent vectors."
+    }
+  ]
+}

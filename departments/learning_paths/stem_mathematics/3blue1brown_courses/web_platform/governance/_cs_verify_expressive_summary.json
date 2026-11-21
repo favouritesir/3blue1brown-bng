@@ -1,0 +1,101 @@
+{
+  "lessons": [
+    {
+      "lesson": "lesson_01",
+      "sections": 5,
+      "cues": 26,
+      "duration_s": 328.01,
+      "figures": 5
+    },
+    {
+      "lesson": "lesson_02",
+      "sections": 5,
+      "cues": 24,
+      "duration_s": 293.26,
+      "figures": 5
+    },
+    {
+      "lesson": "lesson_03",
+      "sections": 5,
+      "cues": 21,
+      "duration_s": 266.43,
+      "figures": 5
+    },
+    {
+      "lesson": "lesson_04",
+      "sections": 5,
+      "cues": 21,
+      "duration_s": 240.2,
+      "figures": 5
+    },
+    {
+      "lesson": "lesson_05",
+      "sections": 5,
+      "cues": 19,
+      "duration_s": 200.91,
+      "figures": 5
+    },
+    {
+      "lesson": "lesson_06",
+      "sections": 5,
+      "cues": 22,
+      "duration_s": 250.73,
+      "figures": 5
+    },
+    {
+      "lesson": "lesson_07",
+      "sections": 5,
+      "cues": 22,
+      "duration_s": 252.02,
+      "figures": 5
+    },
+    {
+      "lesson": "lesson_08",
+      "sections": 5,
+      "cues": 22,
+      "duration_s": 249.6,
+      "figures": 5
+    },
+    {
+      "lesson": "lesson_09",
+      "sections": 5,
+      "cues": 22,
+      "duration_s": 245.21,
+      "figures": 5
+    },
+    {
+      "lesson": "lesson_10",
+      "sections": 5,
+      "cues": 24,
+      "duration_s": 273.99,
+      "figures": 5
+    },
+    {
+      "lesson": "lesson_11",
+      "sections": 5,
+      "cues": 22,
+      "duration_s": 254.33,
+      "figures": 5
+    },
+    {
+      "lesson": "lesson_12",
+      "sections": 5,
+      "cues": 21,
+      "duration_s": 242.24,
+      "figures": 5
+    },
+    {
+      "lesson": "lesson_13",
+      "sections": 5,
+      "cues": 22,
+      "duration_s": 251.52,
+      "figures": 5
+    }
+  ],
+  "total_checks": 221,
+  "passed": 221,
+  "failed": 0,
+  "failures": [],
+  "channel": "chrome",
+  "headless": true
+}

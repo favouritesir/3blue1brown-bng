@@ -1,0 +1,240 @@
+{
+  "standard": "independent ffprobe + ffmpeg silencedetect verification",
+  "silencedetect": {
+    "noise": "-45dB",
+    "duration_s": 2.0,
+    "lead_zone_s": 5.0,
+    "tail_zone_s": 8.0
+  },
+  "lessons": [
+    {
+      "lesson": "lesson_01",
+      "youtube_id": "IQqtsm-bBRU",
+      "original": {
+        "path": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\topology\\lesson_01\\original_source\\full_original.mp4",
+        "duration_sec": 1645.366,
+        "size_bytes": 723744399,
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "av1",
+            "codec_type": "video",
+            "width": 3840,
+            "height": 2160
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio"
+          }
+        ]
+      },
+      "output": {
+        "path": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\topology\\lesson_01\\experiments\\3b1b_topology_01_full_dubbed.mp4",
+        "duration_sec": 1645.3,
+        "size_bytes": 720184172,
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "av1",
+            "codec_type": "video",
+            "width": 3840,
+            "height": 2160
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio"
+          }
+        ]
+      },
+      "duration_delta_sec": -0.066,
+      "silence_runs_over_2s": [
+        {
+          "start": 0.0,
+          "end": 2.652,
+          "length": 2.652
+        },
+        {
+          "start": 1641.659,
+          "end": 1645.284,
+          "length": 3.625
+        }
+      ],
+      "internal_silence_runs_over_2s": [],
+      "build_report": {
+        "median_fill": 0.999,
+        "max_internal_gap_s": 0.0216,
+        "fill_policy_met": true,
+        "cue_count": 72,
+        "expected_cue_count": 72,
+        "timeline_scale": 0.883022,
+        "max_measured_drift_ms": 0.01,
+        "overrun_cues": 0,
+        "oembed_ok": true,
+        "yt_dlp_uploader": "3Blue1Brown",
+        "sfx": "NONE — clean speech only"
+      },
+      "gates": {
+        "duration_matches_original": true,
+        "no_internal_silence_over_2s": true,
+        "median_fill_ge_0.72": true,
+        "max_internal_gap_le_1.5s": true
+      },
+      "ALL_GATES_PASS": true
+    },
+    {
+      "lesson": "lesson_02",
+      "youtube_id": "BHdbsHFs2P0",
+      "original": {
+        "path": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\topology\\lesson_02\\original_source\\full_original.mp4",
+        "duration_sec": 1779.484,
+        "size_bytes": 180817146,
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "av1",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio"
+          }
+        ]
+      },
+      "output": {
+        "path": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\topology\\lesson_02\\experiments\\3b1b_topology_02_full_dubbed.mp4",
+        "duration_sec": 1779.433,
+        "size_bytes": 176673865,
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "av1",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio"
+          }
+        ]
+      },
+      "duration_delta_sec": -0.051,
+      "silence_runs_over_2s": [
+        {
+          "start": 0.0,
+          "end": 2.667,
+          "length": 2.667
+        },
+        {
+          "start": 1775.718,
+          "end": 1779.43,
+          "length": 3.712
+        }
+      ],
+      "internal_silence_runs_over_2s": [],
+      "build_report": {
+        "median_fill": 0.9994,
+        "max_internal_gap_s": 0.0247,
+        "fill_policy_met": true,
+        "cue_count": 48,
+        "expected_cue_count": 48,
+        "timeline_scale": 1.844607,
+        "max_measured_drift_ms": 0.01,
+        "overrun_cues": 0,
+        "oembed_ok": true,
+        "yt_dlp_uploader": "3Blue1Brown",
+        "sfx": "NONE — clean speech only"
+      },
+      "gates": {
+        "duration_matches_original": true,
+        "no_internal_silence_over_2s": true,
+        "median_fill_ge_0.72": true,
+        "max_internal_gap_le_1.5s": true
+      },
+      "ALL_GATES_PASS": true
+    },
+    {
+      "lesson": "lesson_03",
+      "youtube_id": "yuVqxCSsE7c",
+      "original": {
+        "path": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\topology\\lesson_03\\original_source\\full_original.mp4",
+        "duration_sec": 1161.207,
+        "size_bytes": 40939941,
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "av1",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio"
+          }
+        ]
+      },
+      "output": {
+        "path": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\topology\\lesson_03\\experiments\\3b1b_topology_03_full_dubbed.mp4",
+        "duration_sec": 1161.167,
+        "size_bytes": 38265580,
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "av1",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio"
+          }
+        ]
+      },
+      "duration_delta_sec": -0.04,
+      "silence_runs_over_2s": [
+        {
+          "start": 0.0,
+          "end": 2.721,
+          "length": 2.721
+        },
+        {
+          "start": 1157.442,
+          "end": 1161.161,
+          "length": 3.719
+        }
+      ],
+      "internal_silence_runs_over_2s": [],
+      "build_report": {
+        "median_fill": 0.9989,
+        "max_internal_gap_s": 0.0238,
+        "fill_policy_met": true,
+        "cue_count": 43,
+        "expected_cue_count": 43,
+        "timeline_scale": 1.009877,
+        "max_measured_drift_ms": 0.01,
+        "overrun_cues": 0,
+        "oembed_ok": true,
+        "yt_dlp_uploader": "3Blue1Brown",
+        "sfx": "NONE — clean speech only"
+      },
+      "gates": {
+        "duration_matches_original": true,
+        "no_internal_silence_over_2s": true,
+        "median_fill_ge_0.72": true,
+        "max_internal_gap_le_1.5s": true
+      },
+      "ALL_GATES_PASS": true
+    }
+  ],
+  "ALL_LESSONS_PASS": true
+}

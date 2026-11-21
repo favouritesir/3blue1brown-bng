@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>৩ব্লু১ব্রাউন: লিনিয়ার রূপান্তর ও ম্যাট্রিক্স সিমুলেটর | বাংলা রিসোর্স ফ্যাক্টরি</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root {
+      --bg-dark: #080c14;
+      --bg-card: #0f172a;
+      --border-color: #334155;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-purple: #c084fc;
+      --text-main: #f8fafc;
+      --text-dim: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Hind Siliguri', sans-serif;
+      padding: 1.5rem;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.65rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: 1.9rem;
+      background: linear-gradient(90deg, #38bdf8, #a7f3d0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 1.5rem;
+    }
+    @media (max-width: 900px) {
+      .grid-layout { grid-template-columns: 1fr; }
+    }
+    .canvas-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    canvas {
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 650px;
+      height: 480px;
+    }
+    .controls-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .matrix-box {
+      background: #020617;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .matrix-input-group label {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .matrix-input-group input {
+      width: 100%;
+      background: #1e293b;
+      border: 1px solid #475569;
+      color: #fff;
+      padding: 0.4rem;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .preset-btn {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: var(--text-main);
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      text-align: left;
+      transition: all 0.2s;
+    }
+    .preset-btn:hover {
+      background: #334155;
+      border-color: var(--accent-cyan);
+    }
+    .info-card {
+      background: rgba(15, 23, 42, 0.6);
+      border-left: 3px solid var(--accent-cyan);
+      padding: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      border-radius: 0 6px 6px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">৩ব্লু১ব্রাউন লিনিয়ার বীজগণিত • লেসন ০৩</div>
+      <h1>লিনিয়ার রূপান্তর ও ম্যাট্রিক্স সিমুলেটর</h1>
+      <p style="color: var(--text-dim);">ম্যাট্রিক্সকে শুধু সংখ্যা নয়, স্পেসের জ্যামিতিক রূপান্তর হিসেবে পর্যবেক্ষণ করুন।</p>
+    </header>
+
+    <div class="grid-layout">
+      <!-- Interactive Canvas -->
+      <div class="canvas-panel">
+        <canvas id="gridCanvas" width="650" height="480"></canvas>
+        <div style="margin-top: 0.75rem; display: flex; gap: 1rem; font-size: 0.85rem;">
+          <span style="color: #38bdf8;">■ î (i-hat): কলাম ১</span>
+          <span style="color: #10b981;">■ ĵ (j-hat): কলাম ২</span>
+          <span style="color: #f59e0b;">■ v = [x, y]ᵀ: পরীক্ষাধীন ভেক্টর</span>
+        </div>
+      </div>
+
+      <!-- Control Sidebar -->
+      <div class="controls-panel">
+        <div class="matrix-box">
+          <div style="font-size: 0.9rem; font-weight: 600; color: var(--accent-cyan);">রূপান্তর ম্যাট্রিক্স M</div>
+          <div class="matrix-grid">
+            <div class="matrix-input-group">
+              <label>i-hat (x'): a</label>
+              <input type="number" id="mat_a" value="1" step="0.5">
+            </div>
+            <div class="matrix-input-group">
+              <label>j-hat (x'): b</label>
+              <input type="number" id="mat_b" value="0" step="0.5">
+            </div>
+            <div class="matrix-input-group">
+              <label>i-hat (y'): c</label>
+              <input type="number" id="mat_c" value="0" step="0.5">
+            </div>
+            <div class="matrix-input-group">
+              <label>j-hat (y'): d</label>
+              <input type="number" id="mat_d" value="1" step="0.5">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">ক্লাসিক রূপান্তর প্রিসেটস:</div>
+          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+            <button class="preset-btn" onclick="applyPreset(1, 0, 0, 1)">Identity (অপরিবর্তিত গ্রিড)</button>
+            <button class="preset-btn" onclick="applyPreset(0, -1, 1, 0)">90° Rotation (ঘূর্ণন)</button>
+            <button class="preset-btn" onclick="applyPreset(1, 1, 0, 1)">Horizontal Shear (শিয়ার)</button>
+            <button class="preset-btn" onclick="applyPreset(2, 0, 0, 2)">2x Uniform Scale (প্রসারণ)</button>
+            <button class="preset-btn" onclick="applyPreset(2, 4, 1, 2)">Line Collapse (সংকোচন)</button>
+          </div>
+        </div>
+
+        <div class="info-card" id="infoText">
+          গ্রিড রেখাগুলো সমান্তরাল ও সমান দূরত্বে রয়েছে। মূলবিন্দু স্থির।
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('gridCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const inA = document.getElementById('mat_a');
+    const inB = document.getElementById('mat_b');
+    const inC = document.getElementById('mat_c');
+    const inD = document.getElementById('mat_d');
+    const infoText = document.getElementById('infoText');
+
+    let curA = 1, curB = 0, curC = 0, curD = 1;
+    let targetA = 1, targetB = 0, targetC = 0, targetD = 1;
+    let animProgress = 1;
+
+    function applyPreset(a, b, c, d) {
+      targetA = a; targetB = b; targetC = c; targetD = d;
+      inA.value = a; inB.value = b; inC.value = c; inD.value = d;
+      animProgress = 0;
+      updateInfo(a, b, c, d);
+      animate();
+    }
+
+    [inA, inB, inC, inD].forEach(input => {
+      input.addEventListener('input', () => {
+        targetA = parseFloat(inA.value) || 0;
+        targetB = parseFloat(inB.value) || 0;
+        targetC = parseFloat(inC.value) || 0;
+        targetD = parseFloat(inD.value) || 0;
+        animProgress = 0;
+        updateInfo(targetA, targetB, targetC, targetD);
+        animate();
+      });
+    });
+
+    function updateInfo(a, b, c, d) {
+      const det = a * d - b * c;
+      if (Math.abs(det) < 0.001) {
+        infoText.innerHTML = "<strong>সতর্কতা: কলামদ্বয় লিনিয়ারলি ডিপেনডেন্ট!</strong><br>পুরো দ্বিমাত্রিক তল একটি মাত্র সরলরেখায় সংকুচিত হয়ে গেছে (Det = 0)।";
+      } else {
+        infoText.innerHTML = `ডিটারমিন্যান্ট: ${det.toFixed(2)}<br>i-hat পৌঁছাল: [${a}, ${c}]ᵀ<br>j-hat পৌঁছাল: [${b}, ${d}]ᵀ`;
+      }
+    }
+
+    function animate() {
+      if (animProgress < 1) {
+        animProgress += 0.05;
+        curA = curA + (targetA - curA) * 0.2;
+        curB = curB + (targetB - curB) * 0.2;
+        curC = curC + (targetC - curC) * 0.2;
+        curD = curD + (targetD - curD) * 0.2;
+        draw();
+        requestAnimationFrame(animate);
+      } else {
+        curA = targetA; curB = targetB; curC = targetC; curD = targetD;
+        draw();
+      }
+    }
+
+    function draw() {
+      const w = canvas.width;
+      const h = canvas.height;
+      const ox = w / 2;
+      const oy = h / 2;
+      const scale = 38;
+
+      ctx.clearRect(0, 0, w, h);
+
+      // Draw faint original grid
+      ctx.strokeStyle = '#1e293b';
+      ctx.lineWidth = 1;
+      for (let x = -10; x <= 10; x++) {
+        ctx.beginPath();
+        ctx.moveTo(ox + x * scale, 0);
+        ctx.lineTo(ox + x * scale, h);
+        ctx.stroke();
+      }
+      for (let y = -10; y <= 10; y++) {
+        ctx.beginPath();
+        ctx.moveTo(0, oy + y * scale);
+        ctx.lineTo(w, oy + y * scale);
+        ctx.stroke();
+      }
+
+      // Draw Transformed Grid
+      ctx.strokeStyle = '#334155';
+      ctx.lineWidth = 1.2;
+      for (let y = -8; y <= 8; y++) {
+        ctx.beginPath();
+        for (let x = -8; x <= 8; x += 0.5) {
+          const tx = curA * x + curB * y;
+          const ty = curC * x + curD * y;
+          const px = ox + tx * scale;
+          const py = oy - ty * scale;
+          if (x === -8) ctx.moveTo(px, py);
+          else ctx.lineTo(px, py);
+        }
+        ctx.stroke();
+      }
+      for (let x = -8; x <= 8; x++) {
+        ctx.beginPath();
+        for (let y = -8; y <= 8; y += 0.5) {
+          const tx = curA * x + curB * y;
+          const ty = curC * x + curD * y;
+          const px = ox + tx * scale;
+          const py = oy - ty * scale;
+          if (y === -8) ctx.moveTo(px, py);
+          else ctx.lineTo(px, py);
+        }
+        ctx.stroke();
+      }
+
+      // Origin
+      ctx.fillStyle = '#f8fafc';
+      ctx.beginPath();
+      ctx.arc(ox, oy, 4, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Transformed i-hat
+      drawVector(ox, oy, curA * scale, -curC * scale, '#38bdf8', 'î');
+      // Transformed j-hat
+      drawVector(ox, oy, curB * scale, -curD * scale, '#10b981', 'ĵ');
+    }
+
+    function drawVector(ox, oy, vx, vy, color, label) {
+      const tx = ox + vx;
+      const ty = oy + vy;
+      ctx.strokeStyle = color;
+      ctx.fillStyle = color;
+      ctx.lineWidth = 3;
+
+      ctx.beginPath();
+      ctx.moveTo(ox, oy);
+      ctx.lineTo(tx, ty);
+      ctx.stroke();
+
+      // Arrowhead
+      const angle = Math.atan2(vy, vx);
+      const headLen = 10;
+      ctx.beginPath();
+      ctx.moveTo(tx, ty);
+      ctx.lineTo(tx - headLen * Math.cos(angle - Math.PI / 6), ty - headLen * Math.sin(angle - Math.PI / 6));
+      ctx.lineTo(tx - headLen * Math.cos(angle + Math.PI / 6), ty - headLen * Math.sin(angle + Math.PI / 6));
+      ctx.fill();
+
+      // Label
+      ctx.font = 'bold 14px sans-serif';
+      ctx.fillText(label, tx + 8, ty - 6);
+    }
+
+    draw();
+  </script>
+</body>
+</html>

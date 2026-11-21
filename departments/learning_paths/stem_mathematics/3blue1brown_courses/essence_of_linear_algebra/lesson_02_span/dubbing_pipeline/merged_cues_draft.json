@@ -1,0 +1,727 @@
+[
+  {
+    "start": 12.2,
+    "end": 15.16,
+    "text": "in the last video along with the ideas of vector addition and scalar"
+  },
+  {
+    "start": 15.16,
+    "end": 18.92,
+    "text": "multiplication I described Vector coordinates where there's this back and"
+  },
+  {
+    "start": 18.92,
+    "end": 21.16,
+    "text": "forth between for example pairs of"
+  },
+  {
+    "start": 21.16,
+    "end": 25.68,
+    "text": "numbers and two-dimensional vectors now I imagine the vector coordinates were"
+  },
+  {
+    "start": 25.68,
+    "end": 30.519,
+    "text": "already familiar to a lot of you but there's another kind of interesting way to think about these coordinates which"
+  },
+  {
+    "start": 30.519,
+    "end": 34.36,
+    "text": "is pretty Central to linear algebra when you have a pair of numbers that's meant"
+  },
+  {
+    "start": 34.36,
+    "end": 37.8,
+    "text": "to describe a vector like 3 -2 I want"
+  },
+  {
+    "start": 37.8,
+    "end": 42.48,
+    "text": "you to think about each coordinate as a scalar meaning think about how each one"
+  },
+  {
+    "start": 42.48,
+    "end": 45.64,
+    "text": "stretches or squishes vectors in the XY"
+  },
+  {
+    "start": 45.64,
+    "end": 49.8,
+    "text": "coordinate system there are two very special vectors the one pointing to the"
+  },
+  {
+    "start": 49.8,
+    "end": 54.199,
+    "text": "right with length one commonly called ihat or the unit Vector in the X"
+  },
+  {
+    "start": 54.199,
+    "end": 59.079,
+    "text": "Direction and the one pointing straight up with length one commonly called J hat"
+  },
+  {
+    "start": 59.079,
+    "end": 63.76,
+    "text": "or the unit Vector in the y direction now think of the x coordinate"
+  },
+  {
+    "start": 63.76,
+    "end": 66.439,
+    "text": "of our Vector as a scaler that scales IH"
+  },
+  {
+    "start": 66.439,
+    "end": 70.799,
+    "text": "hat stretching it by a factor of three and the y-coordinate as a scaler that"
+  },
+  {
+    "start": 70.799,
+    "end": 73.08,
+    "text": "scales J hat flipping it and stretching"
+  },
+  {
+    "start": 73.08,
+    "end": 76.08,
+    "text": "it by a factor of two in this sense the"
+  },
+  {
+    "start": 76.08,
+    "end": 81.07900000000001,
+    "text": "vector that these coordinates describe is the sum of two scaled vectors that's"
+  },
+  {
+    "start": 81.07900000000001,
+    "end": 82.96000000000001,
+    "text": "a surprisingly important concept this"
+  },
+  {
+    "start": 82.96000000000001,
+    "end": 86.28,
+    "text": "idea of adding together two scaled"
+  },
+  {
+    "start": 86.28,
+    "end": 90.96000000000001,
+    "text": "vectors those two vectors IH hat and J hat have a special name by the way"
+  },
+  {
+    "start": 90.96000000000001,
+    "end": 94.96000000000001,
+    "text": "together they're called the basis of a coordinate system what this means"
+  },
+  {
+    "start": 94.96000000000001,
+    "end": 99.0,
+    "text": "basically is that when you think about coordinates as scalers the basis vectors"
+  },
+  {
+    "start": 99.0,
+    "end": 103.68,
+    "text": "are what those scalers actually you know scale there's also a more technical"
+  },
+  {
+    "start": 103.68,
+    "end": 106.52000000000001,
+    "text": "definition but I'll get to that"
+  },
+  {
+    "start": 106.52000000000001,
+    "end": 110.92,
+    "text": "later by Framing our coordinate system in terms of these two special basis"
+  },
+  {
+    "start": 110.92,
+    "end": 115.479,
+    "text": "vectors it raises a pretty interesting and subtle point we could have chosen"
+  },
+  {
+    "start": 115.479,
+    "end": 117.6,
+    "text": "different basis vectors and gotten a"
+  },
+  {
+    "start": 117.6,
+    "end": 121.0,
+    "text": "completely reasonable new coord system"
+  },
+  {
+    "start": 121.0,
+    "end": 124.96,
+    "text": "for example take some Vector pointing up and to the right along with some other"
+  },
+  {
+    "start": 124.96,
+    "end": 128.75900000000001,
+    "text": "Vector pointing down and to the right in some way take a moment to think about"
+  },
+  {
+    "start": 128.75900000000001,
+    "end": 133.44,
+    "text": "all the different vectors that you can get by choosing two scalers using each"
+  },
+  {
+    "start": 133.44,
+    "end": 138.239,
+    "text": "one to scale one of the vectors then adding together what you get which two"
+  },
+  {
+    "start": 138.239,
+    "end": 139.8,
+    "text": "dimensional vectors can you reach by"
+  },
+  {
+    "start": 139.8,
+    "end": 143.67000000000002,
+    "text": "altering the choices of"
+  },
+  {
+    "start": 143.68,
+    "end": 148.48,
+    "text": "scalers the answer is that you can reach every possible two-dimensional vector"
+  },
+  {
+    "start": 148.48,
+    "end": 151.319,
+    "text": "and I think it's a good puzzle to plate"
+  },
+  {
+    "start": 151.319,
+    "end": 156.28,
+    "text": "y a new pair of basis vectors like this still gives us a valid way to go back"
+  },
+  {
+    "start": 156.28,
+    "end": 160.159,
+    "text": "and forth between Pairs of numbers and two-dimensional vectors but the"
+  },
+  {
+    "start": 160.159,
+    "end": 163.68,
+    "text": "association is definitely different from the one that you get using the more"
+  },
+  {
+    "start": 163.68,
+    "end": 168.36,
+    "text": "standard basis of ihat and jhat this is something I'll go into much more detail"
+  },
+  {
+    "start": 168.36,
+    "end": 171.64,
+    "text": "on later describing the exact relationship between different"
+  },
+  {
+    "start": 171.64,
+    "end": 175.28,
+    "text": "coordinate systems but for right now I just want you to appreciate the fact"
+  },
+  {
+    "start": 175.28,
+    "end": 179.239,
+    "text": "that anytime we describe vectors numerically it depends on an implicit"
+  },
+  {
+    "start": 179.239,
+    "end": 184.08,
+    "text": "choice of what basis vectors we're using so anytime that you're scaling two"
+  },
+  {
+    "start": 184.08,
+    "end": 185.879,
+    "text": "vectors and adding them like this it's"
+  },
+  {
+    "start": 185.879,
+    "end": 190.319,
+    "text": "called a linear combination of those two"
+  },
+  {
+    "start": 190.319,
+    "end": 193.92,
+    "text": "vectors where does this word linear come from why does this have anything to do"
+  },
+  {
+    "start": 193.92,
+    "end": 198.12,
+    "text": "with lines well this isn't the atomology but one way I like to think about it is"
+  },
+  {
+    "start": 198.12,
+    "end": 201.56,
+    "text": "that if you fix one of those scalers and let the other one change its value"
+  },
+  {
+    "start": 201.56,
+    "end": 204.36,
+    "text": "freely the tip of the resulting Vector"
+  },
+  {
+    "start": 204.36,
+    "end": 208.07,
+    "text": "draws a straight"
+  },
+  {
+    "start": 208.07999999999998,
+    "end": 212.92000000000002,
+    "text": "line now if you let both scalers range freely and consider every possible"
+  },
+  {
+    "start": 212.92000000000002,
+    "end": 217.04,
+    "text": "Vector that you can get there are two things that can happen for most pairs of"
+  },
+  {
+    "start": 217.04,
+    "end": 220.799,
+    "text": "vectors you'll be able to reach every possible point in the plane every"
+  },
+  {
+    "start": 220.799,
+    "end": 224.92000000000002,
+    "text": "two-dimensional Vector is within your grasp however in The Unlucky case where"
+  },
+  {
+    "start": 224.92000000000002,
+    "end": 229.439,
+    "text": "your two original vectors happen to line up the tip of the resulting Vector is"
+  },
+  {
+    "start": 229.439,
+    "end": 232.959,
+    "text": "limited to just this single line passing through the"
+  },
+  {
+    "start": 232.959,
+    "end": 237.04,
+    "text": "origin actually technically there's a third possibility too both your vectors"
+  },
+  {
+    "start": 237.04,
+    "end": 240.28,
+    "text": "could be zero in which case you'd just be stuck at the"
+  },
+  {
+    "start": 240.28,
+    "end": 245.0,
+    "text": "origin here's some more terminology the set of all possible vectors that you can"
+  },
+  {
+    "start": 245.0,
+    "end": 249.72,
+    "text": "reach with a linear combination of a given pair of vectors is called the span"
+  },
+  {
+    "start": 249.72,
+    "end": 253.47,
+    "text": "of those two"
+  },
+  {
+    "start": 253.48,
+    "end": 256.079,
+    "text": "vectors so restating what we just saw in"
+  },
+  {
+    "start": 256.079,
+    "end": 258.56,
+    "text": "this lingo the span of most pairs of 2D"
+  },
+  {
+    "start": 258.56,
+    "end": 263.36,
+    "text": "vectors is all vectors of 2D space but when they line up their span is all"
+  },
+  {
+    "start": 263.36,
+    "end": 268.32,
+    "text": "vectors whose tip sit on a certain line remember how I said that linear"
+  },
+  {
+    "start": 268.32,
+    "end": 273.0,
+    "text": "algebra revolves around vector addition and scalar multiplication well the span"
+  },
+  {
+    "start": 273.0,
+    "end": 277.12,
+    "text": "of two vectors is basically a way of asking what are all the possible vectors"
+  },
+  {
+    "start": 277.12,
+    "end": 281.32,
+    "text": "you can reach using only these two fundamental operations vector addition"
+  },
+  {
+    "start": 281.32,
+    "end": 285.72,
+    "text": "and scalar multiplication this is a good time to talk about how people commonly think"
+  },
+  {
+    "start": 285.72,
+    "end": 289.8,
+    "text": "about vectors as points it gets really crowded to think about a whole"
+  },
+  {
+    "start": 289.8,
+    "end": 293.52,
+    "text": "collection of vectors sitting on a line and more crowded still to think about"
+  },
+  {
+    "start": 293.52,
+    "end": 298.0,
+    "text": "all two dimensional vectors all at once filling up the plane so when dealing"
+  },
+  {
+    "start": 298.0,
+    "end": 301.919,
+    "text": "with collections of vectors like this it's common to represent each one with"
+  },
+  {
+    "start": 301.919,
+    "end": 304.52,
+    "text": "just a point in Space the point at the"
+  },
+  {
+    "start": 304.52,
+    "end": 308.479,
+    "text": "tip of that Vector where as usual I want you thinking about that Vector with its"
+  },
+  {
+    "start": 308.479,
+    "end": 311.72,
+    "text": "tail on the origin that way if you want"
+  },
+  {
+    "start": 311.72,
+    "end": 315.759,
+    "text": "to think about every possible Vector whose tip sits on a certain line just"
+  },
+  {
+    "start": 315.759,
+    "end": 319.11,
+    "text": "think about the line"
+  },
+  {
+    "start": 319.12,
+    "end": 323.4,
+    "text": "itself likewise to think about all possible two-dimensional vectors all at"
+  },
+  {
+    "start": 323.4,
+    "end": 326.4,
+    "text": "once conceptualize each one as the point"
+  },
+  {
+    "start": 326.4,
+    "end": 330.52,
+    "text": "where its tip sits so in effect what you'll be thinking about is the infinite"
+  },
+  {
+    "start": 330.52,
+    "end": 335.12,
+    "text": "flat sheet of two-dimensional space itself leaving the arrows out of"
+  },
+  {
+    "start": 335.12,
+    "end": 339.44,
+    "text": "it in general if you're thinking about a vector on its own think of it as an"
+  },
+  {
+    "start": 339.44,
+    "end": 343.24,
+    "text": "arrow and if you're dealing with a collection of vectors it's convenient to"
+  },
+  {
+    "start": 343.24,
+    "end": 348.0,
+    "text": "think of them all as points so for our span example the span of most pairs of"
+  },
+  {
+    "start": 348.0,
+    "end": 352.24,
+    "text": "vectors ends up being the entire infinite sheet of two-dimensional space"
+  },
+  {
+    "start": 352.24,
+    "end": 357.55,
+    "text": "but if they line up their span is just a"
+  },
+  {
+    "start": 357.56,
+    "end": 361.56,
+    "text": "line the idea of span gets a lot more interesting if we start thinking about"
+  },
+  {
+    "start": 361.56,
+    "end": 364.12,
+    "text": "vectors in threedimensional space for"
+  },
+  {
+    "start": 364.12,
+    "end": 368.319,
+    "text": "example if you take two vectors in 3D space that are not pointing in the same"
+  },
+  {
+    "start": 368.319,
+    "end": 372.36,
+    "text": "direction what does it mean to take their"
+  },
+  {
+    "start": 372.36,
+    "end": 375.08,
+    "text": "span well their span is the collection"
+  },
+  {
+    "start": 375.08,
+    "end": 377.8,
+    "text": "of all possible linear combinations of"
+  },
+  {
+    "start": 377.8,
+    "end": 382.56,
+    "text": "those two vectors meaning all possible vectors you get by scaling each of the"
+  },
+  {
+    "start": 382.56,
+    "end": 387.0,
+    "text": "two of them in some way and then adding them together you can kind of Imagine"
+  },
+  {
+    "start": 387.0,
+    "end": 391.0,
+    "text": "turning two different knobs to change the two SC scalers defining the linear"
+  },
+  {
+    "start": 391.0,
+    "end": 395.039,
+    "text": "combination adding the scaled vectors and following the tip of the resulting"
+  },
+  {
+    "start": 395.039,
+    "end": 399.84000000000003,
+    "text": "Vector that tip will Trace out some kind of flat sheet cutting through the origin"
+  },
+  {
+    "start": 399.84000000000003,
+    "end": 402.36,
+    "text": "of three-dimensional space this flat"
+  },
+  {
+    "start": 402.36,
+    "end": 405.28,
+    "text": "sheet is the span of the two vectors or"
+  },
+  {
+    "start": 405.28,
+    "end": 409.199,
+    "text": "more precisely the set of all possible vectors whose tips sit on that flat"
+  },
+  {
+    "start": 409.199,
+    "end": 413.84000000000003,
+    "text": "sheet is the span of your two vectors isn't that a beautiful mental"
+  },
+  {
+    "start": 413.84000000000003,
+    "end": 418.44,
+    "text": "image so what happens if we add a third vector and consider the span of all"
+  },
+  {
+    "start": 418.44,
+    "end": 422.759,
+    "text": "three of those guys a linear combination of three vectors is"
+  },
+  {
+    "start": 422.759,
+    "end": 426.28,
+    "text": "defined pretty much the same way as it is for two you'll choose three different"
+  },
+  {
+    "start": 426.28,
+    "end": 429.12,
+    "text": "scalers scale each of those vectors and"
+  },
+  {
+    "start": 429.12,
+    "end": 435.309,
+    "text": "then add them all"
+  },
+  {
+    "start": 435.319,
+    "end": 439.879,
+    "text": "together and again the span of these vectors is the set of all possible"
+  },
+  {
+    "start": 439.879,
+    "end": 443.51,
+    "text": "linear"
+  },
+  {
+    "start": 443.52,
+    "end": 447.8,
+    "text": "combinations two different things could happen here if your third Vector happens"
+  },
+  {
+    "start": 447.8,
+    "end": 451.879,
+    "text": "to be sitting on the span of the first two then the span doesn't change you're"
+  },
+  {
+    "start": 451.879,
+    "end": 456.36,
+    "text": "sort of trapped on that same flat sheet in other words adding a scaled version"
+  },
+  {
+    "start": 456.36,
+    "end": 459.84000000000003,
+    "text": "of that third Vector to the linear combination doesn't really give you"
+  },
+  {
+    "start": 459.84000000000003,
+    "end": 463.96,
+    "text": "access to any new vectors but if you just randomly choose"
+  },
+  {
+    "start": 463.96,
+    "end": 468.8,
+    "text": "a third Vector it's almost certainly not sitting on the span of those first two"
+  },
+  {
+    "start": 468.8,
+    "end": 472.919,
+    "text": "then since it's pointing in a separate Direction it unlocks access to every"
+  },
+  {
+    "start": 472.919,
+    "end": 477.36,
+    "text": "possible three dimensional Vector one way I like to think about this is that"
+  },
+  {
+    "start": 477.36,
+    "end": 482.159,
+    "text": "as you scale that new third vector it moves around that span sheet of the"
+  },
+  {
+    "start": 482.159,
+    "end": 487.039,
+    "text": "first two sweeping it through all of space another way to think about it is"
+  },
+  {
+    "start": 487.039,
+    "end": 490.759,
+    "text": "that you're making full use of the three freely changing scalers that you have at"
+  },
+  {
+    "start": 490.759,
+    "end": 492.96,
+    "text": "your disposal to access the full three"
+  },
+  {
+    "start": 492.96,
+    "end": 495.95,
+    "text": "dimensions of"
+  },
+  {
+    "start": 495.96,
+    "end": 500.24,
+    "text": "space now in the case where the third Vector was already sitting on the span"
+  },
+  {
+    "start": 500.24,
+    "end": 504.0,
+    "text": "of the first two or the case where two vectors happen to line up we want some"
+  },
+  {
+    "start": 504.0,
+    "end": 508.199,
+    "text": "terminology to describe the fact that at least one of these vectors is redundant"
+  },
+  {
+    "start": 508.199,
+    "end": 512.36,
+    "text": "not adding anything to our span whenever this happens where you have"
+  },
+  {
+    "start": 512.36,
+    "end": 515.919,
+    "text": "multiple vectors and you could remove one without reducing the span the"
+  },
+  {
+    "start": 515.919,
+    "end": 519.399,
+    "text": "relevant terminology is to say that they are linearly"
+  },
+  {
+    "start": 519.399,
+    "end": 523.479,
+    "text": "dependent another way of phrasing that would be to say that one of the vectors"
+  },
+  {
+    "start": 523.479,
+    "end": 527.44,
+    "text": "can be expressed as a linear combination of the others since it's already in the"
+  },
+  {
+    "start": 527.44,
+    "end": 531.87,
+    "text": "span of the"
+  },
+  {
+    "start": 531.88,
+    "end": 536.6,
+    "text": "others on the other hand if each Vector really does add another dimension to the"
+  },
+  {
+    "start": 536.6,
+    "end": 538.88,
+    "text": "span they're said to be linearly"
+  },
+  {
+    "start": 538.88,
+    "end": 546.43,
+    "text": "independent"
+  },
+  {
+    "start": 546.44,
+    "end": 551.2,
+    "text": "so with all of that terminology and hopefully with some good mental images to go with it let me leave you with a"
+  },
+  {
+    "start": 551.2,
+    "end": 553.48,
+    "text": "puzzle before we go the technical"
+  },
+  {
+    "start": 553.48,
+    "end": 556.24,
+    "text": "definition of a basis of a space is a"
+  },
+  {
+    "start": 556.24,
+    "end": 561.0,
+    "text": "set of linearly independent vectors that span that"
+  },
+  {
+    "start": 561.0,
+    "end": 565.8389999999999,
+    "text": "space now given how I described a basis earlier and given your current"
+  },
+  {
+    "start": 565.8389999999999,
+    "end": 569.92,
+    "text": "understanding of the words span and linearly independent think about why"
+  },
+  {
+    "start": 569.92,
+    "end": 573.04,
+    "text": "this definition would make"
+  },
+  {
+    "start": 573.04,
+    "end": 577.88,
+    "text": "sense in the next video I'll get into matrices and transforming space see you"
+  },
+  {
+    "start": 577.88,
+    "end": 593.81,
+    "text": "then"
+  }
+]

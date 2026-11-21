@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="flowBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#161f36"/>
+    </linearGradient>
+    <filter id="fShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="480" rx="14" fill="url(#flowBg)" stroke="#334155" stroke-width="2"/>
+
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="bold" fill="#38bdf8">
+    MCP ইন্টারঅ্যাকশন ও ডেটা ফ্লো সাইকেল (Protocol Lifecycle)
+  </text>
+  <text x="450" y="65" text-anchor="middle" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94a3b8">
+    ব্যবহারকারীর ইনপুট থেকে শুরু করে এআই এজেন্টের টুল এক্সিকিউশন ও ফাইনাল রেসপন্স
+  </text>
+
+  <!-- Step 1 -->
+  <g transform="translate(60, 100)" filter="url(#fShadow)">
+    <rect width="160" height="110" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+    <circle cx="80" cy="30" r="16" fill="#0284c7"/>
+    <text x="80" y="35" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fff">১</text>
+    <text x="80" y="65" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0">ব্যবহারকারী রিকোয়েস্ট</text>
+    <text x="80" y="85" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="10" fill="#94a3b8">হোস্টে প্রম্পট প্রদান</text>
+  </g>
+
+  <!-- Arrow 1 to 2 -->
+  <path d="M 220 155 L 280 155" stroke="#38bdf8" stroke-width="2.5" fill="none"/>
+  <polygon points="280,155 272,150 272,160" fill="#38bdf8"/>
+
+  <!-- Step 2 -->
+  <g transform="translate(280, 100)" filter="url(#fShadow)">
+    <rect width="160" height="110" rx="10" fill="#1e293b" stroke="#818cf8" stroke-width="1.5"/>
+    <circle cx="80" cy="30" r="16" fill="#6366f1"/>
+    <text x="80" y="35" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fff">২</text>
+    <text x="80" y="65" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0">টুল ডিসকভারি</text>
+    <text x="80" y="85" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="10" fill="#94a3b8">tools/list কোয়েরি</text>
+  </g>
+
+  <!-- Arrow 2 to 3 -->
+  <path d="M 440 155 L 500 155" stroke="#818cf8" stroke-width="2.5" fill="none"/>
+  <polygon points="500,155 492,150 492,160" fill="#818cf8"/>
+
+  <!-- Step 3 -->
+  <g transform="translate(500, 100)" filter="url(#fShadow)">
+    <rect width="160" height="110" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+    <circle cx="80" cy="30" r="16" fill="#059669"/>
+    <text x="80" y="35" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fff">৩</text>
+    <text x="80" y="65" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0">নিরাপদ এক্সিকিউশন</text>
+    <text x="80" y="85" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="10" fill="#94a3b8">tools/call এক্সিকিউট</text>
+  </g>
+
+  <!-- Arrow 3 to 4 -->
+  <path d="M 660 155 L 720 155" stroke="#10b981" stroke-width="2.5" fill="none"/>
+  <polygon points="720,155 712,150 712,160" fill="#10b981"/>
+
+  <!-- Step 4 -->
+  <g transform="translate(720, 100)" filter="url(#fShadow)">
+    <rect width="140" height="110" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+    <circle cx="70" cy="30" r="16" fill="#d97706"/>
+    <text x="70" y="35" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fff">৪</text>
+    <text x="70" y="65" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0">রেজাল্ট রিটার্ন</text>
+    <text x="70" y="85" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="10" fill="#94a3b8">সার্ভার থেকে আউটপুট</text>
+  </g>
+
+  <!-- Return Flow Bottom -->
+  <path d="M 790 210 L 790 320 L 140 320 L 140 210" stroke="#f43f5e" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
+  <polygon points="140,210 135,220 145,220" fill="#f43f5e"/>
+
+  <!-- Step 5 in bottom middle -->
+  <g transform="translate(320, 275)" filter="url(#fShadow)">
+    <rect width="260" height="90" rx="10" fill="#0f172a" stroke="#f43f5e" stroke-width="1.5"/>
+    <text x="130" y="30" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="bold" fill="#fb7185">৫. চূড়ান্ত বাংলা রেসপন্স জেনারেশন</text>
+    <text x="130" y="52" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#cbd5e1">মডেল প্রাপ্ত ডেটা সিন্থেসাইজ করে</text>
+    <text x="130" y="70" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="10" fill="#94a3b8">ব্যবহারকারীকে সঠিক উত্তর পৌঁছে দেয়</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="450" y="440" text-anchor="middle" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b">
+    বাংলা রিসোর্স ফ্যাক্টরি — মডেল কনটেক্সট প্রোটোকল টেকনিক্যাল গাইডলাইন
+  </text>
+</svg>

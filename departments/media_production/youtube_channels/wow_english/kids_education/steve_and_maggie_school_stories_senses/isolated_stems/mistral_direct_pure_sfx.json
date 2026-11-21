@@ -1,0 +1,21 @@
+{
+  "file": "mistral_direct_pure_sfx.wav",
+  "source": "raw_sources/original_audio.wav",
+  "sr": 44100,
+  "channels": 2,
+  "frames": 9416704,
+  "duration_s": 213.531,
+  "subtype": "PCM_24",
+  "peak": 0.95,
+  "rms": 0.0321,
+  "method": "Demucs htdemucs --two-stems=vocals (speech stem V, accompaniment/SFX stem N) -> speech frame set from V voice-band VAD + whisper word timeline + SRT captions (dilated 60ms, gaps<=150ms merged, intro <2.3s exempt) -> speech-dominant frames (N_env/(N_env+V_env)<=0.5) hard-gated to digital zero, SFX-dominant frames (r>0.5, e.g. boings/pops overlapping words) kept at full level -> magnitude-only Wiener mask |N|^2/(|N|^2+4|V|^2) on N's STFT inside speech+/-150ms with N's own phase kept -> 30ms smoothed gate -> intro bed 0-2.3s from original mix -> zero-phase FFT highpass 30Hz -> peak normalize 0.95",
+  "no_LR_cancellation": true,
+  "phase": "magnitude-only STFT masks + real time-domain envelopes; no L-R/mid-side processing; output waveform cos-sim vs no_vocals stem = 0.98-1.0 in kept SFX frames",
+  "speech_bleed": "hard-gated speech frames are digital silence (max residual 4.7e-3 only at 30ms ramp edges adjacent to kept SFX); corr(output, vocals stem) in gated frames = -0.0016",
+  "sfx_events_kept_peak": {
+    "12.24_boing": 0.4617, "28.32": 0.5106, "81.40_chime": 0.3714, "120.76": 0.3459,
+    "141.04": 0.4022, "149.58": 0.5018, "188.06_pop": 0.95, "197.76_pop": 0.9063,
+    "206.78_chili_sizzle": 0.5611, "intro_bed_0-2.2s": 0.9383
+  },
+  "model": "nvidia/mistralai/mistral-large-4-1t-a52b (subagent: mistral_direct)"
+}

@@ -1,0 +1,320 @@
+{
+  "lesson_id": "lesson_15",
+  "chapter_num": 15,
+  "course_id": "linear_algebra",
+  "title_en": "Abstract Vector Spaces",
+  "title_bn": "বিমূর্ত ভেক্টর স্পেস ও ফাংশন স্পেস",
+  "subtitle_bn": "তীর ও সংখ্যাজোড়ের সীমানা পেরিয়ে: ফাংশন যখন ভেক্টর এবং অন্তরীকরণ যখন রৈখিক রূপান্তর",
+  "video_id": "TgKwz5b66Lg",
+  "official_url": "https://www.3blue1brown.com/lessons/abstract-vector-spaces",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "16:45",
+    "prerequisites": [
+      "lesson_01",
+      "lesson_02",
+      "lesson_03",
+      "lesson_04",
+      "lesson_09",
+      "lesson_13",
+      "lesson_14"
+    ]
+  },
+  "epigraph": {
+    "quote": "Mathematics is the art of giving the same name to different things.",
+    "quote_bn": "গণিত হলো আপাতদৃষ্টিতে সম্পূর্ণ ভিন্ন বিষয়ের অন্তরালে লুকিয়ে থাকা একই সারসত্তাকে একই নামে ডাকার শিল্প।",
+    "author": "Henri Poincaré (অঁরি পোয়াঁকারে)"
+  },
+  "sections": [
+    {
+      "id": "sec_01_what_is_a_vector",
+      "title_bn": "১. ভেক্টর আসলে কী? জ্যামিতিক তীর, সংখ্যার তালিকা এবং স্বতঃসিদ্ধের বিমূর্ত জগৎ",
+      "title_en": "What Is a Vector Really? The 8 Abstract Axioms",
+      "summary_bn": "পদার্থবিজ্ঞানের দিকসম্পন্ন তীর কিংবা কম্পিউটার সায়েন্সের সংখ্যার তালিকার ঊর্ধ্বে উঠে গণিতবিদরা ভেক্টরকে সংজ্ঞায়িত করেন তাদের আচরণের মাধ্যমে—যোগ এবং স্কেলার গুণনের ৮টি মৌলিক স্বতঃসিদ্ধ মেনে চলা যেকোনো সত্তাই একটি ভেক্টর।",
+      "key_takeaways": [
+        "পদার্থবিদ ভেক্টরকে দেখেন দিক ও দৈর্ঘ্যসম্পন্ন জ্যামিতিক তীর হিসেবে; কম্পিউটার বিজ্ঞানী ভেক্টরকে দেখেন সুনির্দিষ্ট অর্ডারে সাজানো সংখ্যার তালিকা হিসেবে।",
+        "গণিতবিদদের কাছে রূপ বা আকৃতি মুখ্য নয়, বরং সম্পর্ক ও অপারেশনের নিয়মই পরম সত্য।",
+        "ভেক্টর স্পেসের জন্য আবশ্যকীয় দুটি অপারেশন হলো: ভেক্টর যোগফল ($+$) এবং স্কেলার গুণন ($\\cdot$)।",
+        "যদি কোনো উপাদানসমষ্টি এই দুই ক্রিয়ার অধীনে আবদ্ধ থাকে এবং ৮টি স্বতঃসিদ্ধ (বিনিময়, সংযোগ, শূন্য ভেক্টর, বিপরীতক, বণ্টন বিধি) মেনে চলে, তবে তারা নিঃসন্দেহে একটি ভেক্টর স্পেস গঠন করে।"
+      ],
+      "formulas": [
+        {
+          "label": "ভেক্টর যোগের আবদ্ধতা ও বিনিময় বিধি (Closure & Commutativity)",
+          "katex": "\\vec{u} + \\vec{v} \\in V, \\quad \\vec{u} + \\vec{v} = \\vec{v} + \\vec{u}"
+        },
+        {
+          "label": "সংযোগ বিধি ও শূন্য ভেক্টর (Associativity & Zero Vector)",
+          "katex": "(\\vec{u} + \\vec{v}) + \\vec{w} = \\vec{u} + (\\vec{v} + \\vec{w}), \\quad \\exists \\, \\vec{0} \\in V \\text{ s.t. } \\vec{v} + \\vec{0} = \\vec{v}"
+        },
+        {
+          "label": "যোগমূলক বিপরীতক (Additive Inverse)",
+          "katex": "\\forall \\, \\vec{v} \\in V, \\quad \\exists \\, (-\\vec{v}) \\in V \\text{ s.t. } \\vec{v} + (-\\vec{v}) = \\vec{0}"
+        },
+        {
+          "label": "স্কেলার গুণনের বণ্টন বিধি (Distributive Laws)",
+          "katex": "c(\\vec{u} + \\vec{v}) = c\\vec{u} + c\\vec{v}, \\quad (c + d)\\vec{v} = c\\vec{v} + d\\vec{v}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_three_perspectives_vector",
+          "caption_bn": "ভেক্টরের তিন দৃষ্টিভঙ্গি: পদার্থবিদের তীর, প্রোগ্রামারের তালিকা এবং গণিতবিদের বিমূর্ত স্বতঃসিদ্ধ",
+          "type": "svg",
+          "src": "figures/three_vector_perspectives.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "vector_axioms_explorer",
+        "axioms_count": 8,
+        "description_bn": "ভেক্টর স্পেসের ৮টি স্বতঃসিদ্ধ নির্বাচন করুন এবং যাচাই করুন কীভাবে সাধারণ কার্তেসীয় ভেক্টর এবং ফাংশন উভয়ই নিখুঁতভাবে এই শর্তগুলো পূরণ করে।"
+      }
+    },
+    {
+      "id": "sec_02_functions_as_vectors",
+      "title_bn": "২. ফাংশন নিজেই একটি ভেক্টর: অসীম মাত্রার অবিচ্ছিন্ন জগৎ",
+      "title_en": "Functions as Vectors: Continuous Values & Polynomial Subspaces",
+      "summary_bn": "দুটি বাস্তব ফাংশনের যোগফল ও স্কেলার গুণন ভেক্টরের মতোই কাজ করে। ফলে অবিচ্ছিন্ন ফাংশনগুলোর সেট একটি অসীম মাত্রার ভেক্টর স্পেস গঠন করে এবং বহুপদী ফাংশনগুলো সসীম মাত্রার সাবস্পেস তৈরি করে।",
+      "key_takeaways": [
+        "দুটি ফাংশনের যোগ $(f+g)(x) = f(x) + g(x)$ উপাংশ ধরে ধরে সাধারণ ভেক্টর যোগের মতোই কাজ করে।",
+        "স্কেলার গুণন $(c \\cdot f)(x) = c \\cdot f(x)$ প্রতিটি ইনপুটে ফাংশনের আউটপুট মানকে স্কেল করে।",
+        "ধ্রুব শূন্য ফাংশন $z(x) = 0$ হলো এই জগতের শূন্য ভেক্টর, এবং $-f(x)$ হলো যোগমূলক বিপরীতক।",
+        "সসীম ভেক্টরে উপাংশের সংখ্যা সসীম (যেমন ২ বা ৩), কিন্তু একটি অবিচ্ছিন্ন ফাংশনের প্রতিটি বাস্তব বিন্দুতে মান থাকে বিধায় এটি অসীম মাত্রার ভেক্টর স্পেস।",
+        "$n$-ঘাতী বহুপদী ফাংশন $\\mathcal{P}_n$ একটি সসীম $(n+1)$-মাত্রার ভেক্টর স্পেস যার ভিত্তি $\\{1, x, x^2, \\dots, x^n\\}$।"
+      ],
+      "formulas": [
+        {
+          "label": "ফাংশন যোগ ও স্কেলার গুণনের সংজ্ঞা",
+          "katex": "(f + g)(x) = f(x) + g(x), \\quad (c \\cdot f)(x) = c \\cdot f(x)"
+        },
+        {
+          "label": "ফাংশন স্পেসের শূন্য ভেক্টর ও বিপরীতক",
+          "katex": "\\mathbf{0}(x) = 0, \\quad f(x) + (-f(x)) = \\mathbf{0}(x)"
+        },
+        {
+          "label": "বহুপদী ফাংশনকে ভেক্টর স্থানাঙ্কে রূপান্তর",
+          "katex": "p(x) = a_0 \\cdot 1 + a_1 x + a_2 x^2 + a_3 x^3 \\longleftrightarrow [p]_{\\mathcal{B}} = \\begin{bmatrix} a_0 \\\\ a_1 \\\\ a_2 \\\\ a_3 \\end{bmatrix}"
+        },
+        {
+          "label": "বহুপদী সাবস্পেসের ভিত্তি (Polynomial Basis)",
+          "katex": "\\mathcal{B} = \\{1, x, x^2, x^3\\}, \\quad \\dim(\\mathcal{P}_3) = 4"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_function_addition_vector_style",
+          "caption_bn": "গ্রাফে দুটি ফাংশনের যোগফল কীভাবে উপাংশভিত্তিক ভেক্টর যোগের মতোই উচ্চতা বৃদ্ধি করে",
+          "type": "svg",
+          "src": "figures/function_addition_visualizer.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "polynomial_vector_converter",
+        "initial_coefficients": [
+          2,
+          -3,
+          1,
+          0.5
+        ],
+        "description_bn": "বহুপদীর সহগ পরিবর্তন করে দেখুন কীভাবে ফাংশনের লেখচিত্র এবং ৪-মাত্রিক কলাম ভেক্টরের মান যুগপৎভাবে পরিবর্তিত হয়।"
+      }
+    },
+    {
+      "id": "sec_03_linear_transformations_on_functions",
+      "title_bn": "৩. ফাংশনের ওপর লিনিয়ার রূপান্তর: ডেরিভেটিভ বা অন্তরক অপারেটর এবং ম্যাট্রিক্স রূপ",
+      "title_en": "The Derivative as a Linear Transformation & The Differentiation Matrix",
+      "summary_bn": "ক্যালকুলাসের অন্তরীকরণ অপারেটর $D = \\frac{d}{dx}$ মূলত ফাংশন স্পেসের ওপর একটি নিখুঁত লিনিয়ার রূপান্তর। বহুপদী ভিত্তিতে একে সাধারণ ম্যাট্রিক্স গুণন আকারে প্রকাশ করে অন্তরীকরণ সমাধান করা যায়।",
+      "key_takeaways": [
+        "একটি রূপান্তরকে লিনিয়ার হতে হলে অ্যাডিটিভিটি $L(f+g) = L(f)+L(g)$ এবং হোমোজিনিটি $L(cf) = c L(f)$ মেনে চলতে হয়।",
+        "অন্তরীকরণ অপারেটর $\\frac{d}{dx}$ এই দুটি শর্তই পুরোপুরি সন্তুষ্ট করে: $\\frac{d}{dx}(f+g) = \\frac{df}{dx} + \\frac{dg}{dx}$ এবং $\\frac{d}{dx}(cf) = c \\frac{df}{dx}$।",
+        "ভিত্তি উপাদান $\\{1, x, x^2, x^3\\}$ এর ওপর ডেরিভেটিভ প্রয়োগ করে প্রাপ্ত ফলাফলগুলোই হলো রূপান্তর ম্যাট্রিক্সের কলাম।",
+        "ম্যাট্রিক্স গুণনের মাধ্যমে ক্যালকুলাসের অন্তরীকরণ নির্ণয় সম্ভব: ম্যাট্রিক্সকে বহুপদীর সহগ ভেক্টর দ্বারা গুণ করলেই ডেরিভেটিভের সহগ পাওয়া যায়।",
+        "ডেরিভেটিভ অপারেটরের কার্নেল বা নাল স্পেস হলো সকল ধ্রুবক ফাংশন ($c \\cdot 1$), কারণ ধ্রুবকের ডেরিভেটিভ শূন্য।"
+      ],
+      "formulas": [
+        {
+          "label": "অন্তরীকরণ অপারেটরের রৈখিকতার শর্ত (Linearity of Derivative)",
+          "katex": "\\frac{d}{dx}(f(x) + g(x)) = \\frac{d}{dx}f(x) + \\frac{d}{dx}g(x), \\quad \\frac{d}{dx}(c \\cdot f(x)) = c \\frac{d}{dx}f(x)"
+        },
+        {
+          "label": "ভিত্তি বহুপদীর ওপর ডেরিভেটিভ রূপান্তর",
+          "katex": "\\frac{d}{dx}(1) = 0, \\quad \\frac{d}{dx}(x) = 1, \\quad \\frac{d}{dx}(x^2) = 2x, \\quad \\frac{d}{dx}(x^3) = 3x^2"
+        },
+        {
+          "label": "ডিফারেনশিয়েশন ম্যাট্রিক্স রূপ (Differentiation Matrix)",
+          "katex": "\\mathbf{D} = \\begin{bmatrix} 0 & 1 & 0 & 0 \\\\ 0 & 0 & 2 & 0 \\\\ 0 & 0 & 0 & 3 \\\\ 0 & 0 & 0 & 0 \\end{bmatrix}"
+        },
+        {
+          "label": "ম্যাট্রিক্স গুণনে বহুপদীর ডেরিভেটিভ নির্ণয়",
+          "katex": "\\mathbf{D} \\begin{bmatrix} a_0 \\\\ a_1 \\\\ a_2 \\\\ a_3 \\end{bmatrix} = \\begin{bmatrix} 0 & 1 & 0 & 0 \\\\ 0 & 0 & 2 & 0 \\\\ 0 & 0 & 0 & 3 \\\\ 0 & 0 & 0 & 0 \\end{bmatrix} \\begin{bmatrix} a_0 \\\\ a_1 \\\\ a_2 \\\\ a_3 \\end{bmatrix} = \\begin{bmatrix} a_1 \\\\ 2a_2 \\\\ 3a_3 \\\\ 0 \\end{bmatrix} \\longleftrightarrow a_1 + 2a_2 x + 3a_3 x^2"
+        },
+        {
+          "label": "অপারেটরের নাল স্পেস বা কার্নেল",
+          "katex": "\\ker(\\mathbf{D}) = \\left\\{ \\begin{bmatrix} c \\\\ 0 \\\\ 0 \\\\ 0 \\end{bmatrix} \\;\\middle|\\; c \\in \\mathbb{R} \\right\\} = \\text{span}(\\{1\\})"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_derivative_matrix_action",
+          "caption_bn": "ম্যাট্রিক্স D কীভাবে বহুপদীর সহগ ভেক্টরকে এক ধাপ নিচে নামিয়ে স্কেল করে ক্যালকুলাস সম্পাদন করে",
+          "type": "svg",
+          "src": "figures/derivative_matrix_action.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "matrix_calculus_simulator",
+        "matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "description_bn": "যেকোনো ৩য় ঘাত পর্যন্ত বহুপদী ইনপুট দিন এবং দেখুন কীভাবে ম্যাট্রিক্স গুণনের মাধ্যমে সরাসরি এর ডেরিভেটিভ গণনা করা হয়।"
+      }
+    },
+    {
+      "id": "sec_04_inner_products_and_abstract_bridge",
+      "title_bn": "৪. ফাংশনের ডট গুণন: ইনার প্রোডাক্ট, অর্থোগোনালিটি ও ফুরিয়ার বিশ্লেষণ",
+      "title_en": "Inner Products of Functions, Orthogonality & Fourier Synthesis",
+      "summary_bn": "ভেক্টরের ডট গুণনকে অবিচ্ছিন্ন ফাংশনের ক্ষেত্রে ইন্টিগ্রাল আকারে সংজ্ঞায়িত করা হয়। এর মাধ্যমে ফাংশনগুলোর মধ্যবর্তী লম্বতা বা অর্থোগোনালিটি এবং ফুরিয়ার সিরিজের নিখুঁত জ্যামিতিক ব্যাখ্যা উন্মোচিত হয়।",
+      "key_takeaways": [
+        "সসীম ভেক্টরে ডট গুণন হলো উপাংশগুলোর গুণফলের যোগফল: $\\sum v_i w_i$। অবিচ্ছিন্ন ফাংশনে এই অবিচ্ছিন্ন যোগফলটিই হলো নির্দিষ্ট ইন্টিগ্রাল $\\int_a^b f(x)g(x)\\,dx$।",
+        "ফাংশনের ইনার প্রোডাক্ট $\\langle f, g \\rangle = \\int_a^b f(x)g(x)\\,dx$ ডট গুণনের সকল বৈশিষ্ট্য (প্রতিসাম্য, রৈখিকতা, পজিটিভিটি) রক্ষা করে।",
+        "যখন দুটি ফাংশনের ইনার প্রোডাক্ট শূন্য হয় ($\\langle f, g \\rangle = 0$), তখন তাদেরকে পরস্পরের অর্থোগোনাল (লম্ব) ফাংশন বলা হয়।",
+        "সাইকেল বা তরঙ্গের ত্রিকোণমিতিক ফাংশন $\\{\\cos(nx), \\sin(nx)\\}$ পরস্পরের সাথে সমকোণে অবস্থান করে একটি অর্থোগোনাল ভিত্তি তৈরি করে।",
+        "ফুরিয়ার সিরিজ মূলত কোনো জটিল ফাংশনকে এই অর্থোগোনাল ভিত্তির ওপর ভেক্টর প্রজেকশন বা উপাংশে বিভক্ত করার প্রক্রিয়া ছাড়া আর কিছুই নয়।"
+      ],
+      "formulas": [
+        {
+          "label": "ডট গুণন থেকে ফাংশনের ইনার প্রোডাক্টে রূপান্তর",
+          "katex": "\\vec{v} \\cdot \\vec{w} = \\sum_{i=1}^n v_i w_i \\quad \\longrightarrow \\quad \\langle f, g \\rangle = \\int_{a}^{b} f(x) g(x) \\, dx"
+        },
+        {
+          "label": "ফাংশনের মান বা নর্ম (Function Norm / Length)",
+          "katex": "\\|f\\| = \\sqrt{\\langle f, f \\rangle} = \\sqrt{\\int_{a}^{b} [f(x)]^2 \\, dx}"
+        },
+        {
+          "label": "ফাংশনের অর্থোগোনালিটি বা লম্ব শর্ত",
+          "katex": "\\langle f, g \\rangle = 0 \\iff f \\perp g"
+        },
+        {
+          "label": "ত্রিকোণমিতিক ভিত্তি ফাংশনের অর্থোগোনালিটি",
+          "katex": "\\int_{-\\pi}^{\\pi} \\cos(mx) \\sin(nx) \\, dx = 0, \\quad \\int_{-\\pi}^{\\pi} \\cos(mx) \\cos(nx) \\, dx = \\pi \\delta_{mn}"
+        },
+        {
+          "label": "ফুরিয়ার ধারায় অর্থোগোনাল প্রজেকশন",
+          "katex": "a_n = \\frac{\\langle f(x), \\cos(nx) \\rangle}{\\|\\cos(nx)\\|^2} = \\frac{1}{\\pi} \\int_{-\\pi}^{\\pi} f(x) \\cos(nx) \\, dx"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_function_inner_product_integral",
+          "caption_bn": "ইনার প্রোডাক্টের জ্যামিতিক তাৎপর্য: দুটি ফাংশনের গুণফলের নিচের ক্ষেত্রফল কীভাবে তাদের পারস্পরিক সমাপতন ও লম্বতা প্রকাশ করে",
+          "type": "svg",
+          "src": "figures/function_inner_product_area.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "fourier_projection_visualizer",
+        "description_bn": "যেকোনো তরঙ্গরূপের সাথে সাইন ও কোসাইন তরঙ্গের ইনার প্রোডাক্ট নির্ণয় করে ফুরিয়ার সহগগুলো তৈরি হতে দেখুন।"
+      }
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_vector_axioms_definition",
+      "section_ref": "sec_01_what_is_a_vector",
+      "question_bn": "গণিতে কোনো বস্তুসমূহের সেটকে একটি 'ভেক্টর স্পেস' হিসেবে স্বীকৃতি পাওয়ার প্রধান শর্ত কোনটি?",
+      "question_en": "What is the defining requirement for a set of objects to form a vector space in mathematics?",
+      "options": [
+        "উপাদানগুলোকে অবশ্যই ত্রিমাত্রিক স্থানে দিক ও দৈর্ঘ্য নির্দেশকারী জ্যামিতিক তীর হতে হবে",
+        "উপাদানগুলোকে কম্পিউটার মেমরিতে নির্দিষ্ট সংখ্যক ফ্লোটিং পয়েন্ট সংখ্যার তালিকা হতে হবে",
+        "উপাদানগুলোর ওপর সুসংজ্ঞায়িত যোগ ও স্কেলার গুণন থাকতে হবে যা ৮টি সার্বজনীন ভেক্টর স্পেস স্বতঃসিদ্ধ সন্তুষ্ট করে",
+        "উপাদানগুলোর ডিটারমিন্যান্ট সর্বদা ধনাত্মক হতে হবে"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "আধুনিক গণিতে ভেক্টরের পরিচয় তার বাহ্যিক রূপ (তীর বা সংখ্যাজোড়) দিয়ে নির্ধারিত হয় না। বরং উপাদানগুলোর ওপর যোগ এবং স্কেলার গুণনের নিয়ম যদি ৮টি মূল স্বতঃসিদ্ধ (বিনিময়, সংযোগ, বণ্টন, শূন্য ভেক্টরের উপস্থিতি ইত্যাদি) মেনে চলে, তবে সেই উপাদানগুলোকেই ভেক্টর বলা হয়।",
+      "explanation_en": "In abstract mathematics, a vector is fundamentally defined by how it behaves under vector addition and scalar multiplication satisfying the 8 vector space axioms, regardless of whether it looks like an arrow or a list of numbers."
+    },
+    {
+      "id": "quiz_02_derivative_linearity",
+      "section_ref": "sec_03_linear_transformations_on_functions",
+      "question_bn": "ক্যালকুলাসের অন্তরীকরণ অপারেটর $D = \\frac{d}{dx}$ কে কেন একটি 'লিনিয়ার রূপান্তর' বলা হয়?",
+      "question_en": "Why is the differentiation operator D = d/dx considered a linear transformation on function spaces?",
+      "options": [
+        "কারণ এটি যেকোনো বক্ররেখাকে সোজা সরলরেখায় রূপান্তরিত করে",
+        "কারণ এটি যোগের বণ্টন $D(f+g) = Df + Dg$ এবং স্কেলারের স্কেলিং $D(cf) = c Df$ দুটি শর্তই যথাযথভাবে পূরণ করে",
+        "কারণ এর ইনভার্স ম্যাট্রিক্স সর্বদা আইডেন্টিটি ম্যাট্রিক্সের সমান হয়",
+        "কারণ এটি কেবল ১ম ঘাতের সরল সমীকরণের ওপরেই প্রয়োগ করা যায়"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "একটি রূপান্তরকে লিনিয়ার হতে হলে দুটি মৌলিক ধর্ম অক্ষুণ্ণ রাখতে হয়: অ্যাডিটিভিটি ($L(f+g) = L(f)+L(g)$) এবং হোমোজিনিটি ($L(cf) = c L(f)$)। অন্তরীকরণের মৌলিক নিয়ম অনুযায়ী দুটি ফাংশনের যোগের ডেরিভেটিভ হলো পৃথক ডেরিভেটিভের যোগফল, এবং ধ্রুবক স্কেলার ডেরিভেটিভের বাইরে অবাধে চলে আসে।",
+      "explanation_en": "Differentiation preserves vector addition (d/dx(f+g) = df/dx + dg/dx) and scalar multiplication (d/dx(cf) = c df/dx), satisfying the exact axioms of a linear transformation."
+    },
+    {
+      "id": "quiz_03_derivative_matrix_action",
+      "section_ref": "sec_03_linear_transformations_on_functions",
+      "question_bn": "বহুপদীর ভিত্তি $\\{1, x, x^2, x^3\\}$ এর সাপেক্ষে ডেরিভেটিভ ম্যাট্রিক্স $\\mathbf{D} = \\begin{bmatrix} 0 & 1 & 0 & 0 \\\\ 0 & 0 & 2 & 0 \\\\ 0 & 0 & 0 & 3 \\\\ 0 & 0 & 0 & 0 \\end{bmatrix}$ হলে, $p(x) = 5 + 4x - 3x^2 + 2x^3$ বহুপদীর ডেরিভেটিভ কলাম ভেক্টরটি কী হবে?",
+      "question_en": "Using the polynomial basis {1, x, x^2, x^3} and differentiation matrix D, what is the output vector for p(x) = 5 + 4x - 3x^2 + 2x^3?",
+      "options": [
+        "$\\begin{bmatrix} 4 \\\\ -6 \\\\ 6 \\\\ 0 \\end{bmatrix}$ (যা $4 - 6x + 6x^2$ নির্দেশ করে)",
+        "$\\begin{bmatrix} 5 \\\\ 4 \\\\ -3 \\\\ 2 \\end{bmatrix}$ (যা অপরিবর্তিত থাকে)",
+        "$\\begin{bmatrix} 0 \\\\ 5 \\\\ 4 \\\\ -3 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 4 \\\\ -3 \\\\ 2 \\\\ 0 \\end{bmatrix}$"
+      ],
+      "correct_index": 0,
+      "explanation_bn": "বহুপদীটির স্থানাঙ্ক ভেক্টর হলো $\\begin{bmatrix} 5 \\\\ 4 \\\\ -3 \\\\ 2 \\end{bmatrix}$। ম্যাট্রিক্স $\\mathbf{D}$ দ্বারা গুণ করলে: ১ম সারি: $0(5)+1(4)+0(-3)+0(2) = 4$; ২য় সারি: $2(-3) = -6$; ৩য় সারি: $3(2) = 6$; ৪র্থ সারি: $0$। ফলাফল হলো $\\begin{bmatrix} 4 \\\\ -6 \\\\ 6 \\\\ 0 \\end{bmatrix}$, যা $4 - 6x + 6x^2$ এর সমান।",
+      "explanation_en": "Multiplying D by [5, 4, -3, 2]^T yields [4, -6, 6, 0]^T, which corresponds directly to the polynomial 4 - 6x + 6x^2."
+    },
+    {
+      "id": "quiz_04_function_orthogonality",
+      "section_ref": "sec_04_inner_products_and_abstract_bridge",
+      "question_bn": "$[-\\pi, \\pi]$ ব্যবধানে $f(x) = \\sin(x)$ এবং $g(x) = \\cos(x)$ ফাংশনদ্বয়কে কেন 'পরস্পর লম্ব বা অর্থোগোনাল' বলা হয়?",
+      "question_en": "Why are f(x) = sin(x) and g(x) = cos(x) orthogonal functions on the interval [-pi, pi]?",
+      "options": [
+        "কারণ তাদের সর্বোচ্চ মান উভয়েরই ১ এর সমান",
+        "কারণ তাদের ইনার প্রোডাক্ট ইন্টিগ্রাল $\\int_{-\\pi}^{\\pi} \\sin(x) \\cos(x) \\, dx = 0$",
+        "কারণ তাদের গ্রাফ পরস্পরকে কখনোই ছেদ করে না",
+        "কারণ তাদের ডেরিভেটিভ সর্বদা সমান হয়"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ভেক্টরের জ্যামিতিতে দুটি ভেক্টর লম্ব হলে যেমন তাদের ডট প্রোডাক্ট শূন্য হয়, তেমনি ফাংশন স্পেসে দুটি ফাংশন অর্থোগোনাল হলে তাদের ইনার প্রোডাক্ট ইন্টিগ্রাল শূন্য হয়। এখানে $\\int_{-\\pi}^{\\pi} \\sin(x)\\cos(x)\\,dx = \\frac{1}{2} \\int_{-\\pi}^{\\pi} \\sin(2x)\\,dx = 0$।",
+      "explanation_en": "Two functions are orthogonal under an inner product when their integral inner product evaluates to zero: integral_{-pi}^{pi} sin(x)cos(x) dx = 0."
+    },
+    {
+      "id": "quiz_05_power_of_abstraction",
+      "section_ref": "sec_04_inner_products_and_abstract_bridge",
+      "question_bn": "লিনিয়ার বীজগণিতে বিমূর্ত ভেক্টর স্পেস তত্ত্বের সবচেয়ে শক্তিশালী সুবিধা কোনটি?",
+      "question_en": "What is the primary strength of studying abstract vector spaces in linear algebra?",
+      "options": [
+        "এটি জ্যামিতির চিত্র আঁকা সম্পূর্ণ নিষিদ্ধ করে দেয়",
+        "কেবলমাত্র স্বতঃসিদ্ধ ব্যবহার করে প্রমাণিত যেকোনো উপপাদ্য একই সাথে জ্যামিতিক তীর, ডেটা মেট্রিক্স, ফাংশন স্পেস এবং কোয়ান্টাম ওয়েভফাংশনের জন্য স্বয়ংক্রিয়ভাবে সত্য প্রমাণিত হয়",
+        "এটি ক্যালকুলাসের সকল ইন্টিগ্রালকে অপ্রয়োজনীয় করে তোলে",
+        "এটি ম্যাট্রিক্সের মাত্রা কেবল ২x২ এর মধ্যে সীমাবদ্ধ রাখে"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "বিমূর্ততার আসল সৌন্দর্য হলো সার্বজনীনতা। একবার ভেক্টর স্পেস স্বতঃসিদ্ধ ব্যবহার করে কোনো তত্ত্ব (যেমন আইগেনভেক্টর, ডিকম্পোজিশন, অর্থোগোনালিটি) প্রমাণ করা হলে, তা যেকোনো সিস্টেমেই প্রযোজ্য—তা হোক দ্বিমাত্রিক তীর, কোটি উপাদানের বিগ-ডেটা তালিকা, ফুরিয়ার এনালাইসিস কিংবা কোয়ান্টাম বলবিদ্যা।",
+      "explanation_en": "Any theorem proven solely from vector space axioms immediately holds true across all representations: geometric arrows, high-dimensional datasets, function spaces, and quantum mechanics."
+    }
+  ]
+}

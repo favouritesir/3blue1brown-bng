@@ -1,0 +1,268 @@
+{
+  "console_logs": [
+    "[pageerror] Failed to execute 'define' on 'CustomElementRegistry': this constructor has already been used with this registry",
+    "[error] Permissions policy violation: compute-pressure is not allowed in this document."
+  ],
+  "duplications": {
+    "hasWatchPanel": true,
+    "watchPanelVisible": "block",
+    "watchPanelDrawerItems": 10,
+    "hasChapterList": true,
+    "chapterListVisible": "block",
+    "chapterListItems": 5,
+    "hasChapterNav": true,
+    "chapterNavRect": {
+      "x": 0,
+      "y": 17831.15625,
+      "width": 1280,
+      "height": 195.640625,
+      "top": 17831.15625,
+      "right": 1280,
+      "bottom": 18026.796875,
+      "left": 0
+    },
+    "chapterListRect": {
+      "x": 0,
+      "y": 18026.796875,
+      "width": 1280,
+      "height": 443.296875,
+      "top": 18026.796875,
+      "right": 1280,
+      "bottom": 18470.09375,
+      "left": 0
+    },
+    "backToTopCount": 1,
+    "searchOverlaysCount": 2
+  },
+  "components_dark": {
+    "mediaTab": {
+      "exists": true,
+      "imgBtnText": "🖼️ Image",
+      "vidBtnText": "🎬 Video",
+      "imgPaneVisible": "block",
+      "vidPaneVisible": "none"
+    },
+    "quote": {
+      "exists": true,
+      "hasChapterQuote": true,
+      "author": "হের্মান ওয়াইল",
+      "attribText": "— হের্মান ওয়াইল",
+      "text": "সংখ্যাকে স্থানাঙ্ক হিসেবে উপস্থাপন করা একটি সহিংস কাজ।",
+      "styles": {
+        "fontStyle": "italic",
+        "display": "block",
+        "border": "3px solid rgb(116, 192, 227)"
+      }
+    },
+    "callouts": [
+      {
+        "type": "blue",
+        "title": "📐 ১. পদার্থবিজ্ঞানের ছাত্রের দৃষ্টিভঙ্গি (PHYSICS PERSPECTIVE)",
+        "bg": "rgba(116, 192, 227, 0.07)",
+        "borderColor": "rgb(116, 192, 227)",
+        "titleColor": "rgb(116, 192, 227)",
+        "bodyColor": "rgb(234, 237, 243)",
+        "hasBody": true,
+        "isBodyInside": true,
+        "innerScrollWidth": 1049,
+        "innerClientWidth": 1049
+      },
+      {
+        "type": "gold",
+        "title": "💻 ২. কম্পিউটার সায়েন্সের ছাত্রের দৃষ্টিভঙ্গি (COMPUTER SCIENCE PERSPECTIVE)",
+        "bg": "rgba(247, 201, 72, 0.07)",
+        "borderColor": "rgb(247, 201, 72)",
+        "titleColor": "rgb(247, 201, 72)",
+        "bodyColor": "rgb(234, 237, 243)",
+        "hasBody": true,
+        "isBodyInside": true,
+        "innerScrollWidth": 1049,
+        "innerClientWidth": 1049
+      },
+      {
+        "type": "green",
+        "title": "📐 ৩. গণিতবিদদের দৃষ্টিভঙ্গি (MATHEMATICIAN'S PERSPECTIVE)",
+        "bg": "rgba(105, 240, 174, 0.07)",
+        "borderColor": "rgb(105, 240, 174)",
+        "titleColor": "rgb(67, 198, 172)",
+        "bodyColor": "rgb(234, 237, 243)",
+        "hasBody": true,
+        "isBodyInside": true,
+        "innerScrollWidth": 1049,
+        "innerClientWidth": 1049
+      },
+      {
+        "type": "blue",
+        "title": "💡 কেন এই নির্দিষ্ট সংজ্ঞা?",
+        "bg": "rgba(116, 192, 227, 0.07)",
+        "borderColor": "rgb(116, 192, 227)",
+        "titleColor": "rgb(116, 192, 227)",
+        "bodyColor": "rgb(234, 237, 243)",
+        "hasBody": true,
+        "isBodyInside": true,
+        "innerScrollWidth": 1049,
+        "innerClientWidth": 1049
+      },
+      {
+        "type": "gold",
+        "title": "🌟 কেন ভিত্তি ভেক্টর গুরুত্বপূর্ণ?",
+        "bg": "rgba(247, 201, 72, 0.07)",
+        "borderColor": "rgb(247, 201, 72)",
+        "titleColor": "rgb(247, 201, 72)",
+        "bodyColor": "rgb(234, 237, 243)",
+        "hasBody": true,
+        "isBodyInside": true,
+        "innerScrollWidth": 1049,
+        "innerClientWidth": 1049
+      }
+    ],
+    "quizzes": [
+      {
+        "question": "❓ কোন ভেক্টরটি ৪ একক <em>নিচে</em> এবং তারপর ৭ একক <em>ডানে</em> যাওয়ার সাথে মিলে?",
+        "optionsCount": 4,
+        "options": [
+          {
+            "text": "[\n−\n4\n\n\n7\n]\n[\n−4\n7\n\t​\n\n]",
+            "hasKatex": true
+          },
+          {
+            "text": "[\n−\n7\n\n\n4\n]\n[\n−7\n4\n\t​\n\n]",
+            "hasKatex": true
+          },
+          {
+            "text": "[\n7\n\n\n−\n4\n]\n[\n7\n−4\n\t​\n\n]",
+            "hasKatex": true
+          },
+          {
+            "text": "[\n4\n\n\n7\n]\n[\n4\n7\n\t​\n\n]",
+            "hasKatex": true
+          }
+        ],
+        "feedbackExists": true
+      },
+      {
+        "question": "❓ যদি $\\vec{v} = \\begin{bmatrix} 3 \\\\ 1 \\end{bmatrix}$ হয়, তবে $-2\\vec{v}$ এর মান কত?",
+        "optionsCount": 4,
+        "options": [
+          {
+            "text": "[\n−\n3\n\n\n−\n1\n]\n[\n−3\n−1\n\t​\n\n]",
+            "hasKatex": true
+          },
+          {
+            "text": "[\n−\n6\n\n\n−\n2\n]\n[\n−6\n−2\n\t​\n\n]",
+            "hasKatex": true
+          },
+          {
+            "text": "[\n6\n\n\n2\n]\n[\n6\n2\n\t​\n\n]",
+            "hasKatex": true
+          },
+          {
+            "text": "[\n−\n2\n\n\n−\n6\n]\n[\n−2\n−6\n\t​\n\n]",
+            "hasKatex": true
+          }
+        ],
+        "feedbackExists": true
+      }
+    ],
+    "lab": {
+      "exists": true,
+      "hasVizWrapper": true,
+      "isEverythingInsideVizWrapper": true,
+      "svgPlaneRect": {
+        "x": 140,
+        "y": 16585.015625,
+        "width": 1000,
+        "height": 624.25,
+        "top": 16585.015625,
+        "right": 1140,
+        "bottom": 17209.265625,
+        "left": 140
+      },
+      "wrapperRect": {
+        "x": 114,
+        "y": 16504.546875,
+        "width": 1052,
+        "height": 829.671875,
+        "top": 16504.546875,
+        "right": 1166,
+        "bottom": 17334.21875,
+        "left": 114
+      }
+    }
+  },
+  "components_light_callouts": [
+    {
+      "type": "blue",
+      "title": "📐 ১. পদার্থবিজ্ঞানের ছাত্রের দৃষ্টিভঙ্গি (PHYSICS PERSPECTIVE)",
+      "bg": "rgba(2, 132, 199, 0.08)",
+      "borderColor": "rgb(2, 132, 199)",
+      "titleColor": "rgb(3, 105, 161)",
+      "bodyColor": "rgb(37, 41, 46)"
+    },
+    {
+      "type": "gold",
+      "title": "💻 ২. কম্পিউটার সায়েন্সের ছাত্রের দৃষ্টিভঙ্গি (COMPUTER SCIENCE PERSPECTIVE)",
+      "bg": "rgba(245, 158, 11, 0.08)",
+      "borderColor": "rgb(217, 119, 6)",
+      "titleColor": "rgb(180, 83, 9)",
+      "bodyColor": "rgb(37, 41, 46)"
+    },
+    {
+      "type": "green",
+      "title": "📐 ৩. গণিতবিদদের দৃষ্টিভঙ্গি (MATHEMATICIAN'S PERSPECTIVE)",
+      "bg": "rgba(16, 185, 129, 0.08)",
+      "borderColor": "rgb(5, 150, 105)",
+      "titleColor": "rgb(4, 120, 87)",
+      "bodyColor": "rgb(37, 41, 46)"
+    },
+    {
+      "type": "blue",
+      "title": "💡 কেন এই নির্দিষ্ট সংজ্ঞা?",
+      "bg": "rgba(2, 132, 199, 0.08)",
+      "borderColor": "rgb(2, 132, 199)",
+      "titleColor": "rgb(3, 105, 161)",
+      "bodyColor": "rgb(37, 41, 46)"
+    },
+    {
+      "type": "gold",
+      "title": "🌟 কেন ভিত্তি ভেক্টর গুরুত্বপূর্ণ?",
+      "bg": "rgba(245, 158, 11, 0.08)",
+      "borderColor": "rgb(217, 119, 6)",
+      "titleColor": "rgb(180, 83, 9)",
+      "bodyColor": "rgb(37, 41, 46)"
+    }
+  ],
+  "media_tab_toggle_test": {
+    "imgPaneDisplay": "none",
+    "vidPaneDisplay": "block",
+    "vidHasSrc": "http://localhost:8085/assets/figures/la_02/LinearCombinationScalarsRangeFree.mp4"
+  },
+  "quiz_test": {
+    "checkBtnDisabled": true,
+    "feedbackVisible": true,
+    "feedbackText": "✅ চমৎকার! ৪ একক নিচে এবং ৭ একক ডানে — তার মানে \n𝑥\n=\n7\nx=7, \n𝑦\n=\n−\n4\ny=−4। সুতরাং ভেক্টর \n[\n7\n\n\n−\n4\n]\n[\n7\n−4\n\t​\n\n] বা \n[\n7\n,\n−\n4\n]\n[7,−4]।",
+    "feedbackKatexRendered": true,
+    "feedbackHtml": "✅ চমৎকার! ৪ একক নিচে এবং ৭ একক ডানে — তার মানে <span><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding=\"application/x-tex\">x = 7</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height: 0.4306em;\"></span><span class=\"mord mathnormal\">x</span><span class=\"mspace\" style=\"margin-right: 0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right: 0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height: 0.6444em;\"></span><span class=\"mord\">7</span></span></span></span></span>, <span><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>y</mi><mo>=</mo><mo>−</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">y = -4</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height: 0.625em; vertical-align: -0.1944em;\"></span><span class=\"mord mathnormal\" style=\"margin-right: 0.0359em;\">y</span><span class=\"mspace\" style=\"margin-right: 0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right: 0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height: 0.7278em; vertical-align: -0.0833em;\"></span><span class=\"mord\">−</span><span class=\"mord\">4</span></span></span></span></span>। সুতরাং ভেক্টর <span><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo fence=\"true\">[</mo><mtable rowspacing=\"0.16em\" columnalign=\"center\" columnspacing=\"1em\"><mtr><mtd><mstyle scriptlevel=\"0\" displaystyle=\"false\"><mn>7</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel=\"0\" displaystyle=\"false\"><mrow><mo>−</mo><mn>4</mn></mrow></mstyle></mtd></mtr></mtable><mo fence=\"true\">]</mo></mrow><annotation encoding=\"application/x-tex\">\\begin{bmatrix} 7 \\\\ -4 \\end{bmatrix}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height: 2.4em; vertical-align: -0.95em;\"></span><span class=\"minner\"><span class=\"mopen delimcenter\" style=\"top: 0em;\"><span class=\"delimsizing size3\">[</span></span><span class=\"mord\"><span class=\"mtable\"><span class=\"col-align-c\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height: 1.45em;\"><span class=\"\" style=\"top: -3.61em;\"><span class=\"pstrut\" style=\"height: 3em;\"></span><span class=\"mord\"><span class=\"mord\">7</span></span></span><span class=\"\" style=\"top: -2.41em;\"><span class=\"pstrut\" style=\"height: 3em;\"></span><span class=\"mord\"><span class=\"mord\">−</span><span class=\"mord\">4</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height: 0.95em;\"><span class=\"\"></span></span></span></span></span></span></span><span class=\"mclose delimcenter\" style=\"top: 0em;\"><span class=\"delimsizing size3\">]</span></span></span></span></span></span></span> বা <span><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>7</mn><mo separator=\"true\">,</mo><mo>−</mo><mn>4</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[7, -4]</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height: 1em; vertical-align: -0.25em;\"></span><span class=\"mopen\">[</span><span class=\"mord\">7</span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right: 0.1667em;\"></span><span class=\"mord\">−</span><span class=\"mord\">4</span><span class=\"mclose\">]</span></span></span></span></span>।"
+  },
+  "mobile_audit": {
+    "docWidth": 375,
+    "scrollWidth": 375,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": [
+      {
+        "tag": "NAV",
+        "id": "siteNav",
+        "className": "site-nav scrolled",
+        "scrollWidth": 517,
+        "clientWidth": 375
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "className": "nav-inner",
+        "scrollWidth": 517,
+        "clientWidth": 375
+      }
+    ]
+  }
+}

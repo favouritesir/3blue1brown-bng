@@ -1,0 +1,390 @@
+{
+  "lesson_id": "lesson_01",
+  "chapter_num": 1,
+  "course_id": "linear_algebra",
+  "title_en": "Vectors, what even are they?",
+  "title_bn": "ভেক্টর আসলে কী?",
+  "subtitle_bn": "পদার্থবিদ্যা, কম্পিউটার বিজ্ঞান ও বিশুদ্ধ গণিতের তিন রূপ এবং ভেক্টর যোগ ও স্কেলার গুণনের মূল ভিত্তি",
+  "video_id": "fNk_zzaMoSs",
+  "official_url": "https://www.3blue1brown.com/lessons/vectors",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "9:52",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "Introducing coordinates is an act of violence.",
+    "quote_bn": "সংখ্যাকে স্থানাঙ্ক হিসেবে উপস্থাপন করা একটি সহিংস কাজ।",
+    "author": "Hermann Weyl (হের্মান ভাইল)"
+  },
+  "sections": [
+    {
+      "id": "sec_01_three_perspectives",
+      "title_bn": "১. ভেক্টরের তিনটি ভিন্ন দৃষ্টিভঙ্গি",
+      "title_en": "The Three Perspectives on Vectors",
+      "summary_bn": "পদার্থবিজ্ঞান, কম্পিউটার সায়েন্স এবং বিশুদ্ধ গণিত—এই তিন বিভাগের শিক্ষার্থীরা ভেক্টরকে নিজস্ব স্বতন্ত্র দৃষ্টিকোণ থেকে সংজ্ঞায়িত করেন।",
+      "key_takeaways": [
+        "পদার্থবিজ্ঞানের দৃষ্টিতে ভেক্টর হলো মহাশূন্যের তীরচিহ্ন, যার মূল বৈশিষ্ট্য হলো মান (দৈর্ঘ্য) এবং দিক। স্থান পরিবর্তন করলেও এই দুটি অপরিবর্তিত থাকলে ভেক্টর অভিন্ন থাকে।",
+        "কম্পিউটার বিজ্ঞানের দৃষ্টিতে ভেক্টর হলো সংখ্যার সুশৃঙ্খল তালিকা (Ordered List / Array), যেখানে প্রতিটি সংখ্যার অবস্থান বা ক্রম একটি নির্দিষ্ট বাস্তব অর্থ বহন করে।",
+        "গণিতবিদদের দৃষ্টিতে ভেক্টর হলো যেকোনো বিমূর্ত গাণিতিক সত্তা, যা ভেক্টর যোগ এবং স্কেলার গুণনের মৌলিক নিয়মগুলো যথাযথভাবে মেনে চলে।",
+        "দ্বিমাত্রিক ভেক্টর সমতলে অবস্থান করে এবং ত্রিমাত্রিক ভেক্টর বিস্তৃত মহাশূন্যের দিক নির্দেশ করে।"
+      ],
+      "formulas": [
+        {
+          "label": "কম্পিউটার সায়েন্স তালিকা ভেক্টর উদাহরণ (বাস্তব ডেটা)",
+          "katex": "\\vec{v}_{\\text{house}} = \\begin{bmatrix} 2{,}600 \\text{ ft}^2 \\\\ \\$300{,}000 \\end{bmatrix}"
+        },
+        {
+          "label": "বিমূর্ত ভেক্টর স্পেসের দুই মৌলিক চালিকাশক্তি",
+          "katex": "\\vec{u} + \\vec{v} \\in V, \\quad c \\cdot \\vec{v} \\in V \\quad (c \\in \\mathbb{R})"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_vector_example",
+          "caption_bn": "একটি ভেক্টর — দিক ও মান নির্দেশক তীরচিহ্ন",
+          "type": "svg",
+          "src": "figures/VectorExample.svg"
+        },
+        {
+          "id": "fig_three_perspectives",
+          "caption_bn": "তিনটি পৃথক দৃষ্টিভঙ্গি: পদার্থবিদ, কম্পিউটার বিজ্ঞানী ও গণিতবিদ",
+          "type": "svg",
+          "src": "figures/perspectives.svg"
+        },
+        {
+          "id": "fig_magnitude_and_direction",
+          "caption_bn": "ভেক্টরের দুটি অবিচ্ছেদ্য বৈশিষ্ট্য: মান (দৈর্ঘ্য) এবং দিক",
+          "type": "svg",
+          "src": "figures/MagnitudeAndDirection.svg"
+        },
+        {
+          "id": "fig_2d_and_3d_vectors",
+          "caption_bn": "সমতলে দ্বিমাত্রিক (টুডি) এবং মহাশূন্যে ত্রিমাত্রিক (থ্রিডি) ভেক্টর",
+          "type": "image",
+          "src": "figures/2dAnd3DVectors.jpg"
+        },
+        {
+          "id": "fig_mathematician_perspective",
+          "caption_bn": "গণিতবিদের বিমূর্ত ভেক্টর স্পেসের সার্বজনীন রূপ",
+          "type": "svg",
+          "src": "figures/MathematiciansPerspective.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_02_coordinate_systems",
+      "title_bn": "২. স্থানাঙ্ক ব্যবস্থা, মূলবিন্দু ও কোঅর্ডিনেট",
+      "title_en": "Coordinate Systems, The Origin, and Vector Coordinates",
+      "summary_bn": "কার্তেসীয় স্থানাঙ্ক ব্যবস্থা জ্যামিতিক তীরচিহ্ন এবং সাংখ্যিক তালিকার মধ্যে সেতু তৈরি করে। প্রতিটি ভেক্টরের লেজ সর্বদা মূলবিন্দুতে স্থিত থাকে।",
+      "key_takeaways": [
+        "লিনিয়ার অ্যালজেব্রায় ভেক্টরকে কল্পনা করার আদর্শ রূপ হলো এমন এক তীরচিহ্ন যার লেজ বা tail সর্বদা মূলবিন্দুতে (0,0) আবদ্ধ থাকে।",
+        "ভেক্টরের কোঅর্ডিনেট বা স্থানাঙ্ক হলো মূলবিন্দু থেকে তীরের শীর্ষবিন্দুতে পৌঁছানোর সুনির্দিষ্ট নির্দেশিকা।",
+        "প্রথম সংখ্যাটি এক্স অক্ষ বরাবর অনুভূমিক সরণ (ডানে ধনাত্মক, বামে ঋণাত্মক) এবং দ্বিতীয় সংখ্যাটি ওয়াই অক্ষের সমান্তরালে উল্লম্ব সরণ (উপরে ধনাত্মক, নিচে ঋণাত্মক) নির্দেশ করে।",
+        "সাধারণ বিন্দুর সাথে পার্থক্য বোঝাতে ভেক্টরকে থার্ড ব্র্যাকেট দিয়ে উল্লম্ব কলাম আকারে লেখা হয়।",
+        "ত্রিমাত্রিক স্থানে তৃতীয় অক্ষ হিসেবে জেড অক্ষ যুক্ত হয় এবং প্রতিটি ভেক্টর তিনটি সংখ্যার ট্রিপলেট (x, y, z) দ্বারা নির্ধারিত হয়।"
+      ],
+      "formulas": [
+        {
+          "label": "দ্বিমাত্রিক কলাম ভেক্টর প্রকাশ",
+          "katex": "\\vec{v} = \\begin{bmatrix} x \\\\ y \\end{bmatrix}"
+        },
+        {
+          "label": "নির্দিষ্ট ভেক্টর উদাহরণ",
+          "katex": "\\begin{bmatrix} 3 \\\\ -2 \\end{bmatrix} \\implies \\text{৩ একক ডানে, ২ একক নিচে}"
+        },
+        {
+          "label": "ত্রিমাত্রিক কলাম ভেক্টর প্রকাশ",
+          "katex": "\\vec{w} = \\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_coord_axes",
+          "caption_bn": "অনুভূমিক এক্স অক্ষ এবং উল্লম্ব ওয়াই অক্ষ",
+          "type": "svg",
+          "src": "figures/CoordinateSystemAxes.svg"
+        },
+        {
+          "id": "fig_coord_origin",
+          "caption_bn": "অক্ষের মিলনকেন্দ্র: মূলবিন্দু (0, 0)",
+          "type": "svg",
+          "src": "figures/CoordinateSystemOrigin.svg"
+        },
+        {
+          "id": "fig_coord_grid",
+          "caption_bn": "সমান দূরত্বের টিক মার্ক ও নির্দেশক গ্রিড লাইন",
+          "type": "svg",
+          "src": "figures/CoordinateSystemGrid.svg"
+        },
+        {
+          "id": "fig_vector_as_arrow",
+          "caption_bn": "মূলবিন্দু থেকে শীর্ষবিন্দু নির্দেশক তীরচিহ্ন",
+          "type": "svg",
+          "src": "figures/VectorAsArrow.svg"
+        },
+        {
+          "id": "fig_vector_coordinates_2d",
+          "caption_bn": "ভেক্টরের উপাদান প্রকাশ: কলাম ভেক্টর রূপে",
+          "type": "svg",
+          "src": "figures/VectorCoordinates.svg"
+        },
+        {
+          "id": "fig_vector_coordinates_3d",
+          "caption_bn": "ত্রিমাত্রিক স্থানে তিনটি অক্ষ বরাবর ভেক্টরের ট্রিপলেট উপাদান",
+          "type": "svg",
+          "src": "figures/VectorCoordinates3d.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "vector_coordinate_inspector_2d",
+        "initial_vector": [
+          3,
+          -2
+        ],
+        "description_bn": "দ্বিমাত্রিক গ্রিডে ভেক্টরের শীর্ষবিন্দু টেনে স্থানাঙ্ক [x, y], দৈর্ঘ্য এবং কোণের পরিবর্তন রিয়েল-টাইমে পর্যবেক্ষণ করুন।"
+      }
+    },
+    {
+      "id": "sec_03_vector_addition",
+      "title_bn": "৩. ভেক্টর যোগ — টিপ-টু-টেইল নীতি ও উপাদানভিত্তিক সমষ্টি",
+      "title_en": "Vector Addition: Tip-to-Tail Rule & Component Sums",
+      "summary_bn": "দুটি ভেক্টরের যোগফল জ্যামিতিকভাবে টিপ-টু-টেইল পদ্ধতিতে নির্ধারিত হয় এবং সংখ্যাতাত্ত্বিকভাবে সংশ্লিষ্ট উপাদানগুলোর পৃথক যোগফল হিসেবে প্রকাশ পায়।",
+      "key_takeaways": [
+        "জ্যামিতিকভাবে দুটি ভেক্টর v⃗ ও w⃗ যোগ করতে দ্বিতীয় ভেক্টরের লেজটিকে প্রথম ভেক্টরের শীর্ষবিন্দুতে সরাতে হয়; মূলবিন্দু থেকে চূড়ান্ত শীর্ষবিন্দুর দূরত্বই হলো লব্ধি ভেক্টর v⃗ + w⃗।",
+        "ভেক্টরকে একটি নির্দিষ্ট সরণ বা চলন হিসেবে ভাবলে এই নিয়মের সত্যতা স্পষ্ট হয়: এক পথ ধরে হেঁটে পরে অন্য পথ ধরার মোট ফলাফল সরাসরি যোগফল ভেক্টরের সমান।",
+        "সংখ্যাতাত্ত্বিক দৃষ্টিতে ভেক্টর যোগের অর্থ হলো সংশ্লিষ্ট উপাংশগুলোকে পরস্পর যোগ করা: (x₁ + x₂) এবং (y₁ + y₂)।",
+        "চার ধাপের টিপ-টু-টেইল পথকে পুনর্বিন্যাস করে আগে সব অনুভূমিক সরণ এবং পরে সব উল্লম্ব সরণ করলে সরাসরি উপাদানভিত্তিক যোগফল পাওয়া যায়।"
+      ],
+      "formulas": [
+        {
+          "label": "ভেক্টর যোগের সার্বিক বীজগণিতীয় সূত্র",
+          "katex": "\\begin{bmatrix} x_1 \\\\ y_1 \\end{bmatrix} + \\begin{bmatrix} x_2 \\\\ y_2 \\end{bmatrix} = \\begin{bmatrix} x_1 + x_2 \\\\ y_1 + y_2 \\end{bmatrix}"
+        },
+        {
+          "label": "উপাদান পুনর্বিন্যাসের সাংখ্যিক উদাহরণ",
+          "katex": "\\begin{bmatrix} 1 \\\\ 2 \\end{bmatrix} + \\begin{bmatrix} 3 \\\\ -1 \\end{bmatrix} = \\begin{bmatrix} 1 + 3 \\\\ 2 + (-1) \\end{bmatrix} = \\begin{bmatrix} 4 \\\\ 1 \\end{bmatrix}"
+        },
+        {
+          "label": "ধাপ পুনর্বিন্যাসের সমতুল্যতা",
+          "katex": "\\Delta x_{\\text{total}} = x_1 + x_2, \\quad \\Delta y_{\\text{total}} = y_1 + y_2"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_addition_prep",
+          "caption_bn": "ভেক্টর যোগের প্রাথমিক দুটি ভেক্টর v এবং w",
+          "type": "svg",
+          "src": "figures/VectorAdditionPrep.svg"
+        },
+        {
+          "id": "fig_addition_tiptotail",
+          "caption_bn": "টিপ-টু-টেইল পদ্ধতিতে দুটি ভেক্টরের যোগফল v + w",
+          "type": "svg",
+          "src": "figures/VectorAddition.svg"
+        },
+        {
+          "id": "fig_number_line_steps",
+          "caption_bn": "একমাত্রিক সংখ্যারেখায় পদক্ষেপের মতো ভেক্টর যোগ (২ + ৫ = ৭)",
+          "type": "svg",
+          "src": "figures/NumberLine.svg"
+        },
+        {
+          "id": "fig_addition_components",
+          "caption_bn": "চারটি পৃথক পদক্ষেপ: ১ ডানে, ২ উপরে, ৩ ডানে, ১ নিচে",
+          "type": "svg",
+          "src": "figures/VectorAdditionComponents.svg"
+        },
+        {
+          "id": "fig_addition_reorganize",
+          "caption_bn": "পদক্ষেপগুলোর পুনর্বিন্যাস: অনুভূমিক ও উল্লম্ব সরণের পৃথক সমষ্টি",
+          "type": "svg",
+          "src": "figures/VectorAdditionComponentsReorganizeSteps.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "vector_addition_tiptotail_simulator",
+        "initial_v": [
+          1,
+          2
+        ],
+        "initial_w": [
+          3,
+          -1
+        ],
+        "description_bn": "দুটি ভেক্টর v ও w-এর শীর্ষবিন্দু টেনে অবস্থান পরিবর্তন করুন এবং টিপ-টু-টেইল পদ্ধতিতে স্বয়ংক্রিয়ভাবে লব্ধি ভেক্টরের রূপান্তর দেখুন।"
+      }
+    },
+    {
+      "id": "sec_04_scalar_multiplication",
+      "title_bn": "৪. স্কেলার গুণন — প্রসারণ, সংকোচন ও বিপরীতকরণ",
+      "title_en": "Scalar Multiplication: Scaling, Squishing, and Direction Flipping",
+      "summary_bn": "ভেক্টরকে কোনো বাস্তব সংখ্যা (স্কেলার) দিয়ে গুণ করলে তার দৈর্ঘ্য আনুপাতিক হারে প্রসারিত বা সংকুচিত হয় এবং ঋণাত্মক চিহ্নে অভিমুখ উল্টে যায়।",
+      "key_takeaways": [
+        "ভেক্টরকে সংখ্যা দিয়ে গুণ করার ক্রিয়াকে জ্যামিতিক অর্থে 'স্কেলিং' (scaling) এবং যে সংখ্যা দিয়ে স্কেল করা হয় তাকে 'স্কেলার' (scalar) বলা হয়।",
+        "১-এর চেয়ে বড় স্কেলার (যেমন ২) ভেক্টরকে প্রসারিত করে দ্বিগুণ দৈর্ঘ্য প্রদান করে।",
+        "০ থেকে ১-এর মধ্যকার স্কেলার (যেমন ১/৩) ভেক্টরের দৈর্ঘ্যকে সংকুচিত করে এক-তৃতীয়াংশ করে দেয়।",
+        "ঋণাত্মক স্কেলার (যেমন -১.৫) ভেক্টরের দিক ১৮০° উল্টে দেয় এবং এর মান অনুযায়ী ভেক্টরটিকে প্রসারিত করে।",
+        "সংখ্যাতাত্ত্বিকভাবে স্কেলার গুণন মানে ভেক্টরের প্রতিটি উপাদানকে পৃথকভাবে সেই স্কেলার দ্বারা গুণ করা।"
+      ],
+      "formulas": [
+        {
+          "label": "স্কেলার গুণন সাধারণ সূত্র",
+          "katex": "c \\cdot \\vec{v} = c \\cdot \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} c \\cdot x \\\\ c \\cdot y \\end{bmatrix}"
+        },
+        {
+          "label": "প্রসারণের উদাহরণ",
+          "katex": "2 \\cdot \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 2x \\\\ 2y \\end{bmatrix}"
+        },
+        {
+          "label": "সংকোচনের উদাহরণ",
+          "katex": "\\frac{1}{3} \\cdot \\begin{bmatrix} 12 \\\\ 9 \\end{bmatrix} = \\begin{bmatrix} 4 \\\\ 3 \\end{bmatrix}"
+        },
+        {
+          "label": "বিপরীতকরণ ও প্রসারণের উদাহরণ",
+          "katex": "-1.5 \\cdot \\begin{bmatrix} 2 \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} -3 \\\\ -1.5 \\end{bmatrix}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_scaling_two",
+          "caption_bn": "সংখ্যা ২ দিয়ে গুণ করলে ভেক্টরটি আদি দৈর্ঘ্যের দ্বিগুণ লম্বা হয়",
+          "type": "svg",
+          "src": "figures/VectorScalingByTwo.svg"
+        },
+        {
+          "id": "fig_scaling_third",
+          "caption_bn": "সংখ্যা ১/৩ দিয়ে গুণ করলে ভেক্টরটি এক-তৃতীয়াংশে সংকুচিত হয়",
+          "type": "svg",
+          "src": "figures/VectorScalingByOneOverThree.svg"
+        },
+        {
+          "id": "fig_scaling_negative",
+          "caption_bn": "ঋণাত্মক সংখ্যা -১.৫ দিয়ে গুণ করলে ভেক্টরটি উল্টে যায় এবং ১.৫ গুণ বাড়ে",
+          "type": "svg",
+          "src": "figures/VectorScalingByNegativeOnePointFive.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_05_basis_vectors_and_synthesis",
+      "title_bn": "৫. ভিত্তি ভেক্টর পরিচিতি ও দুই দৃষ্টিভঙ্গির মেলবন্ধন",
+      "title_en": "Basis Vectors (î & ĵ) and Unifying the Perspectives",
+      "summary_bn": "সমতলের যেকোনো ভেক্টর আসলে দুটি মৌলিক একক ভেক্টরের (আই হ্যাট ও জে হ্যাট) স্কেলিং ও যোগফল; জ্যামিতি ও সংখ্যার এই মেলবন্ধনই লিনিয়ার অ্যালজেব্রার মূল চালিকাশক্তি।",
+      "key_takeaways": [
+        "আই হ্যাট (î) হলো এক্স অক্ষ বরাবর ১ দৈর্ঘ্যের একক ভেক্টর এবং জে হ্যাট (ĵ) হলো ওয়াই অক্ষ বরাবর ১ দৈর্ঘ্যের একক ভেক্টর।",
+        "যেকোনো ভেক্টরের স্থানাঙ্ক (x, y) আসলে পরম কোনো সত্য নয়, এটি কেবল ভিত্তি ভেক্টরদ্বয়কে কতটুকু স্কেল করে যোগ করা হয়েছে তারই পরিমাপ: v⃗ = xî + yĵ।",
+        "লিনিয়ার বীজগণিতের প্রতিটি একক ধারণা দুটি মৌলিক অপারেশনের চারপাশে ঘোরে: ভেক্টর যোগ এবং স্কেলার গুণন।",
+        "তীরচিহ্নকে সংখ্যায় রূপান্তর করে কম্পিউটারকে দিয়ে গণনা করানো এবং সংখ্যার তালিকাকে জ্যামিতিক স্থানে ভিজ্যুয়ালাইজ করে অন্তর্দৃষ্টি লাভ করাই এই বিষয়ের মূল শক্তি।"
+      ],
+      "formulas": [
+        {
+          "label": "প্রমিত একক ভিত্তি ভেক্টর",
+          "katex": "\\hat{i} = \\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix}, \\quad \\hat{j} = \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix}"
+        },
+        {
+          "label": "ভিত্তি ভেক্টরের রৈখিক সমাবেশ রূপে ভেক্টর",
+          "katex": "\\vec{v} = \\begin{bmatrix} x \\\\ y \\end{bmatrix} = x\\hat{i} + y\\hat{j} = x\\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix} + y\\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix}"
+        },
+        {
+          "label": "উদাহরণ ভেক্টরের উপাংশ বিশ্লেষণ",
+          "katex": "\\begin{bmatrix} 3 \\\\ -2 \\end{bmatrix} = 3\\hat{i} - 2\\hat{j}"
+        },
+        {
+          "label": "ভেক্টরের দৈর্ঘ্য বা মান (ইউক্লিডীয় নর্ম)",
+          "katex": "\\|\\vec{v}\\| = \\sqrt{x^2 + y^2}"
+        }
+      ],
+      "figures": [],
+      "interactive_widget": {
+        "type": "basis_vector_decomposer",
+        "initial_vector": [
+          3,
+          -2
+        ],
+        "description_bn": "যেকোনো স্থানাঙ্ক (x, y) ইনপুট দিন — সিস্টেম সরাসরি ভিত্তি ভেক্টর î ও ĵ-এর উপাংশে বিভাজন, দৈর্ঘ্য ||v|| এবং কোণ θ দেখাবে।"
+      }
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_vector_coordinates",
+      "section_ref": "sec_02_coordinate_systems",
+      "question_bn": "কোন ভেক্টরটি ৪ একক নিচে এবং তারপর ৭ একক ডানে যাওয়ার সাথে মিলে?",
+      "question_en": "Which vector corresponds with walking 4 units down and then 7 units to the right?",
+      "options": [
+        "$\\begin{bmatrix} -4 \\\\ 7 \\end{bmatrix}$",
+        "$\\begin{bmatrix} -7 \\\\ 4 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 7 \\\\ -4 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 4 \\\\ 7 \\end{bmatrix}$"
+      ],
+      "options_bn": [
+        "$\\begin{bmatrix} -4 \\\\ 7 \\end{bmatrix}$",
+        "$\\begin{bmatrix} -7 \\\\ 4 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 7 \\\\ -4 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 4 \\\\ 7 \\end{bmatrix}$"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "প্রথম সংখ্যাটি অনুভূমিক এক্স অক্ষ বরাবর চলন নির্দেশ করে (ডান দিকে ধনাত্মক, বামে ঋণাত্মক) এবং দ্বিতীয় সংখ্যাটি উল্লম্ব ওয়াই অক্ষ বরাবর চলন নির্দেশ করে (উপরে ধনাত্মক, নিচে ঋণাত্মক)। এখানে ৭ একক ডানে অর্থাৎ $x = +7$, এবং ৪ একক নিচে অর্থাৎ $y = -4$। সুতরাং কলাম ভেক্টরটি হবে $\\begin{bmatrix} 7 \\\\ -4 \\end{bmatrix}$।",
+      "explanation_en": "The first coordinate tracks horizontal steps along the x-axis (right is positive: +7) and the second tracks vertical movement along the y-axis (down is negative: -4). Thus the column vector is [7, -4]^T.",
+      "hint": "মনে রাখবেন: প্রথম উপাদানটি এক্স অক্ষের সরণ (ডান-বাম) এবং দ্বিতীয় উপাদানটি ওয়াই অক্ষের সরণ (উপরে-নিচে)।",
+      "hints": [
+        "মনে রাখবেন: প্রথম উপাদানটি এক্স অক্ষের সরণ (ডান-বাম) এবং দ্বিতীয় উপাদানটি ওয়াই অক্ষের সরণ (উপরে-নিচে)।",
+        "ডানে যাওয়া মানে ধনাত্মক এক্স (+৭) এবং নিচে যাওয়া মানে ঋণাত্মক ওয়াই (-৪)।"
+      ]
+    },
+    {
+      "id": "quiz_02_vector_addition",
+      "section_ref": "sec_03_vector_addition",
+      "question_bn": "যদি দুটি ভেক্টর $\\begin{bmatrix} 4 \\\\ -2 \\end{bmatrix}$ এবং $\\begin{bmatrix} 6 \\\\ 2 \\end{bmatrix}$ যোগ করা হয়, তবে মূলবিন্দু থেকে যোগফল ভেক্টরে পৌঁছানোর চলন বর্ণনা করো:",
+      "question_en": "If two vectors [4, -2]^T and [6, 2]^T are added together, which movement describes reaching the sum vector from the origin?",
+      "options": [
+        "Walk 10 units along the positive x-axis and 4 units along the positive y-axis (ধনাত্মক এক্স অক্ষ বরাবর ১০ একক এবং ধনাত্মক ওয়াই অক্ষ বরাবর ৪ একক হাঁটা)",
+        "Walk 10 units along the positive x-axis and don't move on y-axis (ধনাত্মক এক্স অক্ষ বরাবর ১০ একক হাঁটা এবং ওয়াই অক্ষ বরাবর কোনো সরণ না হওয়া)",
+        "Don't move, the sum is at the origin (মূলবিন্দুতেই অবস্থান করা, কোনো সরণ না হওয়া)",
+        "Don't move on the x-axis and walk 10 units along the positive y-axis (এক্স অক্ষ বরাবর স্থির থেকে ধনাত্মক ওয়াই অক্ষ বরাবর ১০ একক হাঁটা)"
+      ],
+      "options_bn": [
+        "ধনাত্মক এক্স অক্ষ বরাবর ১০ একক এবং ধনাত্মক ওয়াই অক্ষ বরাবর ৪ একক হাঁটা",
+        "ধনাত্মক এক্স অক্ষ বরাবর ১০ একক হাঁটা এবং ওয়াই অক্ষ বরাবর কোনো সরণ না হওয়া",
+        "মূলবিন্দুতেই অবস্থান করা, কোনো সরণ না হওয়া",
+        "এক্স অক্ষ বরাবর স্থির থেকে ধনাত্মক ওয়াই অক্ষ বরাবর ১০ একক হাঁটা"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ভেক্টর যোগের নিয়ম অনুসারে অনুরূপ উপাদানগুলো সরাসরি যোগ হয়: $\\begin{bmatrix} 4 \\\\ -2 \\end{bmatrix} + \\begin{bmatrix} 6 \\\\ 2 \\end{bmatrix} = \\begin{bmatrix} 4+6 \\\\ -2+2 \\end{bmatrix} = \\begin{bmatrix} 10 \\\\ 0 \\end{bmatrix}$। অর্থাৎ ধনাত্মক এক্স অক্ষ বরাবর ১০ একক যাওয়া এবং ওয়াই অক্ষ বরাবর কোনো সরণ না হওয়া।",
+      "explanation_en": "Adding corresponding components yields [4+6, -2+2]^T = [10, 0]^T. This means moving 10 units along the positive x-axis and remaining completely stationary on the y-axis.",
+      "hint": "উভয় ভেক্টরের এক্স উপাদান ও ওয়াই উপাদান আলাদাভাবে যোগ করুন: (4 + 6) এবং (-2 + 2)।",
+      "hints": [
+        "উভয় ভেক্টরের এক্স উপাদান ও ওয়াই উপাদান আলাদাভাবে যোগ করুন: (4 + 6) এবং (-2 + 2)।",
+        "যেহেতু -২ এবং +২ যোগ করলে ০ হয়, তাই ওয়াই অক্ষ বরাবর কোনো সরণ থাকবে না।"
+      ]
+    },
+    {
+      "id": "quiz_03_scalar_multiplication",
+      "section_ref": "sec_04_scalar_multiplication",
+      "question_bn": "স্কেলার গুণন $\\frac{1}{3} \\cdot \\begin{bmatrix} 12 \\\\ 9 \\end{bmatrix}$-এর মান কত?",
+      "question_en": "What is the value of the scalar multiplication (1/3) * [12, 9]^T?",
+      "options": [
+        "$\\begin{bmatrix} 6 \\\\ 4.5 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 4 \\\\ 3 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 3 \\\\ 4 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 4 \\\\ 4 \\end{bmatrix}$"
+      ],
+      "options_bn": [
+        "$\\begin{bmatrix} 6 \\\\ 4.5 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 4 \\\\ 3 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 3 \\\\ 4 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 4 \\\\ 4 \\end{bmatrix}$"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "স্কেলার গুণনের নিয়ম অনুযায়ী ভেক্টরের প্রতিটি উপাদানকে আলাদাভাবে স্কেলার ১/৩ দ্বারা গুণ করতে হয়: $\\frac{1}{3} \\cdot \\begin{bmatrix} 12 \\\\ 9 \\end{bmatrix} = \\begin{bmatrix} 12 \\times \\frac{1}{3} \\\\ 9 \\times \\frac{1}{3} \\end{bmatrix} = \\begin{bmatrix} 4 \\\\ 3 \\end{bmatrix}$। জ্যামিতিকভাবে ভেক্টরটি দিক অবিকৃত রেখে তার আদি দৈর্ঘ্যের এক-তৃতীয়াংশে সংকুচিত হয়েছে।",
+      "explanation_en": "Scalar multiplication multiplies every component: 12 * (1/3) = 4 and 9 * (1/3) = 3, yielding [4, 3]^T.",
+      "hint": "ভেক্টরের প্রতিটি উপাদানকে আলাদাভাবে ১/৩ দিয়ে গুণ বা ৩ দিয়ে ভাগ করুন।",
+      "hints": [
+        "ভেক্টরের প্রতিটি উপাদানকে আলাদাভাবে ১/৩ দিয়ে গুণ বা ৩ দিয়ে ভাগ করুন।",
+        "12 ÷ 3 = 4 এবং 9 ÷ 3 = 3।"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>সঙ্গীত ও পরিমাপ তত্ত্ব | Music And Measure Theory</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/analysis/lesson_10/manifest.js?v=8"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="বিশ্লেষণ"
+  course-url="../../index.html#analysis"
+  home-url="../../index.html"
+  chapter-num="১০"
+  chapter-total="১০"
+  prev-url="lesson_09.html"
+  prev-title="পূর্ববর্তী অধ্যায়: গণিত আবিষ্কারের অনুভূতি কেমন?"
+  next-url=""
+  next-title="শেষ অধ্যায়"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="বিশ্লেষণ"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ১০ · বিশ্লেষণ"
+  title="সঙ্গীত ও পরিমাপ তত্ত্ব | Music And Measure Theory"
+  desc="সুরের মিল-অমিল থেকে জন্ম নেওয়া একটি গাণিতিক ধারণা — পরিমাপ"
+  video-src="../../media_vault/analysis/lesson_10/experiments/3b1b_analysis_10_full_dubbed.mp4"
+  yt-id="cyW5z-M2yzw"
+  date="৪ অক্টোবর, ২০১৫"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://www.3blue1brown.com/lessons/music-and-measure-theory"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">সুর, অনুপাত ও অমিল</b1b-bookmark>
+      <b1b-bookmark time="86" time-bn="০১:২৬">পরিমাপ মানে কী?</b1b-bookmark>
+      <b1b-bookmark time="164" time-bn="০২:৪৪">ভোল্টারার ফাংশন ও অবকলন</b1b-bookmark>
+      <b1b-bookmark time="237" time-bn="০৩:৫৭">সঙ্গীত থেকে তত্ত্বে ফিরে আসা</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-measure-harmony">সুর, অনুপাত ও অমিল</a>
+      <a href="#sec-measure-definition">পরিমাপ মানে কী?</a>
+      <a href="#sec-measure-volterra">ভোল্টারার ফাংশন ও অবকলন</a>
+      <a href="#sec-measure-conclusion">সঙ্গীত থেকে তত্ত্বে ফিরে আসা</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ সুর, অনুপাত ও অমিল ═══ -->
+      <b1b-section id="sec-measure-harmony" title="সুর, অনুপাত ও অমিল">
+        <b1b-quote author="Grant Sanderson">সুরের মিল ও অমিলকে অনুবাদ করা যায় পরিমাপ তত্ত্বের ভাষায়।</b1b-quote>
+        <p>দুটি স্বর একসাথে বাজালে কখনো মিলে যায় (consonance), কখনো অমিল লাগে (dissonance)। এর মূলে আছে ফ্রিকোয়েন্সির অনুপাত। ২:১ অনুপাত এক অক্টেভ, ৩:২ এক পঞ্চমাংশ — সরল পূর্ণসংখ্যার অনুপাত হলেই কানে «মিল» লাগে। জটিল অনুপাত হলে অমিল।</p>
+        <b1b-figure src="../../assets/figures/an_10/fig_10_01.svg" alt="দুটি স্বরের তরঙ্গ — সরল অনুপাতে মিল, জটিল অনুপাতে অমিল" caption="দুটি স্বরের তরঙ্গ — সরল অনুপাতে মিল, জটিল অনুপাতে অমিল"></b1b-figure>
+        <p>ধরুন একটি স্বর $440$ হার্জ, অন্যটি $\sqrt2\cdot 440$ হার্জ। দ্বিতীয়টির সাপেক্ষে প্রথমটি কখনোই পুরোপুরি মিলবে না — তরঙ্গদ্বয়ের শিখর কখনো একই জায়গায় আসবে না। এই «কখনো মিলবে না» কথাটিকে গণিতের ভাষায় বলা যায় পরিমাপের ভাষায়।</p>
+        <b1b-callout type="gold" icon="📌" title="একটা ছোট পরীক্ষা">
+          <p>ঘড়ির দুটি কাঁটা ধরুন — একটা প্রতি সেকেন্ডে এক ঘুরে, অন্যটা $\sqrt2$ ঘুরে। কতক্ষণে তারা ঠিক একই অবস্থানে ফিরে আসবে? কখনোই না। কিন্তু সেকেন্ডের একটি নির্দিষ্ট অংশে তারা «প্রায়» মিলে যায়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ পরিমাপ মানে কী? ═══ -->
+      <b1b-section id="sec-measure-definition" title="পরিমাপ মানে কী?">
+        <p>দৈর্ঘ্য, ক্ষেত্রফল, আয়তন — সবই «পরিমাপ»-এর উদাহরণ। পরিমাপ তত্ত্বে আমরা এই ধারণাটিকে আরও সাধারণ করি: কোনো সেটকে একটা সংখ্যা দেওয়া, যা তার «আকার» বোঝায়। শর্ত হলো — খালি সেটের পরিমাপ ০, এবং পরস্পর বিচ্ছিন্ন সেটগুলোর পরিমাপ যোগ করা যায়।</p>
+        <b1b-formula math="\mu\!\left(\bigsqcup_{i} A_i\right)=\sum_i \mu(A_i)"></b1b-formula>
+        <b1b-figure src="../../assets/figures/an_10/fig_10_02.svg" alt="বিচ্ছিন্ন অঞ্চলগুলোর পরিমাপ যোগ করে মোট পরিমাপ" caption="বিচ্ছিন্ন অঞ্চলগুলোর পরিমাপ যোগ করে মোট পরিমাপ"></b1b-figure>
+        <p>পরিমাপের সবচেয়ে আশ্চর্য বৈশিষ্ট্য হলো: অসংখ্য বিন্দু নিয়ে গঠিত কোনো সেটের পরিমাপ ০ হতে পারে। পূর্ণসংখ্যার সেটটি অসীম, তবু $[0,1]$ ব্যবধানের ভেতরে তার «দৈর্ঘ্য» ০। একে বলা হয় «প্রায় কোথাও নেই» (almost nowhere)।</p>
+        <b1b-callout type="gold" icon="📌" title="কেন এটা গুরুত্বপূর্ণ?">
+          <p>পরিমাপ ০ হওয়া মানে «অস্তিত্ব নেই» নয় — মানে হলো এত ছোট যে গড় হিসাবের কাছে এর অবদান শূন্য। সম্ভাবনায়, ইন্টিগ্রালে, ফুরিয়ার বিশ্লেষণে এই পার্থক্য নিয়ে কাজ করা হয় বারবার।</p>
+        </b1b-callout>
+
+        <!-- Quiz quiz-measure-rationals -->
+        <b1b-quiz
+          question="❓ $[0,1]$ ব্যবধানের ভেতরে পরিমেয় সংখ্যাগুলোর (rationals) পরিমাপ কত?"
+          correct="2"
+          correct-msg="ঠিক! পরিমেয় সংখ্যা গণনাযোগ্য, তাই সেগুলোর মোট পরিমাপ ০ — যদিও সেটি ঘন (dense)।"
+          wrong-msg="অসীম সংখ্যক বিন্দু হলেও গণনাযোগ্য সেটের পরিমাপ ০ হয়।"
+          reveal-msg="সঠিক উত্তর: $0$।">
+          <div slot="option">$1$</div>
+          <div slot="option">$\frac12$</div>
+          <div slot="option">$0$</div>
+          <div slot="option">অসীম</div>
+        </b1b-quiz>
+
+        <!-- Quiz quiz-measure-add -->
+        <b1b-quiz
+          question="❓ পরিমাপ তত্ত্বে পরস্পর বিচ্ছিন্ন সেটের ক্ষেত্রে কী সত্য?"
+          correct="1"
+          correct-msg="হ্যাঁ! $\mu(\bigsqcup A_i)=\sum\mu(A_i)$ — এটি পরিমাপের সংজ্ঞারই অংশ, একে countable additivity বলে।"
+          wrong-msg="পরস্পর বিচ্ছিন্ন অংশগুলোর পরিমাপ যোগ করলেই মোট পরিমাপ পাওয়া যায়।"
+          reveal-msg="সঠিক উত্তর: পরিমাপগুলোর যোগফল মোট পরিমাপ।">
+          <div slot="option">পরিমাপগুলো যোগ করতে হয়</div>
+          <div slot="option">পরিমাপগুলোর যোগফল মোট পরিমাপ</div>
+          <div slot="option">পরিমাপগুলোর গুণফল মোট পরিমাপ</div>
+          <div slot="option">কোনো নিয়ম নেই</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ ভোল্টারার ফাংশন ও অবকলন ═══ -->
+      <b1b-section id="sec-measure-volterra" title="ভোল্টারার ফাংশন ও অবকলন">
+        <p>ধরুন $[0,1]$ ব্যবধানে একটা ফাংশন আছে, যার অবকলন আছে কিন্তু সেই অবকলন অসীম সংখ্যক বিন্দুতে দ্রুত ওঠানামা করে। ভোল্টারার বিখ্যাত ফাংশন ঠিক এরকম — জটিল মনে হলেও এর অবকলন প্রতিটি বিন্দুতে বিদ্যমান।</p>
+        <b1b-figure src="../../assets/figures/an_10/fig_10_03.svg" alt="অবকলনযোগ্য কিন্তু অস্থির — ভোল্টারার ফাংশনের ধারণা" caption="অবকলনযোগ্য কিন্তু অস্থির — ভোল্টারার ফাংশনের ধারণা"></b1b-figure>
+        <p>প্রশ্ন: $\int_0^1 f'(x)\,dx$ কি $f(1)-f(0)$-এর সমান? ক্লাসিক্যাল ক্যালকুলাসে হ্যাঁ, কিন্তু এখানে $f'$-এর মান এত বেশি ওঠানামা করে যে সাধারণ রিম্যান ইন্টিগ্রাল লেখা যায় না। আধুনিক Lebesgue ইন্টিগ্রালে দেখা যায় — এই অসমতা আসলে কেবল একটি পরিমাপ-শূন্য সেটে ঘটে, তাই সামগ্রিক ফলাফল ঠিক থাকে।</p>
+        <b1b-formula math="\int_0^1 f&#x27;(x)\,dx=f(1)-f(0)\quad\text{(প্রায় সব জায়গায় সত্য)},"></b1b-formula>
+      </b1b-section>
+
+      <!-- ═══ সঙ্গীত থেকে তত্ত্বে ফিরে আসা ═══ -->
+      <b1b-section id="sec-measure-conclusion" title="সঙ্গীত থেকে তত্ত্বে ফিরে আসা">
+        <p>আমাদের প্রথমের সেই অমিলপূর্ণ স্বর-জোড়ার কথা মনে আছে? দুটি স্বরের শিখর মিলে যাওয়ার সময়গুলোর সেটের পরিমাপ ০ — অর্থাৎ «প্রায় কখনোই» মিলবে না। পরিমাপ তত্ত্ব এই «প্রায়» শব্দটিকে একটি নিখুঁত গাণিতিক অর্থ দেয়।</p>
+        <b1b-callout type="blue" icon="📐" title="প্রায় সব জায়গায়">
+          <p>«প্রায় সব জায়গায়» (almost everywhere) মানে — যে সেটে দাবিটি ভুল, তার পরিমাপ ০। এই একটিমাত্র ধারণা আধুনিক বিশ্লেষণের ভিত্তিপ্রস্তর; ফুরিয়ার সিরিজ, সম্ভাবনা, অবকলন সমীকরণ — সব জায়গায় এটি ফিরে আসে।</p>
+        </b1b-callout>
+        <p>সুরের মিল-অমিল যেমন কানে অনুভূত হয়, পরিমাপ তত্ত্ব তেমনি গণিতের ভাষায় সেই অনুভূতিকে ধরে দেয়। শিল্প ও গণিতের এই গভীর সংযোগই আমাদের এই পাঠের শেষ কথা।</p>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/analysis/lesson_10/experiments/3b1b_analysis_10_full_dubbed.mp4"
+    yt-id="cyW5z-M2yzw"
+    title="সঙ্গীত ও পরিমাপ তত্ত্ব — অধ্যায় ১০"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — বিশ্লেষণ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_09.html"
+  prev-title="গণিত আবিষ্কারের অনুভূতি কেমন?"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url=""
+  next-title="শেষ"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

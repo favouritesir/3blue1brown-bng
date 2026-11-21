@@ -1,0 +1,141 @@
+[
+  {
+    "id": "sec_01_geometric_intuition",
+    "title": "১. জ্যামিতিক অন্তর্দৃষ্টি: নিজস্ব স্প্যান বা রেখায় স্থির থাকা ভেক্টর",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "১. জ্যামিতিক অন্তর্দৃষ্টি: নিজস্ব স্প্যান বা রেখায় স্থির থাকা ভেক্টর",
+        "tex": ""
+      },
+      {
+        "type": "chapter-quote",
+        "text": "\" গত বার আমি জিজ্ঞেস করেছিলাম, 'গণিত তোমার কাছে কী?' কেউ কেউ উত্তর দিয়েছিল—'সংখ্যার কারসাজি, কাঠামোর কারসাজি।' আর যদি সঙ্গীত সম্পর্কে জিজ্ঞেস করতাম, তবে কি উত্তর আসত—'স্বরের কারসাজি?' — সার্জ ল্যাং (Serge Lang)",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "আইগেনভেক্টর ও আইগেনভ্যালু লিনিয়ার বীজগণিতের এমন এক ধারণা যা প্রথমে কিছুটা অস্বচ্ছ লাগতে পারে—অথচ এর পেছনের ছবি খুবই সরল। এর আগের অধ্যায়গুলোতে ম্যাট্রিক্সকে রূপান্তর হিসেবে দেখা, নির্ণায়ক, রৈখিক সমীকরণ জোট এবং ভিত্তি পরিবর্তন—এই চারটি বিষয়ের ওপর এর বোঝাপড়া নির্ভর করে। চলুন একটি কঙ্ক্রিট উদাহরণ দিয়ে শুরু করি: দ্বিমাত্রিক স্পেসে <annotation>A=\\begin{bmatrix}3&1\\\\0&2\\end{bmatrix}</annotation> ম্যাট্রিক্সটি <annotation>\\hat{i}</annotation>-কে <annotation>[3,0]</annotation> এবং <annotation>\\hat{j}</annotation>-কে <annotation>[1,2]</annotation> এ নিয়ে যায়।",
+        "tex": "A=\\begin{bmatrix}3&1\\\\0&2\\end{bmatrix} \\hat{i} [3,0] \\hat{j} [1,2]"
+      },
+      {
+        "type": "figure",
+        "text": "এই চিত্রে দেখা যাচ্ছে কীভাবে <annotation>A=\\begin{bmatrix}3&1\\\\0&2\\end{bmatrix}</annotation> ম্যাট্রিক্সটি পুরো সমতলকে নতুন আকার দেয়: <annotation>\\hat{i}</annotation> তিন গুণ হয়ে x-অক্ষেই থাকে, আর <annotation>\\hat{j}</annotation> এগিয়ে <annotation>[1,2]</annotation> তে পড়ে। গ্রিডের রেখাগুলোর দিক বদলালেও মূলবিন্দু অনড় থাকে—এটিই রৈখিক রূপান্তরের চিহ্ন। এখানে লক্ষ্য করতে হবে কোন ভেক্টরগুলো ঘুরে না গিয়ে শুধু দৈর্ঘ্যে বদলায়; পরের চিত্রগুলোতে আমরা ঠিক সেগুলোই খুঁজে বের করব।",
+        "tex": "A=\\begin{bmatrix}3&1\\\\0&2\\end{bmatrix} \\hat{i} \\hat{j} [1,2]"
+      },
+      {
+        "type": "callout",
+        "text": "✨ নিজস্ব স্প্যানে অবিচল ভেক্টরই আইগেনভেক্টর মূলবিন্দু থেকে যেকোনো ভেক্টরের ডগা দিয়ে যে সরলরেখাটি যায়, তাকে বলা হয় ওই ভেক্টরের স্প্যান। অধিকাংশ ভেক্টর রূপান্তরের সময় এই রেখা ছেড়ে নতুন কোণে চলে যায়; কিন্তু কিছু ভেক্টর থাকে যারা নিজেদের রেখাতেই থেকে কেবল প্রসারিত বা সংকুচিত হয়—তাদেরই আইগেনভেক্টর বলা হয়। আমাদের উদাহরণে x-অক্ষের ভেক্টররা তিন গুণ হয় (<annotation>A\\hat{i}=3\\hat{i}</annotation>), তাই তাদের আইগেনভ্যালু <annotation>3</annotation>। আর <annotation>[1,-1]</annotation> বরাবর কর্ণ রেখার ভেক্টররা দুই গুণ হয়—আইগেনভ্যালু <annotation>2</annotation>। অন্য কোনো উদাহরণে আইগেনভ্যালু <annotation>-\\tfrac{1}{2}</annotation> হতে পারে, অর্থাৎ ভেক্টরটি উল্টে অর্ধেক হবে; তবুও সে নিজস্ব রেখাতেই থাকবে। জার্মান শব্দ 'eigen' মানে 'নিজস্ব'—নামটিই ধারণাটি বলে দেয়।",
+        "tex": "A\\hat{i}=3\\hat{i} 3 [1,-1] 2 -\\tfrac{1}{2}"
+      },
+      {
+        "type": "p",
+        "text": "সুতরাং <annotation>A\\vec{v}=\\lambda\\vec{v}</annotation> হলো আইগেনভেক্টরের সংজ্ঞা: <annotation>\\vec{v}</annotation> অশূন্য, <annotation>\\lambda</annotation> একটি স্কেলার, আর রূপান্তরের পর <annotation>\\vec{v}</annotation> একই দিকে (বা ঠিক বিপরীত দিকে) থেকে <annotation>\\lambda</annotation> গুণ লম্বা হয়। <annotation>\\lambda>0</annotation> হলে দিক একই থাকে, <annotation>\\lambda<0</annotation> হলে ১৮০° উল্টে যায়, আর <annotation>|\\lambda|>1</annotation> মানে প্রসারণ। এই সহজ ধর্মটিই পরে জটিল ম্যাট্রিক্সের ঘাত নির্ণয়কে সহজ করে দেবে।",
+        "tex": "A\\vec{v}=\\lambda\\vec{v} \\vec{v} \\lambda \\vec{v} \\lambda \\lambda>0 \\lambda<0 |\\lambda|>1"
+      }
+    ]
+  },
+  {
+    "id": "sec_02_characteristic_equation",
+    "title": "২. চারিত্রিক সমীকরণ: নির্ণায়ক শূন্য হওয়ার বীজগণিত",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "২. চারিত্রিক সমীকরণ: নির্ণায়ক শূন্য হওয়ার বীজগণিত",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "এখন প্রশ্ন হলো—কোনো প্রদত্ত ম্যাট্রিক্সের আইগেনভেক্টর ও আইগেনভ্যালু কীভাবে খুঁজে পাব? প্রতীকীভাবে লিখি <annotation>A\\vec{v}=\\lambda\\vec{v}</annotation>। এখানে বাম পাশে আছে ম্যাট্রিক্স–ভেক্টর গুণন, আর ডান পাশে সাধারণ স্কেলার গুণন—দুই ধরনের গুণন একই সমীকরণে বসানোয় প্রথমে একটু অস্বস্তি লাগতে পারে।",
+        "tex": "A\\vec{v}=\\lambda\\vec{v}"
+      },
+      {
+        "type": "p",
+        "text": "অস্বস্তিটি দূর করতে ডান পাশের <annotation>\\lambda\\vec{v}</annotation> কে একটি ম্যাট্রিক্স গুণন হিসেবে লিখি: <annotation>\\lambda\\vec{v}=(\\lambda I)\\vec{v}</annotation>, যেখানে <annotation>I</annotation> হলো কর্ণে ১ ও বাকি সব জায়গায় ০ বিশিষ্ট আইডেন্টিটি ম্যাট্রিক্স। এখন ডান পাশের পদটিকে বামে নিয়ে এলে পাই <annotation>(A-\\lambda I)\\vec{v}=\\vec{0}</annotation>—অর্থাৎ একটি নতুন ম্যাট্রিক্স <annotation>(A-\\lambda I)</annotation> ভেক্টর <annotation>\\vec{v}</annotation>-কে শূন্য ভেক্টরে চ্যাপ্টা করে দিচ্ছে।",
+        "tex": "\\lambda\\vec{v} \\lambda\\vec{v}=(\\lambda I)\\vec{v} I (A-\\lambda I)\\vec{v}=\\vec{0} (A-\\lambda I) \\vec{v}"
+      },
+      {
+        "type": "figure",
+        "text": "এই চিত্রে <annotation>(A-\\lambda I)</annotation> ম্যাট্রিক্সটি পুরো দ্বিমাত্রিক স্থানকে চ্যাপ্টা করে একটি সরলরেখায় নামিয়ে আনছে, যাতে অশূন্য ভেক্টর <annotation>\\vec{v}</annotation> শূন্যে পৌঁছাতে পারে। গ্রিডের ঘনত্ব কমে যাওয়া আর ক্ষেত্রফলের শূন্য হয়ে যাওয়া—দুটোই নির্ণায়ক শূন্য হওয়ার দৃশ্যমান প্রমাণ। মনে রাখবেন, যদি স্থান চ্যাপ্টা না হতো তবে কেবল তুচ্ছ সমাধান <annotation>\\vec{v}=\\vec{0}</annotation>-ই পাওয়া যেত।",
+        "tex": "(A-\\lambda I) \\vec{v} \\vec{v}=\\vec{0}"
+      },
+      {
+        "type": "callout",
+        "text": "🔍 শূন্য নির্ণায়কই সুইট স্পট অশূন্য <annotation>\\vec{v}</annotation>-এর জন্য <annotation>(A-\\lambda I)\\vec{v}=\\vec{0}</annotation> সম্ভব হতে হলে <annotation>(A-\\lambda I)</annotation>-কে স্থানকে নিচু মাত্রায় নামাতে হবে—অর্থাৎ <annotation>\\det(A-\\lambda I)=0</annotation>। একে বলা হয় চারিত্রিক সমীকরণ। উদাহরণস্বরূপ <annotation>A=\\begin{bmatrix}2&2\\\\1&3\\end{bmatrix}</annotation> নিলে <annotation>\\det\\begin{bmatrix}2-\\lambda&2\\\\1&3-\\lambda\\end{bmatrix}=(2-\\lambda)(3-\\lambda)-2</annotation>; <annotation>\\lambda</annotation>-কে নবের মতো ঘুরালে 'সুইট স্পট' আসে <annotation>\\lambda=1</annotation>-এ, যখন ম্যাট্রিক্সটি স্থানকে একটি রেখায় চ্যাপ্টা করে। ব্যবহারিকভাবে আগে এই সমীকরণ থেকে <annotation>\\lambda</annotation> বের করা হয়, তারপর নাল-স্পেস থেকে সংশ্লিষ্ট <annotation>\\vec{v}</annotation> পাওয়া যায়।",
+        "tex": "\\vec{v} (A-\\lambda I)\\vec{v}=\\vec{0} (A-\\lambda I) \\det(A-\\lambda I)=0 A=\\begin{bmatrix}2&2\\\\1&3\\end{bmatrix} \\det\\begin{bmatrix}2-\\lambda&2\\\\1&3-\\lambda\\end{bmatrix}=(2-\\lambda)(3-\\lambda)-2 \\lambda \\lambda=1 \\lambda \\vec{v}"
+      },
+      {
+        "type": "p",
+        "text": "আমাদের প্রথম উদাহরণে ফিরে আসি: <annotation>A=\\begin{bmatrix}3&1\\\\0&2\\end{bmatrix}</annotation>। <annotation>\\det\\begin{bmatrix}3-\\lambda&1\\\\0&2-\\lambda\\end{bmatrix}=(3-\\lambda)(2-\\lambda)=0</annotation> দেয় <annotation>\\lambda=2</annotation> অথবা <annotation>\\lambda=3</annotation>। <annotation>\\lambda=2</annotation> বসালে <annotation>\\begin{bmatrix}1&1\\\\0&0\\end{bmatrix}\\begin{bmatrix}x\\\\y\\end{bmatrix}=\\vec{0}</annotation> থেকে <annotation>x=-y</annotation>, অর্থাৎ <annotation>[1,-1]</annotation> বরাবর রেখার সব ভেক্টরই আইগেনভেক্টর—ঠিক যা আমরা চিত্রে দেখেছিলাম।",
+        "tex": "A=\\begin{bmatrix}3&1\\\\0&2\\end{bmatrix} \\det\\begin{bmatrix}3-\\lambda&1\\\\0&2-\\lambda\\end{bmatrix}=(3-\\lambda)(2-\\lambda)=0 \\lambda=2 \\lambda=3 \\lambda=2 \\begin{bmatrix}1&1\\\\0&0\\end{bmatrix}\\begin{bmatrix}x\\\\y\\end{bmatrix}=\\vec{0} x=-y [1,-1]"
+      }
+    ]
+  },
+  {
+    "id": "sec_03_special_transformations",
+    "title": "৩. বিশেষ রূপান্তর: ঘূর্ণন, শিয়ার ও স্কেলিং",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৩. বিশেষ রূপান্তর: ঘূর্ণন, শিয়ার ও স্কেলিং",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "সব ম্যাট্রিক্সের কি বাস্তব আইগেনভেক্টর থাকে? না। সবচেয়ে সুন্দর ব্যতিক্রম হলো ৯০° ঘূর্ণন: <annotation>R=\\begin{bmatrix}0&-1\\\\1&0\\end{bmatrix}</annotation> প্রতিটি ভেক্টরকে তার নিজস্ব রেখা থেকে ৯০° সরে যেতে বাধ্য করে, তাই কোনো ভেক্টরই স্প্যানে থাকে না। বীজগণিতও একই কথা বলে—<annotation>\\det(R-\\lambda I)=(-\\lambda)(-\\lambda)-(-1)(1)=\\lambda^2+1=0</annotation>, যার মূল কেবল জটিল সংখ্যা <annotation>\\lambda=\\pm i</annotation>। বাস্তব মূলের অনুপস্থিতিই বলে দেয় বাস্তব আইগেনভেক্টর নেই।",
+        "tex": "R=\\begin{bmatrix}0&-1\\\\1&0\\end{bmatrix} \\det(R-\\lambda I)=(-\\lambda)(-\\lambda)-(-1)(1)=\\lambda^2+1=0 \\lambda=\\pm i"
+      },
+      {
+        "type": "figure",
+        "text": "এই চিত্রে ৯০° ঘূর্ণনের সময় প্রতিটি তীর আদি রেখা থেকে লম্বভাবে সরে যাচ্ছে—কোনো তীরই আগের দিকে ফিরে আসছে না। পাশাপাশি দেখানো <annotation>\\lambda^2+1=0</annotation> রাশিটির কোনো বাস্তব সমাধান নেই, আর এই দুটি পর্যবেক্ষণ একে অপরকে সমর্থন করে। একে জটিল আইগেনভ্যালু বলা হয়; জ্যামিতিকভাবে এর অর্থ হলো রূপান্তরটি কেবল স্কেল নয়, একটি অতিরিক্ত ঘূর্ণনও ঘটায়।",
+        "tex": "\\lambda^2+1=0"
+      },
+      {
+        "type": "p",
+        "text": "অন্য দিকে শিয়ার <annotation>S=\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}</annotation>—এ <annotation>\\hat{i}</annotation> স্থির থাকে, <annotation>\\hat{j}</annotation> ডানে সরে। কেবল x-অক্ষের ভেক্টরাই নিজেদের রেখায় থাকে, <annotation>\\det(S-\\lambda I)=(1-\\lambda)^2</annotation> থেকে একমাত্র <annotation>\\lambda=1</annotation>; অর্থাৎ শিয়ারের একটি মাত্র আইগেন-রেখা আছে। আর <annotation>2I=\\begin{bmatrix}2&0\\\\0&2\\end{bmatrix}</annotation> সব দিকে সমান দুই গুণ করে, তাই সমতলের প্রতিটি ভেক্টরই <annotation>\\lambda=2</annotation> সহ আইগেনভেক্টর—একটিমাত্র আইগেনভ্যালু, অসীম সংখ্যক আইগেনভেক্টর।",
+        "tex": "S=\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix} \\hat{i} \\hat{j} \\det(S-\\lambda I)=(1-\\lambda)^2 \\lambda=1 2I=\\begin{bmatrix}2&0\\\\0&2\\end{bmatrix} \\lambda=2"
+      },
+      {
+        "type": "callout",
+        "text": "🔄 তিন ধরনের আচরণ এক নজরে ঘূর্ণন: কোনো বাস্তব আইগেনভেক্টর নেই (<annotation>\\lambda=\\pm i</annotation>)। শিয়ার: মাত্র একটি স্বাধীন আইগেন-রেখা (<annotation>\\lambda=1</annotation>)। স্কেলিং: প্রতিটি ভেক্টরই আইগেনভেক্টর (<annotation>\\lambda=2</annotation>)। আর <annotation>\\lambda=-\\tfrac{1}{2}</annotation>-এর মতো ঋণাত্মক ক্ষেত্রে ভেক্টরটি উল্টে অর্ধেক হয়—দিক বদলালেও সে নিজস্ব রেখাতেই থাকে, তাই এখনো আইগেনভেক্টর। এই তুলনাটি মনে রাখলে পরের অংশের আইগেনবেসিস বোঝা সহজ হবে।",
+        "tex": "\\lambda=\\pm i \\lambda=1 \\lambda=2 \\lambda=-\\tfrac{1}{2}"
+      }
+    ]
+  },
+  {
+    "id": "sec_04_3d_rotations_and_eigenbasis",
+    "title": "৪. থ্রিডি ঘূর্ণন অক্ষ ও আইগেনভিত্তি: কর্ণ ম্যাট্রিক্সের জাদু",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৪. থ্রিডি ঘূর্ণন অক্ষ ও আইগেনভিত্তি: কর্ণ ম্যাট্রিক্সের জাদু",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "ত্রিমাত্রিক স্পেসে আইগেনভেক্টরের ধারণা আরও প্রাণবন্ত। মূলবিন্দুগামী কোনো অক্ষকে কেন্দ্র করে পুরো স্থান আবর্তিত হলে অক্ষের ওপরের ভেক্টরগুলোর দিক বা দৈর্ঘ্য বিন্দুমাত্র বদলায় না—অর্থাৎ <annotation>R\\vec{v}_{\\text{axis}}=1\\cdot\\vec{v}_{\\text{axis}}</annotation>। এই অক্ষই হলো ঘূর্ণনের আইগেনভেক্টর, আর এর আইগেনভ্যালু <annotation>1</annotation>।",
+        "tex": "R\\vec{v}_{\\text{axis}}=1\\cdot\\vec{v}_{\\text{axis}} 1"
+      },
+      {
+        "type": "figure",
+        "text": "এই চিত্রে ত্রিমাত্রিক ঘূর্ণনের মাঝখান দিয়ে বের হওয়া সরলরেখাটিই ঘূর্ণন অক্ষ—এর ওপর অবস্থিত তীরগুলো ঘোরালেও অক্ষের দিকে কোনো নাড়া খায় না। চারপাশের বিন্দুগুলো সরে গেলেও এই অক্ষ অপরিবর্তিত থাকায় এটি <annotation>\\lambda=1</annotation> বিশিষ্ট আইগেনভেক্টর। ৩×৩ ম্যাট্রিক্সের ত্রিকোণমিতিক সদস্যের চেয়ে এই একটি রেখা খুঁজে পাওয়া অনেক বেশি স্বজ্ঞাত ও শক্তিশালী।",
+        "tex": "\\lambda=1"
+      },
+      {
+        "type": "callout",
+        "text": "🧭 আইগেনবেসিস: ডায়াগনাল ম্যাট্রিক্সের জাদু যদি কোনো ম্যাট্রিক্সের যথেষ্ট স্বাধীন আইগেনভেক্টর থাকে যারা পুরো স্থান স্প্যান করতে পারে, তবে তাদের নতুন ভিত্তি হিসেবে বেছে নেওয়া যায়—একে আইগেনবেসিস বলে। এই ভিত্তিতে মূল রূপান্তরটি একটি ডায়াগনাল ম্যাট্রিক্স <annotation>\\Lambda=\\begin{bmatrix}\\lambda_1&0\\\\0&\\lambda_2\\end{bmatrix}</annotation> এ রূপ নেয়, কারণ প্রতিটি ভিত্তি ভেক্টর কেবল নিজের আইগেনভ্যালু দ্বারা স্কেল হয়, অন্যদের সাথে মিশে যায় না। ফলে শততম ঘাত লেখা যায় <annotation>\\begin{bmatrix}3&0\\\\0&2\\end{bmatrix}^{100}=\\begin{bmatrix}3^{100}&0\\\\0&2^{100}\\end{bmatrix}</annotation>—একটি সাধারণ ঘাতক্রিয়া, অথচ মূল ম্যাট্রিক্সকে ১০০ বার গুণ করতে হলে কত খাটুনি লাগত ভাবুন।",
+        "tex": "\\Lambda=\\begin{bmatrix}\\lambda_1&0\\\\0&\\lambda_2\\end{bmatrix} \\begin{bmatrix}3&0\\\\0&2\\end{bmatrix}^{100}=\\begin{bmatrix}3^{100}&0\\\\0&2^{100}\\end{bmatrix}"
+      },
+      {
+        "type": "p",
+        "text": "ভিত্তি পরিবর্তনের গত পাঠের সূত্রটি মনে করুন: নতুন ম্যাট্রিক্স <annotation>=A^{-1}MA</annotation>। আইগেনভেক্টরগুলোকে কলাম করে গঠিত পরিবর্তন ম্যাট্রিক্স <annotation>S</annotation> দিলে <annotation>D=S^{-1}AS=\\Lambda</annotation>—অর্থাৎ একই রূপান্তর, শুধু আইগেনবেসিসের ভাষায় লেখা। তাই <annotation>A^{100}=S\\Lambda^{100}S^{-1}</annotation>: সহজে ঘাত বের করে আবার আমাদের ভাষায় ফিরে আসা।",
+        "tex": "=A^{-1}MA S D=S^{-1}AS=\\Lambda A^{100}=S\\Lambda^{100}S^{-1}"
+      },
+      {
+        "type": "p",
+        "text": "তবে সব রূপান্তরের এই সুবিধা পাওয়া যায় না—শিয়ারের মতো ম্যাট্রিক্সের পর্যাপ্ত স্বাধীন আইগেনভেক্টর নেই, তাই তার আইগেনবেসিস গড়ে ওঠে না। কৌতূহলীদের জন্য পাজল: <annotation>A=\\begin{bmatrix}0&1\\\\1&1\\end{bmatrix}</annotation> এর প্রথম কয়েকটি ঘাত বের করলে ফিবোনাচ্চি সংখ্যা <annotation>1,1,2,3,5,8</annotation> দেখা যায়; এর আইগেনভ্যালু <annotation>\\tfrac{1\\pm\\sqrt5}{2}</annotation> (সোনালি অনুপাত) ব্যবহার করে <annotation>A^n</annotation>-এর সংকেত বের করা যায়। পরবর্তী অধ্যায়ে শেখা হবে আইগেনভ্যালু দ্রুত নির্ণয়ের এক চতুর কৌশল।",
+        "tex": "A=\\begin{bmatrix}0&1\\\\1&1\\end{bmatrix} 1,1,2,3,5,8 \\tfrac{1\\pm\\sqrt5}{2} A^n"
+      }
+    ]
+  }
+]

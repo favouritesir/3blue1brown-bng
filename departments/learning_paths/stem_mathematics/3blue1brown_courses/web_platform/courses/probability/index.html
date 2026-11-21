@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>সম্ভাব্যতার মূলভাব — ৩ব্লু১ব্রাউন বাংলা</title>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<style>
+  .course-hero {
+    padding: 100px 24px 48px;
+    background: radial-gradient(circle at 50% 20%, rgba(246, 173, 85, 0.15), rgba(116, 192, 227, 0.08) 50%, transparent 75%);
+    text-align: center;
+  }
+  .course-badge {
+    display: inline-block;
+    padding: 5px 16px;
+    background: rgba(246, 173, 85, 0.15);
+    border: 1px solid rgba(246, 173, 85, 0.45);
+    border-radius: 20px;
+    color: var(--theme-gold);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+  .course-title {
+    font-size: 2.7rem;
+    font-weight: 900;
+    margin-bottom: 14px;
+    color: var(--text);
+    line-height: 1.25;
+  }
+  .course-sub {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 720px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+  }
+  .course-stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .c-stat {
+    text-align: center;
+  }
+  .c-stat-val {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--theme-gold);
+  }
+  .c-stat-lbl {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .chapters-container {
+    max-width: 980px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+  }
+  .chapter-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .chapter-row {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+  .chapter-row.active-lesson {
+    border-color: var(--theme-gold);
+    box-shadow: 0 4px 20px rgba(246, 173, 85, 0.12);
+  }
+  .chapter-row:hover {
+    border-color: var(--theme);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+  }
+  .ch-num {
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: var(--theme-gold);
+    min-width: 52px;
+    text-align: center;
+    opacity: 0.9;
+  }
+  .ch-body {
+    flex: 1;
+  }
+  .ch-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+  .ch-desc {
+    font-size: 0.96rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .ch-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .ch-tag {
+    font-size: 0.78rem;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+  }
+  .ch-tag.gold {
+    background: rgba(246, 173, 85, 0.12);
+    border-color: rgba(246, 173, 85, 0.35);
+    color: var(--theme-gold);
+    font-weight: 600;
+  }
+  .ch-action {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--theme);
+    font-weight: bold;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+  .ch-action.gold {
+    color: var(--theme-gold);
+  }
+  .coming-soon-pill {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    color: var(--text-muted);
+  }
+</style>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../../index.html">
+      <svg class="pi-logo" viewBox="-50 -50 100 100" aria-label="৩ব্লু১ব্রাউন">
+        <path fill="#74C0E3" d="M 0 0 L 0 -50 A 50 50 0 1 1 -50 0 z"/>
+        <path fill="#8C6239" d="M 0 0 L 0 -50 A 50 50 0 0 0 -50 0 z"/>
+        <circle cx="0" cy="0" r="22" fill="#000"/>
+        <circle cx="-8" cy="-6" r="7" fill="#fff"/>
+        <circle cx="8" cy="-6" r="7" fill="#fff"/>
+        <circle cx="-7" cy="-6" r="3.5" fill="#000"/>
+        <circle cx="9" cy="-6" r="3.5" fill="#000"/>
+        <path d="M -10 6 Q 0 14 10 6" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-title">৩ব্লু১ব্রাউন বাংলা</span>
+        <span class="logo-sub">কোর্স সূচিপত্র</span>
+      </div>
+    </a>
+
+    <div class="nav-breadcrumb">
+      <a href="../../index.html">হোম</a>
+      <span>/</span>
+      <span>সম্ভাব্যতার মূলভাব</span>
+    </div>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" onclick="toggleTheme()" title="থিম পরিবর্তন">🌙</button>
+      <a href="lesson_01.html" style="background:var(--theme-gold); color:#000; padding:6px 18px; border-radius:20px; font-weight:bold; font-size:0.85rem;">অধ্যায় ১ শুরু করুন →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="course-hero">
+  <div class="course-badge">অফিসিয়াল ৩ব্লু১ব্রাউন কনসেপ্ট · বাংলায় ইন্টারেক্টিভ কোর্স</div>
+  <h1 class="course-title">সম্ভাব্যতার মূলভাব</h1>
+  <p class="course-sub">Essence of Probability — গ্রান্ট স্যান্ডারসনের দৃষ্টিকোণে অনিশ্চয়তার জ্যামিতি। ফর্মুলা মুখস্থ নয়; ক্ষেত্রফলের অনুপাত, নমুনা ক্ষেত্রের সংকোচন ও ইন্টারেক্টিভ সিমুলেশনের মাধ্যমে অনুধাবন করুন সম্ভাবনার গভীরতম সত্য।</p>
+  
+  <div class="course-stats-bar">
+    <div class="c-stat">
+      <div class="c-stat-val">১০টি</div>
+      <div class="c-stat-lbl">সম্পূর্ণ পরিকল্পিত পাঠ</div>
+    </div>
+    <div class="c-stat">
+      <div class="c-stat-val">১০০%</div>
+      <div class="c-stat-lbl">ক্ষেত্রফলভিত্তিক ভিজ্যুয়াল ধারণা</div>
+    </div>
+    <div class="c-stat">
+      <div class="c-stat-val">KaTeX</div>
+      <div class="c-stat-lbl">অফলাইন রেন্ডারিং</div>
+    </div>
+    <div class="c-stat">
+      <div class="c-stat-val">HTML5</div>
+      <div class="c-stat-lbl">ইন্টারেক্টিভ সিমুলেটর ল্যাব</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CHAPTERS LIST ═══════════ -->
+<main class="chapters-container">
+  <div class="chapter-grid">
+
+    <a href="lesson_01.html" class="chapter-row">
+      <div class="ch-num">০১</div>
+      <div class="ch-body">
+        <h2 class="ch-title">অধ্যায় ০১: সম্ভাব্যতা আসলে কী? — অনিশ্চয়তার জ্যামিতি ও প্যারাডক্স (What Even is Probability? — The Geometry of Uncertainty)</h2>
+        <p class="ch-desc">নমুনা ক্ষেত্র, ক্ষেত্রফলভিত্তিক সম্ভাব্যতা, মন্টি হল ধাঁধা এবং শর্তাধীন সম্ভাবনার মহাবিশ্ব ক্রপিং</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ 15:00</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_02.html" class="chapter-row">
+      <div class="ch-num">০২</div>
+      <div class="ch-body">
+        <h2 class="ch-title">অধ্যায় ০২: বেজের সূত্র এবং মেডিকেল টেস্ট প্যারাডক্স — শর্তসাপেক্ষ সম্ভাব্যতা (Bayes&#x27; Rule and the False Positive Paradox (Conditional Probability))</h2>
+        <p class="ch-desc">যৌথ সম্ভাব্যতা P(A ∩ B), শর্তসাপেক্ষ সম্ভাবনার সংজ্ঞা P(A|B), বৃক্ষচিত্র, বেস রেট ফ্যালাসি ও ফলস পজিটিভ প্যারাডক্স</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ 16:20</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_03.html" class="chapter-row">
+      <div class="ch-num">০৩</div>
+      <div class="ch-body">
+        <h2 class="ch-title">অধ্যায় ০৩: দ্বিপদী বিন্যাস ও প্যাসকেলের ত্রিভুজ — কয়েন টসের জ্যামিতি (Binomial Distribution and Pascal&#x27;s Triangle — Geometry of Coin Flips)</h2>
+        <p class="ch-desc">বার্নৌলি ট্রায়াল, গুণনীয়ক ও কম্বিনেটোরিক্স $\binom{n}{k}$, সম্ভাবনার পথ-জালিকা, প্যাসকেলের ত্রিভুজ এবং গ্যালটন বোর্ডের বিস্ময়</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ 15:45</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_04.html" class="chapter-row">
+      <div class="ch-num">০৪</div>
+      <div class="ch-body">
+        <h2 class="ch-title">অধ্যায় ০৪: অবিচ্ছিন্ন সম্ভাব্যতা ঘনত্ব ও নরমাল ডিস্ট্রিবিউশন (Continuous Probability Distributions &amp; Probability Density)</h2>
+        <p class="ch-desc">বিচ্ছিন্ন পিএমএফ থেকে অবিচ্ছিন্ন ঘনত্বে রূপান্তর, একক বিন্দুর শূন্য সম্ভাব্যতা $P(X=c)=0$, বক্ররেখার নিচের ক্ষেত্রফল $\int_a^b f(x)\,dx$, এবং গাউসিয়ান বেল কার্ভ ও সেন্ট্রাল লিমিট থিওরেমের অমর রহস্য</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ 16:15</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_05.html" class="chapter-row">
+      <div class="ch-num">০৫</div>
+      <div class="ch-body">
+        <h2 class="ch-title">অধ্যায় ০৫: মার্কভ চেইন, র‍্যান্ডম ওয়াক ও স্টেডি স্টেট (Markov Chains, Random Walks, and Steady States)</h2>
+        <p class="ch-desc">স্মৃতিহীন রূপান্তর, ট্রানজিশন ম্যাট্রিক্স, জুয়াড়ির নিঃস্ব হওয়া, আইগেনভেক্টর এবং গুগলের পেজর‍্যাঙ্ক বিপ্লব</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ 16:45</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+    <a href="lesson_06.html" class="chapter-row">
+      <div class="ch-num">০৬</div>
+      <div class="ch-body">
+        <h2 class="ch-title">অধ্যায় ০৬: কেন্দ্রীয় সীমা উপপাদ্য — প্রকৃতির সার্বজনীন বেল কার্ভ (The Central Limit Theorem — Why the Bell Curve Rules the Universe)</h2>
+        <p class="ch-desc">স্বাধীন দৈব চলকের সমষ্টি, কনভোলিউশন ও মসৃণায়ন, নমুনা গড়ের আদর্শ বিচ্যুতি $\frac{\sigma}{\sqrt{n}}$, এবং কেন যেকোনো অদ্ভুত আদি বণ্টন শেষ পর্যন্ত গাউসিয়ান নরমাল কার্ভে রূপান্তরিত হয়</p>
+        <div class="ch-tags">
+          <span class="ch-tag">⏱️ 17:15</span><span class="ch-tag">🎮 ইন্টারেক্টিভ ল্যাব</span><span class="ch-tag">❓ কুইজ সংযুক্ত</span>
+        </div>
+      </div>
+      <div class="ch-action">পাঠ খুলুন →</div>
+    </a>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>৩ব্লু১ব্রাউন বাংলা প্ল্যাটফর্ম · মূল ভাবনা: Grant Sanderson (3Blue1Brown) · গণিত রেন্ডারিং: KaTeX v0.16.11 (অফলাইন)</p>
+</footer>
+
+</body>
+</html>

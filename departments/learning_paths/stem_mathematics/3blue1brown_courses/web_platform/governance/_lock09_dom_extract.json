@@ -1,0 +1,259 @@
+{
+  "sectionEls": [
+    {
+      "id": "sec-01-linear-combinations",
+      "noNarration": null
+    },
+    {
+      "id": "sec-02-multidim-to-1d",
+      "noNarration": null
+    },
+    {
+      "id": "sec-03-duality-dot-product",
+      "noNarration": null
+    },
+    {
+      "id": "sec-04-geometric-projection",
+      "noNarration": null
+    },
+    {
+      "id": "sec-interactive-lab",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-quizzes",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-formulas-glossary",
+      "noNarration": "true"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-01-linear-combinations",
+      "title": "১. রৈখিক সমাহারের জ্যামিতিক বুনন",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "১. রৈখিক সমাহারের জ্যামিতিক বুনন"
+        },
+        {
+          "type": "chapter-quote",
+          "text": "\"\n\nডুয়ালিটি বা দ্বৈততা হলো এমন এক আয়না, যেখানে তাকালে একটি সাধারণ ভেক্টর সরাসরি একটি রৈখিক ফাংশনে এবং একটি রৈখিক ফাংশন একটি অনন্য ভেক্টরে প্রতিবিম্বিত হয়।\n\n— গ্রান্ট স্যান্ডারসন (Grant Sanderson), Lockdown Math, Lesson 9"
+        },
+        {
+          "type": "p",
+          "text": "রৈখিক বীজগণিতের সমস্ত জাদু মূলত দুটি মৌলিক অপারেশনের ওপর দাঁড়িয়ে আছে: ভেক্টরকে স্কেলার দিয়ে গুণ করা এবং দুটি ভেক্টরকে পরস্পর যোগ করা। যখন আমরা এই দুটি প্রক্রিয়া একসাথে চালাই—যেমন \n𝑎\n𝑣\n⃗\n+\n𝑏\n𝑤\n⃗\na\nv\n+b\nw\n—তখন তাকে বলা হয় রৈখিক সমাহার (Linear Combination)।"
+        },
+        {
+          "type": "p",
+          "text": "যদি \n𝑣\n⃗\nv\n এবং \n𝑤\n⃗\nw\n একই রেখায় অবস্থিত না হয়, তবে তাদের সমস্ত সম্ভাব্য রৈখিক সমাহার সমগ্র দ্বিমাত্রিক তলটিকে স্পর্শ করতে পারে—যাকে আমরা বলি তাদের 'স্প্যান' (Span)।"
+        },
+        {
+          "type": "p",
+          "text": "কিন্তু যদি আমরা এই প্রশ্নটি উল্টো করে করি: সমতলের সমস্ত ভেক্টরকে যদি একটি একক সংখ্যা লাইনে সংকুচিত করে আনা হয়, তবে সেই রৈখিক প্রক্রিয়াটির জ্যামিতি কেমন দেখাবে?"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑥\n⃗\n=\n𝑐\n1\n𝑣\n⃗\n1\n+\n𝑐\n2\n𝑣\n⃗\n2\n+\n⋯\n+\n𝑐\n𝑛\n𝑣\n⃗\n𝑛\n=\n∑\n𝑖\n=\n1\n𝑛\n𝑐\n𝑖\n𝑣\n⃗\n𝑖\nx\n=c\n1\n\t​\n\nv\n1\n\t​\n\n+c\n2\n\t​\n\nv\n2\n\t​\n\n+⋯+c\nn\n\t​\n\nv\nn\n\t​\n\n=\ni=1\n∑\nn\n\t​\n\nc\ni\n\t​\n\nv\ni\n\t​"
+        },
+        {
+          "type": "callout-blue",
+          "text": "🧮 রৈখিক সমাহার\n\nস্কেলার গুণন ও ভেক্টর যোগের সমন্বয়ে যেকোনো নতুন ভেক্টর গঠিত হয়।\n\nপ্রতিটি \n𝑐\n𝑖\nc\ni\n\t​\n\n হলো একটি স্কেলার—এটি নির্ধারণ করে সংশ্লিষ্ট ভিত্তি ভেক্টর \n𝑣\n⃗\n𝑖\nv\ni\n\t​\n\n কতখানি প্রসারিত বা সংকুচিত হবে।"
+        },
+        {
+          "type": "callout-gold",
+          "text": "💡 ভিত্তির স্বাধীনতা\n\nভেক্টরগুলো পরস্পর রৈখিকভাবে স্বাধীন হলে তাদের সমাহার পূর্ণ মাত্রার স্থান তৈরি করে।\n\nঅন্যদিকে, যদি \n𝑤\n⃗\n=\n𝑘\n𝑣\n⃗\nw\n=k\nv\n হয়—অর্থাৎ তারা সমরেখ—তবে তাদের সমাহার কেবল একটি সরলরেখাতেই আবদ্ধ থাকে।"
+        },
+        {
+          "type": "callout-green",
+          "text": "🎯 মূল শিক্ষণীয় বিষয়\n\nভেক্টরের রৈখিক সমাহার (Linear Combination) হলো ভিত্তি ভেক্টরগুলোকে স্কেলার দ্বারা গুণ করে যোগ করার মাধ্যমে নতুন স্থান বা সাবস্পেস তৈরির প্রক্রিয়া।"
+        }
+      ]
+    },
+    {
+      "id": "sec-02-multidim-to-1d",
+      "title": "২. বহু মাত্রা থেকে এক মাত্রার রূপান্তর (Rⁿ → R)",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "২. বহু মাত্রা থেকে এক মাত্রার রূপান্তর (Rⁿ → R)"
+        },
+        {
+          "type": "p",
+          "text": "একটি রৈখিক রূপান্তর সমতলের গ্রিড লাইনগুলোকে সরলরেখা এবং সমান দূরবর্তী রাখে। ধরা যাক আমাদের কাছে এমন একটি রূপান্তর \n𝑇\nT আছে যা দ্বিমাত্রিক সমতলের যেকোনো ভেক্টর \n[\n𝑥\n\n\n𝑦\n]\n[\nx\ny\n\t​\n\n]-কে ইনপুট হিসেবে নেয় এবং আউটপুট হিসেবে দেয় একটি সাধারণ বাস্তব সংখ্যা।"
+        },
+        {
+          "type": "p",
+          "text": "যেহেতু রূপান্তরটি রৈখিক, তাই এটি পুরোপুরি নির্ধারিত হয় আমাদের পরিচিত একক ভিত্তি ভেক্টর \n𝑖\n^\ni\n^\n এবং \n𝑗\n^\nj\n^\n\t​\n\n ঠিক কোথায় গিয়ে পড়ে তার ওপর।"
+        },
+        {
+          "type": "p",
+          "text": "মনে করুন \n𝑖\n^\ni\n^\n গিয়ে পড়ল সংখ্যা লাইনের \n𝑢\n1\nu\n1\n\t​\n\n বিন্দুতে এবং \n𝑗\n^\nj\n^\n\t​\n\n গিয়ে পড়ল \n𝑢\n2\nu\n2\n\t​\n\n বিন্দুতে। তাহলে যেকোনো সাধারণ ভেক্টর \n[\n𝑥\n\n\n𝑦\n]\n=\n𝑥\n𝑖\n^\n+\n𝑦\n𝑗\n^\n[\nx\ny\n\t​\n\n]=x\ni\n^\n+y\nj\n^\n\t​\n\n গিয়ে পড়বে ঠিক \n𝑥\n⋅\n𝑢\n1\n+\n𝑦\n⋅\n𝑢\n2\nx⋅u\n1\n\t​\n\n+y⋅u\n2\n\t​\n\n অবস্থানে! এটিকে আমরা একটি সারি ম্যাট্রিক্স দিয়ে লিখতে পারি: \n[\n𝑢\n1\n\t\n𝑢\n2\n]\n[\n𝑥\n\n\n𝑦\n]\n[\nu\n1\n\t​\n\n\t​\n\nu\n2\n\t​\n\n\t​\n\n][\nx\ny\n\t​\n\n]।"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑇\n(\n[\n𝑥\n\n\n𝑦\n]\n)\n=\n[\n𝑢\n1\n\t\n𝑢\n2\n]\n[\n𝑥\n\n\n𝑦\n]\n=\n𝑢\n1\n𝑥\n+\n𝑢\n2\n𝑦\nT([\nx\ny\n\t​\n\n])=[\nu\n1\n\t​\n\n\t​\n\nu\n2\n\t​\n\n\t​\n\n][\nx\ny\n\t​\n\n]=u\n1\n\t​\n\nx+u\n2\n\t​\n\ny"
+        },
+        {
+          "type": "callout-blue",
+          "text": "🧮 ১X২ ম্যাট্রিক্স রূপান্তর\n\nবহুমাত্রা থেকে এক মাত্রার রৈখিক রূপান্তর সর্বদাই একটি একক সারি ম্যাট্রিক্স দ্বারা নির্ধারিত হয়।\n\nম্যাট্রিক্সের একমাত্র সারিতে থাকা \n𝑢\n1\nu\n1\n\t​\n\n ও \n𝑢\n2\nu\n2\n\t​\n\n হলো যথাক্রমে \n𝑖\n^\ni\n^\n ও \n𝑗\n^\nj\n^\n\t​\n\n-এর গন্তব্য—বাকি সব কিছু রৈখিকতা থেকে যান্ত্রিকভাবে ফলে যায়।"
+        },
+        {
+          "type": "callout-gold",
+          "text": "🔑 ম্যাট্রিক্সের সারমর্ম\n\n১x২ ম্যাট্রিক্সটি কোনো সাধারণ তালিকা নয়—এটি ১-মাত্রিক আউটপুট স্পেসের একটি সম্পূর্ণ রূপান্তর নির্দেশিকা।\n\nবহুমাত্রিক স্থান থেকে এক মাত্রার বাস্তব সংখ্যায় (\n𝑅\n𝑛\n→\n𝑅\nR\nn\n→R) যেকোনো রৈখিক রূপান্তরকে ঠিক এমন একটি \n1\n×\n𝑛\n1×n ম্যাট্রিক্স দ্বারা প্রকাশ করা যায়।"
+        }
+      ]
+    },
+    {
+      "id": "sec-03-duality-dot-product",
+      "title": "৩. ডট প্রোডাক্টের সাথে পুনর্মিলন ও ডুয়াল ভেক্টর",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "৩. ডট প্রোডাক্টের সাথে পুনর্মিলন ও ডুয়াল ভেক্টর"
+        },
+        {
+          "type": "p",
+          "text": "এবার সূত্রটির দিকে তাকান: \n𝑢\n1\n𝑥\n+\n𝑢\n2\n𝑦\nu\n1\n\t​\n\nx+u\n2\n\t​\n\ny। এটি কি অত্যন্ত পরিচিত মনে হচ্ছে না? হ্যাঁ, এটি অবিকল ভেক্টর \n𝑢\n⃗\n=\n[\n𝑢\n1\n\n\n𝑢\n2\n]\nu\n=[\nu\n1\n\t​\n\nu\n2\n\t​\n\n\t​\n\n] এবং ভেক্টর \n𝑣\n⃗\n=\n[\n𝑥\n\n\n𝑦\n]\nv\n=[\nx\ny\n\t​\n\n] এর ডট প্রোডাক্ট!"
+        },
+        {
+          "type": "p",
+          "text": "এখানেই গণিতের সবচেয়ে অপরূপ ডুয়ালিটি বা দ্বৈততার জন্ম হয়। একটি ১x২ অনুভূমিক ম্যাট্রিক্স \n[\n𝑢\n1\n\t\n𝑢\n2\n]\n[\nu\n1\n\t​\n\n\t​\n\nu\n2\n\t​\n\n\t​\n\n] (যা একটি ফাংশন হিসেবে কাজ করে) এবং একটি সাধারণ উলম্ব ভেক্টর \n[\n𝑢\n1\n\n\n𝑢\n2\n]\n[\nu\n1\n\t​\n\nu\n2\n\t​\n\n\t​\n\n] (যা স্থানে একটি নির্দেশক তির)—এরা একে অপরের দ্বৈত রূপ!"
+        },
+        {
+          "type": "p",
+          "text": "গণিতবিদ রিস (Riesz Representation Theorem) এটিকেই প্রমাণ করেছেন: ইউক্লিডীয় স্থানে \n𝑅\n𝑛\n→\n𝑅\nR\nn\n→R যেকোনো রৈখিক রূপান্তর আসলে নির্দিষ্ট একটি দ্বৈত ভেক্টরের সাথে ডট প্রোডাক্টের হুবহু নামান্তর।"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑇\n(\n𝑣\n⃗\n)\n=\n[\n𝑢\n1\n\t\n𝑢\n2\n]\n𝑣\n⃗\n=\n𝑢\n⃗\n⋅\n𝑣\n⃗\n=\n∥\n𝑢\n⃗\n∥\n∥\n𝑣\n⃗\n∥\ncos\n⁡\n𝜃\nT(\nv\n)=[\nu\n1\n\t​\n\n\t​\n\nu\n2\n\t​\n\n\t​\n\n]\nv\n=\nu\n⋅\nv\n=∥\nu\n∥∥\nv\n∥cosθ"
+        },
+        {
+          "type": "callout-blue",
+          "text": "🪞 দ্বৈত সমীকরণ\n\nপ্রতিটি রৈখিক ফাংশন একটি অনন্য ভেক্টর \n𝑢\n⃗\nu\n কে ধারণ করে, যার জ্যামিতিক ডট প্রোডাক্টের মাধ্যমে মান গণনা করা যায়।\n\nঅর্থাৎ \n𝑇\n(\n𝑣\n⃗\n)\n=\n𝑢\n⃗\n⋅\n𝑣\n⃗\nT(\nv\n)=\nu\n⋅\nv\n — সারি ম্যাট্রিক্সের গুণফল আর কলাম ভেক্টরের ডট প্রোডাক্ট একই সংখ্যা দেয়।"
+        },
+        {
+          "type": "callout-gold",
+          "text": "✨ ডুয়ালিটির দর্শন\n\nফাংশন এবং ভেক্টর আলাদা কোনো সত্তা নয়; নির্দিষ্ট ভিত্তি ও ডট প্রোডাক্টের উপস্থিতিতে এরা একই জ্যামিতিক বাস্তবতার দুটি ভিন্ন রূপ।"
+        }
+      ]
+    },
+    {
+      "id": "sec-04-geometric-projection",
+      "title": "৪. অর্থোগোনাল প্রজেকশন ও প্রতিসাম্যের ব্যাখ্যা",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "৪. অর্থোগোনাল প্রজেকশন ও প্রতিসাম্যের ব্যাখ্যা"
+        },
+        {
+          "type": "p",
+          "text": "কেন এই প্রক্ষেপণটি রৈখিক রূপান্তরের সমস্ত নিয়ম মেনে চলে? কল্পনা করুন একটি একক ভেক্টর \n𝑢\n^\nu\n^\n এর দিকে নির্দেশিত একটি রেখা রয়েছে। সমতলের সমস্ত ভেক্টরকে যদি এই রেখার ওপর লম্বভাবে ফেলা হয় (orthogonal projection), তবে তা একটি বৈধ রৈখিক রূপান্তর তৈরি করে।"
+        },
+        {
+          "type": "p",
+          "text": "যেহেতু রূপান্তরটি রৈখিক, তাই একক ভিত্তি ভেক্টর \n𝑖\n^\ni\n^\n যখন এই রেখায় পড়ে, তার ছায়ার দৈর্ঘ্য দাঁড়ায় \n𝑢\n1\nu\n1\n\t​\n\n (যা \n𝑢\n^\nu\n^\n এর \n𝑥\nx-উপাংশ)। একইভাবে \n𝑗\n^\nj\n^\n\t​\n\n এর ছায়া দাঁড়ায় \n𝑢\n2\nu\n2\n\t​\n\n।"
+        },
+        {
+          "type": "p",
+          "text": "ফলে যেকোনো ভেক্টরের অভিক্ষেপের দৈর্ঘ্য হয় \n𝑥\n𝑢\n1\n+\n𝑦\n𝑢\n2\nxu\n1\n\t​\n\n+yu\n2\n\t​\n\n। ডট প্রোডাক্টে কেন \n𝑢\n⃗\n⋅\n𝑣\n⃗\n=\n𝑣\n⃗\n⋅\n𝑢\n⃗\nu\n⋅\nv\n=\nv\n⋅\nu\n হয়, তার প্রমাণও এই জ্যামিতিতে স্পষ্ট: \n𝑢\n⃗\nu\n এর রেখায় \n𝑣\n⃗\nv\n এর ছায়া গুণ \n𝑢\n⃗\nu\n এর দৈর্ঘ্য, আর \n𝑣\n⃗\nv\n এর রেখায় \n𝑢\n⃗\nu\n এর ছায়া গুণ \n𝑣\n⃗\nv\n এর দৈর্ঘ্য—উভয় প্রক্রিয়াই প্রতিসাম্যের কারণে হুবহু একই ক্ষেত্রফল নির্ধারণ করে!"
+        },
+        {
+          "type": "formula-box",
+          "text": "Proj\n𝑢\n⃗\n(\n𝑣\n⃗\n)\n=\n(\n𝑢\n⃗\n⋅\n𝑣\n⃗\n∥\n𝑢\n⃗\n∥\n2\n)\n𝑢\n⃗\n,\n𝑢\n⃗\n⋅\n𝑣\n⃗\n=\n𝑣\n⃗\n⋅\n𝑢\n⃗\nProj\nu\n\t​\n\n(\nv\n)=(\n∥\nu\n∥\n2\nu\n⋅\nv\n\t​\n\n)\nu\n,\nu\n⋅\nv\n=\nv\n⋅\nu"
+        },
+        {
+          "type": "callout-blue",
+          "text": "📐 অর্থোগোনাল অভিক্ষেপ ও স্কেলার ডট\n\nপ্রজেকশন প্রক্রিয়াটি সরাসরি ডট প্রোডাক্ট দ্বারা নিয়ন্ত্রিত হয় এবং উভয় ভেক্টরের পারস্পরিক প্রতিসাম্য রক্ষা করে।\n\nঅভিক্ষেপের স্কেলার দৈর্ঘ্য \ncomp\n𝑢\n⃗\n(\n𝑣\n⃗\n)\n=\n𝑢\n⃗\n⋅\n𝑣\n⃗\n∥\n𝑢\n⃗\n∥\ncomp\nu\n\t​\n\n(\nv\n)=\n∥\nu\n∥\nu\n⋅\nv\n\t​\n\n — যখন \n𝑢\n⃗\nu\n একক ভেক্টর, তখন এটি সরাসরি \n𝑢\n⃗\n⋅\n𝑣\n⃗\nu\n⋅\nv\n।"
+        },
+        {
+          "type": "callout-green",
+          "text": "🌟 চূড়ান্ত সারসংক্ষেপ\n\nডট প্রোডাক্ট কোনো মুখস্থ সূত্র নয়; এটি হলো প্রজেকশনের জ্যামিতিক প্রক্রিয়াকে একটি একক সংখ্যার মাধ্যমে অনুবাদ করার সবচেয়ে বিশুদ্ধ উপায়।"
+        }
+      ]
+    }
+  ],
+  "engine": [
+    {
+      "id": "sec-01-linear-combinations",
+      "blockCount": 9,
+      "types": [
+        "h2",
+        "chapter-quote",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "callout",
+        "callout",
+        "callout"
+      ]
+    },
+    {
+      "id": "sec-02-multidim-to-1d",
+      "blockCount": 7,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "callout",
+        "callout"
+      ]
+    },
+    {
+      "id": "sec-03-duality-dot-product",
+      "blockCount": 7,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "callout",
+        "callout"
+      ]
+    },
+    {
+      "id": "sec-04-geometric-projection",
+      "blockCount": 7,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "callout",
+        "callout"
+      ]
+    }
+  ],
+  "manifestPresent": true,
+  "manifestKeys": [
+    "sec-01-linear-combinations",
+    "sec-02-multidim-to-1d",
+    "sec-03-duality-dot-product",
+    "sec-04-geometric-projection"
+  ],
+  "page_errors": [],
+  "console_errors": [
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND"
+  ]
+}

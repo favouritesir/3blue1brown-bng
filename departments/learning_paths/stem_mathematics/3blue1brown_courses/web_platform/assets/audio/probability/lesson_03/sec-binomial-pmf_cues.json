@@ -1,0 +1,58 @@
+[
+  {
+    "index": 0,
+    "type": "h2",
+    "text": "দ্বিপদী সম্ভাব্যতা ভর ফাংশন (Binomial পিএমএফ)",
+    "start_ms": 0.0,
+    "end_ms": 3936.0,
+    "duration_ms": 3936.0
+  },
+  {
+    "index": 1,
+    "type": "p",
+    "text": "দ্বিপদী বিন্যাস মূলত পথের সংখ্যা এবং একক পথের সম্ভাবনার গুণফল।",
+    "start_ms": 4286.0,
+    "end_ms": 9086.0,
+    "duration_ms": 4800.0
+  },
+  {
+    "index": 2,
+    "type": "p",
+    "text": "দ্বিপদী গড়ের মান n p, যা সাধারণ কাণ্ডজ্ঞানের সাথে সরাসরি মিলে যায়।",
+    "start_ms": 9436.0,
+    "end_ms": 14500.0,
+    "duration_ms": 5064.0
+  },
+  {
+    "index": 3,
+    "type": "p",
+    "text": "পরিমিত ব্যবধান \\sigma = \\sqrt{n p (1 p)} দ্বারা নির্ধারিত হয় চূড়াটি কতটা চওড়া হবে।",
+    "start_ms": 14850.0,
+    "end_ms": 20994.0,
+    "duration_ms": 6144.0
+  },
+  {
+    "index": 4,
+    "type": "formula-box",
+    "text": "দ্বিপদী সম্ভাব্যতা ভর ফাংশন (Binomial পিএমএফ): P(X = k) = \\binom{n}{k} p^k (1 p)^{n k}, \\qquad k \\in \\{0, 1, 2, \\dots, n\\}",
+    "start_ms": 21344.0,
+    "end_ms": 31808.0,
+    "duration_ms": 10464.0
+  },
+  {
+    "index": 5,
+    "type": "formula-box",
+    "text": "গাণিতিক প্রত্যাশা বা গড় (Mean): EX = \\mu = n \\cdot p",
+    "start_ms": 32158.0,
+    "end_ms": 36118.0,
+    "duration_ms": 3960.0
+  },
+  {
+    "index": 6,
+    "type": "formula-box",
+    "text": "ভেদাঙ্ক বা ভ্যারিয়্যান্স (Variance): \\text{Var}(X) = \\sigma^2 = n \\cdot p \\cdot (1 p)",
+    "start_ms": 36468.0,
+    "end_ms": 42804.0,
+    "duration_ms": 6336.0
+  }
+]

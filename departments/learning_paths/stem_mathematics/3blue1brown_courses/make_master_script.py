@@ -1,0 +1,566 @@
+# -*- coding: utf-8 -*-
+"""
+Builder for 3Blue1Brown Essence of Probability Lesson 04
+Master Script Data Generator
+"""
+
+import json
+from pathlib import Path
+
+BASE_DIR = Path("departments/learning_paths/stem_mathematics/3blue1brown_courses")
+MASTER_SCRIPT_PATH = (
+    BASE_DIR
+    / "essence_of_probability"
+    / "lesson_04_continuous_distributions"
+    / "dubbing_pipeline"
+    / "3b1b_prob_l04_bangla_master_script.json"
+)
+MASTER_SCRIPT_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+master_cues = [
+    {
+        "id": 1,
+        "start": 0.0,
+        "end": 7.2,
+        "duration": 7.2,
+        "en": "So far in this series, our random variables took distinct, countable values: coin tosses, rolling dice, or counting cards.",
+        "bn": "এই সিরিজের পূর্ববর্তী অধ্যায়গুলোতে আমাদের দৈব চলকগুলো ছিল পৃথক ও গণনাযোগ্য—যেমন মুদ্রার হেড-টেল, ছক্কার দান কিংবা তাসের সংখ্যা।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 2,
+        "start": 7.7,
+        "end": 15.4,
+        "duration": 7.7,
+        "en": "In that discrete world, every single outcome could claim a discrete chunk of probability mass—a probability mass function, or PMF.",
+        "bn": "সেই বিচ্ছিন্ন জগতে প্রতিটি সুনির্দিষ্ট ফলাফল নিজের জন্য কিছু নির্দিষ্ট সম্ভাব্যতা ভর দাবি করত, যাকে আমরা বলি প্রবাবিলিটি মাস ফাংশন বা পিএমএফ।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 3,
+        "start": 15.9,
+        "end": 23.8,
+        "duration": 7.9,
+        "en": "You could draw vertical bars whose heights directly represented the probability of that exact number occurring, summing neatly to one.",
+        "bn": "সেখানে প্রতিটি সম্ভাব্য মানের জন্য উলম্ব স্তম্ভ বা বার আঁকা যেত, যার উচ্চতাই সরাসরি সেই ফলাফল ঘটার সম্ভাবনা নির্দেশ করত এবং সবগুলোর যোগফল হতো ঠিক এক।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 4,
+        "start": 24.3,
+        "end": 32.5,
+        "duration": 8.2,
+        "en": "But physical reality rarely cooperates in discrete chunks. Think about a person's exact height, the speed of wind, or the precise time you wait for a bus.",
+        "bn": "কিন্তু বাস্তব ভৌত জগৎ সচরাচর বিচ্ছিন্ন সংখ্যায় সীমাবদ্ধ থাকে না। কোনো মানুষের নিখুঁত উচ্চতা, বাতাসের বেগ কিংবা বাস স্টপে অপেক্ষার সময়ের কথা ভাবুন।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 5,
+        "start": 33.0,
+        "end": 41.2,
+        "duration": 8.2,
+        "en": "These quantities don't jump in discrete steps; they flow smoothly along a continuum of real numbers with infinite decimal precision.",
+        "bn": "এই পরিমাপগুলো ধাপে ধাপে লাফিয়ে চলে না; বরং বাস্তব সংখ্যার এক অবিচ্ছিন্ন মসৃণ ধারা বেয়ে অসীম দশমিক সূক্ষ্মতায় প্রবাহিত হয়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 6,
+        "start": 41.7,
+        "end": 49.9,
+        "duration": 8.2,
+        "en": "And when you try to apply discrete probability to a continuum, your intuition instantly crashes into a mind-bending paradox.",
+        "bn": "আর যখনই আপনি অবিচ্ছিন্ন বাস্তবতায় বিচ্ছিন্ন সম্ভাবনার নিয়ম প্রয়োগ করতে যাবেন, তখনই আপনার চিন্তাভাবনা এক দারুণ ধাঁধার মুখোমুখি হবে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 7,
+        "start": 50.4,
+        "end": 58.1,
+        "duration": 7.7,
+        "en": "Consider this question: What is the probability that a randomly chosen person is exactly one hundred seventy-five centimeters tall?",
+        "bn": "একটি আপাত সহজ প্রশ্ন বিবেচনা করা যাক: দৈবভাবে নির্বাচিত একজন ব্যক্তির উচ্চতা অবিকল একশত পঁচাত্তর সেন্টিমিটার হওয়ার সম্ভাবনা কত?",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 8,
+        "start": 58.6,
+        "end": 66.8,
+        "duration": 8.2,
+        "en": "Not one hundred seventy-four point nine nine, but exactly one hundred seventy-five point zero zero zero with an infinite string of zeros.",
+        "bn": "একশত চুয়াত্তর দশমিক নয় নয় নয় নয় নয় নয় নয় নয় নয়, কিংবা একশত পঁচাত্তর দশমিক শূন্য শূন্য শূন্য এক নয়, বরং অবিকল একশত পঁচাত্তর দশমিক শূন্য শূন্য শূন্য সেন্টিমিটার—যার পর অসীম শূন্য!",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 9,
+        "start": 67.3,
+        "end": 75.8,
+        "duration": 8.5,
+        "en": "The answer, shocking as it sounds, is precisely zero. The probability of any single exact point on a continuum is zero.",
+        "bn": "উত্তরটি শুনতে যতই অদ্ভুত লাগুক না কেন, এর সম্ভাবনা গাণিতিকভাবে একদম নিখুঁত শূন্য! অবিচ্ছিন্ন রেখায় যেকোনো একক সুনির্দিষ্ট বিন্দুর সম্ভাবনা শূন্য।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 10,
+        "start": 76.3,
+        "end": 84.8,
+        "duration": 8.5,
+        "en": "Because between one hundred seventy and one hundred eighty centimeters, there are uncountably infinite possible exact heights.",
+        "bn": "কারণ একশত সত্তর থেকে একশত আশি সেন্টিমিটারের মধ্যবর্তী পরিসরেই অগণিত, অনন্ত কোটি বাস্তব বিন্দু বিদ্যমান।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 11,
+        "start": 85.3,
+        "end": 93.8,
+        "duration": 8.5,
+        "en": "If any single height had even the tiniest non-zero probability, summing infinitely many would blow up past one hundred percent.",
+        "bn": "যদি যেকোনো একটি নির্দিষ্ট উচ্চতার সম্ভাবনা সামান্যতমও ধনাত্মক হতো, তবে অসীম সংখ্যক বিন্দুর সম্ভাবনার যোগফল একশত শতাংশ ছাড়িয়ে অসীমে চলে যেত!",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 12,
+        "start": 94.3,
+        "end": 102.3,
+        "duration": 8.0,
+        "en": "Yet, someone certainly has a height! People exist! How can every point have probability zero, while the whole has probability one?",
+        "bn": "অথচ প্রতিটি মানুষেরই কোনো না কোনো বাস্তব উচ্চতা রয়েছে! তাহলে প্রতিটি একক বিন্দুর সম্ভাবনা শূন্য হওয়া সত্ত্বেও সমগ্রের সম্ভাবনা কীভাবে এক হয়?",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 13,
+        "start": 102.8,
+        "end": 111.5,
+        "duration": 8.7,
+        "en": "To resolve this paradox, physics offers the perfect analogy: the difference between total mass and mass density.",
+        "bn": "এই হেঁয়ালি বা প্যারাডক্সটি সমাধান করতে পদার্থবিজ্ঞান আমাদের সবচেয়ে চমৎকার রূপকটি উপহার দেয়: মোট ভর বনাম ভর ঘনত্বের পার্থক্য।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 14,
+        "start": 112.0,
+        "end": 120.3,
+        "duration": 8.3,
+        "en": "Think of a solid metal rod weighing one kilogram. What is the mass of a single mathematical point inside that rod?",
+        "bn": "এক কেজি ওজনের একটি নিখুঁত নিরেট ধাতব রডের কথা চিন্তা করুন। ওই রডের অভ্যন্তরে থাকা একটি একক জ্যামিতিক বিন্দুর ভর কত?",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 15,
+        "start": 120.8,
+        "end": 129.2,
+        "duration": 8.4,
+        "en": "A single point has zero volume, zero width, so its mass is zero. Yet, integrate density over the rod, and you get one kilogram.",
+        "bn": "একটি বিন্দুর কোনো আয়তন বা বেধ নেই, তাই তার ভর শূন্য। কিন্তু সমগ্র রডের দৈর্ঘ্য বরাবর ঘনত্বকে সমাকলন করলেই আপনি পেয়ে যান সেই এক কেজি ভর!",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 16,
+        "start": 129.7,
+        "end": 137.9,
+        "duration": 8.2,
+        "en": "In the exact same way, continuous probability replaces probability mass with probability density: f of x.",
+        "bn": "ঠিক একইভাবে, অবিচ্ছিন্ন সম্ভাব্যতা তত্ত্বে আমরা বিচ্ছিন্ন প্রবাবিলিটি মাসের পরিবর্তে পরিচয় করিয়ে দিই সম্ভাব্যতা ঘনত্ব বা প্রবাবিলিটি ডেনসিটি ফাংশন—এফ অব এক্স।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 17,
+        "start": 138.4,
+        "end": 146.5,
+        "duration": 8.1,
+        "en": "Imagine taking a histogram of heights with wide bins of width delta x. The height of each bar is the count divided by total samples.",
+        "bn": "কল্পনা করুন, আমরা ডেল্টা এক্স প্রস্থের প্রশস্ত বিন বা ঘর নিয়ে মানুষের উচ্চতার একটি হিস্টোগ্রাম স্তম্ভচিত্র তৈরি করলাম।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 18,
+        "start": 147.0,
+        "end": 155.5,
+        "duration": 8.5,
+        "en": "Now, shrink delta x smaller and smaller, while collecting millions of data points, and rescale the height by dividing by delta x.",
+        "bn": "এখন বিনের প্রস্থ ডেল্টা এক্স-কে ক্রমাগত ছোট করে শূন্যের কাছাকাছি নিয়ে যান এবং প্রতি বারের উচ্চতাকে ডেল্টা এক্স দিয়ে ভাগ করে পুনঃস্কেল করুন।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 19,
+        "start": 156.0,
+        "end": 164.2,
+        "duration": 8.2,
+        "en": "As delta x approaches zero, the jagged staircase of bars melts into a smooth, continuous curve. That curve is the PDF, f of x.",
+        "bn": "ডেল্টা এক্স যখন শূন্যের দিকে ধাবিত হয়, তখন খাঁজকাটা সিঁড়ির মতো স্তম্ভগুলো গলে গিয়ে এক মসৃণ বক্ররেখায় রূপ নেয়। এই বক্ররেখাটিই হলো পিডিএফ বা এফ অব এক্স।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 20,
+        "start": 164.7,
+        "end": 172.8,
+        "duration": 8.1,
+        "en": "Crucially, the vertical height f of x is not a probability! It has units of probability per unit of x.",
+        "bn": "এখানে অত্যন্ত গুরুত্বপূর্ণ বিষয় হলো: বক্ররেখার উলম্ব উচ্চতা এফ অব এক্স কিন্তু কোনো সম্ভাব্যতা নয়! এটি হলো প্রতি একক দৈর্ঘ্যের সম্ভাব্যতা ঘনত্ব।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 21,
+        "start": 173.3,
+        "end": 181.5,
+        "duration": 8.2,
+        "en": "In fact, f of x can easily be greater than one. For a uniform distribution between zero and one-half, the height is exactly two!",
+        "bn": "প্রকৃতপক্ষে, এফ অব এক্স-এর মান একের চেয়েও বড় হতে পারে! উদাহরণস্বরূপ, শূন্য থেকে শূন্য দশমিক পাঁচ ব্যবধানে সুষম বিস্তারের উচ্চতা হয় ঠিক দুই!",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 22,
+        "start": 182.0,
+        "end": 190.5,
+        "duration": 8.5,
+        "en": "To convert density back into probability, you must multiply by an interval width: density times width equals area.",
+        "bn": "ঘনত্বকে পুনরায় সম্ভাব্যতায় রূপান্তর করতে হলে তাকে একটি ব্যবধানের প্রস্থ দিয়ে গুণ করতে হয়: ঘনত্ব গুণ প্রস্থ সমান ক্ষেত্রফল।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 23,
+        "start": 191.0,
+        "end": 199.5,
+        "duration": 8.5,
+        "en": "For an infinitesimally tiny sliver dx, the probability of falling between x and x plus dx is approximately f of x times dx.",
+        "bn": "অতি ক্ষুদ্র ব্যবধান ডিএক্স-এর জন্য এক্স থেকে এক্স প্লাস ডিএক্স-এর মধ্যে ফলাফল পড়ার সম্ভাবনা হলো আনুমানিকভাবে এফ অব এক্স গুণ ডিএক্স।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 24,
+        "start": 200.0,
+        "end": 208.5,
+        "duration": 8.5,
+        "en": "And to find the probability of falling anywhere within a finite interval from a to b, we add up all those infinitely thin slices.",
+        "bn": "আর এ থেকে বি পর্যন্ত যেকোনো সসীম ব্যবধানে ফলাফল থাকার সম্ভাবনা বের করতে আমরা এই সবকটি অতি পাতলা ফালির যোগফল গ্রহণ করি।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 25,
+        "start": 209.0,
+        "end": 217.5,
+        "duration": 8.5,
+        "en": "In calculus, an infinite sum of infinitesimal slices is none other than a definite integral: the integral from a to b of f of x dx.",
+        "bn": "ক্যালকুলাসের ভাষায় অতি ক্ষুদ্র ফালির অসীম যোগফল আর কিছুই নয়—একটি নির্দিষ্ট যোগজ বা ডেফিনিট ইন্টিগ্রাল: ইন্টিগ্রাল এ থেকে বি এফ অব এক্স ডিএক্স।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 26,
+        "start": 218.0,
+        "end": 226.5,
+        "duration": 8.5,
+        "en": "This is the core insight of continuous probability: Probability is area under the curve! Not height, but area.",
+        "bn": "এটাই হলো অবিচ্ছিন্ন সম্ভাবনার সবচেয়ে মৌলিক অন্তর্দৃষ্টি: সম্ভাব্যতা মানেই বক্ররেখার নিচের ক্ষেত্রফল! কোনো উচ্চতা নয়, বরং ক্ষেত্রফল।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 27,
+        "start": 227.0,
+        "end": 235.3,
+        "duration": 8.3,
+        "en": "Now you see immediately why the probability of a single point is zero! The integral from c to c of f of x dx has width zero, so area is zero.",
+        "bn": "এবার চোখের সামনে স্পষ্ট ধরা দেয় কেন একক বিন্দুর সম্ভাবনা শূন্য! সি থেকে সি পর্যন্ত ইন্টিগ্রালের প্রস্থ শূন্য, ফলে তার ক্ষেত্রফলও অবধারিতভাবে শূন্য।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 28,
+        "start": 235.8,
+        "end": 244.0,
+        "duration": 8.2,
+        "en": "A line segment has length, but an isolated point on it has zero length. Yet countless zero-length points compose that entire segment.",
+        "bn": "একটি রেখাংশের সুনির্দিষ্ট দৈর্ঘ্য থাকে, কিন্তু তার ওপরের প্রতিটি পৃথক বিন্দুর দৈর্ঘ্য শূন্য। অথচ এই শূন্য দৈর্ঘ্যের বিন্দুদের মিলেই পুরো রেখাটি গঠিত!",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 29,
+        "start": 244.5,
+        "end": 252.5,
+        "duration": 8.0,
+        "en": "Just as with discrete probability where total probability sums to one, a valid PDF must obey two non-negotiable rules.",
+        "bn": "বিচ্ছিন্ন সম্ভাবনার মতো এখানেও একটি বৈধ সম্ভাবনা ঘনত্ব ফাংশন বা পিডিএফ-কে দুটি অলঙ্ঘনীয় নিয়ম মেনে চলতে হয়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 30,
+        "start": 253.0,
+        "end": 261.2,
+        "duration": 8.2,
+        "en": "First, the density f of x must never be negative anywhere. Probabilities can never be less than zero, so f of x is greater than or equal to zero.",
+        "bn": "প্রথমত, ঘনত্বের মান কোথাও ঋণাত্মক হতে পারবে না। যেহেতু সম্ভাব্যতা কখনো শূন্যের কম হয় না, তাই এফ অব এক্স সর্বদা শূন্য বা তার চেয়ে বড় হবে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 31,
+        "start": 261.7,
+        "end": 270.5,
+        "duration": 8.8,
+        "en": "Second, the total area under the entire curve, from negative infinity to positive infinity, must equal exactly one: one hundred percent.",
+        "bn": "দ্বিতীয়ত, সমগ্র বক্ররেখার নিচের মোট ক্ষেত্রফল—মাইনাস ইনফিনিটি থেকে প্লাস ইনফিনিটি পর্যন্ত—ঠিক এক বা একশত শতাংশের সমান হতে হবে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 32,
+        "start": 271.0,
+        "end": 279.5,
+        "duration": 8.5,
+        "en": "Closely paired with the PDF is another powerful tool: the Cumulative Distribution Function, capital F of x, or CDF.",
+        "bn": "পিডিএফ-এর পাশাপাশি আরেকটি অত্যন্ত শক্তিশালী গাণিতিক হাতিয়ার হলো ক্রমযোজিত বিন্যাস ফাংশন বা সিডিএফ, যাকে ক্যাপিটাল এফ অব এক্স লেখা হয়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 33,
+        "start": 280.0,
+        "end": 288.5,
+        "duration": 8.5,
+        "en": "Capital F of x simply measures the accumulated area under the PDF all the way from negative infinity up to the point x.",
+        "bn": "ক্যাপিটাল এফ অব এক্স মূলত মাইনাস ইনফিনিটি থেকে শুরু করে এক্স বিন্দু পর্যন্ত পিডিএফ-এর নিচে সঞ্চিত মোট ক্ষেত্রফল পরিমাপ করে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 34,
+        "start": 289.0,
+        "end": 297.8,
+        "duration": 8.8,
+        "en": "By the Fundamental Theorem of Calculus, the derivative of the CDF gives you back the PDF: the slope of accumulation is the density itself!",
+        "bn": "ক্যালকুলাসের মৌলিক উপপাদ্য অনুসারে, সিডিএফ-এর অন্তরজ বা ডেরিভেটিভ নিলে আপনি সরাসরি পিডিএফ ফিরে পান: ক্ষেত্রফল সঞ্চয়ের ঢালই হলো ঘনত্ব!",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 35,
+        "start": 298.3,
+        "end": 306.8,
+        "duration": 8.5,
+        "en": "Now, let's explore the king of all continuous distributions: the Normal distribution, famously known as the Gaussian bell curve.",
+        "bn": "এবার আসুন অবিচ্ছিন্ন সম্ভাবনার সম্রাট—নরমাল ডিস্ট্রিবিউশন বা বিখ্যাত গাউসিয়ান বেল কার্ভের অপরূপ রূপটি প্রত্যক্ষ করি।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 36,
+        "start": 307.3,
+        "end": 315.8,
+        "duration": 8.5,
+        "en": "Its formula looks intimidating at first glance: one over sigma root two pi times e to the power negative x minus mu squared over two sigma squared.",
+        "bn": "প্রথম দেখায় এর সূত্রটি বেশ জটিল মনে হতে পারে: ওয়ান বাই সিগমা রুট টু পাই ইনটু ই টু দ্য পাওয়ার মাইনাস এক্স মাইনাস মিউ হোল স্কোয়ার বাই টু সিগমা স্কোয়ার।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 37,
+        "start": 316.3,
+        "end": 324.8,
+        "duration": 8.5,
+        "en": "Here, mu is the center or mean of the bell curve, and sigma is the standard deviation, controlling how wide or peaked the bell spreads.",
+        "bn": "এখানে মিউ হলো ঘণ্টার কেন্দ্র বা গড় মান, আর সিগমা হলো পরিমিত ব্যবধান বা স্ট্যান্ডার্ড ডেভিয়েশন, যা নিয়ন্ত্রণ করে ঘণ্টাটি কতটা চওড়া বা খাড়া হবে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 38,
+        "start": 325.3,
+        "end": 333.8,
+        "duration": 8.5,
+        "en": "The factor of one over sigma root two pi is simply the normalization constant ensuring that the total area under this curve integrates to exactly one.",
+        "bn": "আর সামনের ওয়ান বাই সিগমা রুট টু পাই হলো একটি বিশুদ্ধ নরমালাইজিং ধ্রুবক, যা নিশ্চিত করে যে বক্ররেখার নিচের মোট ক্ষেত্রফল যেন ঠিক এক হয়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 39,
+        "start": 334.3,
+        "end": 343.0,
+        "duration": 8.7,
+        "en": "Why does this specific bell curve appear everywhere in the universe? In test scores, measurement errors, gas molecule velocities, and financial noise?",
+        "bn": "কেন এই বিশেষ বেল কার্ভটি মহাবিশ্বের সর্বত্র দেখা যায়? পরীক্ষার নম্বর, পরিমাপের ত্রুটি, গ্যাসের অণুর বেগ থেকে শুরু করে আর্থিক বাজারের ওঠানামায়?",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 40,
+        "start": 343.5,
+        "end": 352.3,
+        "duration": 8.8,
+        "en": "The secret is one of the deepest truths in all of mathematics: the Central Limit Theorem, or CLT.",
+        "bn": "এর পেছনের গোপন রহস্যটি হলো গোটা গণিতজগতের অন্যতম গভীরতম সত্য: সেন্ট্রাল লিমিট থিওরেম বা কেন্দ্রীয় সীমা উপপাদ্য।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 41,
+        "start": 352.8,
+        "end": 361.6,
+        "duration": 8.8,
+        "en": "The theorem states that when you add together many independent random variables—no matter what bizarre distribution they started from—their sum approaches a Normal bell curve!",
+        "bn": "উপপাদ্যটি বলছে: আপনি যখন অনেকগুলো স্বাধীন দৈব চলককে একত্রে যোগ করবেন—তাদের নিজস্ব বিস্তার যতই অদ্ভুত বা অসদৃশ হোক না কেন—তাদের সামগ্রিক যোগফল অবধারিতভাবে একটি নিখুঁত নরমাল বেল কার্ভে রূপ নেবে!",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 42,
+        "start": 362.1,
+        "end": 370.8,
+        "duration": 8.7,
+        "en": "Roll a single fair die: the distribution is completely flat and uniform. Roll two dice and add them: you get a triangle.",
+        "bn": "একটি নিরপেক্ষ ছক্কা ফেললে বিস্তারটি সম্পূর্ণ সমতল ও সুষম। দুটি ছক্কা ফেলে যোগ করলে পাবেন একটি ত্রিভুজাকার চূড়া।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 43,
+        "start": 371.3,
+        "end": 380.0,
+        "duration": 8.7,
+        "en": "Roll ten dice, or drop thousands of ball bearings through a Galton board, and like magic, the smooth, majestic Gaussian bell curve emerges.",
+        "bn": "কিন্তু দশটি ছক্কার সমষ্টি নিন, কিংবা গ্যালটন বোর্ডের পিন বেয়ে হাজার হাজার মার্বেল ফেলুন—জাদুর মতো ফুটে উঠবে সেই চিরচেনা রাজকীয় গাউসিয়ান বেল কার্ভ।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 44,
+        "start": 380.5,
+        "end": 389.2,
+        "duration": 8.7,
+        "en": "So remember: in the discrete realm, probability is counting and bar heights. In the continuous realm, probability is geometry and calculus.",
+        "bn": "সুতরাং মনে রাখবেন: বিচ্ছিন্ন জগতে সম্ভাব্যতা হলো গণনা এবং স্তম্ভের উচ্চতা। আর অবিচ্ছিন্ন জগতে সম্ভাব্যতা হলো জ্যামিতি এবং ক্যালকুলাসের ক্ষেত্রফল।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 45,
+        "start": 389.7,
+        "end": 398.8,
+        "duration": 9.1,
+        "en": "Density tells you where probability tends to concentrate, and integration under that density curve reveals the true chances of our continuous universe.",
+        "bn": "ঘনত্ব আমাদের জানিয়ে দেয় সম্ভাবনা কোথায় বেশি পুঞ্জীভূত হচ্ছে, আর সেই ঘনত্বের নিচে সমাকলনই আমাদের উন্মোচন করে দেয় অবিচ্ছিন্ন মহাবিশ্বের নিখুঁত সম্ভাবনা।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    }
+]
+
+with open(MASTER_SCRIPT_PATH, "w", encoding="utf-8") as f:
+    json.dump(master_cues, f, ensure_ascii=False, indent=2)
+
+print(f"Master script written: {len(master_cues)} cues.")

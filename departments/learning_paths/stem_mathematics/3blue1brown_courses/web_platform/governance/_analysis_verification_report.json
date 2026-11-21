@@ -1,0 +1,92 @@
+[
+  {
+    "lesson": "lesson_01",
+    "cues": 27,
+    "duration_s": 447.18,
+    "figures": 4,
+    "sections": 4,
+    "errors": [],
+    "ok": true
+  },
+  {
+    "lesson": "lesson_02",
+    "cues": 22,
+    "duration_s": 308.94,
+    "figures": 4,
+    "sections": 4,
+    "errors": [],
+    "ok": true
+  },
+  {
+    "lesson": "lesson_03",
+    "cues": 24,
+    "duration_s": 342.06,
+    "figures": 4,
+    "sections": 4,
+    "errors": [],
+    "ok": true
+  },
+  {
+    "lesson": "lesson_04",
+    "cues": 21,
+    "duration_s": 286.58,
+    "figures": 3,
+    "sections": 4,
+    "errors": [],
+    "ok": true
+  },
+  {
+    "lesson": "lesson_05",
+    "cues": 23,
+    "duration_s": 347.83,
+    "figures": 4,
+    "sections": 4,
+    "errors": [],
+    "ok": true
+  },
+  {
+    "lesson": "lesson_06",
+    "cues": 23,
+    "duration_s": 329.28,
+    "figures": 3,
+    "sections": 4,
+    "errors": [],
+    "ok": true
+  },
+  {
+    "lesson": "lesson_07",
+    "cues": 22,
+    "duration_s": 303.16,
+    "figures": 3,
+    "sections": 4,
+    "errors": [],
+    "ok": true
+  },
+  {
+    "lesson": "lesson_08",
+    "cues": 20,
+    "duration_s": 287.46,
+    "figures": 4,
+    "sections": 4,
+    "errors": [],
+    "ok": true
+  },
+  {
+    "lesson": "lesson_09",
+    "cues": 21,
+    "duration_s": 309.41,
+    "figures": 3,
+    "sections": 4,
+    "errors": [],
+    "ok": true
+  },
+  {
+    "lesson": "lesson_10",
+    "cues": 21,
+    "duration_s": 287.88,
+    "figures": 3,
+    "sections": 4,
+    "errors": [],
+    "ok": true
+  }
+]

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>কনভোলিউশন আসলে কী? | But what is a convolution?</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/analysis/lesson_07/manifest.js?v=8"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="বিশ্লেষণ"
+  course-url="../../index.html#analysis"
+  home-url="../../index.html"
+  chapter-num="০৭"
+  chapter-total="১০"
+  prev-url="lesson_06.html"
+  prev-title="পূর্ববর্তী অধ্যায়: গবেষকরা ভাবলেন এটা বাগ — বোরওয়েইন ইন্টিগ্রাল"
+  next-url="lesson_08.html"
+  next-title="পরবর্তী অধ্যায়: ওয়াইন্ডিং নম্বর ও ডোমেইন কালারিং"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="বিশ্লেষণ"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৭ · বিশ্লেষণ"
+  title="কনভোলিউশন আসলে কী? | But what is a convolution?"
+  desc="দুই পাশার যোগফল থেকে ছবির ঝাপসা করা — একই গাণিতিক ক্রিয়ার তিন রূপ"
+  video-src="../../media_vault/analysis/lesson_07/experiments/3b1b_analysis_07_full_dubbed.mp4"
+  yt-id="KuXjwB4LzSA"
+  date="১৮ নভেম্বর, ২০২২"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://www.3blue1brown.com/lessons/convolutions"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">দুই পাশার যোগফল</b1b-bookmark>
+      <b1b-bookmark time="91" time-bn="০১:৩১">স্লাইডিং উইন্ডো ও মুভিং এভারেজ</b1b-bookmark>
+      <b1b-bookmark time="174" time-bn="০২:৫৪">ছবিতে কনভোলিউশন</b1b-bookmark>
+      <b1b-bookmark time="234" time-bn="০৩:৫৪">ফুরিয়ার ট্রান্সফর্মের সাথে সংযোগ</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-conv-dice">দুই পাশার যোগফল</a>
+      <a href="#sec-conv-slide">স্লাইডিং উইন্ডো ও মুভিং এভারেজ</a>
+      <a href="#sec-conv-image">ছবিতে কনভোলিউশন</a>
+      <a href="#sec-conv-fourier">ফুরিয়ার ট্রান্সফর্মের সাথে সংযোগ</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ দুই পাশার যোগফল ═══ -->
+      <b1b-section id="sec-conv-dice" title="দুই পাশার যোগফল">
+        <b1b-quote author="Grant Sanderson">কনভোলিউশন দেখা যায় সম্ভাবনা, ছবি প্রক্রিয়াকরণ ও দ্রুত ফুরিয়ার রূপান্তরে।</b1b-quote>
+        <p>ধরুন দুটি পাশা ছুঁড়লাম। ৭ পড়ার কতটা সম্ভাবনা? পাশা দুটির ফলাফল $(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)$ — ছটি উপায়। ২ পড়ার কেবল একটিমাত্র উপায় $(1,1)$। তাই ৭-এর চেয়ে ২ অনেক কম সম্ভাব্য।</p>
+        <b1b-figure src="../../assets/figures/an_07/fig_07_01.svg" alt="দুই পাশার যোগফলের সম্ভাবনা বণ্টন — ৭-তে সবচেয়ে বড় চূড়া" caption="দুই পাশার যোগফলের সম্ভাবনা বণ্টন — ৭-তে সবচেয়ে বড় চূড়া"></b1b-figure>
+        <p>এই হিসাবের ভেতরেই কনভোলিউশন লুকিয়ে আছে। প্রথম পাশার সম্ভাবনা বণ্টন $f$, দ্বিতীয়টির $g$। $(f*g)(n)$ মানে: $i+j=n$ এমন সব উপায়ের $f(i)g(j)$ যোগ — অর্থাৎ «কত ভাবে এই যোগফল তৈরি হতে পারে»।</p>
+        <b1b-formula math="(f*g)(n)=\sum_{i+j=n} f(i)\,g(j)"></b1b-formula>
+        <b1b-callout type="blue" icon="📐" title="নাম কেন «কনভোলিউশন»?">
+          <p>ইংরেজি convolute মানে «একসাথে পেঁচানো»। দুটি ফাংশনকে একটির ওপর দিয়ে সরিয়ে সরিয়ে গুণ করে যোগ করার এই প্রক্রিয়া আসলে ঠিক তাই — দুই আকারকে পেঁচিয়ে একটি নতুন আকার তৈরি করা।</p>
+        </b1b-callout>
+
+        <!-- Quiz quiz-conv-dice -->
+        <b1b-quiz
+          question="❓ দুটি পাশা ছুঁড়লে যোগফল ৭ পড়ার কতটি উপায় আছে?"
+          correct="2"
+          correct-msg="ঠিক! $(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)$ — ছয়টি উপায়, তাই ৭-ই সবচেয়ে সম্ভাব্য যোগফল।"
+          wrong-msg="সব জোড়া গণনা করুন: প্রথম পাশা ১ হলে দ্বিতীয় ৬, ২ হলে ৫ ... এইভাবে ছয়টি।"
+          reveal-msg="সঠিক উত্তর: ছয়টি।">
+          <div slot="option">একটি</div>
+          <div slot="option">তিনটি</div>
+          <div slot="option">ছয়টি</div>
+          <div slot="option">বারোটি</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ স্লাইডিং উইন্ডো ও মুভিং এভারেজ ═══ -->
+      <b1b-section id="sec-conv-slide" title="স্লাইডিং উইন্ডো ও মুভিং এভারেজ">
+        <p>একটি সময়-সংকেত নিন। এর «মুভিং এভারেজ» বের করতে চাই — প্রতিটি বিন্দুতে তার আশেপাশের কয়েকটি মানের গড়। এটি করার এক উপায়: একটি ছোট «কার্নেল» ফাংশন বানান, যার মান ওই জানালার ভেতরে $\frac{1}{2k+1}$ আর বাইরে ০। তারপর সেটিকে সংকেতের ওপর সরাতে সরাতে গুণ করে যোগ করুন।</p>
+        <b1b-figure src="../../assets/figures/an_07/fig_07_02.svg" alt="একটি ছোট কার্নেল সংকেতের ওপর সরে গিয়ে মসৃণ গ্রাফ তৈরি করছে" caption="একটি ছোট কার্নেল সংকেতের ওপর সরে গিয়ে মসৃণ গ্রাফ তৈরি করছে"></b1b-figure>
+        <b1b-formula math="(f*g)(t)=\int f(\tau)\,g(t-\tau)\,d\tau"></b1b-formula>
+        <p>এখানে $g(t-\tau)$ মানে কার্নেলটিকে উল্টে $t$ পর্যন্ত সরানো। «উল্টে» দেওয়ার কারণে যোগফলের কনভোলিউশন আর এই সরণ-ভিত্তিক কনভোলিউশন একই সূত্রের দুই রূপ। প্রতিটি $t$-তে ফলাফল হলো আশেপাশের মানগুলোর ভারযুক্ত গড়।</p>
+        <b1b-callout type="gold" icon="📌" title="সংকেত প্রক্রিয়াকরণে">
+          <p>এই একটিমাত্র ক্রিয়া দিয়ে গ্রাফ মসৃণ করা, শব্দ কমানো, প্রান্ত (edge) খোঁজা — সবই করা যায়। শুধু কার্নেলের আকার বদলালেই কাজ বদলে যায়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ ছবিতে কনভোলিউশন ═══ -->
+      <b1b-section id="sec-conv-image" title="ছবিতে কনভোলিউশন">
+        <p>একটি ছবি মূলত পিক্সেলের একটি গ্রিড — দ্বিমাত্রিক ফাংশন $I(x,y)$। ছবি ঝাপসা (blur) করতে একটি ছোট $3\times3$ বা $5\times5$ কার্নেল ব্যবহার করা হয়; প্রতিটি পিক্সেলে নতুন মান হয় তার প্রতিবেশী পিক্সেলগুলোর ভারযুক্ত গড়।</p>
+        <b1b-figure src="../../assets/figures/an_07/fig_07_03.svg" alt="একটি ছোট পিক্সেল-গ্রিডে কার্নেল প্রয়োগ — তীক্ষ্ণ ছবি থেকে মসৃণ ছবি" caption="একটি ছোট পিক্সেল-গ্রিডে কার্নেল প্রয়োগ — তীক্ষ্ণ ছবি থেকে মসৃণ ছবি"></b1b-figure>
+        <p>অন্য একটি জনপ্রিয় কার্নেলকে বলে Sobel operator — এটি প্রতিবেশী পিক্সেলের মাঝের পার্থক্য বের করে, ফলে যেসব জায়গায় রং দ্রুত বদলায় (অর্থাৎ প্রান্ত) সেখানে উজ্জ্বল রেখা দেখা যায়। একই কনভোলিউশন, শুধু কার্নেলের মান ইতিবাচকের বদলে কিছু ঋণাত্মক।</p>
+      </b1b-section>
+
+      <!-- ═══ ফুরিয়ার ট্রান্সফর্মের সাথে সংযোগ ═══ -->
+      <b1b-section id="sec-conv-fourier" title="ফুরিয়ার ট্রান্সফর্মের সাথে সংযোগ">
+        <p>এখন সবচেয়ে সুন্দর অংশ। ফুরিয়ার ট্রান্সফর্মের এক বিখ্যাত বৈশিষ্ট্য হলো: দুটি ফাংশনের কনভোলিউশনের ফুরিয়ার রূপ হয় তাদের ফুরিয়ার রূপদ্বয়ের বিন্দুভিত্তিক গুণফল। অর্থাৎ $\widehat{f*g}=\hat f\cdot\hat g$।</p>
+        <b1b-formula math="\mathcal{F}\{f*g\}=\mathcal{F}\{f\}\cdot\mathcal{F}\{g\}"></b1b-formula>
+        <b1b-callout type="green" icon="🌟" title="কেন এত গুরুত্বপূর্ণ?">
+          <p>সরাসরি কনভোলিউশন হিসাব করা ব্যয়বহুল — প্রতিটি পিক্সেলের জন্য অনেকগুলো গুণ-যোগ। কিন্তু ফুরিয়ার-ডোমেইনে গিয়ে শুধু গুণ করলেই চলে, তারপর বিপরীত রূপান্তর। দ্রুত ফুরিয়ার ট্রান্সফর্ম (FFT) ব্যবহার করে এই পদ্ধতি «ফাস্ট কনভোলিউশন» নামে পরিচিত — আজকালের অডিও, ভিডিও ও ছবি প্রক্রিয়াকরণের বেশিরভাগ কাজ এর ওপরেই নির্ভরশীল।</p>
+        </b1b-callout>
+        <p>সম্ভাবনা, ছবির প্রান্ত-শোধন, শব্দের প্রতিধ্বনি — আলাদা মনে হওয়া এই বিষয়গুলো আসলে একই গাণিতিক ক্রিয়ারই বিভিন্ন মুখ। সেই একতা দেখাই কনভোলিউশন অধ্যয়নের সবচেয়ে বড় পুরস্কার।</p>
+
+        <!-- Quiz quiz-conv-ft -->
+        <b1b-quiz
+          question="❓ দুটি ফাংশনের কনভোলিউশনের ফুরিয়ার রূপ কী?"
+          correct="1"
+          correct-msg="হ্যাঁ! $\mathcal{F}\{f*g\}=\hat f\cdot\hat g$ — ডোমেইন বদলালে কনভোলিউশন হয়ে যায় সাধারণ গুণ, আর এটিই FFT-ভিত্তিক দ্রুত অ্যালগরিদমের ভিত্তি।"
+          wrong-msg="মনে রাখবেন: কনভোলিউশন $\leftrightarrow$ গুণফল; গুণফল $\leftrightarrow$ কনভোলিউশন।"
+          reveal-msg="সঠিক উত্তর: ফুরিয়ার রূপদ্বয়ের গুণফল।">
+          <div slot="option">ফুরিয়ার রূপদ্বয়ের যোগফল</div>
+          <div slot="option">ফুরিয়ার রূপদ্বয়ের গুণফল</div>
+          <div slot="option">ফুরিয়ার রূপদ্বয়ের ভাগফল</div>
+          <div slot="option">আবার কনভোলিউশন</div>
+        </b1b-quiz>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/analysis/lesson_07/experiments/3b1b_analysis_07_full_dubbed.mp4"
+    yt-id="KuXjwB4LzSA"
+    title="কনভোলিউশন আসলে কী? — অধ্যায় ০৭"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — বিশ্লেষণ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_06.html"
+  prev-title="গবেষকরা ভাবলেন এটা বাগ — বোরওয়েইন ইন্টিগ্রাল"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_08.html"
+  next-title="ওয়াইন্ডিং নম্বর ও ডোমেইন কালারিং"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

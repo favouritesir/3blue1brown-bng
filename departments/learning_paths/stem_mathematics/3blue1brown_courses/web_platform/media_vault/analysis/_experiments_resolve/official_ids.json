@@ -1,0 +1,122 @@
+[
+  {
+    "lesson": "lesson_01",
+    "slug": "zeta",
+    "official_url": "https://www.3blue1brown.com/lessons/zeta",
+    "videoobject_title": "Visualizing the Riemann zeta function and analytic continuation",
+    "embed_url": "https://www.youtube.com/embed/sD0NjbwqlYw",
+    "video_id": "sD0NjbwqlYw",
+    "youtube_url": "https://www.youtube.com/watch?v=sD0NjbwqlYw",
+    "oembed_author": "3Blue1Brown",
+    "oembed_title": "But what is the Riemann zeta function? Visualizing analytic continuation",
+    "author_verified": true
+  },
+  {
+    "lesson": "lesson_02",
+    "slug": "print-gallery",
+    "official_url": "https://www.3blue1brown.com/lessons/print-gallery",
+    "videoobject_title": "How (and why) to take a logarithm of an image",
+    "embed_url": "https://www.youtube.com/embed/ldxFjLJ3rVY",
+    "video_id": "ldxFjLJ3rVY",
+    "youtube_url": "https://www.youtube.com/watch?v=ldxFjLJ3rVY",
+    "oembed_author": "3Blue1Brown",
+    "oembed_title": "How (and why) to take a logarithm of an image",
+    "author_verified": true
+  },
+  {
+    "lesson": "lesson_03",
+    "slug": "fourier-transforms",
+    "official_url": "https://www.3blue1brown.com/lessons/fourier-transforms",
+    "videoobject_title": "But what is the Fourier Transform?  A visual introduction.",
+    "embed_url": "https://www.youtube.com/embed/spUNpyF58BY",
+    "video_id": "spUNpyF58BY",
+    "youtube_url": "https://www.youtube.com/watch?v=spUNpyF58BY",
+    "oembed_author": "3Blue1Brown",
+    "oembed_title": "But what is the Fourier Transform?  A visual introduction.",
+    "author_verified": true
+  },
+  {
+    "lesson": "lesson_04",
+    "slug": "uncertainty-principle",
+    "official_url": "https://www.3blue1brown.com/lessons/uncertainty-principle",
+    "videoobject_title": "The more general uncertainty principle, beyond quantum",
+    "embed_url": "https://www.youtube.com/embed/MBnnXbOM5S4",
+    "video_id": "MBnnXbOM5S4",
+    "youtube_url": "https://www.youtube.com/watch?v=MBnnXbOM5S4",
+    "oembed_author": "3Blue1Brown",
+    "oembed_title": "The more general uncertainty principle, regarding Fourier transforms",
+    "author_verified": true
+  },
+  {
+    "lesson": "lesson_05",
+    "slug": "fourier-series",
+    "official_url": "https://www.3blue1brown.com/lessons/fourier-series",
+    "videoobject_title": "But what is a Fourier series? From heat flow to circle drawings",
+    "embed_url": "https://www.youtube.com/embed/r6sGWTCMz2k",
+    "video_id": "r6sGWTCMz2k",
+    "youtube_url": "https://www.youtube.com/watch?v=r6sGWTCMz2k",
+    "oembed_author": "3Blue1Brown",
+    "oembed_title": "But what is a Fourier series?  From heat flow to drawing with circles | DE4",
+    "author_verified": true
+  },
+  {
+    "lesson": "lesson_06",
+    "slug": "borwein",
+    "official_url": "https://www.3blue1brown.com/lessons/borwein",
+    "videoobject_title": "Researchers thought this was a bug (Borwein integrals)",
+    "embed_url": "https://www.youtube.com/embed/851U557j6HE",
+    "video_id": "851U557j6HE",
+    "youtube_url": "https://www.youtube.com/watch?v=851U557j6HE",
+    "oembed_author": "3Blue1Brown",
+    "oembed_title": "Researchers thought this was a bug (Borwein integrals)",
+    "author_verified": true
+  },
+  {
+    "lesson": "lesson_07",
+    "slug": "convolutions",
+    "official_url": "https://www.3blue1brown.com/lessons/convolutions",
+    "videoobject_title": "But what is a convolution?",
+    "embed_url": "https://www.youtube.com/embed/KuXjwB4LzSA",
+    "video_id": "KuXjwB4LzSA",
+    "youtube_url": "https://www.youtube.com/watch?v=KuXjwB4LzSA",
+    "oembed_author": "3Blue1Brown",
+    "oembed_title": "But what is a convolution?",
+    "author_verified": true
+  },
+  {
+    "lesson": "lesson_08",
+    "slug": "winding-numbers",
+    "official_url": "https://www.3blue1brown.com/lessons/winding-numbers",
+    "videoobject_title": "Winding numbers and domain coloring",
+    "embed_url": "https://www.youtube.com/embed/b7FxPsqfkOY",
+    "video_id": "b7FxPsqfkOY",
+    "youtube_url": "https://www.youtube.com/watch?v=b7FxPsqfkOY",
+    "oembed_author": "3Blue1Brown",
+    "oembed_title": "Winding numbers and domain coloring",
+    "author_verified": true
+  },
+  {
+    "lesson": "lesson_09",
+    "slug": "inventing-math",
+    "official_url": "https://www.3blue1brown.com/lessons/inventing-math",
+    "videoobject_title": "What does it feel like to invent math?",
+    "embed_url": "https://www.youtube.com/embed/XFDM1ip5HdU",
+    "video_id": "XFDM1ip5HdU",
+    "youtube_url": "https://www.youtube.com/watch?v=XFDM1ip5HdU",
+    "oembed_author": "3Blue1Brown",
+    "oembed_title": "What does it feel like to invent math?",
+    "author_verified": true
+  },
+  {
+    "lesson": "lesson_10",
+    "slug": "music-and-measure-theory",
+    "official_url": "https://www.3blue1brown.com/lessons/music-and-measure-theory",
+    "videoobject_title": "Music And Measure Theory",
+    "embed_url": "https://www.youtube.com/embed/cyW5z-M2yzw",
+    "video_id": "cyW5z-M2yzw",
+    "youtube_url": "https://www.youtube.com/watch?v=cyW5z-M2yzw",
+    "oembed_author": "3Blue1Brown",
+    "oembed_title": "Music And Measure Theory",
+    "author_verified": true
+  }
+]

@@ -1,0 +1,82 @@
+{
+  "lesson": "lesson_02",
+  "video_id": "mvmuCPvRoWQ",
+  "official_url": "https://www.3blue1brown.com/lessons/eulers-formula-via-group-theory",
+  "oembed_author": "3Blue1Brown",
+  "oembed_title": "Euler's formula with introductory group theory",
+  "oembed_confirms_3b1b": true,
+  "original_path": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\group_theory\\lesson_02\\original_source\\full_original.mp4",
+  "output_path": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\group_theory\\lesson_02\\experiments\\3b1b_group_theory_02_full_dubbed.mp4",
+  "original_duration_sec": 1467.501134,
+  "output_duration_sec": 1467.432313,
+  "duration_delta_sec": -0.069,
+  "duration_match": true,
+  "output_size_bytes": 285506789,
+  "output_streams": [
+    {
+      "index": 0,
+      "codec_name": "vp9",
+      "codec_type": "video",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "index": 1,
+      "codec_name": "aac",
+      "codec_type": "audio"
+    }
+  ],
+  "page_video_src_matches": true,
+  "page_video_src_values": [
+    "../../media_vault/group_theory/lesson_02/experiments/3b1b_group_theory_02_full_dubbed.mp4",
+    "../../media_vault/group_theory/lesson_02/experiments/3b1b_group_theory_02_full_dubbed.mp4"
+  ],
+  "page_video_src_resolved": [
+    "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\group_theory\\lesson_02\\experiments\\3b1b_group_theory_02_full_dubbed.mp4",
+    "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\group_theory\\lesson_02\\experiments\\3b1b_group_theory_02_full_dubbed.mp4"
+  ],
+  "silencedetect_noise_db": -45,
+  "silencedetect_min_duration_sec": 2.0,
+  "silence_spans": [
+    {
+      "start": 0.0,
+      "end": 2.745488,
+      "duration": 2.745488
+    },
+    {
+      "start": 1463.612245,
+      "end": 1467.41424,
+      "duration": 3.801995
+    }
+  ],
+  "lead_in_silences": [
+    {
+      "start": 0.0,
+      "end": 2.745488,
+      "duration": 2.745488
+    }
+  ],
+  "tail_silences": [
+    {
+      "start": 1463.612245,
+      "end": 1467.41424,
+      "duration": 3.801995
+    }
+  ],
+  "interior_silences": [],
+  "internal_silences_over_2s": [],
+  "internal_silences_over_2s_count": 0,
+  "median_fill": 0.9989,
+  "median_fill_gate": 0.72,
+  "median_fill_ok": true,
+  "max_internal_gap_s": 1.2,
+  "max_internal_gap_gate": 1.5,
+  "max_internal_gap_ok": true,
+  "fill_gate_passed_in_build": true,
+  "build_cue_count": 46,
+  "build_failed_tts_cues": [],
+  "build_overrun_cues": 0,
+  "build_max_drift_ms": 0.01,
+  "timeline_scale": 1.187385,
+  "ALL_GATES_PASS": true
+}

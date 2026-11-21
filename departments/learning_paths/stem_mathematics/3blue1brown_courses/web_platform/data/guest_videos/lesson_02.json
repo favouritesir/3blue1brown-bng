@@ -1,0 +1,258 @@
+{
+  "lesson_id": "lesson_02",
+  "chapter_num": 2,
+  "course_id": "guest_videos",
+  "title_en": "Exploration & Epiphany | Guest video by Paul Dancstep",
+  "title_bn": "অন্বেষণ ও উদ্ভোদন: অসম্পূর্ণ ঘনকের গণিত",
+  "subtitle_bn": "সোল লুইট্টের 'ইনকমপ্লিট ওপেন কিউবস' — দল তত্ত্ব ও বার্নসাইডের লেমা দিয়ে একটি শিল্পকর্মের গোপন গণনা",
+  "video_id": "_BrFKp-U8GI",
+  "youtube_id": "_BrFKp-U8GI",
+  "author": "Paul Dancstep",
+  "official_url": "https://www.3blue1brown.com/lessons/incomplete-cubes",
+  "oembed": {
+    "url": "https://www.youtube.com/watch?v=_BrFKp-U8GI",
+    "author_name": "3Blue1Brown",
+    "author_url": "https://www.youtube.com/@3blue1brown",
+    "verified": true
+  },
+  "meta": {
+    "credits": "Paul Dancstep",
+    "author": "Paul Dancstep",
+    "author_bn": "পল ড্যানস্টেপ (Paul Dancstep)",
+    "host_channel": "3Blue1Brown",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "১৮:২৩",
+    "description_en": "The mathematics behind Sol Lewitt's Incomplete Open Cubes, involving group theory and Burnside's lemma.",
+    "date_published": "৭ সেপ্টেম্বর, ২০২৫",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "Sometimes the most beautiful answer is the one you discover by counting twice.",
+    "quote_bn": "কখনো কখনো সবচেয়ে সুন্দর উত্তরটি আবিষ্কৃত হয় দুবার গণনা করে।",
+    "author": "Paul Dancstep (পল ড্যানস্টেপ)"
+  },
+  "sections": [
+    {
+      "id": "sec-01-art",
+      "title_bn": "একটি শিল্পকর্ম থেকে জন্ম নেওয়া প্রশ্ন",
+      "title_en": "A question born from a work of art",
+      "summary_bn": "সোল লুইট্টের বিখ্যাত শিল্পকর্ম 'ইনকমপ্লিট ওপেন কিউবস' দেখে একজন গণিতবিদের মনে প্রশ্ন জন্মায় — আসলে কতগুলো আলাদা আকৃতি আছে?",
+      "key_takeaways": [
+        "শিল্পী সোল লুইট্ট ১২টি ধার থেকে কিছু ধার বাদ দিয়ে অনেকগুলো খোলা ঘনক তৈরি করেছিলেন।",
+        "প্রশ্ন হলো: ঘোরালে বা উল্টালে যেগুলো একই দেখায়, তাদের একই হিসেবেই গণনা করতে হবে।",
+        "এই সাধারণ দেখে মনে হওয়া প্রশ্নটি সমাধান করতে লাগবে দল তত্ত্ব ও বার্নসাইডের লেমা।"
+      ],
+      "formulas": [
+        {
+          "label": "মোট সম্ভাব্য ধার-সংমিশ্রণ",
+          "katex": "2^{12} = 4096"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_lewitt_cubes",
+          "caption_bn": "লুইট্টের অসম্পূর্ণ ঘনক",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_02/fig_lewitt_cubes.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "figure",
+        "p",
+        "formula",
+        "callout",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-02-symmetry",
+      "title_bn": "ঘনকের সমতুল্যতা: ২৪টি ঘূর্ণন",
+      "title_en": "Cube symmetries: the 24 rotations",
+      "summary_bn": "একটি ঘনককে নিজের অক্ষের চারপাশে বিভিন্ন ভাবে ঘোরালে ২৪টি ভিন্ন অবস্থা পাওয়া যায় — এই ২৪টি ঘূর্ণনই গঠন করে একটি দল (group)।",
+      "key_takeaways": [
+        "ঘনকের ঘূর্ণন দল R-এর ২৪টি সদস্য আছে; এটি হলো S4 দলের সমতুল্য।",
+        "প্রতিটি ঘূর্ণন ১২টি ধারকে নিজেদের মধ্যে বিনিময় করে — একে বলা হয় permutation।",
+        "দল তত্ত্বের ভাষায় বলা যায়, আমরা ১২টি ধারের ওপর একটি দলের ক্রিয়া (group action) নিয়ে কাজ করছি।"
+      ],
+      "formulas": [
+        {
+          "label": "ঘূর্ণন দলের আকার",
+          "katex": "|R| = 24 \\cong S_4"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_rotations",
+          "caption_bn": "ঘনকের ২৪টি ঘূর্ণন",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_02/fig_rotations.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "figure",
+        "p",
+        "callout",
+        "formula",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-03-burnside",
+      "title_bn": "বার্নসাইডের লেমা: দুবার গণনার কৌশল",
+      "title_en": "Burnside's lemma: counting twice",
+      "summary_bn": "বার্নসাইডের লেমা বলে — ভিন্ন আকৃতির সংখ্যা হলো, প্রতিটি ঘূর্ণন দিয়ে অপরিবর্তিত থাকা আকৃতির গড়।",
+      "key_takeaways": [
+        "লেমার সূত্র: শ্রেণির সংখ্যা = (১/|G|) × Σ fix(g), অর্থাৎ প্রতিটি দল-সদস্য দ্বারা স্থির থাকা বস্তুর সংখ্যার গড়।",
+        "fix(g) বের করতে হয় কোন ধার-সমন্বয় ঐ ঘূর্ণনের পরেও একই থাকে।",
+        "ঘূর্ণনের ধরন অনুসারে fix(g)-এর মান আলাদা হয় — তাই ২৪টি ঘূর্ণনকে কয়েকটি শ্রেণিতে ভাগ করা হয়।"
+      ],
+      "formulas": [
+        {
+          "label": "বার্নসাইডের লেমা",
+          "katex": "N = \\frac{1}{|G|}\\sum_{g\\in G}\\mathrm{fix}(g)"
+        },
+        {
+          "label": "স্থির আকৃতির সংখ্যা",
+          "katex": "\\mathrm{fix}(g)=2^{c(g)}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_burnside",
+          "caption_bn": "বার্নসাইডের ধারণা — স্থির বিন্দুগুলোর গড়",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_02/fig_burnside.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "quote",
+        "p",
+        "formula",
+        "figure",
+        "p",
+        "callout",
+        "formula"
+      ]
+    },
+    {
+      "id": "sec-04-result",
+      "title_bn": "চূড়ান্ত গণনা: ২২০টি আকৃতি",
+      "title_en": "The final count: 220 shapes",
+      "summary_bn": "২৪টি ঘূর্ণনকে তিনটি শ্রেণিতে ভাগ করে fix(g) হিসেব করে শেষে পাওয়া যায় ২২০ — লুইট্টের শিল্পকর্মের গোপন উত্তর।",
+      "key_takeaways": [
+        "২৪টি ঘূর্ণনকে তিন ভাগে ভাগ করা হয়: কেবল কেন্দ্র-অক্ষ, ধার-অক্ষ ও শীর্ষ-অক্ষ ঘূর্ণন।",
+        "প্রতি শ্রেণির চক্র-গণনাDifferent হওয়ায় fix(g)-এর মানও আলাদা হয়।",
+        "সবকিছু যোগ করে ২৪ দিয়ে ভাগ করলে ফলাফল দাঁড়ায় ২২০।"
+      ],
+      "formulas": [
+        {
+          "label": "চূড়ান্ত গণনা",
+          "katex": "N=\\frac{1}{24}(6\\cdot2^{3}+9\\cdot2^{4}+8\\cdot2^{6}+2^{12})=200"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_result_220",
+          "caption_bn": "চূড়ান্ত ফল — ২২০টি ভিন্ন আকৃতি",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_02/fig_result_220.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "formula",
+        "p",
+        "callout",
+        "figure",
+        "p"
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_sym",
+      "section_ref": "sec-02-symmetry",
+      "question_bn": "একটি ঘনকের কতটি ভিন্ন ঘূর্ণন সমতুল্যতা আছে?",
+      "question_en": "How many rotational symmetries does a cube have?",
+      "options": [
+        "৬",
+        "১২",
+        "২৪",
+        "৪৮"
+      ],
+      "options_bn": [
+        "৬",
+        "১২",
+        "২৪",
+        "৪৮"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "ঘনকের ঘূর্ণন দলে ২৪টি সদস্য থাকে — এটি S4 দলের সমতুল্য। এজন্যই বার্নসাইডের গণনায় ২৪ দিয়ে ভাগ করা হয়।",
+      "explanation_en": "ঘনকের ঘূর্ণন দলে ২৪টি সদস্য থাকে — এটি S4 দলের সমতুল্য। এজন্যই বার্নসাইডের গণনায় ২৪ দিয়ে ভাগ করা হয়।",
+      "hint": "মুখ, ধার ও শীর্ষের সংখ্যা যোগ করে ভাবুন।",
+      "hints": [
+        "মুখ, ধার ও শীর্ষের সংখ্যা যোগ করে ভাবুন।"
+      ]
+    },
+    {
+      "id": "quiz_02_burnside",
+      "section_ref": "sec-03-burnside",
+      "question_bn": "বার্নসাইডের লেমা অনুযায়ী ভিন্ন আকৃতির সংখ্যা কী?",
+      "question_en": "According to Burnside's lemma, the number of distinct shapes is the ...?",
+      "options": [
+        "সব fix(g)-এর যোগফল",
+        "fix(g)-এর গড়",
+        "fix(g)-এর গুণফল",
+        "শুধু সবচেয়ে বড় fix(g)"
+      ],
+      "options_bn": [
+        "সব fix(g)-এর যোগফল",
+        "fix(g)-এর গড়",
+        "fix(g)-এর গুণফল",
+        "শুধু সবচেয়ে বড় fix(g)"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "লেমা বলে যে ভিন্ন আকৃতির সংখ্যা হলো প্রতিটি দল-সদস্য দ্বারা স্থिर থাকা বস্তুর সংখ্যার গড় — অর্থাৎ যোগফলকে দলের আকার দিয়ে ভাগ করা।",
+      "explanation_en": "লেমা বলে যে ভিন্ন আকৃতির সংখ্যা হলো প্রতিটি দল-সদস্য দ্বারা স্থिर থাকা বস্তুর সংখ্যার গড় — অর্থাৎ যোগফলকে দলের আকার দিয়ে ভাগ করা।",
+      "hint": "দলের আকার দিয়ে ভাগ করার কথা মনে রাখবেন।",
+      "hints": [
+        "দলের আকার দিয়ে ভাগ করার কথা মনে রাখবেন।"
+      ]
+    }
+  ],
+  "lab": {
+    "title": "ইন্টারেক্টিভ ল্যাব: ঘনকের ধার বেছে নিন",
+    "desc_bn": "নিচের ছবিতে ঘনকের ধারগুলোতে ক্লিক করে যোগ বা বাদ দিন — দেখুন কীভাবে আকৃতি বদলায়।",
+    "data_no_narration": true
+  },
+  "narration_manifest": "assets/audio/guest_videos/lesson_02/manifest.json",
+  "video_src": "../../media_vault/guest_videos/lesson_02/experiments/3b1b_guest_videos_02_full_dubbed.mp4",
+  "figure_assets": [
+    {
+      "id": "fig_lewitt_cubes",
+      "caption_bn": "লুইট্টের অসম্পূর্ণ ঘনক",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_02/fig_lewitt_cubes.svg"
+    },
+    {
+      "id": "fig_rotations",
+      "caption_bn": "ঘনকের ২৪টি ঘূর্ণন",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_02/fig_rotations.svg"
+    },
+    {
+      "id": "fig_burnside",
+      "caption_bn": "বার্নসাইডের ধারণা — স্থির বিন্দুগুলোর গড়",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_02/fig_burnside.svg"
+    },
+    {
+      "id": "fig_result_220",
+      "caption_bn": "চূড়ান্ত ফল — ২২০টি ভিন্ন আকৃতি",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_02/fig_result_220.svg"
+    }
+  ]
+}

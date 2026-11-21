@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অধ্যায় ১২ — ডিফারেনশিয়াল আসলে কী? (What is a differential?) | ৩ব্লু১ব্রাউন বাংলা</title>
+
+<!-- ═══════════ STYLES (shared library only — no design override) ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded, synchronous — zero-CORS narration) ═══════════ -->
+<script src="../../assets/audio/calculus/lesson_12/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict canonical load order (Lesson 01 template) ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (LAST: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+
+<style>
+  /* Lab-only layout helpers (no design override of the component library). */
+  .calc-lab { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+  .calc-canvas { display: block; width: 100%; height: auto; min-height: 380px; background: #080b12; border-radius: 10px; }
+  [data-theme="light"] .calc-canvas { background: #f8fafc; }
+  .calc-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px; }
+  .calc-control label { display: flex; justify-content: space-between; font-size: .9rem; font-weight: 600; margin-bottom: 6px; }
+  .calc-control input[type=range] { width: 100%; }
+  .calc-val { color: var(--theme, #10b981); font-family: monospace; }
+  .calc-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 16px; }
+  .calc-stat { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+  .calc-stat span { display: block; font-size: .8rem; color: var(--text-muted); margin-bottom: 4px; }
+  .calc-stat strong { font-size: 1.05rem; color: var(--theme, #10b981); }
+  .calc-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .calc-actions button {
+    background: rgba(16,185,129,.14); color: var(--theme, #10b981); border: 1px solid rgba(16,185,129,.4);
+    border-radius: 8px; padding: 7px 12px; font-weight: 700; cursor: pointer; font-family: inherit;
+  }
+</style>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="ক্যালকুলাসের মূল সারমর্ম"
+  course-url="../../index.html#calculus"
+  home-url="../../index.html"
+  chapter-num="১২"
+  chapter-total="১২"
+  prev-url="lesson_11.html"
+  prev-title="১১ — ডি এক্স এর প্রকৃত অর্থ"
+  next-url=""
+  next-title="সিরিজ সমাপ্ত — পরবর্তী অধ্যায় নেই"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="ক্যালকুলাসের মূল সারমর্ম"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ১২ · ক্যালকুলাসের মূল সারমর্ম — সমাপ্তি পর্ব"
+  title="অধ্যায় ১২: ডিফারেনশিয়াল আসলে কী? (What is a differential?)"
+  desc="এক চলকের গণ্ডি পেরিয়ে যখন বাস্তব পৃথিবী বহুমাত্রিক রূপ নেয়, তখন ডেরিভেটিভ কীভাবে ডিফারেনশিয়াল ও গ্র্যাডিয়েন্টে রূপান্তর লাভ করে? ⚠️ নোট: ৩ব্লু১ব্রাউনের মূল ক্যালকুলাস সিরিজ ১২ অধ্যায়েই শেষ — এই অধ্যায়ের কোনো অফিশিয়াল ডাবড ভিডিও নেই। নিচের 'অরিজিনাল ভিডিও' বাটন একটি সম্পর্কিত অফিশিয়াল ৩ব্লু১ব্রাউন ক্লিপ (fallback) দেখায়; video-src পাথটি ভবিষ্যতে সমাধানের জন্য সংরক্ষিত।"
+  video-src="../../media_vault/calculus/lesson_12/experiments/3b1b_calculus_12_full_dubbed.mp4"
+  yt-id="3d6DsjIBzJ4"
+  date="৮ মে, ২০১৭"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="মূল পাঠ: Grant Sanderson (3Blue1Brown) · বাংলা রূপান্তর ও পাঠ্য বিন্যাস: STEM ম্যাথমেটিক্স উইং"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০"> ঢাল থেকে রৈখিক মানচিত্রে উত্তরণ</b1b-bookmark>
+      <b1b-bookmark time="105" time-bn="০১:৪৫">সম্পূর্ণ ডিফারেনশিয়াল df = f_x dx + f_y dy</b1b-bookmark>
+      <b1b-bookmark time="196" time-bn="০৩:১৬">গ্র্যাডিয়েন্ট ও ডট গুণন</b1b-bookmark>
+      <b1b-bookmark time="287" time-bn="০৪:৪৭">পদার্থবিদ্যা ও স্থানাঙ্ক নিরপেক্ষতা</b1b-bookmark>
+      <b1b-bookmark time="368" time-bn="০৬:০৮">ক্যালকুলাসের পরবর্তী দিগন্ত</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-from-slope-to-linear-map">১. ঢাল থেকে রৈখিক রূপান্তরে উত্তরণ</a>
+      <a href="#sec-total-differential-multivariable">২. সম্পূর্ণ ডিফারেনশিয়াল ও আংশিক অন্তরীকরণ</a>
+      <a href="#sec-gradient-dot-product">৩. গ্র্যাডিয়েন্ট ভেক্টর ও ডট গুণন</a>
+      <a href="#sec-physical-engineering-invariance">৪. পদার্থবিদ্যা ও তাপগতিবিদ্যায় ডিফারেনশিয়াল</a>
+      <a href="#sec-beyond-the-basics">৫. ক্যালকুলাসের পরবর্তী দিগন্ত</a>
+      <a href="#sec-video-note">⚠️ ভিডিও ফলব্যাক সংক্রান্ত নোট</a>
+      <a href="#sec-figures">৬. চিত্র-সহায়ক ব্যাখ্যা</a>
+      <a href="#sec-labs">৭. ইন্টারেক্টিভ ল্যাব</a>
+      <a href="#sec-quizzes">৮. ধারণা যাচাই: ৩টি কুইজ</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ NARRATED 1 — sec-from-slope-to-linear-map | manifest cues: h2, chapter-quote, p, p, p, formula-box, callout, p (8) ═══ -->
+      <b1b-section id="sec-from-slope-to-linear-map" title="১. একক ঢাল থেকে রৈখিক রূপান্তরে উত্তরণ (From Slope to Linear Map)">
+        <b1b-quote author="গ্রান্ট স্যান্ডারসন (৩ব্লু১ব্রাউন)">ক্যালকুলাসের চূড়ান্ত সত্য হলো: জটিল ও বাঁকানো বিশ্বব্রহ্মাণ্ডকে স্থানীয়ভাবে একটি সুন্দর সমতল রৈখিক জগতে পরিণত করা।</b1b-quote>
+
+        <p>ক্যালকুলাসের এই দীর্ঘ অভিযাত্রায় আমরা ঢাল, স্পর্শক, ক্ষেত্রফল এবং অসীম ধারার ভেতর দিয়ে হেঁটে এসেছি। কিন্তু আপনি যদি গণিতের উচ্চতর সোপানে পা রাখেন, তবে গণিতবিদরা আপনাকে বলবেন: অন্তরজ বা ডেরিভেটিভ মূলত কোনো সংখ্যা বা সরলরেখার ঢাল নয়—ডেরিভেটিভ হলো একটি রৈখিক রূপান্তর বা লিনিয়ার ম্যাপ (Linear Transformation)।</p>
+
+        <p>এক চলকের ক্ষেত্রে $y = f(x)$ ফাংশনে যখন ইনপুট সামান্য $dx$ পরিবর্তিত হয়, তখন ডিফারেনশিয়াল $dy = f'(x)\,dx$ নির্দেশ করে একটি গুণন সম্পর্ক: $dx \mapsto f'(x) \cdot dx$। এখানে $f'(x)$ কাজ করে একটি স্কেলিং ফ্যাক্টর বা স্ট্রেচিং গুণক হিসেবে।</p>
+
+        <p>কিন্তু যখন একাধিক চলক একসাথে কাজ করে—যেমন আবহাওয়ার তাপমাত্রা $T(x, y, z)$ যা ত্রিমাত্রিক স্থানে অবস্থানভেদে পরিবর্তিত হয়—তখন একক কোনো 'ঢাল' দিয়ে পরিবর্তন ব্যাখ্যা করা অসম্ভব। সেখানেই রাজকীয় অভিষেক ঘটে 'টোটাল ডিফারেনশিয়াল' (Total Differential)-এর।</p>
+
+        <b1b-formula math="df = f'(x)\,dx \quad (\text{এক মাত্রার ডিফারেনশিয়াল রৈখিক রূপান্তর})" caption="ইনপুট ভেক্টর $dx$-কে আউটপুট স্কেলার $dy$-তে রূপান্তরের রৈখিক প্রক্রিয়া।"></b1b-formula>
+
+        <b1b-callout type="gold" icon="🌐" title="স্থানীয় রৈখিকতার মহাবিস্ময়">
+          <p>পৃথিবী গোল হওয়া সত্ত্বেও আমরা হাঁটার সময় মাটিকে যেমন নিখুঁত সমতল দেখি, তেমনি যেকোনো মসৃণ বহুমাত্রিক সারফেসকে অতি ক্ষুদ্রাতিক্ষুদ্র স্থানে জুম করলে তা একটি সমতল স্পর্শক তলে (Tangent Plane) পরিণত হয়।</p>
+        </b1b-callout>
+
+        <p>এই স্পর্শক তলের গাণিতিক সমীকরণটিই হলো সম্পূর্ণ ডিফারেনশিয়াল।</p>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 2 — sec-total-differential-multivariable | manifest cues: h2, p, p, p, p, formula-box, callout (7) ═══ -->
+      <b1b-section id="sec-total-differential-multivariable" title="২. সম্পূর্ণ ডিফারেনশিয়াল ও আংশিক অন্তরীকরণ (The Total Differential)">
+        <p>কল্পনা করুন একটি ফাংশন $z = f(x, y)$, যার লেখচিত্র ত্রিমাত্রিক তলে একটি বাঁকানো পাহাড়ের মতো।</p>
+
+        <p>এখন আপনি যদি $x$ বরাবর একটু হাঁটেন ($dx$) এবং একই সাথে $y$ বরাবরও একটু পা বাড়ান ($dy$), তবে আপনার উচ্চতায় মোট পরিবর্তন $dz$ কতটুকু হবে?</p>
+
+        <p>আংশিক অন্তরীকরণের (Partial Derivative) মাধ্যমে আমরা প্রতিটি অক্ষের সংবেদনশীলতা আলাদাভাবে পরিমাপ করি:<br/>১. $\frac{\partial f}{\partial x}$: কেবল $x$ পরিবর্তনের কারণে উচ্চতা বৃদ্ধির হার (যখন $y$ স্থির)।<br/>২. $\frac{\partial f}{\partial y}$: কেবল $y$ পরিবর্তনের কারণে উচ্চতা বৃদ্ধির হার (যখন $x$ স্থির)।</p>
+
+        <p>রৈখিক আসন্নায়ন অনুযায়ী, উভয় পরিবর্তনের সম্মিলিত রূপই হলো সম্পূর্ণ ডিফারেনশিয়াল: $df = \frac{\partial f}{\partial x}\,dx + \frac{\partial f}{\partial y}\,dy$!</p>
+
+        <b1b-formula math="df = \frac{\partial f}{\partial x}\,dx + \frac{\partial f}{\partial y}\,dy \quad;\quad df = \sum_{i=1}^n \frac{\partial f}{\partial x_i}\,dx_i" caption="দুই চলকের টোটাল ডিফারেনশিয়াল এবং $n$-সংখ্যক চলকের ক্ষেত্রে তার সাধারণ রূপ — প্রতিটি আংশিক ডেরিভেটিভ সংশ্লিষ্ট ইনপুটের সংবেদনশীলতার ওজন।"></b1b-formula>
+
+        <b1b-callout type="blue" icon="⚖️" title="বাস্তব উপলব্ধি: ওজনযুক্ত সংবেদনশীলতা">
+          <p>প্রতিটি $dx_i$ হলো একটি স্বতন্ত্র ইনপুট নাড়া, আর প্রতিটি আংশিক ডেরিভেটিভ $\frac{\partial f}{\partial x_i}$ হলো সেই ইনপুটের প্রতি ফাংশনটির সংবেদনশীলতার ওজন (Weight of Sensitivity)।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 3 — sec-gradient-dot-product | manifest cues: h2, p, p, p, formula-box, callout, p (7) ═══ -->
+      <b1b-section id="sec-gradient-dot-product" title="৩. গ্র্যাডিয়েন্ট ভেক্টর ও ডট গুণন রূপ (The Gradient Vector & Dot Product)">
+        <p>টোটাল ডিফারেনশিয়ালের এই সমীকরণটিকে ভেক্টর বীজগণিতের দৃষ্টিতে দেখলে একটি অপরূপ সৌন্দর্য উন্মোচিত হয়।</p>
+
+        <p>যদি আমরা সমস্ত আংশিক ডেরিভেটিভগুলোকে একটি ভেক্টরে সাজাই, তবে তাকে বলা হয় গ্র্যাডিয়েন্ট ভেক্টর (Gradient Vector): $\nabla f = \left[ \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right]^T$। আর ইনপুটের ক্ষুদ্র স্থানচ্যুতিগুলোকে একত্র করলে পাই স্থানচ্যুতি ভেক্টর: $d\mathbf{r} = [dx, dy]^T$।</p>
+
+        <p>এখন লক্ষ্য করুন, টোটাল ডিফারেনশিয়াল $df$ আর কিছুই নয়—তা হলো গ্র্যাডিয়েন্ট ভেক্টর এবং স্থানচ্যুতি ভেক্টরের নিখুঁত ডট গুণন (Dot Product)!</p>
+
+        <b1b-formula math="df = \nabla f \cdot d\mathbf{r} = \|\nabla f\| \, \|d\mathbf{r}\| \cos(\theta) \quad;\quad \nabla f = \left\langle \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \right\rangle" caption="ডিফারেনশিয়াল হলো গ্র্যাডিয়েন্ট ও স্থানচ্যুতি ভেক্টরের ডট গুণন; ত্রিমাত্রিক স্কেলার ক্ষেত্রে গ্র্যাডিয়েন্টের তিনটি উপাংশ।"></b1b-formula>
+
+        <b1b-callout type="green" icon="⛰️" title="তীব্রতম আরোহণের দিক (Direction of Steepest Ascent)">
+          <p>ডট গুণনের সূত্র থেকে স্পষ্ট: যখন $\theta = 0$, অর্থাৎ স্থানচ্যুতি $d\mathbf{r}$ ঠিক গ্র্যাডিয়েন্ট $\nabla f$-এর দিকে নির্দেশ করে, তখনই $df$ সর্বোচ্চ হয়। অর্থাৎ গ্র্যাডিয়েন্ট ভেক্টর সর্বদা পাহাড়ি ঢালের সবচেয়ে খাড়া আরোহণের দিক নির্দেশ করে!</p>
+        </b1b-callout>
+
+        <p>আধুনিক কৃত্রিম বুদ্ধিমত্তা ও নিউরাল নেটওয়ার্কের ব্যাকপ্রোপাগেশন (Gradient Descent) হুবহু এই নীতির ওপর ভিত্তি করেই প্রশিক্ষণ গ্রহণ করে।</p>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 4 — sec-physical-engineering-invariance | manifest cues: h2, p, p, p, formula-box, callout (6) ═══ -->
+      <b1b-section id="sec-physical-engineering-invariance" title="৪. পদার্থবিদ্যা ও তাপগতিবিদ্যায় ডিফারেনশিয়াল (Differentials in Physics & Thermodynamics)">
+        <p>পদার্থবিজ্ঞান ও প্রকৌশলবিদ্যায় ডিফারেনশিয়ালকে সবচেয়ে বেশি জীবন্ত দেখা যায় তাপগতিবিদ্যা (Thermodynamics) এবং চিরায়ত বলবিদ্যায়।</p>
+
+        <p>তাপগতিবিদ্যার প্রথম সূত্র বিবেচনা করুন: $dE = dQ - dW$। এখানে অভ্যন্তরীণ শক্তির ক্ষুদ্র পরিবর্তন $dE$ হলো একটি যথার্থ ডিফারেনশিয়াল (Exact Differential), কারণ এটি সিস্টেমের আদি ও চূড়ান্ত অবস্থার ওপর নির্ভর করে, কোন পথে পরিবর্তন হয়েছে তার ওপর নয়।</p>
+
+        <p>পক্ষান্তরে তাপ $dQ$ এবং কাজ $dW$ হলো পথ-নির্ভর (Inexact Differential)। ক্যালকুলাসের ডিফারেনশিয়াল বিশ্লেষণ আমাদের শেখায় কোন পরিবর্তনগুলো সংরক্ষিত ক্ষেত্র (Conservative Field) তৈরি করে এবং কোনগুলো শক্তি ক্ষয় করে।</p>
+
+        <b1b-formula math="dE = T\,dS - P\,dV \quad;\quad W = \int_C \mathbf{F} \cdot d\mathbf{r}" caption="তাপগতিবিদ্যায় অভ্যন্তরীণ শক্তির পূর্ণাঙ্গ ডিফারেনশিয়াল রূপ এবং বলক্ষেত্র বরাবর ডট গুণনের লাইন ইন্টিগ্রাল হিসেবে কৃতকাজ।"></b1b-formula>
+
+        <b1b-callout type="purple" icon="🧭" title="স্থানাঙ্ক নিরপেক্ষতা (Coordinate Invariance)">
+          <p>ডিফারেনশিয়াল $df$-এর সবচেয়ে শক্তিশালী বৈশিষ্ট্য হলো: আপনি কার্তেসীয় স্থানাঙ্ক ($x, y$), পোলার স্থানাঙ্ক ($r, \theta$), কিংবা যেকোনো বাঁকানো স্থানাঙ্ক ব্যবহার করুন না কেন—ডিফারেনশিয়াল সম্পর্কের জ্যামিতিক মান সম্পূর্ণ অপরিবর্তিত থাকে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 5 — sec-beyond-the-basics | manifest cues: h2, p, p, p, p, formula-box, callout (7) ═══ -->
+      <b1b-section id="sec-beyond-the-basics" title="৫. ক্যালকুলাসের পরবর্তী দিগন্ত: আপনি এখন কোথায় যাবেন? (Beyond the Basics: Where to Go)">
+        <p>বারোটি রোমাঞ্চকর অধ্যায়ের মধ্য দিয়ে আমরা ক্যালকুলাসের ভিত্তিপ্রস্তর স্থাপন করেছি। কিন্তু এটি শেষ নয়, বরং উচ্চতর গণিতের বিশাল সাগরে আপনার প্রথম যাত্রা মাত্র!</p>
+
+        <p>এখান থেকে আপনার সামনে তিনটি প্রধান শাখা উন্মুক্ত হয়: ১. মাল্টিভেরিয়েবল ক্যালকুলাস (Multivariable Calculus): কার্ল, ডাইভারজেন্স, গ্রিন-স্টোকস উপপাদ্য এবং ম্যাক্সওয়েলের তড়িৎচৌম্বকীয় সমীকরণ।</p>
+
+        <p>২. ব্যবকলনীয় সমীকরণ (Differential Equations): গতি, গ্রহের কক্ষপথ, মহামারীর বিস্তার এবং কোয়ান্টাম ওয়েভ ফাংশনের সময়ভিত্তিক বিবর্তন বোঝার হাতিয়ার।</p>
+
+        <p>৩. কৃত্রিম বুদ্ধিমত্তা ও মেশিন লার্নিং (AI & Optimization): লক্ষ লক্ষ ওজনের গ্র্যাডিয়েন্ট হিসাব করে বৃহৎ ভাষা মডেল (LLM) ও নিউরাল নেটওয়ার্ককে নিখুঁত করার ব্যাকপ্রোপাগেশন।</p>
+
+        <b1b-formula math="\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t} \quad \text{ও} \quad \mathbf{w}_{t+1} = \mathbf{w}_t - \eta \nabla \mathcal{L}(\mathbf{w})" caption="ফ্যারাডের সূত্র থেকে আধুনিক ডিপ লার্নিংয়ের গ্র্যাডিয়েন্ট ডিসেন্ট—ক্যালকুলাসের অবিরাম পদচারণা।"></b1b-formula>
+
+        <b1b-callout type="gold" icon="👋" title="গ্রান্ট স্যান্ডারসনের বিদায়ী বাণী">
+          <p>ক্যালকুলাস কোনো শুকনো নিয়মের সমষ্টি নয়; এটি অসীম পরিবর্তনশীল বাস্তবতাকে মানুষের সহজ বুদ্ধির আওতায় আনার এক স্বর্গীয় ভাষা। চোখ মেলে তাকান, মহাবিশ্বের প্রতিটি পরিবর্তনের অন্তরালে শুনবেন ক্যালকুলাসের ছন্দ।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — official video fallback disclosure ═══ -->
+      <b1b-section id="sec-video-note" title="⚠️ ভিডিও ফলব্যাক সংক্রান্ত নোট" data-no-narration="true">
+        <b1b-callout type="red" icon="⚠️" title="এই অধ্যায়ের নিজস্ব অফিশিয়াল ডাবড ভিডিও নেই">
+          <p>৩ব্লু১ব্রাউনের <strong>Essence of Calculus</strong> সিরিজ ১২টি অধ্যায়েই সমাপ্ত; তাই "What is a differential?" নামে কোনো স্বতন্ত্র অফিশিয়াল ইউটিউব ভিডিও নেই (ডাটার <code>youtube_id = 1tGQvW48p64</code> ও ৪০৪ ফেরত দেয়)। হিরো ও ওয়াচ প্যানেলে <code>video-src</code> হিসেবে একটি সম্পর্কিত পাথ সংরক্ষিত আছে, যা ভবিষ্যতে যেকোনো ডাবিং তৈরি হলে সমাধান করা যাবে।.</p>
+          <p>এই পেইজের ভিডিও ট্যাবগুলোতে <strong>অফিশিয়াল ৩ব্লু১ব্রাউন ফলব্যাক ক্লিপ</strong> (<code>3d6DsjIBzJ4</code> ও <code>CfW845LNObM</code>) ব্যবহার করা হয়েছে — এগুলো এই অধ্যায়ের ধারণার সাথে সম্পর্কিত কিন্তু অধ্যায়-নির্দিষ্ট ডাবিং নয়। সম্পূর্ণ পাঠ্যবস্তু, সূত্র, চিত্র ও কুইজ অফিশিয়াল ডাটা JSON থেকে নেওয়া হয়েছে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — figure explanations (rule 6: 2–4 sentence pedagogical captions) ═══ -->
+      <b1b-section id="sec-figures" title="৬. চিত্র-সহায়ক ব্যাখ্যা: ডিফারেনশিয়ালের চারটি রূপ" data-no-narration="true">
+        <p>নিচের চিত্রগুলো অধ্যায়ের চারটি কেন্দ্রীয় ধারণাকে দৃশ্যমান করে: স্থানীয় রৈখিকতা ও স্পর্শক তল, সম্পূর্ণ ডিফারেনশিয়াল, গ্র্যাডিয়েন্ট-ডট-গুণন এবং স্থানাঙ্ক নিরপেক্ষতা। প্রতিটি চিত্রের সঙ্গে ২–৪ বাক্যের শিক্ষণীয় ব্যাখ্যা দেওয়া হলো; 'Video' ট্যাবে সম্পর্কিত অফিশিয়াল ৩ব্লু১ব্রাউন ক্লিপ দেখা যাবে।</p>
+
+        <b1b-media-tab active-tab="image" caption="এখানে নীল বক্ররেখাটিকে একটি বিন্দুতে জুম করা হয়েছে—গোলাপি বিন্দুটির কাছে বক্রতা অদৃশ্য হয়ে হলুদ স্পর্শক রেখার মতো দেখা যায়। সবুজ অংশ দুটি হলো ইনপুটের ক্ষুদ্র সরণ dx এবং স্পর্শক বরাবর তার রৈখিক প্রতিক্রিয়া df। এই ছবিটিই বোঝায় যে ডেরিভেটিভ কোনো সংখ্যা নয়, বরং একটি স্থানীয় রৈখিক মানচিত্র; ভিডিও ট্যাবে এই জুমিংয়ের গতি দেখা যাবে।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0ODAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBiMTIyMCIvPjxwYXRoIGQ9Ik0zMCAyNTAgUTE1MCA1MCAyNTAgMTUwIFQ0NTAgODAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM4YmRmOCIgc3Ryb2tlLXdpZHRoPSIzIi8+PGxpbmUgeDE9IjExMCIgeTE9IjE4NSIgeDI9IjM1MCIgeTI9IjEyMCIgc3Ryb2tlPSIjZmJiZjI0IiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIyMzAiIGN5PSIxNTUiIHI9IjUiIGZpbGw9IiNmNDcyYjYiLz48bGluZSB4MT0iMjMwIiB5MT0iMTU1IiB4Mj0iMzIwIiB5Mj0iMTU1IiBzdHJva2U9IiMzNGQzOTkiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIzMjAiIHkxPSIxNTUiIHgyPSIzMjAiIHkyPSIxMjEiIHN0cm9rZT0iIzM0ZDM5OSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iNDAiIHk9IjM2IiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+bG9jYWwgbGluZWFyaXR5IC0gdGFuZ2VudCBwbGFuZTwvdGV4dD48dGV4dCB4PSIyNjIiIHk9IjE3NiIgZmlsbD0iIzM0ZDM5OSIgZm9udC1zaXplPSIxMyIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmR4PC90ZXh0Pjx0ZXh0IHg9IjMyNiIgeT0iMTQwIiBmaWxsPSIjMzRkMzk5IiBmb250LXNpemU9IjEzIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+ZGY8L3RleHQ+PHRleHQgeD0iMTIwIiB5PSIxMTIiIGZpbGw9IiNmYmJmMjQiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj50YW5nZW50PC90ZXh0Pjwvc3ZnPg==" alt="স্থানীয় রৈখিকতা ও স্পর্শক — dx ও df"/>
+          </div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/CfW845LNObM?start=120" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="অফিশিয়াল 3B1B ফলব্যাক: স্থানীয় রৈখিকতা"></iframe></div>
+        </b1b-media-tab>
+
+        <b1b-media-tab active-tab="image" caption="গ্রিডের ওপর নীল বক্রগুলো হলো $z = f(x, y)$ ফাংশনের সম-উচ্চতা রেখা। গোলাপি বিন্দু থেকে সবুজ দুটি তীর $dx$ ও $dy$ ইনপুটের স্বতন্ত্র নাড়া দেখায়, আর হলুদ তীরটি তাদের সম্মিলিত ফল $df$। ছবিটি পড়ার সময় লক্ষ্য করুন $df$ কীভাবে দুটি আংশিক ডেরিভেটিভের ওজনযুক্ত যোগফল $f_x dx + f_y dy$ হয়—এই সমীকরণটিই সম্পূর্ণ ডিফারেনশিয়াল।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0ODAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBiMTIyMCIvPjxnIHN0cm9rZT0iIzFlMjkzYiIgc3Ryb2tlLXdpZHRoPSIxIj48cGF0aCBkPSJNNDAgNjBINDQwTTQwIDExMEg0NDBNNDAgMTYwSDQ0ME00MCAyMTBINDQwTTQwIDI2MEg0NDBNOTAgNDBWMjc1TTE3MCA0MFYyNzVNMjUwIDQwVjI3NU0zMzAgNDBWMjc1TTQxMCA0MFYyNzUiLz48L2c+PHBhdGggZD0iTTUwIDIzMCBRMTcwIDE0MCAyNTAgMTkwIFQ0NDAgMTEwIiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGJkZjgiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik01MCAxOTAgUTE3MCAxMDAgMjUwIDE1MCBUNDQwIDcwIiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGJkZjgiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC42Ii8+PGNpcmNsZSBjeD0iMjUwIiBjeT0iMTcwIiByPSI1IiBmaWxsPSIjZjQ3MmI2Ii8+PGxpbmUgeDE9IjI1MCIgeTE9IjE3MCIgeDI9IjMzMCIgeTI9IjE3MCIgc3Ryb2tlPSIjMzRkMzk5IiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMjUwIiB5MT0iMTcwIiB4Mj0iMjUwIiB5Mj0iMTIwIiBzdHJva2U9IiMzNGQzOTkiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIyNTAiIHkxPSIxNzAiIHgyPSIzMzAiIHkyPSIxMjAiIHN0cm9rZT0iI2ZiYmYyNCIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iNDAiIHk9IjM0IiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+ZGYgPSBmX3ggZHggKyBmX3kgZHk8L3RleHQ+PHRleHQgeD0iMjgwIiB5PSIxODgiIGZpbGw9IiMzNGQzOTkiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5keDwvdGV4dD48dGV4dCB4PSIyNTYiIHk9IjEzMCIgZmlsbD0iIzM0ZDM5OSIgZm9udC1zaXplPSIxMyIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmR5PC90ZXh0Pjx0ZXh0IHg9IjMzNSIgeT0iMTE4IiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjEzIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+ZGY8L3RleHQ+PC9zdmc+" alt="সম্পূর্ণ ডিফারেনশিয়াল: df = f_x dx + f_y dy"/>
+          </div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/3d6DsjIBzJ4?start=60" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="অফিশিয়াল 3B1B ফলব্যাক: বহুমাত্রিক ডেরিভেটিভ"></iframe></div>
+        </b1b-media-tab>
+
+        <b1b-media-tab active-tab="image" caption="কেন্দ্র থেকে বাইরের দিকে নীল উপবৃত্তগুলো ফাংশনের সম-মান রেখা (contour)। হলুদ তীরটি গ্র্যাডিয়েন্ট $\nabla f$—অর্থাৎ সবচেয়ে খাড়া চড়াইয়ের দিক—আর সবুজ তীরটি যেকোনো ইনপুট স্থানচ্যুতি $d\mathbf{r}$। দুটির মধ্যকার কোণ $\theta$ ছোট হলে ডট গুণন $df = \|\nabla f\|\,\|d\mathbf{r}\|\cos\theta$ বড় হয়; $\theta = 0$ হলে পরিবর্তন সর্বোচ্চ। এই চিত্রটিই ব্যাখ্যা করে কেন গ্র্যাডিয়েন্ট ডিসেন্ট মডেল প্রশিক্ষণে কাজ করে।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0ODAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBiMTIyMCIvPjxlbGxpcHNlIGN4PSIyNDAiIGN5PSIxNTAiIHJ4PSIxNjAiIHJ5PSIxMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFlNDBhZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGVsbGlwc2UgY3g9IjI0MCIgY3k9IjE1MCIgcng9IjExMCIgcnk9IjY4IiBmaWxsPSJub25lIiBzdHJva2U9IiMyNTYzZWIiIHN0cm9rZS13aWR0aD0iMiIvPjxlbGxpcHNlIGN4PSIyNDAiIGN5PSIxNTAiIHJ4PSI2MCIgcnk9IjM2IiBmaWxsPSJub25lIiBzdHJva2U9IiMzYjgyZjYiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9IjI0MCIgY3k9IjE1MCIgcj0iNSIgZmlsbD0iI2Y0NzJiNiIvPjxsaW5lIHgxPSIyNDAiIHkxPSIxNTAiIHgyPSIzNTAiIHkyPSI4MiIgc3Ryb2tlPSIjZmJiZjI0IiBzdHJva2Utd2lkdGg9IjMiLz48bGluZSB4MT0iMjQwIiB5MT0iMTUwIiB4Mj0iMzIwIiB5Mj0iMTUwIiBzdHJva2U9IiMzNGQzOTkiIHN0cm9rZS13aWR0aD0iMyIvPjx0ZXh0IHg9IjM1MiIgeT0iNzgiIGZpbGw9IiNmYmJmMjQiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5ncmFkIGY8L3RleHQ+PHRleHQgeD0iMzIyIiB5PSIxNjgiIGZpbGw9IiMzNGQzOTkiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5kcjwvdGV4dD48dGV4dCB4PSI0MCIgeT0iMzQiIGZpbGw9IiNlMmU4ZjAiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5kZiA9IGdyYWQgZiAuIGRyID0gfGdyYWQgZnx8ZHJ8Y29zKHRoZXRhKTwvdGV4dD48L3N2Zz4=" alt="গ্র্যাডিয়েন্ট ও স্থানচ্যুতি ভেক্টরের ডট গুণন"/>
+          </div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/CfW845LNObM?start=300" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="অফিশিয়াল 3B1B ফলব্যাক: গ্র্যাডিয়েন্ট এবং ডট গুণন"></iframe></div>
+        </b1b-media-tab>
+
+        <b1b-media-tab active-tab="image" caption="বাঁদিকের কার্তেসীয় গ্রিড আর ডানদিকের পোলার গ্রিড একই স্থানের দুটি ভিন্ন ভাষা মাত্র। যেকোনো নির্দিষ্ট পরিবর্তনের ক্ষেত্রে $df$-এর জ্যামিতিক মান অপরিবর্তিত থাকে—এটিই স্থানাঙ্ক নিরপেক্ষতা। নিচে $dE = T\,dS - P\,dV$ সূত্রটি মনে করিয়ে দেয় যে তাপগতিবিদ্যায় যথার্থ ডিফারেনশিয়াল কেবল শেষ অবস্থার ওপর নির্ভর করে, পথের ওপর নয়।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0ODAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBiMTIyMCIvPjxnIHN0cm9rZT0iIzFlMjkzYiIgc3Ryb2tlLXdpZHRoPSIxIj48cGF0aCBkPSJNNDAgNjBIMjIwTTQwIDExMEgyMjBNNDAgMTYwSDIyME00MCAyMTBIMjIwTTQwIDI2MEgyMjBNODAgNDBWMjc1TTE0MCA0MFYyNzVNMjAwIDQwVjI3NSIvPjwvZz48ZyBzdHJva2U9IiMwZjc2NmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSI+PGNpcmNsZSBjeD0iMzYwIiBjeT0iMTUwIiByPSIxMTAiLz48Y2lyY2xlIGN4PSIzNjAiIGN5PSIxNTAiIHI9Ijc1Ii8+PGNpcmNsZSBjeD0iMzYwIiBjeT0iMTUwIiByPSI0MCIvPjxwYXRoIGQ9Ik0zNjAgNDBWMjYwTTI1MCAxNTBINDcwIi8+PC9nPjx0ZXh0IHg9IjQwIiB5PSIzNCIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPkNhcnRlc2lhbiB2cyBwb2xhciAtIHNhbWUgZGY8L3RleHQ+PHRleHQgeD0iNDIiIHk9IjI4OCIgZmlsbD0iIzk0YTNiOCIgZm9udC1zaXplPSIxMyIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmRFID0gVCBkUyAtIFAgZFY8L3RleHQ+PC9zdmc+" alt="কার্তেসীয় ও পোলার স্থানাঙ্কে একই ডিফারেনশিয়াল"/>
+          </div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/3d6DsjIBzJ4?start=420" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="অফিশিয়াল 3B1B ফলব্যাক: স্থানাঙ্ক ও ডিফারেনশিয়াল"></iframe></div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — fullscreen interactive labs ═══ -->
+      <b1b-section id="sec-labs" title="৭. ইন্টারেক্টিভ ল্যাব: স্পর্শক তল ও গ্র্যাডিয়েন্ট আরোহণ" data-no-narration="true">
+        <p>নিচের দুটি ল্যাব স্লাইডার ঘুরিয়ে তত্ত্বকে নিজের হাতে যাচাই করার সুযোগ দেয়। প্রথম ল্যাবে $(x, y)$ বিন্দুতে $df = f_x dx + f_y dy$ স্পর্শক তল কীভাবে আসল পরিবর্তনকে আনুমানিক করে দেখুন; দ্বিতীয় ল্যাবে গ্র্যাডিয়েন্টের তীর অনুসরণ করে একটি বল কীভাবে চূড়ার দিকে ওঠে পর্যবেক্ষণ করুন।</p>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে স্পর্শক তল ল্যাব দেখুন">
+          <calc-tangent-plane-lab></calc-tangent-plane-lab>
+        </b1b-fullscreen>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে গ্র্যাডিয়েন্ট আরোহণ ল্যাব দেখুন">
+          <calc-gradient-ascent-lab></calc-gradient-ascent-lab>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — 3 official quizzes with exact options + rich Bengali feedback ═══ -->
+      <b1b-section id="sec-quizzes" title="৮. ধারণা যাচাই: ৩টি ইন্টারেক্টিভ কুইজ" data-no-narration="true">
+        <b1b-quiz
+          question="❓ ১. দুই চলকের কোনো ফাংশন $z = f(x, y)$-এর টোটাল ডিফারেনশিয়াল $df$ কী প্রকাশ করে?"
+          correct="1"
+          correct-msg="অসাধারণ ও সম্পূর্ণ নিখুঁত! টোটাল ডিফারেনশিয়াল উভয় ইনপুটের সংবেদনশীলতাকে রৈখিকভাবে একত্রিত করে: $df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy$। অন্য বিকল্পগুলোও দেখে নিন—শুধু $x$ বরাবর অংশ নির্দেশ করা অসম্পূর্ণ; চরম মানের জন্য ডিফারেনশিয়াল শূন্য হতে হয়; আর আয়তনের জন্য ডাবল ইন্টিগ্রেশন প্রয়োজন। ব্যাখ্যা: ইনপুট ভেক্টর $(dx, dy)$ হলে স্পর্শক তলের উল্লম্ব সরণ হয় প্রতিটি আংশিক ডেরিভেটিভের সাথে সংশ্লিষ্ট পরিবর্তনের গুণফলের সমষ্টি।"
+          wrong-msg="ভুল! মনে রাখতে হবে $df$ কোনো একটি অক্ষের ঢাল নয়। এটি স্পর্শক তল (Tangent Plane) বরাবর মোট রৈখিক পরিবর্তন—$x$ ও $y$ উভয়ের ক্ষুদ্র স্থানচ্যুতির অবদানের যোগফল: $df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy$। চরম মান বা আয়তন নির্ণয়ের সাথে এর সরাসরি মিল নেই। সঠিক উত্তর হলো দ্বিতীয় বিকল্প।"
+          reveal-msg="সঠিক উত্তর: দ্বিতীয় বিকল্প — $x$ এবং $y$ উভয় চলকের ক্ষুদ্র স্থানচ্যুতির ফলে স্পর্শক তল বরাবর মোট রৈখিক পরিবর্তন: $df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy$। ব্যাখ্যা: ইনপুট $(dx, dy)$ হলে স্পর্শক তলের উল্লম্ব সরণ হয় প্রতিটি আংশিক ডেরিভেটিভের সাথে সংশ্লিষ্ট পরিবর্তনের গুণফলের সমষ্টি।">
+          <div slot="option">শুধুমাত্র $x$ অক্ষ বরাবর বক্ররেখার স্পর্শকের উচ্চতা</div>
+          <div slot="option">$x$ এবং $y$ উভয় চলকের ক্ষুদ্র স্থানচ্যুতির ফলে স্পর্শক তল (Tangent Plane) বরাবর মোট রৈখিক পরিবর্তন: $df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy$</div>
+          <div slot="option">ফাংশনটির সর্বোচ্চ চরম মান</div>
+          <div slot="option">পাহাড়ের নিচের মোট আয়তন</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ২. ডিফারেনশিয়াল $df = \nabla f \cdot d\mathbf{r}$ সমীকরণে গ্র্যাডিয়েন্ট ভেক্টর $\nabla f$-এর অভিমুখ ভৌতভাবে কী নির্দেশ করে?"
+          correct="2"
+          correct-msg="একেবারে সঠিক! ডট গুণন সর্বোচ্চ হয় যখন স্থানচ্যুতি গ্র্যাডিয়েন্টের সমান্তরাল হয় ($df = \|\nabla f\|\,\|d\mathbf{r}\|\cos\theta$, $\theta = 0^\circ$)। তাই $\nabla f$ হলো তীব্রতম আরোহণের দিক। বাকিদের মধ্যে—সবচেয়ে দ্রুত হ্রাসের দিক হলো $-\nabla f$; অপরিবর্তিত দিক হলো গ্র্যাডিয়েন্টের লম্ব অভিমুখ (কনট্যুর রেখা); আর মহাকর্ষীয় তরঙ্গের সাথে এর কোনো প্রত্যক্ষ সম্পর্ক নেই।"
+          wrong-msg="আবার ভাবুন: $df = \|\nabla f\|\,\|d\mathbf{r}\|\cos\theta$ সর্বোচ্চ মান ধারণ করে যখন $\theta = 0^\circ$, অর্থাৎ গ্র্যাডিয়েন্ট নিজেই হলো সর্বাধিক বৃদ্ধির দিক। দ্রুততম হ্রাস হলো $-\nabla f$, আর কনট্যুর রেখা গ্র্যাডিয়েন্টের লম্ব। সঠিক উত্তর হলো তৃতীয় বিকল্প—তীব্রতম আরোহণের দিক (Direction of Steepest Ascent)।"
+          reveal-msg="সঠিক উত্তর: তৃতীয় বিকল্প — ওই বিন্দু থেকে যে অভিমুখে গেলে ফাংশনটির মান সবচেয়ে তীব্র হারে বৃদ্ধি পায় (Direction of Steepest Ascent)। ব্যাখ্যা: $df = \|\nabla f\|\,\|d\mathbf{r}\|\cos\theta$ সর্বোচ্চ যখন $\theta = 0^\circ$—অর্থাৎ গ্র্যাডিয়েন্ট নিজেই সর্বাধিক বৃদ্ধির দিক।">
+          <div slot="option">ফাংশনের মান যেদিকে সবচেয়ে দ্রুত হ্রাস পায়</div>
+          <div slot="option">যেদিকে ফাংশনের কোনো পরিবর্তন ঘটে না (কনট্যুর রেখা)</div>
+          <div slot="option">ওই বিন্দু থেকে যে অভিমুখে গেলে ফাংশনটির মান সবচেয়ে তীব্র হারে বৃদ্ধি পায় (Direction of Steepest Ascent)</div>
+          <div slot="option">মহাকর্ষীয় তরঙ্গের ভরবেগ</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৩. আধুনিক কৃত্রিম বুদ্ধিমত্তা ও ডিপ লার্নিং মডেলে লক্ষ লক্ষ প্যারামিটার অপ্টিমাইজ করার জন্য ক্যালকুলাসের কোন ধারণাটি সবচেয়ে সরাসরি ব্যবহৃত হয়?"
+          correct="0"
+          correct-msg="চমৎকার ও যুগান্তকারী! ব্যাকপ্রোপাগেশন অ্যালগরিদম মূলত বহুমাত্রিক চেইন রুল ও গ্র্যাডিয়েন্ট ভেক্টরের নিখুঁত প্রয়োগ—$w \leftarrow w - \eta \frac{\partial L}{\partial w}$। অন্য বিকল্পগুলো ভুল: বলয় আনরোলিং হলো ক্যালকুলাস বোঝার সূচনা পদ্ধতি; ল'হোপিতালের নিয়ম সীমার সমস্যা সমাধানে ব্যবহৃত হয়; আর পিথাগোরাস উপপাদ্য প্রাথমিক জ্যামিতির অংশ।"
+          wrong-msg="নিউরাল নেটওয়ার্ক প্রশিক্ষণের ভিত্তি হলো গ্র্যাডিয়েন্ট ডিসেন্ট: $w \leftarrow w - \eta \frac{\partial L}{\partial w}$, যা ক্যালকুলাসের আংশিক অন্তরজের সরাসরি প্রয়োগ। বৃত্তের ক্ষেত্রফলের বলয় আনরোলিং, ল'হোপিতালের নিয়ম বা পিথাগোরাস উপপাদ্য—কোনোটিই বৃহৎ মডেল অপ্টিমাইজেশনের হাতিয়ার নয়। সঠিক উত্তর হলো প্রথম বিকল্প।"
+          reveal-msg="সঠিক উত্তর: প্রথম বিকল্প — লস ফাংশনের গ্র্যাডিয়েন্ট নির্ণয় করে তার বিপরীত দিকে প্যারামিটার আপডেট করা (Gradient Descent via Partial Derivatives)। ব্যাখ্যা: $w \leftarrow w - \eta \frac{\partial L}{\partial w}$ ক্যালকুলাসের আংশিক অন্তরজের সরাসরি প্রয়োগ।">
+          <div slot="option">লস ফাংশনের গ্র্যাডিয়েন্ট নির্ণয় করে তার বিপরীত দিকে প্যারামিটার আপডেট করা (Gradient Descent via Partial Derivatives)</div>
+          <div slot="option">বৃত্তের ক্ষেত্রফল বের করার বলয় আনরোলিং পদ্ধতি</div>
+          <div slot="option">ল'হোপিতালের নিয়ম</div>
+          <div slot="option">ত্রিভুজের ক্ষেত্রফল নির্ণয়ের পিথাগোরাস উপপাদ্য</div>
+        </b1b-quiz>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/calculus/lesson_12/experiments/3b1b_calculus_12_full_dubbed.mp4"
+    yt-id="3d6DsjIBzJ4"
+    title="অধ্যায় ১২: ডিফারেনশিয়াল আসলে কী? — অফিশিয়াল 3B1B ফলব্যাক ক্লিপ"
+    subtitle="⚠️ এই অধ্যায়ের কোনো অফিশিয়াল ডাবড ভিডিও নেই (মূল সিরিজ ১২ অধ্যায়ে সমাপ্ত)। দেখানো হচ্ছে একটি সম্পর্কিত অফিশিয়াল ৩ব্লু১ব্রাউন ক্লিপ; বাংলা পাঠ্যবস্তু সম্পূর্ণরূপে ডাটা JSON-ভিত্তিক।"
+    playlist-title="📋 প্লেলিস্ট — ক্যালকুলাস সিরিজ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_11.html"
+  prev-title="ডি এক্স এর প্রকৃত অর্থ"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url=""
+  next-title="সিরিজ সমাপ্ত"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ PAGE-LOCAL LAB COMPONENTS (new components only; no library override/patch) ═══════════ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Lab 1: 3D-style tangent-plane & total-differential explorer ── */
+  class CalcTangentPlaneLab extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.rendered) return;
+      this.dataset.rendered = '1';
+      this.innerHTML = `
+        <div class="calc-lab">
+          <canvas class="calc-canvas" width="900" height="440"></canvas>
+          <div class="calc-controls">
+            <div class="calc-control"><label><span>বিন্দু x</span><span class="calc-val" data-for="x">১.২০</span></label><input type="range" class="x" min="-2.4" max="2.4" step="0.1" value="1.2"/></div>
+            <div class="calc-control"><label><span>বিন্দু y</span><span class="calc-val" data-for="y">০.৮০</span></label><input type="range" class="y" min="-2.4" max="2.4" step="0.1" value="0.8"/></div>
+            <div class="calc-control"><label><span>dx</span><span class="calc-val" data-for="dx">০.৪০</span></label><input type="range" class="dx" min="-1" max="1" step="0.05" value="0.4"/></div>
+            <div class="calc-control"><label><span>dy</span><span class="calc-val" data-for="dy">০.৩০</span></label><input type="range" class="dy" min="-1" max="1" step="0.05" value="0.3"/></div>
+          </div>
+          <div class="calc-actions">
+            <button type="button" class="preset" data-x="1.2" data-y="0.8" data-dx="0.4" data-dy="0.3">ডিফল্ট নাড়া</button>
+            <button type="button" class="preset" data-x="1.2" data-y="0.8" data-dx="0.1" data-dy="0.1">সূক্ষ্ম নাড়া</button>
+            <button type="button" class="preset" data-x="-1.5" data-y="-1" data-dx="-0.5" data-dy="0.6">ঋণাত্মক dx</button>
+          </div>
+          <div class="calc-stats">
+            <div class="calc-stat"><span>f(x,y) = 0.2x² + 0.3y²</span><strong class="stat-f">—</strong></div>
+            <div class="calc-stat"><span>f_x = 0.4x · f_y = 0.6y</span><strong class="stat-g">—</strong></div>
+            <div class="calc-stat"><span>df = f_x dx + f_y dy</span><strong class="stat-df">—</strong></div>
+            <div class="calc-stat"><span>আসল Δf ও ত্রুটি</span><strong class="stat-err">—</strong></div>
+          </div>
+        </div>`;
+      this._canvas = this.querySelector('.calc-canvas');
+      this._ctx = this._canvas.getContext('2d');
+      this._inputs = {
+        x: this.querySelector('.x'), y: this.querySelector('.y'),
+        dx: this.querySelector('.dx'), dy: this.querySelector('.dy')
+      };
+      const draw = () => this._draw();
+      Object.keys(this._inputs).forEach(k => {
+        this._inputs[k].addEventListener('input', () => {
+          this.querySelector('[data-for="' + k + '"]').textContent = parseFloat(this._inputs[k].value).toFixed(2);
+          draw();
+        });
+      });
+      this.querySelectorAll('.preset').forEach(b => b.addEventListener('click', () => {
+        ['x', 'y', 'dx', 'dy'].forEach(k => {
+          this._inputs[k].value = b.dataset[k];
+          this.querySelector('[data-for="' + k + '"]').textContent = parseFloat(b.dataset[k]).toFixed(2);
+        });
+        draw();
+      }));
+      window.addEventListener('resize', () => this._resize());
+      window.addEventListener('b1b-fullscreen-change', () => this._resize());
+      this._resize();
+      requestAnimationFrame(() => this._resize());
+    }
+
+    _resize() {
+      if (!this._canvas) return;
+      const w = this._canvas.parentElement.clientWidth || 900;
+      this._canvas.width = w;
+      this._canvas.height = Math.max(380, Math.min(540, w * 0.5));
+      this._draw();
+    }
+
+    _proj(X, Y, Z) {
+      const s = this._scale, cx = this._cx, cy = this._cy;
+      return [cx + (X - Y) * 0.866 * s, cy + (X + Y) * 0.5 * s - Z * s];
+    }
+
+    _line(a, b, color, width, dash) {
+      const ctx = this._ctx;
+      ctx.strokeStyle = color; ctx.lineWidth = width || 1.5;
+      ctx.setLineDash(dash || []);
+      ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    _draw() {
+      const ctx = this._ctx; if (!ctx) return;
+      const W = this._canvas.width, H = this._canvas.height;
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#080b12' : '#f8fafc'; ctx.fillRect(0, 0, W, H);
+      this._scale = Math.min(W, H) / 10.5;
+      this._cx = W * 0.5; this._cy = H * 0.68;
+
+      const x = parseFloat(this._inputs.x.value), y = parseFloat(this._inputs.y.value);
+      const dx = parseFloat(this._inputs.dx.value), dy = parseFloat(this._inputs.dy.value);
+      const f = (a, b) => 0.2 * a * a + 0.3 * b * b;
+      const fx = 0.4 * x, fy = 0.6 * y;
+      const df = fx * dx + fy * dy;
+      const actual = f(x + dx, y + dy) - f(x, y);
+      this.querySelector('.stat-f').textContent = f(x, y).toFixed(4);
+      this.querySelector('.stat-g').textContent = fx.toFixed(3) + ' , ' + fy.toFixed(3);
+      this.querySelector('.stat-df').textContent = df.toFixed(4);
+      this.querySelector('.stat-err').textContent = actual.toFixed(4) + ' / ' + (actual - df).toFixed(5);
+
+      // Wireframe surface mesh.
+      for (let Y = -2.5; Y <= 2.51; Y += 0.5) {
+        for (let X = -2.5; X < 2.5; X += 0.25) {
+          this._line(this._proj(X, Y, f(X, Y)), this._proj(X + 0.25, Y, f(X + 0.25, Y)), 'rgba(56,189,248,.45)', 1);
+        }
+      }
+      for (let X = -2.5; X <= 2.51; X += 0.5) {
+        for (let Y = -2.5; Y < 2.5; Y += 0.25) {
+          this._line(this._proj(X, Y, f(X, Y)), this._proj(X, Y + 0.25, f(X, Y + 0.25)), 'rgba(56,189,248,.25)', 1);
+        }
+      }
+
+      // Tangent plane patch at (x, y).
+      const z0 = f(x, y);
+      const zp = (a, b) => z0 + fx * (a - x) + fy * (b - y);
+      const r = 0.9;
+      const corners = [
+        this._proj(x - r, y - r, zp(x - r, y - r)),
+        this._proj(x + r, y - r, zp(x + r, y - r)),
+        this._proj(x + r, y + r, zp(x + r, y + r)),
+        this._proj(x - r, y + r, zp(x - r, y + r))
+      ];
+      ctx.beginPath(); ctx.moveTo(corners[0][0], corners[0][1]);
+      corners.slice(1).forEach(c => ctx.lineTo(c[0], c[1]));
+      ctx.closePath();
+      ctx.fillStyle = 'rgba(251,191,36,.20)'; ctx.fill();
+      ctx.strokeStyle = '#fbbf24'; ctx.lineWidth = 2; ctx.stroke();
+
+      // Selected point + displacement arrows.
+      const P = this._proj(x, y, z0);
+      ctx.beginPath(); ctx.arc(P[0], P[1], 6, 0, Math.PI * 2); ctx.fillStyle = '#f472b6'; ctx.fill();
+      this._line(P, this._proj(x + dx, y, z0 + fx * dx), '#34d399', 3);
+      this._line(this._proj(x + dx, y, z0 + fx * dx), this._proj(x + dx, y + dy, z0 + fx * dx + fy * dy), '#34d399', 3);
+      this._line(this._proj(x, y, z0), this._proj(x + dx, y + dy, z0 + df), '#fbbf24', 3);
+
+      ctx.font = 'bold 14px sans-serif';
+      ctx.fillStyle = dark ? '#e2e8f0' : '#0f172a';
+      ctx.fillText('f(x,y) = 0.2x² + 0.3y²   ·   স্পর্শক তল (হলুদ)', 18, 26);
+      ctx.fillStyle = '#fbbf24';
+      ctx.fillText('df = ' + df.toFixed(3) + '   (আসল Δf = ' + actual.toFixed(3) + ')', 18, 48);
+      ctx.fillStyle = '#34d399';
+      ctx.fillText('dx, dy নাড়া → df = f_x dx + f_y dy', 18, H - 16);
+    }
+  }
+
+  /* ── Lab 2: gradient-ascent sandbox ── */
+  class CalcGradientAscentLab extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.rendered) return;
+      this.dataset.rendered = '1';
+      this.innerHTML = `
+        <div class="calc-lab">
+          <canvas class="calc-canvas" width="900" height="440"></canvas>
+          <div class="calc-controls">
+            <div class="calc-control"><label><span>ধাপ আকার η (step size)</span><span class="calc-val" data-for="eta">০.১৫</span></label><input type="range" class="eta" min="0.02" max="0.5" step="0.01" value="0.15"/></div>
+            <div class="calc-control"><label><span>শুরুর x</span><span class="calc-val" data-for="sx">-২.২০</span></label><input type="range" class="sx" min="-3" max="3" step="0.1" value="-2.2"/></div>
+            <div class="calc-control"><label><span>শুরুর y</span><span class="calc-val" data-for="sy">১.৮০</span></label><input type="range" class="sy" min="-3" max="3" step="0.1" value="1.8"/></div>
+          </div>
+          <div class="calc-actions">
+            <button type="button" class="play">▶ আরোহণ শুরু করুন</button>
+            <button type="button" class="reset">↺ রিসেট</button>
+          </div>
+          <div class="calc-stats">
+            <div class="calc-stat"><span>অবস্থান (x, y)</span><strong class="stat-pos">—</strong></div>
+            <div class="calc-stat"><span>গ্র্যাডিয়েন্ট ∇f = (−x, −y)</span><strong class="stat-grad">—</strong></div>
+            <div class="calc-stat"><span>|∇f| (তীব্রতা)</span><strong class="stat-mag">—</strong></div>
+            <div class="calc-stat"><span>f(x,y) = 3 − 0.5(x²+y²)</span><strong class="stat-val">—</strong></div>
+          </div>
+        </div>`;
+      this._canvas = this.querySelector('.calc-canvas');
+      this._ctx = this._canvas.getContext('2d');
+      this._eta = this.querySelector('.eta');
+      this._sx = this.querySelector('.sx');
+      this._sy = this.querySelector('.sy');
+      this._pos = { x: parseFloat(this._sx.value), y: parseFloat(this._sy.value) };
+      this._trail = [];
+      this._playing = false; this._raf = null; this._last = 0;
+      const draw = () => this._draw();
+      [[this._eta, 'eta'], [this._sx, 'sx'], [this._sy, 'sy']].forEach(([el, key]) => {
+        el.addEventListener('input', () => {
+          this.querySelector('[data-for="' + key + '"]').textContent = parseFloat(el.value).toFixed(2);
+          if (key !== 'eta') { this._resetPos(); }
+          draw();
+        });
+      });
+      const playBtn = this.querySelector('.play');
+      playBtn.addEventListener('click', () => {
+        if (this._playing) { cancelAnimationFrame(this._raf); this._playing = false; playBtn.textContent = '▶ আরোহণ শুরু করুন'; return; }
+        this._playing = true; playBtn.textContent = '⏸ বিরতি'; this._last = 0;
+        const loop = ts => {
+          if (!this._last) this._last = ts;
+          const dt = Math.min(50, ts - this._last); this._last = ts;
+          const steps = Math.max(1, Math.round(dt / 16));
+          for (let i = 0; i < steps; i++) this._step();
+          this._draw();
+          if (this._playing) this._raf = requestAnimationFrame(loop);
+        };
+        this._raf = requestAnimationFrame(loop);
+      });
+      this.querySelector('.reset').addEventListener('click', () => {
+        if (this._playing) { cancelAnimationFrame(this._raf); this._playing = false; playBtn.textContent = '▶ আরোহণ শুরু করুন'; }
+        this._resetPos(); this._draw();
+      });
+      window.addEventListener('resize', () => this._resize());
+      window.addEventListener('b1b-fullscreen-change', () => this._resize());
+      this._resize();
+      requestAnimationFrame(() => this._resize());
+    }
+
+    _resetPos() {
+      this._pos = { x: parseFloat(this._sx.value), y: parseFloat(this._sy.value) };
+      this._trail = [];
+    }
+
+    _step() {
+      const p = this._pos, eta = parseFloat(this._eta.value) * 0.1;
+      const gx = -p.x, gy = -p.y;
+      const n = Math.hypot(gx, gy) || 1;
+      p.x += eta * gx / n * 3; p.y += eta * gy / n * 3;
+      this._trail.push({ x: p.x, y: p.y });
+      if (this._trail.length > 400) this._trail.shift();
+      if (Math.hypot(p.x, p.y) < 0.06) {
+        this._playing = false;
+        const btn = this.querySelector('.play');
+        if (btn) btn.textContent = '▶ আরোহণ শুরু করুন';
+      }
+    }
+
+    _resize() {
+      if (!this._canvas) return;
+      const w = this._canvas.parentElement.clientWidth || 900;
+      this._canvas.width = w;
+      this._canvas.height = Math.max(380, Math.min(540, w * 0.5));
+      this._draw();
+    }
+
+    _draw() {
+      const ctx = this._ctx; if (!ctx) return;
+      const W = this._canvas.width, H = this._canvas.height;
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#080b12' : '#f8fafc'; ctx.fillRect(0, 0, W, H);
+      const s = Math.min(W, H) / 8.2, cx = W / 2, cy = H / 2;
+      const P = (x, y) => [cx + x * s, cy - y * s];
+
+      // Contour rings of f(x,y) = 3 - 0.5(x²+y²).
+      for (let r = 0.5; r <= 3.5; r += 0.5) {
+        ctx.beginPath(); ctx.arc(cx, cy, r * s, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(56,189,248,' + (0.5 - r * 0.09) + ')'; ctx.lineWidth = 1.5; ctx.stroke();
+      }
+      ctx.strokeStyle = dark ? '#64748b' : '#334155'; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(20, cy); ctx.lineTo(W - 20, cy);
+      ctx.moveTo(cx, 20); ctx.lineTo(cx, H - 20); ctx.stroke();
+
+      // Trail.
+      if (this._trail.length > 1) {
+        ctx.beginPath();
+        this._trail.forEach((t, i) => { const q = P(t.x, t.y); i ? ctx.lineTo(q[0], q[1]) : ctx.moveTo(q[0], q[1]); });
+        ctx.strokeStyle = '#f472b6'; ctx.lineWidth = 2; ctx.stroke();
+      }
+
+      // Gradient arrow.
+      const p = this._pos, gx = -p.x, gy = -p.y, mag = Math.hypot(gx, gy);
+      const at = P(p.x, p.y);
+      if (mag > 0.02) {
+        const end = P(p.x + gx / mag * 0.7, p.y + gy / mag * 0.7);
+        ctx.strokeStyle = '#fbbf24'; ctx.lineWidth = 3;
+        ctx.beginPath(); ctx.moveTo(at[0], at[1]); ctx.lineTo(end[0], end[1]); ctx.stroke();
+        const ang = Math.atan2(end[1] - at[1], end[0] - at[0]);
+        ctx.beginPath(); ctx.moveTo(end[0], end[1]);
+        ctx.lineTo(end[0] - 12 * Math.cos(ang - 0.5), end[1] - 12 * Math.sin(ang - 0.5));
+        ctx.lineTo(end[0] - 12 * Math.cos(ang + 0.5), end[1] - 12 * Math.sin(ang + 0.5));
+        ctx.closePath(); ctx.fillStyle = '#fbbf24'; ctx.fill();
+      }
+      ctx.beginPath(); ctx.arc(at[0], at[1], 8, 0, Math.PI * 2);
+      ctx.fillStyle = '#34d399'; ctx.fill();
+      ctx.strokeStyle = '#0b1220'; ctx.lineWidth = 2; ctx.stroke();
+
+      const fval = 3 - 0.5 * (p.x * p.x + p.y * p.y);
+      this.querySelector('.stat-pos').textContent = p.x.toFixed(3) + ' , ' + p.y.toFixed(3);
+      this.querySelector('.stat-grad').textContent = gx.toFixed(3) + ' , ' + gy.toFixed(3);
+      this.querySelector('.stat-mag').textContent = mag.toFixed(3);
+      this.querySelector('.stat-val').textContent = fval.toFixed(4);
+
+      ctx.font = 'bold 14px sans-serif'; ctx.fillStyle = dark ? '#e2e8f0' : '#0f172a';
+      ctx.fillText('f(x,y) = 3 − 0.5(x²+y²)  ·  কনট্যুর ও তীব্রতম আরোহণ', 18, 26);
+      ctx.fillStyle = '#fbbf24'; ctx.fillText('∇f = (−x, −y)', 18, 48);
+      ctx.fillStyle = '#34d399'; ctx.fillText('বলটি গ্র্যাডিয়েন্ট অনুসরণ করে চূড়ায় পৌঁছাচ্ছে', 18, H - 16);
+    }
+  }
+
+  if (!customElements.get('calc-tangent-plane-lab')) customElements.define('calc-tangent-plane-lab', CalcTangentPlaneLab);
+  if (!customElements.get('calc-gradient-ascent-lab')) customElements.define('calc-gradient-ascent-lab', CalcGradientAscentLab);
+})();
+</script>
+
+</body>
+</html>

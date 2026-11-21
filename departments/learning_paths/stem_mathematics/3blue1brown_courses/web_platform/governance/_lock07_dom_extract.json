@@ -1,0 +1,145 @@
+{
+  "sectionEls": [
+    {
+      "id": "sec-01-circle-unwrapping",
+      "noNarration": null
+    },
+    {
+      "id": "sec-01-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-02-derivative-connection",
+      "noNarration": null
+    },
+    {
+      "id": "sec-02-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-03-sphere-volume-surface",
+      "noNarration": null
+    },
+    {
+      "id": "sec-03-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-04-square-contrast",
+      "noNarration": null
+    },
+    {
+      "id": "sec-04-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-interactive-lab",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-quizzes",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-formulas-glossary",
+      "noNarration": "true"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-01-circle-unwrapping",
+      "title": "১. বৃত্তকে বলয়ে কাটা ও ত্রিভুজে উন্মোচন",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "১. বৃত্তকে বলয়ে কাটা ও ত্রিভুজে উন্মোচন"
+        }
+      ]
+    },
+    {
+      "id": "sec-02-derivative-connection",
+      "title": "২. পরিবর্তনের হার ও ডেরিভেটিভের জ্যামিতিক অর্থ",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "২. পরিবর্তনের হার ও ডেরিভেটিভের জ্যামিতিক অর্থ"
+        }
+      ]
+    },
+    {
+      "id": "sec-03-sphere-volume-surface",
+      "title": "৩. ত্রিমাত্রিক গোলক: আয়তন ও পৃষ্ঠতলের ক্ষেত্রফল",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "৩. ত্রিমাত্রিক গোলক: আয়তন ও পৃষ্ঠতলের ক্ষেত্রফল"
+        }
+      ]
+    },
+    {
+      "id": "sec-04-square-contrast",
+      "title": "৪. বর্গের সাথে তুলনা: কেন x² এর ডেরিভেটিভ 2x?",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "৪. বর্গের সাথে তুলনা: কেন x² এর ডেরিভেটিভ 2x?"
+        }
+      ]
+    }
+  ],
+  "engine": [
+    {
+      "id": "sec-01-circle-unwrapping",
+      "blockCount": 1,
+      "types": [
+        "h2"
+      ]
+    },
+    {
+      "id": "sec-02-derivative-connection",
+      "blockCount": 1,
+      "types": [
+        "h2"
+      ]
+    },
+    {
+      "id": "sec-03-sphere-volume-surface",
+      "blockCount": 1,
+      "types": [
+        "h2"
+      ]
+    },
+    {
+      "id": "sec-04-square-contrast",
+      "blockCount": 1,
+      "types": [
+        "h2"
+      ]
+    }
+  ],
+  "manifestPresent": true,
+  "manifestKeys": [
+    "sec-01-circle-unwrapping",
+    "sec-02-derivative-connection",
+    "sec-03-sphere-volume-surface",
+    "sec-04-square-contrast"
+  ],
+  "page_errors": [],
+  "console_errors": [
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND"
+  ]
+}

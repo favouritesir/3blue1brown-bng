@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr" data-theme="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="গণিতের সৌন্দর্য আবিষ্কার করুন — বাংলায়। ৩ব্লু১ব্রাউনের লিনিয়ার অ্যালজেব্রা, ক্যালকুলাস ও নিউরাল নেটওয়ার্ক কোর্স বাংলায় উপস্থাপিত। Full curriculum roadmap: 6 series, 11+ topics, 53 lessons, 100% free. All 53 lessons across 6 series are fully Bengali-dubbed with interactive labs and quizzes." />
+  <meta name="keywords" content="গণিত, লিনিয়ার অ্যালজেব্রা, ক্যালকুলাস, নিউরাল নেটওয়ার্ক, বাংলা, 3blue1brown" />
+  <meta name="author" content="গণিত শেখার প্ল্যাটফর্ম" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="গণিত শেখার প্ল্যাটফর্ম — বাংলায় ৩ব্লু১ব্রাউন" />
+  <meta property="og:description" content="লিনিয়ার অ্যালজেব্রা, ক্যালকুলাস ও নিউরাল নেটওয়ার্ক — দৃশ্যমান অ্যানিমেশনের মাধ্যমে বাংলায় শিখুন।" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="bn_BD" />
+
+  <title>গণিত শেখার প্ল্যাটফর্ম — বাংলায় ৩ব্লু১ব্রাউন</title>
+
+  <!-- Preconnect for Bengali web fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Official KaTeX (Vendored Locally — 100% Offline & Pure LaTeX Rendering) -->
+  <link rel="stylesheet" href="assets/libs/katex/katex.min.css" />
+  <script defer src="assets/libs/katex/katex.min.js"></script>
+  <script defer src="assets/libs/katex/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      function renderMath() {
+        if (typeof renderMathInElement === "function") {
+          renderMathInElement(document.body, {
+            delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false
+          });
+        } else {
+          setTimeout(renderMath, 50);
+        }
+      }
+      renderMath();
+    });
+  </script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+</head>
+
+<body>
+
+<!-- ======================================================
+     NAVBAR
+     ====================================================== -->
+<header class="navbar" id="navbar" role="banner">
+  <div class="container navbar__inner">
+
+    <!-- Official 3Blue1Brown Pi Creature Logo -->
+    <a href="index.html" class="navbar__logo" aria-label="৩ব্লু১ব্রাউন বাংলা — হোম পেজ">
+      <svg class="navbar__pi-logo" viewBox="-50 -50 100 100" aria-label="৩ব্লু১ব্রাউন">
+        <path fill="#74C0E3" d="M 0 0 L 0 -50 A 50 50 0 1 1 -50 0 z"/>
+        <path fill="#8C6239" d="M 0 0 L 0 -50 A 50 50 0 0 0 -50 0 z"/>
+        <circle cx="0" cy="0" r="22" fill="#000"/>
+        <circle cx="-8" cy="-6" r="7" fill="#fff"/>
+        <circle cx="8" cy="-6" r="7" fill="#fff"/>
+        <circle cx="-7" cy="-6" r="3.5" fill="#000"/>
+        <circle cx="9" cy="-6" r="3.5" fill="#000"/>
+        <path d="M -10 6 Q 0 14 10 6" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="navbar__logo-text">
+        <span class="navbar__logo-title">৩ব্লু১ব্রাউন বাংলা</span>
+        <span class="navbar__logo-subtitle">অফিসিয়াল ম্যাথ প্ল্যাটফর্ম</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="navbar__nav" aria-label="প্রধান নেভিগেশন">
+      <a href="#tracks"   class="navbar__link active" data-section="tracks">কোর্স</a>
+      <a href="#player"   class="navbar__link" data-section="player">পাঠ প্রিভিউ</a>
+      <a href="board.html" class="navbar__link" style="color:var(--accent-blue);font-weight:700;">📊 লাইভ ট্র্যাকার</a>
+      <a href="#why"      class="navbar__link" data-section="why">কেন শিখব</a>
+      <a href="#about"    class="navbar__link" data-section="about">পরিচিতি</a>
+    </nav>
+
+    <!-- Actions -->
+    <div class="navbar__actions">
+      <button class="navbar__search-btn" id="searchBtn" aria-label="অনুসন্ধান (Ctrl+K)" title="অনুসন্ধান">
+        🔍
+      </button>
+      <button class="navbar__theme-btn" id="themeToggle" aria-label="থিম পরিবর্তন" title="থিম পরিবর্তন">
+        ☀️
+      </button>
+      <a href="#tracks" class="btn-cta">শুরু করুন →</a>
+    </div>
+
+    <!-- Hamburger (mobile) -->
+    <button class="navbar__hamburger" id="hamburger" aria-label="মেনু খুলুন" aria-expanded="false" aria-controls="mobileNav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- Mobile navigation drawer -->
+<nav class="navbar__mobile-nav" id="mobileNav" aria-label="মোবাইল নেভিগেশন">
+  <a href="#tracks" class="navbar__link active">📚 কোর্সসমূহ</a>
+  <a href="#player" class="navbar__link">▶️ পাঠ প্রিভিউ</a>
+  <a href="board.html" class="navbar__link" style="color:var(--accent-blue);font-weight:700;">📊 লাইভ ট্র্যাকার বোর্ড</a>
+  <a href="#why"    class="navbar__link">💡 কেন শিখব</a>
+  <a href="#about"  class="navbar__link">ℹ️ পরিচিতি</a>
+  <hr style="border-color:var(--border-subtle);margin:0.5rem 0;" />
+  <a href="#tracks" class="btn-cta" style="text-align:center;display:block;">শুরু করুন →</a>
+</nav>
+
+<!-- ======================================================
+     SEARCH OVERLAY
+     ====================================================== -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="পাঠ অনুসন্ধান">
+  <div class="search-box">
+    <div class="search-box__input-row">
+      <span class="search-box__icon" aria-hidden="true">🔍</span>
+      <input
+        type="search"
+        class="search-box__input"
+        id="searchInput"
+        placeholder="পাঠ বা বিষয় খুঁজুন..."
+        autocomplete="off"
+        spellcheck="false"
+        aria-label="অনুসন্ধান"
+      />
+      <button class="search-box__close" id="searchClose" aria-label="অনুসন্ধান বন্ধ করুন">ESC</button>
+    </div>
+    <div class="search-box__results" id="searchResults" role="listbox" aria-label="অনুসন্ধান ফলাফল"></div>
+  </div>
+</div>
+
+<!-- ======================================================
+     HERO
+     ====================================================== -->
+<main id="main-content">
+<section class="hero" aria-labelledby="heroTitle">
+
+  <!-- Floating math symbols (decorative) -->
+  <span class="hero__math-float" aria-hidden="true">∑</span>
+  <span class="hero__math-float" aria-hidden="true">∫</span>
+  <span class="hero__math-float" aria-hidden="true">∇</span>
+  <span class="hero__math-float" aria-hidden="true">∞</span>
+  <span class="hero__math-float" aria-hidden="true">λ</span>
+
+  <div class="hero__bg-grid" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="hero__content">
+
+      <div class="hero__eyebrow animate-fade-up">
+        <span class="hero__eyebrow-line" aria-hidden="true"></span>
+        <span class="hero__eyebrow-text">বাংলায় সেরা গণিত</span>
+        <span class="hero__eyebrow-line" aria-hidden="true"></span>
+      </div>
+
+      <h1 class="hero__title animate-fade-up animate-delay-1" id="heroTitle">
+        গণিতের <span class="highlight">সৌন্দর্য</span><br/>
+        অনুভব করুন বাংলায়
+      </h1>
+
+      <p class="hero__subtitle animate-fade-up animate-delay-2">
+        দৃশ্যমান অ্যানিমেশন ও গভীর অন্তর্দৃষ্টির মাধ্যমে লিনিয়ার অ্যালজেব্রা, ক্যালকুলাস
+        ও নিউরাল নেটওয়ার্কের রহস্য উন্মোচন করুন — সম্পূর্ণ বাংলায়।
+      </p>
+
+      <div class="hero__actions animate-fade-up animate-delay-3">
+        <a href="#tracks" class="btn-primary">
+          <span>▶</span> কোর্স দেখুন
+        </a>
+        <a href="#player" class="btn-secondary">
+          <span>📖</span> পাঠ প্রিভিউ
+        </a>
+      </div>
+
+            <div class="hero__stats animate-fade-up animate-delay-4" aria-label="Roadmap stats">
+        <div class="hero__stat">
+          <span class="hero__stat-value">6</span>
+          <span class="hero__stat-label">সিরিজ</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-value">11+</span>
+          <span class="hero__stat-label">বিষয়</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-value">65+</span>
+          <span class="hero__stat-label">মোট পাঠ</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-value">100%</span>
+          <span class="hero__stat-label">বিনামূল্যে</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-value">&#8734;</span>
+          <span class="hero__stat-label">অনুপ্রেরণা</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     COURSE TRACKS
+     ====================================================== -->
+<section class="section" id="tracks" aria-labelledby="tracksTitle">
+  <div class="container">
+
+    <div class="section__header">
+      <span class="section__label">রোডম্যাপ</span>
+      <h2 class="section__title animate-fade-up" id="tracksTitle">সম্পূর্ণ সিলেবাস রোডম্যাপ</h2>
+      <p class="section__subtitle animate-fade-up animate-delay-1">
+        Official 3Blue1Brown curriculum: 6 core series + 20 topic collections — with local pages for every topic.
+        All 53 lessons across 6 core series are fully Bengali-dubbed, with full-length video and expressive teacher narration. Tap a card to explore.
+      </p>
+    </div>
+
+    <nav class="roadmap-nav" aria-label="Roadmap sections">
+      <a href="#core-series" class="roadmap-nav__pill">সিরিজ (6)</a>
+      <a href="#topic-collections" class="roadmap-nav__pill">11+ বিষয়</a>
+    </nav>
+
+    <h3 class="roadmap-subhead" id="core-series">সিরিজ - Core Series (6)</h3>
+    <div class="tracks-grid" role="list" aria-label="Core series">
+      <article class="track-card track-card--blue animate-fade-up animate-delay-1" data-href="courses/linear_algebra/index.html" role="listitem" aria-label="Essence of Linear Algebra">
+        <div class="track-card__icon" aria-hidden="true">&#128208;</div>
+        <div class="track-card__meta">
+          <span class="badge badge--green">চলমান</span>
+          <span class="badge badge--blue">15 / 15 পাঠ</span>
+        </div>
+        <h3 class="track-card__title">লিনিয়ার অ্যালজেব্রার মূলভাব</h3>
+        <p class="track-card__subtitle">Essence of Linear Algebra</p>
+        <p class="track-card__desc">ভেক্টর, ম্যাট্রিক্স, ডিটারমিন্যান্ট, আইগেনভ্যালু — লিনিয়ার অ্যালজেব্রার মূল ধারণাগুলো দৃশ্যমান অ্যানিমেশনের মাধ্যমে বাংলায় শিখুন।</p>
+        <div class="track-card__footer">
+          <span class="track-card__lessons">পাঠ ০১–১৫ সম্পূর্ণ বাংলা ডাবিং</span>
+          <div class="track-card__arrow" aria-hidden="true">&#8594;</div>
+        </div>
+      </article>
+      <article class="track-card track-card--gold animate-fade-up animate-delay-2" data-href="courses/calculus/index.html" role="listitem" aria-label="Essence of Calculus">
+        <div class="track-card__icon" aria-hidden="true">&#8747;</div>
+        <div class="track-card__meta">
+          <span class="badge badge--green">চলমান</span>
+          <span class="badge badge--gray">১২টি পাঠ</span>
+        </div>
+        <h3 class="track-card__title">ক্যালকুলাসের মূল সারমর্ম</h3>
+        <p class="track-card__subtitle">Essence of Calculus</p>
+        <p class="track-card__desc">লিমিট, ডেরিভেটিভ, ইন্টিগ্রাল ও মৌলিক উপপাদ্য — ক্যালকুলাসকে সূত্রের বাইরে একটি দৃশ্যমান গল্পের মতো অনুভব করুন।</p>
+        <div class="track-card__footer">
+          <span class="track-card__lessons">অধ্যায় ০১ উন্মুক্ত</span>
+          <div class="track-card__arrow" aria-hidden="true">&#8594;</div>
+        </div>
+      </article>
+      <article class="track-card track-card--purple animate-fade-up animate-delay-3" data-href="courses/neural_networks/index.html" role="listitem" aria-label="Neural Networks">
+        <div class="track-card__icon" aria-hidden="true">&#129504;</div>
+        <div class="track-card__meta">
+          <span class="badge badge--green">চলমান</span>
+          <span class="badge badge--purple">১ / ৮ পাঠ</span>
+        </div>
+        <h3 class="track-card__title">নিউরাল নেটওয়ার্ক ও ডিপ লার্নিং</h3>
+        <p class="track-card__subtitle">Neural Networks & Deep Learning</p>
+        <p class="track-card__desc">কৃত্রিম বুদ্ধিমত্তা কীভাবে শেখে: নিউরন, পারসেপট্রন, ব্যাকপ্রোপাগেশন, গ্রেডিয়েন্ট ডিসেন্ট ও ট্রান্সফরমার আর্কিটেকচার।</p>
+        <div class="track-card__footer">
+          <span class="track-card__lessons">পাঠ ০১ সম্পূর্ণ বাংলা ও ইন্টারেক্টিভ ল্যাব</span>
+          <div class="track-card__arrow" aria-hidden="true">&#8594;</div>
+        </div>
+      </article>
+      <article class="track-card track-card--teal animate-fade-up" data-href="courses/differential_equations/index.html" role="listitem" aria-label="Differential Equations">
+        <div class="track-card__icon" aria-hidden="true">&#128200;</div>
+        <div class="track-card__meta">
+          <span class="badge badge--green">চলমান</span>
+          <span class="badge badge--blue">অধ্যায় ১ লাইভ</span>
+        </div>
+        <h3 class="track-card__title">ডিফারেনশিয়াল সমীকরণ</h3>
+        <p class="track-card__subtitle">Differential Equations</p>
+        <p class="track-card__desc">পরিবর্তনের ভাষা: তাপ, গতি ও তরঙ্গের গতিশীল ব্যবস্থার রূপান্তর এবং বাস্তব মহাবিশ্বের গাণিতিক মডেলিং।</p>
+        <div class="track-card__footer">
+          <span class="track-card__lessons">পাঠ ১ সম্পূর্ণ লাইভ ও ল্যাব</span>
+          <div class="track-card__arrow" aria-hidden="true">&#8594;</div>
+        </div>
+      </article>
+      <article class="track-card track-card--pink animate-fade-up" onclick="window.location.href='courses/lockdown_math/index.html'" role="listitem" aria-label="Lockdown Math" style="cursor:pointer;">
+        <div class="track-card__icon" aria-hidden="true">&#127968;</div>
+        <div class="track-card__meta">
+          <span class="badge badge--orange" style="background:rgba(246,173,85,0.18); color:#f6ad55; border:1px solid rgba(246,173,85,0.4);">সম্পূর্ণ ১০/১০</span>
+          <span class="badge badge--gray">১০টি অধ্যায়</span>
+        </div>
+        <h3 class="track-card__title">লকডাউন ম্যাথ ও বিশেষ জ্যামিতি</h3>
+        <p class="track-card__subtitle">Lockdown Math & Geometry</p>
+        <p class="track-card__desc">দ্বিঘাত সমীকরণ জ্যামিতিক রূপ, অয়লারের সূত্র, জটিল সংখ্যা, প্রাইম স্পাইরাল এবং দ্বিপদী বিন্যাস নিয়ে গ্রান্ট স্যান্ডারসনের সরাসরি গণিত ক্লাস।</p>
+        <div class="track-card__footer">
+          <span class="track-card__lessons">পাঠ ০১–১০ সম্পূর্ণ &rarr;</span>
+          <div class="track-card__arrow" aria-hidden="true">&rarr;</div>
+        </div>
+      </article>
+      <article class="track-card track-card--green animate-fade-up" data-href="courses/probability/index.html" role="listitem" aria-label="Essence of Probability">
+        <div class="track-card__icon" aria-hidden="true">&#127922;</div>
+        <div class="track-card__meta">
+          <span class="badge badge--green">চলমান</span>
+          <span class="badge badge--blue">পাঠ ০১ লাইভ</span>
+        </div>
+        <h3 class="track-card__title">সম্ভাব্যতার মূলভাব</h3>
+        <p class="track-card__subtitle">Essence of Probability</p>
+        <p class="track-card__desc">মৌলিক নীতি থেকে সম্ভাব্যতা ও অনিশ্চয়তার জ্যামিতি — ক্ষেত্রফলভিত্তিক সিমুলেটর ও ইন্টারেক্টিভ ল্যাব সহ বাংলায়।</p>
+        <div class="track-card__footer">
+          <span class="track-card__lessons">পাঠ ০১ শুরু করুন →</span>
+          <div class="track-card__arrow" aria-hidden="true">&#8594;</div>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="roadmap-subhead" id="topic-collections">বিষয় ও কালেকশন — Topics &amp; Collections</h3>
+    
+    <!-- Filter Pills for 3Blue1Brown Topics Parity -->
+    <div class="topics-filter-bar" id="topicsFilterBar" role="tablist" aria-label="বিষয় ফিল্টার">
+      <button class="topic-filter-btn active" data-filter="all" role="tab" aria-selected="true">সকল (All)</button>
+      <button class="topic-filter-btn" data-filter="best-of" role="tab" aria-selected="false">সেরা ভিডিও (Best Of)</button>
+      <button class="topic-filter-btn" data-filter="linear-algebra" role="tab" aria-selected="false">লিনিয়ার অ্যালজেব্রা</button>
+      <button class="topic-filter-btn" data-filter="calculus" role="tab" aria-selected="false">ক্যালকুলাস</button>
+      <button class="topic-filter-btn" data-filter="neural-networks" role="tab" aria-selected="false">নিউরাল নেটওয়ার্ক</button>
+      <button class="topic-filter-btn" data-filter="differential-equations" role="tab" aria-selected="false">ডিফারেনশিয়াল সমীকরণ</button>
+      <button class="topic-filter-btn" data-filter="physics" role="tab" aria-selected="false">পদার্থবিজ্ঞান</button>
+      <button class="topic-filter-btn" data-filter="computer-science" role="tab" aria-selected="false">কম্পিউটার সায়েন্স</button>
+      <button class="topic-filter-btn" data-filter="geometry" role="tab" aria-selected="false">জ্যামিতি ও টপোলজি</button>
+      <button class="topic-filter-btn" data-filter="puzzles" role="tab" aria-selected="false">ধাঁধা ও পাই</button>
+      <button class="topic-filter-btn" data-filter="talks" role="tab" aria-selected="false">বক্তৃতা ও আলোচনা</button>
+    </div>
+
+    <div class="topics-grid" id="topicsGrid" role="list" aria-label="বিষয় তালিকা">
+      <!-- 21 Full 3Blue1Brown Topics Showcase items matching official parity -->
+      <article class="topic-card" data-topic-id="all" data-category="all" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">🌐</span>
+          <span class="topic-card__badge">২১টি বিষয়</span>
+        </div>
+        <span class="topic-card__title">সকল বিষয়</span>
+        <span class="topic-card__sub">All Topics &amp; Videos</span>
+        <p class="topic-card__desc">৩ব্লু১ব্রাউনের সম্পূর্ণ শিক্ষামূলক পাঠ্যক্রম — কোর সিরিজ ও সকল গণিত-বিজ্ঞান কালেকশন।</p>
+        <span class="topic-card__action">সকল ক্যাটালগ দেখুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="best-of" data-category="best-of" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">⭐</span>
+          <span class="topic-card__badge">১০+ ভিডিও</span>
+        </div>
+        <span class="topic-card__title">সেরা ভিডিও</span>
+        <span class="topic-card__sub">Best of 3Blue1Brown</span>
+        <p class="topic-card__desc">চমকপ্রদ গণিত, দৃষ্টিনন্দন ভিজ্যুয়ালাইজেশন ও সর্বাধিক জনপ্রিয় ৩Blue1Brown ভিডিও কালেকশন।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="neural-networks" data-category="neural-networks" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">🧠</span>
+          <span class="topic-card__badge">৮ পাঠ</span>
+        </div>
+        <span class="topic-card__title">নিউরাল নেটওয়ার্ক</span>
+        <span class="topic-card__sub">Neural Networks</span>
+        <p class="topic-card__desc">ডিপ লার্নিংয়ের গাণিতিক ভিত্তি, ব্যাকপ্রোপাগেশন ও আধুনিক ট্রান্সফরমারের ভেতর কী ঘটে।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="linear-algebra" data-category="linear-algebra" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">📐</span>
+          <span class="topic-card__badge">১৫ পাঠ • বাংলা ডাবড</span>
+        </div>
+        <span class="topic-card__title">লিনিয়ার অ্যালজেব্রা</span>
+        <span class="topic-card__sub">Linear Algebra</span>
+        <p class="topic-card__desc">ভেক্টর, রূপান্তর, ম্যাট্রিক্স গুণন ও আইগেনভ্যালুর পূর্ণাঙ্গ বাংলা সিরিজ।</p>
+        <span class="topic-card__action">কোর্সে প্রবেশ করুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="calculus" data-category="calculus" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">∫</span>
+          <span class="topic-card__badge">১২ পাঠ</span>
+        </div>
+        <span class="topic-card__title">ক্যালকুলাস</span>
+        <span class="topic-card__sub">Essence of Calculus</span>
+        <p class="topic-card__desc">ডেরিভেটিভ, ইন্টিগ্রাল, লিমিট ও টেলর সিরিজের দৃশ্যমান ও সাবলীল ব্যাখ্যা।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="differential-equations" data-category="differential-equations" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">📈</span>
+          <span class="topic-card__badge">৫ পাঠ</span>
+        </div>
+        <span class="topic-card__title">ডিফারেনশিয়াল সমীকরণ</span>
+        <span class="topic-card__sub">Differential Equations</span>
+        <p class="topic-card__desc">তাপ প্রবাহ, পেন্ডুলামের গতি ও মহাবিশ্বের পরিবর্তনের গতিশীল সমীকরণ।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="analysis" data-category="calculus" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">🔍</span>
+          <span class="topic-card__badge">অ্যানালাইসিস</span>
+        </div>
+        <span class="topic-card__title">অ্যানালাইসিস</span>
+        <span class="topic-card__sub">Mathematical Analysis</span>
+        <p class="topic-card__desc">রিয়েল ও কমপ্লেক্স অ্যানালাইসিস, অসীম ধারা ও ফাংশনের সূক্ষ্ম গাণিতিক ভিত্তি।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="physics" data-category="physics" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">⚛️</span>
+          <span class="topic-card__badge">পদার্থবিজ্ঞান</span>
+        </div>
+        <span class="topic-card__title">পদার্থবিজ্ঞান</span>
+        <span class="topic-card__sub">Physics Simulations</span>
+        <p class="topic-card__desc">কোয়ান্টাম মেকানিক্স, সাধারণ আপেক্ষিকতা, আলো ও সংঘর্ষের গাণিতিক সৌন্দর্য।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="computer-science" data-category="computer-science" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">💻</span>
+          <span class="topic-card__badge">সিএস</span>
+        </div>
+        <span class="topic-card__title">কম্পিউটার সায়েন্স</span>
+        <span class="topic-card__sub">Computer Science</span>
+        <p class="topic-card__desc">অ্যালগরিদম, বিটকয়েন, ক্রিপ্টোগ্রাফি, কোডিং থিওরি ও কম্পিউটিং ফান্ডামেন্টালস।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="why-pi" data-category="puzzles" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">π</span>
+          <span class="topic-card__badge">পাই সিরিজ</span>
+        </div>
+        <span class="topic-card__title">কেন পাই?</span>
+        <span class="topic-card__sub">Why Pi?</span>
+        <p class="topic-card__desc">সংঘর্ষে পাই, বাশেল সমস্যা ও অপ্রত্যাশিত স্থানে পাই-এর রহস্যময় আবির্ভাব।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="puzzles" data-category="puzzles" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">🧩</span>
+          <span class="topic-card__badge">ম্যাথ পাজল</span>
+        </div>
+        <span class="topic-card__title">ধাঁধা ও সমস্যা সমাধান</span>
+        <span class="topic-card__sub">Puzzles</span>
+        <p class="topic-card__desc">ম্যাথ অলিম্পিয়াড, পুতনাম প্রতিযোগিতা ও চমকপ্রদ গাণিতিক ধাঁধার সমাধান।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="geometry" data-category="geometry" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">📐</span>
+          <span class="topic-card__badge">জ্যামিতি</span>
+        </div>
+        <span class="topic-card__title">জ্যামিতি</span>
+        <span class="topic-card__sub">Geometry</span>
+        <p class="topic-card__desc">ইউক্লিডীয় ও অ-ইউক্লিডীয় তল, প্রক্ষেপণ, প্রতিসাম্য ও উচ্চমাত্রিক জ্যামিতি।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="topology" data-category="geometry" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">🍩</span>
+          <span class="topic-card__badge">টপোলজি</span>
+        </div>
+        <span class="topic-card__title">টপোলজি</span>
+        <span class="topic-card__sub">Topology</span>
+        <p class="topic-card__desc">রাবার-শিট জ্যামিতি, মোবিউস স্ট্রিপ, টরাস ও ক্ষেত্রফলের অবিচ্ছিন্ন পরিবর্তন।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="fractals" data-category="geometry" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">❄️</span>
+          <span class="topic-card__badge">ফ্র্যাক্টাল</span>
+        </div>
+        <span class="topic-card__title">ফ্র্যাক্টাল</span>
+        <span class="topic-card__sub">Fractals &amp; Dimensions</span>
+        <p class="topic-card__desc">ম্যান্ডেলব্রোট সেট, ফ্র্যাক্টাল মাত্রা ও প্রকৃতির অসীম রূপের গাণিতিক শৃঙ্খলা।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="probability" data-category="calculus" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">🎲</span>
+          <span class="topic-card__badge">নতুন ২০২৫-২৬</span>
+        </div>
+        <span class="topic-card__title">সম্ভাব্যতা</span>
+        <span class="topic-card__sub">Probability &amp; Statistics</span>
+        <p class="topic-card__desc">বেইজিয়ান পরিসংখ্যান, দৈব চলক, অনিশ্চয়তা ও সম্ভাব্যতা কাঠামোর দৃশ্যমান উপস্থাপনা।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="group-theory" data-category="linear-algebra" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">💎</span>
+          <span class="topic-card__badge">গ্রুপ তত্ত্ব</span>
+        </div>
+        <span class="topic-card__title">গ্রুপ তত্ত্ব</span>
+        <span class="topic-card__sub">Group Theory &amp; Symmetry</span>
+        <p class="topic-card__desc">প্রতিসাম্যের গাণিতিক ভাষা, বিমূর্ত বীজগণিত ও মনস্টার গ্রুপের গল্প।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="number-theory" data-category="puzzles" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">🔢</span>
+          <span class="topic-card__badge">সংখ্যা তত্ত্ব</span>
+        </div>
+        <span class="topic-card__title">সংখ্যা তত্ত্ব</span>
+        <span class="topic-card__sub">Number Theory</span>
+        <p class="topic-card__desc">মৌলিক সংখ্যা, রিমান হাইপোথিসিস ও মডুলার অ্যারিথমেটিকের বিস্ময়।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="lockdown-math" data-category="puzzles" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">🏠</span>
+          <span class="topic-card__badge">১০ পাঠ</span>
+        </div>
+        <span class="topic-card__title">লকডাউন ম্যাথ</span>
+        <span class="topic-card__sub">Lockdown Math</span>
+        <p class="topic-card__desc">কোয়াটারনিয়ন, অয়লারের সূত্র এবং জটিল সংখ্যার জ্যামিতির লাইভ সেশনসমূহ।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="guest-videos" data-category="talks" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">🤝</span>
+          <span class="topic-card__badge">অতিথি ভিডিও</span>
+        </div>
+        <span class="topic-card__title">অতিথি ভিডিও</span>
+        <span class="topic-card__sub">Guest Videos &amp; Collabs</span>
+        <p class="topic-card__desc">Numberphile, Stand-up Maths ও আন্তর্জাতিক গবেষকদের সাথে যৌথভাবে তৈরি বিশেষ পাঠ।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="talks" data-category="talks" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">🎙️</span>
+          <span class="topic-card__badge">বক্তৃতা</span>
+        </div>
+        <span class="topic-card__title">বক্তৃতা ও আলোচনা</span>
+        <span class="topic-card__sub">Talks &amp; Lectures</span>
+        <p class="topic-card__desc">গণিত শিক্ষকতা, ভিজ্যুয়ালাইজেশনের দর্শন ও মানিম (Manim) ইঞ্জিন তৈরির প্রেক্ষাপট।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+
+      <article class="topic-card" data-topic-id="other-channels" data-category="talks" role="listitem">
+        <div class="topic-card__icon-row">
+          <span class="topic-card__icon">📺</span>
+          <span class="topic-card__badge">অন্যান্য চ্যানেলে</span>
+        </div>
+        <span class="topic-card__title">অন্যান্য চ্যানেলে</span>
+        <span class="topic-card__sub">On Other Channels</span>
+        <p class="topic-card__desc">লেক্স ফ্রিডম্যান পডকাস্ট, কুর্টজগেজাগ্ট ও ভেরিটাসিয়ামের সহযোগিতায় উপস্থাপনা।</p>
+        <span class="topic-card__action">বিস্তারিত জানুন ↗</span>
+      </article>
+    </div>
+
+    <p class="roadmap-note">সকল সিরিজ ও কালেকশনের মূল স্বত্ব Grant Sanderson / 3Blue1Brown। এই প্ল্যাটফর্মে বাংলায় পূর্ণ রূপান্তর ও লোকাল ইন্টারেকশন প্রদান করা হচ্ছে।</p>
+
+  </div>
+</section>
+
+<!-- ======================================================
+     MEDIA PLAYER PREVIEW SECTION
+     ====================================================== -->
+
+    <!-- Local topic library (all 20 official topics) -->
+    <div class="topic-library" id="topicLibrary" style="margin-top:28px">
+      <h3 class="track-card__title" style="margin-bottom:14px">📚 টপিক লাইব্রেরি — সব ২০টি বিষয় (local)</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <a href="courses/topics/best-of.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">সেরা ভিডিও (14)</a>
+        <a href="courses/topics/neural-networks.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">neural networks (11)</a>
+        <a href="courses/topics/linear-algebra.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">linear algebra (16)</a>
+        <a href="courses/topics/calculus.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">calculus (17)</a>
+        <a href="courses/topics/differential-equations.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">differential equations (10)</a>
+        <a href="courses/topics/analysis.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">বিশ্লেষণ (10)</a>
+        <a href="courses/topics/physics.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">পদার্থবিজ্ঞান (13)</a>
+        <a href="courses/topics/computer-science.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">কম্পিউটার বিজ্ঞান (13)</a>
+        <a href="courses/topics/why-pi.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">কেন পাই (8)</a>
+        <a href="courses/topics/puzzles.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">ধাঁধা (10)</a>
+        <a href="courses/topics/geometry.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">জ্যামিতি (6)</a>
+        <a href="courses/topics/topology.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">টপোলজি (3)</a>
+        <a href="courses/topics/fractals.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">ফ্র্যাক্টাল (4)</a>
+        <a href="courses/topics/probability.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">probability (9)</a>
+        <a href="courses/topics/group-theory.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">গ্রুপ তত্ত্ব (2)</a>
+        <a href="courses/topics/number-theory.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">সংখ্যা তত্ত্ব (3)</a>
+        <a href="courses/topics/lockdown-math.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">lockdown math (11)</a>
+        <a href="courses/topics/guest-videos.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">অতিথি ভিডিও (5)</a>
+        <a href="courses/topics/talks.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">বক্তৃতা (5)</a>
+        <a href="courses/topics/videos-elsewhere.html" style="padding:8px 14px;border:1px solid #2a3340;border-radius:20px;text-decoration:none;color:inherit;background:#151b24">অন্য চ্যানেলে (8)</a>
+      </div>
+    </div>
+
+<section class="section section--alt player-section" id="player" aria-labelledby="playerTitle">
+  <div class="container">
+
+    <div class="section__header">
+      <span class="section__label">পাঠ প্রিভিউ</span>
+      <h2 class="section__title animate-fade-up" id="playerTitle">লিনিয়ার অ্যালজেব্রা — প্রথম পাঁচটি পাঠ</h2>
+      <p class="section__desc animate-fade-up animate-delay-1">
+        ভেক্টর থেকে শুরু করে ত্রিমাত্রিক রূপান্তর — সরাসরি স্টুডিও কোয়ালিটি বাংলা ডাবড ভিডিও ও ইন্টারঅ্যাক্টিভ প্লেয়ার।
+      </p>
+    </div>
+
+    <div class="player-showcase">
+
+      <!-- Video Player Panel -->
+      <div class="animate-fade-up">
+        <div class="player-showcase__media" id="playerMediaContainer" role="region" aria-label="ভিডিও প্লেয়ার">
+
+          <!-- HTML5 Video element for pure local dubbed playback -->
+          <video
+            id="previewVideo"
+            class="player-showcase__video"
+            src="media_vault/lesson_01/3b1b_lesson_01_bangla_dubbed_video.mp4"
+            playsinline
+            preload="metadata"
+          ></video>
+
+          <!-- Fallback YouTube iframe -->
+          <iframe
+            id="previewIframe"
+            class="player-showcase__iframe"
+            style="display:none;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+
+          <!-- Center Play/Pause button -->
+          <button class="player-play-btn" id="mainPlayBtn" aria-label="চালু করুন" title="চালু / বিরতি">
+            ▶
+          </button>
+
+          <!-- Controls overlay -->
+          <div class="player-controls" id="playerControls" aria-label="প্লেয়ার নিয়ন্ত্রণ">
+            <div
+              class="player-controls__progress"
+              id="playerProgressBar"
+              role="slider"
+              aria-label="ভিডিও অগ্রগতি"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              tabindex="0"
+            >
+              <div class="player-controls__progress-fill" id="playerProgressFill" style="width:0%;"></div>
+            </div>
+            <div class="player-controls__row">
+              <div style="display:flex;gap:8px;align-items:center;">
+                <button class="player-controls__btn" id="mainPlayBtn2" aria-label="চালু বা বিরতি">▶ চালু</button>
+                <button class="player-controls__btn" id="playerPrevBtn" aria-label="পূর্ববর্তী পাঠ" title="পূর্ববর্তী পাঠ">⏮</button>
+                <button class="player-controls__btn" id="playerNextBtn" aria-label="পরবর্তী পাঠ" title="পরবর্তী পাঠ">⏭</button>
+                <button class="player-controls__btn" id="playerSourceToggle" aria-label="উৎস পরিবর্তন (লোকাল / ইউটিউব)" title="উৎস পরিবর্তন" style="font-size:0.75rem;padding:2px 8px;background:rgba(255,255,255,0.15);border-radius:4px;">1080p লোকাল</button>
+              </div>
+              <span class="player-controls__time" id="playerTime">০:০০ / ৯:৫২</span>
+              <div style="display:flex;gap:8px;align-items:center;">
+                <button class="player-controls__btn" id="playerCcBtn" aria-label="বাংলা ভয়েস সক্রিয়" title="বাংলা ভয়েস">বাংলা অডিও 🔊</button>
+                <button class="player-controls__btn" id="playerFullscreenBtn" aria-label="পূর্ণ স্ক্রিন" title="পূর্ণ স্ক্রিন">⛶</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Lesson list panel -->
+      <div class="player-showcase__info animate-fade-up animate-delay-2">
+        <p class="player-showcase__label">এখন নির্বাচিত পাঠ</p>
+        <h3 class="player-showcase__title" id="playerCurrentTitle">
+          ভেক্টর কী? — মূল ধারণার পরিচয়
+        </h3>
+        <p class="player-showcase__desc" id="playerCurrentDesc">
+          লিনিয়ার অ্যালজেব্রা সিরিজের প্রথম পাঠে ভেক্টরের তিনটি দৃষ্টিভঙ্গি জানুন — পদার্থবিজ্ঞানী, গণিতবিদ ও কম্পিউটার বিজ্ঞানীর চোখে।
+        </p>
+        <div style="margin: 12px 0 18px;">
+          <a id="playerLessonPageLink" href="courses/linear_algebra/lesson_01.html" class="btn-primary" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;font-size:0.875rem;">
+            <span>📖</span> সম্পূর্ণ ইন্টারঅ্যাক্টিভ পাঠ ও কুইজ দেখুন →
+          </a>
+        </div>
+
+        <ol class="player-showcase__lesson-list" id="playerLessonList" role="list" aria-label="পাঠ তালিকা">
+
+          <li
+            class="lesson-item active"
+            data-lesson-index="0"
+            data-lesson-id="la_01"
+            data-course-id="linear_algebra"
+            role="listitem"
+            tabindex="0"
+            aria-current="true"
+            aria-label="পাঠ ০১ — ভেক্টর কী"
+          >
+            <div class="lesson-item__num" aria-hidden="true">০১</div>
+            <div class="lesson-item__info">
+              <div class="lesson-item__title">ভেক্টর কী? — মূল ধারণার পরিচয়</div>
+              <div class="lesson-item__dur">৯:৫২ মিনিট • 1080p HD Video</div>
+            </div>
+            <a href="courses/linear_algebra/lesson_01.html" class="lesson-item__link-badge" title="সম্পূর্ণ পাঠ খুলুন" onclick="event.stopPropagation()">পাঠ পৃষ্ঠা ↗</a>
+            <div class="lesson-item__status" aria-label="প্লেয়ার">▶</div>
+          </li>
+
+          <li
+            class="lesson-item"
+            data-lesson-index="1"
+            data-lesson-id="la_02"
+            data-course-id="linear_algebra"
+            role="listitem"
+            tabindex="0"
+            aria-label="পাঠ ০২ — রৈখিক সমন্বয় ও স্প্যান"
+          >
+            <div class="lesson-item__num" aria-hidden="true">০২</div>
+            <div class="lesson-item__info">
+              <div class="lesson-item__title">রৈখিক সমন্বয়, স্প্যান ও ভিত্তি ভেক্টর</div>
+              <div class="lesson-item__dur">৯:৫৯ মিনিট • 1080p HD Video</div>
+            </div>
+            <a href="courses/linear_algebra/lesson_02.html" class="lesson-item__link-badge" title="সম্পূর্ণ পাঠ খুলুন" onclick="event.stopPropagation()">পাঠ পৃষ্ঠা ↗</a>
+            <div class="lesson-item__status" aria-label="প্লেয়ার">▶</div>
+          </li>
+
+          <li
+            class="lesson-item"
+            data-lesson-index="2"
+            data-lesson-id="la_03"
+            data-course-id="linear_algebra"
+            role="listitem"
+            tabindex="0"
+            aria-label="পাঠ ০৩ — রৈখিক রূপান্তর এবং ম্যাট্রিক্স"
+          >
+            <div class="lesson-item__num" aria-hidden="true">০৩</div>
+            <div class="lesson-item__info">
+              <div class="lesson-item__title">রৈখিক রূপান্তর এবং ম্যাট্রিক্স</div>
+              <div class="lesson-item__dur">১০:৫৯ মিনিট • 1080p HD Video</div>
+            </div>
+            <a href="courses/linear_algebra/lesson_03.html" class="lesson-item__link-badge" title="সম্পূর্ণ পাঠ খুলুন" onclick="event.stopPropagation()">পাঠ পৃষ্ঠা ↗</a>
+            <div class="lesson-item__status" aria-label="প্লেয়ার">▶</div>
+          </li>
+
+          <li
+            class="lesson-item"
+            data-lesson-index="3"
+            data-lesson-id="la_04"
+            data-course-id="linear_algebra"
+            role="listitem"
+            tabindex="0"
+            aria-label="পাঠ ০৪ — ম্যাট্রিক্স গুণন"
+          >
+            <div class="lesson-item__num" aria-hidden="true">০৪</div>
+            <div class="lesson-item__info">
+              <div class="lesson-item__title">ম্যাট্রিক্স গুণন — রূপান্তরের রচনা</div>
+              <div class="lesson-item__dur">১০:০৩ মিনিট • 1080p HD Video</div>
+            </div>
+            <a href="courses/linear_algebra/lesson_04.html" class="lesson-item__link-badge" title="সম্পূর্ণ পাঠ খুলুন" onclick="event.stopPropagation()">পাঠ পৃষ্ঠা ↗</a>
+            <div class="lesson-item__status" aria-label="প্লেয়ার">▶</div>
+          </li>
+
+          <li
+            class="lesson-item"
+            data-lesson-index="4"
+            data-lesson-id="la_05"
+            data-course-id="linear_algebra"
+            role="listitem"
+            tabindex="0"
+            aria-label="পাঠ ০৫ — ত্রিমাত্রিক রূপান্তর"
+          >
+            <div class="lesson-item__num" aria-hidden="true">০৫</div>
+            <div class="lesson-item__info">
+              <div class="lesson-item__title">ত্রিমাত্রিক স্থানে রৈখিক রূপান্তর</div>
+              <div class="lesson-item__dur">৪:৪৬ মিনিট • 1080p HD Video</div>
+            </div>
+            <a href="courses/linear_algebra/lesson_05.html" class="lesson-item__link-badge" title="সম্পূর্ণ পাঠ খুলুন" onclick="event.stopPropagation()">পাঠ পৃষ্ঠা ↗</a>
+            <div class="lesson-item__status" aria-label="প্লেয়ার">▶</div>
+          </li>
+
+        </ol>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     WHY THIS PLATFORM
+     ====================================================== -->
+<section class="section" id="why" aria-labelledby="whyTitle">
+  <div class="container">
+
+    <div class="section__header">
+      <span class="section__label">আমাদের পদ্ধতি</span>
+      <h2 class="section__title animate-fade-up" id="whyTitle">কেন এটি আলাদা?</h2>
+      <p class="section__desc animate-fade-up animate-delay-1">
+        পাঠ্যপুস্তকের বাইরে গিয়ে গণিতের প্রকৃত সৌন্দর্য উপলব্ধি করুন।
+      </p>
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature-item animate-fade-up animate-delay-1">
+        <div class="feature-item__icon">🎨</div>
+        <h3 class="feature-item__title">দৃশ্যমান শিক্ষা</h3>
+        <p class="feature-item__desc">
+          প্রতিটি ধারণা অ্যানিমেশনের মাধ্যমে উপস্থাপিত। চোখে দেখে বুঝুন,
+          মনে রাখুন চিরকাল।
+        </p>
+      </div>
+
+      <div class="feature-item animate-fade-up animate-delay-2">
+        <div class="feature-item__icon">🇧🇩</div>
+        <h3 class="feature-item__title">মাতৃভাষায় শিক্ষা</h3>
+        <p class="feature-item__desc">
+          সম্পূর্ণ বাংলায় — সরল, প্রমিত, শিক্ষামূলক ভাষায়।
+          ইংরেজির বাধা ছাড়া গণিত শিখুন।
+        </p>
+      </div>
+
+      <div class="feature-item animate-fade-up animate-delay-3">
+        <div class="feature-item__icon">🧩</div>
+        <h3 class="feature-item__title">গভীর ধারণাগত বোঝাপড়া</h3>
+        <p class="feature-item__desc">
+          সূত্র মুখস্থ নয় — কেন এটি সত্য, সেটি বুঝুন।
+          গণিতের প্রকৃত আনন্দ এখানে।
+        </p>
+      </div>
+
+      <div class="feature-item animate-fade-up animate-delay-1">
+        <div class="feature-item__icon">📱</div>
+        <h3 class="feature-item__title">যেকোনো ডিভাইসে</h3>
+        <p class="feature-item__desc">
+          মোবাইল, ট্যাবলেট বা ডেস্কটপ — সব ডিভাইসে সুন্দরভাবে
+          কাজ করে। যেখানে খুশি, যখন খুশি শিখুন।
+        </p>
+      </div>
+
+      <div class="feature-item animate-fade-up animate-delay-2">
+        <div class="feature-item__icon">🆓</div>
+        <h3 class="feature-item__title">সম্পূর্ণ বিনামূল্যে</h3>
+        <p class="feature-item__desc">
+          কোনো সাবস্ক্রিপশন নেই, কোনো লুকানো ফি নেই।
+          জ্ঞান হোক সবার জন্য উন্মুক্ত।
+        </p>
+      </div>
+
+      <div class="feature-item animate-fade-up animate-delay-3">
+        <div class="feature-item__icon">📊</div>
+        <h3 class="feature-item__title">অগ্রগতি ট্র্যাকিং</h3>
+        <p class="feature-item__desc">
+          আপনার শেখার যাত্রা ট্র্যাক করুন। কোথায় আছেন,
+          কোথায় যেতে হবে — সবসময় জানুন।
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================================================
+     QUOTE / INSPIRATION
+     ====================================================== -->
+<section class="section section--alt" aria-labelledby="quoteSection">
+  <div class="container" id="quoteSection">
+    <div class="quote-block animate-fade-up">
+      <p class="quote-block__text">
+        গণিতের সৌন্দর্য হলো এই যে, এটি একটি নিখুঁত ভাষা — যেখানে চিন্তাকে
+        নির্ভুলভাবে প্রকাশ করা যায়। এই ভাষা শিখলে মহাবিশ্বের গোপন রহস্য
+        পড়তে পারবেন।
+      </p>
+      <p class="quote-block__author">— ৩ব্লু১ব্রাউন বাংলা এডুকেশন টিম</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     MATH SHOWCASE (KaTeX render demo)
+     ====================================================== -->
+<section class="section" aria-labelledby="mathTitle">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__label">গণিতের ভাষা</span>
+      <h2 class="section__title animate-fade-up" id="mathTitle">সুন্দর সমীকরণ — প্রাণবন্ত ব্যাখ্যা</h2>
+      <p class="section__desc animate-fade-up animate-delay-1">
+        কঠিন সূত্রও সহজ হয়ে যায় যখন দৃশ্যমানভাবে বোঝানো হয়।
+      </p>
+    </div>
+
+    <div class="features-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+
+      <div class="feature-item animate-fade-up animate-delay-1">
+        <div class="feature-item__icon">
+          <span class="math-render" data-tex="A\vec{v} = \lambda\vec{v}" data-mode="inline">Av = λv</span>
+        </div>
+        <h3 class="feature-item__title">আইগেনভেক্টর সমীকরণ</h3>
+        <p class="feature-item__desc">
+          রৈখিক রূপান্তর যখন একটি ভেক্টরকে শুধু প্রসারিত বা সংকুচিত করে,
+          সে ভেক্টরকেই বলা হয় আইগেনভেক্টর।
+        </p>
+      </div>
+
+      <div class="feature-item animate-fade-up animate-delay-2">
+        <div class="feature-item__icon">
+          <span class="math-render" data-tex="\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)" data-mode="inline">d/dx[f(g(x))]</span>
+        </div>
+        <h3 class="feature-item__title">চেইন রুল</h3>
+        <p class="feature-item__desc">
+          দুটি ফাংশনের যৌগিক অবকলের জন্য চেইন রুল — ক্যালকুলাসের
+          অন্যতম শক্তিশালী হাতিয়ার।
+        </p>
+      </div>
+
+      <div class="feature-item animate-fade-up animate-delay-3">
+        <div class="feature-item__icon">
+          <span class="math-render" data-tex="\sigma(x) = \frac{1}{1 + e^{-x}}" data-mode="inline">σ(x) = 1/(1+e⁻ˣ)</span>
+        </div>
+        <h3 class="feature-item__title">সিগময়েড ফাংশন</h3>
+        <p class="feature-item__desc">
+          নিউরাল নেটওয়ার্কের অ্যাক্টিভেশন ফাংশন — যা নিউরনকে
+          "সক্রিয়" হওয়ার সিদ্ধান্ত নিতে সাহায্য করে।
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     ABOUT / ATTRIBUTION
+     ====================================================== -->
+<section class="section section--alt" id="about" aria-labelledby="aboutTitle">
+  <div class="container">
+
+    <div class="section__header">
+      <span class="section__label">পরিচিতি</span>
+      <h2 class="section__title animate-fade-up" id="aboutTitle">এই প্ল্যাটফর্ম সম্পর্কে</h2>
+    </div>
+
+    <div class="player-showcase" style="align-items:start;">
+
+      <div class="animate-fade-up">
+        <div class="feature-item" style="height:100%;border-radius:var(--radius-lg);padding:var(--space-xl);">
+          <div class="feature-item__icon" style="font-size:2.5rem;">🎓</div>
+          <h3 class="feature-item__title" style="font-size:1.2rem;margin-top:0.5rem;">আমাদের লক্ষ্য</h3>
+          <p class="feature-item__desc">
+            গ্রান্ট স্যান্ডারসনের (৩ব্লু১ব্রাউন) অসাধারণ শিক্ষামূলক ভিডিওগুলো
+            বাংলাভাষীদের কাছে পৌঁছে দেওয়া আমাদের মিশন।
+          </p>
+          <p class="feature-item__desc" style="margin-top:0.75rem;">
+            উচ্চমানের গণিত শিক্ষাকে ভাষার বাধা থেকে মুক্ত করে, প্রতিটি
+            বাংলাভাষী শিক্ষার্থীর কাছে সহজলভ্য করাই আমাদের স্বপ্ন।
+          </p>
+          <p class="feature-item__desc" style="margin-top:0.75rem;">
+            <strong style="color:var(--text-primary);">মূল কৃতিত্ব:</strong> সমস্ত গণিতের ধারণা ও অ্যানিমেশন
+            <a href="https://www.3blue1brown.com" style="color:var(--accent-blue);" target="_blank" rel="noopener">3Blue1Brown (Grant Sanderson)</a>-এর মৌলিক সৃষ্টি।
+            এই প্ল্যাটফর্ম শুধুমাত্র বাংলা ডাবিং ও উপস্থাপনার জন্য।
+          </p>
+        </div>
+      </div>
+
+      <div class="animate-fade-up animate-delay-2" style="display:flex;flex-direction:column;gap:var(--space-md);">
+
+        <div class="feature-item">
+          <div class="feature-item__icon">📚</div>
+          <h3 class="feature-item__title">কোর্স কন্টেন্ট</h3>
+          <p class="feature-item__desc">
+            লিনিয়ার অ্যালজেব্রা (১৫ পাঠ), ক্যালকুলাস (১২ পাঠ),
+            নিউরাল নেটওয়ার্ক (৮ পাঠ) — সবই বাংলায়।
+          </p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-item__icon">🔊</div>
+          <h3 class="feature-item__title">বাংলা অডিও ডাবিং</h3>
+          <p class="feature-item__desc">
+            উচ্চমানের বাংলা ভয়েস ওভার ও পেশাদার অডিও মিক্সিং
+            সহ সম্পূর্ণ ডাবড কন্টেন্ট।
+          </p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-item__icon">💻</div>
+          <h3 class="feature-item__title">প্রযুক্তি</h3>
+          <p class="feature-item__desc">
+            বিশুদ্ধ HTML, CSS ও JavaScript। কোনো ফ্রেমওয়ার্ক নির্ভরতা নেই।
+            দ্রুত, হালকা, অফলাইনে কাজযোগ্য।
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================================================
+     CALL TO ACTION (bottom)
+     ====================================================== -->
+<section class="section" aria-labelledby="ctaTitle" style="text-align:center;">
+  <div class="container">
+    <div class="hero__content" style="max-width:600px;">
+      <h2 class="hero__title animate-fade-up" id="ctaTitle" style="font-size:clamp(1.5rem,3vw,2.4rem);">
+        আজই শুরু করুন আপনার<br/>
+        <span class="highlight">গণিতের যাত্রা</span>
+      </h2>
+      <p class="hero__subtitle animate-fade-up animate-delay-1" style="font-size:1rem;">
+        সম্পূর্ণ বিনামূল্যে, কোনো নিবন্ধন ছাড়াই।
+        শুধু ক্লিক করুন এবং শেখা শুরু করুন।
+      </p>
+      <div class="hero__actions animate-fade-up animate-delay-2">
+        <a href="#tracks" class="btn-primary" style="font-size:1.1rem;padding:16px 40px;">
+          ▶ কোর্স শুরু করুন
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ======================================================
+     FOOTER
+     ====================================================== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+
+    <div class="footer__grid">
+
+      <!-- Brand column -->
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo" style="margin-bottom:0.5rem;" aria-label="হোম">
+          <svg class="navbar__pi-logo" viewBox="-50 -50 100 100" aria-label="৩ব্লু১ব্রাউন">
+            <path fill="#74C0E3" d="M 0 0 L 0 -50 A 50 50 0 1 1 -50 0 z"/>
+            <path fill="#8C6239" d="M 0 0 L 0 -50 A 50 50 0 0 0 -50 0 z"/>
+            <circle cx="0" cy="0" r="22" fill="#000"/>
+            <circle cx="-8" cy="-6" r="7" fill="#fff"/>
+            <circle cx="8" cy="-6" r="7" fill="#fff"/>
+            <circle cx="-7" cy="-6" r="3.5" fill="#000"/>
+            <circle cx="9" cy="-6" r="3.5" fill="#000"/>
+            <path d="M -10 6 Q 0 14 10 6" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+          <div class="navbar__logo-text">
+            <span class="navbar__logo-title">৩ব্লু১ব্রাউন বাংলা</span>
+            <span class="navbar__logo-subtitle">অফিসিয়াল ম্যাথ প্ল্যাটফর্ম</span>
+          </div>
+        </a>
+        <p class="footer__brand-desc">
+          বাংলাভাষীদের জন্য সেরা দৃশ্যমান গণিত শিক্ষা। মাতৃভাষায়
+          বিশ্বমানের গণিত শিখুন — বিনামূল্যে।
+        </p>
+      </div>
+
+      <!-- Courses column -->
+      <div>
+        <h3 class="footer__col-title">কোর্সসমূহ</h3>
+        <nav class="footer__links" aria-label="কোর্স লিংক">
+          <a href="courses/linear_algebra/index.html">লিনিয়ার অ্যালজেব্রা</a>
+          <a href="courses/neural_networks/index.html">নিউরাল নেটওয়ার্ক</a>
+          <a href="https://www.3blue1brown.com/?topic=calculus" target="_blank" rel="noopener">ক্যালকুলাস &#8599;</a>
+          <a href="https://www.3blue1brown.com/?topic=differential-equations" target="_blank" rel="noopener">ডিফারেনশিয়াল &#8599;</a>
+          <a href="https://www.3blue1brown.com/?topic=lockdown-math" target="_blank" rel="noopener">লকডাউন &#8599;</a>
+          <a href="https://www.3blue1brown.com/?topic=probability" target="_blank" rel="noopener">সম্ভাব্যতা &#8599;</a>
+          
+          
+        </nav>
+      </div>
+
+      <!-- Resources column -->
+      <div>
+        <h3 class="footer__col-title">রিসোর্স</h3>
+        <nav class="footer__links" aria-label="রিসোর্স লিংক">
+          <a href="curriculum_index.json">পাঠ্যক্রম সূচি</a>
+          <a href="https://www.3blue1brown.com/#lessons" target="_blank" rel="noopener">3b1b Lessons &#8599;</a>
+          <a href="#about">পরিচিতি</a>
+          <a href="#why">কেন শিখব</a>
+        </nav>
+      </div>
+
+      <!-- Attribution column -->
+      <div>
+        <h3 class="footer__col-title">কৃতিত্ব</h3>
+        <nav class="footer__links" aria-label="কৃতিত্ব লিংক">
+          <a href="https://www.3blue1brown.com" target="_blank" rel="noopener">3Blue1Brown ↗</a>
+          <a href="https://www.youtube.com/@3blue1brown" target="_blank" rel="noopener">YouTube চ্যানেল ↗</a>
+          <a href="https://katex.org" target="_blank" rel="noopener">KaTeX ↗</a>
+        </nav>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">
+        © ২০২৬ গণিত শেখার প্ল্যাটফর্ম। কন্টেন্ট কৃতিত্ব: Grant Sanderson / 3Blue1Brown।
+        শুধুমাত্র শিক্ষামূলক, অবাণিজ্যিক উদ্দেশ্যে।
+      </p>
+      <nav class="footer__bottom-links" aria-label="ফুটার লিংক">
+        <a href="#about">গোপনীয়তা</a>
+        <a href="#about">শর্তাবলি</a>
+        <a href="#about">যোগাযোগ</a>
+      </nav>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Topic Details Modal Component -->
+<div class="topic-modal-overlay" id="topicModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTopicTitle">
+  <div class="topic-modal" id="topicModal">
+    <div class="topic-modal__header">
+      <div class="topic-modal__header-left">
+        <div class="topic-modal__icon" id="modalTopicIcon">⭐</div>
+        <div class="topic-modal__titles">
+          <h3 class="topic-modal__title" id="modalTopicTitle">বিষয় বিবরণ</h3>
+          <span class="topic-modal__sub" id="modalTopicSub">3Blue1Brown Collection</span>
+        </div>
+      </div>
+      <button class="topic-modal__close" id="modalTopicClose" aria-label="মডাল বন্ধ করুন">✕</button>
+    </div>
+    <div class="topic-modal__body">
+      <p class="topic-modal__desc" id="modalTopicDesc"></p>
+      
+      <div class="topic-modal__section-heading">অধ্যায় ও গুরুত্বপূর্ণ ধারণাসমূহ</div>
+      <ul class="topic-modal__chapters-list" id="modalTopicChapters"></ul>
+    </div>
+    <div class="topic-modal__footer">
+      <span style="font-size:0.8rem;color:var(--text-muted);" id="modalTopicMeta">বাংলা ডাবিং উৎপাদন ও রোডম্যাপের আওতাধীন</span>
+      <div style="display:flex;gap:10px;">
+        <a id="modalActionLink" href="#" class="btn-primary" style="padding:8px 16px;font-size:0.85rem;">কোর্সে যান →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast container (dynamically populated by JS) -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">&#8593;</button>
+  <div class="toast-container" id="toastContainer" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<!-- ======================================================
+     SCRIPTS (deferred, non-blocking)
+     ====================================================== -->
+<script src="assets/js/main.js" defer></script>
+
+</body>
+</html>

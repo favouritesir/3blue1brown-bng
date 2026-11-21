@@ -1,0 +1,225 @@
+{
+  "lesson_id": "lesson_08",
+  "chapter_num": 8,
+  "course_id": "linear_algebra",
+  "title_en": "Nonsquare Matrices as Transformations Between Dimensions",
+  "title_bn": "অসম আকারের ম্যাট্রিক্স ও মাত্রার রূপান্তর",
+  "subtitle_bn": "দ্বিমাত্রিক ও ত্রিমাত্রিক জগতের সংযোগ ও মাত্রাগত রূপান্তরের জ্যামিতিক অন্তর্দৃষ্টি",
+  "video_id": "v8VSDg_WQlA",
+  "official_url": "https://www.3blue1brown.com/lessons/nonsquare-matrices",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "4:26",
+    "prerequisites": [
+      "lesson_03",
+      "lesson_04",
+      "lesson_05"
+    ]
+  },
+  "epigraph": {
+    "quote": "Matrices are not abstract arrays of numbers; they are geometric bridges connecting spaces of different dimensions.",
+    "quote_bn": "ম্যাট্রিক্স কোনো বিমূর্ত সাংখ্যিক সারণী নয়; এটি হলো বিভিন্ন মাত্রার জগতের মাঝে সেতুবন্ধন রচনার এক অপূর্ব জ্যামিতিক মাধ্যম।",
+    "author": "Grant Sanderson"
+  },
+  "sections": [
+    {
+      "id": "sec_01_dimensions_intro",
+      "title_bn": "১. অসম আকারের ম্যাট্রিক্স ও মাত্রার সংযোগ",
+      "title_en": "Nonsquare Matrices and Dimensional Transitions",
+      "summary_bn": "বর্গাকার ম্যাট্রিক্সের বাইরে অসম আকারের ম্যাট্রিক্সগুলো বিভিন্ন মাত্রার স্থানের মধ্যে রূপান্তর ঘটায়।",
+      "key_takeaways": [
+        "ম্যাট্রিক্সের কলাম সংখ্যা নির্দেশ করে ইনপুট স্থানের মাত্রা (কয়টি ভিত্তি ভেক্টর নিয়ে শুরু)।",
+        "ম্যাট্রিক্সের সারি সংখ্যা নির্দেশ করে আউটপুট স্থানের মাত্রা (রূপান্তরিত ভেক্টরের কয়টি স্থানাঙ্ক)।",
+        "একটি $m \\times n$ ম্যাট্রিক্স হলো $\\mathbb{R}^n$ থেকে $\\mathbb{R}^m$ স্থানে একটি রৈখিক রূপান্তর।"
+      ],
+      "formulas": [
+        {
+          "label": "মাত্রাগত রূপান্তর সাধারণ নীতি",
+          "katex": "A_{m \\times n}: \\mathbb{R}^n \\to \\mathbb{R}^m"
+        },
+        {
+          "label": "ভেক্টর রূপান্তরের পূর্ণ সমীকরণ",
+          "katex": "\\begin{bmatrix} a_{11} & a_{12} & \\dots & a_{1n} \\\\ a_{21} & a_{22} & \\dots & a_{2n} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ a_{m1} & a_{m2} & \\dots & a_{mn} \\end{bmatrix} \\begin{bmatrix} x_1 \\\\ x_2 \\\\ \\vdots \\\\ x_n \\end{bmatrix} = \\begin{bmatrix} y_1 \\\\ y_2 \\\\ \\vdots \\\\ y_m \\end{bmatrix}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_matrix_dims_meaning",
+          "caption_bn": "ম্যাট্রিক্সের কলাম সংখ্যা ইনপুট মাত্রা এবং সারি সংখ্যা আউটপুট মাত্রা প্রকাশ করে",
+          "type": "svg",
+          "src": "figures/matrix_dimensions_mapping.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_02_3x2_mapping",
+      "title_bn": "২. ৩×২ ম্যাট্রিক্স: ২D থেকে ৩D স্পেসে রূপান্তর",
+      "title_en": "3×2 Matrices: Mapping 2D into 3D Space",
+      "summary_bn": "২টি কলাম ও ৩টি সারি বিশিষ্ট ম্যাট্রিক্স দ্বিমাত্রিক সমতলকে ত্রিমাত্রিক স্থানে প্রক্ষেপণ করে।",
+      "key_takeaways": [
+        "২টি কলাম মানে ইনপুটে রয়েছে কেবল î এবং ĵ (দ্বিমাত্রিক সমতল)।",
+        "৩টি সারি মানে î এবং ĵ-এর রূপান্তরিত অবস্থান ত্রিমাত্রিক স্থানের স্থানাঙ্ক $(x, y, z)$ ধারণ করে।",
+        "আউটপুটটি হলো ত্রিমাত্রিক মহাকাশের মূলবিন্দুগামী একটি দ্বিমাত্রিক চাদর বা সমতল।",
+        "যদি কলাম দুটি লিনিয়ারলি স্বাধীন হয়, তবে র্যাঙ্ক = ২ (ফুল কলাম র্যাঙ্ক), কিন্তু এটি পুরো ৩D স্থান ভরাট করতে পারে না।"
+      ],
+      "formulas": [
+        {
+          "label": "৩×২ রূপান্তরের ভিত্তি ভেক্টর ম্যাপিং",
+          "katex": "M_{3 \\times 2} = \\begin{bmatrix} L(\\hat{i}) & L(\\hat{j}) \\end{bmatrix} = \\begin{bmatrix} 2 & 0 \\\\ -1 & 1 \\\\ -2 & 3 \\end{bmatrix}"
+        },
+        {
+          "label": "কলাম স্পেস ও র্যাঙ্ক",
+          "katex": "\\text{Col}(M_{3 \\times 2}) = \\text{span}\\left( \\begin{bmatrix} 2 \\\\ -1 \\\\ -2 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 1 \\\\ 3 \\end{bmatrix} \\right) \\subset \\mathbb{R}^3, \\quad \\text{Rank} = 2"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_2d_to_3d_sheet",
+          "caption_bn": "দ্বিমাত্রিক গ্রিড ত্রিমাত্রিক স্থানের ভেতরে একটি সমতলে রূপান্তরিত হচ্ছে",
+          "type": "svg",
+          "src": "figures/2d_to_3d_sheet.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "matrix_3x2_projector",
+        "initial_matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -2,
+            3
+          ]
+        ],
+        "description_bn": "২D ভেক্টর ইনপুট দিয়ে ৩D মহাকাশের দ্বিমাত্রিক তলে তার অবস্থান প্রত্যক্ষ করুন।"
+      }
+    },
+    {
+      "id": "sec_03_2x3_compression",
+      "title_bn": "৩. ২×৩ ম্যাট্রিক্স: ৩D থেকে ২D সমতলে প্রক্ষেপণ",
+      "title_en": "2×3 Matrices: Projecting 3D Space onto 2D",
+      "summary_bn": "৩টি কলাম ও ২টি সারি বিশিষ্ট ম্যাট্রিক্স ত্রিমাত্রিক জগতকে দ্বিমাত্রিক সমতলে সংকুচিত করে।",
+      "key_takeaways": [
+        "৩টি কলাম মানে ইনপুট হলো ত্রিমাত্রিক স্থান (î, ĵ, এবং k̂)।",
+        "২টি সারি মানে প্রতিটি রূপান্তরিত ভিত্তি ভেক্টর কেবল ২D স্থানাঙ্ক ধারণ করে।",
+        "তিনটি ভিত্তি ভেক্টরই একটি সমতলে অবতরণ করায় তারা অবশ্যই লিনিয়ারলি নির্ভরশীল হতে বাধ্য।",
+        "এখানে মাত্রা সংকোচন ঘটে; ৩D স্থানের অন্তত একটি সম্পূর্ণ সরলরেখা (নাল স্পেস / কার্নেল) মূলবিন্দুতে সংকুচিত হয়।"
+      ],
+      "formulas": [
+        {
+          "label": "২×৩ রূপান্তরের ভিত্তি ভেক্টর ম্যাপিং",
+          "katex": "M_{2 \\times 3} = \\begin{bmatrix} L(\\hat{i}) & L(\\hat{j}) & L(\\hat{k}) \\end{bmatrix} = \\begin{bmatrix} 3 & 1 & 4 \\\\ 1 & 5 & 9 \\end{bmatrix}"
+        },
+        {
+          "label": "র্যাঙ্ক-নালিটি উপপাদ্য ও মাত্রা সংকোচন",
+          "katex": "\\dim(\\text{Null}(M)) + \\text{Rank}(M) = 3 \\implies \\dim(\\text{Null}(M)) \\ge 1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_3d_to_2d_squash",
+          "caption_bn": "ত্রিমাত্রিক স্থানকে দ্বিমাত্রিক পর্দায় চাপ দিয়ে চ্যাপ্টা করার চিত্র",
+          "type": "svg",
+          "src": "figures/3d_to_2d_squash.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_04_dimension_bridge",
+      "title_bn": "৪. ১×২ ম্যাট্রিক্স, ডট গুণন ও গুণন বিধির জ্যামিতিক তাৎপর্য",
+      "title_en": "1×2 Matrices, Dot Products & Multiplication Compatibility",
+      "summary_bn": "১×২ ম্যাট্রিক্স ভেক্টরকে স্কেলারে রূপান্তর করে এবং ম্যাট্রিক্স গুণনে ভেতরের মাত্রা মেলার জ্যামিতিক কারণ স্পষ্ট করে।",
+      "key_takeaways": [
+        "একটি ১×২ ম্যাট্রিক্স হলো দ্বিমাত্রিক স্থান থেকে একমাত্রিক সংখ্যা রেখায় রূপান্তর।",
+        "এটি যেকোনো ২D ভেক্টর গ্রহণ করে একটি একক স্কেলার আউটপুট দেয়, যা ভেক্টর ডট গুণনের ভিত্তি।",
+        "ম্যাট্রিক্স গুণনে ভেতরের মাত্রা $k$ সমান হতে হয় ($A_{m \\times k} B_{k \\times n}$), কারণ প্রথম রূপান্তরের আউটপুট স্থানটি দ্বিতীয় রূপান্তরের ইনপুট স্থানের সাথে হুবহু মিলতে হবে।"
+      ],
+      "formulas": [
+        {
+          "label": "১×২ ম্যাট্রিক্স রূপান্তর (ডট গুণনের দ্বৈততা)",
+          "katex": "\\begin{bmatrix} u_1 & u_2 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = u_1 x + u_2 y = \\vec{u} \\cdot \\vec{v}"
+        },
+        {
+          "label": "ম্যাট্রিক্স গুণন ও মাত্রার সংযোজন",
+          "katex": "A_{m \\times k} \\times B_{k \\times n} = C_{m \\times n} \\iff \\mathbb{R}^n \\xrightarrow{B} \\mathbb{R}^k \\xrightarrow{A} \\mathbb{R}^m"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_matrix_composition_pipeline",
+          "caption_bn": "মাত্রাগত ধারাবাহিক রূপান্তরের পাইপলাইন: n থেকে k, অতঃপর k থেকে m মাত্রায় সংযোগ",
+          "type": "svg",
+          "src": "figures/dimension_composition_pipeline.svg"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_matrix_dimensions",
+      "section_ref": "sec_01_dimensions_intro",
+      "question_bn": "একটি ম্যাট্রিক্সের মাত্রা $3 \\times 2$ হলে, এটি কোন স্থান থেকে কোন স্থানে রৈখিক রূপান্তর নির্দেশ করে?",
+      "question_en": "If a matrix has dimensions 3x2, what transformation does it represent?",
+      "options": [
+        "ত্রিমাত্রিক (৩D) স্থান থেকে দ্বিমাত্রিক (২D) সমতলে",
+        "দ্বিমাত্রিক (২D) সমতল থেকে ত্রিমাত্রিক (৩D) স্থানে",
+        "দ্বিমাত্রিক সমতল থেকে একমাত্রিক রেখায়",
+        "ত্রিমাত্রিক স্থান থেকে ত্রিমাত্রিক স্থানে"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "কলাম সংখ্যা (২) নির্দেশ করে ইনপুট স্পেসের ভিত্তি ভেক্টরের সংখ্যা—অর্থাৎ দ্বিমাত্রিক (২D) স্থান। সারি সংখ্যা (৩) নির্দেশ করে প্রতিটি রূপান্তরিত ভেক্টরের স্থানাঙ্কের সংখ্যা—অর্থাৎ ত্রিমাত্রিক (৩D) স্থান। সুতরাং $3 \\times 2$ ম্যাট্রিক্স ২D থেকে ৩D স্থানে রূপান্তর নির্দেশ করে।",
+      "explanation_en": "Columns (2) = input dimension (2D), rows (3) = output dimension (3D). Thus, a 3x2 matrix maps 2D into 3D."
+    },
+    {
+      "id": "quiz_02_3x2_column_space",
+      "section_ref": "sec_02_3x2_mapping",
+      "question_bn": "একটি $3 \\times 2$ ম্যাট্রিক্সের কলাম দুটি পরস্পর লিনিয়ারলি স্বাধীন হলে, এর আউটপুট কলাম স্পেস জ্যামিতিকভাবে কী হবে?",
+      "question_en": "If the columns of a 3x2 matrix are linearly independent, what is its column space geometrically?",
+      "options": [
+        "সম্পূর্ণ ত্রিমাত্রিক মহাকাশ ভরাট করে ফেলবে",
+        "ত্রিমাত্রিক স্থানের মূলবিন্দুগামী একটি সমতল (২D Sheet)",
+        "একটি একমাত্রিক সরলরেখা",
+        "কেবলমাত্র মূলবিন্দু (একটি একক বিন্দু)"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "যেহেতু ইনপুটে মাত্র দুটি ভিত্তি ভেক্টর রয়েছে, তাই রূপান্তরের পর এই দুটি ভেক্টরের স্প্যান সর্বোচ্চ একটি দ্বিমাত্রিক সমতল হতে পারে। দুটি ভেক্টর দিয়ে কখনো পুরো ত্রিমাত্রিক স্থান ভরাট করা সম্ভব নয়। তাই কলাম স্পেসটি হবে ৩D স্থানের মূলবিন্দুগামী একটি দ্বিমাত্রিক সমতল।",
+      "explanation_en": "Two linearly independent vectors span a 2D plane through the origin, which cannot fill the full 3D space."
+    },
+    {
+      "id": "quiz_03_2x3_null_space",
+      "section_ref": "sec_03_2x3_compression",
+      "question_bn": "একটি $2 \\times 3$ ম্যাট্রিক্স ত্রিমাত্রিক স্থানকে দ্বিমাত্রিক সমতলে সংকুচিত করে। এর নাল স্পেস (Null Space / Kernel)-এর সর্বনিম্ন মাত্রা কত হবে?",
+      "question_en": "A 2x3 matrix maps 3D space to 2D. What is the minimum dimension of its null space?",
+      "options": [
+        "০ (কোনো ভেক্টর শূন্য হবে না)",
+        "১ (অন্তত একটি সম্পূর্ণ রেখা মূলবিন্দুতে সংকুচিত হবে)",
+        "২ (একটি সম্পূর্ণ তল মূলবিন্দুতে পরিণত হবে)",
+        "৩ (পুরো স্থান শূন্য হয়ে যাবে)"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "র্যাঙ্ক-নালিটি উপপাদ্য অনুসারে: র্যাঙ্ক + নালিটি = ৩ (ইনপুট মাত্রা)। যেহেতু আউটপুট স্থান দ্বিমাত্রিক, তাই র্যাঙ্ক সর্বোচ্চ ২ হতে পারে। ফলে নালিটি = ৩ - র্যাঙ্ক $\\ge 3 - 2 = 1$। অর্থাৎ ৩D স্থানের অন্তত একটি সম্পূর্ণ সরলরেখা সংকুচিত হয়ে মূলবিন্দুতে মিশে যাবে।",
+      "explanation_en": "By Rank-Nullity: Rank + Nullity = 3. Since Rank <= 2, Nullity >= 1. At least a 1D line is squashed to the origin."
+    },
+    {
+      "id": "quiz_04_dimension_compatibility",
+      "section_ref": "sec_04_dimension_bridge",
+      "question_bn": "ধরা যাক ম্যাট্রিক্স $A$-এর আকার $2 \\times 3$ এবং ম্যাট্রিক্স $B$-এর আকার $3 \\times 2$। তবে যৌগিক ম্যাট্রিক্স গুণন $AB$-এর আকার কত হবে?",
+      "question_en": "If matrix A is 2x3 and matrix B is 3x2, what is the size of the product AB?",
+      "options": [
+        "$3 \\times 3$",
+        "$2 \\times 2$",
+        "$2 \\times 3$",
+        "গুণন অসম্ভব"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "প্রথমে $B$ কার্যকর হয়ে ২D স্থান থেকে ৩D স্থানে নিয়ে যায়। এরপর $A$ কার্যকর হয়ে সেই ৩D স্থানকে পুনরায় ২D সমতলে নামিয়ে আনে। সুতরাং সামগ্রিক রূপান্তরটি ২D স্থান থেকে ২D স্থানে ঘটবে, যার ম্যাট্রিক্সের আকার হবে $2 \\times 2$।",
+      "explanation_en": "B maps 2D to 3D, and A maps 3D to 2D. The composition AB maps 2D to 2D, giving a 2x2 matrix."
+    }
+  ]
+}

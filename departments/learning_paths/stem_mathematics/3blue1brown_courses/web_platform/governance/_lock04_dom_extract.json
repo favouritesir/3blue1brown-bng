@@ -1,0 +1,354 @@
+{
+  "sectionEls": [
+    {
+      "id": "sec-number-extension",
+      "noNarration": null
+    },
+    {
+      "id": "sec-number-extension-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-rotation-meaning",
+      "noNarration": null
+    },
+    {
+      "id": "sec-rotation-meaning-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-argand-plane",
+      "noNarration": null
+    },
+    {
+      "id": "sec-argand-plane-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-polar-form",
+      "noNarration": null
+    },
+    {
+      "id": "sec-polar-form-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-complex-multiplication",
+      "noNarration": null
+    },
+    {
+      "id": "sec-complex-multiplication-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-trig-connection",
+      "noNarration": null
+    },
+    {
+      "id": "sec-trig-connection-study",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-interactive-lab",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-quizzes",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-formulas-glossary",
+      "noNarration": "true"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-number-extension",
+      "title": "সংখ্যা ধারণার বিস্তৃতি: ঋণাত্মক সংখ্যা থেকে দ্বিমাত্রিক জগতে",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "সংখ্যা ধারণার বিস্তৃতি: ঋণাত্মক সংখ্যা থেকে দ্বিমাত্রিক জগতে"
+        },
+        {
+          "type": "p",
+          "text": "সংখ্যা কেবল পরিমাপের একক নয়, সংখ্যা হলো এক একটি জ্যামিতিক রূপান্তর।"
+        },
+        {
+          "type": "p",
+          "text": "ঋণাত্মক ১ দ্বারা গুণ মানে সংখ্যারেখায় ১৮০ ডিগ্রি ঘূর্ণন।"
+        },
+        {
+          "type": "p",
+          "text": "জটিল সংখ্যা একমাত্রিক সংখ্যারেখাকে পূর্ণাঙ্গ দ্বিমাত্রিক সমতলে রূপান্তর করে।"
+        },
+        {
+          "type": "formula-box",
+          "text": "1\n×\n(\n−\n1\n)\n=\n−\n1\n,\n(\n−\n1\n)\n×\n(\n−\n1\n)\n=\n+\n1\n1×(−1)=−1,(−1)×(−1)=+1"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑖\n2\n=\n−\n1\n⟹\n𝑖\n=\n−\n1\ni\n2\n=−1⟹i=\n−1\n\t​"
+        }
+      ]
+    },
+    {
+      "id": "sec-rotation-meaning",
+      "title": "i-এর আসল অর্থ: সমতলে ৯০ ডিগ্রি ঘূর্ণন",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "i-এর আসল অর্থ: সমতলে ৯০ ডিগ্রি ঘূর্ণন"
+        },
+        {
+          "type": "p",
+          "text": "কাল্পনিক একক i কোনো সংখ্যা নয়, এটি সমতলে ৯০° ঘড়ির কাঁটার বিপরীত ঘূর্ণন।"
+        },
+        {
+          "type": "p",
+          "text": "চারবার i প্রয়োগ করলে পূর্ণাঙ্গ ৩৬০° ঘূর্ণন সম্পন্ন হয় এবং মূল অবস্থানে ফেরা যায়।"
+        },
+        {
+          "type": "p",
+          "text": "i-এর ঘাত নির্ণয় মূলত ৪ মডুলো পাটিগণিতের জ্যামিতিক প্রতিচ্ছবি।"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑖\n1\n=\n𝑖\n,\n𝑖\n2\n=\n−\n1\n,\n𝑖\n3\n=\n−\n𝑖\n,\n𝑖\n4\n=\n1\ni\n1\n=i,i\n2\n=−1,i\n3\n=−i,i\n4\n=1"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑖\n4\n𝑘\n+\n𝑟\n=\n𝑖\n𝑟\n(\n𝑟\n∈\n{\n0\n,\n1\n,\n2\n,\n3\n}\n)\ni\n4k+r\n=i\nr\n(r∈{0,1,2,3})"
+        }
+      ]
+    },
+    {
+      "id": "sec-argand-plane",
+      "title": "আর্গাঁ চিত্র ও কার্তেসীয় স্থানাঙ্ক রূপ (a + bi)",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "আর্গাঁ চিত্র ও কার্তেসীয় স্থানাঙ্ক রূপ (a + bi)"
+        },
+        {
+          "type": "p",
+          "text": "জটিল সমতলে অনুভূমিক অক্ষ বাস্তব এবং উল্লম্ব অক্ষ কাল্পনিক অংশ নির্দেশ করে।"
+        },
+        {
+          "type": "p",
+          "text": "জটিল সংখ্যার যোগফল জ্যামিতিকভাবে ভেক্টর যোগের অনুরূপ।"
+        },
+        {
+          "type": "p",
+          "text": "প্রতিটি জটিল সংখ্যা সমতলের একটি বিন্দু ও ভেক্টরের দ্বৈত পরিচয় ধারণ করে।"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑧\n=\n𝑎\n+\n𝑏\n𝑖\n(\n𝑎\n,\n𝑏\n∈\n𝑅\n)\nz=a+bi(a,b∈R)"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑧\n1\n+\n𝑧\n2\n=\n(\n𝑎\n1\n+\n𝑎\n2\n)\n+\n(\n𝑏\n1\n+\n𝑏\n2\n)\n𝑖\nz\n1\n\t​\n\n+z\n2\n\t​\n\n=(a\n1\n\t​\n\n+a\n2\n\t​\n\n)+(b\n1\n\t​\n\n+b\n2\n\t​\n\n)i"
+        }
+      ]
+    },
+    {
+      "id": "sec-polar-form",
+      "title": "পোলার রূপ: দূরত্ব ও কোণের ভাষা (r, θ)",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "পোলার রূপ: দূরত্ব ও কোণের ভাষা (r, θ)"
+        },
+        {
+          "type": "p",
+          "text": "পোলার স্থানাঙ্কে জটিল সংখ্যা দূরত্ব r এবং কোণ θ দ্বারা নির্ধারিত হয়।"
+        },
+        {
+          "type": "p",
+          "text": "মডুলাস হলো সমতলে ভেক্টরের দৈর্ঘ্য এবং আর্গুমেন্ট হলো তার ঘূর্ণন কোণ।"
+        },
+        {
+          "type": "p",
+          "text": "পোলার রূপ জটিল সংখ্যার গুণ ও ভাগের জ্যামিতিক সারমর্ম উন্মোচন করে।"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑟\n=\n∣\n𝑧\n∣\n=\n𝑎\n2\n+\n𝑏\n2\nr=∣z∣=\na\n2\n+b\n2\n\t​"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝜃\n=\narg\n(\n𝑧\n)\n=\narctan\n⁡\n(\n𝑏\n𝑎\n)\nθ=arg(z)=arctan(\na\nb\n\t​\n\n)"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑧\n=\n𝑟\n(\ncos\n⁡\n𝜃\n+\n𝑖\nsin\n⁡\n𝜃\n)\nz=r(cosθ+isinθ)"
+        }
+      ]
+    },
+    {
+      "id": "sec-complex-multiplication",
+      "title": "জটিল সংখ্যার গুণন: স্কেলিং ও রোটেশনের দ্বৈত নৃত্য",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "জটিল সংখ্যার গুণন: স্কেলিং ও রোটেশনের দ্বৈত নৃত্য"
+        },
+        {
+          "type": "p",
+          "text": "জটিল সংখ্যার গুণনে মডুলাসদ্বয় গুণ হয় এবং আর্গুমেন্টদ্বয় যোগ হয়।"
+        },
+        {
+          "type": "p",
+          "text": "একক বৃত্তের জটিল সংখ্যা দিয়ে গুণ করা কেবল স্থানটিকে নির্দিষ্ট কোণে ঘুরিয়ে দেয়।"
+        },
+        {
+          "type": "p",
+          "text": "দ্য মোয়াভ্রের উপপাদ্য সরাসরি এই ঘূর্ণন নীতির স্বাভাবিক অনুসিদ্ধান্ত।"
+        },
+        {
+          "type": "formula-box",
+          "text": "∣\n𝑧\n1\n𝑧\n2\n∣\n=\n∣\n𝑧\n1\n∣\n⋅\n∣\n𝑧\n2\n∣\n,\narg\n(\n𝑧\n1\n𝑧\n2\n)\n=\narg\n(\n𝑧\n1\n)\n+\narg\n(\n𝑧\n2\n)\n∣z\n1\n\t​\n\nz\n2\n\t​\n\n∣=∣z\n1\n\t​\n\n∣⋅∣z\n2\n\t​\n\n∣,arg(z\n1\n\t​\n\nz\n2\n\t​\n\n)=arg(z\n1\n\t​\n\n)+arg(z\n2\n\t​\n\n)"
+        },
+        {
+          "type": "formula-box",
+          "text": "(\ncos\n⁡\n𝜃\n+\n𝑖\nsin\n⁡\n𝜃\n)\n𝑛\n=\ncos\n⁡\n(\n𝑛\n𝜃\n)\n+\n𝑖\nsin\n⁡\n(\n𝑛\n𝜃\n)\n(cosθ+isinθ)\nn\n=cos(nθ)+isin(nθ)"
+        }
+      ]
+    },
+    {
+      "id": "sec-trig-connection",
+      "title": "ত্রিকোণমিতির সূত্রাবলি: মুখস্থহীন জ্যামিতিক আবিষ্কার",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "ত্রিকোণমিতির সূত্রাবলি: মুখস্থহীন জ্যামিতিক আবিষ্কার"
+        },
+        {
+          "type": "p",
+          "text": "ত্রিকোণমিতির সমস্ত যৌগিক কোণের সূত্র জটিল সংখ্যার স্বাভাবিক গুণফল থেকে সরাসরি উদ্ভূত হয়।"
+        },
+        {
+          "type": "p",
+          "text": "বাস্তব অংশ কোসাইনের পরিবর্তন এবং কাল্পনিক অংশ সাইনের পরিবর্তন প্রকাশ করে।"
+        },
+        {
+          "type": "p",
+          "text": "জটিল সংখ্যায় কোণ যোগ হওয়া এবং বীজগণিতে পদগুলোর গুণফল এক ও অভিন্ন প্রক্রিয়া।"
+        },
+        {
+          "type": "formula-box",
+          "text": "cos\n⁡\n(\n𝛼\n+\n𝛽\n)\n=\ncos\n⁡\n𝛼\ncos\n⁡\n𝛽\n−\nsin\n⁡\n𝛼\nsin\n⁡\n𝛽\ncos(α+β)=cosαcosβ−sinαsinβ"
+        },
+        {
+          "type": "formula-box",
+          "text": "sin\n⁡\n(\n𝛼\n+\n𝛽\n)\n=\nsin\n⁡\n𝛼\ncos\n⁡\n𝛽\n+\ncos\n⁡\n𝛼\nsin\n⁡\n𝛽\nsin(α+β)=sinαcosβ+cosαsinβ"
+        }
+      ]
+    }
+  ],
+  "engine": [
+    {
+      "id": "sec-number-extension",
+      "blockCount": 6,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "formula-box"
+      ]
+    },
+    {
+      "id": "sec-rotation-meaning",
+      "blockCount": 6,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "formula-box"
+      ]
+    },
+    {
+      "id": "sec-argand-plane",
+      "blockCount": 6,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "formula-box"
+      ]
+    },
+    {
+      "id": "sec-polar-form",
+      "blockCount": 7,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "formula-box",
+        "formula-box"
+      ]
+    },
+    {
+      "id": "sec-complex-multiplication",
+      "blockCount": 6,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "formula-box"
+      ]
+    },
+    {
+      "id": "sec-trig-connection",
+      "blockCount": 6,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "formula-box"
+      ]
+    }
+  ],
+  "manifestPresent": true,
+  "manifestKeys": [
+    "sec-number-extension",
+    "sec-rotation-meaning",
+    "sec-argand-plane",
+    "sec-polar-form",
+    "sec-complex-multiplication",
+    "sec-trig-connection",
+    "sec-interactive-lab",
+    "sec-quizzes"
+  ],
+  "page_errors": [],
+  "console_errors": [
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND"
+  ]
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>কঠিনতম পরীক্ষার কঠিনতম সমস্যা | The hardest problem on the hardest test</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/puzzles/lesson_02/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="ধাঁধা"
+  course-url="index.html"
+  home-url="../../index.html"
+  chapter-num="০২"
+  chapter-total="১০"
+  prev-url="lesson_01.html"
+  prev-title="পূর্ববর্তী: এআই যে আইএমও সমস্যাটি সমাধান করতে পারেনি"
+  next-url="lesson_03.html"
+  next-title="পরবর্তী: অপ্রত্যাশিতভাবে কঠিন বাতাই-প্রশ্ন"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="ধাঁধা"
+  course-url="index.html"
+  chapter-label="অধ্যায় ০২ · ধাঁধা"
+  title="কঠিনতম পরীক্ষার কঠিনতম সমস্যা | The hardest problem on the hardest test"
+  desc="গোলকের উপর চারটি এলোমেলো বিন্দু নিয়ে একটি জ্যামিতি-সম্ভাবনা প্রশ্ন — এবং দৃষ্টিভঙ্গি বদলের সুন্দর এক সমাধান।"
+  video-src="../../media_vault/puzzles/lesson_02/experiments/3b1b_puzzles_02_full_dubbed.mp4"
+  yt-id="OkmNXy7er84"
+  date="৮ ডিসেম্বর, ২০১৭"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">পুটনামের কঠিনতম প্রশ্ন</b1b-bookmark>
+      <b1b-bookmark time="70" time-bn="০১:১০">দ্বিমাত্রিক ক্ষেত্র: ১/৪</b1b-bookmark>
+      <b1b-bookmark time="145" time-bn="০২:২৫">দৃষ্টিভঙ্গির স্থানান্তর</b1b-bookmark>
+      <b1b-bookmark time="217" time-bn="০৩:৩৭">ত্রিমাত্রিকে ফিরে আসা</b1b-bookmark>
+      <b1b-bookmark time="266" time-bn="০৪:২৬">দুটি শিক্ষণীয় কৌশল</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-problem">পুটনামের কঠিনতম প্রশ্ন</a>
+      <a href="#sec-2d">দ্বিমাত্রিক ক্ষেত্র: ১/৪</a>
+      <a href="#sec-reframe">দৃষ্টিভঙ্গির স্থানান্তর</a>
+      <a href="#sec-3d">ত্রিমাত্রিকে ফিরে আসা</a>
+      <a href="#sec-takeaway">দুটি শিক্ষণীয় কৌশল</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <b1b-section id="sec-problem" title="পুটনামের কঠিনতম প্রশ্ন">
+        <p>আমেরিকার বিশ্ববিদ্যালয়-স্তরের পুটনাম প্রতিযোগিতা তার কঠিনতার জন্য বিখ্যাত। ১৯৯২ সালের A6 নম্বর প্রশ্নটি ছিল এরকমই এক কঠিন প্রশ্ন।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_02/f01_sphere.svg" alt="গোলক ও চারটি বিন্দু" caption="গোলকের পৃষ্ঠে এলোমেলোভাবে বাছা চারটি বিন্দু"></b1b-figure>
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin: 24px 0 12px; color: var(--theme);">মূল প্রশ্ন</h3>
+        <p>গোলকের পৃষ্ঠে স্বাধীনভাবে ও সমান সম্ভাবনায় চারটি বিন্দু বাছা হলো। এই চার বিন্দুকে শীর্ষবিন্দু ধরে গড়ে ওঠা টেট্রাহেড্রনের ভেতরে গোলকের কেন্দ্র থাকার সম্ভাবনা কত?</p>
+        <b1b-callout type="blue" icon="📍" title="প্রথম ধাপ">
+          <p>সরাসরি ত্রিমাত্রিক হিসাব না করে প্রশ্নটিকে আগে দ্বিমাত্রিকে নামিয়ে আনুন — একটি বৃত্ত ও তিনটি বিন্দু।</p>
+        </b1b-callout>
+      </b1b-section>
+      <b1b-section id="sec-2d" title="দ্বিমাত্রিক ক্ষেত্র: ১/৪">
+        <p>বৃত্তের উপর তিনটি এলোমেলো বিন্দু বাছুন। কোন অবস্থানে ত্রিভুজটি কেন্দ্র ধারণ করবে? প্রথম দুটি বিন্দু স্থির রেখে তৃতীয়টির অবস্থান দেখুন।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_02/f02_circle.svg" alt="বৃত্তে তিন বিন্দু" caption="প্রথম দুটি বিন্দু থেকে কেন্দ্র দিয়ে টানা রেখা বৃত্তকে ভাগ করে চারটি চাপে"></b1b-figure>
+        <p>P₁ ও P₂ থেকে কেন্দ্রের মধ্য দিয়ে রেখা টানলে বৃত্ত চারটি চাপে ভাগ হয়। কেবল ঠিক বিপরীত চাপে P₃ থাকলে ত্রিভুজ কেন্দ্র ধারণ করে।</p>
+        <b1b-formula math="P(\text{centre in triangle})=\frac14"></b1b-formula>
+        <p>P₁ ও P₂-র মধ্যকার কোণ যতই হোক, গড়ে ওই চাপটি পুরো বৃত্তের এক-চতুর্থাংশ। তাই দ্বিমাত্রিক উত্তর ১/৪।</p>
+      </b1b-section>
+      <b1b-section id="sec-reframe" title="দৃষ্টিভঙ্গির স্থানান্তর">
+        <p>১/৪ সংখ্যাটি সন্দেহজনকভাবে পরিচ্ছন্ন। এর পেছনে কী আছে? প্রশ্নটি নতুনভাবে গঠন করুন: আগে কেন্দ্র দিয়ে দুটি এলোমেলো রেখা বাছুন, তারপর প্রতিটি রেখার দুটি ছেদবিন্দুর মধ্যে মুদ্রা উঠিয়ে বিন্দু বাছুন।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_02/f03_coins.svg" alt="রেখা ও মুদ্রা" caption="প্রতিটি রেখার জন্য দুটি নমুনা বিন্দু — মুদ্রা উঠিয়ে একটি বাছা হয়"></b1b-figure>
+        <b1b-quiz
+          question="❓ গোলকের পৃষ্ঠে এলোমেলো চার বিন্দু দিয়ে গঠিত টেট্রাহেড্রনের ভেতরে কেন্দ্র থাকার সম্ভাবনা কত?"
+          correct="1"
+          correct-msg="চমৎকার! কেন্দ্র দিয়ে তিনটি রেখা বেছে মুদ্রা উঠালে ৮টি সমান ফলের মাত্র একটি কেন্দ্র-ধারণকারী টেট্রাহেড্রন দেয় — তাই ১/৮।"
+          wrong-msg="আবার ভেবে দেখুন। ইঙ্গিত: দ্বিমাত্রিকে ১/৪; ত্রিমাত্রিকে ২³ = ৮টি সম্ভাবনা।"
+          reveal-msg="সঠিক উত্তর: ১/৮">
+          <div slot="option">১/৪</div>
+          <div slot="option">১/৮</div>
+          <div slot="option">১/২</div>
+          <div slot="option">১/১৬</div>
+        </b1b-quiz>
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin: 24px 0 12px; color: var(--theme);">কেন এটি কাজ করে</h3>
+        <p>মুদ্রা উঠানোর চারটি সমান সম্ভাব্য ফলাফলের মাত্র একটি P₁ ও P₂-কে P₃-র বিপরীত দিকে রাখে। রেখা যেমনই হোক, সম্ভাবনা সবসময় ১/৪ — কোনো জটিল সমাকলন ছাড়াই।</p>
+        <b1b-callout type="gold" icon="🔁" title="মূল কৌশল">
+          <p>কোনো নির্মাণ কাজে লাগলে পুরো প্রশ্নটিকে সেই নির্মাণের ভাষায় আবার লিখুন।</p>
+        </b1b-callout>
+      </b1b-section>
+      <b1b-section id="sec-3d" title="ত্রিমাত্রিকে ফিরে আসা">
+        <p>একই কৌশল তিন মাত্রায় কাজ করে: আগে কেন্দ্র দিয়ে তিনটি এলোমেলো রেখা বাছুন, তারপর প্রতিটির জন্য মুদ্রা উঠান।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_02/f04_octants.svg" alt="গোলকের আট ভাগ" caption="তিন রেখা ও তল দ্বারা গোলক আটটি গোলাকার ত্রিভুজে বিভক্ত"></b1b-figure>
+        <p>মোট ২³ = ৮টি সমান সম্ভাব্য ফলাফল; মাত্র একটি P₁, P₂, P₃-কে P₄-র বিপরীত দিকে রাখে।</p>
+        <b1b-formula math="P(\text{centre in tetrahedron})=\frac18"></b1b-formula>
+      </b1b-section>
+      <b1b-section id="sec-takeaway" title="দুটি শিক্ষণীয় কৌশল">
+        <p>প্রথম: যতক্ষণ না হাতে কোনো আঁধার ধরা পড়ে, ততক্ষণ প্রশ্নটিকে সরল সংস্করণে নামিয়ে আনুন। দ্বিতীয়: কাজে লাগা নির্মাণকে প্রশ্নের ভিত্তি বানান।</p>
+        <p>ভুল উপায়ে হিসাব করলে ত্রিমাত্রিক ক্ষেত্রে জটিল পৃষ্ঠ-সমাকলন আসে; সঠিক দৃষ্টিভঙ্গিতে উত্তর কয়েক লাইনে পাওয়া যায়।</p>
+      </b1b-section>
+
+      <!-- ═══ Practice — excluded from narration ═══ -->
+      <b1b-section id="sec-practice" title="অনুশীলন ও সারসংক্ষেপ" data-no-narration="true">
+        <p>পাঠের মূল ধারণাটি নিজের ভাষায় বলে দেখুন, তারপর নিচের প্রশ্নের উত্তর দিন।</p>
+        <b1b-quiz
+          question="❓ এই পাঠের মূল ধারণা কোনটি?"
+          correct="1"
+          correct-msg="চমৎকার! এই কোর্সজুড়ে আমরা দেখেছি — ইনভ্যারিয়েন্ট, কোডিং, জ্যামিতি বা টপোলজি যাই হোক, সঠিক দৃষ্টিভঙ্গিই সমাধানের চাবি।"
+          wrong-msg="আবার ভেবে দেখুন। ইঙ্গিত: “দৃষ্টিভঙ্গি” শব্দটি মনে রাখুন।"
+          reveal-msg="সঠিক উত্তর: সঠিক দৃষ্টিভঙ্গি বা কাঠামো খুঁজে পেলে কঠিন ধাঁধাও সরল হয়">
+          <div slot="option">ধাঁধা মানেই ভাগ্যের ব্যাপার</div>
+          <div slot="option">সঠিক দৃষ্টিভঙ্গি বা কাঠামো খুঁজে পেলে কঠিন ধাঁধাও সরল হয়</div>
+          <div slot="option">সব উত্তর মুখস্থ করতে হয়</div>
+          <div slot="option">গণিত কেবল সংখ্যা নিয়ে কাজ করে</div>
+        </b1b-quiz>
+        <b1b-callout type="green" icon="✅" title="পরবর্তী পাঠ">
+          <p>পরবর্তী অধ্যায়ে আমরা আরেকটি ধাঁধা নিয়ে কাজ করব। প্রতিটি পাঠেই নতুন একটি দৃষ্টিভঙ্গি যোগ হবে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/puzzles/lesson_02/experiments/3b1b_puzzles_02_full_dubbed.mp4"
+    yt-id="OkmNXy7er84"
+    title="কঠিনতম পরীক্ষার কঠিনতম সমস্যা | The hardest problem on the hardest test"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — ধাঁধা">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_01.html"
+  prev-title="পূর্ববর্তী: এআই যে আইএমও সমস্যাটি সমাধান করতে পারেনি"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_03.html"
+  next-title="পরবর্তী: অপ্রত্যাশিতভাবে কঠিন বাতাই-প্রশ্ন"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

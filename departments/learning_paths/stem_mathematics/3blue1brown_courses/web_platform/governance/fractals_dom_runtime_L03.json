@@ -1,0 +1,71 @@
+{
+  "runtime": [
+    {
+      "id": "sec-misconception",
+      "title": "একটি প্রচলিত ভুল ধারণা",
+      "noNarration": false
+    },
+    {
+      "id": "sec-dimension",
+      "title": "মাত্রা আসলে কী?",
+      "noNarration": false
+    },
+    {
+      "id": "sec-scaling",
+      "title": "স্কেলিং নিয়ম ও সূত্র",
+      "noNarration": false
+    },
+    {
+      "id": "sec-not-selfsimilar",
+      "title": "স্ব-সদৃশ নয় এমন ফ্র্যাক্টাল",
+      "noNarration": false
+    },
+    {
+      "id": "sec-coast",
+      "title": "উপকূলের কাহিনী",
+      "noNarration": false
+    },
+    {
+      "id": "sec-conclusion",
+      "title": "উপসংহার",
+      "noNarration": false
+    },
+    {
+      "id": "sec-lab",
+      "title": "ইন্টারেক্টিভ ল্যাব ও কুইজ",
+      "noNarration": true
+    }
+  ],
+  "engine": [
+    {
+      "id": "sec-misconception",
+      "blocks": 5,
+      "cues": 5
+    },
+    {
+      "id": "sec-dimension",
+      "blocks": 5,
+      "cues": 5
+    },
+    {
+      "id": "sec-scaling",
+      "blocks": 6,
+      "cues": 6
+    },
+    {
+      "id": "sec-not-selfsimilar",
+      "blocks": 6,
+      "cues": 6
+    },
+    {
+      "id": "sec-coast",
+      "blocks": 5,
+      "cues": 5
+    },
+    {
+      "id": "sec-conclusion",
+      "blocks": 3,
+      "cues": 3
+    }
+  ]
+}

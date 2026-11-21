@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>সমস্ত পিথাগোরীয় ট্রিপলের দৃশ্যায়ন | All possible pythagorean triples, visualized</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/number_theory/lesson_02/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<b1b-search-overlay></b1b-search-overlay>
+
+<b1b-navbar
+  course-title="সংখ্যা তত্ত্ব"
+  course-url="../../index.html#number-theory"
+  home-url="../../index.html"
+  chapter-num="০২"
+  chapter-total="০৩"
+  prev-url="lesson_01.html"
+  prev-title="পূর্ববর্তী অধ্যায়: মৌলিক সংখ্যার সর্পিল"
+  next-url="lesson_03.html"
+  next-title="পরবর্তী অধ্যায়: পাই হিডিং ইন প্রাইম রেগুলারিটিজ"
+  active-mode="read">
+</b1b-navbar>
+
+<b1b-hero-player
+  course-title="সংখ্যা তত্ত্ব"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০২ · সংখ্যা তত্ত্ব"
+  title="সমস্ত পিথাগোরীয় ট্রিপলের দৃশ্যায়ন | All possible pythagorean triples, visualized"
+  desc="৩-৪-৫ থেকে জটিল সংখ্যা: a² + b² = c²-এর সম্পূর্ণ সমাধানের জ্যামিতিক পথ"
+  video-src="../../media_vault/number_theory/lesson_02/experiments/3b1b_number_theory_02_full_dubbed.mp4"
+  yt-id="QJYmyhnaaek"
+  date="২৬ মে, ২০১৭"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2017/triples.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<div class="lesson-body">
+
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">পরিচিত ত্রিভুজ ও প্রশ্ন</b1b-bookmark>
+      <b1b-bookmark time="65" time-bn="০১:০৫">একক বৃত্ত ও পরিমেয় বিন্দু</b1b-bookmark>
+      <b1b-bookmark time="161" time-bn="০২:৪১">ইউক্লিডের সূত্র</b1b-bookmark>
+      <b1b-bookmark time="263" time-bn="০৪:২৩">জটিল সংখ্যা ও গাউসিয়ান পূর্ণসংখ্যা</b1b-bookmark>
+      <b1b-bookmark time="320" time-bn="০৫:২০">সমস্ত ট্রিপলের মানচিত্র</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-familiar-triangles">পরিচিত ত্রিভুজ ও মূল প্রশ্ন</a>
+      <a href="#sec-unit-circle">একক বৃত্ত, পরিমেয় বিন্দু ও ইউক্লিডের সূত্র</a>
+      <a href="#sec-complex-numbers">জটিল সংখ্যা ও গাউসিয়ান পূর্ণসংখ্যা</a>
+      <a href="#sec-all-triples">সমস্ত ট্রিপলের মানচিত্র</a>
+      <a href="#sec-conclusion">বীজগণিত ও জ্যামিতির মিলন</a>
+      <a href="#sec-lab">ইন্টারেক্টিভ ল্যাব — ট্রিপল জেনারেটর</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+<b1b-section id="sec-familiar-triangles" title="পরিচিত ত্রিভুজ ও মূল প্রশ্ন">
+        <p>স্কুলে আমরা কয়েকটি বিশেষ সমকোণী ত্রিভুজ শিখি — ৩-৪-৫, ৫-১২-১৩, ৮-১৫-১৭। পিথাগোরাসের সূত্র বলে, বাহু তিনটি a, b, c হলে a² + b² = c², যেখানে c হলো অতিভুজ। প্রশ্ন হলো: এই ধরনের কতগুলো ট্রিপল আছে? আর কি কোনো পদ্ধতি আছে যা দিয়ে সবগুলো বের করা যায়?</p>
+
+        <b1b-figure alt="এই ছবিতে তিন বাহুর ওপর তিনটি বর্গ আঁকা হয়েছে। দুটি ছোট বর্গের ক্ষেত্রফল a² ও b² যোগ করলে বড় বর্গের c²-এর সমান হয়। ৩-৪-৫ ত্রিভুজের ক্ষেত্রে ৯ + ১৬ = ২৫ — এটি সূত্রের জ্যামিতিক প্রমাণ।" caption=" তিনটি বর্গ ত্রিভুজের তিন বাহুর ওপর আঁকা হয়েছে। দুটি ছোট বর্গের ক্ষেত্রফল (a² ও b²) যোগ করলে বড় বর্গের ক্ষেত্রফল (c²)-এর সমান হয় — এটি পিথাগোরাসের সূত্রের জ্যামিতিক রূপ। ছবিতে ৩-৪-৫ ত্রিভুজের ক্ষেত্রে ৯ + ১৬ = ২৫ দেখা যায়।"><svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="পিথাগোরীয় ত্রিভুজ" style="width:100%;max-width:440px;height:auto;background:#0e1622;border:1px solid #27364a;border-radius:10px"><defs><marker id="nt-arrow-9" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#8afdff"/></marker></defs><polygon points="90,170 90,50 250,170" fill="none" stroke="#8afdff" stroke-width="2"/><rect x="50" y="130" width="40" height="40" fill="none" stroke="#ffd166"/><rect x="90" y="10" width="160" height="40" fill="none" stroke="#ffd166"/><rect x="250" y="130" width="40" height="40" fill="none" stroke="#ffd166"/><text x="66" y="158" fill="#ffd166" font-size="13">a²</text><text x="160" y="36" fill="#ffd166" font-size="13">b²</text><text x="290" y="158" fill="#ffd166" font-size="13">c²</text><text x="10" y="205" fill="#8afdff" font-size="12">a² + b² = c² — তিন বর্গের ক্ষেত্রফলের সমতা</text></svg></b1b-figure>
+
+        <b1b-formula math="a^2+b^2=c^2"></b1b-formula>
+
+        <p>কোনো ট্রিপলকে ২, ৩ বা যেকোনো সংখ্যা দিয়ে গুণ করলে নতুন ট্রিপল পাওয়া যায় — ৩-৪-৫ থেকে ৬-৮-১০, ৯-১২-১৫ ইত্যাদি। এগুলোকে আমরা 'অমূল' বলে বাদ দিই। আসল আগ্রহ হলো আদিম ট্রিপল, যেখানে a, b, c-এর কোনো সাধারণ উৎপাদক নেই (gc.d = 1)। সব আদিম ট্রিপল পেলে বাকিগুলো গুণ করে বের করা যায়।</p>
+
+        <b1b-quiz
+          question="❓ নিচের কোনটি একটি আদিম (primitive) পিথাগোরীয় ট্রিপল?"
+          correct="2"
+          correct-msg="সঠিক! (8, 15, 17)-এর তিনটি সংখ্যার কোনো সাধারণ উৎপাদক নেই — gc.d = 1। বাকিগুলো (3,4,5), (3,4,5), (5,12,13)-এর গুণিতক।"
+          wrong-msg="আদিম মানে তিনটি সংখ্যার gc.d = 1। 6,8,10 কে 2 দিয়ে ভাগ করা যায়; 9,12,15 কে 3 দিয়ে; 10,24,26 কে 2 দিয়ে।"
+          reveal-msg="সঠিক উত্তর (8, 15, 17) — এটি মূল ট্রিপল, অন্যগুলো এর গুণিতক।">
+          <div slot="option">(6, 8, 10)</div>
+          <div slot="option">(9, 12, 15)</div>
+          <div slot="option">(8, 15, 17)</div>
+          <div slot="option">(10, 24, 26)</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <b1b-section id="sec-unit-circle" title="একক বৃত্ত, পরিমেয় বিন্দু ও ইউক্লিডের সূত্র">
+        <p>c দিয়ে ভাগ করে সমীকরণকে সরল করি: (a/c)² + (b/c)² = 1। অর্থাৎ আমাদের কাজ হলো একক বৃত্ত x² + y² = 1-এ এমন সব বিন্দু খোঁজা যাদের x ও y পরিমেয় সংখ্যা। ((−1, 0)) বিন্দু থেকে যেকোনো পরিমেয় ঢাল t-এর একটি সরল রেখা টানলে সেটি বৃত্তকে আরেকটি বিন্দুতে ছেদ করে — আর সেই ছেদবিন্দুটি অবশ্যই পরিমেয় হয়।</p>
+
+        <b1b-figure alt="ছবিতে (−1, 0) বিন্দু দিয়ে একটি রেখা বৃত্ত কেটেছে ও ছেদবিন্দু চিহ্নিত হয়েছে। রেখার ঢাল t পরিমেয় হলে ছেদবিন্দুও পরিমেয় হয়। এই জ্যামিতিক কৌশলই পরে পূর্ণসংখ্যার সূত্রে রূপ নেয়।" caption=" ছবিতে (−1, 0) বিন্দু দিয়ে একটি রেখা বৃত্ততে কাটা হয়েছে এবং ছেদবিন্দু (x, y) চিহ্নিত করা হয়েছে। রেখার ঢাল t যুক্তিসঙ্গত হলে ছেদবিন্দুর স্থানাঙ্কও যুক্তিসঙ্গত হয়। এই সরল জ্যামিতিক কৌশলটিই পরবর্তীতে পূর্ণসংখ্যার সূত্রে রূপ নেয়।"><svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="একক বৃত্ত ও পরিমেয় বিন্দু" style="width:100%;max-width:440px;height:auto;background:#0e1622;border:1px solid #27364a;border-radius:10px"><defs><marker id="nt-arrow-10" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#8afdff"/></marker></defs><circle cx="160" cy="110" r="80" fill="none" stroke="#8afdff" stroke-width="2"/><line x1="40" y1="190" x2="300" y2="30" stroke="#ffd166" stroke-width="1.6" marker-end="url(#nt-arrow-10)"/><circle cx="96" cy="62" r="4" fill="#ffd166"/><text x="100" y="55" fill="#ffd166" font-size="12">(x, y)</text><circle cx="80" cy="110" r="4" fill="#8afdff"/><text x="50" y="132" fill="#8afdff" font-size="11">(−1, 0)</text><text x="8" y="18" fill="#ffd166" font-size="12">(-1,0) দিয়ে কাটা রেখার ঢাল t → পরিমেয় বিন্দু</text></svg></b1b-figure>
+
+        <p>রেখার সমীকরণ y = t(x + 1) কে x² + y² = 1-এ বসিয়ে সমাধান করলে পাই x = (1 − t²)/(1 + t²) এবং y = 2t/(1 + t²)। এখন t-কে পরিমেয় m/n আকারে লিখলে ভগ্নাংশ সরল করে পাই a = m² − n², b = 2mn, c = m² + n²। এটি ইউক্লিডের বিখ্যাত সূত্র — m ও n যেকোনো ধনাত্মক পূর্ণসংখ্যা হলে একটি পিথাগোরীয় ট্রিপল পাওয়া যায়।</p>
+
+        <b1b-formula math="x=\frac{1-t^2}{1+t^2},\quad y=\frac{2t}{1+t^2}"></b1b-formula>
+
+        <b1b-formula math="(a,b,c)=(m^2-n^2,\ 2mn,\ m^2+n^2)"></b1b-formula>
+
+        <b1b-quiz
+          question="❓ ইউক্লিডের সূত্রে m = 2, n = 1 বসালে কোন ট্রিপল পাওয়া যায়?"
+          correct="0"
+          correct-msg="চমৎকার! a = m²−n² = 4−1 = 3, b = 2mn = 4, c = m²+n² = 5। পাওয়া গেল পরিচিত ৩-৪-৫ ত্রিভুজ।"
+          wrong-msg="সূত্রটি মনে রেখো: a = m² − n², b = 2mn, c = m² + n²। m = 2, n = 1 বসিয়ে হিসাব করো।"
+          reveal-msg="সঠিক উত্তর (3, 4, 5)।">
+          <div slot="option">(3, 4, 5)</div>
+          <div slot="option">(5, 12, 13)</div>
+          <div slot="option">(8, 15, 17)</div>
+          <div slot="option">(7, 24, 25)</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ m = 3, n = 2-এর জন্য ইউক্লিডের সূত্র থেকে কী পাওয়া যায়?"
+          correct="0"
+          correct-msg="ঠিক! 3²−2² = 5, 2×3×2 = 12, 3²+2² = 13 — অর্থাৎ ৫-১২-১৩ ত্রিভুজ, যা আমরা পরিচিত ত্রিভুজ হিসেবে জানতাম।"
+          wrong-msg="m = 3, n = 2 বসাও: 9−4 = 5, 12, 9+4 = 13।"
+          reveal-msg="সঠিক উত্তর (5, 12, 13)।">
+          <div slot="option">(5, 12, 13)</div>
+          <div slot="option">(8, 15, 17)</div>
+          <div slot="option">(7, 24, 25)</div>
+          <div slot="option">(20, 21, 29)</div>
+        </b1b-quiz>
+
+        <b1b-callout type="green" icon="🌱" title="আদিম হওয়ার শর্ত"><p>প্রত্যেকটি আদিম ট্রিপল ঠিক একটি করে জোড়া (m, n) থেকে আসে, যেখানে m > n, gc.d(m, n) = 1 এবং m ও n একজোড়া বিজোড়-জোড় — অর্থাৎ দুটোই একই সম হলে ট্রিপলটি আদিম হয় না। উদাহরণস্বরূপ m = 2, n = 1 থেকে (3,4,5); m = 3, n = 2 থেকে (5,12,13); m = 4, n = 1 থেকে (15,8,17)। এই শর্তগুলো মানলে কোনো ট্রিপল দুবার আসবে না বা বাদ যাবে না।</p></b1b-callout>
+      </b1b-section>
+
+      <b1b-section id="sec-complex-numbers" title="জটিল সংখ্যা ও গাউসিয়ান পূর্ণসংখ্যা">
+        <p>একই সমীকরণকে জটিল সংখ্যার ভাষায় লেখা যায়: a² + b² = (a + bi)(a − bi)। এখানে a + bi ও a − bi পরস্পরের conjugate, আর তাদের গুণফল একটিমাত্র বাস্তব সংখ্যা c²। ফলে পিথাগোরীয় ট্রিপল খোঁজার মানে হলো — এমন একটি গাউসিয়ান পূর্ণসংখ্যা (a + bi) খোঁজা যার নর্ম a² + b² একটি পূর্ণবর্গ।</p>
+
+        <b1b-figure alt="জটিল তলে a + bi বিন্দু আর তার a ও b উপাদান দেখানো হয়েছে। মূলবিন্দু থেকে দূরত্বের বর্গ |a+bi|² = a²+b²। গাউসিয়ান পূর্ণসংখ্যার factorization-এর মূল এই সম্পর্কেই আছে।" caption=" জটিল তলে এক বিন্দু a + bi দেখানো হয়েছে, সাথে তার অনুভূমিক ও উল্লম্ব উপাদান a ও b। বিন্দুটির মূলবিন্দু থেকে দূরত্বের বর্গই হলো |a + bi|² = a² + b²। ছবিতে এই দূরত্ব ও বর্গের সম্পর্কটি মনে রাখো — গাউসিয়ান পূর্ণসংখ্যার অনন্য factorization-এর মূল এখানেই।"><svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="জটিল তল" style="width:100%;max-width:440px;height:auto;background:#0e1622;border:1px solid #27364a;border-radius:10px"><defs><marker id="nt-arrow-11" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#8afdff"/></marker></defs><line x1="0" y1="0" x2="0" y2="220" stroke="#1d2939"/><line x1="25" y1="0" x2="25" y2="220" stroke="#1d2939"/><line x1="50" y1="0" x2="50" y2="220" stroke="#1d2939"/><line x1="75" y1="0" x2="75" y2="220" stroke="#1d2939"/><line x1="100" y1="0" x2="100" y2="220" stroke="#1d2939"/><line x1="125" y1="0" x2="125" y2="220" stroke="#1d2939"/><line x1="150" y1="0" x2="150" y2="220" stroke="#1d2939"/><line x1="175" y1="0" x2="175" y2="220" stroke="#1d2939"/><line x1="200" y1="0" x2="200" y2="220" stroke="#1d2939"/><line x1="225" y1="0" x2="225" y2="220" stroke="#1d2939"/><line x1="250" y1="0" x2="250" y2="220" stroke="#1d2939"/><line x1="275" y1="0" x2="275" y2="220" stroke="#1d2939"/><line x1="300" y1="0" x2="300" y2="220" stroke="#1d2939"/><line x1="325" y1="0" x2="325" y2="220" stroke="#1d2939"/><line x1="350" y1="0" x2="350" y2="220" stroke="#1d2939"/><line x1="375" y1="0" x2="375" y2="220" stroke="#1d2939"/><line x1="400" y1="0" x2="400" y2="220" stroke="#1d2939"/><line x1="0" y1="0" x2="400" y2="0" stroke="#1d2939"/><line x1="0" y1="25" x2="400" y2="25" stroke="#1d2939"/><line x1="0" y1="50" x2="400" y2="50" stroke="#1d2939"/><line x1="0" y1="75" x2="400" y2="75" stroke="#1d2939"/><line x1="0" y1="100" x2="400" y2="100" stroke="#1d2939"/><line x1="0" y1="125" x2="400" y2="125" stroke="#1d2939"/><line x1="0" y1="150" x2="400" y2="150" stroke="#1d2939"/><line x1="0" y1="175" x2="400" y2="175" stroke="#1d2939"/><line x1="0" y1="200" x2="400" y2="200" stroke="#1d2939"/><line x1="60" y1="160" x2="150" y2="40" stroke="#ffd166" stroke-width="2" marker-end="url(#nt-arrow-11)"/><line x1="60" y1="160" x2="60" y2="40" stroke="#8afdff" stroke-width="1"/><line x1="60" y1="160" x2="150" y2="160" stroke="#8afdff" stroke-width="1"/><circle cx="150" cy="40" r="4" fill="#ffd166"/><text x="156" y="36" fill="#ffd166" font-size="13">a + bi</text><circle cx="150" cy="280" r="4" fill="#8afdff"/><text x="8" y="18" fill="#ffd166" font-size="12">a + bi-এর নর্ম = a² + b²</text></svg></b1b-figure>
+
+        <b1b-formula math="(a+bi)(a-bi)=a^2+b^2=c^2"></b1b-formula>
+
+        <p>গাউসিয়ান পূর্ণসংখ্যার ring-এ অনন্য factorization প্রযোজ্য — যেমন সাধারণ পূর্ণসংখ্যায় প্রতিটি সংখ্যা মৌলিকের গুণফলে ভেঙে যায়। 5-কে ভেঙে লেখা যায় (2 + i)(2 − i); আবার 3 কে ভাঙা যায় না — 3 হলো গাউসিয়ান মৌলিক। নিয়ম হলো: 4k + 1 আকারের মৌলিক দুই গুণনীয়কে ভেঙে যায়, কিন্তু 4k + 3 আকারের মৌলিক অভেদ্য থাকে।</p>
+
+        <b1b-callout type="purple" icon="🔍" title="কেন 4k+3 মৌলিক বাধা?"><p>c² একটি পূর্ণবর্গ, তাই তার factorization-এ প্রতিটি গাউসিয়ান মৌলিকের ঘাত জোড় হতে হবে। 4k+3 আকারের মৌলিক গাউসিয়ান অভেদ্য হওয়ায় c²-এ এটি জোড় ঘাতেই থাকবে — ফলে (a+bi)-তেও এটি জোড় ঘাতে থাকবে, অর্থাৎ a ও b উভয়ই ওই মৌলিক দিয়ে বিভাজ্য হবে। তখন gc.d(a,b) ≠ 1 হয়ে যায়। তাই আদিম ট্রিপলে 4k+3 মৌলিক c-কে ভাগ করতে পারে না।</p></b1b-callout>
+
+        <b1b-formula math="(m+ni)^2=(m^2-n^2)+2mni\ \Longrightarrow\ (a,b,c)=(m^2-n^2,\,2mn,\,m^2+n^2)"></b1b-formula>
+
+        <b1b-quiz
+          question="❓ কোন মৌলিক সংখ্যাটি দুটি পূর্ণবর্গের যোগফল হিসেবে লেখা যায়?"
+          correct="2"
+          correct-msg="সঠিক! 13 = 4 + 9 = 2² + 3²। 7, 11, 19 — তিনটিই 4k+3 আকারের মৌলিক, যেগুলো কখনো দুই বর্গের যোগফল হতে পারে না।"
+          wrong-msg="4k+3 আকারের মৌলিক (যেমন 7, 11, 19) দুই বর্গের যোগফল হতে পারে না। 13 হলো 4k+1 আকারের।"
+          reveal-msg="সঠিক উত্তর 13 = 2² + 3²।">
+          <div slot="option">7</div>
+          <div slot="option">11</div>
+          <div slot="option">13</div>
+          <div slot="option">19</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <b1b-section id="sec-all-triples" title="সমস্ত ট্রিপলের মানচিত্র">
+        <p>এখন সব টুকরো মিলছে। যেকোনো আদিম ট্রিপলের (a + bi) অবশ্যই কোনো গাউসিয়ান পূর্ণসংখ্যার বর্গের (একক গুণক ছাড়া) সমান — কারণ c²-এর factorization-এ প্রতিটি মৌলিকের ঘাত জোড় এবং a+bi ও a−bi পরস্পর সহ-মৌলিক। ফলে (a + bi) = ±(m + ni)² বা ±i(m + ni)², যা থেকেই ইউক্লিডের সূত্রটি আবার পাওয়া যায়। অর্থাৎ m > n, gc.d = 1, বিজোড়-জোড় ভিন্ন — এই তিন শর্ত পূরণকারী প্রতিটি জোড়া ঠিক একটি আদিম ট্রিপল দেয়।</p>
+
+        <b1b-figure alt="এই চিত্রে বর্গগুলোর ক্ষেত্রফল এখন জটিল সংখ্যার নর্মের গুণফল। বাঁয়ে a², ওপরে b², ডানে c² — তিনটি মিলে পিথাগোরীয় সম্পর্ক। বড় আদিম ট্রিপলও একই কাঠামো মেনে চলে, শুধু m ও n বড় হয়।" caption=" চিত্রটি আবার দেখো — এখন বর্গগুলোর ক্ষেত্রফল শুধু সংখ্যা নয়, বরং জটিল সংখ্যার নর্মের গুণফল। বাঁয়ের বর্গ a², ওপরের বর্গ b² আর ডানের বর্গ c² — তিনটি মিলে পিথাগোরীয় সম্পর্ক প্রকাশ করে। বড় আদিম ট্রিপলগুলোও এই একই কাঠামো মেনে চলে, শুধু m ও n বড় হয়।"><svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="পিথাগোরীয় ত্রিভুজ" style="width:100%;max-width:440px;height:auto;background:#0e1622;border:1px solid #27364a;border-radius:10px"><defs><marker id="nt-arrow-12" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#8afdff"/></marker></defs><polygon points="90,170 90,50 250,170" fill="none" stroke="#8afdff" stroke-width="2"/><rect x="50" y="130" width="40" height="40" fill="none" stroke="#ffd166"/><rect x="90" y="10" width="160" height="40" fill="none" stroke="#ffd166"/><rect x="250" y="130" width="40" height="40" fill="none" stroke="#ffd166"/><text x="66" y="158" fill="#ffd166" font-size="13">a²</text><text x="160" y="36" fill="#ffd166" font-size="13">b²</text><text x="290" y="158" fill="#ffd166" font-size="13">c²</text><text x="10" y="205" fill="#8afdff" font-size="12">a² + b² = c² — তিন বর্গের ক্ষেত্রফলের সমতা</text></svg></b1b-figure>
+
+        <p>এই জোড়া-নির্মাণ থেকে ট্রিপলের একটি 'বৃক্ষ' তৈরি হয় — মূলে (3,4,5), তার থেকে শাখা হিসেবে (5,12,13), (8,15,17), (7,24,25), (20,21,29) ইত্যাদি বের হয়। প্রতিটি শাখার আকার বাড়তে থাকে এবং কোনো ট্রিপল দুবার আসে না। পাশাপাশি একক বৃত্তের পরিমেয় বিন্দু আর জটিল বর্গ — একই বস্তুর দুই রূপ।</p>
+      </b1b-section>
+
+      <b1b-section id="sec-conclusion" title="বীজগণিত ও জ্যামিতির মিলন">
+        <p>আমরা শুরু করেছিলাম তিনটি সংখ্যার এক সরল সমীকরণ দিয়ে — a² + b² = c²। শেষ করছি জটিল সংখ্যার অনন্য factorization-এ। একক বৃত্তের পরিমেয় বিন্দু, জোড়া পূর্ণবর্গ, আর গাউসিয়ান বর্গ — এগুলো সব একই গল্পের বিভিন্ন অধ্যায়। কোনো কိ Sharma-অনুমান ছাড়াই সব পিথাগোরীয় ট্রিপলের সম্পূর্ণ তালিকা বের করা গেল, কারণ factorization আমাদের বলে দেয় কোনটির অস্তিত্ব আছে আর কোনটির নেই।</p>
+
+        <p>এই পদ্ধতি শক্তিশালী কারণ এটি কেবল বের করে না, বোঝায়ও — কেন 4k+3 মৌলিক আদিম ট্রিপলে আসতে পারে না, কেন কোনো দুটি (m,n) একই ট্রিপল দেয় না, কেন প্রতিটি আদিম ট্রিপল ঠিক একবারই আসে। গণিতে এমন অনেক সমস্যা আছে যেখানে 'সব সমাধান বের করা'র চেয়ে 'কেন আর নেই' বোঝাটা কঠিন — পিথাগোরীয় ট্রিপল সেই ধরনের এক উজ্জ্বল উদাহরণ।</p>
+      </b1b-section>
+
+      <!-- ── Interactive lab : intentionally outside narration ── -->
+      <b1b-section id="sec-lab" title="ইন্টারেক্টিভ ল্যাব — ট্রিপল জেনারেটর" data-no-narration="true">
+        <p class="viz-intro">m ও n-এর বিভিন্ন জোড়া বেছে সরাসরি আদিম ট্রিপল তৈরি হতে দেখো। প্রতিটি ত্রিভুজের চারপাশে বর্গগুলোর ক্ষেত্রফল যোগ হয়ে কীভাবে বড় বর্গ তৈরি করে তা পর্যবেক্ষণ করো।</p>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <nt-math-lab mode="triples"></nt-math-lab>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div>
+
+  <b1b-watch-panel
+    video-src="../../media_vault/number_theory/lesson_02/experiments/3b1b_number_theory_02_full_dubbed.mp4"
+    yt-id="QJYmyhnaaek"
+    title="সমস্ত পিথাগোরীয় ট্রিপলের দৃশ্যায়ন | All possible pythagorean triples, visualized — অধ্যায় ০২"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — সংখ্যা তত্ত্ব">
+  </b1b-watch-panel>
+
+</div>
+
+<b1b-chapter-nav
+  prev-url="lesson_01.html"
+  prev-title="পূর্ববর্তী অধ্যায়: মৌলিক সংখ্যার সর্পিল"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_03.html"
+  next-title="পরবর্তী অধ্যায়: পাই হিডিং ইন প্রাইম রেগুলারিটিজ"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- Page-specific interactive lab component (NEW element; no library override) -->
+<script>
+(function () {
+  if (customElements.get('nt-math-lab')) return;
+  class NtMathLab extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.rendered) return;
+      this.dataset.rendered = 'true';
+      const mode = this.getAttribute('mode') || 'spiral';
+      this.innerHTML =
+        '<div style="background:#0e1622;border:1px solid #27364a;border-radius:12px;padding:14px;color:#dbe7f3">' +
+          '<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px">' +
+            '<label style="font-size:13px">N = <input type="range" min="20" max="320" value="140" ' +
+              'style="width:180px;vertical-align:middle"/><b class="val" style="color:#ffd166">140</b></label>' +
+            '<button class="replay" style="padding:6px 12px;border-radius:8px;border:1px solid #4361ee;' +
+              'background:#16233a;color:#dbe7f3;cursor:pointer">🔄 পুনরাঙ্কন</button>' +
+          '</div>' +
+          '<canvas width="640" height="360" style="width:100%;height:auto;background:#0a1018;border-radius:8px"></canvas>' +
+          '<p class="hint" style="font-size:12px;color:#8fa6bf;margin:8px 0 0"></p>' +
+        '</div>';
+      const range = this.querySelector('input');
+      const val = this.querySelector('.val');
+      const canvas = this.querySelector('canvas');
+      const hint = this.querySelector('.hint');
+      const ctx = canvas.getContext('2d');
+      const draw = () => {
+        const n = +range.value;
+        val.textContent = n;
+        ctx.clearRect(0, 0, 640, 360);
+        ctx.strokeStyle = '#1d2939';
+        ctx.lineWidth = 1;
+        for (let x = 0; x <= 640; x += 40) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, 360); ctx.stroke(); }
+        for (let y = 0; y <= 360; y += 40) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(640, y); ctx.stroke(); }
+        ctx.save();
+        ctx.translate(320, 180);
+        const prime = (k) => { if (k < 2) return false; for (let d = 2; d * d <= k; d++) if (k % d === 0) return false; return true; };
+        if (mode === 'spiral') {
+          ctx.strokeStyle = '#8afdff'; ctx.lineWidth = 1.4; ctx.beginPath();
+          for (let i = 0; i < 240; i++) {
+            const r = 2 + i * 0.62, a = i * 0.31;
+            const x = r * Math.cos(a), y = r * Math.sin(a);
+            if (!i) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+          ctx.fillStyle = '#ffd166';
+          for (let p = 2; p <= n; p++) {
+            if (!prime(p)) continue;
+            const r = 1.6 + p * 0.62, a = p * 0.31;
+            ctx.beginPath(); ctx.arc(r * Math.cos(a), r * Math.sin(a), 2.2, 0, 7); ctx.fill();
+          }
+          hint.textContent = 'হলুদ বিন্দুগুলো মৌলিক সংখ্যা। N বাড়ালে আর্কিমিডিয় সর্পিলের ওপর নতুন বাহু ও রশ্নি ফুটে ওঠে।';
+        } else if (mode === 'triples') {
+          let shown = 0;
+          ctx.font = '12px sans-serif';
+          for (let m = 2; m <= 26 && shown < n / 6; m++) {
+            for (let k = 1; k < m; k++) {
+              if ((m - k) % 2 === 0) continue;
+              const g = (a, b) => b ? g(b, a % b) : a;
+              if (g(m, k) !== 1) continue;
+              const a = m * m - k * k, b = 2 * m * k, c = m * m + k * k;
+              const s = 150 / c;
+              ctx.strokeStyle = '#8afdff'; ctx.lineWidth = 1;
+              ctx.beginPath(); ctx.moveTo(-b * s, a * s); ctx.lineTo(0, 0); ctx.lineTo(b * s, 0); ctx.lineTo(-b * s, a * s); ctx.stroke();
+              ctx.fillStyle = '#ffd166';
+              ctx.fillText(a + ',' + b + ',' + c, -b * s + 4, a * s - 4);
+              if (++shown > 28) break;
+            }
+          }
+          hint.textContent = 'প্রতিটি ত্রিভুজ (m²−k², 2mk, m²+k²) সূত্র থেকে এসেছে — m ও k বিজোড়-জোড় ভিন্ন এবং সহ-মৌলিক।';
+        } else {
+          const target = Math.PI / 4;
+          const pts = [];
+          let sum = 0;
+          for (let i = 0; i < n; i++) {
+            sum += (i % 2 ? -1 : 1) / (2 * i + 1);
+            pts.push(sum);
+          }
+          ctx.strokeStyle = '#ffd166'; ctx.setLineDash([5, 5]); ctx.beginPath();
+          ctx.moveTo(-280, -target * 160); ctx.lineTo(280, -target * 160); ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.strokeStyle = '#8afdff'; ctx.lineWidth = 1.6; ctx.beginPath();
+          pts.forEach((v, i) => { const x = -280 + i * (560 / pts.length), y = -v * 160; if (!i) ctx.moveTo(x, y); else ctx.lineTo(x, y); });
+          ctx.stroke();
+          ctx.fillStyle = '#ffd166'; ctx.font = '13px sans-serif';
+          ctx.fillText('π/4 ≈ 0.785398', -270, -target * 160 - 8);
+          hint.textContent = 'আংশিক যোগফল π/4-এর ওপর দিয়ে দোলা খেয়ে ক্রমশ কাছে আসছে — এটি লাইবনিটজের ধারা।';
+        }
+        ctx.restore();
+      };
+      range.addEventListener('input', draw);
+      this.querySelector('.replay').addEventListener('click', draw);
+      draw();
+    }
+  }
+  customElements.define('nt-math-lab', NtMathLab);
+})();
+</script>
+
+</body>
+</html>

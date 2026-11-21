@@ -1,0 +1,797 @@
+{
+  "experiment": "kimi_timesync (local deterministic DSP replica)",
+  "cue_count": 98,
+  "sample_rate": 44100,
+  "strategy": "absolute_sample_offset — zero cumulative drift by construction",
+  "expected_max_drift_ms": 0.0,
+  "max_measured_drift_ms": 0.0,
+  "total_duration_sec": 593.32,
+  "cues": [
+    {
+      "id": 1,
+      "expected_start_ms": 10920.0,
+      "actual_start_sample": 481572,
+      "actual_start_ms": 10920.0,
+      "duration_ms": 4300.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 2,
+      "expected_start_ms": 15720.0,
+      "actual_start_sample": 693252,
+      "actual_start_ms": 15720.0,
+      "duration_ms": 4120.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 3,
+      "expected_start_ms": 20380.0,
+      "actual_start_sample": 898758,
+      "actual_start_ms": 20380.0,
+      "duration_ms": 6098.005,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 4,
+      "expected_start_ms": 26478.0,
+      "actual_start_sample": 1167680,
+      "actual_start_ms": 26478.005,
+      "duration_ms": 3621.995,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 5,
+      "expected_start_ms": 30880.0,
+      "actual_start_sample": 1361808,
+      "actual_start_ms": 30880.0,
+      "duration_ms": 3520.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 6,
+      "expected_start_ms": 34940.0,
+      "actual_start_sample": 1540854,
+      "actual_start_ms": 34940.0,
+      "duration_ms": 8220.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 7,
+      "expected_start_ms": 44040.0,
+      "actual_start_sample": 1942164,
+      "actual_start_ms": 44040.0,
+      "duration_ms": 6000.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 8,
+      "expected_start_ms": 51720.0,
+      "actual_start_sample": 2280852,
+      "actual_start_ms": 51720.0,
+      "duration_ms": 3920.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 9,
+      "expected_start_ms": 55640.0,
+      "actual_start_sample": 2453724,
+      "actual_start_ms": 55640.0,
+      "duration_ms": 7120.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 10,
+      "expected_start_ms": 63020.0,
+      "actual_start_sample": 2779182,
+      "actual_start_ms": 63020.0,
+      "duration_ms": 5660.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 11,
+      "expected_start_ms": 69320.0,
+      "actual_start_sample": 3057012,
+      "actual_start_ms": 69320.0,
+      "duration_ms": 1720.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 12,
+      "expected_start_ms": 72400.0,
+      "actual_start_sample": 3192840,
+      "actual_start_ms": 72400.0,
+      "duration_ms": 7288.005,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 13,
+      "expected_start_ms": 79688.0,
+      "actual_start_sample": 3514241,
+      "actual_start_ms": 79688.005,
+      "duration_ms": 4351.995,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 14,
+      "expected_start_ms": 85640.0,
+      "actual_start_sample": 3776724,
+      "actual_start_ms": 85640.0,
+      "duration_ms": 8006.009,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 15,
+      "expected_start_ms": 93646.0,
+      "actual_start_sample": 4129789,
+      "actual_start_ms": 93646.009,
+      "duration_ms": 5173.991,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 16,
+      "expected_start_ms": 99580.0,
+      "actual_start_sample": 4391478,
+      "actual_start_ms": 99580.0,
+      "duration_ms": 8360.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 17,
+      "expected_start_ms": 108400.0,
+      "actual_start_sample": 4780440,
+      "actual_start_ms": 108400.0,
+      "duration_ms": 5750.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 18,
+      "expected_start_ms": 114150.0,
+      "actual_start_sample": 5034015,
+      "actual_start_ms": 114150.0,
+      "duration_ms": 3070.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 19,
+      "expected_start_ms": 118000.0,
+      "actual_start_sample": 5203800,
+      "actual_start_ms": 118000.0,
+      "duration_ms": 6040.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 20,
+      "expected_start_ms": 124740.0,
+      "actual_start_sample": 5501034,
+      "actual_start_ms": 124740.0,
+      "duration_ms": 5466.009,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 21,
+      "expected_start_ms": 130206.0,
+      "actual_start_sample": 5742085,
+      "actual_start_ms": 130206.009,
+      "duration_ms": 6768.005,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 22,
+      "expected_start_ms": 136974.0,
+      "actual_start_sample": 6040553,
+      "actual_start_ms": 136973.991,
+      "duration_ms": 1926.009,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 23,
+      "expected_start_ms": 139680.0,
+      "actual_start_sample": 6159888,
+      "actual_start_ms": 139680.0,
+      "duration_ms": 5240.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 24,
+      "expected_start_ms": 145420.0,
+      "actual_start_sample": 6413022,
+      "actual_start_ms": 145420.0,
+      "duration_ms": 4900.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 25,
+      "expected_start_ms": 150940.0,
+      "actual_start_sample": 6656454,
+      "actual_start_ms": 150940.0,
+      "duration_ms": 6649.002,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 26,
+      "expected_start_ms": 157589.0,
+      "actual_start_sample": 6949675,
+      "actual_start_ms": 157589.002,
+      "duration_ms": 3030.998,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 27,
+      "expected_start_ms": 161440.0,
+      "actual_start_sample": 7119504,
+      "actual_start_ms": 161440.0,
+      "duration_ms": 7171.995,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 28,
+      "expected_start_ms": 168612.0,
+      "actual_start_sample": 7435789,
+      "actual_start_ms": 168611.995,
+      "duration_ms": 3068.005,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 29,
+      "expected_start_ms": 172740.0,
+      "actual_start_sample": 7617834,
+      "actual_start_ms": 172740.0,
+      "duration_ms": 6840.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 30,
+      "expected_start_ms": 180260.0,
+      "actual_start_sample": 7949466,
+      "actual_start_ms": 180260.0,
+      "duration_ms": 5260.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 31,
+      "expected_start_ms": 186380.0,
+      "actual_start_sample": 8219358,
+      "actual_start_ms": 186380.0,
+      "duration_ms": 4980.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 32,
+      "expected_start_ms": 192320.0,
+      "actual_start_sample": 8481312,
+      "actual_start_ms": 192320.0,
+      "duration_ms": 7088.005,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 33,
+      "expected_start_ms": 199408.0,
+      "actual_start_sample": 8793893,
+      "actual_start_ms": 199408.005,
+      "duration_ms": 1951.995,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 34,
+      "expected_start_ms": 202000.0,
+      "actual_start_sample": 8908200,
+      "actual_start_ms": 202000.0,
+      "duration_ms": 8160.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 35,
+      "expected_start_ms": 210880.0,
+      "actual_start_sample": 9299808,
+      "actual_start_ms": 210880.0,
+      "duration_ms": 5430.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 36,
+      "expected_start_ms": 216310.0,
+      "actual_start_sample": 9539271,
+      "actual_start_ms": 216310.0,
+      "duration_ms": 6557.007,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 37,
+      "expected_start_ms": 222867.0,
+      "actual_start_sample": 9828435,
+      "actual_start_ms": 222867.007,
+      "duration_ms": 4712.993,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 38,
+      "expected_start_ms": 228140.0,
+      "actual_start_sample": 10060974,
+      "actual_start_ms": 228140.0,
+      "duration_ms": 6200.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 39,
+      "expected_start_ms": 236340.0,
+      "actual_start_sample": 10422594,
+      "actual_start_ms": 236340.0,
+      "duration_ms": 7340.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 40,
+      "expected_start_ms": 244640.0,
+      "actual_start_sample": 10788624,
+      "actual_start_ms": 244640.0,
+      "duration_ms": 860.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 41,
+      "expected_start_ms": 246200.0,
+      "actual_start_sample": 10857420,
+      "actual_start_ms": 246200.0,
+      "duration_ms": 6661.995,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 42,
+      "expected_start_ms": 252862.0,
+      "actual_start_sample": 11151214,
+      "actual_start_ms": 252861.995,
+      "duration_ms": 3478.005,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 43,
+      "expected_start_ms": 256860.0,
+      "actual_start_sample": 11327526,
+      "actual_start_ms": 256860.0,
+      "duration_ms": 6423.991,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 44,
+      "expected_start_ms": 263284.0,
+      "actual_start_sample": 11610824,
+      "actual_start_ms": 263283.991,
+      "duration_ms": 4396.009,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 45,
+      "expected_start_ms": 268400.0,
+      "actual_start_sample": 11836440,
+      "actual_start_ms": 268400.0,
+      "duration_ms": 7160.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 46,
+      "expected_start_ms": 276900.0,
+      "actual_start_sample": 12211290,
+      "actual_start_ms": 276900.0,
+      "duration_ms": 3200.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 47,
+      "expected_start_ms": 280460.0,
+      "actual_start_sample": 12368286,
+      "actual_start_ms": 280460.0,
+      "duration_ms": 4320.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 48,
+      "expected_start_ms": 285440.0,
+      "actual_start_sample": 12587904,
+      "actual_start_ms": 285440.0,
+      "duration_ms": 2200.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 49,
+      "expected_start_ms": 288480.0,
+      "actual_start_sample": 12721968,
+      "actual_start_ms": 288480.0,
+      "duration_ms": 5080.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 50,
+      "expected_start_ms": 293960.0,
+      "actual_start_sample": 12963636,
+      "actual_start_ms": 293960.0,
+      "duration_ms": 5720.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 51,
+      "expected_start_ms": 300300.0,
+      "actual_start_sample": 13243230,
+      "actual_start_ms": 300300.0,
+      "duration_ms": 8440.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 52,
+      "expected_start_ms": 312080.0,
+      "actual_start_sample": 13762728,
+      "actual_start_ms": 312080.0,
+      "duration_ms": 6780.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 53,
+      "expected_start_ms": 319720.0,
+      "actual_start_sample": 14099652,
+      "actual_start_ms": 319720.0,
+      "duration_ms": 1760.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 54,
+      "expected_start_ms": 321740.0,
+      "actual_start_sample": 14188734,
+      "actual_start_ms": 321740.0,
+      "duration_ms": 2280.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 55,
+      "expected_start_ms": 325520.0,
+      "actual_start_sample": 14355432,
+      "actual_start_ms": 325520.0,
+      "duration_ms": 7160.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 56,
+      "expected_start_ms": 333980.0,
+      "actual_start_sample": 14728518,
+      "actual_start_ms": 333980.0,
+      "duration_ms": 7168.005,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 57,
+      "expected_start_ms": 341148.0,
+      "actual_start_sample": 15044627,
+      "actual_start_ms": 341148.005,
+      "duration_ms": 3631.995,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 58,
+      "expected_start_ms": 345260.0,
+      "actual_start_sample": 15225966,
+      "actual_start_ms": 345260.0,
+      "duration_ms": 4200.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 59,
+      "expected_start_ms": 350180.0,
+      "actual_start_sample": 15442938,
+      "actual_start_ms": 350180.0,
+      "duration_ms": 7780.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 60,
+      "expected_start_ms": 357960.0,
+      "actual_start_sample": 15786036,
+      "actual_start_ms": 357960.0,
+      "duration_ms": 3760.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 61,
+      "expected_start_ms": 362660.0,
+      "actual_start_sample": 15993306,
+      "actual_start_ms": 362660.0,
+      "duration_ms": 2820.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 62,
+      "expected_start_ms": 366020.0,
+      "actual_start_sample": 16141482,
+      "actual_start_ms": 366020.0,
+      "duration_ms": 6440.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 63,
+      "expected_start_ms": 374360.0,
+      "actual_start_sample": 16509276,
+      "actual_start_ms": 374360.0,
+      "duration_ms": 7060.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 64,
+      "expected_start_ms": 381840.0,
+      "actual_start_sample": 16839144,
+      "actual_start_ms": 381840.0,
+      "duration_ms": 3780.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 65,
+      "expected_start_ms": 386920.0,
+      "actual_start_sample": 17063172,
+      "actual_start_ms": 386920.0,
+      "duration_ms": 8193.991,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 66,
+      "expected_start_ms": 395114.0,
+      "actual_start_sample": 17424527,
+      "actual_start_ms": 395113.991,
+      "duration_ms": 3066.009,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 67,
+      "expected_start_ms": 400080.0,
+      "actual_start_sample": 17643528,
+      "actual_start_ms": 400080.0,
+      "duration_ms": 4840.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 68,
+      "expected_start_ms": 405600.0,
+      "actual_start_sample": 17886960,
+      "actual_start_ms": 405600.0,
+      "duration_ms": 7100.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 69,
+      "expected_start_ms": 414640.0,
+      "actual_start_sample": 18285624,
+      "actual_start_ms": 414640.0,
+      "duration_ms": 3720.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 70,
+      "expected_start_ms": 418860.0,
+      "actual_start_sample": 18471726,
+      "actual_start_ms": 418860.0,
+      "duration_ms": 2520.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 71,
+      "expected_start_ms": 421840.0,
+      "actual_start_sample": 18603144,
+      "actual_start_ms": 421840.0,
+      "duration_ms": 7780.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 72,
+      "expected_start_ms": 430500.0,
+      "actual_start_sample": 18985050,
+      "actual_start_ms": 430500.0,
+      "duration_ms": 6360.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 73,
+      "expected_start_ms": 437640.0,
+      "actual_start_sample": 19299924,
+      "actual_start_ms": 437640.0,
+      "duration_ms": 3618.005,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 74,
+      "expected_start_ms": 441258.0,
+      "actual_start_sample": 19459478,
+      "actual_start_ms": 441258.005,
+      "duration_ms": 5041.995,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 75,
+      "expected_start_ms": 447360.0,
+      "actual_start_sample": 19728576,
+      "actual_start_ms": 447360.0,
+      "duration_ms": 4573.991,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 76,
+      "expected_start_ms": 451934.0,
+      "actual_start_sample": 19930289,
+      "actual_start_ms": 451933.991,
+      "duration_ms": 4748.005,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 77,
+      "expected_start_ms": 456682.0,
+      "actual_start_sample": 20139676,
+      "actual_start_ms": 456681.995,
+      "duration_ms": 4458.005,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 78,
+      "expected_start_ms": 461940.0,
+      "actual_start_sample": 20371554,
+      "actual_start_ms": 461940.0,
+      "duration_ms": 4260.998,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 79,
+      "expected_start_ms": 466201.0,
+      "actual_start_sample": 20559464,
+      "actual_start_ms": 466200.998,
+      "duration_ms": 4979.002,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 80,
+      "expected_start_ms": 472020.0,
+      "actual_start_sample": 20816082,
+      "actual_start_ms": 472020.0,
+      "duration_ms": 7560.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 81,
+      "expected_start_ms": 480300.0,
+      "actual_start_sample": 21181230,
+      "actual_start_ms": 480300.0,
+      "duration_ms": 8180.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 82,
+      "expected_start_ms": 490220.0,
+      "actual_start_sample": 21618702,
+      "actual_start_ms": 490220.0,
+      "duration_ms": 6838.005,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 83,
+      "expected_start_ms": 497058.0,
+      "actual_start_sample": 21920258,
+      "actual_start_ms": 497058.005,
+      "duration_ms": 2161.995,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 84,
+      "expected_start_ms": 499980.0,
+      "actual_start_sample": 22049118,
+      "actual_start_ms": 499980.0,
+      "duration_ms": 5307.007,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 85,
+      "expected_start_ms": 505287.0,
+      "actual_start_sample": 22283157,
+      "actual_start_ms": 505287.007,
+      "duration_ms": 3832.993,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 86,
+      "expected_start_ms": 509800.0,
+      "actual_start_sample": 22482180,
+      "actual_start_ms": 509800.0,
+      "duration_ms": 7410.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 87,
+      "expected_start_ms": 517210.0,
+      "actual_start_sample": 22808961,
+      "actual_start_ms": 517210.0,
+      "duration_ms": 4790.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 88,
+      "expected_start_ms": 522520.0,
+      "actual_start_sample": 23043132,
+      "actual_start_ms": 522520.0,
+      "duration_ms": 7200.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 89,
+      "expected_start_ms": 530140.0,
+      "actual_start_sample": 23379174,
+      "actual_start_ms": 530140.0,
+      "duration_ms": 6848.005,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 90,
+      "expected_start_ms": 536988.0,
+      "actual_start_sample": 23681171,
+      "actual_start_ms": 536988.005,
+      "duration_ms": 3291.995,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 91,
+      "expected_start_ms": 540820.0,
+      "actual_start_sample": 23850162,
+      "actual_start_ms": 540820.0,
+      "duration_ms": 6921.995,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 92,
+      "expected_start_ms": 547742.0,
+      "actual_start_sample": 24155422,
+      "actual_start_ms": 547741.995,
+      "duration_ms": 3638.005,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 93,
+      "expected_start_ms": 552300.0,
+      "actual_start_sample": 24356430,
+      "actual_start_ms": 552300.0,
+      "duration_ms": 7768.005,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 94,
+      "expected_start_ms": 560068.0,
+      "actual_start_sample": 24698999,
+      "actual_start_ms": 560068.005,
+      "duration_ms": 2991.995,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 95,
+      "expected_start_ms": 563480.0,
+      "actual_start_sample": 24849468,
+      "actual_start_ms": 563480.0,
+      "duration_ms": 3100.0,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 96,
+      "expected_start_ms": 567840.0,
+      "actual_start_sample": 25041744,
+      "actual_start_ms": 567840.0,
+      "duration_ms": 11119.002,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 97,
+      "expected_start_ms": 578959.0,
+      "actual_start_sample": 25532092,
+      "actual_start_ms": 578959.002,
+      "duration_ms": 10984.989,
+      "drift_ms": 0.0
+    },
+    {
+      "id": 98,
+      "expected_start_ms": 589944.0,
+      "actual_start_sample": 26016530,
+      "actual_start_ms": 589943.991,
+      "duration_ms": 1876.009,
+      "drift_ms": 0.0
+    }
+  ],
+  "voice": "bn-BD-PradeepNeural",
+  "sfx_gain": 0.35
+}

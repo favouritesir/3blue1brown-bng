@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="মুদ্রা নিক্ষেপ থেকে কীভাবে জন্ম নেয় সম্ভাব্যতা তত্ত্বের সবচেয়ে মৌলিক বিন্যাস? বারবার নিরপেক্ষ মুদ্রা নিক্ষেপ, সমাবেশ nCr এর জ্যামিতিক পথ, প্যাসকেলের ত্রিভুজ, গ্যালটন বোর্ডের পিন ও খাঁজ, এবং n বড় হওয়ার সাথে সাথে দ্বিপদী বিন্যাস কীভাবে নিখুঁত নরমাল বেল কার্ভে রূপান্তরিত হয় তার দৃশ্যমান বিশ্লেষণ।"/>
+<title>দ্বিপদী বিন্যাস ও মুদ্রা নিক্ষেপের সম্ভাবনা | Binomial distributions and coin flips | লকডাউন ম্যাথ | ৩ব্লু১ব্রাউন বাংলা</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/lockdown_math/lesson_03/manifest.js?v=4"></script>
+
+<!-- ═══════════ SCRIPTS — strict L01 load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (LAST: parses the final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="লকডাউন ম্যাথ"
+  course-url="../../index.html#lockdown-math"
+  home-url="../../index.html"
+  chapter-num="০৩"
+  chapter-total="১০"
+  prev-url="lesson_02.html"
+  prev-title="পূর্ববর্তী অধ্যায়: সূচকীয় বৃদ্ধি ও মহামারী মডেলিং"
+  next-url="lesson_04.html"
+  next-title="পরবর্তী অধ্যায়: বৃত্তের ক্ষেত্রফল ও পাই-এর উন্মোচন"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="লকডাউন ম্যাথ"
+  course-url="../../index.html#lockdown-math"
+  chapter-label="অধ্যায় ০৩ · লকডাউন ম্যাথ ও বিশেষ জ্যামিতি"
+  title="দ্বিপদী বিন্যাস ও মুদ্রা নিক্ষেপের সম্ভাবনা | Binomial distributions and coin flips"
+  desc="মুদ্রা নিক্ষেপ থেকে প্যাসকেলের ত্রিভুজ, গ্যালটন বোর্ডের মার্বেল পথ, কম্বিনেটোরিক্স এবং গাউসিয়ান বেল কার্ভের প্রথম আবির্ভাব"
+  video-src="../../media_vault/lockdown_math/lesson_03/experiments/3b1b_lockdown_03_full_dubbed.mp4"
+  yt-id="bT1p5tJwn_0"
+  date="লকডাউন সেশন ৩ · ২০২০"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner
+      title="শিক্ষক অডিও বিবরণ ও লাইভ কারাওকে সহকারী"
+      desc="দরদী শিক্ষকের কণ্ঠে প্রতিটি অনুচ্ছেদ, গাণিতিক সূত্র ও চিত্র বিবরণ শুনুন — সাথে রিয়েলটাইম হাইলাইটার ও কন্ট্রোল।"
+      cta="🎙️ শিক্ষকের কণ্ঠে শুনুন">
+    </b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"    time-bn="০০:০০">মুদ্রা নিক্ষেপ ও অনিশ্চয়তার প্রাথমিক গণনা</b1b-bookmark>
+      <b1b-bookmark time="43"  time-bn="০০:৪৩">সমাবেশ nCr ও গ্রিড পথের কম্বিনেটোরিক্স</b1b-bookmark>
+      <b1b-bookmark time="87" time-bn="০১:২৭">প্যাসকেলের ত্রিভুজের জাদুকরী জ্যামিতি</b1b-bookmark>
+      <b1b-bookmark time="130" time-bn="০২:১০">দ্বিপদী বিন্যাসের সূত্র P(X=k) ও পরামিতি</b1b-bookmark>
+      <b1b-bookmark time="186" time-bn="০৩:০৬">গ্যালটন বোর্ড ও সেন্ট্রাল লিমিট থিওরেম সূচনা</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-01-coin-toss-foundations">১. মুদ্রা নিক্ষেপের প্রাথমিক জগত</a>
+      <a href="#sec-02-combinations-and-paths">২. সমাবেশ ও গ্রিডে পথ গণনা</a>
+      <a href="#sec-03-pascals-triangle">৩. প্যাসকেলের ত্রিভুজ</a>
+      <a href="#sec-04-binomial-pmf-and-moments">৪. দ্বিপদী PMF, গড় ও ভেদাঙ্ক</a>
+      <a href="#sec-05-galton-board-and-clt">৫. গ্যালটন বোর্ড ও বেল কার্ভ</a>
+      <a href="#sec-01-study">বিস্তারিত পড়া: বার্নৌলি ট্রায়াল</a>
+      <a href="#sec-02-study">বিস্তারিত পড়া: পথ গণনার জ্যামিতি</a>
+      <a href="#sec-03-study">বিস্তারিত পড়া: প্যাসকেলের অভেদ</a>
+      <a href="#sec-04-study">বিস্তারিত পড়া: μ = np, σ = √np(1−p)</a>
+      <a href="#sec-05-study">বিস্তারিত পড়া: ডি ময়ভ্র–লাপ্লাস</a>
+      <a href="#sec-interactive-lab">ইন্টারেক্টিভ ল্যাব: দ্বিপদী ও গ্যালটন সিমুলেটর</a>
+      <a href="#sec-quizzes">ধারণা যাচাই: ৩টি কুইজ</a>
+      <a href="#sec-formulas-glossary">সূত্র সংগ্রহ ও পরিভাষা</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ NARRATED 1 — manifest cue: h2 (1 cue) ═══ -->
+      <b1b-section id="sec-01-coin-toss-foundations" title="১. মুদ্রা নিক্ষেপের প্রাথমিক জগত ও সম্ভাবনার স্পেস">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="মুদ্রা নিক্ষেপের দ্বিমুখী বৃক্ষচিত্র" style="width:100%;height:auto;display:block">
+              <rect width="660" height="300" fill="#0f141c"/>
+              <g stroke="#74c0e3" stroke-width="1.6" fill="none">
+                <line x1="330" y1="46" x2="200" y2="108"/><line x1="330" y1="46" x2="460" y2="108"/>
+                <line x1="200" y1="124" x2="140" y2="188"/><line x1="200" y1="124" x2="260" y2="188"/>
+                <line x1="460" y1="124" x2="400" y2="188"/><line x1="460" y1="124" x2="520" y2="188"/>
+                <line x1="140" y1="204" x2="110" y2="252"/><line x1="140" y1="204" x2="170" y2="252"/>
+                <line x1="260" y1="204" x2="230" y2="252"/><line x1="260" y1="204" x2="290" y2="252"/>
+                <line x1="400" y1="204" x2="370" y2="252"/><line x1="400" y1="204" x2="430" y2="252"/>
+                <line x1="520" y1="204" x2="490" y2="252"/><line x1="520" y1="204" x2="550" y2="252"/>
+              </g>
+              <circle cx="330" cy="38" r="9" fill="#f6ad55"/>
+              <g fill="#74c0e3"><circle cx="200" cy="116" r="7"/><circle cx="460" cy="116" r="7"/></g>
+              <g fill="#10b981"><circle cx="140" cy="196" r="6"/><circle cx="260" cy="196" r="6"/><circle cx="400" cy="196" r="6"/><circle cx="520" cy="196" r="6"/></g>
+              <g fill="#8b949e"><circle cx="110" cy="260" r="4"/><circle cx="170" cy="260" r="4"/><circle cx="230" cy="260" r="4"/><circle cx="290" cy="260" r="4"/><circle cx="370" cy="260" r="4"/><circle cx="430" cy="260" r="4"/><circle cx="490" cy="260" r="4"/><circle cx="550" cy="260" r="4"/></g>
+              <g fill="#e2e8f0" font-size="13" font-family="sans-serif" text-anchor="middle">
+                <text x="200" y="100">H</text><text x="460" y="100">T</text>
+                <text x="140" y="182">HH</text><text x="260" y="182">HT</text><text x="400" y="182">TH</text><text x="520" y="182">TT</text>
+              </g>
+              <text x="330" y="288" fill="#f6ad55" font-size="15" text-anchor="middle" font-family="sans-serif">n ধাপে শাখার সংখ্যা = 2ⁿ</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_03/experiments/3b1b_lockdown_03_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্র ১: মুদ্রা নিক্ষেপের দ্বিমুখী বৃষ্টিচিত্র: প্রতিটি ধাপে ফলাফল ২ গুণ হয়ে শাখা বিস্তার করে। শীর্ষবিন্দু থেকে প্রথম ধাপে হেড ও টেল—এই দুটি শাখা বের হয়, আর পরের ধাপে প্রতিটি শাখা আবার দুটি করে শাখা তৈরি করে। স্তরের সংখ্যা বাড়লেই নিচের পাতার সংখ্যা $2^n$ হারে বৃদ্ধি পায়, অথচ কোনো শাখা অন্যের উপর নির্ভরশীল নয়। এই চিত্রটিই বার্নৌলি ট্রায়ালের স্বাধীনতা ও নমুনা ক্ষেত্রের সূচকীয় প্রসারণকে দৃশ্যমান করে।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <b1b-section id="sec-01-study" title="মুখস্থের বদলে কাঠামো: বার্নৌলি ট্রায়াল ও নমুনা ক্ষেত্র" data-no-narration="true">
+        <b1b-quote author="ফ্রান্সিস গ্যালটন (Francis Galton) · Natural Inheritance, 1889">দ্বিপদী বিন্যাস হলো সেই সেতু, যা বিচ্ছিন্ন মুদ্রা নিক্ষেপের এলোমেলো জগৎকে প্রকৃতির মসৃণ বেল কার্ভের চিরন্তন শৃঙ্খলার সাথে যুক্ত করে।</b1b-quote>
+        <p>সম্ভাব্যতা তত্ত্বের সবচেয়ে মৌলিক ও বিশুদ্ধ ভিত্তিভূমি হলো একটি নিরপেক্ষ মুদ্রা নিক্ষেপ। একটি মুদ্রার দুটি পৃষ্ঠ—হেড ($H$) এবং টেল ($T$)। যদি মুদ্রাটি সম্পূর্ণ নিরপেক্ষ হয়, তবে প্রতিটি নিক্ষেপে হেড বা টেল আসার সম্ভাবনা সমান: $P(H) = P(T) = \frac{1}{2}$।</p>
+        <p>যদি আমরা মুদ্রাটিকে পরপর দুটি বার নিক্ষেপ করি, তবে মোট সম্ভাব্য ফলাফল দাঁড়ায় $2^2 = 4$ টি: $HH, HT, TH, TT$। এখানে ঠিক একটি হেড আসার ঘটনা ঘটে দুটি ক্ষেত্রে ($HT, TH$), ফলে সম্ভাবনা $\frac{2}{4} = \frac{1}{2}$।</p>
+        <p>যদি মুদ্রাটি ৩ বার নিক্ষেপ করা হয়, তবে মোট ফলাফল $2^3 = 8$ টি। ৪ বার নিক্ষেপ করলে $2^4 = 16$ টি, এবং $n$ বার নিক্ষেপ করলে মোট ফলাফলের সংখ্যা দাঁড়ায় $2^n$। লক্ষ্য করুন, ট্রায়ালের সংখ্যা রৈখিকভাবে বৃদ্ধি পেলেও সমগ্র ফলাফল মহাবিশ্ব সূচকীয় হারে প্রসারিত হয়!</p>
+        <b1b-formula math="|\Omega| = 2^n \qquad (\text{যখন প্রতিটি ট্রায়ালে ২টি সমসম্ভাব্য বিকল্প থাকে})"></b1b-formula>
+        <p>n সংখ্যক স্বাধীন দ্বিমুখী ট্রায়ালের মোট সম্ভাব্য বিন্যাস সংখ্যা সর্বদাই ২ এর ঘাত।</p>
+        <b1b-callout type="blue" icon="📐" title="বার্নৌলি ট্রায়ালের শর্ত">
+          <p>বার্নৌলি ট্রায়াল হলো এমন একটি দৈব পরীক্ষা যার ফলাফল ঠিক দুটি: সাফল্য বা ব্যর্থতা, এবং প্রতিটি ট্রায়াল পূর্ববর্তী ট্রায়ালের প্রভাবমুক্ত (স্বাধীন)।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 2 — manifest cue: h2 (1 cue) ═══ -->
+      <b1b-section id="sec-02-combinations-and-paths" title="২. সমাবেশ $\binom{n}{k}$ এবং গ্রিডে পথ গণনার জ্যামিতি">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 660 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="গ্রিডে হেড ও টেলের পথচলা ও নির্বাচন" style="width:100%;height:auto;display:block">
+              <rect width="660" height="320" fill="#0f141c"/>
+              <g stroke="#263240" stroke-width="1">
+                <line x1="70" y1="280" x2="370" y2="280"/><line x1="70" y1="235" x2="370" y2="235"/>
+                <line x1="70" y1="190" x2="370" y2="190"/><line x1="70" y1="145" x2="370" y2="145"/>
+                <line x1="70" y1="100" x2="370" y2="100"/><line x1="70" y1="55" x2="370" y2="55"/>
+                <line x1="70" y1="280" x2="70" y2="55"/><line x1="120" y1="280" x2="120" y2="55"/>
+                <line x1="170" y1="280" x2="170" y2="55"/><line x1="220" y1="280" x2="220" y2="55"/>
+                <line x1="270" y1="280" x2="270" y2="55"/><line x1="320" y1="280" x2="320" y2="55"/>
+                <line x1="370" y1="280" x2="370" y2="55"/>
+              </g>
+              <path d="M70 280 L120 280 L120 235 L170 235 L170 190 L220 190 L220 145 L270 145 L270 55" fill="none" stroke="#f6ad55" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <g fill="#10b981"><circle cx="70" cy="280" r="6"/><circle cx="270" cy="55" r="6"/></g>
+              <text x="62" y="302" fill="#10b981" font-size="13" font-family="sans-serif">(0,0)</text>
+              <text x="282" y="50" fill="#10b981" font-size="13" font-family="sans-serif">(4,6)</text>
+              <text x="455" y="120" fill="#e2e8f0" font-size="15" font-family="sans-serif">ডানে ৪ ধাপ = হেড</text>
+              <text x="455" y="150" fill="#e2e8f0" font-size="15" font-family="sans-serif">উপরে ৬ ধাপ = টেল</text>
+              <text x="455" y="196" fill="#f6ad55" font-size="18" font-family="sans-serif">মোট পথ = C(10,4) = 210</text>
+              <text x="455" y="228" fill="#8b949e" font-size="13" font-family="sans-serif">প্রতিটি পথ এক একটি অনুক্রম</text>
+              <text x="455" y="252" fill="#8b949e" font-size="13" font-family="sans-serif">যার ঠিক ৪টি হেড আছে</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_03/experiments/3b1b_lockdown_03_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্র ২: গ্রিডে ডানে (হেড) ও উপরে (টেল) পথচলার মাধ্যমে nCr সমাবেশ নির্ণয়। কমলা রেখাটি $(0,0)$ থেকে $(4,6)$ পর্যন্ত একটি নির্দিষ্ট পথ দেখাচ্ছে—ডানে ৪ ও উপরে ৬ ধাপ। একই গন্তব্যে পৌঁছানোর এইরকম আরও অনেক পথ আছে, আর তাদের মোট সংখ্যাই হলো $\binom{10}{4} = 210$। আয়তক্ষেত্রের প্রতিটি কোণায় থাকা সংখ্যা হলো সেখানে পৌঁছানোর উপায়—এই গ্রিডই সমাবেশের জ্যামিতিক অর্থ।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <b1b-section id="sec-02-study" title="নির্বাচন কেন পথ গণনা: সমাবেশ এবং এর প্রতিসাম্য" data-no-narration="true">
+        <p>ধরা যাক, আমরা একটি মুদ্রা ১০ বার নিক্ষেপ করলাম। এর মধ্যে ঠিক ৪টি হেড আসার সম্ভাবনা কত? মোট সম্ভাব্য ফলাফল $2^{10} = 1024$ টি। কিন্তু এর মধ্যে ঠিক ৪টি হেড এবং ৬টি টেল রয়েছে এমন ফলাফল ঠিক কতটি?</p>
+        <p>এটি মূলত ১০টি স্থানের মধ্যে ৪টি স্থানকে 'হেড' এর জন্য বেছে নেওয়ার কম্বিনেটোরিয়াল সমস্যা, যাকে আমরা বলি সমাবেশ বা কম্বিনেশন: $\binom{n}{k} = \frac{n!}{k!(n-k)!}$।</p>
+        <p>৩ব্লু১ব্রাউনের দৃষ্টিতে এটি কোনো শুষ্ক ফ্যাক্টোরিয়াল ভাগাভাগি নয়—এটি হলো একটি দ্বিমাত্রিক গ্রিডে পথচলা! কল্পনা করুন আপনি একটি স্থানাঙ্ক গ্রিডে $(0,0)$ বিন্দু থেকে যাত্রা শুরু করেছেন। প্রতিবার হেড আসলে আপনি এক একক ডানে যান, আর প্রতিবার টেল আসলে এক একক উপরে যান। তাহলে ১০টি টসে ঠিক ৪টি হেড আসার অর্থ হলো ডানে ৪ ধাপ এবং উপরে ৬ ধাপ এগিয়ে $(4,6)$ বিন্দুতে পৌঁছানো! $(0,0)$ থেকে $(4,6)$ বিন্দুতে পৌঁছানোর মোট অনন্য পথের সংখ্যা অবিকল $\binom{10}{4} = \frac{10 \times 9 \times 8 \times 7}{4 \times 3 \times 2 \times 1} = 210$ টি!</p>
+        <b1b-formula math="\binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{n(n-1)(n-2)\cdots(n-k+1)}{k!}"></b1b-formula>
+        <p>n সংখ্যক নিক্ষেপের মধ্যে k সংখ্যক সাফল্য বাছাই করার মোট অনন্য বিন্যাস।</p>
+        <b1b-callout type="gold" icon="🔁" title="প্রতিসাম্যের সৌন্দর্য">
+          <p>৪টি হেড বেছে নেওয়ার অর্থ হলো বাকি ৬টি স্থানকে স্বয়ংক্রিয়ভাবে টেলের জন্য বরাদ্দ করা। তাই সর্বদা বিন্যাস প্রতিসম হয়: binom(10, 4) = binom(10, 6) = 210।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 3 — manifest cue: h2 (1 cue) ═══ -->
+      <b1b-section id="sec-03-pascals-triangle" title="৩. প্যাসকেলের ত্রিভুজের জাদুকরী প্রতিসাম্য">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="প্যাসকেলের ত্রিভুজে সংখ্যা যোগ হয়ে নেমে আসা" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <g fill="#e2e8f0" font-size="15" font-family="sans-serif" text-anchor="middle">
+                <text x="320" y="42">1</text>
+                <text x="298" y="80">1</text><text x="342" y="80">1</text>
+                <text x="276" y="118">1</text><text x="320" y="118">2</text><text x="364" y="118">1</text>
+                <text x="254" y="156">1</text><text x="298" y="156">3</text><text x="342" y="156">3</text><text x="386" y="156">1</text>
+                <text x="232" y="194">1</text><text x="276" y="194">4</text><text x="320" y="194">6</text><text x="364" y="194">4</text><text x="408" y="194">1</text>
+                <text x="210" y="232">1</text><text x="254" y="232">5</text><text x="298" y="232">10</text><text x="342" y="232">10</text><text x="386" y="232">5</text><text x="430" y="232">1</text>
+                <text x="188" y="270">1</text><text x="232" y="270">6</text><text x="276" y="270">15</text><text x="320" y="270" fill="#f6ad55" font-weight="bold">20</text><text x="364" y="270">15</text><text x="408" y="270">6</text><text x="452" y="270">1</text>
+              </g>
+              <g stroke="#f6ad55" stroke-width="1.5" stroke-dasharray="4 3" fill="none">
+                <line x1="298" y1="238" x2="276" y2="266"/><line x1="342" y1="238" x2="364" y2="266"/>
+              </g>
+              <text x="540" y="120" fill="#74c0e3" font-size="14" font-family="sans-serif">১৫ + ৫ = ২০</text>
+              <text x="540" y="150" fill="#8b949e" font-size="12" font-family="sans-serif">উপরের দুটি</text>
+              <text x="540" y="172" fill="#8b949e" font-size="12" font-family="sans-serif">সংখ্যার যোগফল</text>
+              <text x="320" y="302" fill="#8b949e" font-size="12" font-family="sans-serif" text-anchor="middle">n-তম সারির মোট = 2ⁿ</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_03/experiments/3b1b_lockdown_03_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্র ৩: প্যাসকেলের ত্রিভুজ: শীর্ষ থেকে সংখ্যা যোগ হয়ে নেমে এসে দ্বিপদী সহগ গঠন করে। কমলা ২০টি তার ঠিক উপরের ১৫ ও ৫-এর যোগ—প্রতিটি সংখ্যা তার ওপরের দুটি প্রতিবেশীর সমষ্টি। মাঝের রেখা থেকে দেখুন বাম-ডান প্রতিসমতা, আর সারির শেষে ১ থাকা। প্রতিটি সারির যোগফল $2^n$, কারণ সেই সারিই $n$টি মুদ্রা নিক্ষেপের সব ফলাফলের হিসাব।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <b1b-section id="sec-03-study" title="কেন যোগ হয়: শেষ টসের দ্বিধাবিভক্তি" data-no-narration="true">
+        <p>যদি আমরা $n = 0, 1, 2, 3, 4, \dots$ এর জন্য সমস্ত $\binom{n}{k}$ এর মানগুলোকে পিরামিড আকারে সাজাই, তবে জন্ম নেয় গণিতের সবচেয়ে বিখ্যাত নিদর্শন: **প্যাসকেলের ত্রিভুজ (Pascal's Triangle)**।</p>
+        <p>এই ত্রিভুজের প্রতিটি সারি শুরু ও শেষ হয় ১ দিয়ে, এবং ভেতরের প্রতিটি সংখ্যা হলো ঠিক তার উপরের সারির পাশাপাশি দুটি সংখ্যার যোগফল: $\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$।</p>
+        <p>কেন এই সাধারণ যোগফল নিয়মটি কাজ করে? মুদ্রা নিক্ষেপের চোখে তাকালে উত্তরটি স্বতঃসিদ্ধ: $n$-তম নিক্ষেপটি হয় হেড হবে, না হয় টেল হবে। যদি শেষ নিক্ষেপটি হেড হয়, তবে পূর্ববর্তী $n-1$ টি নিক্ষেপ থেকে অবশ্যই $k-1$ টি হেড আসতে হয়েছিল (যার উপায় $\binom{n-1}{k-1}$)। আর যদি শেষ নিক্ষেপটি টেল হয়, তবে পূর্বের $n-1$ নিক্ষেপেই পুরো $k$ টি হেড অর্জিত হতে হয়েছিল (যার উপায় $\binom{n-1}{k}$)। এই দুই স্বাধীন সম্ভাবনার যোগফলই হলো মোট $\binom{n}{k}$! অর্থাৎ প্যাসকেলের ত্রিভুজ হলো মহাবিশ্বের প্রতিটি দ্বিমুখী সিদ্ধান্তের গাণিতিক সংকলন।</p>
+        <b1b-formula math="\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}"></b1b-formula>
+        <p>একটি নতুন ফলাফল অর্জনের উপায় হলো পূর্ববর্তী ধাপে সাফল্য ঘটা বা না ঘটার সম্ভাবনার যোগফল।</p>
+        <b1b-callout type="green" icon="🔺" title="সারির মোট যোগফল">
+          <p>প্যাসকেলের ত্রিভুজের n-তম সারির সমস্ত সংখ্যা যোগ করলে সর্বদা 2^n পাওয়া যায়, কারণ তা n টি মুদ্রা নিক্ষেপের সমস্ত সম্ভাব্য ফলাফলের সমষ্টি নির্দেশ করে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 4 — manifest cue: h2 (1 cue) ═══ -->
+      <b1b-section id="sec-04-binomial-pmf-and-moments" title="৪. দ্বিপদী সম্ভাব্যতা ফাংশন (PMF), গড় ও ভেদাঙ্ক">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="দ্বিপদী বিন্যাসের সম্ভাব্যতা স্তম্ভ ও গড়" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <line x1="45" y1="270" x2="620" y2="270" stroke="#8b949e" stroke-width="1.5"/>
+              <line x1="45" y1="30" x2="45" y2="270" stroke="#8b949e" stroke-width="1.5"/>
+              <g fill="rgba(116,192,227,0.55)" stroke="#74c0e3" stroke-width="1">
+                <rect x="50" y="268" width="26" height="2"/><rect x="84" y="264" width="26" height="6"/><rect x="118" y="252" width="26" height="18"/>
+                <rect x="152" y="227" width="26" height="43"/><rect x="186" y="192" width="26" height="78"/><rect x="220" y="146" width="26" height="124"/>
+                <rect x="254" y="104" width="26" height="166"/><rect x="288" y="70" width="26" height="200"/><rect x="322" y="50" width="26" height="220"/>
+                <rect x="356" y="70" width="26" height="200"/><rect x="390" y="104" width="26" height="166"/><rect x="424" y="146" width="26" height="124"/>
+                <rect x="458" y="192" width="26" height="78"/><rect x="492" y="227" width="26" height="43"/><rect x="526" y="252" width="26" height="18"/>
+                <rect x="560" y="264" width="26" height="6"/><rect x="594" y="268" width="26" height="2"/>
+              </g>
+              <g fill="#f6ad55"><rect x="322" y="50" width="26" height="220" fill="rgba(246,173,85,0.45)" stroke="#f6ad55" stroke-width="2"/></g>
+              <line x1="335" y1="40" x2="335" y2="280" stroke="#f6ad55" stroke-width="1.5" stroke-dasharray="6 5"/>
+              <text x="345" y="34" fill="#f6ad55" font-size="13" font-family="sans-serif">k = np = 8</text>
+              <text x="320" y="300" fill="#8b949e" font-size="12" text-anchor="middle" font-family="sans-serif">হেডের সংখ্যা k →</text>
+              <text x="52" y="26" fill="#8b949e" font-size="12" font-family="sans-serif">P(X=k)</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_03/experiments/3b1b_lockdown_03_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্র ৪: দ্বিপদী বিন্যাসের সম্ভাব্যতা স্তম্ভ: k = np এর কাছে সর্বোচ্চ শিখর তৈরি করে। এখানে $n=16$, $p=0.5$, তাই মাঝখানের $k=8$ স্তম্ভটি সবচেয়ে লম্বা। দুই দিকে স্তম্ভগুলো প্রায় আয়নার মতো সমান হারে নামছে—এটি $p=0.5$-এর প্রতিসমতা। কমলা ড্যাশড রেখাটি গড় $\mu = np$ নির্দেশ করে; $n$ বড় হলে এই স্তম্ভগুলো মিলিয়ে একটি মসৃণ ঘণ্টা-আকৃতির রেখা তৈরি করবে।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <b1b-section id="sec-04-study" title="পক্ষপাতদুষ্ট মুদ্রা, PMF, গড় ও ভেদাঙ্ক" data-no-narration="true">
+        <p>এখন যদি মুদ্রাটি পক্ষপাতদুষ্ট (Biased) হয়—অর্থাৎ হেড আসার সম্ভাবনা $p$ এবং টেল আসার সম্ভাবনা $q = 1 - p$ (যেখানে $p \neq 0.5$)—তখন কী ঘটবে?</p>
+        <p>যেকোনো নির্দিষ্ট অনুক্রম—যেখানে $k$ টি হেড এবং $(n-k)$ টি টেল রয়েছে—তার স্বতন্ত্র সম্ভাবনা হবে $p^k (1-p)^{n-k}$। যেহেতু এমন অনুক্রম মোট $\binom{n}{k}$ টি রয়েছে এবং তারা পরস্পর বর্জনীয়, তাই মোট সম্ভাবনা হবে এদের সমষ্টি।</p>
+        <p>এখান থেকেই প্রতিষ্ঠিত হয় দ্বিপদী বিন্যাসের অমর সম্ভাব্যতা ভর ফাংশন (Probability Mass Function): $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$।</p>
+        <p>দ্বিপদী চলকের প্রত্যাশিত মান (Expected Value বা গড়) হলো $\mu = E[X] = np$, এবং এর ভেদাঙ্ক (Variance) হলো $\sigma^2 = \text{Var}(X) = np(1-p)$। প্রমিত বিচ্যুতি হলো $\sigma = \sqrt{np(1-p)}$। লক্ষ্য করুন, ট্রায়াল সংখ্যা $n$ বাড়ার সাথে সাথে বিস্তার $\sigma$ বাড়লেও গড়ের অনুপাতে আপেক্ষিক বিস্তার $\frac{\sigma}{\mu} = \frac{\sqrt{np(1-p)}}{np} = \frac{\sqrt{1-p}}{\sqrt{n p}} \propto \frac{1}{\sqrt{n}}$ দ্রুত সংকুচিত হয়! এটিই বৃহৎ সংখ্যার সূত্রের মূল মেকানিক্স।</p>
+        <b1b-formula math="P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}, \qquad \mu = np, \qquad \sigma^2 = np(1-p)"></b1b-formula>
+        <p>স্বতন্ত্র ট্রায়ালের সম্ভাব্যতা p এবং মোট ট্রায়াল n এর সমন্বয়ে গঠিত পূর্ণাঙ্গ দ্বিপদী বিন্যাস।</p>
+        <b1b-formula math="\mu = np, \qquad \sigma = \sqrt{np(1-p)}"></b1b-formula>
+        <p>গড় $\mu$ সরাসরি $n$ এর সমানুপাতিক, কিন্তু প্রমিত বিচ্যুতি $\sigma$ বাড়ে $\sqrt{n}$ হারে—তাই বড় $n$-এ ফলাফল কেন্দ্রের দিকে আপেক্ষিকভাবে সংকুচিত হয়।</p>
+        <b1b-callout type="blue" icon="🧮" title="দ্বিপদী উপপাদ্যের সাথে সংযোগ">
+          <p>বীজগণিতে (p + q)^n এর বিস্তৃতিতে যে সহগগুলো আসে, দ্বিপদী বিন্যাসের সম্ভাবনাগুলো অবিকল সেই সহগগুলোই ধারণ করে! যেহেতু p + q = 1, তাই সমস্ত সম্ভাবনার যোগফল (p + q)^n = 1^n = 1 হতে বাধ্য।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 5 — manifest cue: h2 (1 cue) ═══ -->
+      <b1b-section id="sec-05-galton-board-and-clt" title="৫. গ্যালটন বোর্ড ও গাউসিয়ান বেল কার্ভের রূপান্তর">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="গ্যালটন বোর্ডে মার্বেল জমা হয়ে বেল কার্ভ গঠন" style="width:100%;height:auto;display:block">
+              <rect width="640" height="340" fill="#0f141c"/>
+              <g fill="#74c0e3">
+                <circle cx="320" cy="36" r="4"/>
+                <circle cx="306" cy="64" r="4"/><circle cx="334" cy="64" r="4"/>
+                <circle cx="292" cy="92" r="4"/><circle cx="320" cy="92" r="4"/><circle cx="348" cy="92" r="4"/>
+                <circle cx="278" cy="120" r="4"/><circle cx="306" cy="120" r="4"/><circle cx="334" cy="120" r="4"/><circle cx="362" cy="120" r="4"/>
+                <circle cx="264" cy="148" r="4"/><circle cx="292" cy="148" r="4"/><circle cx="320" cy="148" r="4"/><circle cx="348" cy="148" r="4"/><circle cx="376" cy="148" r="4"/>
+                <circle cx="250" cy="176" r="4"/><circle cx="278" cy="176" r="4"/><circle cx="306" cy="176" r="4"/><circle cx="334" cy="176" r="4"/><circle cx="362" cy="176" r="4"/><circle cx="390" cy="176" r="4"/>
+              </g>
+              <g stroke="#f6ad55" stroke-width="1.2" fill="none" opacity="0.7">
+                <path d="M320 40 L306 60 L292 88 L278 116 L264 144 L250 172"/>
+                <path d="M320 40 L334 60 L348 88 L362 116 L376 144 L390 172"/>
+              </g>
+              <g fill="rgba(16,185,129,0.55)" stroke="#10b981" stroke-width="1.5">
+                <rect x="120" y="266" width="42" height="54"/><rect x="170" y="244" width="42" height="76"/><rect x="220" y="208" width="42" height="112"/>
+                <rect x="270" y="158" width="42" height="162"/><rect x="320" y="128" width="42" height="192"/>
+                <rect x="370" y="158" width="42" height="162"/><rect x="420" y="208" width="42" height="112"/><rect x="470" y="244" width="42" height="76"/><rect x="520" y="266" width="42" height="54"/>
+              </g>
+              <path d="M120 268 Q 340 96 562 268" fill="none" stroke="#f6ad55" stroke-width="2.5" stroke-dasharray="7 5"/>
+              <text x="341" y="316" fill="#f6ad55" font-size="14" text-anchor="middle" font-family="sans-serif">মাঝখানের খাঁজে সবচেয়ে বেশি মার্বেল</text>
+              <text x="30" y="30" fill="#8b949e" font-size="12" font-family="sans-serif">মার্বেল ⇣</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_03/experiments/3b1b_lockdown_03_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্র ৫: গ্যালটন বোর্ড: পিনের সারিতে মার্বেলের স্বাধীন ধাক্কা লেগে খাঁজে ঘণ্টার মতো নরমাল কার্ভ সৃষ্টি। প্রতিটি পিনে মার্বেলের বাঁ-কিংবা ডানে যাওয়ার সম্ভাবনা ৫০%, তাই শেষ খাঁজে পৌঁছানোর পথের সংখ্যা $\binom{n}{k}$ অনুযায়ী বণ্টিত হয়। মাঝের খাঁজে সবচেয়ে বেশি পথ মিলে, ফলে স্তূপ সবচেয়ে উঁচু—কমলা ড্যাশড রেখাটি সেই ঘণ্টা-আকৃতির আসন্নায়ন দেখাচ্ছে। একটিমাত্র মার্বেলের পথ অনিশ্চিত হলেও হাজারের সামগ্রিক ছবি নিখুঁতভাবে নিয়ন্ত্রিত।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <b1b-section id="sec-05-study" title="বিশৃঙ্খলা থেকে শৃঙ্খলা: ডি ময়ভ্র–লাপ্লাস উপপাদ্য" data-no-narration="true">
+        <p>১৮৭৩ সালে ব্রিটিশ বহুবিদ্যাবিশারদ স্যার ফ্রান্সিস গ্যালটন দ্বিপদী বিন্যাসকে বাস্তব চোখে দেখার জন্য একটি অনবদ্য যন্ত্র তৈরি করেন, যাকে আজ **গ্যালটন বোর্ড (Galton Board)** বা 'বিন মেশিন' বলা হয়।</p>
+        <p>যন্ত্রটিতে উপর থেকে শত শত ছোট ধাতব বল বা মার্বেল ছেড়ে দেওয়া হয়। মার্বেলগুলো নিচে পড়ার সময় ত্রিভুজাকারে সাজানো পিন বা পেরেকের সাথে ধাক্কা খায়। প্রতিটি ধাক্কায় মার্বেলটির ৫০% সম্ভাবনা থাকে ডানে যাওয়ার এবং ৫০% সম্ভাবনা থাকে বামে যাওয়ার।</p>
+        <p>যদি পথে $n$ সারির পিন থাকে, তবে একটি মার্বেল মোট $n$ বার ডানে বা বামে যাওয়ার স্বাধীন সিদ্ধান্ত নেয়। নিচে জমা হওয়া খাঁজগুলোতে মার্বেলের স্তূপ ঠিক প্যাসকেলের ত্রিভুজের অনুপাত অনুযায়ী জমা হতে থাকে! মাঝখানের খাঁজে সবচেয়ে বেশি মার্বেল পড়ে, কারণ কেন্দ্রে পৌঁছানোর পথের সংখ্যা সবচেয়ে বেশি।</p>
+        <p>যখন মার্বেল এবং পিনের সারির সংখ্যা অনেক বড় হয় ($n \to \infty$), তখন বিচ্ছিন্ন স্তম্ভগুলো মিলিয়ে গিয়ে একটি অপরূপ মসৃণ অবিচ্ছিন্ন ঘণ্টা-আকৃতির বক্ররেখা বা **গাউসিয়ান নরমাল ডিস্ট্রিবিউশন (Bell Curve)** গঠন করে। আব্রাহাম দ্য ময়ভ্র এবং পিয়েরে-সিমন লাপ্লাস এটি গাণিতিকভাবে প্রমাণ করেছিলেন (De Moivre-Laplace Theorem), যা আধুনিক সেন্ট্রাল লিমিট থিওরেম এবং কোয়ান্টাম পদার্থবিজ্ঞান পর্যন্ত সমস্ত পরিসংখ্যানিক বিজ্ঞানের মূল স্তম্ভ!</p>
+        <b1b-formula math="\lim_{n \to \infty} P\left(a \le \frac{X - np}{\sqrt{np(1-p)}} \le b\right) = \frac{1}{\sqrt{2\pi}} \int_a^b e^{-\frac{z^2}{2}} \, dz"></b1b-formula>
+        <p>বৃহৎ n এর জন্য দ্বিপদী বিন্যাস একটি আদর্শ প্রমাণ নরমাল বিন্যাস N(0, 1) এ রূপান্তরিত হয়।</p>
+        <b1b-callout type="purple" icon="🌊" title="বিশৃঙ্খলা থেকে শৃঙ্খলা">
+          <p>প্রতিটি একক মার্বেলের গতিপথ সম্পূর্ণ অনিশ্চিত ও বিশৃঙ্খল, কিন্তু হাজার হাজার মার্বেলের সামগ্রিক রূপ নিখুঁতভাবে সুশৃঙ্খল ও নিয়ন্ত্রিত—এটাই সম্ভাব্যতা বিজ্ঞানের পরম দার্শনিক সৌন্দর্য।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ INTERACTIVE LAB (non-narrated) — inside b1b-fullscreen ═══ -->
+      <b1b-section id="sec-interactive-lab" title="ইন্টারেক্টিভ ল্যাব: দ্বিপদী বিন্যাস ও গ্যালটন বোর্ড সিমুলেটর" data-no-narration="true" data-widget-id="binomial-galton-lab">
+        <p class="viz-intro">ট্রায়াল সংখ্যা $n$ এবং সাফল্যের সম্ভাবনা $p$ পরিবর্তন করে দেখুন কীভাবে সম্ভাব্যতার বারগুলো প্যাসকেলের ত্রিভুজ অনুসরণ করে এবং $n$ বড় হলে নিখুঁত গাউসিয়ান বেল কার্ভে বিলীন হয়। তিনটি মোড—দ্বিপদী PMF, প্যাসকেলের ত্রিভুজ ও সরাসরি গ্যালটন মার্বেল সিমুলেশন—একই সাথে অন্বেষণ করুন।</p>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <div id="lmBinomialLab">
+            <style>
+              #lmBinomialLab .lm-lab-tabs { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:14px; align-items:center; padding-right:140px; }
+              #lmBinomialLab .lm-tab-btn { padding:8px 16px; border-radius:8px; border:1px solid var(--border); background:var(--bg-alt); color:var(--text-muted); font-weight:600; font-size:.9rem; cursor:pointer; font-family:inherit; }
+              #lmBinomialLab .lm-tab-btn.active { background:var(--theme,#74c0e3); color:#0b0f19; border-color:var(--theme,#74c0e3); }
+              #lmBinomialLab .lm-reset { margin-left:auto; }
+              #lmBinomialLab .lm-drop { background:#10b981 !important; color:#04150f !important; border-color:#10b981 !important; }
+              #lmBinomialLab canvas { display:block; width:100%; height:440px; background:#0b0c10; border-radius:8px; border:1px solid var(--border); }
+              #lmBinomialLab .lm-sliders { display:flex; flex-direction:column; gap:14px; margin-top:16px; background:var(--bg-alt); padding:16px 20px; border-radius:8px; border:1px solid var(--border); }
+              #lmBinomialLab .lm-row { display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+              #lmBinomialLab .lm-row label { font-weight:600; min-width:230px; }
+              #lmBinomialLab .lm-row input[type=range] { flex:1; min-width:180px; accent-color:#f6ad55; }
+              #lmBinomialLab .lm-badge { min-width:64px; font-family:monospace; font-weight:bold; padding:3px 8px; background:var(--bg-card); border:1px solid var(--border); border-radius:4px; text-align:center; color:#f6ad55; }
+              #lmBinomialLab .lm-metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin-top:16px; }
+              #lmBinomialLab .lm-metric { background:var(--bg-alt); border:1px solid var(--border); border-left:3px solid #10b981; border-radius:8px; padding:12px 14px; }
+              #lmBinomialLab .lm-metric span { display:block; font-size:.78rem; color:var(--text-muted); margin-bottom:4px; }
+              #lmBinomialLab .lm-metric strong { font-size:1.1rem; color:#10b981; font-family:monospace; }
+              #lmBinomialLab .lm-formula { margin-top:16px; padding:14px; background:var(--bg-alt); border:1px solid var(--border); border-radius:8px; text-align:center; font-size:1.05rem; }
+            </style>
+            <div class="lm-lab-tabs">
+              <button type="button" class="lm-tab-btn active" id="lmModePmf" data-mode-id="mode-binomial-pmf">📊 দ্বিপদী PMF</button>
+              <button type="button" class="lm-tab-btn" id="lmModePascal" data-mode-id="mode-pascals-triangle">🔺 প্যাসকেলের ত্রিভুজ</button>
+              <button type="button" class="lm-tab-btn" id="lmModeGalton" data-mode-id="mode-galton-board-sim">🎯 গ্যালটন মার্বেল</button>
+              <button type="button" class="lm-tab-btn lm-drop" id="lmDrop">▣ মার্বেল ফেলো</button>
+              <button type="button" class="lm-tab-btn lm-reset" id="lmReset">↺ রিসেট</button>
+            </div>
+            <canvas id="lmBinomialCanvas" aria-label="দ্বিপদী বিন্যাস, প্যাসকেলের ত্রিভুজ ও গ্যালটন বোর্ড সিমুলেশন"></canvas>
+            <div class="lm-sliders">
+              <div class="lm-row">
+                <label for="lmN">ট্রায়াল সংখ্যা (n) =</label>
+                <input type="range" id="lmN" min="2" max="64" step="1" value="16"/>
+                <span class="lm-badge" id="lmValN">১৬</span>
+              </div>
+              <div class="lm-row">
+                <label for="lmP">সাফল্যের সম্ভাবনা (p) =</label>
+                <input type="range" id="lmP" min="0.05" max="0.95" step="0.05" value="0.5"/>
+                <span class="lm-badge" id="lmValP">০.৫০</span>
+              </div>
+              <div class="lm-row">
+                <label for="lmMarbles">মার্বেল সংখ্যা =</label>
+                <input type="range" id="lmMarbles" min="100" max="5000" step="100" value="1000"/>
+                <span class="lm-badge" id="lmValM">১০০০</span>
+              </div>
+            </div>
+            <div class="lm-metrics">
+              <div class="lm-metric" data-metric-id="mean_np"><span>প্রত্যাশিত মান (μ = np)</span><strong id="lmMean">৮.০০</strong></div>
+              <div class="lm-metric" data-metric-id="variance"><span>ভেদাঙ্ক (σ² = np(1−p))</span><strong id="lmVar">৪.০০</strong></div>
+              <div class="lm-metric" data-metric-id="std_dev"><span>আদর্শ বিচ্যুতি (σ)</span><strong id="lmSd">২.০০</strong></div>
+              <div class="lm-metric" data-metric-id="peak_prob"><span>সর্বোচ্চ P(X = np)</span><strong id="lmPeak">০.১৯৬৪</strong></div>
+            </div>
+            <div class="lm-formula" id="lmFormula"></div>
+          </div>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ QUIZZES (non-narrated) — exact JSON options + rich feedback ═══ -->
+      <b1b-section id="sec-quizzes" title="ধারণা যাচাই — ৩টি কুইজ" data-no-narration="true">
+        <b1b-quiz
+          question="❓ একটি নিরপেক্ষ মুদ্রা ৫ বার নিক্ষেপ করা হলে ঠিক ৩টি হেড আসার সম্ভাব্যতা কত?"
+          correct="1"
+          correct-msg="চমৎকার! মোট ফলাফল $2^5 = 32$। ৫টির মধ্যে ৩টি হেড বাছাই করার উপায় $\binom{5}{3} = \frac{5 \times 4}{2 \times 1} = 10$। সুতরাং $P(X=3) = \binom{5}{3}\left(\frac{1}{2}\right)^3\left(\frac{1}{2}\right)^2 = 10 \times \frac{1}{32} = \frac{10}{32} = \frac{5}{16}$, অর্থাৎ ৩১.২৫%।"
+          wrong-msg="আবার চেষ্টা করো: মোট ফলাফল $2^5 = 32$, আর ৫টির মধ্যে ৩টি হেডের বিন্যাস $\binom{5}{3} = 10$। তাই সম্ভাবনা $\frac{10}{32} = \frac{5}{16}$—শুধু হেডের সংখ্যা দিয়ে ভাগ নয়, বেছে নেওয়ার পথগুলোও গণনা করতে হবে।"
+          reveal-msg="সঠিক উত্তর: $\frac{10}{32} = \frac{5}{16}$। $P(X=3) = \binom{5}{3}\left(\frac{1}{2}\right)^3\left(\frac{1}{2}\right)^2 = 10 \times \frac{1}{32} = \frac{5}{16}$ (৩১.২৫%)।">
+          <div slot="option">$\frac{5}{32}$</div>
+          <div slot="option">$\frac{10}{32} = \frac{5}{16}$</div>
+          <div slot="option">$\frac{1}{2}$</div>
+          <div slot="option">$\frac{3}{5}$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ একটি পরীক্ষায় ১০০ বার নিরপেক্ষ মুদ্রা নিক্ষেপ করা হলো। হেড আসার প্রত্যাশিত মান $\mu$ এবং আদর্শ বিচ্যুতি $\sigma$ যথাক্রমে কত?"
+          correct="1"
+          correct-msg="একেবারে নিখুঁত! গড় $\mu = np = 100 \times 0.5 = 50$। ভেদাঙ্ক $\sigma^2 = np(1-p) = 100 \times 0.5 \times 0.5 = 25$, তাই আদর্শ বিচ্যুতি $\sigma = \sqrt{25} = 5$। মনে রেখো $\sigma$ হলো $\sigma^2$-এর বর্গমূল—ভেদাঙ্ক ২৫ নয়, প্রমিত বিচ্যুতি ৫।"
+          wrong-msg="ধাপে ধাপে হিসাব করো: $\mu = np = 100 \times 0.5 = 50$; $\sigma^2 = np(1-p) = 25$; সুতরাং $\sigma = \sqrt{25} = 5$। $np(1-p)$ হলো ভেদাঙ্ক, তার বর্গমূল নিতে ভুলো না।"
+          reveal-msg="সঠিক উত্তর: $\mu = 50, \; \sigma = 5$। $\mu = np = 100 \times 0.5 = 50$, আর $\sigma = \sqrt{np(1-p)} = \sqrt{100 \times 0.5 \times 0.5} = \sqrt{25} = 5$।">
+          <div slot="option">$\mu = 50, \; \sigma = 25$</div>
+          <div slot="option">$\mu = 50, \; \sigma = 5$</div>
+          <div slot="option">$\mu = 100, \; \sigma = 10$</div>
+          <div slot="option">$\mu = 50, \; \sigma = 10$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ গ্যালটন বোর্ডে মার্বেলগুলো কেন দুই প্রান্তের চেয়ে ঠিক মাঝখানের খাঁজগুলোতে সবচেয়ে বেশি স্তূপাকারে জমা হয়?"
+          correct="1"
+          correct-msg="অসাধারণ! সবচেয়ে বামে পৌঁছাতে হলে প্রতিটি ধাপে বামে যেতে হয়—মাত্র ১টি পথ, $\binom{n}{0}=1$। কিন্তু কেন্দ্রে পৌঁছাতে হলে সমান সংখ্যক ডানে ও বামে ঘুরতে হয়, যার পথসংখ্যা $\binom{n}{n/2}$ বিশাল। প্রতিটি খাঁজের উচ্চতা ঠিক সেই পথের সংখ্যার অনুপাতে দাঁড়ায়, তাই মাঝখানেই চূড়া তৈরি হয়।"
+          wrong-msg="আবার ভাবো: মাধ্যাকর্ষণ সব খাঁজেই একইভাবে কাজ করে, এর দ্বারা কেন্দ্র-পক্ষপাত ব্যাখ্যা হয় না। আসল কারণ হলো পথের সংখ্যা—কেন্দ্রে পৌঁছানোর উপায় $\binom{n}{n/2}$, প্রান্তে $\binom{n}{0}=1$।"
+          reveal-msg="সঠিক উত্তর: পিনের বিন্যাসে কেন্দ্রে পৌঁছানোর মোট পথের সংখ্যা প্রান্তের চেয়ে বহুগুণ বেশি। $\binom{n}{k}$ এর সর্বোচ্চ মান ঘটে $k = \frac{n}{2}$ তে; $\binom{n}{n/2} \gg \binom{n}{0}$।">
+          <div slot="option">কারণ মাধ্যাকর্ষণ বল মার্বেলগুলোকে কেন্দ্রের দিকে আকর্ষণ করে</div>
+          <div slot="option">কারণ পিনের বিন্যাসে প্রান্তের চেয়ে কেন্দ্রে পৌঁছানোর মোট সম্ভাব্য পথের সংখ্যা বহুগুণ বেশি</div>
+          <div slot="option">কারণ প্রান্তের পিনগুলো মার্বেলকে ধাক্কা দিয়ে কেন্দ্রে পাঠিয়ে দেয়</div>
+          <div slot="option">এটি কেবল একটি কাকতালীয় পর্যবেক্ষণ, এর কোনো নির্দিষ্ট গাণিতিক কারণ নেই</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ FORMULA REFERENCE & GLOSSARY (non-narrated) ═══ -->
+      <b1b-section id="sec-formulas-glossary" title="সূত্র সংগ্রহ ও পরিভাষা" data-no-narration="true">
+        <b1b-callout type="blue" icon="🧮" title="পাঁচটি গুরুত্বপূর্ণ সূত্র">
+          <p>দ্বিপদী সম্ভাব্যতা ফাংশন: $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$</p>
+          <p>সমাবেশ সূত্র: $\binom{n}{k} = \frac{n!}{k!(n-k)!}$</p>
+          <p>প্যাসকেলের অভেদ: $\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$</p>
+          <p>দ্বিপদী প্রত্যাশা ও ভেদাঙ্ক: $\mu = np, \qquad \sigma^2 = np(1-p)$</p>
+          <p>নরমাল বণ্টন আসন্নায়ন: $Z = \frac{X - np}{\sqrt{np(1-p)}} \sim \mathcal{N}(0, 1)$</p>
+        </b1b-callout>
+        <b1b-callout type="gold" icon="📖" title="পরিভাষা (Glossary)">
+          <p><strong>Bernoulli Trial — বার্নৌলি ট্রায়াল:</strong> এমন একটি স্বাধীন পরীক্ষা যার সম্ভাব্য ফলাফল ঠিক দুটি: সাফল্য অথবা ব্যর্থতা।</p>
+          <p><strong>Binomial Distribution — দ্বিপদী বিন্যাস:</strong> n সংখ্যক স্বাধীন বার্নৌলি ট্রায়ালে ঠিক k সংখ্যক সাফল্য পাওয়ার সম্ভাবনার বণ্টন।</p>
+          <p><strong>Pascal's Triangle — প্যাসকেলের ত্রিভুজ:</strong> দ্বিপদী সহগগুলোর ত্রিভুজাকার বিন্যাস যেখানে প্রতিটি সংখ্যা তার উপরের দুটি সংখ্যার সমষ্টির সমান।</p>
+          <p><strong>Galton Board — গ্যালটন বোর্ড:</strong> মার্বেল ও পিনের সাহায্যে দ্বিপদী বিন্যাস ও স্বাভাবিক বণ্টন প্রদর্শনের একটি ক্লাসিক্যাল পরীক্ষামূলক যন্ত্র।</p>
+          <p><strong>Central Limit Theorem — সেন্ট্রাল লিমিট থিওরেম:</strong> স্বাধীন দৈব চলকের সমষ্টি পর্যাপ্ত বড় ট্রায়াল সংখ্যায় সর্বদা স্বাভাবিক বেল কার্ভে রূপ নেওয়ার উপপাদ্য।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/lockdown_math/lesson_03/experiments/3b1b_lockdown_03_full_dubbed.mp4"
+    yt-id="bT1p5tJwn_0"
+    title="দ্বিপদী বিন্যাস ও মুদ্রা নিক্ষেপের সম্ভাবনা — অধ্যায় ০৩"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — লকডাউন ম্যাথ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_02.html"
+  prev-title="সূচকীয় বৃদ্ধি ও মহামারী মডেলিং"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_04.html"
+  next-title="বৃত্তের ক্ষেত্রফল ও পাই-এর উন্মোচন"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ PAGE-LOCAL INTERACTIVE LAB CONTROLLER ═══════════
+     Scoped to #lmBinomialLab; does not touch the shared component library. -->
+<script>
+(function () {
+  'use strict';
+  function initLab() {
+    const lab = document.getElementById('lmBinomialLab');
+    if (!lab || lab.dataset.inited) return;
+    lab.dataset.inited = '1';
+
+    const $ = (id) => document.getElementById(id);
+    const canvas = $('lmBinomialCanvas');
+    const nS = $('lmN'), pS = $('lmP'), mS = $('lmMarbles');
+    if (!canvas || !nS || !pS || !mS) return;
+    const ctx = canvas.getContext('2d');
+    const bn = (v) => String(v).replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[+d]);
+    let mode = 'pmf';
+    let raf = 0;
+    let bins = new Array(65).fill(0);
+    let simTotal = 0;
+
+    function comb(n, k) {
+      let r = 1;
+      for (let i = 1; i <= k; i++) r = r * (n - i + 1) / i;
+      return r;
+    }
+    function pmf(n, p, k) {
+      return comb(n, k) * Math.pow(p, k) * Math.pow(1 - p, n - k);
+    }
+    function read() {
+      return {
+        n: Math.max(2, Math.min(64, parseInt(nS.value, 10) || 16)),
+        p: Math.max(0.05, Math.min(0.95, parseFloat(pS.value) || 0.5)),
+        m: Math.max(100, Math.min(5000, parseInt(mS.value, 10) || 1000))
+      };
+    }
+    function math(scope) {
+      if (scope && typeof window.renderMathInElement === 'function') {
+        window.renderMathInElement(scope, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false
+        });
+      }
+    }
+    function updatePanel(s) {
+      $('lmValN').textContent = bn(s.n);
+      $('lmValP').textContent = bn(s.p.toFixed(2));
+      $('lmValM').textContent = bn(s.m);
+      const mu = s.n * s.p;
+      const va = s.n * s.p * (1 - s.p);
+      const sd = Math.sqrt(va);
+      let peak = 0;
+      for (let k = 0; k <= s.n; k++) peak = Math.max(peak, pmf(s.n, s.p, k));
+      $('lmMean').textContent = mu.toFixed(2);
+      $('lmVar').textContent = va.toFixed(2);
+      $('lmSd').textContent = sd.toFixed(2);
+      $('lmPeak').textContent = peak.toFixed(4);
+      const box = $('lmFormula');
+      if (mode === 'pascal') {
+        box.innerHTML = '<strong>প্যাসকেলের অভেদ:</strong> $\\binom{n}{k} = \\binom{n-1}{k-1} + \\binom{n-1}{k}$ &nbsp; | &nbsp; $n=' + s.n + '$';
+      } else if (mode === 'galton') {
+        box.innerHTML = '<strong>গ্যালটন বোর্ড:</strong> $Z = \\frac{X - np}{\\sqrt{np(1-p)}} \\sim \\mathcal{N}(0,1)$ &nbsp; | &nbsp; $\\mu=' + mu.toFixed(2) + '$, $\\sigma=' + sd.toFixed(2) + '$';
+      } else {
+        box.innerHTML = '<strong>দ্বিপদী PMF:</strong> $P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}$ &nbsp; | &nbsp; $\\mu=np=' + mu.toFixed(2) + '$, $\\sigma=\\sqrt{np(1-p)}=' + sd.toFixed(2) + '$';
+      }
+      math(box);
+    }
+
+    function drawFrame() {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      const W = Math.max(320, rect.width || 640);
+      const H = 440;
+      canvas.width = W * dpr;
+      canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#0a0b10' : '#f8f9fa';
+      ctx.fillRect(0, 0, W, H);
+      ctx.font = '13px sans-serif';
+      ctx.textAlign = 'center';
+      const s = read();
+      const L = 46, R = W - 22, B = H - 46, T = 24;
+
+      ctx.strokeStyle = dark ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.35)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(L, T); ctx.lineTo(L, B); ctx.lineTo(R, B); ctx.stroke();
+
+      if (mode === 'pmf') {
+        const n = s.n, p = s.p;
+        let mx = 0;
+        for (let k = 0; k <= n; k++) mx = Math.max(mx, pmf(n, p, k));
+        const bw = Math.max(2, (R - L - 8) / (n + 1));
+        for (let k = 0; k <= n; k++) {
+          const v = pmf(n, p, k);
+          const h = (v / mx) * (B - T - 32);
+          const x = L + 4 + k * bw;
+          ctx.fillStyle = (Math.abs(k - n * p) <= 0.5) ? 'rgba(246,173,85,0.85)' : 'rgba(116,192,227,0.62)';
+          ctx.fillRect(x, B - h, Math.max(1.5, bw - 1.5), h);
+        }
+        const meanX = L + 4 + (n * p + 0.5) * bw;
+        ctx.save(); ctx.setLineDash([6, 5]); ctx.strokeStyle = '#f6ad55'; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.moveTo(meanX, T); ctx.lineTo(meanX, B); ctx.stroke(); ctx.restore();
+        ctx.fillStyle = dark ? '#e2e8f0' : '#1e293b';
+        ctx.fillText('P(X=k) — k = 0…' + n + '  ·  μ = np = ' + (n * p).toFixed(2), W / 2, H - 14);
+      } else if (mode === 'pascal') {
+        const rows = Math.min(n, 9);
+        const step = Math.min(44, (B - T - 20) / Math.max(1, rows));
+        const dy = Math.min(38, (R - L) / (rows + 2));
+        for (let r = 0; r <= rows; r++) {
+          for (let k = 0; k <= r; k++) {
+            const cx = W / 2 + (k - r / 2) * dy;
+            const cy = T + 14 + r * step;
+            ctx.fillStyle = (r === rows && k === Math.floor(r / 2)) ? '#f6ad55' : (dark ? '#e2e8f0' : '#1e293b');
+            ctx.font = (r >= 5 ? '13px' : '15px') + ' sans-serif';
+            ctx.fillText(String(comb(r, k)), cx, cy);
+          }
+        }
+        ctx.fillStyle = dark ? '#8b949e' : '#475569';
+        ctx.font = '13px sans-serif';
+        ctx.fillText('প্রতিটি সংখ্যা = উপরের দুটি সংখ্যার যোগফল  ·  সারির মোট = 2ⁿ', W / 2, H - 14);
+      } else {
+        const n = s.n;
+        const pegRows = Math.min(n, 12);
+        const topY = T + 6;
+        const gapY = Math.min(22, (B - T - 120) / Math.max(1, pegRows));
+        const gapX = Math.min(26, (R - L - 40) / (pegRows + 2));
+        ctx.fillStyle = '#74c0e3';
+        for (let r = 0; r <= pegRows; r++) {
+          for (let j = 0; j <= r; j++) {
+            const cx = W / 2 + (j - r / 2) * gapX;
+            const cy = topY + r * gapY;
+            ctx.beginPath(); ctx.arc(cx, cy, 3, 0, Math.PI * 2); ctx.fill();
+          }
+        }
+        const binW = Math.max(3, (R - L - 10) / (n + 1));
+        let maxBin = 1;
+        for (let k = 0; k <= n; k++) maxBin = Math.max(maxBin, bins[k] || 0);
+        const baseY = B - 4;
+        for (let k = 0; k <= n; k++) {
+          const h = ((bins[k] || 0) / maxBin) * (B - topY - (pegRows + 1) * gapY - 24);
+          if (h > 0) {
+            ctx.fillStyle = 'rgba(16,185,129,0.7)';
+            ctx.fillRect(L + 5 + k * binW, baseY - h, Math.max(2, binW - 1.5), h);
+          }
+        }
+        ctx.fillStyle = '#f6ad55';
+        ctx.font = '13px sans-serif';
+        ctx.fillText('মার্বেল: ' + bn(simTotal) + ' / ' + bn(s.m) + '  ·  মাঝখানে সর্বোচ্চ স্তূপ', W / 2, H - 14);
+      }
+    }
+
+    function update() {
+      const s = read();
+      updatePanel(s);
+      drawFrame();
+    }
+    function setMode(next) {
+      mode = next;
+      $('lmModePmf').classList.toggle('active', mode === 'pmf');
+      $('lmModePascal').classList.toggle('active', mode === 'pascal');
+      $('lmModeGalton').classList.toggle('active', mode === 'galton');
+      update();
+    }
+    function resetBins() {
+      cancelAnimationFrame(raf);
+      bins = new Array(65).fill(0);
+      simTotal = 0;
+    }
+
+    $('lmModePmf').addEventListener('click', () => setMode('pmf'));
+    $('lmModePascal').addEventListener('click', () => setMode('pascal'));
+    $('lmModeGalton').addEventListener('click', () => setMode('galton'));
+    $('lmDrop').addEventListener('click', () => {
+      resetBins();
+      setMode('galton');
+      const s = read();
+      const perFrame = Math.max(1, Math.ceil(s.m / 120));
+      (function step() {
+        for (let i = 0; i < perFrame && simTotal < s.m; i++) {
+          let k = 0;
+          for (let j = 0; j < s.n; j++) if (Math.random() < s.p) k++;
+          bins[k] = (bins[k] || 0) + 1;
+          simTotal++;
+        }
+        update();
+        if (simTotal < s.m) raf = requestAnimationFrame(step);
+      })();
+    });
+    $('lmReset').addEventListener('click', () => {
+      resetBins();
+      nS.value = '16'; pS.value = '0.5'; mS.value = '1000';
+      setMode('pmf');
+    });
+    [nS, pS, mS].forEach((el) => el.addEventListener('input', () => { resetBins(); update(); }));
+    window.addEventListener('resize', drawFrame);
+    window.addEventListener('b1b-fullscreen-change', drawFrame);
+    update();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLab);
+  } else {
+    initLab();
+  }
+})();
+</script>
+
+</body>
+</html>

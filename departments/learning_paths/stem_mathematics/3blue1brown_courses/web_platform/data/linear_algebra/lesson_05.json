@@ -1,0 +1,281 @@
+{
+  "lesson_id": "lesson_05",
+  "chapter_num": 5,
+  "course_id": "linear_algebra",
+  "title_en": "Three-dimensional linear transformations",
+  "title_bn": "ত্রিমাত্রিক রৈখিক রূপান্তর",
+  "subtitle_bn": "৩×৩ ম্যাট্রিক্স, বেসিস ভেক্টর ট্র্যাকিং এবং ত্রিমাত্রিক মহাকাশের জ্যামিতিক রূপান্তর",
+  "video_id": "rHLEWRxRGiM",
+  "official_url": "https://www.3blue1brown.com/lessons/3d-transformations",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "4:46",
+    "prerequisites": [
+      "lesson_01",
+      "lesson_02",
+      "lesson_03",
+      "lesson_04"
+    ]
+  },
+  "epigraph": {
+    "quote": "Lisa: 'Well, where's my dad?' / Frink: 'Well, it should be obvious to even the most dimwitted individual who holds an advanced degree in hyperbolic topology that Homer Simpson has stumbled into... the third dimension.'",
+    "quote_bn": "লিসা: 'বাবা কোথায়?' / অধ্যাপক ফ্রিংক: 'হাইপারবোলিক টপোলজিতে উচ্চতর ডিগ্রিধারী যে কারো কাছেই এটা স্পষ্ট যে, হোমার সিম্পসন ভুলবশত পদার্পণ করেছে... তৃতীয় মাত্রায়!'",
+    "author": "The Simpsons (দ্য সিম্পসন্স)"
+  },
+  "sections": [
+    {
+      "id": "sec_01_3d_space",
+      "title_bn": "১. ফ্ল্যাটল্যান্ড থেকে ত্রিমাত্রিক জগতে রূপান্তর",
+      "title_en": "From Flatland to Three Dimensions",
+      "summary_bn": "দ্বিমাত্রিক ফ্ল্যাটল্যান্ড থেকে ত্রিমাত্রিক স্পেসে রূপান্তর এবং তিনটি প্রমিত বেসিস ভেক্টর (î, ĵ, k̂)-এর মৌলিক ভূমিকা।",
+      "key_takeaways": [
+        "দ্বিমাত্রিক জগতের মূল নীতিগুলো (মূলবিন্দু স্থির থাকা এবং গ্রিডরেখা সমান্তরাল ও সমদূরত্বে থাকা) উচ্চতর মাত্রাগুলোতে সম্পূর্ণ অবিকৃতভাবে কাজ করে।",
+        "ত্রিমাত্রিক স্থানে তিনটি প্রমিত একক বেসিস ভেক্টর থাকে: x অক্ষ বরাবর î, y অক্ষ বরাবর ĵ এবং z অক্ষ বরাবর k̂।",
+        "যেকোনো ত্রিমাত্রিক ভেক্টরকে স্থানাঙ্ক (x, y, z) দ্বারা এই তিনটি বেসিস ভেক্টরের স্কেলিং ও যোগফল আকারে প্রকাশ করা যায়: v = xî + yĵ + zk̂।",
+        "কোটি কোটি ভেক্টর পৃথকভাবে ট্র্যাক না করে কেবল তিনটি বেসিস ভেক্টরের রূপান্তরিত অবস্থান ট্র্যাক করলেই পুরো মহাকাশের রূপান্তর নির্ভুলভাবে জানা যায়।"
+      ],
+      "formulas": [
+        {
+          "label": "ত্রিমাত্রিক প্রমিত বেসিস ভেক্টরসমূহ",
+          "katex": "\\hat{\\imath} = \\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\end{bmatrix}, \\quad \\hat{\\jmath} = \\begin{bmatrix} 0 \\\\ 1 \\\\ 0 \\end{bmatrix}, \\quad \\hat{k} = \\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\end{bmatrix}"
+        },
+        {
+          "label": "ত্রিমাত্রিক ভেক্টরের রৈখিক সমাবেশ",
+          "katex": "\\vec{v} = x\\hat{\\imath} + y\\hat{\\jmath} + z\\hat{k} = x\\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\end{bmatrix} + y\\begin{bmatrix} 0 \\\\ 1 \\\\ 0 \\end{bmatrix} + z\\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix}"
+        },
+        {
+          "label": "রৈখিক রূপান্তরের মৌলিক শর্তাবলী",
+          "katex": "L(c\\vec{v} + d\\vec{w}) = c L(\\vec{v}) + d L(\\vec{w}), \\quad L(\\vec{0}) = \\vec{0}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_basis_vectors",
+          "caption_bn": "ত্রিমাত্রিক জগতের তিনটি প্রমিত বেসিস ভেক্টর (î, ĵ, k̂)",
+          "type": "svg",
+          "src": "figures/BasisVectors.svg"
+        },
+        {
+          "id": "fig_transform_grid",
+          "caption_bn": "ত্রিমাত্রিক গ্রিডের রূপান্তর — মূলবিন্দু স্থির এবং তলগুলো সমান্তরাল থাকে",
+          "type": "svg",
+          "src": "figures/TransformGrid.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "3d_space_basis_inspector",
+        "initial_camera": {
+          "yaw": 35,
+          "pitch": 25,
+          "zoom": 110
+        },
+        "description_bn": "ত্রিমাত্রিক স্পেসে অক্ষগুলো ঘুরিয়ে দেখুন এবং î, ĵ, k̂ ভেক্টরের আপেক্ষিক অবস্থান প্রত্যক্ষ করুন।"
+      }
+    },
+    {
+      "id": "sec_02_matrix3x3",
+      "title_bn": "২. ৩×৩ ম্যাট্রিক্স ও î, ĵ, k̂ ট্র্যাকিং",
+      "title_en": "3×3 Matrices and Tracking Basis Vectors",
+      "summary_bn": "ত্রিমাত্রিক রৈখিক রূপান্তরকে নয়টি সংখ্যা বিশিষ্ট ৩×৩ ম্যাট্রিক্সে রূপদান এবং ম্যাট্রিক্স-ভেক্টর গুণনের জ্যামিতিক তাৎপর্য।",
+      "key_takeaways": [
+        "রূপান্তরের পর î, ĵ, k̂-এর নতুন স্থানাঙ্ক তিনটি হলো একটি ৩×৩ ম্যাট্রিক্সের তিনটি কলাম।",
+        "এই নয়টি সংখ্যাই সম্পূর্ণ ত্রিমাত্রিক মহাকাশের রৈখিক রূপান্তরকে শতভাগ নির্ভুলভাবে সংজ্ঞায়িত করে।",
+        "ম্যাট্রিক্স-ভেক্টর গুণন কোনো মুখস্থ নিয়ম নয়; এটি হলো ইনপুট স্থানাঙ্ক দ্বারা ম্যাট্রিক্সের কলামগুলোর ভারযুক্ত যোগফল (Weighted Sum of Columns)।",
+        "রূপান্তরের আগে এবং পরে ভেক্টরের রৈখিক সমাবেশের স্কেলিং ও যোগের নিয়ম একই থাকে।"
+      ],
+      "formulas": [
+        {
+          "label": "৩×৩ রূপান্তর ম্যাট্রিক্স গঠন",
+          "katex": "M = \\begin{bmatrix} \\color{#69f0ae}a & \\color{#e94560}b & \\color{#4fc3f7}c \\\\ \\color{#69f0ae}d & \\color{#e94560}e & \\color{#4fc3f7}f \\\\ \\color{#69f0ae}g & \\color{#e94560}h & \\color{#4fc3f7}i \\end{bmatrix} = \\begin{bmatrix} L(\\hat{\\imath}) & L(\\hat{\\jmath}) & L(\\hat{k}) \\end{bmatrix}"
+        },
+        {
+          "label": "ত্রিমাত্রিক ম্যাট্রিক্স-ভেক্টর গুণন (কলামের ভারযুক্ত যোগফল)",
+          "katex": "\\begin{bmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix} = x \\begin{bmatrix} a \\\\ d \\\\ g \\end{bmatrix} + y \\begin{bmatrix} b \\\\ e \\\\ h \\end{bmatrix} + z \\begin{bmatrix} c \\\\ f \\\\ i \\end{bmatrix} = \\begin{bmatrix} ax + by + cz \\\\ dx + ey + fz \\\\ gx + hy + iz \\end{bmatrix}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_follow_basis_vectors",
+          "caption_bn": "বেসিস ভেক্টরগুলোর রূপান্তর ট্র্যাকিং (î, ĵ, k̂)",
+          "type": "svg",
+          "src": "figures/FollowBasisVectors.svg"
+        },
+        {
+          "id": "fig_transform_matrix",
+          "caption_bn": "রূপান্তরিত বেসিস ভেক্টরসমূহ থেকে ৩×৩ ম্যাট্রিক্সের কলাম গঠন",
+          "type": "svg",
+          "src": "figures/TransformMatrix.svg"
+        },
+        {
+          "id": "fig_transform_3d_vector",
+          "caption_bn": "ত্রিমাত্রিক ম্যাট্রিক্স-ভেক্টর গুণন — কলাম তিনটির ভারযুক্ত যোগফল",
+          "type": "svg",
+          "src": "figures/Transform3dVector.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "matrix_3x3_transformation_lab",
+        "initial_matrix": [
+          [1, 0, 0],
+          [0, 1, 0],
+          [0, 0, 1]
+        ],
+        "description_bn": "৩×৩ ম্যাট্রিক্সের উপাদান পরিবর্তন করে ত্রিমাত্রিক একক ঘনকের রূপান্তর রিয়েলটাইমে পর্যবেক্ষণ করুন।"
+      }
+    },
+    {
+      "id": "sec_03_rotations_and_compositions",
+      "title_bn": "৩. ত্রিমাত্রিক ঘূর্ণন, শিয়ার ও রূপান্তরের সংযোজন",
+      "title_en": "3D Rotations, Shears, and Matrix Multiplication",
+      "summary_bn": "ওয়াই-অক্ষের সাপেক্ষে ৯০° ঘূর্ণন, ত্রিমাত্রিক শিয়ার, ৩×৩ ম্যাট্রিক্সের গুণন এবং ক্রমের সংবেদনশীলতা (নন-কমিউটেটিভিটি)।",
+      "key_takeaways": [
+        "y-অক্ষকে স্থির রেখে ৯০° ঘূর্ণনে: î যায় (0, 0, -1)-এ, ĵ স্থির থাকে (0, 1, 0)-এ, এবং k̂ যায় (1, 0, 0)-এ।",
+        "দুটি ৩×৩ ম্যাট্রিক্স গুণন (AB) জ্যামিতিকভাবে নির্দেশ করে দুটি ধারাবাহিক ত্রিমাত্রিক রূপান্তরের সংযোজন (প্রথমে B, তারপর A)।",
+        "কম্পিউটার গ্রাফিক্স এবং রোবোটিক্সে জটিল ত্রিমাত্রিক গতিবিধিকে একাধিক মৌলিক ঘূর্ণন ও শিয়ার রূপান্তরের গুণন হিসেবে উপস্থাপন করা হয়।",
+        "ত্রিমাত্রিক রূপান্তরের ক্ষেত্রে ক্রম অত্যন্ত গুরুত্বপূর্ণ: সাধারণত AB ≠ BA (Non-commutative)।"
+      ],
+      "formulas": [
+        {
+          "label": "y অক্ষের সাপেক্ষে ৯০° ঘূর্ণন ম্যাট্রিক্স",
+          "katex": "R_y(90^\\circ) = \\begin{bmatrix} 0 & 0 & 1 \\\\ 0 & 1 & 0 \\\\ -1 & 0 & 0 \\end{bmatrix}"
+        },
+        {
+          "label": "ত্রিমাত্রিক রূপান্তরের সংযোজন (ম্যাট্রিক্স গুণন)",
+          "katex": "(A B) \\vec{v} = A (B \\vec{v})"
+        },
+        {
+          "label": "বিনিময়হীনতা (নন-কমিউটেটিভিটি)",
+          "katex": "A B \\neq B A \\quad \\text{(সাধারণভাবে ত্রিমাত্রিক স্থানে)}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_rotate_90_y",
+          "caption_bn": "y অক্ষের চারপাশে ৯০° ঘূর্ণন ম্যাট্রিক্স গঠন",
+          "type": "svg",
+          "src": "figures/Rotate90DegreesAroundYAxis.svg"
+        },
+        {
+          "id": "fig_matrix_multiplication",
+          "caption_bn": "দুটি ৩×৩ ম্যাট্রিক্সের গুণন — ধারাবাহিক দুটি রূপান্তরের সংযোজন",
+          "type": "svg",
+          "src": "figures/MatrixMultiplication.svg"
+        },
+        {
+          "id": "fig_composing_transformations",
+          "caption_bn": "ত্রিমাত্রিক স্থানে রূপান্তরের ধারাবাহিক সংযোজন",
+          "type": "svg",
+          "src": "figures/ComposingTransformations.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_04_dimension_bridge_and_determinant",
+      "title_bn": "৪. মাত্রার সেতুবন্ধন ও ত্রিমাত্রিক আয়তন স্কেলিং",
+      "title_en": "Transformations Between Dimensions & Volume Scaling",
+      "summary_bn": "ভিন্ন মাত্রার রূপান্তর (২D থেকে ৩D ও ৩D থেকে ২D প্রজেকশন) এবং একক ঘনকের রূপান্তরের মাধ্যমে ডিটারমিন্যান্টের পূর্বপ্রস্তুতি।",
+      "key_takeaways": [
+        "৩×২ ম্যাট্রিক্স দ্বিমাত্রিক ইনপুট নিয়ে ত্রিমাত্রিক স্পেসে একটি সমতলীয় চাদর (Plane) তৈরি করে।",
+        "২×৩ ম্যাট্রিক্স ত্রিমাত্রিক স্পেসের বস্তুকে দ্বিমাত্রিক স্ক্রিনে প্রজেকশন বা ছায়ার মতো ফেলে দেয়।",
+        "একটি ১×১×১ একক ঘনকের ওপর ৩×৩ রূপান্তর প্রয়োগ করলে তা একটি প্যারালেলেপিপেডে (তির্যক বাক্সে) পরিণত হয়।",
+        "পরবর্তী অধ্যায়ের ভিত্তি: রূপান্তরিত বাক্সের আয়তন কত গুণ প্রসারিত বা সংকুচিত হলো, তা পরিমাপ করাই হলো ত্রিমাত্রিক ডিটারমিন্যান্ট।"
+      ],
+      "formulas": [
+        {
+          "label": "মাত্রার রূপান্তর (২D থেকে ৩D)",
+          "katex": "M_{3 \\times 2} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = x L(\\hat{\\imath}) + y L(\\hat{\\jmath}) \\in \\mathbb{R}^3"
+        },
+        {
+          "label": "আয়তন স্কেলিং ও ডিটারমিন্যান্টের পূর্বাভাস",
+          "katex": "\\text{Volume}(\\text{Parallelepiped}) = |\\det(M_{3 \\times 3})| \\times 1"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_transformation_function",
+          "caption_bn": "মাত্রার রূপান্তর: ইনপুট ও আউটপুট ভেক্টরের মাত্রা",
+          "type": "svg",
+          "src": "figures/TransformationFunction.svg"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_matrix_vector_mult",
+      "section_ref": "sec_02_matrix3x3",
+      "question_bn": "একটি রৈখিক রূপান্তরের ম্যাট্রিক্স $M = \\begin{bmatrix} 0 & 0.5 & -0.5 \\\\ 0 & 0.5 & 1 \\\\ 1 & 0 & 0.5 \\end{bmatrix}$ এবং ইনপুট ভেক্টর $\\vec{v} = \\begin{bmatrix} 1 \\\\ 0 \\\\ -2 \\end{bmatrix}$ হলে, রূপান্তরিত আউটপুট ভেক্টর $M\\vec{v}$ কোনটি হবে?",
+      "question_en": "Given the transformation matrix M and input vector v = [1, 0, -2]^T, what is the resulting output vector?",
+      "options": [
+        "$\\begin{bmatrix} 1 \\\\ -2 \\\\ 0 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 0 \\\\ 1 \\\\ -2 \\end{bmatrix}$",
+        "$\\begin{bmatrix} -1 \\\\ 2 \\\\ 0 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 0.5 \\\\ -1 \\\\ 1 \\end{bmatrix}$"
+      ],
+      "correct_index": 0,
+      "explanation_bn": "ম্যাট্রিক্স-ভেক্টর গুণন হলো কলামগুলোর ভারযুক্ত যোগফল: $1 \\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\end{bmatrix} + 0 \\begin{bmatrix} 0.5 \\\\ 0.5 \\\\ 0 \\end{bmatrix} + (-2) \\begin{bmatrix} -0.5 \\\\ 1 \\\\ 0.5 \\end{bmatrix} = \\begin{bmatrix} 0 + 0 + 1 \\\\ 0 + 0 - 2 \\\\ 1 + 0 - 1 \\end{bmatrix} = \\begin{bmatrix} 1 \\\\ -2 \\\\ 0 \\end{bmatrix}$। এটি গ্রান্ট স্যান্ডারসনের মূল ভিডিওর হুবহু সমস্যা!",
+      "explanation_en": "M*v = 1*col1 + 0*col2 + (-2)*col3 = [0, 0, 1]^T + [-2*(-0.5), -2*1, -2*0.5]^T = [1, -2, 0]^T."
+    },
+    {
+      "id": "quiz_02_y_axis_rotation",
+      "section_ref": "sec_03_rotations_and_compositions",
+      "question_bn": "ত্রিমাত্রিক স্থানে $y$-অক্ষকে স্থির রেখে সমগ্র স্পেসকে তার চারপাশে ৯০° ঘোরালে বেসিস ভেক্টর $\\hat{\\imath}$ কোন অবস্থানে পৌঁছায়?",
+      "question_en": "When 3D space is rotated 90 degrees around the y-axis, where does basis vector i-hat land?",
+      "options": [
+        "$\\begin{bmatrix} 0 \\\\ 1 \\\\ 0 \\end{bmatrix}$ (y অক্ষ বরাবর)",
+        "$\\begin{bmatrix} 0 \\\\ 0 \\\\ -1 \\end{bmatrix}$ (ঋণাত্মক z অক্ষ বরাবর)",
+        "$\\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\end{bmatrix}$ (ধনাত্মক x অক্ষ বরাবর)",
+        "$\\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\end{bmatrix}$ (ধনাত্মক z অক্ষ বরাবর)"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ডান হাত নিয়ম অনুসারে $y$-অক্ষের সাপেক্ষে ৯০° ঘূর্ণনে ধনাত্মক $x$-অক্ষে থাকা $\\hat{\\imath}$ ঘুরে ঋণাত্মক $z$-অক্ষে চলে যায়, যার স্থানাঙ্ক $\\begin{bmatrix} 0 \\\\ 0 \\\\ -1 \\end{bmatrix}$। এটিই ঘূর্ণন ম্যাট্রিক্সের ১ম কলাম গঠন করে।",
+      "explanation_en": "Rotating 90 degrees around the y-axis moves i-hat (1,0,0) to the negative z-axis at (0, 0, -1)."
+    },
+    {
+      "id": "quiz_03_non_commutativity",
+      "section_ref": "sec_03_rotations_and_compositions",
+      "question_bn": "ত্রিমাত্রিক স্থানে দুটি ভিন্ন অক্ষের সাপেক্ষে ঘূর্ণন ম্যাট্রিক্স $A$ এবং $B$-এর ক্ষেত্রে সাধারণভাবে কোনটি সত্য?",
+      "question_en": "For two rotation matrices A and B about different axes in 3D, which statement is true in general?",
+      "options": [
+        "$AB = BA$ (যেকোনো ক্রমে ঘোরালে একই অবস্থান পাওয়া যায়)",
+        "$AB \\neq BA$ (ঘূর্ণনের ক্রম পরিবর্তনের সাথে সাথে চূড়ান্ত অবস্থান পরিবর্তিত হয়)",
+        "$AB = I$ (দুটি ঘূর্ণন পরস্পরকে নাকচ করে দেয়)",
+        "$AB = A + B$ (ঘূর্ণন দুটি যোগফলের মতো আচরণ করে)"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ত্রিমাত্রিক ঘূর্ণন বিনিময়হীন (Non-commutative)। আপনার মোবাইল ফোনটিকে প্রথমে ডানে ৯০° এবং পরে উপরে ৯০° ঘোরালে যে অবস্থান পাবেন, প্রথমে উপরে এবং পরে ডানে ঘোরালে সম্পূর্ণ ভিন্ন অবস্থান পাবেন। অর্থাৎ সাধারণত $AB \\neq BA$।",
+      "explanation_en": "3D rotations are non-commutative; the order of rotations matters, so AB != BA in general."
+    },
+    {
+      "id": "quiz_04_volume_scaling",
+      "section_ref": "sec_04_dimension_bridge_and_determinant",
+      "question_bn": "একটি রৈখিক রূপান্তরের ম্যাট্রিক্স $M = \\begin{bmatrix} 2 & 0 & 0 \\\\ 0 & 3 & 0 \\\\ 0 & 0 & 4 \\end{bmatrix}$ হলে, মূলবিন্দুতে অবস্থিত $1 \\times 1 \\times 1$ একক ঘনকটির রূপান্তরিত আয়তন কত হবে?",
+      "question_en": "If a transformation matrix is M = diag(2, 3, 4), what is the volume of the transformed unit cube?",
+      "options": [
+        "৯ ঘন একক",
+        "১২ ঘন একক",
+        "২৪ ঘন একক",
+        "৬ ঘন একক"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "এই রূপান্তরটি $x$-অক্ষ বরাবর ২ গুণ, $y$-অক্ষ বরাবর ৩ গুণ এবং $z$-অক্ষ বরাবর ৪ গুণ প্রসারিত করে। ফলে $1 \\times 1 \\times 1$ ঘনকটি একটি $2 \\times 3 \\times 4$ বাক্সে পরিণত হয়, যার আয়তন $2 \\times 3 \\times 4 = 24$ ঘন একক। এটিই ম্যাট্রিক্সটির ডিটারমিন্যান্ট!",
+      "explanation_en": "The cube stretches by factors 2, 3, and 4 along the three axes, giving a transformed volume of 2 * 3 * 4 = 24."
+    },
+    {
+      "id": "quiz_05_dimension_bridge",
+      "section_ref": "sec_04_dimension_bridge_and_determinant",
+      "question_bn": "দ্বিমাত্রিক স্থান ($\\mathbb{R}^2$) থেকে ত্রিমাত্রিক স্থানে ($\\mathbb{R}^3$) রূপান্তর ঘটায় এমন একটি রৈখিক রূপান্তরের ম্যাট্রিক্সের আকার কেমন হবে?",
+      "question_en": "What is the dimension of a matrix representing a linear transformation from 2D space (R^2) to 3D space (R^3)?",
+      "options": [
+        "২×৩ ম্যাট্রিক্স (২টি সারি ও ৩টি কলাম)",
+        "৩×২ ম্যাট্রিক্স (৩টি সারি ও ২টি কলাম)",
+        "৩×৩ ম্যাট্রিক্স (৩টি সারি ও ৩টি কলাম)",
+        "২×২ ম্যাট্রিক্স (২টি সারি ও ২টি কলাম)"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ইনপুট স্পেস ২D হওয়ায় বেসিস ভেক্টর থাকবে ২টি (î এবং ĵ), তাই কলাম হবে ২টি। প্রতিটি বেসিস ভেক্টর রূপান্তরিত হয়ে ৩D স্পেসের স্থানাঙ্ক (x, y, z) লাভ করবে, তাই সারি হবে ৩টি। অতএব ম্যাট্রিক্সের আকার হবে ৩×২।",
+      "explanation_en": "2 columns (for 2 input basis vectors) and 3 rows (for 3D output coordinates), resulting in a 3x2 matrix."
+    }
+  ]
+}

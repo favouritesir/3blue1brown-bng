@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অধ্যায় ০৮ — যোগজীকরণ ও ক্যালকুলাসের মৌলিক উপপাদ্য | Integration &amp; The Fundamental Theorem of Calculus</title>
+
+<!-- ═══════════ STYLES (shared library only) ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded, synchronous — zero-CORS narration) ═══════════ -->
+<script src="../../assets/audio/calculus/lesson_08/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict canonical load order (Lesson 01 template) ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (LAST: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+
+<style>
+  /* Lab-only layout helpers (no design override of the component library). */
+  .calc-lab { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+  .calc-canvas { display: block; width: 100%; height: auto; min-height: 360px; background: #080b12; border-radius: 10px; }
+  [data-theme="light"] .calc-canvas { background: #f8fafc; }
+  .calc-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 16px; }
+  .calc-control label { display: flex; justify-content: space-between; font-size: .9rem; font-weight: 600; margin-bottom: 6px; }
+  .calc-control input[type=range] { width: 100%; }
+  .calc-val { color: var(--theme, #f59e0b); font-family: monospace; }
+  .calc-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 16px; }
+  .calc-stat { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+  .calc-stat span { display: block; font-size: .8rem; color: var(--text-muted); margin-bottom: 4px; }
+  .calc-stat strong { font-size: 1.05rem; color: var(--theme, #f59e0b); }
+  .calc-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .calc-actions button, .viz-tool-btn {
+    background: rgba(245,158,11,.14); color: var(--theme, #f59e0b); border: 1px solid rgba(245,158,11,.4);
+    border-radius: 8px; padding: 7px 12px; font-weight: 700; cursor: pointer; font-family: inherit;
+  }
+</style>
+</head>
+<body class="mode-read">
+
+<b1b-search-overlay></b1b-search-overlay>
+
+<b1b-navbar
+  course-title="ক্যালকুলাসের মূল সারমর্ম"
+  course-url="../../index.html#calculus"
+  home-url="../../index.html"
+  chapter-num="০৮"
+  chapter-total="১২"
+  prev-url="lesson_07.html"
+  prev-title="পূর্ববর্তী অধ্যায়: লিমিট ও লোপিতালের নিয়ম"
+  next-url="lesson_09.html"
+  next-title="পরবর্তী অধ্যায়: ক্ষেত্রফল ও ঢালের সম্পর্ক"
+  active-mode="read">
+</b1b-navbar>
+
+<b1b-hero-player
+  course-title="ক্যালকুলাসের মূল সারমর্ম"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৮ · ক্যালকুলাসের মূল সারমর্ম"
+  title="অধ্যায় ০৮: যোগজীকরণ ও ক্যালকুলাসের মৌলিক উপপাদ্য (Integration &amp; The Fundamental Theorem of Calculus)"
+  desc="শুধু স্পিডোমিটার দেখে কত দূর যাওয়া গেল? ক্ষুদ্রাতিক্ষুদ্র ফালির যোগফল, ক্ষেত্রফল ফাংশনের ডেরিভেটিভ এবং অবকলনের বিপরীত হিসেবে যোগজীকরণ — গ্রোথেনডিকের ‘প্রায় সুস্পষ্ট’ নীতির আলোয়।"
+  video-src="../../media_vault/calculus/lesson_08/experiments/3b1b_calculus_08_full_dubbed.mp4"
+  yt-id="rfG8ce4nNh0"
+  date="৫ মে, ২০১৭"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="মূল পাঠ: Grant Sanderson (3Blue1Brown) · ইংরেজি টেক্সট অ্যাডাপ্টেশন: Kurt Bruns · বাংলা রূপান্তর ও পাঠ্য বিন্যাস: STEM ম্যাথমেটিক্স উইং"
+  github-url="https://github.com/3b1b/videos/blob/master/_2017/eoc/chapter8.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<div class="lesson-body">
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">গ্রোথেনডিকের উদ্ধৃতি ও স্পিডোমিটারের গল্প</b1b-bookmark>
+      <b1b-bookmark time="169"  time-bn="০২:৪৯">বেগ আর দূরত্ব: আয়তক্ষেত্রের ক্ষেত্রফল</b1b-bookmark>
+      <b1b-bookmark time="292" time-bn="০৪:৫২">ইন্টিগ্রাল প্রতীক ও dt-র দুই ভূমিকা</b1b-bookmark>
+      <b1b-bookmark time="417" time-bn="০৬:৫৭">ক্ষেত্রফল ফাংশনের ডেরিভেটিভ = মূল ফাংশন</b1b-bookmark>
+      <b1b-bookmark time="417" time-bn="০৬:৫৭">অ্যান্টি-ডেরিভেটিভ, +C ও মৌলিক উপপাদ্য</b1b-bookmark>
+      <b1b-bookmark time="417" time-bn="০৬:৫৭">ঋণাত্মক ক্ষেত্রফল ও স্বাক্ষরিত ক্ষেত্রফল</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-accumulation-intro">১. অবিরাম পরিবর্তন ও দূরত্বের সঞ্চয়</a>
+      <a href="#sec-riemann-to-integral">২. রিম্যান সাম থেকে ইন্টিগ্রাল প্রতীক</a>
+      <a href="#sec-area-function-derivative">৩. ক্ষেত্রফল ফাংশন ও dA/dx = f(x)</a>
+      <a href="#sec-fundamental-theorem">৪. মৌলিক উপপাদ্য ও চূড়ান্ত সমাধান</a>
+      <a href="#sec-official-full">৫. অফিশিয়াল পাঠের সম্পূর্ণ বিবরণ</a>
+      <a href="#sec-media-gallery">৬. চিত্র ও ভিডিও গ্যালারি</a>
+      <a href="#sec-labs">৭. ইন্টারেক্টিভ ল্যাব</a>
+      <a href="#sec-quizzes">৮. ধারণা যাচাই: ৯টি কুইজ</a>
+      <a href="#sec-reference">৯. সূত্র ও পরিভাষা</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+      <!-- ═══ NARRATED 1 — sec-accumulation-intro | manifest cues: h2, chapter-quote, p, figure, p, callout, p, p (8) ═══ -->
+      <b1b-section id="sec-accumulation-intro" title="১. অবিরাম পরিবর্তন ও দূরত্বের সঞ্চয় (Accumulation of Changing Quantities)">
+        <b1b-quote author="আলেকজান্ডার গ্রোথেনডিক (Alexander Grothendieck)">One should never try to prove anything that is not almost obvious — কোনো এমন বিষয় প্রমাণ করার চেষ্টা কখনোই করা উচিত নয়, যা প্রায় সুস্পষ্ট নয়। গণিতে দীর্ঘ সূত্রে ডুবে যাওয়ার আগে ধারণাটি অন্ততপক্ষে বোধগম্য ও স্বাভাবিক কি না, তা নিশ্চিত হওয়া জরুরি।</b1b-quote>
+
+        <p>ধরা যাক আপনি একটি গাড়িতে বসে আছেন এবং জানালা দিয়ে বাইরে দেখতে পাচ্ছেন না—শুধু স্পিডোমিটারের দিকে তাকাতে পারছেন। কোথাও গাড়িটি যাত্রা শুরু করে, ক্রমশ বেগ বাড়ায়, আবার ধীরে ধীরে থেমে যায়; পুরো ঘটনাটি ৮ সেকেন্ডে ঘটে। স্পিডোমিটারের পাঠ নিয়ে তৈরি করা যায় বেগের একটি মডেল: $v(t) = t(8-t) = 8t - t^2$ মিটার প্রতি সেকেন্ড। প্রশ্ন হলো—শুধু এই বেগ জানা থেকে কীভাবে $s(t)$ নামক দূরত্ব ফাংশনটি পাওয়া যাবে, যা যেকোনো $t$-তে মোট অতিক্রান্ত দূরত্ব বলে দেবে?</p>
+
+        <b1b-figure src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MjAgMzIwIiB3aWR0aD0iNTIwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjUyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNTIiIHkxPSIyNjgiIHgyPSI0NzgiIHkyPSIyNjgiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjUyIiB5MT0iMjY4IiB4Mj0iNTIiIHkyPSIzNCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI0NjYiIHk9IjI5MiIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnQgKHMpPC90ZXh0Pjx0ZXh0IHg9IjE2IiB5PSIzOCIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnYgKG0vcyk8L3RleHQ+PHBhdGggZD0iTTUyIDI2OCA1Mi4wIDI2OC4wIEw1OS4xIDI1NC45IEw2Ni4yIDI0Mi4yIEw3My4zIDIzMC4wIEw4MC40IDIxOC4yIEw4Ny41IDIwNi45IEw5NC42IDE5Ni4wIEwxMDEuNyAxODUuNiBMMTA4LjggMTc1LjYgTDExNS45IDE2Ni4wIEwxMjMuMCAxNTYuOSBMMTMwLjEgMTQ4LjIgTDEzNy4yIDE0MC4wIEwxNDQuMyAxMzIuMiBMMTUxLjQgMTI0LjkgTDE1OC41IDExOC4wIEwxNjUuNiAxMTEuNiBMMTcyLjcgMTA1LjYgTDE3OS44IDEwMC4wIEwxODYuOSA5NC45IEwxOTQuMCA5MC4yIEwyMDEuMSA4Ni4wIEwyMDguMiA4Mi4yIEwyMTUuMyA3OC45IEwyMjIuNCA3Ni4wIEwyMjkuNSA3My42IEwyMzYuNiA3MS42IEwyNDMuNyA3MC4wIEwyNTAuOCA2OC45IEwyNTcuOSA2OC4yIEwyNjUuMCA2OC4wIEwyNzIuMSA2OC4yIEwyNzkuMiA2OC45IEwyODYuMyA3MC4wIEwyOTMuNCA3MS42IEwzMDAuNSA3My42IEwzMDcuNiA3Ni4wIEwzMTQuNyA3OC45IEwzMjEuOCA4Mi4yIEwzMjguOSA4Ni4wIEwzMzYuMCA5MC4yIEwzNDMuMSA5NC45IEwzNTAuMiAxMDAuMCBMMzU3LjMgMTA1LjYgTDM2NC40IDExMS42IEwzNzEuNSAxMTguMCBMMzc4LjYgMTI0LjkgTDM4NS43IDEzMi4yIEwzOTIuOCAxNDAuMCBMMzk5LjkgMTQ4LjIgTDQwNy4wIDE1Ni45IEw0MTQuMSAxNjYuMCBMNDIxLjIgMTc1LjYgTDQyOC4zIDE4NS42IEw0MzUuNCAxOTYuMCBMNDQyLjUgMjA2LjkgTDQ0OS42IDIxOC4yIEw0NTYuNyAyMzAuMCBMNDYzLjggMjQyLjIgTDQ3MC45IDI1NC45IEw0NzguMCAyNjguMCBMNDc4IDI2OCBaIiBmaWxsPSIjMTBiOTgxIiBvcGFjaXR5PSIuMjQiLz48cGF0aCBkPSJNNTIuMCAyNjguMCBMNTkuMSAyNTQuOSBMNjYuMiAyNDIuMiBMNzMuMyAyMzAuMCBMODAuNCAyMTguMiBMODcuNSAyMDYuOSBMOTQuNiAxOTYuMCBMMTAxLjcgMTg1LjYgTDEwOC44IDE3NS42IEwxMTUuOSAxNjYuMCBMMTIzLjAgMTU2LjkgTDEzMC4xIDE0OC4yIEwxMzcuMiAxNDAuMCBMMTQ0LjMgMTMyLjIgTDE1MS40IDEyNC45IEwxNTguNSAxMTguMCBMMTY1LjYgMTExLjYgTDE3Mi43IDEwNS42IEwxNzkuOCAxMDAuMCBMMTg2LjkgOTQuOSBMMTk0LjAgOTAuMiBMMjAxLjEgODYuMCBMMjA4LjIgODIuMiBMMjE1LjMgNzguOSBMMjIyLjQgNzYuMCBMMjI5LjUgNzMuNiBMMjM2LjYgNzEuNiBMMjQzLjcgNzAuMCBMMjUwLjggNjguOSBMMjU3LjkgNjguMiBMMjY1LjAgNjguMCBMMjcyLjEgNjguMiBMMjc5LjIgNjguOSBMMjg2LjMgNzAuMCBMMjkzLjQgNzEuNiBMMzAwLjUgNzMuNiBMMzA3LjYgNzYuMCBMMzE0LjcgNzguOSBMMzIxLjggODIuMiBMMzI4LjkgODYuMCBMMzM2LjAgOTAuMiBMMzQzLjEgOTQuOSBMMzUwLjIgMTAwLjAgTDM1Ny4zIDEwNS42IEwzNjQuNCAxMTEuNiBMMzcxLjUgMTE4LjAgTDM3OC42IDEyNC45IEwzODUuNyAxMzIuMiBMMzkyLjggMTQwLjAgTDM5OS45IDE0OC4yIEw0MDcuMCAxNTYuOSBMNDE0LjEgMTY2LjAgTDQyMS4yIDE3NS42IEw0MjguMyAxODUuNiBMNDM1LjQgMTk2LjAgTDQ0Mi41IDIwNi45IEw0NDkuNiAyMTguMiBMNDU2LjcgMjMwLjAgTDQ2My44IDI0Mi4yIEw0NzAuOSAyNTQuOSBMNDc4LjAgMjY4LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM4YmRmOCIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAwIiB5PSI1OCIgZmlsbD0iI2ZiYmYyNCIgZm9udC1zaXplPSIxNiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnYodCkgPSB0KDggLSB0KSA9IDh0IC0gdF4yPC90ZXh0Pjx0ZXh0IHg9IjE5NiIgeT0iMTk2IiBmaWxsPSIjNmVlN2I3IiBmb250LXNpemU9IjE0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+YXJlYSA9IGRpc3RhbmNlIHRyYXZlbGxlZDwvdGV4dD48L3N2Zz4=" alt="বেগ বনাম সময় লেখচিত্রের নিচের ছায়াঘেরা ক্ষেত্রফলই অতিক্রান্ত দূরত্ব" caption="এই চিত্রে $v(t)=t(8-t)$ বক্ররেখাটি $t=0$ থেকে $t=8$ পর্যন্ত আঁকা হয়েছে এবং তার নিচের অঞ্চলটি সবুজে ছায়াঘেরা। অনুভূমিক অক্ষের একক সেকেন্ড আর উল্লম্ব অক্ষের একক মিটার/সেকেন্ড হওয়ায় এই আয়তক্ষেত্রের মতো ক্ষেত্রফলের একক দাঁড়ায় মিটার—অর্থাৎ দূরত্ব। লক্ষ্য করুন বেগের চরম মান $t=4$-এ, কিন্তু দূরত্ব ক্রমেই বাড়ছে, কারণ বেগ সবসময় ধনাত্মক।"></b1b-figure>
+
+        <p>এই ধারণাটি আসলে দুই ধাপের। প্রথমত, যদি গাড়িটি স্থির বেগে চলত, তবে দূরত্ব হতো বেগ গুণ সময়—এবং বেগ-বনাম-সময় লেখচিত্রে সেটি দেখা যেত একটি আয়তক্ষেত্রের ক্ষেত্রফল হিসেবে। দ্বিতীয়ত, যেহেতু বেগ প্রতি মুহূর্তে বদলাচ্ছে, তাই আমরা সময়কে অসংখ্য সরু ফালিতে ভাগ করি; প্রতিটি ফালির প্রস্থ $dt$ এবং তৎকালীন বেগ $v(t)$। এই আসন্নায়নের ফালিগুলোর ক্ষেত্রফলই হলো অতি ক্ষুদ্র দূরত্ব।</p>
+
+        <b1b-callout type="gold" icon="💡" title="বিশেষ অন্তর্দৃষ্টি: স্থানীয় স্থায়িত্বের নীতি">
+          <p>যেকোনো মসৃণ বক্ররেখাকে যথেষ্ট ছোট ব্যবধানে জুম করলে সেটি প্রায় সমতল দেখায়। তাই $dt$ একটি ছোট সময় ব্যবধান নিলে ওই মুহূর্তে গাড়ির বেগকে প্রায় স্থির ধরা যায়, ফলে অতি ক্ষুদ্র দূরত্ব $ds \approx v(t)\,dt$। $dt$ যত ছোট হবে, এই আসন্নায়ন তত নিখুঁত হবে—এটিই পুরো যোগজীকরণের ভিত্তি।</p>
+        </b1b-callout>
+
+        <p>জ্যামিতিকভাবে $v(t)\,dt$ হলো লেখচিত্রের নিচে স্থাপিত অতি পাতলা একটি আয়তাকার ফালির ক্ষেত্রফল—উচ্চতা বেগ, প্রস্থ সময়। উদাহরণস্বরূপ $t=1$ থেকে $1.25$ সেকেন্ডের ফালিটিতে বেগ প্রায় $7$ মিটার/সেকেন্ড ধরলে অতিক্রান্ত দূরত্ব হয় $7 \times 0.25 = 1.75$ মিটার। বাস্তবে এই ব্যবধানে বেগ $7$ থেকে প্রায় $8.4$ পর্যন্ত বেড়ে যায়, কিন্তু ফালিটি যত সরু হবে, আসন্নায়ন তত কম ভুল হবে।</p>
+
+        <p>মোট দূরত্ব পেতে হলে এই প্রতিটি ক্ষুদ্র ফালির ক্ষেত্রফলকে একে একে যোগ করতে হবে। সসীম সংখ্যক ফালির এই যোগফলই পরে রিম্যান সমষ্টি নামে পরিচিত; আর $dt \to 0$ করলে সেটি বক্ররেখার নিচের প্রকৃত ক্ষেত্রফলে পরিণত হয়।</p>
+      </b1b-section>
+      <!-- ═══ NARRATED 2 — sec-riemann-to-integral | manifest cues: h2, p, figure, p, callout, p (6) ═══ -->
+      <b1b-section id="sec-riemann-to-integral" title="২. রিম্যান সাম থেকে লাইবনিজের ইন্টিগ্রাল প্রতীক (Riemann Sums &amp; Leibniz's Integral Notation)">
+        <p>$t=a$ থেকে $t=b$ পর্যন্ত মোট অতিক্রান্ত দূরত্বের আনুমানিক মান পেতে হলো আমাদের সবকটি পাতলা আয়তাকার ফালির ক্ষেত্রফল একে একে যোগ করতে হবে: $\text{Distance} \approx \sum_{i=1}^{n} v(t_i)\,\Delta t$। গণিতের ভাষায় এই সসীম যোগফলকে বলা হয় রিম্যান সমষ্টি (Riemann Sum)—নামকরণ করা হয়েছে বার্নহার্ড রিম্যানের নামে।</p>
+
+        <b1b-figure src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MjAgMzIwIiB3aWR0aD0iNTIwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjUyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNTIiIHkxPSIyNjgiIHgyPSI0NzgiIHkyPSIyNjgiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjUyIiB5MT0iMjY4IiB4Mj0iNTIiIHkyPSIzNCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI0NjYiIHk9IjI5MiIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnQgKHMpPC90ZXh0Pjx0ZXh0IHg9IjE2IiB5PSIzOCIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnYgKG0vcyk8L3RleHQ+PHJlY3QgeD0iNTIuMCIgeT0iMjY4LjAiIHdpZHRoPSI0MS44IiBoZWlnaHQ9IjAuMCIgZmlsbD0iIzM4YmRmOCIgb3BhY2l0eT0iMC4zMCIvPjxyZWN0IHg9Ijk0LjYiIHk9IjE5Ni4wIiB3aWR0aD0iNDEuOCIgaGVpZ2h0PSI3Mi4wIiBmaWxsPSIjMzhiZGY4IiBvcGFjaXR5PSIwLjMwIi8+PHJlY3QgeD0iMTM3LjIiIHk9IjE0MC4wIiB3aWR0aD0iNDEuOCIgaGVpZ2h0PSIxMjguMCIgZmlsbD0iIzM4YmRmOCIgb3BhY2l0eT0iMC4zMCIvPjxyZWN0IHg9IjE3OS44IiB5PSIxMDAuMCIgd2lkdGg9IjQxLjgiIGhlaWdodD0iMTY4LjAiIGZpbGw9IiMzOGJkZjgiIG9wYWNpdHk9IjAuMzAiLz48cmVjdCB4PSIyMjIuNCIgeT0iNzYuMCIgd2lkdGg9IjQxLjgiIGhlaWdodD0iMTkyLjAiIGZpbGw9IiMzOGJkZjgiIG9wYWNpdHk9IjAuMzAiLz48cmVjdCB4PSIyNjUuMCIgeT0iNjguMCIgd2lkdGg9IjQxLjgiIGhlaWdodD0iMjAwLjAiIGZpbGw9IiMzOGJkZjgiIG9wYWNpdHk9IjAuMzAiLz48cmVjdCB4PSIzMDcuNiIgeT0iNzYuMCIgd2lkdGg9IjQxLjgiIGhlaWdodD0iMTkyLjAiIGZpbGw9IiMzOGJkZjgiIG9wYWNpdHk9IjAuMzAiLz48cmVjdCB4PSIzNTAuMiIgeT0iMTAwLjAiIHdpZHRoPSI0MS44IiBoZWlnaHQ9IjE2OC4wIiBmaWxsPSIjMzhiZGY4IiBvcGFjaXR5PSIwLjMwIi8+PHJlY3QgeD0iMzkyLjgiIHk9IjE0MC4wIiB3aWR0aD0iNDEuOCIgaGVpZ2h0PSIxMjguMCIgZmlsbD0iIzM4YmRmOCIgb3BhY2l0eT0iMC4zMCIvPjxyZWN0IHg9IjQzNS40IiB5PSIxOTYuMCIgd2lkdGg9IjQxLjgiIGhlaWdodD0iNzIuMCIgZmlsbD0iIzM4YmRmOCIgb3BhY2l0eT0iMC4zMCIvPjxyZWN0IHg9IjUyLjAiIHk9IjI2OC4wIiB3aWR0aD0iMjAuNSIgaGVpZ2h0PSIwLjAiIGZpbGw9IiMzOGJkZjgiIG9wYWNpdHk9IjAuMTgiLz48cmVjdCB4PSI3My4zIiB5PSIyMzAuMCIgd2lkdGg9IjIwLjUiIGhlaWdodD0iMzguMCIgZmlsbD0iIzM4YmRmOCIgb3BhY2l0eT0iMC4xOCIvPjxyZWN0IHg9Ijk0LjYiIHk9IjE5Ni4wIiB3aWR0aD0iMjAuNSIgaGVpZ2h0PSI3Mi4wIiBmaWxsPSIjMzhiZGY4IiBvcGFjaXR5PSIwLjE4Ii8+PHJlY3QgeD0iMTE1LjkiIHk9IjE2Ni4wIiB3aWR0aD0iMjAuNSIgaGVpZ2h0PSIxMDIuMCIgZmlsbD0iIzM4YmRmOCIgb3BhY2l0eT0iMC4xOCIvPjxyZWN0IHg9IjEzNy4yIiB5PSIxNDAuMCIgd2lkdGg9IjIwLjUiIGhlaWdodD0iMTI4LjAiIGZpbGw9IiMzOGJkZjgiIG9wYWNpdHk9IjAuMTgiLz48cmVjdCB4PSIxNTguNSIgeT0iMTE4LjAiIHdpZHRoPSIyMC41IiBoZWlnaHQ9IjE1MC4wIiBmaWxsPSIjMzhiZGY4IiBvcGFjaXR5PSIwLjE4Ii8+PHJlY3QgeD0iMTc5LjgiIHk9IjEwMC4wIiB3aWR0aD0iMjAuNSIgaGVpZ2h0PSIxNjguMCIgZmlsbD0iIzM4YmRmOCIgb3BhY2l0eT0iMC4xOCIvPjxyZWN0IHg9IjIwMS4xIiB5PSI4Ni4wIiB3aWR0aD0iMjAuNSIgaGVpZ2h0PSIxODIuMCIgZmlsbD0iIzM4YmRmOCIgb3BhY2l0eT0iMC4xOCIvPjxyZWN0IHg9IjIyMi40IiB5PSI3Ni4wIiB3aWR0aD0iMjAuNSIgaGVpZ2h0PSIxOTIuMCIgZmlsbD0iIzM4YmRmOCIgb3BhY2l0eT0iMC4xOCIvPjxyZWN0IHg9IjI0My43IiB5PSI3MC4wIiB3aWR0aD0iMjAuNSIgaGVpZ2h0PSIxOTguMCIgZmlsbD0iIzM4YmRmOCIgb3BhY2l0eT0iMC4xOCIvPjxyZWN0IHg9IjI2NS4wIiB5PSI2OC4wIiB3aWR0aD0iMjAuNSIgaGVpZ2h0PSIyMDAuMCIgZmlsbD0iIzM4YmRmOCIgb3BhY2l0eT0iMC4xOCIvPjxyZWN0IHg9IjI4Ni4zIiB5PSI3MC4wIiB3aWR0aD0iMjAuNSIgaGVpZ2h0PSIxOTguMCIgZmlsbD0iIzM4YmRmOCIgb3BhY2l0eT0iMC4xOCIvPjxyZWN0IHg9IjMwNy42IiB5PSI3Ni4wIiB3aWR0aD0iMjAuNSIgaGVpZ2h0PSIxOTIuMCIgZmlsbD0iIzM4YmRmOCIgb3BhY2l0eT0iMC4xOCIvPjxyZWN0IHg9IjMyOC45IiB5PSI4Ni4wIiB3aWR0aD0iMjAuNSIgaGVpZ2h0PSIxODIuMCIgZmlsbD0iIzM4YmRmOCIgb3BhY2l0eT0iMC4xOCIvPjxyZWN0IHg9IjM1MC4yIiB5PSIxMDAuMCIgd2lkdGg9IjIwLjUiIGhlaWdodD0iMTY4LjAiIGZpbGw9IiMzOGJkZjgiIG9wYWNpdHk9IjAuMTgiLz48cmVjdCB4PSIzNzEuNSIgeT0iMTE4LjAiIHdpZHRoPSIyMC41IiBoZWlnaHQ9IjE1MC4wIiBmaWxsPSIjMzhiZGY4IiBvcGFjaXR5PSIwLjE4Ii8+PHJlY3QgeD0iMzkyLjgiIHk9IjE0MC4wIiB3aWR0aD0iMjAuNSIgaGVpZ2h0PSIxMjguMCIgZmlsbD0iIzM4YmRmOCIgb3BhY2l0eT0iMC4xOCIvPjxyZWN0IHg9IjQxNC4xIiB5PSIxNjYuMCIgd2lkdGg9IjIwLjUiIGhlaWdodD0iMTAyLjAiIGZpbGw9IiMzOGJkZjgiIG9wYWNpdHk9IjAuMTgiLz48cmVjdCB4PSI0MzUuNCIgeT0iMTk2LjAiIHdpZHRoPSIyMC41IiBoZWlnaHQ9IjcyLjAiIGZpbGw9IiMzOGJkZjgiIG9wYWNpdHk9IjAuMTgiLz48cmVjdCB4PSI0NTYuNyIgeT0iMjMwLjAiIHdpZHRoPSIyMC41IiBoZWlnaHQ9IjM4LjAiIGZpbGw9IiMzOGJkZjgiIG9wYWNpdHk9IjAuMTgiLz48cGF0aCBkPSJNNTIuMCAyNjguMCBMNTkuMSAyNTQuOSBMNjYuMiAyNDIuMiBMNzMuMyAyMzAuMCBMODAuNCAyMTguMiBMODcuNSAyMDYuOSBMOTQuNiAxOTYuMCBMMTAxLjcgMTg1LjYgTDEwOC44IDE3NS42IEwxMTUuOSAxNjYuMCBMMTIzLjAgMTU2LjkgTDEzMC4xIDE0OC4yIEwxMzcuMiAxNDAuMCBMMTQ0LjMgMTMyLjIgTDE1MS40IDEyNC45IEwxNTguNSAxMTguMCBMMTY1LjYgMTExLjYgTDE3Mi43IDEwNS42IEwxNzkuOCAxMDAuMCBMMTg2LjkgOTQuOSBMMTk0LjAgOTAuMiBMMjAxLjEgODYuMCBMMjA4LjIgODIuMiBMMjE1LjMgNzguOSBMMjIyLjQgNzYuMCBMMjI5LjUgNzMuNiBMMjM2LjYgNzEuNiBMMjQzLjcgNzAuMCBMMjUwLjggNjguOSBMMjU3LjkgNjguMiBMMjY1LjAgNjguMCBMMjcyLjEgNjguMiBMMjc5LjIgNjguOSBMMjg2LjMgNzAuMCBMMjkzLjQgNzEuNiBMMzAwLjUgNzMuNiBMMzA3LjYgNzYuMCBMMzE0LjcgNzguOSBMMzIxLjggODIuMiBMMzI4LjkgODYuMCBMMzM2LjAgOTAuMiBMMzQzLjEgOTQuOSBMMzUwLjIgMTAwLjAgTDM1Ny4zIDEwNS42IEwzNjQuNCAxMTEuNiBMMzcxLjUgMTE4LjAgTDM3OC42IDEyNC45IEwzODUuNyAxMzIuMiBMMzkyLjggMTQwLjAgTDM5OS45IDE0OC4yIEw0MDcuMCAxNTYuOSBMNDE0LjEgMTY2LjAgTDQyMS4yIDE3NS42IEw0MjguMyAxODUuNiBMNDM1LjQgMTk2LjAgTDQ0Mi41IDIwNi45IEw0NDkuNiAyMTguMiBMNDU2LjcgMjMwLjAgTDQ2My44IDI0Mi4yIEw0NzAuOSAyNTQuOSBMNDc4LjAgMjY4LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZiYmYyNCIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMjUyIiB5PSI1NiIgZmlsbD0iI2ZiYmYyNCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnRoaW4gcmVjdGFuZ2xlcyAtJmd0OyBzbW9vdGggYXJlYSBhcyBkdCAtJmd0OyAwPC90ZXh0Pjx0ZXh0IHg9Ijc2IiB5PSIyMzgiIGZpbGw9IiM3ZGQzZmMiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5lYWNoIHN0cmlwOiB2KHQpIGR0PC90ZXh0Pjwvc3ZnPg==" alt="অসংখ্য সরু আয়তক্ষেত্র মসৃণ বক্ররেখার নিচের ক্ষেত্রফলে রূপ নিচ্ছে" caption="চিত্রে একই বক্ররেখার নিচে দুই সেট আয়তক্ষেত্র দেখানো হয়েছে—কম সংখ্যক চওড়া ফালি আর বেশি সংখ্যক সরু ফালি। দ্বিতীয় সেটের খাঁজকাটা সিঁড়ির মতো ধাপগুলো বক্ররেখার গায়ে অনেক বেশি কাছে সেঁটে যায়। $dt$ ক্রমশ ছোট করলে ফালির সংখ্যা বাড়ে, ত্রুটি কমে এবং সমষ্টি প্রকৃত ক্ষেত্রফলের কাছে পৌঁছায়—এই প্রক্রিয়াটিই ইন্টিগ্রালের সংজ্ঞা।"></b1b-figure>
+
+        <p>গটফ্রিড লাইবনিজ এই অবিচ্ছিন্ন সমষ্টির জন্য বেছে নিয়েছিলেন প্রসারিত ‘S’ চিহ্ন $\int$—যা ল্যাটিন <em>Summa</em> (যোগফল) শব্দের প্রথম অক্ষর থেকে এসেছে। $\int_a^b v(t)\,dt$ লেখার অর্থ হলো: $a$ থেকে $b$ পর্যন্ত অসংখ্য অতি সূক্ষ্ম ফালির $v(t)\,dt$ যোগফল। এখানে $dt$-র দুইটি ভূমিকা আছে—এটি একদিকে প্রতিটি ফালির ক্ষেত্রফলের গুণনীয়ক, অপরদিকে নমুনা নেওয়া সময়গুলোর মধ্যকার ব্যবধানও নির্দেশ করে।</p>
+
+        <b1b-callout type="blue" icon="📐" title="বিশেষ নোট: লাইবনিজ প্রতীকের অন্তর্নিহিত দর্শন">
+          <p>আমরা সাধারণ যোগফলের জন্য $\sum$ ব্যবহার করি, কিন্তু এখানে তা ব্যবহার করি না—কারণ $\int_a^b v(t)\,dt$ কোনো নির্দিষ্ট $dt$-র জন্য এককোনো নির্দিষ্ট যোগফল নয়। এটি প্রকাশ করে যে $dt \to 0$ হলে সেই সমষ্টি যে মানের দিকে ধাবিত হয়, তাকে। একই কারণে $dx$-ও শুধু একটি চলকের নাম নয়; এটি সেই অতিক্ষুদ্র প্রস্থকেও বোঝায় যার গুণফল যোগ করা হচ্ছে।</p>
+        </b1b-callout>
+
+        <p>সীমার চূড়ান্ত পর্যায়ে $\lim_{\Delta t \to 0} \sum_{i=1}^{n} v(t_i)\,\Delta t = \int_a^b v(t)\,dt$—এই সীমাস্থ সমষ্টিকে বলা হয় নির্দিষ্ট যোগজ (Definite Integral)। আমাদের গাড়ির ক্ষেত্রে $a=0$, $b=8$ নিলে এই যোগজের মান দাঁড়ায় $85.33$ মিটার, যা বক্ররেখার নিচের মোট ক্ষেত্রফলের হুবহু সমান।</p>
+      </b1b-section>
+      <!-- ═══ NARRATED 3 — sec-area-function-derivative | manifest cues: h2, p, figure, p, callout, p (6) ═══ -->
+      <b1b-section id="sec-area-function-derivative" title="৩. ক্ষেত্রফল ফাংশন এবং বৃদ্ধির হার: কেন dA/dx = f(x)? (The Area Function and its Derivative)">
+        <p>লক্ষ কোটি আয়তক্ষেত্র হাতে যোগ করা কার্যকর পথ নয়। তাই আমরা কৌশল বদলাই: উভয় সীমা স্থির রাখার বদলে ডান প্রান্তবিন্দুকে একটি স্বাধীন চলক $x$ বানিয়ে দিই এবং সংজ্ঞায়িত করি ক্ষেত্রফল ফাংশন $A(x) = \int_0^x f(t)\,dt$—অর্থাৎ $0$ থেকে পরিবর্তনশীল $x$ পর্যন্ত বক্ররেখার নিচের মোট আবদ্ধ ক্ষেত্রফল।</p>
+
+        <b1b-figure src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MjAgMzIwIiB3aWR0aD0iNTIwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjUyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNTIiIHkxPSIyNjgiIHgyPSI0NzgiIHkyPSIyNjgiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjUyIiB5MT0iMjY4IiB4Mj0iNTIiIHkyPSIzNCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI0NjYiIHk9IjI5MiIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnQgKHMpPC90ZXh0Pjx0ZXh0IHg9IjE2IiB5PSIzOCIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnYgKG0vcyk8L3RleHQ+PHBhdGggZD0iTTUyIDI2OCA1Mi4wIDI2OC4wIEw1OS4xIDI1NC45IEw2Ni4yIDI0Mi4yIEw3My4zIDIzMC4wIEw4MC40IDIxOC4yIEw4Ny41IDIwNi45IEw5NC42IDE5Ni4wIEwxMDEuNyAxODUuNiBMMTA4LjggMTc1LjYgTDExNS45IDE2Ni4wIEwxMjMuMCAxNTYuOSBMMTMwLjEgMTQ4LjIgTDEzNy4yIDE0MC4wIEwxNDQuMyAxMzIuMiBMMTUxLjQgMTI0LjkgTDE1OC41IDExOC4wIEwxNjUuNiAxMTEuNiBMMTcyLjcgMTA1LjYgTDE3OS44IDEwMC4wIEwxODYuOSA5NC45IEwxOTQuMCA5MC4yIEwyMDEuMSA4Ni4wIEwyMDguMiA4Mi4yIEwyMTUuMyA3OC45IEwyMjIuNCA3Ni4wIEwyMjkuNSA3My42IEwyMzYuNiA3MS42IEwyNDMuNyA3MC4wIEwyNTAuOCA2OC45IEwyNTcuOSA2OC4yIEwyNjUuMCA2OC4wIEwyNzIuMSA2OC4yIEwyNzkuMiA2OC45IEwyODYuMyA3MC4wIEwyOTMuNCA3MS42IEwzMDAuNSA3My42IEwzMDcuNiA3Ni4wIEwzMTQuNyA3OC45IEwzMjEuOCA4Mi4yIEwzMjguOSA4Ni4wIEwzMzYuMCA5MC4yIEwzNDMuMSA5NC45IEwzNTAuMiAxMDAuMCBMMzU3LjMgMTA1LjYgTDM2NC40IDExMS42IEwzNzEuNSAxMTguMCBMMzc4LjYgMTI0LjkgTDM4NS43IDEzMi4yIEwzOTIuOCAxNDAuMCBMMzk5LjkgMTQ4LjIgTDQwNy4wIDE1Ni45IEw0MTQuMSAxNjYuMCBMNDIxLjIgMTc1LjYgTDQyOC4zIDE4NS42IEw0MzUuNCAxOTYuMCBMNDQyLjUgMjA2LjkgTDQ0OS42IDIxOC4yIEw0NTYuNyAyMzAuMCBMNDYzLjggMjQyLjIgTDQ3MC45IDI1NC45IEw0NzguMCAyNjguMCBMNDc4IDI2OCBaIiBmaWxsPSIjMTBiOTgxIiBvcGFjaXR5PSIuMjQiLz48cGF0aCBkPSJNNTIuMCAyNjguMCBMNTkuMSAyNTQuOSBMNjYuMiAyNDIuMiBMNzMuMyAyMzAuMCBMODAuNCAyMTguMiBMODcuNSAyMDYuOSBMOTQuNiAxOTYuMCBMMTAxLjcgMTg1LjYgTDEwOC44IDE3NS42IEwxMTUuOSAxNjYuMCBMMTIzLjAgMTU2LjkgTDEzMC4xIDE0OC4yIEwxMzcuMiAxNDAuMCBMMTQ0LjMgMTMyLjIgTDE1MS40IDEyNC45IEwxNTguNSAxMTguMCBMMTY1LjYgMTExLjYgTDE3Mi43IDEwNS42IEwxNzkuOCAxMDAuMCBMMTg2LjkgOTQuOSBMMTk0LjAgOTAuMiBMMjAxLjEgODYuMCBMMjA4LjIgODIuMiBMMjE1LjMgNzguOSBMMjIyLjQgNzYuMCBMMjI5LjUgNzMuNiBMMjM2LjYgNzEuNiBMMjQzLjcgNzAuMCBMMjUwLjggNjguOSBMMjU3LjkgNjguMiBMMjY1LjAgNjguMCBMMjcyLjEgNjguMiBMMjc5LjIgNjguOSBMMjg2LjMgNzAuMCBMMjkzLjQgNzEuNiBMMzAwLjUgNzMuNiBMMzA3LjYgNzYuMCBMMzE0LjcgNzguOSBMMzIxLjggODIuMiBMMzI4LjkgODYuMCBMMzM2LjAgOTAuMiBMMzQzLjEgOTQuOSBMMzUwLjIgMTAwLjAgTDM1Ny4zIDEwNS42IEwzNjQuNCAxMTEuNiBMMzcxLjUgMTE4LjAgTDM3OC42IDEyNC45IEwzODUuNyAxMzIuMiBMMzkyLjggMTQwLjAgTDM5OS45IDE0OC4yIEw0MDcuMCAxNTYuOSBMNDE0LjEgMTY2LjAgTDQyMS4yIDE3NS42IEw0MjguMyAxODUuNiBMNDM1LjQgMTk2LjAgTDQ0Mi41IDIwNi45IEw0NDkuNiAyMTguMiBMNDU2LjcgMjMwLjAgTDQ2My44IDI0Mi4yIEw0NzAuOSAyNTQuOSBMNDc4LjAgMjY4LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM4YmRmOCIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAwIiB5PSI1OCIgZmlsbD0iI2ZiYmYyNCIgZm9udC1zaXplPSIxNiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnYodCkgPSB0KDggLSB0KSA9IDh0IC0gdF4yPC90ZXh0Pjx0ZXh0IHg9IjE5NiIgeT0iMTk2IiBmaWxsPSIjNmVlN2I3IiBmb250LXNpemU9IjE0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+YXJlYSA9IGRpc3RhbmNlIHRyYXZlbGxlZDwvdGV4dD48bGluZSB4MT0iMzI4LjkiIHkxPSIyNjgiIHgyPSIzMjguOSIgeTI9Ijg2LjAiIHN0cm9rZT0iI2ZiYmYyNCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtZGFzaGFycmF5PSI1IDQiLz48Y2lyY2xlIGN4PSIzMjguOSIgY3k9Ijg2LjAiIHI9IjQiIGZpbGw9IiNmYmJmMjQiLz48dGV4dCB4PSIzMjQuOSIgeT0iMjg4IiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjEzIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+VDwvdGV4dD48cmVjdCB4PSIzMjguOSIgeT0iODYuMCIgd2lkdGg9IjE2LjAiIGhlaWdodD0iMTgyLjAiIGZpbGw9IiNmYmJmMjQiIG9wYWNpdHk9Ii44NSIvPjx0ZXh0IHg9IjM1Mi45IiB5PSI4MC4wIiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjEzIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+ZHMgPSB2KFQpIGRUPC90ZXh0Pjx0ZXh0IHg9IjMyNC45IiB5PSIyODYiIGZpbGw9IiNmYmJmMjQiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5kVDwvdGV4dD48L3N2Zz4=" alt="ডান প্রান্ত সরালে ক্ষেত্রফলে যোগ হওয়া সরু dA ফালি" caption="এই চিত্রে $0$ থেকে $T$ পর্যন্ত ছায়াঘেরা অঞ্চলটি হলো ক্ষেত্রফল ফাংশন $A(T)$। হলুদ সরু ফালিটি ডান প্রান্তে $dT$ পরিমাণ নাড়া দেওয়ার ফলে নতুন যোগ হওয়া $dA$; এর উচ্চতা ঠিক ওই বিন্দুতে বক্ররেখার উচ্চতা $v(T)$ এবং প্রস্থ $dT$। $dT$ যত ছোট হবে, এই আয়তাকার আসন্নায়ন তত নিখুঁত হবে—চিত্রটি আসলে $\frac{dA}{dT}=v(T)$ সূত্রটির জ্যামিতিক প্রমাণ।"></b1b-figure>
+
+        <p>ডান সীমানা $x$ যত ডানে সরবে, ক্ষেত্রফল $A(x)$ তত বৃদ্ধি পাবে। যদি $x$-কে সামান্য $dx$ পরিমাণ বাড়ানো হয়, তবে নতুন যুক্ত ফালিটির প্রস্থ $dx$ ও উচ্চতা $f(x)$; অতএব $dA \approx f(x)\,dx$। উভয় পক্ষকে $dx$ দিয়ে ভাগ করলেই উন্মোচিত হয় গণিতের ইতিহাসের অন্যতম শ্বাসরুদ্ধকর সত্য: $\frac{dA}{dx} = f(x)$—ক্ষেত্রফল ফাংশনের ডেরিভেটিভ হুবহু মূল বক্ররেখার উচ্চতা।</p>
+
+        <b1b-callout type="purple" icon="🌊" title="গভীর উপলব্ধি: ক্ষেত্রফলের গতি ও বক্ররেখার উচ্চতা">
+          <p>একটি পাত্রে জল ভরার কথা ভাবুন—সঞ্চিত জলের আয়তন যে হারে বাড়ছে, তা নির্ভর করে কল থেকে আসা জলের তৎকালীন প্রবাহের ওপর। ঠিক তেমনি বক্ররেখা যেখানে যত উঁচু, ক্ষেত্রফল সেখানে তত তীব্র হারে বাড়ে; যেখানে উচ্চতা কম, সেখানে ধীরগতিতে। অর্থাৎ ক্ষেত্রফল সঞ্চয়ের হার আর কিছুই নয়—সরাসরি ফাংশনের বর্তমান মান $f(x)$।</p>
+        </b1b-callout>
+
+        <p>এই উপলব্ধিই ক্যালকুলাসের দ্বিতীয় স্তম্ভটিকে প্রথমটির সাথে গ্রথিত করে। ক্ষেত্রফল নির্ণয় করা মানে এখন এমন একটি ফাংশন খুঁজে বের করা, যার ডেরিভেটিভ মূল বক্ররেখার সমান—অর্থাৎ অ্যান্টি-ডেরিভেটিভ (antiderivative) বের করা। অবকলনের বিপরীত পথে হেঁটেই আমরা যোগজ নির্ণয় করব।</p>
+      </b1b-section>
+      <!-- ═══ NARRATED 4 — sec-fundamental-theorem | manifest cues: h2, p, figure, p, callout, p (6) ═══ -->
+      <b1b-section id="sec-fundamental-theorem" title="৪. ক্যালকুলাসের মৌলিক উপপাদ্য ও সমাধান (The Fundamental Theorem of Calculus)">
+        <p>আমাদের বেগ ফাংশন $v(t)=8t-t^2$-এর অ্যান্টি-ডেরিভেটিভ বের করা যাক। $8t$-এর অ্যান্টি-ডেরিভেটিভ $4t^2$ (কারণ $\frac{d}{dt}(4t^2)=8t$), আর $-t^2$-এর অ্যান্টি-ডেরিভেটিভ $-\frac{1}{3}t^3$ (কারণ $\frac{d}{dt}(t^3)=3t^2$)। সুতরাং $s(t) = 4t^2 - \frac{1}{3}t^3$। $T=8$ বসালে পাই $4(64)-\frac{1}{3}(512)=256-170.66=85.33$ মিটার—আমাদের মূল প্রশ্নের সঠিক উত্তর, কোনো অসীম যোগফল ছাড়াই।</p>
+
+        <b1b-figure src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MjAgMzIwIiB3aWR0aD0iNTIwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjUyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNTIiIHkxPSIyNjgiIHgyPSI0NzgiIHkyPSIyNjgiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjUyIiB5MT0iMjY4IiB4Mj0iNTIiIHkyPSIzNCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI0NjYiIHk9IjI5MiIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPng8L3RleHQ+PHRleHQgeD0iMTYiIHk9IjM4IiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+Zih4KTwvdGV4dD48cGF0aCBkPSJNMTQwIDI2OCAxNDQuMyAyMDIuNyBMMTUxLjQgMjAxLjUgTDE1OC41IDIwMC4zIEwxNjUuNiAxOTkuMiBMMTcyLjcgMTk4LjEgTDE3OS44IDE5Ny4wIEwxODYuOSAxOTYuMCBMMTk0LjAgMTk1LjAgTDIwMS4xIDE5NC4xIEwyMDguMiAxOTMuMSBMMjE1LjMgMTkyLjMgTDIyMi40IDE5MS40IEwyMjkuNSAxOTAuNiBMMjM2LjYgMTg5LjkgTDI0My43IDE4OS4yIEwyNTAuOCAxODguNSBMMjU3LjkgMTg3LjkgTDI2NS4wIDE4Ny4zIEwyNzIuMSAxODYuNyBMMjc5LjIgMTg2LjIgTDI4Ni4zIDE4NS43IEwyOTMuNCAxODUuMyBMMzAwLjUgMTg0LjkgTDMwNy42IDE4NC42IEwzMTQuNyAxODQuMyBMMzIxLjggMTg0LjAgTDMyOC45IDE4My44IEwzMzYuMCAxODMuNiBMMzQzLjEgMTgzLjQgTDM1MC4yIDE4My4zIEwzNTcuMyAxODMuMiBMMzY0LjQgMTgzLjEgTDM3MS41IDE4My4xIEwzNzguNiAxODMuMCBMMzg1LjcgMTgzLjAgTDM5MiAyNjggWiIgZmlsbD0iIzhiNWNmNiIgb3BhY2l0eT0iLjMwIi8+PHBhdGggZD0iTTUyLjAgMjIwLjAgTDU5LjEgMjE4LjYgTDY2LjIgMjE3LjIgTDczLjMgMjE1LjggTDgwLjQgMjE0LjQgTDg3LjUgMjEzLjEgTDk0LjYgMjExLjcgTDEwMS43IDIxMC40IEwxMDguOCAyMDkuMCBMMTE1LjkgMjA3LjcgTDEyMy4wIDIwNi40IEwxMzAuMSAyMDUuMiBMMTM3LjIgMjAzLjkgTDE0NC4zIDIwMi43IEwxNTEuNCAyMDEuNSBMMTU4LjUgMjAwLjMgTDE2NS42IDE5OS4yIEwxNzIuNyAxOTguMSBMMTc5LjggMTk3LjAgTDE4Ni45IDE5Ni4wIEwxOTQuMCAxOTUuMCBMMjAxLjEgMTk0LjEgTDIwOC4yIDE5My4xIEwyMTUuMyAxOTIuMyBMMjIyLjQgMTkxLjQgTDIyOS41IDE5MC42IEwyMzYuNiAxODkuOSBMMjQzLjcgMTg5LjIgTDI1MC44IDE4OC41IEwyNTcuOSAxODcuOSBMMjY1LjAgMTg3LjMgTDI3Mi4xIDE4Ni43IEwyNzkuMiAxODYuMiBMMjg2LjMgMTg1LjcgTDI5My40IDE4NS4zIEwzMDAuNSAxODQuOSBMMzA3LjYgMTg0LjYgTDMxNC43IDE4NC4zIEwzMjEuOCAxODQuMCBMMzI4LjkgMTgzLjggTDMzNi4wIDE4My42IEwzNDMuMSAxODMuNCBMMzUwLjIgMTgzLjMgTDM1Ny4zIDE4My4yIEwzNjQuNCAxODMuMSBMMzcxLjUgMTgzLjEgTDM3OC42IDE4My4wIEwzODUuNyAxODMuMCBMMzkyLjggMTgzLjEgTDM5OS45IDE4My4xIEw0MDcuMCAxODMuMiBMNDE0LjEgMTgzLjIgTDQyMS4yIDE4My4zIEw0MjguMyAxODMuNCBMNDM1LjQgMTgzLjUgTDQ0Mi41IDE4My42IEw0NDkuNiAxODMuNyBMNDU2LjcgMTgzLjkgTDQ2My44IDE4NC4wIEw0NzAuOSAxODQuMSBMNDc4LjAgMTg0LjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM4YmRmOCIgc3Ryb2tlLXdpZHRoPSIzIi8+PGxpbmUgeDE9IjE0MCIgeTE9IjI2OCIgeDI9IjE0MCIgeTI9IjQ0IiBzdHJva2U9IiNmYmJmMjQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWRhc2hhcnJheT0iNiA0Ii8+PHRleHQgeD0iMTM2IiB5PSIyODgiIGZpbGw9IiNmYmJmMjQiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5hPC90ZXh0PjxsaW5lIHgxPSIzOTIiIHkxPSIyNjgiIHgyPSIzOTIiIHkyPSI0NCIgc3Ryb2tlPSIjZmJiZjI0IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjYgNCIvPjx0ZXh0IHg9IjM4OCIgeT0iMjg4IiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+YjwvdGV4dD48dGV4dCB4PSIxNTAiIHk9IjEyMCIgZmlsbD0iI2M0YjVmZCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmFyZWEgPSBGKGIpIC0gRihhKTwvdGV4dD48dGV4dCB4PSIxNTAiIHk9IjE0NiIgZmlsbD0iIzk0YTNiOCIgZm9udC1zaXplPSIxMyIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPkYmIzM5Oyh4KSA9IGYoeCk8L3RleHQ+PC9zdmc+" alt="a থেকে b পর্যন্ত ক্ষেত্রফল F(b) minus F(a)" caption="চিত্রে $a$ ও $b$ দুটি প্রান্তের মধ্যকার ছায়াঘেরা ক্ষেত্রফল দেখানো হয়েছে। $F$ হলো $f$-এর যেকোনো অ্যান্টি-ডেরিভেটিভ; তখন এই ক্ষেত্রফল হবে $F(b)-F(a)$—অর্থাৎ উপরের প্রান্তে অ্যান্টি-ডেরিভেটিভের মান থেকে নিচের প্রান্তের মান বাদ দেওয়া। লক্ষ্য করুন $a$ ও $b$-র বাইরের অংশ চিত্রে আঁকা থাকলেও হিসাবে কেবল এই দুই প্রান্তই ব্যবহৃত হচ্ছে; এটিই মৌলিক উপপাদ্যের আশ্চর্যজনক দিক।"></b1b-figure>
+
+        <p>এখানে $+C$ নিয়ে একটি সূক্ষ্মতা আছে: যেকোনো ধ্রুবক $C$ যোগ করলেই $4t^2-\frac{1}{3}t^3+C$ আরেকটি বৈধ অ্যান্টি-ডেরিভেটিভ হয়, কারণ ধ্রুবকের ডেরিভেটিভ শূন্য। কোনটি বেছে নেবেন তা ঠিক করে নিচের সীমা (lower bound): $T=0$ হলে ক্ষেত্রফল অবশ্যই শূন্য হতে হবে, তাই $\int_0^T t(8-t)\,dt = \left(4T^2-\frac{1}{3}T^3\right)-\left(4\cdot0^2-\frac{1}{3}\cdot0^3\right)$। সাধারণভাবে $\int_a^b f(x)\,dx = F(b)-F(a)$—এখানে $C$ স্বয়ংক্রিয়ভাবে বাতিল হয়ে যায়।</p>
+
+        <b1b-callout type="green" icon="🔁" title="চূড়ান্ত সারাংশ: অবকলন ও যোগজীকরণের পরম সামঞ্জস্য">
+          <p>অন্তরীকরণ ও যোগজীকরণ একে অপরের বিপরীত প্রক্রিয়া। ডেরিভেটিভ কোনো চলমান সমগ্রকে খণ্ড খণ্ড স্থানীয় হারে ভেঙে টুকরো করে; আর ইন্টিগ্রাল সেই অগণিত অতি সূক্ষ্ম টুকরোগুলোকে পুনরায় জোড়া লাগিয়ে মূল সমগ্রকে ফিরিয়ে দেয়। গুণ ও ভাগ যেমন পরস্পরের উল্টো ক্রিয়া, ক্যালকুলাসের এই দুই স্তম্ভও তেমনি—একটি ভেঙে দেখায়, অনেটি গড়ে তোলে।</p>
+        </b1b-callout>
+
+        <p>এখানেই সবচেয়ে আশ্চর্যজনক বিষয়টি লুকিয়ে আছে: ইন্টিগ্রালের মান নিম্ন সীমা থেকে উচ্চ সীমার মধ্যকার প্রতিটি বিন্দুকে ‘ইন্টিগ্রেট’ করে—তাই তো শব্দটি ‘একসাথে আনা’। অথচ অ্যান্টি-ডেরিভেটিভ দিয়ে হিসাব করার সময় আমরা কেবল দুটি ইনপুট দেখি: উপরের প্রান্ত ও নিচের প্রান্ত। মনে হয় যেন ফাঁকি দেওয়া হচ্ছে! কিন্তু অ্যান্টি-ডেরিভেটিভ নিজেই ওই দুই প্রান্তের মধ্যকার সমস্ত তথ্য আগেভাগেই ধরে রেখেছে।</p>
+      </b1b-section>
+      <!-- ═══ NON-NARRATED — ১০০% অফিশিয়াল কনটেন্ট: শিরোনাম-অনুযায়ী সম্পূর্ণ বিবরণ ═══ -->
+      <b1b-section id="sec-official-full" title="৫. অফিশিয়াল পাঠের সম্পূর্ণ বিবরণ — Chapter 11, Integration" data-no-narration="true">
+        <p>মূল নিবন্ধের শিরোনাম “Integration and the fundamental theorem of calculus” (Chapter 11, ৫ মে ২০১৭)। লেখক Grant Sanderson; ইংরেজি টেক্সট অ্যাডাপ্টেশন Kurt Bruns; সোর্স কোড <a href="https://github.com/3b1b/videos/blob/master/_2017/eoc/chapter8.py" target="_blank">chapter8.py</a>। নিচে অফিশিয়াল পাঠের প্রতিটি অংশের সম্পূর্ণ তথ্য বাংলায় রাখা হলো, যাতে কোনো পাঠ্য বাদ না পড়ে।</p>
+
+        <h3 style="font-size:1.2rem;font-weight:700;margin:22px 0 10px;color:var(--theme);">Velocity — স্পিডোমিটার মাত্র</h3>
+        <p>আপনি গাড়িতে বসে আছেন, জানালা দিয়ে কিছু দেখতে পাচ্ছেন না; শুধু স্পিডোমিটারের পাঠ দেখতে পাচ্ছেন। কোথাও গাড়িটি যাত্রা শুরু করেছে, বেগ বাড়িয়েছে, আবার কমিয়ে থেমে গেছে—সব মিলিয়ে ৮ সেকেন্ড। প্রতি সেকেন্ডে বেগ নোট করে সময়ের বিপরীতে প্লট করলে দেখা যায় একটি সুন্দর মডেল: $v(t)=t(8-t)$ মিটার/সেকেন্ড। প্রশ্ন: এই বেগ থেকে কীভাবে $s(t)$ বের করা যায়, যা $t=0$ থেকে $8$-এর মধ্যে যেকোনো সময়ে অতিক্রান্ত দূরত্ব বলে দেবে?</p>
+
+        <h3 style="font-size:1.2rem;font-weight:700;margin:22px 0 10px;color:var(--theme);">Relationship between velocity and distance — বেগ ও দূরত্বের সম্পর্ক</h3>
+        <p>সিরিজের chapter 2-এ বিপরীত পরিস্থিতি ছিল: দূরত্ব ফাংশন $s(t)$ জানা থাকলে তার ডেরিভেটিভ থেকে বেগ পাওয়া যায়। এখন শুধু বেগ জানা আছে, তাই দূরত্ব ফাংশন খোঁজা মানে হলো—এমন ফাংশন খোঁজা যার ডেরিভেটিভ $-t^2+8t$। একে বলা হয় অ্যান্টি-ডেরিভেটিভ। কিন্তু মূল নিবন্ধে একটা ধাপ এড়িয়ে সরাসরি অ্যান্টি-ডেরিভেটিভে ঝাঁপ না দিয়ে দেখানো হয়েছে কেন এই প্রশ্নটি বক্ররেখার নিচের ক্ষেত্রফলের সাথে জড়িত—কারণ এটি একটি বিশাল শ্রেণির ‘ইন্টিগ্রাল Problem’-এর অন্তর্দৃষ্টি তৈরি করে।</p>
+        <b1b-formula math="\frac{d}{dt}s(t) = v(t) = -t^2 + 8t \quad\Longrightarrow\quad s(t) = \text{antiderivative of } v(t)"></b1b-formula>
+
+        <h3 style="font-size:1.2rem;font-weight:700;margin:22px 0 10px;color:var(--theme);">ধ্রুবক বেগ, সিঁড়ি এবং সরু ফালি</h3>
+        <p>ধ্রুবক বেগে চললে দূরত্ব = বেগ $\times$ সময়—এবং লেখচিত্রে এটি একটি আয়তক্ষেত্রের ক্ষেত্রফল। দেখে অদ্ভুত লাগতে পারে যে দূরত্বকে ক্ষেত্রফল হিসেবে দেখা হচ্ছে; কিন্তু অনুভূমিক অক্ষের একক সেকেন্ড ও উল্লম্ব অক্ষের একক মিটার/সেকেন্ড হওয়ায় ক্ষেত্রফলের একক স্বাভাবিকভাবেই মিটার হয়। যদি বেগ কেবল কয়েকটি বিন্দুতে হঠাৎ বদলাত—প্রথম সেকেন্ডে স্থির, পরের সেকেন্ডে হঠাৎ $7$ মিটার/সেকেন্ড—তবে হিসাব সহজ হতো, যদিও ড্রাইভারের জন্য অস্বস্তিকর ও শারীরিকভাবে অসম্ভব। আমরা তাই বেগ ফাংশনকে অনেকগুলো ব্যবধানে ধ্রুবক বলে আসন্নায়ন করি।</p>
+        <p>সময় অক্ষকে $0$ থেকে $8$ পর্যন্ত $dt$ প্রস্থের (যেমন $0.25$ সেকেন্ড) অনেক সরু ফালিতে ভাগ করা হয়। $t=1$ থেকে $1.25$-এর ফালিতে বাস্তব বেগ $7$ থেকে প্রায় $8.4$ মিটার/সেকেন্ডে উঠে যায়। আমরা এর বদলে ওই ফালির বাঁ প্রান্তের মান $7$ ধরি—অর্থাৎ বক্ররেখার বাঁ দিকের উচ্চতা। তখন আসন্ন দূরত্ব $(7\,\text{m/s})(0.25\,\text{s})=1.75$ মিটার, যা সরু আয়তক্ষেত্রটির ক্ষেত্রফল। বেছে নেওয়া উচ্চতা $7$ হোক বা $8.4$-এর মাঝের কোনো মান—$dt$ ছোট হলে সব আসন্নায়নই ভালো হয়।</p>
+
+        <h3 style="font-size:1.2rem;font-weight:700;margin:22px 0 10px;color:var(--theme);">Integral Notation — $\int$ ও $dt$-র দুই ভূমিকা</h3>
+        <p>$\int$ চিহ্নটি প্রসারিত ‘S’—যা <em>Summa</em> অর্থাৎ যোগফলের দ্যোতক। নিচে $0$ ও উপরে $8$ লেখা হয়, কারণ আমরা $0$ থেকে $8$ সেকেন্ডের সময়-পদক্ষেপগুলো যোগ করছি। প্রতি পদক্ষেপে যোগ হওয়া পরিমাণ $v(t)\cdot dt$, যা লেখচিত্রে ওই ফালির ক্ষেত্রফল। $dt$ একসাথে দুই কাজ করে: (১) এটি প্রতিটি যোগফলের গুণনীয়ক, এবং (২) এটি নমুনা সময়গুলোর ব্যবধান নির্দেশ করে। $dt$ ছোট করলে ফালির ক্ষেত্রফল কমে, কিন্তু ফালির সংখ্যা বাড়ে—ফলে মোট ক্ষেত্রফল বক্ররেখার নিচের প্রকৃত ক্ষেত্রফলের কাছে এগিয়ে যায়।</p>
+        <p>সাধারণ $\sum$ চিহ্ন ব্যবহার না করার কারণ: $\int_0^8 v(t)\,dt$ কোনো নির্দিষ্ট $dt$-র জন্য নির্দিষ্ট কোনো যোগফল নয়; এটি প্রকাশ করে যে $dt \to 0$ হলে যোগফল যে মানের দিকে এগিয়ে যায়। সেই সীমাস্থ মানই বক্ররেখার নিচের ক্ষেত্রফল এবং তাই গাড়ির অতিক্রান্ত দূরত্বের নিখুঁত উত্তর।</p>
+        <b1b-formula math="\underbrace{\int_0^8 v(t)\,dt}_{dt\to 0} \;=\; \text{area under the curve} \;=\; \text{distance travelled}"></b1b-formula>
+
+        <h3 style="font-size:1.2rem;font-weight:700;margin:22px 0 10px;color:var(--theme);">Area Under Graphs — ডান প্রান্তকে চলক বানানো</h3>
+        <p>এক দৃষ্টিতে এটি শুধু এক কঠিন প্রশ্নকে আরেক কঠিন প্রশ্নে বদল করা: দূরত্ব বের করার বদলে বক্ররেখার নিচের ক্ষেত্রফল বের করতে হবে। কিন্তু বক্ররেখার নিচের ক্ষেত্রফল এক সার্বজনীন ভাষা—অনেক বিচ্ছিন্ন সমস্যাকে অসংখ্য ছোট অংশে ভেঙে যোগ করতে পারা যায়। বেগ-দূরত্ব জোড়াটি যদি একমাত্র লক্ষ্য হতো, তবে সরাসরি অ্যান্টি-ডেরিভেটিভে চলে যাওয়া যেত; কিন্তু ইন্টিগ্রালের কথা বলা হয় এর সাধারণীকরণযোগ্যতার কারণে—অর্থাৎ একই কৌশল অন্য অনেক ক্ষেত্রে কাজে লাগে।</p>
+        <p>এখন ডান প্রান্তবিন্দুকে চলক $T$ ধরা হয়। $\int_0^T v(t)\,dt$ হলো $0$ থেকে $T$ পর্যন্ত ক্ষেত্রফল, অর্থাৎ $T$ সেকেন্ডে অতিক্রান্ত দূরত্ব—একটি দূরত্ব-বনাম-সময় ফাংশন $s(T)$। এর ডেরিভেটিভ কত? একদিকে ক্ষুদ্র দূরত্ব/ক্ষুদ্র সময় মানেই বেগ; অন্যদিকে চিত্রের ভাষায় $dT$ নাড়ায় ক্ষেত্রফল বাড়ে $ds$ ফালিটি দ্বারা, যার উচ্চতা $v(T)$ ও প্রস্থ $dT$। তাই $ds \approx v(T)\,dT$ এবং $\frac{ds}{dT}=v(T)$। এটি যেকোনো গ্রাফের ক্ষেত্রফল ফাংশনের জন্য সত্য: ক্ষেত্রফল ফাংশনের ডেরিভেটিভ = গ্রাফের ফাংশন।</p>
+        <b1b-formula math="s(T)=\int_0^T v(t)\,dt \quad\Longrightarrow\quad \frac{ds}{dT}=v(T)"></b1b-formula>
+
+        <h3 style="font-size:1.2rem;font-weight:700;margin:22px 0 10px;color:var(--theme);">Find the antiderivative — ধাপে ধাপে হিসাব</h3>
+        <p>বেগ $t(8-t)$-এর সাথে মিলে এমন $s$ কেমন? প্রথমে $8t-t^2$ করে লিখি। $8t$-এর ডেরিভেটিভ দিতে $t^2$-এর ডেরিভেটিভ $2t$—তাই $4t^2$-এর ডেরিভেটিভ $8t$। দ্বিতীয় পদ $-\,t^2$-এর জন্য $t^3$-এর ডেরিভেটিভ $3t^2$, তাই $\frac{1}{3}t^3$-এর ডেরিভেটিভ $t^2$ এবং $-\frac{1}{3}t^3$-এর ডেরিভেটিভ $-t^2$। সুতরাং অ্যান্টি-ডেরিভেটিভ $4t^2-\frac{1}{3}t^3$।</p>
+        <b1b-formula math="v(t)=8t-t^2 \quad\Longrightarrow\quad s(t)=4t^2-\frac{1}{3}t^3"></b1b-formula>
+
+        <h3 style="font-size:1.2rem;font-weight:700;margin:22px 0 10px;color:var(--theme);">The +C issue — নিচের সীমা কেন জরুরি</h3>
+        <p>যেকোনো ধ্রুবক যোগ করলে ডেরিভেটিভ অপরিবর্তিত থাকে, তাই সব অ্যান্টি-ডেরিভেটিভের রূপ $4t^2-\frac{1}{3}t^3+C$। $s(t)$-এর গ্রাফ উপরে-নিচে সরালেও প্রতিটি বিন্দুতে ঢাল একই থাকে। কোন $C$ বেছে নেবেন তা বলে দেয় ইন্টিগ্রালের নিচের সীমা: $t=0$ থেকে $t=0$ পর্যন্ত দূরত্ব অবশ্যই শূন্য। তাই নির্বাচিত অ্যান্টি-ডেরিভেটিভের মান নিচের সীমায় বাদ দিতে হয়।</p>
+        <b1b-formula math="\int_0^T t(8-t)\,dt=\left(4T^2-\frac{1}{3}T^3\right)-\left(4(0)^2-\frac{1}{3}(0)^3\right)"></b1b-formula>
+        <p>এখানে $t=0$-এ মান শূন্য হওয়ায় কিছু বাদ দিতে হয়নি। $T=8$-এ ফলাফল $85.33$ মিটার—মূল প্রশ্নের উত্তর। অন্য উদাহরণ: $1$ থেকে $7$ সেকেন্ডের মধ্যকার ক্ষেত্রফলের জন্য $F(7)-F(1)$ নিতে হবে; যদি অ্যান্টি-ডেরিভেটিভে $5$ যোগ করা থাকেও, তা এই বিয়োগে বাতিল হয়ে যায়।</p>
+
+        <h3 style="font-size:1.2rem;font-weight:700;margin:22px 0 10px;color:var(--theme);">Fundamental theorem — দুটি প্রান্তেই পুরো হিসাব</h3>
+        <p>যেকোনো $f(x)$ ইন্টিগ্রেট করার প্রথম ধাপ হলো এমন $F(x)$ খোঁজা যার ডেরিভেটিভ $f(x)$; তারপর ইন্টিগ্রাল হয় $F(\text{top})-F(\text{bottom})$। একে বলা হয় ক্যালকুলাসের মৌলিক উপপাদ্য। আশ্চর্যের বিষয়: ইন্টিগ্রাল নিম্ন ও উচ্চ সীমার মধ্যকার প্রতিটি বিন্দুকে ধরে নেয়, অথচ হিসাবে চোখ যায় শুধু দুটি প্রান্তে—মনে হয় ফাঁকি! বাস্তবে অ্যান্টি-ডেরিভেটিভ ওই মধ্যবর্তী সব তথ্য নিজের মধ্যে ধরে রেখেছে।</p>
+        <b1b-formula math="\int_a^b f(x)\,dx = F(b)-F(a), \qquad F'(x)=f(x)"></b1b-formula>
+
+        <h3 style="font-size:1.2rem;font-weight:700;margin:22px 0 10px;color:var(--theme);">Quick recap — পুরো যাত্রার সংক্ষেপ</h3>
+        <p>স্পিডোমিটার থেকে শুরু: বেগ সবসময় বদলাচ্ছে, তাই ব্যবধানগুলোতে বেগকে ধ্রুবক ধরে প্রতিটি অংশে দূরত্ব গুণে বের করে যোগ করা হয়। এই গুণফলগুলো সরু আয়তক্ষেত্রের ক্ষেত্রফল; $dt \to 0$ করলে তাদের সমষ্টি বক্ররেখার নিচের ক্ষেত্রফলে পরিণত হয়—এবং সেটিই প্রকৃত দূরত্ব। এই ক্ষেত্রফলকে চলমান ডান প্রান্তের ফাংশন ভাবলে দেখা যায় তার ডেরিভেটিভ গ্রাফের উচ্চতার সমান। সুতরাং ক্ষেত্রফল দিতে হবে এমন ফাংশন খুঁজে যার ডেরিভেটিভ $v(t)$। অ্যান্টি-ডেরিভেটিভ অসংখ্য—ধ্রুবক যোগে নতুনটি পাওয়া যায়—তাই নিচের সীমায় তার মান বাদ দিয়ে $C$-র প্রভাব দূর করা হয়।</p>
+
+        <h3 style="font-size:1.2rem;font-weight:700;margin:22px 0 10px;color:var(--theme);">Negative area — ঋণাত্মক বা স্বাক্ষরিত ক্ষেত্রফল</h3>
+        <p>যদি কোনো সময়ে বেগ ঋণাত্মক হয়, অর্থাৎ গাড়ি পেছনে যাচ্ছে, তবুও $ds \approx v(t)\,dt$ সত্য—শুধু $v(t)$ ঋণাত্মক হওয়ায় $ds$-ও ঋণাত্মক হয়। লেখচিত্রে যে আয়তক্ষেত্রটি অনুভূমিক অক্ষের নিচে যায়, তার ক্ষেত্রফল পেছনে যাওয়া দূরত্ব বোঝায়; শুরু ও শেষ অবস্থানের মধ্যকার বিচ্ছেদ বের করতে এটি বাদ দিতে হয়। সাধারণভাবে ইন্টিগ্রাল বক্ররেখা ও অনুভূমিক অক্ষের মধ্যকার <strong>স্বাক্ষরিত ক্ষেত্রফল (signed area)</strong> মাপে—অক্ষের নিচের অংশ ঋণাত্মক গণনা হয়।</p>
+
+        <h3 style="font-size:1.2rem;font-weight:700;margin:22px 0 10px;color:var(--theme);">Next video, footnote &amp; thanks</h3>
+        <p>পরবর্তী পর্বে ইন্টিগ্রাল ও বক্ররেখার নিচের ক্ষেত্রফল অন্য যে প্রসঙ্গগুলোতে আসবে তা নিয়ে আলোচনা করা হবে—সাথে মৌলিক উপপাদ্য নিয়ে আরও কয়েকটি অন্তর্দৃষ্টি (পরবর্তী অধ্যায়: <em>What does area have to do with slope?</em>)। পাদটীকা: একক ব্যবধানে বেগের গড় নেওয়া, ডান প্রান্ত ব্যবহার করা বা ট্র্যাপিজয়েড ব্যবহার করা—এসব উন্নত আসন্নায়নও একই সীমায় মিলে যায়। নিবন্ধের শেষে Grant Sanderson সেইসব পাঠকদের প্রতি কৃতজ্ঞতা প্রকাশ করেছেন যারা প্যাট্রন হিসেবে কাজটিকে সমর্থন করেন।</p>
+      </b1b-section>
+      <!-- ═══ NON-NARRATED — image/video figures (b1b-media-tab), captions = 2–4 sentence pedagogy ═══ -->
+      <b1b-section id="sec-media-gallery" title="৬. 🖼️ চিত্র ও ভিডিও গ্যালারি — স্পিডোমিটার থেকে স্বাক্ষরিত ক্ষেত্রফল" data-no-narration="true">
+        <p>নিচের প্রতিটি চিত্রের সাথে মূল ৩ব্লু১ব্রাউন অ্যানিমেশনের ভিডিও ট্যাব যুক্ত করা হয়েছে। ‘Image’ ও ‘Video’ বাটনে ক্লিক করে একই ধারণাটি স্থির চিত্র ও গতিশীল অ্যানিমেশন—দুই ভাঙায় দেখা যাবে।</p>
+        <b1b-media-tab active-tab="image" caption="এই চিত্রে গাড়ির ভেতরে বসা যাত্রী শুধু স্পিডোমিটার দেখতে পাচ্ছেন—বাইরের দৃশ্য নয়। ঘড়ির কাঁটা বেগের পরিবর্তন দেখালেও দূরত্ব সরাসরি পড়া যায় না, তাই প্রশ্ন জন্মায়: শুধু বেগ থেকে দূরত্ব কীভাবে পাওয়া যাবে? ভিডিও ট্যাবে প্রথম কয়েক সেকেন্ডে গাড়িটি যেভাবে বেগ বাড়ায় ও কমায় তা দেখলে চিত্রটির প্রসঙ্গ আরও স্পষ্ট হবে।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MjAgMzIwIiB3aWR0aD0iNTIwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjUyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48Y2lyY2xlIGN4PSIxNzAiIGN5PSIxNjAiIHI9IjExMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzM0MTU1IiBzdHJva2Utd2lkdGg9IjE2Ii8+PGNpcmNsZSBjeD0iMTcwIiBjeT0iMTYwIiByPSIxMTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM4YmRmOCIgc3Ryb2tlLXdpZHRoPSI2IiBzdHJva2UtZGFzaGFycmF5PSIzODAgNzIwIiB0cmFuc2Zvcm09InJvdGF0ZSgtMjEwIDE3MCAxNjApIi8+PGxpbmUgeDE9IjEwMi41IiB5MT0iMTk5LjAiIHgyPSI4Ni45IiB5Mj0iMjA4LjAiIHN0cm9rZT0iI2UyZThmMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjkyLjIiIHkxPSIxNjUuMSIgeDI9Ijc0LjIiIHkyPSIxNjYuMyIgc3Ryb2tlPSIjZTJlOGYwIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iOTcuOSIgeTE9IjEzMC4yIiB4Mj0iODEuMyIgeTI9IjEyMy4zIiBzdHJva2U9IiNlMmU4ZjAiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIxMTguNiIgeTE9IjEwMS40IiB4Mj0iMTA2LjciIHkyPSI4Ny44IiBzdHJva2U9IiNlMmU4ZjAiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIxNDkuOCIgeTE9Ijg0LjciIHgyPSIxNDUuMiIgeTI9IjY3LjMiIHN0cm9rZT0iI2UyZThmMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjE4NS4yIiB5MT0iODMuNSIgeDI9IjE4OC43IiB5Mj0iNjUuOCIgc3Ryb2tlPSIjZTJlOGYwIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMjE3LjUiIHkxPSI5OC4xIiB4Mj0iMjI4LjQiIHkyPSI4My44IiBzdHJva2U9IiNlMmU4ZjAiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIyNDAuMCIgeTE9IjEyNS41IiB4Mj0iMjU2LjEiIHkyPSIxMTcuNSIgc3Ryb2tlPSIjZTJlOGYwIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMjQ4LjAiIHkxPSIxNjAuMCIgeDI9IjI2Ni4wIiB5Mj0iMTYwLjAiIHN0cm9rZT0iI2UyZThmMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjE3MCIgeTE9IjE2MCIgeDI9IjIyOCIgeTI9IjkyIiBzdHJva2U9IiNlZjQ0NDQiIHN0cm9rZS13aWR0aD0iNSIvPjxjaXJjbGUgY3g9IjE3MCIgY3k9IjE2MCIgcj0iOSIgZmlsbD0iI2VmNDQ0NCIvPjx0ZXh0IHg9IjExOCIgeT0iMTk1IiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+dih0KTwvdGV4dD48dGV4dCB4PSIzMzYiIHk9IjEyMCIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmNhbiYjMzk7dCBzZWUgb3V0c2lkZTwvdGV4dD48dGV4dCB4PSIzMzYiIHk9IjE1MCIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPm9ubHkgdGhlIHNwZWVkb21ldGVyPC90ZXh0Pjx0ZXh0IHg9IjMzNiIgeT0iMTk2IiBmaWxsPSIjMzhiZGY4IiBmb250LXNpemU9IjE2IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+MCB0byA4IHNlY29uZHM8L3RleHQ+PHRleHQgeD0iMzM2IiB5PSIyMjYiIGZpbGw9IiNmYmJmMjQiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj52KHQpID0gdCg4IC0gdCk8L3RleHQ+PC9zdmc+" alt="অফিশিয়াল ৩ব্লু১ব্রাউন চিত্র"/></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/rfG8ce4nNh0?start=8" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="মূল ৩ব্লু১ব্রাউন অ্যানিমেশন"></iframe></div>
+        </b1b-media-tab>
+        <b1b-media-tab active-tab="image" caption="চিত্রটি বেগের মডেল $v(t)=t(8-t)$ কে বক্ররেখা হিসেবে দেখাচ্ছে; বাঁদিকের ছোট চিহ্নটি $t=1$ থেকে $1.25$ পর্যন্ত নেওয়া একটি নমুনা ব্যবধান। ওই ব্যবধানে বেগ $7$ থেকে প্রায় $8.4$ মিটার/সেকেন্ডে বদলায়, কিন্তু আমরা বাঁ প্রান্তের $7$ ধরে $1.75$ মিটার আসন্ন দূরত্ব পাই। ভিডিও ট্যাবে দেখা যাবে কীভাবে এই একক ফালিটি বারবার ছোট হয়ে পুরো ক্ষেত্রফল গড়ে তোলে।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MjAgMzIwIiB3aWR0aD0iNTIwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjUyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNTIiIHkxPSIyNjgiIHgyPSI0NzgiIHkyPSIyNjgiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjUyIiB5MT0iMjY4IiB4Mj0iNTIiIHkyPSIzNCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI0NjYiIHk9IjI5MiIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnQgKHMpPC90ZXh0Pjx0ZXh0IHg9IjE2IiB5PSIzOCIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnYgKG0vcyk8L3RleHQ+PHBhdGggZD0iTTUyLjAgMjY4LjAgTDU5LjEgMjU0LjkgTDY2LjIgMjQyLjIgTDczLjMgMjMwLjAgTDgwLjQgMjE4LjIgTDg3LjUgMjA2LjkgTDk0LjYgMTk2LjAgTDEwMS43IDE4NS42IEwxMDguOCAxNzUuNiBMMTE1LjkgMTY2LjAgTDEyMy4wIDE1Ni45IEwxMzAuMSAxNDguMiBMMTM3LjIgMTQwLjAgTDE0NC4zIDEzMi4yIEwxNTEuNCAxMjQuOSBMMTU4LjUgMTE4LjAgTDE2NS42IDExMS42IEwxNzIuNyAxMDUuNiBMMTc5LjggMTAwLjAgTDE4Ni45IDk0LjkgTDE5NC4wIDkwLjIgTDIwMS4xIDg2LjAgTDIwOC4yIDgyLjIgTDIxNS4zIDc4LjkgTDIyMi40IDc2LjAgTDIyOS41IDczLjYgTDIzNi42IDcxLjYgTDI0My43IDcwLjAgTDI1MC44IDY4LjkgTDI1Ny45IDY4LjIgTDI2NS4wIDY4LjAgTDI3Mi4xIDY4LjIgTDI3OS4yIDY4LjkgTDI4Ni4zIDcwLjAgTDI5My40IDcxLjYgTDMwMC41IDczLjYgTDMwNy42IDc2LjAgTDMxNC43IDc4LjkgTDMyMS44IDgyLjIgTDMyOC45IDg2LjAgTDMzNi4wIDkwLjIgTDM0My4xIDk0LjkgTDM1MC4yIDEwMC4wIEwzNTcuMyAxMDUuNiBMMzY0LjQgMTExLjYgTDM3MS41IDExOC4wIEwzNzguNiAxMjQuOSBMMzg1LjcgMTMyLjIgTDM5Mi44IDE0MC4wIEwzOTkuOSAxNDguMiBMNDA3LjAgMTU2LjkgTDQxNC4xIDE2Ni4wIEw0MjEuMiAxNzUuNiBMNDI4LjMgMTg1LjYgTDQzNS40IDE5Ni4wIEw0NDIuNSAyMDYuOSBMNDQ5LjYgMjE4LjIgTDQ1Ni43IDIzMC4wIEw0NjMuOCAyNDIuMiBMNDcwLjkgMjU0LjkgTDQ3OC4wIDI2OC4wIiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGJkZjgiIHN0cm9rZS13aWR0aD0iMyIvPjx0ZXh0IHg9IjMwMCIgeT0iNTgiIGZpbGw9IiNmYmJmMjQiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj52KHQpID0gdCg4IC0gdCkgPSA4dCAtIHReMjwvdGV4dD48dGV4dCB4PSIxOTYiIHk9IjE5NiIgZmlsbD0iIzZlZTdiNyIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmFyZWEgPSBkaXN0YW5jZSB0cmF2ZWxsZWQ8L3RleHQ+PGxpbmUgeDE9IjQ1MiIgeTE9IjI0MyIgeDI9IjQ2OCIgeTI9IjI0MyIgc3Ryb2tlPSIjZmJiZjI0IiBzdHJva2Utd2lkdGg9IjUiLz48dGV4dCB4PSIzMzAiIHk9IjEwMCIgZmlsbD0iI2ZiYmYyNCIgZm9udC1zaXplPSIxMyIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnQ9MSA6IDcgbS9zIDsgdD0xLjI1IDogfjguNCBtL3M8L3RleHQ+PC9zdmc+" alt="অফিশিয়াল ৩ব্লু১ব্রাউন চিত্র"/></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/rfG8ce4nNh0?start=42" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="মূল ৩ব্লু১ব্রাউন অ্যানিমেশন"></iframe></div>
+        </b1b-media-tab>
+        <b1b-media-tab active-tab="image" caption="বাঁ প্যানেলে দূরত্ব ফাংশন $s(t)$ আর ডান প্যানেলে তার ডেরিভেটিভ বেগ $v(t)$—দুটোকে সংযোগ করা হয়েছে $ds/dt=v(t)$ সম্পর্ক দ্বারা। আগের অধ্যায়ে আমরা দূরত্ব থেকে বেগ পেয়েছিলাম; এখন বিপরীত দিকে হেঁটে বেগ থেকে দূরত্ব খোঁজছি। এই দুই প্যানেলের আদান-প্রদানই পরবর্তীতে মৌলিক উপপাদ্যের ভিত্তি হয়।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MjAgMzIwIiB3aWR0aD0iNTIwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjUyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iMjYiIHkxPSIxNjAiIHgyPSIyNDYiIHkyPSIxNjAiIHN0cm9rZT0iIzY0NzQ4YiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjI2IiB5MT0iNDAiIHgyPSIyNiIgeTI9IjI4MCIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMjg2IiB5MT0iMTYwIiB4Mj0iNTA2IiB5Mj0iMTYwIiBzdHJva2U9IiM2NDc0OGIiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIyODYiIHkxPSI0MCIgeDI9IjI4NiIgeTI9IjI4MCIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMjYuMCAyNjguMCBMMzMuMyAyNjguMCBMNDAuNyAyNjcuOSBMNDguMCAyNjcuNiBMNTUuMyAyNjcuMyBMNjIuNyAyNjYuOSBMNzAuMCAyNjYuNCBMNzcuMyAyNjUuNyBMODQuNyAyNjUuMCBMOTIuMCAyNjQuMSBMOTkuMyAyNjMuMSBMMTA2LjcgMjYxLjkgTDExNC4wIDI2MC42IEwxMjEuMyAyNTkuMiBMMTI4LjcgMjU3LjYgTDEzNi4wIDI1NS45IEwxNDMuMyAyNTQuMSBMMTUwLjcgMjUyLjEgTDE1OC4wIDI1MC4wIEwxNjUuMyAyNDcuNyBMMTcyLjcgMjQ1LjMgTDE4MC4wIDI0Mi43IEwxODcuMyAyNDAuMCBMMTk0LjcgMjM3LjEgTDIwMi4wIDIzNC4wIEwyMDkuMyAyMzAuOSBMMjE2LjcgMjI3LjUgTDIyNC4wIDIyNC4wIEwyMzEuMyAyMjAuMyBMMjM4LjcgMjE2LjUgTDI0Ni4wIDIxMi41IiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGJkZjgiIHN0cm9rZS13aWR0aD0iMyIvPjxwYXRoIGQ9Ik0yODYuMCAyNjEuMCBMMzA4LjAgMjU1LjQgTDMzMC4wIDI0OS44IEwzNTIuMCAyNDQuMiBMMzc0LjAgMjM4LjYgTDM5Ni4wIDIzMy4wIEw0MTguMCAyMjcuNCBMNDQwLjAgMjIxLjggTDQ2Mi4wIDIxNi4yIEw0ODQuMCAyMTAuNiBMNTA2LjAgMjA1LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM0ZDM5OSIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iNDAiIHk9IjQwIiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+cyh0KSBkaXN0YW5jZTwvdGV4dD48dGV4dCB4PSIzMDAiIHk9IjQwIiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+dih0KSB2ZWxvY2l0eTwvdGV4dD48dGV4dCB4PSIyNTIiIHk9IjExMCIgZmlsbD0iI2ZiYmYyNCIgZm9udC1zaXplPSIyNCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPi0mZ3Q7PC90ZXh0Pjx0ZXh0IHg9IjEyMCIgeT0iMzAwIiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+ZHMvZHQgPSB2KHQpPC90ZXh0Pjx0ZXh0IHg9IjMyMCIgeT0iMzAwIiBmaWxsPSIjNmVlN2I3IiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+ZGVyaXZhdGl2ZTwvdGV4dD48L3N2Zz4=" alt="অফিশিয়াল ৩ব্লু১ব্রাউন চিত্র"/></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/rfG8ce4nNh0?start=96" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="মূল ৩ব্লু১ব্রাউন অ্যানিমেশন"></iframe></div>
+        </b1b-media-tab>
+        <b1b-media-tab active-tab="image" caption="এখানে $\int_0^8 v(t)\,dt$ কে স্পিডোমিটারের পাঠ থেকে নেওয়া সরু আয়তক্ষেত্রগুলোর যোগফল হিসেবে দেখানো হয়েছে। প্রসারিত S চিহ্নটি ল্যাটিন Summa থেকে এসেছে—অর্থাৎ এটি একটি বিচ্ছিন্ন যোগ নয়, অবিচ্ছিন্নভাবে জড়ো করা সমষ্টি। ভিডিও ট্যাবে প্রতীকটির প্রতিটি অংশ কীভাবে চিত্রের সাথে মিলে যায় তা ধাপে ধাপে দেখা যাবে।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MjAgMzIwIiB3aWR0aD0iNTIwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjUyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNTIiIHkxPSIyNjgiIHgyPSI0NzgiIHkyPSIyNjgiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjUyIiB5MT0iMjY4IiB4Mj0iNTIiIHkyPSIzNCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI0NjYiIHk9IjI5MiIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnQ8L3RleHQ+PHRleHQgeD0iMTYiIHk9IjM4IiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+dih0KTwvdGV4dD48cGF0aCBkPSJNNTIuMCAyNjguMCBMNjIuNiAyNDguNSBMNzMuMyAyMzAuMCBMODQuMCAyMTIuNSBMOTQuNiAxOTYuMCBMMTA1LjIgMTgwLjUgTDExNS45IDE2Ni4wIEwxMjYuNSAxNTIuNSBMMTM3LjIgMTQwLjAgTDE0Ny45IDEyOC41IEwxNTguNSAxMTguMCBMMTY5LjIgMTA4LjUgTDE3OS44IDEwMC4wIEwxOTAuNSA5Mi41IEwyMDEuMSA4Ni4wIEwyMTEuOCA4MC41IEwyMjIuNCA3Ni4wIEwyMzMuMCA3Mi41IEwyNDMuNyA3MC4wIEwyNTQuMyA2OC41IEwyNjUuMCA2OC4wIEwyNzUuNiA2OC41IEwyODYuMyA3MC4wIEwyOTYuOSA3Mi41IEwzMDcuNiA3Ni4wIEwzMTguMiA4MC41IEwzMjguOSA4Ni4wIEwzMzkuNiA5Mi41IEwzNTAuMiAxMDAuMCBMMzYwLjggMTA4LjUgTDM3MS41IDExOC4wIEwzODIuMiAxMjguNSBMMzkyLjggMTQwLjAgTDQwMy40IDE1Mi41IEw0MTQuMSAxNjYuMCBMNDI0LjggMTgwLjUgTDQzNS40IDE5Ni4wIEw0NDYuMSAyMTIuNSBMNDU2LjcgMjMwLjAgTDQ2Ny4zIDI0OC41IEw0NzguMCAyNjguMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzhiZGY4IiBzdHJva2Utd2lkdGg9IjMiLz48cmVjdCB4PSI1Mi4wIiB5PSIyNjguMCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjAuMCIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iLjI4Ii8+PHJlY3QgeD0iNzguNiIgeT0iMjIxLjEiIHdpZHRoPSIyMCIgaGVpZ2h0PSI0Ni45IiBmaWxsPSIjMTBiOTgxIiBvcGFjaXR5PSIuMjgiLz48cmVjdCB4PSIxMDUuMiIgeT0iMTgwLjUiIHdpZHRoPSIyMCIgaGVpZ2h0PSI4Ny41IiBmaWxsPSIjMTBiOTgxIiBvcGFjaXR5PSIuMjgiLz48cmVjdCB4PSIxMzEuOSIgeT0iMTQ2LjEiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxMjEuOSIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iLjI4Ii8+PHJlY3QgeD0iMTU4LjUiIHk9IjExOC4wIiB3aWR0aD0iMjAiIGhlaWdodD0iMTUwLjAiIGZpbGw9IiMxMGI5ODEiIG9wYWNpdHk9Ii4yOCIvPjxyZWN0IHg9IjE4NS4xIiB5PSI5Ni4xIiB3aWR0aD0iMjAiIGhlaWdodD0iMTcxLjkiIGZpbGw9IiMxMGI5ODEiIG9wYWNpdHk9Ii4yOCIvPjxyZWN0IHg9IjIxMS44IiB5PSI4MC41IiB3aWR0aD0iMjAiIGhlaWdodD0iMTg3LjUiIGZpbGw9IiMxMGI5ODEiIG9wYWNpdHk9Ii4yOCIvPjxyZWN0IHg9IjIzOC40IiB5PSI3MS4xIiB3aWR0aD0iMjAiIGhlaWdodD0iMTk2LjkiIGZpbGw9IiMxMGI5ODEiIG9wYWNpdHk9Ii4yOCIvPjxyZWN0IHg9IjI2NS4wIiB5PSI2OC4wIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAwLjAiIGZpbGw9IiMxMGI5ODEiIG9wYWNpdHk9Ii4yOCIvPjxyZWN0IHg9IjI5MS42IiB5PSI3MS4xIiB3aWR0aD0iMjAiIGhlaWdodD0iMTk2LjkiIGZpbGw9IiMxMGI5ODEiIG9wYWNpdHk9Ii4yOCIvPjxyZWN0IHg9IjMxOC4yIiB5PSI4MC41IiB3aWR0aD0iMjAiIGhlaWdodD0iMTg3LjUiIGZpbGw9IiMxMGI5ODEiIG9wYWNpdHk9Ii4yOCIvPjxyZWN0IHg9IjM0NC45IiB5PSI5Ni4xIiB3aWR0aD0iMjAiIGhlaWdodD0iMTcxLjkiIGZpbGw9IiMxMGI5ODEiIG9wYWNpdHk9Ii4yOCIvPjxyZWN0IHg9IjM3MS41IiB5PSIxMTguMCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjE1MC4wIiBmaWxsPSIjMTBiOTgxIiBvcGFjaXR5PSIuMjgiLz48cmVjdCB4PSIzOTguMSIgeT0iMTQ2LjEiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxMjEuOSIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iLjI4Ii8+PHJlY3QgeD0iNDI0LjgiIHk9IjE4MC41IiB3aWR0aD0iMjAiIGhlaWdodD0iODcuNSIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iLjI4Ii8+PHJlY3QgeD0iNDUxLjQiIHk9IjIyMS4xIiB3aWR0aD0iMjAiIGhlaWdodD0iNDYuOSIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iLjI4Ii8+PHRleHQgeD0iNjAiIHk9IjU2IiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjIyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+ODwvdGV4dD48dGV4dCB4PSI1MiIgeT0iOTIiIGZpbGw9IiNmYmJmMjQiIGZvbnQtc2l6ZT0iMzQiIGZvbnQtZmFtaWx5PSJzZXJpZiI+JiM4NzQ3OzwvdGV4dD48dGV4dCB4PSI2MCIgeT0iMTIyIiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjIyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+MDwvdGV4dD48dGV4dCB4PSI4NiIgeT0iOTYiIGZpbGw9IiNlMmU4ZjAiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj52KHQpIGR0ID0gc3VtIG9mIHRoaW4gcmVjdGFuZ2xlczwvdGV4dD48dGV4dCB4PSI4NiIgeT0iMTI0IiBmaWxsPSIjN2RkM2ZjIiBmb250LXNpemU9IjE0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+c3RyZXRjaGVkIFMgPSBTdW1tYSAoY29udGludW91cyBzdW0pPC90ZXh0Pjwvc3ZnPg==" alt="অফিশিয়াল ৩ব্লু১ব্রাউন চিত্র"/></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/rfG8ce4nNh0?start=168" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="মূল ৩ব্লু১ব্রাউন অ্যানিমেশন"></iframe></div>
+        </b1b-media-tab>
+        <b1b-media-tab active-tab="image" caption="এই চিত্রে $dt$ দুই ভূমিকায় কাজ করছে: লাল চিহ্নিত ব্যবধানটি ফালির প্রস্থ, আর ওই প্রস্থই নির্ধারণ করছে পরবর্তী নমুনা কোথায় নেওয়া হবে। $dt$ ছোট করলে প্রতিটি ফালির ক্ষেত্রফল কমে, কিন্তু ফালির সংখ্যা বেড়ে যায়—ফলে মোট যোগফল স্থির থাকে। এই দ্বৈত ভূমিকা বোঝা গেলে $\int v(t)\,dt$ কোনো বিমূর্ত সাংকেতিক ধাঁধা থাকে না।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MjAgMzIwIiB3aWR0aD0iNTIwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjUyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNTIiIHkxPSIyNjgiIHgyPSI0NzgiIHkyPSIyNjgiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjUyIiB5MT0iMjY4IiB4Mj0iNTIiIHkyPSIzNCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI0NjYiIHk9IjI5MiIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnQ8L3RleHQ+PHRleHQgeD0iMTYiIHk9IjM4IiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+dih0KTwvdGV4dD48cGF0aCBkPSJNNTIuMCAyNjguMCBMNjAuNSAyNTIuMyBMNjkuMCAyMzcuMyBMNzcuNiAyMjIuOSBMODYuMSAyMDkuMSBMOTQuNiAxOTYuMCBMMTAzLjEgMTgzLjUgTDExMS42IDE3MS43IEwxMjAuMiAxNjAuNSBMMTI4LjcgMTQ5LjkgTDEzNy4yIDE0MC4wIEwxNDUuNyAxMzAuNyBMMTU0LjIgMTIyLjEgTDE2Mi44IDExNC4xIEwxNzEuMyAxMDYuNyBMMTc5LjggMTAwLjAgTDE4OC4zIDkzLjkgTDE5Ni44IDg4LjUgTDIwNS40IDgzLjcgTDIxMy45IDc5LjUgTDIyMi40IDc2LjAgTDIzMC45IDczLjEgTDIzOS40IDcwLjkgTDI0OC4wIDY5LjMgTDI1Ni41IDY4LjMgTDI2NS4wIDY4LjAgTDI3My41IDY4LjMgTDI4Mi4wIDY5LjMgTDI5MC42IDcwLjkgTDI5OS4xIDczLjEgTDMwNy42IDc2LjAgTDMxNi4xIDc5LjUgTDMyNC42IDgzLjcgTDMzMy4yIDg4LjUgTDM0MS43IDkzLjkgTDM1MC4yIDEwMC4wIEwzNTguNyAxMDYuNyBMMzY3LjIgMTE0LjEgTDM3NS44IDEyMi4xIEwzODQuMyAxMzAuNyBMMzkyLjggMTQwLjAgTDQwMS4zIDE0OS45IEw0MDkuOCAxNjAuNSBMNDE4LjQgMTcxLjcgTDQyNi45IDE4My41IEw0MzUuNCAxOTYuMCBMNDQzLjkgMjA5LjEgTDQ1Mi40IDIyMi45IEw0NjEuMCAyMzcuMyBMNDY5LjUgMjUyLjMgTDQ3OC4wIDI2OC4wIiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGJkZjgiIHN0cm9rZS13aWR0aD0iMyIvPjxyZWN0IHg9IjUyLjAiIHk9IjI2OC4wIiB3aWR0aD0iMzQuNSIgaGVpZ2h0PSIwLjAiIGZpbGw9IiNmYmJmMjQiIG9wYWNpdHk9Ii4zMiIvPjxyZWN0IHg9Ijg3LjUiIHk9IjIwNi45IiB3aWR0aD0iMzQuNSIgaGVpZ2h0PSI2MS4xIiBmaWxsPSIjZmJiZjI0IiBvcGFjaXR5PSIuMzIiLz48cmVjdCB4PSIxMjMuMCIgeT0iMTU2LjkiIHdpZHRoPSIzNC41IiBoZWlnaHQ9IjExMS4xIiBmaWxsPSIjZmJiZjI0IiBvcGFjaXR5PSIuMzIiLz48cmVjdCB4PSIxNTguNSIgeT0iMTE4LjAiIHdpZHRoPSIzNC41IiBoZWlnaHQ9IjE1MC4wIiBmaWxsPSIjZmJiZjI0IiBvcGFjaXR5PSIuMzIiLz48cmVjdCB4PSIxOTQuMCIgeT0iOTAuMiIgd2lkdGg9IjM0LjUiIGhlaWdodD0iMTc3LjgiIGZpbGw9IiNmYmJmMjQiIG9wYWNpdHk9Ii4zMiIvPjxyZWN0IHg9IjIyOS41IiB5PSI3My42IiB3aWR0aD0iMzQuNSIgaGVpZ2h0PSIxOTQuNCIgZmlsbD0iI2ZiYmYyNCIgb3BhY2l0eT0iLjMyIi8+PHJlY3QgeD0iMjY1LjAiIHk9IjY4LjAiIHdpZHRoPSIzNC41IiBoZWlnaHQ9IjIwMC4wIiBmaWxsPSIjZmJiZjI0IiBvcGFjaXR5PSIuMzIiLz48cmVjdCB4PSIzMDAuNSIgeT0iNzMuNiIgd2lkdGg9IjM0LjUiIGhlaWdodD0iMTk0LjQiIGZpbGw9IiNmYmJmMjQiIG9wYWNpdHk9Ii4zMiIvPjxyZWN0IHg9IjMzNi4wIiB5PSI5MC4yIiB3aWR0aD0iMzQuNSIgaGVpZ2h0PSIxNzcuOCIgZmlsbD0iI2ZiYmYyNCIgb3BhY2l0eT0iLjMyIi8+PHJlY3QgeD0iMzcxLjUiIHk9IjExOC4wIiB3aWR0aD0iMzQuNSIgaGVpZ2h0PSIxNTAuMCIgZmlsbD0iI2ZiYmYyNCIgb3BhY2l0eT0iLjMyIi8+PHJlY3QgeD0iNDA3LjAiIHk9IjE1Ni45IiB3aWR0aD0iMzQuNSIgaGVpZ2h0PSIxMTEuMSIgZmlsbD0iI2ZiYmYyNCIgb3BhY2l0eT0iLjMyIi8+PHJlY3QgeD0iNDQyLjUiIHk9IjIwNi45IiB3aWR0aD0iMzQuNSIgaGVpZ2h0PSI2MS4xIiBmaWxsPSIjZmJiZjI0IiBvcGFjaXR5PSIuMzIiLz48bGluZSB4MT0iMTIwIiB5MT0iMjUyIiB4Mj0iMTU0IiB5Mj0iMjUyIiBzdHJva2U9IiNlZjQ0NDQiIHN0cm9rZS13aWR0aD0iMyIvPjx0ZXh0IHg9IjExOCIgeT0iMjQ0IiBmaWxsPSIjZWY0NDQ0IiBmb250LXNpemU9IjE0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+ZHQ8L3RleHQ+PHRleHQgeD0iMjUwIiB5PSI2MCIgZmlsbD0iI2ZiYmYyNCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmR0ID0gd2lkdGggb2YgZWFjaCBzdHJpcCBBTkQgdGhlIHNwYWNpbmcgYmV0d2VlbiBzYW1wbGVzPC90ZXh0Pjwvc3ZnPg==" alt="অফিশিয়াল ৩ব্লু১ব্রাউন চিত্র"/></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/rfG8ce4nNh0?start=215" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="মূল ৩ব্লু১ব্রাউন অ্যানিমেশন"></iframe></div>
+        </b1b-media-tab>
+        <b1b-media-tab active-tab="image" caption="চিত্রে ছায়াঘেরা ক্ষেত্রফল $A(T)$ এর ডান প্রান্তে হলুদ ফালিটি $dT$ পরিমাণ নাড়ার ফলে যোগ হয়েছে। ফালির উচ্চতা $v(T)$ আর প্রস্থ $dT$ হওয়ায় $dA \approx v(T)\,dT$, অর্থাৎ $\frac{dA}{dT}=v(T)$—ক্ষেত্রফলের হার মূল বক্ররেখার উচ্চতার সমান। ভিডিও ট্যাবে প্রান্তবিন্দুটি সরতে সরতে ক্ষেত্রফল কীভাবে বেড়ে চলে তা দেখলে সূত্রটি নিজেই ‘সুস্পষ্ট’ হয়ে যায়।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MjAgMzIwIiB3aWR0aD0iNTIwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjUyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNTIiIHkxPSIyNjgiIHgyPSI0NzgiIHkyPSIyNjgiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjUyIiB5MT0iMjY4IiB4Mj0iNTIiIHkyPSIzNCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI0NjYiIHk9IjI5MiIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnQgKHMpPC90ZXh0Pjx0ZXh0IHg9IjE2IiB5PSIzOCIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnYgKG0vcyk8L3RleHQ+PHBhdGggZD0iTTUyIDI2OCA1Mi4wIDI2OC4wIEw1OS4xIDI1NC45IEw2Ni4yIDI0Mi4yIEw3My4zIDIzMC4wIEw4MC40IDIxOC4yIEw4Ny41IDIwNi45IEw5NC42IDE5Ni4wIEwxMDEuNyAxODUuNiBMMTA4LjggMTc1LjYgTDExNS45IDE2Ni4wIEwxMjMuMCAxNTYuOSBMMTMwLjEgMTQ4LjIgTDEzNy4yIDE0MC4wIEwxNDQuMyAxMzIuMiBMMTUxLjQgMTI0LjkgTDE1OC41IDExOC4wIEwxNjUuNiAxMTEuNiBMMTcyLjcgMTA1LjYgTDE3OS44IDEwMC4wIEwxODYuOSA5NC45IEwxOTQuMCA5MC4yIEwyMDEuMSA4Ni4wIEwyMDguMiA4Mi4yIEwyMTUuMyA3OC45IEwyMjIuNCA3Ni4wIEwyMjkuNSA3My42IEwyMzYuNiA3MS42IEwyNDMuNyA3MC4wIEwyNTAuOCA2OC45IEwyNTcuOSA2OC4yIEwyNjUuMCA2OC4wIEwyNzIuMSA2OC4yIEwyNzkuMiA2OC45IEwyODYuMyA3MC4wIEwyOTMuNCA3MS42IEwzMDAuNSA3My42IEwzMDcuNiA3Ni4wIEwzMTQuNyA3OC45IEwzMjEuOCA4Mi4yIEwzMjguOSA4Ni4wIEwzMzYuMCA5MC4yIEwzNDMuMSA5NC45IEwzNTAuMiAxMDAuMCBMMzU3LjMgMTA1LjYgTDM2NC40IDExMS42IEwzNzEuNSAxMTguMCBMMzc4LjYgMTI0LjkgTDM4NS43IDEzMi4yIEwzOTIuOCAxNDAuMCBMMzk5LjkgMTQ4LjIgTDQwNy4wIDE1Ni45IEw0MTQuMSAxNjYuMCBMNDIxLjIgMTc1LjYgTDQyOC4zIDE4NS42IEw0MzUuNCAxOTYuMCBMNDQyLjUgMjA2LjkgTDQ0OS42IDIxOC4yIEw0NTYuNyAyMzAuMCBMNDYzLjggMjQyLjIgTDQ3MC45IDI1NC45IEw0NzguMCAyNjguMCBMNDc4IDI2OCBaIiBmaWxsPSIjMTBiOTgxIiBvcGFjaXR5PSIuMjQiLz48cGF0aCBkPSJNNTIuMCAyNjguMCBMNTkuMSAyNTQuOSBMNjYuMiAyNDIuMiBMNzMuMyAyMzAuMCBMODAuNCAyMTguMiBMODcuNSAyMDYuOSBMOTQuNiAxOTYuMCBMMTAxLjcgMTg1LjYgTDEwOC44IDE3NS42IEwxMTUuOSAxNjYuMCBMMTIzLjAgMTU2LjkgTDEzMC4xIDE0OC4yIEwxMzcuMiAxNDAuMCBMMTQ0LjMgMTMyLjIgTDE1MS40IDEyNC45IEwxNTguNSAxMTguMCBMMTY1LjYgMTExLjYgTDE3Mi43IDEwNS42IEwxNzkuOCAxMDAuMCBMMTg2LjkgOTQuOSBMMTk0LjAgOTAuMiBMMjAxLjEgODYuMCBMMjA4LjIgODIuMiBMMjE1LjMgNzguOSBMMjIyLjQgNzYuMCBMMjI5LjUgNzMuNiBMMjM2LjYgNzEuNiBMMjQzLjcgNzAuMCBMMjUwLjggNjguOSBMMjU3LjkgNjguMiBMMjY1LjAgNjguMCBMMjcyLjEgNjguMiBMMjc5LjIgNjguOSBMMjg2LjMgNzAuMCBMMjkzLjQgNzEuNiBMMzAwLjUgNzMuNiBMMzA3LjYgNzYuMCBMMzE0LjcgNzguOSBMMzIxLjggODIuMiBMMzI4LjkgODYuMCBMMzM2LjAgOTAuMiBMMzQzLjEgOTQuOSBMMzUwLjIgMTAwLjAgTDM1Ny4zIDEwNS42IEwzNjQuNCAxMTEuNiBMMzcxLjUgMTE4LjAgTDM3OC42IDEyNC45IEwzODUuNyAxMzIuMiBMMzkyLjggMTQwLjAgTDM5OS45IDE0OC4yIEw0MDcuMCAxNTYuOSBMNDE0LjEgMTY2LjAgTDQyMS4yIDE3NS42IEw0MjguMyAxODUuNiBMNDM1LjQgMTk2LjAgTDQ0Mi41IDIwNi45IEw0NDkuNiAyMTguMiBMNDU2LjcgMjMwLjAgTDQ2My44IDI0Mi4yIEw0NzAuOSAyNTQuOSBMNDc4LjAgMjY4LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM4YmRmOCIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAwIiB5PSI1OCIgZmlsbD0iI2ZiYmYyNCIgZm9udC1zaXplPSIxNiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnYodCkgPSB0KDggLSB0KSA9IDh0IC0gdF4yPC90ZXh0Pjx0ZXh0IHg9IjE5NiIgeT0iMTk2IiBmaWxsPSIjNmVlN2I3IiBmb250LXNpemU9IjE0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+YXJlYSA9IGRpc3RhbmNlIHRyYXZlbGxlZDwvdGV4dD48bGluZSB4MT0iMzI4LjkiIHkxPSIyNjgiIHgyPSIzMjguOSIgeTI9Ijg2LjAiIHN0cm9rZT0iI2ZiYmYyNCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtZGFzaGFycmF5PSI1IDQiLz48Y2lyY2xlIGN4PSIzMjguOSIgY3k9Ijg2LjAiIHI9IjQiIGZpbGw9IiNmYmJmMjQiLz48dGV4dCB4PSIzMjQuOSIgeT0iMjg4IiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjEzIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+VDwvdGV4dD48cmVjdCB4PSIzMjguOSIgeT0iODYuMCIgd2lkdGg9IjE2LjAiIGhlaWdodD0iMTgyLjAiIGZpbGw9IiNmYmJmMjQiIG9wYWNpdHk9Ii44NSIvPjx0ZXh0IHg9IjM1Mi45IiB5PSI4MC4wIiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjEzIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+ZHMgPSB2KFQpIGRUPC90ZXh0Pjx0ZXh0IHg9IjMyNC45IiB5PSIyODYiIGZpbGw9IiNmYmJmMjQiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5kVDwvdGV4dD48L3N2Zz4=" alt="অফিশিয়াল ৩ব্লু১ব্রাউন চিত্র"/></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/rfG8ce4nNh0?start=292" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="মূল ৩ব্লু১ব্রাউন অ্যানিমেশন"></iframe></div>
+        </b1b-media-tab>
+        <b1b-media-tab active-tab="image" caption="তিনটি বক্ররেখা দেখে নিন—একই $4t^2-\frac{1}{3}t^3$ ফাংশনে $+C$, $0$ ও $-C$ যোগ করা হয়েছে; ঢাল সব জায়গায় একই, শুধু গ্রাফ উপরে-নিচে সরে গেছে। কোন ধ্রুবকটি সঠিক তা ঠিক করে নিচের সীমা: $T=0$-এ ক্ষেত্রফল শূন্য হতে হবে। $F(b)-F(a)$ বিয়োগে $C$ স্বয়ংক্রিয়ভাবে বাতিল হয়—এই চিত্রটি সেই বাতিলকরণের দৃশ্যমান প্রমাণ।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MjAgMzIwIiB3aWR0aD0iNTIwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjUyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNTIiIHkxPSIyNjgiIHgyPSI0NzgiIHkyPSIyNjgiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjUyIiB5MT0iMjY4IiB4Mj0iNTIiIHkyPSIzNCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI0NjYiIHk9IjI5MiIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnQ8L3RleHQ+PHRleHQgeD0iMTYiIHk9IjM4IiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+cyh0KTwvdGV4dD48cGF0aCBkPSJNNTIuMCAyNjguMCBMNjAuNSAyNjcuNCBMNjkuMCAyNjUuNSBMNzcuNiAyNjIuNSBMODYuMSAyNTguNCBMOTQuNiAyNTMuMiBMMTAzLjEgMjQ3LjAgTDExMS42IDIzOS44IEwxMjAuMiAyMzEuNyBMMTI4LjcgMjIyLjcgTDEzNy4yIDIxMy4wIEwxNDUuNyAyMDIuNCBMMTU0LjIgMTkxLjIgTDE2Mi44IDE3OS4zIEwxNzEuMyAxNjYuOCBMMTc5LjggMTUzLjcgTDE4OC4zIDE0MC4xIEwxOTYuOCAxMjYuMSBMMjA1LjQgMTExLjcgTDIxMy45IDk2LjkgTDIyMi40IDgxLjggTDIzMC45IDY2LjQgTDIzOS40IDUwLjkgTDI0OC4wIDM1LjEgTDI1Ni41IDE5LjMgTDI2NS4wIDMuNSBMMjczLjUgLTEyLjQgTDI4Mi4wIC0yOC4yIEwyOTAuNiAtNDMuOSBMMjk5LjEgLTU5LjUgTDMwNy42IC03NC44IEwzMTYuMSAtODkuOSBMMzI0LjYgLTEwNC43IEwzMzMuMiAtMTE5LjIgTDM0MS43IC0xMzMuMiBMMzUwLjIgLTE0Ni44IEwzNTguNyAtMTU5LjkgTDM2Ny4yIC0xNzIuNCBMMzc1LjggLTE4NC4zIEwzODQuMyAtMTk1LjUgTDM5Mi44IC0yMDYuMCBMNDAxLjMgLTIxNS44IEw0MDkuOCAtMjI0LjggTDQxOC40IC0yMzIuOSBMNDI2LjkgLTI0MC4wIEw0MzUuNCAtMjQ2LjMgTDQ0My45IC0yNTEuNSBMNDUyLjQgLTI1NS42IEw0NjEuMCAtMjU4LjYgTDQ2OS41IC0yNjAuNCBMNDc4LjAgLTI2MS4xIiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGJkZjgiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHBhdGggZD0iTTUyLjAgMjQ3LjMgTDYwLjUgMjQ2LjcgTDY5LjAgMjQ0LjkgTDc3LjYgMjQxLjggTDg2LjEgMjM3LjcgTDk0LjYgMjMyLjUgTDEwMy4xIDIyNi4zIEwxMTEuNiAyMTkuMSBMMTIwLjIgMjExLjAgTDEyOC43IDIwMi4xIEwxMzcuMiAxOTIuMyBMMTQ1LjcgMTgxLjggTDE1NC4yIDE3MC41IEwxNjIuOCAxNTguNiBMMTcxLjMgMTQ2LjEgTDE3OS44IDEzMy4xIEwxODguMyAxMTkuNSBMMTk2LjggMTA1LjQgTDIwNS40IDkxLjAgTDIxMy45IDc2LjIgTDIyMi40IDYxLjEgTDIzMC45IDQ1LjcgTDIzOS40IDMwLjIgTDI0OC4wIDE0LjUgTDI1Ni41IC0xLjMgTDI2NS4wIC0xNy4yIEwyNzMuNSAtMzMuMSBMMjgyLjAgLTQ4LjkgTDI5MC42IC02NC42IEwyOTkuMSAtODAuMSBMMzA3LjYgLTk1LjUgTDMxNi4xIC0xMTAuNiBMMzI0LjYgLTEyNS40IEwzMzMuMiAtMTM5LjggTDM0MS43IC0xNTMuOSBMMzUwLjIgLTE2Ny41IEwzNTguNyAtMTgwLjUgTDM2Ny4yIC0xOTMuMCBMMzc1LjggLTIwNC45IEwzODQuMyAtMjE2LjIgTDM5Mi44IC0yMjYuNyBMNDAxLjMgLTIzNi41IEw0MDkuOCAtMjQ1LjQgTDQxOC40IC0yNTMuNSBMNDI2LjkgLTI2MC43IEw0MzUuNCAtMjY2LjkgTDQ0My45IC0yNzIuMSBMNDUyLjQgLTI3Ni4yIEw0NjEuMCAtMjc5LjMgTDQ2OS41IC0yODEuMSBMNDc4LjAgLTI4MS43IiBmaWxsPSJub25lIiBzdHJva2U9IiMzNGQzOTkiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHBhdGggZD0iTTUyLjAgMjg4LjcgTDYwLjUgMjg4LjAgTDY5LjAgMjg2LjIgTDc3LjYgMjgzLjIgTDg2LjEgMjc5LjEgTDk0LjYgMjczLjkgTDEwMy4xIDI2Ny42IEwxMTEuNiAyNjAuNSBMMTIwLjIgMjUyLjQgTDEyOC43IDI0My40IEwxMzcuMiAyMzMuNiBMMTQ1LjcgMjIzLjEgTDE1NC4yIDIxMS45IEwxNjIuOCAyMDAuMCBMMTcxLjMgMTg3LjUgTDE3OS44IDE3NC40IEwxODguMyAxNjAuOCBMMTk2LjggMTQ2LjggTDIwNS40IDEzMi4zIEwyMTMuOSAxMTcuNSBMMjIyLjQgMTAyLjQgTDIzMC45IDg3LjEgTDIzOS40IDcxLjUgTDI0OC4wIDU1LjggTDI1Ni41IDQwLjAgTDI2NS4wIDI0LjEgTDI3My41IDguMyBMMjgyLjAgLTcuNSBMMjkwLjYgLTIzLjMgTDI5OS4xIC0zOC44IEwzMDcuNiAtNTQuMiBMMzE2LjEgLTY5LjMgTDMyNC42IC04NC4xIEwzMzMuMiAtOTguNSBMMzQxLjcgLTExMi41IEwzNTAuMiAtMTI2LjEgTDM1OC43IC0xMzkuMiBMMzY3LjIgLTE1MS43IEwzNzUuOCAtMTYzLjYgTDM4NC4zIC0xNzQuOCBMMzkyLjggLTE4NS40IEw0MDEuMyAtMTk1LjEgTDQwOS44IC0yMDQuMSBMNDE4LjQgLTIxMi4yIEw0MjYuOSAtMjE5LjQgTDQzNS40IC0yMjUuNiBMNDQzLjkgLTIzMC44IEw0NTIuNCAtMjM0LjkgTDQ2MS4wIC0yMzcuOSBMNDY5LjUgLTIzOS44IEw0NzguMCAtMjQwLjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2E3OGJmYSIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSIyNTAiIHk9IjQ2IiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjE2IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+NHReMiAtIHReMy8zICsgQyA6IHNhbWUgZGVyaXZhdGl2ZSwgc2hpZnRlZCBncmFwaHM8L3RleHQ+PHRleHQgeD0iNjYiIHk9IjI1MCIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxMyIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmxvd2VyIGJvdW5kIGZpeGVzIEM8L3RleHQ+PHRleHQgeD0iMzAwIiB5PSIxMjAiIGZpbGw9IiM2ZWU3YjciIGZvbnQtc2l6ZT0iMTQiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5GKHRvcCkgLSBGKGJvdHRvbSkgY2FuY2VscyBDPC90ZXh0Pjwvc3ZnPg==" alt="অফিশিয়াল ৩ব্লু১ব্রাউন চিত্র"/></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/rfG8ce4nNh0?start=388" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="মূল ৩ব্লু১ব্রাউন অ্যানিমেশন"></iframe></div>
+        </b1b-media-tab>
+        <b1b-media-tab active-tab="image" caption="ছায়াঘেরা অঞ্চলটি $a$ থেকে $b$ পর্যন্ত সীমাবদ্ধ; হলুদ ভাঙা রেখা দুটি কেবল প্রান্ত দেখাচ্ছে, কিন্তু পুরো ক্ষেত্রফল নির্ধারণ করে $F(b)-F(a)$। মজার বিষয় হলো—ইন্টিগ্রাল $a$ থেকে $b$-র প্রতিটি বিন্দুকে অন্তর্ভুক্ত করলেও হিসাব হয় শুধু দুই প্রান্তে। ভিডিও ট্যাবে মூল অ্যানিমেশন দেখলে এই ‘ফাঁকি’-র মতো মনে হওয়া সৌন্দর্য আরও স্পষ্ট হবে।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MjAgMzIwIiB3aWR0aD0iNTIwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjUyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNTIiIHkxPSIyNjgiIHgyPSI0NzgiIHkyPSIyNjgiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjUyIiB5MT0iMjY4IiB4Mj0iNTIiIHkyPSIzNCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI0NjYiIHk9IjI5MiIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPng8L3RleHQ+PHRleHQgeD0iMTYiIHk9IjM4IiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+Zih4KTwvdGV4dD48cGF0aCBkPSJNMTQwIDI2OCAxNDQuMyAyMDIuNyBMMTUxLjQgMjAxLjUgTDE1OC41IDIwMC4zIEwxNjUuNiAxOTkuMiBMMTcyLjcgMTk4LjEgTDE3OS44IDE5Ny4wIEwxODYuOSAxOTYuMCBMMTk0LjAgMTk1LjAgTDIwMS4xIDE5NC4xIEwyMDguMiAxOTMuMSBMMjE1LjMgMTkyLjMgTDIyMi40IDE5MS40IEwyMjkuNSAxOTAuNiBMMjM2LjYgMTg5LjkgTDI0My43IDE4OS4yIEwyNTAuOCAxODguNSBMMjU3LjkgMTg3LjkgTDI2NS4wIDE4Ny4zIEwyNzIuMSAxODYuNyBMMjc5LjIgMTg2LjIgTDI4Ni4zIDE4NS43IEwyOTMuNCAxODUuMyBMMzAwLjUgMTg0LjkgTDMwNy42IDE4NC42IEwzMTQuNyAxODQuMyBMMzIxLjggMTg0LjAgTDMyOC45IDE4My44IEwzMzYuMCAxODMuNiBMMzQzLjEgMTgzLjQgTDM1MC4yIDE4My4zIEwzNTcuMyAxODMuMiBMMzY0LjQgMTgzLjEgTDM3MS41IDE4My4xIEwzNzguNiAxODMuMCBMMzg1LjcgMTgzLjAgTDM5MiAyNjggWiIgZmlsbD0iIzhiNWNmNiIgb3BhY2l0eT0iLjMwIi8+PHBhdGggZD0iTTUyLjAgMjIwLjAgTDU5LjEgMjE4LjYgTDY2LjIgMjE3LjIgTDczLjMgMjE1LjggTDgwLjQgMjE0LjQgTDg3LjUgMjEzLjEgTDk0LjYgMjExLjcgTDEwMS43IDIxMC40IEwxMDguOCAyMDkuMCBMMTE1LjkgMjA3LjcgTDEyMy4wIDIwNi40IEwxMzAuMSAyMDUuMiBMMTM3LjIgMjAzLjkgTDE0NC4zIDIwMi43IEwxNTEuNCAyMDEuNSBMMTU4LjUgMjAwLjMgTDE2NS42IDE5OS4yIEwxNzIuNyAxOTguMSBMMTc5LjggMTk3LjAgTDE4Ni45IDE5Ni4wIEwxOTQuMCAxOTUuMCBMMjAxLjEgMTk0LjEgTDIwOC4yIDE5My4xIEwyMTUuMyAxOTIuMyBMMjIyLjQgMTkxLjQgTDIyOS41IDE5MC42IEwyMzYuNiAxODkuOSBMMjQzLjcgMTg5LjIgTDI1MC44IDE4OC41IEwyNTcuOSAxODcuOSBMMjY1LjAgMTg3LjMgTDI3Mi4xIDE4Ni43IEwyNzkuMiAxODYuMiBMMjg2LjMgMTg1LjcgTDI5My40IDE4NS4zIEwzMDAuNSAxODQuOSBMMzA3LjYgMTg0LjYgTDMxNC43IDE4NC4zIEwzMjEuOCAxODQuMCBMMzI4LjkgMTgzLjggTDMzNi4wIDE4My42IEwzNDMuMSAxODMuNCBMMzUwLjIgMTgzLjMgTDM1Ny4zIDE4My4yIEwzNjQuNCAxODMuMSBMMzcxLjUgMTgzLjEgTDM3OC42IDE4My4wIEwzODUuNyAxODMuMCBMMzkyLjggMTgzLjEgTDM5OS45IDE4My4xIEw0MDcuMCAxODMuMiBMNDE0LjEgMTgzLjIgTDQyMS4yIDE4My4zIEw0MjguMyAxODMuNCBMNDM1LjQgMTgzLjUgTDQ0Mi41IDE4My42IEw0NDkuNiAxODMuNyBMNDU2LjcgMTgzLjkgTDQ2My44IDE4NC4wIEw0NzAuOSAxODQuMSBMNDc4LjAgMTg0LjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM4YmRmOCIgc3Ryb2tlLXdpZHRoPSIzIi8+PGxpbmUgeDE9IjE0MCIgeTE9IjI2OCIgeDI9IjE0MCIgeTI9IjQ0IiBzdHJva2U9IiNmYmJmMjQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWRhc2hhcnJheT0iNiA0Ii8+PHRleHQgeD0iMTM2IiB5PSIyODgiIGZpbGw9IiNmYmJmMjQiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5hPC90ZXh0PjxsaW5lIHgxPSIzOTIiIHkxPSIyNjgiIHgyPSIzOTIiIHkyPSI0NCIgc3Ryb2tlPSIjZmJiZjI0IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjYgNCIvPjx0ZXh0IHg9IjM4OCIgeT0iMjg4IiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+YjwvdGV4dD48dGV4dCB4PSIxNTAiIHk9IjEyMCIgZmlsbD0iI2M0YjVmZCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmFyZWEgPSBGKGIpIC0gRihhKTwvdGV4dD48dGV4dCB4PSIxNTAiIHk9IjE0NiIgZmlsbD0iIzk0YTNiOCIgZm9udC1zaXplPSIxMyIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPkYmIzM5Oyh4KSA9IGYoeCk8L3RleHQ+PC9zdmc+" alt="অফিশিয়াল ৩ব্লু১ব্রাউন চিত্র"/></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/rfG8ce4nNh0?start=455" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="মূল ৩ব্লু১ব্রাউন অ্যানিমেশন"></iframe></div>
+        </b1b-media-tab>
+        <b1b-media-tab active-tab="image" caption="লাল অংশটি অনুভূমিক অক্ষের নিচে—গাড়ি পেছনে যাচ্ছে—এবং সবুজ অংশটি ওপরে, অর্থাৎ এগিয়ে যাচ্ছে। ইন্টিগ্রাল এই দুটিকে ঋণাত্মক ও ধনাত্মক হিসেবে যোগ করে, তাই $t=4/3$-এ মোট সরণ আবার শূন্য হয়; সেই সময়েই গাড়ি শুরুর অবস্থানে ফিরে আসে। চিত্রটি ‘signed area’ ধারণাটিকে দৃশ্যমান করে: সাধারণ ক্ষেত্রফল নয়, বরং চিহ্নসহ ক্ষেত্রফলই ইন্টিগ্রাল মাপে।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MjAgMzIwIiB3aWR0aD0iNTIwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjUyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNTIiIHkxPSIxODAiIHgyPSI0NzgiIHkyPSIxODAiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjUyIiB5MT0iMTgwIiB4Mj0iNTIiIHkyPSIzNCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI0NjYiIHk9IjIwNCIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnQ8L3RleHQ+PHRleHQgeD0iMTYiIHk9IjM4IiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+dih0KTwvdGV4dD48cGF0aCBkPSJNNTIuMCAxODAuMCBMNTkuMSAxODAuMSBMNjYuMiAxODAuMyBMNzMuMyAxODAuNyBMODAuNCAxODEuMyBMODcuNSAxODEuOSBMOTQuNiAxODIuNyBMMTAxLjcgMTgzLjUgTDEwOC44IDE4NC41IEwxMTUuOSAxODUuNSBMMTIzLjAgMTg2LjYgTDEzMC4xIDE4Ny43IEwxMzcuMiAxODguOCBMMTQ0LjMgMTkwLjAgTDE1MS40IDE5MS4xIEwxNTguNSAxOTIuMyBMMTY1LjYgMTkzLjQgTDE3Mi43IDE5NC41IEwxNzkuOCAxOTUuNiBMMTg2LjkgMTk2LjYgTDE5NC4wIDE5Ny41IEwyMDEuMSAxOTguMyBMMjA4LjIgMTk5LjEgTDIxNS4zIDE5OS43IEwyMjIuNCAyMDAuMiBMMjI5LjUgMjAwLjUgTDIzNi42IDIwMC43IEwyNDMuNyAyMDAuNyBMMjUwLjggMjAwLjYgTDI1Ny45IDIwMC4yIEwyNjUuMCAxOTkuNyBMMjcyLjEgMTk4LjkgTDI3OS4yIDE5Ny45IEwyODYuMyAxOTYuNyBMMjkzLjQgMTk1LjIgTDMwMC41IDE5My40IEwzMDcuNiAxOTEuMyBMMzE0LjcgMTg5LjAgTDMyMS44IDE4Ni4zIEwzMjguOSAxODMuMyBMMzM2LjAgMTgwLjAgTDM0My4xIDE3Ni4zIEwzNTAuMiAxNzIuMyBMMzU3LjMgMTY3LjkgTDM2NC40IDE2My4xIEwzNzEuNSAxNTcuOSBMMzc4LjYgMTUyLjIgTDM4NS43IDE0Ni4yIEwzOTIuOCAxMzkuNyBMMzk5LjkgMTMyLjcgTDQwNy4wIDEyNS4zIEw0MTQuMSAxMTcuNCBMNDIxLjIgMTA5LjAgTDQyOC4zIDEwMC4xIEw0MzUuNCA5MC43IEw0NDIuNSA4MC43IEw0NDkuNiA3MC4yIEw0NTYuNyA1OS4yIEw0NjMuOCA0Ny41IEw0NzAuOSAzNS4zIEw0NzguMCAyMi41IiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGJkZjgiIHN0cm9rZS13aWR0aD0iMyIvPjxwYXRoIGQ9Ik01Mi4wIDE4MC4wIEw1Mi4wIDE4MC4wIEw1OS4xIDE4MC4xIEw2Ni4yIDE4MC4zIEw3My4zIDE4MC43IEw4MC40IDE4MS4zIEw4Ny41IDE4MS45IEw5NC42IDE4Mi43IEwxMDEuNyAxODMuNSBMMTA4LjggMTg0LjUgTDExNS45IDE4NS41IEwxMjMuMCAxODYuNiBMMTMwLjEgMTg3LjcgTDEzNy4yIDE4OC44IEwxNDQuMyAxOTAuMCBMMTUxLjQgMTkxLjEgTDE1OC41IDE5Mi4zIEwxNjUuNiAxOTMuNCBMMTcyLjcgMTk0LjUgTDE3OS44IDE5NS42IEwxODYuOSAxOTYuNiBMMTk0LjAgMTk3LjUgTDIwMS4xIDE5OC4zIEwyMDguMiAxOTkuMSBMMjE1LjMgMTk5LjcgTDIyMi40IDIwMC4yIEwyMjkuNSAyMDAuNSBMMjM2LjYgMjAwLjcgTDI0My43IDIwMC43IEwyNTAuOCAyMDAuNiBMMjU3LjkgMjAwLjIgTDI2NS4wIDE5OS43IEwyNzIuMSAxOTguOSBMMjc5LjIgMTk3LjkgTDI4Ni4zIDE5Ni43IEwyOTMuNCAxOTUuMiBMMzAwLjUgMTkzLjQgTDMwNy42IDE5MS4zIEwzMTQuNyAxODkuMCBMMzIxLjggMTg2LjMgTDMyOC45IDE4My4zIEwzMzUuMCAxODAuMCBaIiBmaWxsPSIjZWY0NDQ0IiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMzM1LjAgMTgwLjAgTDMzNi4wIDE4MC4wIEwzNDMuMSAxNzYuMyBMMzUwLjIgMTcyLjMgTDM1Ny4zIDE2Ny45IEwzNjQuNCAxNjMuMSBMMzcxLjUgMTU3LjkgTDM3OC42IDE1Mi4yIEwzODUuNyAxNDYuMiBMMzkyLjggMTM5LjcgTDM5OS45IDEzMi43IEw0MDcuMCAxMjUuMyBMNDE0LjEgMTE3LjQgTDQyMS4yIDEwOS4wIEw0MjguMyAxMDAuMSBMNDM1LjQgOTAuNyBMNDQyLjUgODAuNyBMNDQ5LjYgNzAuMiBMNDU2LjcgNTkuMiBMNDYzLjggNDcuNSBMNDcwLjkgMzUuMyBMNDc4LjAgMjIuNSBMNDc4LjAgMTgwLjAgWiIgZmlsbD0iIzM0ZDM5OSIgb3BhY2l0eT0iLjMyIi8+PGxpbmUgeDE9IjQzMC43IiB5MT0iNDAiIHgyPSI0MzAuNyIgeTI9IjI4MCIgc3Ryb2tlPSIjZmJiZjI0IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjYgNCIvPjx0ZXh0IHg9IjQwNC43IiB5PSIzMDAiIGZpbGw9IiNmYmJmMjQiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj50ID0gNC8zPC90ZXh0Pjx0ZXh0IHg9Ijc2IiB5PSIyMjgiIGZpbGw9IiNmY2E1YTUiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5uZWdhdGl2ZSAoYmFja3dhcmRzKTwvdGV4dD48dGV4dCB4PSIzNTIiIHk9Ijk2IiBmaWxsPSIjNmVlN2I3IiBmb250LXNpemU9IjE0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+cG9zaXRpdmU8L3RleHQ+PHRleHQgeD0iNzAiIHk9IjUyIiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjE0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+dih0KSA9IDJ0XjMgLSAydF4yPC90ZXh0Pjwvc3ZnPg==" alt="অফিশিয়াল ৩ব্লু১ব্রাউন চিত্র"/></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/rfG8ce4nNh0?start=545" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="মূল ৩ব্লু১ব্রাউন অ্যানিমেশন"></iframe></div>
+        </b1b-media-tab>
+      </b1b-section>
+      <!-- ═══ NON-NARRATED — interactive labs in b1b-fullscreen ═══ -->
+      <b1b-section id="sec-labs" title="৭. 🔬 ইন্টারেক্টিভ ল্যাব: রিম্যান সাম ও ক্ষেত্রফল-ফাংশন অ্যানিমেশন" data-no-narration="true">
+        <p>প্রথম ল্যাবে আয়তক্ষেত্রের সংখ্যা $n$ বাড়ালে আসন্ন ক্ষেত্রফল কীভাবে $\int_0^8 t(8-t)\,dt = 85.33$-এর কাছে পৌঁছায় তা নিজের হাতে দেখুন। দ্বিতীয় ল্যাবে ডান প্রান্ত $T$ ও নিচের প্রান্ত $a$ সরিয়ে দেখুন কেন ক্ষেত্রফলের বৃদ্ধির হার বক্ররেখার তাৎক্ষণিক উচ্চতার সমান, এবং $F(T)-F(a)$-এ ধ্রুবক $C$ কীভাবে বাতিল হয়।</p>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে রিম্যান ল্যাব দেখুন">
+          <calc-riemann-integration-lab></calc-riemann-integration-lab>
+        </b1b-fullscreen>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে ক্ষেত্রফল-ফাংশন ল্যাব দেখুন">
+          <calc-area-function-lab></calc-area-function-lab>
+        </b1b-fullscreen>
+      </b1b-section>
+      <!-- ═══ NON-NARRATED — ৫টি অফিশিয়াল কুইজ (exact options) + ৪টি পাঠ-ভিত্তিক কুইজ ═══ -->
+      <b1b-section id="sec-quizzes" title="৮. ধারণা যাচাই — ৯টি ইন্টারেক্টিভ কুইজ" data-no-narration="true">
+        <p>নিচের প্রথম পাঁচটি কুইজ ৩ব্লু১ব্রাউনের অফিশিয়াল নিবন্ধ থেকে নেওয়া—অপশনগুলো অবিকল রাখা হয়েছে। বাকি চারটি এই অধ্যায়ের ধারণাগুলো আরও দৃঢ় করতে যোগ করা হয়েছে। প্রতিটি ভুল উত্তরের সাথে রয়েছে বিস্তারিত বাংলা ব্যাখ্যা।</p>
+
+        <b1b-quiz
+          question="❓ ১. $3x^2+5$ ফাংশনের অ্যান্টি-ডেরিভেটিভ কী? (Official quiz 1)"
+          correct="1"
+          correct-msg="ঠিকই! $\frac{d}{dx}(x^3+5x)=3x^2+5$। $3x^3$ নিলে ডেরিভেটিভ $9x^2$ হয়ে যায়—গুণক $3$ কে শক্তিতে যোগ না করে ভাগ করতে হয়, তাই সঠিক রূপ $x^3+5x$।"
+          wrong-msg="আবার ভাবুন: পাওয়ার রুলের বিপরীতে $x^n$-এর অ্যান্টি-ডেরিভেটিভ $\frac{x^{n+1}}{n+1}$। $3x^2$ থেকে $3\cdot\frac{x^3}{3}=x^3$, আর $5$ থেকে $5x$। $x^2+5x$ বা $6x^3+5x$ নিলে ডেরিভেটিভ যথাক্রমে $2x+5$ ও $18x^2+5$ হয়—কোনোটিই মেলে না।"
+          reveal-msg="সঠিক উত্তর: দ্বিতীয় বিকল্প $x^3+5x$। যাচাই: $\frac{d}{dx}(x^3+5x)=3x^2+5$।">
+          <div slot="option">$3x^3+5x$</div>
+          <div slot="option">$x^3+5x$</div>
+          <div slot="option">$x^2+5x$</div>
+          <div slot="option">$6x^3+5x$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ২. $x+2$ ফাংশনের অ্যান্টি-ডেরিভেটিভ কী? (Official quiz 2)"
+          correct="0"
+          correct-msg="অসাধারণ! $\frac{d}{dx}\left(\frac{1}{2}x^2+2x\right)=x+2$। $x$-এর অ্যান্টি-ডেরিভেটিভ $\frac{1}{2}x^2$ (কারণ $\frac{d}{dx}x^2=2x$) আর $2$-এর অ্যান্টি-ডেরিভেটিভ $2x$।"
+          wrong-msg="মনে রাখবেন পাওয়ার রুল উল্টো দিকে চলে: $x^1 \to \frac{x^2}{2}$ এবং ধ্রুবক $2 \to 2x$। $2x^2+2$ দিলে ডেরিভেটিভ $4x$, $x^2+2x$ দিলে $2x+2$, আর $\frac{1}{2}x^2+x$ দিলে $x+1$—কোনোটিই $x+2$ নয়।"
+          reveal-msg="সঠিক উত্তর: প্রথম বিকল্প $\frac{1}{2}x^2+2x$। যাচাই: $\frac{d}{dx}\left(\frac{1}{2}x^2+2x\right)=x+2$।">
+          <div slot="option">$\frac{1}{2}x^2+2x$</div>
+          <div slot="option">$2x^2+2$</div>
+          <div slot="option">$x^2+2x$</div>
+          <div slot="option">$\frac{1}{2}x^2+x$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৩. $v(t)=-\frac{5}{2}t+20$ বেগে $0$ থেকে $8$ সেকেন্ডে গাড়িটি কত দূর যাবে? (Official quiz 3)"
+          correct="3"
+          correct-msg="নিখুঁত! $\int_0^8\left(-\frac{5}{2}t+20\right)dt=\left[-\frac{5}{4}t^2+20t\right]_0^8=-80+160=80$ মিটার। জ্যামিতিকভাবে বেগ-লেখচিত্রের নিচের ট্র্যাপিজয়েডের ক্ষেত্রফলও $\frac{(20+0)}{2}\times 8=80$।"
+          wrong-msg="$160$ মিটার হলো শুধু $20\times 8$—অথচ বেগ ক্রমে কমছে, তাই সেটি অত্যুক্তি। $90$ বা $60$ ট্র্যাপিজয়েডের গড় উচ্চতা ভুল ধরার ফল। সঠিক গড় বেগ $(20+0)/2=10$ মিটার/সেকেন্ড, তাই দূরত্ব $10\times 8=80$ মিটার।"
+          reveal-msg="সঠিক উত্তর: চতুর্থ বিকল্প $80$ মিটার। অ্যান্টি-ডেরিভেটিভ $-\frac{5}{4}t^2+20t$ কে $0$ ও $8$-এ বসিয়ে বাদ দিলে পাওয়া যায় $80$।">
+          <div slot="option">$160$ meters</div>
+          <div slot="option">$90$ meters</div>
+          <div slot="option">$60$ meters</div>
+          <div slot="option">$80$ meters</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৪. $v(t)=-t(t-10)$ বেগে $2$ থেকে $6$ সেকেন্ডে অতিক্রান্ত দূরত্ব কত? (Official quiz 4)"
+          correct="2"
+          correct-msg="চমৎকার! $-t(t-10)=-t^2+10t$, তাই $\int_2^6(-t^2+10t)dt=\left[-\frac{t^3}{3}+5t^2\right]_2^6=(-72+180)-(-\frac{8}{3}+20)=\frac{272}{3}=90.\overline{6}$ মিটার।"
+          wrong-msg="$108$ পাওয়া যায় কেবল $F(6)$ থেকে—নিচের সীমা $F(2)$ বাদ দেওয়া হয়নি। $166.66$ বা $90$ হলো সীমা বা গুণক ভুল ধরার ফল। মৌলিক উপপাদ্য অনুযায়ী অবশ্যই $F(6)-F(2)$ নিতে হবে।"
+          reveal-msg="সঠিক উত্তর: তৃতীয় বিকল্প $90.\overline{6}$ মিটার (অর্থাৎ $90.66\ldots$)। হিসাব: $\frac{272}{3}$।">
+          <div slot="option">$166.66\overline{6}$ meters</div>
+          <div slot="option">$108$ meters</div>
+          <div slot="option">$90.66\overline{6}$ meters</div>
+          <div slot="option">$90$ meters</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৫. $v(t)=2t^3-2t^2$ বেগে পেছনে যাওয়া গাড়িটি কখন শুরুর অবস্থানে ফিরে আসবে? (Official quiz 5)"
+          correct="1"
+          correct-msg="একদম ঠিক! সরণ $s(T)=\int_0^T(2t^3-2t^2)dt=\frac{1}{2}T^4-\frac{2}{3}T^3=T^3\left(\frac{T}{2}-\frac{2}{3}\right)$। এটি শূন্য হয় $T=0$ বা $T=\frac{4}{3}$-এ—অর্থাৎ $\frac{4}{3}$ সেকেন্ডে গাড়ি আবার শুরুর জায়গায় পৌঁছায়।"
+          wrong-msg="$t=1$ হলো বেগ শূন্য হওয়ার সময় (বক্ররেখা অক্ষ ছেদ করে), কিন্তু সেখানে অবস্থান শুরুর জায়গায় নয়—ঋণাত্মক ক্ষেত্রফল তখনো প্রায় পুরোটাই আছে। $\frac{3}{2}$ বা $\frac{5}{3}$ ক্ষেত্রফল দুটির ভারসাম্যের পরের সময়। মনে রাখবেন: শূন্য বেগ ≠ শূন্য সরণ; এখানে ঋণাত্মক ও ধনাত্মক স্বাক্ষরিত ক্ষেত্রফলের যোগফল শূন্য হতে হবে।"
+          reveal-msg="সঠিক উত্তর: দ্বিতীয় বিকল্প $t=\frac{4}{3}$। $\frac{1}{2}T^4-\frac{2}{3}T^3=0 \Rightarrow T=\frac{4}{3}$ (অশূন্য সমাধান)।">
+          <div slot="option">$t=1$</div>
+          <div slot="option">$t=\frac{4}{3}$</div>
+          <div slot="option">$t=\frac{3}{2}$</div>
+          <div slot="option">$t=\frac{5}{3}$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৬. স্থির বেগের ক্ষেত্রে বেগ বনাম সময় লেখচিত্রে অতিক্রান্ত দূরত্ব কেন আয়তক্ষেত্রের ক্ষেত্রফলের সমান হয়?"
+          correct="1"
+          correct-msg="একদম নিখুঁত! $\text{Distance}=\text{Velocity}\times\text{Time}$—লেখচিত্রে উচ্চতা বেগ ও প্রস্থ সময়, তাই তাদের গুণফলই আয়তক্ষেত্রের ক্ষেত্রফল এবং এককও মিটার।"
+          wrong-msg="স্থির বেগের লেখচিত্র বৃত্ত নয়, বরং অনুভূমিক সরলরেখা; ক্ষেত্রফলের একক বর্গমিটার হলেও এখানে অক্ষদ্বয়ের এককের গুণফল (m/s × s) দূরত্ব দেয়। স্থির বেগে ত্বরণ শূন্য, অসীম নয়—এই দুটি বিকল্প ফাঁদ।"
+          reveal-msg="সঠিক উত্তর: দ্বিতীয় বিকল্প—দূরত্ব হলো বেগ গুণ সময়, যা উচ্চতা গুণ প্রস্থ আয়তক্ষেত্রের ক্ষেত্রফল।">
+          <div slot="option">কারণ লেখচিত্রটি সর্বদা একটি বৃত্ত তৈরি করে</div>
+          <div slot="option">কারণ দূরত্ব হলো বেগ গুণ সময়, যা জ্যামিতিকভাবে উচ্চতা (বেগ) গুণ প্রস্থ (সময়) আয়তক্ষেত্রের ক্ষেত্রফলের সাথে হুবহু মিলে যায়</div>
+          <div slot="option">কারণ পদার্থবিজ্ঞানে ক্ষেত্রফল ও দূরত্বের একক অবিকল একই</div>
+          <div slot="option">কারণ সেখানে ত্বরণ সর্বদা অসীম থাকে</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৭. রিম্যান সমষ্টিতে $dt \to 0$ হলে আয়তাকার ফালিগুলোর কী ঘটে?"
+          correct="2"
+          correct-msg="চমৎকার! ফালির সংখ্যা অসীমের দিকে যায় এবং খাঁজকাটা শীর্ষভাগ মসৃণ বক্ররেখার সাথে মিলে নিখুঁত ক্ষেত্রফল দেয়—এটিই নির্দিষ্ট যোগজের সংজ্ঞা।"
+          wrong-msg="প্রস্থ কমলে ফালির সংখ্যা কমে না, বরং বাড়ে; ফালিগুলো অদৃশ্য হলেও তাদের মোট ক্ষেত্রফল শূন্য হয় না। ধনাত্মক ফাংশনের ক্ষেত্রে ঋণাত্মক ক্ষেত্রফল তৈরি হয় না—সেটি শুধু অক্ষের নিচের অংশের ক্ষেত্রে সত্য।"
+          reveal-msg="সঠিক উত্তর: তৃতীয় বিকল্প—অসীম সংখ্যক সরু ফালি মসৃণ বক্ররেখার ক্ষেত্রফলে রূপ নেয়।">
+          <div slot="option">আয়তক্ষেত্রের সংখ্যা কমে একটি মাত্র আয়তক্ষেত্রে পরিণত হয়</div>
+          <div slot="option">আয়তক্ষেত্রগুলো অদৃশ্য হয়ে ক্ষেত্রফল শূন্য হয়ে যায়</div>
+          <div slot="option">আয়তক্ষেত্রের সংখ্যা অসীমের দিকে ধাবিত হয় এবং তাদের খাঁজকাটা শীর্ষভাগ মসৃণ বক্ররেখার সাথে মিলে নিখুঁত ক্ষেত্রফল প্রদান করে</div>
+          <div slot="option">বক্ররেখার নিচে ঋণাত্মক ক্ষেত্রফল সৃষ্টি হয়</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৮. ক্ষেত্রফল ফাংশনের ক্ষেত্রে $\frac{dA}{dx}=f(x)$ হওয়ার জ্যামিতিক কারণ কী?"
+          correct="0"
+          correct-msg="নিখুঁত উত্তর! ডান সীমানা $dx$ সরালে নতুন ফালির প্রস্থ $dx$ ও উচ্চতা $f(x)$ হয়, তাই $dA \approx f(x)\,dx$—আর $dx$ দিয়ে ভাগ করলেই $\frac{dA}{dx}=f(x)$।"
+          wrong-msg="ডেরিভেটিভ শূন্য হয় শুধু ধ্রুবকের ক্ষেত্রে; ক্ষেত্রফল ও পরিধি সর্বদা সমান নয়—এটি বৃত্তের বিশেষ ক্ষেত্রে $2\pi r$। স্পর্শকের কোণ ৪৫° হওয়ার কথা এখানে প্রযোজ্য নয়; ঢাল নির্ভর করে বক্ররেখার উচ্চতার ওপর।"
+          reveal-msg="সঠিক উত্তর: প্রথম বিকল্প—নতুন ফালির ক্ষেত্রফল $dA=f(x)\,dx$ কে $dx$ দিয়ে ভাগ করলে $\frac{dA}{dx}=f(x)$।">
+          <div slot="option">ডান পাশের সীমানা $dx$ পরিমাণ সরালে নতুন যুক্ত হওয়া ফালির প্রস্থ $dx$ এবং উচ্চতা তৎকালীন বক্ররেখার উচ্চতা $f(x)$ হওয়ায় $dA \approx f(x)\,dx$</div>
+          <div slot="option">কারণ গণিতে যেকোনো ফাংশনের ডেরিভেটিভ শূন্য হতে হয়</div>
+          <div slot="option">কারণ ক্ষেত্রফল ও বৃত্তের পরিধি সর্বদাই পরস্পর সমান</div>
+          <div slot="option">কারণ $x$ অক্ষের সাথে স্পর্শকের কোণ সর্বদা ৪৫ ডিগ্রি থাকে</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৯. মৌলিক উপপাদ্য কেন বিপ্লবী? (Official concept check)"
+          correct="2"
+          correct-msg="অসাধারণ! এটি অসীম যোগফলের ক্লান্তিকর কাজকে অ্যান্টি-ডেরিভেটিভ খোঁজার সহজ পদ্ধতিতে রূপ দেয়—$\int_a^b f(x)\,dx=F(b)-F(a)$।"
+          wrong-msg="উপপাদ্য ক্ষেত্রফল পরিমাপ করা অসম্ভব বলে বলে না—বরং সহজ করে। এটি বীজগণিতকে ক্যালকুলাস থেকে বিচ্ছিন্ন না করে বরং গ্রথিত করে; এবং শুধু বৃত্ত-ত্রিভুজ নয়, যেকোনো অবিচ্ছিন্ন বক্ররেখার ক্ষেত্রে সত্য।"
+          reveal-msg="সঠिक উত্তর: তৃতীয় বিকল্প—অসীম যোগফলকে অ্যান্টি-ডেরিভেটিভের বিপরীত নিয়ম দিয়ে সমাধান করা।">
+          <div slot="option">কারণ এটি প্রমাণ করে যে ক্ষেত্রফল কখনো পরিমাপ করা সম্ভব নয়</div>
+          <div slot="option">কারণ এটি বীজগণিতকে ক্যালকুলাস থেকে চিরতরে বিচ্ছিন্ন করে দেয়</div>
+          <div slot="option">কারণ এটি ক্ষেত্রফল নির্ণয়ের জটিল অসীম যোগফলকে ডেরিভেটিভের উল্টো প্রক্রিয়া (অ্যান্টি-ডেরিভেটিভ) খোঁজার সহজ পদ্ধতিতে রূপান্তর করে</div>
+          <div slot="option">কারণ এটি কেবল বৃত্ত ও ত্রিভুজের ক্ষেত্রফল নির্ণয়ে প্রযোজ্য হয়</div>
+        </b1b-quiz>
+
+      </b1b-section>
+      <!-- ═══ NON-NARRATED — formula reference ═══ -->
+      <b1b-section id="sec-reference" title="৯. মূল সূত্র ও পরিভাষা" data-no-narration="true">
+        <b1b-formula math="v(t)=t(8-t)=8t-t^2 \qquad ds \approx v(t)\,dt \qquad \int_0^8 v(t)\,dt=85.33\text{ m}"></b1b-formula>
+        <b1b-formula math="A(x)=\int_0^x f(t)\,dt \qquad \frac{dA}{dx}=f(x) \qquad \int_a^b f(x)\,dx=F(b)-F(a)"></b1b-formula>
+        <b1b-formula math="s(t)=4t^2-\frac{1}{3}t^3+C \qquad \int_0^T t(8-t)\,dt=\left(4T^2-\frac{T^3}{3}\right)-0"></b1b-formula>
+        <b1b-callout type="blue" icon="📚" title="পরিভাষা">
+          <p><strong>অ্যান্টি-ডেরিভেটিভ:</strong> এমন ফাংশন $F$ যার ডেরিভেটিভ $f$—অর্থাৎ $F'=f$। <strong>রিম্যান সমষ্টি:</strong> অসংখ্য সরু ফালির ক্ষেত্রফলের যোগফল; $dt\to0$-এ এটি যোগজে পরিণত হয়। <strong>নির্দিষ্ট যোগজ:</strong> $\int_a^b f(x)\,dx$—বক্ররেখা ও $x$-অক্ষের মধ্যকার স্বাক্ষরিত ক্ষেত্রফল। <strong>মৌলিক উপপাদ্য:</strong> $\int_a^b f(x)\,dx=F(b)-F(a)$—অবকলন ও যোগজীকরণের ঐক্য। <strong>স্বাক্ষরিত ক্ষেত্রফল:</strong> অক্ষের ওপরের অংশ ধনাত্মক ও নিচের অংশ ঋণাত্মক গণনা।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <b1b-watch-panel
+    video-src="../../media_vault/calculus/lesson_08/experiments/3b1b_calculus_08_full_dubbed.mp4"
+    yt-id="rfG8ce4nNh0"
+    title="অধ্যায় ০৮: যোগজীকরণ ও ক্যালকুলাসের মৌলিক উপপাদ্য — The Essence of Calculus"
+    subtitle="মূল ৩ব্লু১ব্রাউন অ্যানিমেশন: স্পিডোমিটার, সরু আয়তক্ষেত্র, ক্ষেত্রফল ফাংশন ও মৌলিক উপপাদ্য।"
+    playlist-title="📋 প্লেলিস্ট — ক্যালকুলাস সিরিজ">
+  </b1b-watch-panel>
+</div><!-- /lesson-body -->
+
+<b1b-chapter-nav
+  prev-url="lesson_07.html"
+  prev-title="লিমিট, লোপিতালের নিয়ম ও এপসাইলন-ডেলটা"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_09.html"
+  next-title="ক্ষেত্রফল ও ঢালের সম্পর্ক"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- Page-local lab components (new components only; no library override/patch). -->
+<script>
+(function () {
+  'use strict';
+
+  function themeDark() { return document.documentElement.getAttribute('data-theme') !== 'light'; }
+  function fmt(n, d) { return Number(n).toFixed(d === undefined ? 2 : d); }
+
+  /* ── Lab 1: Riemann sum accumulator for v(t) = 8t - t^2 ── */
+  class CalcRiemannIntegrationLab extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.rendered) return;
+      this.dataset.rendered = '1';
+      this.innerHTML = `
+        <div class="calc-lab">
+          <canvas class="calc-canvas" width="900" height="420"></canvas>
+          <div class="calc-controls">
+            <div class="calc-control"><label><span>ফালির সংখ্যা n</span><span class="calc-val" data-for="n">১২</span></label><input type="range" class="n" min="2" max="80" step="1" value="12"/></div>
+            <div class="calc-control"><label><span>dt (সেকেন্ড)</span><span class="calc-val" data-for="dt">০.৬৭</span></label><input type="range" class="dt" min="0.1" max="2" step="0.05" value="0.67"/></div>
+          </div>
+          <div class="calc-actions">
+            <button type="button" class="preset" data-n="4">৪ ফালি (স্থূল)</button>
+            <button type="button" class="preset" data-n="16">১৬ ফালি</button>
+            <button type="button" class="preset" data-n="60">৬০ ফালি (মসৃণ)</button>
+            <button type="button" class="play">▶ অটো বাড়ানো</button>
+          </div>
+          <div class="calc-stats">
+            <div class="calc-stat"><span>আসন্ন ক্ষেত্রফল (Riemann sum)</span><strong class="stat-sum">—</strong></div>
+            <div class="calc-stat"><span>নিখুঁত মান ∫₀⁸ t(8−t) dt</span><strong>85.33 m</strong></div>
+            <div class="calc-stat"><span>ত্রুটি</span><strong class="stat-err">—</strong></div>
+          </div>
+        </div>`;
+      this._canvas = this.querySelector('.calc-canvas');
+      this._ctx = this._canvas.getContext('2d');
+      this._n = this.querySelector('.n');
+      this._dt = this.querySelector('.dt');
+      this._playing = false;
+      const draw = () => this._draw();
+      this._n.addEventListener('input', () => {
+        this.querySelector('[data-for="n"]').textContent = this._n.value;
+        this._dt.value = (8 / Number(this._n.value)).toFixed(2);
+        this.querySelector('[data-for="dt"]').textContent = this._dt.value;
+        draw();
+      });
+      this._dt.addEventListener('input', () => {
+        this._n.value = Math.max(2, Math.min(80, Math.round(8 / Number(this._dt.value))));
+        this.querySelector('[data-for="n"]').textContent = this._n.value;
+        this.querySelector('[data-for="dt"]').textContent = this._dt.value;
+        draw();
+      });
+      this.querySelectorAll('.preset').forEach(b => b.addEventListener('click', () => {
+        this._n.value = b.dataset.n;
+        this._dt.value = (8 / Number(b.dataset.n)).toFixed(2);
+        this.querySelector('[data-for="n"]').textContent = b.dataset.n;
+        this.querySelector('[data-for="dt"]').textContent = this._dt.value;
+        draw();
+      }));
+      const playBtn = this.querySelector('.play');
+      playBtn.addEventListener('click', () => {
+        if (this._playing) { this._playing = false; playBtn.textContent = '▶ অটো বাড়ানো'; return; }
+        this._playing = true; playBtn.textContent = '⏸ বিরতি';
+        const loop = () => {
+          if (!this._playing) return;
+          let n = Number(this._n.value) + 1;
+          if (n > 80) n = 2;
+          this._n.value = n;
+          this._dt.value = (8 / n).toFixed(2);
+          this.querySelector('[data-for="n"]').textContent = n;
+          this.querySelector('[data-for="dt"]').textContent = this._dt.value;
+          draw();
+          this._raf = requestAnimationFrame(loop);
+        };
+        this._raf = requestAnimationFrame(loop);
+      });
+      window.addEventListener('resize', () => this._resize());
+      window.addEventListener('b1b-fullscreen-change', () => this._resize());
+      this._resize();
+    }
+
+    _resize() {
+      if (!this._canvas) return;
+      const w = this._canvas.parentElement.clientWidth || 900;
+      this._canvas.width = w;
+      this._canvas.height = Math.max(360, Math.min(520, w * 0.46));
+      this._draw();
+    }
+
+    _draw() {
+      const ctx = this._ctx; if (!ctx) return;
+      const W = this._canvas.width, H = this._canvas.height;
+      const dark = themeDark();
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#080b12' : '#f8fafc'; ctx.fillRect(0, 0, W, H);
+      const L = 52, R = W - 30, B = H - 52, T = 30;
+      const v = t => t * (8 - t);
+      const X = t => L + (R - L) * t / 8;
+      const Y = val => B - val * (B - T) / 18;
+
+      ctx.strokeStyle = dark ? '#94a3b8' : '#475569'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(L, B); ctx.lineTo(R, B); ctx.moveTo(L, B); ctx.lineTo(L, T); ctx.stroke();
+      ctx.fillStyle = dark ? '#e2e8f0' : '#0f172a'; ctx.font = '12px sans-serif';
+      ctx.fillText('t (s)', R - 28, B + 20); ctx.fillText('v (m/s)', L - 44, T + 2);
+
+      const n = Number(this._n.value);
+      const dt = 8 / n;
+      let sum = 0;
+      for (let i = 0; i < n; i++) {
+        const t = i * dt;
+        const h = v(t);
+        sum += h * dt;
+        const x = X(t), w = Math.max((R - L) / n - 0.7, 0.8), y = Y(h);
+        ctx.fillStyle = 'rgba(245,158,11,.30)';
+        ctx.fillRect(x, y, w, B - y);
+        ctx.strokeStyle = 'rgba(245,158,11,.55)'; ctx.lineWidth = 1;
+        ctx.strokeRect(x, y, w, B - y);
+      }
+      ctx.beginPath();
+      for (let i = 0; i <= 160; i++) {
+        const t = 8 * i / 160, x = X(t), y = Y(v(t));
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 3; ctx.stroke();
+
+      ctx.fillStyle = '#fbbf24'; ctx.font = 'bold 13px sans-serif';
+      ctx.fillText('v(t) = 8t - t^2', X(4.2), Y(v(4.2)) - 10);
+      const exact = 512 / 6;
+      this.querySelector('.stat-sum').textContent = fmt(sum) + ' m';
+      this.querySelector('.stat-err').textContent = fmt(Math.abs(sum - exact)) + ' m';
+    }
+  }
+
+  /* ── Lab 2: Area function A(x), sliver dA and F(T) - F(a) ── */
+  class CalcAreaFunctionLab extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.rendered) return;
+      this.dataset.rendered = '1';
+      this.innerHTML = `
+        <div class="calc-lab">
+          <canvas class="calc-canvas" width="900" height="420"></canvas>
+          <div class="calc-controls">
+            <div class="calc-control"><label><span>ডান প্রান্ত T</span><span class="calc-val" data-for="T">৫.০</span></label><input type="range" class="T" min="0" max="8" step="0.1" value="5"/></div>
+            <div class="calc-control"><label><span>নিচের প্রান্ত a</span><span class="calc-val" data-for="a">১.০</span></label><input type="range" class="a" min="0" max="8" step="0.1" value="1"/></div>
+          </div>
+          <div class="calc-actions">
+            <button type="button" class="preset" data-t="2" data-a="0">T=2, a=0</button>
+            <button type="button" class="preset" data-t="5" data-a="1">T=5, a=1</button>
+            <button type="button" class="preset" data-t="8" data-a="0">T=8, a=0 (85.33 m)</button>
+          </div>
+          <div class="calc-stats">
+            <div class="calc-stat"><span>A(T) = 4T² − T³/3</span><strong class="stat-A">—</strong></div>
+            <div class="calc-stat"><span>বৃদ্ধির হার dA/dT = 8T − T²</span><strong class="stat-v">—</strong></div>
+            <div class="calc-stat"><span>F(T) − F(a) = নির্দিষ্ট যোগজ</span><strong class="stat-diff">—</strong></div>
+          </div>
+        </div>`;
+      this._canvas = this.querySelector('.calc-canvas');
+      this._ctx = this._canvas.getContext('2d');
+      this._T = this.querySelector('.T');
+      this._a = this.querySelector('.a');
+      const draw = () => this._draw();
+      this._T.addEventListener('input', () => {
+        this.querySelector('[data-for="T"]').textContent = Number(this._T.value).toFixed(1);
+        draw();
+      });
+      this._a.addEventListener('input', () => {
+        this.querySelector('[data-for="a"]').textContent = Number(this._a.value).toFixed(1);
+        draw();
+      });
+      this.querySelectorAll('.preset').forEach(b => b.addEventListener('click', () => {
+        this._T.value = b.dataset.t; this._a.value = b.dataset.a;
+        this.querySelector('[data-for="T"]').textContent = Number(b.dataset.t).toFixed(1);
+        this.querySelector('[data-for="a"]').textContent = Number(b.dataset.a).toFixed(1);
+        draw();
+      }));
+      window.addEventListener('resize', () => this._resize());
+      window.addEventListener('b1b-fullscreen-change', () => this._resize());
+      this._resize();
+    }
+
+    _resize() {
+      if (!this._canvas) return;
+      const w = this._canvas.parentElement.clientWidth || 900;
+      this._canvas.width = w;
+      this._canvas.height = Math.max(360, Math.min(520, w * 0.46));
+      this._draw();
+    }
+
+    _draw() {
+      const ctx = this._ctx; if (!ctx) return;
+      const W = this._canvas.width, H = this._canvas.height;
+      const dark = themeDark();
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#080b12' : '#f8fafc'; ctx.fillRect(0, 0, W, H);
+      const L = 52, R = W - 30, B = H - 52, T = 30;
+      const v = t => t * (8 - t);
+      const F = t => 4 * t * t - (t * t * t) / 3;
+      const X = t => L + (R - L) * t / 8;
+      const Y = val => B - val * (B - T) / 90;
+
+      ctx.strokeStyle = dark ? '#94a3b8' : '#475569'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(L, B); ctx.lineTo(R, B); ctx.moveTo(L, B); ctx.lineTo(L, T); ctx.stroke();
+
+      let Tval = Number(this._T.value), aval = Math.min(Number(this._a.value), Tval);
+      ctx.beginPath(); ctx.moveTo(X(0), B);
+      for (let i = 0; i <= 120; i++) {
+        const t = Tval * i / 120; ctx.lineTo(X(t), Y(F(t)));
+      }
+      ctx.lineTo(X(Tval), B); ctx.closePath();
+      ctx.fillStyle = 'rgba(16,185,129,.25)'; ctx.fill();
+
+      if (Tval - aval > 0.05) {
+        ctx.beginPath(); ctx.moveTo(X(aval), B);
+        for (let i = 0; i <= 80; i++) {
+          const t = aval + (Tval - aval) * i / 80; ctx.lineTo(X(t), Y(F(t)));
+        }
+        ctx.lineTo(X(Tval), B); ctx.closePath();
+        ctx.fillStyle = 'rgba(139,92,246,.35)'; ctx.fill();
+      }
+
+      ctx.beginPath();
+      for (let i = 0; i <= 160; i++) {
+        const t = 8 * i / 160, x = X(t), y = Y(F(t));
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 3; ctx.stroke();
+
+      const dT = 0.38;
+      const x1 = X(Math.min(Tval, 8 - dT)), x2 = x1 + (R - L) * dT / 8;
+      const y1 = Y(F(Math.min(Tval, 8 - dT)));
+      ctx.fillStyle = 'rgba(251,191,36,.9)';
+      ctx.fillRect(x1, y1, Math.max(x2 - x1, 2), Math.max(B - y1, 2));
+      ctx.fillStyle = '#fbbf24'; ctx.font = '12px sans-serif';
+      ctx.fillText('dA = v(T) dT', x1 - 18, Math.max(y1 - 6, 16));
+
+      [['a', aval, '#a78bfa'], ['T', Tval, '#fbbf24']].forEach(pair => {
+        ctx.strokeStyle = pair[2]; ctx.lineWidth = 2; ctx.setLineDash([5, 4]);
+        ctx.beginPath(); ctx.moveTo(X(pair[1]), B); ctx.lineTo(X(pair[1]), T); ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = pair[2]; ctx.font = 'bold 13px sans-serif';
+        ctx.fillText(pair[0] + ' = ' + pair[1].toFixed(1), X(pair[1]) + 4, T + 12);
+      });
+
+      ctx.fillStyle = dark ? '#e2e8f0' : '#0f172a'; ctx.font = '12px sans-serif';
+      ctx.fillText('A(x) = ∫₀ˣ t(8−t) dt', L + 6, T + 30);
+      this.querySelector('.stat-A').textContent = fmt(F(Tval)) + ' m²';
+      this.querySelector('.stat-v').textContent = fmt(v(Tval)) + ' m/s';
+      this.querySelector('.stat-diff').textContent = fmt(F(Tval) - F(aval)) + ' m';
+    }
+  }
+
+  if (!customElements.get('calc-riemann-integration-lab')) customElements.define('calc-riemann-integration-lab', CalcRiemannIntegrationLab);
+  if (!customElements.get('calc-area-function-lab')) customElements.define('calc-area-function-lab', CalcAreaFunctionLab);
+})();
+</script>
+
+</body>
+</html>

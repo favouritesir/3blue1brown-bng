@@ -1,0 +1,631 @@
+# -*- coding: utf-8 -*-
+import json
+import os
+from pathlib import Path
+
+BASE_DIR = Path("departments/learning_paths/stem_mathematics/3blue1brown_courses")
+
+SCRIPT_DIR_OSC = BASE_DIR / "differential_equations" / "lesson_03_oscillations" / "dubbing_pipeline"
+SCRIPT_DIR_LIN = BASE_DIR / "differential_equations" / "lesson_03_linear_systems" / "dubbing_pipeline"
+AUDIO_DIR = BASE_DIR / "web_platform" / "assets" / "audio" / "differential_equations" / "lesson_03"
+DATA_DIR = BASE_DIR / "web_platform" / "data" / "differential_equations"
+
+SCRIPT_DIR_OSC.mkdir(parents=True, exist_ok=True)
+SCRIPT_DIR_LIN.mkdir(parents=True, exist_ok=True)
+AUDIO_DIR.mkdir(parents=True, exist_ok=True)
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+# ==========================================
+# 1. MASTER SCRIPT (50 items)
+# ==========================================
+MASTER_SCRIPT = [
+    {
+        "id": 1,
+        "start": 0.0,
+        "end": 7.2,
+        "duration": 7.2,
+        "en": "In our previous exploration, we marveled at the swinging pendulum and how phase space untangles nonlinear motion.",
+        "bn": "পূর্ববর্তী অধ্যায়ে আমরা সরল পেন্ডুলামের দোলন এবং ফেজ স্পেস কীভাবে অরৈখিক গতিকে স্পষ্ট করে তোলে তা গভীরভাবে দেখেছি।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 2,
+        "start": 7.8,
+        "end": 16.0,
+        "duration": 8.2,
+        "en": "Today, we study the heartbeat of the physical universe: harmonic oscillations and the spring-mass system.",
+        "bn": "আজ আমরা পদার্থবিজ্ঞানের সবচেয়ে মৌলিক এবং সার্বজনীন স্পন্দন নিয়ে আলোচনা করব—দোলন এবং স্প্রিং-ভর ব্যবস্থা।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 3,
+        "start": 16.5,
+        "end": 25.0,
+        "duration": 8.5,
+        "en": "From vibrating violin strings and quartz clocks to atomic bonds and quantum fields, almost everything near equilibrium oscillates.",
+        "bn": "বেহালার তারের সুর থেকে শুরু করে কোয়ার্টজ ঘড়ি, অণুর ভেতরের বন্ধন কিংবা কোয়ান্টাম ক্ষেত্র—সাম্যাবস্থার কাছে প্রায় প্রতিটি ব্যবস্থাপনাই স্পন্দিত হয়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 4,
+        "start": 25.5,
+        "end": 34.0,
+        "duration": 8.5,
+        "en": "Let us begin with the simplest ideal case: a block of mass m sliding without friction on a horizontal surface, attached to a spring.",
+        "bn": "চলুন সবচেয়ে সহজ ও আদর্শ ব্যবস্থা দিয়ে শুরু করা যাক: ঘর্ষণহীন মেঝের ওপর এম ভরের একটি বস্তু একটি স্প্রিংয়ের সাথে যুক্ত রয়েছে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 5,
+        "start": 34.5,
+        "end": 43.2,
+        "duration": 8.7,
+        "en": "When the mass is displaced by an amount x from equilibrium, Robert Hooke's 1678 law tells us the restoring force is proportional to displacement.",
+        "bn": "বস্তুটিকে সাম্যাবস্থা থেকে এক্স পরিমাণ টেনে ছেড়ে দিলে রবার্ট হুকের ১৬৭৮ সালের সূত্র অনুসারে প্রত্যয়নী বল সরণের সমানুপাতিক হয়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 6,
+        "start": 43.8,
+        "end": 51.5,
+        "duration": 7.7,
+        "en": "F equals minus k times x, where k is the spring stiffness constant and the minus sign insists that force opposes displacement.",
+        "bn": "বল এফ সমান মাইনাস কে গুণ এক্স; যেখানে কে হলো স্প্রিং ধ্রুবক এবং ঋণাত্মক চিহ্নটি নির্দেশ করে বল সর্বদা সরণের বিপরীতে কাজ করে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 7,
+        "start": 52.0,
+        "end": 60.5,
+        "duration": 8.5,
+        "en": "Now, we invoke Newton's second law: force equals mass times acceleration, which is mass times the second derivative of position with respect to time.",
+        "bn": "এবার আমরা নিউটনের দ্বিতীয় গতিসূত্র প্রয়োগ করি: বল সমান ভর গুণ ত্বরণ, অর্থাৎ এম গুণ অবস্থানের দ্বিতীয় অন্তরজ ডি স্কয়ার এক্স বাই ডি টি স্কয়ার।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 8,
+        "start": 61.0,
+        "end": 70.2,
+        "duration": 9.2,
+        "en": "Setting m times x double-dot equal to minus k x gives the quintessential equation of Simple Harmonic Motion: x double-dot plus omega-naught squared x equals zero.",
+        "bn": "সমীকরণটি সাজালে আমরা পাই সরল ছন্দিত স্পন্দনের চিরায়ত সমীকরণ: ডি স্কয়ার এক্স বাই ডি টি স্কয়ার যোগ ওমেগা নট স্কয়ার এক্স সমান শূন্য।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 9,
+        "start": 70.8,
+        "end": 80.0,
+        "duration": 9.2,
+        "en": "Here, omega-naught equals the square root of k over m, which represents the natural angular frequency of the oscillator.",
+        "bn": "এখানে ওমেগা নট হলো রুট ওভার কে বাই এম, যা দোলকটির নিজস্ব প্রাকৃতিক কৌণিক কম্পাঙ্ক নির্দেশ করে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 10,
+        "start": 80.5,
+        "end": 89.8,
+        "duration": 9.3,
+        "en": "The general solution is a pure sinusoidal wave: x of t equals A cosine of omega-naught t minus phi, oscillating forever with constant amplitude A.",
+        "bn": "এর সাধারণ সমাধান হলো একটি বিশুদ্ধ সাইন তরঙ্গ: এক্স অফ টি সমান এ কস অফ ওমেগা নট টি মাইনাস ফাই, যা ধ্রুব বিস্তারে অনন্তকাল দুলতে থাকে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 11,
+        "start": 90.5,
+        "end": 100.0,
+        "duration": 9.5,
+        "en": "In phase space, plotting position x on the horizontal axis and velocity v on the vertical axis, this motion traces a family of closed concentric ellipses.",
+        "bn": "ফেজ স্পেসে অনুভূমিক অক্ষে অবস্থান এক্স এবং উলম্ব অক্ষে বেগ ভি আঁকলে এই গতি আবদ্ধ সমকেন্দ্রিক উপবৃত্তের পরিবার গঠন করে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 12,
+        "start": 100.5,
+        "end": 110.2,
+        "duration": 9.7,
+        "en": "Every closed loop in phase space signifies a conservative system where mechanical energy, half m v squared plus half k x squared, remains strictly constant.",
+        "bn": "ফেজ স্পেসের প্রতিটি বদ্ধ লুপ প্রমাণ করে যে ব্যবস্থাটি শক্তি সংরক্ষণশীল; গতিশক্তি ও স্থিতিশক্তির মোট যোগফল সর্বদা ধ্রুবক থাকে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 13,
+        "start": 110.8,
+        "end": 120.0,
+        "duration": 9.2,
+        "en": "However, in real engineering systems, frictionless motion is an illusion. Energy is inevitably bled away by friction and viscous drag.",
+        "bn": "কিন্তু বাস্তব প্রকৌশলে ঘর্ষণহীন গতি এক অলীক কল্পনা। ঘর্ষণ এবং সান্দ্র বাধার কারণে শক্তি ধীরে ধীরে পরিবেশে ক্ষয়প্রাপ্ত হয়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 14,
+        "start": 120.5,
+        "end": 129.5,
+        "duration": 9.0,
+        "en": "For moderate speeds in air or fluid, damping acts as a retarding force directly proportional to velocity: F damping equals minus b times v.",
+        "bn": "তরল বা বাতাসে মাঝারি বেগে সান্দ্র বাধা বেগের সমানুপাতিক হয়: এফ ড্যাম্পিং সমান মাইনাস বি গুণ ভি, যেখানে বি হলো সান্দ্রতা গুণাঙ্ক।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 15,
+        "start": 130.0,
+        "end": 139.8,
+        "duration": 9.8,
+        "en": "Adding this resistive force to Newton's second law yields the complete damped harmonic oscillator equation: m x double-dot plus b x dot plus k x equals zero.",
+        "bn": "এই প্রতিরোধী বল নিউটনের দ্বিতীয় সূত্রে যোগ করলে পাওয়া যায় পূর্ণ অবদমিত সমীকরণ: এম এক্স ডাবল-ডট যোগ বি এক্স ডট যোগ কে এক্স সমান শূন্য।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 16,
+        "start": 140.2,
+        "end": 150.0,
+        "duration": 9.8,
+        "en": "Dividing through by the mass m, we rewrite it in the standard canonical form: x double-dot plus 2 gamma x dot plus omega-naught squared x equals zero.",
+        "bn": "উভয়পক্ষকে ভর এম দিয়ে ভাগ করে আমরা প্রমিত রূপ পাই: এক্স ডাবল-ডট যোগ টু গামা এক্স ডট যোগ ওমেগা নট স্কয়ার এক্স সমান শূন্য।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 17,
+        "start": 150.5,
+        "end": 159.0,
+        "duration": 8.5,
+        "en": "Here, the parameter gamma equals b over 2m, and it quantifies the strength of damping per unit mass.",
+        "bn": "এখানে গামা হলো বি বাই টু এম, যা একক ভরে অবদমনের তীব্রতা পরিমাপ করে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 18,
+        "start": 159.5,
+        "end": 169.0,
+        "duration": 9.5,
+        "en": "Notice that every single term involves x or its derivatives to the first power. This is a linear, homogeneous, constant-coefficient differential equation.",
+        "bn": "খেয়াল করুন প্রতিটি পদে এক্স বা তার অন্তরজ প্রথম ঘাতে রয়েছে। এটি একটি ধ্রুব সহগবিশিষ্ট দ্বিতীয় ক্রমের রৈখিক হোমোজেনিয়াস ওডিই।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 19,
+        "start": 169.5,
+        "end": 179.0,
+        "duration": 9.5,
+        "en": "Because derivatives of exponential functions reproduce themselves, Euler's inspired insight is to propose the trial solution x of t equals e to the power r t.",
+        "bn": "সূচকীয় ফাংশনের অন্তরজ পুনরায় একই আকার দেয় বলে অয়লারের পথ ধরে আমরা সমাধান হিসেবে ধরে নিই এক্স অফ টি সমান ই টু দ্য পাওয়ার আর টি।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 20,
+        "start": 179.5,
+        "end": 189.0,
+        "duration": 9.5,
+        "en": "Substituting this ansatz into the differential equation, we get e to the r t multiplied by r squared plus 2 gamma r plus omega-naught squared equals zero.",
+        "bn": "এই মান সমীকরণে বসালে ই টু দ্য পাওয়ার আর টি কমন নিয়ে পাই আর স্কয়ার যোগ টু গামা আর যোগ ওমেগা নট স্কয়ার সমান শূন্য।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 21,
+        "start": 189.5,
+        "end": 199.5,
+        "duration": 10.0,
+        "en": "Since the exponential is never zero, the quadratic factor in parentheses must vanish. This is the celebrated characteristic equation of the oscillator.",
+        "bn": "যেহেতু সূচকীয় পদ কখনো শূন্য হতে পারে না, তাই বন্ধনীর ভেতরের দ্বিঘাত রাশিটি অবশ্যই শূন্য হতে হবে। একেই বলে চারিত্রিক সমীকরণ।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 22,
+        "start": 200.0,
+        "end": 210.0,
+        "duration": 10.0,
+        "en": "Using the quadratic formula, the roots are r equals minus gamma plus or minus the square root of gamma squared minus omega-naught squared.",
+        "bn": "দ্বিঘাত সূত্র প্রয়োগ করলে মূলগুলো আসে আর সমান মাইনাস গামা প্লাস মাইনাস রুট ওভার গামা স্কয়ার মাইনাস ওমেগা নট স্কয়ার।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 23,
+        "start": 210.5,
+        "end": 220.0,
+        "duration": 9.5,
+        "en": "The entire destiny of the oscillating system hinges on the sign of the quantity inside the square root: gamma squared minus omega-naught squared.",
+        "bn": "বর্গমূলের ভেতরের রাশি গামা স্কয়ার মাইনাস ওমেগা নট স্কয়ার এর চিহ্নের ওপরই নির্ভর করে গতিপ্রকৃতির সমগ্র ভবিষ্যৎ!",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 24,
+        "start": 220.5,
+        "end": 230.0,
+        "duration": 9.5,
+        "en": "Depending on this discriminant, nature manifests in three remarkably distinct behaviors: underdamping, critical damping, and overdamping.",
+        "bn": "এই নিশ্চায়কের মানের ওপর ভিত্তি করে প্রকৃতিতে তিনটি সম্পূর্ণ ভিন্ন দৃশ্যপট উন্মোচিত হয়: অবদমিত, সংকটকালীন অবদমিত এবং অতি-অবদমিত।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 25,
+        "start": 230.5,
+        "end": 240.5,
+        "duration": 10.0,
+        "en": "First: the underdamped regime, where damping is weak: gamma is strictly less than omega-naught.",
+        "bn": "প্রথম দৃশ্যপট: আন্ডারড্যাম্পড বা দুর্বল অবদমন, যেখানে গামার মান ওমেগা নটের চেয়ে ছোট অর্থাৎ সান্দ্র বাধা অত্যন্ত মৃদু।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 26,
+        "start": 241.0,
+        "end": 251.5,
+        "duration": 10.5,
+        "en": "The term under the radical is negative, which gives us a pair of complex conjugate roots: r equals minus gamma plus or minus i times omega-d.",
+        "bn": "বর্গমূলের ভেতরে ঋণাত্মক সংখ্যা আসায় আমরা পাই অনুবন্ধী জটিল সংখ্যার এক যুগল মূল: আর সমান মাইনাস গামা প্লাস মাইনাস আই গুণ ওমেগা ডি।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 27,
+        "start": 252.0,
+        "end": 262.0,
+        "duration": 10.0,
+        "en": "Here, omega-d equals the square root of omega-naught squared minus gamma squared. This is the damped frequency, which is slightly slower than omega-naught.",
+        "bn": "এখানে ওমেগা ডি হলো রুট ওভার ওমেগা নট স্কয়ার মাইনাস গামা স্কয়ার, যা অবদমিত কম্পাঙ্ক নির্দেশ করে এবং স্বাভাবিক কম্পাঙ্কের চেয়ে কিছুটা কম।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 28,
+        "start": 262.5,
+        "end": 272.5,
+        "duration": 10.0,
+        "en": "Using Euler's formula e to the i theta equals cosine theta plus i sine theta, the physical real solution is x of t equals A e to the minus gamma t times cosine of omega-d t minus phi.",
+        "bn": "অয়লারের সূত্র প্রয়োগ করলে বাস্তব সমাধানটি দাঁড়ায় এক্স অফ টি সমান এ ইনটু ই টু দ্য পাওয়ার মাইনাস গামা টি গুণ কস অফ ওমেগা ডি টি মাইনাস ফাই।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 29,
+        "start": 273.0,
+        "end": 283.0,
+        "duration": 10.0,
+        "en": "This is a masterpiece of geometry: a rapid sinusoidal oscillation trapped inside an exponentially decaying envelope plus or minus A e to the minus gamma t.",
+        "bn": "এটি জ্যামিতির এক অপূর্ব শিল্পকর্ম: প্লাস মাইনাস এ ইনটু ই টু দ্য পাওয়ার মাইনাস গামা টি এর সূচকীয় মোড়কের ভেতরে আবদ্ধ দ্রুত দোলন!",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 30,
+        "start": 283.5,
+        "end": 294.0,
+        "duration": 10.5,
+        "en": "What happens in phase space? The closed ellipses of undamped motion break open and curl inward, forming a tight logarithmic spiral toward the origin.",
+        "bn": "ফেজ স্পেসে কী ঘটে? আনড্যাম্পড গতির আবদ্ধ উপবৃত্তগুলো ভেঙে গিয়ে ভেতরের দিকে পাক খেয়ে মূলবিন্দুর দিকে একটি সর্পিল স্পাইরাল তৈরি করে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 31,
+        "start": 294.5,
+        "end": 304.5,
+        "duration": 10.0,
+        "en": "The origin is now a spiral sink, also called an attractor. No matter where you release the mass, it spirals down to rest as t goes to infinity.",
+        "bn": "মূলবিন্দুটি এখন একটি স্পাইরাল সিঙ্ক বা আকর্ষণবিন্দু। যেখান থেকেই বস্তুকে ছেড়ে দিন না কেন, সময়ের সাথে সাথে এটি ক্ষয়প্রাপ্ত হয়ে মূলবিন্দুতে স্থির হবে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 32,
+        "start": 305.0,
+        "end": 315.0,
+        "duration": 10.0,
+        "en": "Second: the critically damped regime, where gamma exactly balances omega-naught. The square root vanishes, leaving a single repeated root r equals minus gamma.",
+        "bn": "দ্বিতীয় দৃশ্যপট: সংকটকালীন অবদমন, যেখানে গামা ঠিক ওমেগা নটের সমান। বর্গমূল শূন্য হয়ে যায় এবং একটিমাত্র পুনরাবৃত্ত মূল আর সমান মাইনাস গামা থাকে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 33,
+        "start": 315.5,
+        "end": 326.0,
+        "duration": 10.5,
+        "en": "The general solution acquires a polynomial factor: x of t equals c-one plus c-two times t, all multiplied by e to the minus gamma t.",
+        "bn": "তখন দ্বিতীয় স্বাধীন সমাধান পাওয়ার জন্য টি গুণ করতে হয়: এক্স অফ টি সমান সি ওয়ান যোগ সি টু গুণ টি, সম্পূর্ণটা গুণ ই টু দ্য পাওয়ার মাইনাস গামা টি।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 34,
+        "start": 326.5,
+        "end": 337.0,
+        "duration": 10.5,
+        "en": "Critical damping is the golden engineering standard for car shock absorbers and automatic door closers: it returns to equilibrium in the fastest possible time without ever oscillating.",
+        "bn": "গাড়ির শক অ্যাবজরবার কিংবা স্বয়ংক্রিয় দরজা বন্ধের ক্ষেত্রে এটি এক নিখুঁত ইঞ্জিনিয়ারিং স্ট্যান্ডার্ড: এটি কোনো দোলন ছাড়াই দ্রুততম সময়ে সাম্যাবস্থায় ফিরে আসে!",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 35,
+        "start": 337.5,
+        "end": 347.5,
+        "duration": 10.0,
+        "en": "Third: the overdamped regime, where gamma is strictly greater than omega-naught. Damping dominates inertia completely, like moving a spring in thick honey.",
+        "bn": "তৃতীয় দৃশ্যপট: ওভারড্যাম্পড বা অতি-অবদমন, যেখানে গামা ওমেগা নটের চেয়ে অনেক বড়। ঘন মধুর ভেতর স্প্রিং নাড়ালে যেমন হয়, ঘর্ষণ এখানে জড়তাকে পুরোপুরি দমিয়ে দেয়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 36,
+        "start": 348.0,
+        "end": 358.5,
+        "duration": 10.5,
+        "en": "The roots are two distinct real negative numbers, r-one and r-two. The solution decays monotonically as a sum of two pure exponentials without any oscillation whatsoever.",
+        "bn": "এখানে মূল দুটি পৃথক বাস্তব ঋণাত্মক সংখ্যা আর ওয়ান ও আর টু। সমাধানটি কোনো ধরনের দোলন ছাড়াই দুটি সূচকীয় হ্রাসের যোগফল হিসেবে অত্যন্ত ধীরগতিতে শূন্যে পৌঁছায়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 37,
+        "start": 359.0,
+        "end": 369.0,
+        "duration": 10.0,
+        "en": "Now let us ask an even grander question: what happens when we continuously pump energy into the oscillator with an external periodic driving force?",
+        "bn": "এবার চলুন আরও এক ধাপ এগিয়ে যাওয়া যাক: যদি আমরা বাইরে থেকে পর্যায়বৃত্ত বল প্রয়োগ করে অবিরত দোলকটিতে শক্তি যোগান দিই, তবে কী ঘটবে?",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 38,
+        "start": 369.5,
+        "end": 380.0,
+        "duration": 10.5,
+        "en": "The equation becomes non-homogeneous: x double-dot plus 2 gamma x dot plus omega-naught squared x equals F-naught over m times cosine of omega t.",
+        "bn": "সমীকরণটি একটি নন-হোমোজেনিয়াস সমীকরণে রূপ নেয়: এক্স ডাবল-ডট যোগ টু গামা এক্স ডট যোগ ওমেগা নট স্কয়ার এক্স সমান এফ নট বাই এম গুণ কস অফ ওমেগা টি।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 39,
+        "start": 380.5,
+        "end": 391.0,
+        "duration": 10.5,
+        "en": "The total response is the sum of two parts: the homogeneous transient solution x-h of t, and a particular steady-state solution x-p of t.",
+        "bn": "মোট সমাধানটি দুটি অংশের সমষ্টি: ট্রানজিয়েন্ট বা ক্ষণস্থায়ী সমাধান এক্স এইচ এবং স্থির দশার সুষম সমাধান এক্স পি।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 40,
+        "start": 391.5,
+        "end": 401.5,
+        "duration": 10.0,
+        "en": "Because of damping, the transient term dies out exponentially over time, leaving only the steady-state oscillation at the external driving frequency omega.",
+        "bn": "অবদমনের কারণে ক্ষণস্থায়ী পদটি সময়ের সাথে মিলিয়ে যায়; টিকে থাকে কেবল বাহ্যিক চালক কম্পাঙ্ক ওমেগাতে দোদুল্যমান স্থির দশাটি।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 41,
+        "start": 402.0,
+        "end": 412.5,
+        "duration": 10.5,
+        "en": "The steady-state amplitude A of omega equals F-naught over m divided by the square root of omega-naught squared minus omega squared squared plus 4 gamma squared omega squared.",
+        "bn": "স্থির দশার বিস্তার এ অফ ওমেগা নির্ভর করে ওমেগা নট এবং চালক কম্পাঙ্ক ওমেগার পার্থক্যের ওপর।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 42,
+        "start": 413.0,
+        "end": 423.5,
+        "duration": 10.5,
+        "en": "When the driving frequency omega approaches the natural frequency omega-naught, the denominator reaches its minimum and the response amplitude explodes! This is Resonance.",
+        "bn": "যখন চালক কম্পাঙ্ক ওমেগা দোলকের স্বাভাবিক কম্পাঙ্ক ওমেগা নটের কাছাকাছি পৌঁছে, তখন হর সর্বনিম্ন হয়ে বিস্তার নাটকীয়ভাবে বিস্ফোরিত হয়! এটিই হলো অনুনাদ বা রেজোন্যান্স।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 43,
+        "start": 424.0,
+        "end": 434.5,
+        "duration": 10.5,
+        "en": "Resonance can shatter bridges if wind forces align, as dramatically shown in the Tacoma Narrows Bridge, but it is also the secret behind radio tuning and magnetic resonance imaging.",
+        "bn": "বায়ুর ছন্দে অনুনাদ সৃষ্টি হলে যেমন তাকোমা ব্রিজ ভেঙে পড়তে পারে, তেমনি রেডিও টিউনিং এবং এমআরআই মেশিনের অবিশ্বাস্য কার্যকারিতার মূল চাবিকাঠিও এই অনুনাদ।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 44,
+        "start": 435.0,
+        "end": 445.0,
+        "duration": 10.0,
+        "en": "In phase space, a driven oscillator with damping forgets its initial release point and gets drawn inexorably into a closed periodic orbit called a limit cycle.",
+        "bn": "ফেজ স্পেসে প্রণোদিত অবদমিত দোলক তার আদি অবস্থান ভুলে গিয়ে একটি নির্দিষ্ট বদ্ধ কক্ষপথের দিকে আকৃষ্ট হয়—যাকে বলা হয় লিমিট সাইকেল।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 45,
+        "start": 445.5,
+        "end": 456.0,
+        "duration": 10.5,
+        "en": "Let us step back and appreciate how linear systems of ODEs unify this whole picture: we define the state vector x-arrow equals column vector x and v.",
+        "bn": "একটু পেছনের পদক্ষেপে পুরো ছবিটিকে যদি রৈখিক ওডিই জোটের দৃষ্টিতে দেখি: আমরা স্টেট ভেক্টর এক্স সংজ্ঞায়িত করি অবস্থান এক্স এবং বেগ ভি এর সমন্বয়ে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 46,
+        "start": 456.5,
+        "end": 467.0,
+        "duration": 10.5,
+        "en": "Then dx by dt equals v, and dv by dt equals minus omega-naught squared x minus 2 gamma v. In matrix form, d x-arrow by dt equals matrix A times x-arrow.",
+        "bn": "তখন ডি এক্স বাই ডি টি সমান ভি, এবং ডি ভি বাই ডি টি সমান মাইনাস ওমেগা নট স্কয়ার এক্স মাইনাস টু গামা ভি। ম্যাট্রিক্স আকারে ডি এক্স বাই ডি টি সমান এ গুণ এক্স।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 47,
+        "start": 467.5,
+        "end": 478.0,
+        "duration": 10.5,
+        "en": "The matrix has top row 0, 1, and bottom row minus omega-naught squared, minus 2 gamma. Its eigenvalues are precisely the roots of our characteristic equation!",
+        "bn": "ম্যাট্রিক্সের প্রথম সারিতে শূন্য ও এক, দ্বিতীয় সারিতে মাইনাস ওমেগা নট স্কয়ার ও মাইনাস টু গামা। এর আইগেনভ্যালুগুলোই অবিকল আমাদের চারিত্রিক সমীকরণের মূল!",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 48,
+        "start": 478.5,
+        "end": 489.0,
+        "duration": 10.5,
+        "en": "Linear algebra and differential equations reveal themselves as two sides of the very same coin: complex eigenvalues rotate space into spirals, while negative real eigenvalues pull space into nodes.",
+        "bn": "রৈখিক বীজগণিত এবং ক্যালকুলাস একই মুদ্রার দুই পিঠ: জটিল আইগেনভ্যালু স্থানকে সর্পিল স্পাইরালে ঘুরায়, আর ঋণাত্মক বাস্তব আইগেনভ্যালু স্থানকে নোডের মতো আকর্ষণ করে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 49,
+        "start": 489.5,
+        "end": 500.0,
+        "duration": 10.5,
+        "en": "Whether you are looking at an oscillating mass on a coil, an alternating current in an RLC electrical circuit, or quantum harmonic vibrations, the underlying mathematics is identical.",
+        "bn": "স্প্রিংয়ের সাথে দোদুল্যমান ভর, আরএলসি বৈদ্যুতিক বর্তনী কিংবা কোয়ান্টাম হারমোনিক স্পন্দন—সবকিছুর পেছনে কাজ করছে অবিকল একই গাণিতিক সূত্রাবলী।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    },
+    {
+        "id": 50,
+        "start": 500.5,
+        "end": 512.0,
+        "duration": 11.5,
+        "en": "By understanding the spring-mass oscillator through differential equations and phase space, you have unlocked the foundational symphony of the universe.",
+        "bn": "ডিফারেনশিয়াল সমীকরণ ও ফেজ স্পেসের মাধ্যমে এই হারমোনিক গতিকে অনুধাবনের মধ্য দিয়ে আপনারা মহাবিশ্বের মৌলিক ছন্দকে প্রত্যক্ষ করার এক অনবদ্য চোখ লাভ করলেন!",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)",
+        "tempo_estimate": 1.0,
+        "sync_strategy": "dynamic_atempo_fit"
+    }
+]
+
+# Write to both script dirs
+with open(SCRIPT_DIR_OSC / "3b1b_diffeq_l03_bangla_master_script.json", "w", encoding="utf-8") as f:
+    json.dump(MASTER_SCRIPT, f, ensure_ascii=False, indent=2)
+
+with open(SCRIPT_DIR_LIN / "3b1b_diffeq_l03_bangla_master_script.json", "w", encoding="utf-8") as f:
+    json.dump(MASTER_SCRIPT, f, ensure_ascii=False, indent=2)
+
+print("Master scripts written successfully.")

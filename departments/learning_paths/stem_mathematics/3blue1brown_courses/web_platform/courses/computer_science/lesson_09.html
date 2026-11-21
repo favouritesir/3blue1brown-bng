@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>হ্যামিং কোড ও ত্রুটি সংশোধন | Hamming codes and error correction</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/computer_science/lesson_09/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="কম্পিউটার বিজ্ঞান"
+  course-url="../../index.html#computer-science"
+  home-url="../../index.html"
+  chapter-num="০৯"
+  chapter-total="১৩"
+  prev-url="lesson_08.html"
+  prev-title="মহামারি সিমুলেশন: SIR মডেল"
+  next-url="lesson_10.html"
+  next-title="হ্যামিং কোড পর্ব ২ | এর সৌন্দর্য"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="কম্পিউটার বিজ্ঞান"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৯ · কম্পিউটার বিজ্ঞান"
+  title="হ্যামিং কোড ও ত্রুটি সংশোধন | Hamming codes and error correction"
+  desc="প্যারিটি বিট, হ্যামিং দূরত্ব ও (7,4) কোড—একটি বিটের ভুল কীভাবে শনাক্ত ও সংশোধন করা যায়।"
+  video-src="../../media_vault/computer_science/lesson_09/experiments/3b1b_computer_science_09_full_dubbed.mp4"
+  yt-id="X8jsijhllIA"
+  date="৪ সেপ্টেম্বর, ২০২০"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2020/hamming.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">ত্রুটির সমস্যা</b1b-bookmark>
+      <b1b-bookmark time="70" time-bn="০১:১০">প্যারিটি</b1b-bookmark>
+      <b1b-bookmark time="165" time-bn="০২:৪৫">(7,4) কোড</b1b-bookmark>
+      <b1b-bookmark time="255" time-bn="০৪:১৫">সংশোধন</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-problem">১. ত্রুটি কেন হয়</a>
+      <a href="#sec-parity">২. প্যারিটি বিট</a>
+      <a href="#sec-74">৩. (7,4) হ্যামিং কোড</a>
+      <a href="#sec-distance">৪. হ্যামিং দূরত্ব</a>
+      <a href="#sec-decode">৫. ভুল সংশোধন</a>
+      <a href="#sec-lab">ইন্টারেক্টিভ — বিট ঠিক করুন</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+    <b1b-section id="sec-problem" title="১. ত্রুটি কেন হয়">
+        <p>তথ্য যখন তারের মাধ্যমে বা ডিস্কে লেখা হয়, তখন কখনো কখনো একটি ০ হয়ে ১ বা ১ হয়ে ০ হয়ে যায়। প্রশ্ন হলো—এই ভুল কি শনাক্ত ও সংশোধন করা যায়?</p>
+        <b1b-figure src="../../assets/figures/cs09/cs09_f01.svg" alt="bit-flip" caption="একটি বিট উল্টে যাওয়ার চিত্র"></b1b-figure>
+        <b1b-callout type="blue" icon="⚠️" title="সমস্যা">
+          <p>শুধু ভুল ''ধরা'' যথেষ্ট নয়—আমরা চাই ভুলটি ''ঠিক''ও করে দিতে।</p>
+        </b1b-callout>
+    </b1b-section>
+
+    <b1b-section id="sec-parity" title="২. প্যারিটি বিট">
+        <p>সবচেয়ে সরল পদ্ধতি হলো একটি ''প্যারিটি বিট'' যোগ করা—যার মান এমনভাবে বাছাই করা হয় যাতে মোট ১-এর সংখ্যা জোড় হয়। একটি বিট বদলালে এই নিয়ম ভেঙে যায়, তাই ভুল ধরা পড়ে।</p>
+        <b1b-figure src="../../assets/figures/cs09/cs09_f02.svg" alt="parity-bit" caption="প্যারিটি বিট যোগ করে ভুল শনাক্ত"></b1b-figure>
+        <p>কিন্তু এক প্যারিটি বিট দিয়ে শুধু ''ভুল আছে'' বোঝা যায়—কোথায় ভুল তা বোঝা যায় না। তার জন্য লাগবে একাধিক প্যারিটি বিট।</p>
+    </b1b-section>
+
+    <b1b-section id="sec-74" title="৩. (7,4) হ্যামিং কোড">
+        <p>রিচার্ড হ্যামিং দেখিয়েছিলেন—৪টি তথ্য বিটের সাথে ৩টি প্যারিটি বিট যোগ করে ৭-বিটের একটি শব্দ তৈরি করা যায়, যা যেকোনো একটি বিটের ভুল সংশোধন করতে পারে।</p>
+        <b1b-figure src="../../assets/figures/cs09/cs09_f03.svg" alt="hamming-74" caption="(7,4) হ্যামিং কোড—বিটের অবস্থান চিহ্নিত"></b1b-figure>
+        <b1b-formula math="4\ \text{তথ্য বিট} \;+\; 3\ \text{প্যারিটি বিট} \;=\; 7\ \text{বিট}"></b1b-formula>
+        <b1b-quote author="Richard Hamming">কম্পিউটার ভুল করবে—এটা অনিবার্য; আমাদের কাজ হলো সেই ভুলকে নির্ভুলভাবে ঠিক করা।</b1b-quote>
+
+        <b1b-quiz
+          question="❓ (7,4) হ্যামিং কোডে কতটি প্যারিটি বিট থাকে?"
+          correct="2"
+          correct-msg="সঠিক! ৭ − ৪ = ৩টি প্যারিটি বিট।"
+          wrong-msg="মোট বিট বিয়োগ তথ্য বিট—বাকিটা প্যারিটি।"
+          reveal-msg="সঠিক উত্তর: ৩টি।">
+          <div slot="option">১</div>
+          <div slot="option">২</div>
+          <div slot="option">৩</div>
+          <div slot="option">৪</div>
+        </b1b-quiz>
+    </b1b-section>
+
+    <b1b-section id="sec-distance" title="৪. হ্যামিং দূরত্ব">
+        <p>দুটি কোডওয়ার্ডের যতগুলো অবস্থানে বিট আলাদা, তা হলো হ্যামিং দূরত্ব। একটি ভুল সংশোধন করতে হলে কোডওয়ার্ডগুলোর মধ্যে ন্যূনতম দূরত্ব কমপক্ষে ৩ হতে হবে।</p>
+        <b1b-figure src="../../assets/figures/cs09/cs09_f04.svg" alt="hamming-distance" caption="কোডওয়ার্ডের মধ্যকার হ্যামিং দূরত্ব"></b1b-figure>
+        <b1b-formula math="d_{\min}\geq 2t+1"></b1b-formula>
+        <p>$t$টি ভুল সংশোধন করতে ন্যূনতম দূরত্ব $2t+1$—এই সীমাটিকে ''হ্যামিং সীমা'' বলে।</p>
+    </b1b-section>
+
+    <b1b-section id="sec-decode" title="৫. ভুল সংশোধন">
+        <p>প্রাপ্ত ৭-বিট শব্দের তিনটি প্যারিটি যাচাই করা হয়। তিনটি ফলাফল একসাথে একটি ''সিনড্রোম'' তৈরি করে, যা সরাসরি ভুল বিটের অবস্থান (১ থেকে ৭) নির্দেশ করে। সেই বিটটি উল্টে দিলেই ঠিক কোডওয়ার্ড পাওয়া যায়।</p>
+        <b1b-figure src="../../assets/figures/cs09/cs09_f05.svg" alt="syndrome-correct" caption="সিনড্রোম থেকে ভুল বিটের অবস্থান"></b1b-figure>
+        <b1b-callout type="gold" icon="🧠" title="এখানেই সৌন্দর্য">
+          <p>তিনটি প্যারিটি = তিন বিট = ৮টি সম্ভব সিনড্রোম—একটি ''কোনো ভুল নেই'' আর বাকি সাতটি ''কোন বিট ভুল''।</p>
+        </b1b-callout>
+    </b1b-section>
+
+    <b1b-section id="sec-lab" title="৬. ইন্টারেক্টিভ — বিট ঠিক করুন" data-no-narration="true">
+      <p class="viz-intro">নিচের ইন্টারেক্টিভ উপাদান ও কুইজের মাধ্যমে পাঠের ধারণা নিজে যাচাই করুন।</p>
+      <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+        <figure class="interactive-figure"><img src="../../assets/figures/cs09/cs09_f06.svg" alt="সিনড্রোম ও ত্রুটি সংশোধন"/><figcaption>সিনড্রোম ও ত্রুটি সংশোধন</figcaption></figure>
+      </b1b-fullscreen>
+
+        <b1b-quiz
+          question="❓ ৩টি প্যারিটি বিট কতটি ভিন্ন অবস্থান চিহ্নিত করতে পারে?"
+          correct="2"
+          correct-msg="সঠিক! $2^3=8$—একটি ''ভুল নেই'' + ৭টি ভুলের অবস্থান।"
+          wrong-msg="তিনটি বিট দিয়ে কতগুলো বাইনারি প্যাটার্ন লেখা যায়?"
+          reveal-msg="সঠিক উত্তর: ৮টি।">
+          <div slot="option">৩</div>
+          <div slot="option">৭</div>
+          <div slot="option">৮</div>
+          <div slot="option">১৬</div>
+        </b1b-quiz>
+    </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/computer_science/lesson_09/experiments/3b1b_computer_science_09_full_dubbed.mp4"
+    yt-id="X8jsijhllIA"
+    title="হ্যামিং কোড ও ত্রুটি সংশোধন — অধ্যায় ০৯"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — কম্পিউটার বিজ্ঞান">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_08.html"
+  prev-title="মহামারি সিমুলেশন: SIR মডেল"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_10.html"
+  next-title="হ্যামিং কোড পর্ব ২ | এর সৌন্দর্য"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

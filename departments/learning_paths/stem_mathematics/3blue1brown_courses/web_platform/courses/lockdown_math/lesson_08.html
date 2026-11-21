@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="ব্যাসেল সমস্যা: 1 + 1/4 + 1/9 + 1/16 + ... অসীম ধারার যোগফল কেন π²/৬ এর সমান? লেনার্ড অয়লারের এই ঐতিহাসিক আবিষ্কারকে বাতিঘরের আলো এবং পিথাগোরাসের বৃত্তাকার জ্যামিতির সাহায্যে অত্যন্ত স্বজ্ঞাত ও চাক্ষুষভাবে সমাধান।"/>
+<title>ব্যাসেল সমস্যা ও পাই স্কয়ার বাই ৬ এর সমাধান | Proof of the Basel problem | লকডাউন ম্যাথ | ৩ব্লু১ব্রাউন বাংলা</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/lockdown_math/lesson_08/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict L01 load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (LAST: parses the final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="লকডাউন ম্যাথ"
+  course-url="../../index.html#lockdown-math"
+  home-url="../../index.html"
+  chapter-num="০৮"
+  chapter-total="১০"
+  prev-url="lesson_07.html"
+  prev-title="বৃত্তের ক্ষেত্রফল ও অন্তরজের জ্যামিতিক প্রমাণ"
+  next-url="lesson_09.html"
+  next-title="দ্বৈত ভেক্টর ও রৈখিক সমাহার"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="লকডাউন ম্যাথ"
+  course-url="../../index.html#lockdown-math"
+  chapter-label="অধ্যায় ০৮ · লকডাউন ম্যাথ ও ব্যাসেল সমস্যা"
+  title="ব্যাসেল সমস্যা ও পাই স্কয়ার বাই ৬ এর সমাধান | Proof of the Basel problem"
+  desc="কেন সকল বর্গসংখ্যার ব্যস্তানুপাতিক অসীম যোগফল π²/৬ হয়? বাতিঘরের আলোর উজ্জ্বলতা, পিথাগোরাস উপপাদ্য এবং অয়লারের ঐতিহাসিক আবিষ্কার।"
+  video-src="../../media_vault/lockdown_math/lesson_08/experiments/3b1b_lockdown_08_full_dubbed.mp4"
+  yt-id="d-o3eB9sfls"
+  date="লকডাউন সেশন ৮ · ২০২০"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner
+      title="শিক্ষক অডিও বিবরণ ও লাইভ কারাওকে সহকারী"
+      desc="দরদী শিক্ষকের কণ্ঠে প্রতিটি অনুচ্ছেদ, গাণিতিক সূত্র ও চিত্র বিবরণ শুনুন — সাথে রিয়েলটাইম হাইলাইটার ও কন্ট্রোল।"
+      cta="🎙️ শিক্ষকের কণ্ঠে শুনুন">
+    </b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"    time-bn="০০:০০">ব্যাসেল সমস্যার ইতিহাস ও অয়লারের চমক</b1b-bookmark>
+      <b1b-bookmark time="52"  time-bn="০০:৫২">আলোর বিপরীত বর্গীয় সূত্র ও বাতিঘরের মডেল</b1b-bookmark>
+      <b1b-bookmark time="111" time-bn="০১:৫১">পিথাগোরাস উপপাদ্য ও দুটি বাতির একক বাতিতে রূপান্তর</b1b-bookmark>
+      <b1b-bookmark time="168" time-bn="০২:৪৮">বৃত্তাকার কক্ষপথে অসীম বাতিঘরের প্রতিসাম্য</b1b-bookmark>
+      <b1b-bookmark time="168" time-bn="০২:৪৮">চূড়ান্ত সীমার হিসাব এবং পাই স্কয়ার বাই ৬ এর উন্মোচন</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-01-basel-intro">১. ব্যাসেল সমস্যার পটভূমি ও পাই-এর রহস্যময় প্রবেশ</a>
+      <a href="#sec-01-study">ব্যাসেল ধারা ও অয়লারের চমক — বিস্তারিত পাঠ</a>
+      <a href="#sec-02-lighthouse-physics">২. বাতিঘর ও আলোর তীব্রতা</a>
+      <a href="#sec-02-study">বিপরীত বর্গীয় সূত্র — বিস্তারিত পাঠ</a>
+      <a href="#sec-03-pythagorean-lighthouse">৩. পিথাগোরাস উপপাদ্য ও বাতির সংমিশ্রণ</a>
+      <a href="#sec-03-study">বিপরীত পিথাগোরাস সম্পর্ক — বিস্তারিত পাঠ</a>
+      <a href="#sec-04-circle-limit">৪. বৃত্তীয় প্রতিসাম্য ও চূড়ান্ত প্রমাণ</a>
+      <a href="#sec-04-study">বিজোড় ধারা থেকে π²/৬ — বিস্তারিত পাঠ</a>
+      <a href="#sec-interactive-lab">ইন্টারেক্টিভ ল্যাব: বাতিঘর আলো ও ব্যাসেল সিমুলেটর</a>
+      <a href="#sec-quizzes">ধারণা যাচাই: ৩টি কুইজ</a>
+      <a href="#sec-formulas-glossary">সূত্র সংগ্রহ ও পরিভাষা</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ NARRATED 1 — manifest cue: h2 (1 cue) ═══ -->
+      <b1b-section id="sec-01-basel-intro" title="১. ব্যাসেল সমস্যার পটভূমি ও পাই-এর রহস্যময় প্রবেশ">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ব্যাসেল ধারার পদ ও π²/৬ এ স্থিতিশীলতা" style="width:100%;height:auto;display:block">
+              <rect width="640" height="300" fill="#0f141c"/>
+              <text x="320" y="26" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">ব্যাসেল ধারা: 1 + 1/4 + 1/9 + 1/16 + ⋯ → π²/6</text>
+              <line x1="60" y1="250" x2="600" y2="250" stroke="#8b949e" stroke-width="1.5"/>
+              <rect x="95" y="130" width="60" height="120" fill="rgba(116,192,227,0.32)" stroke="#74c0e3" stroke-width="2"/>
+              <text x="125" y="122" fill="#74c0e3" font-size="14" text-anchor="middle" font-family="sans-serif">1</text>
+              <rect x="205" y="220" width="60" height="30" fill="rgba(246,173,85,0.32)" stroke="#f6ad55" stroke-width="2"/>
+              <text x="235" y="212" fill="#f6ad55" font-size="13" text-anchor="middle" font-family="sans-serif">1/4</text>
+              <rect x="315" y="236.7" width="60" height="13.3" fill="rgba(16,185,129,0.32)" stroke="#10b981" stroke-width="2"/>
+              <text x="345" y="229" fill="#10b981" font-size="13" text-anchor="middle" font-family="sans-serif">1/9</text>
+              <rect x="425" y="242.4" width="60" height="7.6" fill="rgba(167,139,250,0.32)" stroke="#a78bfa" stroke-width="2"/>
+              <text x="455" y="235" fill="#a78bfa" font-size="13" text-anchor="middle" font-family="sans-serif">1/16</text>
+              <text x="530" y="238" fill="#8b949e" font-size="13" text-anchor="middle" font-family="sans-serif">⋯</text>
+              <line x1="60" y1="52" x2="600" y2="52" stroke="#10b981" stroke-width="2" stroke-dasharray="7 5"/>
+              <text x="580" y="44" fill="#10b981" font-size="13" text-anchor="end" font-family="sans-serif">π²/6 ≈ 1.644934</text>
+              <text x="320" y="280" fill="#8b949e" font-size="12" text-anchor="middle" font-family="sans-serif">পদগুলো ছোট হলেও যোগফল ক্রমশ একটিমাত্র সীমার কাছে স্থির হয়</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_08/experiments/3b1b_lockdown_08_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্রে ব্যাসেল ধারার প্রথম চারটি পদ ১, ১/৪, ১/৯, ১/১৬ কে ক্রমশ ছোট বার হিসেবে দেখানো হয়েছে, আর সবুজ ড্যাশড রেখাটি তাদের সীমা π²/৬ ≈ ১.৬৪৪৯ নির্দেশ করছে। লক্ষ্য করুন, প্রতিটি নতুন পদ আগের চেয়ে অনেক ছোট, কিন্তু যোগফল কখনোই ঠিক সেই রেখাটি পেরোতে পারছে না—শুধু তার কাছে এগিয়ে যাচ্ছে। এই দৃশ্যটিই প্রশ্নটির গুরুত্ব বহন করে: পদগুলোতে কোথাও বৃত্ত নেই, তবুঁ যোগফলে পাই হাজির হয়। অয়লার ১৭৩৫ সালে দেখিয়েছিলেন যে এই সীমা আর কিছুই নয়, বরং $\frac{\pi^2}{6}$।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <!-- STUDY NOTES (non-narrated; manifest has only the h2 cue) -->
+      <b1b-section id="sec-01-study" title="ব্যাসেল ধারা ও অয়লারের চমক — বিস্তারিত পাঠ" data-no-narration="true">
+        <b1b-quote author="লেওনার্ড অয়লার (Leonhard Euler), De Summis Serierum Reciprocarum, 1735">এতদিন ধরে শীর্ষস্থানীয় গণিতবিদরা যে যোগফল বের করতে ব্যর্থ হয়েছিলেন, তা হঠাৎ বৃত্তের অনুপাত পাই-কে সামনে এনে হাজির করল—এ যেন সংখ্যার অরণ্যে এক পরম বিস্ময়।</b1b-quote>
+
+        <p>১৬৪৪ সালে ইতালীয় গণিতবিদ পিয়েত্রো মেঙ্গোলি একটি আপাত সরল কিন্তু প্রচণ্ড দুরূহ সমস্যা প্রস্তাব করেন: স্বাভাবিক সংখ্যাগুলোর বর্গের অন্যোন্যক বা ব্যস্তানুপাতিক ধারার অসীম যোগফল কত?</p>
+
+        <p>জ্যাকব বার্নৌলি ও ইয়োহান বার্নৌলির মতো গণিতের দিকপালরা বহু দশক ধরে এই সমস্যা সমাধানের চেষ্টা করেও ব্যর্থ হন। ধারার পদগুলো দ্রুত ছোট হতে থাকে—$1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \dots$—এবং এটি প্রায় ১.৬৪৪৯৩ এর দিকে যায়। কিন্তু এর সঠিক মানটি কী তা ছিল অজানা।</p>
+
+        <p>১৭৩৫ সালে মাত্র ২৮ বছর বয়সে তরুণ লেওনার্ড অয়লার সমগ্র গণিত বিশ্বকে চমকে দিয়ে প্রমাণ করেন যে এই যোগফলটি আর কিছুই নয়, বরং $\frac{\pi^2}{6}$! প্রশ্ন হলো: সম্পূর্ণ বিজোড় ও জোড় পূর্ণসংখ্যার বর্গের ধারার মধ্যে হঠাৎ বৃত্তের পরিধি ও ব্যাসের অনুপাত $\pi$ এলো কোথা থেকে?</p>
+
+        <b1b-callout type="gold" icon="🧮" title="ব্যাসেল সমীকরণ">
+          <p>$\sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \cdots = \frac{\pi^2}{6} \approx 1.644934$</p>
+          <p>অসীম পদ যোগ করলে তা অবিকল $\frac{\pi^2}{6}$ এর নিখুঁত গাণিতিক মানে উপনীত হয়।</p>
+        </b1b-callout>
+
+        <b1b-formula math="\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}"></b1b-formula>
+
+        <b1b-callout type="blue" icon="🔑" title="অধ্যায়ের চারটি মূল শিক্ষণীয় বিষয়">
+          <p>ব্যাসেল সমস্যা হলো সমস্ত ধনাত্মক পূর্ণসংখ্যার বর্গের ব্যস্তানুপাতিক যোগফল নির্ণয়: $\sum_{n=1}^\infty \frac{1}{n^2} = 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \cdots = \frac{\pi^2}{6}$।</p>
+          <p>পদার্থবিজ্ঞানের আলোর ব্যস্তবর্গীয় সূত্র ($I \propto \frac{1}{d^2}$) অনুসারে, $d$ দূরত্বে অবস্থিত একটি বাতিঘরের আপাত উজ্জ্বলতা $\frac{1}{d^2}$ এর সমানুপাতিক।</p>
+          <p>পিথাগোরাসের উপপাদ্য ব্যবহার করে দুটি বাতিঘরকে সমকোণী ত্রিভুজের অতিভুজ বরাবর একটি একক বাতিঘরে রূপান্তর করা যায়, যা বৃত্তের পরিধিতে বাতিঘরের বিন্যাসে নিয়ে যায়।</p>
+          <p>অসীম সীমাতে একটি সুষম বহুভুজের বাতিঘরের মোট আলো বৃত্তের পরিধির দৈর্ঘ্য ও কোণ পরিমাপের মাধ্যমে সরাসরি $\frac{\pi^2}{6}$-এ গিয়ে পৌঁছায়।</p>
+        </b1b-callout>
+
+        <b1b-callout type="green" icon="💡" title="গণিতের বিস্ময়">
+          <p>যেখানে কোনো বৃত্তের চিহ্ন দৃশ্যমান নেই, সেখানে পাই-এর উপস্থিতি ইঙ্গিত করে যে সমস্যার গভীরে কোনো সুপ্ত বৃত্তাকার জ্যামিতি লুকিয়ে আছে। এই অধ্যায়ে আমরা সেই লুকোনো জ্যামিতিটিকেই আলোর মাধ্যমে উন্মোচন করব।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 2 — manifest cue: h2 (1 cue) ═══ -->
+      <b1b-section id="sec-02-lighthouse-physics" title="২. পদার্থবিজ্ঞানের দৃষ্টিতে: বাতিঘর ও আলোর তীব্রতা">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="বিন্দু আলোক থেকে সম্প্রসারিত গোলক ও ১/ডি² উজ্জ্বলতা" style="width:100%;height:auto;display:block">
+              <rect width="640" height="300" fill="#0f141c"/>
+              <text x="320" y="24" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">আলোর বিপরীত বর্গীয় সূত্র: I ∝ 1/d²</text>
+              <circle cx="200" cy="160" r="42" fill="none" stroke="#74c0e3" stroke-width="2"/>
+              <circle cx="200" cy="160" r="84" fill="none" stroke="#f6ad55" stroke-width="2"/>
+              <circle cx="200" cy="160" r="126" fill="none" stroke="#10b981" stroke-width="2"/>
+              <circle cx="200" cy="160" r="8" fill="#fff3bf"/>
+              <text x="200" y="290" fill="#fff3bf" font-size="13" text-anchor="middle" font-family="sans-serif">বিন্দু বাতিঘর</text>
+              <line x1="200" y1="160" x2="326" y2="160" stroke="#8b949e" stroke-width="1.5"/>
+              <text x="263" y="152" fill="#74c0e3" font-size="13" text-anchor="middle" font-family="sans-serif">d → I</text>
+              <text x="290" y="124" fill="#f6ad55" font-size="13" font-family="sans-serif">2d → I/4</text>
+              <text x="330" y="98" fill="#10b981" font-size="13" font-family="sans-serif">3d → I/9</text>
+              <text x="490" y="150" fill="#e2e8f0" font-size="13" font-family="sans-serif">দূরত্ব দ্বিগুণ →</text>
+              <text x="490" y="172" fill="#e2e8f0" font-size="13" font-family="sans-serif">ক্ষেত্রফল ৪ গুণ →</text>
+              <text x="490" y="194" fill="#10b981" font-size="13" font-family="sans-serif">উজ্জ্বলতা ১/৪</text>
+              <text x="430" y="248" fill="#8b949e" font-size="12" text-anchor="middle" font-family="sans-serif">দূরত্ব n হলে অবদান 1/n² — ঠিক ব্যাসেল ধারা</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_08/experiments/3b1b_lockdown_08_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্রে একটি বিন্দু-বাতিঘর থেকে তিনটি সমকেন্দ্রিক গোলকের ছायা দেখানো হয়েছে, যাদের ব্যাসার্ধ d, 2d ও 3d। একই আলো যখন বড় গোলকের ওপর ছড়িয়ে পড়ে, তার ক্ষেত্রফল ৪ গুণ বা ৯ গুণ হয়ে যায়—তাই প্রতি একক ক্ষেত্রফলে পৌঁছানো আলো যথাক্রমে $\frac{1}{4}$ ও $\frac{1}{9}$ হয়ে যায়। এই কারণেই দূরত্ব n-এ থাকা বাতিঘরের অবদান $\frac{1}{n^2}$, অর্থাৎ ব্যাসেল ধারার নিখুঁত প্রতিরূপ। লক্ষ্য করুন কীভাবে একটি বিমূর্ত অসীম ধারা হঠাৎ করে একটি বাস্তব ভৌত মডেলে রূপ নিল।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <b1b-section id="sec-02-study" title="বিপরীত বর্গীয় সূত্র — বিস্তারিত পাঠ" data-no-narration="true">
+        <p>গ্রান্ট স্যান্ডারসনের এই জ্যামিতিক প্রমাণের ভিত্তি হলো পদার্থবিজ্ঞানের একটি মৌলিক নিয়ম: আলোর বিপরীত বর্গীয় সূত্র (Inverse-Square Law)।</p>
+
+        <p>একটি আদর্শ বিন্দু-বাতিঘর থেকে নির্গত আলোর তেজ চারপাশের গোলকীয় তলে সমানভাবে ছড়িয়ে পড়ে। ফলে কোনো পর্যবেক্ষকের কাছে আলোর আপাত তীব্রতা বা উজ্জ্বলতা বাতিঘরটির দূরত্বের বর্গের ব্যস্তানুপাতিক হয়: $I = \frac{1}{d^2}$।</p>
+
+        <p>অতএব, যদি আমরা মূলবিন্দু থেকে ১, ২, ৩, ৪ একক দূরত্বে একটি সরলরেখায় বাতিঘর স্থাপন করি, তবে মূলবিন্দুতে অবস্থানরত একজন দর্শকের চোখে সমস্ত বাতিঘরের মিলিত মোট উজ্জ্বলতা হবে অবিকল ব্যাসেল ধারার যোগফল: $\sum_{n=1}^\infty \frac{1}{n^2}$!</p>
+
+        <b1b-callout type="gold" icon="💡" title="আলোর বিপরীত বর্গীয় সূত্র">
+          <p>$\text{উজ্জ্বলতা } I = \frac{P}{4\pi d^2} \propto \frac{1}{d^2}$</p>
+          <p>দূরত্ব $d$ বৃদ্ধি পেলে প্রতি একক ক্ষেত্রফলে আলোর ফ্লাক্স $\frac{1}{d^2}$ অনুপাতে হ্রাস পায়।</p>
+        </b1b-callout>
+
+        <b1b-formula math="I(d) \propto \frac{1}{d^2}"></b1b-formula>
+
+        <b1b-callout type="blue" icon="🔄" title="সমস্যার ভৌত রূপান্তর">
+          <p>বিমূর্ত বীজগণিতীয় সংখ্যাগুলোকে বাতিঘরের আলোর উজ্জ্বলতায় রূপান্তর করার মাধ্যমে আমরা সমস্যাটিকে বিশুদ্ধ জ্যামিতির খেলা বানিয়ে ফেলতে পারি। এখন প্রশ্ন শুধু একটাই—এই বাতিঘরগুলোকে কীভাবে সাজালে তাদের মোট আলো সবচেয়ে সহজে হিসাব করা যাবে?</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 3 — manifest cue: h2 (1 cue) ═══ -->
+      <b1b-section id="sec-03-pythagorean-lighthouse" title="৩. পিথাগোরাস উপপাদ্য ও বাতির সংমিশ্রণ">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="সমকোণী ত্রিভুজে ১/এ² + ১/বি² = ১/এইচ²" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <text x="320" y="24" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">পিথাগোরাসীয় বাতি জোড়: 1/a² + 1/b² = 1/h²</text>
+              <line x1="150" y1="250" x2="150" y2="80" stroke="#74c0e3" stroke-width="3"/>
+              <line x1="150" y1="250" x2="420" y2="250" stroke="#f6ad55" stroke-width="3"/>
+              <line x1="150" y1="80" x2="420" y2="250" stroke="#8b949e" stroke-width="2"/>
+              <circle cx="150" cy="80" r="7" fill="#74c0e3"/>
+              <circle cx="420" cy="250" r="7" fill="#f6ad55"/>
+              <circle cx="150" cy="250" r="7" fill="#10b981"/>
+              <text x="136" y="170" fill="#74c0e3" font-size="15" font-family="sans-serif">a</text>
+              <text x="280" y="272" fill="#f6ad55" font-size="15" text-anchor="middle" font-family="sans-serif">b</text>
+              <text x="112" y="76" fill="#74c0e3" font-size="13" font-family="sans-serif">বাতি A</text>
+              <text x="430" y="254" fill="#f6ad55" font-size="13" font-family="sans-serif">বাতি B</text>
+              <text x="112" y="268" fill="#10b981" font-size="13" font-family="sans-serif">পর্যবেক্ষক</text>
+              <line x1="150" y1="250" x2="265" y2="180" stroke="#10b981" stroke-width="2" stroke-dasharray="6 4"/>
+              <circle cx="265" cy="180" r="5" fill="#10b981"/>
+              <text x="272" y="176" fill="#10b981" font-size="14" font-family="sans-serif">h</text>
+              <text x="320" y="308" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="sans-serif">দুই বাতির মিলিত আলো = h দূরত্বে একক বাতির আলো</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_08/experiments/3b1b_lockdown_08_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্রে একটি সমকোণী ত্রিভুজের দুটি বাহুতে A ও B বাতিঘর রাখা হয়েছে, আর সমকোণী কোণে দাঁড়িয়ে আছেন পর্যবেক্ষক; সবুজ ড্যাশড রেখাটি অতিভুজের ওপর লম্ব $h$। ক্ষেত্রফলের দুই রূপ $\frac{1}{2}ab = \frac{1}{2}ch$ আর পিথাগোরাস $a^2+b^2=c^2$ একসাথে বসালেই $\frac{1}{a^2}+\frac{1}{b^2}=\frac{1}{h^2}$ পাওয়া যায়। অর্থাৎ দুটি লম্বালম্বি বাতির মোট উজ্জ্বলতা ঠিক $h$ দূরত্বে রাখা একটি বাতির সমান। এই সরল নীতিটিই পরবর্তীতে বাতিঘরের জটিল সারিকে বৃত্তের ওপর সুন্দরভাবে সাজাতে সাহায্য করবে।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <b1b-section id="sec-03-study" title="বিপরীত পিথাগোরাস সম্পর্ক — বিস্তারিত পাঠ" data-no-narration="true">
+        <p>এবার জ্যামিতির সবচেয়ে সুন্দর চাবিকাঠিটি লক্ষ্য করুন। ধরুন একটি সমকোণী ত্রিভুজ রয়েছে যার অতিভুজের বিপরীত কোণটিতে একজন পর্যবেক্ষক দাঁড়িয়ে আছেন, এবং সমকোণ সৃষ্টিকারী দুটি বাহুর প্রান্তে দুটি বাতিঘর $A$ ও $B$ রাখা আছে।</p>
+
+        <p>যদি পর্যবেক্ষক থেকে বাহুদ্বয়ের দূরত্ব যথাক্রমে $a$ ও $b$ হয় এবং অতিভুজের ওপর লম্ব দূরত্ব $h$ হয়, তবে জ্যামিতিকভাবে ত্রিভুজের ক্ষেত্রফল এবং পিথাগোরাসের উপপাদ্য থেকে দেখা যায়: $\frac{1}{a^2} + \frac{1}{b^2} = \frac{1}{h^2}$!</p>
+
+        <p>এর অর্থ হলো: দুটি লম্বালম্বি বাতিঘরের মিলিত উজ্জ্বলতা অবিকল একটি একক বাতিঘরের উজ্জ্বলতার সমান, যা ঠিক $h$ দূরত্বে অবস্থিত। এই চমৎকার নীতির মাধ্যমে আমরা জটিল বাতিঘরের সারিগুলোকে ধাপে ধাপে বৃত্তের ওপর সজ্জিত করতে পারি।</p>
+
+        <b1b-callout type="gold" icon="📐" title="বিপরীত পিথাগোরাস সম্পর্ক">
+          <p>$\frac{1}{a^2} + \frac{1}{b^2} = \frac{a^2 + b^2}{a^2 b^2} = \frac{c^2}{(c h)^2} = \frac{1}{h^2}$</p>
+          <p>যেহেতু সমকোণী ত্রিভুজের ক্ষেত্রফল $\frac{1}{2}ab = \frac{1}{2}ch$, তাই $ab = ch$ প্রতিস্থাপন করলে এই অনন্য সম্পর্কটি প্রতিষ্ঠিত হয়।</p>
+        </b1b-callout>
+
+        <b1b-formula math="\frac{1}{a^2} + \frac{1}{b^2} = \frac{1}{h^2}"></b1b-formula>
+
+        <b1b-callout type="blue" icon="✨" title="জ্যামিতিক ম্যাজিক">
+          <p>দুটি বাতিঘরকে একত্রিত করে একটি সমতুল্য বাতিঘর তৈরি করা যায়—যা আলোকীয় পুনর্বিন্যাসের ভিত্তি তৈরি করে। প্রতিটি জোড় একত্রীকরণে দূরত্ব ও আলোর অবদানের এই সুন্দর সম্পর্কটি বারবার কাজে লাগে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 4 — manifest cue: h2 (1 cue) ═══ -->
+      <b1b-section id="sec-04-circle-limit" title="৪. বৃত্তীয় প্রতিসাম্য ও পাই স্কয়ার বাই ৬ এর চূড়ান্ত প্রমাণ">
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="বৃত্তে বহুভুজাকার বাতিঘর বিন্যাস ও চাপ-জ্যা সমতা" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <text x="320" y="24" fill="#f6ad55" font-size="16" text-anchor="middle" font-family="sans-serif">বৃত্তীয় প্রতিসাম্য: চাপ ≈ জ্যা → পাই আগমন</text>
+              <circle cx="250" cy="165" r="110" fill="none" stroke="#74c0e3" stroke-width="2"/>
+              <polygon points="250,55 327.7,82.3 360,165 327.7,247.7 250,275 172.3,247.7 140,165 172.3,82.3" fill="none" stroke="#a78bfa" stroke-width="1.6"/>
+              <line x1="250" y1="55" x2="327.7" y2="82.3" stroke="#f6ad55" stroke-width="3"/>
+              <path d="M 250 55 Q 291 62 327.7 82.3" fill="none" stroke="#10b981" stroke-width="3"/>
+              <text x="288" y="52" fill="#f6ad55" font-size="13" text-anchor="middle" font-family="sans-serif">জ্যা = sinθ</text>
+              <text x="300" y="96" fill="#10b981" font-size="13" text-anchor="middle" font-family="sans-serif">চাপ = θ</text>
+              <circle cx="250" cy="165" r="4" fill="#fff3bf"/>
+              <text x="250" y="305" fill="#8b949e" font-size="13" text-anchor="middle" font-family="sans-serif">অসীম সীমায় sinθ ≈ θ, আর বৃত্তের চাপেই লুকিয়ে আছে π</text>
+              <text x="500" y="140" fill="#e2e8f0" font-size="14" font-family="sans-serif">বিজোড় ধারা → π²/8</text>
+              <text x="500" y="168" fill="#10b981" font-size="16" font-weight="bold" font-family="sans-serif">মোট → π²/6</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/lockdown_math/lesson_08/experiments/3b1b_lockdown_08_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্রে একটি বৃত্তের পরিধিতে সমান ব্যবধানে বাতিঘর সাজানো হয়েছে, আর কমলা জ্যা ও সবুজ চাপ দেখাচ্ছে কীভাবে ক্ষুদ্র কোণে $\sin\theta \approx \theta$ হয়ে যায়। পিথাগোরাসীয় জোড় একত্রীকরণ বারবার চালিয়ে শেষ পর্যন্ত বাতিঘরগুলো বৃত্তের ওপর সমান কোণে দাঁড়িয়ে যায়, যেখানে চাপের দৈর্ঘ্য সরাসরি কোণের সমানুপাতিক। এই কোণ পরিমাপেই $\pi$ প্রবেশ করে—আর তাই ব্যাসেল ধারার যোগফলে হঠাৎ $\pi^2$ ফুটে ওঠে। সবুজ বাক্সে দেখানো চূড়ান্ত ফলাফল হলো অয়লারের বিখ্যাত $\frac{\pi^2}{6}$।</div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <b1b-section id="sec-04-study" title="বিজোড় ধারা থেকে π²/৬ — বিস্তারিত পাঠ" data-no-narration="true">
+        <p>যখন এই বাতিঘরগুলোকে একটি বৃত্তের পরিধিতে সমান ব্যবধানে স্থাপন করা হয় এবং পিথাগোরাসীয় দ্বিগুণকরণের পুনরাবৃত্তি করা হয়, তখন বৃত্তের চাপ ও জ্যা-এর অনুপাত সামনে আসে।</p>
+
+        <p>বৃত্তের ব্যাস যদি $1$ হয়, তবে কোণ $\theta$ এর জন্য জ্যা-এর দৈর্ঘ্য দাঁড়ায় $\sin\theta$, কিন্তু চাপের দৈর্ঘ্য দাঁড়ায় $\theta$। অতি ক্ষুদ্র ব্যবধানে জ্যা এবং চাপ প্রায় সমান হয়ে যায়: $\sin\theta \approx \theta$।</p>
+
+        <p>ধারাবাহিকভাবে এই প্রতিসাম্যকে অসীমের দিকে নিয়ে গেলে এবং উভয় দিকের সমস্ত বিজোড় ও জোড় বাতিঘরকে একত্রিত করলে দেখা যায়, সমগ্র বৃত্তের মোট আলো দাঁড়ায় $\frac{1}{2} \times \frac{\pi^2}{2} = \frac{\pi^2}{4}$ বিজোড় পদের জন্য, যা থেকে সমস্ত স্বাভাবিক সংখ্যার ধারায় রূপান্তর করলে চূড়ান্তভাবে জন্ম নেয় $\frac{\pi^2}{6}$!</p>
+
+        <b1b-callout type="gold" icon="🎯" title="বিজোড় ধারা থেকে সমগ্র ব্যাসেল ধারা">
+          <p>$S = \sum_{n=1}^\infty \frac{1}{n^2}, \quad S_{\text{বিজোড়}} = \sum_{k=0}^\infty \frac{1}{(2k+1)^2} = \frac{\pi^2}{8} \implies S = \frac{4}{3} S_{\text{বিজোড়}} = \frac{\pi^2}{6}$</p>
+          <p>যেহেতু জোড় পদগুলোর যোগফল মূল ধারার $\frac{1}{4}$ অংশ, তাই অবশিষ্ট $\frac{3}{4}$ অংশ হলো বিজোড় পদের সমষ্টি। ফলে $\frac{3}{4}S = \frac{\pi^2}{8} \implies S = \frac{\pi^2}{6}$।</p>
+        </b1b-callout>
+
+        <b1b-formula math="\sum_{k=0}^\infty \frac{1}{(2k+1)^2} = \frac{\pi^2}{8} \quad \Longrightarrow \quad \sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}"></b1b-formula>
+
+        <b1b-callout type="green" icon="🌟" title="চূড়ান্ত ঐক্য">
+          <p>বৃত্তীয় চাপের দৈর্ঘ্য ও কোণের পরিমাপ থেকেই $\pi$-এর আগমন ঘটে, যার ফলে বাতিঘরের আলোকীয় ধারায় $\pi^2$ নিখুঁতভাবে উদ্ভাসিত হয়। বিশুদ্ধ পূর্ণসংখ্যার একটি ধারা ও বৃত্তের ধ্রুবক—দুটি সম্পূর্ণ ভিন্ন জগৎ এখানে এক হয়ে গেল।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ INTERACTIVE LAB (non-narrated) — inside b1b-fullscreen ═══ -->
+      <b1b-section id="sec-interactive-lab" title="ইন্টারেক্টিভ ল্যাব: বাতিঘরের আলো ও ব্যাসেল সমস্যা সিমুলেটর" data-no-narration="true" data-widget-id="basel-lighthouse-simulator">
+        <b1b-callout type="green" icon="🧪" title="নিজে চেষ্টা করুন">
+          <p>বাতিঘরের সংখ্যা $N$ পরিবর্তন করে ধারার আংশিক যোগফল পর্যবেক্ষণ করুন। দেখুন কীভাবে আলো যোগ হতে হতে নিখুঁতভাবে $\frac{\pi^2}{6} \approx 1.64493$ এর দিকে অগ্রসর হয়। তিনটি মোডে সারি, পিথাগোরাস জোড় এবং বৃত্তের পরিধিতে রূপান্তর—তিনভাবেই একই সত্য উদ্ভাসিত হয়।</p>
+        </b1b-callout>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <div id="lmBaselLab">
+            <style>
+              #lmBaselLab .lm-lab-tabs { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:14px; align-items:center; padding-right:140px; }
+              #lmBaselLab .lm-tab-btn { padding:8px 16px; border-radius:8px; border:1px solid var(--border); background:var(--bg-alt); color:var(--text-muted); font-weight:600; font-size:.9rem; cursor:pointer; font-family:inherit; }
+              #lmBaselLab .lm-tab-btn.active { background:var(--theme,#74c0e3); color:#0b0f19; border-color:var(--theme,#74c0e3); }
+              #lmBaselLab .lm-reset { margin-left:auto; }
+              #lmBaselLab canvas { display:block; width:100%; height:440px; background:#0b0c10; border-radius:8px; border:1px solid var(--border); }
+              #lmBaselLab .lm-sliders { display:flex; flex-direction:column; gap:14px; margin-top:16px; background:var(--bg-alt); padding:16px 20px; border-radius:8px; border:1px solid var(--border); }
+              #lmBaselLab .lm-row { display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+              #lmBaselLab .lm-row label { font-weight:600; min-width:190px; }
+              #lmBaselLab .lm-row input[type=range] { flex:1; min-width:180px; accent-color:#f6ad55; }
+              #lmBaselLab .lm-badge { min-width:64px; font-family:monospace; font-weight:bold; padding:3px 8px; background:var(--bg-card); border:1px solid var(--border); border-radius:4px; text-align:center; color:#f6ad55; }
+              #lmBaselLab .lm-metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin-top:16px; }
+              #lmBaselLab .lm-metric { background:var(--bg-alt); border:1px solid var(--border); border-left:3px solid #10b981; border-radius:8px; padding:12px 14px; }
+              #lmBaselLab .lm-metric span { display:block; font-size:.78rem; color:var(--text-muted); margin-bottom:4px; }
+              #lmBaselLab .lm-metric strong { font-size:1.1rem; color:#10b981; font-family:monospace; }
+              #lmBaselLab .lm-formula { margin-top:16px; padding:14px; background:var(--bg-alt); border:1px solid var(--border); border-radius:8px; text-align:center; font-size:1.05rem; }
+            </style>
+            <div class="lm-lab-tabs">
+              <button type="button" class="lm-tab-btn active" id="lmModeSeries" data-mode-id="mode-series-sum">📊 ধারার আংশিক যোগফল</button>
+              <button type="button" class="lm-tab-btn" id="lmModePythagoras" data-mode-id="mode-pythagoras-merge">📐 পিথাগোরাস বাতি জোড়</button>
+              <button type="button" class="lm-tab-btn" id="lmModeCircle" data-mode-id="mode-circle-wrap">⭕ বৃত্তে আলো রূপান্তর</button>
+              <button type="button" class="lm-tab-btn lm-reset" id="lmReset">↺ রিসেট</button>
+            </div>
+            <canvas id="lmBaselCanvas" aria-label="ব্যাসেল ধারা ও বাতিঘরের আলো সিমুলেশন"></canvas>
+            <div class="lm-sliders">
+              <div class="lm-row">
+                <label for="lmSliderN">বাতিঘরের সংখ্যা (N) =</label>
+                <input type="range" id="lmSliderN" min="1" max="1000" step="1" value="20"/>
+                <span class="lm-badge" id="lmValN">২০</span>
+              </div>
+              <div class="lm-row">
+                <label for="lmSliderA">বাহু a (পিথাগোরাস মোড) =</label>
+                <input type="range" id="lmSliderA" min="1" max="12" step="1" value="3"/>
+                <span class="lm-badge" id="lmValA">৩</span>
+              </div>
+              <div class="lm-row">
+                <label for="lmSliderB">বাহু b (পিথাগোরাস মোড) =</label>
+                <input type="range" id="lmSliderB" min="1" max="12" step="1" value="4"/>
+                <span class="lm-badge" id="lmValB">৪</span>
+              </div>
+            </div>
+            <div class="lm-metrics">
+              <div class="lm-metric" data-metric-id="partial_sum"><span>আংশিক সমষ্টি (Partial Sum)</span><strong id="lmMPartial">১.৫৯৮</strong></div>
+              <div class="lm-metric" data-metric-id="exact_target"><span>তাত্ত্বিক মান (π²/6)</span><strong id="lmMExact">১.৬৪৫</strong></div>
+              <div class="lm-metric" data-metric-id="error_delta"><span>অবশিষ্ট ব্যবধান (Error)</span><strong id="lmMError">০.০৪৬</strong></div>
+            </div>
+            <div class="lm-formula" id="lmFormula"></div>
+          </div>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ QUIZZES (non-narrated) — exact JSON options + rich feedback ═══ -->
+      <b1b-section id="sec-quizzes" title="ধারণা যাচাই — ৩টি কুইজ" data-no-narration="true">
+        <b1b-quiz
+          question="❓ ব্যাসেল সমস্যার অসীম ধারার যোগফলের সঠিক মান কোনটি?"
+          correct="1"
+          correct-msg="চমৎকার! ১৭৩৫ সালে লেওনার্ড অয়লার প্রথম সফলভাবে প্রমাণ করেন যে সমস্ত ধনাত্মক পূর্ণসংখ্যার বর্গের অন্যোন্যকের যোগফল হলো $\frac{\pi^2}{6} \approx 1.64493$। অর্থাৎ $1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \cdots = \frac{\pi^2}{6}$।"
+          wrong-msg="আবার ভাবুন: $\sum_{n=1}^\infty \frac{1}{n^2} = 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \cdots$ ধারাটি ক্রমশ ১.৬৪৪৯-এর দিকে যায়, অর্থাৎ অপসারী নয়। এর নিখুঁত মান অয়লার আবিষ্কার করেছিলেন $\frac{\pi^2}{6}$ — $\frac{\pi^2}{8}$ শুধু বিজোড় পদের যোগফল।"
+          reveal-msg="সঠিক উত্তর: পাই স্কয়ার ভাগ ছয়, অর্থাৎ $\frac{\pi^2}{6}$। কারণ $\sum_{n=1}^\infty \frac{1}{n^2} = 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \cdots = \frac{\pi^2}{6} \approx 1.64493$ — অয়লারের বিখ্যাত ফলাফল।">
+          <div slot="option">$\frac{\pi}{4}$ (পাই ভাগ চার)</div>
+          <div slot="option">$\frac{\pi^2}{6}$ (পাই স্কয়ার ভাগ ছয়)</div>
+          <div slot="option">$\frac{\pi^2}{8}$ (পাই স্কয়ার ভাগ আট)</div>
+          <div slot="option">$\infty$ (ধারাটি অপসারী এবং এর যোগফল অসীম)</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ আলোর বিপরীত বর্গীয় সূত্র অনুসারে, পর্যবেক্ষক থেকে বাতিঘরের দূরত্ব যদি ৩ গুণ বৃদ্ধি করা হয়, তবে তার আপাত উজ্জ্বলতা কত গুণ হবে?"
+          correct="2"
+          correct-msg="ঠিকই! $I(d) \propto \frac{1}{d^2}$ হওয়ায় $I(3d) = \frac{1}{(3d)^2} = \frac{1}{9d^2} = \frac{1}{9} I(d)$। দূরত্ব ৩ গুণ করলে উজ্জ্বলতা $3^2 = 9$ গুণ হ্রাস পায়, অর্থাৎ আগের $\frac{1}{9}$ অংশে নেমে আসে।"
+          wrong-msg="মনে রেখো: উজ্জ্বলতা দূরত্বের প্রথম ঘাতের নয়, বর্গের ব্যস্তানুপাতিক। $I \propto \frac{1}{d^2}$ তাই দূরত্ব ৩ গুণ হলে ভাগটি হবে $3^2 = 9$ — অর্থাৎ $\frac{1}{9} I$।"
+          reveal-msg="সঠিক উত্তর: ৯ ভাগের ১ ভাগে নেমে আসবে ($I(3d) = \frac{1}{9}I(d)$)। কারণ $I(d) \propto \frac{1}{d^2}$, সুতরাং $I(3d) = \frac{1}{(3d)^2} = \frac{1}{9d^2}$।">
+          <div slot="option">$3 \times I$ (৩ গুণ বৃদ্ধি পাবে)</div>
+          <div slot="option">$\frac{1}{3} I$ (৩ ভাগের ১ ভাগে নেমে আসবে)</div>
+          <div slot="option">$\frac{1}{9} I$ (৯ ভাগের ১ ভাগে নেমে আসবে)</div>
+          <div slot="option">$I$ (কোনো পরিবর্তন হবে না)</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ যদি একটি সমকোণী ত্রিভুজের সমকোণ সংলগ্ন বাহু দুটির দৈর্ঘ্য $a$ এবং $b$ হয় এবং অতিভুজের ওপর লম্ব উচ্চতা $h$ হয়, তবে তাদের দূরত্বের বর্গের ব্যস্তানুপাতের সঠিক সম্পর্ক কোনটি?"
+          correct="0"
+          correct-msg="অসাধারণ! পিথাগোরাসের উপপাদ্য $a^2 + b^2 = c^2$ এবং ক্ষেত্রফলের সমীকরণ $ab = ch$ একসাথে ব্যবহার করলে সরাসরি $\frac{1}{a^2} + \frac{1}{b^2} = \frac{a^2+b^2}{a^2b^2} = \frac{c^2}{(ch)^2} = \frac{1}{h^2}$ পাওয়া যায়। এই সম্পর্কটিই দুটি বাতিকে একক বাতিতে রূপান্তরের চাবিকাঠি।"
+          wrong-msg="ধাপে ধাপে হিসাব করো: $\frac{1}{a^2} + \frac{1}{b^2} = \frac{a^2+b^2}{a^2b^2}$। এখানে $a^2+b^2=c^2$ (পিথাগোরাস) এবং ক্ষেত্রফল $\frac{1}{2}ab=\frac{1}{2}ch$ থেকে $ab=ch$। বসালে পাওয়া যায় $\frac{c^2}{(ch)^2}=\frac{1}{h^2}$ — $a^2+b^2=h^2$ নয়।"
+          reveal-msg="সঠিক উত্তর: $\frac{1}{a^2} + \frac{1}{b^2} = \frac{1}{h^2}$। কারণ $\frac{a^2+b^2}{a^2b^2} = \frac{c^2}{(ch)^2} = \frac{1}{h^2}$ — পিথাগোরাস ও $ab=ch$ থেকে প্রতিষ্ঠিত বিপরীত পিথাগোরাস সম্পর্ক।">
+          <div slot="option">$\frac{1}{a^2} + \frac{1}{b^2} = \frac{1}{h^2}$ (১ বাই এ স্কয়ার যোগ ১ বাই বি স্কয়ার সমান ১ বাই এইচ স্কয়ার)</div>
+          <div slot="option">$a^2 + b^2 = h^2$ (এ স্কয়ার যোগ বি স্কয়ার সমান এইচ স্কয়ার)</div>
+          <div slot="option">$\frac{1}{a} + \frac{1}{b} = \frac{1}{h}$ (১ বাই এ যোগ ১ বাই বি সমান ১ বাই এইচ)</div>
+          <div slot="option">$ab = h^2$ (এ গুণন বি সমান এইচ স্কয়ার)</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ FORMULA REFERENCE & GLOSSARY (non-narrated) ═══ -->
+      <b1b-section id="sec-formulas-glossary" title="সূত্র সংগ্রহ ও পরিভাষা" data-no-narration="true">
+        <b1b-callout type="blue" icon="🧮" title="পাঁচটি গুরুত্বপূর্ণ সূত্র">
+          <p>ব্যাসেল সমস্যার মূল ধারা: $\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}$</p>
+          <p>বিজোড় বর্গের ধারা: $\sum_{k=0}^\infty \frac{1}{(2k+1)^2} = \frac{\pi^2}{8}$</p>
+          <p>বিপরীত পিথাগোরাস সম্পর্ক: $\frac{1}{a^2} + \frac{1}{b^2} = \frac{1}{h^2}$</p>
+          <p>আলোর বিপরীত বর্গীয় সূত্র: $I(d) \propto \frac{1}{d^2}$</p>
+          <p>ক্ষুদ্র কোণে চাপ-জ্যা সমতা: $\lim_{\theta \to 0} \frac{\sin\theta}{\theta} = 1$</p>
+        </b1b-callout>
+
+        <b1b-callout type="gold" icon="📖" title="পরিভাষা (Glossary)">
+          <p><strong>Basel Problem — ব্যাসেল সমস্যা:</strong> সকল পূর্ণসংখ্যার বর্গের বিপরীত রাশির অসীম যোগফল নির্ণয়ের বিখ্যাত গাণিতিক সমস্যা।</p>
+          <p><strong>Inverse-Square Law — বিপরীত বর্গীয় সূত্র:</strong> পদার্থবিজ্ঞানের যে নিয়মে কোনো প্রভাব (যেমন আলো বা মহাকর্ষ) দূরত্বের বর্গের উল্টো অনুপাতে হ্রাস পায়।</p>
+          <p><strong>Partial Sum — আংশিক সমষ্টি:</strong> একটি অসীম ধারার প্রথম N সংখ্যক পদের যোগফল।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/lockdown_math/lesson_08/experiments/3b1b_lockdown_08_full_dubbed.mp4"
+    yt-id="d-o3eB9sfls"
+    title="ব্যাসেল সমস্যা ও পাই স্কয়ার বাই ৬ এর সমাধান — অধ্যায় ০৮"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — লকডাউন ম্যাথ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_07.html"
+  prev-title="বৃত্তের ক্ষেত্রফল ও অন্তরজের জ্যামিতিক প্রমাণ"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_09.html"
+  next-title="দ্বৈত ভেক্টর ও রৈখিক সমাহার"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ PAGE-LOCAL INTERACTIVE LAB CONTROLLER ═══════════
+     Scoped to #lmBaselLab; does not touch the shared component library. -->
+<script>
+(function () {
+  'use strict';
+  function initLab() {
+    const lab = document.getElementById('lmBaselLab');
+    if (!lab || lab.dataset.inited) return;
+    lab.dataset.inited = '1';
+
+    const $ = (id) => document.getElementById(id);
+    const canvas = $('lmBaselCanvas');
+    const sliderN = $('lmSliderN');
+    const sliderA = $('lmSliderA');
+    const sliderB = $('lmSliderB');
+    if (!canvas || !sliderN || !sliderA || !sliderB) return;
+    const ctx = canvas.getContext('2d');
+    const toBn = (n) => String(n).replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[d]);
+    let mode = 'series';
+
+    function fmt(n, digits) {
+      return n.toFixed(digits === undefined ? 3 : digits).replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[d]);
+    }
+
+    function math(scope) {
+      if (scope && typeof window.renderMathInElement === 'function') {
+        window.renderMathInElement(scope, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false
+        });
+      }
+    }
+
+    function readState() {
+      const N = parseInt(sliderN.value, 10) || 20;
+      const a = parseFloat(sliderA.value) || 3;
+      const b = parseFloat(sliderB.value) || 4;
+      let sum = 0;
+      for (let n = 1; n <= N; n++) sum += 1 / (n * n);
+      const exact = (Math.PI * Math.PI) / 6;
+      const c = Math.sqrt(a * a + b * b);
+      const h = (a * b) / c;
+      return { N, a, b, c, h, sum, exact, error: Math.abs(exact - sum) };
+    }
+
+    function updatePanel(s) {
+      $('lmValN').textContent = toBn(s.N);
+      $('lmValA').textContent = toBn(s.a);
+      $('lmValB').textContent = toBn(s.b);
+      $('lmMPartial').textContent = fmt(s.sum, 4);
+      $('lmMExact').textContent = fmt(s.exact, 4);
+      $('lmMError').textContent = fmt(s.error, 4);
+      const box = $('lmFormula');
+      if (mode === 'series') {
+        box.innerHTML = '<strong>আংশিক যোগফল:</strong> $\\sum_{n=1}^{' + s.N + '}\\frac{1}{n^2} \\approx ' + s.sum.toFixed(5) +
+          '$ &nbsp; | &nbsp; সীমা $\\frac{\\pi^2}{6} \\approx 1.644934$ &nbsp; | &nbsp; ব্যবধান $' + s.error.toFixed(5) + '$';
+      } else if (mode === 'pythagoras') {
+        box.innerHTML = '<strong>বিপরীত পিথাগোরাস:</strong> $\\frac{1}{' + s.a + '^2}+\\frac{1}{' + s.b + '^2}=\\frac{1}{' + s.h.toFixed(3) + '^2}$ &nbsp; | &nbsp; $ab=' + (s.a * s.b).toFixed(2) + '=ch$, $c=' + s.c.toFixed(3) + '$';
+      } else {
+        box.innerHTML = '<strong>চাপ-জ্যা সমতা:</strong> $\\lim_{\\theta\\to 0}\\frac{\\sin\\theta}{\\theta}=1$ &nbsp; | &nbsp; $' + s.N + '$ টি বাতি সমান কোণে &nbsp; | &nbsp; $\\pi^2/6 \\approx 1.644934$';
+      }
+      math(box);
+    }
+
+    function draw(s) {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      const W = Math.max(320, rect.width || 640);
+      const H = 440;
+      canvas.width = W * dpr;
+      canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#0a0b10' : '#f8f9fa';
+      ctx.fillRect(0, 0, W, H);
+      ctx.textAlign = 'center';
+      ctx.font = '14px sans-serif';
+
+      if (mode === 'series') {
+        const shown = Math.min(s.N, 60);
+        const x0 = 40, span = W - 80, baseY = H - 60;
+        ctx.strokeStyle = dark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.3)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.moveTo(x0, baseY); ctx.lineTo(W - 40, baseY); ctx.stroke();
+        const targetY = baseY - 1.644934 * 150;
+        ctx.save(); ctx.setLineDash([6, 5]); ctx.strokeStyle = '#10b981'; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.moveTo(x0, targetY); ctx.lineTo(W - 40, targetY); ctx.stroke(); ctx.restore();
+        ctx.fillStyle = '#10b981'; ctx.font = '12px sans-serif';
+        ctx.fillText('π²/6 ≈ 1.6449', W - 110, targetY - 8);
+        let cum = 0;
+        for (let n = 1; n <= shown; n++) {
+          const term = 1 / (n * n);
+          cum += term;
+          const x = x0 + (n - 0.5) * (span / shown);
+          const bh = term * 150 * 12;
+          ctx.fillStyle = 'rgba(116,192,227,0.75)';
+          ctx.fillRect(x - Math.max(1, span / shown / 3), baseY - bh, Math.max(2, span / shown * 0.66), bh);
+          const cy = baseY - cum * 150;
+          ctx.fillStyle = '#f6ad55';
+          ctx.beginPath(); ctx.arc(x, cy, 2.2, 0, Math.PI * 2); ctx.fill();
+        }
+        ctx.fillStyle = dark ? '#e2e8f0' : '#1e293b'; ctx.font = '13px sans-serif';
+        ctx.fillText('$n = ' + s.N + '$ টি বাতি &nbsp;|&nbsp; আংশিক যোগফল $\\approx ' + s.sum.toFixed(4) + '$', W / 2, H - 24);
+      } else if (mode === 'pythagoras') {
+        const ox = W * 0.28, oy = H - 70;
+        const sx = Math.min(40, (W * 0.5) / Math.max(s.a, s.b));
+        const ax = ox, ay = oy - s.a * sx;
+        const bx = ox + s.b * sx, by = oy;
+        ctx.strokeStyle = '#74c0e3'; ctx.lineWidth = 3;
+        ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(ox, oy); ctx.stroke();
+        ctx.strokeStyle = '#f6ad55';
+        ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(bx, by); ctx.stroke();
+        ctx.strokeStyle = '#8b949e'; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by); ctx.stroke();
+        const t = (s.a * s.a) / (s.c * s.c);
+        const hx = ax + t * (bx - ax), hy = ay + t * (by - ay);
+        ctx.save(); ctx.setLineDash([6, 4]); ctx.strokeStyle = '#10b981'; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(hx, hy); ctx.stroke(); ctx.restore();
+        ctx.fillStyle = dark ? '#e2e8f0' : '#1e293b'; ctx.font = 'bold 15px sans-serif';
+        ctx.fillText('a = ' + s.a, ax - 24, (ay + oy) / 2);
+        ctx.fillText('b = ' + s.b, (ox + bx) / 2, oy + 22);
+        ctx.fillText('h = ' + s.h.toFixed(2), (ox + hx) / 2 + 20, (oy + hy) / 2 - 8);
+        ctx.font = '13px sans-serif';
+        ctx.fillText('$\\frac{1}{a^2}+\\frac{1}{b^2}=\\frac{1}{h^2}$', W / 2, 34);
+        ctx.fillStyle = '#8b949e';
+        ctx.fillText('দুই বাতি → h দূরত্বে একক বাতি', W / 2, H - 24);
+      } else {
+        const cx = W / 2, cy = H / 2 - 10, R = Math.min(W, H) * 0.34;
+        ctx.strokeStyle = '#74c0e3'; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.stroke();
+        const shown = Math.min(s.N, 64);
+        for (let i = 0; i < shown; i++) {
+          const ang = (i / shown) * Math.PI * 2;
+          const x = cx + R * Math.cos(ang), y = cy + R * Math.sin(ang);
+          ctx.fillStyle = '#f6ad55';
+          ctx.beginPath(); ctx.arc(x, y, 3, 0, Math.PI * 2); ctx.fill();
+        }
+        const a1 = 0, a2 = (Math.PI * 2) / shown;
+        const p1x = cx + R * Math.cos(a1), p1y = cy + R * Math.sin(a1);
+        const p2x = cx + R * Math.cos(a2), p2y = cy + R * Math.sin(a2);
+        ctx.strokeStyle = '#f6ad55'; ctx.lineWidth = 3;
+        ctx.beginPath(); ctx.moveTo(p1x, p1y); ctx.lineTo(p2x, p2y); ctx.stroke();
+        ctx.strokeStyle = '#10b981';
+        ctx.beginPath(); ctx.arc(cx, cy, R, a1, a2); ctx.stroke();
+        ctx.fillStyle = dark ? '#e2e8f0' : '#1e293b'; ctx.font = 'bold 14px sans-serif';
+        ctx.fillText('$\\sin\\theta \\approx \\theta$', cx, 34);
+        ctx.fillStyle = '#8b949e'; ctx.font = '13px sans-serif';
+        ctx.fillText('$' + s.N + '$ টি বাতি সমান কোণে — বৃত্তের চাপেই লুকিয়ে আছে $\\pi$', cx, H - 24);
+      }
+    }
+
+    function update() { const s = readState(); updatePanel(s); draw(s); }
+
+    function setMode(next) {
+      mode = next;
+      $('lmModeSeries').classList.toggle('active', mode === 'series');
+      $('lmModePythagoras').classList.toggle('active', mode === 'pythagoras');
+      $('lmModeCircle').classList.toggle('active', mode === 'circle');
+      update();
+    }
+
+    $('lmModeSeries').addEventListener('click', () => setMode('series'));
+    $('lmModePythagoras').addEventListener('click', () => setMode('pythagoras'));
+    $('lmModeCircle').addEventListener('click', () => setMode('circle'));
+    $('lmReset').addEventListener('click', () => {
+      sliderN.value = '20'; sliderA.value = '3'; sliderB.value = '4'; setMode('series');
+    });
+    sliderN.addEventListener('input', update);
+    sliderA.addEventListener('input', update);
+    sliderB.addEventListener('input', update);
+    window.addEventListener('resize', update);
+    window.addEventListener('b1b-fullscreen-change', update);
+    update();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLab);
+  } else {
+    initLab();
+  }
+})();
+</script>
+
+</body>
+</html>

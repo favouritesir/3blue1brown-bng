@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>একটি গণনার ধাঁধার সবচেয়ে অপ্রত্যাশিত উত্তর | The most unexpected answer to a counting puzzle</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/why_pi/lesson_01/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="কেন পাই"
+  course-url="../../courses/why_pi/index.html"
+  home-url="../../index.html"
+  chapter-num="০১"
+  chapter-total="০৮"
+  prev-url=""
+  prev-title="পূর্ববর্তী অধ্যায় নেই"
+  next-url="lesson_02.html"
+  next-title="পরবর্তী: সংঘর্ষরত ব্লকরা কীভাবে পাই গণনা করে"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="কেন পাই"
+  course-url="../../courses/why_pi/index.html"
+  chapter-label="অধ্যায় ০১ · কেন পাই (Why Pi)"
+  title="একটি গণনার ধাঁধার সবচেয়ে অপ্রত্যাশিত উত্তর | The most unexpected answer to a counting puzzle"
+  desc="দুটি স্লাইডিং ব্লক আর একটি দেয়াল—এই সাদামাটা সেটআপ থেকে কীভাবে পাইয়ের (π) অঙ্কগুলো ধ ধ করে বেরিয়ে আসে"
+  video-src="../../media_vault/why_pi/lesson_01/experiments/3b1b_why_pi_01_full_dubbed.mp4"
+  yt-id="lB(aqeI7a_0"
+  date="১৩ জানুয়ারি, ২০১৯"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://www.3blue1brown.com/lessons/clacks"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">ধাঁধাটির সেটআপ</b1b-bookmark>
+      <b1b-bookmark time="101" time-bn="০১:৪১">অঙ্কগুলোর অপ্রত্যাশিত প্যাটার্ন</b1b-bookmark>
+      <b1b-bookmark time="203" time-bn="০৩:২৩">লুকোনো বৃত্ত ও শক্তির সংরক্ষণ</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-setup">ধাঁধাটির সেটআপ</a>
+      <a href="#sec-pattern">অঙ্কগুলোর অপ্রত্যাশিত প্যাটার্ন</a>
+      <a href="#sec-hidden-circle">লুকোনো বৃত্ত ও শক্তির সংরক্ষণ</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <b1b-quote author="Grant Sanderson">যেখানে পাই আছে, সেখানে একটা লুকোনো বৃত্তও আছে।</b1b-quote>
+
+      <b1b-section id="sec-setup" title="ধাঁধাটির সেটআপ">
+<p>কল্পনা করুন একদিকে একটি দেয়াল, তার সামনে ছোট একটি ব্লক এবং তার ডানে অনেক বড় একটি ব্লক। বড় ব্লকটি বাঁ দিকে ধেয়ে আসছে, ছোট ব্লকটি প্রথমে সম্পূর্ণ স্থির। আমরা একধরনের আদর্শ পদার্থবিদ: মেঝেতে কোনো ঘর্ষণ নেই, আর প্রতিটি সংঘর্ষ <em>সম্পূর্ণ স্থিতিস্থাপক</em>—অর্থাৎ সংঘর্ষে কোনো শক্তি নষ্ট হয় না।</p>
+
+<b1b-figure src="../../assets/figures/why_pi/lesson_01/fig_clacks_setup.svg" alt="দেয়াল, ছোট ব্লক ও বড় ব্লক—ধাঁধাটির আদি অবস্থা" caption="দেয়াল, ছোট ব্লক ও বড় ব্লক—ধাঁধাটির আদি অবস্থা"></b1b-figure>
+
+<p>সবচেয়ে সোজা ক্ষেত্রটি হলো দুই ব্লকের ভর সমান হওয়া। প্রথম ব্লকটি তার সম্পূর্ণ ভরবেগ দ্বিতীয়টিকে দিয়ে দেয়, দ্বিতীয়টি দেয়ালে ঠুকে ফিরে আসে, আবার প্রথমটির সাথে ধাক্কা খায়—আর প্রথমটি সোজা অসীমের দিকে চলে যায়। মোট <strong>তিনটি</strong> 'ক্ল্যাক' শোনা যায়।</p>
+
+<b1b-figure src="../../assets/figures/why_pi/lesson_01/fig_clacks_equal.svg" alt="সমান ভরের ব্লক: মোট তিনটি সংঘর্ষ" caption="সমান ভরের ব্লক: মোট তিনটি সংঘর্ষ"></b1b-figure>
+
+<p>কিন্তু যদি প্রথম ব্লকের ভর দ্বিতীয়টির চেয়ে ১০০ গুণ হয়? তখন ছোট ব্লকটি দেয়াল আর বড় ব্লকের মাঝে বারবার ছড়া খেয়ে ধীরে ধীরে বড় ব্লকের ভরবেগকে উল্টে দেয়। কতবার সংঘর্ষ হবে? উত্তরটা সহজে অনুমেয় নয়।</p>
+
+<b1b-formula math="N = 3 \quad (m_1 = m_2)"></b1b-formula>
+      </b1b-section>
+      <b1b-section id="sec-pattern" title="অঙ্কগুলোর অপ্রত্যাশিত প্যাটার্ন">
+<p>আসুন ভরের অনুপাতটা বাড়িয়ে দেখি। ১০০ গুণ হলে <strong>৩১</strong>টি সংঘর্ষ। ১০,০০০ গুণ হলে <strong>৩১৪</strong>টি। ১০ লক্ষ গুণ হলে <strong>৩,১৪১</strong>টি। আপনি কি প্যাটার্নটা দেখতে পাচ্ছেন?</p>
+
+<b1b-figure src="../../assets/figures/why_pi/lesson_01/fig_clacks_digits.svg" alt="ভর বাড়ার সাথে সংঘর্ষের সংখ্যা পাইয়ের অঙ্ক ধরে নেয়" caption="ভর বাড়ার সাথে সংঘর্ষের সংখ্যা পাইয়ের অঙ্ক ধরে নেয়"></b1b-figure>
+
+<p>যখনই বড় ব্লকের ভর ছোটটির <em>১০০-এর কোনো ঘাত</em>, তখনই মোট সংঘর্ষের সংখ্যা পাইয়ের (π ≈ 3.14159…) প্রথম অঙ্কগুলোর মতো হয়। এটি প্রথম শুনে আমাকেও হতবাক করে দিয়েছিল—ধন্যবাদ ভিউয়ার Henry Kavle-কে এই তথ্যটি শেয়ার করার জন্য; মূল আবিষ্কার গণিতবিদ Gregory Galperin-এর (১৯৯৫, প্রকাশ ২০০৩)।</p>
+
+<b1b-callout type="gold" icon="⚡" title="কেন এটা বিস্ময়কর?">
+<p>পাই সাধারণত কোনো অবিচ্ছিন্ন জ্যামিতিক পরিমাণ—বৃত্তের পরিধি আর ব্যাসের অনুপাত—বর্ণনা করে। কিন্তু এখানে এর <strong>দশমিক অঙ্কগুলো</strong> একটা পূর্ণসংখ্যা গণনা করছে! এমন অদ্ভুত উপায়ে পাইয়ের আবির্ভাব সত্যিই মানুষকে অবাক করে।</p>
+</b1b-callout>
+
+<p>অবশ্যই, এটা পাই হিসাব করার ব্যবহারিক উপায় নয়। ২০টি অঙ্ক পেতে বড় ব্লকের ভর ছোটটির ১০০ কোটি কোটি কোটি কোটি গুণ হতে হবে—আমাদের ছায়াপথের কেন্দ্রের অতিপ্রকৃত কৃষ্ণগহ্বরের চেয়েও অনেক বেশি! তবু প্রশ্নটা থেকে যায়: <strong>এখানে পাই আসছে কেন?</strong></p>
+
+<b1b-formula math="\frac{m_1}{m_2}=100^{\,d-1}\;\Longrightarrow\; N \approx \lfloor 10^{d}\,\pi\rfloor"></b1b-formula>
+
+<b1b-quiz
+          question="❓ বড় ব্লকের ভর ছোট ব্লকের ১০০ গুণ হলে মোট কতটি সংঘর্ষ হয়?"
+          correct="1"
+          correct-msg="ঠিক! ১০০ : ১ ভর অনুপাতে ৩১টি সংঘর্ষ হয়—π-র প্রথম দুই অঙ্ক ৩.১।"
+          wrong-msg="মনে করো: ১ : ১ হলে ৩টি, ১০০ : ১ হলে ৩১টি, ১০,০০০ : ১ হলে ৩১৪টি।"
+          reveal-msg="সঠিক উত্তর ৩১টি সংঘর্ষ।">
+          <div slot="option">$3$</div>
+          <div slot="option">$31$</div>
+          <div slot="option">$314$</div>
+          <div slot="option">$3{,}141$</div>
+        </b1b-quiz>
+      </b1b-section>
+      <b1b-section id="sec-hidden-circle" title="লুকোনো বৃত্ত ও শক্তির সংরক্ষণ">
+<p>এই ধাঁধার মূল কথা হলো: <strong>যেখানে পাই আছে, সেখানে একটা লুকোনো বৃত্ত আছে।</strong> এই ক্ষেত্রে সেই বৃত্তটা লুকিয়ে আছে শক্তির সংরক্ষণের ভেতরে।</p>
+
+<p>যেকোনো মুহূর্তে দুই ব্লকের মোট গতিশক্তি $\tfrac12 m_1 v_1^2+\tfrac12 m_2 v_2^2$—আর সংঘর্ষের পরও এই মান অপরিবর্তিত থাকে। এখন যদি অক্ষদুটিকে এভাবে স্কেল করি: $x=\sqrt{m_1}\,v_1$ এবং $y=\sqrt{m_2}\,v_2$, তবে সমীকরণটা দাঁড়ায় $\tfrac12(x^2+y^2)=\text{ধ্রুবক}$—অর্থাৎ <strong>একটি বৃত্ত</strong>!</p>
+
+<b1b-figure src="../../assets/figures/why_pi/lesson_01/fig_clacks_circle.svg" alt="বেগ-ফেজ স্পেসে শক্তির সংরক্ষণ একটি বৃত্ত তৈরি করে" caption="বেগ-ফেজ স্পেসে শক্তির সংরক্ষণ একটি বৃত্ত তৈরি করে"></b1b-figure>
+
+<b1b-callout type="blue" icon="🔵" title="পরবর্তী দুটি পাঠে">
+<p>এই বৃত্তের ওপর দুটি ভিন্ন উপায়ে চলন করে দেখা যাবে কেন সংঘর্ষের সংখ্যা পাইয়ের অঙ্ক দেয়। পরবর্তী পাঠে আমরা <em>বেগ-ফেজ স্পেস</em> (velocity phase space) ব্যবহার করব, আর তারপরের পাঠে দেখব একই সমস্যা <em>আলোর রশ্মির</em> মতো আচরণ করে। দুটিই সমান সুন্দর।</p>
+</b1b-callout>
+
+<p>সংক্ষেপে: ব্লকগুলোর গতি নির্ধারণ করে শক্তি ও ভরবেগ—এই দুটি সংরক্ষণ আইন। আর এই আইনগুলোকেই একটা জ্যামিতিক ছবিতে রূপ দিয়েই পাইয়ের রহস্যের উত্তর মিলবে।</p>
+
+<b1b-formula math="\tfrac12 m_1 v_1^2+\tfrac12 m_2 v_2^2=\text{const}\;\Rightarrow\; \tfrac12(x^2+y^2)=\text{const}"></b1b-formula>
+
+<b1b-formula math="x=\sqrt{m_1}\,v_1,\qquad y=\sqrt{m_2}\,v_2"></b1b-formula>
+      </b1b-section>
+      <b1b-section id="sec-visualizer" title="ইন্টারেক্টিভ ভিজ্যুয়ালাইজার" data-no-narration="true">
+        <p class="viz-intro">নিচের সমতলে বিষয়টির মূল জ্যামিতিক চিত্রটি পর্যবেক্ষণ করুন। বৃত্ত, কোণ এবং স্কেলিংয়ের মাধ্যমে পাই কীভাবে আবির্ভূত হয় তা অনুভব করুন।</p>
+        <b1b-vector-decomposer initial="3,-2">
+          <p>ভেক্টরের উপাংশ ও স্কেলিংয়ের মাধ্যমে জ্যামিতিক রূপান্তর পর্যবেক্ষণ করুন।</p>
+        </b1b-vector-decomposer>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="3,-2"></b1b-vector-plane>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/why_pi/lesson_01/experiments/3b1b_why_pi_01_full_dubbed.mp4"
+    yt-id="lB(aqeI7a_0"
+    title="একটি গণনার ধাঁধার সবচেয়ে অপ্রত্যাশিত উত্তর — অধ্যায় ০১"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — কেন পাই">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url=""
+  prev-title="পূর্ববর্তী অধ্যায় নেই"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_02.html"
+  next-title="পরবর্তী: সংঘর্ষরত ব্লকরা কীভাবে পাই গণনা করে"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

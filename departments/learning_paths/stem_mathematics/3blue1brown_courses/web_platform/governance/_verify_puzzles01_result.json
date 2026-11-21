@@ -1,0 +1,70 @@
+{
+  "lesson": "lesson_01",
+  "channel": "chrome (headless=True)",
+  "sections": 5,
+  "cues": 22,
+  "per_section": {
+    "sec-im-o": 5,
+    "sec-deconstruct": 6,
+    "sec-intuition": 4,
+    "sec-perspective": 4,
+    "sec-takeaway": 3
+  },
+  "manifest_keys": 5,
+  "dom_manifest_1to1": true,
+  "duplicates": 0,
+  "disallowed_types": 0,
+  "quiz_media_tab_types": 0,
+  "forbidden_label_hits": 0,
+  "figure_cues": 3,
+  "katex_annotations": 0,
+  "phonetic_safeguards_ok": true,
+  "prosody": {
+    "h2": [
+      "-5%",
+      "+2Hz",
+      "+0%"
+    ],
+    "figure": [
+      "-4%",
+      "+0Hz",
+      "+0%"
+    ],
+    "formula_box": [
+      "-8%",
+      "+0Hz",
+      "+0%"
+    ],
+    "p": [
+      "+2%",
+      "+0Hz",
+      "+0%"
+    ],
+    "callout": [
+      "+0%",
+      "+0Hz",
+      "+0%"
+    ],
+    "conclusion": [
+      "-3%",
+      "+0Hz",
+      "+0%"
+    ]
+  },
+  "gap_ms": 350.0,
+  "js_page_errors": 0,
+  "console_errors_narration": 0,
+  "mp3_nonzero": true,
+  "mp3_browser_loadable": true,
+  "json_valid": true,
+  "manifest_js_matches_json": true,
+  "no_narration_sections": [
+    "sec-practice"
+  ],
+  "manifest_version": [
+    2
+  ],
+  "total_duration_ms": 266542.0,
+  "total_duration_s": 266.54,
+  "ok": true
+}

@@ -1,0 +1,71 @@
+{
+  "runtime": [
+    {
+      "id": "sec-intro",
+      "title": "যে ফ্র্যাক্টাল নিউটন জানতেন না",
+      "noNarration": false
+    },
+    {
+      "id": "sec-newton",
+      "title": "স্পর্শক থেকে মূলের দিকে",
+      "noNarration": false
+    },
+    {
+      "id": "sec-complex",
+      "title": "জটিল তলে প্রবেশ",
+      "noNarration": false
+    },
+    {
+      "id": "sec-basins",
+      "title": "আকর্ষণ-অববাহিকা",
+      "noNarration": false
+    },
+    {
+      "id": "sec-boundary",
+      "title": "সীমানার অসীম জটিলতা",
+      "noNarration": false
+    },
+    {
+      "id": "sec-conclusion",
+      "title": "উপসংহার ও পরবর্তী পাঠ",
+      "noNarration": false
+    },
+    {
+      "id": "sec-lab",
+      "title": "ইন্টারেক্টিভ ল্যাব ও কুইজ",
+      "noNarration": true
+    }
+  ],
+  "engine": [
+    {
+      "id": "sec-intro",
+      "blocks": 7,
+      "cues": 7
+    },
+    {
+      "id": "sec-newton",
+      "blocks": 6,
+      "cues": 6
+    },
+    {
+      "id": "sec-complex",
+      "blocks": 6,
+      "cues": 6
+    },
+    {
+      "id": "sec-basins",
+      "blocks": 6,
+      "cues": 6
+    },
+    {
+      "id": "sec-boundary",
+      "blocks": 6,
+      "cues": 6
+    },
+    {
+      "id": "sec-conclusion",
+      "blocks": 3,
+      "cues": 3
+    }
+  ]
+}

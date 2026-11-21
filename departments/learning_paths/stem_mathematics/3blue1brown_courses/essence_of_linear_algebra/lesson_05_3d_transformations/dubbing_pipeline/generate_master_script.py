@@ -1,0 +1,308 @@
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+# BASE_DIR is already dubbing_pipeline directory
+DUBBING_DIR = BASE_DIR
+DUBBING_DIR.mkdir(parents=True, exist_ok=True)
+
+# Master cues crafted for maximum natural flow, rhythm, clarity, and sync
+master_cues = [
+    {
+        "id": 1,
+        "start": 13.46,
+        "end": 18.52,
+        "duration": 5.06,
+        "en": "Hey folks, I've got a relatively quick video for you today, just sort of a footnote between chapters.",
+        "bn": "বন্ধুরা সবাইকে স্বাগতম! আজ আপনাদের জন্য তুলনামূলক ছোট্ট একটি ভিডিও নিয়ে এসেছি—অধ্যায়গুলোর মাঝে ঠিক যেন একটি প্রয়োজনীয় পাদটীকা।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 2,
+        "start": 19.06,
+        "end": 28.38,
+        "duration": 9.32,
+        "en": "In the last two videos I talked about linear transformations and matrices, but I only showed the specific case of transformations that take two-dimensional vectors to other two-dimensional vectors.",
+        "bn": "আগের দুটি পর্বে আমরা লিনিয়ার রূপান্তর এবং ম্যাট্রিক্স নিয়ে বিস্তারিত আলোচনা করেছি, তবে সেগুলোতে কেবল দ্বিমাত্রিক ভেক্টরকে অন্য দ্বিমাত্রিক ভেক্টরে রূপান্তরের বিষয়টিই দেখানো হয়েছিল।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 3,
+        "start": 28.92,
+        "end": 36.06,
+        "duration": 7.14,
+        "en": "In general throughout the series we'll work mainly in two dimensions, mostly because it's easier to actually see on the screen and wrap your mind around.",
+        "bn": "পুরো সিরিজ জুড়ে আমরা মূলত দ্বিমাত্রিক জগতেই বেশি কাজ করব, কারণ স্ক্রিনে এটি চাক্ষুষভাবে ফুটিয়ে তোলা এবং মনের চোখে উপলব্ধি করা অনেকটাই সহজ।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 4,
+        "start": 36.50,
+        "end": 42.80,
+        "duration": 6.30,
+        "en": "But more importantly than that, once you get all the core ideas in two dimensions, they carry over pretty seamlessly to higher dimensions.",
+        "bn": "তবে তার চেয়েও বড় কথা হলো, দ্বিমাত্রিকে মূল ধারণাগুলো একবার পরিষ্কার হয়ে গেলে উচ্চতর মাত্রায় সেগুলো সম্পূর্ণ স্বাভাবিকভাবে কাজ করে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 5,
+        "start": 43.80,
+        "end": 51.00,
+        "duration": 7.20,
+        "en": "Nevertheless, it's good to peek our heads outside of flatland now and then to, you know, see what it means to apply these ideas in more than just those two dimensions.",
+        "bn": "তবুও আমাদের এই দ্বিমাত্রিক ফ্ল্যাটল্যান্ডের বাইরে মাঝে মাঝে উঁকি দেওয়া ভালো, যাতে বোঝা যায় দুইয়ের চেয়ে বেশি মাত্রায় এই নিয়মগুলো আসলে কীভাবে রূপ নেয়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 6,
+        "start": 52.34,
+        "end": 58.88,
+        "duration": 6.54,
+        "en": "For example, consider a linear transformation with three-dimensional vectors as inputs and three-dimensional vectors as outputs.",
+        "bn": "উদাহরণস্বরূপ, এমন একটি লিনিয়ার রূপান্তর বিবেচনা করা যাক যার ইনপুট এবং আউটপুট উভয়ই ত্রিমাত্রিক ভেক্টর।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 7,
+        "start": 60.16,
+        "end": 72.52,
+        "duration": 12.36,
+        "en": "We can visualize this by smooshing around all the points in three-dimensional space, as represented by a grid, in such a way that keeps the grid lines parallel and evenly spaced, and which fixes the origin in place.",
+        "bn": "একটি গ্রিডের সাহায্যে পুরো ত্রিমাত্রিক স্পেসের সমস্ত বিন্দুকে এমনভাবে স্থানান্তরিত করে আমরা এটি কল্পনা করতে পারি, যাতে গ্রিড লাইনগুলো সর্বদা সমান্তরাল ও সমদূরত্বে থাকে এবং মূলবিন্দু তার নিজের জায়গায় সম্পূর্ণ স্থির থাকে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 8,
+        "start": 73.46,
+        "end": 87.16,
+        "duration": 13.70,
+        "en": "And just as with two dimensions, every point of space that we see moving around is really just a proxy for a vector who has its tip at that point, and what we're really doing is thinking about input vectors moving over to their corresponding outputs.",
+        "bn": "আর দ্বিমাত্রিকের মতোই স্পেসের প্রতিটি চলমান বিন্দু মূলত এমন একটি ভেক্টরের প্রতিনিধি যার শীর্ষবিন্দু সেই অবস্থানে থাকে; অর্থাৎ আমরা মূলত প্রতিটি ইনপুট ভেক্টরকে তার রূপান্তরিত আউটপুট ভেক্টরে পৌঁছাতে দেখছি।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 9,
+        "start": 87.90,
+        "end": 93.56,
+        "duration": 5.66,
+        "en": "And just as with two dimensions, one of these transformations is completely described by where the basis vectors go.",
+        "bn": "আর দ্বিমাত্রিকের মতোই এই সম্পূর্ণ রূপান্তরটি নিখুঁতভাবে নির্ধারিত হয়ে যায় কেবল বেসিস ভেক্টরগুলো কোথায় গিয়ে পৌঁছায় তার ওপর ভিত্তি করে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 10,
+        "start": 94.16,
+        "end": 106.56,
+        "duration": 12.40,
+        "en": "But now, there are three standard basis vectors that we typically use. The unit vector in the x direction, i-hat, the unit vector in the y direction, j-hat, and a new guy, the unit vector in the z direction, called k-hat.",
+        "bn": "তবে এখন আমাদের ব্যবহৃত স্ট্যান্ডার্ড বেসিস ভেক্টর মোট তিনটি: এক্স-দিক বরাবর ইউনিট ভেক্টর আই-হ্যাট, ওয়াই-দিক বরাবর ইউনিট ভেক্টর জে-হ্যাট, এবং আমাদের নতুন সদস্য—জেড-দিক বরাবর ইউনিট ভেক্টর, যার নাম কে-হ্যাট।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 11,
+        "start": 107.14,
+        "end": 116.02,
+        "duration": 8.88,
+        "en": "In fact, I think it's easier to think about these transformations by only following those basis vectors, since the full 3D grid representing all points can get kind of messy.",
+        "bn": "আসলে পুরো ত্রিমাত্রিক গ্রিড অনুসরণ করাটা কিছুটা ঘিঞ্জি হয়ে যেতে পারে, তাই কেবল এই তিনটি বেসিস ভেক্টরকে ট্র্যাক করাই রূপান্তরটি বোঝার সবচেয়ে সহজ উপায়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 12,
+        "start": 116.92,
+        "end": 124.00,
+        "duration": 7.08,
+        "en": "By leaving a copy of the original axes in the background, we can think about the coordinates of where each of these three basis vectors lands.",
+        "bn": "ব্যাকগ্রাউন্ডে মূল অক্ষগুলোর একটি অনুলিপি রেখে আমরা লক্ষ্য করতে পারি এই তিনটি বেসিস ভেক্টর রূপান্তরের পর কোন কোন নতুন স্থানাঙ্কে অবতরণ করল।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 13,
+        "start": 125.82,
+        "end": 136.16,
+        "duration": 10.34,
+        "en": "Record the coordinates of these three vectors as the columns of a 3x3 matrix. This gives a matrix that completely describes the transformation using only nine numbers.",
+        "bn": "এই তিনটি ভেক্টরের স্থানাঙ্ককে একটি ৩×৩ ম্যাট্রিক্সের তিনটি কলাম হিসেবে লিপিবদ্ধ করুন। এর মাধ্যমে কেবল নয়টি সংখ্যা ব্যবহার করে পুরো ত্রিমাত্রিক রূপান্তরকে সম্পূর্ণভাবে সংজ্ঞায়িত করা যায়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 14,
+        "start": 137.20,
+        "end": 143.96,
+        "duration": 6.76,
+        "en": "As a simple example, consider the transformation that rotates space 90 degrees around the y-axis.",
+        "bn": "একটি সহজ উদাহরণ হিসেবে এমন একটি রূপান্তর দেখা যাক যা সমগ্র স্পেসকে ওয়াই-অক্ষের সাপেক্ষে ৯০ ডিগ্রি ঘুরিয়ে দেয়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 15,
+        "start": 144.86,
+        "end": 150.10,
+        "duration": 5.24,
+        "en": "So that would mean that it takes i-hat to the coordinates (0, 0, -1) on the z-axis.",
+        "bn": "এর অর্থ হলো, এটি আই-হ্যাটকে জেড-অক্ষের ঋণাত্মক দিকে শূন্য, শূন্য, মাইনাস এক স্থানাঙ্কে নিয়ে যায়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 16,
+        "start": 150.82,
+        "end": 154.28,
+        "duration": 3.46,
+        "en": "It doesn't move j-hat, so it stays at the coordinates (0, 1, 0).",
+        "bn": "এটি জে-হ্যাটকে একেবারেই স্থানচ্যুত করে না, ফলে তা শূন্য, এক, শূন্য স্থানাঙ্কেই থেকে যায়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 17,
+        "start": 154.88,
+        "end": 158.84,
+        "duration": 3.96,
+        "en": "And then k-hat moves over to the x-axis at (1, 0, 0).",
+        "bn": "এবং কে-হ্যাট স্থানান্তরিত হয়ে এক্স-অক্ষের ওপরে এক, শূন্য, শূন্য অবস্থানে পৌঁছে যায়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 18,
+        "start": 160.99,
+        "end": 166.76,
+        "duration": 5.77,
+        "en": "Those three sets of coordinates become the columns of a matrix that describes that rotation transformation.",
+        "bn": "এই তিনটি স্থানাঙ্কের সেটই তখন সেই ঘূর্ণন রূপান্তর বর্ণনাকারী ম্যাট্রিক্সটির তিনটি কলামে পরিণত হয়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 19,
+        "start": 169.76,
+        "end": 176.22,
+        "duration": 6.46,
+        "en": "To see where a vector with coordinates (x, y, z) lands, the reasoning is almost identical to what it was for two dimensions.",
+        "bn": "এক্স, ওয়াই, জেড স্থানাঙ্ক বিশিষ্ট যেকোনো ভেক্টর কোথায় গিয়ে পৌঁছাবে তা বের করার যুক্তিটি দ্বিমাত্রিকের মতোই প্রায় পুরোপুরি অভিন্ন।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 20,
+        "start": 176.94,
+        "end": 184.04,
+        "duration": 7.10,
+        "en": "Each of those coordinates can be thought of as instructions for how to scale each basis vector so that they add together to get your vector.",
+        "bn": "প্রতিটি স্থানাঙ্ককে এমন নির্দেশনা হিসেবে ভাবা যায় যা বলে দেয় প্রতিটি বেসিস ভেক্টরকে কতটা প্রসারিত করে যোগ করলে মূল ভেক্টরটি তৈরি হবে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 21,
+        "start": 186.26,
+        "end": 194.00,
+        "duration": 7.74,
+        "en": "And the important part, just like the 2D case, is that this scaling and adding process works both before and after the transformation.",
+        "bn": "এবং সবচেয়ে গুরুত্বপূর্ণ বিষয় হলো, দ্বিমাত্রিকের মতোই এই স্কেলিং ও যোগের নিয়মটি রূপান্তরের আগেও যেমন কাজ করে, রূপান্তরের পরেও ঠিক একইভাবে কার্যকর থাকে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 22,
+        "start": 196.38,
+        "end": 204.82,
+        "duration": 8.44,
+        "en": "So to see where your vector lands, you multiply those coordinates by the corresponding columns of the matrix, and then you add together the three results.",
+        "bn": "কাজেই আপনার ভেক্টরটি কোথায় পৌঁছাবে তা দেখতে হলে স্থানাঙ্কগুলোকে ম্যাট্রিক্সের সংশ্লিষ্ট কলামগুলো দিয়ে গুণ করতে হবে, এবং তারপর তিনটি ফলাফল পরস্পর যোগ করে নিতে হবে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 23,
+        "start": 209.60,
+        "end": 215.52,
+        "duration": 5.92,
+        "en": "Multiplying two matrices is also similar. Whenever you see two 3x3 matrices getting multiplied together,",
+        "bn": "দুটি ম্যাট্রিক্সের গুণন প্রক্রিয়াটিও একইভাবে ঘটে। যখনই দেখবেন দুটি ৩×৩ ম্যাট্রিক্স পরস্পর গুণ হচ্ছে,",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 24,
+        "start": 215.52,
+        "end": 223.26,
+        "duration": 7.74,
+        "en": "you should imagine first applying the transformation encoded by the right one, then applying the transformation encoded by the left one.",
+        "bn": "তখন মনে কল্পনা করবেন প্রথমে ডানদিকের ম্যাট্রিক্সের রূপান্তরটি প্রয়োগ করা হচ্ছে, এবং তারপর বামদিকের ম্যাট্রিক্সের রূপান্তরটি তার ওপর প্রয়োগ করা হচ্ছে।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 25,
+        "start": 224.06,
+        "end": 232.58,
+        "duration": 8.52,
+        "en": "It turns out that 3D matrix multiplication is actually pretty important for fields like computer graphics and robotics, since things like rotations in three dimensions",
+        "bn": "দেখা যায় কম্পিউটার গ্রাফিক্স এবং রোবোটিক্সের মতো ক্ষেত্রগুলোতে ত্রিমাত্রিক ম্যাট্রিক্স গুণন অত্যন্ত অপরিহার্য; কারণ ৩ডি ঘূর্ণনের মতো জটিল বিষয়গুলো",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 26,
+        "start": 232.58,
+        "end": 241.16,
+        "duration": 8.58,
+        "en": "can be pretty hard to describe, but they're easier to wrap your mind around if you can break them down as the composition of separate, easier-to-think-about rotations.",
+        "bn": "সরাসরি প্রকাশ করা ভীষণ কঠিন হলেও, সেগুলোকে যখন তুলনামূলক সহজ একাধিক ধারাবাহিক ঘূর্ণনের সংযোজন হিসেবে ভেঙে নেওয়া হয়, তখন তা খুব সহজেই নিয়ন্ত্রণ ও কল্পনা করা যায়।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 27,
+        "start": 244.36,
+        "end": 249.86,
+        "duration": 5.50,
+        "en": "Performing this matrix multiplication numerically is, once again, pretty similar to the two-dimensional case.",
+        "bn": "সংখ্যাগতভাবে এই ম্যাট্রিক্স গুণন সম্পন্ন করার পদ্ধতিটিও আবারও দ্বিমাত্রিকের নিয়মের মতোই পুরোপুরি সামঞ্জস্যপূর্ণ।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 28,
+        "start": 250.48,
+        "end": 263.82,
+        "duration": 13.34,
+        "en": "In fact, a good way to test your understanding of the last video would be to try to reason through what specifically this matrix multiplication should look like, thinking closely about how it relates to the idea of applying two successive transformations in space.",
+        "bn": "প্রকৃতপক্ষে আগের পর্বটি আপনি কতটা গভীরভাবে উপলব্ধি করেছেন তা যাচাই করার সেরা উপায় হলো: ত্রিমাত্রিক স্থানে দুটি রূপান্তর ধারাবাহিকভাবে ঘটলে তাদের ম্যাট্রিক্স গুণনের রূপটি কেমন হবে তা নিজে নিজে যুক্তি দিয়ে খুঁজে বের করা।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    },
+    {
+        "id": 29,
+        "start": 272.14,
+        "end": 275.50,
+        "duration": 3.36,
+        "en": "In the next video, I'll start getting into the determinant.",
+        "bn": "পরবর্তী পর্বে আমরা লিনিয়ার অ্যালজেবরার অন্যতম চিত্তাকর্ষক বিষয় 'ডিটারমিন্যান্ট' নিয়ে আলোচনা শুরু করব।",
+        "voice": "bn-BD-PradeepNeural",
+        "persona": "Grant Sanderson (Narrator)"
+    }
+]
+
+import json
+master_script_file = DUBBING_DIR / "3b1b_lesson_05_bangla_master_script.json"
+with open(master_script_file, "w", encoding="utf-8") as f:
+    json.dump(master_cues, f, ensure_ascii=False, indent=2)
+
+print(f"Master script generated with {len(master_cues)} unified cues: {master_script_file}")

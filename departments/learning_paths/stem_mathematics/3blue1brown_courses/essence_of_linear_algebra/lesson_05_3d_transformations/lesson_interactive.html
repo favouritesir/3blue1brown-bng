@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>৩ব্লু১ব্রাউন: ত্রিমাত্রিক রৈখিক রূপান্তর সিমুলেটর | বাংলা রিসোর্স ফ্যাক্টরি</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root {
+      --bg-dark: #070b14;
+      --bg-card: #0f172a;
+      --border-color: #334155;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-purple: #c084fc;
+      --accent-rose: #f43f5e;
+      --text-main: #f8fafc;
+      --text-dim: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Hind Siliguri', sans-serif;
+      padding: 1.5rem;
+      line-height: 1.6;
+    }
+    .container { max-width: 1300px; margin: 0 auto; }
+    header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: 2rem;
+      background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle { color: var(--text-dim); font-size: 1rem; }
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 1.5rem;
+    }
+    @media (max-width: 1000px) {
+      .grid-layout { grid-template-columns: 1fr; }
+    }
+    .canvas-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    canvas {
+      background: #020617;
+      border-radius: 10px;
+      border: 1px solid #1e293b;
+      cursor: grab;
+      width: 100%;
+      height: 520px;
+      touch-action: none;
+    }
+    canvas:active { cursor: grabbing; }
+    .canvas-hint {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-top: 0.6rem;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .controls-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 0.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      background: #090e1a;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid #1e293b;
+      position: relative;
+    }
+    .matrix-grid::before, .matrix-grid::after {
+      content: '';
+      position: absolute;
+      top: 6px; bottom: 6px;
+      width: 6px;
+      border-top: 2px solid var(--text-dim);
+      border-bottom: 2px solid var(--text-dim);
+    }
+    .matrix-grid::before { left: 4px; border-left: 2px solid var(--text-dim); }
+    .matrix-grid::after { right: 4px; border-right: 2px solid var(--text-dim); }
+    .matrix-cell { display: flex; flex-direction: column; align-items: center; }
+    .matrix-cell label {
+      font-size: 0.7rem;
+      margin-bottom: 0.2rem;
+      font-family: monospace;
+    }
+    .col-i label { color: #ef4444; }
+    .col-j label { color: #10b981; }
+    .col-k label { color: #3b82f6; }
+    .matrix-cell input {
+      width: 100%;
+      background: #1e293b;
+      border: 1px solid var(--border-color);
+      color: #fff;
+      text-align: center;
+      padding: 0.45rem 0.2rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .btn-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+    }
+    .btn {
+      background: #1e293b;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      padding: 0.65rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .btn:hover {
+      background: #334155;
+      border-color: var(--accent-cyan);
+      color: #fff;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      border: none;
+      color: white;
+      font-weight: 600;
+      grid-column: span 2;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #0369a1, #1d4ed8);
+    }
+    .vector-panel {
+      background: #090e1a;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 0.85rem;
+    }
+    .slider-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .slider-row label {
+      width: 45px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    .slider-row input[type="range"] {
+      flex: 1;
+      accent-color: var(--accent-amber);
+    }
+    .slider-row span {
+      width: 35px;
+      font-size: 0.85rem;
+      text-align: right;
+      font-family: monospace;
+    }
+    .math-display {
+      background: #060a12;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 1rem;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .legend {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+    .legend-item { display: flex; align-items: center; gap: 0.35rem; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-i { background: #ef4444; }
+    .dot-j { background: #10b981; }
+    .dot-k { background: #3b82f6; }
+    .dot-v { background: #f59e0b; }
+    .notes-card {
+      margin-top: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="badge">3Blue1Brown • লেসন ০৫ • ত্রিমাত্রিক রৈখিক রূপান্তর</div>
+    <h1>ত্রিমাত্রিক রৈখিক রূপান্তর সিমুলেটর (3D Linear Transformations)</h1>
+    <div class="subtitle">৩টি বেসিস ভেক্টর (\(\hat{\imath}, \hat{\jmath}, \hat{k}\)), ৩×৩ রূপান্তর ম্যাট্রিক্স এবং ৩ডি স্পেসের জ্যামিতিক আবর্তন ও রূপান্তর ইন্টারেক্টিভভাবে পর্যবেক্ষণ করুন।</div>
+  </header>
+
+  <div class="grid-layout">
+    <div class="canvas-panel">
+      <canvas id="glCanvas"></canvas>
+      <div class="canvas-hint">
+        <span>🖱️ মাউস ড্র্যাগ করে ৩ডি ভিউ ঘুরান</span>
+        <span>🔍 স্ক্রোল করে জুম ইন/আউট করুন</span>
+        <span>⏱️ অ্যানিমেশন স্লাইডারে রূপান্তরের অগ্রগতি দেখুন</span>
+      </div>
+      <div class="legend">
+        <div class="legend-item"><div class="dot dot-i"></div> \(\hat{\imath}\) (x-অক্ষ কলাম)</div>
+        <div class="legend-item"><div class="dot dot-j"></div> \(\hat{\jmath}\) (y-অক্ষ কলাম)</div>
+        <div class="legend-item"><div class="dot dot-k"></div> \(\hat{k}\) (z-অক্ষ কলাম)</div>
+        <div class="legend-item"><div class="dot dot-v"></div> ইনপুট/আউটপুট ভেক্টর \(\vec{v}\)</div>
+      </div>
+    </div>
+
+    <div class="controls-panel">
+      <div class="section-title">
+        <span>৩×৩ রূপান্তর ম্যাট্রিক্স (M)</span>
+        <button class="btn" style="padding: 0.2rem 0.5rem; font-size:0.75rem;" onclick="resetIdentity()">Identity Matrix</button>
+      </div>
+
+      <div class="matrix-grid">
+        <div class="matrix-cell col-i"><label>î_x</label><input type="number" id="m00" value="1" step="0.1"></div>
+        <div class="matrix-cell col-j"><label>ĵ_x</label><input type="number" id="m01" value="0" step="0.1"></div>
+        <div class="matrix-cell col-k"><label>k̂_x</label><input type="number" id="m02" value="0" step="0.1"></div>
+
+        <div class="matrix-cell col-i"><label>î_y</label><input type="number" id="m10" value="0" step="0.1"></div>
+        <div class="matrix-cell col-j"><label>ĵ_y</label><input type="number" id="m11" value="1" step="0.1"></div>
+        <div class="matrix-cell col-k"><label>k̂_y</label><input type="number" id="m12" value="0" step="0.1"></div>
+
+        <div class="matrix-cell col-i"><label>î_z</label><input type="number" id="m20" value="0" step="0.1"></div>
+        <div class="matrix-cell col-j"><label>ĵ_z</label><input type="number" id="m21" value="0" step="0.1"></div>
+        <div class="matrix-cell col-k"><label>k̂_z</label><input type="number" id="m22" value="1" step="0.1"></div>
+      </div>
+
+      <div class="section-title">রেডিমেড ৩ডি রূপান্তর প্রিসেট</div>
+      <div class="btn-group">
+        <button class="btn" onclick="presetRotateY90()">Rotate Y (90°)</button>
+        <button class="btn" onclick="presetRotateZ90()">Rotate Z (90°)</button>
+        <button class="btn" onclick="presetRotateX90()">Rotate X (90°)</button>
+        <button class="btn" onclick="presetShear3D()">3D Shear</button>
+        <button class="btn" onclick="presetProjection2D()">3D to 2D Flat</button>
+        <button class="btn" onclick="presetLessonQuiz()">লেসনের কুইজ ম্যাট্রিক্স</button>
+        <button class="btn btn-primary" onclick="animateTransform()">অ্যানিমেট রূপান্তর (Play)</button>
+      </div>
+
+      <div class="section-title">ইনপুট ভেক্টর \(\vec{v} = [x, y, z]^T\)</div>
+      <div class="vector-panel">
+        <div class="slider-row">
+          <label style="color:#ef4444;">X:</label>
+          <input type="range" id="vx" min="-3" max="3" step="0.1" value="1">
+          <span id="vx_val">1.0</span>
+        </div>
+        <div class="slider-row">
+          <label style="color:#10b981;">Y:</label>
+          <input type="range" id="vy" min="-3" max="3" step="0.1" value="0">
+          <span id="vy_val">0.0</span>
+        </div>
+        <div class="slider-row">
+          <label style="color:#3b82f6;">Z:</label>
+          <input type="range" id="vz" min="-3" max="3" step="0.1" value="-2">
+          <span id="vz_val">-2.0</span>
+        </div>
+      </div>
+
+      <div class="section-title">রূপান্তর অগ্রগতি (Progress t)</div>
+      <div class="slider-row">
+        <input type="range" id="animT" min="0" max="1" step="0.01" value="1">
+        <span id="animT_val">1.00</span>
+      </div>
+
+      <div class="math-display" id="mathOutput">
+        <!-- Dynamic MathJax Output -->
+      </div>
+    </div>
+  </div>
+
+  <div class="notes-card">
+    <h3 style="color: var(--accent-cyan); margin-bottom: 0.8rem;">বাংলা রিসোর্স ফ্যাক্টরি অন্তর্দৃষ্টি (Core Visual Intuition):</h3>
+    <p>১. <strong>৩×৩ ম্যাট্রিক্সের কলামগুলো:</strong> একটি ৩×৩ ম্যাট্রিক্স কেবল কিছু এলোমেলো সংখ্যার টেবিল নয়। ১ম কলামটি নির্দেশ করে রূপান্তরের পর \(\hat{\imath}\) ভেক্টরটি কোথায় যায়, ২য় কলাম নির্দেশ করে \(\hat{\jmath}\) কোথায় যায়, এবং ৩য় কলাম নির্দেশ করে \(\hat{k}\) কোথায় গিয়ে অবতরণ করে।</p>
+    <p style="margin-top: 0.5rem;">২. <strong>ভেক্টর স্কেলিং ও সমাবেশ:</strong> ইনপুট ভেক্টরের স্থানাঙ্ক \([x, y, z]\) রূপান্তরের আগে ও পরে ঠিক একই স্কেলার ওজন (Weights) হিসেবে কাজ করে। ফলে আউটপুট ভেক্টরটি কেবল পরিবর্তিত কলাম তিনটির একটি রৈখিক সমাবেশ: \(\vec{v}_{\text{out}} = x L(\hat{\imath}) + y L(\hat{\jmath}) + z L(\hat{k})\)।</p>
+  </div>
+</div>
+
+<script>
+  const canvas = document.getElementById('glCanvas');
+  const ctx = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    canvas.width = canvas.clientWidth * window.devicePixelRatio;
+    canvas.height = canvas.clientHeight * window.devicePixelRatio;
+  }
+  window.addEventListener('resize', () => { resizeCanvas(); draw(); });
+
+  // Camera State
+  let rotX = 0.45;
+  let rotY = -0.65;
+  let zoom = 55;
+  let isDragging = false;
+  let lastMouseX = 0;
+  let lastMouseY = 0;
+
+  canvas.addEventListener('pointerdown', (e) => {
+    isDragging = true;
+    lastMouseX = e.clientX;
+    lastMouseY = e.clientY;
+    canvas.setPointerCapture(e.pointerId);
+  });
+
+  canvas.addEventListener('pointermove', (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - lastMouseX;
+    const dy = e.clientY - lastMouseY;
+    rotY += dx * 0.008;
+    rotX += dy * 0.008;
+    lastMouseX = e.clientX;
+    lastMouseY = e.clientY;
+    draw();
+  });
+
+  canvas.addEventListener('pointerup', () => { isDragging = false; });
+  canvas.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    zoom *= e.deltaY > 0 ? 0.95 : 1.05;
+    zoom = Math.max(25, Math.min(130, zoom));
+    draw();
+  });
+
+  // Matrix Inputs
+  const mIds = ['m00','m01','m02','m10','m11','m12','m20','m21','m22'];
+  mIds.forEach(id => {
+    document.getElementById(id).addEventListener('input', () => { updateMath(); draw(); });
+  });
+
+  // Vector sliders
+  ['vx', 'vy', 'vz'].forEach(id => {
+    document.getElementById(id).addEventListener('input', (e) => {
+      document.getElementById(id + '_val').innerText = parseFloat(e.target.value).toFixed(1);
+      updateMath();
+      draw();
+    });
+  });
+
+  const animSlider = document.getElementById('animT');
+  animSlider.addEventListener('input', (e) => {
+    document.getElementById('animT_val').innerText = parseFloat(e.target.value).toFixed(2);
+    draw();
+  });
+
+  function getTargetMatrix() {
+    return [
+      [parseFloat(document.getElementById('m00').value) || 0, parseFloat(document.getElementById('m01').value) || 0, parseFloat(document.getElementById('m02').value) || 0],
+      [parseFloat(document.getElementById('m10').value) || 0, parseFloat(document.getElementById('m11').value) || 0, parseFloat(document.getElementById('m12').value) || 0],
+      [parseFloat(document.getElementById('m20').value) || 0, parseFloat(document.getElementById('m21').value) || 0, parseFloat(document.getElementById('m22').value) || 0]
+    ];
+  }
+
+  function setMatrix(m) {
+    document.getElementById('m00').value = m[0][0];
+    document.getElementById('m01').value = m[0][1];
+    document.getElementById('m02').value = m[0][2];
+    document.getElementById('m10').value = m[1][0];
+    document.getElementById('m11').value = m[1][1];
+    document.getElementById('m12').value = m[1][2];
+    document.getElementById('m20').value = m[2][0];
+    document.getElementById('m21').value = m[2][1];
+    document.getElementById('m22').value = m[2][2];
+    updateMath();
+    draw();
+  }
+
+  function resetIdentity() {
+    setMatrix([[1,0,0],[0,1,0],[0,0,1]]);
+  }
+
+  function presetRotateY90() {
+    setMatrix([[0,0,1],[0,1,0],[-1,0,0]]);
+  }
+
+  function presetRotateZ90() {
+    setMatrix([[0,-1,0],[1,0,0],[0,0,1]]);
+  }
+
+  function presetRotateX90() {
+    setMatrix([[1,0,0],[0,0,-1],[0,1,0]]);
+  }
+
+  function presetShear3D() {
+    setMatrix([[1,1,0],[0,1,1],[0,0,1]]);
+  }
+
+  function presetProjection2D() {
+    setMatrix([[1,0,0],[0,1,0],[0,0,0]]);
+  }
+
+  function presetLessonQuiz() {
+    setMatrix([[0, 0.5, -0.5],[0, 0.5, 1],[1, 0, 0.5]]);
+    document.getElementById('vx').value = 1;
+    document.getElementById('vy').value = 0;
+    document.getElementById('vz').value = -2;
+    document.getElementById('vx_val').innerText = '1.0';
+    document.getElementById('vy_val').innerText = '0.0';
+    document.getElementById('vz_val').innerText = '-2.0';
+    updateMath();
+  }
+
+  let animFrame = null;
+  function animateTransform() {
+    if (animFrame) cancelAnimationFrame(animFrame);
+    let start = null;
+    const duration = 1200; // ms
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      // ease-in-out
+      const ease = progress < 0.5 ? 2 * progress * progress : -1 + (4 - 2 * progress) * progress;
+      animSlider.value = ease;
+      document.getElementById('animT_val').innerText = ease.toFixed(2);
+      draw();
+      if (progress < 1) {
+        animFrame = requestAnimationFrame(step);
+      }
+    }
+    animSlider.value = 0;
+    animFrame = requestAnimationFrame(step);
+  }
+
+  // 3D Projection math
+  function project(p, cx, cy) {
+    // 3D Point: [x, y, z] -> Three.js standard: x right, y up, z forward
+    // Rotate Y
+    let x1 = p[0] * Math.cos(rotY) + p[2] * Math.sin(rotY);
+    let y1 = p[1];
+    let z1 = -p[0] * Math.sin(rotY) + p[2] * Math.cos(rotY);
+
+    // Rotate X
+    let x2 = x1;
+    let y2 = y1 * Math.cos(rotX) - z1 * Math.sin(rotX);
+    let z2 = y1 * Math.sin(rotX) + z1 * Math.cos(rotX);
+
+    // Isometric-perspective scale
+    const dist = 6;
+    const fov = dist / (dist + z2 * 0.15);
+    const px = cx + x2 * zoom * fov;
+    const py = cy - y2 * zoom * fov;
+    return { x: px, y: py, depth: z2 };
+  }
+
+  function drawLine3D(p1, p2, color, width, cx, cy, dashed = false) {
+    const s1 = project(p1, cx, cy);
+    const s2 = project(p2, cx, cy);
+    ctx.save();
+    ctx.beginPath();
+    if (dashed) ctx.setLineDash([4, 4]);
+    ctx.moveTo(s1.x, s1.y);
+    ctx.lineTo(s2.x, s2.y);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = width * window.devicePixelRatio;
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawVector3D(p, color, width, cx, cy, label) {
+    const origin = [0, 0, 0];
+    const tip = project(p, cx, cy);
+    const base = project(origin, cx, cy);
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(base.x, base.y);
+    ctx.lineTo(tip.x, tip.y);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = width * window.devicePixelRatio;
+    ctx.stroke();
+
+    // Arrow head
+    const angle = Math.atan2(tip.y - base.y, tip.x - base.x);
+    const headLen = 12 * window.devicePixelRatio;
+    ctx.beginPath();
+    ctx.moveTo(tip.x, tip.y);
+    ctx.lineTo(tip.x - headLen * Math.cos(angle - Math.PI / 6), tip.y - headLen * Math.sin(angle - Math.PI / 6));
+    ctx.lineTo(tip.x - headLen * Math.cos(angle + Math.PI / 6), tip.y - headLen * Math.sin(angle + Math.PI / 6));
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.fill();
+
+    if (label) {
+      ctx.fillStyle = color;
+      ctx.font = `bold ${14 * window.devicePixelRatio}px sans-serif`;
+      ctx.fillText(label, tip.x + 8, tip.y - 8);
+    }
+    ctx.restore();
+  }
+
+  function draw() {
+    resizeCanvas();
+    const w = canvas.width;
+    const h = canvas.height;
+    const cx = w / 2;
+    const cy = h / 2;
+
+    ctx.clearRect(0, 0, w, h);
+
+    const t = parseFloat(animSlider.value);
+    const M_target = getTargetMatrix();
+    // Interpolate Identity -> Target Matrix
+    const M = [
+      [1 + (M_target[0][0] - 1) * t, (M_target[0][1]) * t, (M_target[0][2]) * t],
+      [(M_target[1][0]) * t, 1 + (M_target[1][1] - 1) * t, (M_target[1][2]) * t],
+      [(M_target[2][0]) * t, (M_target[2][1]) * t, 1 + (M_target[2][2] - 1) * t]
+    ];
+
+    function transformPoint(pt) {
+      return [
+        M[0][0]*pt[0] + M[0][1]*pt[1] + M[0][2]*pt[2],
+        M[1][0]*pt[0] + M[1][1]*pt[1] + M[1][2]*pt[2],
+        M[2][0]*pt[0] + M[2][1]*pt[1] + M[2][2]*pt[2]
+      ];
+    }
+
+    // 1. Draw Original Coordinate Axes (Dimmed Faint Lines)
+    const axisLen = 3.5;
+    drawLine3D([-axisLen, 0, 0], [axisLen, 0, 0], 'rgba(255,255,255,0.12)', 1, cx, cy, true);
+    drawLine3D([0, -axisLen, 0], [0, axisLen, 0], 'rgba(255,255,255,0.12)', 1, cx, cy, true);
+    drawLine3D([0, 0, -axisLen], [0, 0, axisLen], 'rgba(255,255,255,0.12)', 1, cx, cy, true);
+
+    // 2. Draw 3D Transformed Grid / Unit Lattice Box
+    const gridRange = 2;
+    for (let x = -gridRange; x <= gridRange; x++) {
+      for (let z = -gridRange; z <= gridRange; z++) {
+        // Line along y
+        const p1 = transformPoint([x, -gridRange, z]);
+        const p2 = transformPoint([x, gridRange, z]);
+        drawLine3D(p1, p2, 'rgba(56, 189, 248, 0.08)', 1, cx, cy);
+      }
+    }
+    for (let y = -gridRange; y <= gridRange; y++) {
+      for (let z = -gridRange; z <= gridRange; z++) {
+        const p1 = transformPoint([-gridRange, y, z]);
+        const p2 = transformPoint([gridRange, y, z]);
+        drawLine3D(p1, p2, 'rgba(56, 189, 248, 0.08)', 1, cx, cy);
+      }
+    }
+    for (let x = -gridRange; x <= gridRange; x++) {
+      for (let y = -gridRange; y <= gridRange; y++) {
+        const p1 = transformPoint([x, y, -gridRange]);
+        const p2 = transformPoint([x, y, gridRange]);
+        drawLine3D(p1, p2, 'rgba(56, 189, 248, 0.08)', 1, cx, cy);
+      }
+    }
+
+    // 3. Draw Transformed Basis Vectors î, ĵ, k̂
+    const i_trans = transformPoint([1, 0, 0]);
+    const j_trans = transformPoint([0, 1, 0]);
+    const k_trans = transformPoint([0, 0, 1]);
+
+    drawVector3D(i_trans, '#ef4444', 3.5, cx, cy, 'î');
+    drawVector3D(j_trans, '#10b981', 3.5, cx, cy, 'ĵ');
+    drawVector3D(k_trans, '#3b82f6', 3.5, cx, cy, 'k̂');
+
+    // 4. Draw Input Vector & Transformed Vector v
+    const vx = parseFloat(document.getElementById('vx').value) || 0;
+    const vy = parseFloat(document.getElementById('vy').value) || 0;
+    const vz = parseFloat(document.getElementById('vz').value) || 0;
+
+    const v_trans = transformPoint([vx, vy, vz]);
+    drawVector3D(v_trans, '#f59e0b', 4, cx, cy, 'v');
+  }
+
+  function updateMath() {
+    const M = getTargetMatrix();
+    const vx = parseFloat(document.getElementById('vx').value) || 0;
+    const vy = parseFloat(document.getElementById('vy').value) || 0;
+    const vz = parseFloat(document.getElementById('vz').value) || 0;
+
+    const ox = (M[0][0]*vx + M[0][1]*vy + M[0][2]*vz).toFixed(2);
+    const oy = (M[1][0]*vx + M[1][1]*vy + M[1][2]*vz).toFixed(2);
+    const oz = (M[2][0]*vx + M[2][1]*vy + M[2][2]*vz).toFixed(2);
+
+    const mathDiv = document.getElementById('mathOutput');
+    mathDiv.innerHTML = `
+      \\[
+      \\begin{bmatrix}
+      \\color{#ef4444}{${M[0][0]}} & \\color{#10b981}{${M[0][1]}} & \\color{#3b82f6}{${M[0][2]}} \\\\
+      \\color{#ef4444}{${M[1][0]}} & \\color{#10b981}{${M[1][1]}} & \\color{#3b82f6}{${M[1][2]}} \\\\
+      \\color{#ef4444}{${M[2][0]}} & \\color{#10b981}{${M[2][1]}} & \\color{#3b82f6}{${M[2][2]}}
+      \\end{bmatrix}
+      \\begin{bmatrix}
+      ${vx} \\\\ ${vy} \\\\ ${vz}
+      \\end{bmatrix}
+      =
+      \\begin{bmatrix}
+      \\color{#f59e0b}{${ox}} \\\\
+      \\color{#f59e0b}{${oy}} \\\\
+      \\color{#f59e0b}{${oz}}
+      \\end{bmatrix}
+      \\]
+    `;
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise([mathDiv]);
+    }
+  }
+
+  // Initial setup
+  presetLessonQuiz();
+  resizeCanvas();
+  draw();
+</script>
+</body>
+</html>

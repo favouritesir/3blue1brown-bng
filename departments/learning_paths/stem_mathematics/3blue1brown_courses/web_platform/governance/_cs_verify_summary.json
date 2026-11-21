@@ -1,0 +1,1583 @@
+{
+  "results": [
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "0 page errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "navbar rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "heroVideo rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "banner rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "article rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "fullscreen rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "watch rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "footer rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "bookmarks rendered (5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "figures rendered (5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "quizzes rendered (2)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "one data-no-narration lab section (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "5 narrated sections (got 5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "DOM cue parity blocks==cues==manifest per section",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "no quiz/media cue types (0)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "manifest narrated IDs match DOM section IDs",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "all 6 images loaded",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "hero video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "watch video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "official youtube_id on hero+watch",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "script load order == L01 (incl. manifest)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "quiz click -> correct feedback",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "0 console errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_01 (entropy)",
+      "check": "0 HTTP 4xx/5xx (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "0 page errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "navbar rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "heroVideo rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "banner rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "article rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "fullscreen rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "watch rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "footer rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "bookmarks rendered (4)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "figures rendered (5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "quizzes rendered (2)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "one data-no-narration lab section (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "5 narrated sections (got 5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "DOM cue parity blocks==cues==manifest per section",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "no quiz/media cue types (0)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "manifest narrated IDs match DOM section IDs",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "all 6 images loaded",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "hero video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "watch video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "official youtube_id on hero+watch",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "script load order == L01 (incl. manifest)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "quiz click -> correct feedback",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "0 console errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_02 (cross-entropy)",
+      "check": "0 HTTP 4xx/5xx (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "0 page errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "navbar rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "heroVideo rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "banner rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "article rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "fullscreen rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "watch rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "footer rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "bookmarks rendered (4)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "figures rendered (5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "quizzes rendered (2)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "one data-no-narration lab section (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "5 narrated sections (got 5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "DOM cue parity blocks==cues==manifest per section",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "no quiz/media cue types (0)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "manifest narrated IDs match DOM section IDs",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "all 6 images loaded",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "hero video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "watch video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "official youtube_id on hero+watch",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "script load order == L01 (incl. manifest)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "quiz click -> correct feedback",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "0 console errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_03 (arithmetic-codes)",
+      "check": "0 HTTP 4xx/5xx (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "0 page errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "navbar rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "heroVideo rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "banner rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "article rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "fullscreen rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "watch rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "footer rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "bookmarks rendered (4)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "figures rendered (5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "quizzes rendered (2)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "one data-no-narration lab section (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "5 narrated sections (got 5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "DOM cue parity blocks==cues==manifest per section",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "no quiz/media cue types (0)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "manifest narrated IDs match DOM section IDs",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "all 6 images loaded",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "hero video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "watch video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "official youtube_id on hero+watch",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "script load order == L01 (incl. manifest)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "quiz click -> correct feedback",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "0 console errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_04 (wordle)",
+      "check": "0 HTTP 4xx/5xx (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "0 page errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "navbar rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "heroVideo rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "banner rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "article rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "fullscreen rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "watch rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "footer rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "bookmarks rendered (4)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "figures rendered (5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "quizzes rendered (2)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "one data-no-narration lab section (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "5 narrated sections (got 5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "DOM cue parity blocks==cues==manifest per section",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "no quiz/media cue types (0)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "manifest narrated IDs match DOM section IDs",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "all 6 images loaded",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "hero video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "watch video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "official youtube_id on hero+watch",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "script load order == L01 (incl. manifest)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "quiz click -> correct feedback",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "0 console errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_05 (wordle-2)",
+      "check": "0 HTTP 4xx/5xx (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "0 page errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "navbar rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "heroVideo rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "banner rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "article rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "fullscreen rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "watch rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "footer rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "bookmarks rendered (4)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "figures rendered (5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "quizzes rendered (2)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "one data-no-narration lab section (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "5 narrated sections (got 5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "DOM cue parity blocks==cues==manifest per section",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "no quiz/media cue types (0)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "manifest narrated IDs match DOM section IDs",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "all 6 images loaded",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "hero video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "watch video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "official youtube_id on hero+watch",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "script load order == L01 (incl. manifest)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "quiz click -> correct feedback",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "0 console errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_06 (bitcoin)",
+      "check": "0 HTTP 4xx/5xx (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "0 page errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "navbar rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "heroVideo rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "banner rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "article rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "fullscreen rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "watch rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "footer rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "bookmarks rendered (4)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "figures rendered (5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "quizzes rendered (2)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "one data-no-narration lab section (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "5 narrated sections (got 5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "DOM cue parity blocks==cues==manifest per section",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "no quiz/media cue types (0)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "manifest narrated IDs match DOM section IDs",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "all 6 images loaded",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "hero video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "watch video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "official youtube_id on hero+watch",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "script load order == L01 (incl. manifest)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "quiz click -> correct feedback",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "0 console errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_07 (256-bit-security)",
+      "check": "0 HTTP 4xx/5xx (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "0 page errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "navbar rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "heroVideo rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "banner rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "article rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "fullscreen rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "watch rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "footer rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "bookmarks rendered (4)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "figures rendered (5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "quizzes rendered (2)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "one data-no-narration lab section (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "5 narrated sections (got 5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "DOM cue parity blocks==cues==manifest per section",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "no quiz/media cue types (0)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "manifest narrated IDs match DOM section IDs",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "all 6 images loaded",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "hero video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "watch video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "official youtube_id on hero+watch",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "script load order == L01 (incl. manifest)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "quiz click -> correct feedback",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "0 console errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_08 (epidemic-simulations)",
+      "check": "0 HTTP 4xx/5xx (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "0 page errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "navbar rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "heroVideo rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "banner rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "article rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "fullscreen rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "watch rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "footer rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "bookmarks rendered (4)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "figures rendered (5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "quizzes rendered (2)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "one data-no-narration lab section (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "5 narrated sections (got 5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "DOM cue parity blocks==cues==manifest per section",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "no quiz/media cue types (0)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "manifest narrated IDs match DOM section IDs",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "all 6 images loaded",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "hero video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "watch video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "official youtube_id on hero+watch",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "script load order == L01 (incl. manifest)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "quiz click -> correct feedback",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "0 console errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_09 (hamming-codes)",
+      "check": "0 HTTP 4xx/5xx (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "0 page errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "navbar rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "heroVideo rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "banner rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "article rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "fullscreen rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "watch rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "footer rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "bookmarks rendered (4)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "figures rendered (5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "quizzes rendered (2)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "one data-no-narration lab section (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "5 narrated sections (got 5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "DOM cue parity blocks==cues==manifest per section",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "no quiz/media cue types (0)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "manifest narrated IDs match DOM section IDs",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "all 6 images loaded",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "hero video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "watch video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "official youtube_id on hero+watch",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "script load order == L01 (incl. manifest)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "quiz click -> correct feedback",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "0 console errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_10 (hamming-codes-2)",
+      "check": "0 HTTP 4xx/5xx (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "0 page errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "navbar rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "heroVideo rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "banner rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "article rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "fullscreen rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "watch rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "footer rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "bookmarks rendered (4)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "figures rendered (5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "quizzes rendered (2)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "one data-no-narration lab section (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "5 narrated sections (got 5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "DOM cue parity blocks==cues==manifest per section",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "no quiz/media cue types (0)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "manifest narrated IDs match DOM section IDs",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "all 6 images loaded",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "hero video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "watch video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "official youtube_id on hero+watch",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "script load order == L01 (incl. manifest)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "quiz click -> correct feedback",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "0 console errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_11 (grover)",
+      "check": "0 HTTP 4xx/5xx (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "0 page errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "navbar rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "heroVideo rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "banner rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "article rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "fullscreen rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "watch rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "footer rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "bookmarks rendered (4)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "figures rendered (5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "quizzes rendered (2)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "one data-no-narration lab section (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "5 narrated sections (got 5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "DOM cue parity blocks==cues==manifest per section",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "no quiz/media cue types (0)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "manifest narrated IDs match DOM section IDs",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "all 6 images loaded",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "hero video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "watch video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "official youtube_id on hero+watch",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "script load order == L01 (incl. manifest)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "quiz click -> correct feedback",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "0 console errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_12 (grover-clarification)",
+      "check": "0 HTTP 4xx/5xx (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "0 page errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "navbar rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "heroVideo rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "banner rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "article rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "fullscreen rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "watch rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "footer rendered exactly once (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "bookmarks rendered (4)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "figures rendered (5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "quizzes rendered (2)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "one data-no-narration lab section (got 1)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "5 narrated sections (got 5)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "DOM cue parity blocks==cues==manifest per section",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "no quiz/media cue types (0)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "manifest narrated IDs match DOM section IDs",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "all 6 images loaded",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "hero video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "watch video-src exact",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "official youtube_id on hero+watch",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "script load order == L01 (incl. manifest)",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "quiz click -> correct feedback",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "0 console errors (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "lesson_13 (hanoi-and-sierpinski)",
+      "check": "0 HTTP 4xx/5xx (got 0: [])",
+      "ok": true
+    },
+    {
+      "lesson": "index",
+      "check": "index: 0 page errors (got [])",
+      "ok": true
+    },
+    {
+      "lesson": "index",
+      "check": "index: 0 HTTP 4xx/5xx (got [])",
+      "ok": true
+    },
+    {
+      "lesson": "index",
+      "check": "index: 13 lesson rows (got 13)",
+      "ok": true
+    }
+  ],
+  "fatal": [],
+  "total_checks": 315,
+  "passed": 315,
+  "failed": 0
+}

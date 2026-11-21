@@ -1,0 +1,86 @@
+{
+  "audit": "Leader Quality & Content Audit — Linear Algebra lessons 01-05 vs official 3blue1brown.com lesson texts",
+  "auditor_role": "Leader Quality & Content Auditor",
+  "audit_date": "2026-11-05",
+  "official_sources": {
+    "lesson_01": "https://3blue1brown.com/lessons/vectors",
+    "lesson_02": "https://3blue1brown.com/lessons/span",
+    "lesson_03": "https://3blue1brown.com/lessons/linear-transformations",
+    "lesson_04": "https://3blue1brown.com/lessons/matrix-multiplication",
+    "lesson_05": "https://3blue1brown.com/lessons/3d-transformations"
+  },
+  "findings_and_fixes": [
+    {
+      "id": "L01-2D3D-PARA",
+      "lesson": "lesson_01.html",
+      "requirement": "Missing paragraph between MagnitudeAndDirection.svg and 2dAnd3DVectors.jpg",
+      "official_text": "Vectors that live in a flat plane are two-dimensional, and those sitting in the broader space that we live in are three-dimensional.",
+      "finding": "Paragraph already present in lesson_01.html (2D/3D sentence between the two figures). Verified against official text.",
+      "fix": "none needed — verified present",
+      "status": "VERIFIED_PRESENT"
+    },
+    {
+      "id": "L01-GAPS",
+      "lesson": "lesson_01.html",
+      "finding": "Dropped sentences vs official /lessons/vectors: (1) tick-marks setup paragraph + CoordinateSystemTickMarks.svg unused; (2) tail-at-origin-in-xy-plane thought after grid figure; (3) sign conventions (positive x=right, negative x=left; positive y=up, negative y=down) + vertical square brackets one-to-one mapping + VectorCoordinates2.svg unused; (4) 3D z-axis triplet paragraph before Quiz 1; (5) addition-as-movement rationale after VectorAddition.svg; (6) number-line 2+5=7 paragraph before NumberLine.svg; (7) worked example [1,2]+[3,-1]=[4,1] four-step path + VectorAdditionComponentsReorganizeSteps.svg unused after VectorAdditionComponents.svg; (8) scalar = number (interchangeable) before VectorScalingByTwo.svg; (9) Conclusion section before Section 6 visualizer (two fundamental operations; arrows <-> lists; next: span/basis/linear dependence).",
+      "fix": "All 9 blocks inserted into lesson_01.html at anchored positions; 3 previously-unused figures (CoordinateSystemTickMarks.svg, VectorCoordinates2.svg, VectorAdditionComponentsReorganizeSteps.svg) now wired in. Bengali prose generated via ITRANS transliteration to avoid encoding corruption; KaTeX math kept ASCII.",
+      "status": "FIXED"
+    },
+    {
+      "id": "L02-CLOSING",
+      "lesson": "lesson_02.html",
+      "finding": "Missing official closing line before </article>",
+      "official_text": "In the next chapter we'll get into matrices and transforming space. See you there!",
+      "fix": "Closing paragraph inserted before </article>.",
+      "status": "FIXED"
+    },
+    {
+      "id": "L03-GAPS",
+      "lesson": "lesson_03.html",
+      "finding": "Missing: (1) diagonal-line non-linear example (NonLinearTransformationDiagonalLines.jpg + ...GetCurved.jpg unused) after the curved-lines figure; (2) formal algebraic properties section L(v+w)=L(v)+L(w), L(cv)=cL(v) with formal-properties assets (AlgebraicProperties.svg, LinearCombinationOfBasisVectorsBefore/After.svg unused); (3) Conclusion section before </article>.",
+      "fix": "Diagonal non-linear example + grid-2col figures inserted after the grid-2col block; new section#sec-formal-properties inserted before SECTION 3 with both KaTeX formulas and 3 figures; section#sec-conclusion inserted before </article>.",
+      "status": "FIXED"
+    },
+    {
+      "id": "L04-GAPS",
+      "lesson": "lesson_04.html",
+      "finding": "Missing vs official /lessons/matrix-multiplication: (1) identity matrix I=[[1,0],[0,1]] (do-nothing, IM=MI=M) and scaling commutativity (aI=[[a,0],[0,a]], aI*M = M*aI = aM commutes with every matrix) after the non-commutativity section; (2) Recap + Emil Artin quote ('proofs involving matrices can be shortened by 50% if one throws the matrices out') before </article>.",
+      "fix": "Identity/scaling-commutativity subsection (h3 + 2 paragraphs + 2 KaTeX formula boxes) inserted at the end of sec-non-commutative; section#sec-recap with Artin chapter-quote inserted before </article>.",
+      "status": "FIXED"
+    },
+    {
+      "id": "L05-OK",
+      "lesson": "lesson_05.html",
+      "finding": "Audited section-by-section vs official /lessons/3d-transformations: complete (3 basis vectors, 3x3 construction, matrix-vector multiplication, rotY/rotZ examples, textbook quiz, composition, 2D<->3D puzzle, bridge to determinants).",
+      "fix": "none needed",
+      "status": "VERIFIED_COMPLETE"
+    },
+    {
+      "id": "CSS-FIGURE-SIZE",
+      "file": "assets/css/lesson.css",
+      "finding": ".lesson-figure img max-width was 620px (duplicate 100% block already removed previously); figures could render stretched/tiny.",
+      "fix": "max-width bumped 620px -> 640px, centered (margin auto, display block, width 100%, height auto already present). Modifiers retained: figure-sm 420px, figure-lg 780px, figure-full 100%.",
+      "status": "FIXED"
+    },
+    {
+      "id": "JS-AUTOPLAY-CLASH",
+      "files": ["assets/js/lesson.js", "assets/js/narration_engine.js"],
+      "finding": "Simultaneous audio+video auto-play possible: video 'play' guard paused other videos + narrationEngine but not <audio> elements; audio play button played without pausing videos; setMode and switchMediaTab switched views without pausing media; narration_engine pauseMainVideos() paused only <video>, not <audio>.",
+      "fix": "lesson.js: added global pauseAllMediaExcept(el)/pauseAllMedia() helpers + capture-phase document 'play' listener that pauses every other video/audio, all YouTube iframes, and the narration engine whenever any media starts; setMode() now calls pauseAllMedia(); switchMediaTab() calls pauseAllMedia() when switching panes; audio player block now falls back to document.querySelector('audio') and registers play/pause listeners that keep the icon in sync and enforce single-active-media. narration_engine.js: pauseMainVideos() now pauses 'video, audio'. Video player remains primary; narration audio is dedicated — no dual playback.",
+      "status": "FIXED"
+    }
+  ],
+  "application": {
+    "script": "apply_audit_fixes.py (run with --apply) — CRLF-preserving, anchor-asserted insertions",
+    "files_modified": [
+      "courses/linear_algebra/lesson_01.html",
+      "courses/linear_algebra/lesson_02.html",
+      "courses/linear_algebra/lesson_03.html",
+      "courses/linear_algebra/lesson_04.html",
+      "assets/css/lesson.css",
+      "assets/js/lesson.js",
+      "assets/js/narration_engine.js"
+    ],
+    "files_untouched": ["courses/linear_algebra/lesson_05.html (audited complete)"]
+  }
+}

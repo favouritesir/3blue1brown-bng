@@ -1,0 +1,136 @@
+{
+  "lesson_id": "lesson_03",
+  "chapter_num": 3,
+  "course_id": "why_pi",
+  "title_en": "How colliding blocks act like a beam of light...to compute pi.",
+  "title_bn": "সংঘর্ষরত ব্লকরা আলোর রশ্মির মতো আচরণ করে",
+  "subtitle_bn": "অবস্থান-ফেজ স্পেস, আয়নার মতো প্রতিফলন আর “লুকিং-গ্লাস” কৌশল—ব্লকের সংঘর্ষকে আলোর অপটিক্সে রূপান্তর",
+  "official_url": "https://www.3blue1brown.com/lessons/clacks-via-light",
+  "video_src": "../../media_vault/why_pi/lesson_03/experiments/3b1b_why_pi_03_full_dubbed.mp4",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "12:05",
+    "date": "৩ ফেব্রুয়ারি, ২০১৯",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "A change of perspective is worth 80 IQ points.",
+    "quote_bn": "দৃষ্টিভঙ্গির একটা বদল ৮০ আইকিউ পয়েন্টের মতো।",
+    "author": "Alan Kay"
+  },
+  "sections": [
+    {
+      "id": "sec-position-space",
+      "title_bn": "অবস্থান-ফেজ স্পেস",
+      "title_en": "Position Phase Space",
+      "summary_bn": "এবার অক্ষগুলো বেগ নয়, ব্লকদুটির অবস্থান বোঝাবে। দুটি ব্লকের দূরত্বই একটা বিন্দুর অবস্থান নির্ধারণ করে।",
+      "key_takeaways": [
+        "x-অক্ষ দেয়াল থেকে বড় ব্লকের বাঁ প্রান্তের দূরত্ব $d_1$, y-অক্ষ ছোট ব্লকের ডান প্রান্তের দূরত্ব $d_2$।",
+        "$x=y$ রেখায় ব্লকদুটি সংঘর্ষ করে; নিচের সীমানায় ছোট ব্লক দেয়ালে ঠুকে।",
+        "আগের পাঠের মতোই এখানে也是在 একটা বিন্দু সিস্টেমের পুরো অবস্থা প্রকাশ করে।"
+      ],
+      "formulas": [
+        {
+          "label": "সংঘর্ষের রেখা",
+          "katex": "d_1=d_2\\;\\Rightarrow\\;x=y"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_light_position",
+          "caption_bn": "অবস্থান-ফেজ স্পেসে দুই ব্লকের গতি একটা বিন্দুর পথ",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_03/fig_light_position.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-rescale",
+      "title_bn": "ভর দিয়ে অক্ষ স্কেল করা",
+      "title_en": "Rescaling by Square Roots of Mass",
+      "summary_bn": "√m দিয়ে অক্ষ স্কেল করলে শক্তি হয় “আলোর ধ্রুবক বেগ” আর ভরবেগ হয় “আপতন কোণ = প্রতিফলন কোণ”—অপটিক্যাল অ্যানালজিটি সঠিক হয়ে যায়।",
+      "key_takeaways": [
+        "নতুন অক্ষ: $x=\\sqrt{m_1}d_1$, $y=\\sqrt{m_2}d_2$।",
+        "বিন্দুর বেগের মান $\\sqrt{2E}$—যা ধ্রুবক, ঠিক যেন আলোর বেগ ধ্রুবক।",
+        "ভরবেগের সংরক্ষণ নিশ্চিত করে আপতন কোণ = প্রতিফলন কোণ, অর্থাৎ সীমানাগুলো আসলেই আয়নার মতো কাজ করে।"
+      ],
+      "formulas": [
+        {
+          "label": "স্কেল করা অক্ষ",
+          "katex": "x=\\sqrt{m_1}\\,d_1,\\qquad y=\\sqrt{m_2}\\,d_2"
+        },
+        {
+          "label": "ধ্রুবক “আলোর বেগ”",
+          "katex": "\\sqrt{\\dot x^2+\\dot y^2}=\\sqrt{2E}=\\text{const}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_light_rescale",
+          "caption_bn": "স্কেলের পর সীমানা দুটো আয়নার মতো কাজ করে",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_03/fig_light_rescale.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-unfold",
+      "title_bn": "আয়না “খুলে” সোজা রশ্মি",
+      "title_en": "Unfolding the Mirrors",
+      "summary_bn": "রশ্মিকে প্রতিফলিত হতে না দিয়ে বরং পুরো বিশ্বকে উল্টিয়ে দিলে রশ্মিটা সোজা চলে—তখন সংঘর্ষ গণনা হয়ে যায় কাঁচের টুকরো গণনা।",
+      "key_takeaways": [
+        "প্রতিফলনের বদলে বিশ্বকে উল্টানো: রশ্মি সোজা যায়, আর আমরা “লুকিং-গ্লাস” ইউনিভার্সে প্রবেশ করি।",
+        "আয়নাদুটোর মাঝের কোণ θ হলে কতবার θ যোগ করা যায় যাতে যোগফল π-র কম থাকে—সেটাই উত্তর।",
+        "সংখ্যা $\\left\\lfloor \\pi/\\theta \\right\\rfloor$ (সঠিক ক্ষেত্রে $\\lceil \\pi/\\theta\\rceil-1$)।"
+      ],
+      "formulas": [
+        {
+          "label": "আয়নার কোণ",
+          "katex": "\\theta=\\arctan\\!\\sqrt{\\tfrac{m_2}{m_1}}"
+        },
+        {
+          "label": "প্রতিফলনের সংখ্যা",
+          "katex": "N=\\left\\lfloor\\frac{\\pi}{\\theta}\\right\\rfloor"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_light_unfold",
+          "caption_bn": "আয়না খুলে দিলে রশ্মি কাঁচের টুকরোর মাঝ দিয়ে সোজা যায়",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_03/fig_light_unfold.svg"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_light_formula",
+      "course_id": "why_pi",
+      "lesson_id": "lesson_03",
+      "section_ref": "sec-unfold",
+      "question_bn": "আয়না খulে দেওয়া কৌশলে প্রতিফলনের সংখ্যার সূত্র কী?",
+      "question_en": "What is the reflection-count formula after unfolding the mirrors?",
+      "options": [
+        "$\\lfloor \\pi/\\theta \\rfloor$",
+        "$\\lfloor 2\\pi/\\theta \\rfloor$",
+        "$\\lfloor \\theta/\\pi \\rfloor$",
+        "$\\pi\\theta$"
+      ],
+      "options_bn": [
+        "$\\lfloor \\pi/\\theta \\rfloor$",
+        "$\\lfloor 2\\pi/\\theta \\rfloor$",
+        "$\\lfloor \\theta/\\pi \\rfloor$",
+        "$\\pi\\theta$"
+      ],
+      "correct_index": 0,
+      "explanation_bn": "ঠিক! $\\pi$ অতিক্রম না করে θ কে যতবার যোগ করা যায়, ততবার প্রতিফলন—অর্থাৎ $\\lfloor \\pi/\\theta \\rfloor$।",
+      "explanation_en": "",
+      "hint": "π কে θ দিয়ে ভাগ করে নিচের দিকে বৃত্তাকার করো।",
+      "hints": [
+        "π কে θ দিয়ে ভাগ করে নিচের দিকে বৃত্তাকার করো।"
+      ]
+    }
+  ]
+}

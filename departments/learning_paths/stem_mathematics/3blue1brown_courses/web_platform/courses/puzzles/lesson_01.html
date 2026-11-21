@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>এআই যে আইএমও সমস্যাটি সমাধান করতে পারেনি | The last IMO problem AI could not solve</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/puzzles/lesson_01/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="ধাঁধা"
+  course-url="index.html"
+  home-url="../../index.html"
+  chapter-num="০১"
+  chapter-total="১০"
+  prev-url=""
+  prev-title="শুরু"
+  next-url="lesson_02.html"
+  next-title="পরবর্তী: কঠিনতম পরীক্ষার কঠিনতম সমস্যা"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="ধাঁধা"
+  course-url="index.html"
+  chapter-label="অধ্যায় ০১ · ধাঁধা"
+  title="এআই যে আইএমও সমস্যাটি সমাধান করতে পারেনি | The last IMO problem AI could not solve"
+  desc="২০২৫ সালের আন্তর্জাতিক গণিত অলিম্পিয়াডের ষষ্ঠ ও সবচেয়ে কঠিন সমস্যা — আর সেটির পেছনে যে অন্তর্দৃষ্টির পথ প্রয়োজন।"
+  video-src="../../media_vault/puzzles/lesson_01/experiments/3b1b_puzzles_01_full_dubbed.mp4"
+  yt-id="Nbwv5wHQoj0"
+  date="১৮ সেপ্টেম্বর, ২০২৬"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">আইএমও ও এই বছরের চ্যালেঞ্জ</b1b-bookmark>
+      <b1b-bookmark time="70" time-bn="০১:১০">পাঠ্য পড়া ও সরল উদাহরণ</b1b-bookmark>
+      <b1b-bookmark time="142" time-bn="০২:২২">অন্তর্দৃষ্টির পথ</b1b-bookmark>
+      <b1b-bookmark time="191" time-bn="০৩:১১">দৃষ্টিভঙ্গি বদল</b1b-bookmark>
+      <b1b-bookmark time="232" time-bn="০৩:৫২">শিক্ষণীয় বিষয়</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-im-o">আইএমও ও এই বছরের চ্যালেঞ্জ</a>
+      <a href="#sec-deconstruct">পাঠ্য পড়া ও সরল উদাহরণ</a>
+      <a href="#sec-intuition">অন্তর্দৃষ্টির পথ</a>
+      <a href="#sec-perspective">দৃষ্টিভঙ্গি বদল</a>
+      <a href="#sec-takeaway">শিক্ষণীয় বিষয়</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <b1b-section id="sec-im-o" title="আইএমও ও এই বছরের চ্যালেঞ্জ">
+        <p>প্রতি বছর শতাধিক দেশের শ্রেষ্ঠ তরুণ গণিতবিদরা আন্তর্জাতিক গণিত অলিম্পিয়াডে (আইএমও) অংশ নেন। দুই দিনে ছয়টি করে প্রমাণ-ভিত্তিক প্রশ্ন; প্রতিটির মান সাত। এটি স্কুল-স্তরের গণিতের সবচেয়ে কঠিন মঞ্চ।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_01/f01_points.svg" alt="বিন্দু ও রেখার চিত্র" caption="সমতলে ছড়ানো কয়েকটি বিন্দু — কঠিন ধাঁধা প্রায়ই শুরু হয় সরল চিত্র আঁকা দিয়ে"></b1b-figure>
+        <p>২০২৫ সালের ষষ্ঠ ও শেষ প্রশ্নটি আলাদা করে চমকপ্রদ ছিল: এটি ছিল সবচেয়ে কঠিন, এবং সেই সময়কার শীর্ষ কৃত্রিম বুদ্ধিমত্তা মডেলগুলোও এটি সমাধান করতে পারেনি।</p>
+        <b1b-callout type="gold" icon="🎯" title="এই পাঠে আমরা কী শিখব">
+          <p>এখানে লক্ষ্য কেবল উত্তর জানা নয়; লক্ষ্য হলো দেখা যে কীভাবে একটি অচেনা সমস্যার সাথে খেলা, সরল উদাহরণ তৈরি এবং সঠিক দৃষ্টিভঙ্গি খোঁজা — এই তিনটি ধাপই পথ দেখায়।</p>
+        </b1b-callout>
+      </b1b-section>
+      <b1b-section id="sec-deconstruct" title="পাঠ্য পড়া ও সরল উদাহরণ">
+        <p>যেকোনো কঠিন প্রশ্নের প্রথম কাজ হলো বাক্যগুলোকে ছোট ছোট অংশে ভেঙে বোঝা। প্রতিটি শর্তের অর্থ নিজের শব্দে বলুন, তারপর কাগজে একটি ছোট উদাহরণ আঁকুন।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_01/f02_small.svg" alt="সরল উদাহরণের চিত্র" caption="একটি ছোট উদাহরণ আঁকার মাধ্যমে বিমূর্ত শর্তগুলো নির্দিষ্ট রূপ নেয়"></b1b-figure>
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin: 24px 0 12px; color: var(--theme);">খেলা থেকেই শুরু</h3>
+        <p>দুই বা তিনটি বস্তু নিয়ে প্রশ্নটি চেষ্টা করে দেখুন। সাধারণত ক্ষুদ্রতম ক্ষেত্রেই লুকানো থাকে সেই নিয়ম, যা পরে বড় ক্ষেত্রেও কাজ করে।</p>
+        <b1b-callout type="blue" icon="🔍" title="পর্যবেক্ষণ">
+          <p>গ্রান্ট স্যান্ডারসন বার বার দেখান — “খেলা” কোনো অপ্রয়োজনীয় কাজ নয়; এটি হলো অন্তর্দৃষ্টি অর্জনের প্রথম বৈজ্ঞানিক পদ্ধতি।</p>
+        </b1b-callout>
+      </b1b-section>
+      <b1b-section id="sec-intuition" title="অন্তর্দৃষ্টির পথ">
+        <p>কৃত্রিম বুদ্ধিমত্তা মডেলগুলো প্রচলিত ধাঁচে হিসাব করতে পারে, কিন্তু যখন কোনো তৈরি করা ধাঁচই কাজ করে না, তখন প্রয়োজন হয় নতুন করণীয় উপায় বানানোর।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_01/f03_paths.svg" alt="অনুসন্ধানের পথ" caption="একাধিক সম্ভাব্য পথের মধ্যে সঠিক দৃষ্টিভঙ্গি খুঁজে বের করা"></b1b-figure>
+        <b1b-quiz
+          question="❓ ২০২৫ সালের আইএমও ষষ্ঠ সমস্যা সম্পর্কে নিচের কোন বক্তব্যটি সঠিক?"
+          correct="1"
+          correct-msg="চমৎকার! ভিডিওতে বলা হয়েছে যে ২০২৫ সালের আইএমও-র শেষ ও কঠিনতম প্রশ্নটি তৎকালীন শীর্ষ কৃত্রিম বুদ্ধিমত্তা মডেলগুলোও সমাধান করতে পারেনি; এখানে মূল কথা হলো অন্তর্দৃষ্টির পথ।"
+          wrong-msg="আবার ভেবে দেখুন। ইঙ্গিত: “এআই সমাধান করতে পারেনি এমন কঠিনতম সমস্যা” — শিরোনামটিই ইঙ্গিত দেয়।"
+          reveal-msg="সঠিক উত্তর: এটি ছিল সবচেয়ে কঠিন প্রশ্ন এবং সেই সময়ের শীর্ষ এআই মডেলগুলোকেও চ্যালেঞ্জ করেছিল">
+          <div slot="option">এটি ছিল পরীক্ষার সবচেয়ে সহজ প্রশ্ন</div>
+          <div slot="option">এটি ছিল সবচেয়ে কঠিন প্রশ্ন এবং সেই সময়ের শীর্ষ এআই মডেলগুলোকেও চ্যালেঞ্জ করেছিল</div>
+          <div slot="option">এটি ছিল একটি বহুবিকল্প প্রশ্ন</div>
+          <div slot="option">এটি সমাধানের জন্য প্রয়োজন ছিল কেবল দীর্ঘ গুণন</div>
+        </b1b-quiz>
+        <p>এই ভিডিওর মূল শিক্ষা হলো: উত্তরের চেয়ে গুরুত্বপূর্ণ হলো সেই মানসিক প্রক্রিয়া, যার মাধ্যমে আমরা অজানার সাথে পরিচিত হই এবং নিজেদের ধারণাকে সংশোধন করি।</p>
+      </b1b-section>
+      <b1b-section id="sec-perspective" title="দৃষ্টিভঙ্গি বদল">
+        <p>অনেক সময় সমস্যা কঠিন থাকে কারণ আমরা ভুল কোণ থেকে দেখি। এক পা পেছনে গিয়ে পুরো গঠনটি নতুনভাবে দেখলে জটিলতা সরল হয়ে যায়।</p>
+        <b1b-quote author="টেরেন্স টাও">গণিতের সমস্যা বা ধাঁধা প্রকৃত গণিতের জন্য ততটুকু গুরুত্বপূর্ণ, যতখানি গল্প বা উপাখ্যান শিশুর জন্য বাস্তব জীবন বোঝার ক্ষেত্রে গুরুত্বপূর্ণ।</b1b-quote>
+        <b1b-callout type="green" icon="🌱" title="মনে রাখবেন">
+          <p>কোনো প্রশ্নের সাথে প্রথমে লড়াই করুন, হিসাবের সরঞ্জাম নয় — সঠিক প্রশ্নটি খুঁজে পাওয়াই অর্ধেক সমাধান।</p>
+        </b1b-callout>
+      </b1b-section>
+      <b1b-section id="sec-takeaway" title="শিক্ষণীয় বিষয়">
+        <p>আইএমও-র মতো প্রতিযোগিতা আমাদের মনে করিয়ে দেয় যে কঠিন সমস্যা সমাধান করা মানেই নতুন ধারণা তৈরি করা; পুরনো সূত্র মুখস্থ করা নয়।</p>
+        <p>পরবর্তী পাঠগুলোতে আমরা ঠিক এই একই দৃষ্টিভঙ্গি ব্যবহার করে কয়েকটি বিখ্যাত ধাঁধা সমাধান করব — ইনভ্যারিয়েন্ট, সম্ভাবনা, জ্যামিতি ও গ্রাফ তত্ত্বের মাধ্যমে।</p>
+      </b1b-section>
+
+      <!-- ═══ Practice — excluded from narration ═══ -->
+      <b1b-section id="sec-practice" title="অনুশীলন ও সারসংক্ষেপ" data-no-narration="true">
+        <p>পাঠের মূল ধারণাটি নিজের ভাষায় বলে দেখুন, তারপর নিচের প্রশ্নের উত্তর দিন।</p>
+        <b1b-quiz
+          question="❓ এই পাঠের মূল ধারণা কোনটি?"
+          correct="1"
+          correct-msg="চমৎকার! এই কোর্সজুড়ে আমরা দেখেছি — ইনভ্যারিয়েন্ট, কোডিং, জ্যামিতি বা টপোলজি যাই হোক, সঠিক দৃষ্টিভঙ্গিই সমাধানের চাবি।"
+          wrong-msg="আবার ভেবে দেখুন। ইঙ্গিত: “দৃষ্টিভঙ্গি” শব্দটি মনে রাখুন।"
+          reveal-msg="সঠিক উত্তর: সঠিক দৃষ্টিভঙ্গি বা কাঠামো খুঁজে পেলে কঠিন ধাঁধাও সরল হয়">
+          <div slot="option">ধাঁধা মানেই ভাগ্যের ব্যাপার</div>
+          <div slot="option">সঠিক দৃষ্টিভঙ্গি বা কাঠামো খুঁজে পেলে কঠিন ধাঁধাও সরল হয়</div>
+          <div slot="option">সব উত্তর মুখস্থ করতে হয়</div>
+          <div slot="option">গণিত কেবল সংখ্যা নিয়ে কাজ করে</div>
+        </b1b-quiz>
+        <b1b-callout type="green" icon="✅" title="পরবর্তী পাঠ">
+          <p>পরবর্তী অধ্যায়ে আমরা আরেকটি ধাঁধা নিয়ে কাজ করব। প্রতিটি পাঠেই নতুন একটি দৃষ্টিভঙ্গি যোগ হবে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/puzzles/lesson_01/experiments/3b1b_puzzles_01_full_dubbed.mp4"
+    yt-id="Nbwv5wHQoj0"
+    title="এআই যে আইএমও সমস্যাটি সমাধান করতে পারেনি | The last IMO problem AI could not solve"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — ধাঁধা">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url=""
+  prev-title="শুরু"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_02.html"
+  next-title="পরবর্তী: কঠিনতম পরীক্ষার কঠিনতম সমস্যা"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

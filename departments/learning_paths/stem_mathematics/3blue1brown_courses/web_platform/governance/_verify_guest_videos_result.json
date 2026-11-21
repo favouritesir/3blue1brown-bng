@@ -1,0 +1,460 @@
+{
+  "channel": "chrome (headless=True)",
+  "all_ok": true,
+  "reports": [
+    {
+      "index": true,
+      "checks": {
+        "no_errors": true,
+        "five_links": true
+      },
+      "all_ok": true,
+      "errors": [],
+      "links": [
+        "lesson_01.html",
+        "lesson_02.html",
+        "lesson_03.html",
+        "lesson_04.html",
+        "lesson_05.html"
+      ]
+    },
+    {
+      "lesson": "lesson_01",
+      "url": "file:///D:/0PEN%20CODE/Dub%20Studio/departments/learning_paths/stem_mathematics/3blue1brown_courses/web_platform/courses/guest_videos/lesson_01.html",
+      "channel": "chrome (headless=True)",
+      "checks": {
+        "no_console_or_page_errors": true,
+        "component_order_like_gold": true,
+        "manifest_preload_ref": true,
+        "video_src_exact_twice": true,
+        "all_singletons_once": true,
+        "no_double_render": true,
+        "id_match_dom_manifest": true,
+        "narration_parity": true,
+        "manifest_js_equals_json": true,
+        "quizzes_present": true,
+        "quizzes_no_narration": true,
+        "lab_no_narration": true,
+        "figures_load": true,
+        "quiz_click_works": true,
+        "data_json_fields": true,
+        "one_article": true
+      },
+      "all_ok": true,
+      "errors": [],
+      "singleton_counts": {
+        "b1b-search-overlay": 1,
+        "b1b-navbar": 1,
+        "b1b-hero-player": 1,
+        "b1b-narration-banner": 1,
+        "b1b-bookmarks": 1,
+        "b1b-toc-sidebar": 1,
+        "b1b-article": 1,
+        "b1b-watch-panel": 1,
+        "b1b-chapter-nav": 1,
+        "b1b-footer": 1,
+        "b1b-back-to-top": 1
+      },
+      "section_ids": [
+        "sec-01-noise",
+        "sec-02-forward",
+        "sec-03-reverse",
+        "sec-04-clip",
+        "sec-05-practice"
+      ],
+      "per_section_parity": {
+        "sec-01-noise": {
+          "manifest_cues": 7,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-02-forward": {
+          "manifest_cues": 7,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-03-reverse": {
+          "manifest_cues": 8,
+          "engine_blocks": 8,
+          "engine_cues": 8,
+          "dom_blocks": 8,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-04-clip": {
+          "manifest_cues": 7,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-05-practice": {
+          "manifest_cues": 7,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "ok": true
+        }
+      },
+      "quiz_click": {
+        "ok": true,
+        "clicked": true,
+        "feedback": "❌ আবার ভাবুন — নয়েজ কোথা থেকে আসে?"
+      },
+      "broken_images": []
+    },
+    {
+      "lesson": "lesson_02",
+      "url": "file:///D:/0PEN%20CODE/Dub%20Studio/departments/learning_paths/stem_mathematics/3blue1brown_courses/web_platform/courses/guest_videos/lesson_02.html",
+      "channel": "chrome (headless=True)",
+      "checks": {
+        "no_console_or_page_errors": true,
+        "component_order_like_gold": true,
+        "manifest_preload_ref": true,
+        "video_src_exact_twice": true,
+        "all_singletons_once": true,
+        "no_double_render": true,
+        "id_match_dom_manifest": true,
+        "narration_parity": true,
+        "manifest_js_equals_json": true,
+        "quizzes_present": true,
+        "quizzes_no_narration": true,
+        "lab_no_narration": true,
+        "figures_load": true,
+        "quiz_click_works": true,
+        "data_json_fields": true,
+        "one_article": true
+      },
+      "all_ok": true,
+      "errors": [],
+      "singleton_counts": {
+        "b1b-search-overlay": 1,
+        "b1b-navbar": 1,
+        "b1b-hero-player": 1,
+        "b1b-narration-banner": 1,
+        "b1b-bookmarks": 1,
+        "b1b-toc-sidebar": 1,
+        "b1b-article": 1,
+        "b1b-watch-panel": 1,
+        "b1b-chapter-nav": 1,
+        "b1b-footer": 1,
+        "b1b-back-to-top": 1
+      },
+      "section_ids": [
+        "sec-01-art",
+        "sec-02-symmetry",
+        "sec-03-burnside",
+        "sec-04-result"
+      ],
+      "per_section_parity": {
+        "sec-01-art": {
+          "manifest_cues": 7,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-02-symmetry": {
+          "manifest_cues": 7,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-03-burnside": {
+          "manifest_cues": 8,
+          "engine_blocks": 8,
+          "engine_cues": 8,
+          "dom_blocks": 8,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-04-result": {
+          "manifest_cues": 7,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "ok": true
+        }
+      },
+      "quiz_click": {
+        "ok": true,
+        "clicked": true,
+        "feedback": "❌ ভুল — ১২টি ধার আর ২৪টি ঘূর্ণন আলাদা বিষয়।"
+      },
+      "broken_images": []
+    },
+    {
+      "lesson": "lesson_03",
+      "url": "file:///D:/0PEN%20CODE/Dub%20Studio/departments/learning_paths/stem_mathematics/3blue1brown_courses/web_platform/courses/guest_videos/lesson_03.html",
+      "channel": "chrome (headless=True)",
+      "checks": {
+        "no_console_or_page_errors": true,
+        "component_order_like_gold": true,
+        "manifest_preload_ref": true,
+        "video_src_exact_twice": true,
+        "all_singletons_once": true,
+        "no_double_render": true,
+        "id_match_dom_manifest": true,
+        "narration_parity": true,
+        "manifest_js_equals_json": true,
+        "quizzes_present": true,
+        "quizzes_no_narration": true,
+        "lab_no_narration": true,
+        "figures_load": true,
+        "quiz_click_works": true,
+        "data_json_fields": true,
+        "one_article": true
+      },
+      "all_ok": true,
+      "errors": [],
+      "singleton_counts": {
+        "b1b-search-overlay": 1,
+        "b1b-navbar": 1,
+        "b1b-hero-player": 1,
+        "b1b-narration-banner": 1,
+        "b1b-bookmarks": 1,
+        "b1b-toc-sidebar": 1,
+        "b1b-article": 1,
+        "b1b-watch-panel": 1,
+        "b1b-chapter-nav": 1,
+        "b1b-footer": 1,
+        "b1b-back-to-top": 1
+      },
+      "section_ids": [
+        "sec-01-boltzmann",
+        "sec-02-temperature",
+        "sec-03-model",
+        "sec-04-transition",
+        "sec-05-supercritical"
+      ],
+      "per_section_parity": {
+        "sec-01-boltzmann": {
+          "manifest_cues": 7,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-02-temperature": {
+          "manifest_cues": 7,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-03-model": {
+          "manifest_cues": 7,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-04-transition": {
+          "manifest_cues": 7,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-05-supercritical": {
+          "manifest_cues": 6,
+          "engine_blocks": 6,
+          "engine_cues": 6,
+          "dom_blocks": 6,
+          "types_match": true,
+          "ok": true
+        }
+      },
+      "quiz_click": {
+        "ok": true,
+        "clicked": true,
+        "feedback": "❌ ভুল — এটি হারের বিপরীত।"
+      },
+      "broken_images": []
+    },
+    {
+      "lesson": "lesson_04",
+      "url": "file:///D:/0PEN%20CODE/Dub%20Studio/departments/learning_paths/stem_mathematics/3blue1brown_courses/web_platform/courses/guest_videos/lesson_04.html",
+      "channel": "chrome (headless=True)",
+      "checks": {
+        "no_console_or_page_errors": true,
+        "component_order_like_gold": true,
+        "manifest_preload_ref": true,
+        "video_src_exact_twice": true,
+        "all_singletons_once": true,
+        "no_double_render": true,
+        "id_match_dom_manifest": true,
+        "narration_parity": true,
+        "manifest_js_equals_json": true,
+        "quizzes_present": true,
+        "quizzes_no_narration": true,
+        "lab_no_narration": true,
+        "figures_load": true,
+        "quiz_click_works": true,
+        "data_json_fields": true,
+        "one_article": true
+      },
+      "all_ok": true,
+      "errors": [],
+      "singleton_counts": {
+        "b1b-search-overlay": 1,
+        "b1b-navbar": 1,
+        "b1b-hero-player": 1,
+        "b1b-narration-banner": 1,
+        "b1b-bookmarks": 1,
+        "b1b-toc-sidebar": 1,
+        "b1b-article": 1,
+        "b1b-watch-panel": 1,
+        "b1b-chapter-nav": 1,
+        "b1b-footer": 1,
+        "b1b-back-to-top": 1
+      },
+      "section_ids": [
+        "sec-01-imo",
+        "sec-02-dd",
+        "sec-03-lm",
+        "sec-04-results"
+      ],
+      "per_section_parity": {
+        "sec-01-imo": {
+          "manifest_cues": 6,
+          "engine_blocks": 6,
+          "engine_cues": 6,
+          "dom_blocks": 6,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-02-dd": {
+          "manifest_cues": 7,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-03-lm": {
+          "manifest_cues": 7,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-04-results": {
+          "manifest_cues": 7,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "ok": true
+        }
+      },
+      "quiz_click": {
+        "ok": true,
+        "clicked": true,
+        "feedback": "❌ ভুল — ডিডি কখনো অবৈধ ধাপ তৈরি করে না।"
+      },
+      "broken_images": []
+    },
+    {
+      "lesson": "lesson_05",
+      "url": "file:///D:/0PEN%20CODE/Dub%20Studio/departments/learning_paths/stem_mathematics/3blue1brown_courses/web_platform/courses/guest_videos/lesson_05.html",
+      "channel": "chrome (headless=True)",
+      "checks": {
+        "no_console_or_page_errors": true,
+        "component_order_like_gold": true,
+        "manifest_preload_ref": true,
+        "video_src_exact_twice": true,
+        "all_singletons_once": true,
+        "no_double_render": true,
+        "id_match_dom_manifest": true,
+        "narration_parity": true,
+        "manifest_js_equals_json": true,
+        "quizzes_present": true,
+        "quizzes_no_narration": true,
+        "lab_no_narration": true,
+        "figures_load": true,
+        "quiz_click_works": true,
+        "data_json_fields": true,
+        "one_article": true
+      },
+      "all_ok": true,
+      "errors": [],
+      "singleton_counts": {
+        "b1b-search-overlay": 1,
+        "b1b-navbar": 1,
+        "b1b-hero-player": 1,
+        "b1b-narration-banner": 1,
+        "b1b-bookmarks": 1,
+        "b1b-toc-sidebar": 1,
+        "b1b-article": 1,
+        "b1b-watch-panel": 1,
+        "b1b-chapter-nav": 1,
+        "b1b-footer": 1,
+        "b1b-back-to-top": 1
+      },
+      "section_ids": [
+        "sec-01-elements",
+        "sec-02-postulates",
+        "sec-03-construction",
+        "sec-04-legacy"
+      ],
+      "per_section_parity": {
+        "sec-01-elements": {
+          "manifest_cues": 6,
+          "engine_blocks": 6,
+          "engine_cues": 6,
+          "dom_blocks": 6,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-02-postulates": {
+          "manifest_cues": 7,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-03-construction": {
+          "manifest_cues": 7,
+          "engine_blocks": 7,
+          "engine_cues": 7,
+          "dom_blocks": 7,
+          "types_match": true,
+          "ok": true
+        },
+        "sec-04-legacy": {
+          "manifest_cues": 6,
+          "engine_blocks": 6,
+          "engine_cues": 6,
+          "dom_blocks": 6,
+          "types_match": true,
+          "ok": true
+        }
+      },
+      "quiz_click": {
+        "ok": true,
+        "clicked": true,
+        "feedback": "✅ ঠিক! রুলার ও কম্পাস।"
+      },
+      "broken_images": []
+    }
+  ]
+}

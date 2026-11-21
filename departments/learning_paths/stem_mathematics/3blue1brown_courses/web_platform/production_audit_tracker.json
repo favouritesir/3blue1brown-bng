@@ -1,0 +1,154 @@
+{
+  "platform": "3Blue1Brown Bangla Web Platform",
+  "audit_date": "2026-11-04",
+  "platform_version": "2.0.0-modern",
+  "design_system": "Replicates live 3blue1brown.com — dual Watch/Read mode, pi-creature header, 2-col hero grid, inline figures, blockquote chapter quotes, interactive quizzes with Check/Reveal, playlist drawer, bottom chapter nav cards",
+  "compliance_rules": {
+    "zero_original_audio": "Strictly 0% original English voice, 0% background music, 0% SFX bed",
+    "pure_voice_model": "bn-BD-PradeepNeural",
+    "phonetic_safeguard": "এক্স অক্ষ, ওয়াই অক্ষ, জেড অক্ষ, টুডি, থ্রিডি, আই হ্যাট, জে হ্যাট, কে হ্যাট",
+    "time_locking": "atempo dynamically bounded [0.90 - 1.45], exact millisecond cue alignment",
+    "loudness_norm": "EBU R128 (-14.0 LUFS, -1.0 dBTP peak)",
+    "offline_math_engine": "Local Vendored KaTeX v0.16.11 (Full Engine + Fonts, 0% CDN dependency)",
+    "mode_system": "Dual mode: Read (article+figures+quizzes) and Watch (theater+playlist drawer)",
+    "theme_system": "Dark/Light toggle with localStorage persistence"
+  },
+  "shared_assets": {
+    "lesson_css": "assets/css/lesson.css — Full modern 3B1B design system, dark/light, read/watch modes",
+    "lesson_js": "assets/js/lesson.js — Theme, mode toggle, audio player, KaTeX, quiz engine, search overlay",
+    "katex_local": "assets/libs/katex/ — KaTeX v0.16.11 fully vendored, zero CDN"
+  },
+  "lessons": {
+    "lesson_01": {
+      "title": "ভেক্টর আসলে কী? (Vectors, what even are they?)",
+      "status": "COMPLETED_AND_VERIFIED",
+      "html_page": "web_platform/courses/linear_algebra/lesson_01.html",
+      "video_path": "web_platform/media_vault/lesson_01/3b1b_lesson_01_bangla_dubbed_video.mp4",
+      "audio_path": "web_platform/media_vault/lesson_01/3b1b_lesson_01_bangla_master.mp3",
+      "youtube_id": "fNk_zzaMoSs",
+      "features": {
+        "hero_2col_grid": true,
+        "watch_read_toggle": true,
+        "pi_creature_logo": true,
+        "chapter_quote": "Hermann Weyl",
+        "inline_svg_figures": 15,
+        "katex_formulas": 6,
+        "interactive_quizzes": 2,
+        "canvas_visualizer": "Vector scalar multiplication with drag",
+        "playlist_drawer": true,
+        "bottom_chapter_nav": true,
+        "audio_player": true,
+        "theme_toggle": true,
+        "search_overlay": true
+      },
+      "speech_engine": "Edge-TTS bn-BD-PradeepNeural",
+      "audio_purity": "100% pure Bengali speech, 0% original voice, 0% background music",
+      "phonetics": "এক্স অক্ষ, ওয়াই অক্ষ, টুডি, থ্রিডি, আই হ্যাট, জে হ্যাট",
+      "math_rendered": "KaTeX_v0.16.11_offline_verified"
+    },
+    "lesson_02": {
+      "title": "রৈখিক সমন্বয়, স্প্যান ও ভিত্তি ভেক্টর",
+      "status": "COMPLETED_AND_VERIFIED",
+      "html_page": "web_platform/courses/linear_algebra/lesson_02.html",
+      "video_path": "web_platform/media_vault/lesson_02/3b1b_lesson_02_bangla_dubbed_video.mp4",
+      "audio_path": "web_platform/media_vault/lesson_02/3b1b_lesson_02_bangla_master.mp3",
+      "youtube_id": "k7RM-ot2NWY",
+      "features": {
+        "hero_2col_grid": true,
+        "watch_read_toggle": true,
+        "pi_creature_logo": true,
+        "chapter_quote": "Grant Sanderson",
+        "katex_formulas": 5,
+        "interactive_quizzes": 2,
+        "canvas_visualizer": "Dual-vector span visualizer with drag & linear dependence detection",
+        "playlist_drawer": true,
+        "bottom_chapter_nav": true
+      },
+      "speech_engine": "Edge-TTS bn-BD-PradeepNeural",
+      "audio_purity": "100% Bengali voice, 0% English vocal bleed",
+      "phonetics": "এক্স অক্ষ, ওয়াই অক্ষ, আই হ্যাট, জে হ্যাট",
+      "math_rendered": "KaTeX_v0.16.11_offline_verified"
+    },
+    "lesson_03": {
+      "title": "রৈখিক রূপান্তর ও ম্যাট্রিক্স (Linear Transformations and Matrices)",
+      "status": "COMPLETED_AND_VERIFIED",
+      "html_page": "web_platform/courses/linear_algebra/lesson_03.html",
+      "video_path": "web_platform/media_vault/lesson_03/3b1b_lesson_03_bangla_dubbed_video.mp4",
+      "audio_path": "web_platform/media_vault/lesson_03/3b1b_lesson_03_bangla_master.mp3",
+      "youtube_id": "kYB8IZa5AuE",
+      "features": {
+        "hero_2col_grid": true,
+        "watch_read_toggle": true,
+        "pi_creature_logo": true,
+        "chapter_quote": "Grant Sanderson",
+        "katex_formulas": 5,
+        "interactive_quizzes": 1,
+        "canvas_visualizer": "Live matrix transformation grid with 4 sliders (a,b,c,d) + determinant display",
+        "playlist_drawer": true,
+        "bottom_chapter_nav": true
+      },
+      "speech_engine": "Edge-TTS bn-BD-PradeepNeural",
+      "audio_purity": "100% Bengali voice, 0% English vocal bleed",
+      "phonetics": "এক্স অক্ষ, ওয়াই অক্ষ, টুডি, আই হ্যাট, জে হ্যাট",
+      "math_rendered": "KaTeX_v0.16.11_offline_verified"
+    },
+    "lesson_04": {
+      "title": "ম্যাট্রিক্স গুণন — রূপান্তরের রচনা (Matrix Multiplication as Composition)",
+      "status": "COMPLETED_AND_VERIFIED",
+      "html_page": "web_platform/courses/linear_algebra/lesson_04.html",
+      "video_path": "web_platform/media_vault/lesson_04/3b1b_lesson_04_bangla_dubbed_video.mp4",
+      "audio_path": "web_platform/media_vault/lesson_04/3b1b_lesson_04_bangla_master.mp3",
+      "youtube_id": "XkY2DOUCWMU",
+      "features": {
+        "hero_2col_grid": true,
+        "watch_read_toggle": true,
+        "pi_creature_logo": true,
+        "chapter_quote": "Grant Sanderson",
+        "katex_formulas": 6,
+        "interactive_quizzes": 1,
+        "playlist_drawer": true,
+        "bottom_chapter_nav": true
+      },
+      "speech_engine": "Edge-TTS bn-BD-PradeepNeural",
+      "audio_purity": "100% Bengali voice, 0% English vocal bleed",
+      "phonetics": "এক্স অক্ষ, ওয়াই অক্ষ, টুডি, আই হ্যাট, জে হ্যাট",
+      "math_rendered": "KaTeX_v0.16.11_offline_verified"
+    },
+    "lesson_05": {
+      "title": "ত্রিমাত্রিক রৈখিক রূপান্তর (Three-Dimensional Linear Transformations)",
+      "status": "COMPLETED_AND_VERIFIED",
+      "html_page": "web_platform/courses/linear_algebra/lesson_05.html",
+      "video_path": "web_platform/media_vault/lesson_05/3b1b_lesson_05_bangla_dubbed_video.mp4",
+      "audio_path": "web_platform/media_vault/lesson_05/3b1b_lesson_05_bangla_master.mp3",
+      "youtube_id": "rHLEWRxRGiM",
+      "features": {
+        "hero_2col_grid": true,
+        "watch_read_toggle": true,
+        "pi_creature_logo": true,
+        "chapter_quote": "Grant Sanderson",
+        "katex_formulas": 7,
+        "interactive_quizzes": 1,
+        "canvas_visualizer": "3D wireframe cube + basis vectors with rotX/rotY sliders (isometric projection)",
+        "playlist_drawer": true,
+        "bottom_chapter_nav": true
+      },
+      "speech_engine": "Edge-TTS bn-BD-PradeepNeural",
+      "audio_purity": "100% Bengali voice, 0% English vocal bleed",
+      "phonetics": "এক্স অক্ষ, ওয়াই অক্ষ, জেড অক্ষ, টুডি, থ্রিডি, আই হ্যাট, জে হ্যাট, কে হ্যাট",
+      "math_rendered": "KaTeX_v0.16.11_offline_verified"
+    }
+  },
+  "upgrade_summary": {
+    "completed": "2026-11-04",
+    "changes": [
+      "NEW: assets/css/lesson.css — complete modern 3B1B design system (700+ lines)",
+      "NEW: assets/js/lesson.js — shared JS: theme, mode toggle, audio, KaTeX, quizzes, search",
+      "UPGRADED lesson_01.html — full modern template: 2-col hero, pi-creature logo, dual mode, 15 SVG figures, 2 quizzes, canvas visualizer",
+      "UPGRADED lesson_02.html — span visualizer with linear dependence detection, 2 quizzes",
+      "UPGRADED lesson_03.html — live matrix transformation grid visualizer with determinant, 1 quiz",
+      "UPGRADED lesson_04.html — composition & matrix multiplication, 1 quiz",
+      "UPGRADED lesson_05.html — 3D wireframe visualizer with rotX/rotY, 3x3 matrix formulas, 1 quiz"
+    ],
+    "design_authenticity": "Closely replicates https://www.3blue1brown.com/lessons/vectors/ — 2-column hero (video left, metadata right), chapter label, chapter quote blockquote, inline SVG figures with captions, interactive quiz forms with Check/Reveal buttons, playlist drawer, bottom chapter nav cards, pi-creature SVG logo, dark/light toggle"
+  }
+}

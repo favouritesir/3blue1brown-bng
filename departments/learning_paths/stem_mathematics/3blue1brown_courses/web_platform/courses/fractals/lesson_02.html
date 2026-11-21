@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>নিউটনের কাজ থেকে কীভাবে ম্যান্ডেলব্রোট সেটের জন্ম হয় | How a Mandelbrot set arises from Newton&#x27;s work</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/fractals/lesson_02/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<b1b-search-overlay></b1b-search-overlay>
+
+<b1b-navbar
+  course-title="ফ্র্যাক্টাল"
+  course-url="../../courses/fractals/index.html"
+  home-url="../../index.html"
+  chapter-num="২"
+  chapter-total="০৪"
+  prev-url="lesson_01.html"
+  prev-title="পূর্ববর্তী: নিউটনের ফ্র্যাক্টাল (যা নিউটন কখনো জানতেন না)"
+  next-url="lesson_03.html"
+  next-title="পরবর্তী: ফ্র্যাক্টাল সাধারণত স্ব-সদৃশ নয়"
+  active-mode="read">
+</b1b-navbar>
+
+<b1b-hero-player
+  course-title="ফ্র্যাক্টাল"
+  course-url="index.html"
+  chapter-label="অধ্যায় ২ · ফ্র্যাক্টাল সিরিজ"
+  title="নিউটনের কাজ থেকে কীভাবে ম্যান্ডেলব্রোট সেটের জন্ম হয় | How a Mandelbrot set arises from Newton&#x27;s work"
+  desc="হলোমর্ফিক ডাইনামিক্সের পরিচয় — পুনরাবৃত্তি, প্যারামিটার স্পেস এবং z² + c থেকে জন্ম নেওয়া বিখ্যাত ম্যান্ডেলব্রোট সেট"
+  video-src="../../media_vault/fractals/lesson_02/experiments/3b1b_fractals_02_full_dubbed.mp4"
+  yt-id="LqbZpur38nw"
+  date="১৬ অক্টোবর, ২০২১"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2021/holomorphic_dynamics.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<div class="lesson-body">
+  <div class="read-mode">
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">পুনরাবৃত্তির জগৎ</b1b-bookmark>
+      <b1b-bookmark time="68" time-bn="০১:০৮">হলোমর্ফিক ফাংশন</b1b-bookmark>
+      <b1b-bookmark time="146" time-bn="০২:২৬">নিউটন পদ্ধতি নতুন করে</b1b-bookmark>
+      <b1b-bookmark time="218" time-bn="০৩:৩৮">প্যারামিটার স্পেস</b1b-bookmark>
+      <b1b-bookmark time="280" time-bn="০৪:৪০">ম্যান্ডেলব্রোট সেট</b1b-bookmark>
+      <b1b-bookmark time="358" time-bn="০৫:৫৮">পলায়ন-সময় ও রঙ</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-iteration">পুনরাবৃত্তির জগৎ</a>
+      <a href="#sec-holomorphic">হলোমর্ফিক ফাংশন</a>
+      <a href="#sec-newton-again">নিউটনের পদ্ধতি নতুন করে দেখা</a>
+      <a href="#sec-parameter">প্যারামিটার স্পেস</a>
+      <a href="#sec-mandelbrot">ম্যান্ডেলব্রোট সেট</a>
+      <a href="#sec-escape">পলায়ন-সময় ও রঙ</a>
+      <a href="#sec-conclusion">উপসংহার</a>
+      <a href="#sec-lab">ইন্টারেক্টিভ ল্যাব ও কুইজ</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <b1b-section id="sec-iteration" title="পুনরাবৃত্তির জগৎ">
+        <p>আমরা অনেক সময় ভাবি গণিত মানে সূত্র মুখস্থ করা। কিন্তু গণিতের আরও একটি দিক আছে — কোনো নিয়ম বারবার প্রয়োগ করে দেখা কী হয়। একে বলা হয় পুনরাবৃত্তি বা iteration, আর এই নিয়েই হলোমর্ফিক ডাইনামিক্সের জগৎ শুরু।</p>
+        <b1b-figure alt="শিক্ষণীয় চিত্র" caption="পুনরাবৃত্তির ধাপগুলো — প্রতিটি বলয় এক পদক্ষেপের ফলাফল। কেন্দ্র থেকে দূরে সরে যাওয়া মানে পলায়ন।">
+<svg viewBox="0 0 400 240" role="img" aria-label="শিক্ষণীয় চিত্র" style="width:100%;max-width:680px;display:block;margin:0 auto;background:#121821;border-radius:12px"><line x1="20" y1="12" x2="20" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="60" y1="12" x2="60" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="100" y1="12" x2="100" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="140" y1="12" x2="140" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="180" y1="12" x2="180" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="220" y1="12" x2="220" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="260" y1="12" x2="260" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="300" y1="12" x2="300" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="340" y1="12" x2="340" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="380" y1="12" x2="380" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="20" x2="388" y2="20" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="60" x2="388" y2="60" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="100" x2="388" y2="100" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="140" x2="388" y2="140" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="180" x2="388" y2="180" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="220" x2="388" y2="220" stroke="#2b3547" stroke-width="1"/><circle cx="200" cy="120" r="90" fill="none" stroke="#4ecdc4" stroke-width="6" stroke-opacity="0.8"/><circle cx="200" cy="120" r="66" fill="none" stroke="#74c0e3" stroke-width="6" stroke-opacity="0.8"/><circle cx="200" cy="120" r="42" fill="none" stroke="#f7c948" stroke-width="6" stroke-opacity="0.8"/><circle cx="200" cy="120" r="20" fill="none" stroke="#ff6b6b" stroke-width="6" stroke-opacity="0.8"/><circle cx="200" cy="120" r="6" fill="#fff"/></svg>
+        </b1b-figure>
+        <p>ধরুন একটি সংখ্যা নিলাম এবং তার ওপর কোনো নিয়ম প্রয়োগ করলাম। ফলাফলটিকে আবার সেই নিয়মে দিলাম। আবার ফলাফল নিলাম... এইভাবে চলতে থাকলে একটিমাত্র সরল নিয়ম থেকে জন্ম নিতে পারে অবিশ্বাস্যভাবে জটিল এক আচরণ।</p>
+        <b1b-callout type="blue" icon="🔁" title="মূল ধারণা">
+          <p>একটি গতিশীল ব্যবস্থায় সময় আসলে পদক্ষেপের সংখ্যা। n তম পদক্ষেপে আমরা যে বিন্দুতে থাকি, তার ওপর নিয়ম প্রয়োগ করেই (n+1) তম বিন্দুটি পাই। নিউটনের পদ্ধতিও ঠিক এরকম একটি পুনরাবৃত্তিমূলক ব্যবস্থা।</p>
+        </b1b-callout>
+        <b1b-formula math="z_{n+1} = f(z_n)"></b1b-formula>
+      </b1b-section>
+
+      <b1b-section id="sec-holomorphic" title="হলোমর্ফিক ফাংশন">
+        <p>এখানে আমরা এমন সব ফাংশন নিয়ে কাজ করব যাদের ইনপুট ও আউটপুট দুটোই জটিল সংখ্যা। এদেরকে হলোমর্ফিক ফাংশন বলা হয়, যখন তারা জটিল অর্থে অন্তরণযোগ্য হয়। নামটি শুনতে কঠিন লাগলেও ভিতরের ধারণা সহজ।</p>
+        <b1b-figure alt="শিক্ষণীয় চিত্র" caption="জটিল ফাংশন একটি বিন্দুকে অন্য বিন্দুতে পাঠায় — পুরো তলজুড়ে এই মানচিত্রের প্রভাব দেখা যায়।">
+<svg viewBox="0 0 400 240" role="img" aria-label="শিক্ষণীয় চিত্র" style="width:100%;max-width:680px;display:block;margin:0 auto;background:#121821;border-radius:12px"><line x1="20" y1="12" x2="20" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="60" y1="12" x2="60" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="100" y1="12" x2="100" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="140" y1="12" x2="140" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="180" y1="12" x2="180" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="220" y1="12" x2="220" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="260" y1="12" x2="260" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="300" y1="12" x2="300" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="340" y1="12" x2="340" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="380" y1="12" x2="380" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="20" x2="388" y2="20" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="60" x2="388" y2="60" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="100" x2="388" y2="100" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="140" x2="388" y2="140" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="180" x2="388" y2="180" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="220" x2="388" y2="220" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="120" x2="388" y2="120" stroke="#74c0e3" stroke-width="1.5"/><line x1="200" y1="12" x2="200" y2="228" stroke="#74c0e3" stroke-width="1.5"/><circle cx="120" cy="80" r="9" fill="#ff6b6b"/><text x="132" y="72" fill="#e8edf5" font-size="13">z1</text><circle cx="275" cy="90" r="9" fill="#4ecdc4"/><text x="287" y="82" fill="#e8edf5" font-size="13">z2</text><circle cx="220" cy="195" r="9" fill="#f7c948"/><text x="232" y="187" fill="#e8edf5" font-size="13">z3</text></svg>
+        </b1b-figure>
+        <p>বাস্তব সংখ্যার ক্ষেত্রে অন্তরজ মানে ঢাল। জটিল তলে তা আরও শক্তিশালী কিছু — ফাংশনটি স্থানীয়ভাবে একটি ঘূর্ণন ও স্কেলিংয়ের মতো আচরণ করে। এই কারণে জটिल ফাংশনের ছবি এত খাঁটি জ্যামিতিক আকৃতি নিয়ে আসে।</p>
+        <b1b-formula math="f&#x27;(z_0) = \lim_{h\to 0}\frac{f(z_0+h)-f(z_0)}{h}"></b1b-formula>
+        <b1b-callout type="gold" icon="✨" title="কেন গুরুত্বপূর্ণ?">
+          <p>হলোমর্ফিকতা ফাংশনকে একটি দারুণ নিয়ন্ত্রণ দেয় — এক বিন্দুতে আচরণ জানলে আশপাশের বিন্দুগুলোর আচরণও ঠিক আকারে বের করা যায়। ফলে পুনরাবৃত্তি থেকে যে গঠন তৈরি হয় তা ইতিবাচকভাবে কাঠামোবদ্ধ হয়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <b1b-section id="sec-newton-again" title="নিউটনের পদ্ধতি নতুন করে দেখা">
+        <p>আগের পাঠে আমরা নিউটনের পদ্ধতি দেখেছি। এখন সেটিকে নতুন চোখে দেখি — এটি আসলে একটি ফাংশনের পুনরাবৃত্তি ছাড়া কিছু নয়। যে ফাংশনটি বারবার প্রয়োগ করা হয়, তাকেই আমাদের গতিশীল ব্যবস্থা বলা যাবে।</p>
+        <b1b-formula math="N(z) = z - \frac{z^3-1}{3z^2}"></b1b-formula>
+        <b1b-figure alt="শিক্ষণীয় চিত্র" caption="নিউটন ফাংশনের পুনরাবৃত্তি থেকে তৈরি তিন রঙের অববাহিকা — আগের পাঠের সেই ছবি এখন একটি গতিশীল ব্যবস্থার ফলাফল।">
+<svg viewBox="0 0 400 240" role="img" aria-label="শিক্ষণীয় চিত্র" style="width:100%;max-width:680px;display:block;margin:0 auto;background:#121821;border-radius:12px"><line x1="20" y1="12" x2="20" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="60" y1="12" x2="60" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="100" y1="12" x2="100" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="140" y1="12" x2="140" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="180" y1="12" x2="180" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="220" y1="12" x2="220" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="260" y1="12" x2="260" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="300" y1="12" x2="300" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="340" y1="12" x2="340" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="380" y1="12" x2="380" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="20" x2="388" y2="20" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="60" x2="388" y2="60" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="100" x2="388" y2="100" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="140" x2="388" y2="140" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="180" x2="388" y2="180" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="220" x2="388" y2="220" stroke="#2b3547" stroke-width="1"/><circle cx="115" cy="150" r="86" fill="#ff6b6b" fill-opacity="0.30"/><circle cx="285" cy="150" r="86" fill="#4ecdc4" fill-opacity="0.30"/><circle cx="200" cy="65" r="86" fill="#f7c948" fill-opacity="0.30"/><circle cx="350.0" cy="120.0" r="4" fill="#ff6b6b"/><circle cx="335.1" cy="157.3" r="4" fill="#4ecdc4"/><circle cx="293.5" cy="187.2" r="4" fill="#f7c948"/><circle cx="233.4" cy="203.8" r="4" fill="#ff6b6b"/><circle cx="166.6" cy="203.8" r="4" fill="#4ecdc4"/><circle cx="106.5" cy="187.2" r="4" fill="#f7c948"/><circle cx="64.9" cy="157.3" r="4" fill="#ff6b6b"/><circle cx="50.0" cy="120.0" r="4" fill="#4ecdc4"/><circle cx="64.9" cy="82.7" r="4" fill="#f7c948"/><circle cx="106.5" cy="52.8" r="4" fill="#ff6b6b"/><circle cx="166.6" cy="36.2" r="4" fill="#4ecdc4"/><circle cx="233.4" cy="36.2" r="4" fill="#f7c948"/><circle cx="293.5" cy="52.8" r="4" fill="#ff6b6b"/><circle cx="335.1" cy="82.7" r="4" fill="#4ecdc4"/><circle cx="200" cy="120" r="8" fill="#fff"/></svg>
+        </b1b-figure>
+        <p>এই ফাংশনের প্রতিটি প্রারম্ভিক বিন্দু একের পর এক মানের ভেতর দিয়ে ভ্রমণ করে। কেউ শেষ পর্যন্ত প্রথম মূলে, কেউ দ্বিতীয়তে, কেউ বা তৃতীয় মূলে পৌঁছায়। আর যারা সীমানার ওপর থাকে, তাদের ভাগ্য অনিশ্চিত।</p>
+        <b1b-callout type="purple" icon="🌀" title="পরিচিত ছবি, নতুন দৃ�্টি">
+          <p>আগের পাঠের ফ্র্যাক্টাল ছবিটি আসলে এই গতিশীল ব্যবস্থারই একটি 'দূরত্ব-মানচিত্র'। এখন আমরা জিজ্ঞেস করব: যদি নিয়মটিকে বদলে বদলে প্যারামিটার করা যায়, তবে কী হবে?</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <b1b-section id="sec-parameter" title="প্যারামিটার স্পেস">
+        <p>এখন একটি আশ্চর্য ধাপ। নিউটনের নিয়মের ভেতরে কোনো একটি সংখ্যা বদলে দিলে কী হবে? প্রতিটি ভিন্ন সংখ্যা এক বিভিন্ন গতিশীল ব্যবস্থা তৈরি করবে। এই সংখ্যাটিকে আমরা প্যারামিটার বলি।</p>
+        <b1b-figure alt="শিক্ষণীয় চিত্র" caption="প্যারামিটারের বিভিন্ন মানের জন্য পলায়ন-সময় ভিন্ন ভিন্ন — রঙ দিয়ে সেই সময়কে দেখানো হয়েছে।">
+<svg viewBox="0 0 400 240" role="img" aria-label="শিক্ষণীয় চিত্র" style="width:100%;max-width:680px;display:block;margin:0 auto;background:#121821;border-radius:12px"><line x1="20" y1="12" x2="20" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="60" y1="12" x2="60" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="100" y1="12" x2="100" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="140" y1="12" x2="140" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="180" y1="12" x2="180" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="220" y1="12" x2="220" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="260" y1="12" x2="260" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="300" y1="12" x2="300" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="340" y1="12" x2="340" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="380" y1="12" x2="380" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="20" x2="388" y2="20" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="60" x2="388" y2="60" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="100" x2="388" y2="100" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="140" x2="388" y2="140" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="180" x2="388" y2="180" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="220" x2="388" y2="220" stroke="#2b3547" stroke-width="1"/><circle cx="200" cy="120" r="90" fill="none" stroke="#4ecdc4" stroke-width="6" stroke-opacity="0.8"/><circle cx="200" cy="120" r="66" fill="none" stroke="#74c0e3" stroke-width="6" stroke-opacity="0.8"/><circle cx="200" cy="120" r="42" fill="none" stroke="#f7c948" stroke-width="6" stroke-opacity="0.8"/><circle cx="200" cy="120" r="20" fill="none" stroke="#ff6b6b" stroke-width="6" stroke-opacity="0.8"/><circle cx="200" cy="120" r="6" fill="#fff"/></svg>
+        </b1b-figure>
+        <p>প্যারামিটারকে জটিল তলে স্থাপন করি। তখন প্যারামিটার স্পেসের প্রতিটি বিন্দু একেকটি গতিশীল ব্যবস্থার প্রতিনিধিত্ব করে। এই স্পেসেই লুকিয়ে আছে গণিতের সবচেয়ে বিখ্যাত ছবিগুলোর একটি।</p>
+        <b1b-callout type="blue" icon="🎛️" title="দুই ধরনের স্পেস">
+          <p>একটি হলো dynamic plane — যেখানে বিন্দুগুলো ভ্রমণ করে; অন্যটি হলো parameter space — যেখানে প্রতিটি বিন্দু একটিমাত্র নিয়মকে নির্দেশ করে। ম্যান্ডেলব্রোট সেট দ্বিতীয় ধরনের একটি ছবি।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <b1b-section id="sec-mandelbrot" title="ম্যান্ডেলব্রোট সেট">
+        <p>আসুন সবচেয়ে সরল প্যারামিটারাইজড নিয়ম নিই: z_{n+1} = z_n² + c। এখানে c হলো প্যারামিটার। z₀ = 0 থেকে শুরু করি। কোন c-র জন্য মানগুলো সীমিত থাকে, কোন c-র জন্য অসীমে পালিয়ে যায়? যেসব c-র জন্য থেমে থাকে, তাদের নিয়ে গড়ে ওঠে ম্যান্ডেলব্রোট সেট।</p>
+        <b1b-figure alt="শিক্ষণীয় চিত্র" caption="ম্যান্ডেলব্রোট সেট — মূল কার্ডিওয়েড আকৃতি ও তার সাথে লেগে থাকা ছোট ছোট বৃত্তাকার বলয়। সীমানায় অসীম বিশদতা লুকিয়ে আছে।">
+<svg viewBox="0 0 400 240" role="img" aria-label="শিক্ষণীয় চিত্র" style="width:100%;max-width:680px;display:block;margin:0 auto;background:#121821;border-radius:12px"><line x1="20" y1="12" x2="20" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="60" y1="12" x2="60" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="100" y1="12" x2="100" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="140" y1="12" x2="140" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="180" y1="12" x2="180" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="220" y1="12" x2="220" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="260" y1="12" x2="260" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="300" y1="12" x2="300" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="340" y1="12" x2="340" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="380" y1="12" x2="380" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="20" x2="388" y2="20" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="60" x2="388" y2="60" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="100" x2="388" y2="100" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="140" x2="388" y2="140" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="180" x2="388" y2="180" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="220" x2="388" y2="220" stroke="#2b3547" stroke-width="1"/><path d="M 130 120 C 130 60, 270 60, 270 120 C 270 180, 130 180, 130 120 Z" fill="#4ecdc4" fill-opacity="0.55" stroke="#74c0e3" stroke-width="2"/><circle cx="118" cy="120" r="14" fill="#f7c948" fill-opacity="0.7" stroke="#74c0e3" stroke-width="1"/><circle cx="282" cy="120" r="14" fill="#f7c948" fill-opacity="0.7" stroke="#74c0e3" stroke-width="1"/><circle cx="200" cy="62" r="10" fill="#f7c948" fill-opacity="0.7" stroke="#74c0e3" stroke-width="1"/><circle cx="200" cy="178" r="10" fill="#f7c948" fill-opacity="0.7" stroke="#74c0e3" stroke-width="1"/><circle cx="150" cy="82" r="7" fill="#f7c948" fill-opacity="0.7" stroke="#74c0e3" stroke-width="1"/><circle cx="250" cy="158" r="7" fill="#f7c948" fill-opacity="0.7" stroke="#74c0e3" stroke-width="1"/><circle cx="330" cy="60" r="5" fill="#ff6b6b"/></svg>
+        </b1b-figure>
+        <b1b-formula math="z_{n+1} = z_n^2 + c,\qquad z_0 = 0"></b1b-formula>
+        <p>c = 0 হলে পুনরাবৃত্তি কখনো বদলায় না — সেটির ভেতরে পড়ে। c = 1 হলে মান বেড়েই চলে — বাইরে পড়ে। এই সরল পরীক্ষা পুরো জটিল তলে চালালে যে ছবি পাই, তাই ম্যান্ডেলব্রোট সেট।</p>
+        <b1b-callout type="green" icon="🖤" title="সেটের ভেতরের নিয়ম">
+          <p>ম্যান্ডেলব্রোট সেটের ভেতরের বিন্দুগুলোর জন্য পুনরাবৃত্তি কখনোই পলায়ন করে না। বাইরের বিন্দুগুলোর জন্য কমবেশি সময়ের মধ্যেই মান অসীমের দিকে চলে যায়। আর মাঝের সরু সীমানা হলো অসীম জটিলতার আবাস।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <b1b-section id="sec-escape" title="পলায়ন-সময় ও রঙ">
+        <p>ম্যান্ডেলব্রোট সেটের কালো অংশ হলো ভেতর। বাইরের অংশ একরঙা না রেখে আমরা রঙ দিই পলায়ন-সময় অনুযায়ী। যে বিন্দু দ্রুত পালায় তাকে এক রঙ, যেটি দেরিতে পালায় তাকে অন্য রঙ।</p>
+        <b1b-figure alt="শিক্ষণীয় চিত্র" caption="পলায়ন-সময় অনুযায়ী রঙ করা বলয় — সীমানার কাছে রঙের স্তরগুলো ঘন হয়ে আসে।">
+<svg viewBox="0 0 400 240" role="img" aria-label="শিক্ষণীয় চিত্র" style="width:100%;max-width:680px;display:block;margin:0 auto;background:#121821;border-radius:12px"><line x1="20" y1="12" x2="20" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="60" y1="12" x2="60" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="100" y1="12" x2="100" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="140" y1="12" x2="140" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="180" y1="12" x2="180" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="220" y1="12" x2="220" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="260" y1="12" x2="260" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="300" y1="12" x2="300" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="340" y1="12" x2="340" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="380" y1="12" x2="380" y2="228" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="20" x2="388" y2="20" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="60" x2="388" y2="60" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="100" x2="388" y2="100" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="140" x2="388" y2="140" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="180" x2="388" y2="180" stroke="#2b3547" stroke-width="1"/><line x1="12" y1="220" x2="388" y2="220" stroke="#2b3547" stroke-width="1"/><circle cx="200" cy="120" r="90" fill="none" stroke="#4ecdc4" stroke-width="6" stroke-opacity="0.8"/><circle cx="200" cy="120" r="66" fill="none" stroke="#74c0e3" stroke-width="6" stroke-opacity="0.8"/><circle cx="200" cy="120" r="42" fill="none" stroke="#f7c948" stroke-width="6" stroke-opacity="0.8"/><circle cx="200" cy="120" r="20" fill="none" stroke="#ff6b6b" stroke-width="6" stroke-opacity="0.8"/><circle cx="200" cy="120" r="6" fill="#fff"/></svg>
+        </b1b-figure>
+        <p>এই রঙিন বলয়গুলো কেবল সৌন্দর্যের জন্য নয়। এগুলো দেখে বোঝা যায় সীমানার কাছে গতিশীল ব্যবস্থা কত সংবেদনশীল। রঙ যত ঘন হবে, বোঝা যাবে তত বেশি জটিলতা সেখানে লুকিয়ে আছে।</p>
+        <b1b-callout type="red" icon="🎨" title="আরেক ধাপ">
+          <p>ম্যান্ডেলব্রোট সেটের একটি বিন্দুতে জুম করে দেখুন — সেখানে আবার ছোট আকারে একই ম্যান্ডেলব্রোট-মতো আকৃতি ফুটে ওঠে। তবে সেটি হুবহু প্রতিলিপি নয়; প্রতিটি জুমে নতুন কিছু যোগ হয়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <b1b-section id="sec-conclusion" title="উপসংহার">
+        <p>আজ আমরা দেখলাম নিউটনের পদ্ধতি থেকে কীভাবে হলোমর্ফিক ডাইনামিক্সের জন্ম হয়, এবং z² + c এর মতো একটি সরল নিয়ম থেকে কীভাবে ম্যান্ডেলব্রোট সেট তৈরি হয়। গণিতের এই শাখা আজও গবেষণার একটি জীবন্ত ক্ষেত্র।</p>
+        <p>পরবর্তী পাঠে প্রশ্ন উঠবে — ফ্র্যাক্টাল আসলে কী, আর কীভাবে এর 'মাত্রা' মাপা যায়? <a href='lesson_03.html'><strong>পরবর্তী অধ্যায়: ফ্র্যাক্টাল সাধারণত স্ব-সদৃশ নয়</strong></a></p>
+      </b1b-section>
+
+      <!-- ═══ Interactive lab & quizzes — excluded from narration ═══ -->
+      <b1b-section id="sec-lab" title="ইন্টারেক্টিভ ল্যাব ও কুইজ" data-no-narration="true">
+        <p class="viz-intro">সমতলের বিন্দুটি টেনে বিভিন্ন প্রারম্ভিক মান বেছে নিন এবং স্লাইডার দিয়ে স্কেলিং দেখুন। বড় করে দেখতে পূর্ণস্ক্রিন বাটনে ক্লিক করুন।</p>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="2,1"></b1b-vector-plane>
+        </b1b-fullscreen>
+
+        <b1b-quiz
+          question="❓ ম্যান্ডেলব্রোট সেট কোন পুনরাবৃত্তি থেকে তৈরি হয়?"
+          correct="1"
+          correct-msg="সঠিক! z₀ = 0 থেকে শুরু করে z_{n+1} = z_n² + c — যে c-র জন্য মান সীমিত থাকে, সেটাই ম্যান্ডেলব্রোট সেট।"
+          wrong-msg="মনে রাখবেন: ম্যান্ডেলব্রোট সেটের নিয়ম হলো বর্গ করে প্যারামিটার c যোগ করা।"
+          reveal-msg="সঠিক উত্তর: zₙ₊₁ = zₙ² + c।">
+          <div slot="option">zₙ₊₁ = zₙ − f(zₙ)/f′(zₙ)</div>
+          <div slot="option">zₙ₊₁ = zₙ² + c</div>
+          <div slot="option">zₙ₊₁ = 2zₙ</div>
+          <div slot="option">zₙ₊₁ = sin(zₙ)</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ c = 0 নিলে z₀ = 0 থেকে শুরু করে পুনরাবৃত্তির ফল কী হয়?"
+          correct="1"
+          correct-msg="ঠিক! 0² + 0 = 0, তাই প্রতিটি পদক্ষেপে শূন্যই পাই — মান কখনো বদলায় না। c = 0 অবশ্যই সেটের ভেতরে।"
+          wrong-msg="0² + 0 = 0। শূন্য থেকে শুরু করে শূন্যই ফল — কোনো পলায়ন নেই।"
+          reveal-msg="সঠিক উত্তর: শূন্যেই স্থির থাকে।">
+          <div slot="option">অসীমে পালিয়ে যায়</div>
+          <div slot="option">শূন্যেই স্থির থাকে</div>
+          <div slot="option">random মান দেয়</div>
+          <div slot="option">পদ্ধতি ব্যর্থ হয়</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ হলোমর্ফিক ফাংশন মানে কী?"
+          correct="1"
+          correct-msg="সঠিক! হলোমর্ফিক মানে জটিল অর্থে অন্তরণযোগ্য — প্রতিটি বিন্দুতে ফাংশনের একটি ভালো স্পর্শক থাকে।"
+          wrong-msg="হলোমর্ফিক শব্দটি এসেছে জটিল বিশ্লেষণ থেকে — অর্থ হলো জটিল অন্তরণযোগ্যতা।"
+          reveal-msg="সঠিক উত্তর: জটিল অর্থে অন্তরণযোগ্য।">
+          <div slot="option">শুধু বাস্তব সংখ্যা নিয়ে কাজ করে</div>
+          <div slot="option">জটিল অর্থে অন্তরণযোগ্য</div>
+          <div slot="option">সবসময় বর্গাকার</div>
+          <div slot="option">কখনো পরিবর্তন হয় না</div>
+        </b1b-quiz>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <b1b-watch-panel
+    video-src="../../media_vault/fractals/lesson_02/experiments/3b1b_fractals_02_full_dubbed.mp4"
+    yt-id="LqbZpur38nw"
+    title="নিউটনের কাজ থেকে কীভাবে ম্যান্ডেলব্রোট সেটের জন্ম হয় — অধ্যায় ২"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — ফ্র্যাক্টাল">
+    <a class="playlist-item" href="lesson_01.html">
+      <div class="playlist-num">১</div>
+      <div class="playlist-item-info"><div class="playlist-item-title">নিউটনের ফ্র্যাক্টাল (যা নিউটন কখনো জানতেন না)</div>
+      <div class="playlist-item-meta">অধ্যায় ১</div></div>
+    </a>
+    <a class="playlist-item active" href="lesson_02.html">
+      <div class="playlist-num">২</div>
+      <div class="playlist-item-info"><div class="playlist-item-title">নিউটনের কাজ থেকে কীভাবে ম্যান্ডেলব্রোট সেটের জন্ম হয়</div>
+      <div class="playlist-item-meta">অধ্যায় ২</div></div>
+    </a>
+    <a class="playlist-item" href="lesson_03.html">
+      <div class="playlist-num">৩</div>
+      <div class="playlist-item-info"><div class="playlist-item-title">ফ্র্যাক্টাল সাধারণত স্ব-সদৃশ নয়</div>
+      <div class="playlist-item-meta">অধ্যায় ৩</div></div>
+    </a>
+    <a class="playlist-item" href="lesson_04.html">
+      <div class="playlist-num">৪</div>
+      <div class="playlist-item-info"><div class="playlist-item-title">হিলবার্টের বক্ররেখা: অসীম গণিত কি কাজে লাগে?</div>
+      <div class="playlist-item-meta">অধ্যায় ৪</div></div>
+    </a>
+  </b1b-watch-panel>
+</div><!-- /lesson-body -->
+
+<b1b-chapter-nav
+  prev-url="lesson_01.html"
+  prev-title="নিউটনের ফ্র্যাক্টাল (যা নিউটন কখনো জানতেন না)"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_03.html"
+  next-title="ফ্র্যাক্টাল সাধারণত স্ব-সদৃশ নয়"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

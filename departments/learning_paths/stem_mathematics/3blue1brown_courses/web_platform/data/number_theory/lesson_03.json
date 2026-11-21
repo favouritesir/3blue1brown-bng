@@ -1,0 +1,213 @@
+{
+  "lesson_id": "lesson_03",
+  "chapter_num": 3,
+  "course_id": "number_theory",
+  "title_en": "Pi hiding in prime regularities",
+  "title_bn": "মৌলিক নিয়মিততায় লুকোনো পাই",
+  "subtitle_bn": "লাইবনিটজের ধারা, গাউসিয়ান পূর্ণসংখ্যা ও মৌলিক সংখ্যার গুণফল থেকে পাই-এর জন্ম",
+  "video_id": "NaL_Cb42WyY",
+  "youtube_id": "NaL_Cb42WyY",
+  "official_url": "https://www.3blue1brown.com/lessons/leibniz-formula",
+  "slug": "leibniz-formula",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "date": "১৯ মে, ২০১৭",
+    "source_url": "https://github.com/3b1b/videos/blob/master/_2017/leibniz.py",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "At first, 1 − 1/3 + 1/5 − 1/7 + … seems unrelated to circles, but in fact there is a circle hiding here.",
+    "quote_bn": "প্রথমে মনে হয় ১ − ১/৩ + ১/৫ − …-এর সাথে বৃত্তের কোনো সম্পর্ক নেই, কিন্তু আসলে এখানে এক বৃত্ত লুকিয়ে আছে।",
+    "author": "3Blue1Brown"
+  },
+  "bookmarks": [
+    {
+      "time": 0,
+      "time_bn": "০০:০০",
+      "label_bn": "লাইবনিটজের ধারা ও বৃত্ত"
+    },
+    {
+      "time": 130,
+      "time_bn": "০২:১০",
+      "label_bn": "arctan ও গুণোত্তর ধারা"
+    },
+    {
+      "time": 280,
+      "time_bn": "০৪:৪০",
+      "label_bn": "গাউসিয়ান বিন্দু ও বৃত্ত"
+    },
+    {
+      "time": 440,
+      "time_bn": "০৭:২০",
+      "label_bn": "মৌলিক ও দুই বর্গের যোগফল"
+    },
+    {
+      "time": 610,
+      "time_bn": "১০:১০",
+      "label_bn": "অয়লারের গুণফল সূত্র"
+    },
+    {
+      "time": 760,
+      "time_bn": "১২:৪০",
+      "label_bn": "দুই ধারার মিলন ও উপসংহার"
+    }
+  ],
+  "toc": [
+    {
+      "href": "#sec-leibniz-series",
+      "label_bn": "লাইবনিটজের ধারা ও লুকোনো বৃত্ত"
+    },
+    {
+      "href": "#sec-gaussian",
+      "label_bn": "গাউসিয়ান পূর্ণসংখ্যা ও দুই বর্গের যোগফল"
+    },
+    {
+      "href": "#sec-product",
+      "label_bn": "অয়লারের গুণফলে পাই"
+    },
+    {
+      "href": "#sec-conclusion",
+      "label_bn": "দুই ধারার মিলন ও উপসংহার"
+    },
+    {
+      "href": "#sec-lab",
+      "label_bn": "ইন্টারেক্টিভ ল্যাব — ধারা ও আংশিক যোগফল"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-leibniz-series",
+      "title_bn": "লাইবনিটজের ধারা ও লুকোনো বৃত্ত",
+      "title_en": "Sec Leibniz Series",
+      "block_types": [
+        "p",
+        "formula",
+        "figure",
+        "p",
+        "formula"
+      ],
+      "narrated": true
+    },
+    {
+      "id": "sec-gaussian",
+      "title_bn": "গাউসিয়ান পূর্ণসংখ্যা ও দুই বর্গের যোগফল",
+      "title_en": "Sec Gaussian",
+      "block_types": [
+        "p",
+        "figure",
+        "p",
+        "formula",
+        "callout"
+      ],
+      "narrated": true
+    },
+    {
+      "id": "sec-product",
+      "title_bn": "অয়লারের গুণফলে পাই",
+      "title_en": "Sec Product",
+      "block_types": [
+        "p",
+        "figure",
+        "formula",
+        "p",
+        "formula"
+      ],
+      "narrated": true
+    },
+    {
+      "id": "sec-conclusion",
+      "title_bn": "দুই ধারার মিলন ও উপসংহার",
+      "title_en": "Sec Conclusion",
+      "block_types": [
+        "p",
+        "p"
+      ],
+      "narrated": true
+    },
+    {
+      "id": "sec-lab",
+      "title_bn": "ইন্টারেক্টিভ ল্যাব — ধারা ও আংশিক যোগফল",
+      "title_en": "Interactive Lab",
+      "narrated": false,
+      "mode": "leibniz",
+      "desc_bn": "পদ সংখ্যা বাড়িয়ে লাইবনিটজের ধারার আংশিক যোগফল π/4-এর কাছে কীভাবে আসছে তা দেখো। প্রতিটি নতুন পদ আগেরটির বিপরীত দিকে ঠেলে দেয় — এই দোলনাই ধারার বৈশিষ্ট্য।"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "q_series",
+      "question_bn": "❓ $1-\\frac{1}{3}+\\frac{1}{5}-\\frac{1}{7}+\\cdots$ ধারাটির মান কত?",
+      "options_bn": [
+        "$\\frac{\\pi}{2}$",
+        "$\\frac{\\pi}{4}$",
+        "$\\frac{\\pi}{8}$",
+        "$\\frac{4}{\\pi}$"
+      ],
+      "correct_index": 1,
+      "correct_feedback_bn": "সঠিক! arctan(1) = π/4 এবং arctan-এর ধারা 1 − 1/3 + 1/5 − … — তাই যোগফল π/4। কিন্তু প্রশ্ন হলো বৃত্ত আকস্মিকভাবে এখানে কী করছে?",
+      "wrong_feedback_bn": "arctan x = x − x³/3 + x⁵/5 − …; x = 1 বসালে পাওয়া যায় π/4।",
+      "reveal_bn": "সঠিক উত্তর $\\frac{\\pi}{4}$।"
+    },
+    {
+      "id": "q_sum2squares",
+      "question_bn": "❓ নিচের কোন মৌলিক সংখ্যাটি দুটি পূর্ণবর্গের যোগফল?",
+      "options_bn": [
+        "7",
+        "11",
+        "13",
+        "19"
+      ],
+      "correct_index": 2,
+      "correct_feedback_bn": "হ্যাঁ! 13 = 2² + 3²। 4k+1 আকারের মৌলিকই কেবল দুই বর্গের যোগফল হতে পারে; 7, 11, 19 সবই 4k+3।",
+      "wrong_feedback_bn": "4k+3 আকারের মৌলিক কখনো দুই বর্গের যোগফল নয়। 13 = 4×3+1 আকারের।",
+      "reveal_bn": "সঠিক উত্তর 13 = 4 + 9।"
+    },
+    {
+      "id": "q_factor5",
+      "question_bn": "❓ অয়লারের গুণফলে $p\\equiv 1\\pmod 4$ মৌলিকের জন্য গুণনীয়ক কত?",
+      "options_bn": [
+        "$\\frac{p}{p-1}$",
+        "$\\frac{p}{p+1}$",
+        "$\\frac{p-1}{p}$",
+        "$1-\\frac{1}{p}$"
+      ],
+      "correct_index": 0,
+      "correct_feedback_bn": "সঠিক! 1-এর জন্য χ₄(p) = 1, তাই (1 − 1/p)⁻¹ = p/(p−1)। p = 5-এর জন্য গুণনীয়ক 5/4। 3-এর মতো মৌলিকের ক্ষেত্রে χ₄ = −1, তাই ফ্যাক্টর p/(p+1)।",
+      "wrong_feedback_bn": "χ₄(p) = 1 হলে ফ্যাক্টর (1 − 1/p)⁻¹ = p/(p−1); χ₄ = −1 হলে p/(p+1)।",
+      "reveal_bn": "সঠিক উত্তর $\\frac{p}{p-1}$।"
+    },
+    {
+      "id": "q_lattice",
+      "question_bn": "❓ বৃত্তের ভেতরের গাউসিয়ান বিন্দু (lattice point) সংখ্যা R বড় হলে কতের কাছাকাছি হয়?",
+      "options_bn": [
+        "πR",
+        "πR²",
+        "2πR",
+        "R²"
+      ],
+      "correct_index": 1,
+      "correct_feedback_bn": "সঠিক! বৃত্তের ক্ষেত্রফল πR², আর প্রতিটি একক বর্গে প্রায় একটি করে বিন্দু থাকে — তাই মোট বিন্দু ≈ πR²। এই সরল ধারণাটিই শেষ পর্যন্ত π-এর গুণফল সূত্রের দিকে নিয়ে যায়।",
+      "wrong_feedback_bn": "বৃত্তের ক্ষেত্রফল πR²; ঘনত্ব ~1 হওয়ায় বিন্দুর সংখ্যাও ~πR²।",
+      "reveal_bn": "সঠিক উত্তর πR²।"
+    }
+  ],
+  "figures": [
+    {
+      "id": "fig_03_01",
+      "caption_bn": " গ্রাফে আংশিক যোগফলগুলো π/4-এর (হলুদ ড্যাশ্ড রেখা) ওপর দিয়ে দোলে — প্রথম পদ ১, তারপর ০.৬৬৭, ০.৮৬৭, ০.৭২৪… করে ক্রমশ কাছে আসে। প্রতিটি নতুন পদ আগের চেয়ে ছোট, তাই দোলনের প্রশস্ততা কমতে থাকে। ছবিটি মনে রেখো: অসীম ধারা কীভাবে একটিমাত্র সংখ্যায় স্থির হয় তা এখানে দেখা যায়।",
+      "type": "svg-inline"
+    },
+    {
+      "id": "fig_03_02",
+      "caption_bn": " ছবিতে বৃত্তের ভেতরে জালির বিন্দুগুলো দেখানো হয়েছে; হলুদ বিন্দুগুলো এমন সংখ্যা যারা দুই বর্গের যোগফল (যেমন 5 = 1²+2², 13 = 2²+3²)। বাইরের ড্যাশ্ড বৃত্ত R-এর সীমা। বিন্দুগুলোর ঘনত্ব প্রায় একই — তাই মোট সংখ্যা ক্ষেত্রফল πR²-এর সমান হয়। এই গণনাই পরের সব সূত্রের ভিত্তি।",
+      "type": "svg-inline"
+    },
+    {
+      "id": "fig_03_03",
+      "caption_bn": " বলয়গুলো ধাপে ধাপে মৌলিকগুলোর গুণনীয়ক যোগ করতে দেখায় — ৫-এর ফ্যাক্টর ৫/৪, ১৩-এর ১৩/১২, আর ৩-এর ৩/৪, ৭-এর ৭/৮। হলুদ কেন্দ্র π/4-এর লক্ষ্য। প্রতিটি বলয় আগের আসন্ন মানকে আরও নিখুঁত করে। ছবিটি মনে রেখো: অসীম সংখ্যক মৌলিকের ছোট ছোট সংশোধন মিলে একটি বৃত্তের পরিমাপ তৈরি করছে।",
+      "type": "svg-inline"
+    }
+  ],
+  "video_src": "../../media_vault/number_theory/lesson_03/experiments/3b1b_number_theory_03_full_dubbed.mp4"
+}

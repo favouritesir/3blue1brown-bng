@@ -1,0 +1,166 @@
+{
+  "lesson_id": "lesson_06",
+  "chapter_num": 6,
+  "course_id": "geometry",
+  "title_en": "Thinking outside the 10-dimensional box",
+  "title_bn": "দশমাত্রিক বাক্সের বাইরে চিন্তা",
+  "subtitle_bn": "মাত্রা কী, ৪-মাত্রিক ঘনক কেমন দেখায়, এবং স্ট্রিং থিওরিতে ১০ মাত্রার অর্থ",
+  "video_id": "zwAD6dRSVyI",
+  "official_url": "https://www.3blue1brown.com/lessons/higher-dimensions",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "book chapter",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "We cannot visualize higher dimensions, but we can reason about them.",
+    "quote_bn": "আমরা উচ্চমাত্রা দেখতে পারি না, কিন্তু সেগুলো নিয়ে যুক্তি দিতে পারি।",
+    "author": "অজানা"
+  },
+  "sections": [
+    {
+      "id": "sec-intro",
+      "title_bn": "ভূমিকা — বাক্সের বাইরে",
+      "title_en": "Outside the Box",
+      "summary_bn": "আমরা 3D-তে বাস করি; 4D বা 10D কল্পনা করা কঠিন—কিন্তু গণিত সেটিকে সম্ভব করে তোলে।",
+      "key_takeaways": [
+        "আমাদের দৈনন্দিক অভিজ্ঞতা তিনটি মাত্রায় সীমাবদ্ধ।",
+        "উচ্চমাত্রা ‘দেখা’ নয়, বরং যৌক্তিকভাবে বোঝার বিষয়।",
+        "এই পাঠে আমরা ধাপে ধাপে 4D ও তার বাইরে যাব।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_dim-ladder",
+          "caption_bn": "মাত্রার সিঁড়ি",
+          "type": "svg",
+          "src": "figures/dim-ladder.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-dimension",
+      "title_bn": "মাত্রা আসলে কী?",
+      "title_en": "What is a Dimension?",
+      "summary_bn": "মাত্রা হলো কোনো বিন্দুকে নির্দিষ্ট করতে লাগা স্বাধীন সংখ্যার সংখ্যা—degree of freedom।",
+      "key_takeaways": [
+        "রেখায় এক, সমতলে দুই, স্থানে তিনটি সংখ্যা লাগে।",
+        "মাত্রা = স্বাধীনভাবে বদলানো যায় এমন নির্দেশকের সংখ্যা।",
+        "সমীকরণের ব্যবস্থায় মাত্রা হলো মুক্ত চলকের সংখ্যা।"
+      ],
+      "formulas": [
+        {
+          "label": "n-মাত্রিক স্থান",
+          "katex": "\\mathbb{R}^n=\\{(x_1,\\dots,x_n)\\}"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "sec-hypercube",
+      "title_bn": "৪-মাত্রিক ঘনক — টেসারাক্ট",
+      "title_en": "The Tesseract",
+      "summary_bn": "ঘনককে এক মাত্রা বাড়িয়ে প্রক্ষেপণ করলে ৪-মাত্রিক ঘনকের ছায়া পাওয়া যায়।",
+      "key_takeaways": [
+        "$n$-মাত্রিক ঘনকের শীর্ষবিন্দু আছে $2^n$ টি—৪D তে ১৬টি।",
+        "একটি ছোট ঘনককে বড় ঘনকের ভেতরে বসিয়ে সংশ্লিষ্ট শীর্ষগুলোর সাথে যুক্ত করলে টেসারাক্টের প্রক্ষেপণ পাওয়া যায়।",
+        "আমরা শুধু ছায়া দেখি—আসল 4D বস্তু নয়।"
+      ],
+      "formulas": [
+        {
+          "label": "n-ঘনকের শীর্ষ",
+          "katex": "2^n"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_tesseract",
+          "caption_bn": "টেসারাক্ট",
+          "type": "svg",
+          "src": "figures/tesseract.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-flatland",
+      "title_bn": "ফ্ল্যাটল্যান্ডের উপমা",
+      "title_en": "The Flatland Analogy",
+      "summary_bn": "একটি ২D প্রাণী how 3D বস্তু দেখতে পারে—এই উপমা 4D বোঝার চাবিকাঠি।",
+      "key_takeaways": [
+        "একটি 2D প্রাণী 3D বলকে ছেদ করতে দেখলে বৃত্ত বড় হয়ে আবার ছোট হয়।",
+        "সে ‘বাইরে’ যেতে পারে না—আমরা 4D-তেও তেমনি আবদ্ধ।",
+        "উপমা আমাদের 4D বস্তুর ছেদ-চিত্র কল্পনা করতে সাহায্য করে।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_flatland",
+          "caption_bn": "ফ্ল্যাটল্যান্ডের দৃশ্য",
+          "type": "svg",
+          "src": "figures/flatland.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-physics",
+      "title_bn": "পদার্থবিদ্যায় ১০ মাত্রা",
+      "title_en": "10 Dimensions in Physics",
+      "summary_bn": "স্ট্রিং থিওরিতে ১০ মাত্রার প্রয়োজন হয়—অতিরিক্ত মাত্রাগুলো ‘কম্প্যাক্টিফায়েড’ হয়ে আমাদের কাছে অদৃশ্য।",
+      "key_takeaways": [
+        "স্ট্রিং থিওরির গাণিতিক সামঞ্জস্যের জন্য ১০ (বা ১১) মাত্রা লাগে।",
+        "অতিরিক্ত মাত্রাগুলো অতি ক্ষুদ্র আকারে ‘ভाँজ’ হয়ে থাকে—কম্প্যাক্টিফিকেশন।",
+        "আমরা সেগুলো দেখি না, কিন্তু কণার ভর ও বলের ওপর তাদের প্রভাব পড়ে।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_compactification",
+          "caption_bn": "কম্প্যাক্ট মাত্রা",
+          "type": "svg",
+          "src": "figures/compactification.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-conclusion",
+      "title_bn": "উপসংহার",
+      "title_en": "Conclusion",
+      "summary_bn": "উচ্চমাত্রা কল্পনা করা কঠিন হলেও গণিত ও উপমা আমাদের সেগুলো নিয়ে কাজ করতে শেখায়।",
+      "key_takeaways": [
+        "মাত্রা মানে স্বাধীন নির্দেশকের সংখ্যা—দেখার বিষয় নয়, যুক্তির বিষয়।",
+        "ফ্ল্যাটল্যান্ডের উপমা ও প্রক্ষেপণ—উচ্চমাত্রা বোঝার দুটি শক্তিশালী হাতিয়ার।",
+        "এই কোর্সে আমরা গোলক, কোয়াটারনিয়ন ও মাত্রা—এই তিনটিকে একসাথে দেখলাম।"
+      ],
+      "formulas": [],
+      "figures": []
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_hypercube",
+      "section_ref": "sec-hypercube",
+      "question_bn": "একটি ৪-মাত্রিক ঘনকের (টেসারাক্ট) শীর্ষবিন্দু কতটি?",
+      "question_en": "একটি ৪-মাত্রিক ঘনকের (টেসারাক্ট) শীর্ষবিন্দু কতটি?",
+      "options": [
+        "৮",
+        "১২",
+        "১৬",
+        "৩২"
+      ],
+      "options_bn": [
+        "৮",
+        "১২",
+        "১৬",
+        "৩২"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "$n$-মাত্রিক ঘনকের শীর্ষবিন্দু $2^n$ টি। তাই $n=4$-এ $2^4=16$ টি শীর্ষবিন্দু হয়।",
+      "explanation_en": "$n$-মাত্রিক ঘনকের শীর্ষবিন্দু $2^n$ টি। তাই $n=4$-এ $2^4=16$ টি শীর্ষবিন্দু হয়।",
+      "hint": "প্রতিটি মাত্রা শীর্ষের সংখ্যা দ্বিগুণ করে—২, ৪, ৮, …",
+      "hints": [
+        "প্রতিটি মাত্রা শীর্ষের সংখ্যা দ্বিগুণ করে—২, ৪, ৮, …"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+file 'D:/0PEN CODE/Dub Studio/temp_slot_lesson_01/timed_032.wav'
+file 'D:/0PEN CODE/Dub Studio/temp_slot_lesson_01/pad_032.wav'

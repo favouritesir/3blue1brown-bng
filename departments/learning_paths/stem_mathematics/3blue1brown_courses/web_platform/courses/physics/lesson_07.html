@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>প্রতিসরণ নিয়ে দর্শকদের প্রশ্নের উত্তর | Answering viewer questions about refraction (3Blue1Brown Physics)</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/physics/lesson_07/manifest.js?v=1"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="পদার্থবিজ্ঞান"
+  course-url="../../index.html#physics"
+  home-url="../../index.html"
+  chapter-num="০৭"
+  chapter-total="১৩"
+  prev-url="lesson_06.html"
+  prev-title="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_08.html"
+  next-title="পরবর্তী অধ্যায়"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="পদার্থবিজ্ঞান"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৭ · পদার্থবিজ্ঞান"
+  title="প্রতিসরণ নিয়ে দর্শকদের প্রশ্নের উত্তর | Answering viewer questions about refraction"
+  desc="আলো আসলেই কি ধীর হয়? দশা-বেগ ও গোষ্ঠী-বেগের পার্থক্য, ফার্মাটের নীতি ও মিরাজ।"
+  video-src="../../media_vault/physics/lesson_07/experiments/3b1b_physics_07_full_dubbed.mp4"
+  yt-id="Cz4Q4QOuoo8"
+  date="৩ ডিসেম্বর, ২০২৩"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">প্রশ্নগুলো কেন গুরুত্বপূর্ণ</b1b-bookmark>
+      <b1b-bookmark time="15" time-bn="০০:১৫">দশা-বেগ বনাম গোষ্ঠী-বেগ</b1b-bookmark>
+      <b1b-bookmark time="51" time-bn="০০:৫১">ফার্মাটের ন্যূনতম সময়</b1b-bookmark>
+      <b1b-bookmark time="74" time-bn="০১:১৪">মিরাজ ও সম্পূর্ণ অভ্যন্তরীণ প্রতিফলন</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-riq-intro">প্রশ্নগুলো কেন গুরুত্বপূর্ণ</a>
+      <a href="#sec-riq-phase-group">দশা-বেগ বনাম গোষ্ঠী-বেগ</a>
+      <a href="#sec-riq-fermat">ফার্মাটের ন্যূনতম সময়</a>
+      <a href="#sec-riq-mirage">মিরাজ ও সম্পূর্ণ অভ্যন্তরীণ প্রতিফলন</a>
+      <a href="#sec-visualizer">ইন্টারেক্টিভ ল্যাব</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ প্রশ্নগুলো কেন গুরুত্বপূর্ণ ═══ -->
+      <b1b-section id="sec-riq-intro" title="প্রশ্নগুলো কেন গুরুত্বপূর্ণ">
+        <p>আগের পাঠে আমরা দেখেছিলাম কীভাবে মাধ্যমের ইলেকট্রনদের সাড়ার ফলে তরঙ্গের দশা পিছিয়ে যায় এবং সেটি প্রতিসরণ ঘটায়। সেই ব্যাখ্যা নিয়ে দর্শকরা কয়েকটি খুব স্বাভাবিক প্রশ্ন পাঠিয়েছিলেন। আজ আমরা সেই প্রশ্নগুলোর উত্তর দেব।</p>
+        <b1b-quiz
+          question="❓ দশা-বেগ ও গোষ্ঠী-বেগের মূল পার্থক্য কী?"
+          correct="1"
+          correct-msg="সঠিক! দশা-বেগ হলো শীর্ষের গতি, গোষ্ঠী-বেগ হলো সংকেত বা শক্তির গতি।"
+          wrong-msg="শীর্ষবিন্দুর গতি = দশা-বেগ; মোড়কের গতি = গোষ্ঠী-বেগ।"
+          reveal-msg="সঠিক উত্তর: দশা-বেগ শীর্ষের, গোষ্ঠী-বেগ সংকেতের।"
+          data-no-narration="true">
+          <div slot="option">দশা-বেগ সবসময় বেশি</div>
+          <div slot="option">দশা-বেগ শীর্ষের, গোষ্ঠী-বেগ সংকেতের</div>
+          <div slot="option">দুটি একই</div>
+          <div slot="option">গোষ্ঠী-বেগ সবসময় শূন্য</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ দশা-বেগ বনাম গোষ্ঠী-বেগ ═══ -->
+      <b1b-section id="sec-riq-phase-group" title="দশা-বেগ বনাম গোষ্ঠী-বেগ">
+        <p>অনেকের প্রশ্ন: আলোর বেগ c সবসময় একই তো, তাহলে কাঁচে কমে যাওয়ার মানে কী? এর উত্তর হলো — যেটি কমে সেটি হলো <strong>দশা-বেগ</strong>, অর্থাৎ একটি বিশুদ্ধ একক-কম্পাঙ্ক তরঙ্গের শীর্ষবিন্দুর গতি। কিন্তু আমরা যে সংকেত বা শক্তি পাঠাই, তার গতি হলো <strong>গোষ্ঠী-বেগ</strong>। বেশিরভাগ স্বচ্ছ মাধ্যমে দশা-বেগ c-র কম হলেও কোনো তথ্য c-র বেশি বেগে যায় না।</p>
+        <b1b-formula math="v_g = v_p - \lambda\,\frac{dv_p}{d\lambda}"></b1b-formula>
+        <b1b-figure src="../../assets/figures/phys_07/fig_01.svg" alt="phase vs group" caption="তরঙ্গের শীর্ষ ও মোড়ক আলাদা গতিতে এগোচ্ছে"></b1b-figure>
+        <b1b-callout type="blue" icon="⚠️" title="সতর্কতা">
+          <p>বিচ্ছুরণের কারণে একটি ছোট আলো-স্পন্দ ক্রমশ চওড়া হয় — কারণ এর বিভিন্ন কম্পাঙ্কের উপাদান বিভিন্ন বেগে চলে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ ফার্মাটের ন্যূনতম সময় ═══ -->
+      <b1b-section id="sec-riq-fermat" title="ফার্মাটের ন্যূনতম সময়">
+        <p>ফার্মাটের নীতি বলে: আলো A থেকে B-তে সবচেয়ে কম সময়ে পৌঁছানোর পথ অনুসরণ করে। কাঁচে বেগ কম হওয়ায় আলো কাঁচের ভেতরে কম দূরত্বেই কাটানোর চেষ্টা করে — ফলে সীমানায় বেঁকে যায়। এই এক নীতি দিয়ে স্নেলের সূত্রও পাওয়া যায় আবার দর্পণের প্রতিফলন নিয়মও।</p>
+        <b1b-formula math="t = \int \frac{n(s)\,ds}{c} \;\longrightarrow\; \delta t = 0"></b1b-formula>
+        <b1b-figure src="../../assets/figures/phys_07/fig_02.svg" alt="Fermat path" caption="জলের ওপর দিয়ে দেখা বস্তুর প্রতিসরণ"></b1b-figure>
+        <b1b-quiz
+          question="❓ ফার্মাটের নীতি অনুযায়ী আলো কী বেছে নেয়?"
+          correct="1"
+          correct-msg="হ্যাঁ! আলো সবচেয়ে কম &lt;em&gt;সময়ে&lt;/em&gt; পৌঁছানোর পথ বেছে নেয় — দূরত্ব নয়।"
+          wrong-msg="দূরত্ব নয়, সময় হলো মাপকাঠি — বিভিন্ন মাধ্যমে বেগ আলাদা হওয়ায় পথ বেঁকে যায়।"
+          reveal-msg="সঠিক উত্তর: সবচেয়ে কম সময়ের পথ।"
+          data-no-narration="true">
+          <div slot="option">সবচেয়ে ছোট পথ</div>
+          <div slot="option">সবচেয়ে কম সময়ের পথ</div>
+          <div slot="option">সবচেয়ে বেশি দূরত্ব</div>
+          <div slot="option">সরল রেখা সবসময়</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ মিরাজ ও সম্পূর্ণ অভ্যন্তরীণ প্রতিফলন ═══ -->
+      <b1b-section id="sec-riq-mirage" title="মিরাজ ও সম্পূর্ণ অভ্যন্তরীণ প্রতিফলন">
+        <p>গরম রাস্তার ওপর জলের মতো দেখা মিরাজ আসলে কোনো জল নয় — বাতাসের নিচের স্তর গরম হওয়ায় সেখানে প্রতিসরাংক কমে যায়। আলো ঊর্ধ্বমুখে বেঁকে আমাদের চোখে পৌঁছায়, আর আমরা মনে করি সেটি জল থেকে প্রতিফলিত হয়েছে। একইভাবে কাঁচের ভেতর থেকে বাইরে যাওয়ার সময় কোণ বেশি হলে আলো বের হয় না — সম্পূর্ণভাবে প্রতিফলিত হয়। এটি হলো total internal reflection, যার ওপর ভিত্তি করে অপটিক্যাল ফাইবার কাজ করে।</p>
+        <b1b-formula math="\sin\theta_c = \frac{n_2}{n_1},\quad n_1&gt;n_2"></b1b-formula>
+        <b1b-callout type="gold" icon="🔦" title="দৈনন্দিন জীবনে">
+          <p>হীরার চমক, অপটিক্যাল ফাইবারে ইন্টারনেট সংকেত, মরুভূমির মিরাজ — সবই প্রতিসরণের একই মূল নীতির ফল।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Interactive lab — excluded from narration ═══ -->
+      <b1b-section id="sec-visualizer" title="ফার্মাটের পথ সিমুলেটর — মাধ্যম বদলে কম সময়ের পথ খুঁজুন" data-no-narration="true">
+        <p class="viz-intro">এই ইন্টারেক্টিভ ল্যাবটি ব্যবহার করে ধারণাটি নিজে পরীক্ষা করে দেখুন। প্যারামিটার বদলে ফলাফলের পরিবর্তন পর্যবেক্ষণ করুন।</p>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="3,-2"></b1b-vector-plane>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/physics/lesson_07/experiments/3b1b_physics_07_full_dubbed.mp4"
+    yt-id="Cz4Q4QOuoo8"
+    title="প্রতিসরণ নিয়ে দর্শকদের প্রশ্নের উত্তর — অধ্যায় ০৭"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — পদার্থবিজ্ঞান">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_06.html"
+  prev-title="পূর্ববর্তী অধ্যায়"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_08.html"
+  next-title="পরবর্তী অধ্যায়"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

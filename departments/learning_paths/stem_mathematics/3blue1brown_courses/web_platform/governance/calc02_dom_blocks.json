@@ -1,0 +1,186 @@
+[
+  {
+    "id": "sec-paradox",
+    "title": "১. তাৎক্ষণিক বেগ ও প্যারাডক্স (Instantaneous Velocity & The Paradox)",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "১. তাৎক্ষণিক বেগ ও প্যারাডক্স (Instantaneous Velocity & The Paradox)",
+        "tex": ""
+      },
+      {
+        "type": "chapter-quote",
+        "text": "\" যতদূর গণিতের তত্ত্বসমূহ বাস্তবতা সম্পর্কে, ততদূর সেগুলো নিশ্চিত নয়; আর যতদূর নিশ্চিত, ততদূর বাস্তবতা সম্পর্কে নয়। — আলবার্ট আইনস্টাইন",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "শিক্ষার্থী বন্ধুরা, ক্যালকুলাসের দ্বিতীয় অধ্যায়ে তোমাদের স্বাগত জানাচ্ছি। ধরা যাক, তোমরা একটি সুন্দর হাইওয়ে দিয়ে গাড়ি চালিয়ে যাচ্ছ; হঠাৎ ড্যাশবোর্ডের স্পিডোমিটারের দিকে চোখ পড়ল এবং দেখলে কাঁটাটি ঠিক ষাট কিলোমিটার প্রতি ঘণ্টার ঘরে স্থির হয়ে আছে। আসল উদাহরণে গাড়িটি বিন্দু A থেকে শুরু করে গতি বাড়িয়ে শেষ পর্যন্ত ১০০ মিটার দূরের বিন্দু B-তে ১০ সেকেন্ডে থামে।",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "কিন্তু এই ষাট কিলোমিটার প্রতি ঘণ্টা আসলে কীসের পরিমাপ? আমরা ছোটবেলা থেকেই জানি, বেগ মানে অতিক্রান্ত দূরত্ব ভাগ প্রয়োজনীয় সময়—অর্থাৎ দূরত্বের পরিবর্তন <annotation>\\Delta s</annotation>-কে সময়ের ব্যবধান <annotation>\\Delta t</annotation> দিয়ে ভাগ করলে গড় বেগ <annotation>v_{\\text{avg}} = \\frac{\\Delta s}{\\Delta t}</annotation> পাওয়া যায়।",
+        "tex": "\\Delta s \\Delta t v_{\\text{avg}} = \\frac{\\Delta s}{\\Delta t}"
+      },
+      {
+        "type": "figure",
+        "text": "এই লেখচিত্রে অনুভূমিক অক্ষে সময় <annotation>t</annotation> (সেকেন্ড) এবং উল্লম্ব অক্ষে অতিক্রান্ত দূরত্ব <annotation>s(t)</annotation> (মিটার) দেখানো হয়েছে। গাড়িটি ১০ সেকেন্ডে ১০০ মিটার পথ পাড়ি দিয়ে থামে, আর বক্ররেখার উচ্চতা সেই দূরত্বই নির্দেশ করে। <annotation>t=6</annotation> সেকেন্ডে উচ্চতা ৭০ মিটারের কিছু বেশি—লক্ষ্য করুন বক্ররেখার ঢালই পরবর্তীতে বেগের ধারণা জন্ম দেবে।",
+        "tex": "t s(t) t=6"
+      },
+      {
+        "type": "p",
+        "text": "এবার ভাবুন, যাত্রা শুরুর ঠিক পাঁচ সেকেন্ডের মাথার মতো একটি একক মুহূর্তের কথা। সেই মুহূর্তে সময়ের কোনো ব্যবধান নেই, অর্থাৎ <annotation>\\Delta t = 0</annotation> এবং গাড়িও কোনো দূরত্ব অতিক্রম করতে পারে না, ফলে <annotation>\\Delta s = 0</annotation>। একটি স্থির ছবি (snapshot) দেখে বেগ বের করা যায় না—তাই দুটি সময়ের স্ন্যাপশট তুলনা করে <annotation>\\frac{50-30}{5-4} = 20</annotation> মিটার প্রতি সেকেন্ড হিসাব করা হয়; অথচ লেখচিত্র থেকে দেখা যায় <annotation>t=3</annotation>-এ গাড়িটি সবচেয়ে দ্রুত চলে!",
+        "tex": "\\Delta t = 0 \\Delta s = 0 \\frac{50-30}{5-4} = 20 t=3"
+      },
+      {
+        "type": "callout",
+        "text": "⚠️ বিশেষ নোট: অবকলনের কেন্দ্রীয় প্যারাডক্স একটি একক মুহূর্তে যদি পরিবর্তনই না ঘটে, তবে <annotation>\\frac{0}{0}</annotation> সম্পূর্ণ অনির্ণেয়! তবুও স্পিডোমিটার পরিষ্কারভাবে <annotation>60\\ \\text{km/h}</annotation> দেখাচ্ছে। এই আপাত বৈপরীত্যই হলো অন্তরজের প্যারাডক্স—গতি মাপতে হলে দুটি সময় লাগবে, অথচ বেগ চাই একটি মুহূর্তে।",
+        "tex": "\\frac{0}{0} 60\\ \\text{km/h}"
+      },
+      {
+        "type": "p",
+        "text": "এটিই হলো সেই বিখ্যাত প্যারাডক্স: একটি স্থির ছবিতে সবকিছু নিথর, কোনো গতি নেই, তাহলে গতির পরিমাপ কীভাবে একটি একক বিন্দুতে অবস্থান করতে পারে? এই ধাঁধার উত্তর খুঁজতেই জন্ম হয়েছিল ক্যালকুলাসের।",
+        "tex": ""
+      }
+    ]
+  },
+  {
+    "id": "sec-derivative-meaning",
+    "title": "২. ডেরিভেটিভ কী? dt ও ds-এর অনুপাত (What is a Derivative?)",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "২. ডেরিভেটিভ কী? dt ও ds-এর অনুপাত (What is a Derivative?)",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "প্যারাডক্সটির চমৎকার সমাধান হলো: ক্যালকুলাস কখনো শূন্য দিয়ে শূন্যকে ভাগ করে না! বরং এটি এমন এক সীমাস্থ প্রক্রিয়ার কথা বলে যা শূন্যের দিকে ধাবমান—প্রথমে একটি সসীম ছোট সময় নেওয়া হয়, তারপর জিজ্ঞেস করা হয় সেটি শূন্যের কাছে গেলে উত্তর কী ধীরে ধীরে অভিমুখী হয়।",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "মনে করি, পাঁচ সেকেন্ড সময়ের পর আমরা অত্যন্ত ক্ষুদ্র একটি সময় ব্যবধান বিবেচনা করলাম, যাকে বলা হয় <annotation>dt</annotation>। এই অতি সংক্ষিপ্ত সময়ে গাড়িটি খুব সামান্য একটু পথ অতিক্রম করল, যাকে আমরা বলছি <annotation>ds</annotation>।",
+        "tex": "dt ds"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>v_{\\text{inst}} = \\frac{ds}{dt} = \\lim_{\\Delta t \\to 0} \\frac{s(t + \\Delta t) - s(t)}{\\Delta t}</annotation>",
+        "tex": "v_{\\text{inst}} = \\frac{ds}{dt} = \\lim_{\\Delta t \\to 0} \\frac{s(t + \\Delta t) - s(t)}{\\Delta t}"
+      },
+      {
+        "type": "p",
+        "text": "এখানে <annotation>dt</annotation> কিন্তু শূন্য নয়, বরং শূন্যের খুব কাছাকাছি—হয়তো <annotation>0.001</annotation> সেকেন্ড। বাস্তব স্পিডোমিটারও ঠিক এভাবে কাজ করে: ৩ সেকেন্ডে সেটি ৩ থেকে ৩.০১ সেকেন্ডের ব্যবধানে <annotation>\\frac{20.21-20}{0.01}</annotation> মিটার প্রতি সেকেন্ড হিসাব করে। এই অতি ক্ষুদ্র ব্যবধানে <annotation>\\frac{ds}{dt}</annotation> আমাদের একটি বাস্তব ও সুসংজ্ঞায়িত গড় বেগ প্রদান করে।",
+        "tex": "dt 0.001 \\frac{20.21-20}{0.01} \\frac{ds}{dt}"
+      },
+      {
+        "type": "callout",
+        "text": "🔍 বিশেষ নোট: ডেরিভেটিভের মূল রহস্য <annotation>dt</annotation> কে যতই ক্ষুদ্র থেকে ক্ষুদ্রতর করা হোক না কেন, <annotation>\\frac{ds}{dt}</annotation> অনুপাতটি হারিয়ে যায় না; বরং এটি একটি সুনির্দিষ্ট স্থির মানের দিকে ধাবিত হয়। এই সীমাস্থ মানটিই হলো ডেরিভেটিভ বা তাৎক্ষণিক বেগ।",
+        "tex": "dt \\frac{ds}{dt}"
+      },
+      {
+        "type": "p",
+        "text": "তাই স্পিডোমিটার আসলে সময়ের একক মুহূর্তে গতি মাপে না; বরং অত্যন্ত ক্ষুদ্র সময় ব্যবধানে সম্ভাব্য পরিবর্তনের শ্রেষ্ঠ সুষম আসন্নায়ন (best constant approximation) নির্দেশ করে।",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "গণিতের ভাষায়, দূরত্ব ফাংশন <annotation>s(t)</annotation>-এর পরিবর্তনের হার হলো <annotation>\\frac{ds}{dt}</annotation>—আর <annotation>\\frac{ds}{dt}</annotation> কে <annotation>t</annotation>-এর একটি ফাংশন হিসেবে ভাবা যায়। 'd' অক্ষরটি ব্যবহার করে আমরা ঘোষণা করি যে শেষ পর্যন্ত <annotation>dt \\to 0</annotation> দেখা হবে; এটি এসেছে 'difference' বা ক্ষুদ্র পার্থক্য থেকে।",
+        "tex": "s(t) \\frac{ds}{dt} \\frac{ds}{dt} t dt \\to 0"
+      }
+    ]
+  },
+  {
+    "id": "sec-tangent-zoom",
+    "title": "৩. জ্যামিতিক স্পর্শক ও বক্ররেখা জুম (Geometric Tangent & Graph Zooming)",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৩. জ্যামিতিক স্পর্শক ও বক্ররেখা জুম (Geometric Tangent & Graph Zooming)",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "ডেরিভেটিভের এই ভাবনাটিকে জ্যামিতিক লেখচিত্রে কীভাবে কল্পনা করা যায়? ধরা যাক, অনুভূমিক সময় অক্ষে <annotation>t</annotation> এবং উল্লম্ব অক্ষে দূরত্ব <annotation>s</annotation> স্থাপন করে আমরা দূরত্বের বক্ররেখা <annotation>s(t)</annotation> আঁকলাম।",
+        "tex": "t s s(t)"
+      },
+      {
+        "type": "figure",
+        "text": "চিত্রে <annotation>t=3</annotation> বিন্দুর চারপাশে অতিক্ষুদ্র <annotation>dt</annotation> এবং তার ফলে হওয়া <annotation>ds</annotation> দেখানো হয়েছে। Anুভূমিক <annotation>dt</annotation> হলো 'run', আর উল্লম্ব <annotation>ds</annotation> হলো 'rise'—এই দুটির অনুপাতই rise-over-run বা ঢাল। বক্ররেখাটি বিভক্ত ছোট ত্রিভুজটির মাধ্যমে বোঝা যায় কেন <annotation>\\frac{ds}{dt}</annotation> আসলে একটি ঢাল।",
+        "tex": "t=3 dt ds dt ds \\frac{ds}{dt}"
+      },
+      {
+        "type": "p",
+        "text": "বক্ররেখার যেকোনো দুটি বিন্দুর মধ্যে যদি আমরা একটি ছেদক রেখা (secant line) টানি, তবে তার ঢাল হবে খাড়া উচ্চতা <annotation>\\Delta s</annotation> ভাগ আনুভূমিক দৈর্ঘ্য <annotation>\\Delta t</annotation>—অর্থাৎ <annotation>\\frac{s(t+\\Delta t)-s(t)}{\\Delta t}</annotation>।",
+        "tex": "\\Delta s \\Delta t \\frac{s(t+\\Delta t)-s(t)}{\\Delta t}"
+      },
+      {
+        "type": "p",
+        "text": "এবার গ্রান্ট স্যান্ডারসনের অন্যতম প্রিয় কৌশলটি লক্ষ্য করুন: লেখচিত্রের একটি নির্দিষ্ট বিন্দুতে অসম্ভব জুম করতে থাকুন। যতই জুম করবেন, বাঁকা বক্ররেখাটি আর বাঁকা থাকবে না—দেখতে প্রায় নিখুঁত সরলরেখার মতো হয়ে যাবে, আর ছেদকটি স্পর্শকে (tangent) পরিণত হবে।",
+        "tex": ""
+      },
+      {
+        "type": "callout",
+        "text": "📐 বিশেষ নোট: স্থানীয় রৈখিকতা (Local Linearity) অত্যন্ত ক্ষুদ্র পরিসরে প্রতিটি মসৃণ বক্ররেখাই স্থানীয়ভাবে একটি সরলরেখা। সেই সরলরেখার ঢালই হলো ওই বিন্দুতে অঙ্কিত স্পর্শকের ঢাল—আর তা কিছুই নয়, <annotation>\\frac{ds}{dt}</annotation>।",
+        "tex": "\\frac{ds}{dt}"
+      },
+      {
+        "type": "p",
+        "text": "অতএব স্পর্শকের ঢাল আর কিছুই নয়—তা হলো <annotation>\\frac{ds}{dt}</annotation>। 'তাৎক্ষণিক হার' না বলে একে ধীরে ধীরে 'বিন্দুটির আশেপাশে শ্রেষ্ঠ সুষম আসন্নায়ন' হিসেবে ভাবা যায়; স্পর্শকের ঢালই পরিবর্তনের হারকে চোখে দেখার সবচেয়ে শক্তিশালী রূপ।",
+        "tex": "\\frac{ds}{dt}"
+      }
+    ]
+  },
+  {
+    "id": "sec-x2-geometry",
+    "title": "৪. x²-এর অন্তরীকরণ জ্যামিতি (Geometry of the Derivative of x²)",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "৪. x²-এর অন্তরীকরণ জ্যামিতি (Geometry of the Derivative of x²)",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "চলুন এবার একটি বাস্তব বীজগণিতীয় ফাংশন <annotation>f(x) = x^2</annotation> নিয়ে জ্যামিতিক পরীক্ষা চালানো যাক। মুখস্থ সূত্র বলছে এর ডেরিভেটিভ <annotation>2x</annotation>—কিন্তু কেন ঠিক <annotation>2x</annotation>?",
+        "tex": "f(x) = x^2 2x 2x"
+      },
+      {
+        "type": "figure",
+        "text": "x² x·dx x·dx (dx)² dx x চিত্রে <annotation>x</annotation> বাহুর বর্গক্ষেত্রটির ডান ও উপরের ধারে দুটি <annotation>x \\times dx</annotation> আয়তাকার ফালি যোগ হয়েছে, আর কোণে রয়েছে অতিক্ষুদ্র <annotation>(dx)^2</annotation> বর্গ। মূল অংশ <annotation>x^2</annotation> অপরিবর্তিত থাকে; শুধু এই তিনটি নতুন টুকরোই ক্ষেত্রফলের বৃদ্ধি <annotation>df</annotation> গঠন করে। দুটি ফালিই সমান হওয়ায় '২' সংখ্যাটি এসেছে—এটি কোনো বিমূর্ত সহগ নয়, বরং দুই ধারের জ্যামিতি।",
+        "tex": "x x \\times dx (dx)^2 x^2 df"
+      },
+      {
+        "type": "p",
+        "text": "কল্পনা করুন একটি বর্গক্ষেত্র, যার প্রতিটি বাহুর দৈর্ঘ্য <annotation>x</annotation>—তাহলে তার ক্ষেত্রফল <annotation>x^2</annotation>। এবার বর্গক্ষেত্রের দৈর্ঘ্য ও প্রস্থ উভয় দিকেই অতি সামান্য বৃদ্ধি <annotation>dx</annotation> যোগ করা হলো।",
+        "tex": "x x^2 dx"
+      },
+      {
+        "type": "p",
+        "text": "প্রশ্ন হলো, ক্ষেত্রফলের মোট বৃদ্ধি <annotation>df</annotation> কতটুকু হবে? চিত্রে তাকালে দেখা যায় নতুন ক্ষেত্রফল তিনটি অংশে বিভক্ত: উপরের প্রান্তে <annotation>x \\times dx</annotation>, ডান প্রান্তে আরেকটি <annotation>x \\times dx</annotation>, এবং কোণায় <annotation>(dx)^2</annotation> নামক অতি ক্ষুদ্র বর্গক্ষেত্র।",
+        "tex": "df x \\times dx x \\times dx (dx)^2"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>df = (x + dx)^2 - x^2 = 2x \\cdot dx + (dx)^2</annotation>",
+        "tex": "df = (x + dx)^2 - x^2 = 2x \\cdot dx + (dx)^2"
+      },
+      {
+        "type": "p",
+        "text": "এবার উভয়পক্ষকে <annotation>dx</annotation> দিয়ে ভাগ করলে পরিবর্তনের হার<annotation>p পাওয়া যায়:</annotation>\\frac{df}{dx} = 2x + dx$।",
+        "tex": "dx p পাওয়া যায়:"
+      },
+      {
+        "type": "callout",
+        "text": "✨ বিশেষ নোট: ক্ষুদ্রাতিক্ষুদ্রের বিলোপ <annotation>dx</annotation> শূন্যের দিকে ধাবিত হলে একা পড়ে থাকা <annotation>dx</annotation> পদটি নগণ্য হয়ে মিলিয়ে যায়, কিন্তু মূল দুই পাশের ফালির অনুপাত <annotation>2x</annotation> অক্ষত থাকে। এই '২' আসলে বর্গক্ষেত্রের দুটি বর্ধনশীল ধারের প্রতীক।",
+        "tex": "dx dx 2x"
+      },
+      {
+        "type": "p",
+        "text": "এভাবেই আমরা পাই <annotation>\\frac{d}{dx}(x^2) = 2x</annotation>। এটি কোনো অলৌকিক জাদু নয়—বরং দুটি আয়তাকার ফালির উন্মোচিত জ্যামিতিক রূপ, যার সীমাস্থ অবস্থায় <annotation>\\lim_{dx \\to 0}(2x + dx) = 2x</annotation>।",
+        "tex": "\\frac{d}{dx}(x^2) = 2x \\lim_{dx \\to 0}(2x + dx) = 2x"
+      }
+    ]
+  }
+]

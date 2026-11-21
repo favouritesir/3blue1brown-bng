@@ -1,0 +1,232 @@
+{
+  "hasStudioAudio": true,
+  "manifestPresent": true,
+  "manifestKeys": [
+    "sec-heat-pde-review",
+    "sec-boundary-separation",
+    "sec-sine-harmonics-decay",
+    "sec-fourier-orthogonality",
+    "sec-continuous-fourier-transform"
+  ],
+  "engine": [
+    {
+      "id": "sec-heat-pde-review",
+      "title": "১. তাপ সমীকরণ ও সীমানা শর্তের ভৌত তাৎপর্য (The Heat Equation & Boundary Conditions)",
+      "blockCount": 8,
+      "cueCount": 8,
+      "audioFile": "../../assets/audio/differential_equations/lesson_05/sec_01_heat_pde_review.mp3",
+      "types": [
+        "h2",
+        "chapter-quote",
+        "p",
+        "formula-box",
+        "p",
+        "p",
+        "callout-gold",
+        "figure"
+      ],
+      "texts": [
+        "১. তাপ সমীকরণ ও সীমানা শর্তের ভৌত তাৎপর্য (The Heat Equation",
+        "উদ্ধৃতি: \" প্রকৃতির গভীর পর্যবেক্ষণই গাণিতিক বিশ্লেষণের সবচে",
+        "পূর্ববর্তী অধ্যায়ে আমরা তাপ সমীকরণের ভৌত ও জ্যামিতিক তাৎপর্",
+        "গাণিতিক সূত্র: ∂ 𝑢 ∂ 𝑡 সমান 𝛼 ∂ 2 𝑢 ∂ 𝑥 2 , 0 < 𝑥 < 𝐿",
+        "স্থানীয় দ্বিতীয় স্থানিক অন্তরজ $ frac partial^2 u partial ",
+        "কিন্তু বাস্তবে কেবল এই সমীকরণটি কোনো সমাধান নির্দিষ্ট করতে প",
+        "বিশেষ নোট: 🧊 সীমানা শর্তের অপরিসীম গুরুত্ব। 🧊 সীমানা শর্তে",
+        "চিত্রে দেখা যাচ্ছে, এই চিত্রে একটি ধাতব রডের দুই প্রান্তে ভি"
+      ]
+    },
+    {
+      "id": "sec-boundary-separation",
+      "title": "২. চলক পৃথকীকরণ পদ্ধতি ও আইগেনমান সমস্যা (Separation of Variables)",
+      "blockCount": 8,
+      "cueCount": 8,
+      "audioFile": "../../assets/audio/differential_equations/lesson_05/sec_02_boundary_separation.mp3",
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "formula-box",
+        "p",
+        "p",
+        "formula-box",
+        "callout-green"
+      ],
+      "texts": [
+        "২. চলক পৃথকীকরণ পদ্ধতি ও আইগেনমান সমস্যা (Separation of Vari",
+        "জটিল আংশিক সমীকরণ সমাধানের জন্য জোসেফ ফুরিয়ার গণিত ইতিহাসের",
+        "আমরা অনুমান করি যে অজ্ঞাত অপেক্ষক $u(x, t)$ স্থানিক ফাংশন $X",
+        "গাণিতিক সূত্র: 𝑇 ′ ( 𝑡 ) 𝛼 𝑇 ( 𝑡 ) সমান 𝑋 ′ ′ ( 𝑥 ) �",
+        "উভয়পক্ষকে $ alpha X(x) T(t)$ দিয়ে ভাগ করলে সমীকরণটি দাঁড়া",
+        "এখান থেকে আমরা দুটি পৃথক সাধারণ ডিফারেনশিয়াল সমীকরণ পাই: স্",
+        "গাণিতিক সূত্র: 𝜆 𝑛 সমান 𝑛 𝜋 𝐿 , 𝑋 𝑛 ( 𝑥 ) সমান sin ⁡",
+        "বিশেষ নোট: ⚛️ কোয়ান্টাম মেকানিক্সের পূর্বাভাস!। ⚛️ কোয়ান্ট"
+      ]
+    },
+    {
+      "id": "sec-sine-harmonics-decay",
+      "title": "৩. সাইন হারমোনিক্স ও উচ্চ কম্পাঙ্কের তীব্র ক্ষয় (Exponential Decay of Modes)",
+      "blockCount": 7,
+      "cueCount": 7,
+      "audioFile": "../../assets/audio/differential_equations/lesson_05/sec_03_sine_harmonics_decay.mp3",
+      "types": [
+        "h2",
+        "p",
+        "formula-box",
+        "p",
+        "figure",
+        "p",
+        "callout-purple"
+      ],
+      "texts": [
+        "৩. সাইন হারমোনিক্স ও উচ্চ কম্পাঙ্কের তীব্র ক্ষয় (Exponentia",
+        "স্থানিক আইগেনফাংশন নির্ধারিত হওয়ার পর এবার সময়ের অংশের সমা",
+        "গাণিতিক সূত্র: 𝑢 𝑛 ( 𝑥 , 𝑡 ) সমান exp ⁡ ( বিয়োগ 𝛼 ( 𝑛",
+        "এখানেই লুকিয়ে আছে তাপ সমীকরণের সবচেয়ে বৈপ্লবিক পদার্থবিজ্ঞ",
+        "চিত্রে দেখা যাচ্ছে, গ্রাফে দেখুন $n সমান 1$ মোড ধীরে ধীরে ক্",
+        "বাস্তব জীবনে এর চাক্ষুষ অর্থ কী? তাপমাত্রার যেকোনো তীক্ষ্ণ ব",
+        "বিশেষ নোট: ⏳ এনট্রপি ও সময়ের একমুখী তীর। ⏳ এনট্রপি ও সময়ের"
+      ]
+    },
+    {
+      "id": "sec-fourier-orthogonality",
+      "title": "৪. ফুরিয়ার ধারা, উপরিপাত নীতি ও অর্থোগোনালিটি (Fourier Series & Orthogonality)",
+      "blockCount": 9,
+      "cueCount": 9,
+      "audioFile": "../../assets/audio/differential_equations/lesson_05/sec_04_fourier_orthogonality.mp3",
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "callout-red",
+        "formula-box",
+        "p",
+        "formula-box",
+        "formula-box",
+        "p"
+      ],
+      "texts": [
+        "৪. ফুরিয়ার ধারা, উপরিপাত নীতি ও অর্থোগোনালিটি (Fourier Seri",
+        "ধরা যাক, শুরুতে রডের তাপমাত্রা একটি মসৃণ সাইন তরঙ্গ নয়; বরং",
+        "জোসেফ ফুরিয়ার ১৮০৭ সালে ঘোষণা করেছিলেন যে যেকোনো ফাংশন $f(x",
+        "বিশেষ নোট: ⚔️ ঐতিহাসিক বিতর্ক ও ফাংশন স্পেসে ভিত্তি ভেক্টর। ",
+        "গাণিতিক সূত্র: ∫ 0 𝐿 sin ⁡ ( 𝑛 𝜋 𝑥 𝐿 ) sin ⁡ ( 𝑚 𝜋 𝑥",
+        "কিন্তু ফুরিয়ারের ভিত্তি ছিল সাইন অপেক্ষকের অর্থোগোনালিটি বা",
+        "গাণিতিক সূত্র: 𝑏 𝑛 সমান 2 𝐿 ∫ 0 𝐿 𝑓 ( 𝑥 ) sin ⁡ ( 𝑛 �",
+        "গাণিতিক সূত্র: 𝑢 ( 𝑥 , 𝑡 ) সমান ∑ 𝑛 সমান 1 ∞ 𝑏 𝑛 exp ⁡",
+        "এই অর্থোগোনালিটি সমীকরণের উভয়পাশে $ sin left( frac m pi x L"
+      ]
+    },
+    {
+      "id": "sec-continuous-fourier-transform",
+      "title": "৫. অসীম দণ্ড, ফুরিয়ার রূপান্তর ও গাউসিয়ান কার্নেল (The Fourier Transform & Heat Kernel)",
+      "blockCount": 9,
+      "cueCount": 9,
+      "audioFile": "../../assets/audio/differential_equations/lesson_05/sec_05_continuous_fourier_transform.mp3",
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "formula-box",
+        "p",
+        "formula-box",
+        "figure",
+        "formula-box",
+        "callout-blue"
+      ],
+      "texts": [
+        "৫. অসীম দণ্ড, ফুরিয়ার রূপান্তর ও গাউসিয়ান কার্নেল (The Fou",
+        "এবার কল্পনা করুন আমাদের ধাতব দণ্ডটি সীমাবদ্ধ নয়; এটি মাইনাস",
+        "যখন $L to infty$, তখন পাশাপাশি দুটি অনুমোদিত কম্পাঙ্কের মধ্য",
+        "গাণিতিক সূত্র: 𝑓 ^ ( 𝑘 ) সমান ∫ বিয়োগ ∞ ∞ 𝑓 ( 𝑥 ) 𝑒 বি",
+        "ফুরিয়ার রূপান্তরের মাধ্যমে আমরা বাস্তব স্থান $x$ বিয়োগ এর ",
+        "গাণিতিক সূত্র: 𝑑 𝑢 ^ 𝑑 𝑡 সমান বিয়োগ 𝛼 𝑘 2 𝑢 ^ dt d u",
+        "চিত্রে দেখা যাচ্ছে, এই চিত্রে একটি বিন্দুতে কেন্দ্রীভূত তাপ ",
+        "গাণিতিক সূত্র: Φ ( 𝑥 , 𝑡 ) সমান 1 4 𝜋 𝛼 𝑡 exp ⁡ ( বিয়ো",
+        "বিশেষ নোট: 🌌 ব্রাউনিয়ান গতি ও সম্ভাবনা তত্ত্ব। 🌌 ব্রাউনিয"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-heat-pde-review",
+      "noNarration": null,
+      "h2": "১. তাপ সমীকরণ ও সীমানা শর্তের ভৌত তাৎপর্য (The Heat Equation & Boundary Conditions)"
+    },
+    {
+      "id": "sec-boundary-separation",
+      "noNarration": null,
+      "h2": "২. চলক পৃথকীকরণ পদ্ধতি ও আইগেনমান সমস্যা (Separation of Variables)"
+    },
+    {
+      "id": "sec-sine-harmonics-decay",
+      "noNarration": null,
+      "h2": "৩. সাইন হারমোনিক্স ও উচ্চ কম্পাঙ্কের তীব্র ক্ষয় (Exponential Decay of Modes)"
+    },
+    {
+      "id": "sec-fourier-orthogonality",
+      "noNarration": null,
+      "h2": "৪. ফুরিয়ার ধারা, উপরিপাত নীতি ও অর্থোগোনালিটি (Fourier Series & Orthogonality)"
+    },
+    {
+      "id": "sec-continuous-fourier-transform",
+      "noNarration": null,
+      "h2": "৫. অসীম দণ্ড, ফুরিয়ার রূপান্তর ও গাউসিয়ান কার্নেল (The Fourier Transform & Heat Kernel)"
+    },
+    {
+      "id": "sec-interactive-lab",
+      "noNarration": "true",
+      "h2": "৬. ইন্টারেক্টিভ ল্যাব: ফুরিয়ার ক্ষয় ও ব্যাপন সিমুলেটর"
+    },
+    {
+      "id": "sec-quizzes",
+      "noNarration": "true",
+      "h2": "৭. ধারণা যাচাই ও বহুনির্বাচনী কুইজ"
+    }
+  ],
+  "tex": {
+    "sec-heat-pde-review": [
+      [
+        "\\frac{\\partial u}{\\partial t} = \\alpha \\frac{\\partial^2 u}{\\partial x^2}, \\quad 0 < x < L, \\; t > 0"
+      ]
+    ],
+    "sec-boundary-separation": [
+      [
+        "\\frac{T'(t)}{\\alpha T(t)} = \\frac{X''(x)}{X(x)} = -\\lambda^2"
+      ],
+      [
+        "\\lambda_n = \\frac{n\\pi}{L}, \\quad X_n(x) = \\sin\\left(\\frac{n\\pi x}{L}\\right), \\quad n = 1, 2, 3, \\dots"
+      ]
+    ],
+    "sec-sine-harmonics-decay": [
+      [
+        "u_n(x, t) = \\exp\\left( -\\alpha \\left(\\frac{n\\pi}{L}\\right)^2 t \\right) \\sin\\left(\\frac{n\\pi x}{L}\\right)"
+      ]
+    ],
+    "sec-fourier-orthogonality": [
+      [
+        "\\int_0^L \\sin\\left(\\frac{n\\pi x}{L}\\right) \\sin\\left(\\frac{m\\pi x}{L}\\right) dx = \\begin{cases} 0, & n \\neq m \\\\ \\frac{L}{2}, & n = m \\end{cases}"
+      ],
+      [
+        "b_n = \\frac{2}{L}\\int_0^L f(x) \\sin\\left(\\frac{n\\pi x}{L}\\right) dx"
+      ],
+      [
+        "u(x, t) = \\sum_{n=1}^{\\infty} b_n \\exp\\left( -\\alpha \\left(\\frac{n\\pi}{L}\\right)^2 t \\right) \\sin\\left(\\frac{n\\pi x}{L}\\right)"
+      ]
+    ],
+    "sec-continuous-fourier-transform": [
+      [
+        "\\hat{f}(k) = \\int_{-\\infty}^{\\infty} f(x) e^{-i k x} dx, \\quad f(x) = \\frac{1}{2\\pi}\\int_{-\\infty}^{\\infty} \\hat{f}(k) e^{i k x} dk"
+      ],
+      [
+        "\\frac{d\\hat{u}}{dt} = -\\alpha k^2 \\hat{u}"
+      ],
+      [
+        "\\Phi(x, t) = \\frac{1}{\\sqrt{4\\pi\\alpha t}} \\exp\\left( -\\frac{x^2}{4\\alpha t} \\right)"
+      ]
+    ]
+  },
+  "manifestVersion": [
+    "../../assets/audio/differential_equations/lesson_05/manifest.js?v=1"
+  ]
+}

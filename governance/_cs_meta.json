@@ -1,0 +1,132 @@
+{
+  "entropy": {
+    "url": "https://www.3blue1brown.com/lessons/entropy",
+    "article_title": "Reinventing Entropy | Compression is Intelligence Part 1",
+    "article_desc": "What is the fundamental compressibility of language?",
+    "youtube_id": "l6DKRf-fAAM",
+    "title_en": "Reinventing Entropy | Compression is Intelligence Part 1",
+    "description_en": "What is the fundamental compressibility of language?",
+    "date": "2026-06-07T00:00:00.000Z",
+    "github": "https://github.com/3b1b/videos/blob/master/_2026/cross_entropy/"
+  },
+  "cross-entropy": {
+    "url": "https://www.3blue1brown.com/lessons/cross-entropy",
+    "article_title": "But what is Cross-Entropy? | Compression is Intelligence Part 2",
+    "article_desc": "What does it cost to compress data when your model of the probabilities is wrong?",
+    "youtube_id": "GlYgs6v2YfU",
+    "title_en": "But what is Cross-Entropy? | Compression is Intelligence Part 2",
+    "description_en": "What does it cost to compress data when your model of the probabilities is wrong?",
+    "date": "2026-07-16T00:00:00.000Z",
+    "github": "https://github.com/3b1b/videos/blob/master/_2026/cross_entropy/"
+  },
+  "arithmetic-codes": {
+    "url": "https://www.3blue1brown.com/lessons/arithmetic-codes",
+    "article_title": "How to compress text to 1 bit per character | Compression is Intelligence Part 3",
+    "article_desc": "How arithmetic coding turns a language model&apos;s predictions into a near-optimal compression scheme.",
+    "youtube_id": "qbsb9DpdZ6s",
+    "title_en": "How to compress text to 1 bit per character | Compression is Intelligence Part 3",
+    "description_en": "How arithmetic coding turns a language model&apos;s predictions into a near-optimal compression scheme.",
+    "date": "2026-11-17T00:00:00.000Z",
+    "github": "https://github.com/3b1b/videos/blob/master/_2026/arithmetic_coding/"
+  },
+  "wordle": {
+    "url": "https://www.3blue1brown.com/lessons/wordle",
+    "article_title": "Solving Wordle using information theory",
+    "article_desc": "A lesson on information theory and Shannon entropy, told through an exploration of writing a Wordle solver.",
+    "youtube_id": "v68zYyaEmEA",
+    "title_en": "Solving Wordle using information theory",
+    "description_en": "A lesson on information theory and Shannon entropy, told through an exploration of writing a Wordle solver.",
+    "date": "2022-02-06T00:00:00.000Z",
+    "github": "https://github.com/3b1b/videos/blob/master/_2022/wordle/simulations.py"
+  },
+  "wordle-2": {
+    "url": "https://www.3blue1brown.com/lessons/wordle-2",
+    "article_title": "Oh, wait, actually the best Wordle opener is not &quot;crane&quot;…",
+    "article_desc": "Following up on the previous video about Wordle and information theory",
+    "youtube_id": "fRed0Xmc2Wg",
+    "title_en": "Oh, wait, actually the best Wordle opener is not &quot;crane&quot;…",
+    "description_en": "Following up on the previous video about Wordle and information theory",
+    "date": "2022-02-13T00:00:00.000Z",
+    "github": "https://github.com/3b1b/videos/blob/master/_2022/wordle/simulations.py"
+  },
+  "bitcoin": {
+    "url": "https://www.3blue1brown.com/lessons/bitcoin",
+    "article_title": "But how does bitcoin actually work?",
+    "article_desc": "How does bitcoin work? What is a &quot;block chain&quot;? What problem is this system trying to solve, and how does it use the tools of cryptography to do so?",
+    "youtube_id": "bBC-nXj3Ng4",
+    "title_en": "But how does bitcoin actually work?",
+    "description_en": "How does bitcoin work? What is a &quot;block chain&quot;? What problem is this system trying to solve, and how does it use the tools of cryptography to do so?",
+    "date": "2017-07-07T00:00:00.000Z",
+    "github": "https://github.com/3b1b/videos/blob/master/_2017/crypto.py"
+  },
+  "256-bit-security": {
+    "url": "https://www.3blue1brown.com/lessons/256-bit-security",
+    "article_title": "How secure is 256 bit security?",
+    "article_desc": "When a piece of cryptography is described as having &quot;256-bit security&quot;, what exactly does that mean?  Just how big is the number 2^256?",
+    "youtube_id": "S9JGmA5_unY",
+    "title_en": "How secure is 256 bit security?",
+    "description_en": "When a piece of cryptography is described as having &quot;256-bit security&quot;, what exactly does that mean?  Just how big is the number 2^256?",
+    "date": "2017-07-08T00:00:00.000Z",
+    "github": "https://github.com/3b1b/videos/blob/master/_2017/256.py"
+  },
+  "epidemic-simulations": {
+    "url": "https://www.3blue1brown.com/lessons/epidemic-simulations",
+    "article_title": "Simulating an epidemic",
+    "article_desc": "SIR models for epidemics, showing how tweaking behavior can change an outbreak.",
+    "youtube_id": "gxAaO2rsdIs",
+    "title_en": "Simulating an epidemic",
+    "description_en": "SIR models for epidemics, showing how tweaking behavior can change an outbreak.",
+    "date": "2020-03-27T00:00:00.000Z",
+    "github": "https://github.com/3b1b/videos/blob/master/_2020/sir.py"
+  },
+  "hamming-codes": {
+    "url": "https://www.3blue1brown.com/lessons/hamming-codes",
+    "article_title": "Hamming codes and error correction",
+    "article_desc": "A discovery-oriented introduction to error correction codes.",
+    "youtube_id": "X8jsijhllIA",
+    "title_en": "Hamming codes and error correction",
+    "description_en": "A discovery-oriented introduction to error correction codes.",
+    "date": "2020-09-04T00:00:00.000Z",
+    "github": "https://github.com/3b1b/videos/blob/master/_2020/hamming.py"
+  },
+  "hamming-codes-2": {
+    "url": "https://www.3blue1brown.com/lessons/hamming-codes-2",
+    "article_title": "Hamming codes part 2, the elegance of it all",
+    "article_desc": "How to implement Hamming Codes with xors",
+    "youtube_id": "b3NxrZOu_CE",
+    "title_en": "Hamming codes part 2, the elegance of it all",
+    "description_en": "How to implement Hamming Codes with xors",
+    "date": "2020-09-04T00:00:00.000Z",
+    "github": "https://github.com/3b1b/videos/blob/master/_2020/hamming.py"
+  },
+  "grover": {
+    "url": "https://www.3blue1brown.com/lessons/grover",
+    "article_title": "But what is quantum computing?  (Grover&apos;s Algorithm)",
+    "article_desc": "Covering the fundamentals of qubits and quantum state vectors, building up to a walk through of Grover&apos;s algorithm for search.",
+    "youtube_id": "RQWpF2Gb-gU",
+    "title_en": "But what is quantum computing?  (Grover&apos;s Algorithm)",
+    "description_en": "Covering the fundamentals of qubits and quantum state vectors, building up to a walk through of Grover&apos;s algorithm for search.",
+    "date": "2025-04-29T00:00:00.000Z",
+    "github": "https://github.com/3b1b/videos/blob/master/_2025/blocks_and_grover/"
+  },
+  "grover-clarification": {
+    "url": "https://www.3blue1brown.com/lessons/grover-clarification",
+    "article_title": "Where my explanation of Grover&apos;s algorithm failed",
+    "article_desc": "Addressing viewer questions from the last video, and taking the chance to further discuss linearity",
+    "youtube_id": "Dlsa9EBKDGI",
+    "title_en": "Where my explanation of Grover&apos;s algorithm failed",
+    "description_en": "Addressing viewer questions from the last video, and taking the chance to further discuss linearity",
+    "date": "2025-05-04T00:00:00.000Z",
+    "github": "https://github.com/3b1b/videos/blob/master/_2025/blocks_and_grover/"
+  },
+  "hanoi-and-sierpinski": {
+    "url": "https://www.3blue1brown.com/lessons/hanoi-and-sierpinski",
+    "article_title": "Binary, Hanoi and Sierpinski, part 1",
+    "article_desc": "How counting in binary can solve the famous Tower of Hanoi puzzle.",
+    "youtube_id": "2SUvWfNJSsM",
+    "title_en": "Binary, Hanoi and Sierpinski, part 1",
+    "description_en": "How counting in binary can solve the famous Tower of Hanoi puzzle.",
+    "date": "2016-11-25T00:00:00.000Z",
+    "github": "https://github.com/3b1b/videos/blob/master/_2016/hanoi.py"
+  }
+}

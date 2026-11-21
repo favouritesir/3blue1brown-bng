@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>মহাকাশের দূরত্বের সিঁড়ি — টেরেন্স তাও | Terence Tao on the cosmic distance ladder (3Blue1Brown Physics)</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/physics/lesson_02/manifest.js?v=1"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="পদার্থবিজ্ঞান"
+  course-url="../../index.html#physics"
+  home-url="../../index.html"
+  chapter-num="০২"
+  chapter-total="১৩"
+  prev-url="lesson_01.html"
+  prev-title="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_03.html"
+  next-title="পরবর্তী অধ্যায়"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="পদার্থবিজ্ঞান"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০২ · পদার্থবিজ্ঞান"
+  title="মহাকাশের দূরত্বের সিঁড়ি — টেরেন্স তাও | Terence Tao on the cosmic distance ladder"
+  desc="রাডার থেকে প্যারালাক্স, সেফিড তারা থেকে হাবলের সূত্র — মহাবিশ্বের দূরত্ব মাপার ধাপে ধাপে কৌশল।"
+  video-src="../../media_vault/physics/lesson_02/experiments/3b1b_physics_02_full_dubbed.mp4"
+  yt-id="YdOXS_9_P4U"
+  date="৮ ফেব্রুয়ারি, ২০২৫"
+  author="Terence Tao &amp; Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">দূরত্ব মাপার কঠিন কাজ</b1b-bookmark>
+      <b1b-bookmark time="31" time-bn="০০:৩১">প্যারালাক্স — কাছের তারার দূরত্ব</b1b-bookmark>
+      <b1b-bookmark time="67" time-bn="০১:০৭">স্ট্যান্ডার্ড ক্যান্ডেল — উজ্জ্বলতা থেকে দূরত্ব</b1b-bookmark>
+      <b1b-bookmark time="98" time-bn="০১:৩৮">ছায়াপথ ও প্রসারমাণ মহাবিশ্ব</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-cosmic-intro">দূরত্ব মাপার কঠিন কাজ</a>
+      <a href="#sec-cosmic-parallax">প্যারালাক্স — কাছের তারার দূরত্ব</a>
+      <a href="#sec-cosmic-candles">স্ট্যান্ডার্ড ক্যান্ডেল — উজ্জ্বলতা থেকে দূরত্ব</a>
+      <a href="#sec-cosmic-hubble">ছায়াপথ ও প্রসারমাণ মহাবিশ্ব</a>
+      <a href="#sec-visualizer">ইন্টারেক্টিভ ল্যাব</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ দূরত্ব মাপার কঠিন কাজ ═══ -->
+      <b1b-section id="sec-cosmic-intro" title="দূরত্ব মাপার কঠিন কাজ">
+        <p>আকাশে একটি তারা বা ছায়াপথ কত দূরে আছে, আমরা কি সরাসরি টেপ দিয়ে মাপতে পারি? অবশ্যই না। তাই বিজ্ঞানীদের তৈরি করতে হয়েছে এক ধাপের ওপর আরেক ধাপ বসানো একটি <strong>দূরত্বের সিঁড়ি (cosmic distance ladder)</strong>। প্রতিটি ধাপ আগের ধাপের ফলাফলকে ব্যবহার করে আরেকটু দূরে পৌঁছায়।</p>
+        <b1b-figure src="../../assets/figures/phys_02/fig_01.svg" alt="distance ladder" caption="সিঁড়ির মতো সাজানো বিভিন্ন দূরত্ব-মাপার পদ্ধতি"></b1b-figure>
+        <p>সবচেয়ে কাছের ধাপ হলো পৃথিবী ও সূর্যের দূরত্ব — একে বলা হয় astronomical unit বা AU। আধুনিক পদ্ধতিতে রাডার তরঙ্গ পাঠিয়ে গ্রহের দূরত্ব অত্যন্ত নিখুঁতভাবে মাপা যায়।</p>
+        <b1b-quiz
+          question="❓ একটি তারার প্যারালাক্স কোণ ০.৫ আর্কসেকেন্ড হলে দূরত্ব কত?"
+          correct="1"
+          correct-msg="সঠিক! d = 1/p, তাই ১/০.৫ = ২ পারসেক।"
+          wrong-msg="মনে রাখবেন d = 1/p — কোণ যত ছোট, দূরত্ব তত বেশি।"
+          reveal-msg="সঠিক উত্তর: ২ পারসেক।"
+          data-no-narration="true">
+          <div slot="option">০.৫ পারসেক</div>
+          <div slot="option">২ পারসেক</div>
+          <div slot="option">৫ পারসেক</div>
+          <div slot="option">০.২৫ পারসেক</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ প্যারালাক্স — কাছের তারার দূরত্ব ═══ -->
+      <b1b-section id="sec-cosmic-parallax" title="প্যারালাক্স — কাছের তারার দূরত্ব">
+        <p>আপনি যদি চোখ বদলে একই বস্তু দেখেন, কাছের জিনিসটা বেশি সরে যাওয়া মনে হয় — একেই প্যারালাক্স বলে। পৃথিবী ছয় মাসে সূর্যের চারদিকে অর্ধেক ঘুরে যায়, তাই আমরা একই তারাকে দুইটি ভিন্ন অবস্থান থেকে দেখি। যে তারা কাছে, সেটি অপেক্ষাকৃত বেশি সরে দেখায়। কোণের এই সরণ মেপে ত্রিকোণমিতি দিয়ে দূরত্ব বের করা যায়।</p>
+        <b1b-formula math="d\,(\mathrm{pc}) = \frac{1}{p\,(\mathrm{arcsec})}"></b1b-formula>
+        <b1b-figure src="../../assets/figures/phys_02/fig_02.svg" alt="stellar parallax" caption="পৃথিবীর কক্ষপথের দুই অবস্থান থেকে কাছের তারার দেখা সরণ"></b1b-figure>
+        <b1b-callout type="blue" icon="📐" title="কেন কেবল কাছের তারা?">
+          <p>দূরের তারার প্যারালাক্স কোণ এক আর্কসেকেন্ডেরও ছোট হয় — টেলিস্কোপের জন্য সেটি মাপা কঠিন। তাই পরবর্তী ধাপে নতুন কৌশল লাগবে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ স্ট্যান্ডার্ড ক্যান্ডেল — উজ্জ্বলতা থেকে দূরত্ব ═══ -->
+      <b1b-section id="sec-cosmic-candles" title="স্ট্যান্ডার্ড ক্যান্ডেল — উজ্জ্বলতা থেকে দূরত্ব">
+        <p>একটি ৬০ ওয়াটের বাল্ব কত দূরে আছে বুঝতে পারি কত উজ্জ্বল দেখাচ্ছে তা থেকে। মহাকাশেও তাই — যদি আমরা কোনো তারার <em>প্রকৃত</em> উজ্জ্বলতা জানি, তবে পৃথিবীতে সেটি যত কম উজ্জ্বল দেখাবে, বুঝব সেটি তত দূরে আছে। এরকম বস্তুকে বলা হয় স্ট্যান্ডার্ড ক্যান্ডেল।</p>
+        <p>সেফিড তারার ক্ষেত্রে হেনরিয়েটা লেভিট আবিষ্কার করেছিলেন যে এদের স্পন্দনের সময়কাল ও প্রকৃত উজ্জ্বলতার একটা নির্দিষ্ট সম্পর্ক আছে। সময়কাল মেপে উজ্জ্বলতা জানা যায়, তারপর দূরত্ব বের করা যায়।</p>
+        <b1b-formula math="m - M = 5\log_{10}\!\left(\frac{d}{10\,\mathrm{pc}}\right)"></b1b-formula>
+        <b1b-quiz
+          question="❓ সেফিড তারার কোন বৈশিষ্ট্য ব্যবহার করে দূরত্ব মাপা হয়?"
+          correct="1"
+          correct-msg="হ্যাঁ! period-luminosity সম্পর্কই সেফিডকে স্ট্যান্ডার্ড ক্যান্ডেল বানায়।"
+          wrong-msg="সেফিডের স্পন্দন সময়কাল জানলে প্রকৃত উজ্জ্বলতা জানা যায় — সেটিই চাবিকাঠি।"
+          reveal-msg="সঠিক উত্তর: স্পন্দনের সময়কাল ও উজ্জ্বলতা।"
+          data-no-narration="true">
+          <div slot="option">রঙ</div>
+          <div slot="option">স্পন্দনের সময়কাল ও উজ্জ্বলতা</div>
+          <div slot="option">আকার</div>
+          <div slot="option">তাপমাত্রা</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ ছায়াপথ ও প্রসারমাণ মহাবিশ্ব ═══ -->
+      <b1b-section id="sec-cosmic-hubble" title="ছায়াপথ ও প্রসারমাণ মহাবিশ্ব">
+        <p>খুব দূরের ছায়াপথের জন্য স্ট্যান্ডার্ড ক্যান্ডেলও দেখা যায় না। তখন কাজে লাগে হাবলের সূত্র — ছায়াপথ যত দূরে, মহাবিশ্বের প্রসারণের কারণে সেটি তত দ্রুত আমাদের থেকে দূরে সরে যাচ্ছে। এর আলোর রঙ লালের দিকে সরে যায় (redshift)। সেই সরণ মেপে দূরত্বের ধাপ আরেকটু এগিয়ে যায়।</p>
+        <b1b-formula math="v = H_0\, d"></b1b-formula>
+        <b1b-figure src="../../assets/figures/phys_02/fig_03.svg" alt="cosmic redshift" caption="দূরের ছায়াপথের আলোর রঙ লালের দিকে সরে যাচ্ছে"></b1b-figure>
+        <b1b-callout type="gold" icon="🔭" title="সিঁড়ির শেষ ধাপ">
+          <p>প্রতিটি ধাপ আগের ধাপ দ্বারা ক্যালিব্রেট করা হয়। কোনো এক ধাপে ছোট ভুল হলে পরবর্তী সব ধাপে সেটি বেড়ে যায় — তাই একাধিক পদ্ধতি দিয়ে ফলাফল যাচাই করা হয়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Interactive lab — excluded from narration ═══ -->
+      <b1b-section id="sec-visualizer" title="প্যারালাক্স সিমুলেটর — ভিন্ন অবস্থান থেকে তারার সরণ দেখুন" data-no-narration="true">
+        <p class="viz-intro">এই ইন্টারেক্টিভ ল্যাবটি ব্যবহার করে ধারণাটি নিজে পরীক্ষা করে দেখুন। প্যারামিটার বদলে ফলাফলের পরিবর্তন পর্যবেক্ষণ করুন।</p>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="3,-2"></b1b-vector-plane>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/physics/lesson_02/experiments/3b1b_physics_02_full_dubbed.mp4"
+    yt-id="YdOXS_9_P4U"
+    title="মহাকাশের দূরত্বের সিঁড়ি — টেরেন্স তাও — অধ্যায় ০২"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — পদার্থবিজ্ঞান">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_01.html"
+  prev-title="পূর্ববর্তী অধ্যায়"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_03.html"
+  next-title="পরবর্তী অধ্যায়"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

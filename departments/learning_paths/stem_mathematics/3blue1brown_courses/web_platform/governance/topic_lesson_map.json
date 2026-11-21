@@ -1,0 +1,280 @@
+{
+  "best-of": {
+    "title": "Best Of",
+    "lessons": [
+      "colliding-blocks-v2",
+      "print-gallery",
+      "holograms",
+      "cosmic-distance-1",
+      "hardest-problem",
+      "fourier-series",
+      "inscribed-rect-v2",
+      "shadows",
+      "wordle",
+      "essence-of-calculus",
+      "prime-spirals",
+      "newtons-fractal",
+      "zeta",
+      "fractal-dimension"
+    ]
+  },
+  "neural-networks": {
+    "title": "Neural Networks",
+    "lessons": [
+      "neural-networks",
+      "gradient-descent",
+      "neural-network-analysis",
+      "backpropagation",
+      "backpropagation-calculus",
+      "mini-llm",
+      "gpt",
+      "attention",
+      "mlp",
+      "cross-entropy",
+      "diffusion-models"
+    ]
+  },
+  "linear-algebra": {
+    "title": "Linear Algebra",
+    "lessons": [
+      "vectors",
+      "span",
+      "linear-transformations",
+      "matrix-multiplication",
+      "3d-transformations",
+      "determinant",
+      "inverse-matrices",
+      "nonsquare-matrices",
+      "dot-products",
+      "cross-products",
+      "cross-products-extended",
+      "cramers-rule",
+      "change-of-basis",
+      "eigenvalues",
+      "quick-eigen",
+      "abstract-vector-spaces"
+    ]
+  },
+  "calculus": {
+    "title": "Calculus",
+    "lessons": [
+      "essence-of-calculus",
+      "derivatives",
+      "derivatives-power-rule",
+      "derivatives-trig-functions",
+      "chain-rule-and-product-rule",
+      "eulers-number",
+      "implicit-differentiation",
+      "limits",
+      "epsilon-delta",
+      "l-hopitals-rule",
+      "integration",
+      "area-and-slope",
+      "higher-order-derivatives",
+      "taylor-series",
+      "taylor-series-geometric-view",
+      "derivatives-and-transforms",
+      "divergence-and-curl"
+    ]
+  },
+  "differential-equations": {
+    "title": "Differential Equations",
+    "lessons": [
+      "differential-equations",
+      "pdes",
+      "heat-equation",
+      "fourier-series",
+      "complex-exponents",
+      "laplace-transform",
+      "laplace-for-odes",
+      "eulers-formula-dynamically",
+      "matrix-exponents",
+      "exponential-and-epidemics"
+    ]
+  },
+  "analysis": {
+    "title": "Analysis",
+    "lessons": [
+      "zeta",
+      "print-gallery",
+      "fourier-transforms",
+      "uncertainty-principle",
+      "fourier-series",
+      "borwein",
+      "convolutions",
+      "winding-numbers",
+      "inventing-math",
+      "music-and-measure-theory"
+    ]
+  },
+  "physics": {
+    "title": "Physics",
+    "lessons": [
+      "holograms",
+      "cosmic-distance-1",
+      "cosmic-distance-2",
+      "barber-pole-1",
+      "barber-pole-2",
+      "prism",
+      "refractive-index-questions",
+      "light-quantum-mechanics",
+      "uncertainty-principle",
+      "feynmans-lost-lecture",
+      "turbulence",
+      "brachistochrone",
+      "snells-law"
+    ]
+  },
+  "computer-science": {
+    "title": "Computer Science",
+    "lessons": [
+      "entropy",
+      "cross-entropy",
+      "arithmetic-codes",
+      "wordle",
+      "wordle-2",
+      "bitcoin",
+      "256-bit-security",
+      "epidemic-simulations",
+      "hamming-codes",
+      "hamming-codes-2",
+      "grover",
+      "grover-clarification",
+      "hanoi-and-sierpinski"
+    ]
+  },
+  "why-pi": {
+    "title": "Why Pi",
+    "lessons": [
+      "clacks",
+      "colliding-blocks-v2",
+      "clacks-via-light",
+      "basel-problem",
+      "leibniz-formula",
+      "gaussian-integral",
+      "wallis-product",
+      "pi-was-628"
+    ]
+  },
+  "puzzles": {
+    "title": "Puzzles",
+    "lessons": [
+      "2025-p6",
+      "hardest-problem",
+      "windmills",
+      "shadows",
+      "moser-reboot",
+      "one-more-dim",
+      "subsets-puzzle",
+      "chessboard-puzzle",
+      "three-utilities",
+      "eulers-characteristic-formula"
+    ]
+  },
+  "geometry": {
+    "title": "Geometry",
+    "lessons": [
+      "sphere-area",
+      "dandelin-spheres",
+      "spheres-talk",
+      "quaternions",
+      "quaternions-and-3d-rotation",
+      "higher-dimensions"
+    ]
+  },
+  "topology": {
+    "title": "Topology",
+    "lessons": [
+      "inscribed-rect-v2",
+      "hairy-ball",
+      "borsuk-ulam"
+    ]
+  },
+  "fractals": {
+    "title": "Fractals",
+    "lessons": [
+      "newtons-fractal",
+      "holomorphic-dynamics",
+      "fractal-dimension",
+      "hilbert-curve"
+    ]
+  },
+  "probability": {
+    "title": "Probability",
+    "lessons": [
+      "bayes-theorem",
+      "clt",
+      "gaussian-integral",
+      "convolutions2",
+      "gaussian-convolution",
+      "better-bayes",
+      "bayes-theorem-quick",
+      "binomial-distributions",
+      "pdfs"
+    ]
+  },
+  "group-theory": {
+    "title": "Group Theory",
+    "lessons": [
+      "groups-and-monsters",
+      "eulers-formula-via-group-theory"
+    ]
+  },
+  "number-theory": {
+    "title": "Number Theory",
+    "lessons": [
+      "prime-spirals",
+      "pythagorean-triples",
+      "leibniz-formula"
+    ]
+  },
+  "lockdown-math": {
+    "title": "Lockdown Math",
+    "lessons": [
+      "lockdown-math-announcement",
+      "ldm-quadratic",
+      "ldm-trigonometry",
+      "ldm-complex-numbers",
+      "ldm-eulers-formula",
+      "ldm-imaginary-interest",
+      "ldm-logarithms",
+      "ldm-natural-logs",
+      "ldm-power-towers",
+      "ldm-i-to-i",
+      "ldm-tips-to-problem-solving"
+    ]
+  },
+  "guest-videos": {
+    "title": "Guest Videos",
+    "lessons": [
+      "diffusion-models",
+      "incomplete-cubes",
+      "phase-change",
+      "alpha-geometry",
+      "euclid"
+    ]
+  },
+  "talks": {
+    "title": "Talks",
+    "lessons": [
+      "harvey-mudd-speech",
+      "tedx-talk",
+      "transformers-talk",
+      "pedagogical-curse",
+      "ego-and-math"
+    ]
+  },
+  "videos-elsewhere": {
+    "title": "On other channels",
+    "lessons": [
+      "bertrands-paradox",
+      "hyperdarts",
+      "prime-number-race",
+      "feynmans-lost-lecture",
+      "image-convolution",
+      "seam-carving",
+      "discrete-fourier-transform",
+      "diffusion-equation"
+    ]
+  }
+}

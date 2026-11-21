@@ -1,0 +1,192 @@
+{
+  "experiment": "clean_timesync_v2 (lockdown_math/lesson_03_3b1b NEW experiment folder; official 3Blue1Brown 8idr1WZ1A7Q source; full-length, improved fill, scale recomputed from rendered speech)",
+  "lesson": "lesson_03",
+  "course": "lockdown_math",
+  "video_id": "8idr1WZ1A7Q",
+  "script_source": "audio_manifest:manifest.json (alias-deduped)",
+  "cue_count": 5,
+  "expected_cue_count": 5,
+  "failed_tts_cues": [],
+  "strategy": "absolute sample offset (start*44100); atempo fit floor 0.82; pad only; no truncation",
+  "sfx": "NONE - clean speech only",
+  "voice": "bn-BD-PradeepNeural",
+  "min_tempo": 0.82,
+  "max_tempo": 2.2,
+  "overrun_cues": 0,
+  "max_measured_drift_ms": 0.01,
+  "timeline_scale": 1.162647,
+  "timeline_scale_initial_manifest": 3.002747,
+  "scale_recomputed_from_rendered_speech": true,
+  "rendered_natural_speech_total_sec": 643.728,
+  "render_rounds": 2,
+  "lead_in_sec": 2.5,
+  "tail_margin_sec": 3.0,
+  "video_duration_sec": 753.929,
+  "master_audio_duration_sec": 753.929,
+  "last_cue_end_sec": 750.929,
+  "tail_silence_sec": 3.0,
+  "speech_ends_before_video_end": true,
+  "fill_policy": {
+    "expand_trigger_ratio": 0.62,
+    "expand_target_fill": 0.85,
+    "median_fill": 0.9997,
+    "median_fill_target": 0.72,
+    "median_fill_ok": true,
+    "max_internal_gap_s": 1.4325,
+    "max_internal_gap_target": 1.5,
+    "max_internal_gap_ok": true
+  },
+  "quality_gate": {
+    "median_fill_ok": true,
+    "max_internal_gap_ok": true,
+    "passed": true
+  },
+  "median_fill": 0.9997,
+  "max_internal_gap_s": 1.4325,
+  "expanded_cues": [
+    {
+      "id": 1,
+      "section": "sec-01-coin-toss-foundations",
+      "round": "quality_gate",
+      "sentences_added": 4,
+      "final_chars": 1798,
+      "natural_before": 91.728,
+      "natural_after": 120.792
+    },
+    {
+      "id": 2,
+      "section": "sec-02-combinations-and-paths",
+      "round": "quality_gate",
+      "sentences_added": 4,
+      "final_chars": 1913,
+      "natural_before": 105.552,
+      "natural_after": 133.584
+    },
+    {
+      "id": 3,
+      "section": "sec-03-pascals-triangle",
+      "round": "quality_gate",
+      "sentences_added": 4,
+      "final_chars": 1929,
+      "natural_before": 99.912,
+      "natural_after": 129.288
+    }
+  ],
+  "cues": [
+    {
+      "id": 1,
+      "section": "sec-01-coin-toss-foundations",
+      "expected_start_ms": 2500.0,
+      "actual_start_ms": 2500.0,
+      "drift_ms": 0.0,
+      "tempo": 0.8601,
+      "natural_sec": 120.792,
+      "target_sec": 140.439,
+      "fit_samples": 6190924,
+      "window_samples": 6193360,
+      "fill": 0.9996,
+      "max_internal_gap_s": 1.303,
+      "placed_samples": 6193360,
+      "expanded": true
+    },
+    {
+      "id": 2,
+      "section": "sec-02-combinations-and-paths",
+      "expected_start_ms": 142939.0,
+      "actual_start_ms": 142939.0,
+      "drift_ms": 0.0,
+      "tempo": 0.8601,
+      "natural_sec": 133.584,
+      "target_sec": 155.311,
+      "fit_samples": 6846880,
+      "window_samples": 6849215,
+      "fill": 0.9997,
+      "max_internal_gap_s": 1.3403,
+      "placed_samples": 6849215,
+      "expanded": true
+    },
+    {
+      "id": 3,
+      "section": "sec-03-pascals-triangle",
+      "expected_start_ms": 298250.0,
+      "actual_start_ms": 298250.0,
+      "drift_ms": 0.0,
+      "tempo": 0.8601,
+      "natural_sec": 129.288,
+      "target_sec": 150.316,
+      "fit_samples": 6626625,
+      "window_samples": 6628936,
+      "fill": 0.9997,
+      "max_internal_gap_s": 1.325,
+      "placed_samples": 6628936,
+      "expanded": true
+    },
+    {
+      "id": 4,
+      "section": "sec-04-binomial-pmf-and-moments",
+      "expected_start_ms": 448566.0,
+      "actual_start_ms": 448566.01,
+      "drift_ms": 0.01,
+      "tempo": 0.8601,
+      "natural_sec": 113.496,
+      "target_sec": 131.956,
+      "fit_samples": 5816881,
+      "window_samples": 5819260,
+      "fill": 0.9996,
+      "max_internal_gap_s": 1.2678,
+      "placed_samples": 5819260,
+      "expanded": false
+    },
+    {
+      "id": 5,
+      "section": "sec-05-galton-board-and-clt",
+      "expected_start_ms": 580522.0,
+      "actual_start_ms": 580522.0,
+      "drift_ms": 0.0,
+      "tempo": 0.8601,
+      "natural_sec": 146.568,
+      "target_sec": 170.407,
+      "fit_samples": 7512591,
+      "window_samples": 7514949,
+      "fill": 0.9997,
+      "max_internal_gap_s": 1.4325,
+      "placed_samples": 7514949,
+      "expanded": false
+    }
+  ],
+  "source_metadata_note": "SOURCE FIXED. This dub uses the OFFICIAL 3Blue1Brown source 8idr1WZ1A7Q ('Binomial distributions | Probabilities of probabilities, part 1', oEmbed author_name=3Blue1Brown), downloaded with yt-dlp into lesson_03/original_source and ffprobe-verified as h264 1920x1080 + aac, ~753.929 s. This REPLACES the wrong third-party id bT1p5tJwn_0 (jbstatistics, 'Introduction to the Bernoulli Distribution', 301.794 s, AV1+Opus), whose earlier output was preserved as 3b1b_lockdown_03_full_dubbed_jbstatistics_replaced.mp4. The ~1:07:30 duration in lesson_03.json is stale metadata and was deliberately left untouched; the real video is ~754 s. Teacher audio/manifests, data JSON and other lessons were not modified.",
+  "source_probe": {
+    "container_duration_sec": 753.929,
+    "video_stream_codec": "h264",
+    "video_width": 1920,
+    "video_height": 1080,
+    "audio_stream_codec": "aac"
+  },
+  "youtube_oembed": {
+    "title": "Binomial distributions | Probabilities of probabilities, part 1",
+    "author_name": "3Blue1Brown",
+    "author_url": "https://www.youtube.com/@3blue1brown",
+    "video_id": "8idr1WZ1A7Q",
+    "oembed_url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=8idr1WZ1A7Q&format=json"
+  },
+  "source_verified_3blue1brown": true,
+  "wrong_id_replaced": "bT1p5tJwn_0",
+  "output_video": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\lockdown_math\\lesson_03\\experiments\\3b1b_lockdown_03_full_dubbed.mp4",
+  "output_duration_sec": 753.867,
+  "output_size_bytes": 45429923,
+  "output_streams": [
+    {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_type": "video"
+    },
+    {
+      "index": 1,
+      "codec_name": "aac",
+      "codec_type": "audio"
+    }
+  ],
+  "volumedetect_intro_0_2s_db": -91.0,
+  "volumedetect_final_2s_db": -91.0,
+  "volumedetect_mid_30_32s_db": -19.7
+}

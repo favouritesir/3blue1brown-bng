@@ -1,0 +1,41 @@
+{
+  "version": "4.0-acoustic-delimited-synced",
+  "output_file": "D:\\0PEN CODE\\Dub Studio\\departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\rendered_output\\Steve_and_Maggie_EGM_V4_Acoustic_Delimited_Synced.mp4",
+  "master_wav": "D:\\0PEN CODE\\Dub Studio\\departments\\media_production\\youtube_channels\\wow_english\\kids_education\\steve_and_maggie_school_stories_senses\\rendered_output\\Steve_and_Maggie_EGM_V4_Master_Audio.wav",
+  "size_mb": 10.33,
+  "duration": 213.530703,
+  "video_stream": {
+    "codec": "h264",
+    "width": 640,
+    "height": 360,
+    "fps": "25/1"
+  },
+  "audio_stream": {
+    "codec": "aac",
+    "channels": 2,
+    "sample_rate": "44100",
+    "bit_rate": "152907"
+  },
+  "ebur128_compliance": {
+    "integrated_lufs": -14.0,
+    "target_lufs": -14.0,
+    "true_peak_dbtp": -1.0,
+    "target_tp_dbtp": -1.0,
+    "loudness_range_lu": 6.6,
+    "pass": true
+  },
+  "voice_engine": "Google AI Studio Voice Engine (gemini-3.8-flash-tts)",
+  "casting_audit": {
+    "Steve": {
+      "voice": "Orus",
+      "total_cues": 40,
+      "status": "LOCKED_STABLE"
+    },
+    "Maggie": {
+      "voice": "Aoede",
+      "total_cues": 8,
+      "status": "LOCKED_STABLE"
+    }
+  },
+  "total_cues_synchronized": 48
+}

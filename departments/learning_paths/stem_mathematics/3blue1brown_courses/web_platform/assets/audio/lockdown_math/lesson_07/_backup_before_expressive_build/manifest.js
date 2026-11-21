@@ -1,0 +1,68 @@
+window.TEACHER_AUDIO_MANIFEST = {
+  "course": "lockdown_math",
+  "lesson": "lesson_07",
+  "voice": "bn-BD-PradeepNeural",
+  "mode": "authentic_teacher",
+  "sections": {
+    "sec-01-circle-unwrapping": {
+      "title": "১. বৃত্তকে বলয়ে কাটা ও ত্রিভুজে উন্মোচন",
+      "audio_file": "sec-01-circle-unwrapping.mp3",
+      "total_duration_ms": 4118.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "১. বৃত্তকে বলয়ে কাটা ও ত্রিভুজে উন্মোচন",
+          "start_ms": 0.0,
+          "end_ms": 3768.0,
+          "duration_ms": 3768.0
+        }
+      ]
+    },
+    "sec-02-derivative-connection": {
+      "title": "২. পরিবর্তনের হার ও ডেরিভেটিভের জ্যামিতিক অর্থ",
+      "audio_file": "sec-02-derivative-connection.mp3",
+      "total_duration_ms": 4478.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "২. পরিবর্তনের হার ও ডেরিভেটিভের জ্যামিতিক অর্থ",
+          "start_ms": 0.0,
+          "end_ms": 4128.0,
+          "duration_ms": 4128.0
+        }
+      ]
+    },
+    "sec-03-sphere-volume-surface": {
+      "title": "৩. ত্রিমাত্রিক গোলক: আয়তন ও পৃষ্ঠতলের ক্ষেত্রফল",
+      "audio_file": "sec-03-sphere-volume-surface.mp3",
+      "total_duration_ms": 4526.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "৩. ত্রিমাত্রিক গোলক: আয়তন ও পৃষ্ঠতলের ক্ষেত্রফল",
+          "start_ms": 0.0,
+          "end_ms": 4176.0,
+          "duration_ms": 4176.0
+        }
+      ]
+    },
+    "sec-04-square-contrast": {
+      "title": "৪. বর্গের সাথে তুলনা: কেন x² এর ডেরিভেটিভ 2x?",
+      "audio_file": "sec-04-square-contrast.mp3",
+      "total_duration_ms": 4646.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "৪. বর্গের সাথে তুলনা: কেন x² এর ডেরিভেটিভ 2x?",
+          "start_ms": 0.0,
+          "end_ms": 4296.0,
+          "duration_ms": 4296.0
+        }
+      ]
+    }
+  }
+};

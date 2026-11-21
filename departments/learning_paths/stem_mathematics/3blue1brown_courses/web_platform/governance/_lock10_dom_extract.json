@@ -1,0 +1,263 @@
+{
+  "sectionEls": [
+    {
+      "id": "sec-01-quadratic-symmetry",
+      "noNarration": null
+    },
+    {
+      "id": "sec-02-depressed-cubic",
+      "noNarration": null
+    },
+    {
+      "id": "sec-03-cardano-formula",
+      "noNarration": null
+    },
+    {
+      "id": "sec-04-quintic-wall",
+      "noNarration": null
+    },
+    {
+      "id": "sec-interactive-lab",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-quizzes",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-formulas-glossary",
+      "noNarration": "true"
+    },
+    {
+      "id": "sec-video-disclosure",
+      "noNarration": "true"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-01-quadratic-symmetry",
+      "title": "১. দ্বিঘাতের সরল প্রতিসাম্য: গড় ও দূরত্বের খেলা",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "১. দ্বিঘাতের সরল প্রতিসাম্য: গড় ও দূরত্বের খেলা"
+        },
+        {
+          "type": "chapter-quote",
+          "text": "\"\n\nবহুপদী সমীকরণ সমাধান কোনো যান্ত্রিক সূত্র খোঁজা নয়; এটি হলো জটিল সমতলে মূলগুলোর মধ্যকার অভ্যন্তরীণ প্রতিসাম্যের নৃত্য আবিষ্কার করা।\n\n— গ্রান্ট স্যান্ডারসন (Grant Sanderson), Lockdown Math, Lesson 10"
+        },
+        {
+          "type": "p",
+          "text": "অধ্যায় ০১-এ আমরা দেখেছি কীভাবে একটি দ্বিঘাত সমীকরণ \n𝑥\n2\n−\n2\n𝑚\n𝑥\n+\n𝑝\n=\n0\nx\n2\n−2mx+p=0 অন্ধভাবে সূত্র মুখস্থ না করে জ্যামিতিক প্রতিসাম্য দিয়ে মুহূর্তেই সমাধান করা যায়।"
+        },
+        {
+          "type": "p",
+          "text": "এই ক্লিপটি দ্বিঘাত সমীকরণের সাথে সম্পর্কিত; এটি এই পাঠের মূল ভিডিও নয়। ডেটার ভুল id LqbZpur38nw (\"Beyond Mandelbrot\") এখানে ব্যবহার করা হয়নি।"
+        },
+        {
+          "type": "p",
+          "text": "প্যারাবোলার প্রতিসাম্য অক্ষ অবস্থান করে মূলদ্বয়ের ঠিক মাঝখানে, অর্থাৎ গড় বিন্দু \n𝑚\nm-এ। যদি মূল দুটি হয় \n𝑚\n−\n𝑑\nm−d এবং \n𝑚\n+\n𝑑\nm+d, তবে তাদের গুণফল দাঁড়ায় \n(\n𝑚\n−\n𝑑\n)\n(\n𝑚\n+\n𝑑\n)\n=\n𝑚\n2\n−\n𝑑\n2\n=\n𝑝\n(m−d)(m+d)=m\n2\n−d\n2\n=p। এখান থেকে বিচ্যুতির মান সরাসরি পাওয়া যায় \n𝑑\n=\n𝑚\n2\n−\n𝑝\nd=\nm\n2\n−p\n\t​\n\n।"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑥\n2\n+\n𝑏\n𝑥\n+\n𝑐\n=\n0\n⟹\n𝑚\n=\n−\n𝑏\n2\n,\n𝑑\n=\n𝑚\n2\n−\n𝑐\n⟹\n𝑥\n=\n𝑚\n±\n𝑑\nx\n2\n+bx+c=0⟹m=−\n2\nb\n\t​\n\n,d=\nm\n2\n−c\n\t​\n\n⟹x=m±d"
+        },
+        {
+          "type": "p",
+          "text": "এই সহজ জ্যামিতিক ধারণাটি আমাদের শেখায় একটি মৌলিক পাঠ: যেকোনো বহুপদী সমীকরণকে তার সর্বোচ্চ ঘাতের ঠিক নিচের পদটি দূর করার মতো করে স্থানান্তর করলে সমস্যাটি অবিশ্বাস্য রকম সহজ হয়ে যায়।"
+        },
+        {
+          "type": "callout-gold",
+          "text": "💡 মূল ভাবনা\n\nসর্বোচ্চ ঘাতের ঠিক নিচের পদটির সহগ আসলে সমস্ত মূলের যোগফলের বিপরীত নির্দেশ করে। একে কেন্দ্রে নিয়ে আসা মানে মূলগুলোর যোগফলকে শূন্য বানানো।"
+        }
+      ]
+    },
+    {
+      "id": "sec-02-depressed-cubic",
+      "title": "২. ডিপ্রেসড কিউবিক: x² পদ অপসারণের চিশিরনহাউস কৌশল",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "২. ডিপ্রেসড কিউবিক: x² পদ অপসারণের চিশিরনহাউস কৌশল"
+        },
+        {
+          "type": "p",
+          "text": "একটি সাধারণ ত্রিঘাত সমীকরণের চেহারা হলো \n𝑥\n3\n+\n𝑎\n𝑥\n2\n+\n𝑏\n𝑥\n+\n𝑐\n=\n0\nx\n3\n+ax\n2\n+bx+c=0। এখানে \n𝑥\n2\nx\n2\n পদটি থাকায় সরাসরি সমাধান করা অত্যন্ত জটিল হয়ে পড়ে।"
+        },
+        {
+          "type": "p",
+          "text": "উচ্চতর বহুপদীর জন্য কোনো নিজস্ব ৩ব্লু১ব্রাউন ভিডিও নেই; এটি শুধুই একটি সম্পর্কিত ক্লিপ।"
+        },
+        {
+          "type": "p",
+          "text": "কিন্তু ঠিক যেভাবে দ্বিঘাতে আমরা \n𝑥\n=\n𝑡\n−\n𝑏\n2\nx=t−\n2\nb\n\t​\n\n ধরেছিলাম, ত্রিঘাতের ক্ষেত্রে তিনটি মূলের গড় হলো \n−\n𝑎\n3\n−\n3\na\n\t​\n\n। সুতরাং যদি আমরা চলক পরিবর্তন করে ধরি \n𝑥\n=\n𝑡\n−\n𝑎\n3\nx=t−\n3\na\n\t​\n\n, তবে সমীকরণটি স্থানান্তরিত হয়ে এমন একটি নতুন রূপে রূপ নেয় যেখানে \n𝑡\n2\nt\n2\n পদটি পুরোপুরি গায়েব হয়ে যায়!"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑥\n=\n𝑡\n−\n𝑎\n3\n⟹\n𝑡\n3\n+\n𝑝\n𝑡\n+\n𝑞\n=\n0\n,\n𝑝\n=\n𝑏\n−\n𝑎\n2\n3\n,\n𝑞\n=\n𝑐\n−\n𝑎\n𝑏\n3\n+\n2\n𝑎\n3\n27\nx=t−\n3\na\n\t​\n\n⟹t\n3\n+pt+q=0,p=b−\n3\na\n2\n\t​\n\n,q=c−\n3\nab\n\t​\n\n+\n27\n2a\n3\n\t​"
+        },
+        {
+          "type": "p",
+          "text": "এই রূপান্তরিত রূপটিকে বলা হয় ডিপ্রেসড কিউবিক (Depressed Cubic): \n𝑡\n3\n+\n𝑝\n𝑡\n+\n𝑞\n=\n0\nt\n3\n+pt+q=0। এটি পুরো সমস্যাকে একটি একক মাত্রিক জটিলতায় নামিয়ে আনে, যা সমাধানের পথ উন্মুক্ত করে।"
+        },
+        {
+          "type": "callout-gold",
+          "text": "🔁 স্থানান্তরের শক্তি\n\nযেকোনো n-ঘাতের বহুপদীতে \n𝑥\n=\n𝑡\n−\n𝑎\n𝑛\n−\n1\n𝑛\n⋅\n𝑎\n𝑛\nx=t−\nn⋅a\nn\n\t​\n\na\nn−1\n\t​\n\n\t​\n\n প্রতিস্থাপন করলে \n𝑡\n𝑛\n−\n1\nt\nn−1\n পদটি চিরতরে বিলুপ্ত হয়।"
+        }
+      ]
+    },
+    {
+      "id": "sec-03-cardano-formula",
+      "title": "৩. কার্দানোর কৌশল ও কাল্পনিক সংখ্যার ঐতিহাসিক জন্ম",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "৩. কার্দানোর কৌশল ও কাল্পনিক সংখ্যার ঐতিহাসিক জন্ম"
+        },
+        {
+          "type": "p",
+          "text": "ষোড়শ শতাব্দীতে স্কিপিওনে দেল ফেরো, তার্তালিয়া এবং জিরোলামো কার্দানো এই ডিপ্রেসড কিউবিক সমাধানের এক অবিস্মরণীয় কৌশল আবিষ্কার করেন।"
+        },
+        {
+          "type": "p",
+          "text": "কার্দানোর ত্রিঘাত পদ্ধতির কোনো নিজস্ব ৩ব্লু১ব্রাউন ভিডিও নেই; ক্লিপটি শুধু সম্পর্কিত।"
+        },
+        {
+          "type": "p",
+          "text": "কার্দানো প্রস্তাব করলেন: অজানা সংখ্যা \n𝑡\nt-কে দুটি রাশির যোগফল হিসেবে ভাবা যাক—\n𝑡\n=\n𝑢\n+\n𝑣\nt=u+v। এটি ঘন করলে পাওয়া যায় \n(\n𝑢\n+\n𝑣\n)\n3\n=\n𝑢\n3\n+\n𝑣\n3\n+\n3\n𝑢\n𝑣\n(\n𝑢\n+\n𝑣\n)\n(u+v)\n3\n=u\n3\n+v\n3\n+3uv(u+v)। অতএব \n𝑡\n3\n−\n3\n𝑢\n𝑣\n⋅\n𝑡\n−\n(\n𝑢\n3\n+\n𝑣\n3\n)\n=\n0\nt\n3\n−3uv⋅t−(u\n3\n+v\n3\n)=0।"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑡\n=\n−\n𝑞\n2\n+\n𝑞\n2\n4\n+\n𝑝\n3\n27\n3\n+\n−\n𝑞\n2\n−\n𝑞\n2\n4\n+\n𝑝\n3\n27\n3\nt=\n3\n−\n2\nq\n\t​\n\n+\n4\nq\n2\n\t​\n\n+\n27\np\n3\n\t​\n\n\t​\n\n\t​\n\n+\n3\n−\n2\nq\n\t​\n\n−\n4\nq\n2\n\t​\n\n+\n27\np\n3\n\t​\n\n\t​\n\n\t​"
+        },
+        {
+          "type": "p",
+          "text": "এখন যদি আমরা এটিকে আমাদের মূল সমীকরণ \n𝑡\n3\n+\n𝑝\n𝑡\n+\n𝑞\n=\n0\nt\n3\n+pt+q=0 এর সাথে মেলানোর জন্য শর্ত ধরি \n3\n𝑢\n𝑣\n=\n−\n𝑝\n3uv=−p (বা \n𝑢\n𝑣\n=\n−\n𝑝\n/\n3\nuv=−p/3) এবং \n𝑢\n3\n+\n𝑣\n3\n=\n−\n𝑞\nu\n3\n+v\n3\n=−q, তবে আমরা \n𝑢\n3\nu\n3\n এবং \n𝑣\n3\nv\n3\n এর যোগফল ও গুণফল পেয়ে যাই! আর যোগফল ও গুণফল জানা থাকলে তা সরাসরি একটি দ্বিঘাত সমীকরণ দিয়ে সমাধান করা যায়।"
+        },
+        {
+          "type": "p",
+          "text": "সবচেয়ে অবিশ্বাস্য বিষয় হলো: যখন সমীকরণটির তিনটি মূলই পুরোপুরি বাস্তব সংখ্যা হয় (Casus Irreducibilis), তখনও কার্দানোর সূত্রে বর্গমূলের ভেতরে ঋণাত্মক সংখ্যা (\n−\n1\n−1\n\t​\n\n) চলে আসে! গণিতবিদরা বাধ্য হয়ে এই কাল্পনিক সংখ্যা নিয়ে কাজ শুরু করেন এবং দেখেন হিসাব শেষে কাল্পনিক অংশ কেটে গিয়ে আবার খাঁটি বাস্তব সংখ্যাই ফেরত আসে—এভাবেই জন্ম নেয় জটিল সংখ্যার মহাবিশ্ব।"
+        },
+        {
+          "type": "callout-gold",
+          "text": "🌀 ঐতিহাসিক মোড়\n\nদ্বিঘাত সমীকরণ নয়, বরং ত্রিঘাতের বাস্তব সমাধান বের করতেই গণিতে কাল্পনিক সংখ্যা \n𝑖\ni অপরিহার্য হয়ে উঠেছিল।"
+        }
+      ]
+    },
+    {
+      "id": "sec-04-quintic-wall",
+      "title": "৪. ৫ ঘাতের অলঙ্ঘনীয় দেয়াল: অ্যাবেল ও গ্যালোয়ার প্রতিসাম্য",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "৪. ৫ ঘাতের অলঙ্ঘনীয় দেয়াল: অ্যাবেল ও গ্যালোয়ার প্রতিসাম্য"
+        },
+        {
+          "type": "p",
+          "text": "ত্রিঘাতের পর ফেরারি দ্রুত চতুর্ঘাত (degree 4) সমীকরণের সমাধানও বের করে ফেলেন। স্বভাবতই গণিতবিদরা বিশ্বাস করতে শুরু করেন যে ৫ ঘাত (quintic), ৬ ঘাত বা যেকোনো ঘাতের জন্যই নিশ্চয়ই এমন চমৎকার কোনো বীজগণিতীয় সূত্র বিদ্যমান রয়েছে।"
+        },
+        {
+          "type": "p",
+          "text": "গ্যালোয়া তত্ত্ব বা পঞ্চঘাতের ওপর কোনো নিজস্ব ৩ব্লু১ব্রাউন ভিডিও নেই; ক্লিপটি শুধু সম্পর্কিত।"
+        },
+        {
+          "type": "p",
+          "text": "কিন্তু প্রায় তিন শতাব্দী ধরে পৃথিবীর সেরা প্রতিভারা চেষ্টা করেও ৫ ঘাতের সাধারণ সূত্র আবিষ্কার করতে পারেননি। অবশেষে ১৯ শতকের শুরুতে নিলস হেনরিক অ্যাবেল এবং প্রতিভাবান তরুণ এভারিস্ত গ্যালোয়া প্রমাণ করেন এক অবিশ্বাস্য সত্য: ৫ বা তদূর্ধ্ব ঘাতের সাধারণ বহুপদী সমীকরণের জন্য এমন কোনো সূত্র তৈরি করা মানুষের পক্ষে সম্ভব নয়—কারণ গণিতের নিয়মেই তা অসম্ভব!"
+        },
+        {
+          "type": "formula-box",
+          "text": "𝑎\n5\n𝑥\n5\n+\n𝑎\n4\n𝑥\n4\n+\n𝑎\n3\n𝑥\n3\n+\n𝑎\n2\n𝑥\n2\n+\n𝑎\n1\n𝑥\n+\n𝑎\n0\n=\n0\n\\centernot\n⟹\n𝑥\n=\nRadical Formula\n(\n𝑎\n𝑖\n)\na\n5\n\t​\n\nx\n5\n+a\n4\n\t​\n\nx\n4\n+a\n3\n\t​\n\nx\n3\n+a\n2\n\t​\n\nx\n2\n+a\n1\n\t​\n\nx+a\n0\n\t​\n\n=0\\centernot⟹x=Radical Formula(a\ni\n\t​\n\n)"
+        },
+        {
+          "type": "p",
+          "text": "গ্যালোয়া জটিল সমতলে মূলগুলোর স্থানান্তর ও বিন্যাসের প্রতিসাম্য বিশ্লেষণ করে দেখান যে, ৫টি মূলের বিন্যাস গ্রুপ \n𝑆\n5\nS\n5\n\t​\n\n (Symmetric group on 5 elements) একটি 'সমাধানযোগ্য গ্রুপ' (Solvable group) নয়। মূল-চিহ্ন (\n⋅\n𝑛\nn\n⋅\n\t​\n\n) নেওয়া মানে প্রতিসাম্যকে স্তরে স্তরে খণ্ডন করা, কিন্তু \n𝑆\n5\nS\n5\n\t​\n\n গ্রুপের ভেতরে একটি অবিভাজ্য জটিল ঘূর্ণন প্রতিসাম্য রয়েছে যাকে কেবল মূল-চিহ্ন দিয়ে কখনোই আলাদা করা যায় না।"
+        },
+        {
+          "type": "callout-gold",
+          "text": "🧱 গণিতের গভীরতম শিক্ষা\n\nএকটি সূত্র খুঁজে না পাওয়া মানে আমাদের মেধার অভাব নয়; কখনো কখনো প্রকৃতি নিজেই তার অভ্যন্তরীণ প্রতিসাম্যের কারণে সূত্রের পথ বন্ধ করে রাখে।"
+        }
+      ]
+    }
+  ],
+  "engine": [
+    {
+      "id": "sec-01-quadratic-symmetry",
+      "blockCount": 8,
+      "types": [
+        "h2",
+        "chapter-quote",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "p",
+        "callout"
+      ]
+    },
+    {
+      "id": "sec-02-depressed-cubic",
+      "blockCount": 7,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "p",
+        "callout"
+      ]
+    },
+    {
+      "id": "sec-03-cardano-formula",
+      "blockCount": 8,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "p",
+        "p",
+        "callout"
+      ]
+    },
+    {
+      "id": "sec-04-quintic-wall",
+      "blockCount": 7,
+      "types": [
+        "h2",
+        "p",
+        "p",
+        "p",
+        "formula-box",
+        "p",
+        "callout"
+      ]
+    }
+  ],
+  "manifestPresent": true,
+  "manifestKeys": [
+    "sec-01-quadratic-symmetry",
+    "sec-02-depressed-cubic",
+    "sec-03-cardano-formula",
+    "sec-04-quintic-wall"
+  ],
+  "page_errors": [],
+  "console_errors": [
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+    "Failed to load resource: net::ERR_FILE_NOT_FOUND"
+  ]
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180" viewBox="0 0 320 180">
+<rect width="320" height="180" rx="10" fill="#10131c"/>
+<line x1="20" y1="90" x2="300" y2="90" stroke="#4ade80" stroke-width="2"/><line x1="40" y1="83" x2="40" y2="97" stroke="#4ade80"/><line x1="80" y1="83" x2="80" y2="97" stroke="#4ade80"/><line x1="120" y1="83" x2="120" y2="97" stroke="#4ade80"/><line x1="160" y1="83" x2="160" y2="97" stroke="#4ade80"/><line x1="200" y1="83" x2="200" y2="97" stroke="#4ade80"/><line x1="240" y1="83" x2="240" y2="97" stroke="#4ade80"/><line x1="280" y1="83" x2="280" y2="97" stroke="#4ade80"/>
+<text x="160" y="174" text-anchor="middle" fill="#9fb3c8" font-size="12" font-family="sans-serif">যোগ-গ্রুপ থেকে গুণ-গ্রুপে গঠন-সংরক্ষণকারী মানচ</text>
+</svg>

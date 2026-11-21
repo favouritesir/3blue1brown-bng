@@ -1,0 +1,138 @@
+{
+  "lesson_id": "lesson_01",
+  "chapter_num": 1,
+  "course_id": "why_pi",
+  "title_en": "The most unexpected answer to a counting puzzle",
+  "title_bn": "একটি গণনার ধাঁধার সবচেয়ে অপ্রত্যাশিত উত্তর",
+  "subtitle_bn": "দুটি স্লাইডিং ব্লক আর একটি দেয়াল—এই সাদামাটা সেটআপ থেকে কীভাবে পাইয়ের (π) অঙ্কগুলো ধ ধ করে বেরিয়ে আসে",
+  "official_url": "https://www.3blue1brown.com/lessons/clacks",
+  "video_src": "../../media_vault/why_pi/lesson_01/experiments/3b1b_why_pi_01_full_dubbed.mp4",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "5:30",
+    "date": "১৩ জানুয়ারি, ২০১৯",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "Where there is π, there is a hidden circle.",
+    "quote_bn": "যেখানে পাই আছে, সেখানে একটা লুকোনো বৃত্তও আছে।",
+    "author": "Grant Sanderson"
+  },
+  "sections": [
+    {
+      "id": "sec-setup",
+      "title_bn": "ধাঁধাটির সেটআপ",
+      "title_en": "The Setup of the Puzzle",
+      "summary_bn": "দুটি ব্লক, একটি দেয়াল, ঘর্ষণহীন পৃষ্ঠ এবং সম্পূর্ণ স্থিতিস্থাপক সংঘর্ষ— এই আদর্শ পরিস্থিতিতেও ফলাফল কী হবে তা এক নজরে বোঝা যায় না।",
+      "key_takeaways": [
+        "বড় ব্লকটি ডান থেকে একটি নির্দিষ্ট বেগে আসে, ছোট ব্লকটি প্রথমে স্থির থাকে এবং বাঁ দিকে একটি দেয়াল থাকে।",
+        "ঘর্ষণ নেই এবং প্রতিটি সংঘর্ষ সম্পূর্ণ স্থিতিস্থাপক—অর্থাৎ শক্তির কোনো ক্ষতি হয় না।",
+        "দুটি ব্লকের ভর সমান হলে মোট তিনবার সংঘর্ষ হয়: একবার ব্লকদ্বয়ের মধ্যে, একবার দেয়ালে, আবার একবার ব্লকদ্বয়ের মধ্যে।"
+      ],
+      "formulas": [
+        {
+          "label": "সমান ভরের ক্ষেত্রে মোট ধ্বনি (clack)",
+          "katex": "N = 3 \\quad (m_1 = m_2)"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_clacks_setup",
+          "caption_bn": "দেয়াল, ছোট ব্লক ও বড় ব্লক—ধাঁধাটির আদি অবস্থা",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_01/fig_clacks_setup.svg"
+        },
+        {
+          "id": "fig_clacks_equal",
+          "caption_bn": "সমান ভরের ব্লক: মোট তিনটি সংঘর্ষ",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_01/fig_clacks_equal.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-pattern",
+      "title_bn": "অঙ্কগুলোর অপ্রত্যাশিত প্যাটার্ন",
+      "title_en": "The Unexpected Digit Pattern",
+      "summary_bn": "ভরের অনুপাত ১০০-এর ঘাত হলে সংঘর্ষের সংখ্যা পাইয়ের প্রথম অঙ্কগুলোর সাথে মেলে—একটি সম্পূর্ণ অবিশ্বাস্য আবিষ্কার।",
+      "key_takeaways": [
+        "ভর অনুপাত ১০০ : ১ হলে ৩১টি সংঘর্ষ; ১০,০০০ : ১ হলে ৩১৪টি; ১০,০০,০০০ : ১ হলে ৩,১৪১টি।",
+        "এই সংখ্যাগুলো π ≈ 3.14159… এর প্রথম অঙ্কগুলোর ঠিক মতোই।",
+        "Gregory Galperin ১৯৯৫ সালে এই ঘটনাটি আবিষ্কার করেন এবং ২০০৩ সালে প্রকাশ করেন।"
+      ],
+      "formulas": [
+        {
+          "label": "ভর অনুপাত ১০০^(d−1) হলে d অঙ্ক",
+          "katex": "\\frac{m_1}{m_2}=100^{\\,d-1}\\;\\Longrightarrow\\; N \\approx \\lfloor 10^{d}\\,\\pi\\rfloor"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_clacks_digits",
+          "caption_bn": "ভর বাড়ার সাথে সংঘর্ষের সংখ্যা পাইয়ের অঙ্ক ধরে নেয়",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_01/fig_clacks_digits.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec-hidden-circle",
+      "title_bn": "লুকোনো বৃত্ত ও শক্তির সংরক্ষণ",
+      "title_en": "The Hidden Circle and Conservation of Energy",
+      "summary_bn": "যেখানে পাই আছে সেখানে একটা বৃত্ত আছে—এই ক্ষেত্রে বৃত্তটা আসে শক্তির সংরক্ষণ সূত্র থেকে।",
+      "key_takeaways": [
+        "দুই ব্লকের মোট গতিশক্তি সংঘর্ষের আগে ও পরে একই থাকে।",
+        "√m₁·v₁ ও √m₂·v₂ কে অক্ষ হিসেবে নিলে শক্তির সমীকরণটা becomes একটা বৃত্ত— $x^2+y^2=\\text{const}$।",
+        "ভরবেগের সংরক্ষণ এই বৃত্তে সরলরেখা দ্বারা কাটা বিন্দুগুলোর মাঝে চলাচল নির্ধারণ করে।"
+      ],
+      "formulas": [
+        {
+          "label": "গতিশক্তির সংরক্ষণ—বৃত্তের সমীকরণ",
+          "katex": "\\tfrac12 m_1 v_1^2+\\tfrac12 m_2 v_2^2=\\text{const}\\;\\Rightarrow\\; \\tfrac12(x^2+y^2)=\\text{const}"
+        },
+        {
+          "label": "স্কেল করা স্থানাঙ্ক",
+          "katex": "x=\\sqrt{m_1}\\,v_1,\\qquad y=\\sqrt{m_2}\\,v_2"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_clacks_circle",
+          "caption_bn": "বেগ-ফেজ স্পেসে শক্তির সংরক্ষণ একটি বৃত্ত তৈরি করে",
+          "type": "svg",
+          "src": "figures/why_pi/lesson_01/fig_clacks_circle.svg"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_clacks_100",
+      "course_id": "why_pi",
+      "lesson_id": "lesson_01",
+      "section_ref": "sec-pattern",
+      "question_bn": "বড় ব্লকের ভর ছোট ব্লকের ১০০ গুণ হলে মোট কতটি সংঘর্ষ হয়?",
+      "question_en": "How many collisions occur when the big block is 100 times the mass?",
+      "options": [
+        "$3$",
+        "$31$",
+        "$314$",
+        "$3{,}141$"
+      ],
+      "options_bn": [
+        "$3$",
+        "$31$",
+        "$314$",
+        "$3{,}141$"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ঠিক! ১০০ : ১ ভর অনুপাতে ৩১টি সংঘর্ষ হয়—π-র প্রথম দুই অঙ্ক ৩.১।",
+      "explanation_en": "",
+      "hint": "ভর অনুপাত ১০০ = ১০⁰² হওয়ায় π-র ২টি অঙ্ক আসে।",
+      "hints": [
+        "ভর অনুপাত ১০০ = ১০⁰² হওয়ায় π-র ২টি অঙ্ক আসে।"
+      ]
+    }
+  ]
+}

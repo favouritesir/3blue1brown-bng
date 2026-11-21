@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>পাই-র জন্য ওয়ালিস গুণফল — একটি জ্যামিতিক প্রমাণ | The Wallis product for pi, proved geometrically</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/why_pi/lesson_07/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="কেন পাই"
+  course-url="../../courses/why_pi/index.html"
+  home-url="../../index.html"
+  chapter-num="০৭"
+  chapter-total="০৮"
+  prev-url="lesson_06.html"
+  prev-title="পূর্ববর্তী: স্বাভাবিক বণ্টনে পাই কেন?"
+  next-url="lesson_08.html"
+  next-title="পরবর্তী: পাই প্রায় ৬.২৮৩১৮৫… হতে পারত"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="কেন পাই"
+  course-url="../../courses/why_pi/index.html"
+  chapter-label="অধ্যায় ০৭ · কেন পাই (Why Pi)"
+  title="পাই-র জন্য ওয়ালিস গুণফল — একটি জ্যামিতিক প্রমাণ | The Wallis product for pi, proved geometrically"
+  desc="$\frac{\pi}{2}=\frac21\cdot\frac23\cdot\frac43\cdot\frac45\cdots$ — এই অসীম গুণফলটির জ্যামিতিক প্রমাণ ও জটিল সংখ্যার কৌশল"
+  video-src="../../media_vault/why_pi/lesson_07/experiments/3b1b_why_pi_07_full_dubbed.mp4"
+  yt-id="V4YQUKiRbEA"
+  date="২০ এপ্রিল, ২০১৮"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://www.3blue1brown.com/lessons/wallis-product"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">ওয়ালিস গুণফল</b1b-bookmark>
+      <b1b-bookmark time="69" time-bn="০১:০৯">sin^n-এর ইন্টিগ্রাল</b1b-bookmark>
+      <b1b-bookmark time="157" time-bn="০২:৩৭">জ্যামিতিক প্রমাণ ও জটিল সংখ্যা</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-wallis-product">ওয়ালিস গুণফল</a>
+      <a href="#sec-sin-integrals">sin^n-এর ইন্টিগ্রাল</a>
+      <a href="#sec-geometric-proof">জ্যামিতিক প্রমাণ ও জটিল সংখ্যা</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <b1b-quote author="Grant Sanderson">সরল ভগ্নাংশের একটা গুণফল সমান পাই-র অর্ধেক।</b1b-quote>
+
+      <b1b-section id="sec-wallis-product" title="ওয়ালিস গুণফল">
+<p>১৬৫৫ সালে John Wallis একটা বিস्मয়কর সম্পর্ক লিখেছিলেন: $\frac21\cdot\frac23\cdot\frac43\cdot\frac45\cdot\frac65\cdot\frac67\cdots=\frac{\pi}{2}$। সব পদ সরল ভগ্নাংশ, কিন্তু ফলাফল পাই!</p>
+
+<b1b-figure src="../../assets/figures/why_pi/lesson_07/fig_wallis_product.svg" alt="সরল ভগ্নাংশের গুণফল π/2" caption="সরল ভগ্নাংশের গুণফল π/2"></b1b-figure>
+
+<p>ওয়ালিস নিজে এইটা প্রমাণ করতে পারেননি। আজ আমরা দেখব একটা জ্যামিতিক প্রমাণ, যার মূলে আছে $\sin^n x$ এর ইন্টিগ্রাল।</p>
+
+<b1b-formula math="\frac{\pi}{2}=\prod_{n=1}^{\infty}\frac{2n}{2n-1}\cdot\frac{2n}{2n+1}=\frac21\cdot\frac23\cdot\frac43\cdot\frac45\cdots"></b1b-formula>
+      </b1b-section>
+      <b1b-section id="sec-sin-integrals" title="sin^n-এর ইন্টিগ্রাল">
+<p>ধরি $I_n=\int_0^{\pi}\sin^n x\,dx$। আংশিক ইন্টিগ্রেশন দিয়ে পাই সুন্দর একটা পুনরাবৃত্তি: $I_n=\frac{n-1}{n}I_{n-2}$। অর্থাৎ $I_2=\frac12 I_0$, $I_4=\frac34 I_2$, $I_6=\frac56 I_4$—এইভাবে চলতে থাকে।</p>
+
+<b1b-figure src="../../assets/figures/why_pi/lesson_07/fig_wallis_sin.svg" alt="sin^n বক্ররেখার নিচের ক্ষেত্রফল থেকে গুণফল" caption="sin^n বক্ররেখার নিচের ক্ষেত্রফল থেকে গুণফল"></b1b-figure>
+
+<p>এই অনুপাতগুলোকে বারবার বসালে ওয়ালিসের $\frac21\cdot\frac23\cdot\frac43\cdots$ পদগুলো তৈরি হয়। কিন্তু $I_0=\pi$ কোথা থেকে এলো? সেটা এলো $\sin^0 x=1$ কে $0$ থেকে $\pi$ পর্যন্ত ইন্টিগ্রেট করে—অর্থাৎ $\pi$ দৈর্ঘ্যের একটা আয়তক্ষেত্রের ক্ষেত্রফল থেকে।</p>
+
+<b1b-formula math="I_n=\int_0^{\pi}\sin^n x\,dx=\frac{n-1}{n}I_{n-2}"></b1b-formula>
+
+<b1b-formula math="I_{2n}=\pi\cdot\frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots(2n)}"></b1b-formula>
+      </b1b-section>
+      <b1b-section id="sec-geometric-proof" title="জ্যামিতিক প্রমাণ ও জটিল সংখ্যা">
+<p>জটিল সংখ্যার তলে $\sin x$-কে তার শূন্যবিন্দুগুলো দিয়ে প্রকাশ করা যায়। এই গুণনরূপ আর বৃত্তের ক্ষেত্রফলের হিসাব একসাথে করে দেখা যায় ওয়ালিসের গুণফল ঠিক $\pi/2$।</p>
+
+<b1b-figure src="../../assets/figures/why_pi/lesson_07/fig_wallis_circle.svg" alt="বৃত্তের জ্যামিতি থেকেই পাই আসে" caption="বৃত্তের জ্যামিতি থেকেই পাই আসে"></b1b-figure>
+
+<p>এই প্রমাণ আবার একই কথা মনে করিয়ে দেয়: পাই যেখানেই আবির্ভূত হোক, তার পেছনে কোথাও না কোথাও একটা <strong>বৃত্ত</strong> থাকেই।</p>
+
+<b1b-callout type="green" icon="✅" title='ওয়ালিস গুণফলের তাৎপর্য'>
+<p>সরল ভগ্নাংশের একটা অসীম গুণফলের মান $\pi/2$—এটা দেখে মনে হয় কাকতালীয়, কিন্তু মূলে আছে $\sin^n x$-এর ইন্টিগ্রালের পুনরাবৃত্তি সূত্র আর বৃত্তের জ্যামিতি। গুণফলটির প্রতিটি পদ আসলে একটা জ্যামিতিক অনুপাত।</p>
+</b1b-callout>
+
+<b1b-formula math="\prod_{n=1}^{\infty}\frac{2n}{2n-1}\cdot\frac{2n}{2n+1}=\frac{\pi}{2}"></b1b-formula>
+
+<b1b-quiz
+          question="❓ ওয়ালিস গুণফল $\frac21\cdot\frac23\cdot\frac43\cdots$ এর মান কত?"
+          correct="1"
+          correct-msg="সঠিক! ওয়ালিস গুণফলের মান $\pi/2$।"
+          wrong-msg="মনে করো: ওয়ালিস গুণফল π-র অর্ধেকের সমান।"
+          reveal-msg="সঠিক উত্তর $\pi/2$।">
+          <div slot="option">$\pi$</div>
+          <div slot="option">$\pi/2$</div>
+          <div slot="option">$\pi^2/6$</div>
+          <div slot="option">$2/\pi$</div>
+        </b1b-quiz>
+      </b1b-section>
+      <b1b-section id="sec-visualizer" title="ইন্টারেক্টিভ ভিজ্যুয়ালাইজার" data-no-narration="true">
+        <p class="viz-intro">নিচের সমতলে বিষয়টির মূল জ্যামিতিক চিত্রটি পর্যবেক্ষণ করুন। বৃত্ত, কোণ এবং স্কেলিংয়ের মাধ্যমে পাই কীভাবে আবির্ভূত হয় তা অনুভব করুন।</p>
+        <b1b-vector-decomposer initial="3,-2">
+          <p>ভেক্টরের উপাংশ ও স্কেলিংয়ের মাধ্যমে জ্যামিতিক রূপান্তর পর্যবেক্ষণ করুন।</p>
+        </b1b-vector-decomposer>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="3,-2"></b1b-vector-plane>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/why_pi/lesson_07/experiments/3b1b_why_pi_07_full_dubbed.mp4"
+    yt-id="V4YQUKiRbEA"
+    title="পাই-র জন্য ওয়ালিস গুণফল — একটি জ্যামিতিক প্রমাণ — অধ্যায় ০৭"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — কেন পাই">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_06.html"
+  prev-title="পূর্ববর্তী: স্বাভাবিক বণ্টনে পাই কেন?"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_08.html"
+  next-title="পরবর্তী: পাই প্রায় ৬.২৮৩১৮৫… হতে পারত"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

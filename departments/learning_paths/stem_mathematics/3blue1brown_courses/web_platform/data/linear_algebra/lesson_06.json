@@ -1,0 +1,235 @@
+{
+  "lesson_id": "lesson_06",
+  "chapter_num": 6,
+  "course_id": "linear_algebra",
+  "title_en": "The Determinant",
+  "title_bn": "নির্ণায়ক বা ডিটারমিন্যান্টের জ্যামিতিক তাৎপর্য",
+  "subtitle_bn": "ক্ষেত্রফল ও আয়তন স্কেলিং ফ্যাক্টর হিসেবে নির্ণায়কের দৃষ্টিনন্দন রূপ",
+  "video_id": "Ip3X9LOh2dk",
+  "official_url": "https://www.3blue1brown.com/lessons/determinant",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "10:03",
+    "prerequisites": [
+      "lesson_03",
+      "lesson_04",
+      "lesson_05"
+    ]
+  },
+  "epigraph": {
+    "quote": "The purpose of computation is insight, not numbers.",
+    "quote_bn": "গণনামূলক হিসাবের মূল উদ্দেশ্য কেবল সংখ্যা বের করা নয়, বরং গভীর অন্তর্দৃষ্টি লাভ করা।",
+    "author": "Richard Hamming"
+  },
+  "sections": [
+    {
+      "id": "sec_01_scaling_area",
+      "title_bn": "১. ক্ষেত্রফল স্কেলিং ও ডিটারমিন্যান্টের মৌলিক ধারণা",
+      "title_en": "Scaling Area and the Determinant",
+      "summary_bn": "রৈখিক রূপান্তরে সমতলের ক্ষেত্রফল কত গুণ পরিবর্তিত হয়, তা পরিমাপ করাই হলো ডিটারমিন্যান্ট।",
+      "key_takeaways": [
+        "ডিটারমিন্যান্ট হলো রৈখিক রূপান্তরের ক্ষেত্রফল স্কেলিং ফ্যাক্টর (Scaling Factor)।",
+        "গ্রিডের প্রতিটি ক্ষুদ্র বর্গে একই স্কেলিং প্রযোজ্য হওয়ায় যেকোনো জটিল ক্ষেত্রের সামগ্রিক ক্ষেত্রফল একই অনুপাতে স্কেল হয়।",
+        "ডিটারমিন্যান্ট শূন্য (det = 0) হওয়ার অর্থ পুরো সমতল চ্যাপ্টা হয়ে রেখা বা বিন্দুতে পরিণত হওয়া (মাত্রার সংকোচন)।"
+      ],
+      "formulas": [
+        {
+          "label": "স্কেলিং ম্যাট্রিক্স উদাহরণ",
+          "katex": "\\begin{bmatrix} 3 & 0 \\\\ 0 & 2 \\end{bmatrix} \\implies \\text{Area} = 3 \\times 2 = 6"
+        },
+        {
+          "label": "ক্ষেত্রফল রূপান্তর নীতি",
+          "katex": "\\text{Area}(\\text{Transformed}) = |\\det(A)| \\times \\text{Area}(\\text{Original})"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_scale_areas",
+          "caption_bn": "একক বর্গক্ষেত্রের ক্ষেত্রফল স্কেলিং ফ্যাক্টর পরিমাপ",
+          "type": "svg",
+          "src": "figures/scale_areas.svg"
+        },
+        {
+          "id": "fig_determinant_0",
+          "caption_bn": "ডিটারমিন্যান্ট শূন্য হলে স্থানটি এক মাত্রিক রেখায় সংকুচিত হয়",
+          "type": "svg",
+          "src": "figures/determinant_0.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "matrix_2x2_area_visualizer",
+        "initial_matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "description_bn": "ম্যাট্রিক্সের মান পরিবর্তন করে একক বর্গক্ষেত্রের ক্ষেত্রফল পরিবর্তনের বাস্তব চিত্র দেখুন।"
+      }
+    },
+    {
+      "id": "sec_02_negative_determinant",
+      "title_bn": "২. ঋণাত্মক ডিটারমিন্যান্ট ও সমতলের ওরিয়েন্টেশন বা দিকবিন্যাস",
+      "title_en": "Negative Determinant & Orientation Reversal",
+      "summary_bn": "যখন কোনো রূপান্তর সমতলকে কাগজের মতো উল্টে দেয় (আই হ্যাট ও জে হ্যাটের পারস্পরিক দিক বদলে যায়), তখন ডিটারমিন্যান্ট ঋণাত্মক হয়।",
+      "key_takeaways": [
+        "স্বাভাবিক অবস্থায় î-এর বামে ĵ থাকে; রূপান্তরের পর ĵ যদি î-এর ডানে চলে যায়, তবে সমতলের ওরিয়েন্টেশন উল্টে গেছে।",
+        "ওরিয়েন্টেশন উল্টালে ডিটারমিন্যান্টের চিহ্ন ঋণাত্মক হয়, কিন্তু ক্ষেত্রফল স্কেলিং নির্দেশ করে এর পরম মান |det|।",
+        "ডিটারমিন্যান্ট ধনাত্মক থেকে ধীরে ধীরে শূন্য হয়ে ঋণাত্মকে গমন করে একটি মসৃণ ধারাবাহিক পরিবর্তনের মাধ্যমে।"
+      ],
+      "formulas": [
+        {
+          "label": "ঋণাত্মক নির্ণায়কের উদাহরণ",
+          "katex": "\\det \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix} = (1)(4) - (2)(3) = 4 - 6 = -2"
+        },
+        {
+          "label": "পরম মান ও ক্ষেত্রফল",
+          "katex": "\\text{Area Scaling} = |\\det(A)| = |-2| = 2"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_orientation_flip",
+          "caption_bn": "আই হ্যাট ও জে হ্যাটের আপেক্ষিক অবস্থান পরিবর্তনের মাধ্যমে ওরিয়েন্টেশন উল্টানো",
+          "type": "svg",
+          "src": "figures/j_right_of_i.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_03_determinant_in_3d",
+      "title_bn": "৩. ত্রিমাত্রিক জগতে ডিটারমিন্যান্ট ও প্যারালেলেপিপেড",
+      "title_en": "The Determinant in Three Dimensions",
+      "summary_bn": "ত্রিমাত্রিক স্থানে ডিটারমিন্যান্ট হলো একক ঘনকের রূপান্তরের ফলে তৈরি প্যারালেলেপিপেডের আয়তন স্কেলিং ফ্যাক্টর।",
+      "key_takeaways": [
+        "থ্রিডি স্থানে î, ĵ, k̂ দ্বারা গঠিত ১×১×১ একক ঘনকের রূপান্তরিত রূপ হলো প্যারালেলেপিপেড (Parallelepiped)।",
+        "প্যারালেলেপিপেডের আয়তনই হলো উক্ত ৩×৩ ম্যাট্রিক্সের ডিটারমিন্যান্ট।",
+        "ডান হাত নিয়ম (Right-hand rule) থ্রিডিতে ওরিয়েন্টেশন নির্ধারণ করে; নিয়ম উল্টে গেলে ডিটারমিন্যান্ট ঋণাত্মক হয়।",
+        "৩×৩ ম্যাট্রিক্সের det = 0 হলে স্থানটি সমতল, রেখা বা বিন্দুতে সংকুচিত হয় (আয়তন = ০)।"
+      ],
+      "formulas": [
+        {
+          "label": "প্যারালেলেপিপেডের আয়তন হিসেবে ৩×৩ নির্ণায়ক",
+          "katex": "\\det(M) = \\det \\begin{bmatrix} L(\\hat{i}) & L(\\hat{j}) & L(\\hat{k}) \\end{bmatrix} = \\text{Volume of Parallelepiped}"
+        },
+        {
+          "label": "শূন্য আয়তন ও মাত্রা সংকোচন",
+          "katex": "\\det(M_{3 \\times 3}) = 0 \\iff \\text{Rank}(M) \\le 2"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_unit_cube",
+          "caption_bn": "একক ঘনক হতে প্যারালেলেপিপেডে রূপান্তর",
+          "type": "svg",
+          "src": "figures/parallelepiped.svg"
+        },
+        {
+          "id": "fig_right_hand_rule",
+          "caption_bn": "ডান হাত নিয়মের সাহায্যে ত্রিমাত্রিক ওরিয়েন্টেশন পরীক্ষা",
+          "type": "svg",
+          "src": "figures/hands.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_04_computation_and_composition",
+      "title_bn": "৪. বীজগাণিতিক গণনা ও গুণন বিধির জ্যামিতিক প্রমাণ",
+      "title_en": "Algebraic Computation & det(AB) = det(A)det(B)",
+      "summary_bn": "২×২ ম্যাট্রিক্সে ad - bc সূত্রের জ্যামিতিক ব্যাখ্যা এবং ম্যাট্রিক্স গুণনে ডিটারমিন্যান্টের গুণফলের সহজ জ্যামিতিক অন্তর্দৃষ্টি।",
+      "key_takeaways": [
+        "২×২ ম্যাট্রিক্সের ক্ষেত্রে ad - bc সূত্রের ad হলো আয়তক্ষেত্র এবং bc হলো শিয়ারিংয়ের কারণে সৃষ্ট পার্শ্বীয় বিকৃতি।",
+        "det(AB) = det(A) det(B) সূত্রটি এক বাক্যে জ্যামিতিকভাবে প্রমাণিত: দুটি ধারাবাহিক স্কেলিংয়ের মোট প্রভাব তাদের গুণফলের সমান।"
+      ],
+      "formulas": [
+        {
+          "label": "২×২ ম্যাট্রিক্সের নির্ণায়ক সূত্র",
+          "katex": "\\det\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} = ad - bc"
+        },
+        {
+          "label": "৩×৩ নির্ণায়কের ল্যাপলাস বিস্তার",
+          "katex": "\\det\\begin{bmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{bmatrix} = a(ei - fh) - b(di - fg) + c(dh - eg)"
+        },
+        {
+          "label": "ডিটারমিন্যান্টের গুণন বিধি",
+          "katex": "\\det(M_1 M_2) = \\det(M_1) \\cdot \\det(M_2)"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_det_formula_diagram",
+          "caption_bn": "ad - bc সূত্রের নিখুঁত জ্যামিতিক ব্যবচ্ছেদ",
+          "type": "svg",
+          "src": "figures/determinant_diagram.svg"
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_area_scaling",
+      "section_ref": "sec_01_scaling_area",
+      "question_bn": "একটি রৈখিক রূপান্তরের ম্যাট্রিক্স $M = \\begin{bmatrix} 2 & 0 \\\\ 0 & 3 \\end{bmatrix}$। মূল সমতলে ৪ বর্গ একক ক্ষেত্রফলের একটি বৃত্তাকার ক্ষেত্র রূপান্তরের পর কত ক্ষেত্রফল বিশিষ্ট উপবৃত্তে পরিণত হবে?",
+      "question_en": "A transformation matrix is M = [[2, 0], [0, 3]]. If an original circular region has area 4, what is the area of the transformed ellipse?",
+      "options": [
+        "৪ বর্গ একক",
+        "১০ বর্গ একক",
+        "২৪ বর্গ একক",
+        "১২ বর্গ একক"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "ম্যাট্রিক্স $M$-এর নির্ণায়ক $\\det(M) = (2)(3) - (0)(0) = 6$। সুতরাং যেকোনো অঞ্চলের ক্ষেত্রফল ঠিক ৬ গুণ বৃদ্ধি পাবে। তাই নতুন ক্ষেত্রফল হবে $4 \\times 6 = 24$ বর্গ একক।",
+      "explanation_en": "det(M) = 6, so any area scales by 6. Transformed area = 4 * 6 = 24."
+    },
+    {
+      "id": "quiz_02_det_zero",
+      "section_ref": "sec_01_scaling_area",
+      "question_bn": "কোনো ২×২ ম্যাট্রিক্সের ডিটারমিন্যান্ট শূন্য $(\\det = 0)$ হলে রূপান্তরটি সম্পর্কে নিশ্চিতভাবে কী বলা যায়?",
+      "question_en": "What does det(A) = 0 mean geometrically for a 2D transformation?",
+      "options": [
+        "স্থানটি অবিকৃত থাকে এবং কোনো ভেক্টর সরে না",
+        "পুরো টুডি সমতলটি চ্যাপ্টা হয়ে একটি একমাত্রিক সরলরেখা বা মূলবিন্দুতে সংকুচিত হয়",
+        "সমতলটি ১৮০ ডিগ্রি কোণে উল্টে যায়",
+        "ক্ষেত্রফল অপরিবর্তিত থাকে কিন্তু অক্ষগুলো সমকোণে থাকে না"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ডিটারমিন্যান্ট শূন্য হওয়ার অর্থ হলো সমস্ত ২D অঞ্চলের ক্ষেত্রফল ০ হয়ে যাওয়া। এর ফলে সম্পূর্ণ সমতলটি চ্যাপ্টা হয়ে একটি সরলরেখা (অথবা একটি বিন্দু)-তে পরিণত হয়, অর্থাৎ মাত্রা বা ডাইমেনশন সংকুচিত হয়।",
+      "explanation_en": "det(A) = 0 squishes all 2D areas to 0, compressing the entire 2D space into a 1D line or 0D point."
+    },
+    {
+      "id": "quiz_03_negative_det",
+      "section_ref": "sec_02_negative_determinant",
+      "question_bn": "যদি কোনো রূপান্তরের ক্ষেত্রে $\\det(A) = -5$ হয়, তবে নিচের কোন বিবৃতিটি সঠিক?",
+      "question_en": "If det(A) = -5, which statement is true?",
+      "options": [
+        "ক্ষেত্রফল ৫ গুণ বৃদ্ধি পায় এবং সমতলের ওরিয়েন্টেশন অক্ষুণ্ণ থাকে",
+        "ক্ষেত্রফল ৫ গুণ হ্রাস পায় এবং সমতল স্থির থাকে",
+        "ক্ষেত্রফল ৫ গুণ বৃদ্ধি পায় কিন্তু সমতলের ওরিয়েন্টেশন বা দিকবিন্যাস উল্টে যায় (কাগজের পাতা উল্টানোর মতো)",
+        "রূপান্তরটি অসম্ভব কারণ ক্ষেত্রফল কখনো ঋণাত্মক হতে পারে না"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "ডিটারমিন্যান্টের ঋণাত্মক চিহ্নটি নির্দেশ করে যে স্থানের দিকবিন্যাস বা ওরিয়েন্টেশন উল্টে গেছে (î এবং ĵ এর পারস্পরিক ঘূর্ণন দিক বিপরীত হয়ে গেছে)। তবে ক্ষেত্রফল স্কেলিং পরিমাপ করতে পরম মান $|-5| = 5$ বিবেচনা করা হয়, অর্থাৎ ক্ষেত্রফল ৫ গুণ প্রসারিত হয়।",
+      "explanation_en": "The negative sign signifies spatial orientation inversion, while |det(A)| = 5 indicates areas scale by a factor of 5."
+    },
+    {
+      "id": "quiz_04_det_multiplication",
+      "section_ref": "sec_04_computation_and_composition",
+      "question_bn": "যদি ম্যাট্রিক্স $A$-এর ডিটারমিন্যান্ট ৩ হয় এবং ম্যাট্রিক্স $B$-এর ডিটারমিন্যান্ট $-2$ হয়, তবে যৌগিক রূপান্তর $AB$-এর ডিটারমিন্যান্ট $\\det(AB)$ কত হবে?",
+      "question_en": "If det(A) = 3 and det(B) = -2, what is det(AB)?",
+      "options": [
+        "১",
+        "৫",
+        "-৬",
+        "-১.৫"
+      ],
+      "correct_index": 2,
+      "explanation_bn": "ডিটারমিন্যান্টের গুণন বিধি অনুসারে: $\\det(AB) = \\det(A) \\times \\det(B) = 3 \\times (-2) = -6$। জ্যামিতিকভাবে, প্রথম রূপান্তরটি ক্ষেত্রফলকে ২ গুণ স্কেল করে ওরিয়েন্টেশন উল্টায়, এবং দ্বিতীয় রূপান্তরটি সেই ক্ষেত্রফলকে আরও ৩ গুণ প্রসারিত করে। মোট প্রভাব হলো -৬ গুণ।",
+      "explanation_en": "By the multiplicative property, det(AB) = det(A) * det(B) = 3 * (-2) = -6."
+    }
+  ]
+}

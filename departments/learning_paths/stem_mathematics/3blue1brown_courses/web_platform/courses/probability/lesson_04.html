@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অধ্যায় ০৪: অবিচ্ছিন্ন সম্ভাব্যতা ঘনত্ব ও নরমাল ডিস্ট্রিবিউশন | সম্ভাব্যতার মূলভাব | ৩ব্লু১ব্রাউন বাংলা</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<style>
+  :root{--prob-theme:#38bdf8;--prob-blue:#38bdf8;--prob-gold:#f6ad55;--prob-green:#48bb78;}
+  .viz-wrapper{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px;}
+  .viz-header{display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:800;color:var(--prob-theme);margin-bottom:12px;flex-wrap:wrap;}
+  .viz-canvas-container{width:100%;overflow:hidden;}
+  .viz-canvas{display:block;width:100%;border-radius:8px;}
+  .viz-controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:16px;}
+  .viz-slider-row label{display:block;font-size:.88rem;margin-bottom:6px;font-weight:600;}
+  .viz-slider-row input[type=range]{width:100%;}
+  .viz-val{display:inline-block;margin-top:5px;font-size:.85rem;color:var(--prob-theme);font-weight:800;font-family:'JetBrains Mono',monospace;}
+  .prob-sim-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px;}
+  .prob-stat-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;}
+  .prob-stat-title{font-size:.82rem;color:var(--text-muted);margin-bottom:5px;}
+  .prob-stat-val{font-size:1.3rem;font-weight:800;font-family:'JetBrains Mono',monospace;color:var(--prob-theme);}
+  .prob-stat-formula{font-size:.74rem;color:var(--text-muted);margin-top:4px;}
+  .viz-info{background:rgba(56,189,248,.08);border-left:4px solid var(--prob-theme);border-radius:8px;padding:12px 16px;margin-top:16px;line-height:1.85;font-size:.92rem;}
+</style>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/probability/lesson_04/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order (identical to LA L01 gold) ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="সম্ভাব্যতার মূলভাব"
+  course-url="../../index.html#probability"
+  home-url="../../index.html"
+  chapter-num="০৪"
+  chapter-total="০৬"
+  prev-url="lesson_03.html"
+  prev-title="পূর্ববর্তী: শর্তাধীন সম্ভাব্যতা ও স্বাধীনতা"
+  next-url="lesson_05.html"
+  next-title="পরবর্তী: দ্বিপদী বিস্তার ও প্যাসকেলের ত্রিভুজ"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="সম্ভাব্যতার মূলভাব"
+  course-url="../../index.html#probability"
+  chapter-label="সম্ভাব্যতা • চতুর্থ অধ্যায় · Essence of Probability"
+  title="অধ্যায় ০৪: অবিচ্ছিন্ন সম্ভাব্যতা ঘনত্ব ও নরমাল ডিস্ট্রিবিউশন"
+  desc="বাস্তব জগতে পরিমাপগুলো বিচ্ছিন্ন সংখ্যা নয়, বরং অবিচ্ছিন্ন ধারা। প্রতিটি একক বিন্দুর সম্ভাবনা শূন্য হওয়া সত্ত্বেও কীভাবে সামগ্রিক সম্ভাবনা এক হয়? ঘনত্ব ফাংশন $f(x)$, সমাকলনের মাধ্যমে ক্ষেত্রফল এবং কেন মহাবিশ্বের সর্বত্র গাউসিয়ান বেল কার্ভের দেখা মেলে—তার পূর্ণাঙ্গ দর্শন। মূল শিক্ষা: অবিচ্ছিন্ন চলকে সম্ভাব্যতা কোনো বিন্দুর উচ্চতা নয়, বরং বক্ররেখার নিচের ক্ষেত্রফল: $P(a \le X \le b) = \int_a^b f(x)\,dx$। সেন্ট্রাল লিমিট থিওরেম নিশ্চিত করে যে বহুসংখ্যক স্বাধীন চলকের যোগফল সর্বদা একটি নিখুঁত নরমাল বেল কার্ভ তৈরি করে।"
+  video-src="../../media_vault/probability/lesson_04/experiments/3b1b_prob_04_full_dubbed.mp4"
+  yt-id="ZA4JkHKZM50"
+  date="সম্ভাব্যতার মূলভাব · অধ্যায় ০৪"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://www.3blue1brown.com/lessons/probability-0"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner
+      title="শিক্ষক অডিও বিবরণ ও লাইভ কারাওকে সহকারী"
+      desc="দরদী শিক্ষকের কণ্ঠে প্রতিটি অনুচ্ছেদ, গাণিতিক সূত্র ও চিত্র বিবরণ শুনুন — সাথে রিয়েলটাইম হাইলাইটার ও কন্ট্রোল।"
+      cta="🎙️ শিক্ষকের কণ্ঠে শুনুন">
+    </b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">বিচ্ছিন্ন বনাম অবিচ্ছিন্ন বাস্তবতা ও পিএমএফ থেকে রূপান্তর</b1b-bookmark>
+      <b1b-bookmark time="48" time-bn="০০:৪৮">একক বিন্দুর সম্ভাব্যতা কেন শূন্য: P(X=c) = 0</b1b-bookmark>
+      <b1b-bookmark time="97" time-bn="০১:৩৭">ভর ও ঘনত্বের পদার্থবিজ্ঞান রূপক: সম্ভাব্যতা ঘনত্ব f(x)</b1b-bookmark>
+      <b1b-bookmark time="153" time-bn="০২:৩৩">সম্ভাব্যতা হলো বক্ররেখার ক্ষেত্রফল ও স্বাভাবিকীকরণ</b1b-bookmark>
+      <b1b-bookmark time="209" time-bn="০৩:২৯">নরমাল ডিস্ট্রিবিউশন ও গাউসিয়ান বেল কার্ভের পরামিতি</b1b-bookmark>
+      <b1b-bookmark time="254" time-bn="০৪:১৪">সেন্ট্রাল লিমিট থিওরেম: বিশ্বজুড়ে বেল কার্ভের রহস্য</b1b-bookmark>
+      <b1b-bookmark time="299" time-bn="০৪:৫৯">ইন্টারেক্টিভ নরমাল কার্ভ ও ইন্টিগ্রাল ল্যাব</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-discrete-vs-continuous">১. বিচ্ছিন্ন বনাম অবিচ্ছিন্ন বাস্তবতা ও পিএমএফ থেকে রূপান্তর</a>
+      <a href="#sec-zero-probability-paradox">২. একক বিন্দুর সম্ভাব্যতা কেন শূন্য: P(X=c) = 0</a>
+      <a href="#sec-density-analogy">৩. ভর ও ঘনত্বের পদার্থবিজ্ঞান রূপক: সম্ভাব্যতা ঘনত্ব f(x)</a>
+      <a href="#sec-area-under-curve">৪. সম্ভাব্যতা হলো বক্ররেখার ক্ষেত্রফল ও স্বাভাবিকীকরণ</a>
+      <a href="#sec-gaussian-bell-curve">৫. নরমাল ডিস্ট্রিবিউশন: গাউসিয়ান বেল কার্ভের জ্যামিতি</a>
+      <a href="#sec-clt-intuition">৬. সেন্ট্রাল লিমিট থিওরেম: বিশ্বজুড়ে বেল কার্ভের রহস্য</a>
+      <a href="#sec-interactive-lab">৭. ইন্টারেক্টিভ নরমাল কার্ভ ও ইন্টিগ্রাল ল্যাব</a>
+      <a href="#sec-quizzes">৮. ধারণা যাচাই ও কুইজ</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ Section 1 — 6 manifest cues: h2, chapter-quote, p, p, p, callout ═══ -->
+      <b1b-section id="sec-discrete-vs-continuous" title="বিচ্ছিন্ন বনাম অবিচ্ছিন্ন বাস্তবতা ও পিএমএফ থেকে রূপান্তর">
+
+        <b1b-quote author="গটফ্রিড ভিলহেম লাইবনিজ">প্রকৃতি কখনো লাফিয়ে চলে না—প্রকৃতির সমস্ত গতি ও রাশি অবিচ্ছিন্ন ধারায় প্রবাহিত হয়।</b1b-quote>
+
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="বিচ্ছিন্ন পিএমএফের স্তম্ভ আর অবিচ্ছিন্ন ঘনত্বের মসৃণ বক্ররেখার তুলনা" style="width:100%;height:auto;display:block">
+              <rect width="640" height="300" fill="#0f141c"/>
+              <text x="160" y="26" fill="#38bdf8" font-size="15" font-weight="bold" text-anchor="middle">বিচ্ছিন্ন: প্রতি বিন্দুতে একটি স্তম্ভ</text>
+              <text x="480" y="26" fill="#f6ad55" font-size="15" font-weight="bold" text-anchor="middle">অবিচ্ছিন্ন: এক মসৃণ ধারা</text>
+              <line x1="36" y1="250" x2="284" y2="250" stroke="#8b949e" stroke-width="1.5"/>
+              <line x1="36" y1="250" x2="36" y2="44" stroke="#8b949e" stroke-width="1.5"/>
+              <g fill="rgba(56,189,248,0.55)" stroke="#38bdf8" stroke-width="1.5">
+                <rect x="52" y="205" width="24" height="45"/><rect x="94" y="160" width="24" height="90"/>
+                <rect x="136" y="110" width="24" height="140"/><rect x="178" y="160" width="24" height="90"/>
+                <rect x="220" y="205" width="24" height="45"/>
+              </g>
+              <line x1="356" y1="250" x2="604" y2="250" stroke="#8b949e" stroke-width="1.5"/>
+              <line x1="356" y1="250" x2="356" y2="44" stroke="#8b949e" stroke-width="1.5"/>
+              <path d="M360 250 C 410 250, 420 90, 480 90 C 540 90, 550 250, 600 250" fill="rgba(246,173,85,0.18)" stroke="#f6ad55" stroke-width="2.5"/>
+              <text x="160" y="278" fill="#8b949e" font-size="13" text-anchor="middle">স্তম্ভের উচ্চতা = P(X = x), যোগফল = ১</text>
+              <text x="480" y="278" fill="#8b949e" font-size="13" text-anchor="middle">বিন্দুর উচ্চতা নয়, ক্ষেত্রফলই সম্ভাবনা</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/probability/lesson_04/experiments/3b1b_prob_04_full_dubbed.mp4"></video></div>
+          <div slot="caption">বামপাশে বিচ্ছিন্ন চলকের পিএমএফ দেখানো হয়েছে, যেখানে প্রতিটি পৃথক মানের নিজস্ব উলম্ব স্তম্ভ আছে এবং সব স্তম্ভের উচ্চতা যোগ করলে ১ পাওয়া যায়। ডানপাশে অবিচ্ছিন্ন চলকের ঘনত্ব বক্ররেখা—এখানে কোনো পৃথক স্তম্ভ নেই, মানগুলো এক মসৃণ রেখায় প্রবাহিত হয়। লক্ষ্য করুন পার্থক্যটি কেবল আঁকার ধরণের নয়: প্রথমে উচ্চতা যোগ করা হয়, দ্বিতীয়তে ক্ষেত্রফল নির্ণয় করা হয়। **বিচ্ছিন্ন সম্ভাবনা ভর ফাংশন (PMF)** — বিচ্ছিন্ন চলকের প্রতিটি একক মানের নির্দিষ্ট সম্ভাবনা থাকে এবং তাদের সমষ্টি ১। $p(x_i) = P(X = x_i), \qquad \sum_{i} p(x_i) = 1.0$$</div>
+        </b1b-media-tab>
+
+        <p>এই সিরিজের পূর্ববর্তী অধ্যায়গুলোতে আমরা যেসব দৈব চলক (Random Variables) নিয়ে কাজ করেছি, সেগুলো ছিল বিচ্ছিন্ন বা ডিসক্রিট (Discrete)। যেমন: একটি মুদ্রার হেড কিংবা টেল, ছক্কার ১ থেকে ৬ পর্যন্ত পূর্ণসংখ্যা, অথবা ৫২টি তাসের মধ্যে একটি কার্ড বেছে নেওয়া। এই ধরণের প্রতিটি ক্ষেত্রে ফলাফলগুলো ছিল পৃথক, সুস্পষ্ট এবং গণনাযোগ্য।</p>
+
+        <p>বিচ্ছিন্ন জগতে প্রতিটি ফলাফলের একটি নির্দিষ্ট সম্ভাব্যতা মান থাকে, যাকে আমরা সম্ভাব্যতা ভর ফাংশন বা পিএমএফ (Probability Mass Function, $p(x)$) বলি। সেখানে প্রতিটি মানের জন্য একটি করে উলম্ব বার বা স্তম্ভ আঁকা যায়, যার উচ্চতা নির্দেশ করে সেই মানটি ঘটার সম্ভাবনা $P(X=x)$, এবং সকল সম্ভাব্য স্তম্ভের উচ্চতা যোগ করলে মোট যোগফল হয় ঠিক ১.০ বা ১০০%।</p>
+
+        <p>কিন্তু আমাদের বাস্তব ভৌত জগৎ বেশিরভাগ ক্ষেত্রেই এমন বিচ্ছিন্ন ধাপে কাজ করে না। কোনো ব্যক্তির নিখুঁত উচ্চতা, বায়ুমণ্ডলের তাপমাত্রা, বাতাসের গতিবেগ কিংবা বাস স্টপে আপনার অপেক্ষার সময়ের কথা চিন্তা করুন। এগুলো ১, ২, ৩ এর মতো বিচ্ছিন্ন পূর্ণসংখ্যায় লাফায় না; বরং বাস্তব সংখ্যার এক মসৃণ ও নিরবচ্ছিন্ন ধারা (Continuum of Real Numbers) বেয়ে প্রবাহিত হয়।</p>
+
+        <b1b-callout type="blue" title="💡 মূল পার্থক্যের রেখা">
+          <p>বিচ্ছিন্ন চলকে আমরা প্রতিটি বিন্দুর জন্য 'সম্ভাবনার ভর' (Probability Mass) পরিমাপ করি। কিন্তু অবিচ্ছিন্ন চলকে কোনো একক বিচ্ছিন্ন বিন্দু থাকে না—মানগুলো একটি অবিচ্ছিন্ন পরিসরে বিস্তৃত থাকে।</p>
+          <ul>
+            <li>বিচ্ছিন্ন চলকে প্রতিটি সম্ভাব্য ফলাফল পৃথক ও গণনাযোগ্য পূর্ণমানে বিদ্যমান থাকে।</li>
+            <li>বাস্তব পরিমাপ (উচ্চতা, সময়, বেগ) অবিচ্ছিন্ন রেখা বরাবর অসীম সূক্ষ্মতায় প্রবাহিত হয়।</li>
+            <li>অবিচ্ছিন্ন চলকের ক্ষেত্রে সরাসরি বিচ্ছিন্ন পিএমএফ নিয়ম প্রয়োগ করলে এক গভীর স্বজ্ঞাত সংকট তৈরি হয়।</li>
+          </ul>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Section 2 — 6 manifest cues: h2, p, p, formula-box, p, callout ═══ -->
+      <b1b-section id="sec-zero-probability-paradox" title="একক বিন্দুর সম্ভাব্যতা কেন শূন্য: P(X=c) = 0">
+
+        <p>এখন একটি আপাত সহজ অথচ যুগান্তকারী প্রশ্ন বিবেচনা করা যাক: দৈবভাবে নির্বাচিত একজন ব্যক্তির উচ্চতা অবিকল ১৭৫ সেন্টিমিটার হওয়ার সম্ভাবনা কত?</p>
+
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="১৭০ থেকে ১৮০ সেন্টিমিটারের মধ্যে অগণিত বিন্দু ও ডার্টবোর্ডের একক পিন" style="width:100%;height:auto;display:block">
+              <rect width="640" height="300" fill="#0f141c"/>
+              <text x="320" y="26" fill="#38bdf8" font-size="16" font-weight="bold" text-anchor="middle">১০ সেন্টিমিটারে অগণিত বাস্তব বিন্দু</text>
+              <line x1="46" y1="140" x2="594" y2="140" stroke="#8b949e" stroke-width="2"/>
+              <g stroke="#38bdf8" stroke-width="1.5">
+                <line x1="80" y1="128" x2="80" y2="152"/><line x1="150" y1="128" x2="150" y2="152"/>
+                <line x1="220" y1="128" x2="220" y2="152"/><line x1="290" y1="128" x2="290" y2="152"/>
+                <line x1="360" y1="128" x2="360" y2="152"/><line x1="430" y1="128" x2="430" y2="152"/>
+                <line x1="500" y1="128" x2="500" y2="152"/><line x1="570" y1="128" x2="570" y2="152"/>
+              </g>
+              <circle cx="320" cy="140" r="7" fill="#f6ad55"/>
+              <text x="320" y="112" fill="#f6ad55" font-size="14" text-anchor="middle">অবিকল ১৭৫.০০০…</text>
+              <text x="90" y="176" fill="#8b949e" font-size="13">১৭০</text>
+              <text x="552" y="176" fill="#8b949e" font-size="13">১৮০</text>
+              <circle cx="320" cy="244" r="40" fill="none" stroke="#48bb78" stroke-width="2"/>
+              <circle cx="320" cy="244" r="26" fill="none" stroke="#48bb78" stroke-width="1.5"/>
+              <circle cx="314" cy="240" r="3.5" fill="#f6ad55"/>
+              <text x="320" y="292" fill="#8b949e" font-size="13" text-anchor="middle">পিনটি ঠিক যে বিন্দুতে বিঁধল—পূর্বে সেই বিন্দুর সম্ভাবনা ছিল শূন্য</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/probability/lesson_04/experiments/3b1b_prob_04_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্রের রেখাটি ১৭০ থেকে ১৮০ সেন্টিমিটারের ছোট ব্যবধান, কিন্তু তার ভেতরে বাস্তব সংখ্যার অগণিত বিন্দু রয়েছে—কমলা বিন্দুটি হলো অবিকল ১৭৫.০০০… নিচের ডার্টবোর্ডে পিনটি ঠিক যে বিন্দুতে বিঁধেছে, সেই নির্দিষ্ট বিন্দুতে পড়ার সম্ভাবনা আগে থেকে ছিল শূন্য, অথচ ঘটনাটি ঘটেছে। লক্ষ্য করুন প্রান্তবিন্দু অন্তর্ভুক্ত করাই বা না করাই ফলাফল বদলায় না, কারণ একক বিন্দুর ওজন শূন্য। একক বিন্দুর সম্ভাব্যতা উপপাদ্য: $$P(X = c) = 0 \quad \forall c \in \mathbb{R}$$ **ব্যবধানের সমতুল্যতা** — যেহেতু একক প্রান্তবিন্দুর সম্ভাবনা শূন্য, তাই প্রান্তবিন্দু অন্তর্ভুক্ত করা বা না করায় সম্ভাবনায় কোনো পরিবর্তন হয় না। $P(a \le X \le b) = P(a < X < b) = P(a \le X < b)$$</div>
+        </b1b-media-tab>
+
+        <p>এখানে 'অবিকল' বলতে আমরা বোঝাচ্ছি ১৭৪.৯৯৯... বা ১৭৫.০০০১ নয়, বরং ঠিক ১৭৫.০০০০০০০... যার দশমিকের পর অনন্তকাল পর্যন্ত কেবলই শূন্য থাকবে! কোয়ান্টাম সূক্ষ্মতায় মেপে দেখলে এমন নিখুঁত সংখ্যা কি বাস্তবে সম্ভব?<br/><br/>উত্তরটি শুনতে বিস্ময়কর হলেও গাণিতিকভাবে পরম সত্য: একজন ব্যক্তির উচ্চতা অবিকল যেকোনো একটি নির্দিষ্ট বিন্দুতে পড়ার সম্ভাবনা ঠিক শূন্য! অর্থাৎ অবিচ্ছিন্ন চলকে $P(X = c) = 0$। <strong>একক বিন্দুর সম্ভাব্যতা উপপাদ্য</strong> — অবিচ্ছিন্ন দৈব চলকের ক্ষেত্রে যেকোনো একটি সুনির্দিষ্ট মানের সম্ভাবনা সর্বদা শূন্য।</p>
+
+        <b1b-formula math="P(X = c) = 0 \quad \forall c \in \mathbb{R}"></b1b-formula>
+
+        <p>কেন এমন হয়? কারণ ১৭০ থেকে ১৮০ সেন্টিমিটার এই ক্ষুদ্র ১০ সেন্টিমিটার ব্যবধানের ভেতরেও বাস্তব সংখ্যার অসীম, অগণিত (Uncountably Infinite) বিন্দু রয়েছে। যদি প্রতিটি বিন্দুর জন্য অতি ক্ষুদ্র—ধরা যাক ০.০০০১—সম্ভাবনাও নির্ধারিত থাকত, তবে অসীম সংখ্যক বিন্দুর সম্ভাবনা যোগ করলে মোট সম্ভাব্যতা অসীমে পৌঁছে যেত, যা সম্ভাবনার মৌলিক স্বতঃসিদ্ধ (মোট সম্ভাবনা = ১) ভেঙে দিত!<br/><br/>তাহলে কি কারও উচ্চতা ১৭৫ সেন্টিমিটার হওয়া অসম্ভব? অবশ্যই না! মানুষটির একটি সুনির্দিষ্ট উচ্চতা আছেই। কিন্তু অবিচ্ছিন্ন জগতের নিয়ম হলো: কোনো একক বিন্দুর নিজস্ব কোনো সম্ভাবনা থাকে না; সম্ভাবনা কেবল একটি ব্যবধান বা ইন্টারভ্যাল (Interval) জুড়েই অর্থবহ হয়।</p>
+
+        <b1b-callout type="gold" title="⚠️ সম্ভাবনা শূন্য মানেই কিন্তু 'অসম্ভব' নয়!">
+          <p>আমাদের প্রাত্যহিক স্বজ্ঞা বলে: 'সম্ভাবনা শূন্য মানে ঘটনাটি ঘটা অসম্ভব।' কিন্তু অবিচ্ছিন্ন সম্ভাব্যতায় এই ধারণাটি সম্পূর্ণ ভুল! একটি বিন্দুর সম্ভাবনা শূন্য মানে হলো অসীম বিকল্পের সাপেক্ষে তার ওজন শূন্য। ডার্টবোর্ডে যখনই আপনি একটি নিখুঁত জ্যামিতিক পিন নিক্ষেপ করবেন, সেটি ঠিক যে বিন্দুতে বিঁধল—পূর্বে সেই সুনির্দিষ্ট বিন্দুতে লাগার সম্ভাবনা ছিল ঠিক শূন্য, অথচ ঘটনাটি কিন্তু ঘটেছে!</p>
+          <ul>
+            <li>অবিচ্ছিন্ন সংখ্যাধারায় যেকোনো নির্দিষ্ট বিন্দুর সম্ভাবনা গাণিতিকভাবে শূন্য: $P(X=c)=0$।</li>
+            <li>সম্ভাব্যতা শূন্য হলেও ঘটনাটি বাস্তবে ঘটা সম্ভব (Zero Probability Does Not Mean Impossible)।</li>
+            <li>অবিচ্ছিন্ন জগতে সম্ভাবনা কেবল একটি পরিসর বা ব্যবধানের জন্য সংজ্ঞায়িত হয়।</li>
+          </ul>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Section 3 — 6 manifest cues: h2, p, p, p, callout, p ═══ -->
+      <b1b-section id="sec-density-analogy" title="ভর ও ঘনত্বের পদার্থবিজ্ঞান রূপক: সম্ভাব্যতা ঘনত্ব f(x)">
+
+        <p>প্রতিটি বিন্দুর সম্ভাবনা শূন্য হওয়া সত্ত্বেও কীভাবে পুরো ব্যবধানের সম্ভাবনা ১.০ হয়—এই প্যারাডক্সটি সমাধান করতে পদার্থবিজ্ঞান আমাদের সবচেয়ে চমৎকার রূপকটি উপহার দেয়: মোট ভর বনাম ভর ঘনত্বের পার্থক্য।</p>
+
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="এক মিটার লোহার রড, রৈখিক ভর ঘনত্ব ও অতি ক্ষুদ্র dx ফালি" style="width:100%;height:auto;display:block">
+              <rect width="640" height="300" fill="#0f141c"/>
+              <text x="320" y="28" fill="#38bdf8" font-size="16" font-weight="bold" text-anchor="middle">১ কেজি ভরের রড — বিন্দুর ভর ০, কিন্তু ঘনত্বের সমাকলন = ১ কেজি</text>
+              <rect x="60" y="110" width="520" height="76" rx="8" fill="#1b2740" stroke="#38bdf8" stroke-width="2"/>
+              <defs><linearGradient id="rodGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38bdf8" stop-opacity="0.25"/><stop offset="0.5" stop-color="#38bdf8" stop-opacity="0.8"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0.25"/></linearGradient></defs>
+              <rect x="62" y="112" width="516" height="72" rx="7" fill="url(#rodGrad)"/>
+              <rect x="316" y="108" width="14" height="80" fill="#f6ad55" opacity="0.9"/>
+              <line x1="320" y1="70" x2="320" y2="104" stroke="#f6ad55" stroke-width="2"/>
+              <text x="320" y="62" fill="#f6ad55" font-size="14" text-anchor="middle">$dx$ ফালি: $dm = \lambda(x)\,dx$</text>
+              <text x="70" y="212" fill="#8b949e" font-size="13">$x=0$</text>
+              <text x="548" y="212" fill="#8b949e" font-size="13">$x=L$</text>
+              <text x="320" y="250" fill="#f6ad55" font-size="15" text-anchor="middle">$M = \int_0^L \lambda(x)\,dx = 1\text{ kg}$</text>
+              <text x="320" y="282" fill="#8b949e" font-size="13" text-anchor="middle">ঘনত্ব × প্রস্থ = ভর — ঠিক যেমনি ঘনত্ব × ব্যবধান = সম্ভাব্যতা</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/probability/lesson_04/experiments/3b1b_prob_04_full_dubbed.mp4"></video></div>
+          <div slot="caption">চিত্রে এক মিটার দীর্ঘ ধাতব রডের ভেতরে কমলা রঙের অতি সরু ফালিটি $dx$ দৈর্ঘ্যের একটি অংশ, যার ভর $\lambda(x)\,dx$। গাণিতিক বিন্দুর কোনো দৈর্ঘ্য বা আয়তন না থাকায় তার নিজস্ব ভর শূন্য, অথচ পুরো রড জুড়ে ঘনত্বকে সমাকলন করলে মোট ভর exactly এক কিলোগ্রাম মেলে। এই রূপকটিই সম্ভাব্যতায় রূপান্তরিত হয়—ভরের জায়গায় আসে সম্ভাবনা আর ভর ঘনত্বের জায়গায় আসে $f(x)$। পদার্থবিজ্ঞানের রৈখিক ভর ঘনত্ব সমাকলন: $$M = \int_0^L \lambda(x)\,dx = 1\text{ kg}, \qquad m(\text{point}) = 0\text{ kg}$$ আর সম্ভাব্যতা ঘনত্বের সাথে তুলনা: $dP = f(x)\,dx, \qquad P(X \in [x, x+dx]) \approx f(x)\,dx$ **পদার্থবিজ্ঞানের রৈখিক ভর ঘনত্ব সমাকলন** — একক বিন্দুর ভর শূন্য হওয়া সত্ত্বেও ঘনত্বের সমাকলনে মোট ভর তৈরি হয়। **সম্ভাব্যতা ঘনত্বের সাথে তুলনা** — সম্ভাব্যতা ঘনত্ব $f(x)$-কে ক্ষুদ্র ব্যবধান $dx$ দ্বারা গুণ করলেই সম্ভাব্যতা পাওয়া যায়।</div>
+        </b1b-media-tab>
+
+        <p>ধরা যাক আপনার হাতে ১ মিটার লম্বা একটি নিরেট লোহার রড আছে, যার মোট ভর ১ কিলোগ্রাম। এখন যদি প্রশ্ন করা হয়: ওই রডের অভ্যন্তরে অবস্থিত ঠিক ৫০ সেন্টিমিটার দাগে থাকা একক জ্যামিতিক বিন্দুর ভর কত?</p>
+
+        <p>একটি গাণিতিক বিন্দুর কোনো দৈর্ঘ্য নেই, প্রস্থ নেই, আয়তন নেই—তাই তার নিজস্ব ভর অবিকল শূন্য গ্রাম! কিন্তু আপনি কি বলবেন রডটির কোনো ভর নেই? কখনোই না। রডজুড়ে রয়েছে রৈখিক ভর ঘনত্ব (Linear Mass Density, $\lambda(x)$)। প্রতিটি অতি ক্ষুদ্র দৈর্ঘ্য $dx$-এর ভর হলো $dm = \lambda(x)\,dx$। আর পুরো রডের সমস্ত বিন্দু বরাবর সমাকলন (Integrate) করলেই আমরা পেয়ে যাই পূর্ণ ১ কেজি ভর!</p>
+
+        <b1b-callout type="blue" title="🔍 গুরুত্বপূর্ণ সতর্কতা: $f(x)$ কিন্তু সম্ভাব্যতা নয়!">
+          <p>অনেকেই ভুলবশত $f(x)$-এর মানকে কোনো বিন্দুর সম্ভাবনা মনে করেন। কিন্তু $f(x)$ হলো সম্ভাব্যতা ঘনত্ব (Probability per unit of $x$)। ঘনত্ব কখনো সম্ভাব্যতা নয়! প্রকৃতপক্ষে, $f(x)$-এর মান অনায়াসেই ১-এর চেয়ে অনেক বড় হতে পারে। উদাহরণস্বরূপ: $[0, 0.5]$ ব্যবধানে সুষম বিস্তারের উচ্চতা $f(x) = 2.0$—কিন্তু তার মোট ক্ষেত্রফল $2.0 \times 0.5 = 1.0$!</p>
+          <ul>
+            <li>বিন্দুর সম্ভাব্যতা শূন্য হলেও ওই অঞ্চলের সম্ভাব্যতা ঘনত্ব $f(x)$ অশূন্য ও ধনাত্মক হতে পারে।</li>
+            <li>পিডিএফ $f(x)$-এর মান ১-এর চেয়ে বড় হতে পারে; কারণ এটি সম্ভাবনা নয়, ঘনত্বের হার।</li>
+            <li>ঘনত্বকে দৈর্ঘ্যের ব্যবধান দিয়ে গুণ করলেই কেবল প্রকৃত সম্ভাব্যতা ক্ষেত্রফল উৎপন্ন হয়।</li>
+          </ul>
+        </b1b-callout>
+
+        <p>ঠিক এই রূপকটিই সম্ভাব্যতা তত্ত্বে প্রয়োগ করা হয়। অবিচ্ছিন্ন চলকে বিচ্ছিন্ন 'সম্ভাব্যতা ভর' (Probability Mass)-এর জায়গা দখল করে 'সম্ভাব্যতা ঘনত্ব' বা প্রবাবিলিটি ডেনসিটি ফাংশন (Probability Density Function, PDF), যাকে আমরা $f(x)$ দ্বারা প্রকাশ করি।</p>
+      </b1b-section>
+
+      <!-- ═══ Section 4 — 6 manifest cues: h2, p, formula-box, p, formula-box, callout ═══ -->
+      <b1b-section id="sec-area-under-curve" title="সম্ভাব্যতা হলো বক্ররেখার ক্ষেত্রফল ও স্বাভাবিকীকরণ">
+
+        <p>এবার আমরা আসি ৩ব্লু১ব্রাউনের মূল দর্শনে: সম্ভাব্যতা হলো ক্ষেত্রফল (Probability as Area)। আমরা দেখেছি, কোনো অতি ক্ষুদ্র ব্যবধান $dx$-এ চলকের মান থাকার সম্ভাবনা হলো $f(x)\,dx$, যা জ্যামিতিকভাবে $dx$ প্রস্থ এবং $f(x)$ উচ্চতা বিশিষ্ট একটি অতি পাতলা আয়তাকার ফালির ক্ষেত্রফল।<br/><br/>সুতরাং, $X$-এর মান একটি নির্দিষ্ট সীমানা $a$ থেকে $b$-এর মধ্যে পড়ার সম্ভাবনা নির্ণয় করতে হলে আমাদের এই সমস্ত অতি ক্ষুদ্র ফালিগুলোকে একত্রে যোগ করতে হবে। ক্যালকুলাসের জাদুতে এই অসীম সূক্ষ্ম যোগফলই হলো নির্দিষ্ট যোগজ বা ডেফিনিট ইন্টিগ্রাল: <strong>ব্যবধানের সম্ভাব্যতা সমাকলন</strong> — বক্ররেখার নিচে $a$ থেকে $b$ পর্যন্ত সীমারেখার ক্ষেত্রফলই হলো ওই ব্যবধানে ফলাফল আসার সম্ভাবনা।</p>
+
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ঘনত্ব বক্ররেখার নিচে a থেকে b পর্যন্ত ছায়াঘেরা ক্ষেত্রফল ও ক্রমযোজিত বিন্যাস" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <text x="320" y="26" fill="#38bdf8" font-size="16" font-weight="bold" text-anchor="middle">সম্ভাব্যতা = বক্ররেখার নিচের ক্ষেত্রফল</text>
+              <line x1="48" y1="256" x2="600" y2="256" stroke="#8b949e" stroke-width="1.5"/>
+              <line x1="48" y1="256" x2="48" y2="44" stroke="#8b949e" stroke-width="1.5"/>
+              <defs><clipPath id="areaClip"><path d="M52 256 C 130 256, 160 96, 300 92 C 440 88, 480 256, 592 256 Z"/></clipPath></defs>
+              <path d="M52 256 C 130 256, 160 96, 300 92 C 440 88, 480 256, 592 256 Z" fill="none" stroke="#38bdf8" stroke-width="2.5"/>
+              <g clip-path="url(#areaClip)"><rect x="230" y="60" width="170" height="200" fill="rgba(72,187,120,0.55)"/></g>
+              <line x1="230" y1="256" x2="230" y2="76" stroke="#f6ad55" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <line x1="400" y1="256" x2="400" y2="86" stroke="#f6ad55" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <rect x="296" y="150" width="10" height="106" fill="#f6ad55" opacity="0.85"/>
+              <text x="230" y="278" fill="#f6ad55" font-size="14" text-anchor="middle">$a$</text>
+              <text x="400" y="278" fill="#f6ad55" font-size="14" text-anchor="middle">$b$</text>
+              <text x="316" y="140" fill="#f6ad55" font-size="12" text-anchor="middle">$dx$</text>
+              <text x="315" y="306" fill="#48bb78" font-size="14" text-anchor="middle">সবুজ ক্ষেত্রফল = $P(a \le X \le b)$</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/probability/lesson_04/experiments/3b1b_prob_04_full_dubbed.mp4"></video></div>
+          <div slot="caption">ছবিতে নীল বক্ররেখাটি সম্ভাব্যতা ঘনত্ব $f(x)$ আর সবুজ অংশটি $a$ থেকে $b$ পর্যন্ত সীমানার নিচের ক্ষেত্রফল, যা ঠিক ওই ব্যবধানের সম্ভাবনা। ছোট কমলা ফালিটির প্রস্থ $dx$ ও উচ্চতা $f(x)$—এই দুটির গুণফলই একক ফালির সম্ভাবনা, আর অসীম সূক্ষ্ম ফালিগুলো যোগ করলেই ডেফিনিট ইন্টিগ্রাল তৈরি হয়। বাম দিক থেকে সঞ্চিত এই ক্ষেত্রফলই ক্রমযোজিত বিন্যাস ফাংশন $F(x)$, যার ঢাল আবার মূল ঘনত্ব $f(x)$। ক্রমযোজিত বিন্যাস ফাংশন (CDF): $F(x) = P(X \le x) = \int_{-\infty}^x f(t)\,dt, \qquad \frac{d}{dx}F(x) = f(x)$ **মোট সম্ভাবনার স্বাভাবিকীকরণ স্বতঃসিদ্ধ** — সমগ্র বাস্তব রেখা বরাবর ঘনত্বের মোট ক্ষেত্রফল সর্বদা ঠিক এক একক। **ক্রমযোজিত বিন্যাস ফাংশন (CDF)** — সিডিএফ $F(x)$ হলো সঞ্চিত ক্ষেত্রফল, যার ডেরিভেটিভ নিলে সরাসরি মূল ঘনত্ব $f(x)$ পাওয়া যায়।</div>
+        </b1b-media-tab>
+
+        <b1b-formula math="P(a \le X \le b) = \int_a^b f(x)\,dx"></b1b-formula>
+
+        <p>যেকোনো বৈধ সম্ভাব্যতা ঘনত্ব ফাংশন $f(x)$-কে দুটি মৌলিক শর্ত অবশ্যই পূরণ করতে হয়: ১. অঋণাত্মকতার শর্ত: বক্ররেখাটি কখনো অনুভূমিক অক্ষের নিচে নামতে পারবে না, অর্থাৎ সকল $x$-এর জন্য $f(x) \ge 0$। কারণ ঋণাত্মক ক্ষেত্রফল বা ঋণাত্মক সম্ভাবনার কোনো বাস্তব অস্তিত্ব নেই। ২. স্বাভাবিকীকরণ বা নরমালাইজেশন শর্ত: সম্পূর্ণ রেখা জুড়ে মাইনাস ইনফিনিটি থেকে প্লাস ইনফিনিটি পর্যন্ত বক্ররেখার নিচের মোট ক্ষেত্রফল অবিকল ১.০ (বা ১০০%) হতে হবে।</p>
+
+        <b1b-formula math="\int_{-\infty}^{\infty} f(x)\,dx = 1.0 = 100\%"></b1b-formula>
+
+        <b1b-callout type="green" title="📐 ক্যালকুলাসের সাথে সংযোগ">
+          <p>ক্রমযোজিত বিন্যাস ফাংশন বা সিডিএফ ($F(x)$) হলো বাম দিক থেকে সঞ্চিত ক্ষেত্রফলের পরিমাপ। ক্যালকুলাসের মৌলিক উপপাদ্য অনুযায়ী, এই সঞ্চিত ক্ষেত্রফলের পরিবর্তনের হারই হলো তৎকালীন বক্ররেখার উচ্চতা: $F'(x) = f(x)$।</p>
+          <ul>
+            <li>অবিচ্ছিন্ন চলকে সম্ভাবনা হলো বক্ররেখার নিচের ক্ষেত্রফল: $P(a \le X \le b) = \int_a^b f(x) dx$।</li>
+            <li>পিডিএফ-এর মোট ক্ষেত্রফল সর্বদা ১.০ এ নরমালাইজড থাকে।</li>
+            <li>সিডিএফ হলো সঞ্চিত ক্ষেত্রফল এবং সিডিএফ-এর ঢাল হলো সম্ভাব্যতা ঘনত্ব।</li>
+          </ul>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Section 5 — 6 manifest cues: h2, p, formula-box, p, callout, p ═══ -->
+      <b1b-section id="sec-gaussian-bell-curve" title="নরমাল ডিস্ট্রিবিউশন: গাউসিয়ান বেল কার্ভের জ্যামিতি">
+
+        <p>সমগ্র সম্ভাব্যতা ও পরিসংখ্যানের ইতিহাসে সবচেয়ে প্রভাবশালী ও বহুল ব্যবহৃত অবিচ্ছিন্ন বিন্যাস হলো নরমাল ডিস্ট্রিবিউশন (Normal Distribution) বা গাউসিয়ান বেল কার্ভ (Gaussian Bell Curve)। এই ঘণ্টা আকৃতির মসৃণ প্রতিসম বক্ররেখাটি দুটি মাত্র পরামিতি (Parameter) দ্বারা সম্পূর্ণ নিয়ন্ত্রিত হয়:<br/><br/>১. গড় বা মিন (Mean, $\mu$): এটি নির্ধারণ করে ঘণ্টার সর্বোচ্চ চূড়াটি অনুভূমিক অক্ষে ঠিক কোথায় অবস্থান করবে। এটি বণ্টনের কেন্দ্রবিন্দু। ২. পরিমিত ব্যবধান বা স্ট্যান্ডার্ড ডেভিয়েশন (Standard Deviation, $\sigma$): এটি নির্ধারণ করে ঘণ্টাটি কতটা প্রশস্ত বা কতটা খাড়া হবে। $\sigma$ ছোট হলে বণ্টনটি কেন্দ্রের দিকে তীব্রভাবে পুঞ্জীভূত হয়; $\sigma$ বড় হলে ঘণ্টাটি চ্যাপ্টা হয়ে দুই দিকে ছড়িয়ে পড়ে।</p>
+
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="গাউসিয়ান বেল কার্ভ, মিউ কেন্দ্র ও সিগমা বলয়" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <text x="320" y="26" fill="#38bdf8" font-size="16" font-weight="bold" text-anchor="middle">গাউসিয়ান বেল কার্ভ — কেন্দ্র $\mu$, বিস্তার $\sigma$</text>
+              <line x1="38" y1="258" x2="602" y2="258" stroke="#8b949e" stroke-width="1.5"/>
+              <defs><clipPath id="bellClip"><path d="M44 258 C 150 258, 190 74, 320 74 C 450 74, 490 258, 596 258 Z"/></clipPath></defs>
+              <path d="M44 258 C 150 258, 190 74, 320 74 C 450 74, 490 258, 596 258 Z" fill="none" stroke="#38bdf8" stroke-width="2.5"/>
+              <g clip-path="url(#bellClip)">
+                <rect x="250" y="60" width="140" height="200" fill="rgba(72,187,120,0.5)"/>
+                <rect x="180" y="60" width="70" height="200" fill="rgba(246,173,85,0.45)"/>
+                <rect x="390" y="60" width="70" height="200" fill="rgba(246,173,85,0.45)"/>
+              </g>
+              <line x1="320" y1="68" x2="320" y2="258" stroke="#f6ad55" stroke-width="2" stroke-dasharray="6 4"/>
+              <text x="320" y="284" fill="#f6ad55" font-size="14" text-anchor="middle">$\mu$</text>
+              <text x="180" y="284" fill="#8b949e" font-size="12" text-anchor="middle">$\mu-\sigma$</text>
+              <text x="460" y="284" fill="#8b949e" font-size="12" text-anchor="middle">$\mu+\sigma$</text>
+              <text x="320" y="308" fill="#48bb78" font-size="13" text-anchor="middle">সবুজ ≈ ৬৮.৩% · কমলা ≈ ২৭.২% · বাইরে ≈ ৪.৫%</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/probability/lesson_04/experiments/3b1b_prob_04_full_dubbed.mp4"></video></div>
+          <div slot="caption">ছবিতে ঘণ্টাকৃতির বক্ররেখাটি $\mu$ বিন্দুতে শীর্ষে পৌঁছায় আর $\sigma$ নির্ধারণ করে কত প্রশস্ত বা খাড়া হবে। সবুজ মধ্যভাগে প্রায় ৬৮.৩%, তার পাশের দুটি কমলা অংশে আরও প্রায় ২৭.২%, ফলে $\pm 2\sigma$-এ মোট ৯৫.৫% ক্ষেত্রফল পড়ে। লক্ষ্য করুন বক্ররেখার উচ্চতা কখনো নিজে সম্ভাবনা নয়—সম্ভাবনা হলো এই বলয়গুলোর ক্ষেত্রফল। প্রমিত নরমাল চলক: $$Z = \frac{X - \mu}{\sigma} \sim \mathcal{N}(0, 1), \qquad \phi(z) = \frac{1}{\sqrt{2\pi}} e^{-\frac{z^2}{2}}$$ ৬৮-৯৫-৯৯.৭ শতাংশের নীতি: $P(\mu - \sigma \le X \le \mu + \sigma) \approx 68.27\%, \quad P(\mu - 2\sigma \le X \le \mu + 2\sigma) \approx 95.45\%, \quad P(\mu - 3\sigma \le X \le \mu + 3\sigma) \approx 99.73\%$ **নরমাল ডিস্ট্রিবিউশনের সম্ভাব্যতা ঘনত্ব ফাংশন** — গাউসিয়ান বেল কার্ভের সার্বজনীন সমীকরণ, যেখানে $\mu$ কেন্দ্র এবং $\sigma$ বিস্তার। **প্রমিত নরমাল চলক (Standard Normal Z-Score)** — যেকোনো নরমাল চলককে গড় ০ এবং ভ্যারিয়েন্স ১-এ রূপান্তরের স্ট্যান্ডার্ডাইজেশন। **৬৮-৯৫-৯৯.৭ শতাংশের নীতি (Empirical Rule)** — গড় থেকে নির্দিষ্ট সিগমা দূরত্বের মধ্যে মোট ক্ষেত্রফলের অনুপাত।</div>
+        </b1b-media-tab>
+
+        <b1b-formula math="f(x) = \frac{1}{\sigma \sqrt{2\pi}} \, e^{-\frac{(x - \mu)^2}{2\sigma^2}}"></b1b-formula>
+
+        <p>নরমাল ডিস্ট্রিবিউশনের গাণিতিক সূত্রে একটি বিশ্বখ্যাত ধ্রুবক যুক্ত থাকে: $\frac{1}{\sigma \sqrt{2\pi}}$। এটি কোনো রহস্যময় সংখ্যা নয়; এটি হলো সেই নিখুঁত নরমালাইজিং সহগ, যা নিশ্চিত করে যে $e^{-\frac{(x-\mu)^2}{2\sigma^2}}$ বক্ররেখার নিচের মোট ক্ষেত্রফল যেন ঠিক ১.০ হয়।</p>
+
+        <b1b-callout type="gold" title="🔔 ৬৮-৯৫-৯৯.৭ স্বর্ণালী নীতি">
+          <p>যেকোনো নরমাল ডিস্ট্রিবিউশনে, চলকের মান গড় থেকে ১টি পরিমিত ব্যবধানের মধ্যে থাকার সম্ভাবনা প্রায় ৬৮.৩%, ২টি পরিমিত ব্যবধানের মধ্যে ৯৫.৫%, এবং ৩টি পরিমিত ব্যবধানের মধ্যে ৯৯.৭%! এই জ্যামিতিক সত্যটি কোয়ালিটি কন্ট্রোল, মেশিন লার্নিং ও বৈজ্ঞানিক গবেষণায় অনুমানের ভিত্তি স্থাপন করে।</p>
+          <ul>
+            <li>নরমাল ডিস্ট্রিবিউশন গড়ের সাপেক্ষে নিখুঁতভাবে প্রতিসম ঘণ্টা আকৃতির বক্ররেখা।</li>
+            <li>$\mu$ বণ্টনের কেন্দ্র এবং $\sigma$ বণ্টনের বিস্তার নিয়ন্ত্রণ করে।</li>
+            <li>৬৮-৯৫-৯৯.৭ নীতি যেকোনো স্বাভাবিক বণ্টনের ক্ষেত্রফল বণ্টনের দ্রুত প্রাক্কলন দেয়।</li>
+          </ul>
+        </b1b-callout>
+
+        <p>সুতরাং এই সূত্রের প্রতিটি অংশের নিজস্ব ভূমিকা আছে—কেন্দ্র নির্ধারণ করে $\mu$, বিস্তার নির্ধারণ করে $\sigma$, আর সামনের সহগ নিশ্চিত করে মোট ক্ষেত্রফল ঠিক এক।</p>
+      </b1b-section>
+
+      <!-- ═══ Section 6 — 6 manifest cues: h2, p, p, callout, p, p ═══ -->
+      <b1b-section id="sec-clt-intuition" title="সেন্ট্রাল লিমিট থিওরেম: বিশ্বজুড়ে বেল কার্ভের রহস্য">
+
+        <p>কেন এই বিশেষ বেল কার্ভটি বিজ্ঞানের সব শাখায় এত বেশি দেখা যায়? মানুষের বুদ্ধিমত্তা (আইকিউ), উচ্চতা, অণুবীক্ষণিক কণার ব্রাউনিয়ান গতি, স্টক মার্কেটের দৈনিক পরিবর্তনের ওঠানামা—সবকিছুতেই কেন এই একই ঘণ্টার প্রতিচ্ছবি?</p>
+
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="একটি ছক্কা, দুই ছক্কা ও দশ ছক্কার যোগফলে বেল কার্ভের আবির্ভাব" style="width:100%;height:auto;display:block">
+              <rect width="640" height="320" fill="#0f141c"/>
+              <text x="120" y="26" fill="#38bdf8" font-size="14" font-weight="bold" text-anchor="middle">১টি ছক্কা — সমতল</text>
+              <text x="320" y="26" fill="#f6ad55" font-size="14" font-weight="bold" text-anchor="middle">২টি ছক্কা — ত্রিভুজ</text>
+              <text x="520" y="26" fill="#48bb78" font-size="14" font-weight="bold" text-anchor="middle">১০টি ছক্কা — বেল কার্ভ</text>
+              <g fill="rgba(56,189,248,0.6)" stroke="#38bdf8" stroke-width="1">
+                <rect x="42" y="180" width="23" height="88"/><rect x="67" y="180" width="23" height="88"/>
+                <rect x="92" y="180" width="23" height="88"/><rect x="117" y="180" width="23" height="88"/>
+                <rect x="142" y="180" width="23" height="88"/><rect x="167" y="180" width="23" height="88"/>
+              </g>
+              <g fill="rgba(246,173,85,0.6)" stroke="#f6ad55" stroke-width="1">
+                <rect x="222" y="232" width="16" height="36"/><rect x="240" y="208" width="16" height="60"/>
+                <rect x="258" y="184" width="16" height="84"/><rect x="276" y="160" width="16" height="108"/>
+                <rect x="294" y="136" width="16" height="132"/><rect x="312" y="160" width="16" height="108"/>
+                <rect x="330" y="184" width="16" height="84"/><rect x="348" y="208" width="16" height="60"/>
+                <rect x="366" y="232" width="16" height="36"/>
+              </g>
+              <path d="M412 268 C 440 268, 460 140, 520 140 C 580 140, 600 268, 628 268" fill="rgba(72,187,120,0.25)" stroke="#48bb78" stroke-width="2.5"/>
+              <line x1="40" y1="268" x2="620" y2="268" stroke="#8b949e" stroke-width="1.5"/>
+              <text x="320" y="302" fill="#8b949e" font-size="14" text-anchor="middle">আদি বিন্যাস যেকোনো হোক—স্বাধীন চলকের সমষ্টি সর্বদা বেল কার্ভে ধাবিত হয়</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/probability/lesson_04/experiments/3b1b_prob_04_full_dubbed.mp4"></video></div>
+          <div slot="caption">তিনটি প্যানেলে একই নীতির তিনটি ধাপ দেখানো হয়েছে—একটি ছক্কার সমতল বিন্যাস, দুটি ছক্কার ত্রিভুজাকার চূড়া, আর দশটি ছক্কার যোগফলে জন্ম নেওয়া মসৃণ ঘণ্টাকৃতির বক্ররেখা। লক্ষ্য করুন আদি বিন্যাস কতখানি অসমান হলেও যোগফলের মাঝখানের খাঁজগুলো গলে গিয়ে একটি প্রতিসম চূড়া তৈরি করে। গ্যালটন বোর্ডের হাজারো মার্বেল ঠিক এই প্রক্রিয়াটিকে যান্ত্রিকভাবে প্রমাণ করে। সেন্ট্রাল লিমিট থিওরেম গাণিতিক রূপ: $S_n = \sum_{i=1}^n X_i \implies \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} \xrightarrow{d} \mathcal{N}(0, 1) \quad \text{as } n \to \infty$ **সেন্ট্রাল লিমিট থিওরেম গাণিতিক রূপ** — নমুনা আকার $n$ বৃদ্ধি পেলে যেকোনো গড়ের বিস্তার প্রমিত নরমাল ডিস্ট্রিবিউশনে রূপান্তরিত হয়।</div>
+        </b1b-media-tab>
+
+        <p>উত্তরটি লুকিয়ে আছে সম্ভাব্যতা তত্ত্বের সবচেয়ে বিস্ময়কর সত্যে: সেন্ট্রাল লিমিট থিওরেম (Central Limit Theorem, বা CLT)। উপপাদ্যটি বলছে: আপনি যদি যেকোনো বণ্টনের—তা যতই অসদৃশ, একপেশে বা বিচিত্র হোক না কেন—বহুসংখ্যক স্বাধীন ও সমবন্টিত দৈব চলককে একত্রে যোগ করেন, তবে সেই চলকগুলোর সমষ্টি বা গড় সর্বদা একটি নিখুঁত নরমাল বেল কার্ভের দিকে ধাবিত হবে!</p>
+
+        <b1b-callout type="blue" title="🎲 গ্যালটন বোর্ডের যান্ত্রিক প্রমাণ">
+          <p>ফ্রান্সিস গ্যালটনের উদ্ভাবিত 'গ্যালটন বোর্ড' (Galton Board)-এ ওপর থেকে হাজার হাজার মার্বেল পিনের গায়ে লেগে ডানে বা বাঁয়ে পড়ে। প্রতিটি পিনের সংঘর্ষ একটি স্বাধীন দৈব ঘটনা। নিচে যখন মার্বেলগুলো জমা হয়, তখন স্বয়ংক্রিয়ভাবে একটি নিখুঁত কাঁচের বেল কার্ভ তৈরি হয়!</p>
+          <ul>
+            <li>স্বাধীন দৈব চলকের সমষ্টি সর্বদা নরমাল ডিস্ট্রিবিউশনে উপনীত হয়—এটাই সেন্ট্রাল লিমিট থিওরেম।</li>
+            <li>আদি বিস্তার সমতল, বাঁকা বা যেকোনো আকৃতির হলেও তাদের যোগফল বেল কার্ভ তৈরি করে।</li>
+            <li>এই কারণেই প্রকৃতি, জৈববিজ্ঞান ও প্রকৌশলের বাস্তব পরিমাপে গাউসিয়ান কার্ভের এত প্রাচুর্য।</li>
+          </ul>
+        </b1b-callout>
+
+        <p>একটি বাস্তব পরীক্ষার কথা ভাবুন: একটি ছক্কা নিক্ষেপ করলে ১ থেকে ৬ আসার সম্ভাবনা সমান—বিস্তারটি পুরোপুরি সমতল বা ফ্ল্যাট। এবার দুটি ছক্কা ফেলে যোগ করুন—সমষ্টির সম্ভাবনা হয়ে ওঠে ত্রিভুজাকার চূড়ার মতো। এবার দশটি ছক্কা ফেলে যোগ করুন: বিস্ময়করভাবে সমস্ত অসমান খাঁজ গলে গিয়ে একটি মসৃণ গাউসিয়ান বেল কার্ভ তৈরি হয়!</p>
+
+        <p>বাস্তব জগতের অধিকাংশ ঘটনা শত শত ক্ষুদ্র ক্ষুদ্র স্বাধীন প্রভাবকের সমষ্টি হিসেবে ঘটে। মানুষের উচ্চতা জিন, পুষ্টি, পরিবেশ ইত্যাদির হাজারো ক্ষুদ্র প্রভাবের সম্মিলিত যোগফল। আর এই যোগফলের কারণেই প্রকৃতিতে বেল কার্ভ অবধারিতভাবে আবির্ভূত হয়।</p>
+      </b1b-section>
+
+      <!-- ═══ Section 7: Interactive lab — NON-NARRATED ═══ -->
+      <b1b-section id="sec-interactive-lab" title="ইন্টারেক্টিভ নরমাল কার্ভ ও ইন্টিগ্রাল ল্যাব" data-no-narration="true">
+        <p>নিচের ইন্টারেক্টিভ ল্যাবে গাউসিয়ান বেল কার্ভের জীবন্ত আচরণ প্রত্যক্ষ করুন।</p>
+
+        <p>স্লাইডারের সাহায্যে গড় $\mu$ এবং পরিমিত ব্যবধান $\sigma$ পরিবর্তন করে দেখুন কীভাবে কার্ভটি ডানে-বামে স্থানান্তরিত হয় কিংবা খাড়া ও চওড়া রূপ ধারণ করে। একই সাথে সীমানা $a$ এবং $b$ পরিবর্তন করে বক্ররেখার নিচের নির্দিষ্ট যোগজের ক্ষেত্রফল ও সংশ্লিষ্ট সম্ভাবনা তাৎক্ষণিক পর্যবেক্ষণ করুন:</p>
+
+        <b1b-media-tab active-tab="image">
+          <div slot="image">
+            <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="গাউসিয়ান ইন্টিগ্রাল ল্যাবের প্রাকদর্শন — স্লাইডার ও ছায়াঘেরা ক্ষেত্রফল" style="width:100%;height:auto;display:block">
+              <rect width="640" height="260" fill="#0f141c"/>
+              <text x="320" y="26" fill="#38bdf8" font-size="16" font-weight="bold" text-anchor="middle">লাইভ গাউসিয়ান ইন্টিগ্রাল ল্যাব — $\mu$, $\sigma$, $a$, $b$ টেনে দেখুন</text>
+              <line x1="46" y1="208" x2="594" y2="208" stroke="#8b949e" stroke-width="1.5"/>
+              <defs><clipPath id="labClip"><path d="M50 208 C 140 208, 180 70, 320 70 C 460 70, 500 208, 590 208 Z"/></clipPath></defs>
+              <path d="M50 208 C 140 208, 180 70, 320 70 C 460 70, 500 208, 590 208 Z" fill="none" stroke="#38bdf8" stroke-width="2.5"/>
+              <g clip-path="url(#labClip)"><rect x="240" y="60" width="160" height="150" fill="rgba(72,187,120,0.5)"/></g>
+              <line x1="240" y1="208" x2="240" y2="90" stroke="#f6ad55" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <line x1="400" y1="208" x2="400" y2="90" stroke="#f6ad55" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <text x="240" y="228" fill="#f6ad55" font-size="14" text-anchor="middle">$a$</text>
+              <text x="400" y="228" fill="#f6ad55" font-size="14" text-anchor="middle">$b$</text>
+              <text x="320" y="250" fill="#48bb78" font-size="13" text-anchor="middle">সবুজ ক্ষেত্র = $\int_a^b f(x)\,dx$</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/probability/lesson_04/experiments/3b1b_prob_04_full_dubbed.mp4"></video></div>
+          <div slot="caption">এই ছবিটি নিচের ল্যাবের প্রাকদর্শন—নীল বক্ররেখা হলো $f(x)$, আর $a$ ও $b$ সীমানার মাঝখানের সবুজ অংশ হলো $\int_a^b f(x)\,dx$। $\mu$ বদলালে পুরো ঘণ্টা ডানে-বামে সরে যায়, আর $\sigma$ কমালে চূড়া উপরে উঠে যায় কিন্তু মোট ক্ষেত্রফল ১-এই থাকে। $a$ ও $b$ টেনে আপনি সরাসরি দেখতে পাবেন কীভাবে ব্যবধানের প্রস্থ বাড়ার সাথে সাথে সম্ভাবনাও বৃদ্ধি পায়।</div>
+        </b1b-media-tab>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <div class="viz-wrapper" id="gaussianVizWrapper">
+            <div class="viz-header"><span>🔬 ইন্টারেক্টিভ গাউসিয়ান কার্ভ ও ইন্টিগ্রাল ল্যাব — স্লাইডার টেনে পরীক্ষা করুন!</span></div>
+            <div class="viz-canvas-container">
+              <canvas class="viz-canvas" id="gaussianCanvas" aria-label="গাউসিয়ান বেল কার্ভ ও a থেকে b পর্যন্ত ছায়াঘেরা ক্ষেত্রফল"></canvas>
+            </div>
+            <div class="viz-controls">
+              <div class="viz-slider-row">
+                <label for="sliderMu">গড় মান (Mean, μ):</label>
+                <input type="range" id="sliderMu" min="-3" max="3" step="0.1" value="0"/>
+                <span class="viz-val" id="valMu">০.০</span>
+              </div>
+              <div class="viz-slider-row">
+                <label for="sliderSigma">পরিমিত ব্যবধান (Std Dev, σ):</label>
+                <input type="range" id="sliderSigma" min="0.5" max="2.5" step="0.1" value="1"/>
+                <span class="viz-val" id="valSigma">১.০</span>
+              </div>
+              <div class="viz-slider-row">
+                <label for="sliderA">নিম্নসীমা a:</label>
+                <input type="range" id="sliderA" min="-4" max="4" step="0.1" value="-1"/>
+                <span class="viz-val" id="valA">−১.০</span>
+              </div>
+              <div class="viz-slider-row">
+                <label for="sliderB">উর্ধ্বসীমা b:</label>
+                <input type="range" id="sliderB" min="-4" max="4" step="0.1" value="1"/>
+                <span class="viz-val" id="valB">১.০</span>
+              </div>
+            </div>
+            <div class="prob-sim-stats">
+              <div class="prob-stat-card"><div class="prob-stat-title">শীর্ষ উচ্চতা f(μ)</div><div class="prob-stat-val" id="statPeakHeight">০.৩৯৮৯</div><div class="prob-stat-formula">1 / (σ √(2π))</div></div>
+              <div class="prob-stat-card"><div class="prob-stat-title">ব্যবধানের সম্ভাব্যতা P(a ≤ X ≤ b)</div><div class="prob-stat-val" id="statIntervalProb">০.৬৮২৭ (৬৮.৩%)</div><div class="prob-stat-formula">∫_a^b f(x) dx</div></div>
+              <div class="prob-stat-card"><div class="prob-stat-title">বক্ররেখার মোট ক্ষেত্রফল</div><div class="prob-stat-val" id="statTotalArea">১.০০০০ (১০০%)</div><div class="prob-stat-formula">∫_{-∞}^{∞} f(x) dx</div></div>
+            </div>
+            <div class="viz-info" id="gaussianInsight">💡 লক্ষ্য করুন: যখন আপনি $\sigma$ ছোট করেন, তখন চূড়ার উচ্চতা $f(\mu)$ নাটকীয়ভাবে বৃদ্ধি পায় কিন্তু মোট ক্ষেত্রফল সর্বদা ঠিক ১.০-তে অপরিবর্তিত থাকে!</div>
+          </div>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ Section 8: Quizzes — NON-NARRATED ═══ -->
+      <b1b-section id="sec-quizzes" title="ধারণা যাচাই ও কুইজ" data-no-narration="true">
+        <p>অবিচ্ছিন্ন সম্ভাব্যতা ঘনত্ব, একক বিন্দুর শূন্য সম্ভাব্যতা এবং সেন্ট্রাল লিমিট থিওরেম সম্পর্কিত আপনার উপলব্ধি যাচাই করতে নিচের চারটি কুইজে অংশগ্রহণ করুন।</p>
+
+        <b1b-quiz
+          question="❓ একটি অবিচ্ছিন্ন দৈব চলক $X$-এর জন্য $P(X = 5)$-এর মান কত?"
+          correct="1"
+          correct-msg="চমৎকার! অবিচ্ছিন্ন চলকের ক্ষেত্রে যেকোনো একটি সুনির্দিষ্ট একক বিন্দুর সম্ভাবনা সর্বদা ০: $P(X = c) = 0$। সম্ভাবনা কেবল নির্দিষ্ট ব্যবধানের ক্ষেত্রফল হিসেবে সংজ্ঞায়িত হয়।"
+          wrong-msg="ভেবে দেখুন: অবিচ্ছিন্ন রেখায় অসীম সংখ্যক বাস্তব সংখ্যা রয়েছে। একক বিন্দুর কোনো প্রস্থ বা ক্ষেত্রফল থাকে কি?"
+          reveal-msg="সঠিক উত্তর হলো ০। কারণ নির্দিষ্ট বিন্দুতে প্রস্থ $dx = 0$, ফলে সমাকলনের ক্ষেত্রফলও শূন্য।">
+          <div slot="option">$0.5$</div>
+          <div slot="option">$0$</div>
+          <div slot="option">$f(5)$</div>
+          <div slot="option">$1$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ কোনো সম্ভাব্যতা ঘনত্ব ফাংশন $f(x)$-এর মান কি ১-এর বেশি হতে পারে?"
+          correct="1"
+          correct-msg="নিখুঁত! $f(x)$ হলো সম্ভাব্যতা ঘনত্ব, যার একক হলো 'সম্ভাব্যতা প্রতি একক দৈর্ঘ্য'। যদি ব্যবধান অত্যন্ত সংকীর্ণ হয় (যেমন $[0, 0.2]$), তবে ঘনত্ব $f(x) = 5$ হতে পারে এবং মোট ক্ষেত্রফল $5 \times 0.2 = 1.0$ অক্ষুণ্ণ থাকে।"
+          wrong-msg="মনে রাখবেন: $f(x)$ এবং $P(A)$ এক নয়! $f(x)$ হলো ঘনত্ব, আর ক্ষেত্রফল হলো সম্ভাব্যতা।"
+          reveal-msg="সঠিক উত্তর: হ্যাঁ, $f(x)$ ১-এর বেশি হতে পারে। কারণ সম্ভাব্যতা হলো ক্ষেত্রফল, উচ্চতা নয়।">
+          <div slot="option">না, কারণ সম্ভাব্যতা কখনো ১-এর বেশি হতে পারে না</div>
+          <div slot="option">হ্যাঁ, কারণ $f(x)$ হলো ঘনত্ব (Density), সম্ভাব্যতা নয়; বক্ররেখার নিচের মোট ক্ষেত্রফল ১ হলেই চলবে</div>
+          <div slot="option">কেবলমাত্র বিচ্ছিন্ন চলকের ক্ষেত্রে হতে পারে</div>
+          <div slot="option">না, এটি গাণিতিকভাবে অসম্ভব</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ সেন্ট্রাল লিমিট থিওরেম (CLT)-এর মূল প্রতিপাদ্য কী?"
+          correct="1"
+          correct-msg="অসাধারণ! সেন্ট্রাল লিমিট থিওরেমের জাদুকরী শক্তি এখানেই: আদি চলকগুলোর বিন্যাস যাই হোক না কেন, তাদের সমষ্টি বা গড় সর্বদা স্বাভাবিক বেল কার্ভে রূপ নেয়।"
+          wrong-msg="পুনরায় চিন্তা করুন: কীভাবে একাধিক স্বাধীন প্রভাবক একত্রিত হলে ঘণ্টাকৃতির বক্ররেখা সৃষ্টি হয়?"
+          reveal-msg="সঠিক উত্তর: স্বাধীন দৈব চলকসমূহের সমষ্টি বা গড় একটি নরমাল ডিস্ট্রিবিউশনে উপনীত হয়।">
+          <div slot="option">সকল দৈব চলকই জন্মগতভাবে নরমাল ডিস্ট্রিবিউশন মেনে চলে</div>
+          <div slot="option">যেকোনো স্বাধীন দৈব চলকের বড় সমষ্টি বা গড় একটি নরমাল বেল কার্ভের দিকে ধাবিত হয়</div>
+          <div slot="option">নরমাল ডিস্ট্রিবিউশনের ক্ষেত্রফল সবসময় শূন্য হয়</div>
+          <div slot="option">ছক্কার দানে সর্বদা ৬ আসার সম্ভাবনা বেশি</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ একটি নরমাল ডিস্ট্রিবিউশনে গড় থেকে দুই পরিমিত ব্যবধানের মধ্যে $[\mu - 2\sigma, \mu + 2\sigma]$ মোট তথ্যের কত শতাংশ অবস্থান করে?"
+          correct="2"
+          correct-msg="একদম সঠিক! ৬৮-৯৫-৯৯.৭ নীতি অনুসারে, $\pm 1\sigma$-তে ৬৮.৩%, $\pm 2\sigma$-তে ৯৫.৪%, এবং $\pm 3\sigma$-তে ৯৯.৭% ক্ষেত্রফল অন্তর্ভুক্ত থাকে।"
+          wrong-msg="৬৮% হলো ১টি সিগমার জন্য। ২টি সিগমার জন্য ক্ষেত্রফল কত মনে করুন?"
+          reveal-msg="সঠিক উত্তর: প্রায় ৯৫.৪%।">
+          <div slot="option">প্রায় ৫০%</div>
+          <div slot="option">প্রায় ৬৮.৩%</div>
+          <div slot="option">প্রায় ৯৫.৪%</div>
+          <div slot="option">প্রায় ৯৯.৭%</div>
+        </b1b-quiz>
+
+      </b1b-section>
+
+      <b1b-callout type="blue" title="📝 প্ল্যাটফর্ম সম্পর্কে">
+        <p>৩ব্লু১ব্রাউন বাংলা প্ল্যাটফর্ম · মূল পাঠ ভাবনা: Grant Sanderson (3Blue1Brown)। অফলাইন গাণিতিক প্রতীক: KaTeX v0.16.11 · একক শেল ডেটা আর্কিটেকচার: STEM গণিত টিম।</p>
+      </b1b-callout>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/probability/lesson_04/experiments/3b1b_prob_04_full_dubbed.mp4"
+    yt-id="ZA4JkHKZM50"
+    title="অবিচ্ছিন্ন সম্ভাব্যতা ঘনত্ব ও নরমাল ডিস্ট্রিবিউশন — অধ্যায় ৪"
+    subtitle="পিএমএফ থেকে পিডিএফ, একক বিন্দুর শূন্য সম্ভাব্যতার প্যারাডক্স, বক্ররেখার নিচের ক্ষেত্রফল, গাউসিয়ান বেল কার্ভ ও সেন্ট্রাল লিমিট থিওরেম—সম্পূর্ণ প্রমিত বাংলায় ডাব করা।"
+    playlist-title="📋 প্লেলিস্ট — সম্ভাব্যতার মূলভাব">
+    <div slot="playlist">
+      <a class="playlist-item" href="lesson_01.html"><div class="playlist-num">১</div><div class="playlist-item-info"><div class="playlist-item-title">সম্ভাব্যতা আসলে কী?</div><div class="playlist-item-meta">অধ্যায় ১</div></div></a>
+      <a class="playlist-item" href="lesson_02.html"><div class="playlist-num">২</div><div class="playlist-item-info"><div class="playlist-item-title">বেজের সূত্র ও মেডিকেল টেস্ট প্যারাডক্স</div><div class="playlist-item-meta">অধ্যায় ২</div></div></a>
+      <a class="playlist-item" href="lesson_03.html"><div class="playlist-num">৩</div><div class="playlist-item-info"><div class="playlist-item-title">দ্বিপদী বিন্যাস ও প্যাসকেলের ত্রিভুজ</div><div class="playlist-item-meta">অধ্যায় ৩</div></div></a>
+      <a class="playlist-item active" href="lesson_04.html"><div class="playlist-num">৪</div><div class="playlist-item-info"><div class="playlist-item-title">অবিচ্ছিন্ন সম্ভাব্যতা ঘনত্ব ও নরমাল ডিস্ট্রিবিউশন</div><div class="playlist-item-meta">অধ্যায় ৪ · চলমান</div></div></a>
+    </div>
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_03.html"
+  prev-title="০৩. শর্তাধীন সম্ভাব্যতা ও স্বাধীনতা"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_05.html"
+  next-title="০৫. দ্বিপদী বিস্তার ও প্যাসকেলের ত্রিভুজ"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ INTERACTIVE GAUSSIAN INTEGRAL LAB SCRIPT ═══════════ -->
+<script>
+(function () {
+  function init() {
+    if (window.__probGaussianLabReady) return;
+    const canvas = document.getElementById('gaussianCanvas');
+    if (!canvas) return;
+    window.__probGaussianLabReady = true;
+
+    const ctx = canvas.getContext('2d');
+    let W = 600, H = 380;
+    const sMu = document.getElementById('sliderMu');
+    const sSigma = document.getElementById('sliderSigma');
+    const sA = document.getElementById('sliderA');
+    const sB = document.getElementById('sliderB');
+    const vals = {
+      mu: document.getElementById('valMu'),
+      sigma: document.getElementById('valSigma'),
+      a: document.getElementById('valA'),
+      b: document.getElementById('valB')
+    };
+    const stats = {
+      peak: document.getElementById('statPeakHeight'),
+      prob: document.getElementById('statIntervalProb'),
+      total: document.getElementById('statTotalArea')
+    };
+    if (!ctx || !sMu || !sSigma || !sA || !sB) return;
+
+    // Bengali numeral formatter (keeps the minus sign and decimals readable).
+    function bn(n) {
+      return String(n).replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[+d]).replace('-', '−');
+    }
+
+    // Abramowitz & Stegun 7.1.26 error-function approximation.
+    function erf(x) {
+      const sign = x < 0 ? -1 : 1;
+      x = Math.abs(x);
+      const t = 1 / (1 + 0.3275911 * x);
+      const y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-x * x);
+      return sign * y;
+    }
+
+    function normalCdf(x, mu, sigma) {
+      return 0.5 * (1 + erf((x - mu) / (sigma * Math.SQRT2)));
+    }
+
+    function resize() {
+      const container = canvas.parentElement;
+      W = container && container.clientWidth ? container.clientWidth : 600;
+      const full = !!canvas.closest('.b1b-fs-active, .fullscreen');
+      H = full ? Math.max(window.innerHeight - 250, 420) : Math.min(Math.max(W * 0.55, 340), 440);
+      canvas.width = W;
+      canvas.height = H;
+      draw();
+    }
+
+    function update() {
+      const mu = parseFloat(sMu.value);
+      const sigma = parseFloat(sSigma.value);
+      let a = parseFloat(sA.value);
+      let b = parseFloat(sB.value);
+      if (a > b) { const t = a; a = b; b = t; }
+      vals.mu && (vals.mu.textContent = bn(mu.toFixed(1)));
+      vals.sigma && (vals.sigma.textContent = bn(sigma.toFixed(1)));
+      vals.a && (vals.a.textContent = bn(a.toFixed(1)));
+      vals.b && (vals.b.textContent = bn(b.toFixed(1)));
+      const prob = Math.max(0, Math.min(1, normalCdf(b, mu, sigma) - normalCdf(a, mu, sigma)));
+      const peak = 1 / (sigma * Math.sqrt(2 * Math.PI));
+      stats.peak && (stats.peak.textContent = bn(peak.toFixed(4)));
+      stats.prob && (stats.prob.textContent = bn(prob.toFixed(4)) + ' (' + bn((prob * 100).toFixed(1)) + '%)');
+      stats.total && (stats.total.textContent = bn('1.0000') + ' (১০০%)');
+      draw();
+    }
+
+    function draw() {
+      const mu = parseFloat(sMu.value);
+      const sigma = parseFloat(sSigma.value);
+      let a = parseFloat(sA.value), b = parseFloat(sB.value);
+      if (a > b) { const t = a; a = b; b = t; }
+
+      ctx.clearRect(0, 0, W, H);
+      const padL = 46, padR = 24, padT = 30, padB = 56;
+      const plotW = W - padL - padR, plotH = H - padT - padB;
+      const xMin = -5, xMax = 5;
+      const toX = x => padL + ((x - xMin) / (xMax - xMin)) * plotW;
+      const yMax = 1 / (0.5 * Math.sqrt(2 * Math.PI)) * 1.12;
+      const toY = y => padT + plotH - (y / yMax) * plotH;
+
+      ctx.save();
+      ctx.fillStyle = '#10131b';
+      ctx.strokeStyle = 'rgba(255,255,255,0.12)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      if (ctx.roundRect) ctx.roundRect(4, 4, W - 8, H - 8, 10); else ctx.rect(4, 4, W - 8, H - 8);
+      ctx.fill(); ctx.stroke();
+
+      // Axes and ticks.
+      ctx.strokeStyle = 'rgba(255,255,255,0.30)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(padL, padT + plotH); ctx.lineTo(W - padR, padT + plotH);
+      ctx.moveTo(padL, padT); ctx.lineTo(padL, padT + plotH);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(255,255,255,0.5)';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      for (let x = -4; x <= 4; x += 2) {
+        const px = toX(x);
+        ctx.beginPath(); ctx.moveTo(px, padT + plotH); ctx.lineTo(px, padT + plotH + 5); ctx.stroke();
+        ctx.fillText(bn(String(x)), px, padT + plotH + 20);
+      }
+      ctx.textAlign = 'left';
+      ctx.fillText('f(x)', 10, padT + 14);
+
+      // Curve path.
+      const N = 420;
+      const pdf = x => Math.exp(-((x - mu) * (x - mu)) / (2 * sigma * sigma)) / (sigma * Math.sqrt(2 * Math.PI));
+      const pts = [];
+      for (let i = 0; i <= N; i++) {
+        const x = xMin + (i / N) * (xMax - xMin);
+        pts.push([toX(x), toY(pdf(x))]);
+      }
+
+      // Shaded interval [a, b].
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(toX(a), padT + plotH);
+      for (let i = 0; i <= N; i++) {
+        const x = xMin + (i / N) * (xMax - xMin);
+        if (x >= a && x <= b) ctx.lineTo(toX(x), toY(pdf(x)));
+      }
+      ctx.lineTo(toX(b), padT + plotH);
+      ctx.closePath();
+      ctx.fillStyle = 'rgba(72,187,120,0.55)';
+      ctx.fill();
+      ctx.restore();
+
+      // Bell curve stroke.
+      ctx.beginPath();
+      pts.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]));
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 2.5;
+      ctx.stroke();
+
+      // Bounds a, b and centre mu.
+      const marks = [[a, '#f6ad55', 'a'], [b, '#f6ad55', 'b'], [mu, '#48bb78', 'μ']];
+      marks.forEach(m => {
+        const px = toX(m[0]);
+        ctx.save();
+        ctx.strokeStyle = m[1];
+        ctx.lineWidth = 1.5;
+        ctx.setLineDash([5, 4]);
+        ctx.beginPath(); ctx.moveTo(px, toY(pdf(m[0]))); ctx.lineTo(px, padT + plotH); ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = m[1];
+        ctx.font = 'bold 13px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(m[2], px, padT + plotH + 20);
+        ctx.restore();
+      });
+      ctx.fillStyle = 'rgba(255,255,255,0.55)';
+      ctx.font = '13px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('সবুজ ক্ষেত্র = P(a ≤ X ≤ b) = ∫ f(x) dx', W / 2, H - 10);
+      ctx.restore();
+    }
+
+    [sMu, sSigma, sA, sB].forEach(s => s.addEventListener('input', update));
+    window.addEventListener('resize', resize, { passive: true });
+    window.addEventListener('b1b-fullscreen-change', resize);
+    resize();
+    update();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>আইগেনভেক্টর ও আইগেনভ্যালু | Eigenvectors and eigenvalues (Essence of linear algebra, chapter 14)</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/linear_algebra/lesson_14/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order (identical to Lesson 01) ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="লিনিয়ার অ্যালজেব্রা"
+  course-url="../../index.html#linear-algebra"
+  home-url="../../index.html"
+  chapter-num="১৪"
+  chapter-total="১৫"
+  prev-url="lesson_13.html"
+  prev-title="পূর্ববর্তী অধ্যায়: ভিত্তি পরিবর্তন"
+  next-url="lesson_15.html"
+  next-title="পরবর্তী অধ্যায়: আইগেনভ্যালু গণনার চতুর কৌশল"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="লিনিয়ার অ্যালজেব্রা"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ১৪ · লিনিয়ার অ্যালজেব্রার সারমর্ম"
+  title="আইগেনভেক্টর ও আইগেনভ্যালু | Eigenvectors and eigenvalues (Essence of linear algebra, chapter 14)"
+  desc="রূপান্তরে যেসব ভেক্টর নিজস্ব স্প্যানে অবিচল থেকে কেবল স্কেল হয়—তাদের আইগেনভেক্টর বলা হয়। $A\vec{v}=\lambda\vec{v}$ থেকে শুরু করে শূন্য নির্ণায়ক, চারিত্রিক বহুপদ, ঘূর্ণন-শিয়ার-স্কেলিং এবং আইগেনবেসিসে $A^{-1}MA$—সবকিছুর জ্যামিতিক অন্তর্দৃষ্টি।"
+  video-src="../../media_vault/lesson_14/experiments/fill_v2/3b1b_lesson_14_full_dubbed_fill2.mp4"
+  yt-id="PFDu9oVAE-g"
+  date="১৫ সেপ্টেম্বর, ২০১৬"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="মূল পাঠ: Grant Sanderson (3Blue1Brown) · টেক্সট অ্যাডাপ্টেশন: Kurt Bruns ও James Schloss · বাংলা পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2016/eola/chapter10.py"
+  voice-badge="বাংলা শিক্ষক ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">সূচনা ও প্রয়োজনীয় ভিত্তি</b1b-bookmark>
+      <b1b-bookmark time="144"  time-bn="০২:২৪">একটি উদাহরণ: ম্যাট্রিক্স [[3,1],[0,2]]</b1b-bookmark>
+      <b1b-bookmark time="274" time-bn="০৪:৩৪">নিজস্ব স্প্যানে থাকা ভেক্টর ও আইগেনভ্যালু</b1b-bookmark>
+      <b1b-bookmark time="385" time-bn="০৬:২৫">শূন্য নির্ণায়ক ও চারিত্রিক বহুপদ</b1b-bookmark>
+      <b1b-bookmark time="385" time-bn="০৬:২৫">ঘূর্ণন, শিয়ার ও স্কেলিং</b1b-bookmark>
+      <b1b-bookmark time="385" time-bn="০৬:২৫">আইগেনবেসিস ও A⁻¹MA</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec_01_geometric_intuition">১. জ্যামিতিক অন্তর্দৃষ্টি: নিজস্ব স্প্যানে স্থির ভেক্টর</a>
+      <a href="#sec_02_characteristic_equation">২. চারিত্রিক সমীকরণ ও শূন্য নির্ণায়ক</a>
+      <a href="#sec_03_special_transformations">৩. ঘূর্ণন, শিয়ার ও স্কেলিং</a>
+      <a href="#sec_quizzes_eigenvalues">কুইজ: আইগেনভ্যালু নির্ণয় (অফিশিয়াল)</a>
+      <a href="#sec_04_3d_rotations_and_eigenbasis">৪. থ্রিডি ঘূর্ণন অক্ষ ও আইগেনবেসিস</a>
+      <a href="#sec_labs">ইন্টারেক্টিভ ল্যাব ও মিডিয়া চিত্র</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ NARRATED SECTION 1 — 6 cues: h2, chapter-quote, p, figure, insight-box(callout), p ═══ -->
+      <b1b-section id="sec_01_geometric_intuition" title="১. জ্যামিতিক অন্তর্দৃষ্টি: নিজস্ব স্প্যান বা রেখায় স্থির থাকা ভেক্টর">
+
+        <b1b-quote author="সার্জ ল্যাং (Serge Lang)">গত বার আমি জিজ্ঞেস করেছিলাম, 'গণিত তোমার কাছে কী?' কেউ কেউ উত্তর দিয়েছিল—'সংখ্যার কারসাজি, কাঠামোর কারসাজি।' আর যদি সঙ্গীত সম্পর্কে জিজ্ঞেস করতাম, তবে কি উত্তর আসত—'স্বরের কারসাজি?'</b1b-quote>
+
+        <p>আইগেনভেক্টর ও আইগেনভ্যালু লিনিয়ার বীজগণিতের এমন এক ধারণা যা প্রথমে কিছুটা অস্বচ্ছ লাগতে পারে—অথচ এর পেছনের ছবি খুবই সরল। এর আগের অধ্যায়গুলোতে ম্যাট্রিক্সকে রূপান্তর হিসেবে দেখা, নির্ণায়ক, রৈখিক সমীকরণ জোট এবং ভিত্তি পরিবর্তন—এই চারটি বিষয়ের ওপর এর বোঝাপড়া নির্ভর করে। চলুন একটি কঙ্ক্রিট উদাহরণ দিয়ে শুরু করি: দ্বিমাত্রিক স্পেসে $A=\begin{bmatrix}3&1\\0&2\end{bmatrix}$ ম্যাট্রিক্সটি $\hat{i}$-কে $[3,0]$ এবং $\hat{j}$-কে $[1,2]$ এ নিয়ে যায়।</p>
+
+        <b1b-figure
+          src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2016/eigenvalues/figures/an-example/LinearTransformation.light.svg"
+          alt="ম্যাট্রিক্স [[3,1],[0,2]] দ্বারা দ্বিমাত্রিক স্পেসের রূপান্তর"
+          caption="এই চিত্রে দেখা যাচ্ছে কীভাবে $A=\begin{bmatrix}3&1\\0&2\end{bmatrix}$ ম্যাট্রিক্সটি পুরো সমতলকে নতুন আকার দেয়: $\hat{i}$ তিন গুণ হয়ে x-অক্ষেই থাকে, আর $\hat{j}$ এগিয়ে $[1,2]$ তে পড়ে। গ্রিডের রেখাগুলোর দিক বদলালেও মূলবিন্দু অনড় থাকে—এটিই রৈখিক রূপান্তরের চিহ্ন। এখানে লক্ষ্য করতে হবে কোন ভেক্টরগুলো ঘুরে না গিয়ে শুধু দৈর্ঘ্যে বদলায়; পরের চিত্রগুলোতে আমরা ঠিক সেগুলোই খুঁজে বের করব।"></b1b-figure>
+
+        <b1b-callout type="gold" icon="✨" title="নিজস্ব স্প্যানে অবিচল ভেক্টরই আইগেনভেক্টর">
+          <p>মূলবিন্দু থেকে যেকোনো ভেক্টরের ডগা দিয়ে যে সরলরেখাটি যায়, তাকে বলা হয় ওই ভেক্টরের <strong>স্প্যান</strong>। অধিকাংশ ভেক্টর রূপান্তরের সময় এই রেখা ছেড়ে নতুন কোণে চলে যায়; কিন্তু কিছু ভেক্টর থাকে যারা নিজেদের রেখাতেই থেকে কেবল প্রসারিত বা সংকুচিত হয়—তাদেরই আইগেনভেক্টর বলা হয়।</p>
+          <p>আমাদের উদাহরণে x-অক্ষের ভেক্টররা তিন গুণ হয় ($A\hat{i}=3\hat{i}$), তাই তাদের আইগেনভ্যালু $3$। আর $[1,-1]$ বরাবর কর্ণ রেখার ভেক্টররা দুই গুণ হয়—আইগেনভ্যালু $2$। অন্য কোনো উদাহরণে আইগেনভ্যালু $-\tfrac{1}{2}$ হতে পারে, অর্থাৎ ভেক্টরটি উল্টে অর্ধেক হবে; তবুও সে নিজস্ব রেখাতেই থাকবে। জার্মান শব্দ 'eigen' মানে 'নিজস্ব'—নামটিই ধারণাটি বলে দেয়।</p>
+        </b1b-callout>
+
+        <p>সুতরাং $A\vec{v}=\lambda\vec{v}$ হলো আইগেনভেক্টরের সংজ্ঞা: $\vec{v}$ অশূন্য, $\lambda$ একটি স্কেলার, আর রূপান্তরের পর $\vec{v}$ একই দিকে (বা ঠিক বিপরীত দিকে) থেকে $\lambda$ গুণ লম্বা হয়। $\lambda>0$ হলে দিক একই থাকে, $\lambda<0$ হলে ১৮০° উল্টে যায়, আর $|\lambda|>1$ মানে প্রসারণ। এই সহজ ধর্মটিই পরে জটিল ম্যাট্রিক্সের ঘাত নির্ণয়কে সহজ করে দেবে।</p>
+
+      </b1b-section>
+
+      <!-- ═══ NARRATED SECTION 2 — 6 cues: h2, p, p, figure, insight-box(callout), p ═══ -->
+      <b1b-section id="sec_02_characteristic_equation" title="২. চারিত্রিক সমীকরণ: নির্ণায়ক শূন্য হওয়ার বীজগণিত">
+
+        <p>এখন প্রশ্ন হলো—কোনো প্রদত্ত ম্যাট্রিক্সের আইগেনভেক্টর ও আইগেনভ্যালু কীভাবে খুঁজে পাব? প্রতীকীভাবে লিখি $A\vec{v}=\lambda\vec{v}$। এখানে বাম পাশে আছে ম্যাট্রিক্স–ভেক্টর গুণন, আর ডান পাশে সাধারণ স্কেলার গুণন—দুই ধরনের গুণন একই সমীকরণে বসানোয় প্রথমে একটু অস্বস্তি লাগতে পারে।</p>
+
+        <p>অস্বস্তিটি দূর করতে ডান পাশের $\lambda\vec{v}$ কে একটি ম্যাট্রিক্স গুণন হিসেবে লিখি: $\lambda\vec{v}=(\lambda I)\vec{v}$, যেখানে $I$ হলো কর্ণে ১ ও বাকি সব জায়গায় ০ বিশিষ্ট আইডেন্টিটি ম্যাট্রিক্স। এখন ডান পাশের পদটিকে বামে নিয়ে এলে পাই $(A-\lambda I)\vec{v}=\vec{0}$—অর্থাৎ একটি নতুন ম্যাট্রিক্স $(A-\lambda I)$ ভেক্টর $\vec{v}$-কে শূন্য ভেক্টরে চ্যাপ্টা করে দিচ্ছে।</p>
+
+        <b1b-figure
+          src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2016/eigenvalues/figures/notes-on-computation/ZeroDeterminantTransformation.light.svg"
+          alt="(A − λI) ম্যাট্রিক্স দ্বারা স্থানকে এক মাত্রায় চ্যাপ্টা করা"
+          caption="এই চিত্রে $(A-\lambda I)$ ম্যাট্রিক্সটি পুরো দ্বিমাত্রিক স্থানকে চ্যাপ্টা করে একটি সরলরেখায় নামিয়ে আনছে, যাতে অশূন্য ভেক্টর $\vec{v}$ শূন্যে পৌঁছাতে পারে। গ্রিডের ঘনত্ব কমে যাওয়া আর ক্ষেত্রফলের শূন্য হয়ে যাওয়া—দুটোই নির্ণায়ক শূন্য হওয়ার দৃশ্যমান প্রমাণ। মনে রাখবেন, যদি স্থান চ্যাপ্টা না হতো তবে কেবল তুচ্ছ সমাধান $\vec{v}=\vec{0}$-ই পাওয়া যেত।"></b1b-figure>
+
+        <b1b-callout type="blue" icon="🔍" title="শূন্য নির্ণায়কই সুইট স্পট">
+          <p>অশূন্য $\vec{v}$-এর জন্য $(A-\lambda I)\vec{v}=\vec{0}$ সম্ভব হতে হলে $(A-\lambda I)$-কে স্থানকে নিচু মাত্রায় নামাতে হবে—অর্থাৎ $\det(A-\lambda I)=0$। একে বলা হয় <strong>চারিত্রিক সমীকরণ</strong>।</p>
+          <p>উদাহরণস্বরূপ $A=\begin{bmatrix}2&2\\1&3\end{bmatrix}$ নিলে $\det\begin{bmatrix}2-\lambda&2\\1&3-\lambda\end{bmatrix}=(2-\lambda)(3-\lambda)-2$; $\lambda$-কে নবের মতো ঘুরালে 'সুইট স্পট' আসে $\lambda=1$-এ, যখন ম্যাট্রিক্সটি স্থানকে একটি রেখায় চ্যাপ্টা করে। ব্যবহারিকভাবে আগে এই সমীকরণ থেকে $\lambda$ বের করা হয়, তারপর নাল-স্পেস থেকে সংশ্লিষ্ট $\vec{v}$ পাওয়া যায়।</p>
+        </b1b-callout>
+
+        <p>আমাদের প্রথম উদাহরণে ফিরে আসি: $A=\begin{bmatrix}3&1\\0&2\end{bmatrix}$। $\det\begin{bmatrix}3-\lambda&1\\0&2-\lambda\end{bmatrix}=(3-\lambda)(2-\lambda)=0$ দেয় $\lambda=2$ অথবা $\lambda=3$। $\lambda=2$ বসালে $\begin{bmatrix}1&1\\0&0\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\vec{0}$ থেকে $x=-y$, অর্থাৎ $[1,-1]$ বরাবর রেখার সব ভেক্টরই আইগেনভেক্টর—ঠিক যা আমরা চিত্রে দেখেছিলাম।</p>
+
+      </b1b-section>
+
+      <!-- ═══ NARRATED SECTION 3 — 5 cues: h2, p, figure, p, insight-box(callout) ═══ -->
+      <b1b-section id="sec_03_special_transformations" title="৩. বিশেষ রূপান্তর: ঘূর্ণন, শিয়ার ও স্কেলিং">
+
+        <p>সব ম্যাট্রিক্সের কি বাস্তব আইগেনভেক্টর থাকে? না। সবচেয়ে সুন্দর ব্যতিক্রম হলো ৯০° ঘূর্ণন: $R=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$ প্রতিটি ভেক্টরকে তার নিজস্ব রেখা থেকে ৯০° সরে যেতে বাধ্য করে, তাই কোনো ভেক্টরই স্প্যানে থাকে না। বীজগণিতও একই কথা বলে—$\det(R-\lambda I)=(-\lambda)(-\lambda)-(-1)(1)=\lambda^2+1=0$, যার মূল কেবল জটিল সংখ্যা $\lambda=\pm i$। বাস্তব মূলের অনুপস্থিতিই বলে দেয় বাস্তব আইগেনভেক্টর নেই।</p>
+
+        <b1b-figure
+          src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2016/eigenvalues/figures/notes-on-computation/RotationTransformation.light.svg"
+          alt="৯০ ডিগ্রি ঘূর্ণনে কোনো ভেক্টর তার আদি স্প্যানে থাকে না"
+          caption="এই চিত্রে ৯০° ঘূর্ণনের সময় প্রতিটি তীর আদি রেখা থেকে লম্বভাবে সরে যাচ্ছে—কোনো তীরই আগের দিকে ফিরে আসছে না। পাশাপাশি দেখানো $\lambda^2+1=0$ রাশিটির কোনো বাস্তব সমাধান নেই, আর এই দুটি পর্যবেক্ষণ একে অপরকে সমর্থন করে। একে জটিল আইগেনভ্যালু বলা হয়; জ্যামিতিকভাবে এর অর্থ হলো রূপান্তরটি কেবল স্কেল নয়, একটি অতিরিক্ত ঘূর্ণনও ঘটায়।"></b1b-figure>
+
+        <p>অন্য দিকে শিয়ার $S=\begin{bmatrix}1&1\\0&1\end{bmatrix}$—এ $\hat{i}$ স্থির থাকে, $\hat{j}$ ডানে সরে। কেবল x-অক্ষের ভেক্টরাই নিজেদের রেখায় থাকে, $\det(S-\lambda I)=(1-\lambda)^2$ থেকে একমাত্র $\lambda=1$; অর্থাৎ শিয়ারের একটি মাত্র আইগেন-রেখা আছে। আর $2I=\begin{bmatrix}2&0\\0&2\end{bmatrix}$ সব দিকে সমান দুই গুণ করে, তাই সমতলের প্রতিটি ভেক্টরই $\lambda=2$ সহ আইগেনভেক্টর—একটিমাত্র আইগেনভ্যালু, অসীম সংখ্যক আইগেনভেক্টর।</p>
+
+        <b1b-callout type="green" icon="🔄" title="তিন ধরনের আচরণ এক নজরে">
+          <p><strong>ঘূর্ণন:</strong> কোনো বাস্তব আইগেনভেক্টর নেই ($\lambda=\pm i$)। <strong>শিয়ার:</strong> মাত্র একটি স্বাধীন আইগেন-রেখা ($\lambda=1$)। <strong>স্কেলিং:</strong> প্রতিটি ভেক্টরই আইগেনভেক্টর ($\lambda=2$)।</p>
+          <p>আর $\lambda=-\tfrac{1}{2}$-এর মতো ঋণাত্মক ক্ষেত্রে ভেক্টরটি উল্টে অর্ধেক হয়—দিক বদলালেও সে নিজস্ব রেখাতেই থাকে, তাই এখনো আইগেনভেক্টর। এই তুলনাটি মনে রাখলে পরের অংশের আইগেনবেসিস বোঝা সহজ হবে।</p>
+        </b1b-callout>
+
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED QUIZ SECTION — official 3B1B Questions ═══ -->
+      <b1b-section id="sec_quizzes_eigenvalues" title="✅ কুইজ: আইগেনভ্যালু নির্ণয় (অফিশিয়াল 3Blue1Brown প্রশ্ন)" data-no-narration="true">
+        <p class="viz-intro">নিচের তিনটি প্রশ্ন অফিশিয়াল 3Blue1Brown লেসনের 'Questions' অংশ থেকে নেওয়া হয়েছে। একটি বিকল্প বেছে <strong>যাচাই করো</strong> টিপুন—প্রতিটি ফলাফলে গাণিতিক ব্যাখ্যা আছে।</p>
+
+        <b1b-quiz
+          question="❓ $\begin{bmatrix}3&2\\2&3\end{bmatrix}$ ম্যাট্রিক্সটির আইগেনভ্যালু কী? (What is the eigenvalue(s) of the matrix $\begin{bmatrix}3&2\\2&3\end{bmatrix}$?)"
+          correct="1"
+          correct-msg="চমৎকার! $\det\begin{bmatrix}3-\lambda&2\\2&3-\lambda\end{bmatrix}=(3-\lambda)^2-4=\lambda^2-6\lambda+5=(\lambda-5)(\lambda-1)$, তাই আইগেনভ্যালু $5$ ও $1$। $[1,1]$ বরাবর ভেক্টর ৫ গুণ এবং $[1,-1]$ বরাবর ভেক্টর ১ গুণ হয়—নির্ণায়কের শূন্যমূলই এই দুটি রেখা চিহ্নিত করে।"
+          wrong-msg="কেবল কর্ণের মান 3 দেখে উত্তর দিলে হবে না। $(3-\lambda)^2-4=0$ সমাধান করুন: $\lambda=5$ ও $\lambda=1$ পাওয়া যায়। '3' শুধু কর্ণের মান, আইগেনভ্যালু নয়; '$5$ and $1$' হলো সঠিক বিকল্প।"
+          reveal-msg="সঠিক উত্তর: 5 and 1 — কারণ $(\lambda-5)(\lambda-1)=0$।">
+          <div slot="option">3</div>
+          <div slot="option">5 and 1</div>
+          <div slot="option">2</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ $\begin{bmatrix}2&1\\-1&2\end{bmatrix}$ ম্যাট্রিক্সটির আইগেনভ্যালু কী? (What is the eigenvalue(s) of the matrix $\begin{bmatrix}2&1\\-1&2\end{bmatrix}$?)"
+          correct="0"
+          correct-msg="ঠিক! $\det\begin{bmatrix}2-\lambda&1\\-1&2-\lambda\end{bmatrix}=(2-\lambda)^2+1=0$ দেয় $\lambda=2\pm i$—অর্থাৎ কোনো বাস্তব আইগেনভ্যালু নেই। জ্যামিতিকভাবে এটি ৯০° ঘূর্ণনেরই মতো আচরণ করে, শুধু ২ গুণ স্কেলিংসহ; তাই কোনো বাস্তব ভেক্টরই নিজস্ব স্প্যানে থাকতে পারে না।"
+          wrong-msg="কর্ণে ২ থাকলেই আইগেনভ্যালু ২ হবে না। $(2-\lambda)^2+1=0$ এর কোনো বাস্তব মূল নেই—মূল দুটি জটিল $2\pm i$। '3 and 1'ও ভুল, কারণ বর্গটির মান কখনো ঋণাত্মক হতে পারে না।"
+          reveal-msg="সঠিক উত্তর: There are no real eigenvalues. — কারণ $(2-\lambda)^2+1=0$।">
+          <div slot="option">There are no real eigenvalues.</div>
+          <div slot="option">2</div>
+          <div slot="option">3 and 1</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ $\begin{bmatrix}-2&1\\0&-2\end{bmatrix}$ ম্যাট্রিক্সটির আইগেনভ্যালু কী? (What is the eigenvalue(s) of the matrix $\begin{bmatrix}-2&1\\0&-2\end{bmatrix}$?)"
+          correct="2"
+          correct-msg="চমৎকার! $\det\begin{bmatrix}-2-\lambda&1\\0&-2-\lambda\end{bmatrix}=(-2-\lambda)^2=0$ দেয় $\lambda=-2$ (দ্বি-মূল)। x-অক্ষের ভেক্টররাই আইগেনভেক্টর; উপরের ১ মানটি শিয়ারের মতো মিশ্রণ ঘটালেও আইগেনভ্যালু $-2$ই থাকে।"
+          wrong-msg="$(-2-\lambda)^2=0$ সমাধান করলে $\lambda=-2$ পাওয়া যায়। 'There are none' ভুল—প্রতিটি বর্গ ম্যাট্রিক্সের কমপক্ষে একটি (জটিল হলেও) আইগেনভ্যালু থাকে। আর $+2$ ভুল কারণ এখানে কর্ণের মান ঋণাত্মক দুই।"
+          reveal-msg="সঠিক উত্তর: -2 — কারণ $(-2-\lambda)^2=0$।">
+          <div slot="option">There are none.</div>
+          <div slot="option">2</div>
+          <div slot="option">-2</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ NARRATED SECTION 4 — 6 cues: h2, p, figure, insight-box(callout), p, p ═══ -->
+      <b1b-section id="sec_04_3d_rotations_and_eigenbasis" title="৪. থ্রিডি ঘূর্ণন অক্ষ ও আইগেনভিত্তি: কর্ণ ম্যাট্রিক্সের জাদু">
+
+        <p>ত্রিমাত্রিক স্পেসে আইগেনভেক্টরের ধারণা আরও প্রাণবন্ত। মূলবিন্দুগামী কোনো অক্ষকে কেন্দ্র করে পুরো স্থান আবর্তিত হলে অক্ষের ওপরের ভেক্টরগুলোর দিক বা দৈর্ঘ্য বিন্দুমাত্র বদলায় না—অর্থাৎ $R\vec{v}_{\text{axis}}=1\cdot\vec{v}_{\text{axis}}$। এই অক্ষই হলো ঘূর্ণনের আইগেনভেক্টর, আর এর আইগেনভ্যালু $1$।</p>
+
+        <b1b-figure
+          src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2016/eigenvalues/figures/3d-rotational-axis/AxisOfRotationEigenvector.light.svg"
+          alt="ত্রিমাত্রিক ঘূর্ণনের অক্ষই আইগেনভেক্টর, আইগেনভ্যালু ১"
+          caption="এই চিত্রে ত্রিমাত্রিক ঘূর্ণনের মাঝখান দিয়ে বের হওয়া সরলরেখাটিই ঘূর্ণন অক্ষ—এর ওপর অবস্থিত তীরগুলো ঘোরালেও অক্ষের দিকে কোনো নাড়া খায় না। চারপাশের বিন্দুগুলো সরে গেলেও এই অক্ষ অপরিবর্তিত থাকায় এটি $\lambda=1$ বিশিষ্ট আইগেনভেক্টর। ৩×৩ ম্যাট্রিক্সের ত্রিকোণমিতিক সদস্যের চেয়ে এই একটি রেখা খুঁজে পাওয়া অনেক বেশি স্বজ্ঞাত ও শক্তিশালী।"></b1b-figure>
+
+        <b1b-callout type="purple" icon="🧭" title="আইগেনবেসিস: ডায়াগনাল ম্যাট্রিক্সের জাদু">
+          <p>যদি কোনো ম্যাট্রিক্সের যথেষ্ট স্বাধীন আইগেনভেক্টর থাকে যারা পুরো স্থান স্প্যান করতে পারে, তবে তাদের নতুন ভিত্তি হিসেবে বেছে নেওয়া যায়—একে <strong>আইগেনবেসিস</strong> বলে। এই ভিত্তিতে মূল রূপান্তরটি একটি ডায়াগনাল ম্যাট্রিক্স $\Lambda=\begin{bmatrix}\lambda_1&0\\0&\lambda_2\end{bmatrix}$ এ রূপ নেয়, কারণ প্রতিটি ভিত্তি ভেক্টর কেবল নিজের আইগেনভ্যালু দ্বারা স্কেল হয়, অন্যদের সাথে মিশে যায় না।</p>
+          <p>ফলে শততম ঘাত লেখা যায় $\begin{bmatrix}3&0\\0&2\end{bmatrix}^{100}=\begin{bmatrix}3^{100}&0\\0&2^{100}\end{bmatrix}$—একটি সাধারণ ঘাতক্রিয়া, অথচ মূল ম্যাট্রিক্সকে ১০০ বার গুণ করতে হলে কত খাটুনি লাগত ভাবুন।</p>
+        </b1b-callout>
+
+        <p>ভিত্তি পরিবর্তনের গত পাঠের সূত্রটি মনে করুন: নতুন ম্যাট্রিক্স $=A^{-1}MA$। আইগেনভেক্টরগুলোকে কলাম করে গঠিত পরিবর্তন ম্যাট্রিক্স $S$ দিলে $D=S^{-1}AS=\Lambda$—অর্থাৎ একই রূপান্তর, শুধু আইগেনবেসিসের ভাষায় লেখা। তাই $A^{100}=S\Lambda^{100}S^{-1}$: সহজে ঘাত বের করে আবার আমাদের ভাষায় ফিরে আসা।</p>
+
+        <p>তবে সব রূপান্তরের এই সুবিধা পাওয়া যায় না—শিয়ারের মতো ম্যাট্রিক্সের পর্যাপ্ত স্বাধীন আইগেনভেক্টর নেই, তাই তার আইগেনবেসিস গড়ে ওঠে না। কৌতূহলীদের জন্য পাজল: $A=\begin{bmatrix}0&1\\1&1\end{bmatrix}$ এর প্রথম কয়েকটি ঘাত বের করলে ফিবোনাচ্চি সংখ্যা $1,1,2,3,5,8$ দেখা যায়; এর আইগেনভ্যালু $\tfrac{1\pm\sqrt5}{2}$ (সোনালি অনুপাত) ব্যবহার করে $A^n$-এর সংকেত বের করা যায়। পরবর্তী অধ্যায়ে শেখা হবে আইগেনভ্যালু দ্রুত নির্ণয়ের এক চতুর কৌশল।</p>
+
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED LABS / IMAGE-VIDEO FIGURES ═══ -->
+      <b1b-section id="sec_labs" title="🔬 ইন্টারেক্টিভ ল্যাব ও মিডিয়া চিত্র" data-no-narration="true">
+        <p class="viz-intro">নিচের চিত্র ও অ্যানিমেশনগুলোতে ইমেজ/ভিডিও ট্যাব ব্যবহার করে একই ধারণা দুইভাবে দেখুন। ল্যাবগুলোতে ভেক্টরের শীর্ষবিন্দু টেনে অথবা উপাংশ বদলে পর্যবেক্ষণ করুন কোন কোণে ভেক্টরটি রূপান্তরের পর নিজস্ব রেখায় থেকে যায়—যেকোনো ল্যাব পূর্ণস্ক্রিনে খুলতে পারেন।</p>
+
+        <b1b-media-tab active-tab="image"
+          caption="অফিশিয়াল 3Blue1Brown অ্যানিমেশন: ম্যাট্রিক্স [[3,1],[0,2]] দ্বারা পুরো স্পেসের রূপান্তর।
+          স্থির চিত্রে দেখা যাচ্ছে $\hat{i}$ তিন গুণ হয়ে x-অক্ষে থাকা আর $\hat{j}$ এর $[1,2]$ এ পৌঁছানো; ভিডিওতে একই পরিবর্তন ধীরে ধীরে ঘটতে দেখা যায়। গ্রিডের পেছনের রেখাগুলোর সাথে তুলনা করলে কোন তীর দিক বদলিয়েছে আর কোনটি শুধু স্কেল হয়েছে—তা স্পষ্ট হয়।">
+          <div slot="image"><img src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2016/eigenvalues/figures/an-example/LinearTransformation.light.svg" alt="ম্যাট্রিক্স [[3,1],[0,2]] দ্বারা স্পেসের রূপান্তর"/></div>
+          <div slot="video"><video controls src="../../assets/figures/la_05/TransformGrid.mp4"></video></div>
+        </b1b-media-tab>
+
+        <b1b-media-tab active-tab="image"
+          caption="অফিশিয়াল 3Blue1Brown অ্যানিমেশন: যেসব ভেক্টর রূপান্তরের পরও নিজস্ব স্প্যানে অবিচল থাকে।
+          ছবিতে x-অক্ষ ও $[1,-1]$ কর্ণ রেখা—এই দুটিকে ছাড়া বাকি সব তীর ঘুরে গেছে; ভিডিওতে সেই 'ঘুরে যাওয়া' আর 'থাকে যাওয়া'-র তুলনা চলমানভাবে দেখা যায়। এই দুটি রেখাই এই ম্যাট্রিক্সের আইগেনভেক্টর, আর তাদের স্কেলিং গুণক হলো যথাক্রমে ৩ ও ২।">
+          <div slot="image"><img src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2016/eigenvalues/figures/an-example/EigenvectorsAndEigenvalues.light.svg" alt="আইগেনভেক্টর ও আইগেনভ্যালু—নিজস্ব স্প্যানে স্থির ভেক্টর"/></div>
+          <div slot="video"><video controls src="../../assets/figures/la_05/TransformManyVectors.mp4"></video></div>
+        </b1b-media-tab>
+
+        <b1b-media-tab active-tab="image"
+          caption="অফিশিয়াল 3Blue1Brown অ্যানিমেশন: ত্রিমাত্রিক ঘূর্ণনের অক্ষ।
+          স্থির চিত্রে অক্ষের ওপরের ভেক্টর অপরিবর্তিত থাকলেও চারপাশের স্পেস ঘুরে যাচ্ছে; ভিডিওতে এই আবর্তন ধারাবাহিকভাবে দেখা যায়। অক্ষের $\lambda=1$ হওয়া থেকেই বোঝা যায়—ঘূর্ণন কিছুই প্রসারিত বা সংকুচিত করছে না, শুধু দিক বদলাচ্ছে।">
+          <div slot="image"><img src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2016/eigenvalues/figures/3d-rotational-axis/AxisOfRotation.light.svg" alt="ত্রিমাত্রিক ঘূর্ণনের অক্ষ"/></div>
+          <div slot="video"><video controls src="../../assets/figures/la_05/Rotate90DegreesAroundYAxis.mp4"></video></div>
+        </b1b-media-tab>
+
+        <b1b-fullscreen label="⛶ ল্যাব পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="3,-1"></b1b-vector-plane>
+        </b1b-fullscreen>
+
+        <b1b-fullscreen label="⛶ ল্যাব পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-decomposer initial="1,-1">
+            <p>এখানে $[1,-1]$ ভেক্টরটিকে $\hat{i},\hat{j}$ ভিত্তিতে ভেঙে দেখুন। এরপর ভাবুন: $\begin{bmatrix}3&1\\0&2\end{bmatrix}$ প্রয়োগ করলে এটি কেবল দুই গুণ হয়ে কেন নিজস্ব রেখাতেই থেকে যায়?</p>
+          </b1b-vector-decomposer>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/lesson_14/experiments/fill_v2/3b1b_lesson_14_full_dubbed_fill2.mp4"
+    yt-id="PFDu9oVAE-g"
+    title="আইগেনভেক্টর ও আইগেনভ্যালু | Eigenvectors and eigenvalues — অধ্যায় ১৪"
+    subtitle="অফিশিয়াল 3Blue1Brown ভিডিও (মূল ইংরেজি অডিও) সহ পড়ার মোডে বাংলা শিক্ষক বর্ণনা ও জ্যামিতিক ব্যাখ্যা উপলব্ধ।"
+    playlist-title="📋 প্লেলিস্ট — লিনিয়ার অ্যালজেব্রা">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_13.html"
+  prev-title="ভিত্তি পরিবর্তন"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_15.html"
+  next-title="আইগেনভ্যালু গণনার চতুর কৌশল"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

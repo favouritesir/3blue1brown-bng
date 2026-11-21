@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>মহাজাগতিক পরিমাপের ইতিহাস — পরবর্তী অধ্যায় | Terence Tao continuing history&#x27;s cleverest cosmological measurements (3Blue1Brown Physics)</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/physics/lesson_03/manifest.js?v=1"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="পদার্থবিজ্ঞান"
+  course-url="../../index.html#physics"
+  home-url="../../index.html"
+  chapter-num="০৩"
+  chapter-total="১৩"
+  prev-url="lesson_02.html"
+  prev-title="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_04.html"
+  next-title="পরবর্তী অধ্যায়"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="পদার্থবিজ্ঞান"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৩ · পদার্থবিজ্ঞান"
+  title="মহাজাগতিক পরিমাপের ইতিহাস — পরবর্তী অধ্যায় | Terence Tao continuing history&#x27;s cleverest cosmological measurements"
+  desc="গ্রহ থেকে শুরু করে দূরতম ছায়াপথ — দূরত্বের সিঁড়ির পরবর্তী ধাপগুলোর বুদ্ধিমান কৌশল।"
+  video-src="../../media_vault/physics/lesson_03/experiments/3b1b_physics_03_full_dubbed.mp4"
+  yt-id="hFMaT9oRbs4"
+  date="২৩ ফেব্রুয়ারি, ২০২৫"
+  author="Terence Tao &amp; Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">সিঁড়ি আবার শুরু করা</b1b-bookmark>
+      <b1b-bookmark time="20" time-bn="০০:২০">গ্রহের দূরত্ব ও AU</b1b-bookmark>
+      <b1b-bookmark time="45" time-bn="০০:৪৫">স্ট্যান্ডার্ড ক্যান্ডেলের নতুন ধাপ</b1b-bookmark>
+      <b1b-bookmark time="69" time-bn="০১:০৯">প্রসারমাণ মহাবিশ্ব</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-cosmic2-intro">সিঁড়ি আবার শুরু করা</a>
+      <a href="#sec-cosmic2-au">গ্রহের দূরত্ব ও AU</a>
+      <a href="#sec-cosmic2-standard">স্ট্যান্ডার্ড ক্যান্ডেলের নতুন ধাপ</a>
+      <a href="#sec-cosmic2-cosmology">প্রসারমাণ মহাবিশ্ব</a>
+      <a href="#sec-visualizer">ইন্টারেক্টিভ ল্যাব</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ সিঁড়ি আবার শুরু করা ═══ -->
+      <b1b-section id="sec-cosmic2-intro" title="সিঁড়ি আবার শুরু করা">
+        <p>আগের পর্বে আমরা দেখেছিলাম কীভাবে রাডার, প্যারালাক্স ও সেফিড তারা ব্যবহার করে মহাকাশের দূরত্বের প্রথম কয়েক ধাপ তৈরি করা হয়। এখন টেরেন্স তাও সেই সিঁড়ির পরবর্তী অংশটি নিয়ে কথা বলছেন — কীভাবে আমরা আরও দূরের ছায়াপথ পর্যন্ত পৌঁছাই।</p>
+        <b1b-figure src="../../assets/figures/phys_03/fig_01.svg" alt="ladder continued" caption="রাডার → প্যারালাক্স → সেফিড → হাবল: ক্রমবর্ধমান দূরত্বের সিঁড়ি"></b1b-figure>
+        <b1b-quiz
+          question="❓ T² ∝ a³ সূত্রে a দ্বারা কী বোঝায়?"
+          correct="1"
+          correct-msg="সঠিক! a হলো উপবৃত্তাকার কক্ষপথের অর্ধ-প্রধান অক্ষ, অর্থাৎ গড় দূরত্ব।"
+          wrong-msg="T হলো আবর্তন সময়কাল; a হলো কক্ষপথের আকার।"
+          reveal-msg="সঠিক উত্তর: কক্ষপথের অর্ধ-প্রধান অক্ষ।"
+          data-no-narration="true">
+          <div slot="option">আবর্তন সময়কাল</div>
+          <div slot="option">কক্ষপথের অর্ধ-প্রধান অক্ষ</div>
+          <div slot="option">গ্রহের ভর</div>
+          <div slot="option">সূর্যের তাপমাত্রা</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ গ্রহের দূরত্ব ও AU ═══ -->
+      <b1b-section id="sec-cosmic2-au" title="গ্রহের দূরত্ব ও AU">
+        <p>সূর্যের চারপাশে গ্রহদের কক্ষপথের আকারের অনুপাত কেপলারের তৃতীয় সূত্র থেকে পাওয়া যায়: T² ∝ a³। অর্থাৎ যদি পৃথিবী–সূর্য দূরত্ব (১ AU) জানা থাকে, তবে মঙ্গল বা বৃহস্পতির দূরত্বও হিসাব করা যায়। রাডার দিয়ে ১ AU কে অত্যন্ত নিখুঁতভাবে মেপে নেওয়া হয়।</p>
+        <b1b-formula math="T^2 \propto a^3"></b1b-formula>
+        <p>এখানে সৌন্দর্য হলো — একটিমাত্র ভালো পরিমাপ পুরো সৌরজগতের মানচিত্র unlock করে দেয়।</p>
+      </b1b-section>
+
+      <!-- ═══ স্ট্যান্ডার্ড ক্যান্ডেলের নতুন ধাপ ═══ -->
+      <b1b-section id="sec-cosmic2-standard" title="স্ট্যান্ডার্ড ক্যান্ডেলের নতুন ধাপ">
+        <p>সেফিড তারা আমাদের কাছের ছায়াপথ পর্যন্ত পৌঁছাতে সাহায্য করে। আরও দূরে আছে টাইপ 1a সুপারনোভা — বিস্ফোরণের এক ধরনের স্ট্যান্ডার্ড ক্যান্ডেল যার প্রকৃত উজ্জ্বলতা প্রায় সব ক্ষেত্রেই একই রকম। এই বিস্ফোরণগুলো অত্যন্ত উজ্জ্বল, তাই কোটি কোটি আলোকবর্ষ দূর থেকেও দেখা যায়।</p>
+        <b1b-figure src="../../assets/figures/phys_03/fig_02.svg" alt="standard candle" caption="দূরবীন ফিল্ডে একটি উজ্জ্বল সুপারনোভা বিস্ফোরণ"></b1b-figure>
+        <b1b-formula math="d = 10^{(m-M+5)/5}\ \mathrm{pc}"></b1b-formula>
+        <b1b-quiz
+          question="❓ টাইপ 1a সুপারনোভা কেন দরকারী?"
+          correct="1"
+          correct-msg="হ্যাঁ! স্থির প্রকৃত উজ্জ্বলতার কারণে এটি স্ট্যান্ডার্ড ক্যান্ডেল।"
+          wrong-msg="প্রকৃত উজ্জ্বলতা জানা থাকলে দেখা উজ্জ্বলতা থেকে দূরত্ব বের করা যায়।"
+          reveal-msg="সঠিক উত্তর: এর প্রকৃত উজ্জ্বলতা প্রায় স্থির।"
+          data-no-narration="true">
+          <div slot="option">এর রঙ সবসময় একই</div>
+          <div slot="option">এর প্রকৃত উজ্জ্বলতা প্রায় স্থির</div>
+          <div slot="option">এ শুধু কাছে দেখা যায়</div>
+          <div slot="option">এর ভর খুব কম</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ প্রসারমাণ মহাবিশ্ব ═══ -->
+      <b1b-section id="sec-cosmic2-cosmology" title="প্রসারমাণ মহাবিশ্ব">
+        <p>যখন কোনো সুপারনোভার দূরত্ব আমরা জানি, তখন সেই ছায়াপথের redshift মেপে হাবলের সূত্র যাচাই করা যায়। ১৯৯০-এর দশকে এই ধরনের পর্যবেক্ষণই দেখিয়েছিল মহাবিশ্বের প্রসারণ ত্বরান্বিত হচ্ছে — যার জন্য দেওয়া হয়েছে নোবেল পুরস্কার।</p>
+        <b1b-callout type="gold" icon="🌌" title="সিঁড়ির ভুল">
+          <p>প্রতিটি ধাপ আগের ধাপের ওপর নির্ভর করে। কাছের ধাপে ছোট এক শতাংশ ভুল দূরের ধাপে বড় হয়ে দেখা দেয় — তাই বিজ্ঞানীরা একাধিক স্বাধীন পদ্ধতি দিয়ে ফলাফল যাচাই করেন।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ Interactive lab — excluded from narration ═══ -->
+      <b1b-section id="sec-visualizer" title="দূরত্বের সিঁড়ি — ধাপ নির্বাচক সিমুলেটর" data-no-narration="true">
+        <p class="viz-intro">এই ইন্টারেক্টিভ ল্যাবটি ব্যবহার করে ধারণাটি নিজে পরীক্ষা করে দেখুন। প্যারামিটার বদলে ফলাফলের পরিবর্তন পর্যবেক্ষণ করুন।</p>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="3,-2"></b1b-vector-plane>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/physics/lesson_03/experiments/3b1b_physics_03_full_dubbed.mp4"
+    yt-id="hFMaT9oRbs4"
+    title="মহাজাগতিক পরিমাপের ইতিহাস — পরবর্তী অধ্যায় — অধ্যায় ০৩"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — পদার্থবিজ্ঞান">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_02.html"
+  prev-title="পূর্ববর্তী অধ্যায়"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_04.html"
+  next-title="পরবর্তী অধ্যায়"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

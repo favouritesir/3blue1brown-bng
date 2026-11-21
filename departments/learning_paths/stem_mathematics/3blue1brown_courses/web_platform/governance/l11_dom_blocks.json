@@ -1,0 +1,152 @@
+[
+  {
+    "id": "sec_01_cross_product_puzzle",
+    "title": "ক্রস প্রোডাক্টের অদ্ভুত সূত্রের রহস্য ও গভীর জিজ্ঞাসা",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "ক্রস প্রোডাক্টের অদ্ভুত সূত্রের রহস্য ও গভীর জিজ্ঞাসা",
+        "tex": ""
+      },
+      {
+        "type": "chapter-quote",
+        "text": "\" গ্রোথেন্ডিকের কাছ থেকে আমি শিখেছি—প্রমাণের কঠিনতা নিয়ে গর্ব করা উচিত নয়; কঠিনতা মানে আমরা এখনো বুঝতে পারিনি। লক্ষ্য হলো এমন এক প্রাকৃতিক দৃশ্য আঁকা যার ভেতরে প্রমাণটি স্বতঃসিদ্ধ হয়ে ওঠে। — পিয়ের দেলিগ্ন (Pierre Deligne)",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "গত অধ্যায়ে আমরা ক্রস প্রোডাক্টের জ্যামিতিক রূপটি দেখেছি: দুটি থ্রিডি ভেক্টর <annotation>\\vec{v}</annotation> ও <annotation>\\vec{w}</annotation>-এর ক্রস প্রোডাক্ট এমন একটি নতুন ভেক্টর, যার দৈর্ঘ্য <annotation>\\|\\vec{v}\\times\\vec{w}\\|=\\|\\vec{v}\\|\\|\\vec{w}\\|\\sin\\theta</annotation>—অর্থাৎ ওই দুই ভেক্টর দ্বারা গঠিত সামান্তরিকের ক্ষেত্রফল—এবং দিক ডান হাতের নিয়ম মেনে উভয়ের ওপর লম্ব।",
+        "tex": "\\vec{v} \\vec{w} \\|\\vec{v}\\times\\vec{w}\\|=\\|\\vec{v}\\|\\|\\vec{w}\\|\\sin\\theta"
+      },
+      {
+        "type": "p",
+        "text": "কিন্তু ক্লাসরুমে হিসাব করার সময় একটি অদ্ভুত সূত্র শেখানো হয়: প্রথম সারিতে আই হ্যাট, জে হ্যাট ও কে হ্যাট লিখে <annotation>\\vec{v}\\times\\vec{w}=\\det\\begin{bmatrix}\\hat{i}&v_1&w_1\\\\\\hat{j}&v_2&w_2\\\\\\hat{k}&v_3&w_3\\end{bmatrix}</annotation> হিসাব করা হয়। সংখ্যার জায়গায় ভিত্তি ভেক্টর বসিয়ে ‘নম্বরের মতো’ আচরণ করানো—এই অদ্ভুততা কি শুধু মুখস্থ করার কৌশল?",
+        "tex": "\\vec{v}\\times\\vec{w}=\\det\\begin{bmatrix}\\hat{i}&v_1&w_1\\\\\\hat{j}&v_2&w_2\\\\\\hat{k}&v_3&w_3\\end{bmatrix}"
+      },
+      {
+        "type": "callout",
+        "text": "🤔 কাকতালীয় কৌশল নাকি চিরন্তন জ্যামিতিক সত্য? প্রশ্ন হলো: সংখ্যার বদলে ডিটারমিন্যান্টের ভেতরে <annotation>\\hat{i},\\hat{j},\\hat{k}</annotation> বসিয়ে দেওয়া কি কেবল কোনো গাণিতিক কারসাজি? নাকি এর পেছনে রৈখিক বীজগণিতের এমন এক গভীর সংযোগ লুকিয়ে আছে, যা একবার বুঝলে সূত্রটি আর ‘ট্রিক’ থাকবে না? উত্তর খুঁজতে আমাদের দরকার হবে অধ্যায় ৫-এর ডিটারমিন্যান্ট এবং অধ্যায় ৯-এর ডুয়ালিটি।",
+        "tex": "\\hat{i},\\hat{j},\\hat{k}"
+      },
+      {
+        "type": "p",
+        "text": "আজকের পর্বে দেখব, এই রহস্যের চাবিকাঠি হলো ডুয়ালিটি বা দ্বৈততার নীতি—রৈখিক রূপান্তরের দৃষ্টিকোণ থেকে এই সূত্রটি একেবারেই সহজ ও অনিবার্য হয়ে ওঠে। ক্রস প্রোডাক্টকে একটি বিশেষ রৈখিক রূপান্তরের দ্বৈত ভেক্টর হিসেবে দেখলেই সবকিছু পরিষ্কার হয়।",
+        "tex": ""
+      }
+    ]
+  },
+  {
+    "id": "sec_02_volume_function",
+    "title": "সামান্তরিক গোলকের আয়তন এবং ত্রিমাত্রিক রৈখিক ফাংশন",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "সামান্তরিক গোলকের আয়তন এবং ত্রিমাত্রিক রৈখিক ফাংশন",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "দুটি নির্দিষ্ট ভেক্টর <annotation>\\vec{v}</annotation> ও <annotation>\\vec{w}</annotation> নেওয়া যাক। এদের সাথে যেকোনো পরিবর্তনশীল ভেক্টর <annotation>\\vec{u}</annotation> যুক্ত করে একটি ফাংশন সংজ্ঞায়িত করি: <annotation>f(\\vec{u})=\\det\\begin{bmatrix}u_1&v_1&w_1\\\\u_2&v_2&w_2\\\\u_3&v_3&w_3\\end{bmatrix}</annotation>। এটি <annotation>\\mathbb{R}^3\\to\\mathbb{R}</annotation>—অর্থাৎ ইনপুটে একটি ভেক্টর, আউটপুটে একটি বাস্তব সংখ্যা।",
+        "tex": "\\vec{v} \\vec{w} \\vec{u} f(\\vec{u})=\\det\\begin{bmatrix}u_1&v_1&w_1\\\\u_2&v_2&w_2\\\\u_3&v_3&w_3\\end{bmatrix} \\mathbb{R}^3\\to\\mathbb{R}"
+      },
+      {
+        "type": "p",
+        "text": "জ্যামিতিকভাবে এই ফাংশনটি <annotation>\\vec{u},\\vec{v},\\vec{w}</annotation> দ্বারা গঠিত সামান্তরিক গোলক বা প্যারালেলেপাইপেডের চিহ্নিত আয়তন বের করে। অধ্যায় ৫ থেকে আমরা জানি, তিনটি কলাম ভেক্টরের এই আয়তনই হলো তাদের <annotation>3\\times3</annotation> ম্যাট্রিক্সের নির্ণায়ক—ঋণাত্মক চিহ্নটি তিন ভেক্টরের ডান-হাতের ওরিয়েন্টেশন উল্টে যাওয়া নির্দেশ করে।",
+        "tex": "\\vec{u},\\vec{v},\\vec{w} 3\\times3"
+      },
+      {
+        "type": "callout",
+        "text": "⚡ কেন এটি একটি রৈখিক রূপান্তর? (Insight) সবচেয়ে গুরুত্বপূর্ণ কথা: ডিটারমিন্যান্ট তার যেকোনো একটি কলামের সাপেক্ষে পুরোপুরি রৈখিক (multilinear)। যেহেতু <annotation>\\vec{v}</annotation> ও <annotation>\\vec{w}</annotation> স্থির এবং শুধু <annotation>\\vec{u}</annotation> পরিবর্তনশীল, তাই <annotation>f(c\\vec{u}_1+\\vec{u}_2)=c\\,f(\\vec{u}_1)+f(\\vec{u}_2)</annotation>—অর্থাৎ আমাদের হাতে আসলেই একটি <annotation>3</annotation>d<annotation>\\to</annotation>১ডি রৈখিক রূপান্তর আছে!",
+        "tex": "\\vec{v} \\vec{w} \\vec{u} f(c\\vec{u}_1+\\vec{u}_2)=c\\,f(\\vec{u}_1)+f(\\vec{u}_2) 3 \\to"
+      },
+      {
+        "type": "figure",
+        "text": "v w u আয়তন = det[u v w] চিত্রে তিনটি ভেক্টর u, v ও w একসাথে একটি সামান্তরিক গোলক গঠন করেছে; এদের ডিটারমিন্যান্টই সেই গোলকের চিহ্নিত আয়তন। u-কে দ্বিগুণ করলে গোলকের আয়তনও দ্বিগুণ হয় এবং দুটি u-এর যোগফল নিলে আয়তন দুটির সমষ্টি পাওয়া যায়—এই দুটি পর্যবেক্ষণই f-এর রৈখিকতার চাক্ষুষ প্রমাণ। স্থির v ও w-এর দিকে তাকিয়ে বুঝুন কেন কেবল প্রথম কলামের ওপর ফাংশনটি নির্ভর করে।",
+        "tex": ""
+      }
+    ]
+  },
+  {
+    "id": "sec_03_duality_and_dual_vector",
+    "title": "ডুয়ালিটির ঐশ্বর্য ও দ্বৈত ভেক্টর p-এর অস্তিত্ব",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "ডুয়ালিটির ঐশ্বর্য ও দ্বৈত ভেক্টর p-এর অস্তিত্ব",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "অষ্টম ও নবম অধ্যায়ের ডুয়ালিটির কথা মনে করুন: যেকোনো স্থান থেকে সংখ্যা রেখায় যাওয়া একটি রৈখিক রূপান্তরকে এক-সারি ম্যাট্রিক্স দিয়ে লেখা যায়, আর সেই ম্যাট্রিক্সকে পাশে শুইয়ে দিলেই পাওয়া যায় একটি দ্বৈত ভেক্টর—রূপান্তরটি প্রয়োগ করা আর ওই ভেক্টরের সাথে ডট গুণন করা একই কাজ। দ্বিমাত্রিক ক্ষেত্রে <annotation>1\\times2</annotation> ম্যাট্রিক্স <annotation>[u_x\\;u_y]</annotation> আর ভেক্টর <annotation>\\hat{u}</annotation> এর ডট গুণন ছিল ঠিক এই একই সম্পর্কের প্রকাশ।",
+        "tex": "1\\times2 [u_x\\;u_y] \\hat{u}"
+      },
+      {
+        "type": "p",
+        "text": "এখন একই কথা ত্রিমাত্রিক ক্ষেত্রে প্রয়োগ করি। আমাদের <annotation>f(\\vec{u})</annotation> একটি <annotation>3\\to1</annotation> রূপান্তর, তাই এটি একটি <annotation>1\\times3</annotation> ম্যাট্রিক্স দ্বারা প্রকাশিত হয়: <annotation>f(\\vec{u})=\\begin{bmatrix}p_1&p_2&p_3\\end{bmatrix}\\begin{bmatrix}u_1\\\\u_2\\\\u_3\\end{bmatrix}=\\vec{p}\\cdot\\vec{u}</annotation>। অর্থাৎ এমন একটি অনন্য ভেক্টর <annotation>\\vec{p}</annotation> অবশ্যই আছে, যার জন্য প্রতিটি <annotation>\\vec{u}</annotation>-এর ক্ষেত্রে <annotation>\\vec{p}\\cdot\\vec{u}=\\det[\\vec{u}\\;\\vec{v}\\;\\vec{w}]</annotation> হয়।",
+        "tex": "f(\\vec{u}) 3\\to1 1\\times3 f(\\vec{u})=\\begin{bmatrix}p_1&p_2&p_3\\end{bmatrix}\\begin{bmatrix}u_1\\\\u_2\\\\u_3\\end{bmatrix}=\\vec{p}\\cdot\\vec{u} \\vec{p} \\vec{u} \\vec{p}\\cdot\\vec{u}=\\det[\\vec{u}\\;\\vec{v}\\;\\vec{w}]"
+      },
+      {
+        "type": "callout",
+        "text": "✨ এখন একমাত্র কাজ — পি কে? একদিকে <annotation>f(\\vec{u})</annotation> হলো <annotation>\\vec{u},\\vec{v},\\vec{w}</annotation>-এর প্যারালেলেপাইপেডের আয়তন; অন্যদিকে ডুয়ালিটি বলছে, একই আয়তনকে সবসময় একটি নির্দিষ্ট ভেক্টর <annotation>\\vec{p}</annotation>-এর সাথে <annotation>\\vec{u}</annotation>-এর ডট গুণন হিসেবেও লেখা যায়। এখন প্রশ্ন: এই রহস্যময় ভেক্টর <annotation>\\vec{p}</annotation> আসলে কে, আর তার জ্যামিতিক বৈশিষ্ট্য কী? দুই ভাবে উত্তর খুঁজব—প্রথমে হিসাব করে, তারপর ছবি দিয়ে।",
+        "tex": "f(\\vec{u}) \\vec{u},\\vec{v},\\vec{w} \\vec{p} \\vec{u} \\vec{p}"
+      }
+    ]
+  },
+  {
+    "id": "sec_04_geometric_proof_p",
+    "title": "জ্যামিতিক প্রমাণ: ভেক্টর p-এর দৈর্ঘ্য ও দিক নির্ধারণ",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "জ্যামিতিক প্রমাণ: ভেক্টর p-এর দৈর্ঘ্য ও দিক নির্ধারণ",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "জ্যামিতির মূল সূত্রে ফিরে যাই: যেকোনো সামান্তরিক গোলকের আয়তন = ভূমির ক্ষেত্রফল <annotation>\\times</annotation> লম্ব উচ্চতা। এখানে ভূমি হলো <annotation>\\vec{v},\\vec{w}</annotation> দ্বারা গঠিত সামান্তরিক, যার ক্ষেত্রফল আমরা জানি; আর উচ্চতা হলো <annotation>\\vec{v},\\vec{w}</annotation>-এর তলের ওপর লম্ব রেখার দিকে <annotation>\\vec{u}</annotation>-এর প্রক্ষেপণ বা প্রজেকশন <annotation>h</annotation>—অর্থাৎ <annotation>\\text{Volume}=(\\text{Base Area})\\times h</annotation>।",
+        "tex": "\\times \\vec{v},\\vec{w} \\vec{v},\\vec{w} \\vec{u} h \\text{Volume}=(\\text{Base Area})\\times h"
+      },
+      {
+        "type": "p",
+        "text": "এখন ডট গুণনের জ্যামিতিক রূপটি স্মরণ করুন: <annotation>\\vec{p}\\cdot\\vec{u}=\\|\\vec{p}\\|\\cdot\\text{proj}_{\\vec{p}}(\\vec{u})</annotation>—অর্থাৎ <annotation>\\vec{p}</annotation>-এর দৈর্ঘ্যের সাথে <annotation>\\vec{u}</annotation>-এর <annotation>\\vec{p}</annotation>-এর দিকে লম্ব প্রক্ষেপণের গুণফল। এই দুটি রাশি প্রতিটি <annotation>\\vec{u}</annotation>-এর জন্য সমান হতে হলে <annotation>\\vec{p}</annotation>-কে অবশ্যই <annotation>\\vec{v},\\vec{w}</annotation>-এর তলের ওপর লম্ব হতে হবে এবং তার দৈর্ঘ্য হতে হবে ভূমির ক্ষেত্রফলের সমান।",
+        "tex": "\\vec{p}\\cdot\\vec{u}=\\|\\vec{p}\\|\\cdot\\text{proj}_{\\vec{p}}(\\vec{u}) \\vec{p} \\vec{u} \\vec{p} \\vec{u} \\vec{p} \\vec{v},\\vec{w}"
+      },
+      {
+        "type": "callout",
+        "text": "🖐️ ডান হাতের নিয়ম দিক নির্ধারণ করে ঋণাত্মক ও ধনাত্মক আয়তনের অবস্থাও মেলাতে হবে: <annotation>\\vec{p}\\cdot\\vec{u}</annotation> ঋণাত্মক হবে ঠিক তখনি, যখন <annotation>\\vec{u},\\vec{v},\\vec{w}</annotation>-এর ডান-হাতের ওরিয়েন্টেশন ঋণাত্মক—যেমন <annotation>\\vec{v}</annotation> ও <annotation>\\vec{w}</annotation> বদলালে চিহ্ন উল্টে যায়। তাই <annotation>\\vec{p}</annotation>-এর অভিমুখও হতে হবে অবিকল ডান হাতের নিয়ম অনুযায়ী: তর্জনী <annotation>\\vec{v}</annotation>, মধ্যমা <annotation>\\vec{w}</annotation> দিকে ধরলে বুঁড়ু <annotation>\\vec{p}</annotation>-এর দিক দেখায়।",
+        "tex": "\\vec{p}\\cdot\\vec{u} \\vec{u},\\vec{v},\\vec{w} \\vec{v} \\vec{w} \\vec{p} \\vec{v} \\vec{w} \\vec{p}"
+      },
+      {
+        "type": "formula-box",
+        "text": "<annotation>\\vec{p}\\perp\\operatorname{span}(\\vec{v},\\vec{w}),\\qquad \\|\\vec{p}\\|=\\text{Area}(\\vec{v},\\vec{w})=\\|\\vec{v}\\times\\vec{w}\\|\\quad\\Longrightarrow\\quad \\vec{p}=\\vec{v}\\times\\vec{w}</annotation>",
+        "tex": "\\vec{p}\\perp\\operatorname{span}(\\vec{v},\\vec{w}),\\qquad \\|\\vec{p}\\|=\\text{Area}(\\vec{v},\\vec{w})=\\|\\vec{v}\\times\\vec{w}\\|\\quad\\Longrightarrow\\quad \\vec{p}=\\vec{v}\\times\\vec{w}"
+      }
+    ]
+  },
+  {
+    "id": "sec_05_algebraic_synthesis",
+    "title": "বীজগাণিতিক সমাপনী: সিউডো-ডিটারমিন্যান্টের পরিপূর্ণ যৌক্তিকতা",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "বীজগাণিতিক সমাপনী: সিউডো-ডিটারমিন্যান্টের পরিপূর্ণ যৌক্তিকতা",
+        "tex": ""
+      },
+      {
+        "type": "p",
+        "text": "এবার হিসাবটি মিলিয়ে নেওয়া যাক। তিন-বাই-তিন ডিটারমিন্যান্টকে প্রথম কলাম <annotation>\\vec{u}</annotation>-এর সাপেক্ষে বিস্তার করলে পাই: <annotation>\\det[\\vec{u}\\;\\vec{v}\\;\\vec{w}]=u_1(v_2w_3-v_3w_2)+u_2(v_3w_1-v_1w_3)+u_3(v_1w_2-v_2w_1)</annotation>।",
+        "tex": "\\vec{u} \\det[\\vec{u}\\;\\vec{v}\\;\\vec{w}]=u_1(v_2w_3-v_3w_2)+u_2(v_3w_1-v_1w_3)+u_3(v_1w_2-v_2w_1)"
+      },
+      {
+        "type": "p",
+        "text": "যেহেতু এটি <annotation>\\vec{p}\\cdot\\vec{u}=p_1u_1+p_2u_2+p_3u_3</annotation>-এর সমান, তাই <annotation>u_1,u_2,u_3</annotation>-এর এই তিনটি সহগই হলো সরাসরি কাঙ্ক্ষিত ভেক্টর <annotation>\\vec{p}</annotation>-এর তিনটি স্থানাঙ্ক: <annotation>\\vec{p}=\\begin{bmatrix}v_2w_3-v_3w_2\\\\v_3w_1-v_1w_3\\\\v_1w_2-v_2w_1\\end{bmatrix}</annotation>।",
+        "tex": "\\vec{p}\\cdot\\vec{u}=p_1u_1+p_2u_2+p_3u_3 u_1,u_2,u_3 \\vec{p} \\vec{p}=\\begin{bmatrix}v_2w_3-v_3w_2\\\\v_3w_1-v_1w_3\\\\v_1w_2-v_2w_1\\end{bmatrix}"
+      },
+      {
+        "type": "callout",
+        "text": "🎩 জাদুকরি কৌশল নয়, ডুয়ালিটির প্রতিচ্ছবি আর এই কারণেই পাঠ্যবইগুলোতে <annotation>\\vec{u}</annotation>-এর জায়গায় প্রতীকীভাবে <annotation>\\hat{i},\\hat{j},\\hat{k}</annotation> লিখে দেওয়া হয়—বিস্তার করার পর স্বয়ংক্রিয়ভাবে ওই সহগগুলো ভেক্টর আকারে প্রকাশিত হয়। এটি কোনো জাদুকরি কৌশল নয়, বরং ডুয়ালিটির এক অনবদ্য গাণিতিক প্রতিচ্ছবি: বীজগণিত ও জ্যামিতি এখানে এক মোহনায় মিলিত হয়েছে।",
+        "tex": "\\vec{u} \\hat{i},\\hat{j},\\hat{k}"
+      }
+    ]
+  }
+]

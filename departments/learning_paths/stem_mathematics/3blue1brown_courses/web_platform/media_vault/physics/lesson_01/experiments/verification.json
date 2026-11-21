@@ -1,0 +1,391 @@
+{
+  "experiment": "clean_timesync_v2 + adaptive enrichment (physics full-length)",
+  "lesson": "lesson_01",
+  "video_id": "EmKQsSDlaa4",
+  "script_source": "audio_manifest:manifest.json",
+  "cue_count": 17,
+  "expected_cue_count": 17,
+  "failed_tts_cues": [],
+  "strategy": "absolute sample offset; atempo [0.82,2.2]; pad only; fixed 0.8s pause; no truncation",
+  "sfx": "NONE — clean speech only",
+  "voice": "bn-BD-PradeepNeural",
+  "max_tempo": 2.2,
+  "tempo_floor": 0.82,
+  "overrun_cues": 0,
+  "max_measured_drift_ms": 0.01,
+  "timeline_scale": 10.964477,
+  "fixed_inter_cue_pause_sec": 0.8,
+  "lead_in_sec": 2.5,
+  "tail_margin_sec": 3.0,
+  "video_duration_sec": 2783.19,
+  "master_audio_duration_sec": 2783.19,
+  "last_cue_end_sec": 2780.19,
+  "tail_silence_sec": 3.0,
+  "speech_ends_before_video_end": true,
+  "median_fill": 0.9998,
+  "max_internal_gap_s": 0.0499,
+  "fill_policy_target": "median_fill >= 0.72 and max_internal_gap_s <= 1.5",
+  "fill_policy_met": true,
+  "enrichments_applied": [
+    {
+      "id": 1,
+      "natural_before": 3.168,
+      "natural_after": 38.616,
+      "target_sec": 36.577,
+      "passes": 1
+    },
+    {
+      "id": 2,
+      "natural_before": 27.648,
+      "natural_after": 329.112,
+      "target_sec": 297.093,
+      "passes": 1
+    },
+    {
+      "id": 3,
+      "natural_before": 19.248,
+      "natural_after": 257.496,
+      "target_sec": 219.991,
+      "passes": 1
+    },
+    {
+      "id": 4,
+      "natural_before": 21.696,
+      "natural_after": 252.024,
+      "target_sec": 233.149,
+      "passes": 1
+    },
+    {
+      "id": 5,
+      "natural_before": 13.728,
+      "natural_after": 178.248,
+      "target_sec": 163.678,
+      "passes": 1
+    },
+    {
+      "id": 6,
+      "natural_before": 3.48,
+      "natural_after": 44.448,
+      "target_sec": 40.262,
+      "passes": 1
+    },
+    {
+      "id": 7,
+      "natural_before": 18.0,
+      "natural_after": 230.88,
+      "target_sec": 193.677,
+      "passes": 1
+    },
+    {
+      "id": 8,
+      "natural_before": 16.824,
+      "natural_after": 184.536,
+      "target_sec": 184.466,
+      "passes": 1
+    },
+    {
+      "id": 9,
+      "natural_before": 15.936,
+      "natural_after": 210.96,
+      "target_sec": 182.098,
+      "passes": 1
+    },
+    {
+      "id": 10,
+      "natural_before": 14.112,
+      "natural_after": 156.84,
+      "target_sec": 159.467,
+      "passes": 1
+    },
+    {
+      "id": 11,
+      "natural_before": 3.84,
+      "natural_after": 53.208,
+      "target_sec": 44.472,
+      "passes": 1
+    },
+    {
+      "id": 12,
+      "natural_before": 22.104,
+      "natural_after": 283.032,
+      "target_sec": 237.622,
+      "passes": 1
+    },
+    {
+      "id": 13,
+      "natural_before": 17.568,
+      "natural_after": 215.376,
+      "target_sec": 209.202,
+      "passes": 1
+    },
+    {
+      "id": 14,
+      "natural_before": 13.512,
+      "natural_after": 181.176,
+      "target_sec": 154.468,
+      "passes": 1
+    },
+    {
+      "id": 15,
+      "natural_before": 3.456,
+      "natural_after": 43.848,
+      "target_sec": 39.998,
+      "passes": 1
+    },
+    {
+      "id": 16,
+      "natural_before": 20.952,
+      "natural_after": 256.92,
+      "target_sec": 225.254,
+      "passes": 1
+    },
+    {
+      "id": 17,
+      "natural_before": 12.696,
+      "natural_after": 152.64,
+      "target_sec": 143.415,
+      "passes": 1
+    }
+  ],
+  "enrich_threshold_ratio": 0.9,
+  "cues": [
+    {
+      "id": 1,
+      "section": "sec-holo-intro",
+      "expected_start_ms": 2500.0,
+      "actual_start_ms": 2500.0,
+      "drift_ms": 0.0,
+      "tempo": 1.0557,
+      "natural_sec": 38.616,
+      "target_sec": 36.577,
+      "fill_ratio": 0.9995,
+      "internal_gap_s": 0.02,
+      "enriched": true
+    },
+    {
+      "id": 2,
+      "section": "sec-holo-intro",
+      "expected_start_ms": 39877.0,
+      "actual_start_ms": 39877.01,
+      "drift_ms": 0.01,
+      "tempo": 1.1078,
+      "natural_sec": 329.112,
+      "target_sec": 297.093,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.046,
+      "enriched": true
+    },
+    {
+      "id": 3,
+      "section": "sec-holo-intro",
+      "expected_start_ms": 337771.0,
+      "actual_start_ms": 337771.0,
+      "drift_ms": 0.0,
+      "tempo": 1.1705,
+      "natural_sec": 257.496,
+      "target_sec": 219.991,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0399,
+      "enriched": true
+    },
+    {
+      "id": 4,
+      "section": "sec-holo-intro",
+      "expected_start_ms": 558562.0,
+      "actual_start_ms": 558562.0,
+      "drift_ms": 0.0,
+      "tempo": 1.081,
+      "natural_sec": 252.024,
+      "target_sec": 233.149,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0499,
+      "enriched": true
+    },
+    {
+      "id": 5,
+      "section": "sec-holo-intro",
+      "expected_start_ms": 792511.0,
+      "actual_start_ms": 792511.0,
+      "drift_ms": 0.0,
+      "tempo": 1.089,
+      "natural_sec": 178.248,
+      "target_sec": 163.678,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0384,
+      "enriched": true
+    },
+    {
+      "id": 6,
+      "section": "sec-holo-coherence",
+      "expected_start_ms": 956989.0,
+      "actual_start_ms": 956989.0,
+      "drift_ms": 0.0,
+      "tempo": 1.104,
+      "natural_sec": 44.448,
+      "target_sec": 40.262,
+      "fill_ratio": 0.9994,
+      "internal_gap_s": 0.0222,
+      "enriched": true
+    },
+    {
+      "id": 7,
+      "section": "sec-holo-coherence",
+      "expected_start_ms": 998050.0,
+      "actual_start_ms": 998050.0,
+      "drift_ms": 0.0,
+      "tempo": 1.1921,
+      "natural_sec": 230.88,
+      "target_sec": 193.677,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0388,
+      "enriched": true
+    },
+    {
+      "id": 8,
+      "section": "sec-holo-coherence",
+      "expected_start_ms": 1192527.0,
+      "actual_start_ms": 1192527.01,
+      "drift_ms": 0.01,
+      "tempo": 1.0004,
+      "natural_sec": 184.536,
+      "target_sec": 184.466,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.049,
+      "enriched": true
+    },
+    {
+      "id": 9,
+      "section": "sec-holo-coherence",
+      "expected_start_ms": 1377793.0,
+      "actual_start_ms": 1377792.99,
+      "drift_ms": -0.01,
+      "tempo": 1.1585,
+      "natural_sec": 210.96,
+      "target_sec": 182.098,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.041,
+      "enriched": true
+    },
+    {
+      "id": 10,
+      "section": "sec-holo-coherence",
+      "expected_start_ms": 1560691.0,
+      "actual_start_ms": 1560691.0,
+      "drift_ms": 0.0,
+      "tempo": 0.9835,
+      "natural_sec": 156.84,
+      "target_sec": 159.467,
+      "fill_ratio": 0.9999,
+      "internal_gap_s": 0.0197,
+      "enriched": true
+    },
+    {
+      "id": 11,
+      "section": "sec-holo-record",
+      "expected_start_ms": 1720958.0,
+      "actual_start_ms": 1720958.0,
+      "drift_ms": 0.0,
+      "tempo": 1.1964,
+      "natural_sec": 53.208,
+      "target_sec": 44.472,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0158,
+      "enriched": true
+    },
+    {
+      "id": 12,
+      "section": "sec-holo-record",
+      "expected_start_ms": 1766230.0,
+      "actual_start_ms": 1766230.0,
+      "drift_ms": 0.0,
+      "tempo": 1.1911,
+      "natural_sec": 283.032,
+      "target_sec": 237.622,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.038,
+      "enriched": true
+    },
+    {
+      "id": 13,
+      "section": "sec-holo-record",
+      "expected_start_ms": 2004652.0,
+      "actual_start_ms": 2004652.0,
+      "drift_ms": 0.0,
+      "tempo": 1.0295,
+      "natural_sec": 215.376,
+      "target_sec": 209.202,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.041,
+      "enriched": true
+    },
+    {
+      "id": 14,
+      "section": "sec-holo-record",
+      "expected_start_ms": 2214655.0,
+      "actual_start_ms": 2214655.01,
+      "drift_ms": 0.01,
+      "tempo": 1.1729,
+      "natural_sec": 181.176,
+      "target_sec": 154.468,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0352,
+      "enriched": true
+    },
+    {
+      "id": 15,
+      "section": "sec-holo-reconstruct",
+      "expected_start_ms": 2369922.0,
+      "actual_start_ms": 2369922.0,
+      "drift_ms": 0.0,
+      "tempo": 1.0963,
+      "natural_sec": 43.848,
+      "target_sec": 39.998,
+      "fill_ratio": 0.9995,
+      "internal_gap_s": 0.0215,
+      "enriched": true
+    },
+    {
+      "id": 16,
+      "section": "sec-holo-reconstruct",
+      "expected_start_ms": 2410721.0,
+      "actual_start_ms": 2410721.0,
+      "drift_ms": 0.0,
+      "tempo": 1.1406,
+      "natural_sec": 256.92,
+      "target_sec": 225.254,
+      "fill_ratio": 0.9998,
+      "internal_gap_s": 0.0438,
+      "enriched": true
+    },
+    {
+      "id": 17,
+      "section": "sec-holo-reconstruct",
+      "expected_start_ms": 2636775.0,
+      "actual_start_ms": 2636775.01,
+      "drift_ms": 0.01,
+      "tempo": 1.0643,
+      "natural_sec": 152.64,
+      "target_sec": 143.415,
+      "fill_ratio": 0.9999,
+      "internal_gap_s": 0.0178,
+      "enriched": true
+    }
+  ],
+  "output_video": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\physics\\lesson_01\\experiments\\3b1b_physics_01_full_dubbed.mp4",
+  "output_duration_sec": 2783.133,
+  "output_size_bytes": 287821503,
+  "output_streams": [
+    {
+      "index": 0,
+      "codec_name": "av1",
+      "codec_type": "video"
+    },
+    {
+      "index": 1,
+      "codec_name": "aac",
+      "codec_type": "audio"
+    }
+  ],
+  "volumedetect_intro_0_2s_db": -91.0,
+  "volumedetect_final_2s_db": -91.0
+}

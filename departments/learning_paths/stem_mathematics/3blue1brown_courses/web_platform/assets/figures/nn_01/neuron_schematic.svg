@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1017"/>
+      <stop offset="100%" stop-color="#161922"/>
+    </linearGradient>
+    <linearGradient id="neuronGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="360" rx="12" fill="url(#bgGrad)" stroke="#2d3748" stroke-width="1.5"/>
+
+  <!-- Left: Inputs -->
+  <g transform="translate(60, 40)">
+    <text x="50" y="10" fill="#94a3b8" font-family="'Hind Siliguri', sans-serif" font-size="14" text-anchor="middle" font-weight="600">পূর্ববর্তী লেয়ারের অ্যাক্টিভেশন</text>
+    
+    <!-- Input 1 -->
+    <circle cx="50" cy="50" r="22" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+    <text x="50" y="55" fill="#38bdf8" font-family="monospace" font-size="14" text-anchor="middle" font-weight="bold">a₁</text>
+    <text x="50" y="88" fill="#64748b" font-family="monospace" font-size="11" text-anchor="middle">0.85</text>
+    
+    <!-- Input 2 -->
+    <circle cx="50" cy="130" r="22" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+    <text x="50" y="135" fill="#38bdf8" font-family="monospace" font-size="14" text-anchor="middle" font-weight="bold">a₂</text>
+    <text x="50" y="168" fill="#64748b" font-family="monospace" font-size="11" text-anchor="middle">0.40</text>
+
+    <!-- Dots -->
+    <circle cx="50" cy="195" r="3" fill="#64748b"/>
+    <circle cx="50" cy="210" r="3" fill="#64748b"/>
+    <circle cx="50" cy="225" r="3" fill="#64748b"/>
+
+    <!-- Input n -->
+    <circle cx="50" cy="265" r="22" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+    <text x="50" y="270" fill="#38bdf8" font-family="monospace" font-size="14" text-anchor="middle" font-weight="bold">aₙ</text>
+    <text x="50" y="303" fill="#64748b" font-family="monospace" font-size="11" text-anchor="middle">0.92</text>
+  </g>
+
+  <!-- Connecting Lines with Weights -->
+  <path d="M 132 90 L 370 170" stroke="#a855f7" stroke-width="3" opacity="0.8"/>
+  <rect x="210" y="105" width="60" height="22" rx="4" fill="#0f172a" stroke="#a855f7" stroke-width="1"/>
+  <text x="240" y="120" fill="#c084fc" font-family="monospace" font-size="12" text-anchor="middle" font-weight="bold">w₁ = 2.4</text>
+
+  <path d="M 132 170 L 370 180" stroke="#f43f5e" stroke-width="2" stroke-dasharray="4,4" opacity="0.7"/>
+  <rect x="210" y="160" width="65" height="22" rx="4" fill="#0f172a" stroke="#f43f5e" stroke-width="1"/>
+  <text x="242" y="175" fill="#fb7185" font-family="monospace" font-size="12" text-anchor="middle" font-weight="bold">w₂ = -1.1</text>
+
+  <path d="M 132 305 L 370 190" stroke="#a855f7" stroke-width="3.5" opacity="0.9"/>
+  <rect x="210" y="245" width="60" height="22" rx="4" fill="#0f172a" stroke="#a855f7" stroke-width="1"/>
+  <text x="240" y="260" fill="#c084fc" font-family="monospace" font-size="12" text-anchor="middle" font-weight="bold">wₙ = 3.8</text>
+
+  <!-- Neuron Core (Summation & Bias) -->
+  <g transform="translate(420, 180)">
+    <circle cx="0" cy="0" r="58" fill="url(#neuronGrad)" stroke="#c084fc" stroke-width="3" filter="url(#glow)"/>
+    <text x="0" y="-12" fill="#ffffff" font-family="'Hind Siliguri', sans-serif" font-size="16" text-anchor="middle" font-weight="700">গাণিতিক নিউরন</text>
+    <text x="0" y="15" fill="#f8fafc" font-family="monospace" font-size="13" text-anchor="middle" font-weight="bold">z = ∑ wᵢaᵢ + b</text>
+    <text x="0" y="34" fill="#fed7aa" font-family="'Hind Siliguri', sans-serif" font-size="12" text-anchor="middle">বায়াস (b) = -1.5</text>
+  </g>
+
+  <!-- Arrow to Activation Function -->
+  <path d="M 482 180 L 550 180" stroke="#c084fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <polygon points="555,180 545,174 545,186" fill="#c084fc"/>
+
+  <!-- Activation Box -->
+  <g transform="translate(560, 130)">
+    <rect width="100" height="100" rx="10" fill="#1e1b4b" stroke="#818cf8" stroke-width="2"/>
+    <text x="50" y="24" fill="#a5b4fc" font-family="'Hind Siliguri', sans-serif" font-size="13" text-anchor="middle" font-weight="600">অ্যাক্টিভেশন</text>
+    <!-- Sigmoid curve inside -->
+    <path d="M 15 80 Q 45 80 50 50 Q 55 20 85 20" stroke="#38bdf8" stroke-width="2.5" fill="none"/>
+    <text x="50" y="92" fill="#38bdf8" font-family="monospace" font-size="12" text-anchor="middle">σ(z) বা ReLU</text>
+  </g>
+
+  <!-- Arrow to Output Activation -->
+  <polygon points="695,180 685,174 685,186" fill="#38bdf8"/>
+  <path d="M 662 180 L 690 180" stroke="#38bdf8" stroke-width="3"/>
+
+  <!-- Output Activation Node -->
+  <g transform="translate(735, 180)">
+    <circle cx="0" cy="0" r="28" fill="#0284c7" stroke="#38bdf8" stroke-width="2" filter="url(#glow)"/>
+    <text x="0" y="5" fill="#ffffff" font-family="monospace" font-size="14" text-anchor="middle" font-weight="bold">0.82</text>
+    <text x="0" y="46" fill="#7dd3fc" font-family="'Hind Siliguri', sans-serif" font-size="13" text-anchor="middle" font-weight="600">নতুন a</text>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+{
+  "course": "lockdown_math",
+  "lesson": "lesson_02",
+  "title": "অধ্যায় ০২ — সপ্তাহের বার নির্ণয়ের সহজ ট্রিক ও মডুলার অ্যারিথমেটিক",
+  "voice": "bn-BD-PradeepNeural",
+  "mode": "authentic_teacher",
+  "sections": {
+    "sec-calendar-puzzle": {
+      "section_id": "sec-calendar-puzzle",
+      "alias": "sec_01_calendar_puzzle",
+      "title": "ক্যালেন্ডার ধাঁধা",
+      "audio_file": "sec_01_calendar_puzzle.mp3",
+      "total_duration_ms": 150000.0
+    },
+    "sec-clock-modulo": {
+      "section_id": "sec-clock-modulo",
+      "alias": "sec_02_clock_modulo",
+      "title": "ঘড়ির গণিত ও মডুলো ৭",
+      "audio_file": "sec_02_clock_modulo.mp3",
+      "total_duration_ms": 170000.0
+    },
+    "sec-leap-years": {
+      "section_id": "sec-leap-years",
+      "alias": "sec_03_leap_years",
+      "title": "লিপ ইয়ার ও অতিরিক্ত দিন",
+      "audio_file": "sec_03_leap_years.mp3",
+      "total_duration_ms": 205000.0
+    },
+    "sec-doomsday-trick": {
+      "section_id": "sec-doomsday-trick",
+      "alias": "sec_04_doomsday_trick",
+      "title": "যেকোনো তারিখের বার বের করার দৃশ্যমান ট্রিক",
+      "audio_file": "sec_04_doomsday_trick.mp3",
+      "total_duration_ms": 235000.0
+    }
+  }
+}

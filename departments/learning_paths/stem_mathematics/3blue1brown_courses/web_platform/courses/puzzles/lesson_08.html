@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অসম্ভব দাবার বোর্ড ধাঁধা | The impossible chessboard puzzle</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/puzzles/lesson_08/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="ধাঁধা"
+  course-url="index.html"
+  home-url="../../index.html"
+  chapter-num="০৮"
+  chapter-total="১০"
+  prev-url="lesson_07.html"
+  prev-title="পূর্ববর্তী: অলিম্পিয়াড-স্তরের গণনা: জেনারেটিং ফাংশন"
+  next-url="lesson_09.html"
+  next-title="পরবর্তী: তিনটি ইউটিলিটির ধাঁধা"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="ধাঁধা"
+  course-url="index.html"
+  chapter-label="অধ্যায় ০৮ · ধাঁধা"
+  title="অসম্ভব দাবার বোর্ড ধাঁধা | The impossible chessboard puzzle"
+  desc="৬৪টি ঘরে মুদ্রা, একটিমাত্র উল্টানো — কীভাবে ৬৪টি সম্ভাব্য অবস্থানের বার্তা লুকানো যায়?"
+  video-src="../../media_vault/puzzles/lesson_08/experiments/3b1b_puzzles_08_full_dubbed.mp4"
+  yt-id="wTJI_WuZSwE"
+  date="৫ জুলাই, ২০২০"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">ধাঁধাটি</b1b-bookmark>
+      <b1b-bookmark time="55" time-bn="০০:৫৫">ঘরে নাম্বার ও বিট</b1b-bookmark>
+      <b1b-bookmark time="102" time-bn="০১:৪২">এক্স-অর-এর যাদু</b1b-bookmark>
+      <b1b-bookmark time="162" time-bn="০২:৪২">সম্পূর্ণ প্রক্রিয়া</b1b-bookmark>
+      <b1b-bookmark time="201" time-bn="০৩:২১">শিক্ষণীয় বিষয়</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-puzzle">ধাঁধাটি</a>
+      <a href="#sec-bits">ঘরে নাম্বার ও বিট</a>
+      <a href="#sec-xor">এক্স-অর-এর যাদু</a>
+      <a href="#sec-proof">সম্পূর্ণ প্রক্রিয়া</a>
+      <a href="#sec-takeaway">শিক্ষণীয় বিষয়</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <b1b-section id="sec-puzzle" title="ধাঁধাটি">
+        <p>একটি ৮×৮ দাবার বোর্ডের ৬৪টি ঘরে প্রতিটিতে একটি মুদ্রা — মাথা বা লেজ। একজন “চাবি”র অবস্থান নির্দিষ্ট একটি ঘরে রেখে অন্যজনকে বলবেন। নিয়ম: সঙ্গী কেবল একটি মুদ্রা উল্টাতে পারেন।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_08/f01_board.svg" alt="দাবার বোর্ড" caption="৬৪টি ঘর — প্রতিটিতে মাথা বা লেজ"></b1b-figure>
+        <p>দ্বিতীয়জন বোর্ড দেখে কোন ঘরে চাবি আছে তা বলতে পারবেন কি? প্রথমে মনে হয় তথের অভাব আছে — কিন্তু একটিমাত্র উল্টানোতেই যথেষ্ট তথ্য লুকানো যায়।</p>
+        <b1b-callout type="gold" icon="♟️" title="আশ্চর্য">
+          <p>৬৪ = ২⁶। ছয়টি বিটেই ৬৪টি অবস্থান নির্দেশ করা যায় — আর একটি মুদ্রা উল্টানো ঠিক ছয়টি বিটের বার্তা বহন করে।</p>
+        </b1b-callout>
+      </b1b-section>
+      <b1b-section id="sec-bits" title="ঘরে নাম্বার ও বিট">
+        <p>প্রতিটি ঘরে ০ থেকে ৬৩ পর্যন্ত একটি নাম্বার দিন। ৬ বিটের দ্বিমিক রূপে এই নাম্বারগুলো লিখুন — প্রতিটি বিট একটি “প্রশ্ন” যার উত্তর হলো ওই বিটের মান।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_08/f02_bits.svg" alt="দ্বিমিক নাম্বার" caption="৬টি বিট দিয়ে ০–৬৩ নাম্বার এনকোড করা"></b1b-figure>
+        <b1b-formula math="64=2^{6}\quad\Rightarrow\quad 6\ \text{bits}"></b1b-formula>
+        <p>মুদ্রার অবস্থা ব্যবহার করে আমরা ছয়টি প্রশ্নের উত্তর পাই; সেগুলো নিয়ে একটি ৬-বিটের নাম্বার গড়ে ওঠে।</p>
+      </b1b-section>
+      <b1b-section id="sec-xor" title="এক্স-অর-এর যাদু">
+        <p>যে ঘরগুলোতে মাথা আছে, তাদের নাম্বারগুলোর এক্স-অর (বিট-ভিত্তিক যোগ, ক্যারি ছাড়া) বের করুন। ফলাফল একটি ৬-বিটের নাম্বার S — বর্তমান বার্তা।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_08/f03_xor.svg" alt="এক্স-অর গণনা" caption="মাথা-ঘরগুলোর নাম্বারের এক্স-অর"></b1b-figure>
+        <b1b-quiz
+          question="❓ ৬৪টি ঘরের অবস্থান নির্দেশ করতে কতগুলো বিটের প্রয়োজন?"
+          correct="1"
+          correct-msg="চমৎকার! ২⁶ = ৬৪, তাই ছয়টি বিটেই ০–৬৩ পর্যন্ত সব ঘর নির্দেশ করা যায়। বোর্ডের মুদ্রার এক্স-অর ঠিক এই ছয় বিটের বার্তা বহন করে।"
+          wrong-msg="আবার ভেবে দেখুন। ইঙ্গিত: ২⁶ = ৬৪ — ঘাতটি গণুন।"
+          reveal-msg="সঠিক উত্তর: ৬">
+          <div slot="option">৪</div>
+          <div slot="option">৬</div>
+          <div slot="option">৮</div>
+          <div slot="option">৬৪</div>
+        </b1b-quiz>
+        <p>চাবি আছে এমন ঘরের নাম্বার T। প্রথমজন সেই ঘরটি খুঁজেন যার নাম্বার S ⊕ T; সেখানকার মুদ্রা উল্টালে নতুন এক্স-অর হয় ঠিক T।</p>
+        <b1b-formula math="S \oplus (S \oplus T) = T"></b1b-formula>
+        <b1b-callout type="blue" icon="🔁" title="কেন কাজ করে">
+          <p>একটি মুদ্রা উল্টালে সেই ঘরের নাম্বারটি এক্স-অর-এর সাথে যোগ বা বাদ যায় — ফলে ঠিক T পাওয়া যায়, অন্য কিছু নয়।</p>
+        </b1b-callout>
+      </b1b-section>
+      <b1b-section id="sec-proof" title="সম্পূর্ণ প্রক্রিয়া">
+        <p>ধাপ ১: মাথা-ঘরগুলোর এক্স-অর বের করুন (S)। ধাপ ২: X = S ⊕ T নির্ণয় করুন। ধাপ ৩: X নাম্বারের ঘরের মুদ্রা উল্টান। দ্বিতীয়জন একই হিসাব করে T পড়েন।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_08/f04_steps.svg" alt="ধাপসমূহ" caption="তিন ধাপে বার্তা এনকোড ও ডিকোড"></b1b-figure>
+        <p>কোনো অতিরিক্ত চুক্তি বা আগের বিন্যাস লাগে না — কেবল গণিতের একটি সুন্দর একটি সরল কৌশল।</p>
+      </b1b-section>
+      <b1b-section id="sec-takeaway" title="শিক্ষণীয় বিষয়">
+        <p>“অসম্ভব” মনে হওয়া তথ্য-সমস্যা প্রায়ই একটি উপযুক্ত কোডিংয়ে রূপান্তরিত হয়। ২-র ঘাত, দ্বিমিক ব্যবস্থা ও এক্স-অর — এই তিনটি টুল অনেক ধাঁধার চাবি।</p>
+        <p>পরবর্তী পাঠে আমরা দেখব কীভাবে একই ধরনের সীমাবদ্ধতা গ্রাফ-অঙ্কনে নতুন রূপ নেয়।</p>
+      </b1b-section>
+
+      <!-- ═══ Practice — excluded from narration ═══ -->
+      <b1b-section id="sec-practice" title="অনুশীলন ও সারসংক্ষেপ" data-no-narration="true">
+        <p>পাঠের মূল ধারণাটি নিজের ভাষায় বলে দেখুন, তারপর নিচের প্রশ্নের উত্তর দিন।</p>
+        <b1b-quiz
+          question="❓ এই পাঠের মূল ধারণা কোনটি?"
+          correct="1"
+          correct-msg="চমৎকার! এই কোর্সজুড়ে আমরা দেখেছি — ইনভ্যারিয়েন্ট, কোডিং, জ্যামিতি বা টপোলজি যাই হোক, সঠিক দৃষ্টিভঙ্গিই সমাধানের চাবি।"
+          wrong-msg="আবার ভেবে দেখুন। ইঙ্গিত: “দৃষ্টিভঙ্গি” শব্দটি মনে রাখুন।"
+          reveal-msg="সঠিক উত্তর: সঠিক দৃষ্টিভঙ্গি বা কাঠামো খুঁজে পেলে কঠিন ধাঁধাও সরল হয়">
+          <div slot="option">ধাঁধা মানেই ভাগ্যের ব্যাপার</div>
+          <div slot="option">সঠিক দৃষ্টিভঙ্গি বা কাঠামো খুঁজে পেলে কঠিন ধাঁধাও সরল হয়</div>
+          <div slot="option">সব উত্তর মুখস্থ করতে হয়</div>
+          <div slot="option">গণিত কেবল সংখ্যা নিয়ে কাজ করে</div>
+        </b1b-quiz>
+        <b1b-callout type="green" icon="✅" title="পরবর্তী পাঠ">
+          <p>পরবর্তী অধ্যায়ে আমরা আরেকটি ধাঁধা নিয়ে কাজ করব। প্রতিটি পাঠেই নতুন একটি দৃষ্টিভঙ্গি যোগ হবে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/puzzles/lesson_08/experiments/3b1b_puzzles_08_full_dubbed.mp4"
+    yt-id="wTJI_WuZSwE"
+    title="অসম্ভব দাবার বোর্ড ধাঁধা | The impossible chessboard puzzle"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — ধাঁধা">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_07.html"
+  prev-title="পূর্ববর্তী: অলিম্পিয়াড-স্তরের গণনা: জেনারেটিং ফাংশন"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_09.html"
+  next-title="পরবর্তী: তিনটি ইউটিলিটির ধাঁধা"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

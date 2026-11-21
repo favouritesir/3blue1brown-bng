@@ -1,0 +1,213 @@
+{
+  "all_pass": true,
+  "lessons": {
+    "01": {
+      "lesson": "01",
+      "output": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\fractals\\lesson_01\\experiments\\3b1b_fractals_01_full_dubbed.mp4",
+      "original_container_sec": 1565.141043,
+      "original_video_stream_sec": 1565.083333,
+      "output_container_sec": 1565.083333,
+      "output_video_stream_sec": 1565.083333,
+      "duration_diff_sec": 0.0,
+      "duration_gate": true,
+      "silent_runs": [
+        {
+          "start": 0.0,
+          "end": 2.676,
+          "duration": 2.676
+        },
+        {
+          "start": 1561.369,
+          "end": 1565.061,
+          "duration": 3.692
+        }
+      ],
+      "lead_in_runs": [
+        {
+          "start": 0.0,
+          "end": 2.676,
+          "duration": 2.676
+        }
+      ],
+      "tail_runs": [
+        {
+          "start": 1561.369,
+          "end": 1565.061,
+          "duration": 3.692
+        }
+      ],
+      "internal_runs": [],
+      "internal_runs_over_2s": [],
+      "internal_silence_gate": true,
+      "median_fill": 0.9995,
+      "max_internal_gap_s": 0.0307,
+      "fill_policy_met": true,
+      "failed_tts_cues": [],
+      "cue_count": 34,
+      "expected_cue_count": 34,
+      "timeline_scale": 3.669398,
+      "overrun_cues": 0,
+      "max_measured_drift_ms": 0.01,
+      "output_size_bytes": 965248309,
+      "fill_gate": true,
+      "tts_gate": true,
+      "PASS": true
+    },
+    "02": {
+      "lesson": "02",
+      "output": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\fractals\\lesson_02\\experiments\\3b1b_fractals_02_full_dubbed.mp4",
+      "original_container_sec": 1655.652426,
+      "original_video_stream_sec": 1655.6,
+      "output_container_sec": 1655.6,
+      "output_video_stream_sec": 1655.6,
+      "duration_diff_sec": 0.0,
+      "duration_gate": true,
+      "silent_runs": [
+        {
+          "start": 0.0,
+          "end": 2.679,
+          "duration": 2.679
+        },
+        {
+          "start": 1651.796,
+          "end": 1655.584,
+          "duration": 3.788
+        }
+      ],
+      "lead_in_runs": [
+        {
+          "start": 0.0,
+          "end": 2.679,
+          "duration": 2.679
+        }
+      ],
+      "tail_runs": [
+        {
+          "start": 1651.796,
+          "end": 1655.584,
+          "duration": 3.788
+        }
+      ],
+      "internal_runs": [],
+      "internal_runs_over_2s": [],
+      "internal_silence_gate": true,
+      "median_fill": 0.9995,
+      "max_internal_gap_s": 0.0329,
+      "fill_policy_met": true,
+      "failed_tts_cues": [],
+      "cue_count": 37,
+      "expected_cue_count": 37,
+      "timeline_scale": 3.777614,
+      "overrun_cues": 0,
+      "max_measured_drift_ms": 0.01,
+      "output_size_bytes": 906983955,
+      "fill_gate": true,
+      "tts_gate": true,
+      "PASS": true
+    },
+    "03": {
+      "lesson": "03",
+      "output": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\fractals\\lesson_03\\experiments\\3b1b_fractals_03_full_dubbed.mp4",
+      "original_container_sec": 1194.736327,
+      "original_video_stream_sec": 1194.6935,
+      "output_container_sec": 1194.6935,
+      "output_video_stream_sec": 1194.6935,
+      "duration_diff_sec": 0.0,
+      "duration_gate": true,
+      "silent_runs": [
+        {
+          "start": 0.0,
+          "end": 2.662,
+          "duration": 2.662
+        },
+        {
+          "start": 1190.96,
+          "end": 1194.684,
+          "duration": 3.724
+        }
+      ],
+      "lead_in_runs": [
+        {
+          "start": 0.0,
+          "end": 2.662,
+          "duration": 2.662
+        }
+      ],
+      "tail_runs": [
+        {
+          "start": 1190.96,
+          "end": 1194.684,
+          "duration": 3.724
+        }
+      ],
+      "internal_runs": [],
+      "internal_runs_over_2s": [],
+      "internal_silence_gate": true,
+      "median_fill": 0.9994,
+      "max_internal_gap_s": 0.0306,
+      "fill_policy_met": true,
+      "failed_tts_cues": [],
+      "cue_count": 30,
+      "expected_cue_count": 30,
+      "timeline_scale": 3.360792,
+      "overrun_cues": 0,
+      "max_measured_drift_ms": 0.01,
+      "output_size_bytes": 87867489,
+      "fill_gate": true,
+      "tts_gate": true,
+      "PASS": true
+    },
+    "04": {
+      "lesson": "04",
+      "output": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\fractals\\lesson_04\\experiments\\3b1b_fractals_04_full_dubbed.mp4",
+      "original_container_sec": 1097.862676,
+      "original_video_stream_sec": 1097.796,
+      "output_container_sec": 1097.796313,
+      "output_video_stream_sec": 1097.796313,
+      "duration_diff_sec": 0.0,
+      "duration_gate": true,
+      "silent_runs": [
+        {
+          "start": 0.0,
+          "end": 2.65,
+          "duration": 2.65
+        },
+        {
+          "start": 1093.892,
+          "end": 1097.784,
+          "duration": 3.892
+        }
+      ],
+      "lead_in_runs": [
+        {
+          "start": 0.0,
+          "end": 2.65,
+          "duration": 2.65
+        }
+      ],
+      "tail_runs": [
+        {
+          "start": 1093.892,
+          "end": 1097.784,
+          "duration": 3.892
+        }
+      ],
+      "internal_runs": [],
+      "internal_runs_over_2s": [],
+      "internal_silence_gate": true,
+      "median_fill": 0.9994,
+      "max_internal_gap_s": 0.0299,
+      "fill_policy_met": true,
+      "failed_tts_cues": [],
+      "cue_count": 29,
+      "expected_cue_count": 29,
+      "timeline_scale": 3.174661,
+      "overrun_cues": 0,
+      "max_measured_drift_ms": 0.01,
+      "output_size_bytes": 125712911,
+      "fill_gate": true,
+      "tts_gate": true,
+      "PASS": true
+    }
+  }
+}

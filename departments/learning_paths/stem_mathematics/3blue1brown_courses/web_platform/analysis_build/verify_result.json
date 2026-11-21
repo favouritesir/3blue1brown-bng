@@ -1,0 +1,508 @@
+{
+  "browser": "chrome (headless=True, channel=chrome)",
+  "lessons_ok": 10,
+  "lessons_total": 10,
+  "index_ok": true,
+  "reports": [
+    {
+      "lesson": 1,
+      "slug": "zeta",
+      "http": 200,
+      "data": {
+        "course_id": "analysis",
+        "official": true,
+        "quizzes": 2
+      },
+      "parity": {
+        "dom_sections": 4,
+        "manifest_keys": 4,
+        "ids_1to1": true,
+        "cues_1to1": true,
+        "engine_ids_match": true,
+        "engine_cues_nonzero": true,
+        "engine_block_cue_equal": true,
+        "json_js_same": true
+      },
+      "components_once": {
+        "article": true,
+        "b1bArticle": true,
+        "section": true,
+        "quiz": true,
+        "callout": true,
+        "figure": true,
+        "formula": true,
+        "quote": true,
+        "toc/navbar/hero/watch/footer": true
+      },
+      "video_src_ok": true,
+      "quiz_clicks": [
+        {
+          "i": 0,
+          "correct": true,
+          "wrong": true
+        },
+        {
+          "i": 1,
+          "correct": true,
+          "wrong": true
+        }
+      ],
+      "errors": {
+        "page": [],
+        "console": [],
+        "bad_responses": []
+      },
+      "ok": true
+    },
+    {
+      "lesson": 2,
+      "slug": "print-gallery",
+      "http": 200,
+      "data": {
+        "course_id": "analysis",
+        "official": true,
+        "quizzes": 2
+      },
+      "parity": {
+        "dom_sections": 4,
+        "manifest_keys": 4,
+        "ids_1to1": true,
+        "cues_1to1": true,
+        "engine_ids_match": true,
+        "engine_cues_nonzero": true,
+        "engine_block_cue_equal": true,
+        "json_js_same": true
+      },
+      "components_once": {
+        "article": true,
+        "b1bArticle": true,
+        "section": true,
+        "quiz": true,
+        "callout": true,
+        "figure": true,
+        "formula": true,
+        "quote": true,
+        "toc/navbar/hero/watch/footer": true
+      },
+      "video_src_ok": true,
+      "quiz_clicks": [
+        {
+          "i": 0,
+          "correct": true,
+          "wrong": true
+        },
+        {
+          "i": 1,
+          "correct": true,
+          "wrong": true
+        }
+      ],
+      "errors": {
+        "page": [],
+        "console": [],
+        "bad_responses": []
+      },
+      "ok": true
+    },
+    {
+      "lesson": 3,
+      "slug": "fourier-transforms",
+      "http": 200,
+      "data": {
+        "course_id": "analysis",
+        "official": true,
+        "quizzes": 2
+      },
+      "parity": {
+        "dom_sections": 4,
+        "manifest_keys": 4,
+        "ids_1to1": true,
+        "cues_1to1": true,
+        "engine_ids_match": true,
+        "engine_cues_nonzero": true,
+        "engine_block_cue_equal": true,
+        "json_js_same": true
+      },
+      "components_once": {
+        "article": true,
+        "b1bArticle": true,
+        "section": true,
+        "quiz": true,
+        "callout": true,
+        "figure": true,
+        "formula": true,
+        "quote": true,
+        "toc/navbar/hero/watch/footer": true
+      },
+      "video_src_ok": true,
+      "quiz_clicks": [
+        {
+          "i": 0,
+          "correct": true,
+          "wrong": true
+        },
+        {
+          "i": 1,
+          "correct": true,
+          "wrong": true
+        }
+      ],
+      "errors": {
+        "page": [],
+        "console": [],
+        "bad_responses": []
+      },
+      "ok": true
+    },
+    {
+      "lesson": 4,
+      "slug": "uncertainty-principle",
+      "http": 200,
+      "data": {
+        "course_id": "analysis",
+        "official": true,
+        "quizzes": 2
+      },
+      "parity": {
+        "dom_sections": 4,
+        "manifest_keys": 4,
+        "ids_1to1": true,
+        "cues_1to1": true,
+        "engine_ids_match": true,
+        "engine_cues_nonzero": true,
+        "engine_block_cue_equal": true,
+        "json_js_same": true
+      },
+      "components_once": {
+        "article": true,
+        "b1bArticle": true,
+        "section": true,
+        "quiz": true,
+        "callout": true,
+        "figure": true,
+        "formula": true,
+        "quote": true,
+        "toc/navbar/hero/watch/footer": true
+      },
+      "video_src_ok": true,
+      "quiz_clicks": [
+        {
+          "i": 0,
+          "correct": true,
+          "wrong": true
+        },
+        {
+          "i": 1,
+          "correct": true,
+          "wrong": true
+        }
+      ],
+      "errors": {
+        "page": [],
+        "console": [],
+        "bad_responses": []
+      },
+      "ok": true
+    },
+    {
+      "lesson": 5,
+      "slug": "fourier-series",
+      "http": 200,
+      "data": {
+        "course_id": "analysis",
+        "official": true,
+        "quizzes": 2
+      },
+      "parity": {
+        "dom_sections": 4,
+        "manifest_keys": 4,
+        "ids_1to1": true,
+        "cues_1to1": true,
+        "engine_ids_match": true,
+        "engine_cues_nonzero": true,
+        "engine_block_cue_equal": true,
+        "json_js_same": true
+      },
+      "components_once": {
+        "article": true,
+        "b1bArticle": true,
+        "section": true,
+        "quiz": true,
+        "callout": true,
+        "figure": true,
+        "formula": true,
+        "quote": true,
+        "toc/navbar/hero/watch/footer": true
+      },
+      "video_src_ok": true,
+      "quiz_clicks": [
+        {
+          "i": 0,
+          "correct": true,
+          "wrong": true
+        },
+        {
+          "i": 1,
+          "correct": true,
+          "wrong": true
+        }
+      ],
+      "errors": {
+        "page": [],
+        "console": [],
+        "bad_responses": []
+      },
+      "ok": true
+    },
+    {
+      "lesson": 6,
+      "slug": "borwein",
+      "http": 200,
+      "data": {
+        "course_id": "analysis",
+        "official": true,
+        "quizzes": 2
+      },
+      "parity": {
+        "dom_sections": 4,
+        "manifest_keys": 4,
+        "ids_1to1": true,
+        "cues_1to1": true,
+        "engine_ids_match": true,
+        "engine_cues_nonzero": true,
+        "engine_block_cue_equal": true,
+        "json_js_same": true
+      },
+      "components_once": {
+        "article": true,
+        "b1bArticle": true,
+        "section": true,
+        "quiz": true,
+        "callout": true,
+        "figure": true,
+        "formula": true,
+        "quote": true,
+        "toc/navbar/hero/watch/footer": true
+      },
+      "video_src_ok": true,
+      "quiz_clicks": [
+        {
+          "i": 0,
+          "correct": true,
+          "wrong": true
+        },
+        {
+          "i": 1,
+          "correct": true,
+          "wrong": true
+        }
+      ],
+      "errors": {
+        "page": [],
+        "console": [],
+        "bad_responses": []
+      },
+      "ok": true
+    },
+    {
+      "lesson": 7,
+      "slug": "convolutions",
+      "http": 200,
+      "data": {
+        "course_id": "analysis",
+        "official": true,
+        "quizzes": 2
+      },
+      "parity": {
+        "dom_sections": 4,
+        "manifest_keys": 4,
+        "ids_1to1": true,
+        "cues_1to1": true,
+        "engine_ids_match": true,
+        "engine_cues_nonzero": true,
+        "engine_block_cue_equal": true,
+        "json_js_same": true
+      },
+      "components_once": {
+        "article": true,
+        "b1bArticle": true,
+        "section": true,
+        "quiz": true,
+        "callout": true,
+        "figure": true,
+        "formula": true,
+        "quote": true,
+        "toc/navbar/hero/watch/footer": true
+      },
+      "video_src_ok": true,
+      "quiz_clicks": [
+        {
+          "i": 0,
+          "correct": true,
+          "wrong": true
+        },
+        {
+          "i": 1,
+          "correct": true,
+          "wrong": true
+        }
+      ],
+      "errors": {
+        "page": [],
+        "console": [],
+        "bad_responses": []
+      },
+      "ok": true
+    },
+    {
+      "lesson": 8,
+      "slug": "winding-numbers",
+      "http": 200,
+      "data": {
+        "course_id": "analysis",
+        "official": true,
+        "quizzes": 2
+      },
+      "parity": {
+        "dom_sections": 4,
+        "manifest_keys": 4,
+        "ids_1to1": true,
+        "cues_1to1": true,
+        "engine_ids_match": true,
+        "engine_cues_nonzero": true,
+        "engine_block_cue_equal": true,
+        "json_js_same": true
+      },
+      "components_once": {
+        "article": true,
+        "b1bArticle": true,
+        "section": true,
+        "quiz": true,
+        "callout": true,
+        "figure": true,
+        "formula": true,
+        "quote": true,
+        "toc/navbar/hero/watch/footer": true
+      },
+      "video_src_ok": true,
+      "quiz_clicks": [
+        {
+          "i": 0,
+          "correct": true,
+          "wrong": true
+        },
+        {
+          "i": 1,
+          "correct": true,
+          "wrong": true
+        }
+      ],
+      "errors": {
+        "page": [],
+        "console": [],
+        "bad_responses": []
+      },
+      "ok": true
+    },
+    {
+      "lesson": 9,
+      "slug": "inventing-math",
+      "http": 200,
+      "data": {
+        "course_id": "analysis",
+        "official": true,
+        "quizzes": 2
+      },
+      "parity": {
+        "dom_sections": 4,
+        "manifest_keys": 4,
+        "ids_1to1": true,
+        "cues_1to1": true,
+        "engine_ids_match": true,
+        "engine_cues_nonzero": true,
+        "engine_block_cue_equal": true,
+        "json_js_same": true
+      },
+      "components_once": {
+        "article": true,
+        "b1bArticle": true,
+        "section": true,
+        "quiz": true,
+        "callout": true,
+        "figure": true,
+        "formula": true,
+        "quote": true,
+        "toc/navbar/hero/watch/footer": true
+      },
+      "video_src_ok": true,
+      "quiz_clicks": [
+        {
+          "i": 0,
+          "correct": true,
+          "wrong": true
+        },
+        {
+          "i": 1,
+          "correct": true,
+          "wrong": true
+        }
+      ],
+      "errors": {
+        "page": [],
+        "console": [],
+        "bad_responses": []
+      },
+      "ok": true
+    },
+    {
+      "lesson": 10,
+      "slug": "music-and-measure-theory",
+      "http": 200,
+      "data": {
+        "course_id": "analysis",
+        "official": true,
+        "quizzes": 2
+      },
+      "parity": {
+        "dom_sections": 4,
+        "manifest_keys": 4,
+        "ids_1to1": true,
+        "cues_1to1": true,
+        "engine_ids_match": true,
+        "engine_cues_nonzero": true,
+        "engine_block_cue_equal": true,
+        "json_js_same": true
+      },
+      "components_once": {
+        "article": true,
+        "b1bArticle": true,
+        "section": true,
+        "quiz": true,
+        "callout": true,
+        "figure": true,
+        "formula": true,
+        "quote": true,
+        "toc/navbar/hero/watch/footer": true
+      },
+      "video_src_ok": true,
+      "quiz_clicks": [
+        {
+          "i": 0,
+          "correct": true,
+          "wrong": true
+        },
+        {
+          "i": 1,
+          "correct": true,
+          "wrong": true
+        }
+      ],
+      "errors": {
+        "page": [],
+        "console": [],
+        "bad_responses": []
+      },
+      "ok": true
+    }
+  ]
+}

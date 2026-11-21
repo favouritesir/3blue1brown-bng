@@ -1,0 +1,2402 @@
+[
+  {
+    "id": 1,
+    "start": 0.0,
+    "end": 3.84,
+    "duration": 3.84,
+    "en": "Google just released the elephant goldfish model for free",
+    "raw_bn": "গুগল সবেমাত্র হাতির গোল্ডফিশ মডেলটি বিনামূল্যে প্রকাশ করেছে"
+  },
+  {
+    "id": 2,
+    "start": 3.84,
+    "end": 9.32,
+    "duration": 5.48,
+    "en": "and it makes everything your AI builds look like a pro made it the very first time.",
+    "raw_bn": "এবং এটি আপনার AI তৈরি করা সমস্ত কিছুকে একজন পেশাদারের মতো দেখায় যা প্রথমবার তৈরি করেছে।"
+  },
+  {
+    "id": 3,
+    "start": 9.32,
+    "end": 15.36,
+    "duration": 6.04,
+    "en": "Websites, ads, Instagram carousels, videos, lead generation agents.",
+    "raw_bn": "ওয়েবসাইট, বিজ্ঞাপন, ইনস্টাগ্রাম ক্যারোসেল, ভিডিও, লিড জেনারেশন এজেন্ট।"
+  },
+  {
+    "id": 4,
+    "start": 15.36,
+    "end": 20.64,
+    "duration": 5.28,
+    "en": "Today I'm going to show you five real builds made two ways side by side.",
+    "raw_bn": "আজ আমি আপনাকে দেখাতে যাচ্ছি পাঁচটি বাস্তব বিল্ড দুইভাবে পাশাপাশি তৈরি।"
+  },
+  {
+    "id": 5,
+    "start": 20.64,
+    "end": 24.76,
+    "duration": 4.12,
+    "en": "On the left, the AI builds straight from one quick sentence.",
+    "raw_bn": "বাম দিকে, এআই একটি দ্রুত বাক্য থেকে সরাসরি তৈরি করে।"
+  },
+  {
+    "id": 6,
+    "start": 24.76,
+    "end": 31.76,
+    "duration": 7.0,
+    "en": "On the right, the same AI builds after a team of fresh AI reviewers has torn the plan apart first.",
+    "raw_bn": "ডানদিকে, নতুন এআই পর্যালোচকদের একটি দল প্রথমে পরিকল্পনাটি ছিঁড়ে যাওয়ার পরে একই AI তৈরি করে।"
+  },
+  {
+    "id": 7,
+    "start": 31.76,
+    "end": 37.2,
+    "duration": 5.44,
+    "en": "Same prompt, same model and the difference is something you can see from across the room.",
+    "raw_bn": "একই প্রম্পট, একই মডেল এবং পার্থক্য এমন কিছু যা আপনি রুম জুড়ে থেকে দেখতে পারেন।"
+  },
+  {
+    "id": 8,
+    "start": 37.2,
+    "end": 45.68,
+    "duration": 8.48,
+    "en": "Stick with me because I'll also show you the one thing you have to do before you build anything with AI and it takes about 40 seconds.",
+    "raw_bn": "আমার সাথে থাকুন কারণ আমি আপনাকে একটি জিনিস দেখাব যা আপনি AI দিয়ে কিছু তৈরি করার আগে আপনাকে করতে হবে এবং এটি প্রায় 40 সেকেন্ড সময় নেয়।"
+  },
+  {
+    "id": 9,
+    "start": 45.68,
+    "end": 48.88,
+    "duration": 3.2,
+    "en": "And later, I'll show you a plan that looked perfect",
+    "raw_bn": "এবং পরে, আমি আপনাকে একটি পরিকল্পনা দেখাব যা নিখুঁত লাগছিল"
+  },
+  {
+    "id": 10,
+    "start": 48.88,
+    "end": 56.32,
+    "duration": 7.44,
+    "en": "until four reviewers found the problems that would have hurt real customers on day one and it's completely free to use.",
+    "raw_bn": "যতক্ষণ না চারজন পর্যালোচক এমন সমস্যাগুলি খুঁজে পান যা প্রথম দিনে প্রকৃত গ্রাহকদের ক্ষতি করতে পারে এবং এটি ব্যবহার করা সম্পূর্ণ বিনামূল্যে।"
+  },
+  {
+    "id": 11,
+    "start": 56.32,
+    "end": 64.16,
+    "duration": 7.84,
+    "en": "By the end of this video, you'll know what Google released, how to set it up in two commands and how to use it to make every website,",
+    "raw_bn": "এই ভিডিওটির শেষে, আপনি জানতে পারবেন যে Google কী প্রকাশ করেছে, কীভাবে এটি দুটি কমান্ডে সেট আপ করতে হয় এবং প্রতিটি ওয়েবসাইট তৈরি করতে কীভাবে এটি ব্যবহার করতে হয়,"
+  },
+  {
+    "id": 12,
+    "start": 64.16,
+    "end": 68.72,
+    "duration": 4.56,
+    "en": "ad, carousel and video you create better on the first try.",
+    "raw_bn": "বিজ্ঞাপন, ক্যারোজেল এবং ভিডিও আপনি প্রথম চেষ্টায় আরও ভাল তৈরি করেন।"
+  },
+  {
+    "id": 13,
+    "start": 68.72,
+    "end": 72.64,
+    "duration": 3.92,
+    "en": "Let's get into it. Let me start with what actually happened.",
+    "raw_bn": "এর মধ্যে প্রবেশ করা যাক. আসলে কি ঘটেছিল তা দিয়ে শুরু করি।"
+  },
+  {
+    "id": 14,
+    "start": 72.64,
+    "end": 76.12,
+    "duration": 3.48,
+    "en": "Google has released something called the elephant goldfish model.",
+    "raw_bn": "গুগল এলিফ্যান্ট গোল্ডফিশ মডেল নামে কিছু প্রকাশ করেছে।"
+  },
+  {
+    "id": 15,
+    "start": 76.12,
+    "end": 78.52,
+    "duration": 2.4,
+    "en": "People call it EGM for short.",
+    "raw_bn": "লোকেরা একে সংক্ষেপে ইজিএম বলে।"
+  },
+  {
+    "id": 16,
+    "start": 78.52,
+    "end": 82.36,
+    "duration": 3.84,
+    "en": "It's a free open source plugin for your AI coding agent.",
+    "raw_bn": "এটি আপনার AI কোডিং এজেন্টের জন্য একটি বিনামূল্যের ওপেন সোর্স প্লাগইন।"
+  },
+  {
+    "id": 17,
+    "start": 82.36,
+    "end": 84.56,
+    "duration": 2.2,
+    "en": "You don't need to sign up for anything new.",
+    "raw_bn": "আপনাকে নতুন কিছুর জন্য সাইন আপ করতে হবে না।"
+  },
+  {
+    "id": 18,
+    "start": 84.56,
+    "end": 90.56,
+    "duration": 6.0,
+    "en": "It works inside Claude code, inside codex and inside Google's own anti-gravity.",
+    "raw_bn": "এটি ক্লাউড কোডের ভিতরে, কোডেক্সের ভিতরে এবং গুগলের নিজস্ব অ্যান্টি-গ্র্যাভিটির ভিতরে কাজ করে।"
+  },
+  {
+    "id": 19,
+    "start": 90.56,
+    "end": 94.52,
+    "duration": 3.96,
+    "en": "Open source means the code is public and anyone can use it.",
+    "raw_bn": "ওপেন সোর্স মানে কোডটি সর্বজনীন এবং যে কেউ এটি ব্যবহার করতে পারে।"
+  },
+  {
+    "id": 20,
+    "start": 94.52,
+    "end": 101.48,
+    "duration": 6.96,
+    "en": "Google says thousands of its own engineers already use it to plan their work before they write a single line of code",
+    "raw_bn": "গুগল বলেছে যে তার নিজের হাজার হাজার ইঞ্জিনিয়াররা কোডের একটি লাইন লেখার আগে তাদের কাজের পরিকল্পনা করার জন্য এটি ব্যবহার করে"
+  },
+  {
+    "id": 21,
+    "start": 101.48,
+    "end": 108.64,
+    "duration": 7.16,
+    "en": "and it's built on an idea from a Google engineer called Dave Rensin who wrote an essay about elephants and goldfish.",
+    "raw_bn": "এবং এটি ডেভ রেনসিন নামে একজন Google ইঞ্জিনিয়ারের একটি ধারণার উপর ভিত্তি করে তৈরি করা হয়েছে যিনি হাতি এবং গোল্ডফিশ সম্পর্কে একটি প্রবন্ধ লিখেছিলেন।"
+  },
+  {
+    "id": 22,
+    "start": 108.64,
+    "end": 110.96,
+    "duration": 2.32,
+    "en": "Here's the idea in normal words.",
+    "raw_bn": "এখানে সাধারণ কথায় ধারণা।"
+  },
+  {
+    "id": 23,
+    "start": 110.96,
+    "end": 115.28,
+    "duration": 4.32,
+    "en": "When you work with an AI for a while, it learns everything about your project.",
+    "raw_bn": "আপনি যখন কিছু সময়ের জন্য একটি AI এর সাথে কাজ করেন, তখন এটি আপনার প্রকল্প সম্পর্কে সবকিছু শিখে যায়।"
+  },
+  {
+    "id": 24,
+    "start": 115.28,
+    "end": 119.45,
+    "duration": 4.17,
+    "en": "Your goals, your style, every decision you made along the way.",
+    "raw_bn": "আপনার লক্ষ্য, আপনার শৈলী, আপনি পথ বরাবর করা প্রতিটি সিদ্ধান্ত."
+  },
+  {
+    "id": 25,
+    "start": 119.45,
+    "end": 123.45,
+    "duration": 4.0,
+    "en": "That AI is the elephant. Elephants never forget.",
+    "raw_bn": "সেই AI হল হাতি। হাতি কখনো ভুলতে পারে না।"
+  },
+  {
+    "id": 26,
+    "start": 123.45,
+    "end": 127.25,
+    "duration": 3.8,
+    "en": "And that's great because the elephant can write you a detailed plan.",
+    "raw_bn": "এবং এটি দুর্দান্ত কারণ হাতি আপনাকে একটি বিশদ পরিকল্পনা লিখতে পারে।"
+  },
+  {
+    "id": 27,
+    "start": 127.25,
+    "end": 128.81,
+    "duration": 1.56,
+    "en": "But there's a catch.",
+    "raw_bn": "কিন্তু একটা ক্যাচ আছে।"
+  },
+  {
+    "id": 28,
+    "start": 128.81,
+    "end": 133.29,
+    "duration": 4.48,
+    "en": "Because the elephant knows everything, it stops noticing what's missing.",
+    "raw_bn": "কারণ হাতি সব কিছু জানে, কি নেই তা লক্ষ্য করা বন্ধ করে দেয়।"
+  },
+  {
+    "id": 29,
+    "start": 133.29,
+    "end": 138.13,
+    "duration": 4.84,
+    "en": "It fills in the gaps in its head. It assumes things you never actually said.",
+    "raw_bn": "এটি তার মাথার শূন্যস্থান পূরণ করে। এটি এমন জিনিসগুলি ধরে নেয় যা আপনি কখনই বলেননি।"
+  },
+  {
+    "id": 30,
+    "start": 138.13,
+    "end": 143.85,
+    "duration": 5.72,
+    "en": "So the plan looks perfect to the elephant and to you because you both have the same memory.",
+    "raw_bn": "সুতরাং পরিকল্পনাটি হাতি এবং আপনার কাছে নিখুঁত দেখাচ্ছে কারণ আপনার উভয়েরই একই স্মৃতি রয়েছে।"
+  },
+  {
+    "id": 31,
+    "start": 143.85,
+    "end": 145.85,
+    "duration": 2.0,
+    "en": "That's where the goldfish come in.",
+    "raw_bn": "সেখানেই গোল্ডফিশ আসে।"
+  },
+  {
+    "id": 32,
+    "start": 145.85,
+    "end": 150.69,
+    "duration": 4.84,
+    "en": "A goldfish is a brand new AI helper that has seen none of your conversation.",
+    "raw_bn": "গোল্ডফিশ হল একেবারে নতুন এআই সাহায্যকারী যেটি আপনার কথোপকথন দেখেনি।"
+  },
+  {
+    "id": 33,
+    "start": 150.69,
+    "end": 154.17,
+    "duration": 3.48,
+    "en": "No memory, no history, no idea what you meant.",
+    "raw_bn": "কোন স্মৃতি নেই, কোন ইতিহাস নেই, কোন ধারণা নেই আপনি কি বোঝাতে চেয়েছিলেন।"
+  },
+  {
+    "id": 34,
+    "start": 154.17,
+    "end": 156.53,
+    "duration": 2.36,
+    "en": "It only gets the plan itself.",
+    "raw_bn": "এটা শুধুমাত্র পরিকল্পনা নিজেই পায়."
+  },
+  {
+    "id": 35,
+    "start": 156.53,
+    "end": 159.57,
+    "duration": 3.04,
+    "en": "So it reads the plan the way a stranger would.",
+    "raw_bn": "তাই এটি একটি অপরিচিত ব্যক্তি যেভাবে পরিকল্পনাটি পড়ে।"
+  },
+  {
+    "id": 36,
+    "start": 159.57,
+    "end": 162.41,
+    "duration": 2.84,
+    "en": "And strangers spot the gaps instantly.",
+    "raw_bn": "এবং অপরিচিত ব্যক্তিরা তাত্ক্ষণিকভাবে ফাঁকগুলি সনাক্ত করে।"
+  },
+  {
+    "id": 37,
+    "start": 162.41,
+    "end": 169.89,
+    "duration": 7.48,
+    "en": "Then you, the human, look at what the goldfish found, decide which problems matter, and approve the final plan.",
+    "raw_bn": "তারপর আপনি, মানুষ, সোনার মাছটি কী খুঁজে পেয়েছে তা দেখুন, কোন সমস্যাগুলি গুরুত্বপূর্ণ তা সিদ্ধান্ত নিন এবং চূড়ান্ত পরিকল্পনাটি অনুমোদন করুন।"
+  },
+  {
+    "id": 38,
+    "start": 169.89,
+    "end": 172.45,
+    "duration": 2.56,
+    "en": "Only then does the AI build it.",
+    "raw_bn": "তবেই এআই এটি তৈরি করে।"
+  },
+  {
+    "id": 39,
+    "start": 172.45,
+    "end": 175.01,
+    "duration": 2.56,
+    "en": "So the whole system has three parts.",
+    "raw_bn": "সুতরাং পুরো সিস্টেমের তিনটি অংশ রয়েছে।"
+  },
+  {
+    "id": 40,
+    "start": 175.01,
+    "end": 179.65,
+    "duration": 4.64,
+    "en": "The elephant plans, the goldfish review, you decide.",
+    "raw_bn": "হাতির পরিকল্পনা, গোল্ডফিশ পর্যালোচনা, আপনি সিদ্ধান্ত নিন।"
+  },
+  {
+    "id": 41,
+    "start": 179.65,
+    "end": 183.21,
+    "duration": 3.56,
+    "en": "Now here's why this matters so much for anything visual.",
+    "raw_bn": "এখন এখানে কেন এই চাক্ষুষ কিছু জন্য এত গুরুত্বপূর্ণ."
+  },
+  {
+    "id": 42,
+    "start": 183.21,
+    "end": 185.57,
+    "duration": 2.36,
+    "en": "Think about who looks at your work.",
+    "raw_bn": "আপনার কাজ কে দেখেন তা নিয়ে ভাবুন।"
+  },
+  {
+    "id": 43,
+    "start": 185.57,
+    "end": 188.69,
+    "duration": 3.12,
+    "en": "Someone scrolling Instagram has never heard of you.",
+    "raw_bn": "কেউ ইনস্টাগ্রামে স্ক্রোল করছে আপনার কথা শুনেনি।"
+  },
+  {
+    "id": 44,
+    "start": 188.69,
+    "end": 192.81,
+    "duration": 4.12,
+    "en": "Someone seeing your ad has about 1 second to decide if they care.",
+    "raw_bn": "কেউ আপনার বিজ্ঞাপন দেখছে কিনা তা সিদ্ধান্ত নিতে প্রায় 1 সেকেন্ড সময় আছে।"
+  },
+  {
+    "id": 45,
+    "start": 192.81,
+    "end": 197.69,
+    "duration": 4.88,
+    "en": "Someone landing on your website for the first time has no idea what you sell.",
+    "raw_bn": "কেউ আপনার ওয়েবসাইটে প্রথমবারের মতো অবতরণ করলে আপনি কী বিক্রি করেন তার কোনো ধারণা নেই।"
+  },
+  {
+    "id": 46,
+    "start": 197.69,
+    "end": 200.65,
+    "duration": 2.96,
+    "en": "Every single one of those people is a goldfish.",
+    "raw_bn": "সেই মানুষগুলোর প্রত্যেকেই গোল্ডফিশ।"
+  },
+  {
+    "id": 47,
+    "start": 200.65,
+    "end": 203.81,
+    "duration": 3.16,
+    "en": "No context, no memory, no patience.",
+    "raw_bn": "প্রসঙ্গ নেই, স্মৃতি নেই, ধৈর্য নেই।"
+  },
+  {
+    "id": 48,
+    "start": 203.81,
+    "end": 211.69,
+    "duration": 7.88,
+    "en": "So when you review your plan with goldfish before you build, you're testing it on a fake audience before the real audience ever sees it.",
+    "raw_bn": "সুতরাং আপনি যখন নির্মাণের আগে গোল্ডফিশের সাথে আপনার পরিকল্পনাটি পর্যালোচনা করেন, তখন প্রকৃত দর্শকরা এটি দেখার আগে আপনি এটি একটি নকল দর্শকের উপর পরীক্ষা করছেন।"
+  },
+  {
+    "id": 49,
+    "start": 211.69,
+    "end": 214.61,
+    "duration": 2.92,
+    "en": "Let me show you how it works on a real plan first.",
+    "raw_bn": "আমি আপনাকে দেখাই যে এটি একটি বাস্তব পরিকল্পনায় কিভাবে কাজ করে।"
+  },
+  {
+    "id": 50,
+    "start": 214.61,
+    "end": 220.25,
+    "duration": 5.64,
+    "en": "I wrote a short plan for an AI agent that replies to new customer inquiries for a local clinic.",
+    "raw_bn": "আমি একটি AI এজেন্টের জন্য একটি সংক্ষিপ্ত পরিকল্পনা লিখেছি যা স্থানীয় ক্লিনিকের জন্য নতুন গ্রাহকের অনুসন্ধানের উত্তর দেয়।"
+  },
+  {
+    "id": 51,
+    "start": 220.25,
+    "end": 224.61,
+    "duration": 4.36,
+    "en": "It sends a text, answers questions, and books an appointment into the calendar.",
+    "raw_bn": "এটি একটি পাঠ্য পাঠায়, প্রশ্নের উত্তর দেয় এবং ক্যালেন্ডারে একটি অ্যাপয়েন্টমেন্ট বুক করে।"
+  },
+  {
+    "id": 52,
+    "start": 224.61,
+    "end": 228.17,
+    "duration": 3.56,
+    "en": "19 lines. And at first glance, it looks fine.",
+    "raw_bn": "19 লাইন। এবং প্রথম নজরে, এটি সূক্ষ্ম দেখায়।"
+  },
+  {
+    "id": 53,
+    "start": 228.17,
+    "end": 230.49,
+    "duration": 2.32,
+    "en": "Then I ran the EGM review.",
+    "raw_bn": "তারপর আমি ইজিএম পর্যালোচনা চালালাম।"
+  },
+  {
+    "id": 54,
+    "start": 230.49,
+    "end": 235.17,
+    "duration": 4.68,
+    "en": "Four goldfish reviewers read it at the same time. Each one had a different job.",
+    "raw_bn": "চার গোল্ডফিশ পর্যালোচক একই সময়ে এটি পড়েছেন। প্রত্যেকের আলাদা কাজ ছিল।"
+  },
+  {
+    "id": 55,
+    "start": 235.17,
+    "end": 238.17,
+    "duration": 3.0,
+    "en": "One checks if the plan is simpler than it needs to be.",
+    "raw_bn": "পরিকল্পনাটি প্রয়োজনের চেয়ে সহজ কিনা তা পরীক্ষা করে।"
+  },
+  {
+    "id": 56,
+    "start": 238.17,
+    "end": 241.69,
+    "duration": 3.52,
+    "en": "One reads it like a total beginner and checks if it makes sense.",
+    "raw_bn": "একজন এটি মোট শিক্ষানবিসদের মতো পড়ে এবং এটি অর্থপূর্ণ কিনা তা পরীক্ষা করে।"
+  },
+  {
+    "id": 57,
+    "start": 241.69,
+    "end": 247.65,
+    "duration": 5.96,
+    "en": "One attacks the design itself, and one checks if somebody could actually build it from the plan.",
+    "raw_bn": "একজন নিজেই নকশাটিকে আক্রমণ করে এবং কেউ এটিকে পরিকল্পনা থেকে তৈরি করতে পারে কিনা তা পরীক্ষা করে।"
+  },
+  {
+    "id": 58,
+    "start": 247.65,
+    "end": 254.81,
+    "duration": 7.16,
+    "en": "Each review took about 40 seconds, and all four came back with the same answer: not ready to build.",
+    "raw_bn": "প্রতিটি পর্যালোচনা প্রায় 40 সেকেন্ড সময় নেয়, এবং চারটিই একই উত্তর নিয়ে ফিরে আসে: নির্মাণের জন্য প্রস্তুত নয়।"
+  },
+  {
+    "id": 59,
+    "start": 254.81,
+    "end": 258.33,
+    "duration": 3.52,
+    "en": "All four spotted that the plan had no rule for emergencies.",
+    "raw_bn": "চারজনই লক্ষ্য করেছেন যে পরিকল্পনায় জরুরী অবস্থার জন্য কোন নিয়ম নেই।"
+  },
+  {
+    "id": 60,
+    "start": 258.33,
+    "end": 263.25,
+    "duration": 4.92,
+    "en": "So, if a patient texted that they were in pain, the AI had no idea what to do.",
+    "raw_bn": "সুতরাং, যদি একজন রোগী টেক্সট করেন যে তারা ব্যথা করছেন, তাহলে এআই-এর কী করা উচিত তা ধারণা ছিল না।"
+  },
+  {
+    "id": 61,
+    "start": 263.25,
+    "end": 268.13,
+    "duration": 4.88,
+    "en": "All four spotted that two people could book the same appointment slot at the same time.",
+    "raw_bn": "চারজনই দেখেছেন যে একই সময়ে দুজন লোক একই অ্যাপয়েন্টমেন্ট স্লট বুক করতে পারে।"
+  },
+  {
+    "id": 62,
+    "start": 268.13,
+    "end": 275.09,
+    "duration": 6.96,
+    "en": "All four spotted that the plan said \"Turn it on for every on Monday with no test run and no off switch.\"",
+    "raw_bn": "চারজনই লক্ষ্য করেছেন যে পরিকল্পনায় বলা হয়েছে \"কোনও পরীক্ষা চালানো বা বন্ধ সুইচ ছাড়াই প্রতি সোমবারের জন্য এটি চালু করুন।\""
+  },
+  {
+    "id": 63,
+    "start": 275.09,
+    "end": 278.17,
+    "duration": 3.08,
+    "en": "And one reviewer caught something the other three missed.",
+    "raw_bn": "এবং একজন পর্যালোচক এমন কিছু ধরলেন যা অন্য তিনজন মিস করেছে।"
+  },
+  {
+    "id": 64,
+    "start": 278.17,
+    "end": 280.81,
+    "duration": 2.64,
+    "en": "The contact form could be flooded by spammers,",
+    "raw_bn": "যোগাযোগের ফর্ম স্প্যামারদের দ্বারা প্লাবিত হতে পারে,"
+  },
+  {
+    "id": 65,
+    "start": 280.81,
+    "end": 287.93,
+    "duration": 7.12,
+    "en": "and anybody could type instructions into the message box to trick the AI into saying things the clinic never wanted said.",
+    "raw_bn": "এবং যে কেউ বার্তা বক্সে নির্দেশাবলী টাইপ করতে পারে যাতে এআইকে এমন কিছু বলার জন্য প্রতারণা করা যায় যা ক্লিনিক কখনও বলতে চায় না।"
+  },
+  {
+    "id": 66,
+    "start": 287.93,
+    "end": 292.21,
+    "duration": 4.28,
+    "en": "That's the kind of problem that only shows up after it's already hurt you.",
+    "raw_bn": "এটি এমন একটি সমস্যা যা ইতিমধ্যেই আপনাকে আঘাত করার পরেই দেখা যায়।"
+  },
+  {
+    "id": 67,
+    "start": 292.21,
+    "end": 295.77,
+    "duration": 3.56,
+    "en": "40 seconds, and it was caught before anything was built.",
+    "raw_bn": "40 সেকেন্ড, এবং কিছু তৈরি হওয়ার আগেই এটি ধরা পড়েছিল।"
+  },
+  {
+    "id": 68,
+    "start": 295.77,
+    "end": 298.77,
+    "duration": 3.0,
+    "en": "So, that's what one review does to a plain plan.",
+    "raw_bn": "সুতরাং, যে একটি পর্যালোচনা একটি প্লেইন পরিকল্পনা কি করে."
+  },
+  {
+    "id": 69,
+    "start": 298.77,
+    "end": 301.65,
+    "duration": 2.88,
+    "en": "Now, let me show you what it does to the fun stuff.",
+    "raw_bn": "এখন, আমি আপনাকে দেখাই যে এটি মজার জিনিসগুলিতে কী করে।"
+  },
+  {
+    "id": 70,
+    "start": 301.65,
+    "end": 309.49,
+    "duration": 7.84,
+    "en": "If you want to use the exact skills I built for this video inside your own business, that's what we do every day in the AI Profit Boardroom.",
+    "raw_bn": "আপনি যদি আপনার নিজের ব্যবসার মধ্যে এই ভিডিওটির জন্য আমার তৈরি করা সঠিক দক্ষতাগুলি ব্যবহার করতে চান, তাহলে আমরা প্রতিদিন এআই লাভ বোর্ডরুমে এটিই করি।"
+  },
+  {
+    "id": 71,
+    "start": 309.49,
+    "end": 312.53,
+    "duration": 3.04,
+    "en": "You get the Goldfish Audience Check Skill for Claude.",
+    "raw_bn": "আপনি Claude এর জন্য গোল্ডফিশ অডিয়েন্স চেক স্কিল পাবেন।"
+  },
+  {
+    "id": 72,
+    "start": 312.53,
+    "end": 319.45,
+    "duration": 6.92,
+    "en": "You hand it any carousel, ad, landing page, or video script, and a panel of fresh reviewers checks it like a scroller,",
+    "raw_bn": "আপনি এটিকে যেকোনো ক্যারোজেল, বিজ্ঞাপন, ল্যান্ডিং পৃষ্ঠা বা ভিডিও স্ক্রিপ্ট দেন এবং নতুন পর্যালোচকদের একটি প্যানেল এটি একটি স্ক্রলারের মতো পরীক্ষা করে,"
+  },
+  {
+    "id": 73,
+    "start": 319.45,
+    "end": 322.73,
+    "duration": 3.28,
+    "en": "a skeptic, a first-time visitor, and a buyer would.",
+    "raw_bn": "একটি সংশয়বাদী, একটি প্রথমবার দর্শনার্থী, এবং একটি ক্রেতা হবে."
+  },
+  {
+    "id": 74,
+    "start": 322.73,
+    "end": 329.49,
+    "duration": 6.76,
+    "en": "You get the Plan Before Build Skill, which walks your Claude through brainstorm, plan, review, and then build.",
+    "raw_bn": "আপনি বিল্ড স্কিলের আগে প্ল্যান পাবেন, যা আপনার ক্লাউডকে ব্রেনস্টর্ম, পরিকল্পনা, পর্যালোচনা এবং তারপর তৈরি করে।"
+  },
+  {
+    "id": 75,
+    "start": 329.49,
+    "end": 332.45,
+    "duration": 2.96,
+    "en": "So, your first version comes out looking like your fifth.",
+    "raw_bn": "সুতরাং, আপনার প্রথম সংস্করণটি আপনার পঞ্চমটির মতো দেখতে আসে।"
+  },
+  {
+    "id": 76,
+    "start": 332.45,
+    "end": 338.61,
+    "duration": 6.16,
+    "en": "You get the Storyboard Gate Skill, which reviews a video storyboard before a single frame is made.",
+    "raw_bn": "আপনি স্টোরিবোর্ড গেট স্কিল পাবেন, যা একটি একক ফ্রেম তৈরি করার আগে একটি ভিডিও স্টোরিবোর্ড পর্যালোচনা করে।"
+  },
+  {
+    "id": 77,
+    "start": 338.61,
+    "end": 344.89,
+    "duration": 6.28,
+    "en": "And you get the full systems behind every build in this video: the skills and the exact prompts.",
+    "raw_bn": "এবং আপনি এই ভিডিওতে প্রতিটি বিল্ডের পিছনে সম্পূর্ণ সিস্টেম পাবেন: দক্ষতা এবং সঠিক প্রম্পট।"
+  },
+  {
+    "id": 78,
+    "start": 344.89,
+    "end": 351.89,
+    "duration": 7.0,
+    "en": "The 3D website system, the video system, the Instagram carousel system, the ad creative system,",
+    "raw_bn": "3D ওয়েবসাইট সিস্টেম, ভিডিও সিস্টেম, ইনস্টাগ্রাম ক্যারোজেল সিস্টেম, বিজ্ঞাপন ক্রিয়েটিভ সিস্টেম,"
+  },
+  {
+    "id": 79,
+    "start": 351.89,
+    "end": 354.09,
+    "duration": 2.2,
+    "en": "and the lead generation system.",
+    "raw_bn": "এবং সীসা প্রজন্মের সিস্টেম।"
+  },
+  {
+    "id": 80,
+    "start": 354.09,
+    "end": 357.21,
+    "duration": 3.12,
+    "en": "Plus, the automation that chains them all together.",
+    "raw_bn": "এছাড়াও, অটোমেশন যা তাদের সকলকে একসাথে বেঁধে রাখে।"
+  },
+  {
+    "id": 81,
+    "start": 357.21,
+    "end": 364.17,
+    "duration": 6.96,
+    "en": "So, your agent plans the job, runs the Goldfish review, fixes the plan, and builds the finished website, carousel,",
+    "raw_bn": "সুতরাং, আপনার এজেন্ট কাজের পরিকল্পনা করে, গোল্ডফিশ পর্যালোচনা চালায়, পরিকল্পনা ঠিক করে এবং সমাপ্ত ওয়েবসাইট তৈরি করে, ক্যারোজেল,"
+  },
+  {
+    "id": 82,
+    "start": 364.17,
+    "end": 367.45,
+    "duration": 3.28,
+    "en": "ad, or video for you while you get on with your day.",
+    "raw_bn": "আপনার দিনের সাথে সাথে আপনার জন্য বিজ্ঞাপন বা ভিডিও।"
+  },
+  {
+    "id": 83,
+    "start": 367.45,
+    "end": 375.45,
+    "duration": 8.0,
+    "en": "There's a 30-day roadmap that walks you through installing EGM, running your first review, and turning it into a habit for every project.",
+    "raw_bn": "একটি 30-দিনের রোডম্যাপ রয়েছে যা আপনাকে ইজিএম ইনস্টল করার, আপনার প্রথম পর্যালোচনা চালানো এবং প্রতিটি প্রকল্পের জন্য এটিকে একটি অভ্যাসে পরিণত করে।"
+  },
+  {
+    "id": 84,
+    "start": 375.45,
+    "end": 382.1,
+    "duration": 6.64,
+    "en": "There are four coaching calls every week with members who are using Claude and these review loops in their businesses right now.",
+    "raw_bn": "প্রতি সপ্তাহে চারটি কোচিং কল আছে সদস্যদের সাথে যারা এই মুহূর্তে তাদের ব্যবসায় ক্লাউড এবং এই পর্যালোচনা লুপগুলি ব্যবহার করছেন।"
+  },
+  {
+    "id": 85,
+    "start": 382.1,
+    "end": 385.45,
+    "duration": 3.36,
+    "en": "So, you can bring your exact project and get help on it.",
+    "raw_bn": "সুতরাং, আপনি আপনার সঠিক প্রকল্প আনতে পারেন এবং এটিতে সহায়তা পেতে পারেন।"
+  },
+  {
+    "id": 86,
+    "start": 385.45,
+    "end": 389.74,
+    "duration": 4.28,
+    "en": "There are daily tutorials showing each new tool like this as it comes out.",
+    "raw_bn": "প্রতিদিনের টিউটোরিয়াল আছে যেগুলো একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে একে কৰে আজি৷"
+  },
+  {
+    "id": 87,
+    "start": 389.74,
+    "end": 394.77,
+    "duration": 5.04,
+    "en": "There's a prompt library built around these workflows, so you never start from a blank page.",
+    "raw_bn": "এই ওয়ার্কফ্লোগুলির চারপাশে একটি প্রম্পট লাইব্রেরি তৈরি করা হয়েছে, তাই আপনি কখনই একটি ফাঁকা পৃষ্ঠা থেকে শুরু করবেন না।"
+  },
+  {
+    "id": 88,
+    "start": 394.77,
+    "end": 399.5,
+    "duration": 4.72,
+    "en": "And there's a member map, so you can find other people building with AI near you.",
+    "raw_bn": "এবং একটি সদস্য মানচিত্র আছে, যাতে আপনি আপনার কাছাকাছি AI দিয়ে তৈরি অন্যান্য লোকদের খুঁজে পেতে পারেন।"
+  },
+  {
+    "id": 89,
+    "start": 399.5,
+    "end": 403.25,
+    "duration": 3.76,
+    "en": "Over 3,400 business owners are in there already.",
+    "raw_bn": "3,400 টিরও বেশি ব্যবসার মালিক ইতিমধ্যে সেখানে রয়েছেন।"
+  },
+  {
+    "id": 90,
+    "start": 403.25,
+    "end": 408.57,
+    "duration": 5.32,
+    "en": "The link is in the comments and description, or go to aiprofitboardroom.com.",
+    "raw_bn": "লিঙ্কটি মন্তব্য এবং বিবরণে রয়েছে অথবা aiprofitboardroom.com-এ যান।"
+  },
+  {
+    "id": 91,
+    "start": 408.57,
+    "end": 413.57,
+    "duration": 5.0,
+    "en": "Okay, let's get into the builds. Every build follows the exact same recipe.",
+    "raw_bn": "ঠিক আছে, এর বিল্ডে আসা যাক. প্রতিটি বিল্ড ঠিক একই রেসিপি অনুসরণ করে।"
+  },
+  {
+    "id": 92,
+    "start": 413.57,
+    "end": 418.62,
+    "duration": 5.04,
+    "en": "Step one, the AI builds straight from one quick sentence with no planning.",
+    "raw_bn": "প্রথম ধাপ, এআই কোনো পরিকল্পনা ছাড়াই একটি দ্রুত বাক্য থেকে তৈরি করে।"
+  },
+  {
+    "id": 93,
+    "start": 418.62,
+    "end": 423.06,
+    "duration": 4.44,
+    "en": "Step two, the elephant writes a one-page plan for the same idea.",
+    "raw_bn": "দ্বিতীয় ধাপ, হাতি একই ধারণার জন্য একটি এক-পৃষ্ঠার পরিকল্পনা লেখে।"
+  },
+  {
+    "id": 94,
+    "start": 423.06,
+    "end": 428.13,
+    "duration": 5.08,
+    "en": "Step three, three goldfish reviewers attack that plan, each from a fresh start.",
+    "raw_bn": "ধাপ তিন, তিনটি গোল্ডফিশ পর্যালোচক সেই পরিকল্পনাকে আক্রমণ করে, প্রতিটি নতুন শুরু থেকে।"
+  },
+  {
+    "id": 95,
+    "start": 428.13,
+    "end": 431.94,
+    "duration": 3.8,
+    "en": "Step four, the AI fixes the plan and builds it again.",
+    "raw_bn": "চতুর্থ ধাপ, AI পরিকল্পনাটি ঠিক করে এবং এটি আবার তৈরি করে।"
+  },
+  {
+    "id": 96,
+    "start": 431.94,
+    "end": 434.77,
+    "duration": 2.84,
+    "en": "Then we put both versions side by side.",
+    "raw_bn": "তারপরে আমরা উভয় সংস্করণ পাশাপাশি রাখি।"
+  },
+  {
+    "id": 97,
+    "start": 434.77,
+    "end": 438.74,
+    "duration": 3.97,
+    "en": "Build number one is a 3D website. The prompt was simple.",
+    "raw_bn": "বিল্ড নাম্বার ওয়ান একটি 3D ওয়েবসাইট। প্রম্পট সহজ ছিল."
+  },
+  {
+    "id": 98,
+    "start": 438.74,
+    "end": 443.01,
+    "duration": 4.28,
+    "en": "Build a 3D website for Ember Roast, a specialty coffee subscription.",
+    "raw_bn": "এমবার রোস্টের জন্য একটি 3D ওয়েবসাইট তৈরি করুন, একটি বিশেষ কফি সাবস্ক্রিপশন৷"
+  },
+  {
+    "id": 99,
+    "start": 443.01,
+    "end": 446.86,
+    "duration": 3.84,
+    "en": "On the left, you can see what the AI made straight from that sentence.",
+    "raw_bn": "বাম দিকে, আপনি দেখতে পাচ্ছেন যে AI সরাসরি সেই বাক্য থেকে কী তৈরি করেছে।"
+  },
+  {
+    "id": 100,
+    "start": 446.86,
+    "end": 450.3,
+    "duration": 3.44,
+    "en": "On the right, you can see what it made after the goldfish review.",
+    "raw_bn": "ডানদিকে, আপনি গোল্ডফিশ পর্যালোচনার পরে এটি কী তৈরি করেছে তা দেখতে পারেন।"
+  },
+  {
+    "id": 101,
+    "start": 450.3,
+    "end": 454.57,
+    "duration": 4.28,
+    "en": "Three goldfish read the plan and all three caught the same big problem.",
+    "raw_bn": "তিনটি গোল্ডফিশ পরিকল্পনাটি পড়ে এবং তিনটিই একই বড় সমস্যায় পড়ে।"
+  },
+  {
+    "id": 102,
+    "start": 454.57,
+    "end": 459.98,
+    "duration": 5.41,
+    "en": "Every sign-up button just scrolled down the page to the plans, and picking a plan did nothing.",
+    "raw_bn": "প্রতিটি সাইন-আপ বোতাম শুধু প্ল্যানে পৃষ্ঠাটি স্ক্রোল করে, এবং একটি পরিকল্পনা বাছাই কিছুই করেনি।"
+  },
+  {
+    "id": 103,
+    "start": 459.98,
+    "end": 463.21,
+    "duration": 3.24,
+    "en": "A beautiful site that can't actually sign anyone up.",
+    "raw_bn": "একটি সুন্দর সাইট যা আসলে কেউ সাইন আপ করতে পারে না।"
+  },
+  {
+    "id": 104,
+    "start": 463.21,
+    "end": 466.69,
+    "duration": 3.48,
+    "en": "So now, every plan opens a simple sign-up box.",
+    "raw_bn": "তাই এখন, প্রতিটি পরিকল্পনা একটি সাধারণ সাইন-আপ বাক্স খোলে৷"
+  },
+  {
+    "id": 105,
+    "start": 466.69,
+    "end": 472.38,
+    "duration": 5.68,
+    "en": "All three caught that the plan never said what happens on a phone or browser that can't show 3D.",
+    "raw_bn": "তিনটিই ধরা পড়ে যে প্ল্যানটি কখনই বলে না যে ফোন বা ব্রাউজারে কী ঘটবে যা 3D দেখাতে পারে না।"
+  },
+  {
+    "id": 106,
+    "start": 472.38,
+    "end": 475.3,
+    "duration": 2.92,
+    "en": "So some visitors would just see a blank space.",
+    "raw_bn": "তাই কিছু দর্শক শুধু একটি ফাঁকা স্থান দেখতে হবে."
+  },
+  {
+    "id": 107,
+    "start": 475.3,
+    "end": 477.86,
+    "duration": 2.56,
+    "en": "Now there's a glowing backup image for them.",
+    "raw_bn": "এখন তাদের জন্য একটি উজ্জ্বল ব্যাকআপ ইমেজ আছে।"
+  },
+  {
+    "id": 108,
+    "start": 477.86,
+    "end": 483.74,
+    "duration": 5.88,
+    "en": "And all three caught that the plan left out the facts, the plans, the answers to common questions.",
+    "raw_bn": "এবং তিনটিই ধরা পড়ে যে পরিকল্পনাটি তথ্য, পরিকল্পনা, সাধারণ প্রশ্নের উত্তরগুলি বাদ দিয়েছিল।"
+  },
+  {
+    "id": 109,
+    "start": 483.74,
+    "end": 485.86,
+    "duration": 2.12,
+    "en": "So the AI would have made them up.",
+    "raw_bn": "তাই এআই তাদের তৈরি করত।"
+  },
+  {
+    "id": 110,
+    "start": 485.86,
+    "end": 490.86,
+    "duration": 5.0,
+    "en": "Now every one of those is written into the plan first. Look at the side-by-side.",
+    "raw_bn": "এখন সেগুলির প্রত্যেকটি প্রথমে পরিকল্পনায় লেখা হয়। এদিক-ওদিক তাকান।"
+  },
+  {
+    "id": 111,
+    "start": 490.86,
+    "end": 496.54,
+    "duration": 5.68,
+    "en": "On the left, a brown screen, a plain heading, and one flat brown shape spinning on its own.",
+    "raw_bn": "বাম দিকে, একটি বাদামী পর্দা, একটি সরল শিরোনাম এবং একটি ফ্ল্যাট বাদামী আকৃতি নিজে থেকে ঘুরছে।"
+  },
+  {
+    "id": 112,
+    "start": 496.54,
+    "end": 501.14,
+    "duration": 4.6,
+    "en": "On the right, a glowing ring of light, a cup with steam rising out of it,",
+    "raw_bn": "ডানদিকে, আলোর একটি প্রদীপ্ত বলয়, এটি থেকে বাষ্প সহ একটি কাপ বের হচ্ছে,"
+  },
+  {
+    "id": 113,
+    "start": 501.14,
+    "end": 505.66,
+    "duration": 4.52,
+    "en": "coffee beans floating in the air, and a headline you can read from across the room.",
+    "raw_bn": "কফি বিন বাতাসে ভাসছে, এবং একটি শিরোনাম আপনি রুম জুড়ে থেকে পড়তে পারেন।"
+  },
+  {
+    "id": 114,
+    "start": 505.66,
+    "end": 508.62,
+    "duration": 2.96,
+    "en": "Roasted Tuesday, in your cup by Friday.",
+    "raw_bn": "রোস্ট মঙ্গলবার, শুক্রবার আপনার কাপে।"
+  },
+  {
+    "id": 115,
+    "start": 508.62,
+    "end": 513.42,
+    "duration": 4.8,
+    "en": "And as you scroll, the camera glides up over the cup and the beans scatter.",
+    "raw_bn": "এবং আপনি স্ক্রোল করার সাথে সাথে, ক্যামেরা কাপের উপরে উঠে যায় এবং মটরশুটি ছড়িয়ে পড়ে।"
+  },
+  {
+    "id": 116,
+    "start": 513.42,
+    "end": 518.94,
+    "duration": 5.52,
+    "en": "That's the first lesson. The goldfish don't make the design smaller, they make it clearer.",
+    "raw_bn": "এটাই প্রথম পাঠ। গোল্ডফিশ নকশাটিকে ছোট করে না, তারা এটিকে আরও পরিষ্কার করে।"
+  },
+  {
+    "id": 117,
+    "start": 518.94,
+    "end": 521.98,
+    "duration": 3.04,
+    "en": "Build number two is an Instagram carousel.",
+    "raw_bn": "বিল্ড নম্বর দুই একটি ইনস্টাগ্রাম ক্যারোজেল।"
+  },
+  {
+    "id": 118,
+    "start": 521.98,
+    "end": 529.18,
+    "duration": 7.2,
+    "en": "The prompt was, \"Make an Instagram carousel about five AI tools that save business owners 10 hours a week.\"",
+    "raw_bn": "প্রম্পটটি ছিল, \"একটি Instagram ক্যারোজেল তৈরি করুন প্রায় পাঁচটি AI টুল যা ব্যবসার মালিকদের সপ্তাহে 10 ঘন্টা বাঁচায়।\""
+  },
+  {
+    "id": 119,
+    "start": 529.18,
+    "end": 535.46,
+    "duration": 6.28,
+    "en": "A carousel is read by the most impatient people on the internet, which makes it the perfect test for goldfish.",
+    "raw_bn": "একটি ক্যারোসেল ইন্টারনেটে সবচেয়ে অধৈর্য ব্যক্তিরা পড়ে, যা এটিকে গোল্ডফিশের জন্য নিখুঁত পরীক্ষা করে তোলে।"
+  },
+  {
+    "id": 120,
+    "start": 535.46,
+    "end": 541.14,
+    "duration": 5.68,
+    "en": "The plan said, \"One idea per slide, and every slide has to make sense on its own.\" Then,",
+    "raw_bn": "পরিকল্পনাটি বলেছিল, \"প্রতি স্লাইডে একটি ধারণা, এবং প্রতিটি স্লাইডের নিজস্ব অর্থবোধক আছে।\" তারপর,"
+  },
+  {
+    "id": 121,
+    "start": 541.14,
+    "end": 545.54,
+    "duration": 4.4,
+    "en": "three goldfish read the plan, and all three caught the same things.",
+    "raw_bn": "তিনটি গোল্ডফিশ পরিকল্পনাটি পড়েছিল এবং তিনটিই একই জিনিস ধরেছিল।"
+  },
+  {
+    "id": 122,
+    "start": 545.54,
+    "end": 552.3,
+    "duration": 6.76,
+    "en": "The plan broke its own rule. The last slide said, \"Pick one and use it for 7 days.\" And on its own,",
+    "raw_bn": "পরিকল্পনাটি তার নিজস্ব নিয়ম ভেঙেছে। শেষ স্লাইডে বলা হয়েছে, \"একটি বেছে নিন এবং এটি 7 দিনের জন্য ব্যবহার করুন।\" এবং নিজেই,"
+  },
+  {
+    "id": 123,
+    "start": 552.3,
+    "end": 554.22,
+    "duration": 1.92,
+    "en": "nobody would know one of what.",
+    "raw_bn": "কেউ কি এক জানতে হবে."
+  },
+  {
+    "id": 124,
+    "start": 554.22,
+    "end": 557.98,
+    "duration": 3.76,
+    "en": "So, the closing slide now names all five tools.",
+    "raw_bn": "তাই, ক্লোজিং স্লাইড এখন পাঁচটি টুলের নাম দেয়।"
+  },
+  {
+    "id": 125,
+    "start": 557.98,
+    "end": 564.86,
+    "duration": 6.88,
+    "en": "All three caught that the smallest text in the plan would shrink to about nine pixels on a phone, which nobody can read.",
+    "raw_bn": "তিনটিই ধরা পড়েছিল যে পরিকল্পনার সবচেয়ে ছোট পাঠ্যটি একটি ফোনে প্রায় নয় পিক্সেলে সঙ্কুচিত হবে, যা কেউ পড়তে পারবে না।"
+  },
+  {
+    "id": 126,
+    "start": 564.86,
+    "end": 570.38,
+    "duration": 5.52,
+    "en": "So, the minimum went up, and now nothing on any slide is too small for a phone.",
+    "raw_bn": "সুতরাং, সর্বনিম্ন বেড়েছে, এবং এখন কোনও স্লাইডে কোনও ফোনের জন্য খুব ছোট নয়।"
+  },
+  {
+    "id": 127,
+    "start": 570.38,
+    "end": 574.74,
+    "duration": 4.36,
+    "en": "And all three spotted that the first slide stated a guess as a fact.",
+    "raw_bn": "এবং তিনটিই দেখেছে যে প্রথম স্লাইডটি একটি সত্য হিসাবে একটি অনুমান করেছে৷"
+  },
+  {
+    "id": 128,
+    "start": 574.74,
+    "end": 578.66,
+    "duration": 3.92,
+    "en": "So, now every time saving is clearly marked as an estimate.",
+    "raw_bn": "সুতরাং, এখন প্রতিবার সঞ্চয় স্পষ্টভাবে একটি অনুমান হিসাবে চিহ্নিত করা হয়েছে৷"
+  },
+  {
+    "id": 129,
+    "start": 578.66,
+    "end": 581.06,
+    "duration": 2.4,
+    "en": "Look at the two versions side-by-side.",
+    "raw_bn": "পাশাপাশি দুটি সংস্করণ দেখুন."
+  },
+  {
+    "id": 130,
+    "start": 581.06,
+    "end": 586.98,
+    "duration": 5.92,
+    "en": "On the left, eight blue slides that are walls of small text ending with follow for more.",
+    "raw_bn": "বাম দিকে, আটটি নীল স্লাইড যা ছোট টেক্সটের দেয়াল যা আরও কিছুর জন্য অনুসরণ করুন।"
+  },
+  {
+    "id": 131,
+    "start": 586.98,
+    "end": 591.54,
+    "duration": 4.56,
+    "en": "On the right, a bright lime hook slide you can read from across the room.",
+    "raw_bn": "ডানদিকে, একটি উজ্জ্বল চুনের হুক স্লাইড আপনি রুম জুড়ে থেকে পড়তে পারেন।"
+  },
+  {
+    "id": 132,
+    "start": 591.54,
+    "end": 595.78,
+    "duration": 4.24,
+    "en": "A picture on every slide showing the exact job each tool does.",
+    "raw_bn": "প্রতিটি স্লাইডে একটি ছবি প্রতিটি টুলের সঠিক কাজটি দেখায়।"
+  },
+  {
+    "id": 133,
+    "start": 595.78,
+    "end": 602.74,
+    "duration": 6.96,
+    "en": "Three simple steps per tool, a screenshot this summary, and a closing slide that tells you what to do on Monday.",
+    "raw_bn": "টুল প্রতি তিনটি সহজ ধাপ, এই সারাংশের একটি স্ক্রিনশট এবং একটি ক্লোজিং স্লাইড যা আপনাকে সোমবার কী করতে হবে তা বলে৷"
+  },
+  {
+    "id": 134,
+    "start": 602.74,
+    "end": 605.98,
+    "duration": 3.24,
+    "en": "That's a carousel people save and share.",
+    "raw_bn": "এটি একটি ক্যারোজেল মানুষ সংরক্ষণ এবং ভাগ."
+  },
+  {
+    "id": 135,
+    "start": 605.98,
+    "end": 608.94,
+    "duration": 2.96,
+    "en": "Build number three is an ad creative agent.",
+    "raw_bn": "বিল্ড নম্বর তিন একটি বিজ্ঞাপন ক্রিয়েটিভ এজেন্ট।"
+  },
+  {
+    "id": 136,
+    "start": 608.94,
+    "end": 614.26,
+    "duration": 5.32,
+    "en": "The prompt was, \"Make nine ad creatives for Lumen Skin's new vitamin C serum.",
+    "raw_bn": "প্রম্পট ছিল, \"লুমেন স্কিনের নতুন ভিটামিন সি সিরামের জন্য নয়টি বিজ্ঞাপন ক্রিয়েটিভ তৈরি করুন৷"
+  },
+  {
+    "id": 137,
+    "start": 614.26,
+    "end": 621.14,
+    "duration": 6.88,
+    "en": "Here I added one extra goldfish, a cold scroller, a fresh AI that has never heard of Lumen Skin,",
+    "raw_bn": "এখানে আমি একটি অতিরিক্ত গোল্ডফিশ যোগ করেছি, একটি কোল্ড স্ক্রোলার, একটি তাজা এআই যা কখনও লুমেন স্কিন সম্পর্কে শোনেনি,"
+  },
+  {
+    "id": 138,
+    "start": 621.14,
+    "end": 626.54,
+    "duration": 5.4,
+    "en": "looks at each ad for a second and says what it thinks is being sold and whether it would stop scrolling.",
+    "raw_bn": "প্রতিটি বিজ্ঞাপনকে এক সেকেন্ডের জন্য দেখে এবং বলে যে এটি কী বিক্রি হচ্ছে এবং এটি স্ক্রোল করা বন্ধ করবে কিনা।"
+  },
+  {
+    "id": 139,
+    "start": 626.54,
+    "end": 628.86,
+    "duration": 2.32,
+    "en": "It scored every ad out of 10.",
+    "raw_bn": "এটি 10টির মধ্যে প্রতিটি বিজ্ঞাপনে স্কোর করেছে।"
+  },
+  {
+    "id": 140,
+    "start": 628.86,
+    "end": 632.06,
+    "duration": 3.2,
+    "en": "On the left you can see the nine ads from the quick prompt.",
+    "raw_bn": "বাম দিকে আপনি দ্রুত প্রম্পট থেকে নয়টি বিজ্ঞাপন দেখতে পারেন।"
+  },
+  {
+    "id": 141,
+    "start": 632.06,
+    "end": 637.46,
+    "duration": 5.4,
+    "en": "Pale backgrounds, a flat orange box for a bottle, and paragraphs of small text.",
+    "raw_bn": "ফ্যাকাশে পটভূমি, একটি বোতলের জন্য একটি সমতল কমলা বাক্স এবং ছোট পাঠ্যের অনুচ্ছেদ।"
+  },
+  {
+    "id": 142,
+    "start": 637.46,
+    "end": 644.26,
+    "duration": 6.8,
+    "en": "The cold scroller said they looked like the same ad nine times and the offer was buried or missing in eight of the nine.",
+    "raw_bn": "কোল্ড স্ক্রোলার বলেছে যে তারা নয়বার একই বিজ্ঞাপনের মতো দেখাচ্ছে এবং নয়টির মধ্যে আটটিতে অফারটি সমাহিত বা অনুপস্থিত ছিল।"
+  },
+  {
+    "id": 143,
+    "start": 644.26,
+    "end": 646.54,
+    "duration": 2.28,
+    "en": "Average score, two out of 10.",
+    "raw_bn": "গড় স্কোর, 10 এর মধ্যে দুটি।"
+  },
+  {
+    "id": 144,
+    "start": 646.54,
+    "end": 651.94,
+    "duration": 5.4,
+    "en": "Then three goldfish reviewed the plan and all three caught that it contradicted itself.",
+    "raw_bn": "তারপরে তিনটি গোল্ডফিশ পরিকল্পনাটি পর্যালোচনা করে এবং তিনটিই ধরা পড়ে যে এটি নিজেই বিপরীত।"
+  },
+  {
+    "id": 145,
+    "start": 651.94,
+    "end": 657.14,
+    "duration": 5.2,
+    "en": "It said every ad must show the product, the benefit, and the offer in one second",
+    "raw_bn": "এটি বলেছে যে প্রতিটি বিজ্ঞাপনে অবশ্যই পণ্য, সুবিধা এবং অফারটি এক সেকেন্ডের মধ্যে দেখাতে হবে"
+  },
+  {
+    "id": 146,
+    "start": 657.14,
+    "end": 660.7,
+    "duration": 3.56,
+    "en": "and then six of the nine ad ideas didn't include all three.",
+    "raw_bn": "এবং তারপর নয়টি বিজ্ঞাপন ধারণার মধ্যে ছয়টিতে তিনটিই অন্তর্ভুক্ত ছিল না।"
+  },
+  {
+    "id": 147,
+    "start": 660.7,
+    "end": 663.38,
+    "duration": 2.68,
+    "en": "Two reviewers caught that the text would be unreadable",
+    "raw_bn": "দুই পর্যালোচক ধরেছেন যে পাঠ্যটি অপঠিত হবে"
+  },
+  {
+    "id": 148,
+    "start": 663.38,
+    "end": 670.42,
+    "duration": 7.04,
+    "en": "at the size people actually see ads on a phone and one caught that white text on the orange button was too hard to read.",
+    "raw_bn": "আকারে লোকেরা আসলে একটি ফোনে বিজ্ঞাপন দেখে এবং একজন ধরা পড়ে যে কমলা বোতামে সাদা পাঠ্যটি পড়া খুব কঠিন।"
+  },
+  {
+    "id": 149,
+    "start": 670.42,
+    "end": 673.34,
+    "duration": 2.92,
+    "en": "On the right, the nine ads after the review.",
+    "raw_bn": "ডানদিকে নয়টি বিজ্ঞাপনের পর পর্যালোচনা।"
+  },
+  {
+    "id": 150,
+    "start": 673.34,
+    "end": 678.9,
+    "duration": 5.56,
+    "en": "A glowing amber bottle with light pouring out of it, an offer you can read in half a second,",
+    "raw_bn": "একটি প্রদীপ্ত অ্যাম্বার বোতল যা থেকে আলো ঝরছে, একটি অফার যা আপনি অর্ধ সেকেন্ডের মধ্যে পড়তে পারেন,"
+  },
+  {
+    "id": 151,
+    "start": 678.9,
+    "end": 682.06,
+    "duration": 3.16,
+    "en": "and a short, clear message on every single ad.",
+    "raw_bn": "এবং প্রতিটি বিজ্ঞাপনে একটি সংক্ষিপ্ত, স্পষ্ট বার্তা।"
+  },
+  {
+    "id": 152,
+    "start": 682.06,
+    "end": 687.02,
+    "duration": 4.96,
+    "en": "The same cold scroller looked at them. Average score, 5.7 out of 10.",
+    "raw_bn": "একই ঠান্ডা স্ক্রোলার তাদের দিকে তাকাল। গড় স্কোর, 10 এর মধ্যে 5.7।"
+  },
+  {
+    "id": 153,
+    "start": 687.02,
+    "end": 692.46,
+    "duration": 5.44,
+    "en": "Nearly three times higher from the same AI, the same product, and the same idea.",
+    "raw_bn": "একই AI, একই পণ্য এবং একই ধারণা থেকে প্রায় তিনগুণ বেশি।"
+  },
+  {
+    "id": 154,
+    "start": 692.46,
+    "end": 700.7,
+    "duration": 8.24,
+    "en": "That score is the closest thing you'll get to testing an ad on real people before you put it in front of real people and it took a couple of minutes.",
+    "raw_bn": "এই স্কোরটি হল সবচেয়ে কাছের জিনিস যা আপনি সত্যিকারের লোকেদের সামনে বিজ্ঞাপন দেওয়ার আগে এটি পরীক্ষা করতে পাবেন এবং এটি কয়েক মিনিট সময় নেয়।"
+  },
+  {
+    "id": 155,
+    "start": 700.7,
+    "end": 703.1,
+    "duration": 2.4,
+    "en": "Build number four is a video agent.",
+    "raw_bn": "চার নম্বর বিল্ড একটি ভিডিও এজেন্ট।"
+  },
+  {
+    "id": 156,
+    "start": 703.1,
+    "end": 709.54,
+    "duration": 6.44,
+    "en": "The prompt was make a 15-second promo video for Pulse Coach, an AI fitness coaching app.",
+    "raw_bn": "প্রম্পটটি ছিল পালস কোচের জন্য একটি 15-সেকেন্ডের প্রোমো ভিডিও তৈরি করা, একটি এআই ফিটনেস কোচিং অ্যাপ।"
+  },
+  {
+    "id": 157,
+    "start": 709.54,
+    "end": 715.86,
+    "duration": 6.32,
+    "en": "Video is where this really saves you. Making a video takes the longest of anything in this list.",
+    "raw_bn": "ভিডিও যেখানে এটি সত্যিই আপনাকে বাঁচায়। একটি ভিডিও তৈরি করতে এই তালিকার যেকোনো কিছুর মধ্যে সবচেয়ে বেশি সময় লাগে।"
+  },
+  {
+    "id": 158,
+    "start": 715.86,
+    "end": 720.7,
+    "duration": 4.84,
+    "en": "So the review happens on the storyboard before a single frame is made.",
+    "raw_bn": "সুতরাং একটি একক ফ্রেম তৈরি হওয়ার আগে স্টোরিবোর্ডে পর্যালোচনাটি ঘটে।"
+  },
+  {
+    "id": 159,
+    "start": 720.7,
+    "end": 724.66,
+    "duration": 3.96,
+    "en": "The storyboard is just a list of what happens second by second.",
+    "raw_bn": "স্টোরিবোর্ডটি সেকেন্ডে সেকেন্ডে কী ঘটে তার একটি তালিকা মাত্র।"
+  },
+  {
+    "id": 160,
+    "start": 724.66,
+    "end": 728.74,
+    "duration": 4.08,
+    "en": "What's on screen, what the words say, when the call to action appears.",
+    "raw_bn": "স্ক্রিনে কী আছে, শব্দগুলি কী বলে, যখন কল টু অ্যাকশন উপস্থিত হয়।"
+  },
+  {
+    "id": 161,
+    "start": 728.74,
+    "end": 733.18,
+    "duration": 4.44,
+    "en": "Three goldfish read that list and all three caught the same problems.",
+    "raw_bn": "তিনটি গোল্ডফিশ সেই তালিকাটি পড়ে এবং তিনটিই একই সমস্যায় পড়ে।"
+  },
+  {
+    "id": 162,
+    "start": 733.18,
+    "end": 737.1,
+    "duration": 3.92,
+    "en": "The opening line made a big claim with nothing to back it up.",
+    "raw_bn": "উদ্বোধনী লাইনটি ব্যাক আপ করার কিছুই ছাড়াই একটি বড় দাবি করেছে।"
+  },
+  {
+    "id": 163,
+    "start": 737.1,
+    "end": 739.7,
+    "duration": 2.6,
+    "en": "The kind of claim that can get an ad rejected.",
+    "raw_bn": "যে ধরনের দাবি একটি বিজ্ঞাপন প্রত্যাখ্যাত হতে পারে।"
+  },
+  {
+    "id": 164,
+    "start": 739.7,
+    "end": 744.02,
+    "duration": 4.32,
+    "en": "So, the hook became a question instead. Quit by week three?",
+    "raw_bn": "সুতরাং, হুক পরিবর্তে একটি প্রশ্ন হয়ে ওঠে. তিন সপ্তাহের মধ্যে প্রস্থান করবেন?"
+  },
+  {
+    "id": 165,
+    "start": 744.02,
+    "end": 747.7,
+    "duration": 3.68,
+    "en": "All three caught that the calendar in the video could be read backwards.",
+    "raw_bn": "তিনজনই ধরেছেন যে ভিডিওতে থাকা ক্যালেন্ডারটি পিছনের দিকে পড়া যায়।"
+  },
+  {
+    "id": 166,
+    "start": 747.7,
+    "end": 750.98,
+    "duration": 3.28,
+    "en": "So, crossed out days looked like finished workouts.",
+    "raw_bn": "সুতরাং, পার হয়ে যাওয়া দিনগুলি শেষ ওয়ার্কআউটের মতো লাগছিল।"
+  },
+  {
+    "id": 167,
+    "start": 750.98,
+    "end": 754.94,
+    "duration": 3.96,
+    "en": "Now, there's one simple rule. A lime tick means done.",
+    "raw_bn": "এখন, একটি সহজ নিয়ম আছে. একটি চুনের টিক মানে সম্পন্ন।"
+  },
+  {
+    "id": 168,
+    "start": 754.94,
+    "end": 759.1,
+    "duration": 4.16,
+    "en": "And all three caught that the coaching moment didn't show cause and effect.",
+    "raw_bn": "এবং তিনটিই ধরা পড়েছিল যে কোচিং মুহূর্তটি কারণ এবং প্রভাব দেখায়নি।"
+  },
+  {
+    "id": 169,
+    "start": 759.1,
+    "end": 763.38,
+    "duration": 4.28,
+    "en": "The plan said the app adjust your workout, but never showed why.",
+    "raw_bn": "প্ল্যানটি বলেছিল যে অ্যাপটি আপনার ওয়ার্কআউট সামঞ্জস্য করে, কিন্তু কেন দেখায়নি।"
+  },
+  {
+    "id": 170,
+    "start": 763.38,
+    "end": 765.9,
+    "duration": 2.52,
+    "en": "Now, you watch it happen on one screen.",
+    "raw_bn": "এখন, আপনি এটি একটি স্ক্রিনে ঘটতে দেখেন।"
+  },
+  {
+    "id": 171,
+    "start": 765.9,
+    "end": 770.86,
+    "duration": 4.96,
+    "en": "The heart rate climbs, the ring turns red, and the coach says, \"Heart rate too high.",
+    "raw_bn": "হৃদস্পন্দন বেড়ে যায়, রিং লাল হয়ে যায় এবং কোচ বলেন, \"হার্ট রেট খুব বেশি।"
+  },
+  {
+    "id": 172,
+    "start": 770.86,
+    "end": 775.1,
+    "duration": 4.24,
+    "en": "Easing you to zone two.\" On the left is the video from the quick prompt.",
+    "raw_bn": "জোন টুতে আপনাকে সহজ করা হচ্ছে।\" বামদিকে দ্রুত প্রম্পটের ভিডিওটি রয়েছে।"
+  },
+  {
+    "id": 173,
+    "start": 775.1,
+    "end": 778.34,
+    "duration": 3.24,
+    "en": "Plain text cards fading in on a dark background.",
+    "raw_bn": "সাদামাটা টেক্সট কার্ডগুলি অন্ধকার পটভূমিতে বিবর্ণ হয়ে যাচ্ছে।"
+  },
+  {
+    "id": 174,
+    "start": 778.34,
+    "end": 781.62,
+    "duration": 3.28,
+    "en": "On the right is the video made from the reviewed storyboard.",
+    "raw_bn": "ডানদিকে ভিডিওটি পর্যালোচনা করা স্টোরিবোর্ড থেকে তৈরি করা হয়েছে।"
+  },
+  {
+    "id": 175,
+    "start": 781.62,
+    "end": 786.14,
+    "duration": 4.52,
+    "en": "A phone app that comes alive. A heartbeat line running across the bottom.",
+    "raw_bn": "একটি ফোন অ্যাপ যা জীবন্ত হয়। একটি হৃদস্পন্দন লাইন নীচে জুড়ে চলছে।"
+  },
+  {
+    "id": 176,
+    "start": 786.14,
+    "end": 788.34,
+    "duration": 2.2,
+    "en": "Words sliding in one by one.",
+    "raw_bn": "শব্দগুলো একে একে স্লাইড হচ্ছে।"
+  },
+  {
+    "id": 177,
+    "start": 788.34,
+    "end": 791.22,
+    "duration": 2.88,
+    "en": "And a start button that pulses like a heartbeat.",
+    "raw_bn": "এবং একটি স্টার্ট বোতাম যা হার্টবিটের মতো স্পন্দিত হয়।"
+  },
+  {
+    "id": 178,
+    "start": 791.22,
+    "end": 793.38,
+    "duration": 2.16,
+    "en": "Watch the first second of each one.",
+    "raw_bn": "প্রতিটির প্রথম সেকেন্ড দেখুন।"
+  },
+  {
+    "id": 179,
+    "start": 793.38,
+    "end": 796.86,
+    "duration": 3.48,
+    "en": "That first second decides whether anyone watches the rest.",
+    "raw_bn": "সেই প্রথম সেকেন্ড সিদ্ধান্ত নেয় যে কেউ বাকিটা দেখবে কিনা।"
+  },
+  {
+    "id": 180,
+    "start": 796.86,
+    "end": 799.74,
+    "duration": 2.88,
+    "en": "Build number five is a lead generation agent.",
+    "raw_bn": "পাঁচ নম্বর বিল্ড একটি সীসা প্রজন্মের এজেন্ট."
+  },
+  {
+    "id": 181,
+    "start": 799.74,
+    "end": 806.02,
+    "duration": 6.28,
+    "en": "The prompt was, \"Build a lead generation agent that finds local businesses and writes outreach messages.\"",
+    "raw_bn": "প্রম্পটটি ছিল, \"একটি প্রধান প্রজন্মের এজেন্ট তৈরি করুন যে স্থানীয় ব্যবসাগুলি খুঁজে পায় এবং আউটরিচ মেসেজ লেখে।\""
+  },
+  {
+    "id": 182,
+    "start": 806.02,
+    "end": 810.02,
+    "duration": 4.0,
+    "en": "On screen, you can see a live map of a city filling up with businesses.",
+    "raw_bn": "স্ক্রিনে, আপনি ব্যবসায় ভরা একটি শহরের একটি লাইভ মানচিত্র দেখতে পাবেন।"
+  },
+  {
+    "id": 183,
+    "start": 810.02,
+    "end": 814.5,
+    "duration": 4.48,
+    "en": "Each one with a lead score and a first message written just for that business.",
+    "raw_bn": "লিড স্কোর সহ প্রত্যেকটি এবং শুধুমাত্র সেই ব্যবসার জন্য লেখা একটি প্রথম বার্তা।"
+  },
+  {
+    "id": 184,
+    "start": 814.5,
+    "end": 820.22,
+    "duration": 5.72,
+    "en": "The data here is sample data. So, you can see how it works without touching anybody's real details.",
+    "raw_bn": "এখানে তথ্য নমুনা তথ্য. সুতরাং, আপনি দেখতে পাচ্ছেন যে এটি কারও আসল বিবরণ স্পর্শ না করে কীভাবে কাজ করে।"
+  },
+  {
+    "id": 185,
+    "start": 820.22,
+    "end": 824.38,
+    "duration": 4.16,
+    "en": "Three goldfish read the plan and all three caught the same problems.",
+    "raw_bn": "তিনটি গোল্ডফিশ পরিকল্পনাটি পড়ে এবং তিনটিই একই সমস্যায় পড়ে।"
+  },
+  {
+    "id": 186,
+    "start": 824.38,
+    "end": 826.14,
+    "duration": 1.76,
+    "en": "The lead score was rigged.",
+    "raw_bn": "লিড স্কোর কারচুপি ছিল."
+  },
+  {
+    "id": 187,
+    "start": 826.14,
+    "end": 830.06,
+    "duration": 3.92,
+    "en": "30 out of 100 points went to every business no matter what.",
+    "raw_bn": "100 পয়েন্টের মধ্যে 30টি প্রতিটি ব্যবসায় গেছে তা যাই হোক না কেন।"
+  },
+  {
+    "id": 188,
+    "start": 830.06,
+    "end": 833.22,
+    "duration": 3.16,
+    "en": "So, the scores looked smart, but told you nothing.",
+    "raw_bn": "সুতরাং, স্কোরগুলি স্মার্ট লাগছিল, কিন্তু আপনাকে কিছুই বলিনি।"
+  },
+  {
+    "id": 189,
+    "start": 833.22,
+    "end": 836.78,
+    "duration": 3.56,
+    "en": "The fix was a score built only on what actually matters.",
+    "raw_bn": "ফিক্সটি ছিল একটি স্কোর যা প্রকৃতপক্ষে গুরুত্বপূর্ণ।"
+  },
+  {
+    "id": 190,
+    "start": 836.78,
+    "end": 840.58,
+    "duration": 3.8,
+    "en": "How badly the business needs your offer and how healthy it is.",
+    "raw_bn": "ব্যবসার কতটা খারাপভাবে আপনার অফার প্রয়োজন এবং এটি কতটা স্বাস্থ্যকর।"
+  },
+  {
+    "id": 191,
+    "start": 840.58,
+    "end": 845.14,
+    "duration": 4.56,
+    "en": "All three also caught that the plan promised to respect people who say no thanks,",
+    "raw_bn": "তিনজনই ধরা পড়েছে যে পরিকল্পনাটি এমন লোকদের সম্মান করার প্রতিশ্রুতি দিয়েছে যারা ধন্যবাদ দেয় না,"
+  },
+  {
+    "id": 192,
+    "start": 845.14,
+    "end": 850.38,
+    "duration": 5.24,
+    "en": "but nothing kept track of who said it. So, the same people would come back on tomorrow's list.",
+    "raw_bn": "কিন্তু কে বলেছে তার কিছুই ট্র্যাক করা হয়নি। সুতরাং, একই লোক আগামীকালের তালিকায় ফিরে আসবে।"
+  },
+  {
+    "id": 193,
+    "start": 850.38,
+    "end": 852.7,
+    "duration": 2.32,
+    "en": "Now, every business has a status.",
+    "raw_bn": "এখন, প্রতিটি ব্যবসা একটি স্ট্যাটাস আছে."
+  },
+  {
+    "id": 194,
+    "start": 852.7,
+    "end": 855.7,
+    "duration": 3.0,
+    "en": "New, contacted, skipped, or opted out.",
+    "raw_bn": "নতুন, যোগাযোগ করা, এড়িয়ে যাওয়া বা অনির্বাচন করা হয়েছে৷"
+  },
+  {
+    "id": 195,
+    "start": 855.7,
+    "end": 858.82,
+    "duration": 3.12,
+    "en": "And anyone who isn't new disappears from the list.",
+    "raw_bn": "এবং যে কেউ নতুন নয় তালিকা থেকে অদৃশ্য হয়ে যাবে।"
+  },
+  {
+    "id": 196,
+    "start": 858.82,
+    "end": 863.34,
+    "duration": 4.52,
+    "en": "And two of the reviewers caught that the AI could invent facts in its messages.",
+    "raw_bn": "এবং পর্যালোচকদের মধ্যে দুইজন ধরেছেন যে AI তার বার্তাগুলিতে তথ্য উদ্ভাবন করতে পারে।"
+  },
+  {
+    "id": 197,
+    "start": 863.34,
+    "end": 867.98,
+    "duration": 4.64,
+    "en": "So, now every sentence in the message points to the exact signal it came from.",
+    "raw_bn": "সুতরাং, এখন বার্তার প্রতিটি বাক্যই সঠিক সংকেতকে নির্দেশ করে যা থেকে এসেছে।"
+  },
+  {
+    "id": 198,
+    "start": 867.98,
+    "end": 871.54,
+    "duration": 3.56,
+    "en": "And the message ends with an easy way to say no thanks.",
+    "raw_bn": "এবং বার্তাটি না ধন্যবাদ বলার একটি সহজ উপায় দিয়ে শেষ হয়।"
+  },
+  {
+    "id": 199,
+    "start": 871.54,
+    "end": 876.22,
+    "duration": 4.68,
+    "en": "Look at the side by side. On the left, a plain gray table and a generic message.",
+    "raw_bn": "এদিক ওদিক তাকান। বাম দিকে, একটি সাধারণ ধূসর টেবিল এবং একটি সাধারণ বার্তা।"
+  },
+  {
+    "id": 200,
+    "start": 876.22,
+    "end": 884.34,
+    "duration": 8.12,
+    "en": "On the right, a glowing map of the city, pins dropping in, a score ring on every lead, and a message that writes itself",
+    "raw_bn": "ডানদিকে, শহরের একটি উজ্জ্বল মানচিত্র, পিন ড্রপ করা, প্রতিটি লিডের উপর একটি স্কোর রিং, এবং একটি বার্তা যা নিজেই লিখেছে"
+  },
+  {
+    "id": 201,
+    "start": 884.34,
+    "end": 888.82,
+    "duration": 4.48,
+    "en": "specific to that one business. That opt-out line matters.",
+    "raw_bn": "যে একটি ব্যবসা নির্দিষ্ট. যে অপ্ট-আউট লাইন গুরুত্বপূর্ণ."
+  },
+  {
+    "id": 202,
+    "start": 888.82,
+    "end": 891.74,
+    "duration": 2.92,
+    "en": "Outreach that respects people gets replies.",
+    "raw_bn": "আউটরিচ যা মানুষকে সম্মান করে উত্তর পায়।"
+  },
+  {
+    "id": 203,
+    "start": 891.74,
+    "end": 894.22,
+    "duration": 2.48,
+    "en": "Outreach that doesn't gets you blocked.",
+    "raw_bn": "আউটরিচ যা আপনাকে ব্লক করে না।"
+  },
+  {
+    "id": 204,
+    "start": 894.22,
+    "end": 902.5,
+    "duration": 8.28,
+    "en": "So, that's five builds, same prompts, same AI, and the only thing that changed is that a fresh set of eyes read the plan first.",
+    "raw_bn": "সুতরাং, এটি পাঁচটি বিল্ড, একই প্রম্পট, একই AI, এবং শুধুমাত্র যে জিনিসটি পরিবর্তিত হয়েছে তা হল একটি নতুন চোখ প্রথমে পরিকল্পনাটি পড়ে।"
+  },
+  {
+    "id": 205,
+    "start": 902.5,
+    "end": 907.58,
+    "duration": 5.08,
+    "en": "Now, let me show you the old way next to the new way because this is the real shift.",
+    "raw_bn": "এখন, আমি আপনাকে নতুন পথের পাশে পুরানো পথ দেখাই কারণ এটিই আসল পরিবর্তন।"
+  },
+  {
+    "id": 206,
+    "start": 907.58,
+    "end": 911.98,
+    "duration": 4.4,
+    "en": "The old way looks like this. You type one sentence into your AI.",
+    "raw_bn": "পুরানো উপায় এই মত দেখায়. আপনি আপনার AI এ একটি বাক্য টাইপ করুন।"
+  },
+  {
+    "id": 207,
+    "start": 911.98,
+    "end": 916.98,
+    "duration": 5.0,
+    "en": "It builds something. You look at it and it's almost right. You ask for changes.",
+    "raw_bn": "এটি কিছু তৈরি করে। আপনি এটি তাকান এবং এটি প্রায় সঠিক. আপনি পরিবর্তনের জন্য জিজ্ঞাসা করুন."
+  },
+  {
+    "id": 208,
+    "start": 916.98,
+    "end": 919.74,
+    "duration": 2.76,
+    "en": "It fixes one thing and breaks another.",
+    "raw_bn": "এটা একটা জিনিস ঠিক করে আরেকটা ভেঙ্গে দেয়।"
+  },
+  {
+    "id": 209,
+    "start": 919.74,
+    "end": 927.46,
+    "duration": 7.72,
+    "en": "You go back and forth five, six, seven times, and you only find the real problems after real customers see it.",
+    "raw_bn": "আপনি পাঁচ, ছয়, সাত বার পিছনে যান এবং প্রকৃত গ্রাহকরা এটি দেখার পরেই আপনি আসল সমস্যাগুলি খুঁজে পান।"
+  },
+  {
+    "id": 210,
+    "start": 927.46,
+    "end": 931.02,
+    "duration": 3.56,
+    "en": "That's hours of back and forth on every project.",
+    "raw_bn": "যে প্রতিটি প্রকল্পে সামনে পিছনে ঘন্টার."
+  },
+  {
+    "id": 211,
+    "start": 931.02,
+    "end": 934.46,
+    "duration": 3.44,
+    "en": "The new way looks like this. You describe the idea.",
+    "raw_bn": "নতুন উপায় এই মত দেখায়. আপনি ধারণা বর্ণনা করুন."
+  },
+  {
+    "id": 212,
+    "start": 934.46,
+    "end": 936.54,
+    "duration": 2.08,
+    "en": "The elephant writes a short plan.",
+    "raw_bn": "হাতি একটি সংক্ষিপ্ত পরিকল্পনা লেখে।"
+  },
+  {
+    "id": 213,
+    "start": 936.54,
+    "end": 940.42,
+    "duration": 3.88,
+    "en": "The goldfish attack the plan, each in about 40 seconds.",
+    "raw_bn": "গোল্ডফিশ প্রায় 40 সেকেন্ডের মধ্যে প্রতিটি পরিকল্পনাকে আক্রমণ করে।"
+  },
+  {
+    "id": 214,
+    "start": 940.42,
+    "end": 942.46,
+    "duration": 2.04,
+    "en": "You pick which fixes matter.",
+    "raw_bn": "আপনি বাছাই করুন কোনটি সমস্যা সমাধান করে।"
+  },
+  {
+    "id": 215,
+    "start": 942.46,
+    "end": 946.98,
+    "duration": 4.52,
+    "en": "The AI builds once from a plan that has already been stress tested.",
+    "raw_bn": "এআই এমন একটি পরিকল্পনা থেকে একবার তৈরি করে যা ইতিমধ্যেই স্ট্রেস পরীক্ষা করা হয়েছে।"
+  },
+  {
+    "id": 216,
+    "start": 946.98,
+    "end": 949.74,
+    "duration": 2.76,
+    "en": "And the first version comes out looking like the fifth.",
+    "raw_bn": "এবং প্রথম সংস্করণটি পঞ্চমটির মতো দেখতে বেরিয়ে আসে।"
+  },
+  {
+    "id": 217,
+    "start": 949.74,
+    "end": 954.5,
+    "duration": 4.76,
+    "en": "The work moves to the front where it's quick, instead of the back where it's slow.",
+    "raw_bn": "কাজটি সামনের দিকে চলে যায় যেখানে এটি দ্রুত, পিছনের পরিবর্তে যেখানে এটি ধীর।"
+  },
+  {
+    "id": 218,
+    "start": 954.5,
+    "end": 958.9,
+    "duration": 4.4,
+    "en": "Now, let me show you how to set it up because it really is two commands.",
+    "raw_bn": "এখন, আমি আপনাকে দেখাই কিভাবে এটি সেট আপ করতে হয় কারণ এটি আসলে দুটি কমান্ড।"
+  },
+  {
+    "id": 219,
+    "start": 958.9,
+    "end": 963.38,
+    "duration": 4.48,
+    "en": "Open your terminal. That's the text window where you type commands to your computer.",
+    "raw_bn": "আপনার টার্মিনাল খুলুন. এটি সেই টেক্সট উইন্ডো যেখানে আপনি আপনার কম্পিউটারে কমান্ড টাইপ করেন।"
+  },
+  {
+    "id": 220,
+    "start": 963.38,
+    "end": 965.86,
+    "duration": 2.48,
+    "en": "If you use Claude Code, type this.",
+    "raw_bn": "আপনি যদি Claude কোড ব্যবহার করেন, তাহলে এটি টাইপ করুন।"
+  },
+  {
+    "id": 221,
+    "start": 965.86,
+    "end": 972.86,
+    "duration": 7.0,
+    "en": "Claude Plugin Marketplace add google/elephant-goldfish-model.",
+    "raw_bn": "Claude Plugin Marketplace যোগ করুন google/elephant-goldfish-model."
+  },
+  {
+    "id": 222,
+    "start": 972.86,
+    "end": 974.26,
+    "duration": 1.4,
+    "en": "Then type this.",
+    "raw_bn": "তারপর এই টাইপ করুন."
+  },
+  {
+    "id": 223,
+    "start": 974.26,
+    "end": 978.94,
+    "duration": 4.68,
+    "en": "Claude Plugin install egm@egm. That's it.",
+    "raw_bn": "ক্লড প্লাগইন egm@egm ইনস্টল করুন। সেটাই।"
+  },
+  {
+    "id": 224,
+    "start": 978.94,
+    "end": 982.26,
+    "duration": 3.32,
+    "en": "Start a new Claude code session and the skills are ready.",
+    "raw_bn": "একটি নতুন ক্লড কোড সেশন শুরু করুন এবং দক্ষতা প্রস্তুত।"
+  },
+  {
+    "id": 225,
+    "start": 982.26,
+    "end": 987.62,
+    "duration": 5.36,
+    "en": "If you use Codex, the commands are almost the same and they're on the EGM page on GitHub.",
+    "raw_bn": "আপনি যদি কোডেক্স ব্যবহার করেন, কমান্ডগুলি প্রায় একই এবং সেগুলি গিটহাবের ইজিএম পৃষ্ঠায় রয়েছে৷"
+  },
+  {
+    "id": 226,
+    "start": 987.62,
+    "end": 989.78,
+    "duration": 2.16,
+    "en": "Here's the exact flow I used.",
+    "raw_bn": "এখানে আমি ব্যবহার করা সঠিক প্রবাহ."
+  },
+  {
+    "id": 227,
+    "start": 989.78,
+    "end": 993.65,
+    "duration": 3.86,
+    "en": "First, type /egm:egm-brainstorm,",
+    "raw_bn": "প্রথমে টাইপ করুন /egm:egm-brainstorm,"
+  },
+  {
+    "id": 228,
+    "start": 993.65,
+    "end": 998.58,
+    "duration": 4.94,
+    "en": "[snorts] then a space, then describe your idea in plain words.",
+    "raw_bn": "[snorts] তারপর একটি স্থান, তারপর সরল শব্দে আপনার ধারণা বর্ণনা করুন."
+  },
+  {
+    "id": 229,
+    "start": 998.58,
+    "end": 1004.46,
+    "duration": 5.88,
+    "en": "For example, /egm brainstorm, build a 3D website for my coffee subscription.",
+    "raw_bn": "উদাহরণস্বরূপ, /ইজিএম ব্রেনস্টর্ম, আমার কফি সাবস্ক্রিপশনের জন্য একটি 3D ওয়েবসাইট তৈরি করুন।"
+  },
+  {
+    "id": 230,
+    "start": 1004.46,
+    "end": 1012.22,
+    "duration": 7.76,
+    "en": "The AI talks it through with you. A group of goldfish challenge the idea and it saves the agreed direction in a file called concepts",
+    "raw_bn": "এআই আপনার সাথে কথা বলে। গোল্ডফিশের একটি দল ধারণাটিকে চ্যালেঞ্জ করে এবং এটি ধারণা নামক একটি ফাইলে সম্মত দিক সংরক্ষণ করে"
+  },
+  {
+    "id": 231,
+    "start": 1012.22,
+    "end": 1013.02,
+    "duration": 0.8,
+    "en": "brief.",
+    "raw_bn": "সংক্ষিপ্ত"
+  },
+  {
+    "id": 232,
+    "start": 1013.02,
+    "end": 1018.06,
+    "duration": 5.04,
+    "en": "Second, type /egm:egm-draft.",
+    "raw_bn": "দ্বিতীয়, টাইপ করুন /egm:egm-draft।"
+  },
+  {
+    "id": 233,
+    "start": 1018.06,
+    "end": 1024.58,
+    "duration": 6.52,
+    "en": "The elephant turns that brief into a proper plan and it stops after each section so you can give feedback.",
+    "raw_bn": "হাতি সেই সংক্ষিপ্তটিকে একটি সঠিক পরিকল্পনায় পরিণত করে এবং এটি প্রতিটি বিভাগের পরে থেমে যায় যাতে আপনি প্রতিক্রিয়া জানাতে পারেন।"
+  },
+  {
+    "id": 234,
+    "start": 1024.58,
+    "end": 1028.98,
+    "duration": 4.4,
+    "en": "Third, type /egm:egm-review, then the name of the plan file.",
+    "raw_bn": "তৃতীয়, টাইপ করুন /egm:egm-review, তারপর প্ল্যান ফাইলের নাম।"
+  },
+  {
+    "id": 235,
+    "start": 1028.98,
+    "end": 1031.5,
+    "duration": 2.52,
+    "en": "That's where the goldfish reviewers go to work.",
+    "raw_bn": "সেখানেই গোল্ডফিশ রিভিউয়াররা কাজ করতে যান।"
+  },
+  {
+    "id": 236,
+    "start": 1031.5,
+    "end": 1039.5,
+    "duration": 8.0,
+    "en": "Fourth, read what they found, pick the fixes you care about and tell your AI to build it.",
+    "raw_bn": "চতুর্থত, তারা যা খুঁজে পেয়েছে তা পড়ুন, আপনার পছন্দের সংশোধনগুলি বেছে নিন এবং এটি তৈরি করতে আপনার AI-কে বলুন।"
+  },
+  {
+    "id": 237,
+    "start": 1039.5,
+    "end": 1041.98,
+    "duration": 2.48,
+    "en": "Here's a tip that will save you some head scratching.",
+    "raw_bn": "এখানে একটি টিপ যা আপনাকে কিছু মাথা ঘামাচি থেকে বাঁচাবে।"
+  },
+  {
+    "id": 238,
+    "start": 1041.98,
+    "end": 1045.78,
+    "duration": 3.8,
+    "en": "The review needs your AI to be able to start fresh helpers.",
+    "raw_bn": "নতুন সাহায্যকারী শুরু করতে সক্ষম হওয়ার জন্য পর্যালোচনাটির জন্য আপনার AI প্রয়োজন।"
+  },
+  {
+    "id": 239,
+    "start": 1045.78,
+    "end": 1049.86,
+    "duration": 4.08,
+    "en": "That's the whole point because a goldfish has to start with no memory.",
+    "raw_bn": "এটি পুরো পয়েন্ট কারণ একটি গোল্ডফিশকে কোন স্মৃতি ছাড়াই শুরু করতে হবে।"
+  },
+  {
+    "id": 240,
+    "start": 1049.86,
+    "end": 1052.1,
+    "duration": 2.24,
+    "en": "Claude code does this out of the box.",
+    "raw_bn": "ক্লড কোড বাক্সের বাইরে এটি করে।"
+  },
+  {
+    "id": 241,
+    "start": 1052.1,
+    "end": 1059.66,
+    "duration": 7.56,
+    "en": "If your tool can't start fresh helpers, EGM stops the review and tells you because a review done inside the same memory wouldn't",
+    "raw_bn": "যদি আপনার টুল নতুন সাহায্যকারী শুরু করতে না পারে, তাহলে EGM পর্যালোচনা বন্ধ করে দেয় এবং আপনাকে বলে কারণ একই মেমরির মধ্যে করা একটি পর্যালোচনা হবে না"
+  },
+  {
+    "id": 242,
+    "start": 1059.66,
+    "end": 1061.5,
+    "duration": 1.84,
+    "en": "really be a goldfish review.",
+    "raw_bn": "সত্যিই একটি গোল্ডফিশ পর্যালোচনা হতে হবে."
+  },
+  {
+    "id": 243,
+    "start": 1061.5,
+    "end": 1066.18,
+    "duration": 4.68,
+    "en": "And one more tip, the review gives you a lot of feedback on purpose.",
+    "raw_bn": "এবং আরও একটি টিপ, পর্যালোচনা আপনাকে উদ্দেশ্যমূলকভাবে অনেক প্রতিক্রিয়া দেয়।"
+  },
+  {
+    "id": 244,
+    "start": 1066.18,
+    "end": 1070.02,
+    "duration": 3.84,
+    "en": "Google's own guide says, take what's relevant and ignore the rest.",
+    "raw_bn": "গুগলের নিজস্ব গাইড বলে, প্রাসঙ্গিক যা নিন এবং বাকিগুলি উপেক্ষা করুন।"
+  },
+  {
+    "id": 245,
+    "start": 1070.02,
+    "end": 1071.38,
+    "duration": 1.36,
+    "en": "You're still the boss.",
+    "raw_bn": "আপনি এখনও বস."
+  },
+  {
+    "id": 246,
+    "start": 1071.38,
+    "end": 1075.18,
+    "duration": 3.8,
+    "en": "There are a few more skills in there as well. There's one called resolve",
+    "raw_bn": "সেখানে আরও কিছু দক্ষতা রয়েছে। আছে এক নামক সংকল্প"
+  },
+  {
+    "id": 247,
+    "start": 1075.18,
+    "end": 1081.62,
+    "duration": 6.44,
+    "en": "which walks you through the review findings one by one so you can agree on changes without getting overwhelmed.",
+    "raw_bn": "যা আপনাকে একের পর এক পর্যালোচনা ফলাফলের মাধ্যমে নিয়ে যায় যাতে আপনি অভিভূত না হয়ে পরিবর্তনের সাথে একমত হতে পারেন।"
+  },
+  {
+    "id": 248,
+    "start": 1081.62,
+    "end": 1087.3,
+    "duration": 5.68,
+    "en": "There's one called review loop where you set up your own group of reviewers for a specific job.",
+    "raw_bn": "রিভিউ লুপ নামে একটি আছে যেখানে আপনি একটি নির্দিষ্ট কাজের জন্য আপনার নিজের রিভিউয়ারদের গ্রুপ সেট আপ করেন।"
+  },
+  {
+    "id": 249,
+    "start": 1087.3,
+    "end": 1094.66,
+    "duration": 7.36,
+    "en": "That's the one I used to build the goldfish audience check with a scroller, a skeptic, a first time visitor, and a buyer.",
+    "raw_bn": "এটিই আমি একটি স্ক্রলার, একটি সন্দেহবাদী, প্রথমবার দর্শনার্থী এবং একজন ক্রেতা দিয়ে গোল্ডফিশ দর্শকদের চেক তৈরি করতে ব্যবহার করেছি৷"
+  },
+  {
+    "id": 250,
+    "start": 1094.66,
+    "end": 1101.58,
+    "duration": 6.92,
+    "en": "There's one called bootstrap which writes simple guides for an existing project so new helpers understand it fast.",
+    "raw_bn": "বুটস্ট্র্যাপ নামে একটি আছে যা একটি বিদ্যমান প্রকল্পের জন্য সহজ গাইড লেখে যাতে নতুন সাহায্যকারীরা এটি দ্রুত বুঝতে পারে।"
+  },
+  {
+    "id": 251,
+    "start": 1101.58,
+    "end": 1104.02,
+    "duration": 2.44,
+    "en": "And there's one called Drift Report.",
+    "raw_bn": "এবং ড্রিফ্ট রিপোর্ট নামে একটি আছে."
+  },
+  {
+    "id": 252,
+    "start": 1104.02,
+    "end": 1109.02,
+    "duration": 5.0,
+    "en": "It compares your plans with what was actually built and shows you where they've drifted apart.",
+    "raw_bn": "এটি আসলে কী তৈরি হয়েছিল তার সাথে আপনার পরিকল্পনার তুলনা করে এবং আপনাকে দেখায় যে তারা কোথায় আলাদা হয়ে গেছে।"
+  },
+  {
+    "id": 253,
+    "start": 1109.02,
+    "end": 1111.82,
+    "duration": 2.8,
+    "en": "Google suggests running that once a week.",
+    "raw_bn": "গুগল সপ্তাহে একবার এটি চালানোর পরামর্শ দেয়।"
+  },
+  {
+    "id": 254,
+    "start": 1111.82,
+    "end": 1114.5,
+    "duration": 2.68,
+    "en": "Now, you might be sitting there with a few doubts.",
+    "raw_bn": "এখন, আপনি কিছু সন্দেহ নিয়ে সেখানে বসে থাকতে পারেন।"
+  },
+  {
+    "id": 255,
+    "start": 1114.5,
+    "end": 1118.42,
+    "duration": 3.92,
+    "en": "The first one is, I'm not a coder, so is this even for me?",
+    "raw_bn": "প্রথমটি হল, আমি একজন কোডার নই, তাই এটা কি আমার জন্যও?"
+  },
+  {
+    "id": 256,
+    "start": 1118.42,
+    "end": 1123.94,
+    "duration": 5.52,
+    "en": "EGM was made for software engineers, but look at what we just built with it. A website,",
+    "raw_bn": "ইজিএম সফ্টওয়্যার ইঞ্জিনিয়ারদের জন্য তৈরি করা হয়েছিল, তবে আমরা এটি দিয়ে কী তৈরি করেছি তা দেখুন। একটি ওয়েবসাইট,"
+  },
+  {
+    "id": 257,
+    "start": 1123.94,
+    "end": 1127.78,
+    "duration": 3.84,
+    "en": "a carousel, ads, a video, and a lead agent.",
+    "raw_bn": "একটি ক্যারোজেল, বিজ্ঞাপন, একটি ভিডিও এবং একটি প্রধান এজেন্ট৷"
+  },
+  {
+    "id": 258,
+    "start": 1127.78,
+    "end": 1133.26,
+    "duration": 5.48,
+    "en": "You describe what you want in normal words, and the planet writes is in normal words, too.",
+    "raw_bn": "আপনি সাধারণ শব্দে আপনি যা চান তা বর্ণনা করুন এবং গ্রহটিও সাধারণ শব্দে লিখবে।"
+  },
+  {
+    "id": 259,
+    "start": 1133.26,
+    "end": 1136.86,
+    "duration": 3.6,
+    "en": "If you can describe what you want to build, you can use this.",
+    "raw_bn": "আপনি কি নির্মাণ করতে চান তা বর্ণনা করতে পারলে আপনি এটি ব্যবহার করতে পারেন।"
+  },
+  {
+    "id": 260,
+    "start": 1136.86,
+    "end": 1139.74,
+    "duration": 2.88,
+    "en": "The second doubt is, won't this slow me down?",
+    "raw_bn": "দ্বিতীয় সন্দেহ, এটা কি আমাকে ধীর করবে না?"
+  },
+  {
+    "id": 261,
+    "start": 1139.74,
+    "end": 1144.58,
+    "duration": 4.84,
+    "en": "For a tiny job like changing a headline or fixing one typo, skip it.",
+    "raw_bn": "একটি শিরোনাম পরিবর্তন বা একটি টাইপো ঠিক করার মতো একটি ছোট কাজের জন্য, এটি এড়িয়ে যান।"
+  },
+  {
+    "id": 262,
+    "start": 1144.58,
+    "end": 1146.86,
+    "duration": 2.28,
+    "en": "Google's own guide says the same thing.",
+    "raw_bn": "গুগলের নিজস্ব গাইডও একই কথা বলে।"
+  },
+  {
+    "id": 263,
+    "start": 1146.86,
+    "end": 1149.98,
+    "duration": 3.12,
+    "en": "Use your normal way for small, clear fixes.",
+    "raw_bn": "ছোট, পরিষ্কার সমাধানের জন্য আপনার স্বাভাবিক উপায় ব্যবহার করুন।"
+  },
+  {
+    "id": 264,
+    "start": 1149.98,
+    "end": 1153.7,
+    "duration": 3.72,
+    "en": "But for anything you'd normally go back and forth on five times,",
+    "raw_bn": "কিন্তু যেকোনো কিছুর জন্য আপনি সাধারণত পাঁচবার পিছিয়ে যাবেন,"
+  },
+  {
+    "id": 265,
+    "start": 1153.7,
+    "end": 1159.74,
+    "duration": 6.04,
+    "en": "the review takes about 40 seconds per reviewer, and it saves you all those rounds of changes afterwards.",
+    "raw_bn": "রিভিউ প্রতি পর্যালোচকের জন্য প্রায় 40 সেকেন্ড সময় নেয় এবং এটি আপনাকে পরবর্তী পরিবর্তনের সমস্ত রাউন্ড সংরক্ষণ করে।"
+  },
+  {
+    "id": 266,
+    "start": 1159.74,
+    "end": 1163.38,
+    "duration": 3.64,
+    "en": "The third doubt is, does this work for my kind of business?",
+    "raw_bn": "তৃতীয় সন্দেহ হল, এটা কি আমার ধরনের ব্যবসার জন্য কাজ করে?"
+  },
+  {
+    "id": 267,
+    "start": 1163.38,
+    "end": 1171.1,
+    "duration": 7.72,
+    "en": "If you make anything that a stranger is going to look at, a page, a post, an ad, a video, an email, then, yes.",
+    "raw_bn": "আপনি যদি এমন কিছু তৈরি করেন যা একজন অপরিচিত ব্যক্তি দেখতে যাচ্ছে, একটি পৃষ্ঠা, একটি পোস্ট, একটি বিজ্ঞাপন, একটি ভিডিও, একটি ইমেল, তারপর, হ্যাঁ৷"
+  },
+  {
+    "id": 268,
+    "start": 1171.1,
+    "end": 1174.78,
+    "duration": 3.68,
+    "en": "Every customer you'll ever have starts out as a goldfish.",
+    "raw_bn": "আপনার কাছে থাকা প্রতিটি গ্রাহক গোল্ডফিশ হিসাবে শুরু করে।"
+  },
+  {
+    "id": 269,
+    "start": 1174.78,
+    "end": 1177.62,
+    "duration": 2.84,
+    "en": "This just lets you test your work on one first.",
+    "raw_bn": "এটি আপনাকে প্রথমে একটিতে আপনার কাজ পরীক্ষা করতে দেয়।"
+  },
+  {
+    "id": 270,
+    "start": 1177.62,
+    "end": 1180.02,
+    "duration": 2.4,
+    "en": "So, here's what you can do this week.",
+    "raw_bn": "সুতরাং, আপনি এই সপ্তাহে কি করতে পারেন তা এখানে।"
+  },
+  {
+    "id": 271,
+    "start": 1180.02,
+    "end": 1184.1,
+    "duration": 4.08,
+    "en": "Step one, install EGM with the two commands I just showed you.",
+    "raw_bn": "প্রথম ধাপ, আমি আপনাকে দেখালাম দুটি কমান্ড দিয়ে EGM ইনস্টল করুন।"
+  },
+  {
+    "id": 272,
+    "start": 1184.1,
+    "end": 1191.98,
+    "duration": 7.88,
+    "en": "Step two, pick one thing you're about to make anyway, a landing page, an ad, a carousel, whatever is next on your list.",
+    "raw_bn": "দ্বিতীয় ধাপ, আপনি যেভাবেই হোক একটি জিনিস বাছুন, একটি ল্যান্ডিং পৃষ্ঠা, একটি বিজ্ঞাপন, একটি ক্যারোজেল, আপনার তালিকার পরবর্তী যাই হোক না কেন৷"
+  },
+  {
+    "id": 273,
+    "start": 1191.98,
+    "end": 1197.3,
+    "duration": 5.32,
+    "en": "Step three, before you build it, run brainstorm, then draft, then review.",
+    "raw_bn": "ধাপ তিন, আপনি এটি তৈরি করার আগে, ব্রেনস্টর্ম চালান, তারপর খসড়া, তারপর পর্যালোচনা করুন।"
+  },
+  {
+    "id": 274,
+    "start": 1197.3,
+    "end": 1201.54,
+    "duration": 4.24,
+    "en": "Read what the goldfish found. Fix the three problems that matter most.",
+    "raw_bn": "সোনালী মাছ কি পাওয়া গেছে তা পড়ুন। সবচেয়ে গুরুত্বপূর্ণ তিনটি সমস্যা ঠিক করুন।"
+  },
+  {
+    "id": 275,
+    "start": 1201.54,
+    "end": 1206.3,
+    "duration": 4.76,
+    "en": "Step four, build it and put it side by side with how you'd normally have done it.",
+    "raw_bn": "ধাপ চার, এটি তৈরি করুন এবং এটিকে পাশাপাশি রাখুন যেভাবে আপনি সাধারণত এটি করতেন।"
+  },
+  {
+    "id": 276,
+    "start": 1206.3,
+    "end": 1212.18,
+    "duration": 5.88,
+    "en": "Once you've seen the difference with your own eyes, you'll know where to use it next, one project at a time.",
+    "raw_bn": "একবার আপনি আপনার নিজের চোখে পার্থক্যটি দেখেছেন, আপনি পরবর্তীতে এটি কোথায় ব্যবহার করবেন তা জানতে পারবেন, এক সময়ে একটি প্রকল্প।"
+  },
+  {
+    "id": 277,
+    "start": 1212.18,
+    "end": 1215.78,
+    "duration": 3.6,
+    "en": "And if you want help doing that, join the AI Profit Boardroom.",
+    "raw_bn": "এবং আপনি যদি এটি করতে সহায়তা চান তবে এআই লাভ বোর্ডরুমে যোগ দিন।"
+  },
+  {
+    "id": 278,
+    "start": 1215.78,
+    "end": 1222.42,
+    "duration": 6.64,
+    "en": "You get the goldfish audience check skill for Claude, the same panel of reviewers I used on every build in this video.",
+    "raw_bn": "আপনি Claude-এর জন্য গোল্ডফিশ শ্রোতাদের পরীক্ষা করার দক্ষতা পান, এই ভিডিওতে প্রতিটি বিল্ডে আমি পর্যালোচনাকারীদের একই প্যানেল ব্যবহার করেছি।"
+  },
+  {
+    "id": 279,
+    "start": 1222.42,
+    "end": 1229.38,
+    "duration": 6.96,
+    "en": "So, your Claude already knows how to check your work like a scroller, a skeptic, a first-time visitor, and a buyer.",
+    "raw_bn": "সুতরাং, আপনার Claude ইতিমধ্যেই জানেন কিভাবে আপনার কাজ যেমন একজন স্ক্রলার, একজন সন্দেহবাদী, একজন প্রথমবার দর্শনার্থী এবং একজন ক্রেতার মতো পরীক্ষা করতে হয়।"
+  },
+  {
+    "id": 280,
+    "start": 1229.38,
+    "end": 1235.27,
+    "duration": 5.89,
+    "en": "You get the plan before build skill and the storyboard gate skill ready to drop into Claude.",
+    "raw_bn": "আপনি বিল্ড স্কিল এবং স্টোরিবোর্ড গেট স্কিল ক্লাউডে ড্রপ করার আগে প্ল্যান পেয়ে যান।"
+  },
+  {
+    "id": 281,
+    "start": 1235.27,
+    "end": 1239.87,
+    "duration": 4.6,
+    "en": "You get every system from this video with the skills and the exact prompts.",
+    "raw_bn": "আপনি দক্ষতা এবং সঠিক প্রম্পট সহ এই ভিডিও থেকে প্রতিটি সিস্টেম পাবেন।"
+  },
+  {
+    "id": 282,
+    "start": 1239.87,
+    "end": 1248.11,
+    "duration": 8.24,
+    "en": "The 3D website system, the video system, the Instagram carousel system, the ad creative system, and the lead generation system.",
+    "raw_bn": "3D ওয়েবসাইট সিস্টেম, ভিডিও সিস্টেম, ইনস্টাগ্রাম ক্যারোজেল সিস্টেম, বিজ্ঞাপন ক্রিয়েটিভ সিস্টেম এবং লিড জেনারেশন সিস্টেম।"
+  },
+  {
+    "id": 283,
+    "start": 1248.11,
+    "end": 1251.22,
+    "duration": 3.12,
+    "en": "And you get the automation that runs all of it for you.",
+    "raw_bn": "এবং আপনি অটোমেশন পান যা আপনার জন্য এটি সমস্ত চালায়।"
+  },
+  {
+    "id": 284,
+    "start": 1251.22,
+    "end": 1254.07,
+    "duration": 2.84,
+    "en": "From the plan to the review to the finished build.",
+    "raw_bn": "প্ল্যান থেকে রিভিউ থেকে ফিনিশ বিল্ড।"
+  },
+  {
+    "id": 285,
+    "start": 1254.07,
+    "end": 1257.35,
+    "duration": 3.28,
+    "en": "So, you hand over an idea and come back to the result.",
+    "raw_bn": "সুতরাং, আপনি একটি ধারণা হস্তান্তর করুন এবং ফলাফলে ফিরে আসুন।"
+  },
+  {
+    "id": 286,
+    "start": 1257.35,
+    "end": 1262.79,
+    "duration": 5.44,
+    "en": "You get the 30-day roadmap for setting up EGM and making it part of how you build everything.",
+    "raw_bn": "আপনি EGM সেট আপ করার জন্য 30-দিনের রোডম্যাপ পাবেন এবং আপনি কীভাবে সবকিছু তৈরি করবেন তার অংশ তৈরি করুন।"
+  },
+  {
+    "id": 287,
+    "start": 1262.79,
+    "end": 1267.94,
+    "duration": 5.16,
+    "en": "You get four coaching calls a week with members running these review loops on real client work.",
+    "raw_bn": "আপনি প্রতি সপ্তাহে চারটি কোচিং কল পান সদস্যরা প্রকৃত ক্লায়েন্টের কাজের উপর এই পর্যালোচনা লুপগুলি চালান।"
+  },
+  {
+    "id": 288,
+    "start": 1267.94,
+    "end": 1270.27,
+    "duration": 2.32,
+    "en": "So, you can bring your exact project.",
+    "raw_bn": "সুতরাং, আপনি আপনার সঠিক প্রকল্প আনতে পারেন."
+  },
+  {
+    "id": 289,
+    "start": 1270.27,
+    "end": 1276.07,
+    "duration": 5.8,
+    "en": "You get daily tutorials, the prompt library, and the member map to connect with other builders near you.",
+    "raw_bn": "আপনি প্রতিদিনের টিউটোরিয়াল, প্রম্পট লাইব্রেরি এবং আপনার কাছাকাছি অন্যান্য নির্মাতাদের সাথে সংযোগ করার জন্য সদস্য মানচিত্র পান।"
+  },
+  {
+    "id": 290,
+    "start": 1276.07,
+    "end": 1280.42,
+    "duration": 4.36,
+    "en": "Over 3,400 business owners are already inside.",
+    "raw_bn": "3,400 টিরও বেশি ব্যবসার মালিক ইতিমধ্যে ভিতরে রয়েছে।"
+  },
+  {
+    "id": 291,
+    "start": 1280.42,
+    "end": 1285.46,
+    "duration": 5.04,
+    "en": "The link is in the comments and description, or go to aiprofitboardroom.com.",
+    "raw_bn": "লিঙ্কটি মন্তব্য এবং বিবরণে রয়েছে অথবা aiprofitboardroom.com-এ যান।"
+  },
+  {
+    "id": 292,
+    "start": 1285.46,
+    "end": 1288.11,
+    "duration": 2.64,
+    "en": "So, that's the elephant goldfish model.",
+    "raw_bn": "সুতরাং, যে হাতি গোল্ডফিশ মডেল."
+  },
+  {
+    "id": 293,
+    "start": 1288.11,
+    "end": 1290.59,
+    "duration": 2.48,
+    "en": "Google made it free and open source.",
+    "raw_bn": "Google এটি বিনামূল্যে এবং ওপেন সোর্স করেছে।"
+  },
+  {
+    "id": 294,
+    "start": 1290.59,
+    "end": 1294.03,
+    "duration": 3.44,
+    "en": "The elephant remembers everything and writes the plan.",
+    "raw_bn": "হাতি সবকিছু মনে রাখে এবং পরিকল্পনা লিখে।"
+  },
+  {
+    "id": 295,
+    "start": 1294.03,
+    "end": 1298.22,
+    "duration": 4.2,
+    "en": "The goldfish remember nothing, so they read your plan like a stranger.",
+    "raw_bn": "গোল্ডফিশ কিছুই মনে রাখে না, তাই তারা আপনার পরিকল্পনাটি অপরিচিতের মতো পড়ে।"
+  },
+  {
+    "id": 296,
+    "start": 1298.22,
+    "end": 1300.51,
+    "duration": 2.28,
+    "en": "You decide which fixes matter.",
+    "raw_bn": "আপনি সিদ্ধান্ত নিন কোন সংশোধনগুলি গুরুত্বপূর্ণ।"
+  },
+  {
+    "id": 297,
+    "start": 1300.51,
+    "end": 1305.7,
+    "duration": 5.2,
+    "en": "It installs in two commands and it works in Claude code, Codex, and antigravity.",
+    "raw_bn": "এটি দুটি কমান্ডে ইনস্টল করে এবং এটি ক্লড কোড, কোডেক্স এবং অ্যান্টিগ্র্যাভিটিতে কাজ করে।"
+  },
+  {
+    "id": 298,
+    "start": 1305.7,
+    "end": 1313.62,
+    "duration": 7.92,
+    "en": "And it made every one of these five builds clearer, sharper, and easier to understand before the first real person ever saw them.",
+    "raw_bn": "এবং এটি এই পাঁচটি বিল্ডের প্রত্যেকটিকে আরও পরিষ্কার, তীক্ষ্ণ এবং সহজতর করে তুলেছে প্রথম প্রকৃত ব্যক্তি তাদের দেখার আগে।"
+  },
+  {
+    "id": 299,
+    "start": 1313.62,
+    "end": 1317.59,
+    "duration": 3.96,
+    "en": "Drop a comment and tell me, which would you run through the goldfish first?",
+    "raw_bn": "একটি মন্তব্য ড্রপ করুন এবং আমাকে বলুন, আপনি প্রথমে কোন গোল্ডফিশের মধ্য দিয়ে যাবেন?"
+  },
+  {
+    "id": 300,
+    "start": 1317.59,
+    "end": 1321.31,
+    "duration": 3.72,
+    "en": "Your website or your ads? I'll see you in the next one.",
+    "raw_bn": "আপনার ওয়েবসাইট বা আপনার বিজ্ঞাপন? আমি পরের এক দেখা হবে."
+  }
+]

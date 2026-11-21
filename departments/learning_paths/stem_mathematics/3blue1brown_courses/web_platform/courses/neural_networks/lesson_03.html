@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ব্যাকপ্রপাগেশন আসলে কী? | What is backpropagation really doing?</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/neural_networks/lesson_03/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — exact L01 load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="নিউরাল নেটওয়ার্ক ও ডিপ লার্নিং"
+  course-url="../../index.html#neural-networks"
+  home-url="../../index.html"
+  chapter-num="০৩"
+  chapter-total="০৮"
+  prev-url="lesson_02.html"
+  prev-title="পূর্ববর্তী অধ্যায়: গ্রেডিয়েন্ট ডিসেন্ট কীভাবে কাজ করে?"
+  next-url="lesson_04.html"
+  next-title="পরবর্তী অধ্যায়: ব্যাকপ্রপাগেশন ক্যালকুলাস: বিস্তারিত প্রমাণ ও অ্যালগরিদম"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="নিউরাল নেটওয়ার্ক ও ডিপ লার্নিং"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৩ · নিউরাল নেটওয়ার্ক ও ডিপ লার্নিং"
+  title="ব্যাকপ্রপাগেশন আসলে কী? | What is backpropagation really doing?"
+  desc="একক উদাহরণের প্রত্যাশা, সক্রিয়তার সমাহার, ওজনের মৃদু ধাক্কা (Nudge), এবং হিডেন লেয়ারের দিকে পেছনের টান"
+  video-src="../../media_vault/neural_networks/lesson_03/experiments/3b1b_nn_03_full_dubbed.mp4"
+  yt-id="Ilg3gGewQ5U"
+  date="৩ নভেম্বর, ২০১৭"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর ও ডাবিং: STEM মাল্টিমোডাল টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2017/neural_networks.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner
+      title="শিক্ষক অডিও বিবরণ ও লাইভ কারাওকে সহকারী"
+      desc="ব্যাকপ্রপাগেশনের মূল ধারণা, একক ‘২’-এর প্রত্যাশা, তিনটি নিয়ন্ত্রক লিভার, হিডেন লেয়ারের চাহিদার সংকলন ও সমস্ত উদাহরণের গণতান্ত্রিক গড় — প্রতিটি ধাপ দরদী শিক্ষকের কণ্ঠে শুনুন।">
+    </b1b-narration-banner>
+
+    <!-- Bookmarks — data JSON (time_str + title) -->
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">ভূমিকা: ব্যাকপ্রপাগেশনের মূল দর্শন</b1b-bookmark>
+      <b1b-bookmark time="88"  time-bn="০১:২৮">একটি একক উদাহরণের দৃষ্টিতে আউটপুট লেয়ারের পরিবর্তন</b1b-bookmark>
+      <b1b-bookmark time="149" time-bn="০২:২৯">তিনটি নিয়ন্ত্রক: ওজন পরিবর্তন, পূর্ববর্তী অ্যাক্টিভেশন ও বায়াস</b1b-bookmark>
+      <b1b-bookmark time="262" time-bn="০৪:২২">হিডেন লেয়ারের চাহিদার সংকলন ও চেইন প্রতিক্রিয়া</b1b-bookmark>
+      <b1b-bookmark time="336" time-bn="০৫:৩৬">সমস্ত ট্রেনিং উদাহরণের গণতান্ত্রিক গড় ও সম্মিলিত সিদ্ধান্ত</b1b-bookmark>
+      <b1b-bookmark time="336" time-bn="০৫:৩৬">উপসংহার: ক্যালকুলাসের ভিত্তি ও পরবর্তী পদক্ষেপ</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-overview">অধ্যায়ের মানচিত্র ও গ্রেডিয়েন্টের রহস্য</a>
+      <a href="#sec-backprop-core-idea">১. ব্যাকপ্রপাগেশনের মূল ধারণা ও অ্যালগরিদমের লক্ষ্য</a>
+      <a href="#sec-single-example-wants">২. একটি একক উদাহরণের প্রত্যাশা: আউটপুট নিউরনের চাওয়া</a>
+      <a href="#sec-three-ways-to-nudge">৩. নিউরনের সক্রিয়তা বদলানোর তিনটি পথ</a>
+      <a href="#sec-backprop-hidden-layers">৪. হিডেন লেয়ারের চাহিদার সংকলন ও পেছনের টান</a>
+      <a href="#sec-averaging-all-examples">৫. সমস্ত উদাহরণের গণতান্ত্রিক রায় ও গ্রেডিয়েন্ট গঠন</a>
+      <a href="#sec-official-deep-dive">অফিশিয়াল বিশদ: বায়াস, ওজন ও অ্যাক্টিভেশন</a>
+      <a href="#sec-sgd-conclusion">স্টোকাস্টিক গ্রেডিয়েন্ট ডিসেন্ট ও উপসংহার</a>
+      <a href="#sec-media-gallery">চিত্র ও ভিডিও গ্যালারি</a>
+      <a href="#sec-lab">ইন্টারেক্টিভ নাজ ও ফ্লো সিমুলেটর</a>
+      <a href="#sec-quizzes">ধারণা যাচাই: ৫টি ইন্টারেক্টিভ কুইজ</a>
+      <a href="#sec-reference">মূল সূত্র ও পরিভাষা</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ NON-NARRATED — chapter map, quote & official quick recap ═══ -->
+      <b1b-section id="sec-overview" title="অধ্যায়ের মানচিত্র: পুনরাবৃত্তি ও গ্রেডিয়েন্টের রহস্য" data-no-narration="true">
+        <b1b-quote author="Grant Sanderson · Neural Networks, Chapter 3">ব্যাকপ্রপাগেশন কেবল অন্ধ কিছু সূত্রের সমাহার নয়; এটি প্রতিটি ট্রেনিং উদাহরণের একটি স্পষ্ট কণ্ঠস্বর—নেটওয়ার্কের ভুল দেখে প্রতিটি নিউরন আর ওজনকে ঠিক কতটুকু এবং কোন দিকে বদলাতে হবে, তার এক সম্মিলিত গণতান্ত্রিক রায়।</b1b-quote>
+
+        <p><strong>দ্রুত পুনরাবৃত্তি (Quick Recap)।</strong> আমরা ক্লাসিক হস্তাক্ষর সংখ্যা শনাক্তকরণের উদাহরণ নিয়ে কাজ করছি: ইনপুট লেয়ারে ৭৮৪টি নিউরন (ছবির পিক্সেল মান), দুটি হিডেন লেয়ারে ১৬টি করে নিউরন, এবং আউটপুট লেয়ারে ১০টি নিউরন (০ থেকে ৯—নেটওয়ার্কের পছন্দ নির্দেশ করে)। ‘শেখা’ বলতে বোঝায় এমন ওজন ও বায়াস খুঁজে বের করা যা একটি নির্দিষ্ট কস্ট ফাংশনকে ন্যূনতম করে; গ্রেডিয়েন্ট ডিসেন্ট সেই কস্ট ফাংশনের ঢাল বরাবর নিচের দিকে হেঁটে স্থানীয় ন্যূনতমে পৌঁছায়।</p>
+
+        <p>একক training example-এর কস্ট হলো প্রাপ্ত আউটপুট ও কাঙ্ক্ষিত আউটপুটের প্রতিটি উপাংশের পার্থক্যের বর্গের যোগফল; আর মোট কস্ট হলো অসংখ্য training example-এর এই কস্টগুলোর গড়। এই গড় ফাংশনটিরই নেতিবাচক গ্রেডিয়েন্ট আমাদের বলে দেয় প্রতিটি ওজন ও বায়াসকে কতটা নাড়াতে হবে।</p>
+
+        <b1b-formula math="C = \sum_{j=0}^{9}\left(a_j^{(L)} - y_j\right)^2 \qquad;\qquad C_{\text{total}} = \frac{1}{N}\sum_{i=1}^{N} C_i"></b1b-formula>
+
+        <p><strong>কীবোর্ডের ১৩,০০২টি ডায়ালের জন্য একটি নির্দেশনা।</strong> কস্ট ফাংশনের নেতিবাচক গ্রেডিয়েন্ট $-\nabla C$ একটি ১৩,০০২-মাত্রিক ভেক্টর—প্রতিটি ওজন ও বায়াসের জন্য একটি করে উপাংশ। এই ভেক্টর আমাদের বলে দেয় কোন কোন ডায়াল কোন দিকে ও কতোখানি ঘুরালে কস্ট সবচেয়ে দক্ষতার সাথে কমবে। ব্যাকপ্রপাগেশন (Backpropagation) ঠিক এই ভেক্টরটিই গণনা করার অ্যালগরিদম।</p>
+
+        <b1b-formula math="-\nabla C = \left(\frac{\partial C}{\partial w_1},\ \frac{\partial C}{\partial w_2},\ \dots,\ \frac{\partial C}{\partial b_{42}}\right) \in \mathbb{R}^{13002}"></b1b-formula>
+
+        <b1b-callout type="purple" icon="📉" title="উপাংশের মাত্রাই সংবেদনশীলতা (Sensitivity)">
+          <p>১৩,০০২ মাত্রার দিক নিয়ে ভাবা আমাদের কল্পনার বাইরে—তাই উপাংশগুলোর <strong>আপেক্ষিক মাত্রা</strong> নিয়ে ভাবা সহজ। ধরা যাক কোনো একটি ওজনের সাথে যুক্ত গ্রেডিয়েন্ট উপাংশ 3.2, আর অন্য একটি ওজনের সাথে যুক্ত উপাংশ 0.1। অর্থাৎ প্রথমটি দ্বিতীয়টির চেয়ে <strong>৩২ গুণ</strong> বড়। এর মানে হলো—কস্ট ফাংশন প্রথম ওজনের পরিবর্তনের প্রতি দ্বিতীয় ওজনের চেয়ে ৩২ গুণ বেশি সংবেদনশীল; একই পরিমাণ নাড়া দিলে প্রথম ওজন কস্টে ৩২ গুণ বড় পরিবর্তন আনবে। এইজন্যই gradient descent-এ ‘কতটুকু’ নাড়াতে হবে তা জানা ‘কোন দিকে’ নাড়াতে হবে তা জানার মতোই গুরুত্বপূর্ণ।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 1 — sec-backprop-core-idea | 5 manifest cues: h2, p, p, figure, callout ═══ -->
+      <b1b-section id="sec-backprop-core-idea" title="শেখার ইঞ্জিন: গ্রেডিয়েন্ট ভেক্টরের পেছনের রহস্য">
+        <p>পূর্ববর্তী অধ্যায়ে আমরা দেখেছি গ্রেডিয়েন্ট ডিসেন্ট কীভাবে কস্ট ফাংশনের ঢাল মেপে মেপে নেটওয়ার্কের ত্রুটি কমিয়ে আনে। কিন্তু গ্রেডিয়েন্ট ডিসেন্ট কার্যকর হওয়ার জন্য একটি অপরিহার্য শর্ত রয়েছে: আমাদের জানতে হবে প্রতিটি একক ওজন এবং বায়াসকে সামান্য নাড়াচাড়া করলে (nudge) সামগ্রিক কস্ট ঠিক কতটা পরিবর্তিত হয়। অর্থাৎ, আমাদের দরকার গ্রেডিয়েন্ট ভেক্টর $\nabla C$।</p>
+
+        <p>আমাদের MNIST নেটওয়ার্কে মোট ১৩,০০২টি প্যারামিটার রয়েছে। জটিল বহুমাত্রিক ক্যালকুলাসের সমীকরণে হারিয়ে যাওয়ার আগে আসুন একটি খুব সাধারণ মানবিক দৃষ্টিকোণ থেকে ব্যাকপ্রপাগেশনকে অনুভব করার চেষ্টা করি। ক্যালকুলাস ছাড়া ব্যাকপ্রপাগেশন আসলে কী করে?</p>
+
+        <b1b-figure alt="আউটপুট লেয়ার থেকে পেছনের স্তরের দিকে এরর সংকেতের উল্টোমুখী প্রবাহ" caption="চিত্র ১: ডায়াগ্রামে আউটপুট লেয়ারের ১০টি নিউরন (০–৯) ডানদিকে, তার পেছনে ১৬ নিউরনের দুটি হিডেন লেয়ার এবং বাঁদিকে ইনপুট রয়েছে। লাল তীরচিহ্নগুলো দেখাচ্ছে কীভাবে ‘২ নম্বর নিউরনকে বাড়াতে হবে, বাকিদের কমাতে হবে’—এই কাঙ্ক্ষিত পরিবর্তন সংযোগকারী ওজন আর পূর্ববর্তী নিউরনের দিকে উল্টোমুখী (backward) প্রবাহিত হয়। লক্ষ্য করুন তীরের পুরুত্ব কমে যাচ্ছে: প্রতিটি স্তরে চাহিদা ভাগ হয়ে ছড়িয়ে পড়ে। এই উল্টোমুখী ঢেউয়ের নামই ব্যাকপ্রপাগেশন।">
+          <svg viewBox="0 0 720 300" role="img" aria-label="আউটপুট থেকে ইনপুটের দিকে পেছনের প্রবাহ">
+            <rect width="720" height="300" rx="14" fill="#0b0d14" stroke="#2d2b45" stroke-width="1.5"/>
+            <g font-family="Hind Siliguri, sans-serif" text-anchor="middle">
+              <text x="360" y="30" fill="#e2e8f0" font-size="17" font-weight="700">ব্যাকপ্রপাগেশন: কাঙ্ক্ষিত পরিবর্তনের উল্টোমুখী যাত্রা</text>
+              <g fill="#38bdf8">
+                <circle cx="80" cy="150" r="13"/><circle cx="80" cy="115" r="13"/><circle cx="80" cy="185" r="13"/>
+                <circle cx="80" cy="80" r="13"/><circle cx="80" cy="220" r="13"/>
+              </g>
+              <g fill="#a855f7">
+                <circle cx="300" cy="110" r="12"/><circle cx="300" cy="150" r="12"/><circle cx="300" cy="190" r="12"/>
+              </g>
+              <g fill="#fb7185">
+                <circle cx="560" cy="95" r="14"/><circle cx="600" cy="150" r="16" fill="#f43f5e"/><circle cx="560" cy="205" r="14"/>
+              </g>
+              <g stroke="#fb7185" stroke-width="3" fill="none" marker-end="url(#arrowb1b)">
+                <path d="M540 150 Q430 130 320 145"/>
+                <path d="M540 112 Q430 105 320 128"/>
+                <path d="M540 200 Q430 195 320 172"/>
+                <path d="M285 148 Q180 145 100 140"/>
+              </g>
+              <defs><marker id="arrowb1b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#fb7185"/></marker></defs>
+              <text x="80" y="265" fill="#94a3b8" font-size="13">ইনপুট (৭৮৪)</text>
+              <text x="300" y="265" fill="#94a3b8" font-size="13">হিডেন লেয়ার</text>
+              <text x="585" y="265" fill="#fda4af" font-size="13">আউটপুট (১০)</text>
+              <text x="585" y="72" fill="#fda4af" font-size="12">‘২’ বাড়াও</text>
+            </g>
+          </svg>
+        </b1b-figure>
+
+        <b1b-callout type="purple" icon="🧠" title="ব্যাকপ্রপাগেশনের মূল কথা">
+          <p>ব্যাকপ্রপাগেশন (Backpropagation) হলো এমন একটি অত্যন্ত চতুর অ্যালগরিদম, যা আউটপুট লেয়ার থেকে শুরু করে বিপরীত দিকে (backward) তথ্য প্রবাহিত করে প্রতিটি একক প্যারামিটারের জন্য নিখুঁত সংবেদনশীলতা নির্ণয় করে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 2 — sec-single-example-wants | 4 cues: h2, p, p, p ═══ -->
+      <b1b-section id="sec-single-example-wants" title="আউটপুট লেয়ারকে নিখুঁত করার দাবি">
+        <p>কল্পনা করুন, আমরা নেটওয়ার্কে একটি হস্তাক্ষরে লেখা ২-এর ছবি প্রবেশ করিয়েছি। আউটপুট লেয়ারে রয়েছে ১০টি নিউরন (০ থেকে ৯ পর্যন্ত)। যেহেতু ছবিটি ২-এর, তাই আদর্শ ফলাফল হলো ২ নম্বর নিউরনের অ্যাক্টিভেশন বৃদ্ধি পেয়ে ১.০ হওয়া উচিত, এবং বাকি নয়টি নিউরনের অ্যাক্টিভেশন হ্রাস পেয়ে ০.০ হওয়া উচিত।</p>
+
+        <p>কিন্তু বর্তমান অপ্রশিক্ষিত নেটওয়ার্কে ধরা যাক ২ নম্বর নিউরনের মান এসেছে ০.২, আর ভুল করে ৮ নম্বর নিউরনের মান হয়ে গেছে ০.৮। তাহলে এই নির্দিষ্ট ছবিটির জন্য আমাদের কস্ট কমাতে হলে:</p>
+
+        <p>এখানে পরিবর্তনের মাত্রা (magnitude) অত্যন্ত গুরুত্বপূর্ণ। ৮ নম্বর নিউরনটি ভয়াবহ রকমের ভুল দেখাচ্ছে (০.৮ এসেছে অথচ ০ হওয়া উচিত ছিল), তাই এর অ্যাক্টিভেশনকে নিচে নামানোর দাবি অনেক তীব্র ($\Delta a_8 = -0.8$)। অন্যদিকে যে নিউরনটি ইতোমধ্যে ০.০৫-এ বসে আছে, তাকে কমানোর তাগিদ তুলনামূলকভাবে অত্যন্ত মৃদু। গাণিতিক ভাষায় এই দাবিগুলো লেখা যায়—<strong>সমীকরণ ১:</strong> $\Delta a_2 &gt; 0$ (২ নম্বর নিউরনের মান বাড়াতে হবে), এবং <strong>সমীকরণ ২:</strong> $\Delta a_j &lt; 0 \quad \forall j \neq 2$ (অন্যান্য সমস্ত নিউরনের মান কমাতে হবে)। নুড়ি-পাথরের মতো ছোট ছোট এই চাওয়াগুলোই পরে ওজনের উপাংশে রূপ নেয়।</p>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 3 — sec-three-ways-to-nudge | 6 cues: h2, p, p, callout, figure, p ═══ -->
+      <b1b-section id="sec-three-ways-to-nudge" title="ওজন, পূর্ববর্তী অ্যাক্টিভেশন এবং বায়াসের ভূমিকা">
+        <p>এখন প্রশ্ন হলো: ২ নম্বর আউটপুট নিউরনটির অ্যাক্টিভেশন $a_2$ আমরা কীভাবে বাড়াব? মনে করে দেখুন, এই নিউরনের মান নির্ধারিত হয়েছিল তার পূর্ববর্তী লেয়ারের নিউরনগুলোর একটি ওয়েটেড সমষ্টি এবং একটি অ্যাক্টিভেশন ফাংশন $\sigma$ দিয়ে: <strong>সমীকরণ ৩:</strong> $a_2^{(L)} = \sigma\left(z_2^{(L)}\right) = \sigma\left(\sum_{k=0}^{15} w_{2,k}^{(L)} a_k^{(L-1)} + b_2^{(L)}\right)$।</p>
+
+        <p>যেহেতু সিগময়েড একটি একমুখী বর্ধিষ্ণু ফাংশন, তাই $a_2$ বাড়াতে হলে আমাদের ভেতরের ওয়েটেড সমষ্টি $z_2$ বাড়াতে হবে। আর এই $z_2$ বাড়ানোর জন্য আমাদের হাতে ঠিক তিনটি রাস্তা রয়েছে:</p>
+
+        <b1b-callout type="blue" icon="🎚️" title="তিনটি নিয়ন্ত্রক লিভার">
+          <p>১. <strong>বায়াস বৃদ্ধি ($b_2$ বাড়ানো):</strong> সরাসরি বায়াস বাড়ালে সবার জন্য থ্রেশহোল্ড সহজ হয়।<br/>২. <strong>ওজন বৃদ্ধি ($w_{2,k}$ পরিবর্তন):</strong> যে সকল পূর্ববর্তী নিউরন $a_k$ ইতোমধ্যে খুব উজ্জ্বলভাবে প্রজ্জ্বলিত (উচ্চ মানসম্পন্ন), তাদের সংযোগকারী ওজন $w_{2,k}$ বাড়িয়ে দিলে $z_2$ সবচেয়ে দ্রুত বৃদ্ধি পায়!<br/>৩. <strong>পূর্ববর্তী লেয়ারের অ্যাক্টিভেশন পরিবর্তন ($a_k^{(L-1)}$ পরিবর্তন):</strong> ধনাত্মক ওজনের সাথে যুক্ত পূর্ববর্তী নিউরনগুলোকে আরও উজ্জ্বল করা এবং ঋণাত্মক ওজনের নিউরনগুলোকে নিভিয়ে দেওয়া।</p>
+        </b1b-callout>
+
+        <b1b-figure alt="উজ্জ্বল অ্যাক্টিভেশনের সাথে যুক্ত ওজনের পরিবর্তনই সবচেয়ে বেশি প্রভাব ফেলে" caption="চিত্র ২: একই ২ নম্বর আউটপুট নিউরনে আসা তিনটি সংযোগ দেখানো হয়েছে—একটি উজ্জ্বল (a ≈ 0.9), একটি মাঝারি (a ≈ 0.4) ও একটি নিভে-যাওয়া (a ≈ 0) পূর্ববর্তী নিউরন থেকে। তীরের পুরুত্ব বোঝায় ওজনের সামান্য পরিবর্তনে z-এর যে পরিমাণ বৃদ্ধি ঘটে ($dz = a\,dw$): উজ্জ্বল সংযোগটির প্রভাব সবচেয়ে বেশি, আর নিভে-যাওয়া সংযোগের ক্ষেত্রে $w \cdot 0 = 0$ হওয়ায় কোনো প্রভাবই নেই। মনে রাখতে হবে, এই তীব্রতা শুধু এই একক ‘২’-এর ছবির জন্য প্রযোজ্য।">
+          <svg viewBox="0 0 720 270" role="img" aria-label="অ্যাক্টিভেশনের মান অনুযায়ী ওজন নাজের প্রভাব">
+            <rect width="720" height="270" rx="14" fill="#0b0d14" stroke="#2d2b45" stroke-width="1.5"/>
+            <g font-family="Hind Siliguri, sans-serif" text-anchor="middle">
+              <text x="360" y="30" fill="#e2e8f0" font-size="17" font-weight="700">কোন সংযোগ নাড়ালে সবচেয়ে বেশি লাভ?</text>
+              <g fill="#a855f7" stroke="#38bdf8" stroke-width="2">
+                <circle cx="110" cy="90" r="20" fill="#38bdf8" fill-opacity="0.9"/>
+                <circle cx="110" cy="150" r="20" fill="#38bdf8" fill-opacity="0.4"/>
+                <circle cx="110" cy="210" r="20" fill="#38bdf8" fill-opacity="0.08"/>
+              </g>
+              <g stroke="#fbbf24" fill="none" marker-end="url(#arrowb1b2)">
+                <path d="M132 90 L520 145" stroke-width="7"/>
+                <path d="M132 150 L520 150" stroke-width="3"/>
+                <path d="M132 210 L520 155" stroke-width="1" stroke-dasharray="4 4"/>
+              </g>
+              <defs><marker id="arrowb1b2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#fbbf24"/></marker></defs>
+              <circle cx="585" cy="150" r="28" fill="#f43f5e" fill-opacity="0.85" stroke="#fda4af" stroke-width="2"/>
+              <text x="585" y="157" fill="#fff" font-size="17" font-weight="700">২</text>
+              <text x="110" y="250" fill="#94a3b8" font-size="12">a ≈ 0.9</text>
+              <text x="300" y="255" fill="#fbbf24" font-size="12">dz = a · dw — উজ্জ্বলের প্রভাব সর্বাধিক</text>
+            </g>
+          </svg>
+        </b1b-figure>
+
+        <p>এখানে একটি গভীর সত্য লক্ষ্য করুন: যে নিউরনটি সক্রিয় ছিল না (যার $a_k \approx 0$), তার সাথে যুক্ত ওজনকে যতই নাড়াচাড়া করুন না কেন, $w \cdot 0 = 0$ হওয়ায় $z_2$-এর কোনো পরিবর্তন হবে না। অর্থাৎ, যে নিউরনগুলো সবচেয়ে বেশি সক্রিয় বা প্রজ্জ্বলিত থাকে, তাদের সংশ্লিষ্ট ওজনগুলোই সবচেয়ে বেশি পরিবর্তনের দাবি পায়।</p>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 4 — sec-backprop-hidden-layers | 5 cues: h2, p, p, p, callout ═══ -->
+      <b1b-section id="sec-backprop-hidden-layers" title="গণতান্ত্রিক চাহিদা এবং পেছনের স্তরে সংকেত প্রেরণ">
+        <p>আউটপুট লেয়ারের প্রতিটি নিউরন কেবল নিজের ওজন আর বায়াস বদলানোর ইচ্ছা পোষণ করেই থেমে থাকে না; তারা প্রত্যেকেই পূর্ববর্তী হিডেন লেয়ারের নিউরনগুলোর কাছে একটি সুনির্দিষ্ট ইচ্ছা প্রকাশ করে—‘হে পূর্ববর্তী নিউরন, তুমি একটু বেশি জ্বলো’ অথবা ‘তুমি একটু নিভে যাও’।</p>
+
+        <p>হিডেন লেয়ারের একটি নির্দিষ্ট নিউরন $k$-এর কথা ভাবুন। আউটপুট লেয়ারের ১০টি ভিন্ন ভিন্ন নিউরন প্রত্যেকেই এই নিউরনটির ওপর বিপরীতমুখী টান তৈরি করতে পারে। ২ নম্বর নিউরন হয়তো চায় এই নিউরনটি বাড়ুক, কিন্তু ৮ নম্বর নিউরন হয়তো চায় এটি কমুক—অর্থাৎ একই হিডেন নিউরনের উপর একাধিক, পরস্পরবিরোধী আবেদন আসতে পারে।</p>
+
+        <p>এইভাবে সমস্ত আউটপুট নিউরনের ইচ্ছাগুলোর একটি ভরযুক্ত সমষ্টি (weighted sum) নিয়ে হিডেন লেয়ারের প্রতিটি নিউরনের নিজস্ব কাঙ্ক্ষিত পরিবর্তন নির্ধারিত হয়—<strong>সমীকরণ ৪:</strong> $\Delta a_k^{(L-1)} = \sum_{j=0}^{9} w_{j,k}^{(L)} \cdot (\text{চাহিদা}_j)$। আর যেই মুহূর্তে হিডেন লেয়ারের নিউরনগুলোর কাঙ্ক্ষিত পরিবর্তন জানা হয়ে যায়, আমরা হুবহু একই যুক্তি প্রয়োগ করে তার পেছনের হিডেন লেয়ারে এবং তার সংযোগকারী ওজনে প্রবেশ করতে পারি!</p>
+
+        <b1b-callout type="gold" icon="🔙" title="কেন এর নাম 'ব্যাকপ্রপাগেশন'?">
+          <p>কারণ ভুলের প্রতিক্রিয়া বা চাওয়াগুলো সামনে থেকে পেছনের দিকে (আউটপুট $\to$ হিডেন ২ $\to$ হিডেন ১) ধারাবাহিকভাবে ঢেউয়ের মতো পিছিয়ে ছড়িয়ে পড়ে (propagates backwards)। প্রতিটি স্তরে একই নিয়ম পুনরাবৃত্ত হয়—তাই একবার ধারণাটি বুঝলেই পুরো নেটওয়ার্ক জুড়ে সেটি প্রয়োগ করা যায়।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 5 — sec-averaging-all-examples | 6 cues: h2, p, figure, p, p, callout ═══ -->
+      <b1b-section id="sec-averaging-all-examples" title="একক উদাহরণ থেকে ৬০,০০০ ডেটাপয়েন্টের ঐকমত্য">
+        <p>এতক্ষণ আমরা যে পুরো ব্যাকপ্রপাগেশন প্রক্রিয়াটি দেখলাম, তা ছিল মাত্র একটি একক হস্তাক্ষরের ছবির জন্য। সেই ছবিটি নেটওয়ার্কের প্রতিটি ওজনকে বলেছে: ‘আমাকে চিনতে হলে তোমাকে অমুক দিকে একটু নড়তে হবে’।</p>
+
+        <b1b-figure alt="হাজার হাজার উদাহরণের চাহিদার গড় থেকে একটি সম্মিলিত নাজ" caption="চিত্র ৩: ছোট ছোট রঙিন তীরচিহ্নগুলো হলো বিভিন্ন training example-এর দেওয়া প্রস্তাবিত ওজন-পরিবর্তন—কেউ বাড়াতে বলছে, কেউ কমাতে। নিচের মোটা নীল তীরটি হলো এসব প্রস্তাবের গণিতায়ন গড়: একক উদাহরণের পক্ষপাতিত্ব কমে গিয়ে একটি সুষম ও সম্মিলিত নাজ (nudge) তৈরি হয়। এই গড় ভেক্টরটিই loosely speaking নেতিবাচক গ্রেডিয়েন্ট—আমাদের খোঁজা ১৩,০০২-মাত্রিক নির্দেশনা।">
+          <svg viewBox="0 0 720 280" role="img" aria-label="অনেক নাজের গড় থেকে একক নেতিবাচক গ্রেডিয়েন্ট">
+            <rect width="720" height="280" rx="14" fill="#0b0d14" stroke="#2d2b45" stroke-width="1.5"/>
+            <g font-family="Hind Siliguri, sans-serif" text-anchor="middle">
+              <text x="360" y="30" fill="#e2e8f0" font-size="17" font-weight="700">অনেক মত, একটি ঐকমত্য</text>
+              <g stroke-width="3" fill="none" marker-end="url(#arrowb1b3)">
+                <path d="M170 100 L330 105" stroke="#fb7185"/>
+                <path d="M170 125 L330 118" stroke="#38bdf8"/>
+                <path d="M170 150 L330 150" stroke="#fbbf24"/>
+                <path d="M170 175 L330 162" stroke="#34d399"/>
+                <path d="M170 200 L330 190" stroke="#a855f7"/>
+              </g>
+              <defs><marker id="arrowb1b3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#60a5fa"/></marker></defs>
+              <text x="250" y="238" fill="#94a3b8" font-size="12">২, ৭, ৪, ৯ … এক এক করে প্রত্যেক ছবির চাহিদা</text>
+              <path d="M380 150 L620 150" stroke="#60a5fa" stroke-width="10" fill="none" marker-end="url(#arrowb1b3)"/>
+              <text x="500" y="135" fill="#93c5fd" font-size="13">গড় (average)</text>
+              <text x="620" y="185" fill="#60a5fa" font-size="14" font-weight="700">−∇C</text>
+            </g>
+          </svg>
+        </b1b-figure>
+
+        <p>কিন্তু পুরো প্রশিক্ষণ প্রক্রিয়ায় আমাদের কাছে ৬০,০০০টি ছবি রয়েছে। একটি ২-এর ছবি যে ওজনকে বাড়াতে বলবে, হয়তো একটি ৭-এর ছবি সেই একই ওজনকে সামান্য কমাতে বলবে। ব্যাকপ্রপাগেশন প্রতিটি উদাহরণের জন্য সমস্ত ১৩,০০২টি প্যারামিটারের প্রস্তাবিত পরিবর্তনগুলো গণনা করে, এবং পরিশেষে তাদের সবার গাণিতিক গড় নেয়।</p>
+
+        <p>গাণিতিকভাবে লিখলে—<strong>সমীকরণ ৫:</strong> $\dfrac{\partial C}{\partial w} = \dfrac{1}{N}\sum_{i=1}^{N}\dfrac{\partial C_i}{\partial w}$। এই গড় পরিবর্তনের ভেক্টরটিই হলো আমাদের কাঙ্ক্ষিত নেতিবাচক গ্রেডিয়েন্ট $-\nabla C$! এই গড় মান অনুযায়ী সমস্ত ডায়ালকে একসাথে এক কদম ঘুরিয়ে দিলে নেটওয়ার্ক সামগ্রিকভাবে একটু বেশি নিখুঁত হয়।</p>
+
+        <b1b-callout type="purple" icon="⏱️" title="মিনি-ব্যাচ ও বাস্তব কম্পিউটেশন">
+          <p>বাস্তব কোডে ৬০,০০০ উদাহরণের দীর্ঘ অপেক্ষার বদলে আমরা ৩২ বা ৬৪টি উদাহরণের মিনি-ব্যাচের গড় নিয়ে প্রতিটি পদক্ষেপ দ্রুত সম্পন্ন করি। পরবর্তী চতুর্থ অধ্যায়ে আমরা ক্যালকুলাসের চেইন রুল ব্যবহার করে এই সমস্ত দাবির হুবহু গাণিতিক সমীকরণগুলো প্রমাণ করব।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — official deep dive (bias / weights / activations) ═══ -->
+      <b1b-section id="sec-official-deep-dive" title="অফিশিয়াল বিশদ: বায়াস, ওজন ও অ্যাক্টিভেশনের তিন পথ" data-no-narration="true">
+        <p><strong>Changing the Bias।</strong> বায়াস পরিবর্তন করা হলো অ্যাক্টিভেশন বদলানোর সবচেয়ে সহজ উপায়। ওজন বা পূর্ববর্তী লেয়ারের অ্যাক্টিভেশনের বিপরীতে, বায়াসের পরিবর্তনের ওয়েটেড সমষ্টির ওপর প্রভাব <strong>ধ্রুবক ও পূর্বানুমানযোগ্য</strong>—এটি কোনো নির্দিষ্ট ইনপুট নিউরনের অ্যাক্টিভেশনের ওপর নির্ভর করে না। যেহেতু আমরা ‘২’ নম্বর আউটপুট নিউরনের অ্যাক্টিভেশন বাড়াতে চাই, তাই তার বায়াস বাড়াতে হবে; আর বাকি নয়টি নিউরনের অ্যাক্টিভেশন কমাতে চাই বলে তাদের বায়াস কমাতে হবে।</p>
+
+        <b1b-callout type="blue" icon="🎯" title="অফিশিয়াল কুইজের সঠিক উত্তর: বায়াস">
+          <p>সঠিক উত্তর হলো—<strong>‘Increase the bias associated with the digit-2 neuron and decrease the biases associated with all the other neurons.’</strong> অর্থাৎ ২ নম্বর নিউরনের বায়াস বাড়ানো এবং বাকি সব নিউরনের বায়াস কমানো। কারণ সিগময়েড একমুখী বর্ধিষ্ণু: $z$ বাড়লে $a$ বাড়ে, $z$ কমলে $a$ কমে—তাই ‘২ বাড়াও, বাকি কমাও’ এই দাবি সরাসরি বায়াসে ফলপ্রসূ হয়।</p>
+        </b1b-callout>
+
+        <p><strong>Changing the Weights।</strong> ওজনগুলো অ্যাক্টিভেশনের সাথে গুণ হওয়ায় তাদের প্রভাব আলাদা আলাদা। যে সংযোগগুলোর অ্যাক্টিভেশন বেশি (উজ্জ্বল নিউরন), সেই ওজনগুলোর পরিবর্তন কস্টে বেশি প্রভাব ফেলে; অন্ধকার নিউরনের ওজন নাড়ালে প্রায় কিছুই হয় না। তাই ‘সর্বোচ্চ লাভ (bang for the buck)’ পেতে ওজনগুলোকে তাদের সংশ্লিষ্ট অ্যাক্টিভেশনের সমানুপাতে (proportional to activations) নাড়াতে হবে।</p>
+
+        <b1b-callout type="gold" icon="🔥" title="Hebbian theory — “neurons that fire together wire together”">
+          <p>এই ধারণাটি স্নায়ুবিজ্ঞানের Hebbian তত্ত্বের সাথে মিলে যায়, যার বিখ্যাত সংক্ষেপ—<strong>“neurons that fire together wire together”</strong> (একসাথে যারা জ্বলে, তাদের সংযোগও মজবুত হয়)। ‘২’ দেখার সময় যেসব নিউরন সক্রিয় থাকে, আর ‘২’-এর কথা ভাবতে যেসব নিউরন সক্রিয় হওয়া উচিত—তাদের মধ্যকার সংযোগই সবচেয়ে বেশি শক্তিশালী হয়। অবশ্য কিছুটা সতর্কতা আছে: অপ্রশিক্ষিত নেটওয়ার্ক আসলে ‘২’ ভাবছে না, বরং training data-র লেবেলই নেটওয়ার্ককে বলে দিচ্ছে কী ভাবতে হবে—তবুও ক্যালকুলাস ও লিনিয়ার অ্যালজেব্রার নিচে এই Hebbian ছায়াটি দেখা পাওয়া আকর্ষণীয়।</p>
+        </b1b-callout>
+
+        <p><strong>Changing the Activations।</strong> তৃতীয় পথ হলো পূর্ববর্তী লেয়ারের সব অ্যাক্টিভেশন বদলানো। ২ নম্বর নিউরনের সাথে ধনাত্মক ওজনে যুক্ত নিউরনগুলোকে উজ্জ্বল এবং ঋণাত্মক ওজনে যুক্ত নিউরনগুলোকে নিস্তেজ করলে তার অ্যাক্টিভেশন বাড়বে। এখানেও ‘সর্বোচ্চ লাভ’ পেতে চাহিদা দিতে হবে ওজনের মানের সমানুপাতে ($dz = w\,da$)। কিন্তু আমরা সরাসরি অ্যাক্টিভেশন নিয়ন্ত্রণ করতে পারি না—শুধু সেগুলো নির্ধারণকারী ওজন ও বায়াসই বদলাতে পারি; তাই এই চাহিদাগুলোকে ‘নোট’ করে রেখে পেছনের স্তরে প্রেরণ করা হয়।</p>
+
+        <p>আরও গুরুত্বপূর্ণ: এটি শুধু ২ নম্বর নিউরনের ইচ্ছা। বাকি নয়টি আউটপুট নিউরনও কমতে চাইছে, আর প্রত্যেকেরই দ্বিতীয়-শেষ লেয়ারের ওপর নিজস্ব প্রভাব আছে। ফলে একই হিডেন নিউরনের ওপর অনেক প্রতিদ্বন্দ্বী আবেদন আসে—সবগুলো একসাথে পূরণ করা অসম্ভব। সেরা যেটা করা যায় তা হলো সব চাহিদার একটি ভরযুক্ত সমষ্টি (weighted sum) বের করা; সেখান থেকেই ‘পেছনে ঢেউয়ের মতো ছড়িয়ে পড়া’ শুরু হয়।</p>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — stochastic gradient descent & conclusion ═══ -->
+      <b1b-section id="sec-sgd-conclusion" title="স্টোকাস্টিক গ্রেডিয়েন্ট ডিসেন্ট ও উপসংহার" data-no-narration="true">
+        <p><strong>Repeating for All Training Examples।</strong> এতক্ষণের সব নাজ শুধু একটি ‘২’-এর ছবির জন্য। যদি কেবল সেই এক ছবির কথা শোনা হতো, তবে নেটওয়ার্ক শেষ পর্যন্ত সব ছবিকেই ‘২’ বলে চেনার দিকে ঝুঁকে যেত! তাই ব্যাকপ্রপাগেশন প্রতিটি training example-র জন্য আলাদা আলাদা করে চলে এবং প্রতিটি ওজনের জন্য তার নিজস্ব প্রস্তাবিত পরিবর্তন রেকর্ড করে। এইসব প্রস্তাবের গড়ই একক gradient descent পদক্ষেপে ওজনগুলোর প্রকৃত পরিবর্তন নির্ধারণ করে—আমাদের প্রাপ্ত (something proportional to) নেতিবাচক গ্রেডিয়েন্ট।</p>
+
+        <p><strong>Stochastic Gradient Descent।</strong> বাস্তবে প্রতিটি পদক্ষেপে ৬০,০০০টি উদাহরণের সবগুলোর প্রভাব যোগ করা কম্পিউটারের জন্য অত্যন্ত সময়সাপেক্ষ। এক চতুর কৌশলে training data কে এলোমেলো করে (shuffle) প্রায় <strong>১০০টি</strong> করে mini-batch-এ ভাগ করা হয়; তারপর পুরো সেটের বদলে প্রতিটি mini-batch অনুযায়ী এক একটি gradient descent পদক্ষেপ নেওয়া হয়। এটি প্রকৃত গ্রেডিয়েন্ট নয়—তাই পদক্ষেপটি সবচেয়ে দক্ষ নাও হতে পারে—কিন্তু প্রতিটি ব্যাচ অনেক ভালো আন্দাজ দেয় এবং ১০০টি ব্যাচ থাকলে প্রতিটি পদক্ষেপ মোট সময়ের মাত্র ১/১০০ অংশ নেয়; ১০০ পদক্ষেপ পরে প্রতিটি ডেটাপয়েন্টের পালা পূর্ণ হয়।</p>
+
+        <b1b-callout type="green" icon="🍺" title="মাতাল লোকের পাহাড় নামা">
+          <p>ওয়েবসাইটের সুন্দর রূপক: mini-batch দিয়ে gradient descent দেখতে হয় ‘একজন মাতাল লোক দ্রুত দ্রুত পা দিয়ে পাহাড় থেকে নামছে’—যেমন একজন সাবধানী হিসাবী লোক ধীরে ধীরে সাবধানে নামেন। পদক্ষেপগুলো কম নিখুঁত, কিন্তু অনেক দ্রুত; সামগ্রিকভাবে কাজটি অনেক আগে শেষ হয়। এটিই <strong>Stochastic Gradient Descent (SGD)</strong> নামে পরিচিত।</p>
+        </b1b-callout>
+
+        <p><strong>উপসংহার।</strong> ব্যাকপ্রপাগেশনের কোডের প্রতিটি লাইন আপনি এখন অনানুষ্ঠানিকভাবে দেখে ফেলেছেন—কিছু ইংরেজি বাক্যাংশের আড়ালে কী ঘটছে তা এখন আপনার কাছে পরিচিত। পরবর্তী পাঠে (<a href="lesson_04.html">Backpropagation calculus</a>) একই ধারণাগুলোকে অন্তর্নিহিত ক্যালকুলাসের ভাষায় দেখা হবে, যা Nielsen-এর বই বা অন্য যেকোনো উৎসে পড়তে সাহায্য করবে।</p>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — image / video figure gallery with b1b-media-tab ═══ -->
+      <b1b-section id="sec-media-gallery" title="চিত্র ও ভিডিও গ্যালারি: ধারণাটি দুই মাধ্যমে দেখুন" data-no-narration="true">
+        <p class="viz-intro">প্রতিটি ধারণা একটি স্থির চিত্র এবং মূল অ্যানিমেশন—দুইভাবেই দেখুন। ছবি ট্যাবে সম্পর্কগুলো নিখুঁতভাবে পর্যবেক্ষণ করুন; ভিডিও ট্যাবে গ্রান্ট স্যান্ডারসনের মূল অ্যানিমেশন দেখুন।</p>
+
+        <b1b-media-tab active-tab="image" caption="চিত্রে বাঁ দিকে আউটপুট লেয়ারের ‘২’ নিউরন লাল রঙে জ্বলজ্বল করছে, তার পাশের নয়টি নিউরন নিভে যাচ্ছে; মাঝখানে দুটি হিডেন লেয়ার ও সবচেয়ে বাঁদিকে ইনপুট। লাল তীরগুলো ডান থেকে বাঁয়ে প্রবাহিত হয়ে দেখায় কীভাবে ‘বাড়াও/কমাও’ নির্দেশটি সংযোগ ও নিউরনগুলোর দিকে ছড়িয়ে পড়ে। ভিডিও ট্যাবে এই উল্টোমুখী ঢেউয়ের সম্পূর্ণ অ্যানিমেশন দেখা যাবে—দুই মাধ্যম পাশাপাশি দেখলে সামনে-পেছনের সম্পর্কটি স্পষ্ট হয়।">
+          <div slot="image">
+            <svg viewBox="0 0 720 300" role="img" aria-label="নাজের উল্টোমুখী প্রবাহ" style="width:100%;max-height:340px;">
+              <rect width="720" height="300" rx="12" fill="#0b0d14" stroke="#2d2b45"/>
+              <g font-family="Hind Siliguri, sans-serif" text-anchor="middle" fill="#94a3b8">
+                <text x="95" y="70" font-size="14">ইনপুট ৭৮৪</text>
+                <text x="300" y="70" font-size="14">হিডেন ১</text>
+                <text x="470" y="70" font-size="14">হিডেন ২</text>
+                <text x="630" y="70" font-size="14" fill="#fda4af">আউটপুট ১০</text>
+                <g fill="#38bdf8"><circle cx="95" cy="150" r="10"/><circle cx="95" cy="185" r="10"/><circle cx="95" cy="220" r="10"/></g>
+                <g fill="#a855f7"><circle cx="300" cy="150" r="10"/><circle cx="300" cy="190" r="10"/><circle cx="300" cy="225" r="10"/></g>
+                <g fill="#a855f7"><circle cx="470" cy="150" r="10"/><circle cx="470" cy="190" r="10"/><circle cx="470" cy="225" r="10"/></g>
+                <g fill="#fb7185"><circle cx="600" cy="160" r="11"/><circle cx="635" cy="160" r="15"/><circle cx="670" cy="160" r="11"/></g>
+                <g stroke="#fb7185" stroke-width="2.5" fill="none"><path d="M590 160 Q530 130 480 155"/><path d="M455 170 Q390 165 310 165"/><path d="M285 175 Q190 180 110 175"/></g>
+                <text x="360" y="275" font-size="13">আউটপুট → হিডেন ২ → হিডেন ১ → ইনপুটের দিকে সংকেত</text>
+              </g>
+            </svg>
+          </div>
+          <div slot="video">
+            <iframe src="https://www.youtube.com/embed/Ilg3gGewQ5U?start=90" title="What is backpropagation really doing? — 3Blue1Brown" style="width:100%;height:340px;border:none;" allowfullscreen></iframe>
+          </div>
+        </b1b-media-tab>
+
+        <b1b-media-tab active-tab="image" caption="এই চিত্রে অনেকগুলো ছোট রঙিন তীর একই ওজনের ওপর আসা বিভিন্ন training example-এর ভিন্ন ভিন্ন চাহিদা দেখাচ্ছে—কেউ বাড়াতে, কেউ কমাতে বলছে। নিচের মোটা তীরটি সব প্রস্তাবের গড়, যা পরবর্তী পদক্ষেপে ওজনটির প্রকৃত পরিবর্তন নির্ধারণ করে (mini-batch-এর ক্ষেত্রে শুধু একটি ছোট অংশের গড়)। ভিডিও ট্যাবে ‘drunk man stumbling downhill’ রূপকসহ SGD-র গতি দেখা যাবে; ছবি ও ভিডিও একসাথে দেখলে বুঝতে সুবিধা হয় যে কেন গড় নেওয়া মানে পথ কম সোজা হলেও অনেক দ্রুত অগ্রসর হওয়া।">
+          <div slot="image">
+            <svg viewBox="0 0 720 260" role="img" aria-label="অনেক চাহিদার গড়" style="width:100%;max-height:300px;">
+              <rect width="720" height="260" rx="12" fill="#0b0d14" stroke="#2d2b45"/>
+              <g font-family="Hind Siliguri, sans-serif" text-anchor="middle" fill="#94a3b8">
+                <text x="360" y="32" fill="#e2e8f0" font-size="16" font-weight="700">গড় = সবার কথা শোনা</text>
+                <g stroke-width="3" fill="none"><path d="M110 90 L340 100" stroke="#fb7185"/><path d="M110 125 L340 120" stroke="#38bdf8"/><path d="M110 160 L340 165" stroke="#fbbf24"/><path d="M110 195 L340 185" stroke="#34d399"/></g>
+                <text x="225" y="228" font-size="13">Individual desires</text>
+                <path d="M370 140 L640 140" stroke="#60a5fa" stroke-width="9" fill="none"/>
+                <text x="640" y="175" fill="#93c5fd" font-size="14">∂C/∂w</text>
+              </g>
+            </svg>
+          </div>
+          <div slot="video">
+            <iframe src="https://www.youtube.com/embed/Ilg3gGewQ5U?start=600" title="Stochastic gradient descent — 3Blue1Brown" style="width:100%;height:340px;border:none;" allowfullscreen></iframe>
+          </div>
+        </b1b-media-tab>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — interactive lab, fullscreen ═══ -->
+      <b1b-section id="sec-lab" title="🔬 ইন্টারেক্টিভ ল্যাব: লাইভ ব্যাকপ্রপাগেশন নাজ ও ফ্লো সিমুলেটর" data-no-narration="true">
+        <p class="viz-intro">ইন্টারেক্টিভ ল্যাব: আউটপুট লেয়ারে কাঙ্ক্ষিত টার্গেট পরিবর্তন করে দেখুন কীভাবে পেছনের স্তরের সংযোগকারী ওজন ও হিডেন নিউরনগুলোতে সংকেতের তীব্রতা রঙিন ঢেউ আকারে ছড়িয়ে পড়ে। নিচের নিয়ন্ত্রকগুলো ব্যবহার করে তিনটি মোড পর্যালোচনা করুন।</p>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে নাজ সিমুলেটর দেখুন">
+          <div class="viz-wrapper" style="background:var(--card-bg,#11131b);border:1px solid var(--border,#2d2b45);border-radius:12px;padding:14px;">
+            <div style="display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px;">
+              <label style="font-size:.9rem;color:#cbd5e1;">কাঙ্ক্ষিত টার্গেট ডিজিট
+                <input type="range" min="0" max="9" step="1" value="2" oninput="this.nextElementSibling.textContent=this.value"/>
+                <output style="color:#a855f7;font-weight:700;">2</output>
+              </label>
+              <label style="font-size:.9rem;color:#cbd5e1;">নাজের তীব্রতা (Error Magnitude)
+                <input type="range" min="0.1" max="1" step="0.05" value="0.6" oninput="this.nextElementSibling.textContent=this.value"/>
+                <output style="color:#38bdf8;font-weight:700;">0.6</output>
+              </label>
+              <label style="font-size:.9rem;color:#cbd5e1;">অ্যানিমেশন গতি
+                <select onchange="this.nextElementSibling.textContent=this.value">
+                  <option>মন্থর (Slow)</option>
+                  <option selected>স্বাভাবিক (Normal)</option>
+                  <option>দ্রুত (Fast)</option>
+                </select>
+                <output style="color:#34d399;font-weight:700;">স্বাভাবিক (Normal)</output>
+              </label>
+            </div>
+
+            <svg viewBox="0 0 720 250" role="img" aria-label="ফরোয়ার্ড সক্রিয়তা ও ব্যাকওয়ার্ড এরর ফ্লো" style="width:100%;max-height:300px;">
+              <rect width="720" height="250" rx="12" fill="#0b0d14" stroke="#2d2b45"/>
+              <g font-family="Hind Siliguri, sans-serif" text-anchor="middle" fill="#94a3b8" font-size="12">
+                <text x="360" y="26" fill="#e2e8f0" font-size="15" font-weight="700">৪-স্তরের খেলনা নেটওয়ার্ক: সামনে অ্যাক্টিভেশন, পেছনে এরর</text>
+                <g stroke="#38bdf8" stroke-width="2" fill="none"><path d="M90 120 L280 120"/><path d="M340 120 L530 120"/><path d="M590 120 L660 120"/></g>
+                <g stroke="#fb7185" stroke-width="3" stroke-dasharray="6 4" fill="none"><path d="M660 160 L590 160"/><path d="M530 160 L340 160"/><path d="M280 160 L90 160"/></g>
+                <g fill="#38bdf8"><circle cx="90" cy="120" r="9"/><circle cx="90" cy="150" r="9"/><circle cx="90" cy="180" r="9"/></g>
+                <g fill="#a855f7"><circle cx="310" cy="120" r="11"/><circle cx="310" cy="155" r="11"/><circle cx="310" cy="190" r="11"/></g>
+                <g fill="#a855f7"><circle cx="560" cy="120" r="11"/><circle cx="560" cy="155" r="11"/><circle cx="560" cy="190" r="11"/></g>
+                <g fill="#f43f5e"><circle cx="660" cy="105" r="12"/><circle cx="660" cy="135" r="14"/><circle cx="660" cy="165" r="12"/></g>
+                <text x="90" y="215">ইনপুট</text><text x="310" y="215">হিডেন ১</text><text x="560" y="215">হিডেন ২</text><text x="660" y="215">আউটপুট</text>
+              </g>
+            </svg>
+
+            <div class="nn-layer-explorer" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:14px;">
+              <details open style="background:var(--bg-soft,#161925);border:1px solid var(--border,#2d2b45);border-radius:10px;padding:10px;">
+                <summary style="cursor:pointer;font-weight:700;color:#74C0E3;">মোড ১ — একক আউটপুট এরর</summary>
+                <p style="font-size:.9rem;">$\delta_j^{(L)} = a_j^{(L)} - y_j$: টার্গেট ডিজিটের সক্রিয়তা বাড়াতে হবে, বাকিদের কমাতে—তীব্রতা ভুলের সমানুপাতিক।</p>
+              </details>
+              <details style="background:var(--bg-soft,#161925);border:1px solid var(--border,#2d2b45);border-radius:10px;padding:10px;">
+                <summary style="cursor:pointer;font-weight:700;color:#74C0E3;">মোড ২ — হিডেনে দ্বিমুখী টান</summary>
+                <p style="font-size:.9rem;">$\Delta a_k = \sum_j w_{jk}\,\delta_j$: ১০টি আউটপুটের চাহিদা ওজন দ্বারা গুণ হয়ে একটি নিট টান তৈরি করে।</p>
+              </details>
+              <details style="background:var(--bg-soft,#161925);border:1px solid var(--border,#2d2b45);border-radius:10px;padding:10px;">
+                <summary style="cursor:pointer;font-weight:700;color:#74C0E3;">মোড ৩ — ব্যাচ এভারেজিং</summary>
+                <p style="font-size:.9rem;">$\overline{\Delta w} = \frac{1}{m}\sum_{i=1}^{m}\Delta w_i$: অনেক উদাহরণের চাহিদার গড়ই নেতিবাচক গ্রেডিয়েন্টের আসল রূপ।</p>
+              </details>
+            </div>
+          </div>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — 5 quizzes: exact options + rich Bengali feedback ═══ -->
+      <b1b-section id="sec-quizzes" title="ধারণা যাচাই: ৫টি ইন্টারেক্টিভ কুইজ" data-no-narration="true">
+        <b1b-quiz
+          question="❓ ১. নেতিবাচক গ্রেডিয়েন্টের একটি উপাংশ 3.2 ও অন্যটি 0.1 হলে, প্রথম ওজনের ক্ষেত্রে কস্ট ফাংশন দ্বিতীয় ওজনের তুলনায় কত গুণ বেশি সংবেদনশীল?"
+          correct="1"
+          correct-msg="অসাধারণ! 3.2 ÷ 0.1 = 32, অর্থাৎ প্রথম ওজনটির প্রতি কস্ট ফাংশন ৩২ গুণ বেশি সংবেদনশীল। একই পরিমাণ ছোট নাড়া দিলে প্রথম ওজন কস্টে ৩২ গুণ বড় পরিবর্তন আনবে। গ্রেডিয়েন্টের প্রতিটি উপাংশের মাত্রা ঠিক এই কারণেই গুরুত্বপূর্ণ—দিক জানা যেমন দরকার, তেমনি ‘কতটা’ জানাও তত দরকার।"
+          wrong-msg="আবার হিসাব করো: গ্রেডিয়েন্টের দুই উপাংশের অনুপাতই সংবেদনশীলতার অনুপাত। 3.2 কে 0.1 দিয়ে ভাগ করলে পাবে 32। অর্থাৎ সঠিক উত্তর ৩২×—2× বা ১০× নয়, আর 0.32× তো ভুল দিকেই ইশারা করে।"
+          reveal-msg="সঠিক উত্তর: ৩২ গুণ (32×)। 3.2 / 0.1 = 32; অর্থাৎ কস্ট ফাংশন প্রথম ওজনের পরিবর্তনের প্রতি দ্বিতীয় ওজনের চেয়ে ৩২ গুণ বেশি সংবেদনশীল।">
+          <div slot="option">২ গুণ (2×)</div>
+          <div slot="option">৩২ গুণ (32×)</div>
+          <div slot="option">০.৩২ গুণ (0.32×)</div>
+          <div slot="option">১০ গুণ (10×)</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ২. (অফিশিয়াল কুইজ) ‘২’ ছবিটির জন্য ২ নম্বর আউটপুট নিউরনের অ্যাক্টিভেশন বাড়াতে ও বাকি নিউরনগুলোর অ্যাক্টিভেশন কমাতে বায়াসগুলো কীভাবে বদলাব?"
+          correct="1"
+          correct-msg="ঠিক বলেছ! সঠিক উত্তর: ‘Increase the bias associated with the digit-2 neuron and decrease the biases associated with all the other neurons.’ ২ নম্বর নিউরনের বায়াস বাড়ালে তার ওয়েটেড sum b বাড়ে, ফলে সিগময়েডের মান বাড়ে; বাকি নয়টির বায়াস কমালে তাদের মান কমে—ঠিক যেমনটা ‘২ বাড়াও, বাকি কমাও’ দাবি করেছিল। বায়াসের প্রভাব ধ্রুবক ও পূর্বানুমানযোগ্য, তাই এটি সবচেয়ে সোজা পথ।"
+          wrong-msg="মনে রেখো: সিগময়েড একমুখী বর্ধিষ্ণু ফাংশন—z বাড়লে a বাড়ে, z কমলে a কমে। তাই যেটিকে বাড়াতে চাই তার বায়াস বাড়াতে হবে, আর যেগুলোকে কমাতে চাই তাদের বায়াস কমাতে হবে। ‘সব বাড়ানো’ বা ‘সব কমানো’—কোনোটিই ‘২ বাড়াও, বাকি কমাও’ দাবিটি পূরণ করে না।"
+          reveal-msg="সঠিক উত্তর (দ্বিতীয় বিকল্প): Increase the bias associated with the digit-2 neuron and decrease the biases associated with all the other neurons. সিগময়েড বর্ধিষ্ণু হওয়ায় বায়াস বাড়ালে অ্যাক্টিভেশন বাড়ে ও কমালে কমে।">
+          <div slot="option">Increase the bias associated with the digit-2 neuron and increase the biases associated with all the other neurons.</div>
+          <div slot="option">Increase the bias associated with the digit-2 neuron and decrease the biases associated with all the other neurons.</div>
+          <div slot="option">Decrease the bias associated with the digit-2 neuron and increase the biases associated with all the other neurons.</div>
+          <div slot="option">Decrease the bias associated with the digit-2 neuron and decrease the biases associated with all the other neurons.</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৩. একটি নির্দিষ্ট আউটপুট নিউরনের সক্রিয়তা বাড়ানোর ক্ষেত্রে কোন পূর্ববর্তী নিউরনের সংযোগকারী ওজন পরিবর্তন করলে সবচেয়ে বেশি প্রভাব পড়ে?"
+          correct="1"
+          correct-msg="চমৎকার! যেহেতু ওয়েটেড সমষ্টি z = w·a + b, তাই a-এর মান যত বড় হবে, w-এর সামান্য পরিবর্তনে z-এর পরিবর্তন তত বেশি ঘটবে (∂z/∂w = a)। তাই অতি সক্রিয় নিউরনের ওজন দ্রুততম প্রভাব তৈরি করে—এজন্যই ওজনগুলোকে অ্যাক্টিভেশনের সমানুপাতে নাড়ানো হয় (Hebbian ‘fire together, wire together’)।"
+          wrong-msg="আবার ভাবো: ওজনটির প্রভাব নির্ভর করে তার সাথে গুণ হওয়া অ্যাক্টিভেশনের মানের ওপর। a ≈ 0 হলে w·0 = 0—অন্ধকার পিক্সেলের ওজন নাড়ালে কিছুই হয় না; সবচেয়ে উজ্জ্বল নিউরনের সংযোগেই সবচেয়ে বেশি পরিবর্তন ঘটে।"
+          reveal-msg="সঠিক উত্তর: যে পূর্ববর্তী নিউরনটির সক্রিয়তা ইতোমধ্যে খুব উচ্চ বা উজ্জ্বল ছিল (∂z/∂w = a)।">
+          <div slot="option">যে পূর্ববর্তী নিউরনটির সক্রিয়তা প্রায় শূন্য ছিল</div>
+          <div slot="option">যে পূর্ববর্তী নিউরনটির সক্রিয়তা ইতোমধ্যে খুব উচ্চ বা উজ্জ্বল ছিল</div>
+          <div slot="option">ইনপুট লেয়ারের যেকোনো অন্ধকার পিক্সেলের ওজনে</div>
+          <div slot="option">ওজন পরিবর্তন করলে আউটপুটে কোনো প্রভাবই পড়ে না</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৪. হিডেন লেয়ারের একটি নির্দিষ্ট নিউরন কীভাবে জানতে পারে তার মান বাড়ানো উচিত না কমানো উচিত?"
+          correct="1"
+          correct-msg="একেবারে সঠিক! পরবর্তী লেয়ারের প্রতিটি নিউরন নিজের কাঙ্ক্ষিত পরিবর্তন ও সংযোগকারী ওজনের মাধ্যমে একটি সংকেত পাঠায়; হিডেন নিউরনটি ওইসব সংকেতের ভরযুক্ত সমষ্টি (weighted sum) নিয়ে নিট টান ঠিক করে: Δaₖ = Σⱼ wⱼₖ·δⱼ। একই কারণে ১০টি আউটপুটের প্রতিদ্বন্দ্বী চাহিদা একসাথে পেছনের স্তরে ছড়িয়ে পড়ে—এটাই backpropagation।"
+          wrong-msg="হিডেন নিউরন ইনপুট পিক্সেলের সাথে সরাসরি ‘কথা’ বলে না, মুদ্রাও নিক্ষেপ করে না, আর সব হিডেন নিউরন এক দিকে যায়ও না। সে শুধু পরের স্তর থেকে আসা সংকেতগুলোর ওজন-ভিত্তিক যোগফল দেখে সিদ্ধান্ত নেয়।"
+          reveal-msg="সঠিক উত্তর: পরবর্তী লেয়ারের সমস্ত নিউরনের বিপরীতমুখী চাহিদা এবং সংযোগকারী ওজনের গুণফলের সমষ্টি (Weighted sum) নিয়ে।">
+          <div slot="option">এটি সরাসরি ইনপুট পিক্সেলের সাথে কথা বলে সিদ্ধান্ত নেয়</div>
+          <div slot="option">পরবর্তী লেয়ারের সমস্ত নিউরনের বিপরীতমুখী চাহিদা এবং সংযোগকারী ওজনের গুণফলের সমষ্টি (Weighted sum) নিয়ে</div>
+          <div slot="option">র্যান্ডমভাবে একটি মুদ্রা নিক্ষেপ করে</div>
+          <div slot="option">সব হিডেন নিউরন সবসময় একই দিকে পরিবর্তিত হয়</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৫. ব্যাকপ্রপাগেশনের চূড়ান্ত পদক্ষেপে সমগ্র নেটওয়ার্কের জন্য একটি ওজনের প্রকৃত পরিবর্তন কীভাবে নির্ধারিত হয়?"
+          correct="1"
+          correct-msg="ঠিক! প্রতিটি training example ওজনটির জন্য নিজস্ব ছোট নাজ প্রস্তাব করে; ব্যাকপ্রপাগেশন সব প্রস্তাবের গাণিতিক গড় নেয়—∂C/∂w = (1/N)Σᵢ ∂Cᵢ/∂w। এই গড়-ভেক্টরই (প্রায়) নেতিবাচক গ্রেডিয়েন্ট। বাস্তবেmini-batch (প্রায় ১০০টি উদাহরণ) নিয়ে কাজ করলে দ্রুততা বাড়ে—সেটাই Stochastic Gradient Descent।"
+          wrong-msg="শুধু প্রথম ছবির কথা শুনলে নেটওয়ার্ক সব ছবিকেই ‘২’ বলবে! বৃহত্তম ওজন মুছে ফেলা বা ভুল ছবির ওজন দ্বিগুণ করাও আসল পদ্ধতি নয়—আসল পদ্ধতি হলো সব উদাহরণের প্রস্তাবের গণতান্ত্রিক গড়।"
+          reveal-msg="সঠিক উত্তর: ট্রেনিং সেটের সমস্ত উদাহরণের প্রস্তাবিত পরিবর্তনের গাণিতিক গড় নিয়ে—এই গড়ই (something proportional to) নেতিবাচক গ্রেডিয়েন্ট।">
+          <div slot="option">কেবলমাত্র প্রথম ট্রেনিং উদাহরণের চাহিদা গ্রহণ করে</div>
+          <div slot="option">ট্রেনিং সেটের সমস্ত উদাহরণের প্রস্তাবিত পরিবর্তনের গাণিতিক গড় নিয়ে</div>
+          <div slot="option">সবচেয়ে বড় ওজনকে মুছে ফেলে</div>
+          <div slot="option">কেবলমাত্র ভুল হওয়া ছবিগুলোর ওজন দ্বিগুণ করে</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — formula & glossary reference ═══ -->
+      <b1b-section id="sec-reference" title="মূল সূত্র ও পরিভাষা" data-no-narration="true">
+        <b1b-formula math="\Delta a_2 &gt; 0 \quad (\text{২ নম্বর নিউরন বাড়াতে হবে}) \qquad;\qquad \Delta a_j &lt; 0 \quad \forall j \neq 2"></b1b-formula>
+        <b1b-formula math="a_2^{(L)} = \sigma\!\left(\sum_{k=0}^{15} w_{2,k}^{(L)} a_k^{(L-1)} + b_2^{(L)}\right)"></b1b-formula>
+        <b1b-formula math="\Delta a_k^{(L-1)} = \sum_{j=0}^{9} w_{j,k}^{(L)} \cdot \left(\text{চাহিদা}_j\right)"></b1b-formula>
+        <b1b-formula math="\frac{\partial C}{\partial w} = \frac{1}{N}\sum_{i=1}^{N}\frac{\partial C_i}{\partial w} \quad\Longrightarrow\quad -\nabla C"></b1b-formula>
+        <b1b-callout type="blue" icon="📚" title="পরিভাষা">
+          <p><strong>নেতিবাচক গ্রেডিয়েন্ট ($-\nabla C$):</strong> ১৩,০০২-dimension ভেক্টর যা কস্ট কমানোর জন্য প্রতিটি ওজন ও বায়াসের নাজ নির্দেশ করে। <strong>সংবেদনশীলতা:</strong> গ্রেডিয়েন্ট উপাংশের মাত্রা—3.2 বনাম 0.1 মানে ৩২× বেশি সংবেদনশীল। <strong>নাজ (Nudge):</strong> ওজন/বায়াসের একক gradient-descent পদক্ষেপে ছোট পরিবর্তন। <strong>Hebbian theory:</strong> “neurons that fire together wire together”—অ্যাক্টিভেশনের সমানুপাতে ওজন বৃদ্ধি। <strong>Backpropagation:</strong> আউটপুট থেকে পেছনে চাহিদা প্রেরণ করে গ্রেডিয়েন্ট গণনার অ্যালগরিদম। <strong>SGD:</strong> ~১০০ উদাহরণের mini-batch-এ গড় নিয়ে দ্রুত পদক্ষেপ।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/neural_networks/lesson_03/experiments/3b1b_nn_03_full_dubbed.mp4"
+    yt-id="Ilg3gGewQ5U"
+    title="ব্যাকপ্রপাগেশন আসলে কী? | What is backpropagation really doing? — অধ্যায় ৩"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — নিউরাল নেটওয়ার্ক ও ডিপ লার্নিং">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_02.html"
+  prev-title="গ্রেডিয়েন্ট ডিসেন্ট কীভাবে কাজ করে?"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_04.html"
+  next-title="ব্যাকপ্রপাগেশন ক্যালকুলাস: বিস্তারিত প্রমাণ ও অ্যালগরিদম"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

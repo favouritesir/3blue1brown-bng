@@ -1,0 +1,277 @@
+{
+  "metadata": {
+    "title": "Fun Short School Stories for Children with Steve and Maggie | Learn the Senses",
+    "video_path": "departments/media_production/youtube_channels/wow_english/kids_education/steve_and_maggie_school_stories_senses/raw_sources/source_video.mp4",
+    "duration_seconds": 213.53,
+    "resolution": "640x360",
+    "fps": 25,
+    "characters": {
+      "Steve": {
+        "type": "Human Teacher / Actor",
+        "appearance": "Adult male, red t-shirt, blue jeans, goatee, comic facial acting",
+        "vocal_profile": "Enthusiastic British male voice, playful educational cadence, expressive screams & laughs",
+        "recommended_voice": "Orus / bn-BD-PradeepNeural"
+      },
+      "Maggie": {
+        "type": "Puppet Magpie Bird",
+        "appearance": "Black & white magpie puppet, moveable beak, mischievous hovering/flying animations",
+        "vocal_profile": "High-pitched, playful, teasing, cheeky puppet squawk & giggle",
+        "recommended_voice": "Aoede / bn-BD-NabanitaNeural (with high-pitch / puppet tint)"
+      }
+    }
+  },
+  "key_timestamps_multimodal_analysis": [
+    {
+      "timestamp": "0s - 3s",
+      "key_marker_s": 0.0,
+      "scene_name": "Tightrope Walking on Giant Pencil",
+      "active_on_screen": "Steve (Human)",
+      "mouth_moving": "Steve (preparing and balancing, speaking 'Look, it\\'s a pencil' starting at 2.2s)",
+      "visual_action_gag": "Steve appears shrunk in miniature scale, walking and teetering precariously along a giant yellow cartoon pencil suspended between a giant eraser block and a giant pencil sharpener against a pink/magenta background.",
+      "audio_vfx_and_sfx": "Playful, whimsical cartoon background music bed with light comedic pizzicato and woodblocks, subtle footstep tap sounds as he balances on the wood shaft."
+    },
+    {
+      "timestamp": "10s - 14s",
+      "key_marker_s": 10.0,
+      "scene_name": "Pencil Snap & Fall Gag",
+      "active_on_screen": "Steve (Human)",
+      "mouth_moving": "Steve (cheering 'YEAH' at 10.3s, then screaming in panic at 12.4s)",
+      "visual_action_gag": "Steve reaches the center of the giant pencil, celebrates, but the pencil suddenly cracks and snaps right under his feet into a sharp 'V' shape! Steve loses balance and plummets downwards out of frame with hands flailing up, followed by bouncing text 'pencil' on screen.",
+      "audio_vfx_and_sfx": "Loud cartoon wood snap / crack sound effect ('CRACK!'), sudden comedic slide whistle drop, Steve's terrified comedic scream ('Whoaaa!'), followed by a comical thud / impact sound off-screen."
+    },
+    {
+      "timestamp": "38s - 50s",
+      "key_marker_s": 38.0,
+      "scene_name": "Maggie's Ruler Desk Game & Magic",
+      "active_on_screen": "Steve (Human) and Maggie (Puppet Magpie)",
+      "mouth_moving": "Maggie (beak opening and closing actively at 38.3s - 45.7s: 'FIND the ruler! Find find the ruler!'), Steve reacts with panicked face, wide eyes, grasping hands over the cluttered desk.",
+      "visual_action_gag": "Steve is seated behind a brown wooden desk covered in stationery (crayons, glue stick, scissors, erasers) on a vibrant green chroma background. Maggie the magpie puppet hovers on the right side flapping wings and teasing him to find the ruler. Maggie magically makes the blue ruler disappear or float, prompting Steve's frantic hunt. Pop-up animated bubble text 'find' pulses.",
+      "audio_vfx_and_sfx": "Maggie's distinctive high-pitched chirpy puppet voice and bird wing flap whooshes, magical 'ding/chime' twinkle sound for the ruler appearance, cartoon boing/spring sound effect, playful bouncy orchestral background score."
+    },
+    {
+      "timestamp": "65s - 75s",
+      "key_marker_s": 65.0,
+      "scene_name": "Giant Heavy Pen Lifting Struggle",
+      "active_on_screen": "Steve (Human)",
+      "mouth_moving": "Steve (straining loudly, face grimacing, calling 'Look! Look! Look! It\\'s a pen!')",
+      "visual_action_gag": "Against a vivid warm yellow/orange background, Steve is bent forward struggling with all his strength to hoist an enormous, oversized purple ballpoint pen with gold trim. He lifts it from his knees to his waist, his face turning red with exaggerated comedic strain and gasping, text 'pen' printed on the barrel.",
+      "audio_vfx_and_sfx": "Heavy weight groan/grunt vocalizations, deep cartoon lifting creak sound effect, metallic heavy clunk, dramatic comic straining audio bed, pop sound when 'pen' text pops onto screen."
+    },
+    {
+      "timestamp": "140s - 150s",
+      "key_marker_s": 140.0,
+      "scene_name": "Grammar Magic (This vs These) & Blindfold Wandering Gag",
+      "active_on_screen": "Steve (Human)",
+      "mouth_moving": "Steve (speaking excitedly 'These are pens!' at 140s, transitioning at 143.5s to stumbling blindfolded: 'I can\\'t see!')",
+      "visual_action_gag": "At 140s, Steve juggles visual grammar on pink background: 1 single pen floating in his right hand ('This is a pen') vs 3 miniature pens floating in his left hand ('These are pens'). At 144s, transition to a cozy yellow room with bookshelf and brown door: Steve wears a black sleep mask/blindfold over his eyes, stumbling forward blindly with outstretched trembling hands, groaning comedic cries.",
+      "audio_vfx_and_sfx": "Magical 'poof' / chime SFX as the 3 pens multiply, sudden comical mystery organ/pizzicato chord as he gets blindfolded, gentle comedic wooden bump/clumble sounds as he gropes the air, vocal whimpering."
+    },
+    {
+      "timestamp": "206s - 213s",
+      "key_marker_s": 206.0,
+      "scene_name": "Taste Sense Climax: Fiery Hot Red Chili Gag",
+      "active_on_screen": "Steve (Human) and Maggie (Puppet Magpie)",
+      "mouth_moving": "Steve (mouth wide open in shock, lips burning, shouting 'Hot chili! [screaming]' at 206.9s), Maggie laughing mischievously on the right with beak snapping open.",
+      "visual_action_gag": "Against a vibrant cyan/blue background, Steve stands blindfolded with black sleep mask pushed up onto his forehead. In the previous beat Maggie fed him sweet apple, but at 205s she slyly offers a spicy cartoon red chili pepper with a bite taken out. Steve chews it, his eyes bulge with pure terror, mouth wide agape, hands waving rapidly in front of mouth in extreme spicy heat distress while cartoon 'taste' words explode around them.",
+      "audio_vfx_and_sfx": "Cartoon sizzle / flame whoosh sound effect ('FWOOSH!'), dramatic comic brass panic sting, loud comedic scream ('YAAAAAAAH!'), steam whistle SFX, Maggie's cheeky giggles and squawks, upbeat energetic outro resolution track."
+    }
+  ],
+  "full_video_scene_storyboard_map": [
+    {
+      "scene_id": 1,
+      "time_range": "00:00 - 00:17",
+      "background_color": "Magenta / Pink",
+      "primary_subject": "Giant Yellow Pencil & School Sharpener/Eraser",
+      "actors": [
+        "Steve"
+      ],
+      "speaker": "Steve",
+      "action_narrative": "Steve walks like an acrobat on a huge yellow pencil. He celebrates reaching the center, but the pencil suddenly cracks in half and he falls through the floor.",
+      "sfx_cues": [
+        "Cartoon footsteps",
+        "Wood cracking SFX",
+        "Slide whistle fall",
+        "Comedic impact thud"
+      ]
+    },
+    {
+      "scene_id": 2,
+      "time_range": "00:17 - 00:36",
+      "background_color": "Purple",
+      "primary_subject": "Giant Eraser Block",
+      "actors": [
+        "Steve"
+      ],
+      "speaker": "Steve",
+      "action_narrative": "Steve is standing on a giant blue-and-yellow eraser block, jumping and demonstrating the word 'Eraser'. Text pops up with joyful repetition.",
+      "sfx_cues": [
+        "Rubber squeak / bounce SFX",
+        "Word pop chime",
+        "Playful laughter"
+      ]
+    },
+    {
+      "scene_id": 3,
+      "time_range": "00:36 - 01:05",
+      "background_color": "Vibrant Green",
+      "primary_subject": "Classroom Stationery Desk Game & Giant Blue Ruler Surfing",
+      "actors": [
+        "Steve",
+        "Maggie"
+      ],
+      "speaker": "Maggie (0:38 - 0:50, 0:57 - 1:05) & Steve (0:36, 0:45, 0:51 - 0:57)",
+      "action_narrative": "Maggie hovers over Steve's desk challenging him to find the ruler among markers and scissors. Steve grabs the blue ruler, which magically expands into an enormous giant board, and Steve surf-rides on top of the giant ruler in the air.",
+      "sfx_cues": [
+        "Maggie wing flaps",
+        "Magic sparkle wand chime",
+        "Wind whoosh / surfing glide SFX",
+        "Puppet giggles"
+      ]
+    },
+    {
+      "scene_id": 4,
+      "time_range": "01:05 - 01:26",
+      "background_color": "Warm Yellow / Orange",
+      "primary_subject": "Giant Heavy Purple Pen",
+      "actors": [
+        "Steve"
+      ],
+      "speaker": "Steve",
+      "action_narrative": "Steve spots a gigantic purple pen. He bends down and uses comical brute strength to deadlift it, sweating and trembling with the weight before holding it upright.",
+      "sfx_cues": [
+        "Heavy grunting/groan",
+        "Wood/plastic creak",
+        "Weight drop thud",
+        "Cartoon pop"
+      ]
+    },
+    {
+      "scene_id": 5,
+      "time_range": "01:26 - 01:42",
+      "background_color": "Sky Blue",
+      "primary_subject": "Giant Storybook",
+      "actors": [
+        "Steve",
+        "Maggie (briefly)"
+      ],
+      "speaker": "Steve (and Maggie cheer at 1:35)",
+      "action_narrative": "A huge red-covered book ('Book / 书') appears standing upright. The book opens wide, and Steve is seen standing in the middle crease on giant open drawn pages.",
+      "sfx_cues": [
+        "Heavy book flap whoosh",
+        "Page turn flutter SFX",
+        "Ding chime"
+      ]
+    },
+    {
+      "scene_id": 6,
+      "time_range": "01:42 - 01:56",
+      "background_color": "Orange",
+      "primary_subject": "Giant Teal Backpack / Bag",
+      "actors": [
+        "Steve"
+      ],
+      "speaker": "Steve",
+      "action_narrative": "A giant teal school backpack drops down. Steve pops his head and body out of the main zipper pocket and side pouches, playing peek-a-boo while shouting 'Bag!'.",
+      "sfx_cues": [
+        "Zipper zip-up/zip-down SFX",
+        "Fabric flap pop",
+        "Playful peek-a-boo whistle"
+      ]
+    },
+    {
+      "scene_id": 7,
+      "time_range": "01:56 - 02:11",
+      "background_color": "Green",
+      "primary_subject": "White Paper Sheets",
+      "actors": [
+        "Steve"
+      ],
+      "speaker": "Steve",
+      "action_narrative": "Steve holds sheets of white paper, showing them to the camera. A sheet playfully flutters and sticks to his forehead.",
+      "sfx_cues": [
+        "Paper rustle / flap flutter SFX",
+        "Cartoon suction 'plop' when sticking to head"
+      ]
+    },
+    {
+      "scene_id": 8,
+      "time_range": "02:11 - 02:23",
+      "background_color": "Pink / Magenta",
+      "primary_subject": "Grammar Comparison: Singular 'This is a pen' vs Plural 'These are pens'",
+      "actors": [
+        "Steve"
+      ],
+      "speaker": "Steve",
+      "action_narrative": "Educational visual demonstration holding 1 pen in right hand ('This is a pen') and showing 3 floating pens in left hand ('These are pens').",
+      "sfx_cues": [
+        "Magic sparkle chime",
+        "Pop SFX on pen duplication"
+      ]
+    },
+    {
+      "scene_id": 9,
+      "time_range": "02:23 - 02:44",
+      "background_color": "Yellow Room Interior with Door & Bookshelf",
+      "primary_subject": "Senses - Sight (Eyes / Seeing)",
+      "actors": [
+        "Steve"
+      ],
+      "speaker": "Steve",
+      "action_narrative": "Steve puts on a black sleep mask blindfold, feeling his way across the room blindly. He lifts the blindfold, spots the audience, and celebrates his sight: 'I can see you!'.",
+      "sfx_cues": [
+        "Elastic strap snap SFX",
+        "Stumbling comedic footsteps",
+        "Eye blink 'boing' SFX"
+      ]
+    },
+    {
+      "scene_id": 10,
+      "time_range": "02:44 - 03:01",
+      "background_color": "Purple",
+      "primary_subject": "Senses - Smell (Nose / Sniffing Daisy Flower)",
+      "actors": [
+        "Steve"
+      ],
+      "speaker": "Steve",
+      "action_narrative": "A large white daisy flower grows into frame. Steve leans in with dramatic exaggerated deep sniffing through his nose, sighing in aromatic bliss, then sneezing / reacting as petals tickle him.",
+      "sfx_cues": [
+        "Deep exaggerated inhale/sniff SFX",
+        "Gentle magical harp chime",
+        "Flower stem creak / sprout pop"
+      ]
+    },
+    {
+      "scene_id": 11,
+      "time_range": "03:01 - 03:33",
+      "background_color": "Blue",
+      "primary_subject": "Senses - Taste (Mouth / Sweet Apple vs Fiery Hot Chili)",
+      "actors": [
+        "Steve",
+        "Maggie"
+      ],
+      "speaker": "Maggie (3:06 - 3:17) & Steve (3:17 - 3:33)",
+      "action_narrative": "Steve is blindfolded again for Maggie's taste test game. First Maggie brings a delicious red apple which Steve tastes delightfully. Then Maggie mischievously substitutes a spicy hot red chili pepper! Steve takes a bite, his eyes pop out, his mouth burns, and he screams hysterically while Maggie flaps her wings in triumph.",
+      "sfx_cues": [
+        "Apple crunchy bite SFX ('CRUNCH!')",
+        "Maggie wing flap and cheeky chuckle",
+        "Spicy fire sizzle / whoosh ('FWOOSH!')",
+        "Comic steam kettle whistle",
+        "Loud cartoon scream & outro upbeat music sting"
+      ]
+    }
+  ],
+  "acoustic_sfx_bleed_prevention_guide": {
+    "rule": "Absolute Audio Integrity - Zero Vocal Bleed & Clean Foley Preservation",
+    "dialogue_gating_strategy": "Original dialogue intervals must be ducked to 0.0 volume during Bengali speech synthesis, while non-vocal SFX (crunches, snaps, whistles, magic chimes) are preserved pristine in the background bed.",
+    "gender_voice_mapping": {
+      "Steve": {
+        "gender": "Male",
+        "target_voice_engine": "Google AI Studio Voice Engine (Orus) or Edge-TTS bn-BD-PradeepNeural"
+      },
+      "Maggie": {
+        "gender": "Female / Puppet Bird",
+        "target_voice_engine": "Google AI Studio Voice Engine (Aoede) or Edge-TTS bn-BD-NabanitaNeural (with +15% pitch modulation for puppet timbre)"
+      }
+    }
+  }
+}

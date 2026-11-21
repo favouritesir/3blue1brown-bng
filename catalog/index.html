@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>বাংলা রিসোর্স ফ্যাক্টরি | ডাইনামিক ট্যাক্সোনমি ও রিসোর্স ম্যাপ</title>
+  <style>
+    :root {
+      --bg-primary: #0a0f1d;
+      --bg-secondary: #131b2e;
+      --bg-card: #1a243b;
+      --border-color: #273553;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent-teal: #06b6d4;
+      --accent-green: #10b981;
+      --accent-purple: #8b5cf6;
+      --accent-amber: #f59e0b;
+      --accent-red: #ef4444;
+      --font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Hind Siliguri', 'Kalpurush', Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: linear-gradient(180deg, #162038 0%, var(--bg-primary) 100%);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.5rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand { display: flex; align-items: center; gap: 1rem; }
+    .logo-badge {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--accent-teal), var(--accent-green));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+    }
+
+    .brand-text h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #38bdf8, #a7f3d0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .brand-text p { font-size: 0.85rem; color: var(--text-muted); }
+
+    .system-status-pill {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      padding: 0.5rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent-green);
+      box-shadow: 0 0 10px var(--accent-green);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.9); }
+    }
+
+    main {
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    /* Taxonomy & Routing Banner */
+    .taxonomy-banner {
+      background: linear-gradient(90deg, rgba(6, 182, 212, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .taxonomy-info h3 { font-size: 1.1rem; color: #38bdf8; margin-bottom: 0.25rem; }
+    .taxonomy-info p { font-size: 0.85rem; color: #cbd5e1; }
+    .taxonomy-code {
+      background: #090d16;
+      border: 1px solid #273553;
+      padding: 0.5rem 0.85rem;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.8rem;
+      color: #a7f3d0;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.2rem;
+      transition: all 0.2s;
+    }
+    .stat-card:hover { transform: translateY(-2px); border-color: var(--accent-teal); }
+    .stat-label { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.25rem; }
+    .stat-val { font-size: 1.6rem; font-weight: 700; color: var(--text-main); }
+
+    /* Department / Source Navigator */
+    .map-section {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .section-title { font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; }
+
+    .dept-tree {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+    }
+    .dept-node {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .dept-node::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 4px; height: 100%;
+      background: var(--accent-teal);
+      opacity: 0.3;
+    }
+    .dept-node:hover, .dept-node.active {
+      border-color: var(--accent-teal);
+      background: #202c48;
+      transform: translateY(-2px);
+    }
+    .dept-node:hover::before, .dept-node.active::before { opacity: 1; }
+    .dept-icon { font-size: 1.6rem; margin-bottom: 0.35rem; }
+    .dept-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .dept-desc { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* Controls & Filter Bar */
+    .controls-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .search-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .search-box {
+      flex: 1;
+      min-width: 280px;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-input:focus { border-color: var(--accent-teal); box-shadow: 0 0 10px rgba(6, 182, 212, 0.2); }
+    .search-icon { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+
+    .filters-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .filter-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 600; }
+    .filter-pills { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .filter-pill {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .filter-pill:hover, .filter-pill.active {
+      background: var(--accent-teal);
+      color: #000;
+      font-weight: 600;
+      border-color: var(--accent-teal);
+    }
+
+    /* Resource Cards */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+      gap: 1.5rem;
+    }
+    .resource-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .resource-card:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .source-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.12);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .source-yt { background: rgba(239, 68, 68, 0.12); color: #f87171; border-color: rgba(239, 68, 68, 0.3); }
+    .source-web { background: rgba(16, 185, 129, 0.12); color: #34d399; border-color: rgba(16, 185, 129, 0.3); }
+    .source-academic { background: rgba(139, 92, 246, 0.12); color: #c084fc; border-color: rgba(139, 92, 246, 0.3); }
+
+    .genre-badge {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      background: #273553;
+      color: #cbd5e1;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+      color: #fff;
+    }
+    .card-title-en { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.85rem; }
+
+    .hierarchy-path-box {
+      background: #090e1a;
+      border: 1px solid #1f2c47;
+      border-radius: 8px;
+      padding: 0.6rem 0.8rem;
+      margin-bottom: 1rem;
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+    .hierarchy-title {
+      font-size: 0.68rem;
+      color: var(--accent-teal);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+    .hierarchy-val {
+      color: #a7f3d0;
+      word-break: break-all;
+    }
+
+    .meta-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      color: #cbd5e1;
+    }
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--bg-card);
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+    }
+
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+    .tag-chip {
+      font-size: 0.72rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      color: var(--text-muted);
+    }
+
+    .card-actions {
+      border-top: 1px solid var(--border-color);
+      padding-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .link-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+      border: none;
+    }
+    .btn-primary { background: var(--accent-teal); color: #000; }
+    .btn-primary:hover { background: #22d3ee; }
+    .btn-secondary { background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border-color); }
+    .btn-secondary:hover { background: #22304d; border-color: #38bdf8; }
+    .btn-drive { background: #1e3a8a; color: #93c5fd; border: 1px solid #3b82f6; }
+    .btn-drive:hover { background: #2563eb; color: #fff; }
+
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(4px);
+    }
+    .modal-content {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      width: 90%;
+      max-width: 700px;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      background: transparent; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      background: var(--bg-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="brand">
+        <div class="logo-badge">🇧🇩</div>
+        <div class="brand-text">
+          <h1>বাংলা রিসোর্স ফ্যাক্টরি (Bangla Resource Factory)</h1>
+          <p>চ্যানেল, ওয়েবসাইট, টাইপ ও বিষয়ভিত্তিক স্বয়ংক্রিয় শ্রেণীবিন্যাসিত জ্ঞানভাণ্ডার</p>
+        </div>
+      </div>
+
+      <div class="system-status-pill" id="systemStatusWidget">
+        <div class="status-dot"></div>
+        <span>স্মার্ট গভর্নর: <strong>সিস্টেম সুরক্ষিত ও স্বয়ংক্রিয়</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Dynamic Taxonomy Router Info Banner -->
+    <div class="taxonomy-banner">
+      <div class="taxonomy-info">
+        <h3>📂 অটোমেটিক ট্যাক্সোনমি ও ফোল্ডার রাউটার সক্রিয়</h3>
+        <p>যেকোনো ইউটিউব চ্যানেল, টেক ওয়েবসাইট বা রিসার্চ পেপারের জন্য স্বয়ংক্রিয়ভাবে সুবিন্যস্ত ফোল্ডার তৈরি হয়।</p>
+      </div>
+      <div class="taxonomy-code">
+        departments/&lt;dept&gt;/&lt;source_type&gt;/&lt;channel_or_domain&gt;/&lt;genre&gt;/&lt;slug&gt;/
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">মোট রিসোর্স আইটেম</div>
+        <div class="stat-val" id="statTotal">৯ টি</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">৩ব্লু১ব্রাউন মাস্টার ট্র্যাকার</div>
+        <div class="stat-val" style="color: #38bdf8;">২০ টপিক (১৫৬ লেসন)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">ইউটিউব চ্যানেল ডাবিং</div>
+        <div class="stat-val">১৭:৪৪ মিনিট (১টি)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">ওয়েবসাইট ও রিসার্চ পেপার</div>
+        <div class="stat-val">২ টি পেপার</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">লার্নিং পাথ ও হ্যান্ডবুক</div>
+        <div class="stat-val">২ টি কারিকুলাম</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">R&D অটোমেশন ইঞ্জিন</div>
+        <div class="stat-val">১ টি টুল</div>
+      </div>
+    </div>
+
+    <!-- Department / Category Navigator -->
+    <section class="map-section">
+      <div class="section-header">
+        <div class="section-title">
+          <span>🗺️ বিভাগীয় ও উৎসভিত্তিক দ্রুত নেভিগেশন ম্যাপ</span>
+        </div>
+        <span style="font-size: 0.85rem; color: var(--text-muted);">যেকোনো ক্যাটাগরিতে ক্লিক করে এক নজরে ফিল্টার করুন</span>
+      </div>
+
+      <div class="dept-tree">
+        <div class="dept-node active" onclick="filterDepartment('all')">
+          <div class="dept-icon">🌐</div>
+          <div class="dept-name">সকল উৎস (All Sources)</div>
+          <div class="dept-desc">সকল চ্যানেল, ওয়েবসাইট ও পেপার</div>
+        </div>
+
+        <div class="dept-node" onclick="filterDepartment('media_production')">
+          <div class="dept-icon">📺</div>
+          <div class="dept-name">ইউটিউব ও ভিডিও মিডিয়া</div>
+          <div class="dept-desc">চ্যানেলভিত্তিক ন্যাচারাল ডাবিং ও হালাল ট্র্যাক</div>
+        </div>
+
+        <div class="dept-node" onclick="filterDepartment('research_academic')">
+          <div class="dept-icon">🎓</div>
+          <div class="dept-name">ওয়েবসাইট ও গবেষণা পত্র</div>
+          <div class="dept-desc">arXiv, Anthropic ও টেক ওয়েবসাইট ডকস</div>
+        </div>
+
+        <div class="dept-node" onclick="filterDepartment('learning_paths')">
+          <div class="dept-icon">🧭</div>
+          <div class="dept-name">লার্নিং পাথ ও কারিকুলাম</div>
+          <div class="dept-desc">ধাপভিত্তিক ইঞ্জিনিয়ারিং রোডম্যাপ</div>
+        </div>
+
+        <div class="dept-node" onclick="filterDepartment('books_docs')">
+          <div class="dept-icon">📚</div>
+          <div class="dept-name">বই ও টেকনিক্যাল হ্যান্ডবুক</div>
+          <div class="dept-desc">অনুবাদিত বই ও রেফারেন্স গাইড</div>
+        </div>
+
+        <div class="dept-node" onclick="filterDepartment('rnd_lab')">
+          <div class="dept-icon">🧪</div>
+          <div class="dept-name">R&D ল্যাবরেটরি</div>
+          <div class="dept-desc">ভয়েস সিন্থেসিস ও স্টেম সেপারেটর</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls -->
+    <div class="controls-bar">
+      <div class="search-row">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="চ্যানেলের নাম (যেমন: JavaScript Mastery), সাইট (Anthropic), বা বিষয় খুঁজুন..." oninput="handleSearch()">
+        </div>
+      </div>
+
+      <!-- Source Type Pills -->
+      <div class="filters-group">
+        <span class="filter-label">উৎস ধরন:</span>
+        <div class="filter-pills">
+          <div class="filter-pill active" onclick="filterSourceType('all')">সকল উৎস</div>
+          <div class="filter-pill" onclick="filterSourceType('youtube_channel')">📺 ইউটিউব চ্যানেল</div>
+          <div class="filter-pill" onclick="filterSourceType('website')">🌐 ওয়েবসাইট / ব্লগ</div>
+          <div class="filter-pill" onclick="filterSourceType('academic_paper')">📑 রিসার্চ পেপার</div>
+          <div class="filter-pill" onclick="filterSourceType('book_doc')">📖 বই ও হ্যান্ডবুক</div>
+        </div>
+      </div>
+
+      <!-- Genre Pills -->
+      <div class="filters-group">
+        <span class="filter-label">টপিক / জেনার:</span>
+        <div class="filter-pills">
+          <div class="filter-pill active" onclick="filterGenre('all')">সকল বিষয়</div>
+          <div class="filter-pill" onclick="filterGenre('AI Agents & Security')">🛡️ এআই এজেন্টস ও সিকিউরিটি</div>
+          <div class="filter-pill" onclick="filterGenre('Agentic Architecture')">⚙️ এজেন্টিক আর্কিটেকচার</div>
+          <div class="filter-pill" onclick="filterGenre('Curriculum & Engineering Roadmaps')">🧭 কারিকুলাম ও রোডম্যাপ</div>
+          <div class="filter-pill" onclick="filterGenre('STEM & Mathematics')">📐 স্টেম ও গণিত (3Blue1Brown)</div>
+          <div class="filter-pill" onclick="filterGenre('Voice AI & Audio Signal Processing')">🎙️ ভয়েস এআই ও স্টেম প্রসেসিং</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="resources-grid" id="resourcesGrid">
+      <!-- Injected by JavaScript -->
+    </div>
+  </main>
+
+  <!-- Modal for Cloud Links -->
+  <div class="modal-overlay" id="linkModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h2 id="modalTitle" style="margin-bottom: 0.5rem; font-size: 1.3rem;">ক্লাউড মিডিয়া লিংক কনফিগারেশন</h2>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+        ভারী ফাইলগুলো গিটহাবের বদলে গুগল ড্রাইভে বা ইউটিউবে হোস্ট করে সরাসরি লিংক যোগ করুন:
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div>
+          <label style="display: block; font-size: 0.85rem; margin-bottom: 0.35rem; color: #cbd5e1;">গুগল ড্রাইভ লিংক:</label>
+          <input type="url" id="modalDriveUrl" class="search-input" style="padding-left: 1rem;" placeholder="https://drive.google.com/file/d/...">
+        </div>
+
+        <div>
+          <label style="display: block; font-size: 0.85rem; margin-bottom: 0.35rem; color: #cbd5e1;">ইউটিউব লিংক:</label>
+          <input type="url" id="modalYoutubeUrl" class="search-input" style="padding-left: 1rem;" placeholder="https://www.youtube.com/watch?v=...">
+        </div>
+
+        <button class="btn btn-primary" onclick="saveResourceLinks()" style="justify-content: center; padding: 0.75rem;">
+          💾 সংরক্ষণ ও আপডেট করুন
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>বাংলা রিসোর্স ফ্যাক্টরি &copy; ২০২৬ | চ্যানেল, ওয়েবসাইট ও টপিকভিত্তিক স্বয়ংক্রিয় কাঠামো দ্বারা পরিচালিত</p>
+  </footer>
+
+  <script>
+    let registryData = {
+      "resources": [
+        {
+          "id": "BRF-VID-001",
+          "title_bn": "৭০০ এআই এজেন্টের ওপেন-এআই টেস্ট এনভায়রনমেন্ট থেকে পালানোর রোমাঞ্চকর কাহিনী ও ডিফেন্সিভ সিকিউরিটি গাইড",
+          "title_en": "How 700 AI Agents Escaped OpenAI & Hacked Hugging Face",
+          "department": "media_production",
+          "source_type": "youtube_channel",
+          "source_name": "JavaScript Mastery",
+          "source_handle_or_domain": "@javascriptmastery",
+          "genre": "AI Agents & Security",
+          "category": "video_dubbing",
+          "format": "mp4",
+          "duration": "১৭:৪৪ মিনিট",
+          "language": "বাংলা (প্রমিত টেকনিক্যাল কথ্য রূপ)",
+          "audio_profile": "১০০% মিউজিকমুক্ত হালাল ট্র্যাক (ভোকাল ও ন্যাচারাল টোন সংরক্ষিত)",
+          "local_path": "departments/media_production/youtube_channels/javascript_mastery/ai_agents_security/700_ai_agents_escaped/output_rendered/700_AI_Agents_Escaped_Bangla_Dubbed.mp4",
+          "structured_folder": "departments/media_production/youtube_channels/javascript_mastery/ai_agents_security/700_ai_agents_escaped",
+          "file_size_mb": 61.78,
+          "storage_mode": "external_media",
+          "source_url": "https://www.youtube.com/watch?v=i0p-B-_kr5c",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "",
+          "tags": ["JavaScript Mastery", "YouTube", "AI Agents", "OpenAI", "Hugging Face", "Exploit Gym", "Docker Sandboxing"]
+        },
+        {
+          "id": "BRF-RES-001",
+          "title_bn": "ওপেন-এআই স্যান্ডবক্স ব্রেকআউট ও মাল্টি-এজেন্ট সিকিউরিটি মডেল বিশ্লেষণ",
+          "title_en": "Analysis of Multi-Agent Sandbox Escapes & Defensive Architecture",
+          "department": "research_academic",
+          "source_type": "academic_paper",
+          "source_name": "arXiv / Exploit Gym",
+          "source_handle_or_domain": "arxiv.org",
+          "genre": "AI Agents & Security",
+          "category": "research_paper",
+          "format": "markdown",
+          "duration": "১৫ মিনিট পাঠ",
+          "language": "বাংলা (একাডেমিক ও বিশ্লেষণধর্মী)",
+          "audio_profile": "N/A",
+          "local_path": "departments/research_academic/academic_institutions/arxiv/reinforcement_learning/exploit_gym_technical_benchmark/bangla_adapted/ai_agents_security_paper_bn.md",
+          "structured_folder": "departments/research_academic/academic_institutions/arxiv/reinforcement_learning/exploit_gym_technical_benchmark",
+          "file_size_mb": 0.05,
+          "storage_mode": "repo_tracked",
+          "source_url": "https://arxiv.org",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "",
+          "tags": ["arXiv", "Academic Paper", "Multi-Agent Coordination", "Information Leakage", "Defense in Depth"]
+        },
+        {
+          "id": "BRF-RES-002",
+          "title_bn": "মডেল কনটেক্সট প্রোটোকল (MCP) এর অভ্যন্তরীণ আর্কিটেকচার ও বাংলা প্রয়োগ গাইড",
+          "title_en": "Deep-Dive into Model Context Protocol (MCP) Architecture",
+          "department": "research_academic",
+          "source_type": "website",
+          "source_name": "Anthropic Research",
+          "source_handle_or_domain": "anthropic.com",
+          "genre": "Agentic Architecture",
+          "category": "website_multimedia",
+          "format": "multimedia_markdown",
+          "duration": "১২ মিনিট পাঠ + ৫৬ সেকেন্ড অডিও",
+          "language": "বাংলা (টেকনিক্যাল আর্কিটেকচার)",
+          "audio_profile": "Pure Halal (১০০% মিউজিকহীন ডাবেড অডিও ওভারভিউ)",
+          "local_path": "departments/research_academic/websites/anthropic/agentic_architecture/model_context_protocol_in_depth/bangla_adapted/mcp_architecture_bn.md",
+          "structured_folder": "departments/research_academic/websites/anthropic/agentic_architecture/model_context_protocol_in_depth",
+          "dubbed_audio_path": "departments/research_academic/websites/anthropic/agentic_architecture/model_context_protocol_in_depth/dubbed_media/mcp_overview_bangla_dubbed.mp3",
+          "figures": [
+            "departments/research_academic/websites/anthropic/agentic_architecture/model_context_protocol_in_depth/figures_and_data/mcp_architecture_diagram_bn.svg",
+            "departments/research_academic/websites/anthropic/agentic_architecture/model_context_protocol_in_depth/figures_and_data/mcp_protocol_flow_bn.svg"
+          ],
+          "file_size_mb": 0.38,
+          "storage_mode": "repo_tracked",
+          "source_url": "https://www.anthropic.com/news/model-context-protocol",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "https://www.youtube.com/watch?v=kQmXRbh8S_8",
+          "tags": ["Anthropic", "Website", "MCP", "Context Protocol", "AI Tooling", "ডাবেড অডিও", "ভেক্টর ডায়াগ্রাম"]
+        },
+        {
+          "id": "BRF-LRN-001",
+          "title_bn": "নিরাপদ ও স্বায়ত্তশাসিত এআই এজেন্ট ইঞ্জিনিয়ারিং শেখার পূর্ণাঙ্গ রোডম্যাপ ২০২৬",
+          "title_en": "Autonomous AI Agent Engineering: 0 to Production RoadMap",
+          "department": "learning_paths",
+          "source_type": "curriculum_lab",
+          "source_name": "Bangla Resource Factory Academy",
+          "source_handle_or_domain": "banglaresourcefactory.local",
+          "genre": "Curriculum & Engineering Roadmaps",
+          "category": "learning_path",
+          "format": "interactive_roadmap",
+          "duration": "৮ সপ্তাহের পূর্ণাঙ্গ কোর্স",
+          "language": "বাংলা (নির্দেশনামূলক ও প্র্যাকটিক্যাল)",
+          "audio_profile": "N/A",
+          "local_path": "departments/learning_paths/ai_agents_engineering_roadmap_bn.md",
+          "structured_folder": "departments/learning_paths/engineering_curriculum/ai_agents_engineering_roadmap",
+          "file_size_mb": 0.04,
+          "storage_mode": "repo_tracked",
+          "source_url": "বাংলা রিসোর্স ফ্যাক্টরি কারিকুলাম",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "",
+          "tags": ["Curriculum", "Roadmap", "Python", "Docker", "Paperclip", "OpenCode", "Agentic Coding"]
+        },
+        {
+          "id": "BRF-LRN-002",
+          "title_bn": "১২ সপ্তাহের পূর্ণাঙ্গ প্রোডাকশন এলএলএম ও এআই এজেন্ট ইঞ্জিনিয়ারিং রোডম্যাপ (২০২৬)",
+          "title_en": "12-Week Production LLM & Autonomous Agent Engineering Roadmap",
+          "department": "learning_paths",
+          "source_type": "curriculum_lab",
+          "source_name": "Bangla Resource Factory Academy",
+          "source_handle_or_domain": "banglaresourcefactory.local",
+          "genre": "Curriculum & Engineering Roadmaps",
+          "category": "learning_path",
+          "format": "interactive_roadmap",
+          "duration": "১২ সপ্তাহের পূর্ণাঙ্গ কারিকুলাম",
+          "language": "বাংলা (নির্দেশনামূলক ও প্র্যাকটিক্যাল)",
+          "audio_profile": "N/A",
+          "local_path": "departments/learning_paths/llm_agent_engineering_12_weeks_roadmap_bn.md",
+          "structured_folder": "departments/learning_paths/engineering_curriculum/llm_agent_engineering_12_weeks_roadmap",
+          "file_size_mb": 0.03,
+          "storage_mode": "repo_tracked",
+          "source_url": "বাংলা রিসোর্স ফ্যাক্টরি কারিকুলাম",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "",
+          "tags": ["Curriculum", "Roadmap", "LLM", "RAG", "MCP", "ReAct", "LangGraph", "Docker Sandboxing", "Paperclip", "Agent Engineering"]
+        },
+        {
+          "id": "BRF-LRN-003",
+          "title_bn": "প্রোডাকশন ডেভঅপস ও সিকিউর ডকার স্যান্ডবক্সিং রোডম্যাপ (১০ সপ্তাহ)",
+          "title_en": "DevOps Engineering & Hardened Docker Sandboxing for AI & Cloud Architecture",
+          "department": "learning_paths",
+          "source_type": "curriculum_lab",
+          "source_name": "Bangla Resource Factory Academy",
+          "source_handle_or_domain": "banglaresourcefactory.local",
+          "genre": "DevOps, Cloud & Sandboxing",
+          "category": "learning_path",
+          "format": "interactive_roadmap",
+          "duration": "১০ সপ্তাহের কারিকুলাম",
+          "language": "বাংলা (নির্দেশনামূলক ও ব্যবহারিক)",
+          "audio_profile": "N/A",
+          "local_path": "departments/learning_paths/devops_docker_sandboxing_roadmap_bn.md",
+          "structured_folder": "departments/learning_paths/engineering_curriculum/devops_docker_sandboxing_roadmap",
+          "file_size_mb": 0.04,
+          "storage_mode": "repo_tracked",
+          "source_url": "বাংলা রিসোর্স ফ্যাক্টরি কারিকুলাম",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "",
+          "tags": ["DevOps", "Docker", "Sandboxing", "gVisor", "Firecracker", "CI/CD", "GitHub Actions", "Trivy", "Seccomp", "Linux Kernel", "Cgroups"]
+        },
+        {
+          "id": "BRF-LRN-004",
+          "title_bn": "আধুনিক ফুল-স্ট্যাক ওয়েব ডেভেলপমেন্ট ও রিয়েল-টাইম সিস্টেম আর্কিটেকচার রোডম্যাপ (১২ সপ্তাহ)",
+          "title_en": "Modern Full-Stack Web Development & Real-Time Distributed Systems Architecture",
+          "department": "learning_paths",
+          "source_type": "curriculum_lab",
+          "source_name": "Bangla Resource Factory Academy",
+          "source_handle_or_domain": "banglaresourcefactory.local",
+          "genre": "Web Development & Distributed Systems",
+          "category": "learning_path",
+          "format": "interactive_roadmap",
+          "duration": "১২ সপ্তাহের কারিকুলাম",
+          "language": "বাংলা (নির্দেশনামূলক ও ব্যবহারিক)",
+          "audio_profile": "N/A",
+          "local_path": "departments/learning_paths/modern_web_development_roadmap_bn.md",
+          "structured_folder": "departments/learning_paths/engineering_curriculum/modern_web_development_roadmap",
+          "file_size_mb": 0.05,
+          "storage_mode": "repo_tracked",
+          "source_url": "বাংলা রিসোর্স ফ্যাক্টরি কারিকুলাম",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "",
+          "tags": ["Full-Stack", "TypeScript", "Next.js", "React 19", "PostgreSQL", "Drizzle ORM", "Redis", "WebSockets", "BullMQ", "System Design", "Playwright"]
+        },
+        {
+          "id": "BRF-DOC-001",
+          "title_bn": "এজেন্টিক সফটওয়্যার ডেভেলপমেন্ট হ্যান্ডবুক (বাংলা অনুবাদ ও রেফারেন্স সংস্করণ)",
+          "title_en": "Agentic Software Development Handbook (Bengali Reference Edition)",
+          "department": "books_docs",
+          "source_type": "book_doc",
+          "source_name": "BRF Publishing & Technical Books",
+          "source_handle_or_domain": "books.banglaresourcefactory.local",
+          "genre": "Software Engineering & Architecture",
+          "category": "book_doc",
+          "format": "handbook",
+          "duration": "১২০ পৃষ্ঠা রেফারেন্স",
+          "language": "বাংলা (হ্যান্ডবুক)",
+          "audio_profile": "N/A",
+          "local_path": "departments/books_docs/agentic_development_handbook_bn.md",
+          "structured_folder": "departments/books_docs/publishers_and_authors/brf_press/software_engineering/agentic_handbook",
+          "file_size_mb": 0.08,
+          "storage_mode": "repo_tracked",
+          "source_url": "BRF প্রকাশনা",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "",
+          "tags": ["Handbook", "Best Practices", "System Architecture", "OpenCode Guides"]
+        },
+        {
+          "id": "BRF-RND-001",
+          "title_bn": "হিউম্যান-লাইক ব্রাউজার ভয়েস সিন্থেসিস ও স্টেম সেপারেশন পাইপলাইন",
+          "title_en": "Human-Like Browser Voice Synthesis & Vocal/SFX Stem Separator",
+          "department": "rnd_lab",
+          "source_type": "rnd_laboratories",
+          "source_name": "BRF R&D Audio & Automation Lab",
+          "source_handle_or_domain": "rnd.banglaresourcefactory.local",
+          "genre": "Voice AI & Audio Signal Processing",
+          "category": "rnd_tool",
+          "format": "python_automation",
+          "duration": "অটোমেশন ইঞ্জিন",
+          "language": "বাংলা / পাইথন",
+          "audio_profile": "মাল্টি-ভয়েস ও স্টেম ফিল্টারিং",
+          "local_path": "departments/rnd_lab/browser_automation/browser_voice_adapter.py",
+          "structured_folder": "departments/rnd_lab/voice_synthesis_and_stems",
+          "file_size_mb": 0.02,
+          "storage_mode": "repo_tracked",
+          "source_url": "BRF R&D ল্যাব",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "",
+          "tags": ["R&D", "Audio Stems", "Playwright Automation", "Edge TTS", "Demucs"]
+        },
+        {
+          "id": "BRF-3B1B-001",
+          "title_bn": "রৈখিক বীজগণিতের মূল নির্যাস: ভেক্টর আসলে কী? (কঠিন বিষয় সমূহের নেটিভ বাংলা নোট ও ভেক্টর আর্ট)",
+          "title_en": "Essence of Linear Algebra - Lesson 01: Vectors, What Even Are They?",
+          "department": "learning_paths",
+          "source_type": "website",
+          "source_name": "3Blue1Brown",
+          "source_handle_or_domain": "3blue1brown.com",
+          "genre": "STEM & Mathematics",
+          "category": "learning_path",
+          "format": "interactive_course",
+          "duration": "১৫ মিনিট ভিজ্যুয়াল স্টাডি",
+          "language": "বাংলা (গাণিতিক ইনটুইশন ও প্রমিত পরিভাষা)",
+          "audio_profile": "১০০% মিউজিকমুক্ত, পিওর ভয়েস ও সাউন্ড ইফেক্ট",
+          "local_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_01_vectors/notes/concept_deep_dive_bn.md",
+          "structured_folder": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_01_vectors",
+          "dubbing_script_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_01_vectors/dubbing_pipeline/3b1b_lesson_01_bangla_master_script.json",
+          "dubbing_script_md": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_01_vectors/dubbing_pipeline/3b1b_lesson_01_bangla_dubbing_script.md",
+          "dubbed_audio_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_01_vectors/dubbing_pipeline/output/3b1b_lesson_01_bangla_dubbed_master.mp3",
+          "file_size_mb": 13.55,
+          "storage_mode": "repo_tracked",
+          "source_url": "https://www.3blue1brown.com/topics/linear-algebra",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "",
+          "html_interactive_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_01_vectors/lesson_interactive.html",
+          "tags": ["3Blue1Brown", "Linear Algebra", "Grant Sanderson", "Vectors", "VectorCraft", "Math Visuals", "Music-Free Dub", "PradeepNeural"]
+        },
+        {
+          "id": "BRF-3B1B-002",
+          "title_bn": "রৈখিক সমাবেশ, স্প্যান ও ভিত্তি ভেক্টর (Linear Combinations, Span & Basis Vectors)",
+          "title_en": "Essence of Linear Algebra - Lesson 02: Span and Basis Vectors",
+          "department": "learning_paths",
+          "source_type": "website",
+          "source_name": "3Blue1Brown",
+          "source_handle_or_domain": "3blue1brown.com",
+          "genre": "STEM & Mathematics",
+          "category": "learning_path",
+          "format": "interactive_course",
+          "duration": "১৫ মিনিট ভিজ্যুয়াল স্টাডি + পূর্ণ ডাবিং",
+          "language": "বাংলা (গাণিতিক ইনটুইশন ও প্রমিত পরিভাষা)",
+          "audio_profile": "১০০% মিউজিকমুক্ত, পিওর ভয়েস ও সাউন্ড ইফেক্ট",
+          "local_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_02_span/notes/concept_deep_dive_bn.md",
+          "structured_folder": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_02_span",
+          "dubbing_script_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_02_span/dubbing_pipeline/3b1b_lesson_02_bangla_master_script.json",
+          "dubbed_audio_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_02_span/dubbing_pipeline/output/3b1b_lesson_02_bangla_dubbed_master.mp3",
+          "file_size_mb": 14.2,
+          "storage_mode": "repo_tracked",
+          "source_url": "https://www.3blue1brown.com/topics/linear-algebra",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "",
+          "html_interactive_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_02_span/lesson_interactive.html",
+          "tags": ["3Blue1Brown", "Linear Algebra", "Span", "Basis Vectors", "Linear Combinations", "৪০টি অরিজিনাল অ্যাসেট", "Music-Free Dub"]
+        },
+        {
+          "id": "BRF-3B1B-003",
+          "title_bn": "রৈখিক রূপান্তর ও ম্যাট্রিক্সের জ্যামিতিক অর্থ (Linear Transformations & Matrices)",
+          "title_en": "Essence of Linear Algebra - Lesson 03: Linear Transformations as Matrices",
+          "department": "learning_paths",
+          "source_type": "website",
+          "source_name": "3Blue1Brown",
+          "source_handle_or_domain": "3blue1brown.com",
+          "genre": "STEM & Mathematics",
+          "category": "learning_path",
+          "format": "interactive_course",
+          "duration": "১৫ মিনিট ভিজ্যুয়াল স্টাডি + পূর্ণ ডাবিং",
+          "language": "বাংলা (গাণিতিক ইনটুইশন ও প্রমিত পরিভাষা)",
+          "audio_profile": "১০০% মিউজিকমুক্ত, পিওর ভয়েস ও সাউন্ড ইফেক্ট",
+          "local_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_03_linear_transformations/notes/concept_deep_dive_bn.md",
+          "structured_folder": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_03_linear_transformations",
+          "dubbing_script_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_03_linear_transformations/dubbing_pipeline/3b1b_lesson_03_bangla_master_script.json",
+          "dubbed_audio_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_03_linear_transformations/dubbing_pipeline/output/3b1b_lesson_03_bangla_dubbed_master.mp3",
+          "file_size_mb": 15.8,
+          "storage_mode": "repo_tracked",
+          "source_url": "https://www.3blue1brown.com/topics/linear-algebra",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "",
+          "html_interactive_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_03_linear_transformations/lesson_interactive.html",
+          "tags": ["3Blue1Brown", "Linear Transformations", "Grid Transformation", "Basis Movement", "Music-Free Dub"]
+        },
+        {
+          "id": "BRF-3B1B-004",
+          "title_bn": "ম্যাট্রিক্স গুণন আসলে রূপান্তরের সংযোজন (Matrix Multiplication as Composition)",
+          "title_en": "Essence of Linear Algebra - Lesson 04: Matrix Multiplication as Composition",
+          "department": "learning_paths",
+          "source_type": "website",
+          "source_name": "3Blue1Brown",
+          "source_handle_or_domain": "3blue1brown.com",
+          "genre": "STEM & Mathematics",
+          "category": "learning_path",
+          "format": "interactive_course",
+          "duration": "১২ মিনিট ভিজ্যুয়াল স্টাডি + পূর্ণ ডাবিং",
+          "language": "বাংলা (গাণিতিক ইনটুইশন ও প্রমিত পরিভাষা)",
+          "audio_profile": "১০০% মিউজিকমুক্ত, পিওর ভয়েস ও সাউন্ড ইফেক্ট",
+          "local_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_04_matrix_multiplication/notes/concept_deep_dive_bn.md",
+          "structured_folder": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_04_matrix_multiplication",
+          "dubbing_script_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_04_matrix_multiplication/dubbing_pipeline/3b1b_lesson_04_bangla_master_script.json",
+          "dubbed_audio_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_04_matrix_multiplication/dubbing_pipeline/output/3b1b_lesson_04_bangla_dubbed_master.mp3",
+          "file_size_mb": 12.4,
+          "storage_mode": "repo_tracked",
+          "source_url": "https://www.3blue1brown.com/topics/linear-algebra",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "",
+          "html_interactive_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_04_matrix_multiplication/lesson_interactive.html",
+          "tags": ["3Blue1Brown", "Matrix Multiplication", "Composition", "Associativity", "Music-Free Dub"]
+        },
+        {
+          "id": "BRF-3B1B-002",
+          "title_bn": "রৈখিক বীজগণিত: লিনিয়ার কম্বিনেশন, স্প্যান এবং বেসিস ভেক্টর (পূর্ণাঙ্গ ১:১ অ্যাসেটস, ইন্টারেক্টিভ সিমুলেটর ও হালাল ডাবিং)",
+          "title_en": "Essence of Linear Algebra - Lesson 02: Linear combinations, span, and basis vectors",
+          "department": "learning_paths",
+          "source_type": "website",
+          "source_name": "3Blue1Brown",
+          "source_handle_or_domain": "3blue1brown.com",
+          "genre": "STEM & Mathematics",
+          "category": "learning_path",
+          "format": "interactive_course",
+          "duration": "১০ মিনিট ভিজ্যুয়াল স্টাডি ও ডাবিং",
+          "language": "বাংলা (গাণিতিক ইনটুইশন ও প্রমিত পরিভাষা)",
+          "audio_profile": "১০০% মিউজিকমুক্ত হালাল অডিও (EBU R128 Norm, PradeepNeural)",
+          "local_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_02_span/notes/concept_deep_dive_bn.md",
+          "structured_folder": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_02_span",
+          "dubbing_script_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_02_span/dubbing_pipeline/3b1b_lesson_02_bangla_master_script.json",
+          "dubbing_script_md": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_02_span/dubbing_pipeline/3b1b_lesson_02_bangla_dubbing_script.md",
+          "dubbed_audio_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_02_span/dubbing_pipeline/output/3b1b_lesson_02_bangla_dubbed_master.mp3",
+          "file_size_mb": 13.36,
+          "storage_mode": "repo_tracked",
+          "source_url": "https://www.3blue1brown.com/lessons/span",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "https://www.youtube.com/watch?v=k7RM-ot2NWY",
+          "html_interactive_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_02_span/lesson_interactive.html",
+          "tags": ["3Blue1Brown", "Linear Algebra", "Grant Sanderson", "Linear Combinations", "Span", "Basis Vectors", "Math Visuals", "Halal Dubbing"]
+        },
+        {
+          "id": "BRF-3B1B-003",
+          "title_bn": "রৈখিক বীজগণিত: লিনিয়ার রূপান্তর এবং ম্যাট্রিক্স (স্পেস ট্রান্সফরমেশন, বেসিস ভেক্টরের ট্র্যাকিং ও হালাল ডাবিং)",
+          "title_en": "Essence of Linear Algebra - Lesson 03: Linear transformations and matrices",
+          "department": "learning_paths",
+          "source_type": "website",
+          "source_name": "3Blue1Brown",
+          "source_handle_or_domain": "3blue1brown.com",
+          "genre": "STEM & Mathematics",
+          "category": "learning_path",
+          "format": "interactive_course",
+          "duration": "১১ মিনিট ভিজ্যুয়াল স্টাডি ও ডাবিং",
+          "language": "বাংলা (গাণিতিক ইনটুইশন ও প্রমিত পরিভাষা)",
+          "audio_profile": "১০০% মিউজিকমুক্ত হালাল অডিও (EBU R128 Norm, PradeepNeural)",
+          "local_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_03_linear_transformations/notes/concept_deep_dive_bn.md",
+          "structured_folder": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_03_linear_transformations",
+          "dubbing_script_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_03_linear_transformations/dubbing_pipeline/3b1b_lesson_03_bangla_master_script.json",
+          "dubbed_audio_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_03_linear_transformations/dubbing_pipeline/output/3b1b_lesson_03_bangla_dubbed_master.mp3",
+          "file_size_mb": 14.82,
+          "storage_mode": "repo_tracked",
+          "source_url": "https://www.3blue1brown.com/lessons/linear-transformations",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "https://www.youtube.com/watch?v=kYB8IZa5AuE",
+          "html_interactive_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_03_linear_transformations/lesson_interactive.html",
+          "tags": ["3Blue1Brown", "Linear Algebra", "Grant Sanderson", "Linear Transformations", "Matrices", "Basis Vectors", "Halal Dubbing"]
+        },
+        {
+          "id": "BRF-3B1B-004",
+          "title_bn": "রৈখিক বীজগণিত: রূপান্তরের সংযোজন হিসেবে ম্যাট্রিক্স গুণন (কম্পোজিশন, নন-কমিউটেটিভিটি ও হালাল ডাবিং)",
+          "title_en": "Essence of Linear Algebra - Lesson 04: Matrix multiplication as composition",
+          "department": "learning_paths",
+          "source_type": "website",
+          "source_name": "3Blue1Brown",
+          "source_handle_or_domain": "3blue1brown.com",
+          "genre": "STEM & Mathematics",
+          "category": "learning_path",
+          "format": "interactive_course",
+          "duration": "১০ মিনিট ভিজ্যুয়াল স্টাডি ও ডাবিং",
+          "language": "বাংলা (গাণিতিক ইনটুইশন ও প্রমিত পরিভাষা)",
+          "audio_profile": "১০০% মিউজিকমুক্ত হালাল অডিও (EBU R128 Norm, PradeepNeural)",
+          "local_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_04_matrix_multiplication/notes/concept_deep_dive_bn.md",
+          "structured_folder": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_04_matrix_multiplication",
+          "dubbing_script_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_04_matrix_multiplication/dubbing_pipeline/3b1b_lesson_04_bangla_master_script.json",
+          "dubbing_script_md": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_04_matrix_multiplication/dubbing_pipeline/3b1b_lesson_04_bangla_dubbing_script.md",
+          "dubbed_audio_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_04_matrix_multiplication/dubbing_pipeline/output/3b1b_lesson_04_bangla_dubbed_master.mp3",
+          "file_size_mb": 13.55,
+          "storage_mode": "repo_tracked",
+          "source_url": "https://www.3blue1brown.com/lessons/matrix-multiplication",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "https://www.youtube.com/watch?v=XkY2DOUCWMU",
+          "html_interactive_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_04_matrix_multiplication/lesson_interactive.html",
+          "tags": ["3Blue1Brown", "Linear Algebra", "Grant Sanderson", "Matrix Multiplication", "Composition", "Noncommutativity", "Associativity", "Halal Dubbing"]
+        },
+        {
+          "id": "BRF-3B1B-005",
+          "title_bn": "ত্রিমাত্রিক রৈখিক রূপান্তর ও ৩×৩ ম্যাট্রিক্স (Three-dimensional linear transformations)",
+          "title_en": "Essence of Linear Algebra - Lesson 05: Three-dimensional linear transformations",
+          "department": "learning_paths",
+          "source_type": "website",
+          "source_name": "3Blue1Brown",
+          "source_handle_or_domain": "3blue1brown.com",
+          "genre": "STEM & Mathematics",
+          "category": "learning_path",
+          "format": "interactive_course",
+          "duration": "৪.৬ মিনিট ভিজ্যুয়াল স্টাডি ও ডাবিং",
+          "language": "বাংলা (গাণিতিক ইনটুইশন ও প্রমিত পরিভাষা)",
+          "audio_profile": "১০০% মিউজিকমুক্ত হালাল অডিও (EBU R128 Norm, PradeepNeural)",
+          "local_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_05_3d_transformations/notes/concept_deep_dive_bn.md",
+          "structured_folder": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_05_3d_transformations",
+          "dubbing_script_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_05_3d_transformations/dubbing_pipeline/3b1b_lesson_05_bangla_master_script.json",
+          "dubbing_script_md": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_05_3d_transformations/dubbing_pipeline/3b1b_lesson_05_bangla_dubbing_script.md",
+          "dubbed_audio_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_05_3d_transformations/dubbing_pipeline/output/3b1b_lesson_05_bangla_dubbed_master.mp3",
+          "file_size_mb": 6.35,
+          "storage_mode": "repo_tracked",
+          "source_url": "https://www.3blue1brown.com/lessons/3d-transformations",
+          "cloud_drive_url": "",
+          "cloud_youtube_url": "https://www.youtube.com/watch?v=rHLEWRxRGiM",
+          "html_interactive_path": "departments/learning_paths/stem_mathematics/3blue1brown_courses/essence_of_linear_algebra/lesson_05_3d_transformations/lesson_interactive.html",
+          "tags": ["3Blue1Brown", "Linear Algebra", "Grant Sanderson", "3D Transformations", "3x3 Matrix", "Basis Vectors", "Computer Graphics", "Halal Dubbing"]
+        }
+      ]
+    };
+
+    let currentDept = 'all';
+    let currentSourceType = 'all';
+    let currentGenre = 'all';
+    let searchQuery = '';
+    let selectedResourceId = null;
+
+    // Load saved links
+    const savedLinks = localStorage.getItem('brf_custom_links');
+    if (savedLinks) {
+      try {
+        const linkMap = JSON.parse(savedLinks);
+        registryData.resources.forEach(r => {
+          if (linkMap[r.id]) {
+            r.cloud_drive_url = linkMap[r.id].drive || r.cloud_drive_url;
+            r.cloud_youtube_url = linkMap[r.id].youtube || r.cloud_youtube_url;
+          }
+        });
+      } catch (e){}
+    }
+
+    function renderCards() {
+      const grid = document.getElementById('resourcesGrid');
+      grid.innerHTML = '';
+
+      const filtered = registryData.resources.filter(item => {
+        const matchDept = (currentDept === 'all' || item.department === currentDept);
+        const matchSource = (currentSourceType === 'all' || item.source_type === currentSourceType);
+        const matchGenre = (currentGenre === 'all' || item.genre === currentGenre);
+        const matchSearch = (!searchQuery || 
+          item.title_bn.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.title_en.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.source_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.source_handle_or_domain.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.tags.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()))
+        );
+        return matchDept && matchSource && matchGenre && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+            <h3>কোনো রিসোর্স পাওয়া যায়নি</h3>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem;">ভিন্ন কোনো ফিল্টার বা সার্চ টার্ম নির্বাচন করুন।</p>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'resource-card';
+
+        // Source badge
+        let srcClass = 'source-badge';
+        let srcIcon = '🌐';
+        if (item.source_type === 'youtube_channel') { srcClass += ' source-yt'; srcIcon = '📺'; }
+        else if (item.source_type === 'website') { srcClass += ' source-web'; srcIcon = '🌐'; }
+        else if (item.source_type === 'academic_paper') { srcClass += ' source-academic'; srcIcon = '📑'; }
+
+        // External links
+        let externalActions = '';
+        if (item.cloud_drive_url) {
+          externalActions += `<a href="${item.cloud_drive_url}" target="_blank" class="btn btn-drive">📁 ড্রাইভ ফাইল</a>`;
+        }
+        if (item.cloud_youtube_url || item.source_url) {
+          const ytUrl = item.cloud_youtube_url || item.source_url;
+          externalActions += `<a href="${ytUrl}" target="_blank" class="btn btn-secondary">🔗 আসল উৎস</a>`;
+        }
+
+        card.innerHTML = `
+          <div>
+            <div class="card-top">
+              <span class="${srcClass}">${srcIcon} ${item.source_name} (${item.source_handle_or_domain})</span>
+              <span class="genre-badge">${item.genre}</span>
+            </div>
+
+            <h3 class="card-title">${item.title_bn}</h3>
+            <div class="card-title-en">${item.title_en}</div>
+
+            <!-- Structured Folder Hierarchy Box -->
+            <div class="hierarchy-path-box">
+              <div class="hierarchy-title">📂 নির্ধারিত স্বয়ংক্রিয় ফোল্ডার কাঠামো:</div>
+              <div class="hierarchy-val">${item.structured_folder}</div>
+            </div>
+
+            <div class="meta-list">
+              <div class="meta-item">⏱️ ${item.duration}</div>
+              <div class="meta-item">🗣️ ${item.language}</div>
+              <div class="meta-item">💾 ${item.file_size_mb} MB</div>
+            </div>
+
+            ${item.audio_profile !== 'N/A' ? `
+              <div style="background: rgba(16, 185, 129, 0.08); border-left: 3px solid #10b981; padding: 0.4rem 0.6rem; border-radius: 4px; font-size: 0.76rem; color: #a7f3d0; margin-bottom: 0.85rem;">
+                <strong>সাউন্ড প্রোফাইল:</strong> ${item.audio_profile}
+              </div>
+            ` : ''}
+
+            <div class="tags-container">
+              ${item.tags.map(t => `<span class="tag-chip">#${t}</span>`).join('')}
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <div class="link-group">
+              ${item.html_interactive_path ? `
+                <a href="../${item.html_interactive_path}" target="_blank" class="btn btn-primary" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;">
+                  🌐 লাইভ পাঠ ও ভেক্টর ওপেন
+                </a>
+              ` : ''}
+              ${externalActions}
+              <button class="btn btn-secondary" onclick="copyText('${item.local_path}')">📋 লোকাল পাথ কপি</button>
+              <button class="btn btn-secondary" onclick="openLinkModal('${item.id}')">🔗 ক্লাউড লিংক</button>
+            </div>
+          </div>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
+    function filterDepartment(dept) {
+      currentDept = dept;
+      document.querySelectorAll('.dept-node').forEach(node => node.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+      renderCards();
+    }
+
+    function filterSourceType(type) {
+      currentSourceType = type;
+      document.querySelectorAll('.filters-group:nth-child(2) .filter-pill').forEach(pill => pill.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+      renderCards();
+    }
+
+    function filterGenre(genre) {
+      currentGenre = genre;
+      document.querySelectorAll('.filters-group:nth-child(3) .filter-pill').forEach(pill => pill.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+      renderCards();
+    }
+
+    function handleSearch() {
+      searchQuery = document.getElementById('searchInput').value.trim();
+      renderCards();
+    }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text);
+      alert('লোকাল ফাইল পাথ ক্লিপবোর্ডে কপি হয়েছে:\n' + text);
+    }
+
+    function openLinkModal(resourceId) {
+      selectedResourceId = resourceId;
+      const res = registryData.resources.find(r => r.id === resourceId);
+      if (!res) return;
+
+      document.getElementById('modalTitle').innerText = res.title_bn;
+      document.getElementById('modalDriveUrl').value = res.cloud_drive_url || '';
+      document.getElementById('modalYoutubeUrl').value = res.cloud_youtube_url || '';
+      document.getElementById('linkModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('linkModal').style.display = 'none';
+      selectedResourceId = null;
+    }
+
+    function saveResourceLinks() {
+      if (!selectedResourceId) return;
+      const res = registryData.resources.find(r => r.id === selectedResourceId);
+      if (res) {
+        res.cloud_drive_url = document.getElementById('modalDriveUrl').value.trim();
+        res.cloud_youtube_url = document.getElementById('modalYoutubeUrl').value.trim();
+
+        let store = {};
+        const existing = localStorage.getItem('brf_custom_links');
+        if (existing) {
+          try { store = JSON.parse(existing); } catch(e){}
+        }
+        store[selectedResourceId] = {
+          drive: res.cloud_drive_url,
+          youtube: res.cloud_youtube_url
+        };
+        localStorage.setItem('brf_custom_links', JSON.stringify(store));
+
+        alert('লিংক সফলভাবে সংরক্ষিত হয়েছে!');
+        closeModal();
+        renderCards();
+      }
+    }
+
+    renderCards();
+  </script>
+</body>
+</html>

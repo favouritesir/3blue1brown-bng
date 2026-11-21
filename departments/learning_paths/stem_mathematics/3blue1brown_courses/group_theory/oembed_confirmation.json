@@ -1,0 +1,26 @@
+{
+  "verification_method": "YouTube oEmbed endpoint (https://www.youtube.com/oembed?url=...&format=json)",
+  "verified_on": "2026-11-21",
+  "lessons": {
+    "lesson_01": {
+      "video_id": "mH0oCDa74tE",
+      "oembed_url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DmH0oCDa74tE&format=json",
+      "title": "Group theory, abstraction, and the 196,883-dimensional monster",
+      "author_name": "3Blue1Brown",
+      "author_url": "https://www.youtube.com/@3blue1brown",
+      "provider_name": "YouTube",
+      "official_page": "https://www.3blue1brown.com/lessons/groups-and-monsters",
+      "confirms_3b1b_source": true
+    },
+    "lesson_02": {
+      "video_id": "mvmuCPvRoWQ",
+      "oembed_url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DmvmuCPvRoWQ&format=json",
+      "title": "Euler's formula with introductory group theory",
+      "author_name": "3Blue1Brown",
+      "author_url": "https://www.youtube.com/@3blue1brown",
+      "provider_name": "YouTube",
+      "official_page": "https://www.3blue1brown.com/lessons/eulers-formula-via-group-theory",
+      "confirms_3b1b_source": true
+    }
+  }
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অলিম্পিয়াড-স্তরের গণনা: জেনারেটিং ফাংশন | Olympiad level counting (Generating functions)</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/puzzles/lesson_07/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="ধাঁধা"
+  course-url="index.html"
+  home-url="../../index.html"
+  chapter-num="০৭"
+  chapter-total="১০"
+  prev-url="lesson_06.html"
+  prev-title="পূর্ববর্তী: বাক্সের বাইরে ভাবার পাঁচটি ধাঁধা"
+  next-url="lesson_08.html"
+  next-title="পরবর্তী: অসম্ভব দাবার বোর্ড ধাঁধা"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="ধাঁধা"
+  course-url="index.html"
+  chapter-label="অধ্যায় ০৭ · ধাঁধা"
+  title="অলিম্পিয়াড-স্তরের গণনা: জেনারেটিং ফাংশন | Olympiad level counting (Generating functions)"
+  desc="উপসেট-নির্বাচনের কঠিন গণনাকে সহজ ব্লকবইয়ে রূপ দেয় জেনারেটিং ফাংশন।"
+  video-src="../../media_vault/puzzles/lesson_07/experiments/3b1b_puzzles_07_full_dubbed.mp4"
+  yt-id="bOXCLR3Wric"
+  date="২৩ মে, ২০২২"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">ধাঁধা ও উপসেট</b1b-bookmark>
+      <b1b-bookmark time="50" time-bn="০০:৫০">জেনারেটিং ফাংশন</b1b-bookmark>
+      <b1b-bookmark time="106" time-bn="০১:৪৬">সহগ বের করা</b1b-bookmark>
+      <b1b-bookmark time="159" time-bn="০২:৩৯">অলিম্পিয়াডের কৌশল</b1b-bookmark>
+      <b1b-bookmark time="194" time-bn="০৩:১৪">শিক্ষণীয় বিষয়</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-puzzle">ধাঁধা ও উপসেট</a>
+      <a href="#sec-gf">জেনারেটিং ফাংশন</a>
+      <a href="#sec-coeff">সহগ বের করা</a>
+      <a href="#sec-olympiad">অলিম্পিয়াডের কৌশল</a>
+      <a href="#sec-takeaway">শিক্ষণীয় বিষয়</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <b1b-section id="sec-puzzle" title="ধাঁধা ও উপসেট">
+        <p>ধরা যাক {১, ২, ৩, …, n} সেট। কতগুলো উপসেট আছে যাদের উপাদানগুলোর যোগফল একটি নির্দিষ্ট মানের সমান বা কোনো ভাগে বিভাজ্য? সরাসরি গণনা দ্রুতই অসম্ভব হয়ে পড়ে।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_07/f01_subsets.svg" alt="উপসেট" caption="একটি সেট থেকে বিভিন্ন উপসেট বাছা"></b1b-figure>
+        <p>প্রতিটি উপাদানের দুটি অবস্থা — নেওয়া বা না-নেওয়া। m টি উপাদানের জন্য ২^m টি সম্ভাবনা; কিন্তু আমাদের কেবল কয়েকটির যোগফল গণনা করতে হবে।</p>
+        <b1b-callout type="blue" icon="🔢" title="সমস্যা">
+          <p>যোগফল-ভিত্তিক শর্ত সরাসরি যাচাই করতে হলে অসংখ্য উপসেট দেখতে হয়। আমাদের চাই একবারেই সব উত্তর বের করার উপায়।</p>
+        </b1b-callout>
+      </b1b-section>
+      <b1b-section id="sec-gf" title="জেনারেটিং ফাংশন">
+        <p>প্রতিটি উপাদান k-কে (1 + x^k) দিয়ে প্রতিনিধিত্ব করুন: ১ মানে “নেওয়া হয়নি”, x^k মানে “নেওয়া হয়েছে”। সব গুণফলের বহুপদীতে যে ঘাতের সহগ — সেটিই সেই যোগফলের উপসেট-সংখ্যা।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_07/f02_poly.svg" alt="বহুপদী" caption="গুণফলের ঘাত ও সহগ — প্রতিটি ঘাত এক যোগফল"></b1b-figure>
+        <b1b-formula math="\prod_{k=1}^{n}(1+x^{k})=\sum_{s\ge 0} a_s x^{s}"></b1b-formula>
+        <p>এখানে a_s হলো ঠিক s যোগফলবিশিষ্ট উপসেটের সংখ্যা। গুণের নিয়মই নিশ্চিত করে যে প্রতিটি উপসেট ঠিক একবার গণna হয়।</p>
+      </b1b-section>
+      <b1b-section id="sec-coeff" title="সহগ বের করা">
+        <p>এখন প্রশ্নটি দাঁডায় — এই বহুপদীর নির্দিষ্ট ঘাতের সহগ কীভাবে পাওয়া যায়? একগুচ্ছ জটিল গুণফল না করে কিছু কৌশল কাজে দেয়।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_07/f03_coeff.svg" alt="সহগ" caption="নির্দিষ্ট ঘাতের সহগ উৎপন্ন করা"></b1b-figure>
+        <b1b-quiz
+          question="❓ {1, 2, 3} সেটের উপসেট-যোগফলের জেনারেটিং ফাংশন কোনটি?"
+          correct="1"
+          correct-msg="চমৎকার! প্রতিটি উপাদান k অবদান রাখে (1 + x^k)। তাই {1,2,3}-এর জন্য (1+x)(1+x²)(1+x³) — প্রতিটি ঘাতের সহগ সেই যোগফলের উপসেট-সংখ্যা।"
+          wrong-msg="আবার ভেবে দেখুন। ইঙ্গিত: প্রতিটি উপাদানের জন্য (1 + x^k) লিখুন।"
+          reveal-msg="সঠিক উত্তর: (1+x)(1+x²)(1+x³)">
+          <div slot="option">(1+x)(1+2x)(1+3x)</div>
+          <div slot="option">(1+x)(1+x²)(1+x³)</div>
+          <div slot="option">1+x+x²+x³</div>
+          <div slot="option">(1+x+x²)³</div>
+        </b1b-quiz>
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin: 24px 0 12px; color: var(--theme);">মূলের ফিল্টার</h3>
+        <p>x = 1, −1 বা একক মূল (একক মূল) বসিয়ে কিছু বিশেষ যোগফলের যোগ বা বিয়োগ বের করা যায়; এটি “রুট-অফ-ইউনিটি ফিল্টার” নামে পরিচিত।</p>
+        <b1b-callout type="gold" icon="🎯" title="উদাহরণ">
+          <p>সব সহগের যোগফল পেতে x = 1 বসান → মোট উপসেট ২^n। জোড়-বিজোড় আলাদা করতে x = −1 বসান।</p>
+        </b1b-callout>
+      </b1b-section>
+      <b1b-section id="sec-olympiad" title="অলিম্পিয়াডের কৌশল">
+        <p>আসল আইএমও-প্রশিক্ষণ সমস্যায় সংখ্যা এত বড় হয় যে হিসাবের বদলে গঠন দেখতে হয়। জেনারেটিং ফাংশন সেই গঠনকে একটিমাত্র বহুপদীতে ধরে আনে।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_07/f04_big.svg" alt="বড় গণনা" caption="বড় সেটের জন্য গঠনই হলো পথ"></b1b-figure>
+        <p>একবার সঠিক বহুপদী লিখে ফেললে বাকিটা কেবল বীজগণিত — এটি মানুষের জন্য সহজ, কম্পিউটারের জন্যও দক্ষ।</p>
+      </b1b-section>
+      <b1b-section id="sec-takeaway" title="শিক্ষণীয় বিষয়">
+        <p>গণনার ধাঁধায় প্রশ্ন “কত?”-কে বদলে “কোন ফাংশন?” করা প্রায়ই মুক্তি দেয়। বহুপদীর সহগের ভাষায় গণনা আরও স্বচ্ছ হয়।</p>
+        <p>এই একই ধারণা পরে দাবার বোর্ড ও গ্রাফ-তত্ত্বের ধাঁধায় আবার দেখা যাবে।</p>
+      </b1b-section>
+
+      <!-- ═══ Practice — excluded from narration ═══ -->
+      <b1b-section id="sec-practice" title="অনুশীলন ও সারসংক্ষেপ" data-no-narration="true">
+        <p>পাঠের মূল ধারণাটি নিজের ভাষায় বলে দেখুন, তারপর নিচের প্রশ্নের উত্তর দিন।</p>
+        <b1b-quiz
+          question="❓ এই পাঠের মূল ধারণা কোনটি?"
+          correct="1"
+          correct-msg="চমৎকার! এই কোর্সজুড়ে আমরা দেখেছি — ইনভ্যারিয়েন্ট, কোডিং, জ্যামিতি বা টপোলজি যাই হোক, সঠিক দৃষ্টিভঙ্গিই সমাধানের চাবি।"
+          wrong-msg="আবার ভেবে দেখুন। ইঙ্গিত: “দৃষ্টিভঙ্গি” শব্দটি মনে রাখুন।"
+          reveal-msg="সঠিক উত্তর: সঠিক দৃষ্টিভঙ্গি বা কাঠামো খুঁজে পেলে কঠিন ধাঁধাও সরল হয়">
+          <div slot="option">ধাঁধা মানেই ভাগ্যের ব্যাপার</div>
+          <div slot="option">সঠিক দৃষ্টিভঙ্গি বা কাঠামো খুঁজে পেলে কঠিন ধাঁধাও সরল হয়</div>
+          <div slot="option">সব উত্তর মুখস্থ করতে হয়</div>
+          <div slot="option">গণিত কেবল সংখ্যা নিয়ে কাজ করে</div>
+        </b1b-quiz>
+        <b1b-callout type="green" icon="✅" title="পরবর্তী পাঠ">
+          <p>পরবর্তী অধ্যায়ে আমরা আরেকটি ধাঁধা নিয়ে কাজ করব। প্রতিটি পাঠেই নতুন একটি দৃষ্টিভঙ্গি যোগ হবে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/puzzles/lesson_07/experiments/3b1b_puzzles_07_full_dubbed.mp4"
+    yt-id="bOXCLR3Wric"
+    title="অলিম্পিয়াড-স্তরের গণনা: জেনারেটিং ফাংশন | Olympiad level counting (Generating functions)"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — ধাঁধা">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_06.html"
+  prev-title="পূর্ববর্তী: বাক্সের বাইরে ভাবার পাঁচটি ধাঁধা"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_08.html"
+  next-title="পরবর্তী: অসম্ভব দাবার বোর্ড ধাঁধা"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+{
+  "course": "why_pi",
+  "lesson": "lesson_02",
+  "voice": "bn-BD-PradeepNeural",
+  "mode": "authentic_teacher",
+  "sections": {
+    "sec-conservation": {
+      "title": "শক্তি ও ভরবেগের সংরক্ষণ",
+      "audio_file": "sec_01_sec-conservation.mp3",
+      "total_duration_ms": 20000.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "সংঘর্ষের পর ব্লকদের বেগ বের করতে হলে শক্তি ও ভরবেগ—এই দুটি সংরক্ষণ আইনই যথেষ্ট।",
+          "start_ms": 0.0,
+          "end_ms": 4500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 1,
+          "type": "p",
+          "text": "মোট গতিশক্তি $\\tfrac12 m_1 v_1^2+\\tfrac12 m_2 v_2^2$ সংঘর্ষের সময় ধ্রুবক থাকে।",
+          "start_ms": 5000.0,
+          "end_ms": 9500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 2,
+          "type": "p",
+          "text": "মোট ভরবেগ $m_1 v_1+m_2 v_2$ ব্লক-সংঘর্ষে ধ্রুবক, কিন্তু দেয়ালে ঠুকে ছোট ব্লকের ভরবেগ বদলায়।",
+          "start_ms": 10000.0,
+          "end_ms": 14500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 3,
+          "type": "p",
+          "text": "দুটি অজানা বেগ ও দুটি সমীকরণ—তাই সমাধান নির্ণেয়।",
+          "start_ms": 15000.0,
+          "end_ms": 19500.0,
+          "duration_ms": 4500.0
+        }
+      ]
+    },
+    "sec-phase-circle": {
+      "title": "বেগ-ফেজ স্পেসে বৃত্ত",
+      "audio_file": "sec_02_sec-phase-circle.mp3",
+      "total_duration_ms": 20000.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "বেগগুলোকে স্থানাঙ্ক ধরে শক্তির সমীকরণ আঁকলে একটি উপবৃত্ত পাই; ভর দিয়ে স্কেল করলে সেটি হয়ে যায় নিখুঁত বৃত্ত।",
+          "start_ms": 0.0,
+          "end_ms": 4500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 1,
+          "type": "p",
+          "text": "$x=\\sqrt{m_1}v_1$, $y=\\sqrt{m_2}v_2$ স্কেলে শক্তির সমীকরণ হয় $x^2+y^2=\\text{const}$—একটি বৃত্ত।",
+          "start_ms": 5000.0,
+          "end_ms": 9500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 2,
+          "type": "p",
+          "text": "বৃত্তের ওপর প্রতিটি বিন্দু এক জোড়া বেগের প্রতিনিধিত্ব করে যারা একই শক্তি বহন করে।",
+          "start_ms": 10000.0,
+          "end_ms": 14500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 3,
+          "type": "p",
+          "text": "শুরুতে বড় ব্লক বাঁ dικে যাচ্ছে (x ঋণাত্মক) আর ছোটটি স্থির (y = 0)—অর্থাৎ বৃত্তের বাঁ-প্রান্তে আছি।",
+          "start_ms": 15000.0,
+          "end_ms": 19500.0,
+          "duration_ms": 4500.0
+        }
+      ]
+    },
+    "sec-momentum-line": {
+      "title": "ভরবেগের রেখা ও ফেজের লাফ",
+      "audio_file": "sec_03_sec-momentum-line.mp3",
+      "total_duration_ms": 20000.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "ভরবেগের সংরক্ষণ একটি সরলরেখা দিয়ে প্রকাশ পায়; বৃত্ত আর রেখার ছেদবিন্দুই বলে দেয় সংঘর্ষের পরের বেগ।",
+          "start_ms": 0.0,
+          "end_ms": 4500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 1,
+          "type": "p",
+          "text": "স্কেল করা অক্ষে $\\sqrt{m_1}x+\\sqrt{m_2}y=\\text{const}$ একটি সরলরেখা, যার ঢাল $-\\sqrt{m_1/m_2}$।",
+          "start_ms": 5000.0,
+          "end_ms": 9500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 2,
+          "type": "p",
+          "text": "বৃত্ত ও রেখার দুটি ছেদবিন্দুর মাঝেই সংঘর্ষের আগে-পরে বেগের লাফ ঘটে।",
+          "start_ms": 10000.0,
+          "end_ms": 14500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 3,
+          "type": "p",
+          "text": "ছোট ব্লক দেয়ালে ঠুকে $y$-এর চিহ্ন বদলায়—ফেজ ডায়াগ্রামে x-অক্ষের সাপেক্ষে প্রতিফলন।",
+          "start_ms": 15000.0,
+          "end_ms": 19500.0,
+          "duration_ms": 4500.0
+        }
+      ]
+    },
+    "sec-inscribed-angle": {
+      "title": "অন্তর্লিখিত কোণ ও থিটা হিসাব",
+      "audio_file": "sec_04_sec-inscribed-angle.mp3",
+      "total_duration_ms": 20000.0,
+      "cues": [
+        {
+          "index": 0,
+          "type": "h2",
+          "text": "প্রতিটি লাফ বৃত্তে সমান 2θ চাপ তৈরি করে; θ = arctan(√(m₂/m₁)) ছোট হলে তার মান প্রায়ই √(−) হয়, আর তাই অঙ্কগুলো পাইয়ের মতো দেখায়।",
+          "start_ms": 0.0,
+          "end_ms": 4500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 1,
+          "type": "p",
+          "text": "অন্তর্লিখিত কোণের উপপাদ্য অনুযায়ী প্রতিটি লাফের মাঝের চাপ $2\\theta$ রেডিয়ান।",
+          "start_ms": 5000.0,
+          "end_ms": 9500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 2,
+          "type": "p",
+          "text": "মোট চাপ $2\\pi$ অতিক্রম না করা পর্যন্ত লাফ চলে: $N\\cdot\\theta<\\pi$।",
+          "start_ms": 10000.0,
+          "end_ms": 14500.0,
+          "duration_ms": 4500.0
+        },
+        {
+          "index": 3,
+          "type": "p",
+          "text": "$\\theta=\\arctan\\!\\left(\\sqrt{m_2/m_1}\\right)$, আর ছোট $x$-এর জন্য $\\arctan x\\approx x$—তাই ভর ১০০-এর ঘাত হলে অঙ্কগুলো পাইয়ের মতো হয়।",
+          "start_ms": 15000.0,
+          "end_ms": 19500.0,
+          "duration_ms": 4500.0
+        }
+      ]
+    }
+  }
+}

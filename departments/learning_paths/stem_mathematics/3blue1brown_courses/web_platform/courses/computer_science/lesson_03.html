@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>পাঠ্যকে প্রতি অক্ষরে ১ বিটে সংকুচিত করা | কম্প্রেশন হলো বুদ্ধিমত্তা, পর্ব ৩ | How to compress text to 1 bit per character | Compression is Intelligence Part 3</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/computer_science/lesson_03/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="কম্পিউটার বিজ্ঞান"
+  course-url="../../index.html#computer-science"
+  home-url="../../index.html"
+  chapter-num="০৩"
+  chapter-total="১৩"
+  prev-url="lesson_02.html"
+  prev-title="ক্রস-এন্ট্রপি আসলে কী? | কম্প্রেশন হলো বুদ্ধিমত্তা, পর্ব ২"
+  next-url="lesson_04.html"
+  next-title="তথ্য তত্ত্ব দিয়ে ওয়ার্ডল সমাধান"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="কম্পিউটার বিজ্ঞান"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৩ · কম্পিউটার বিজ্ঞান"
+  title="পাঠ্যকে প্রতি অক্ষরে ১ বিটে সংকুচিত করা | কম্প্রেশন হলো বুদ্ধিমত্তা, পর্ব ৩ | How to compress text to 1 bit per character | Compression is Intelligence Part 3"
+  desc="অ্যারিথমেটিক কোডিং—ভাষা মডেলের ভবিষ্যদ্বাণীকে প্রায়-সর্বোত্তম সংকোচনে রূপ দেওয়া; $[0,1)$ ব্যবধানে বার্তা লেখা।"
+  video-src="../../media_vault/computer_science/lesson_03/experiments/3b1b_computer_science_03_full_dubbed.mp4"
+  yt-id="qbsb9DpdZ6s"
+  date="১৭ নভেম্বর, ২০২৬"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2026/arithmetic_coding/"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">হাফম্যানের সীমা</b1b-bookmark>
+      <b1b-bookmark time="85" time-bn="০১:২৫">ব্যবধানের ধারণা</b1b-bookmark>
+      <b1b-bookmark time="180" time-bn="০৩:০০">এনকোডিং</b1b-bookmark>
+      <b1b-bookmark time="280" time-bn="০৪:৪০">ডিকোডিং</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-limit">১. হাফম্যান কোডের সীমা</a>
+      <a href="#sec-interval">২. $[0,1)$ ব্যবধানে বার্তা</a>
+      <a href="#sec-encode">৩. এনকোডিং — ব্যবধান সংকুচিত করা</a>
+      <a href="#sec-decode">৪. ডিকোডিং ও শেষচিহ্ন</a>
+      <a href="#sec-optimal">৫. কেন এটি প্রায়-সর্বোত্তম</a>
+      <a href="#sec-lab">ইন্টারেক্টিভ — ব্যবধান খেলুন</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+    <b1b-section id="sec-limit" title="১. হাফম্যান কোডের সীমা">
+        <p>হাফম্যান কোডে প্রতিটি প্রতীককে পূর্ণসংখ্যা বিট দিতে হয়। কিন্তু যদি কোনো প্রতীকের সম্ভাবনা ০.৭ হয়, তার আদর্শ কোড দৈর্ঘ্য $-\log_2 0.7 \approx 0.5$ বিট—হাফম্যান তাকে ১ বিটই দেয়। এই ফাঁকটিই অ্যারিথমেটিক কোড পূরণ করে।</p>
+        <b1b-figure src="../../assets/figures/cs03/cs03_f01.svg" alt="huffman-gap" caption="হাফম্যান বনাম আদর্শ কোড দৈর্ঘ্য"></b1b-figure>
+        <b1b-callout type="blue" icon="💡" title="মূল ভাবনা">
+          <p>প্রতিটি প্রতীককে আলাদা কোড না দিয়ে পুরো বার্তাটিকে একটি একক সংখ্যা হিসেবে লেখা যায়—এটিই অ্যারিথমেটিক কোডিং।</p>
+        </b1b-callout>
+    </b1b-section>
+
+    <b1b-section id="sec-interval" title="২. $[0,1)$ ব্যবধানে বার্তা">
+        <p>সমস্ত সম্ভাব্য বার্তাকে $[0,1)$ রেখার ওপর ভাগ করা যায়। প্রতিটি প্রতীক নির্দিষ্ট একটি অংশ দখল করে—সম্ভাবনা যত বড়, অংশ তত বড়। বার্তা পড়ার সাথে সাথে আমরা এই ব্যবধানকে ক্রমশ সংকুচিত করি।</p>
+        <b1b-formula math="[0,1) \;\longrightarrow\; \text{প্রতীকের সম্ভাবনা-অনুপাতে ভাগ}"></b1b-formula>
+        <b1b-figure src="../../assets/figures/cs03/cs03_f02.svg" alt="interval-division" caption="সম্ভাবনা অনুযায়ী $[0,1)$ রেখার ভাগ"></b1b-figure>
+        <p>শেষে যে ছোট ব্যবধানটি পাই, তার ভেতরের যেকোনো সংখ্যা দিয়ে পুরো বার্তাটি চেনা যায়। ব্যবধান যত ছোট, তত বেশি বিট লাগে—অর্থাৎ কম সম্ভাবনার বার্তা বেশি বিট নেয়।</p>
+    </b1b-section>
+
+    <b1b-section id="sec-encode" title="৩. এনকোডিং — ব্যবধান সংকুচিত করা">
+        <p>প্রথম অক্ষরের জন্য তার সম্ভাবনা-অনুপাতে ব্যবধান নির্বাচন করি। পরের অক্ষরের জন্য আগের ব্যবধানের ভেতরে আবার সেই অক্ষরের সম্ভাবনা-অনুপাতে ভাগ করে নির্বাচন করি—এভাবেই এগোই।</p>
+        <b1b-formula math="[a,b) \;\to\; \left[a+(b-a)F_{i-1},\; a+(b-a)F_i\right)"></b1b-formula>
+        <b1b-figure src="../../assets/figures/cs03/cs03_f03.svg" alt="arithmetic-encode" caption="ধাপে ধাপে ব্যবধান সংকোচন—এনকোডিং"></b1b-figure>
+        <b1b-quote author="Grant Sanderson">ভাষা মডেলের ভবিষ্যদ্বাণী আর সংকোচকের ব্যবধান—একই গণিতের দুই রূপ।</b1b-quote>
+    </b1b-section>
+
+    <b1b-section id="sec-decode" title="৪. ডিকোডিং ও শেষচিহ্ন">
+        <p>ডিকোডারীও একই কাজ করে—প্রাপ্ত সংখ্যাটি কোন ব্যবধানে আছে দেখে প্রথম অক্ষর বের করে, তারপর ব্যবধান পুনর্নির্মাণ করে পরের অক্ষর বের করে। বার্তা শেষ বোঝাতে একটি বিশেষ ''এন্ড-অফ-মেসেজ'' প্রতীক ব্যবহার করা হয়।</p>
+        <b1b-figure src="../../assets/figures/cs03/cs03_f04.svg" alt="arithmetic-decode" caption="একটি সংখ্যা থেকে বার্তা পুনরুদ্ধার—ডিকোডিং"></b1b-figure>
+        <b1b-callout type="gold" icon="📐" title="ব্যবহার">
+          <p>আধুনিক JPEG, video codec ও JPEG2000-এ অ্যারিথমেটিক কোডিং ব্যবহৃত হয়।</p>
+        </b1b-callout>
+
+        <b1b-quiz
+          question="❓ অ্যারিথমেটিক কোডিংয়ে বার্তাটি কীভাবে রাখা হয়?"
+          correct="1"
+          correct-msg="সঠিক! পুরো বার্তা একটি ব্যবধান দ্বারা প্রকাশ পায়।"
+          wrong-msg="হাফম্যানের বিপরীতে এখানে প্রতীক নয়, বার্তা—একটি ব্যবধান।"
+          reveal-msg="সঠিক উত্তর: $[0,1)$ রেখার একটি ছোট ব্যবধান।">
+          <div slot="option">প্রতি অক্ষরের জন্য একটি পূর্ণসংখ্যা বিট</div>
+          <div slot="option">$[0,1)$ রেখার একটি ছোট ব্যবধান</div>
+          <div slot="option">শুধু শব্দের তালিকা</div>
+          <div slot="option">একটি হাফম্যান বৃক্ষ</div>
+        </b1b-quiz>
+    </b1b-section>
+
+    <b1b-section id="sec-optimal" title="৫. কেন এটি প্রায়-সর্বোত্তম">
+        <p>অ্যারিথমেটিক কোডের গড় দৈর্ঘ্য এন্ট্রপির খুব কাছাকাছি পৌঁছায়—কোনো পদ্ধতিই এর চেয়ে কম বিট ব্যবহার করতে পারে না। তথ্য তত্ত্বের সৌন্দর্য হলো এই সীমা যে আমরা আগের পাঠে হিসাব করেছি, তা এখানে বাস্তবায়িত হয়।</p>
+        <b1b-figure src="../../assets/figures/cs03/cs03_f05.svg" alt="optimal-limit" caption="কোড দৈর্ঘ্য versus এন্ট্রপি সীমা"></b1b-figure>
+    </b1b-section>
+
+    <b1b-section id="sec-lab" title="৬. ইন্টারেক্টিভ — ব্যবধান খেলুন" data-no-narration="true">
+      <p class="viz-intro">নিচের ইন্টারেক্টিভ উপাদান ও কুইজের মাধ্যমে পাঠের ধারণা নিজে যাচাই করুন।</p>
+      <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+        <figure class="interactive-figure"><img src="../../assets/figures/cs03/cs03_f06.svg" alt="অ্যারিথমেটিক কোডিংয়ের ব্যবধান প্রক্রিয়া"/><figcaption>অ্যারিথমেটিক কোডিংয়ের ব্যবধান প্রক্রিয়া</figcaption></figure>
+      </b1b-fullscreen>
+
+        <b1b-quiz
+          question="❓ $-\log_2(0.5)$ এর মান কত বিট?"
+          correct="1"
+          correct-msg="সঠিক! $-\log_2(0.5)=1$ বিট—সম্ভাবনা অর্ধেক হলে ১ বিট।"
+          wrong-msg="$0.5 = 2^{-1}$, তাই লগারিদম −১, ঋণাত্মক বাদ দিলে ১।"
+          reveal-msg="সঠিক উত্তর: ১ বিট।">
+          <div slot="option">০.৫</div>
+          <div slot="option">১</div>
+          <div slot="option">২</div>
+          <div slot="option">০</div>
+        </b1b-quiz>
+    </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/computer_science/lesson_03/experiments/3b1b_computer_science_03_full_dubbed.mp4"
+    yt-id="qbsb9DpdZ6s"
+    title="পাঠ্যকে প্রতি অক্ষরে ১ বিটে সংকুচিত করা | কম্প্রেশন হলো বুদ্ধিমত্তা, পর্ব ৩ — অধ্যায় ০৩"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — কম্পিউটার বিজ্ঞান">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_02.html"
+  prev-title="ক্রস-এন্ট্রপি আসলে কী? | কম্প্রেশন হলো বুদ্ধিমত্তা, পর্ব ২"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_04.html"
+  next-title="তথ্য তত্ত্ব দিয়ে ওয়ার্ডল সমাধান"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

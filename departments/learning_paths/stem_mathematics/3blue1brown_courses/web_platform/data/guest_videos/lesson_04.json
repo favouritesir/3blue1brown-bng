@@ -1,0 +1,242 @@
+{
+  "lesson_id": "lesson_04",
+  "chapter_num": 4,
+  "course_id": "guest_videos",
+  "title_en": "The AI that solved IMO Geometry Problems | Guest video by @Aleph0",
+  "title_bn": "অ্যালফাজিওমেট্রি: আইএমও জ্যামিতি সমাধানকারী এআই",
+  "subtitle_bn": "অ্যালফাজিওমেট্রি কীভাবে যুক্তি ও অন্তর্দৃষ্টিকে একত্র করে আন্তর্জাতিক গণিত অলিম্পিয়াডের জ্যামিতি সমস্যা সমাধান করেছে",
+  "video_id": "4NlrfOl0l8U",
+  "youtube_id": "4NlrfOl0l8U",
+  "author": "Adithya Chakravarthy",
+  "official_url": "https://www.3blue1brown.com/lessons/alpha-geometry",
+  "oembed": {
+    "url": "https://www.youtube.com/watch?v=4NlrfOl0l8U",
+    "author_name": "3Blue1Brown",
+    "author_url": "https://www.youtube.com/@3blue1brown",
+    "verified": true
+  },
+  "meta": {
+    "credits": "Adithya Chakravarthy",
+    "author": "Adithya Chakravarthy",
+    "author_bn": "অদিত্য চক্রবর্তী (@Aleph0)",
+    "host_channel": "3Blue1Brown",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "২১:১৫",
+    "description_en": "How AlphaGeometry combines logic and intuition to solve IMO geometry problems.",
+    "date_published": "১৭ আগস্ট, ২০২৫",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "Logic without intuition is slow; intuition without logic is unreliable. Together they are powerful.",
+    "quote_bn": "অন্তর্দৃষ্টি ছাড়া যুক্তি ধীর; যুক্তি ছাড়া অন্তর্দৃষ্টি অবিশ্বস্ত। দুজনে মিলে শক্তিশালী।",
+    "author": "Adithya Chakravarthy (অদিত্য চক্রবর্তী)"
+  },
+  "sections": [
+    {
+      "id": "sec-01-imo",
+      "title_bn": "আইএমও জ্যামিতি ও এআই-র চ্যালেঞ্জ",
+      "title_en": "IMO geometry and the AI challenge",
+      "summary_bn": "আন্তর্জাতিক গণিত অলিম্পিয়াডের জ্যামিতি সমস্যা দীর্ঘদিন ধরে কম্পিউটারের জন্য এক কঠিন পরীক্ষা ছিল — অ্যালফাজিওমেট্রি সেই বাধা ভেঙেছে।",
+      "key_takeaways": [
+        "আইএমও জ্যামিতি সমস্যায় সাধারণত একটি চিত্র ও কয়েকটি শর্ত দেওয়া থাকে; প্রমাণ করতে হয় কোনো বিন্দু বা রেখা সম্পর্কে কিছু।",
+        "সম্পূর্ণ যুক্তিভিত্তিক অনুসন্ধান ধীর ও অসম্ভবতা-প্রবণ — কারণ সম্ভাব্য ধাপের সংখ্যা বিপুল।",
+        "মানুষের মতো 'অন্তর্দৃষ্টি' যোগ করাই অ্যালফাজিওমেট্রির মূল উদ্ভাবন।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_imo_problem",
+          "caption_bn": "একটি আইএমও-শৈলীর জ্যামিতি সমস্যা",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_04/fig_imo_problem.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "figure",
+        "p",
+        "callout",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-02-dd",
+      "title_bn": "যুক্তি ইঞ্জিন: ডিডাকটিভ ডেটাবেস",
+      "title_en": "The logic engine: a deductive database",
+      "summary_bn": "অ্যালফাজিওমেট্রির প্রথম অংশ হলো একটি সম্পূর্ণ যুক্তিভিত্তিক ডেটাবেস — ডিডাকটিভ ডেটাবেস বা ডিডি — যা নিয়ম থেকে বিন্দু ও রেখা উৎপন্ন করে।",
+      "key_takeaways": [
+        "ডিডি জ্যামিতির প্রাথমিক নিয়ম ও অক্সিওম ধরে নতুন বস্তু তৈরি করে — যেমন দুটি বিন্দু দিয়ে রেখা বা তিনটি বিন্দু দিয়ে বৃত্ত।",
+        "প্রতিটি উৎপন্ন বস্তু আবার নতুন নিয়মের ইনপুট হয় — এই চক্রাবৃত্তিকে বলা হয় forward chaining।",
+        "ফলাফল হলো এক বিশাল 'অনুমান-বৃক্ষ', যার প্রতিটি শাখা একটি বৈধ যুক্তি-ধাপ।"
+      ],
+      "formulas": [
+        {
+          "label": "রেখা ও ছেদবিন্দু নিয়ম",
+          "katex": "\\{A,B\\}\\to\\overleftrightarrow{AB},\\quad \\{\\ell_1,\\ell_2\\}\\to P"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_dd_tree",
+          "caption_bn": "ডিডাকটিভ ডেটাবেস — অনুমান-বৃক্ষ",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_04/fig_dd_tree.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "figure",
+        "p",
+        "formula",
+        "callout",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-03-lm",
+      "title_bn": "অন্তর্দৃষ্টি ইঞ্জিন: ভাষা মডেল",
+      "title_en": "The intuition engine: a language model",
+      "summary_bn": "দ্বিতীয় অংশ হলো একটি ট্রান্সফর্মার ভাষা মডেল, যা হাজার হাজার কৃত্রিম প্রমাণ দেখে শিখে কোন সহায়ক রেখা বা বৃত্ত পরের ধাপে আঁকা উচিত।",
+      "key_takeaways": [
+        "মডেলটিকে কৃত্রifactWat উপপাদ্য ও প্রমাণ দিয়ে প্রশিক্ষিত করা হয়, যার ফলে জ্যামিতিক 'অভ্যাস' তৈরি হয়।",
+        "প্রতিটি ধাপে মডেল несколько সম্ভাব্য সহায়ক বস্তুর তালিকা দেয় — ডিডি সেগুলো যাচাই করে।",
+        "এই সহযোগিতায় অন্তর্দৃষ্টি দ্রুত পথ দেখায় আর যুক্তি সেই পথের সত্যতা নিশ্চিত করে।"
+      ],
+      "formulas": [
+        {
+          "label": "নিউরো-সিম্বলিক চক্র",
+          "katex": "\\text{LM}\\ \\leftrightarrow\\ \\text{DD}\\ \\leftrightarrow\\ \\text{প্রমাণ}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_lm_suggest",
+          "caption_bn": "ভাষা মডেলের পরামর্শ ও ডিডি-র যাচাই",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_04/fig_lm_suggest.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "figure",
+        "p",
+        "callout",
+        "formula",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-04-results",
+      "title_bn": "ফলাফল ও সীমাবদ্ধতা",
+      "title_en": "Results and limitations",
+      "summary_bn": "অ্যালফাজিওমেট্রি আইএমও-র দুটি জ্যামিতি সমস্যা সমাধান করেছে, কিন্তু এর সীমাবদ্ধতাও রয়েছে — বিশেষ করে জটিল সংখ্যাতাত্ত্বিক সমস্যায়।",
+      "key_takeaways": [
+        "২০২৪ সালের আইএমওতে অ্যালফাজিওমেট্রি দুটি জ্যামিতি সমস্যার সমাধান দিয়েছে, যা স্বর্ণপদক-স্তরের ফল।",
+        "তবে অন্য বিষয়গুলোতে (যেমন বীজগণিত বা সংখ্যাতত্ত্ব) এখনো মানুষের সাথে তুলনাযোগ্য নয়।",
+        "প্রশিক্ষণ ডেটাসেটের গুণমান ও বৈচিত্র্য ফলাফলের ওপর বড় প্রভাব ফেলে।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_results",
+          "caption_bn": "অ্যালফাজিওমেট্রির ফলাফল",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_04/fig_results.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "figure",
+        "callout",
+        "p",
+        "quote",
+        "p"
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_dd",
+      "section_ref": "sec-02-dd",
+      "question_bn": "ডিডাকটিভ ডেটাবেসের (ডিডি) প্রধান বৈশিষ্ট্য কী?",
+      "question_en": "What is the key property of the deductive database?",
+      "options": [
+        "এটি ভুল ধাপও তৈরি করে",
+        "এটি শুধু বৈধ যুক্তি-ধাপ তৈরি করে কিন্তু দিক জানে না",
+        "এটি শুধু ছবি দেখে",
+        "এটি প্রমাণ মুখস্থ করে"
+      ],
+      "options_bn": [
+        "এটি ভুল ধাপও তৈরি করে",
+        "এটি শুধু বৈধ যুক্তি-ধাপ তৈরি করে কিন্তু দিক জানে না",
+        "এটি শুধু ছবি দেখে",
+        "এটি প্রমাণ মুখস্থ করে"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ডিডি কেবল নিয়ম প্রয়োগ করে — প্রতিটি ধাপ বৈধ, কিন্তু কোন ধাপটি লক্ষ্যের দিকে যাবে তা এটি জানে না। সেই দিক নির্ধারণ করে ভাষা মডেল।",
+      "explanation_en": "ডিডি কেবল নিয়ম প্রয়োগ করে — প্রতিটি ধাপ বৈধ, কিন্তু কোন ধাপটি লক্ষ্যের দিকে যাবে তা এটি জানে না। সেই দিক নির্ধারণ করে ভাষা মডেল।",
+      "hint": "মনে রাখবেন, এটি নিখুঁত কিন্তু অন্ধ।",
+      "hints": [
+        "মনে রাখবেন, এটি নিখুঁত কিন্তু অন্ধ।"
+      ]
+    },
+    {
+      "id": "quiz_02_arch",
+      "section_ref": "sec-04-results",
+      "question_bn": "অ্যালফাজিওমেট্রির দুটি প্রধান অংশ কী?",
+      "question_en": "What are the two main components of AlphaGeometry?",
+      "options": [
+        "দুটি ভাষা মডেল",
+        "ডিডাকটিভ ডেটাবেস + ভাষা মডেল",
+        "দুটি নিউরাল নেটওয়ার্ক",
+        "রোবোট + ক্যামেরা"
+      ],
+      "options_bn": [
+        "দুটি ভাষা মডেল",
+        "ডিডাকটিভ ডেটাবেস + ভাষা মডেল",
+        "দুটি নিউরাল নেটওয়ার্ক",
+        "রোবোট + ক্যামেরা"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "এর আর্কিটেকচারে রয়েছে একটি যুক্তিভিত্তিক ডিডাকটিভ ডেটাবেস (ডিডি) আর একটি ভাষা মডেল — যা একসাথে নিউরো-সিম্বলিক পদ্ধতি তৈরি করে।",
+      "explanation_en": "এর আর্কিটেকচারে রয়েছে একটি যুক্তিভিত্তিক ডিডাকটিভ ডেটাবেস (ডিডি) আর একটি ভাষা মডেল — যা একসাথে নিউরো-সিম্বলিক পদ্ধতি তৈরি করে।",
+      "hint": "যুক্তি ও অন্তর্দৃষ্টির কথা মনে রাখবেন।",
+      "hints": [
+        "যুক্তি ও অন্তর্দৃষ্টির কথা মনে রাখবেন।"
+      ]
+    }
+  ],
+  "lab": {
+    "title": "ইন্টারেক্টিভ ল্যাব: জ্যামিতি অনুসন্ধান",
+    "desc_bn": "বিন্দুতে ক্লিক করে রেখা ও বৃত্ত তৈরি করে দেখুন কীভাবে একটি সহায়ক গঠন ধাপে ধাপে প্রমাণের দিকে নিয়ে যায়।",
+    "data_no_narration": true
+  },
+  "narration_manifest": "assets/audio/guest_videos/lesson_04/manifest.json",
+  "video_src": "../../media_vault/guest_videos/lesson_04/experiments/3b1b_guest_videos_04_full_dubbed.mp4",
+  "figure_assets": [
+    {
+      "id": "fig_imo_problem",
+      "caption_bn": "একটি আইএমও-শৈলীর জ্যামিতি সমস্যা",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_04/fig_imo_problem.svg"
+    },
+    {
+      "id": "fig_dd_tree",
+      "caption_bn": "ডিডাকটিভ ডেটাবেস — অনুমান-বৃক্ষ",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_04/fig_dd_tree.svg"
+    },
+    {
+      "id": "fig_lm_suggest",
+      "caption_bn": "ভাষা মডেলের পরামর্শ ও ডিডি-র যাচাই",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_04/fig_lm_suggest.svg"
+    },
+    {
+      "id": "fig_results",
+      "caption_bn": "অ্যালফাজিওমেট্রির ফলাফল",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_04/fig_results.svg"
+    }
+  ]
+}

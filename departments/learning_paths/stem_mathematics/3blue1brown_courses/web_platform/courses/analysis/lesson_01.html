@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>রিম্যান জেটা ফাংশন ও বিশ্লেষণীয় ধারাবাহিকতা | Visualizing the Riemann zeta function and analytic continuation</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/analysis/lesson_01/manifest.js?v=8"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="বিশ্লেষণ"
+  course-url="../../index.html#analysis"
+  home-url="../../index.html"
+  chapter-num="০১"
+  chapter-total="১০"
+  prev-url=""
+  prev-title="পূর্ববর্তী অধ্যায় নেই"
+  next-url="lesson_02.html"
+  next-title="পরবর্তী অধ্যায়: ছবির লগারিদম কীভাবে (এবং কেন) নেবেন"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="বিশ্লেষণ"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০১ · বিশ্লেষণ"
+  title="রিম্যান জেটা ফাংশন ও বিশ্লেষণীয় ধারাবাহিকতা | Visualizing the Riemann zeta function and analytic continuation"
+  desc="একটি সাদাসিধে অසිමোটিক যোগ থেকে জন্ম নেওয়া গভীরতম ফাংশন — এবং কীভাবে একে জটিল তলে আঁকা যায়"
+  video-src="../../media_vault/analysis/lesson_01/experiments/3b1b_analysis_01_full_dubbed.mp4"
+  yt-id="sD0NjbwqlYw"
+  date="৯ ডিসেম্বর, ২০১৬"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://www.3blue1brown.com/lessons/zeta"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">জেটা ফাংশন আসলে কী?</b1b-bookmark>
+      <b1b-bookmark time="137" time-bn="০২:১৭">জটিল ইনপুট ও সর্পিল যোগ</b1b-bookmark>
+      <b1b-bookmark time="248" time-bn="০৪:০৮">জটিল ফাংশনকে রূপান্তর হিসেবে দেখা</b1b-bookmark>
+      <b1b-bookmark time="333" time-bn="০৫:৩৩">বিশ্লেষণীয় ধারাবাহিকতা ও রিম্যান অনুমান</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-zeta-definition">জেটা ফাংশন আসলে কী?</a>
+      <a href="#sec-zeta-complex-spiral">জটিল ইনপুট ও সর্পিল যোগ</a>
+      <a href="#sec-zeta-as-transform">জটিল ফাংশনকে রূপান্তর হিসেবে দেখা</a>
+      <a href="#sec-zeta-continuation">বিশ্লেষণীয় ধারাবাহিকতা ও রিম্যান অনুমান</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ জেটা ফাংশন আসলে কী? ═══ -->
+      <b1b-section id="sec-zeta-definition" title="জেটা ফাংশন আসলে কী?">
+        <b1b-quote author="Grant Sanderson">রিম্যান জেটা ফাংশন আধুনিক গণিতের সবচেয়ে গুরুত্বপূর্ণ বস্তুগুলোর একটি।</b1b-quote>
+        <p>আমাদের গল্প শুরু একটিমাত্র সূত্র দিয়ে। কোনো সংখ্যা $s$ দিলে জেটা ফাংশন সব প্রাকৃতিক সংখ্যার $n$ এর জন্য $\frac{1}{n^s}$ যোগ করে। মনে হতে পারে পুরোনো ধরনের এই যোগ নিয়ে কতটা কথা বলা যাবে — কিন্তু এই সূত্রের ভেতরেই লুকিয়ে আছে মৌলিক সংখ্যার বণ্টন, এক মিলিয়ন ডলারের পুরস্কার, এবং জটিল বিশ্লেষণের এক বিশাল জগৎ।</p>
+        <b1b-formula math="\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}=1+\frac{1}{2^s}+\frac{1}{3^s}+\frac{1}{4^s}+\cdots"></b1b-formula>
+        <p>$s=2$ বসালে আমরা পাই $1+\frac14+\frac19+\frac1{16}+\cdots$ — আর এই যোগের মান $\frac{\pi^2}{6}$। দেখুন কী আশ্চর্য: পূর্ণসংখ্যার ভগ্নাংশের যোগ থেকে পাইয়ের মতো বৃত্তীয় ধ্রুবক বেরিয়ে আসে।</p>
+        <b1b-figure src="../../assets/figures/an_01/fig_01_01.svg" alt="প্রাকৃতিক সংখ্যার ক্রমান্বয়ে ছোট হতে থাকা ভগ্নাংশগুলোর যোগ" caption="প্রাকৃতিক সংখ্যার ক্রমান্বয়ে ছোট হতে থাকা ভগ্নাংশগুলোর যোগ"></b1b-figure>
+        <b1b-callout type="blue" icon="📐" title="বাঁয়ে যাওয়ার আগে একটা সতর্কতা">
+          <p>$s=1$ হলে যোগটি $1+\frac12+\frac13+\cdots$ হয় — এটি হারমোনিক সিরিজ, যা কখনোই কোনো সীমার কাছে আসে না। তাই এই সংজ্ঞাটি কেবল $s>1$-এর জন্যই মানে করে।</p>
+        </b1b-callout>
+        <p>অনেকের কাছে এই ফাংশনটি পরিচিত $1+2+3+4+\cdots=-\frac{1}{12}$ এই বিখ্যাত (ও অনেকাংশে ভুল বোঝা) রাশিটির জন্য। কিন্তু ডানদিকের অসীম যোগ কখনোই $\frac{1}{12}$ বা ঋণাত্মক কিছু দেয় না। আসলে $\zeta(-1)=-\frac{1}{12}$ কথাটি সম্পূর্ণ অন্য কিছু — এটি ফাংশনের এমন এক রূপের কথা বলে, যা মূল যোগ দিয়ে পাওয়া যায় না।</p>
+
+        <!-- Quiz quiz-zeta-3 -->
+        <b1b-quiz
+          question="❓ $\zeta(3)$-এর মান কোন যোগের সমান?"
+          correct="1"
+          correct-msg="ঠিক বলেছ! জেটা সংজ্ঞানুযায়ী $\zeta(s)=\sum 1/n^s$, তাই $\zeta(3)=1+\frac18+\frac1{27}+\frac1{64}+\cdots$।"
+          wrong-msg="মনে রেখো: $n$-এর ঘাত হবে $s$। এখানে $s=3$, তাই প্রতিটি পদ $\frac{1}{n^3}$।"
+          reveal-msg="সঠিক উত্তর: $1+\frac{1}{8}+\frac{1}{27}+\frac{1}{64}+\cdots$">
+          <div slot="option">$1+\frac{1}{4}+\frac{1}{9}+\frac{1}{16}+\cdots$</div>
+          <div slot="option">$1+\frac{1}{8}+\frac{1}{27}+\frac{1}{64}+\cdots$</div>
+          <div slot="option">$1+\frac{1}{8}+\frac{1}{9}+\frac{1}{16}+\cdots$</div>
+          <div slot="option">$1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\cdots$</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ জটিল ইনপুট ও সর্পিল যোগ ═══ -->
+      <b1b-section id="sec-zeta-complex-spiral" title="জটিল ইনপুট ও সর্পিল যোগ">
+        <p>রিম্যান জটিল সংখ্যার বিশ্লেষণের পথপ্রদর্শক ছিলেন। তাই তিনি প্রশ্ন করলেন: $s$-এর জায়গায় যদি $2+i$ এর মতো কোনো জটিল সংখ্যা বসাই তবে কী হবে?</p>
+        <b1b-formula math="\zeta(2+i)=1+\frac{1}{2^{2+i}}+\frac{1}{3^{2+i}}+\frac{1}{4^{2+i}}+\cdots"></b1b-formula>
+        <p>এখানে $\left(\frac12\right)^i$ মানে বারবার গুণ নয়। অয়লারের সূত্র অনুযায়ী জটিল ঘাত একক বৃত্তে ঘোরে — অর্থাৎ এটি কেবল দিক বদলায়, মান বদলায় না। বড় $n$-এর জন্য ঘোরার পরিমাণ বেশি হওয়ায় রেখাগুলো একটার পর একটা ঘুরতে থাকে।</p>
+        <b1b-figure src="../../assets/figures/an_01/fig_01_02.svg" alt="জটিল ঘাতের কারণে যোগের রেখাগুলো সর্পিল আকার নেয়" caption="জটিল ঘাতের কারণে যোগের রেখাগুলো সর্পিল আকার নেয়"></b1b-figure>
+        <b1b-callout type="gold" icon="📌" title="কেন যোগটি এখনো ঠিক আছে?">
+          <p>প্রতিটি পদার দৈর্ঘ্য নির্ধারিত হয় $s$-এর বাস্তব অংশ দিয়ে। যেহেতু বাস্তব অংশ ২, তাই দৈর্ঘ্য $\frac{1}{n^2}$ — ঠিক আগের মতো। শুধু দিকগুলো ঘুরেছে। ফলে যোগটি এখনো এক বিন্দুতে অভিসারী হয়, তবে সেটি আর বাস্তব রেখায় থাকে না।</p>
+        </b1b-callout>
+        <p>ইনপুট $s$ কে জটিল তলে সরানোর সাথে সাথে সর্পিলটির শেষবিন্দুও সরে বেড়ায়। এই বিন্দুটিরই নাম $\zeta(s)$। $s$-এর বাস্তব অংশ ১-এর চেয়ে বড় থাকাকালীন সবকিছু পরিচ্ছন্নভাবে কাজ করে।</p>
+      </b1b-section>
+
+      <!-- ═══ জটিল ফাংশনকে রূপান্তর হিসেবে দেখা ═══ -->
+      <b1b-section id="sec-zeta-as-transform" title="জটিল ফাংশনকে রূপান্তর হিসেবে দেখা">
+        <p>জটিল ফাংশন বোঝার সবচেয়ে সুন্দর উপায় হলো একে রূপান্তর হিসেবে দেখা: প্রতিটি ইনপুট বিন্দুকে তার আউটপুট বিন্দুতে সরিয়ে দিন। সহজ উদাহরণ $f(s)=s^2$ — এখানে $2$ যায় $4$-এ, $-1$ যায় $1$-এ, আর $i$ যায় $-1$-এ।</p>
+        <b1b-figure src="../../assets/figures/an_01/fig_01_03.svg" alt="জটিল তলের গ্রিড $s^2$ রূপান্তরে কীভাবে বেঁকে যায়" caption="জটিল তলের গ্রিড $s^2$ রূপান্তরে কীভাবে বেঁকে যায়"></b1b-figure>
+        <b1b-callout type="green" icon="🌟" title="কোণ-সংরক্ষণই হলো চাবিকাঠি">
+          <p>যদি দুটি রেখা পরস্পরকে ৬৭° কোণে ছেদ করে, তবে রূপান্তরের পরও তারা একই কোণে ছেদ করবে — রেখাগুলো বেঁকে গেলেও কোণ অপরিবর্তিত থাকে। এই বৈশিষ্ট্যটিকে বলে কনফরমাল ম্যাপিং। যে ফাংশনের সব জায়গায় অবকলন আছে, তাকেই বলা হয় বিশ্লেষণীয় (analytic) — আমাদের কাছে তার মানে হলো কোণ-সংরক্ষণকারী।</p>
+        </b1b-callout>
+        <p>$f(z)=e^z$-এর মতো ফাংশনও কোণ সংরক্ষণ করে; বহুপদী, সাইন, কোসাইন — সবই। জটিল বিশ্লেষণের পুরো ক্ষেত্রটি এই কড়া শর্তটিকে কাজে লাগিয়েই গড়ে উঠেছে।</p>
+      </b1b-section>
+
+      <!-- ═══ বিশ্লেষণীয় ধারাবাহিকতা ও রিম্যান অনুমান ═══ -->
+      <b1b-section id="sec-zeta-continuation" title="বিশ্লেষণীয় ধারাবাহিকতা ও রিম্যান অনুমান">
+        <p>জেটা ফাংশনের যে অংশটি আমরা চিনি, তা জটিল তলের ডান অর্ধেক — বাস্তব অংশ ১-এর বেশি এমন জায়গা। ওই অঞ্চলের গ্রিডকে রূপান্তরিত করলে যে ছবি পাই, তার রেখাগুলো হঠাৎ করে কেটে যায়। কিন্তু সেই বক্ররেখাগুলো এগিয়ে নেওয়া যেন চোখেই লেখা আছে।</p>
+        <b1b-figure src="../../assets/figures/an_01/fig_01_04.svg" alt="ডান অর্ধেকের রূপান্তরিত গ্রিড — রেখাগুলো এগিয়ে নেওয়ার অপেক্ষায়" caption="ডান অর্ধেকের রূপান্তরিত গ্রিড — রেখাগুলো এগিয়ে নেওয়ার অপেক্ষায়"></b1b-figure>
+        <b1b-callout type="green" icon="🌟" title="জিগস পাজলের একটিমাত্র সমাধান">
+          <p>আপনি ইচ্ছামতো যেকোনোভাবে রেখাগুলো এগিয়ে দিতে পারেন — কিন্তু যদি শর্ত দেওয়া হয় যে নতুন ফাংশনটিও সব জায়গায় কোণ সংরক্ষণ করবে, তবে পাজলের একটিই সমাধান বেঁচে থাকে। এই একমাত্র সমাধান খোঁজার প্রক্রিয়ারই নাম বিশ্লেষণীয় ধারাবাহিকতা (analytic continuation)।</p>
+        </b1b-callout>
+        <p>সেই ধারাবাহিকতাপ্রাপ্ত ফাংশনে ঋণাত্মক জোড় সংখ্যাগুলো শূন্যস্থান — একে বলা হয় trivially zeros। আর বাকি শূন্যস্থানগুলো থাকে $0<\mathrm{Re}(s)<1$ নামক সংকট আঁতিতে। রিম্যান অনুমান করেছিলেন সবগুলো ঠিক মাঝের রেখায় অর্থাৎ $\mathrm{Re}(s)=\frac12$-তে থাকে।</p>
+        <b1b-formula math="\zeta(s)=2^{s}\pi^{s-1}\sin\!\left(\frac{\pi s}{2}\right)\Gamma(1-s)\,\zeta(1-s)"></b1b-formula>
+        <p>এই অনুমানটি প্রমাণ করতে পারলে শুধু এক মিলিয়ন ডলারই পাওয়া যাবে না — মৌলিক সংখ্যার বণ্টন সম্পর্কে শত শত ফলাফলও নিশ্চিত হয়ে যাবে। সেই অর্থে জেটা ফাংশন আজও গণিতের সবচেয়ে গভীর রহস্যগুলোর একটি।</p>
+
+        <!-- Quiz quiz-zeta-minus-one -->
+        <b1b-quiz
+          question="❓ $\zeta(-1)=-\frac{1}{12}$ মানে কী?"
+          correct="1"
+          correct-msg="চমৎকার! এটি মূল যোগের কথা নয় — ডান অর্ধেকের ফাংশনকে একমাত্র সম্ভাব্য উপায়ে বিশ্লেষণীয়ভাবে এগিয়ে নেওয়ার পর বামদিকে এর মান $-\frac{1}{12}$ হয়।"
+          wrong-msg="ডানদিকের অসীম যোগ কখনোই ঋণাত্মক হয় না। কথাটি আসলে ধারাবাহিকতাপ্রাপ্ত ফাংশন সম্পর্কে।"
+          reveal-msg="সঠিক উত্তর: বিশ্লেষণীয় ধারাবাহিকতার মাধ্যমে পাওয়া ফাংশনের মান $-\frac{1}{12}$।">
+          <div slot="option">$1+2+3+4+\cdots$ যোগের মান আসলেই $-\frac{1}{12}$</div>
+          <div slot="option">বিশ্লেষণীয় ধারাবাহিকতার মাধ্যমে পাওয়া ফাংশনের মান $-\frac{1}{12}$</div>
+          <div slot="option">যোগের কোনো অর্থ নেই এবং এই লেখাটি সম্পূর্ণ ভুল</div>
+          <div slot="option">$\zeta(1)$ এর মান $-\frac{1}{12}$</div>
+        </b1b-quiz>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/analysis/lesson_01/experiments/3b1b_analysis_01_full_dubbed.mp4"
+    yt-id="sD0NjbwqlYw"
+    title="রিম্যান জেটা ফাংশন ও বিশ্লেষণীয় ধারাবাহিকতা — অধ্যায় ০১"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — বিশ্লেষণ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url=""
+  prev-title="শুরু"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_02.html"
+  next-title="ছবির লগারিদম কীভাবে (এবং কেন) নেবেন"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

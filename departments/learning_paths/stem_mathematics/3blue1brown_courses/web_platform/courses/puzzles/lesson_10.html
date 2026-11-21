@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অয়লারের বৈশিষ্ট্য সূত্র ও গ্রাফ ডুয়ালিটি | Euler&#x27;s Formula and Graph Duality</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/puzzles/lesson_10/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="ধাঁধা"
+  course-url="index.html"
+  home-url="../../index.html"
+  chapter-num="১০"
+  chapter-total="১০"
+  prev-url="lesson_09.html"
+  prev-title="পূর্ববর্তী: তিনটি ইউটিলিটির ধাঁধা"
+  next-url=""
+  next-title="কোর্স শেষ"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="ধাঁধা"
+  course-url="index.html"
+  chapter-label="অধ্যায় ১০ · ধাঁধা"
+  title="অয়লারের বৈশিষ্ট্য সূত্র ও গ্রাফ ডুয়ালিটি | Euler&#x27;s Formula and Graph Duality"
+  desc="V − E + F = 2 — এই সুন্দর সূত্রের একটি অসাধারণ প্রমাণ স্প্যানিং ট্রি ও ডুয়াল গ্রাফ দিয়ে।"
+  video-src="../../media_vault/puzzles/lesson_10/experiments/3b1b_puzzles_10_full_dubbed.mp4"
+  yt-id="-9OUyo8NFZg"
+  date="২১ জুন, ২০১৫"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">সূত্রটি</b1b-bookmark>
+      <b1b-bookmark time="56" time-bn="০০:৫৬">স্প্যানিং ট্রি</b1b-bookmark>
+      <b1b-bookmark time="100" time-bn="০১:৪০">ডুয়াল গ্রাফ</b1b-bookmark>
+      <b1b-bookmark time="147" time-bn="০২:২৭">অন্য পৃষ্ঠে</b1b-bookmark>
+      <b1b-bookmark time="189" time-bn="০৩:০৯">শিক্ষণীয় বিষয়</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-formula">সূত্রটি</a>
+      <a href="#sec-tree">স্প্যানিং ট্রি</a>
+      <a href="#sec-dual">ডুয়াল গ্রাফ</a>
+      <a href="#sec-generalize">অন্য পৃষ্ঠে</a>
+      <a href="#sec-takeaway">শিক্ষণীয় বিষয়</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <b1b-section id="sec-formula" title="সূত্রটি">
+        <p>যেকোনো সংযুক্ত সমতলিক গ্রাফের শীর্ষ (V), ধার (E) ও ফলক (F) হলে সবসময় V − E + F = 2। বাইরের অঞ্চলটিকেও একটি ফলক হিসেবে গণনা করা হয়।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_10/f01_graph.svg" alt="সমতলিক গ্রাফ" caption="একটি সমতলিক গ্রাফ — শীর্ষ, ধার ও ফলক"></b1b-figure>
+        <b1b-formula math="V-E+F=2"></b1b-formula>
+        <p>উদাহরণ: একটি ত্রিভুজ — V = 3, E = 3, F = 2 (ভেতর + বাইর)। ৩ − ৩ + ২ = ২।</p>
+        <b1b-callout type="gold" icon="🏛️" title="অয়লারের মহান দৃষ্টি">
+          <p>১৭৫০-এর দশকে অয়লার লক্ষ করেন পলিহেড্রনের ক্ষেত্রেও একই সম্পর্ক ধরে — এটি টপোলজির জন্মের অন্যতম ধাপ।</p>
+        </b1b-callout>
+      </b1b-section>
+      <b1b-section id="sec-tree" title="স্প্যানিং ট্রি">
+        <p>প্রমাণের প্রথম ধাপ: গ্রাফের একটি স্প্যানিং ট্রি বাছুন — সব শীর্ষকে যুক্ত করে এমন উপগ্রাফ যাতে কোনো চক্র নেই। একটি V-শীর্ষের ট্রিতে E = V − 1 টি ধার থাকে।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_10/f02_tree.svg" alt="স্প্যানিং ট্রি" caption="চক্র বাদ দিয়ে গ্রাফের মেরুদণ্ড"></b1b-figure>
+        <p>ট্রির কোনো চক্র নেই, তাই একটিমাত্র ফলক — বাইরের অঞ্চল। তখন V − E + F = V − (V−1) + 1 = ২। সূত্রটি ট্রির ক্ষেত্রে প্রমাণিত।</p>
+        <b1b-formula math="E_{\text{tree}}=V-1,\quad F_{\text{tree}}=1"></b1b-formula>
+      </b1b-section>
+      <b1b-section id="sec-dual" title="ডুয়াল গ্রাফ">
+        <p>এখন বাদ পড়া ধারগুলো ফিরিয়ে আনুন। প্রতিটি বাদ-দেওয়া ধার একটি নতুন চক্র তৈরি করে এবং ফলককে দুই ভাগে ভাগ করে — অর্থাৎ E বাড়ে ১, F-ও বাড়ে ১।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_10/f03_dual.svg" alt="ডুয়াল গ্রাফ" caption="ফলককে বিন্দু বানিয়ে তৈরি ডুয়াল গ্রাফ"></b1b-figure>
+        <b1b-quiz
+          question="❓ একটি সংযুক্ত সমতলিক গ্রাফের জন্য V − E + F-এর মান কত?"
+          correct="2"
+          correct-msg="চমৎকার! অয়লারের বৈশিষ্ট্য সূত্র অনুযায়ী V − E + F = ২ (বাইরের ফলকসহ)। স্প্যানিং ট্রি থেকে শুরু করে ধার ফেরত দিয়ে এটি প্রমাণ করা যায়।"
+          wrong-msg="আবার ভেবে দেখুন। ইঙ্গিত: স্প্যানিং ট্রিতে V−(V−1)+1 = ২।"
+          reveal-msg="সঠিক উত্তর: ২">
+          <div slot="option">০</div>
+          <div slot="option">১</div>
+          <div slot="option">২</div>
+          <div slot="option">V-এর উপর নির্ভর করে</div>
+        </b1b-quiz>
+        <p>প্রতিটি ধার ফেরত দিলে V − E + F-এর মান অপরিবর্তিত থাকে (−১ + ১ = ০)। অতএব শেষ পর্যন্ত মান ২-ই থাকে — সম্পূর্ণ প্রমাণ।</p>
+        <b1b-callout type="blue" icon="🔁" title="ডুয়ালিটি">
+          <p>ফলকগুলোকে বিন্দু বানিয়ে ও ধারগুলোকে প্রথিক্রম করে যে গ্রাফ পাই, তাকে ডুয়াল গ্রাফ বলে। মূল ও ডুয়ালের ভূমিকা বিনিময়যোগ্য।</p>
+        </b1b-callout>
+      </b1b-section>
+      <b1b-section id="sec-generalize" title="অন্য পৃষ্ঠে">
+        <p>গোলকের ক্ষেত্রেও V − E + F = 2 (টোরাসে 0)। সাধারণভাবে এই মানকে বলা হয় অয়লার বৈশিষ্ট্য χ — এটি পৃষ্ঠের গঠনগত পরিচয়।</p>
+        <b1b-figure src="../../assets/figures/puzzles/lesson_10/f04_sphere.svg" alt="গোলক" caption="গোলকপৃষ্ঠে অঙ্কিত গ্রাফ — একই সূত্র প্রযোজ্য"></b1b-figure>
+        <b1b-formula math="\chi=V-E+F"></b1b-formula>
+        <p>এই কারণেই K₃,₃ সমতলে আঁকা যায় না কিন্তু টোরাসে যায় — পৃষ্ঠের χ বদলালে সীমাবদ্ধতাও বদলায়।</p>
+      </b1b-section>
+      <b1b-section id="sec-takeaway" title="শিক্ষণীয় বিষয়">
+        <p>একটি সূত্র মুখস্থ করার বদলে তার প্রমাণের গঠন বোঝা গণিতের আসল আনন্দ। স্প্যানিং ট্রি + এক-ধার-ফেরত — মাত্র দুটি ধাপে পুরো ফল।</p>
+        <p>এই কোর্সের ধাঁধাগুলোতে আমরা বারবার দেখেছি — সঠিক দৃষ্টিভঙ্গি বা ইনভ্যারিয়েন্ট খুঁজে পেলে কঠিনতা অদৃশ্য হয়ে যায়।</p>
+      </b1b-section>
+
+      <!-- ═══ Practice — excluded from narration ═══ -->
+      <b1b-section id="sec-practice" title="অনুশীলন ও সারসংক্ষেপ" data-no-narration="true">
+        <p>পাঠের মূল ধারণাটি নিজের ভাষায় বলে দেখুন, তারপর নিচের প্রশ্নের উত্তর দিন।</p>
+        <b1b-quiz
+          question="❓ এই পাঠের মূল ধারণা কোনটি?"
+          correct="1"
+          correct-msg="চমৎকার! এই কোর্সজুড়ে আমরা দেখেছি — ইনভ্যারিয়েন্ট, কোডিং, জ্যামিতি বা টপোলজি যাই হোক, সঠিক দৃষ্টিভঙ্গিই সমাধানের চাবি।"
+          wrong-msg="আবার ভেবে দেখুন। ইঙ্গিত: “দৃষ্টিভঙ্গি” শব্দটি মনে রাখুন।"
+          reveal-msg="সঠিক উত্তর: সঠিক দৃষ্টিভঙ্গি বা কাঠামো খুঁজে পেলে কঠিন ধাঁধাও সরল হয়">
+          <div slot="option">ধাঁধা মানেই ভাগ্যের ব্যাপার</div>
+          <div slot="option">সঠিক দৃষ্টিভঙ্গি বা কাঠামো খুঁজে পেলে কঠিন ধাঁধাও সরল হয়</div>
+          <div slot="option">সব উত্তর মুখস্থ করতে হয়</div>
+          <div slot="option">গণিত কেবল সংখ্যা নিয়ে কাজ করে</div>
+        </b1b-quiz>
+        <b1b-callout type="green" icon="✅" title="পরবর্তী পাঠ">
+          <p>পরবর্তী অধ্যায়ে আমরা আরেকটি ধাঁধা নিয়ে কাজ করব। প্রতিটি পাঠেই নতুন একটি দৃষ্টিভঙ্গি যোগ হবে।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/puzzles/lesson_10/experiments/3b1b_puzzles_10_full_dubbed.mp4"
+    yt-id="-9OUyo8NFZg"
+    title="অয়লারের বৈশিষ্ট্য সূত্র ও গ্রাফ ডুয়ালিটি | Euler&#x27;s Formula and Graph Duality"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — ধাঁধা">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_09.html"
+  prev-title="পূর্ববর্তী: তিনটি ইউটিলিটির ধাঁধা"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url=""
+  next-title="কোর্স শেষ"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

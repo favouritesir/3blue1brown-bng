@@ -1,0 +1,144 @@
+---
+title: Three-dimensional linear transformations
+description: How to think of 3x3 matrices as transforming 3d space
+date: 2016-08-09
+chapter: 5
+video: rHLEWRxRGiM
+source: _2016/eola/footnote.py
+credits:
+  - Lesson by Grant Sanderson
+  - Text Adaptation by Kurt Bruns & James Schloss
+---
+
+import Collapsible from "~/components/Collapsible";
+import Figure from "~/components/Figure";
+import LessonLink from "~/components/LessonLink";
+import Question from "~/components/Question";
+
+<section>
+
+> Lisa: Well, where's my dad?
+>
+> Frink: Well, it should be obvious to even the most dimwitted individual who holds an advanced degree in hyperbolic topology that Homer Simpson has stumbled into... *dramatic pause*... the third dimension.
+
+In the last two chapters, we talked about linear transformations and matrices, but only showed the specific case of transformations that take two-dimensional vectors to other two-dimensional vectors. Throughout this series we will work mainly in two-dimensions, mostly because it's easier to actually see on the screen and wrap your mind around. And more importantly, once you get all the core ideas in two dimensions, they carry over pretty seamlessly to higher dimensions.
+
+Nevertheless it's good to peek our head outside of flatland now and then to see what it means to apply these ideas to more dimensions.
+
+</section>
+
+<section>
+
+## Three-dimensions
+
+For example, consider a linear transformation with three-dimensional vectors as inputs and three-dimensional vectors as outputs.
+
+<Figure image="$lesson/TransformationFunction.svg" />
+
+Just like in two dimensions, we can visualize the transformation as the input vector *moving* to the output vector.
+
+<Figure
+  image="$lesson/Transform3dVector.svg"
+  video="$lesson/Transform3dVector.mp4"
+/>
+
+To understand the transformation as a whole, we imagine every possible vector move to its corresponding output vector.
+
+<Figure
+  image="$lesson/TransformManyVectors.svg"
+  video="$lesson/TransformManyVectors.mp4"
+/>
+
+It gets very crowded to think about all the vectors as arrows all at once. Instead, we can get a sense for the behavior of the function by transforming the grid in a way that keeps grid lines parallel and evenly spaced.
+
+<Figure
+  image="$lesson/TransformGrid.svg"
+  video="$lesson/TransformGrid.mp4"
+/>
+
+Just as with two dimensions, one of these transformations is completely determined by where the basis vectors go. But now, there are three basis vectors: The unit vector in the $x$-direction, $\hat{\imath}$, the unit vector in the $y$-direction, $\hat{\jmath}$, and the unit vector in the $z$-direction, called $\hat{k}$.
+
+<Figure image="$lesson/BasisVectors.svg" />
+
+In fact it's easier to think about these transformations by only following the basis vectors, since the full 3d grid representing all points can get messy. By leaving a copy of the original axes in the background, we can think about the coordinates where each of the three basis vectors lands.
+
+<Figure
+  image="$lesson/FollowBasisVectors.svg"
+  video="$lesson/FollowBasisVectors.mp4"
+/>
+
+Record the coordinates of these three resulting vectors as the columns of a 3x3 matrix. This gives a matrix that completely describes your transformation using nine numbers.
+
+<Figure image="$lesson/TransformMatrix.svg" />
+
+To see where a vector with coordinates $x$, $y$ and $z$ lands, the reasoning is almost identical to what it was for two dimensions: Each of those coordinates can be thought of as instructions for how to scale each basis vector, so that they add together to get your vector.
+
+<Figure image="$lesson/VectorAsTransformationBefore.svg" />
+
+The important part, just like the 2d case, is that this scaling and adding process works both before and after the transformation. Note how the axis are tilted in the following image:
+
+<Figure image="$lesson/VectorAsTransformationAfter.svg" />
+
+To see where your vector lands, you multiply those coordinates by the corresponding column of the matrix, and add together the three results.
+
+<Figure image="$lesson/TransformationMatrix.svg" />
+
+**Given the transformation function defined by the matrix $\begin{bmatrix} 0 & 0.5 & -0.5 \\ 0 & 0.5 & 1 \\ 1 & 0 & 0.5\end{bmatrix}$ and the vector $\begin{bmatrix} 1 \\ 0 \\ -2 \end{bmatrix}$ as input what is the resulting output vector? For reference, here is the corresponding visualization of where the basis vectors land.**
+
+<Figure
+  image="$lesson/Question1Transformation3d.svg"
+/>
+
+</section>
+
+<section>
+
+## Examples
+
+Consider the transformation here that rotates space $90^\circ$ degrees around the $y$-axis.
+
+<Figure
+  image="$lesson/Rotate90DegreesAroundYAxis.svg"
+  video="$lesson/Rotate90DegreesAroundYAxis.mp4"
+/>
+
+It takes $\hat{\imath}$ to the coordinates $\begin{bmatrix} 0 \\ 0 \\ -1 \end{bmatrix}$, so that's the first column of our matrix. It doesn't move $\hat{\jmath}$, so the second column is $\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}$. And it moves $\hat{k}$ onto the $x$-axis at $\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$, so that becomes the third column of our matrix.
+
+$$
+\hat{\imath} \rightarrow \begin{bmatrix} 0 \\ 0 \\ -1 \end{bmatrix}, \quad
+\hat{\jmath} \rightarrow \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \quad
+\hat{k} \rightarrow \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
+$$
+
+</section>
+
+<section>
+
+## Combining Transformations
+
+Multiplying two matrices is also similar to what we did for two dimensions: Whenever you see two 3x3 matrices getting multiplied together, you should imagine first applying the transformation encoded by the right one, then applying the transformation encoded by the left one.
+
+<Figure image="$lesson/MatrixMultiplication.svg" />
+
+The resulting transformation is the combination of applying the two matrices one after the other.
+
+<Figure
+  image="$lesson/ComposingTransformations.svg"
+  video="$lesson/ComposingTransformations.mp4"
+/>
+
+Three dimension matrix multiplication turns out to be very important for computer graphics and robotics, since things like rotations in three-dimensions can be very hard to describe, but are easier to wrap your mind around if you break them down as the composition of different transformations.
+
+Performing this matrix multiplication numerically is, once again, very analogous to the two-dimensional case. In fact, a good way to test your understanding of the last chapter would be to reason through what specifically it should look like, thinking closely about how it relates to the idea of applying two successive transformations of space.
+
+</section>
+
+<section>
+
+## Puzzle
+
+Here's another puzzle for you: It's also meaningful to talk about a linear transformation from two-dimensional space to three-dimensional space, or from three-dimensions down to two. Can you visualize such a transformation? And can you represent them with matrices? How many rows and columns for each one? When is it meaningful to talk about multiplying such matrices, and why?
+
+In the next chapter, we'll get into the determinant.
+
+</section>

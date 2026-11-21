@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>মৌলিক নিয়মিততায় লুকোনো পাই | Pi hiding in prime regularities</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/number_theory/lesson_03/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<b1b-search-overlay></b1b-search-overlay>
+
+<b1b-navbar
+  course-title="সংখ্যা তত্ত্ব"
+  course-url="../../index.html#number-theory"
+  home-url="../../index.html"
+  chapter-num="০৩"
+  chapter-total="০৩"
+  prev-url="lesson_02.html"
+  prev-title="পূর্ববর্তী অধ্যায়: পিথাগোরীয় ট্রিপল"
+  next-url=""
+  next-title="শেষ অধ্যায়"
+  active-mode="read">
+</b1b-navbar>
+
+<b1b-hero-player
+  course-title="সংখ্যা তত্ত্ব"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৩ · সংখ্যা তত্ত্ব"
+  title="মৌলিক নিয়মিততায় লুকোনো পাই | Pi hiding in prime regularities"
+  desc="লাইবনিটজের ধারা, গাউসিয়ান পূর্ণসংখ্যা ও মৌলিক সংখ্যার গুণফল থেকে পাই-এর জন্ম"
+  video-src="../../media_vault/number_theory/lesson_03/experiments/3b1b_number_theory_03_full_dubbed.mp4"
+  yt-id="NaL_Cb42WyY"
+  date="১৯ মে, ২০১৭"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2017/leibniz.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<div class="lesson-body">
+
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">লাইবনিটজের ধারা ও বৃত্ত</b1b-bookmark>
+      <b1b-bookmark time="87" time-bn="০১:২৭">arctan ও গুণোত্তর ধারা</b1b-bookmark>
+      <b1b-bookmark time="178" time-bn="০২:৫৮">গাউসিয়ান বিন্দু ও বৃত্ত</b1b-bookmark>
+      <b1b-bookmark time="260" time-bn="০৪:২০">মৌলিক ও দুই বর্গের যোগফল</b1b-bookmark>
+      <b1b-bookmark time="260" time-bn="০৪:২০">অয়লারের গুণফল সূত্র</b1b-bookmark>
+      <b1b-bookmark time="260" time-bn="০৪:২০">দুই ধারার মিলন ও উপসংহার</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-leibniz-series">লাইবনিটজের ধারা ও লুকোনো বৃত্ত</a>
+      <a href="#sec-gaussian">গাউসিয়ান পূর্ণসংখ্যা ও দুই বর্গের যোগফল</a>
+      <a href="#sec-product">অয়লারের গুণফলে পাই</a>
+      <a href="#sec-conclusion">দুই ধারার মিলন ও উপসংহার</a>
+      <a href="#sec-lab">ইন্টারেক্টিভ ল্যাব — ধারা ও আংশিক যোগফল</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+<b1b-section id="sec-leibniz-series" title="লাইবনিটজের ধারা ও লুকোনো বৃত্ত">
+        <p>১৬৭০-এর দশকে গটফ্রিড লাইবনিটজ একটি আশ্চর্য সূত্র আবিষ্কার করেছিলেন: ১ − ১/৩ + ১/৫ − ১/৭ + ১/৯ − … = π/4। বাঁ দিকে কেবল সাদামাটা ভগ্নাংশ, ডান দিকে বৃত্তের পরিধি আর ব্যাসের অনুপাত — দেখে মনে হয় না এদের কোনো সম্পর্ক আছে। কিন্তু এই অধ্যায়ে আমরা দেখব, এই 'অসম্ভব' সমীকরণের পেছনে আছে জটিল সংখ্যা আর মৌলিক সংখ্যার গভীর নিয়মিততা।</p>
+
+        <b1b-formula math="\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}=1-\frac13+\frac15-\frac17+\cdots=\frac{\pi}{4}"></b1b-formula>
+
+        <b1b-figure alt="গ্রাফে আংশিক যোগফল পাই/৪-এর ওপর দিয়ে দোলে — ১, ০.৬৬৭, ০.৮৬৭, ০.৭২৪ করে ক্রমশ কাছে আসে। প্রতিটি নতুন পদ ছোট হওয়ায় দোলন কমে যায়। অসীম ধারা কীভাবে এক সংখ্যায় স্থির হয় এখানে দেখা যায়।" caption=" গ্রাফে আংশিক যোগফলগুলো π/4-এর (হলুদ ড্যাশ্ড রেখা) ওপর দিয়ে দোলে — প্রথম পদ ১, তারপর ০.৬৬৭, ০.৮৬৭, ০.৭২৪… করে ক্রমশ কাছে আসে। প্রতিটি নতুন পদ আগের চেয়ে ছোট, তাই দোলনের প্রশস্ততা কমতে থাকে। ছবিটি মনে রেখো: অসীম ধারা কীভাবে একটিমাত্র সংখ্যায় স্থির হয় তা এখানে দেখা যায়।"><svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="লাইবনিটজ ধারা" style="width:100%;max-width:440px;height:auto;background:#0e1622;border:1px solid #27364a;border-radius:10px"><defs><marker id="nt-arrow-13" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#8afdff"/></marker></defs><line x1="20" y1="120" x2="385" y2="120" stroke="#ffd166" stroke-dasharray="5 4"/><polyline points="30.0,10.0 66.0,176.5 102.0,76.5 138.0,148.0 174.0,92.5 210.0,138.0 246.0,99.5 282.0,133.0 318.0,104.5 354.0,128.0" fill="none" stroke="#8afdff" stroke-width="2"/><text x="8" y="18" fill="#ffd166" font-size="12">আংশিক যোগফল π/4-এর চারপাশে দোলা খাচ্ছে</text></svg></b1b-figure>
+
+        <p>এই সূত্রের সহজ ব্যাখ্যা আসে arctan ফাংশন থেকে। জ্যামিতিক ধারা 1/(1+t²) = 1 − t² + t⁴ − … কে 0 থেকে 1 পর্যন্ত ইন্টিগ্রেট করলে পাই arctan(1) = 1 − 1/3 + 1/5 − …। আর arctan(1) = π/4, কারণ ৪৫ ডিগ্রি কোণের tangent হলো ১। অর্থাৎ বৃত্তটি এসেছে ট্রিগনোমেট্রির দরজা দিয়ে — কিন্তু প্রশ্ন থেকেই যায়, মৌলিক সংখ্যা এখানে কোথা থেকে আসে?</p>
+
+        <b1b-formula math="\arctan x=\int_0^x\frac{dt}{1+t^2}=x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots"></b1b-formula>
+
+        <b1b-quiz
+          question="❓ $1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\cdots$ ধারাটির মান কত?"
+          correct="1"
+          correct-msg="সঠিক! arctan(1) = π/4 এবং arctan-এর ধারা 1 − 1/3 + 1/5 − … — তাই যোগফল π/4। কিন্তু প্রশ্ন হলো বৃত্ত আকস্মিকভাবে এখানে কী করছে?"
+          wrong-msg="arctan x = x − x³/3 + x⁵/5 − …; x = 1 বসালে পাওয়া যায় π/4।"
+          reveal-msg="সঠিক উত্তর $\frac{\pi}{4}$।">
+          <div slot="option">$\frac{\pi}{2}$</div>
+          <div slot="option">$\frac{\pi}{4}$</div>
+          <div slot="option">$\frac{\pi}{8}$</div>
+          <div slot="option">$\frac{4}{\pi}$</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <b1b-section id="sec-gaussian" title="গাউসিয়ান পূর্ণসংখ্যা ও দুই বর্গের যোগফল">
+        <p>জটিল তলে পূর্ণসংখ্যার বিন্দুগুলো (a + bi) এক একটি বর্গাকার জালি তৈরি করে — একে গাউসিয়ান পূর্ণসংখ্যা বলে।-radius R-এর বৃত্তের ভেতরে কতগুলো বিন্দু আছে? ক্ষেত্রফল πR² আর প্রতি একক বর্গে প্রায় একটি বিন্দু — তাই উত্তর প্রায় πR²। এই সরল ধারণাটিই শেষ পর্যন্ত π-এর সূত্রে রূপ নেবে।</p>
+
+        <b1b-figure alt="ছবিতে বৃত্তের ভেতরে জালির বিন্দু আর হলুদ বিন্দু দেখা যাচ্ছে, যারা দুই বর্গের যোগফল যেমন ৫ বা ১৩। বিন্দুর ঘনত্ব প্রায় সমান, তাই মোট সংখ্যা ক্ষেত্রফল πR²-এর সমান। এই গণনাই পরের সূত্রের ভিত্তি।" caption=" ছবিতে বৃত্তের ভেতরে জালির বিন্দুগুলো দেখানো হয়েছে; হলুদ বিন্দুগুলো এমন সংখ্যা যারা দুই বর্গের যোগফল (যেমন 5 = 1²+2², 13 = 2²+3²)। বাইরের ড্যাশ্ড বৃত্ত R-এর সীমা। বিন্দুগুলোর ঘনত্ব প্রায় একই — তাই মোট সংখ্যা ক্ষেত্রফল πR²-এর সমান হয়। এই গণনাই পরের সব সূত্রের ভিত্তি।"><svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="গাউসিয়ান বৃত্ত" style="width:100%;max-width:440px;height:auto;background:#0e1622;border:1px solid #27364a;border-radius:10px"><defs><marker id="nt-arrow-14" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#8afdff"/></marker></defs><circle cx="200" cy="110" r="77" fill="none" stroke="#4361ee" stroke-width="1.6" stroke-dasharray="4 3"/><line x1="200" y1="18" x2="200" y2="202" stroke="#27364a"/><line x1="108" y1="110" x2="292" y2="110" stroke="#27364a"/><circle cx="140" cy="140" r="2.6" fill="#8afdff"/><circle cx="140" cy="125" r="2.6" fill="#ffd166"/><circle cx="140" cy="110" r="2.6" fill="#8afdff"/><circle cx="140" cy="95" r="2.6" fill="#ffd166"/><circle cx="140" cy="80" r="2.6" fill="#8afdff"/><circle cx="155" cy="155" r="2.6" fill="#8afdff"/><circle cx="155" cy="140" r="2.6" fill="#ffd166"/><circle cx="155" cy="125" r="2.6" fill="#8afdff"/><circle cx="155" cy="110" r="2.6" fill="#8afdff"/><circle cx="155" cy="95" r="2.6" fill="#8afdff"/><circle cx="155" cy="80" r="2.6" fill="#ffd166"/><circle cx="155" cy="65" r="2.6" fill="#8afdff"/><circle cx="170" cy="170" r="2.6" fill="#8afdff"/><circle cx="170" cy="155" r="2.6" fill="#ffd166"/><circle cx="170" cy="140" r="2.6" fill="#8afdff"/><circle cx="170" cy="125" r="2.6" fill="#ffd166"/><circle cx="170" cy="110" r="2.6" fill="#8afdff"/><circle cx="170" cy="95" r="2.6" fill="#ffd166"/><circle cx="170" cy="80" r="2.6" fill="#8afdff"/><circle cx="170" cy="65" r="2.6" fill="#ffd166"/><circle cx="170" cy="50" r="2.6" fill="#8afdff"/><circle cx="185" cy="170" r="2.6" fill="#ffd166"/><circle cx="185" cy="155" r="2.6" fill="#8afdff"/><circle cx="185" cy="140" r="2.6" fill="#ffd166"/><circle cx="185" cy="125" r="2.6" fill="#8afdff"/><circle cx="185" cy="110" r="2.6" fill="#8afdff"/><circle cx="185" cy="95" r="2.6" fill="#8afdff"/><circle cx="185" cy="80" r="2.6" fill="#ffd166"/><circle cx="185" cy="65" r="2.6" fill="#8afdff"/><circle cx="185" cy="50" r="2.6" fill="#ffd166"/><circle cx="200" cy="170" r="2.6" fill="#8afdff"/><circle cx="200" cy="155" r="2.6" fill="#8afdff"/><circle cx="200" cy="140" r="2.6" fill="#8afdff"/><circle cx="200" cy="125" r="2.6" fill="#8afdff"/><circle cx="200" cy="110" r="2.6" fill="#8afdff"/><circle cx="200" cy="95" r="2.6" fill="#8afdff"/><circle cx="200" cy="80" r="2.6" fill="#8afdff"/><circle cx="200" cy="65" r="2.6" fill="#8afdff"/><circle cx="200" cy="50" r="2.6" fill="#8afdff"/><circle cx="215" cy="170" r="2.6" fill="#ffd166"/><circle cx="215" cy="155" r="2.6" fill="#8afdff"/><circle cx="215" cy="140" r="2.6" fill="#ffd166"/><circle cx="215" cy="125" r="2.6" fill="#8afdff"/><circle cx="215" cy="110" r="2.6" fill="#8afdff"/><circle cx="215" cy="95" r="2.6" fill="#8afdff"/><circle cx="215" cy="80" r="2.6" fill="#ffd166"/><circle cx="215" cy="65" r="2.6" fill="#8afdff"/><circle cx="215" cy="50" r="2.6" fill="#ffd166"/><circle cx="230" cy="170" r="2.6" fill="#8afdff"/><circle cx="230" cy="155" r="2.6" fill="#ffd166"/><circle cx="230" cy="140" r="2.6" fill="#8afdff"/><circle cx="230" cy="125" r="2.6" fill="#ffd166"/><circle cx="230" cy="110" r="2.6" fill="#8afdff"/><circle cx="230" cy="95" r="2.6" fill="#ffd166"/><circle cx="230" cy="80" r="2.6" fill="#8afdff"/><circle cx="230" cy="65" r="2.6" fill="#ffd166"/><circle cx="230" cy="50" r="2.6" fill="#8afdff"/><circle cx="245" cy="155" r="2.6" fill="#8afdff"/><circle cx="245" cy="140" r="2.6" fill="#ffd166"/><circle cx="245" cy="125" r="2.6" fill="#8afdff"/><circle cx="245" cy="110" r="2.6" fill="#8afdff"/><circle cx="245" cy="95" r="2.6" fill="#8afdff"/><circle cx="245" cy="80" r="2.6" fill="#ffd166"/><circle cx="245" cy="65" r="2.6" fill="#8afdff"/><circle cx="260" cy="140" r="2.6" fill="#8afdff"/><circle cx="260" cy="125" r="2.6" fill="#ffd166"/><circle cx="260" cy="110" r="2.6" fill="#8afdff"/><circle cx="260" cy="95" r="2.6" fill="#ffd166"/><circle cx="260" cy="80" r="2.6" fill="#8afdff"/><text x="8" y="18" fill="#ffd166" font-size="12">বৃত্তের ভেতরের গাউসিয়ান বিন্দু ~ πR²</text></svg></b1b-figure>
+
+        <b1b-quiz
+          question="❓ বৃত্তের ভেতরের গাউসিয়ান বিন্দু (lattice point) সংখ্যা R বড় হলে কতের কাছাকাছি হয়?"
+          correct="1"
+          correct-msg="সঠিক! বৃত্তের ক্ষেত্রফল πR², আর প্রতিটি একক বর্গে প্রায় একটি করে বিন্দু থাকে — তাই মোট বিন্দু ≈ πR²। এই সরল ধারণাটিই শেষ পর্যন্ত π-এর গুণফল সূত্রের দিকে নিয়ে যায়।"
+          wrong-msg="বৃত্তের ক্ষেত্রফল πR²; ঘনত্ব ~1 হওয়ায় বিন্দুর সংখ্যাও ~πR²।"
+          reveal-msg="সঠিক উত্তর πR²।">
+          <div slot="option">πR</div>
+          <div slot="option">πR²</div>
+          <div slot="option">2πR</div>
+          <div slot="option">R²</div>
+        </b1b-quiz>
+
+        <p>প্রতিটি গাউসিয়ান পূর্ণসংখ্যার নর্ম N(a + bi) = a² + b²। প্রশ্ন এখন দাঁড়ায়: কোন কোন পূর্ণসংখ্যা n-এর জন্য a² + b² = n সমাধান আছে? গাউসিয়ান পূর্ণসংখ্যায় factorization n = (a+bi)(a−bi)। যেহেতু অনন্য factorization প্রযোজ্য, n-কে দুই বর্গে লেখার সংখ্যা নির্ভর করে n-এর মৌলিক উৎপাদকের ওপর — বিশেষ করে 4k+1 আর 4k+3 শ্রেণির মৌলিকের ওপর।</p>
+
+        <b1b-formula math="N(a+bi)=a^2+b^2=(a+bi)(a-bi)"></b1b-formula>
+
+        <b1b-callout type="gold" icon="🧮" title="মৌলিকের দুই শ্রেণি"><p>যে মৌলিক 4k+1 আকারের (যেমন 5, 13, 17), তা গাউসিয়ান পূর্ণসংখ্যায় দুই গুণনীয়কে ভেঙে যায় — 5 = (2+i)(2−i)। আর যে মৌলিক 4k+3 আকারের (যেমন 3, 7, 11), তা অভেদ্য থেকে যায়। তাই n কে দুই বর্গের যোগফল লিখতে হলে 4k+3 মৌলিকগুলোকে জোড় ঘাতে থাকতে হয়; 4k+1 মৌলিকগুলো ইচ্ছামতো যোগ দিতে পারে। এই দুই শ্রেণির ভিন্ন আচরণই π-এর গুণফল সূত্রের চাবিকাঠি।</p></b1b-callout>
+
+        <b1b-quiz
+          question="❓ নিচের কোন মৌলিক সংখ্যাটি দুটি পূর্ণবর্গের যোগফল?"
+          correct="2"
+          correct-msg="হ্যাঁ! 13 = 2² + 3²। 4k+1 আকারের মৌলিকই কেবল দুই বর্গের যোগফল হতে পারে; 7, 11, 19 সবই 4k+3।"
+          wrong-msg="4k+3 আকারের মৌলিক কখনো দুই বর্গের যোগফল নয়। 13 = 4×3+1 আকারের।"
+          reveal-msg="সঠিক উত্তর 13 = 4 + 9।">
+          <div slot="option">7</div>
+          <div slot="option">11</div>
+          <div slot="option">13</div>
+          <div slot="option">19</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <b1b-section id="sec-product" title="অয়লারের গুণফলে পাই">
+        <p>এখন বৃত্তের ভেতরের বিন্দু সংখ্যা দুইভাবে গণনা করি। একদিকে πR²। অন্যদিকে প্রতিটি গাউসিয়ান পূর্ণসংখ্যার নর্ম n-এর জন্য r₂(n) সংখ্যক উপায়ে বিন্দু পাওয়া যায় — অর্থাৎ মোট ∑_{n≤R²} r₂(n)। 4k+1 মৌলিকের কারণে r₂(n) বাড়ে, 4k+3 মৌলিকের কারণে কমে। R → ∞ হলে এই দুই গণনার মিল থেকে π/4-এর এক গুণফল রূপ পাওয়া যায় — ঠিক যেমন অয়লার বেসেল সমস্যায় পেয়েছিলেন।</p>
+
+        <b1b-figure alt="বলয়গুলো ধাপে ধাপে মৌলিকের গুণনীয়ক যোগ করে — ৫-এর ৫/৪, ১৩-এর ১৩/১২, ৩-এর ৩/৪, ৭-এর ৭/৮। হলুদ কেন্দ্র π/4। অসীম মৌলিকের ছোট সংশোধন মিলে বৃত্তের পরিমাপ তৈরি করছে।" caption=" বলয়গুলো ধাপে ধাপে মৌলিকগুলোর গুণনীয়ক যোগ করতে দেখায় — ৫-এর ফ্যাক্টর ৫/৪, ১৩-এর ১৩/১২, আর ৩-এর ৩/৪, ৭-এর ৭/৮। হলুদ কেন্দ্র π/4-এর লক্ষ্য। প্রতিটি বলয় আগের আসন্ন মানকে আরও নিখুঁত করে। ছবিটি মনে রেখো: অসীম সংখ্যক মৌলিকের ছোট ছোট সংশোধন মিলে একটি বৃত্তের পরিমাপ তৈরি করছে।"><svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="অয়লার গুণফল" style="width:100%;max-width:440px;height:auto;background:#0e1622;border:1px solid #27364a;border-radius:10px"><defs><marker id="nt-arrow-15" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#8afdff"/></marker></defs><circle cx="200" cy="110" r="18" fill="none" stroke="#8afdff" opacity="0.90"/><circle cx="200" cy="110" r="31" fill="none" stroke="#8afdff" opacity="0.81"/><circle cx="200" cy="110" r="44" fill="none" stroke="#8afdff" opacity="0.72"/><circle cx="200" cy="110" r="57" fill="none" stroke="#8afdff" opacity="0.63"/><circle cx="200" cy="110" r="70" fill="none" stroke="#8afdff" opacity="0.54"/><circle cx="200" cy="110" r="83" fill="none" stroke="#8afdff" opacity="0.45"/><circle cx="200" cy="110" r="96" fill="none" stroke="#8afdff" opacity="0.36"/><text x="205" y="114" fill="#ffd166" font-size="14">π/4</text><text x="8" y="18" fill="#ffd166" font-size="12">প্রতিটি মৌলিক সংখ্যা এক একটি গুণনীয়ক</text></svg></b1b-figure>
+
+        <b1b-formula math="\frac{\pi}{4}=\prod_{p\equiv 1\ (4)}\frac{p}{p-1}\ \cdot\prod_{p\equiv 3\ (4)}\frac{p}{p+1}"></b1b-formula>
+
+        <p>সূত্রটি পড়া যায় এভাবে — প্রতিটি 4k+1 মৌলিক π/4-কে p/(p−1) গুণ বাড়ায়, আর প্রতিটি 4k+3 মৌলিক p/(p+1) গুণ কমায়। 5-এর জন্য 5/4, 13-এর জন্য 13/12; 3-এর জন্য 3/4, 7-এর জন্য 7/8। এই দুই ধরনের সংশোধনের ভারসাম্যেই π/4 দাঁড়িয়ে আছে। আবার χ₄(n) চিহ্ন ব্যবহার করে একটিমাত্র সূত্রে লেখা যায়: π/4 = ∏_p (1 − χ₄(p)/p)⁻¹, যেখানে χ₄(2) = 0, χ₄(4k+1) = 1, χ₄(4k+3) = −1।</p>
+
+        <b1b-formula math="\frac{\pi}{4}=\prod_{p}\left(1-\frac{\chi_4(p)}{p}\right)^{-1},\qquad \chi_4(p)=\begin{cases}0,&p=2\\ 1,&p\equiv1\,(4)\\ -1,&p\equiv3\,(4)\end{cases}"></b1b-formula>
+
+        <b1b-quiz
+          question="❓ অয়লারের গুণফলে $p\equiv 1\pmod 4$ মৌলিকের জন্য গুণনীয়ক কত?"
+          correct="0"
+          correct-msg="সঠিক! 1-এর জন্য χ₄(p) = 1, তাই (1 − 1/p)⁻¹ = p/(p−1)। p = 5-এর জন্য গুণনীয়ক 5/4। 3-এর মতো মৌলিকের ক্ষেত্রে χ₄ = −1, তাই ফ্যাক্টর p/(p+1)।"
+          wrong-msg="χ₄(p) = 1 হলে ফ্যাক্টর (1 − 1/p)⁻¹ = p/(p−1); χ₄ = −1 হলে p/(p+1)।"
+          reveal-msg="সঠিক উত্তর $\frac{p}{p-1}$।">
+          <div slot="option">$\frac{p}{p-1}$</div>
+          <div slot="option">$\frac{p}{p+1}$</div>
+          <div slot="option">$\frac{p-1}{p}$</div>
+          <div slot="option">$1-\frac{1}{p}$</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <b1b-section id="sec-conclusion" title="দুই ধারার মিলন ও উপসংহার">
+        <p>এখন লাইবনিটজের মূল ধারাটি আবার দেখো — ১ − ১/৩ + ১/৫ − …। এই '+ − + −' চিহ্নের পর্যায়ক্রম আসলে χ₄(n)-এর মতোই: 4k+1 সংখ্যা ধনাত্মক, 4k+3 ঋণাত্মক, জোড় সংখ্যা বাদ। আর arctan-এর ধারা ও গাউসিয়ান পূর্ণসংখ্যার গুণফল — দুটি সম্পূর্ণ ভিন্ন পথ একসাথে এগিয়ে গিয়ে একই π/4-এ পৌঁছায়। এটি গণিতের সবচেয়ে সুন্দর মিলনগুলোর একটি।</p>
+
+        <p>আরও এক কথা — একই কৌশল বেসেল সমস্যায় (1 + 1/4 + 1/9 + … = π²/6) কাজ করে, শুধু সেখানে χ₄-এর বদলে সব মৌলিক অংশ নেয়। আধুনিক সংখ্যাতত্ত্বে L-ফাংশন, Dirichlet-এর ধারা আর Chebotarev ঘনত্ব — সবই এই একই ধারণার বিস্তারিত রূপ। যেটি শুরুতে একটা অদ্ভুত ভগ্নাংশের ধারা মনে হয়েছিল, তা আজ বৃত্ত, মৌলিক ও জটিল সংখ্যার এক গভীর সংযোগের দরজা।</p>
+      </b1b-section>
+
+      <!-- ── Interactive lab : intentionally outside narration ── -->
+      <b1b-section id="sec-lab" title="ইন্টারেক্টিভ ল্যাব — ধারা ও আংশিক যোগফল" data-no-narration="true">
+        <p class="viz-intro">পদ সংখ্যা বাড়িয়ে লাইবনিটজের ধারার আংশিক যোগফল π/4-এর কাছে কীভাবে আসছে তা দেখো। প্রতিটি নতুন পদ আগেরটির বিপরীত দিকে ঠেলে দেয় — এই দোলনাই ধারার বৈশিষ্ট্য।</p>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <nt-math-lab mode="leibniz"></nt-math-lab>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div>
+
+  <b1b-watch-panel
+    video-src="../../media_vault/number_theory/lesson_03/experiments/3b1b_number_theory_03_full_dubbed.mp4"
+    yt-id="NaL_Cb42WyY"
+    title="মৌলিক নিয়মিততায় লুকোনো পাই | Pi hiding in prime regularities — অধ্যায় ০৩"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — সংখ্যা তত্ত্ব">
+  </b1b-watch-panel>
+
+</div>
+
+<b1b-chapter-nav
+  prev-url="lesson_02.html"
+  prev-title="পূর্ববর্তী অধ্যায়: পিথাগোরীয় ট্রিপল"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url=""
+  next-title="শেষ অধ্যায়"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- Page-specific interactive lab component (NEW element; no library override) -->
+<script>
+(function () {
+  if (customElements.get('nt-math-lab')) return;
+  class NtMathLab extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.rendered) return;
+      this.dataset.rendered = 'true';
+      const mode = this.getAttribute('mode') || 'spiral';
+      this.innerHTML =
+        '<div style="background:#0e1622;border:1px solid #27364a;border-radius:12px;padding:14px;color:#dbe7f3">' +
+          '<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px">' +
+            '<label style="font-size:13px">N = <input type="range" min="20" max="320" value="140" ' +
+              'style="width:180px;vertical-align:middle"/><b class="val" style="color:#ffd166">140</b></label>' +
+            '<button class="replay" style="padding:6px 12px;border-radius:8px;border:1px solid #4361ee;' +
+              'background:#16233a;color:#dbe7f3;cursor:pointer">🔄 পুনরাঙ্কন</button>' +
+          '</div>' +
+          '<canvas width="640" height="360" style="width:100%;height:auto;background:#0a1018;border-radius:8px"></canvas>' +
+          '<p class="hint" style="font-size:12px;color:#8fa6bf;margin:8px 0 0"></p>' +
+        '</div>';
+      const range = this.querySelector('input');
+      const val = this.querySelector('.val');
+      const canvas = this.querySelector('canvas');
+      const hint = this.querySelector('.hint');
+      const ctx = canvas.getContext('2d');
+      const draw = () => {
+        const n = +range.value;
+        val.textContent = n;
+        ctx.clearRect(0, 0, 640, 360);
+        ctx.strokeStyle = '#1d2939';
+        ctx.lineWidth = 1;
+        for (let x = 0; x <= 640; x += 40) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, 360); ctx.stroke(); }
+        for (let y = 0; y <= 360; y += 40) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(640, y); ctx.stroke(); }
+        ctx.save();
+        ctx.translate(320, 180);
+        const prime = (k) => { if (k < 2) return false; for (let d = 2; d * d <= k; d++) if (k % d === 0) return false; return true; };
+        if (mode === 'spiral') {
+          ctx.strokeStyle = '#8afdff'; ctx.lineWidth = 1.4; ctx.beginPath();
+          for (let i = 0; i < 240; i++) {
+            const r = 2 + i * 0.62, a = i * 0.31;
+            const x = r * Math.cos(a), y = r * Math.sin(a);
+            if (!i) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+          ctx.fillStyle = '#ffd166';
+          for (let p = 2; p <= n; p++) {
+            if (!prime(p)) continue;
+            const r = 1.6 + p * 0.62, a = p * 0.31;
+            ctx.beginPath(); ctx.arc(r * Math.cos(a), r * Math.sin(a), 2.2, 0, 7); ctx.fill();
+          }
+          hint.textContent = 'হলুদ বিন্দুগুলো মৌলিক সংখ্যা। N বাড়ালে আর্কিমিডিয় সর্পিলের ওপর নতুন বাহু ও রশ্নি ফুটে ওঠে।';
+        } else if (mode === 'triples') {
+          let shown = 0;
+          ctx.font = '12px sans-serif';
+          for (let m = 2; m <= 26 && shown < n / 6; m++) {
+            for (let k = 1; k < m; k++) {
+              if ((m - k) % 2 === 0) continue;
+              const g = (a, b) => b ? g(b, a % b) : a;
+              if (g(m, k) !== 1) continue;
+              const a = m * m - k * k, b = 2 * m * k, c = m * m + k * k;
+              const s = 150 / c;
+              ctx.strokeStyle = '#8afdff'; ctx.lineWidth = 1;
+              ctx.beginPath(); ctx.moveTo(-b * s, a * s); ctx.lineTo(0, 0); ctx.lineTo(b * s, 0); ctx.lineTo(-b * s, a * s); ctx.stroke();
+              ctx.fillStyle = '#ffd166';
+              ctx.fillText(a + ',' + b + ',' + c, -b * s + 4, a * s - 4);
+              if (++shown > 28) break;
+            }
+          }
+          hint.textContent = 'প্রতিটি ত্রিভুজ (m²−k², 2mk, m²+k²) সূত্র থেকে এসেছে — m ও k বিজোড়-জোড় ভিন্ন এবং সহ-মৌলিক।';
+        } else {
+          const target = Math.PI / 4;
+          const pts = [];
+          let sum = 0;
+          for (let i = 0; i < n; i++) {
+            sum += (i % 2 ? -1 : 1) / (2 * i + 1);
+            pts.push(sum);
+          }
+          ctx.strokeStyle = '#ffd166'; ctx.setLineDash([5, 5]); ctx.beginPath();
+          ctx.moveTo(-280, -target * 160); ctx.lineTo(280, -target * 160); ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.strokeStyle = '#8afdff'; ctx.lineWidth = 1.6; ctx.beginPath();
+          pts.forEach((v, i) => { const x = -280 + i * (560 / pts.length), y = -v * 160; if (!i) ctx.moveTo(x, y); else ctx.lineTo(x, y); });
+          ctx.stroke();
+          ctx.fillStyle = '#ffd166'; ctx.font = '13px sans-serif';
+          ctx.fillText('π/4 ≈ 0.785398', -270, -target * 160 - 8);
+          hint.textContent = 'আংশিক যোগফল π/4-এর ওপর দিয়ে দোলা খেয়ে ক্রমশ কাছে আসছে — এটি লাইবনিটজের ধারা।';
+        }
+        ctx.restore();
+      };
+      range.addEventListener('input', draw);
+      this.querySelector('.replay').addEventListener('click', draw);
+      draw();
+    }
+  }
+  customElements.define('nt-math-lab', NtMathLab);
+})();
+</script>
+
+</body>
+</html>

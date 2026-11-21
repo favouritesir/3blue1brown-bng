@@ -1,0 +1,71 @@
+{
+  "runtime": [
+    {
+      "id": "sec-intro",
+      "title": "স্থান ভরে দেওয়া বক্ররেখা",
+      "noNarration": false
+    },
+    {
+      "id": "sec-construction",
+      "title": "নির্মাণ পদ্ধতি",
+      "noNarration": false
+    },
+    {
+      "id": "sec-limit",
+      "title": "সীমার ধারণা",
+      "noNarration": false
+    },
+    {
+      "id": "sec-useful",
+      "title": "অসীমের গণিত কি কাজে লাগে?",
+      "noNarration": false
+    },
+    {
+      "id": "sec-paradox",
+      "title": "দৈর্ঘ্য ও ক্ষেত্রফলের রহস্য",
+      "noNarration": false
+    },
+    {
+      "id": "sec-conclusion",
+      "title": "উপসংহার",
+      "noNarration": false
+    },
+    {
+      "id": "sec-lab",
+      "title": "ইন্টারেক্টিভ ল্যাব ও কুইজ",
+      "noNarration": true
+    }
+  ],
+  "engine": [
+    {
+      "id": "sec-intro",
+      "blocks": 5,
+      "cues": 5
+    },
+    {
+      "id": "sec-construction",
+      "blocks": 6,
+      "cues": 6
+    },
+    {
+      "id": "sec-limit",
+      "blocks": 5,
+      "cues": 5
+    },
+    {
+      "id": "sec-useful",
+      "blocks": 5,
+      "cues": 5
+    },
+    {
+      "id": "sec-paradox",
+      "blocks": 5,
+      "cues": 5
+    },
+    {
+      "id": "sec-conclusion",
+      "blocks": 3,
+      "cues": 3
+    }
+  ]
+}

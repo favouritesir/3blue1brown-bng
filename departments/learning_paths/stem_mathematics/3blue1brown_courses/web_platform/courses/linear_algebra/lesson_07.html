@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>বিপরীত ম্যাট্রিক্স, কলাম স্পেস ও শূন্য স্পেস | Inverse matrices, column space, and null space (Essence of linear algebra, chapter 7)</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/linear_algebra/lesson_07/manifest.js?v=3"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order (identical to lesson_01.html) ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+
+<style>
+  .lesson-figure svg { width: 100%; height: auto; display: block; background: rgba(0,0,0,.18); border-radius: 10px; }
+  .lesson-figure svg text { font-family: inherit; }
+</style>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="লিনিয়ার অ্যালজেব্রা"
+  course-url="../../index.html#linear-algebra"
+  home-url="../../index.html"
+  chapter-num="০৭"
+  chapter-total="০৫"
+  prev-url="lesson_06.html"
+  prev-title="ডিটারমিন্যান্ট"
+  next-url="lesson_08.html"
+  next-title="বিষম আকারের ম্যাট্রিক্স"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="লিনিয়ার অ্যালজেব্রা"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৭ · লিনিয়ার অ্যালজেব্রার সারমর্ম"
+  title="বিপরীত ম্যাট্রিক্স, কলাম স্পেস ও শূন্য স্পেস | Inverse matrices, column space, and null space (Essence of linear algebra, chapter 7)"
+  desc="লিনিয়ার সমীকরণ জোটের জ্যামিতিক অর্থ, বিপরীত রূপান্তর A⁻¹, অঙ্কনযোগ্য আউটপুটের কলাম স্পেস ও র‍্যাংক, এবং শূন্যে পতিত ভেক্টরের নাল স্পেস—সবকিছু স্থান রূপান্তরের চোখ দিয়ে।"
+  video-src="../../media_vault/lesson_07/experiments/fill_v2/3b1b_lesson_07_full_dubbed_fill2.mp4"
+  yt-id="uQhTuRlWMxw"
+  date="১৫ আগস্ট, ২০১৬"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | Text adaptation: River Way | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2016/eola/chapter6.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">সমীকরণ জোট ও A*x = v</b1b-bookmark>
+      <b1b-bookmark time="128" time-bn="০২:০৮">বিপরীত ম্যাট্রিক্স ও অপরিবর্তনীয়তা</b1b-bookmark>
+      <b1b-bookmark time="279" time-bn="০৪:৩৯">কলাম স্পেস ও র‍্যাংক</b1b-bookmark>
+      <b1b-bookmark time="384" time-bn="০৬:২৪">নাল স্পেস ও সমাধানের জ্যামিতি</b1b-bookmark>
+      <b1b-bookmark time="384" time-bn="০৬:২৪">উপসংহার ও একীভূত দৃষ্টিভঙ্গি</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec_01_linear_systems">১. জ্যামিতিক দৃষ্টিকোণ থেকে লিনিয়ার সমীকরণ জোট</a>
+      <a href="#sec_02_inverse_matrices">২. বিপরীত ম্যাট্রিক্স ও অপরিবর্তনীয়তা</a>
+      <a href="#sec_03_rank_and_column_space">৩. র‍্যাংক ও কলাম স্পেস</a>
+      <a href="#sec_04_null_space">৪. নাল স্পেস ও উপসংহার</a>
+      <a href="#sec-media-gallery">চিত্র ও ভিডিও গ্যালারি</a>
+      <a href="#sec-lab">ইন্টারেক্টিভ ল্যাব</a>
+      <a href="#sec-quizzes-linear-systems">অনুশীলন — সমীকরণ জোট</a>
+      <a href="#sec-quizzes-inverses">অনুশীলন — বিপরীত ম্যাট্রিক্স</a>
+      <a href="#sec-quizzes-column-space">অনুশীলন — র‍্যাংক</a>
+      <a href="#sec-quizzes-null-space">অনুশীলন — নাল স্পেস</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ NARRATED SECTION 1 — 8 manifest cues (sec_01_linear_systems) ═══ -->
+      <!-- Cue type order: h2 · chapter-quote · p · p · formula-box · figure · insight-box · p -->
+      <b1b-section id="sec_01_linear_systems" title="জ্যামিতিক দৃষ্টিকোণ থেকে লিনিয়ার সমীকরণ জোট">
+
+        <b1b-quote author="জর্জ ক্যান্টর (Georg Cantor)">“To ask the right question is harder than to answer it.” — সঠিক প্রশ্নটি জিজ্ঞাসা করা তার উত্তর দেওয়ার চেয়েও কঠিন।</b1b-quote>
+
+        <p>এই সিরিজের অধিকাংশ অধ্যায়ই আমরা ম্যাট্রিক্স ও ভেক্টরের ক্রিয়াকলাপকে রৈখিক রূপান্তরের দৃশ্যের মাধ্যমে বুঝেছি; আজকের অধ্যায়ও তার ব্যতিক্রম নয়। লিনিয়ার অ্যালজেব্রা বিজ্ঞান ও প্রযুক্তির প্রায় প্রতিটি শাখায় অপরিহার্য—এর অন্যতম প্রধান কারণ হলো লিনিয়ার সমীকরণ জোট সমাধানের অসাধারণ ক্ষমতা। তবে আগামী কয়েকটি ধাপে আমরা কেবল অ্যালগরিদম নয়, বরং এর অন্তর্নিহিত জ্যামিতিও দেখব।</p>
+
+        <p>স্কুল-কলেজে আমরা একগাদা অজানা চলক নিয়ে একাধিক সমীকরণ সমাধানের নিয়ম শিখেছি। যেমন—দুই এক্স যোগ দুই ওয়াই সমান মাইনাস চার, এবং এক্স যোগ তিন ওয়াই সমান মাইনাস এক; অর্থাৎ $\begin{cases} 2x + 2y = -4 \\ x + 3y = -1 \end{cases}$। সাধারণ বীজগণিতে এগুলোকে আলাদাভাবে হিসাব করা হয়, কিন্তু ম্যাট্রিক্সের ভাষায় এদের একসাথে একটিমাত্র ভেক্টর সমীকরণে লেখা যায়।</p>
+
+        <b1b-formula math="\underbrace{\begin{bmatrix} 2 & 2 \\ 1 & 3 \end{bmatrix}}_{A}\underbrace{\begin{bmatrix} x \\ y \end{bmatrix}}_{\vec{x}}=\underbrace{\begin{bmatrix} -4 \\ -1 \end{bmatrix}}_{\vec{v}}\qquad\Longleftrightarrow\qquad A\vec{x}=\vec{v}"></b1b-formula>
+
+        <b1b-figure alt="A*x = v — ম্যাট্রিক্স রূপান্তর ও লক্ষ্য ভেক্টর" caption="এই চিত্রে বাঁয়ের গ্রিডে অজানা ইনপুট ভেক্টর $\vec{x}$ (বেগুনি) দেখা যায়, যার ওপর ম্যাট্রিক্স $A$ রূপান্তর প্রয়োগ হওয়ার পর সেটি ডানের গ্রিডে কমলা রঙের লক্ষ্য ভেক্টর $\vec{v}$-তে পৌঁছায়। লক্ষ্য করুন রূপান্তরটি পুরো সমতলকেই প্রসারিত ও ঘুরিয়ে দিয়েছে—শুধু একটি তীরচিহ্নকে নয়। মূল ধারণা হলো $A$ কোনো সংখ্যার তালিকা নয়, বরং স্থানের একটি গতি; তাই $A\vec{x}=\vec{v}$ মানে হলো ‘কোন ইনপুট এই গতির পর ঠিক $\vec{v}$-তে পড়বে?’"></b1b-figure>
+          <svg viewBox="0 0 640 250" role="img" aria-label="ম্যাট্রিক্স রূপান্তরের মাধ্যমে x ভেক্টর v তে পৌঁছাচ্ছে">
+            <g stroke="rgba(150,160,190,.28)" stroke-width="1">
+              <path d="M20 40H300M20 90H300M20 140H300M20 190H300M20 240H300"/>
+              <path d="M40 20V240M90 20V240M140 20V240M190 20V240M240 20V240M290 20V240"/>
+              <path d="M340 40H620M340 90H620M340 140H620M340 190H620M340 240H620"/>
+              <path d="M360 20V240M410 20V240M460 20V240M510 20V240M560 20V240M610 20V240"/>
+            </g>
+            <text x="150" y="18" fill="#74C0E3" font-size="15">ইনপুট স্পেস (আগে)</text>
+            <text x="470" y="18" fill="#74C0E3" font-size="15">আউটপুট স্পেস (পরে)</text>
+            <path d="M305 125 L335 125" stroke="#e94560" stroke-width="3" marker-end="url(#ar)"/>
+            <text x="300" y="112" fill="#e94560" font-size="20" text-anchor="middle">A</text>
+            <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#e94560"/></marker>
+              <marker id="pu" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#b388ff"/></marker>
+              <marker id="or" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#ffb74d"/></marker>
+            </defs>
+            <path d="M40 190 L180 90" stroke="#b388ff" stroke-width="4" marker-end="url(#pu)"/>
+            <text x="126" y="150" fill="#b388ff" font-size="18">x⃗</text>
+            <path d="M360 190 L560 70" stroke="#ffb74d" stroke-width="4" marker-end="url(#or)"/>
+            <text x="520" y="62" fill="#ffb74d" font-size="18">v⃗ = A x⃗</text>
+            <circle cx="40" cy="190" r="4" fill="#fff"/><circle cx="360" cy="190" r="4" fill="#fff"/>
+            <text x="20" y="208" fill="#9aa4bd" font-size="12">O</text><text x="342" y="208" fill="#9aa4bd" font-size="12">O</text>
+          </svg>
+
+        <b1b-callout type="gold" icon="🧭" title="আসল জ্যামিতিক প্রশ্ন (Insight)">
+          <p>সুতরাং সমীকরণটি সমাধানের আসল জ্যামিতিক প্রশ্নটি হলো—রূপান্তরের পূর্বে কোন ভেক্টর $\vec{x}$ ঠিক এমন স্থানে ছিল, যা $A$ প্রয়োগের পর হুবহু $\vec{v}$-এর ওপর গিয়ে পড়েছে? কাগজের হিসাবের বদলে আমরা এখন ‘টেপটি উল্টো দিকে চালিয়ে’ উত্তর খুঁজছি।</p>
+        </b1b-callout>
+
+        <p>এই প্রশ্নটির উত্তর নির্ভর করে রূপান্তর $A$ স্থানটিকে কীভাবে পরিচালিত করেছে—স্থানটি কি পূর্ণ মাত্রায় বিস্তৃত আছে, নাকি চ্যাপ্টা হয়ে তার মাত্রা হারিয়ে ফেলেছে? পরবর্তী দুটি অধ্যায়ে আমরা ঠিক এই দুটি সম্ভাবনার জ্যামিতিই অন্বেষণ করব।</p>
+
+      </b1b-section>
+
+      <!-- ═══ NARRATED SECTION 2 — 10 manifest cues (sec_02_inverse_matrices) ═══ -->
+      <!-- Cue type order: h2 · p · p · figure · formula-box · insight-box · h3 · p · figure · p -->
+      <b1b-section id="sec_02_inverse_matrices" title="বিপরীত ম্যাট্রিক্স: রূপান্তরকে পূর্বাবস্থায় ফিরিয়ে আনা">
+
+        <p>ধরা যাক ম্যাট্রিক্স $A$-এর ডিটারমিন্যান্ট শূন্য নয়, অর্থাৎ $\det(A) \neq 0$। রূপান্তরটি স্থানকে কোনো নিচু মাত্রায়—রেখা বা বিন্দুতে—চ্যাপ্টা করেনি; সমতল সমতলেই রয়ে গেছে। এই শর্তেই কেবল পেছনে ফিরে আসার কথা চিন্তা করা যায়।</p>
+
+        <p>যেহেতু স্থান সংকুচিত হয়নি, তাই পুরো রূপান্তরটিকে হুবহু উল্টো দিকে চালিয়ে সমতলকে তার আদি অবস্থায় ফিরিয়ে আনা সম্ভব। এই উল্টো রূপান্তরটিকেই বলা হয় $A$-এর বিপরীত রূপান্তর বা $A$ inverse, এবং এটি লেখা হয় $A^{-1}$।</p>
+
+        <b1b-figure alt="ঘূর্ণন ও তার বিপরীত ঘূর্ণন" caption="এই চিত্রে বাঁয়ে ম্যাট্রিক্স $A$ সমতলকে ৯০° counterclockwise ঘোরাচ্ছে, আর ডানে তার বিপরীত $A^{-1}$ ঠিক ৯০° clockwise ঘুরিয়ে সবকিছু আগের জায়গায় ফিরিয়ে আনছে। আই হ্যাট ও জে হ্যাটের নতুন অবস্থানগুলো লক্ষ্য করুন—একটির পথ ধরে এগোনোর পর অন্যটি সেই পথ বরাবরই ফিরে আসে। এরূপ জোড়া রূপান্তরই বোঝায় যে $A$ একটি বৈধ, এক-টানা ফাংশন এবং তার বিপরীতাও একটি রৈখিক রূপান্তর।"></b1b-figure>
+          <svg viewBox="0 0 640 250" role="img" aria-label="৯০ ডিগ্রি ঘূর্ণন এবং বিপরীত ঘূর্ণন">
+            <g stroke="rgba(150,160,190,.25)"><path d="M20 125H290M155 20V230"/><path d="M350 125H620M485 20V230"/></g>
+            <text x="24" y="30" fill="#74C0E3" font-size="15">A : ৯০° counterclockwise</text>
+            <text x="354" y="30" fill="#74C0E3" font-size="15">A⁻¹ : ৯০° clockwise</text>
+            <defs><marker id="g1" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#69f0ae"/></marker>
+              <marker id="r1" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#e94560"/></marker>
+              <marker id="b1" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#4fc3f7"/></marker></defs>
+            <path d="M155 125 L155 45" stroke="#69f0ae" stroke-width="4" marker-end="url(#g1)"/>
+            <path d="M155 125 L235 125" stroke="#e94560" stroke-width="4" marker-end="url(#r1)"/>
+            <text x="163" y="52" fill="#69f0ae" font-size="14">î → ĵ</text><text x="205" y="145" fill="#e94560" font-size="14">ĵ → −î</text>
+            <path d="M485 125 L485 205" stroke="#69f0ae" stroke-width="4" marker-end="url(#g1)"/>
+            <path d="M485 125 L405 125" stroke="#e94560" stroke-width="4" marker-end="url(#r1)"/>
+            <text x="493" y="222" fill="#69f0ae" font-size="14">ĵ → î</text><text x="405" y="145" fill="#e94560" font-size="14">î → −ĵ</text>
+            <path d="M300 125 Q325 80 340 125" fill="none" stroke="#4fc3f7" stroke-width="2" marker-end="url(#b1)"/>
+          </svg>
+
+        <b1b-formula math="A^{-1}A = I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}\qquad\text{এবং}\qquad A\vec{x}=\vec{v}\;\Longrightarrow\;\vec{x}=A^{-1}\vec{v}"></b1b-formula>
+
+        <b1b-callout type="blue" icon="🔑" title="সমাধানের চাবিকাঠি (Insight)">
+          <p>অতএব $A\vec{x}=\vec{v}$ সমীকরণটি সমাধানের জন্য কেবল উভয় পাশে $A^{-1}$ প্রয়োগ করতে হবে: $A^{-1}(A\vec{x})=A^{-1}\vec{v}$, ফলে $\vec{x}=A^{-1}\vec{v}$। জ্যামিতিকভাবে এর অর্থ—$\vec{v}$-কে পেছনে ফিরিয়ে নিয়ে গিয়ে দেখা কোথায় তার উৎস ভেক্টরটি ছিল।</p>
+        </b1b-callout>
+
+        <h3>ডিটারমিন্যান্ট শূন্য হলে কেন বিপরীত ম্যাট্রিক্স থাকতে পারে না?</h3>
+
+        <p>কিন্তু যদি ডিটারমিন্যান্ট শূন্য হয়, তখন কী ঘটবে? $\det(A)=0$ মানে রূপান্তরটি পুরো দ্বিমাত্রিক সমতলকে চ্যাপ্টা করে একটি একমাত্রিক সরলরেখায় বা একক বিন্দুতে পরিণত করেছে—অনেকগুলো ভেক্টর এখন একই জায়গায় পড়েছে, তথ্য হারিয়ে গেছে।</p>
+
+        <b1b-figure alt="সংকুচিত রেখা আবার সমতলে ফিরিয়ে আনা যায় না" caption="এই চিত্রে দেখা যাচ্ছে পুরো সমতল একমাত্রিক রেখায় সংকুচিত হয়ে গেছে এবং রেখার ওপরের আলাদা আলাদা বিন্দুগুলো একই গন্তব্যে মিলে গেছে। একে আবার দ্বিমাত্রিক সমতলে ‘খুলে’ দিতে হলে রেখার প্রতিটি বিন্দুকে অসংখ্য বিন্দুতে পাঠাতে হবে, যা কোনো ফাংশনের নিয়ম মানে না। তাই একবার ভেঙে পড়া মাত্রা আর একক রূপান্তর দিয়ে পুনরুদ্ধার করা সম্ভব নয়—এইজন্যই $\det(A)=0$ হলে $A^{-1}$ থাকে না।"></b1b-figure>
+          <svg viewBox="0 0 640 250" role="img" aria-label="সমতল থেকে রেখায় সংকোচন এবং প্রত্যাবর্তনের অসম্ভবতা">
+            <g stroke="rgba(150,160,190,.25)"><path d="M20 40H290M20 90H290M20 140H290M20 190H290M20 230H290"/><path d="M50 20V230M100 20V230M150 20V230M200 20V230M250 20V230"/></g>
+            <text x="26" y="30" fill="#74C0E3" font-size="15">২ডি সমতল</text>
+            <path d="M320 125 L355 125" stroke="#e94560" stroke-width="3" stroke-dasharray="5 4"/>
+            <text x="322" y="110" fill="#e94560" font-size="14">চ্যাপ্টা</text>
+            <path d="M365 125 H610" stroke="#ffb74d" stroke-width="5"/>
+            <circle cx="405" cy="125" r="6" fill="#e94560"/><circle cx="475" cy="125" r="6" fill="#e94560"/><circle cx="545" cy="125" r="6" fill="#e94560"/>
+            <text x="370" y="160" fill="#ffb74d" font-size="15">একমাত্রিক রেখা</text>
+            <text x="370" y="190" fill="#9aa4bd" font-size="13">অনেক ইনপুট → একই আউটপুট</text>
+            <path d="M560 175 Q520 215 470 175" fill="none" stroke="#e94560" stroke-width="2" stroke-dasharray="4 4"/>
+            <text x="430" y="222" fill="#e94560" font-size="14">ফিরে আসা অসম্ভব ✕</text>
+          </svg>
+
+        <p>এই কারণেই যখন ডিটারমিন্যান্ট শূন্য হয়, তখন ম্যাট্রিক্সটির কোনো ইনভার্স বা বিপরীত ম্যাট্রিক্স থাকতে পারে না: $\det(A)=0 \implies A^{-1}\ \text{বিদ্যমান নয়}$। তবু সমাধান না থাকা এমন নয়—তার জন্য প্রয়োজন কলাম স্পেস ও নাল স্পেসের ধারণা।</p>
+
+      </b1b-section>
+
+      <!-- ═══ NARRATED SECTION 3 — 8 manifest cues (sec_03_rank_and_column_space) ═══ -->
+      <!-- Cue type order: h2 · p · p · insight-box · h3 · p · figure · p -->
+      <b1b-section id="sec_03_rank_and_column_space" title="র‍্যাংক এবং কলাম স্পেস: রূপান্তরের সম্ভাব্য আউটপুট ক্ষেত্র">
+
+        <p>যখন কোনো রূপান্তরে সমতল চ্যাপ্টা হয়ে যায়, তখন তার আউটপুট ঠিক কেমন হতে পারে? রূপান্তর প্রয়োগের পর যত সম্ভাব্য আউটপুট ভেক্টর তৈরি হতে পারে, তাদের সমগ্র সেটকেই ম্যাট্রিক্সের কলাম স্পেস বলা হয়: $\text{Col}(A)=\{A\vec{v}:\vec{v}\in\mathbb{R}^n\}$।</p>
+
+        <p>এটিকে ‘কলাম’ স্পেস নাম দেওয়া হলো কেন? কারণ আমরা জানি ম্যাট্রিক্সের প্রতিটি কলাম আসলে রূপান্তরের পর বেসিস ভেক্টরগুলো কোথায় গিয়ে পৌঁছায় তা নির্দেশ করে। অর্থাৎ কলামগুলো হলো রূপান্তরিত আই হ্যাট ও জে হ্যাটের ঠিকানা।</p>
+
+        <b1b-callout type="green" icon="🌐" title="কলাম স্পেস = কলামগুলোর স্প্যান (Insight)">
+          <p>যেকোনো ইনপুট ভেক্টরের রূপান্তর হলো ওই কলামগুলোরই একটি রৈখিক সমাবেশ বা লিনিয়ার কম্বিনেশন। সুতরাং কলাম স্পেসের সহজ অর্থ হলো—ম্যাট্রিক্সের কলামগুলোর স্প্যান: $\text{Column Space}=\text{Span}(\text{Columns of }A)$। যদি $\vec{v}$ এই স্প্যানের বাইরে থাকে, তবে $A\vec{x}=\vec{v}$ এর কোনো সমাধানই নেই।</p>
+        </b1b-callout>
+
+        <h3>র‍্যাংক: আউটপুট স্পেসের প্রকৃত মাত্রা</h3>
+
+        <p>রূপান্তরের পর এই আউটপুট স্পেসের মাত্রা বা ডাইমেনশন কত—তা নির্দেশ করার গাণিতিক পরিমাপটির নামই র‍্যাংক: $\text{Rank}(A)=\dim(\text{Col}(A))$। শব্দটির আক্ষরিক অর্থ ‘পদ বা পদমর্যাদা’, কিন্তু এখানে এটি কেবল ‘কত মাত্রা বেঁচে রইল’ তা বলে।</p>
+
+        <b1b-figure alt="র‍্যাংক ১ ও র‍্যাংক ২ আউটপুট স্পেস" caption="চিত্রের বাঁয়ে রূপান্তরের সমস্ত আউটপুট একটি সরলরেখার ওপর পড়েছে—সেটি র‍্যাংক ১, কারণ আউটপুটের মাত্রা এক। ডানে আউটপুটগুলো পুরো দ্বিমাত্রিক সমতল জুড়ে ছড়িয়ে আছে—সেটি র‍্যাংক ২। লক্ষ্য করুন র‍্যাংক মাপা হয় কলাম স্পেসের মাত্রা দিয়ে, ইনপুটের মাত্রা দিয়ে নয়; তাই একই ২×২ ম্যাট্রিক্সের ক্ষেত্রে র‍্যাংক ২-ই সর্বোচ্চ এবং তখনই ডিটারমিন্যান্ট অশূন্য হয়।"></b1b-figure>
+          <svg viewBox="0 0 640 250" role="img" aria-label="র্যাঙ্ক ১ রেখা এবং র্যাঙ্ক ২ সমতল">
+            <text x="20" y="26" fill="#74C0E3" font-size="15">র‍্যাংক ১ — আউটপুট একটি রেখা</text>
+            <text x="350" y="26" fill="#74C0E3" font-size="15">র‍্যাংক ২ — আউটপুট পুরো সমতল</text>
+            <g stroke="rgba(150,160,190,.22)"><path d="M20 60H290M20 110H290M20 160H290M20 210H290"/><path d="M60 40V230M120 40V230M180 40V230M240 40V230"/></g>
+            <path d="M30 185 L280 75" stroke="#ffb74d" stroke-width="5"/>
+            <circle cx="90" cy="162" r="4" fill="#e94560"/><circle cx="160" cy="137" r="4" fill="#e94560"/><circle cx="230" cy="110" r="4" fill="#e94560"/>
+            <text x="120" y="220" fill="#9aa4bd" font-size="13">মাত্রা = ১</text>
+            <g stroke="rgba(150,160,190,.22)"><path d="M350 60H620M350 110H620M350 160H620M350 210H620"/><path d="M390 40V230M450 40V230M510 40V230M570 40V230"/></g>
+            <circle cx="420" cy="90" r="5" fill="#69f0ae"/><circle cx="500" cy="150" r="5" fill="#69f0ae"/><circle cx="580" cy="80" r="5" fill="#69f0ae"/><circle cx="460" cy="200" r="5" fill="#69f0ae"/>
+            <text x="450" y="220" fill="#9aa4bd" font-size="13">মাত্রা = ২</text>
+          </svg>
+
+        <p>ত্রিমাত্রিক স্থানে যদি আউটপুট স্থান সংকুচিত না হয়ে পূর্ণ থ্রিডি স্পেস থাকে, তবে র‍্যাংক তিন। আর যখন র‍্যাংক ম্যাট্রিক্সের কলাম সংখ্যার সমান হয়—$\text{Full Rank}\iff\text{Rank}(A)=n\iff\det(A)\neq 0$—তখন তাকে ফুল র‍্যাংক বলা হয়।</p>
+
+      </b1b-section>
+
+      <!-- ═══ NARRATED SECTION 4 — 7 manifest cues (sec_04_null_space) ═══ -->
+      <!-- Cue type order: h2 · p · figure · formula-box · insight-box · p · p -->
+      <b1b-section id="sec_04_null_space" title="নাল স্পেস বা শূন্য স্পেস: মূলবিন্দুতে সংকুচিত ভেক্টরের জগৎ">
+
+        <p>যখন কোনো রূপান্তরের ডিটারমিন্যান্ট শূন্য হয় এবং সমতল সংকুচিত হয়ে একটি সরলরেখায় পরিণত হয়, তখন মূলবিন্দু ছাড়াও অসংখ্য ভেক্টর নিশ্চয়ই মূলবিন্দুর ওপর গিয়ে আছড়ে পড়ে। কারণ রৈখিক রূপান্তর মূলবিন্দুকে সর্বদা নিজের জায়গায় রাখে, ফলে সংকোচনের সময় একটি পুরো দিক ‘নিশ্চুপ’ হয়ে যায়।</p>
+
+        <b1b-figure alt="সমতলের একটি রেখা মূলবিন্দুতে সংকুচিত হচ্ছে" caption="এই অ্যানিমেশন-চিত্রে লাল রঙা রেখার ওপর অবস্থিত প্রতিটি ভেক্টর রূপান্তরের পর কমলা রঙের মূলবিন্দুতে গিয়ে মিলিত হচ্ছে, অন্য দিকের ভেক্টরগুলো আবার আউটপুট রেখার ওপর ছড়িয়ে পড়েছে। লক্ষ্য করুন যে ইনপুটের যে দিকটি ‘ধ্বংস’ হয়েছে, ঠিক সেটিই হলো নাল স্পেস—আর যে দিকটি বেঁচে থাকা রেখায় পড়েছে, সেটিই কলাম স্পেস। একই চিত্রে এই দুটি স্পেসের পরিপূরক সম্পর্ক স্পষ্ট হয়।"></b1b-figure>
+          <svg viewBox="0 0 640 250" role="img" aria-label="রেখা মূলবিন্দুতে পতিত হচ্ছে">
+            <g stroke="rgba(150,160,190,.22)"><path d="M20 40H290M20 90H290M20 140H290M20 190H290M20 230H290"/><path d="M50 20V230M110 20V230M170 20V230M230 20V230"/></g>
+            <text x="20" y="28" fill="#74C0E3" font-size="15">আগে : ইনপুট স্পেস</text>
+            <path d="M40 215 L270 45" stroke="#e94560" stroke-width="5"/>
+            <circle cx="100" cy="172" r="4" fill="#ffb74d"/><circle cx="160" cy="130" r="4" fill="#ffb74d"/><circle cx="220" cy="87" r="4" fill="#ffb74d"/>
+            <path d="M300 125 L340 125" stroke="#74C0E3" stroke-width="3" stroke-dasharray="5 4"/>
+            <g stroke="rgba(150,160,190,.22)"><path d="M350 125H620M485 30V220"/></g>
+            <text x="350" y="28" fill="#74C0E3" font-size="15">পরে : আউটপুট রেখা</text>
+            <path d="M360 125 H610" stroke="#ffb74d" stroke-width="5"/>
+            <circle cx="485" cy="125" r="7" fill="#e94560"/>
+            <text x="495" y="150" fill="#e94560" font-size="14">শূন্য (Origin)</text>
+            <text x="370" y="200" fill="#9aa4bd" font-size="13">লাল রেখার সব বিন্দু → শূন্য</text>
+          </svg>
+
+        <b1b-formula math="\text{Null}(A)=\ker(A)=\{\vec{x}\in\mathbb{R}^n: A\vec{x}=\vec{0}\}\qquad\text{এবং}\qquad \text{Rank}(A)+\text{Nullity}(A)=n"></b1b-formula>
+
+        <b1b-callout type="purple" icon="🕸️" title="সমাধানের স্বাধীনতা (Insight)">
+          <p>সমীকরণ জোট সমাধানে নাল স্পেসের ভূমিকা অত্যন্ত গুরুত্বপূর্ণ। যদি $A\vec{x}=\vec{v}$-এর একটি নির্দিষ্ট সমাধান $\vec{x}_0$ থাকে, তবে $\vec{x}_0$-র সাথে নাল স্পেসের যেকোনো ভেক্টর $\vec{n}$ যোগ করলেও তা বৈধ সমাধান দেবে: $A(\vec{x}_0+\vec{n})=A\vec{x}_0+A\vec{n}=\vec{v}+\vec{0}=\vec{v}$।</p>
+        </b1b-callout>
+
+        <p>কারণ নাল স্পেসের ভেক্টর রূপান্তরের পর শূন্য হয়ে যায়, তাই এটি ফলাফলে কোনো হেরফের ঘটায় না। অর্থাৎ নাল স্পেস আমাদের সমাধানের সম্পূর্ণ জ্যামিতিক ক্ষেত্র ও স্বাধীনতার মাত্রা উপহার দেয়—$\vec{v}=\vec{0}$ হলে নাল স্পেসই হবে সব সমাধানের সেট।</p>
+
+        <p>এই গভীর উপলব্ধিটি আমাদের স্পষ্ট করে দেয়: লিনিয়ার অ্যালজেব্রায় বিপরীত ম্যাট্রিক্স, কলাম স্পেস এবং নাল স্পেস কোনো বিচ্ছিন্ন সূত্র নয়—বরং এরা স্থানকে রূপান্তর ও সংকোচনের এক অবিচ্ছেদ্য ও সুসংহত জ্যামিতিক গল্প। এই অধ্যায়ে আমরা হিসাবের পদ্ধতি (Gaussian elimination, row echelon form) নিয়ে যাইনি; পরবর্তী অধ্যায়ে আমরা বিষম আকারের ম্যাট্রিক্স নিয়ে এই যাত্রা অব্যাহত রাখব।</p>
+
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — Official Image/Video media tabs ═══ -->
+      <b1b-section id="sec-media-gallery" title="চিত্র ও ভিডিও গ্যালারি — প্রতিটি ধাপ ছবি ও অ্যানিমেশনে" data-no-narration="true">
+        <div class="media-gallery-grid">
+
+          <b1b-media-tab active-tab="image" caption="এই অ্যানিমেশনে পুরো সমতলের প্রতিটি ভেক্টর একসাথে সরে যাচ্ছে—কেবল একটি তীর নয়, বরം পুরো স্পেসের রূপান্তর। স্থির পেছনের গ্রিডের সাথে তুলনা করলে কোন বিন্দু কোথায় পৌঁছেছে তা সহজে দেখা যায়। $A\vec{x}=\vec{v}$ এর জ্যামিতিক অর্থ ঠিক এই গতির ভেতরেই লুকিয়ে আছে।">
+            <div slot="image"><img loading="eager" src="../../assets/figures/la_05/TransformManyVectors.svg" alt="অসংখ্য ভেক্টরের একসাথে রূপান্তর"/></div>
+            <div slot="video"><video loop muted playsinline controls src="../../assets/figures/la_05/TransformManyVectors.mp4"></video></div>
+          </b1b-media-tab>
+
+          <b1b-media-tab active-tab="image" caption="চিত্রে দেখা যাচ্ছে রূপান্তরের পর আই হ্যাট ও জে হ্যাট কোথায় অবতরণ করেছে। এই দুই গন্তব্যই ম্যাট্রিক্সের দুটি কলাম গঠন করে, আর তাদের স্প্যানই কলাম স্পেস। কলাম চোখে দেখার এই অভ্যাসই আপনাকে বলে দেবে একটি নির্দিষ্ট $\vec{v}$ এর সমাধান আছে কি না।">
+            <div slot="image"><img loading="eager" src="../../assets/figures/la_05/FollowBasisVectors.svg" alt="বেসিস ভেক্টরের গন্তব্য ট্র্যাকিং"/></div>
+            <div slot="video"><video loop muted playsinline controls src="../../assets/figures/la_05/FollowBasisVectors.mp4"></video></div>
+          </b1b-media-tab>
+
+          <b1b-media-tab active-tab="image" caption="এই চিত্রে দুই বেসিস ভেক্টরের সমস্ত রৈখিক সমাবেশ একটি সমতল জুড়ে বিস্তার লাভ করেছে—এটিই স্প্যান, আর ম্যাট্রিক্সের ক্ষেত্রে একই জিনিস কলাম স্পেস নামে পরিচিত। ভিডিওতে সহগগুলো বদলাতে দেখুন কীভাবে আউটপুট ভেক্টরটি এই সমতলের ওপর দিয়ে চলে। তৃতীয় কোনো ভেক্টর এই স্প্যানের বাইরে পড়লে সমীকরণের সমাধান অসম্ভব হয়ে যায়।">
+            <div slot="image"><img loading="eager" src="../../assets/figures/la_02/SpanOfTwoVectorsIn3d.svg" alt="দুই ভেক্টরের স্প্যান"></div>
+            <div slot="video"><video loop muted playsinline controls src="../../assets/figures/la_02/SpanOfTwoVectorsIn3d.mp4"></video></div>
+          </b1b-media-tab>
+
+          <b1b-media-tab active-tab="image" caption="এখানে তৃতীয় ভেক্টরটি প্রথম দুটির স্প্যানের ভেতরে পড়েছে—ঠিক যেমন $\vec{v}$ কলাম স্পেসের ভেতরে থাকলে $A\vec{x}=\vec{v}$ সমাধানযোগ্য। ভিডিওতে স্প্যানের দিকটি ঘুরিয়ে দেখুন কীভাবে ‘ভেতরে/বাইরে’ স্থানাঙ্কের ওপর নির্ভর করলেও জ্যামিতিক সত্যি অপরিবর্তিত থাকে। এই দৃশ্যটি কলাম স্পেসের সবচেয়ে শক্তিশালী মানসিক ছবি।">
+            <div slot="image"><img loading="eager" src="../../assets/figures/la_02/ThirdVectorIsInSpan.svg" alt="তৃতীয় ভেক্টর স্প্যানের ভেতরে"></div>
+            <div slot="video"><video loop muted playsinline controls src="../../assets/figures/la_02/ThirdVectorIsInSpan.mp4"></video></div>
+          </b1b-media-tab>
+
+          <b1b-media-tab active-tab="image" caption="এই অ্যানিমেশনে দুটি রূপান্তর একের পর অন্য স্পেসে ঘটছে—আপনি যদি দ্বিতীয়টিকে প্রথমটির পূর্বাবস্থা ফেরাতে পারেন, তবেই তারা পরস্পরের বিপরীত। ছবি ও ভিডিও তুলনা করে দেখুন কীভাবে ধারাবাহিক গতি একক আইডেন্টিটি রূপান্তরে রূপ নেয়। $A^{-1}A=I$ এর অন্তর্দৃষ্টি এখানে চোখের সামনে ধরা পড়ে।">
+            <div slot="image"><img loading="eager" src="../../assets/figures/la_04/rotate_shear_composition.svg" alt="দুই রূপান্তরের সংযোজন"></div>
+            <div slot="video"><video loop muted playsinline controls src="../../assets/figures/la_04/rotate_shear_composition.mp4"></video></div>
+          </b1b-media-tab>
+
+          <b1b-media-tab active-tab="image" caption="চিত্রে গ্রিডের রেখাগুলো রূপান্তরের পরও সোজা ও সমান্তরাল আছে, শুধু অবস্থান বদলেছে; কিন্তু ডিটারমিন্যান্ট শূন্য হলে এই গ্রিডই একটি রেখায় পরিণত হয়। রৈখিকতার শর্ত ও মাত্রা সংকোচনের পার্থক্য এই দুই দৃশ্যের তুলনায় স্পষ্ট হয়। পেছনের স্থির গ্রিডটিকে মানদণ্ড হিসেবে ব্যবহার করে নিজে যাচাই করে দেখুন।">
+            <div slot="image"><img loading="eager" src="../../assets/figures/la_05/TransformGrid.svg" alt="গ্রিডের রূপান্তর"></div>
+            <div slot="video"><video loop muted playsinline controls src="../../assets/figures/la_05/TransformGrid.mp4"></video></div>
+          </b1b-media-tab>
+
+        </div>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — Interactive lab in fullscreen ═══ -->
+      <b1b-section id="sec-lab" title="ইন্টারেক্টিভ ল্যাব — ভেক্টর সমতলে রূপান্তর, স্প্যান ও শূন্যে পতন" data-no-narration="true">
+        <p class="viz-intro">নিচের সমতলে লাল বিন্দুটি টেনে ভেক্টর $\vec{x}$ বদলান এবং স্লাইডার দিয়ে স্কেল করুন; দেখুন কীভাবে স্থানাঙ্ক বদলালেও $\vec{x}$ সবসময় আই হ্যাট ও জে হ্যাটের একটি রৈখিক সমাবেশই থেকে যায়। এই একই নিয়ম ম্যাট্রিক্সের কলাম স্পেস গঠন করে এবং কোন দিক শূন্যে পতিত হবে তা নির্ধারণ করে। পূর্ণস্ক্রিন বাটনে চাপ দিয়ে ল্যাবটি বড় করে দেখতে পারেন।</p>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <b1b-vector-plane initial="3,-2"></b1b-vector-plane>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — Official Quiz 1 + data-backed practice ═══ -->
+      <b1b-section id="sec-quizzes-linear-systems" title="অনুশীলন — সমীকরণ জোটের জ্যামিতি" data-no-narration="true">
+
+        <b1b-quiz
+          question="❓ কোন ম্যাট্রিক্স-ভেক্টর সমীকরণটি $3x+0y=5$ এবং $2x-5y=2$ সিস্টেমটির সাথে মিলে? (Which matrix-vector equation corresponds to this system?)"
+          correct="3"
+          correct-msg="নিখুঁত! প্রথম সারি $3x+0y=5$ এবং দ্বিতীয় সারি $2x-5y=2$—সুতরাং সহগ ম্যাট্রিক্স $\begin{bmatrix}3&0\\2&-5\end{bmatrix}$, ভেক্টর $\begin{bmatrix}x\\y\end{bmatrix}$ এবং ফল $\begin{bmatrix}5\\2\end{bmatrix}$। মনে রাখবেন সারি = সমীকরণ, কলাম = চলক; কলাম আর সারি বদলে ফেললে ভুল হয়।"
+          wrong-msg="একটি সারি একটি সমীকরণ। $3x+0y=5$ দেয় সারি $[3\;\;0]$ ও ফল $5$, আর $2x-5y=2$ দেয় সারি $[2\;\;-5]$ ও ফল $2$। তৃতীয় বিকল্পে $x,y$ কে সহগ জায়গায় বসানো হয়েছে—সেটি ভুল।"
+          reveal-msg="সঠিক উত্তর $\begin{bmatrix}3&0\\2&-5\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}5\\2\end{bmatrix}$—প্রতিটি সারি যথাক্রমে $3x=5$ ও $2x-5y=2$ প্রকাশ করে।">
+          <div slot="option">$\begin{bmatrix}2&-5\\3&0\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}5\\2\end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix}3&0\\2&-5\end{bmatrix}\begin{bmatrix}2\\5\end{bmatrix}=\begin{bmatrix}x\\y\end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix}2&x\\5&y\end{bmatrix}\begin{bmatrix}3\\2\end{bmatrix}=\begin{bmatrix}0\\-5\end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix}3&0\\2&-5\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}5\\2\end{bmatrix}$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ রৈখিক সমীকরণ জোট $A\vec{x}=\vec{v}$ সমাধানের জ্যামিতিক তাৎপর্য কী?"
+          correct="1"
+          correct-msg="ঠিক বলেছেন! জ্যামিতিকভাবে সমাধান মানে হলো এমন একটি আদি ভেক্টর $\vec{x}$ খুঁজে বের করা, যার ওপর $A$ রূপান্তর প্রয়োগ করলে তা ঠিক টার্গেট $\vec{v}$-তে পৌঁছায়। এটিকে ‘টেপ পেছনে চালানো’-র সাথে তুলনা করা যায়।"
+          wrong-msg="ম্যাট্রিক্স কেবল সংখ্যার চুক্তি নয়—এটি একটি রূপান্তর। কর্ণের গুণফল বা ৯০° ঘূর্ণন এখানে প্রাসঙ্গিক নয়; প্রশ্ন হলো কোন ইনপুট $\vec{x}$ রূপান্তরের পর $\vec{v}$-তে পড়বে।"
+          reveal-msg="সঠিক উত্তর: এমন একটি আদি ভেক্টর $\vec{x}$ সন্ধান করা, যা $A$ প্রয়োগের পর $\vec{v}$-এর ওপর গিয়ে পড়ে।">
+          <div slot="option">শুধুমাত্র সারি ও কলামের স্কেলার মান বিনিময় করা</div>
+          <div slot="option">এমন একটি আদি ভেক্টর $\vec{x}$ খুঁজে বের করা, যা $A$ রূপান্তরের পর $\vec{v}$-এর ওপর গিয়ে পড়ে</div>
+          <div slot="option">ম্যাট্রিক্স $A$-এর কর্ণের উপাদানগুলোর গুণফল নির্ণয় করা</div>
+          <div slot="option">ভেক্টর $\vec{v}$-কে সমতলে ৯০° কোণে ঘুরিয়ে দেওয়া</div>
+        </b1b-quiz>
+
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — Official Quizzes 2 & 3 + data-backed practice ═══ -->
+      <b1b-section id="sec-quizzes-inverses" title="অনুশীলন — বিপরীত ম্যাট্রিক্স ও অপরিবর্তনীয়তা" data-no-narration="true">
+
+        <b1b-quiz
+          question="❓ ১৮০° ঘূর্ণনের বিপরীত ম্যাট্রিক্স (inverse matrix) কোনটি? (What is the inverse matrix for a 180° rotation?)"
+          correct="0"
+          correct-msg="অসাধারণ! ১৮০° ঘুরালে $\hat{\imath}\to-\hat{\imath}$ ও $\hat{\jmath}\to-\hat{\jmath}$, তাই ম্যাট্রিক্স $\begin{bmatrix}-1&0\\0&-1\end{bmatrix}$। এই রূপান্তরকে দুবার প্রয়োগ করলে $\begin{bmatrix}-1&0\\0&-1\end{bmatrix}^2=I$—অর্থাৎ এটি নিজেই নিজের বিপরীত (self-inverse)।"
+          wrong-msg="১৮০° ঘূর্ণনে উভয় বেসিস ভেক্টরের দিক উল্টে যায়, কিন্তু কোনো অদলবদল (swap) হয় না। মনে করুন বিন্দু $(x,y)\to(-x,-y)$; তাই কর্ণে −1, −1 এবং অফ-ডায়াগোনালে ০ বসবে।"
+          reveal-msg="সঠিক উত্তর $\begin{bmatrix}-1&0\\0&-1\end{bmatrix}$—দ্বিতীয় বিকল্পটি কেবল $\hat{\jmath}$-কে উল্টায় (প্রতিফলন), তৃতীয়টি ৯০° ঘূর্ণন, আর চতুর্থটি কোনো বৈধ ঘূর্ণন নয়।">
+          <div slot="option">$\begin{bmatrix}-1&0\\0&-1\end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix}1&0\\0&-1\end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix}0&-1\\1&0\end{bmatrix}$</div>
+          <div slot="option">$\begin{bmatrix}1&-1\\-1&1\end{bmatrix}$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ $A=\begin{bmatrix}3&-1\\-9&3\end{bmatrix}$ এর ক্ষেত্রে $A^{-1}$ কি বিদ্যমান? (Does A⁻¹ exist when A = [[3,−1],[−9,3]]?)"
+          correct="1"
+          correct-msg="একদম সঠিক! $\det(A)=3\times3-(-1)\times(-9)=9-9=0$। ডিটারমিন্যান্ট শূন্য মানে রূপান্তরটি পুরো সমতলকে একমাত্রিক রেখায় চ্যাপ্টা করেছে—দ্বিতীয় সারিটি প্রথম সারির $−3$ গুণ মাত্র। তথ্য হারিয়ে গেছে, তাই $A^{-1}$ নেই।"
+          wrong-msg="আগে ডিটারমিন্যান্টটি হিসাব করুন: $ad-bc=3\cdot3-(-1)(-9)=9-9=0$। সারি দুটি রৈখিকভাবে নির্ভরশীল (একটি অন্যটির গুণিতক)—এমন ম্যাট্রিক্সের বিপরীত থাকে না।"
+          reveal-msg="সঠিক উত্তর ‘না, $A^{-1}$ বিদ্যমান নয়’, কারণ $\det(A)=0$।">
+          <div slot="option">হ্যাঁ, $A^{-1}$ বিদ্যমান</div>
+          <div slot="option">না, $A^{-1}$ বিদ্যমান নয়</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ কোন শর্তে কোনো ম্যাট্রিক্স $A$-এর বিপরীত ম্যাট্রিক্স $A^{-1}$ নিশ্চিতভাবে বিদ্যমান থাকে?"
+          correct="1"
+          correct-msg="চমৎকার! $\det(A)\neq0$ মানে স্থান সংকুচিত হয়নি; ফলে পুরো রূপান্তরটিকে উল্টো দিকে চালিয়ে আদি অবস্থায় ফিরিয়ে আনা যায়। এক-এক করে $\hat{\imath},\hat{\jmath}$ যেখানে পড়েছে তারই ভিত্তিতে স্প্যান পুনর্গঠন করা সম্ভব হয়।"
+          wrong-msg="$\det(A)=0$ হলে মাত্রা হারিয়ে যায়—তখন বিপরীত থাকে না। উপাদান সব ধনাত্মক হওয়া বা ট্রেস শূন্য হওয়া কোনোটিই বিপরীতের শর্ত নয়; একমাত্র শর্ত হলো ডিটারমিন্যান্ট অশূন্য।"
+          reveal-msg="সঠিক উত্তর $\det(A)\neq0$—এই শর্তেই $A^{-1}A=I$ সম্পর্কটি প্রযোজ্য হয়।">
+          <div slot="option">ম্যাট্রিক্সটির ডিটারমিন্যান্ট শূন্য হলে $(\det(A)=0)$</div>
+          <div slot="option">ম্যাট্রিক্সটির ডিটারমিন্যান্ট অশূন্য হলে $(\det(A)\neq0)$</div>
+          <div slot="option">ম্যাট্রিক্সের সমস্ত উপাদান ধনাত্মক হলে</div>
+          <div slot="option">ম্যাট্রিক্সটির ট্রেস শূন্য হলে</div>
+        </b1b-quiz>
+
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — Official Quiz 4 + data-backed practice ═══ -->
+      <b1b-section id="sec-quizzes-column-space" title="অনুশীলন — র‍্যাংক ও কলাম স্পেস" data-no-narration="true">
+
+        <b1b-quiz
+          question="❓ এই ম্যাট্রিক্সের র‍্যাংক কত? (What is the rank of $\begin{bmatrix}1&-2&4\\-2&4&-8\\5&-10&20\end{bmatrix}$?)"
+          correct="1"
+          correct-msg="সঠিক! তিনটি সারিই $[1\;\;-2\;\;4]$ এর গুণিতক—দ্বিতীয় সারি $−2$ গুণ, তৃতীয় সারি $5$ গুণ। তাই সমস্ত কলাম একটি একক দিকের ওপর পড়ে, অর্থাৎ কলাম স্পেস একটি রেখা এবং র‍্যাংক ১। ভিডিওর ‘একই রেখায় মিলে যাওয়া’ ছবিটি মনে করুন।"
+          wrong-msg="সারিগুলো আলাদা করে দেখুন: $[-2,4,-8]=-2[1,-2,4]$ এবং $[5,-10,20]=5[1,-2,4]$। সবগুলোই একই ভেক্টরের স্কেলিং, তবে কোনো সারি শূন্য নয়—তাই র‍্যাংক ০ নয়, বরং ১।"
+          reveal-msg="সঠিক উত্তর Rank 1—একটিমাত্র স্বাধীন দিক $[1,-2,4]$ থাকায় আউটপুট স্পেস একটি রেখা।">
+          <div slot="option">Rank 0</div>
+          <div slot="option">Rank 1</div>
+          <div slot="option">Rank 2</div>
+          <div slot="option">Rank 3 (full rank)</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ একটি ৩×৩ ম্যাট্রিক্সের ক্ষেত্রে রূপান্তরের পর সমস্ত আউটপুট ভেক্টর একটি দ্বিমাত্রিক সমতলে সীমাবদ্ধ থাকলে ম্যাট্রিক্সটির র‍্যাংক কত?"
+          correct="2"
+          correct-msg="অসাধারণ অন্তর্দৃষ্টি! র‍্যাংক হলো কলাম স্পেস বা আউটপুট স্থানের প্রকৃত মাত্রা—যেহেতু সমস্ত আউটপুট একটি ২ডি সমতল গঠন করছে, র‍্যাংক ২। ৩×৩ হলেও $\det(A)=0$ হবে, কারণ ত্রিমাত্রিক আয়তন চ্যাপ্টা হয়ে শূন্য হয়ে গেছে।"
+          wrong-msg="র‍্যাংক মাপা হয় আউটপুটের মাত্রা দিয়ে। রেখা হলে ১, সমতল হলে ২, পূর্ণ ৩ডি হলে ৩। এখানে আউটপুট একটি সমতল—তাই উত্তর ২, ০ বা ৩ নয়।"
+          reveal-msg="সঠিক উত্তর ২—আউটপুট ২ডি সমতলে সীমাবদ্ধ, অর্থাৎ কলাম স্পেসের মাত্রা ২।">
+          <div slot="option">০</div>
+          <div slot="option">১</div>
+          <div slot="option">২</div>
+          <div slot="option">৩</div>
+        </b1b-quiz>
+
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — Official Quiz 5 + data-backed practice ═══ -->
+      <b1b-section id="sec-quizzes-null-space" title="অনুশীলন — নাল স্পেসের আকৃতি" data-no-narration="true">
+
+        <b1b-quiz
+          question="❓ এই ম্যাট্রিক্সের নাল স্পেস কেমন দেখতে হবে? (What does the null space of $\begin{bmatrix}1&-2&4\\-2&4&-8\\5&-10&20\end{bmatrix}$ look like?)"
+          correct="2"
+          correct-msg="নিখুঁত! ম্যাট্রিক্সটির র‍্যাংক ১, therefore ইনপুটের ৩ মাত্রার মধ্যে ২ মাত্রা শূন্যে পতিত হয়—র‍্যাংক-নালিটি উপপাদ্যানুসারে $\text{Nullity}=3-1=2$। তাই নাল স্পেস একটি সমতল (plane)। $A\vec{x}=\vec{0}$-র সমাধানগুলো ঠিক সেই সমতলেই থাকবে।"
+          wrong-msg="ম্যাট্রিক্সটি ৩×৩ কিন্তু র‍্যাংক মাত্র ১ (সব সারি $[1,-2,4]$ এর গুণিতক)। র‍্যাংক-নালিটি: $1+\text{Nullity}=3$, সুতরাং nullity = ২—অর্থাৎ একটি রেখা নয়, একটি সমতল। কেবল শূন্য ভেক্টর তখনই হয় যখন র‍্যাংক ৩ (full rank)।"
+          reveal-msg="সঠিক উত্তর ‘একটি সমতল (A Plane)’—$\text{Nullity}=3-\text{Rank}=3-1=2$ বিধায় নাল স্পেস দ্বিমাত্রিক।">
+          <div slot="option">শুধুমাত্র শূন্য ভেক্টর $\mathbf{0}$</div>
+          <div slot="option">একটি রেখা (A Line)</div>
+          <div slot="option">একটি সমতল (A Plane)</div>
+          <div slot="option">পুরো ৩ডি স্পেস</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ম্যাট্রিক্সের নাল স্পেস (Null Space বা Kernel) বলতে কী বোঝায়?"
+          correct="1"
+          correct-msg="ঠিক! যে সমস্ত ইনপুট ভেক্টর $\vec{x}$-এর ওপর $A$ প্রয়োগ করলে ফলাফল শূন্য ভেক্টর পাওয়া যায় ($A\vec{x}=\vec{0}$), তাদের সমগ্র সেটই নাল স্পেস বা কার্নেল। $\vec{v}=\vec{0}$ হলে এই সেটটি সমীকরণের সব সমাধানকেই নির্দেশ করে।"
+          wrong-msg="একক দৈর্ঘ্যের ভেক্টর বা কর্ণের বাইরের উপাদান নাল স্পেস নয়; অপরিবর্তিত থাকা ভেক্টরও নয় (সেটি আইডেন্টিটির কথা)। মূল শর্ত হলো রূপান্তরের পর ফলাফল $\vec{0}$ হওয়া।"
+          reveal-msg="সঠিক উত্তর: যে সমস্ত ইনপুট ভেক্টর রূপান্তরের পর শূন্য ভেক্টরে $(\vec{0})$ পরিণত হয় তাদের সেট।">
+          <div slot="option">যে সমস্ত ভেক্টরের দৈর্ঘ্য এক একক</div>
+          <div slot="option">যে সমস্ত ইনপুট ভেক্টর রূপান্তরের পর মূলবিন্দু বা শূন্য ভেক্টরে $(\vec{0})$ পরিণত হয়</div>
+          <div slot="option">ম্যাট্রিক্সের প্রধান কর্ণের বাইরে অবস্থিত উপাদানগুলো</div>
+          <div slot="option">যেসব ভেক্টর রূপান্তরের পরও সম্পূর্ণ অপরিবর্তিত থাকে</div>
+        </b1b-quiz>
+
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/lesson_07/experiments/fill_v2/3b1b_lesson_07_full_dubbed_fill2.mp4"
+    yt-id="uQhTuRlWMxw"
+    title="বিপরীত ম্যাট্রিক্স, কলাম স্পেস ও শূন্য স্পেস — অধ্যায় ৭"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — লিনিয়ার অ্যালজেব্রা">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_06.html"
+  prev-title="ডিটারমিন্যান্ট"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_08.html"
+  next-title="বিষম আকারের ম্যাট্রিক্স"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

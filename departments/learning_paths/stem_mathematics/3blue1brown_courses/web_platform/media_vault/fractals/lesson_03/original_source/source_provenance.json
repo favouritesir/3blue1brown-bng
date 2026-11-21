@@ -1,0 +1,16 @@
+{
+  "lesson": "lesson_03",
+  "youtube_id": "gB9n2gHsHN4",
+  "youtube_url": "https://www.youtube.com/watch?v=gB9n2gHsHN4",
+  "oembed_author_name": "3Blue1Brown",
+  "oembed_author_url": "https://www.youtube.com/@3blue1brown",
+  "oembed_title": "Fractals are typically not self-similar",
+  "oembed_confirms_3b1b": true,
+  "ffprobe_duration_sec": 1194.736327,
+  "ffprobe_size_bytes": 90620556,
+  "video_codec": "av1",
+  "video_resolution": [
+    1920,
+    1080
+  ]
+}

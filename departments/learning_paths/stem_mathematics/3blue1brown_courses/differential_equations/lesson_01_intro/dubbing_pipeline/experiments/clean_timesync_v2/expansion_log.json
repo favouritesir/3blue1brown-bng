@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "section": "sec-intro",
+    "authored_sec": 4.896,
+    "natural_after": 11.088,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 2,
+    "section": "sec-intro",
+    "authored_sec": 9.384,
+    "natural_after": 61.992,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 3,
+    "section": "sec-intro",
+    "authored_sec": 10.944,
+    "natural_after": 63.936,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 4,
+    "section": "sec-intro",
+    "authored_sec": 14.496,
+    "natural_after": 61.776,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 5,
+    "section": "sec-intro",
+    "authored_sec": 13.08,
+    "natural_after": 66.072,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 6,
+    "section": "sec-rate-of-change",
+    "authored_sec": 4.944,
+    "natural_after": 8.928,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 7,
+    "section": "sec-rate-of-change",
+    "authored_sec": 8.16,
+    "natural_after": 64.464,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 8,
+    "section": "sec-rate-of-change",
+    "authored_sec": 11.04,
+    "natural_after": 65.448,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 9,
+    "section": "sec-rate-of-change",
+    "authored_sec": 8.52,
+    "natural_after": 12.936,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 10,
+    "section": "sec-rate-of-change",
+    "authored_sec": 11.304,
+    "natural_after": 27.288,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 11,
+    "section": "sec-slope-field",
+    "authored_sec": 5.112,
+    "natural_after": 23.976,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 12,
+    "section": "sec-slope-field",
+    "authored_sec": 14.496,
+    "natural_after": 64.896,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 13,
+    "section": "sec-slope-field",
+    "authored_sec": 14.352,
+    "natural_after": 63.768,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 14,
+    "section": "sec-slope-field",
+    "authored_sec": 13.728,
+    "natural_after": 63.864,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 15,
+    "section": "sec-slope-field",
+    "authored_sec": 21.816,
+    "natural_after": 67.92,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 16,
+    "section": "sec-euler-method",
+    "authored_sec": 4.56,
+    "natural_after": 25.704,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 17,
+    "section": "sec-euler-method",
+    "authored_sec": 9.048,
+    "natural_after": 69.192,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 18,
+    "section": "sec-euler-method",
+    "authored_sec": 9.528,
+    "natural_after": 67.656,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 19,
+    "section": "sec-euler-method",
+    "authored_sec": 12.0,
+    "natural_after": 62.976,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  },
+  {
+    "id": 20,
+    "section": "sec-euler-method",
+    "authored_sec": 16.848,
+    "natural_after": 25.464,
+    "note": "expanded in initial render; reconstructed in reuse mode"
+  }
+]

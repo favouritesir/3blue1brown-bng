@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অধ্যায় ০৫: তাপ সমীকরণ ও ফুরিয়ার রূপান্তর — সীমানা শর্ত ও হারমোনিক বিশ্লেষণ | The Heat Equation and Fourier Transforms</title>
+
+<!-- ═══════════ STYLES (exact L01 order) ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/differential_equations/lesson_05/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict L01 load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="ডিফারেনশিয়াল সমীকরণ"
+  course-url="../../index.html#differential-equations"
+  home-url="../../index.html"
+  chapter-num="০৫"
+  chapter-total="০৬"
+  prev-url="lesson_04.html"
+  prev-title="অধ্যায় ০৪: তাপ সমীকরণ ও ফুরিয়ার ধারা"
+  next-url="lesson_06.html"
+  next-title="অধ্যায় ০৬: তরঙ্গ সমীকরণ ও দ্বিঘাত ব্যবস্থার গতিবিদ্যা"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="ডিফারেনশিয়াল সমীকরণ"
+  course-url="../../index.html"
+  chapter-label="ডিফারেনশিয়াল সমীকরণ • পঞ্চম অধ্যায় — সীমানা শর্ত ও হারমোনিক সুর"
+  title="অধ্যায় ০৫: তাপ সমীকরণ ও ফুরিয়ার রূপান্তর — সীমানা শর্ত ও হারমোনিক বিশ্লেষণ"
+  desc="সীমানা শর্তের ভৌত প্রভাব, চলক পৃথকীকরণ, সাইন হারমোনিক্সের তীব্র সূচকীয় ক্ষয় এবং অসীম ডোমেইনে ফুরিয়ার রূপান্তর ও গাউসিয়ান তাপীয় কার্নেল"
+  video-src="../../media_vault/differential_equations/lesson_05/experiments/3b1b_de_05_full_dubbed.mp4"
+  yt-id="r6sGWTCMz2k"
+  date="৩০ জুন, ২০১৯"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM ম্যাথমেটিক্স উইং"
+  github-url="https://www.3blue1brown.com/lessons/fourier-series"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">তাপ সমীকরণ ও সীমানা শর্তের ভৌত তাৎপর্য</b1b-bookmark>
+      <b1b-bookmark time="147" time-bn="০২:২৭">চলক পৃথকীকরণ পদ্ধতি ও আইগেনমান সমস্যা</b1b-bookmark>
+      <b1b-bookmark time="277" time-bn="০৪:৩৭">উচ্চ কম্পাঙ্কের সূচকীয় ক্ষয় ও তাপের মসৃণকরণ</b1b-bookmark>
+      <b1b-bookmark time="410" time-bn="০৬:৫০">ফুরিয়ার ধারা, উপরিপাত নীতি ও অর্থোগোনালিটি</b1b-bookmark>
+      <b1b-bookmark time="573" time-bn="০৯:৩৩">অসীম দণ্ড, ফুরিয়ার রূপান্তর ও গাউসিয়ান তাপীয় কার্নেল</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-heat-pde-review">১. তাপ সমীকরণ ও সীমানা শর্তের ভৌত তাৎপর্য</a>
+      <a href="#sec-boundary-separation">২. চলক পৃথকীকরণ পদ্ধতি ও আইগেনমান সমস্যা</a>
+      <a href="#sec-sine-harmonics-decay">৩. সাইন হারমোনিক্স ও উচ্চ কম্পাঙ্কের তীব্র ক্ষয়</a>
+      <a href="#sec-fourier-orthogonality">৪. ফুরিয়ার ধারা, উপরিপাত নীতি ও অর্থোগোনালিটি</a>
+      <a href="#sec-continuous-fourier-transform">৫. অসীম দণ্ড, ফুরিয়ার রূপান্তর ও গাউসিয়ান কার্নেল</a>
+      <a href="#sec-interactive-lab">৬. ইন্টারেক্টিভ ল্যাব: ফুরিয়ার ক্ষয় ও ব্যাপন সিমুলেটর</a>
+      <a href="#sec-quizzes">৭. ধারণা যাচাই ও বহুনির্বাচনী কুইজ</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ Section 1 — NARRATED (manifest: sec-heat-pde-review · 8 cues) ═══
+           Cue sequence: h2 → chapter-quote → p → formula-box → p → p → callout → figure -->
+      <b1b-section id="sec-heat-pde-review" title="১. তাপ সমীকরণ ও সীমানা শর্তের ভৌত তাৎপর্য (The Heat Equation &amp; Boundary Conditions)">
+
+        <b1b-quote author="জোসেফ ফুরিয়ার">প্রকৃতির গভীর পর্যবেক্ষণই গাণিতিক বিশ্লেষণের সবচেয়ে সমৃদ্ধ ভিত্তি।</b1b-quote>
+
+        <p>পূর্ববর্তী অধ্যায়ে আমরা তাপ সমীকরণের ভৌত ও জ্যামিতিক তাৎপর্য আবিষ্কার করেছি। সমীকরণটি ছিল একটি একমাত্রিক ধাতব রডে অবস্থান $x$ এবং সময় $t$-এর ফাংশন হিসেবে তাপমাত্রা $u(x, t)$-এর পরিবর্তনের নিয়ম। একমাত্রিক তাপ সমীকরণ যেখানে $\alpha$ তাপীয় ব্যাপন সহগ।</p>
+
+        <b1b-formula math="\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}, \quad 0 &lt; x &lt; L, \; t &gt; 0"></b1b-formula>
+
+        <p>স্থানীয় দ্বিতীয় স্থানিক অন্তরজ $\frac{\partial^2 u}{\partial x^2}$ বক্রতা পরিমাপ করে। যখন কোনো বিন্দুর তাপমাত্রা তার আশপাশের প্রতিবেশী বিন্দুগুলোর গড়ের চেয়ে নিচে অবস্থান করে (হাসিমুখী বা অবতল বক্রতা), তখন দ্বিতীয় ডেরিভেটিভ ধনাত্মক হয় এবং বিন্দুটি উত্তপ্ত হতে শুরু করে। বিপরীতে, উত্তল পাহাড়ের চূড়ার মতো বিন্দুটি প্রতিবেশীদের চেয়ে উষ্ণ হলে তা শীতল হয়ে পড়ে।</p>
+
+        <p>কিন্তু বাস্তবে কেবল এই সমীকরণটি কোনো সমাধান নির্দিষ্ট করতে পারে না। বাস্তব জগতে যেকোনো গতিশীল ব্যবস্থাকে সুনির্দিষ্ট করতে আমাদের প্রয়োজন সীমানা শর্ত (Boundary Conditions)। উদাহরণস্বরূপ, $L$ দৈর্ঘ্যের একটি রডের দুই প্রান্ত $x=0$ এবং $x=L$-এ কী ঘটছে? যদি দুই প্রান্তকে নির্দিষ্ট তাপমাত্রায় (যেমন শূন্য ডিগ্রি সেলসিয়াসের বরফে) ডুবিয়ে রাখা হয়, তবে একে বলা হয় ডিরিক্লেট (Dirichlet) সীমানা শর্ত। আর যদি দুই প্রান্তকে নিখুঁত তাপ নিরোধক দিয়ে আবদ্ধ করা হয় যাতে কোনো তাপ ভেতরে প্রবেশ বা বাইরে বের হতে না পারে, তবে প্রান্তে তাপের নতি বা ফ্লাক্স শূন্য হতে হয়—একে বলা হয় নয়ম্যান (Neumann) সীমানা শর্ত।</p>
+
+        <b1b-callout type="gold" icon="🧊" title="সীমানা শর্তের অপরিসীম গুরুত্ব">
+          <p>আংশিক ডিফারেনশিয়াল সমীকরণের সাধারণ সমাধান অসীম সংখ্যক ফাংশনের একটি বিশাল পরিবার। শুধুমাত্র বাস্তব সীমানা শর্তই মহাবিশ্বের কোটি কোটি সম্ভাবনার মধ্য থেকে একটি মাত্র বাস্তব সমাধানকে বেছে নেয়। দুই প্রান্তে স্থির শূন্য তাপমাত্রার সমসত্ত্ব ডিরিক্লেট সীমানা শর্ত হলো:</p>
+          <p>$$u(0, t) = 0 \quad \text{এবং} \quad u(L, t) = 0 \quad (\text{Homogeneous Dirichlet})$$</p>
+          <p>আর দুই প্রান্তে তাপীয় প্রবাহহীন নয়ম্যান অন্তরক সীমানা শর্ত হলো:</p>
+          <p>$$\left.\frac{\partial u}{\partial x}\right|_{x=0} = 0 \quad \text{এবং} \quad \left.\frac{\partial u}{\partial x}\right|_{x=L} = 0 \quad (\text{Insulated Neumann})$$</p>
+        </b1b-callout>
+
+        <b1b-figure alt="ডিরিক্লেট ও নয়ম্যান সীমানা শর্তের ভৌত প্রভাব" caption="এই চিত্রে একটি ধাতব রডের দুই প্রান্তে ভিন্ন ভিন্ন সীমানা শর্তের ভৌত প্রভাব পাশাপাশি দেখানো হয়েছে। বাঁ প্রান্তে বরফের পানিতে ডুবানো শূন্য-তাপমাত্রার প্রান্তে (ডিরিক্লেট) বক্ররেখা শূন্যে নামতে বাধ্য হয়, আর ডান প্রান্তের অন্তরক আবরণে (নয়ম্যান) তাপ বের হতে না পারায় বক্ররেখা অনুভূমিক হয়ে দাঁড়ায় অর্থাৎ প্রান্তে নতি শূন্য। এই দুই ভিন্ন নিয়মই ঠিক করে দেয় রডের ভেতর কোন তরঙ্গ বেঁচে থাকবে এবং কোনটি মিলিয়ে যাবে। তাই কেবল সমীকরণ নয়, বাস্তব সীমানা শর্তও সমাধানের অবিচ্ছেদ্য অংশ—স্থান ও কাল জড়িত একটি আংশিক সমীকরণকেই পরিচিত সাধারণ সমীকরণের সাহায্যে সমাধানের পথ এটিই দেখায়।">
+          <svg viewBox="0 0 640 320" role="img" aria-label="Dirichlet and Neumann boundary conditions" style="width:100%;height:auto;">
+            <rect x="0" y="0" width="640" height="320" fill="#0b0c12"/>
+            <text x="18" y="28" fill="#74c0e3" font-size="14">চিত্র ১: সীমানা শর্তের দুই রূপ</text>
+            <line x1="70" y1="250" x2="570" y2="250" stroke="#8b949e" stroke-width="2"/>
+            <rect x="58" y="244" width="24" height="18" fill="#74c0e3" fill-opacity="0.55"/>
+            <rect x="558" y="238" width="24" height="26" fill="#ffa94d" fill-opacity="0.55"/>
+            <path d="M 82 250 C 180 248, 220 100, 320 82 C 420 105, 470 180, 558 168" fill="none" stroke="#ff6b6b" stroke-width="3.2"/>
+            <circle cx="82" cy="250" r="5" fill="#74c0e3"/>
+            <circle cx="558" cy="168" r="5" fill="#ffa94d"/>
+            <text x="86" y="285" fill="#74c0e3" font-size="13">x=0, u=0 (বরফ)</text>
+            <text x="446" y="292" fill="#ffa94d" font-size="13">x=L, ∂u/∂x=0</text>
+            <text x="250" y="70" fill="#ff6b6b" font-size="13">u(x,t) — তাপ প্রোফাইল</text>
+            <text x="360" y="150" fill="#10b981" font-size="12">অন্তরক প্রান্তে অনুভূমিক নতি</text>
+          </svg>
+        </b1b-figure>
+
+      </b1b-section>
+
+      <!-- ═══ Section 2 — NARRATED (manifest: sec-boundary-separation · 8 cues) ═══
+           Cue sequence: h2 → p → p → formula-box → p → p → formula-box → callout -->
+      <b1b-section id="sec-boundary-separation" title="২. চলক পৃথকীকরণ পদ্ধতি ও আইগেনমান সমস্যা (Separation of Variables)">
+
+        <p>জটিল আংশিক সমীকরণ সমাধানের জন্য জোসেফ ফুরিয়ার গণিত ইতিহাসের সবচেয়ে কার্যকর হাতিয়ারগুলোর একটি প্রবর্তন করেন: চলক পৃথকীকরণ (Separation of Variables)।</p>
+
+        <p>আমরা অনুমান করি যে অজ্ঞাত অপেক্ষক $u(x, t)$ স্থানিক ফাংশন $X(x)$ এবং কালিক ফাংশন $T(t)$-এর গুণফল হিসেবে বিচ্ছিন্নযোগ্য: $u(x, t) = X(x) T(t)$। এই অনুমানকে তাপ সমীকরণে বসালে আমরা পাই $X(x) T'(t) = \alpha X''(x) T(t)$।</p>
+
+        <b1b-formula math="\frac{T'(t)}{\alpha T(t)} = \frac{X''(x)}{X(x)} = -\lambda^2"></b1b-formula>
+
+        <p>উভয়পক্ষকে $\alpha X(x) T(t)$ দিয়ে ভাগ করলে সমীকরণটি দাঁড়ায় $\frac{T'(t)}{\alpha T(t)} = \frac{X''(x)}{X(x)}$। লক্ষ্য করুন: বামপক্ষটি কেবলমাত্র সময় $t$-এর ফাংশন, আর ডানপক্ষটি কেবলমাত্র অবস্থান $x$-এর ফাংশন। একটি স্বাধীন চলকের ফাংশন অন্য একটি স্বাধীন চলকের ফাংশনের সাথে সর্বদা সমান হতে পারে কেবলমাত্র তখনই, যখন উভয়েই একটি সার্বজনীন ধ্রুবকের সমান হয়! একে আমরা পৃথকীকরণ ধ্রুবক $-\lambda^2$ হিসেবে চিহ্নিত করি। চলক পৃথকীকরণ অনুপাত এবং আইগেনমান ধ্রুবক $-\lambda^2$ এইখানেই জন্ম নেয়।</p>
+
+        <p>এখান থেকে আমরা দুটি পৃথক সাধারণ ডিফারেনশিয়াল সমীকরণ পাই: স্থানিক সমীকরণ $X''(x) + \lambda^2 X(x) = 0$ এবং কালিক সমীকরণ $T'(t) + \alpha \lambda^2 T(t) = 0$। স্থানিক সমীকরণটির সাধারণ সমাধান হলো সাইন ও কোসাইনের সমন্বয়: $X(x) = A \cos(\lambda x) + B \sin(\lambda x)$। সীমানা শর্ত $X(0) = 0$ প্রয়োগ করলে $A = 0$ হতে বাধ্য হয়; এবং $X(L) = 0$ প্রয়োগ করলে পাওয়া যায় $\sin(\lambda L) = 0$। কোয়ান্টায়িত স্থানিক তরঙ্গদৈর্ঘ্য ও অনুমোদিত আইগেনফাংশনসমূহ নিচের সূত্রে প্রকাশিত হয়।</p>
+
+        <b1b-formula math="\lambda_n = \frac{n\pi}{L}, \quad X_n(x) = \sin\left(\frac{n\pi x}{L}\right), \quad n = 1, 2, 3, \dots"></b1b-formula>
+
+        <b1b-callout type="green" icon="⚛️" title="কোয়ান্টাম মেকানিক্সের পূর্বাভাস!">
+          <p>একটি সীমাবদ্ধ রডে স্থানিক কম্পাঙ্ক $\lambda$ যেকোনো সংখ্যা হতে পারে না—সীমানা শর্ত তাকে পূর্ণসংখ্যার গুণিতকে কোয়ান্টায়িত হতে বাধ্য করে। ঠিক এই একই গাণিতিক নীতি এক শতাব্দী পরে শ্রোডিঙ্গার সমীকরণে পরমাণুর শক্তিস্তরের কোয়ান্টাইজেশন ব্যাখ্যা করেছিল!</p>
+          <p>অনুমোদিত স্থানিক আকারগুলো হলো স্ট্যান্ডিং সাইন ওয়েভ। কিন্তু সময়ের সাথে সাথে এদের বিস্তার কীভাবে পরিবর্তিত হয়—সেটিই পরবর্তী পরিচ্ছেদের মূল প্রশ্ন।</p>
+        </b1b-callout>
+
+      </b1b-section>
+
+      <!-- ═══ Section 3 — NARRATED (manifest: sec-sine-harmonics-decay · 7 cues) ═══
+           Cue sequence: h2 → p → formula-box → p → figure → p → callout -->
+      <b1b-section id="sec-sine-harmonics-decay" title="৩. সাইন হারমোনিক্স ও উচ্চ কম্পাঙ্কের তীব্র ক্ষয় (Exponential Decay of Modes)">
+
+        <p>স্থানিক আইগেনফাংশন নির্ধারিত হওয়ার পর এবার সময়ের অংশের সমাধান দেখা যাক: $T'(t) = -\alpha \lambda_n^2 T(t)$। এটি প্রথম ক্রমের অতি পরিচিত সূচকীয় সমীকরণ, যার সমাধান $T_n(t) = e^{-\alpha \lambda_n^2 t} = e^{-\alpha \left(\frac{n\pi}{L}\right)^2 t}$। অতএব, প্রতিটি পূর্ণ সমাধান বা ফান্ডামেন্টাল মোড হলো একটি ক্ষয়িষ্ণু সাইন তরঙ্গ: $u_n(x, t) = e^{-\alpha \left(\frac{n\pi}{L}\right)^2 t} \sin\left(\frac{n\pi x}{L}\right)$। এটি $n$-তম মৌলিক তাপীয় মোড ও এর সূচকীয় ক্ষয়।</p>
+
+        <b1b-formula math="u_n(x, t) = \exp\left( -\alpha \left(\frac{n\pi}{L}\right)^2 t \right) \sin\left(\frac{n\pi x}{L}\right)"></b1b-formula>
+
+        <p>এখানেই লুকিয়ে আছে তাপ সমীকরণের সবচেয়ে বৈপ্লবিক পদার্থবিজ্ঞান। সূচকের দিকে তাকান: ক্ষয়ের হার $n^2$-এর সমানুপাতিক! এর অর্থ হলো, $n=1$ (মৌলিক মোড) যে গতিতে ঠান্ডা হয়, $n=2$ মোড তার চেয়ে $2^2 = 4$ গুণ দ্রুত ঠান্ডা হয়; $n=3$ মোড ক্ষয় হয় $3^2 = 9$ গুণ দ্রুত বেগে; আর $n=10$ মোড বিলীন হয় ১০০ গুণ তীব্রতায়!</p>
+
+        <b1b-figure alt="বিভিন্ন harmonic মোডের সূচকীয় ক্ষয় হার" caption="গ্রাফে দেখুন $n=1$ মোড ধীরে ধীরে ক্ষয়প্রাপ্ত হয়, কিন্তু $n=2$ মোড চার গুণ দ্রুত এবং $n=3$ মোড নয় গুণ দ্রুত গতিতে মিলিয়ে যায়। প্রতিটি বক্ররেখা একই $\exp(-\alpha\lambda_n^2 t)$ নিয়ম মেনে চলে—শুধু ঘাতে $n^2$ থাকার কারণে ঘন ঢেউগুলোর আয়ুষ্কাল $\tau_n = \frac{L^2}{\alpha \pi^2 n^2}$ আকারে সংকুচিত হয়, ফলে $\tau_2 = \frac14\tau_1$ এবং $\tau_3 = \frac19\tau_1$। বিভিন্ন হারমোনিক মোডের এই বৈশিষ্ট্যমূলক আয়ুষ্কাল বা রিলাক্সেশন টাইমই ব্যাখ্যা করে কেন রডের সূক্ষ্ম খাঁজগুলো প্রথমেই অদৃশ্য হয়। তাই কিছুক্ষণের মধ্যে কেবল মসৃণতম $n=1$ আর্চটি টিকে থাকে।">
+          <svg viewBox="0 0 640 320" role="img" aria-label="Exponential decay of sine modes" style="width:100%;height:auto;">
+            <rect x="0" y="0" width="640" height="320" fill="#0b0c12"/>
+            <text x="18" y="28" fill="#74c0e3" font-size="14">চিত্র ২: মোডের ক্ষয় — n² নীতি</text>
+            <line x1="70" y1="265" x2="600" y2="265" stroke="#8b949e" stroke-width="2"/>
+            <line x1="70" y1="265" x2="70" y2="45" stroke="#8b949e" stroke-width="2"/>
+            <path d="M 70 60 C 180 62, 300 100, 420 165 C 490 205, 550 235, 600 250" fill="none" stroke="#10b981" stroke-width="3.2"/>
+            <path d="M 70 60 C 150 62, 230 130, 310 205 C 370 248, 450 260, 600 263" fill="none" stroke="#74c0e3" stroke-width="2.8"/>
+            <path d="M 70 60 C 105 90, 140 165, 180 225 C 230 258, 320 264, 600 265" fill="none" stroke="#ff6b6b" stroke-width="2.8"/>
+            <text x="470" y="130" fill="#10b981" font-size="13">n=1 (ধীরে)</text>
+            <text x="470" y="158" fill="#74c0e3" font-size="13">n=2 (৪× দ্রুত)</text>
+            <text x="470" y="186" fill="#ff6b6b" font-size="13">n=3 (৯× দ্রুত)</text>
+            <text x="300" y="295" fill="#8b949e" font-size="13">সময় t →</text>
+            <text x="78" y="55" fill="#8b949e" font-size="13">বিস্তার</text>
+          </svg>
+        </b1b-figure>
+
+        <p>বাস্তব জীবনে এর চাক্ষুষ অর্থ কী? তাপমাত্রার যেকোনো তীক্ষ্ণ বা খাঁজকাটা পরিবর্তন উচ্চ কম্পাঙ্কের হারমোনিক্স দ্বারা গঠিত। যেহেতু উচ্চ কম্পাঙ্কগুলো প্রায় চোখের পলকে মিলিয়ে যায়, তাই তাপ প্রবাহ যেকোনো আকৃতিকে অবিশ্বাস্য দ্রুততায় মসৃণ করে ফেলে। কিছুক্ষণ অতিবাহিত হলেই সমস্ত সূক্ষ্ম খাঁজ বিলুপ্ত হয়ে কেবল মসৃণতম $n=1$ আর্চটি অবশিষ্ট থাকে।</p>
+
+        <b1b-callout type="purple" icon="⏳" title="এনট্রপি ও সময়ের একমুখী তীর">
+          <p>উচ্চ কম্পাঙ্কের এই বিস্ফোরক ক্ষয় তথ্য হারানোর নামান্তর। সময়ের সাথে সাথে তাপ উচ্চ কম্পাঙ্কের সমস্ত অতীত স্মৃতি চিরতরে মুছে ফেলে। এ কারণেই অতীতের নিখুঁত অবস্থা পুনরুদ্ধার করা অসম্ভব, যা তাপগতিবিদ্যার দ্বিতীয় সূত্রের মূল ভিত্তি। যদি প্রাথমিক তাপমাত্রা কেবল একটি সাইন তরঙ্গ না হয়ে যেকোনো এবড়োখেবড়ো রেখা হয়, তবে তাকে এই মোডগুলোর মাধ্যমেই বিশ্লিষ্ট করে সমাধান করা যায়—সেটিই ফুরিয়ার ধারার কাজ।</p>
+        </b1b-callout>
+
+      </b1b-section>
+
+      <!-- ═══ Section 4 — NARRATED (manifest: sec-fourier-orthogonality · 9 cues) ═══
+           Cue sequence: h2 → p → p → callout → formula-box → p → formula-box → formula-box → p -->
+      <b1b-section id="sec-fourier-orthogonality" title="৪. ফুরিয়ার ধারা, উপরিপাত নীতি ও অর্থোগোনালিটি (Fourier Series &amp; Orthogonality)">
+
+        <p>ধরা যাক, শুরুতে রডের তাপমাত্রা একটি মসৃণ সাইন তরঙ্গ নয়; বরং এক অর্ধেক ফুটন্ত পানিতে এবং অপর অর্ধেক বরফে রাখা ছিল, ফলে কেন্দ্রে একটি খাড়া স্টেপ ফাংশন তৈরি হয়েছে: $u(x, 0) = f(x)$।</p>
+
+        <p>জোসেফ ফুরিয়ার ১৮০৭ সালে ঘোষণা করেছিলেন যে যেকোনো ফাংশন $f(x)$-কে অসীম সংখ্যক সাইন তরঙ্গের যোগফল হিসেবে লেখা সম্ভব: $f(x) = \sum_{n=1}^{\infty} b_n \sin\left(\frac{n\pi x}{L}\right)$। তৎকালীন গণিতের পণ্ডিতরা এই ধারণাকে অবাস্তব বলে উড়িয়ে দিতে চেয়েছিলেন।</p>
+
+        <b1b-callout type="red" icon="⚔️" title="ঐতিহাসিক বিতর্ক ও ফাংশন স্পেসে ভিত্তি ভেক্টর">
+          <p>মসৃণ তরঙ্গ যোগ করে কীভাবে ধারালো সিঁড়ির ধাপ তৈরি সম্ভব? লাগ্রাঞ্জ ও লাপ্লাস এই দাবির তীব্র বিরোধিতা করেছিলেন। অথচ ঠিক যেমন ত্রিমাত্রিক জগতে যেকোনো ভেক্টরকে $\hat{i}, \hat{j}, \hat{k}$ ভিত্তি ভেক্টরের লিনিয়ার কম্বিনেশন হিসেবে প্রকাশ করা যায়, তেমনি অসীম মাত্রিক ফাংশন স্পেসে সাইন তরঙ্গগুলো হলো অর্থোগোনাল ভিত্তি ভেক্টর!</p>
+        </b1b-callout>
+
+        <b1b-formula math="\int_0^L \sin\left(\frac{n\pi x}{L}\right) \sin\left(\frac{m\pi x}{L}\right) dx = \begin{cases} 0, &amp; n \neq m \\ \frac{L}{2}, &amp; n = m \end{cases}"></b1b-formula>
+
+        <p>কিন্তু ফুরিয়ারের ভিত্তি ছিল সাইন অপেক্ষকের অর্থোগোনালিটি বা লম্বতা সম্পর্ক। রৈখিক বীজগণিতে যেমন দুটি লম্ব ভেক্টরের ডট প্রোডাক্ট শূন্য হয়, তেমনি ফাংশন স্পেসে দুটি ভিন্ন কম্পাঙ্কের সাইন তরঙ্গের গুণফলের ইন্টিগ্রাল শূন্য হয়—সাইন আইগেনফাংশনসমূহের এই অর্থোগোনালিটি সম্পর্কই উপরের সূত্রে প্রকাশিত।</p>
+
+        <b1b-formula math="b_n = \frac{2}{L}\int_0^L f(x) \sin\left(\frac{n\pi x}{L}\right) dx"></b1b-formula>
+
+        <b1b-formula math="u(x, t) = \sum_{n=1}^{\infty} b_n \exp\left( -\alpha \left(\frac{n\pi}{L}\right)^2 t \right) \sin\left(\frac{n\pi x}{L}\right)"></b1b-formula>
+
+        <p>এই অর্থোগোনালিটি সমীকরণের উভয়পাশে $\sin\left(\frac{m\pi x}{L}\right)$ দিয়ে গুণ করে সমাকলন করলে প্রতিটি সহগ $b_n$ স্পষ্টভাবে বেরিয়ে আসে—এটি ফুরিয়ার সাইন ধারার সহগ নির্ণয়ের সূত্র। যেহেতু তাপ সমীকরণ রৈখিক, তাই সমীকরণের সাধারণ সমাধান হলো প্রতিটি ক্ষয়িষ্ণু মোডের সরাসরি উপরিপাত (Superposition)—সীমাবদ্ধ দণ্ডে তাপ সমীকরণের এই পূর্ণ সাধারণ সমাধানই উপরের সূত্র। দণ্ডের দৈর্ঘ্য $L$ যদি ক্রমশ বৃদ্ধি পেয়ে অসীমে চলে যায়, তখন বিচ্ছিন্ন ধারার কী রূপান্তর ঘটে?</p>
+
+      </b1b-section>
+
+      <!-- ═══ Section 5 — NARRATED (manifest: sec-continuous-fourier-transform · 9 cues) ═══
+           Cue sequence: h2 → p → p → formula-box → p → formula-box → figure → formula-box → callout -->
+      <b1b-section id="sec-continuous-fourier-transform" title="৫. অসীম দণ্ড, ফুরিয়ার রূপান্তর ও গাউসিয়ান কার্নেল (The Fourier Transform &amp; Heat Kernel)">
+
+        <p>এবার কল্পনা করুন আমাদের ধাতব দণ্ডটি সীমাবদ্ধ নয়; এটি মাইনাস অসীম থেকে প্লাস অসীম পর্যন্ত বিস্তৃত ($-\infty &lt; x &lt; \infty$)।</p>
+
+        <p>যখন $L \to \infty$, তখন পাশাপাশি দুটি অনুমোদিত কম্পাঙ্কের মধ্যবর্তী দূরত্ব $\Delta k = \frac{\pi}{L} \to 0$ হয়ে যায়। বিচ্ছিন্ন পূর্ণসংখ্যার যোগফল তখন মসৃণভাবে একটি অবিচ্ছিন্ন সমাকলনে রূপান্তরিত হয়। এখান থেকেই জন্ম নেয় আধুনিক বিজ্ঞানের অন্যতম শ্রেষ্ঠ আবিষ্কার—ফুরিয়ার রূপান্তর (Fourier Transform)। অবিচ্ছিন্ন ফুরিয়ার রূপান্তর ও বিপরীত রূপান্তর জোড় নিচে দেখানো হয়েছে।</p>
+
+        <b1b-formula math="\hat{f}(k) = \int_{-\infty}^{\infty} f(x) e^{-i k x} dx, \quad f(x) = \frac{1}{2\pi}\int_{-\infty}^{\infty} \hat{f}(k) e^{i k x} dk"></b1b-formula>
+
+        <p>ফুরিয়ার রূপান্তরের মাধ্যমে আমরা বাস্তব স্থান $x$-এর ফাংশন $f(x)$-কে কম্পাঙ্ক $k$-এর অবিচ্ছিন্ন বর্ণালি $\hat{f}(k)$-তে রূপান্তর করি। এই রূপান্তরের সবচেয়ে জাদুকরী বৈশিষ্ট্য হলো এটি স্থানিক ডেরিভেটিভকে সাধারণ গুণনে রূপান্তর করে: $\mathcal{F}\left\{\frac{\partial^2 u}{\partial x^2}\right\} = -k^2 \hat{u}(k, t)$। ফলে জটিল আংশিক সমীকরণটি রূপান্তরিত হয় একটি অতি সহজ ওডিই-তে: $\frac{d\hat{u}}{dt} = -\alpha k^2 \hat{u}$।</p>
+
+        <b1b-formula math="\frac{d\hat{u}}{dt} = -\alpha k^2 \hat{u}"></b1b-formula>
+
+        <b1b-figure alt="গাউসিয়ান তাপীয় কার্নেলের বিস্তার" caption="এই চিত্রে একটি বিন্দুতে কেন্দ্রীভূত তাপ সময়ের সাথে কীভাবে প্রসারিত গাউসিয়ান বেল কার্ভে রূপ নেয় তা দেখানো হয়েছে। শুরুর সরু লাল শিখরটি কালের সাথে সাথে নীল ও সবুজ রেখায় নামিয়ে এসে চওড়া ও নিচু হয়—অর্থাৎ মোট তাপ অপরিবর্তিত থাকলেও এর স্থানিক বিস্তার বাড়তে থাকে। একমাত্রিক তাপ সমীকরণের মৌলিক সমাধান $\Phi(x,t) = \frac{1}{\sqrt{4\pi\alpha t}}e^{-x^2/(4\alpha t)}$ বলে যে বেলটির প্রস্থ $\sqrt{t}$-এর সমানুপাতিকে বাড়ে, যা ব্রাউনিয়ান গতির সাথে সরাসরি মিলে যায়। এই গাউসিয়ান বেল কার্ভটিই অসীম ডোমেইনে তাপ সমীকরণের মৌলিক সমাধান বা হিট কার্নেল।">
+          <svg viewBox="0 0 640 320" role="img" aria-label="Gaussian heat kernel spreading" style="width:100%;height:auto;">
+            <rect x="0" y="0" width="640" height="320" fill="#0b0c12"/>
+            <text x="18" y="28" fill="#74c0e3" font-size="14">চিত্র ৩: গাউসিয়ান হিট কার্নেল</text>
+            <line x1="60" y1="262" x2="600" y2="262" stroke="#8b949e" stroke-width="2"/>
+            <line x1="320" y1="262" x2="320" y2="42" stroke="#8b949e" stroke-width="1.5"/>
+            <path d="M 80 258 C 300 258, 312 55, 320 55 C 328 55, 340 258, 560 258" fill="none" stroke="#ff6b6b" stroke-width="3.2"/>
+            <path d="M 80 258 C 240 258, 290 125, 320 125 C 350 125, 400 258, 560 258" fill="none" stroke="#74c0e3" stroke-width="3"/>
+            <path d="M 80 258 C 180 258, 265 190, 320 190 C 375 190, 460 258, 560 258" fill="none" stroke="#10b981" stroke-width="3"/>
+            <text x="470" y="95" fill="#ff6b6b" font-size="13">t = t₀ (সরু)</text>
+            <text x="470" y="122" fill="#74c0e3" font-size="13">t = 4t₀</text>
+            <text x="470" y="149" fill="#10b981" font-size="13">t = 9t₀ (চওড়া)</text>
+            <text x="300" y="292" fill="#8b949e" font-size="13">অবস্থান x →</text>
+            <text x="332" y="52" fill="#8b949e" font-size="12">Φ(x,t)</text>
+          </svg>
+        </b1b-figure>
+
+        <b1b-formula math="\Phi(x, t) = \frac{1}{\sqrt{4\pi\alpha t}} \exp\left( -\frac{x^2}{4\alpha t} \right)"></b1b-formula>
+
+        <b1b-callout type="blue" icon="🌌" title="ব্রাউনিয়ান গতি ও সম্ভাবনা তত্ত্ব">
+          <p>গাউসিয়ান হিট কার্নেল অবিকল স্বাভাবিক সম্ভাবনা বণ্টনের মতো। এটি কোনো কাকতালীয় বিষয় নয়—অণুদের এলোমেলো ব্রাউনিয়ান গতির সামগ্রিক ম্যাক্রোস্কোপিক রূপই হলো এই তাপ সমীকরণ!</p>
+          <p>ফ্রিকোয়েন্সি স্পেসে সমাধান হলো $\hat{u}(k, t) = \hat{u}(k, 0) e^{-\alpha k^2 t}$। বিপরীত ফুরিয়ার রূপান্তর নিলে দেখা যায়, এটি মূলত প্রাথমিক তাপমাত্রার সাথে একটি প্রসার্য গাউসিয়ান বেল কার্ভের কনভোলিউশন—অসীম ডোমেইনে কনভোলিউশনের মাধ্যমে পূর্ণ সমাধান:</p>
+          <p>$$u(x, t) = (f * \Phi)(x, t) = \int_{-\infty}^{\infty} f(y) \frac{1}{\sqrt{4\pi\alpha t}} e^{-\frac{(x-y)^2}{4\alpha t}} dy$$</p>
+          <p>মৌলিক গাউসিয়ান তাপীয় কার্নেল হলো $\Phi(x, t) = \frac{1}{\sqrt{4\pi\alpha t}} \exp\left(-\frac{x^2}{4\alpha t}\right)$। শুরুতে একটি একক বিন্দুতে কেন্দ্রীভূত তাপ সময়ের সাথে সাথে একটি নিখুঁত নরম ঘণ্টার মতো দুই পাশে ছড়িয়ে পড়ে। একটি লোহার রডের তাপ পরিবাহিতা থেকে জন্ম নিয়ে ফুরিয়ার ধারা ও রূপান্তর আজ কোয়ান্টাম বলবিদ্যা, সিগন্যাল প্রসেসিং এবং আধুনিক তথ্যপ্রযুক্তির মেরুদণ্ডে পরিণত হয়েছে।</p>
+        </b1b-callout>
+
+      </b1b-section>
+
+      <!-- ═══ Section 6 — NON-NARRATED interactive lab ═══ -->
+      <b1b-section id="sec-interactive-lab" title="৬. ইন্টারেক্টিভ ল্যাব: ফুরিয়ার ক্ষয় ও ব্যাপন সিমুলেটর" data-no-narration="true">
+
+        <p>ইন্টারেক্টিভ ল্যাব: ফুরিয়ার হারমোনিক্স ও তাপীয় ব্যাপন সিমুলেটর। নিচের সিমুলেটরে লক্ষ্য করুন কীভাবে প্রাথমিক খাঁজকাটা ফাংশন ফুরিয়ার সাইন ধারার মাধ্যমে গঠিত হয় এবং সময় অতিবাহিত হওয়ার সাথে সাথে কীভাবে উচ্চ কম্পাঙ্কগুলো সবার আগে মিলিয়ে গিয়ে একটি নিখুঁত মসৃণ বক্ররেখায় পরিণত হয়।</p>
+
+        <b1b-formula math="\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}, \qquad u_i^{n+1} = u_i^{n} + \frac{\alpha \Delta t}{\Delta x^2}\left(u_{i+1}^{n} - 2u_i^{n} + u_{i-1}^{n}\right)"></b1b-formula>
+
+        <b1b-callout type="blue" icon="🕹️" title="ল্যাব ব্যবহারের নির্দেশিকা">
+          <p>১. প্রাথমিক তাপমাত্রার প্রোফাইল (স্টেপ, ত্রিভুজ, মৌলিক সাইন, উচ্চ কম্পাঙ্ক মিশ্রণ) ও সীমানা শর্তের ধরন (ডিরিক্লেট/নয়ম্যান) নির্বাচন করুন। ২. তাপীয় ব্যাপন সহগ $\alpha$ ও ফুরিয়ার ধারার পদ সংখ্যা $N$ স্লাইডার ঘুরিয়ে পরামিতি বদলান। ৩. ▶ চালু টিপে বিবর্তন দেখুন, ◼ বন্ধ ও ↺ রিসেট দিয়ে নিয়ন্ত্রণ করুন; গ্রাফে ক্লিক করলে নতুন তাপ প্রোফাইল আঁকা যায়।</p>
+        </b1b-callout>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <div class="viz-wrapper" id="heatDiffusionWrapper">
+            <div class="viz-header">
+              <div class="viz-header-left"><span>🔥 তাপীয় ব্যাপন ও ফুরিয়ার হারমোনিক্স ক্ষয় সিমুলেটর</span></div>
+            </div>
+            <div class="viz-canvas-container" style="position:relative;">
+              <canvas id="de05Graph" style="width:100%;height:300px;cursor:crosshair;display:block;background:#0b0c12;"></canvas>
+              <canvas id="de05Heatmap" style="width:100%;height:40px;display:block;"></canvas>
+            </div>
+            <div class="viz-controls">
+              <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px;">
+                <label style="font-size:.9rem;">প্রাথমিক প্রোফাইল:
+                  <select id="de05Initial" style="margin-left:6px;">
+                    <option value="step">স্টেপ ফাংশন (অর্ধেক উষ্ণ, অর্ধেক বরফ)</option>
+                    <option value="triangle">ত্রিভুজাকার তাপীয় শিখা (Triangular Peak)</option>
+                    <option value="single_sine">মৌলিক সাইন মোড (n = 1)</option>
+                    <option value="high_harmonic">উচ্চ কম্পাঙ্ক মিশ্রণ (n = 1, 3, 5)</option>
+                  </select>
+                </label>
+                <label style="font-size:.9rem;">সীমানা শর্ত:
+                  <select id="de05Boundary" style="margin-left:6px;">
+                    <option value="dirichlet">দুই প্রান্তে শূন্য তাপমাত্রা (Dirichlet)</option>
+                    <option value="neumann">দুই প্রান্ত তাপ নিরোধক দিয়ে মোড়ানো (Neumann)</option>
+                  </select>
+                </label>
+              </div>
+              <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+                <button type="button" id="de05Play" class="viz-tool-btn" style="background:var(--theme);color:#000;font-weight:bold;">▶ চালু</button>
+                <button type="button" id="de05Pause" class="viz-tool-btn">◼ বন্ধ</button>
+                <button type="button" id="de05Reset" class="viz-tool-btn">↺ রিসেট</button>
+                <div class="viz-slider-row"><label>α:</label><input type="range" id="de05Alpha" min="0.02" max="0.4" step="0.01" value="0.1"/><span class="viz-val" id="de05AlphaVal">০.১০</span></div>
+                <div class="viz-slider-row"><label>N:</label><input type="range" id="de05Terms" min="1" max="40" step="1" value="12"/><span class="viz-val" id="de05TermsVal">১২</span></div>
+              </div>
+            </div>
+            <div class="viz-info" id="de05Metrics">অতিক্রান্ত সময় t = ০.০০ s | সর্বোচ্চ তাপমাত্রা u_max = ১০০.০°C | উচ্চ কম্পাঙ্ক ক্ষয় = ০.০%</div>
+          </div>
+        </b1b-fullscreen>
+
+        <b1b-media-tab caption="চিত্র ও ভিডিও তুলনা: বাঁয়ে স্থির চিত্রে প্রাথমিক খাঁজকাটা প্রোফাইল আর ডানে বাংলা ডাবড 3Blue1Brown অ্যানিমেশন। দুই মোডেই লক্ষ্য করো—সময়ের সাথে সাথে উচ্চ কম্পাঙ্কের সূক্ষ্ম ঢেউগুলো প্রথমে মিলিয়ে গিয়ে রড একটি মসৃণ বক্ররেখায় রূপ নিচ্ছে; একেই তাপের মসৃণকরণ বলে।">
+          <div slot="image">
+            <svg viewBox="0 0 560 230" role="img" aria-label="Heat diffusion still" style="background:#0b0c12;width:100%;height:auto;">
+              <rect x="0" y="0" width="560" height="230" fill="#0b0c12"/>
+              <text x="16" y="26" fill="#74c0e3" font-size="13">চিত্র ৪: তাপ ব্যাপনের স্থির চিত্র</text>
+              <line x1="40" y1="180" x2="520" y2="180" stroke="#8b949e" stroke-width="1.5"/>
+              <path d="M 40 180 C 120 178, 150 40, 200 45 C 230 50, 240 160, 280 150 C 320 140, 330 70, 370 75 C 420 80, 460 178, 520 180" fill="none" stroke="#ff6b6b" stroke-width="2.6"/>
+              <path d="M 40 180 Q 280 95 520 180" fill="none" stroke="#74c0e3" stroke-width="2.4"/>
+              <text x="55" y="210" fill="#8b949e" font-size="12">লাল: t=0 (খাঁজকাটা) · নীল: t&gt;0 (মসৃণ)</text>
+            </svg>
+          </div>
+          <div slot="video">
+            <video controls preload="none" src="../../media_vault/differential_equations/lesson_05/experiments/3b1b_de_05_full_dubbed.mp4"></video>
+          </div>
+        </b1b-media-tab>
+
+        <b1b-media-tab caption="দ্বিতীয় চিত্র-ভিডিও প্যানেল: গাউসিয়ান তাপীয় কার্নেল। স্থির চিত্রে বিন্দুতে কেন্দ্রীভূত তাপের প্রোফাইল দেখা যায়, আর ভিডিওতে সময়ের সাথে সাথে সেটি প্রসারিত বেল কার্ভে পরিণত হয়—অসীম দণ্ডের ফুরিয়ার রূপান্তরেরই দৃশ্যমান রূপ।">
+          <div slot="image">
+            <svg viewBox="0 0 560 200" role="img" aria-label="Gaussian kernel still" style="background:#0b0c12;width:100%;height:auto;">
+              <rect x="0" y="0" width="560" height="200" fill="#0b0c12"/>
+              <text x="16" y="26" fill="#74c0e3" font-size="13">চিত্র ৫: গাউসিয়ান কার্নেলের স্থির চিত্র</text>
+              <line x1="40" y1="160" x2="520" y2="160" stroke="#8b949e" stroke-width="1.5"/>
+              <path d="M 60 158 C 240 158, 272 42, 280 42 C 288 42, 320 158, 500 158" fill="none" stroke="#10b981" stroke-width="3"/>
+              <path d="M 60 158 C 190 158, 265 95, 280 95 C 295 95, 370 158, 500 158" fill="none" stroke="#74c0e3" stroke-width="3"/>
+              <text x="300" y="65" fill="#10b981" font-size="12">Φ(x,t)</text>
+            </svg>
+          </div>
+          <div slot="video">
+            <video controls preload="none" src="../../media_vault/differential_equations/lesson_05/experiments/3b1b_de_05_full_dubbed.mp4"></video>
+          </div>
+        </b1b-media-tab>
+
+      </b1b-section>
+
+      <!-- ═══ Section 7 — NON-NARRATED quizzes + reference ═══ -->
+      <b1b-section id="sec-quizzes" title="৭. ধারণা যাচাই ও বহুনির্বাচনী কুইজ" data-no-narration="true">
+
+        <p>নিচের কুইজগুলো অধ্যায়ের মূল ধারণা যাচাই করে। প্রতিটি প্রশ্নের সাথে সমৃদ্ধ বাংলা ফিডব্যাক দেওয়া আছে—উত্তর বাছাই করে 'যাচাই করো' টিপুন।</p>
+
+        <b1b-callout type="gold" icon="🎯" title="অধ্যায়ের মূল বার্তা (Key Takeaway)">
+          <p>তাপ সমীকরণ $\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}$ সমাধান করতে সীমানা শর্ত স্থানিক কম্পাঙ্ককে $\lambda_n = \frac{n\pi}{L}$ কোয়ান্টায়িত করে। উচ্চ কম্পাঙ্কের মোডগুলো $e^{-\alpha (n\pi/L)^2 t}$ হারে প্রচণ্ড গতিতে মিলিয়ে যায়। অসীম দণ্ডে এই রূপান্তর ফুরিয়ার ইন্টিগ্রাল ও গাউসিয়ান বেল কার্ভে বিস্তৃত হয়।</p>
+        </b1b-callout>
+
+        <b1b-quiz
+          question="❓ ১. সমসত্ত্ব ডিরিক্লেট সীমানা শর্তে ($u(0, t) = u(L, t) = 0$) তাপ সমীকরণ সমাধানের সময় স্থানিক সমাধান $X(x)$-এ কোসাইন পদটি ($\cos(\lambda x)$) কেন বাদ পড়ে যায়?"
+          correct="1"
+          correct-msg="চমৎকার ও সম্পূর্ণ সঠিক! যেহেতু $\cos(0) = 1$ এবং $\sin(0) = 0$, তাই বাম প্রান্তের শূন্য সীমানা শর্ত পূরণ করতে হলে কোসাইনের বিস্তার $A$-কে অবশ্যই শূন্য হতে হবে। স্থানিক সমাধান $X(x) = A\cos(\lambda x) + B\sin(\lambda x)$। বাম প্রান্তের শর্ত $X(0) = 0$ বসালে পাই $A(1) + B(0) = 0 \implies A = 0$। ফলে কেবল সাইন পদটি অবশিষ্ট থাকে।"
+          wrong-msg="ভুল! নিচের কারণগুলো খতিয়ে দেখুন — (ক) ভুল! সময়ের ক্ষয় কালিক সমীকরণ $T(t)$ দ্বারা নির্ধারিত হয়, স্থানিক অপেক্ষকের জন্য নয়। (খ) ভুল! সাইন এবং কোসাইন উভয়েরই দ্বিতীয় ডেরিভেটিভ নিজের ঋণাত্মক মানের সমানুপাতিক। (গ) ভুল! ডিরিক্লেট শর্তে সমস্ত পূর্ণসংখ্যা কম্পাঙ্ক ($n=1, 2, 3, \dots$) সাইন তরঙ্গের আকারে অনুমোদিত। সঠিক উত্তর: $x=0$ বিন্দুতে $X(0) = A\cos(0) + B\sin(0) = A = 0$ হওয়ায় কোসাইন পদ বাদ পড়ে।"
+          reveal-msg="সঠিক উত্তর: ২নং বিকল্প। স্থানিক সমাধান $X(x) = A\cos(\lambda x) + B\sin(\lambda x)$। বাম প্রান্তের সীমানা শর্ত $X(0) = 0$ বসালে আমরা পাই $A(1) + B(0) = 0 \implies A = 0$। ফলে কেবল সাইন পদটি অবশিষ্ট থাকে।">
+          <div slot="option">কারণ কোসাইন ফাংশন সময়ের সাপেক্ষে ক্ষয়প্রাপ্ত হতে পারে না</div>
+          <div slot="option">কারণ $x=0$ বিন্দুতে $X(0) = A\cos(0) + B\sin(0) = A = 0$ হতে হয়, ফলে কোসাইনের সহগ $A$ শূন্য হয়ে যায়</div>
+          <div slot="option">কারণ কোসাইনের দ্বিতীয় ডেরিভেটিভ ঋণাত্মক হতে পারে না</div>
+          <div slot="option">কারণ ডিরিক্লেট সীমানা শর্তে শুধুমাত্র জোড় কম্পাঙ্কের তরঙ্গ অনুমোদিত</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ২. তাপ সমীকরণ $\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}$-এ $n$-তম মোডের ক্ষয় ফ্যাক্টর $e^{-\alpha \left(\frac{n\pi}{L}\right)^2 t}$। যদি কম্পাঙ্ক সূচক $n=1$ থেকে বৃদ্ধি পেয়ে $n=3$ হয়, তবে তাপীয় মোডটির ক্ষয়ের গতিবেগ কত গুণ বৃদ্ধি পায়?"
+          correct="2"
+          correct-msg="একদম নিখুঁত! সূচকে ক্ষয় হার $\propto n^2$। তাই $n=3$ হলে ক্ষয়ের তীব্রতা $3^2 = 9$ গুণ বৃদ্ধি পায়! দ্বিতীয় স্থানিক অন্তরজের কারণে দুইবার ব্যবকলনের ফলে স্থানিক কম্পাঙ্ক $\left(\frac{n\pi}{L}\right)$ বাইরে এসে বর্গাকার রূপ ধারণ করে। ফলে সূচকে ক্ষয় হার $-\alpha \lambda_n^2 = -\alpha \frac{n^2 \pi^2}{L^2}$ হয়, যা $n^2$-এর সমানুপাতিক।"
+          wrong-msg="ভুল! নিচের কারণগুলো খতিয়ে দেখুন — (ক) ভুল! ক্ষয়ের হার কম্পাঙ্কের সমানুপাতিক নয়, বরং বর্গের সমানুপাতিক। (খ) ভুল! এটি দ্বিগুণ বা তিনগুণ বৃদ্ধির সরল সম্পর্ক নয়। (গ) ভুল! এটি ঘনকের সমানুপাতিক নয়। সঠিক হিসাব: $n=1 \to 3$ হলে $n^2 = 1 \to 9$, অর্থাৎ ৯ গুণ।"
+          reveal-msg="সঠিক উত্তর: ৩নং বিকল্প (৯ গুণ)। দ্বিতীয় স্থানিক অন্তরজের কারণে দুইবার ব্যবকলনের ফলে স্থানিক কম্পাঙ্ক $\left(\frac{n\pi}{L}\right)$ বাইরে এসে বর্গাকার রূপ ধারণ করে। ফলে সূচকে ক্ষয় হার $-\alpha \lambda_n^2 = -\alpha \frac{n^2 \pi^2}{L^2}$ হয়, যা $n^2$-এর সমানুপাতিক।">
+          <div slot="option">৩ গুণ</div>
+          <div slot="option">৬ গুণ</div>
+          <div slot="option">৯ গুণ</div>
+          <div slot="option">২৭ গুণ</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৩. সীমাবদ্ধ দণ্ডের ফুরিয়ার ধারা (Fourier Series) থেকে অসীম দণ্ডের অবিচ্ছিন্ন ফুরিয়ার রূপান্তরে (Fourier Transform) উত্তরণের মূল গাণিতিক প্রক্রিয়াটি কী?"
+          correct="0"
+          correct-msg="অসাধারণ ও গভীর অন্তর্দৃষ্টিসম্পন্ন উত্তর! দৈর্ঘ্য অসীম হওয়ার সাথে সাথে বিচ্ছিন্ন ফ্রিকোয়েন্সি লাইনগুলো অবিচ্ছিন্ন বর্ণালিতে পরিণত হয় এবং রিমান সামেশন সমাকলনে রূপ নেয়। যখন ব্যবধির দৈর্ঘ্য $L$ অসীমের দিকে ধাবিত হয়, তখন বিচ্ছিন্ন ফুরিয়ার ধারার প্রতিটি মোডের মধ্যবর্তী ব্যবধান $\Delta k = \pi/L$ শূন্যের দিকে পৌঁছায়। ফলে ধারার যোগফল অবিচ্ছিন্ন ইন্টিগ্রালে রূপ নেয়, যা ফুরিয়ার রূপান্তরের জন্ম দেয়।"
+          wrong-msg="ভুল! নিচের বিষয়গুলো মনে রাখুন — (ক) ভুল! তাপ সমীকরণ সব সময়ই একটি রৈখিক ডিফারেনশিয়াল সমীকরণ। (খ) ভুল! এটি স্টেডি-স্টেট ল্যাপ্লাস সমীকরণ নয়, এখানে তাপ গতিশীলভাবে ছড়ায়। (গ) ভুল! ফুরিয়ার রূপান্তরে সাইন-কোসাইন অবিচ্ছিন্ন জটিল সূচকীয় তরঙ্গ $e^{-ikx}$-এ রূপ নেয়। সঠিক উত্তর: $L \to \infty$ হওয়ায় $\Delta k = \frac{\pi}{L} \to 0$ এবং বিচ্ছিন্ন সামেশন অবিচ্ছিন্ন সমাকলনে ($\int dk$) রূপান্তরিত হয়।"
+          reveal-msg="সঠিক উত্তর: ১নং বিকল্প। যখন ব্যবধির দৈর্ঘ্য $L$ অসীমের দিকে ধাবিত হয়, তখন বিচ্ছিন্ন ফুরিয়ার ধারার প্রতিটি মোডের মধ্যবর্তী ব্যবধান $\Delta k = \pi/L$ শূন্যের দিকে পৌঁছায়। ফলে ধারার যোগফল অবিচ্ছিন্ন ইন্টিগ্রালে রূপ নেয়, যা ফুরিয়ার রূপান্তরের জন্ম দেয়।">
+          <div slot="option">দণ্ডের দৈর্ঘ্য $L \to \infty$ হওয়ায় পাশাপাশি দুই কম্পাঙ্কের ব্যবধান $\Delta k = \frac{\pi}{L} \to 0$ হয়, ফলে বিচ্ছিন্ন পদের সামেশন অবিচ্ছিন্ন সমাকলনে ($\int dk$) রূপান্তরিত হয়</div>
+          <div slot="option">তাপ সমীকরণটি রৈখিক থেকে অরৈখিক সমীকরণে পরিবর্তিত হয়</div>
+          <div slot="option">শুধুমাত্র সময়ের ডেরিভেটিভ বাদ দিয়ে স্থানিক ডেরিভেটিভকে শূন্য ধরা হয়</div>
+          <div slot="option">সাইন এবং কোসাইন তরঙ্গগুলো পলিনোমিয়ালে রূপান্তরিত হয়</div>
+        </b1b-quiz>
+
+        <b1b-callout type="purple" icon="📐" title="মূল সূত্র সংগ্রহ (Key Formulas)">
+          <p><strong>১. একমাত্রিক তাপ ব্যাপন সমীকরণ (1D Heat PDE):</strong></p>
+          <b1b-formula math="\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}"></b1b-formula>
+          <p><strong>২. চলক পৃথকীকরণ রূপ (Separation of Variables):</strong></p>
+          <b1b-formula math="u(x, t) = X(x)T(t) \implies \frac{T'(t)}{\alpha T(t)} = \frac{X''(x)}{X(x)} = -\lambda^2"></b1b-formula>
+          <p><strong>৩. কোয়ান্টায়িত স্থানিক আইগেনফাংশন ও আইগেনমান:</strong></p>
+          <b1b-formula math="X_n(x) = \sin\left(\frac{n\pi x}{L}\right), \quad \lambda_n = \frac{n\pi}{L}, \quad n \in \mathbb{N}"></b1b-formula>
+          <p><strong>৪. একক হারমোনিক মোডের সূচকীয় ক্ষয়:</strong></p>
+          <b1b-formula math="u_n(x, t) = \exp\left( -\alpha \left(\frac{n\pi}{L}\right)^2 t \right) \sin\left(\frac{n\pi x}{L}\right)"></b1b-formula>
+          <p><strong>৫. ফুরিয়ার সাইন ধারা বিস্তৃতি ও সহগ:</strong></p>
+          <b1b-formula math="f(x) = \sum_{n=1}^{\infty} b_n \sin\left(\frac{n\pi x}{L}\right), \quad b_n = \frac{2}{L}\int_0^L f(x)\sin\left(\frac{n\pi x}{L}\right)dx"></b1b-formula>
+          <p><strong>৬. পূর্ণ সাধারণ সমাধান (General Solution):</strong></p>
+          <b1b-formula math="u(x, t) = \sum_{n=1}^{\infty} b_n e^{-\alpha \left(\frac{n\pi}{L}\right)^2 t} \sin\left(\frac{n\pi x}{L}\right)"></b1b-formula>
+          <p><strong>৭. অবিচ্ছিন্ন ফুরিয়ার রূপান্তর (Continuous Fourier Transform):</strong></p>
+          <b1b-formula math="\hat{f}(k) = \int_{-\infty}^{\infty} f(x) e^{-i k x} dx"></b1b-formula>
+          <p><strong>৮. মৌলিক গাউসিয়ান তাপীয় কার্নেল (Heat Kernel):</strong></p>
+          <b1b-formula math="\Phi(x, t) = \frac{1}{\sqrt{4\pi\alpha t}} \exp\left( -\frac{x^2}{4\alpha t} \right)"></b1b-formula>
+        </b1b-callout>
+
+        <b1b-callout type="green" icon="📖" title="পরিভাষা (Glossary)">
+          <p><strong>Dirichlet Boundary Condition — ডিরিক্লেট সীমানা শর্ত:</strong> সীমানা শর্তের এমন রূপ যেখানে ডোমেইনের প্রান্তে ফাংশনের মান সরাসরি নির্দিষ্ট করে দেওয়া হয় (যেমন দুই প্রান্তে শূন্য ডিগ্রি তাপমাত্রা)।</p>
+          <p><strong>Neumann Boundary Condition — নয়ম্যান সীমানা শর্ত:</strong> সীমানা শর্ত যেখানে প্রান্তে ফাংশনের স্বাভাবিক অন্তরজ বা ফ্লাক্স নির্দিষ্ট করা হয় (যেমন রডের অন্তরক প্রান্তে তাপের প্রবাহ শূন্য)।</p>
+          <p><strong>Separation of Variables — চলক পৃথকীকরণ:</strong> আংশিক ডিফারেনশিয়াল সমীকরণ সমাধানের একটি ক্লাসিক্যাল পদ্ধতি যেখানে অজ্ঞাত ফাংশনকে একাধিক স্বাধীন চলকের পৃথক ফাংশনের গুণফল ধরা হয়।</p>
+          <p><strong>Orthogonality — অর্থোগোনালিটি বা পারস্পরিক লম্বতা:</strong> একটি নির্দিষ্ট ব্যবধিতে দুটি ভিন্ন ফাংশনের গুণফলের নির্দিষ্ট সমাকলন শূন্য হওয়ার গাণিতিক বৈশিষ্ট্য।</p>
+          <p><strong>Fourier Transform — ফুরিয়ার রূপান্তর:</strong> একটি অসীম ডোমেইনে অবস্থিত ফাংশনকে অবিচ্ছিন্ন কম্পাঙ্কের সাইন ও কোসাইন তরঙ্গের সমাহারে বিশ্লিষ্ট করার রূপান্তর।</p>
+          <p><strong>Heat Kernel (Fundamental Solution) — তাপীয় কার্নেল:</strong> অসীম ডোমেইনে তাপ সমীকরণের গ্রিন্স ফাংশন, যা একটি বিন্দুতে থাকা তাপীয় শক্তির সময়ের সাথে সাথে গাউসিয়ান বেল কার্ভে বিস্তারের রূপ।</p>
+        </b1b-callout>
+
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <b1b-watch-panel
+    video-src="../../media_vault/differential_equations/lesson_05/experiments/3b1b_de_05_full_dubbed.mp4"
+    yt-id="r6sGWTCMz2k"
+    title="অধ্যায় ০৫: তাপ সমীকরণ ও ফুরিয়ার রূপান্তর — But what is a Fourier series? | DE4"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — ডিফারেনশিয়াল সমীকরণ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_04.html"
+  prev-title="অধ্যায় ০৪: তাপ সমীকরণ ও ফুরিয়ার ধারা"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_06.html"
+  next-title="অধ্যায় ০৬: তরঙ্গ সমীকরণ"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ HEAT-DIFFUSION / FOURIER DECAY SIMULATOR (lab controller) ═══════════ -->
+<script>
+(function () {
+  var graph = document.getElementById('de05Graph');
+  if (!graph) return;
+  var gctx = graph.getContext('2d');
+  var map = document.getElementById('de05Heatmap');
+  var mctx = map ? map.getContext('2d') : null;
+  var N = 160, dx = 1 / (N - 1);
+  var u = new Float64Array(N), un = new Float64Array(N), u0 = new Float64Array(N);
+  var running = false, simTime = 0;
+  var alpha = 0.1, terms = 12;
+  var initial = 'step', boundary = 'dirichlet';
+  var info = document.getElementById('de05Metrics');
+  var initialRough = 1;
+
+  function setProfile(kind) {
+    initial = kind;
+    for (var i = 0; i < N; i++) {
+      var x = i * dx, val = 0;
+      switch (kind) {
+        case 'step': val = x < 0.5 ? 1 : 0; break;
+        case 'triangle': val = Math.max(0, 1 - Math.abs(2 * x - 1)); break;
+        case 'single_sine': val = Math.sin(Math.PI * x); break;
+        case 'high_harmonic':
+          val = (Math.sin(Math.PI * x) + 0.5 * Math.sin(3 * Math.PI * x) + 0.3 * Math.sin(5 * Math.PI * x)) / 1.8;
+          break;
+      }
+      u[i] = val; u0[i] = val;
+    }
+    simTime = 0;
+    initialRough = roughness(u);
+  }
+
+  function roughness(arr) {
+    var s = 0;
+    for (var i = 1; i < N; i++) { var d = arr[i] - arr[i - 1]; s += d * d; }
+    return Math.max(s, 1e-9);
+  }
+
+  function applyBoundary(arr) {
+    if (boundary === 'dirichlet') { arr[0] = 0; arr[N - 1] = 0; }
+    else { arr[0] = arr[1]; arr[N - 1] = arr[N - 2]; }
+  }
+
+  function stepSim() {
+    var dt = Math.min(0.00005, 0.4 * dx * dx / Math.max(alpha, 0.001));
+    var r = alpha * dt / (dx * dx);
+    for (var i = 1; i < N - 1; i++) {
+      un[i] = u[i] + r * (u[i + 1] - 2 * u[i] + u[i - 1]);
+    }
+    applyBoundary(un);
+    for (var j = 0; j < N; j++) u[j] = un[j];
+    simTime += dt;
+  }
+
+  function resize() {
+    var wrap = document.getElementById('heatDiffusionWrapper');
+    var w = (wrap && wrap.clientWidth) ? wrap.clientWidth : 600;
+    graph.width = w; graph.height = 300;
+    if (map) { map.width = w; map.height = 40; }
+  }
+  window.addEventListener('resize', resize);
+
+  function draw() {
+    var W = graph.width, H = graph.height;
+    var isDark = document.documentElement.classList.contains('dark') ||
+      document.documentElement.getAttribute('data-theme') === 'dark';
+    gctx.fillStyle = isDark ? '#0b0c12' : '#f8fafc';
+    gctx.fillRect(0, 0, W, H);
+    gctx.strokeStyle = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.08)';
+    gctx.lineWidth = 1;
+    for (var g = 1; g < 5; g++) {
+      var gy = (H - 20) * g / 5;
+      gctx.beginPath(); gctx.moveTo(40, gy); gctx.lineTo(W - 10, gy); gctx.stroke();
+    }
+    gctx.strokeStyle = 'rgba(255,255,255,0.35)';
+    gctx.beginPath(); gctx.moveTo(40, H - 20); gctx.lineTo(W - 10, H - 20); gctx.stroke();
+
+    var maxv = -1e9, minv = 1e9;
+    for (var i = 0; i < N; i++) { if (u[i] > maxv) maxv = u[i]; if (u[i] < minv) minv = u[i]; }
+    var scaleMax = Math.max(1, maxv), scaleMin = Math.min(0, minv);
+
+    gctx.beginPath();
+    for (var k = 0; k < N; k++) {
+      var px = 40 + (W - 50) * (k / (N - 1));
+      var py = (H - 20) - ((u[k] - scaleMin) / (scaleMax - scaleMin)) * (H - 40);
+      if (k === 0) gctx.moveTo(px, py); else gctx.lineTo(px, py);
+    }
+    gctx.strokeStyle = '#ff6b6b'; gctx.lineWidth = 2.6; gctx.lineJoin = 'round'; gctx.stroke();
+
+    if (mctx && map) {
+      for (var x = 0; x < map.width; x++) {
+        var idx = Math.min(N - 1, Math.floor(x / map.width * (N - 1)));
+        var t = Math.max(0, Math.min(1, u[idx]));
+        var rr = Math.round(30 + t * 225), gg = Math.round(60 + t * 90), bb = Math.round(120 - t * 100);
+        mctx.fillStyle = 'rgb(' + rr + ',' + gg + ',' + bb + ')';
+        mctx.fillRect(x, 0, 1, map.height);
+      }
+    }
+
+    var decay = Math.max(0, Math.min(100, (1 - roughness(u) / initialRough) * 100));
+    if (info) {
+      info.textContent = 'অতিক্রান্ত সময় t = ' + simTime.toFixed(2) + ' s | সর্বোচ্চ তাপমাত্রা u_max = '
+        + maxv.toFixed(1) + '°C | উচ্চ কম্পাঙ্ক ক্ষয় = ' + decay.toFixed(1) + '% | N = ' + terms;
+    }
+  }
+
+  function loop() {
+    if (running) {
+      var steps = Math.max(20, Math.round(60 * alpha / 0.1));
+      for (var s = 0; s < steps; s++) stepSim();
+    }
+    draw();
+    requestAnimationFrame(loop);
+  }
+
+  function bind() {
+    var iSel = document.getElementById('de05Initial');
+    var bSel = document.getElementById('de05Boundary');
+    var aS = document.getElementById('de05Alpha'), tS = document.getElementById('de05Terms');
+    var aV = document.getElementById('de05AlphaVal'), tV = document.getElementById('de05TermsVal');
+    if (iSel) iSel.addEventListener('change', function () { setProfile(iSel.value); });
+    if (bSel) bSel.addEventListener('change', function () { boundary = bSel.value; setProfile(initial); });
+    if (aS) aS.addEventListener('input', function () { alpha = parseFloat(aS.value); aV.textContent = alpha.toFixed(2); });
+    if (tS) tS.addEventListener('input', function () { terms = parseInt(tS.value, 10); tV.textContent = String(terms); });
+    var play = document.getElementById('de05Play');
+    var pause = document.getElementById('de05Pause');
+    var reset = document.getElementById('de05Reset');
+    if (play) play.addEventListener('click', function () { running = true; });
+    if (pause) pause.addEventListener('click', function () { running = false; });
+    if (reset) reset.addEventListener('click', function () { running = false; setProfile(initial); });
+    graph.addEventListener('mousedown', function (e) {
+      running = false;
+      var r = graph.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width;
+      for (var i = 0; i < N; i++) {
+        var d = Math.abs(i / (N - 1) - px);
+        u[i] = Math.min(1, u[i] + Math.exp(-d * d / 0.0006));
+      }
+      u0 = Float64Array.from(u);
+      simTime = 0; initialRough = roughness(u);
+    });
+  }
+
+  resize(); bind(); setProfile('step'); draw(); requestAnimationFrame(loop);
+})();
+</script>
+
+</body>
+</html>

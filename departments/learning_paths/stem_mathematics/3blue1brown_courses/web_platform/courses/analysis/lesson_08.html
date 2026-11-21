@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ওয়াইন্ডিং নম্বর ও ডোমেইন কালারিং | Winding numbers and domain coloring</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/analysis/lesson_08/manifest.js?v=8"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="বিশ্লেষণ"
+  course-url="../../index.html#analysis"
+  home-url="../../index.html"
+  chapter-num="০৮"
+  chapter-total="১০"
+  prev-url="lesson_07.html"
+  prev-title="পূর্ববর্তী অধ্যায়: কনভোলিউশন আসলে কী?"
+  next-url="lesson_09.html"
+  next-title="পরবর্তী অধ্যায়: গণিত আবিষ্কারের অনুভূতি কেমন?"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="বিশ্লেষণ"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০৮ · বিশ্লেষণ"
+  title="ওয়াইন্ডিং নম্বর ও ডোমেইন কালারিং | Winding numbers and domain coloring"
+  desc="জটিল সমীকরণের সমাধান খোঁজার একটি চতুর, দৃশ্যমান অ্যালগরিদম"
+  video-src="../../media_vault/analysis/lesson_08/experiments/3b1b_analysis_08_full_dubbed.mp4"
+  yt-id="b7FxPsqfkOY"
+  date="২৪ মার্চ, ২০১৮"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://www.3blue1brown.com/lessons/winding-numbers"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0" time-bn="০০:০০">দুটি সমীকরণ, একটি অজানা</b1b-bookmark>
+      <b1b-bookmark time="81" time-bn="০১:২১">ওয়াইন্ডিং নম্বর কী?</b1b-bookmark>
+      <b1b-bookmark time="152" time-bn="০২:৩২">আর্গুমেন্ট প্রিন্সিপল ও সমাধান গণনা</b1b-bookmark>
+      <b1b-bookmark time="231" time-bn="০৩:৫১">ডোমেইন কালারিং</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-winding-equation">দুটি সমীকরণ, একটি অজানা</a>
+      <a href="#sec-winding-number">ওয়াইন্ডিং নম্বর কী?</a>
+      <a href="#sec-winding-argument">আর্গুমেন্ট প্রিন্সিপল ও সমাধান গণনা</a>
+      <a href="#sec-winding-domain">ডোমেইন কালারিং</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ দুটি সমীকরণ, একটি অজানা ═══ -->
+      <b1b-section id="sec-winding-equation" title="দুটি সমীকরণ, একটি অজানা">
+        <b1b-quote author="Grant Sanderson">ওয়াইন্ডিং নম্বর ব্যবহার করে ২ডি ধারাবাহিক সমীকরণ সমাধানের একটি অ্যালগরিদম।</b1b-quote>
+        <p>ধরুন একটিমাত্র জটিল চলক $z=x+iy$ দেওয়া আছে এবং খুঁজতে হবে কোথায় $f(z)=0$। এটি আসলে দুটি বাস্তব সমীকরণ — বাস্তব অংশ শূন্য এবং কাল্পনিক অংশ শূন্য। একটিমাত্র সমীকরণের মতো সহজে এখানে «দুই পাশে একই কাজ» করা যায় না। তবু একটা সুন্দর পদ্ধতি আছে।</p>
+        <b1b-formula math="f(z)=u(x,y)+i\,v(x,y)=0\quad\Longleftrightarrow\quad u=0\ \text{এবং}\ v=0"></b1b-formula>
+        <p>পদ্ধতিটি শুরু হয় একটা বন্ধ লুপ বেছে নিয়ে। সেই লুপের ওপর $z$ ঘুরলে $f(z)$ জন্যও জটিল তলে একটা পথ আঁকা হয়। মূলবিন্দুটিকে কেন্দ্র ধরে দেখুন: এই পথটি কতবার মূলবিন্দুকে ঘিরে যাচ্ছে?</p>
+        <b1b-figure src="../../assets/figures/an_08/fig_08_01.svg" alt="$z$-তলের একটি বন্ধ লুপ ও $f(z)$-তলে তার রূপান্তরিত পথ" caption="$z$-তলের একটি বন্ধ লুপ ও $f(z)$-তলে তার রূপান্তরিত পথ"></b1b-figure>
+      </b1b-section>
+
+      <!-- ═══ ওয়াইন্ডিং নম্বর কী? ═══ -->
+      <b1b-section id="sec-winding-number" title="ওয়াইন্ডিং নম্বর কী?">
+        <p>ঘুরে যাওয়ার এই সংখ্যাটিই হলো ওয়াইন্ডিং নম্বর — বামাবর্তে ঘোরে ধনাত্মক, ডানাবর্তে ঋণাত্মক, আর মোট কতবার ঘুরেছে তার গণনাই এর মান। $f(z)=z$ হলে লুপ একবার ঘুরলে ওয়াইন্ডিং নম্বর ১; $f(z)=z^2$ হলে ২; $f(z)=1/z$ হলে $-1$।</p>
+        <b1b-figure src="../../assets/figures/an_08/fig_08_02.svg" alt="মূলবিন্দুর চারপাশে এক, দুই ও ঋণাত্মক ঘূর্ণন" caption="মূলবিন্দুর চারপাশে এক, দুই ও ঋণাত্মক ঘূর্ণন"></b1b-figure>
+        <b1b-callout type="green" icon="🌟" title="কোণের মোট পরিবর্তন">
+          <p>গণনার সুবিধার্থে এরকম লেখা হয়: $\frac{1}{2\pi i}\oint \frac{f'(z)}{f(z)}\,dz$। এটি আসলে $\arg f(z)$-এর মোট পরিবর্তনকে $2\pi$ দিয়ে ভাগ করা — অর্থাৎ কত পূর্ণ ঘূর্ণন হয়েছে।</p>
+        </b1b-callout>
+        <b1b-formula math="\mathrm{Wind}(f,\gamma)=\frac{1}{2\pi i}\oint_\gamma \frac{f&#x27;(z)}{f(z)}\,dz"></b1b-formula>
+
+        <!-- Quiz quiz-wind-z2 -->
+        <b1b-quiz
+          question="❓ ইউনিট বৃত্তে $f(z)=z^2$-এর ওয়াইন্ডিং নম্বর কত?"
+          correct="3"
+          correct-msg="ঠিক! $z$ একবার ঘুরলে $z^2$ দুবার ঘোরে, তাই ওয়াইন্ডিং নম্বর ২ — ভেতরে দুটি শূন্য (গুণিত্বসহ) আছে।"
+          wrong-msg="কোণ দ্বিগুণ হওয়ায় ঘূর্ণনের সংখ্যাও দ্বিগুণ — ১ নয়, ২।"
+          reveal-msg="সঠিক উত্তর: ২।">
+          <div slot="option">$-1$</div>
+          <div slot="option">০</div>
+          <div slot="option">১</div>
+          <div slot="option">২</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ আর্গুমেন্ট প্রিন্সিপল ও সমাধান গণনা ═══ -->
+      <b1b-section id="sec-winding-argument" title="আর্গুমেন্ট প্রিন্সিপল ও সমাধান গণনা">
+        <p>এখন আসল কথা। যদি $f$ একটি বন্ধ অঞ্চলে বিশ্লেষণীয় হয় এবং তার সীমানায় কোথাও শূন্য না হয়, তবে সেই সীমানার ওয়াইন্ডিং নম্বরের সমান সংখ্যক শূন্য থাকে ভেতরে (গুণিত্বসহ)। একে বলে আর্গুমেন্ট প্রিন্সিপল।</p>
+        <b1b-figure src="../../assets/figures/an_08/fig_08_03.svg" alt="বিভিন্ন আয়তক্ষেত্রে ওয়াইন্ডিং নম্বর — ০, ১, ২" caption="বিভিন্ন আয়তক্ষেত্রে ওয়াইন্ডিং নম্বর — ০, ১, ২"></b1b-figure>
+        <p>তাই অ্যালগরিদম সহজ: প্রথমে বড় একটি আয়তক্ষেত্র নিন; এর ওয়াইন্ডিং নম্বর ০ হলে ভেতরে কোনো সমাধান নেই। যদি ১ বা তার বেশি হয়, তবে আয়তক্ষেত্রটিকে চার ভাগে ভাগ করে প্রতিটির ওয়াইন্ডিং নম্বর দেখুন। যেটিতে অ-zero সংখ্যা আছে, সেটিকে আবার ভাগ করতে থাকুন।</p>
+        <b1b-callout type="blue" icon="💡" title="কোথায় এটি কাজে লাগে?">
+          <p>রিম্যান হাইপোথিসিস যাচাই করতে জেটা ফাংশনের শূন্যস্থান গণনা, বা বহুপদীর মূল খোঁজা — সব জায়গায় এই পদ্ধতি ব্যবহার করা হয়। বিশেষ করে যখন ফাংশনটি জটিল কিন্তু ধারাবাহিক, তখন এটি অত্যন্ত নির্ভরযোগ্য।</p>
+        </b1b-callout>
+
+        <!-- Quiz quiz-wind-principle -->
+        <b1b-quiz
+          question="❓ আর্গুমেন্ট প্রিন্সিপল অনুযায়ী সীমানার ওয়াইন্ডিং নম্বর মানে কী?"
+          correct="0"
+          correct-msg="হ্যাঁ! ওয়াইন্ডিং নম্বরই বলে দেয় অঞ্চলের ভেতরে কতগুলো শূন্য আছে — একই কথা সূক্ষ্মভাবে গুণিত্বসহ গণনা করা হয়।"
+          wrong-msg="এই প্রিন্সিপল শূন্য (এবং মেরু) গণনার কথা বলে, মান বা দৈর্ঘ্যের নয়।"
+          reveal-msg="সঠিক উত্তর: ভেতরের শূন্যের সংখ্যা (গুণিত্বসহ)।">
+          <div slot="option">ভেতরের শূন্যের সংখ্যা (গুণিত্বসহ)</div>
+          <div slot="option">ফাংশনের সর্বোচ্চ মান</div>
+          <div slot="option">সীমানার দৈর্ঘ্য</div>
+          <div slot="option">কোনো অর্থ নেই</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <!-- ═══ ডোমেইন কালারিং ═══ -->
+      <b1b-section id="sec-winding-domain" title="ডোমেইন কালারিং">
+        <p>জটিল ফাংশনকে পুরোপুরি দেখার আর একটি উপায় হলো ডোমেইন কালারিং: ইনপুট তলের প্রতিটি বিন্দুকে $f(z)$-এর কোণ অনুযায়ী একটি রং দেওয়া হয় (আর মান অনুযায়ী উজ্জ্বলতা)। এক নজরে দেখা যায় ফাংশনটি কোথায় কী করছে।</p>
+        <b1b-figure src="../../assets/figures/an_08/fig_08_04.svg" alt="জটিল তলে ডোমেইন কালারিং — কোণ অনুযায়ী রঙের চাকতি" caption="জটিল তলে ডোমেইন কালারিং — কোণ অনুযায়ী রঙের চাকতি"></b1b-figure>
+        <p>এই রঙিন ছবিতে শূন্য বা মেরু (pole) বিন্দুগুলো স্পষ্টভাবে চেনা যায় — সেখানে সব রং এক বিন্দুতে মিলে যায়, ঠিক যেমন ওয়াইন্ডিং নম্বরের হিসাবও বলে দেয়। গণিত ও দৃশ্যকল্পের এই সংযোগই এই পাঠের মূল আকর্ষণ।</p>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/analysis/lesson_08/experiments/3b1b_analysis_08_full_dubbed.mp4"
+    yt-id="b7FxPsqfkOY"
+    title="ওয়াইন্ডিং নম্বর ও ডোমেইন কালারিং — অধ্যায় ০৮"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — বিশ্লেষণ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_07.html"
+  prev-title="কনভোলিউশন আসলে কী?"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_09.html"
+  next-title="গণিত আবিষ্কারের অনুভূতি কেমন?"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

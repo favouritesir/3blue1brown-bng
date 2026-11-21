@@ -1,0 +1,273 @@
+{
+  "lesson_id": "lesson_13",
+  "chapter_num": 13,
+  "course_id": "linear_algebra",
+  "title_en": "Change of Basis",
+  "title_bn": "ভিত্তি পরিবর্তন ও ভিন্ন দৃষ্টিভঙ্গির রূপান্তর",
+  "subtitle_bn": "ভিন্ন স্থানাঙ্ক ব্যবস্থার ভাষা বিনিময় ও রূপান্তরের রূপান্তর: $A^{-1} M A$ সমীকরণের জ্যামিতিক অন্তর্দৃষ্টি",
+  "video_id": "P2LTAUO1TdA",
+  "official_url": "https://www.3blue1brown.com/lessons/change-of-basis",
+  "meta": {
+    "credits": "Grant Sanderson (3Blue1Brown)",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "12:50",
+    "prerequisites": [
+      "lesson_01",
+      "lesson_02",
+      "lesson_03",
+      "lesson_04",
+      "lesson_07"
+    ]
+  },
+  "epigraph": {
+    "quote": "Coordinates are not absolute; they are merely a construct of our chosen frame of reference. The true geometry remains invariant under any change of basis.",
+    "quote_bn": "স্থানাঙ্ক কোনো পরম বাস্তবতা নয়; এটি কেবল আমাদের বেছে নেওয়া রেফারেন্স ফ্রেম বা ভিত্তি ভেক্টরের সাপেক্ষে সৃষ্ট একটি ভাষা। মহাবিশ্বের আসল জ্যামিতিক সত্য ভিত্তি পরিবর্তনের পরেও চিরকাল অবিকৃত থাকে।",
+    "author": "Grant Sanderson"
+  },
+  "sections": [
+    {
+      "id": "sec_01_two_coordinate_systems",
+      "title_bn": "১. দুইটি ভিন্ন স্থানাঙ্ক ব্যবস্থা ও জেনিফারের নিজস্ব ভিত্তি ভেক্টর",
+      "title_en": "Two Coordinate Systems: Jennifer's Alternate Basis Grid",
+      "summary_bn": "আমাদের পরিচিত স্ট্যান্ডার্ড ভিত্তি $\\hat{i}, \\hat{j}$ এবং জেনিফারের বিকল্প ভিত্তি $\\mathbf{b}_1, \\mathbf{b}_2$-এর মধ্যকার দৃষ্টিভঙ্গির পার্থক্য।",
+      "key_takeaways": [
+        "একটি ভেক্টরের স্থানাঙ্ক সংখ্যাজোড় কোনো পরম বৈশিষ্ট্য নয়; তা ভিত্তি ভেক্টরগুলোর ওপর সরাসরি নির্ভরশীল।",
+        "আমাদের স্ট্যান্ডার্ড ভিত্তি হলো $\\hat{i} = \\begin{bmatrix}1 \\\\ 0\\end{bmatrix}$ এবং $\\hat{j} = \\begin{bmatrix}0 \\\\ 1\\end{bmatrix}$ যা একটি খাড়া লম্ব গ্রিড গঠন করে।",
+        "জেনিফার একই স্থানে অবস্থান করলেও সে নিজস্ব ভিত্তি ভেক্টর $\\mathbf{b}_1 = \\begin{bmatrix}2 \\\\ 1\\end{bmatrix}$ ও $\\mathbf{b}_2 = \\begin{bmatrix}-1 \\\\ 1\\end{bmatrix}$ ব্যবহার করে।",
+        "মহাকাশের একই স্থির ভেক্টরকে আমরা এবং জেনিফার সম্পূর্ণ ভিন্ন স্থানাঙ্ক সংখ্যা দিয়ে বর্ণনা করি।"
+      ],
+      "formulas": [
+        {
+          "label": "আমাদের প্রমিত ভিত্তি ভেক্টর",
+          "katex": "\\hat{i} = \\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix}, \\quad \\hat{j} = \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix}"
+        },
+        {
+          "label": "আমাদের ভাষায় জেনিফারের ভিত্তি ভেক্টর",
+          "katex": "\\mathbf{b}_1 = \\begin{bmatrix} 2 \\\\ 1 \\end{bmatrix}, \\quad \\mathbf{b}_2 = \\begin{bmatrix} -1 \\\\ 1 \\end{bmatrix}"
+        },
+        {
+          "label": "জেনিফারের নিজস্ব দৃষ্টিতে তার একক ভিত্তি",
+          "katex": "[\\mathbf{b}_1]_{\\text{Jen}} = \\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix}_{\\text{Jen}}, \\quad [\\mathbf{b}_2]_{\\text{Jen}} = \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix}_{\\text{Jen}}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_two_grids_overlay",
+          "caption_bn": "আমাদের কার্তেসীয় আয়তাকার গ্রিড এবং জেনিফারের হেলানো বিকল্প গ্রিডের পারস্পরিক উপরিপাতন",
+          "type": "svg",
+          "src": "figures/change_of_basis_two_grids.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "basis_grid_comparator",
+        "initial_basis": {
+          "b1": [
+            2,
+            1
+          ],
+          "b2": [
+            -1,
+            1
+          ]
+        },
+        "description_bn": "জেনিফারের ভিত্তি ভেক্টর দুটিকে ড্র্যাগ করে নিজের ইচ্ছামতো পরিবর্তন করুন এবং দেখুন একই ভেক্টরের দুটি ভিন্ন স্থানাঙ্ক কীভাবে রিয়েল-টাইমে পরিবর্তিত হয়।"
+      }
+    },
+    {
+      "id": "sec_02_jennifer_to_our",
+      "title_bn": "২. জেনিফারের ভাষা থেকে আমাদের ভাষায় রূপান্তর ও ভিত্তি ম্যাট্রিক্স $A$",
+      "title_en": "Translating from Jennifer's Language to Ours via Matrix A",
+      "summary_bn": "জেনিফারের স্থানাঙ্ককে ভিত্তি ম্যাট্রিক্স $A$ দ্বারা গুণ করে আমাদের ভাষায় রূপান্তরের সহজ নিয়ম।",
+      "key_takeaways": [
+        "জেনিফারের স্থানাঙ্ক হলো তার ভিত্তি ভেক্টর $\\mathbf{b}_1$ এবং $\\mathbf{b}_2$-এর রৈখিক সমাবেশের স্কেলার গুণক।",
+        "ভিত্তি ম্যাট্রিক্স $A$-এর কলাম দুটি হলো আমাদের ভাষায় প্রকাশিত জেনিফারের ভিত্তি ভেক্টরদ্বয়: $A = \\begin{bmatrix} \\mathbf{b}_1 & \\mathbf{b}_2 \\end{bmatrix}$।",
+        "যেকোনো ভেক্টরের ক্ষেত্রে: $\\vec{v}_{\\text{our}} = A \\vec{v}_{\\text{Jen}}$।",
+        "ম্যাট্রিক্স গুণন জেনিফারের স্থানাঙ্ক ইনপুট হিসেবে নিয়ে আমাদের ভাষায় ভেক্টরের স্থানাঙ্ক আউটপুট প্রদান করে।"
+      ],
+      "formulas": [
+        {
+          "label": "ভিত্তি পরিবর্তন রূপান্তর ম্যাট্রিক্স",
+          "katex": "A = \\begin{bmatrix} 2 & -1 \\\\ 1 & 1 \\end{bmatrix}"
+        },
+        {
+          "label": "জেনিফার থেকে আমাদের স্থানাঙ্কে অনুবাদ সমীকরণ",
+          "katex": "\\vec{v}_{\\text{our}} = A \\vec{v}_{\\text{Jen}} = \\begin{bmatrix} 2 & -1 \\\\ 1 & 1 \\end{bmatrix} \\begin{bmatrix} x_{\\text{Jen}} \\\\ y_{\\text{Jen}} \\end{bmatrix}"
+        },
+        {
+          "label": "সাংখ্যিক উদাহরণ: (-1, 2) ভেক্টরের রূপান্তর",
+          "katex": "A \\begin{bmatrix} -1 \\\\ 2 \\end{bmatrix}_{\\text{Jen}} = (-1)\\begin{bmatrix} 2 \\\\ 1 \\end{bmatrix} + 2\\begin{bmatrix} -1 \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} -4 \\\\ 1 \\end{bmatrix}_{\\text{our}}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_matrix_a_translation",
+          "caption_bn": "ম্যাট্রিক্স A কীভাবে জেনিফারের গ্রিড স্থানাঙ্ককে আমাদের আয়তাকার স্থানাঙ্কে ম্যাপ করে",
+          "type": "svg",
+          "src": "figures/basis_matrix_a_mapping.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_03_our_to_jennifer",
+      "title_bn": "৩. আমাদের ভাষা থেকে জেনিফারের ভাষায় অনুবাদ ও বিপরীত ম্যাট্রিক্স $A^{-1}$",
+      "title_en": "Translating from Our Language to Jennifer's Language via Inverse Matrix A^-1",
+      "summary_bn": "আমাদের পরিচিত স্থানাঙ্ক থেকে জেনিফারের নিজস্ব দৃষ্টিভঙ্গিতে পৌঁছানোর জন্য $A^{-1}$ প্রয়োগের নিখুঁত গাণিতিক বিশ্লেষণ।",
+      "key_takeaways": [
+        "যেহেতু $A \\vec{v}_{\\text{Jen}} = \\vec{v}_{\\text{our}}$, তাই উভয় পাশে বিপরীত ম্যাট্রিক্স গুণ করলে পাই $\\vec{v}_{\\text{Jen}} = A^{-1} \\vec{v}_{\\text{our}}$।",
+        "ম্যাট্রিক্স $A$-এর ইনভার্স বিদ্যমান থাকে যদি এবং কেবল যদি জেনিফারের ভিত্তি ভেক্টরদ্বয় লিনিয়ারলি স্বাধীন হয় (det $A \\neq 0$)।",
+        "$A^{-1}$ ম্যাট্রিক্সটি আমাদের দেওয়া কার্তেসীয় মানকে জেনিফারের চোখ দিয়ে দেখার নির্দেশিকা তৈরি করে।"
+      ],
+      "formulas": [
+        {
+          "label": "ভিত্তি ম্যাট্রিক্সের নির্ণায়ক",
+          "katex": "\\det(A) = (2)(1) - (-1)(1) = 2 + 1 = 3 \\neq 0"
+        },
+        {
+          "label": "বিপরীত রূপান্তর ম্যাট্রিক্স A^-1",
+          "katex": "A^{-1} = \\frac{1}{3} \\begin{bmatrix} 1 & 1 \\\\ -1 & 2 \\end{bmatrix} = \\begin{bmatrix} 1/3 & 1/3 \\\\ -1/3 & 2/3 \\end{bmatrix}"
+        },
+        {
+          "label": "আমাদের (3, 2) ভেক্টরকে জেনিফারের ভাষায় অনুবাদ",
+          "katex": "\\vec{v}_{\\text{Jen}} = A^{-1} \\begin{bmatrix} 3 \\\\ 2 \\end{bmatrix} = \\begin{bmatrix} 1/3 & 1/3 \\\\ -1/3 & 2/3 \\end{bmatrix} \\begin{bmatrix} 3 \\\\ 2 \\end{bmatrix} = \\begin{bmatrix} 5/3 \\\\ 1/3 \\end{bmatrix}_{\\text{Jen}}"
+        },
+        {
+          "label": "পুনঃযাচাইকরণ (Reverse Verification)",
+          "katex": "\\frac{5}{3}\\begin{bmatrix} 2 \\\\ 1 \\end{bmatrix} + \\frac{1}{3}\\begin{bmatrix} -1 \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} 10/3 - 1/3 \\\\ 5/3 + 1/3 \\end{bmatrix} = \\begin{bmatrix} 3 \\\\ 2 \\end{bmatrix}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_inverse_matrix_pipeline",
+          "caption_bn": "A এবং A^-1 ম্যাট্রিক্সদ্বয় কীভাবে দ্বিমুখী অনুবাদের সেতু হিসেবে কাজ করে",
+          "type": "svg",
+          "src": "figures/bidirectional_basis_translation.svg"
+        }
+      ]
+    },
+    {
+      "id": "sec_04_similarity_transformations",
+      "title_bn": "৪. রূপান্তরের রূপান্তর: অনুরূপ ম্যাট্রিক্স ও দৃষ্টিভঙ্গি পরিবর্তনের সমীকরণ $A^{-1} M A$",
+      "title_en": "Transforming Transformations: Similar Matrices & A^-1 M A",
+      "summary_bn": "অন্য স্থানাঙ্ক ব্যবস্থায় একটি লিনিয়ার রূপান্তর কীভাবে কাজ করে তা নির্ণয়ে $A^{-1} M A$ সমীকরণের ৩-ধাপের জ্যামিতিক প্রক্রিয়া।",
+      "key_takeaways": [
+        "একটি রূপান্তরকে অন্য ভিত্তিতে প্রকাশ করার অর্থ হলো: ডান থেকে বামে ৩টি ধারাবাহিক ক্রিয়া সম্পন্ন করা।",
+        "ধাপ ১ ($A$): জেনিফারের ভেক্টরকে আমাদের ভাষায় রূপান্তর করা।",
+        "ধাপ ২ ($M$): আমাদের ভাষায় পরিচিত রূপান্তরটি ঘটানো (যেমন ৯০° ঘূর্ণন)।",
+        "ধাপ ৩ ($A^{-1}$): ফলাফলকে পুনরায় জেনিফারের নিজস্ব ভাষার স্থানাঙ্কে ফিরিয়ে নেওয়া।",
+        "অনুরূপ ম্যাট্রিক্স (Similar Matrices) $M_{\\text{Jen}} = A^{-1} M A$ হলো একই শারীরিক রূপান্তরের ভিন্ন ফ্রেম অব রেফারেন্সে প্রকাশ।"
+      ],
+      "formulas": [
+        {
+          "label": "দৃষ্টিভঙ্গি পরিবর্তনের মূল সমীকরণ (Change of Basis for Transformations)",
+          "katex": "M_{\\text{Jen}} = A^{-1} M A"
+        },
+        {
+          "label": "আমাদের ভাষায় ৯০ ডিগ্রি ঘড়ির উল্টো ঘূর্ণন ম্যাট্রিক্স",
+          "katex": "M = \\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix}"
+        },
+        {
+          "label": "জেনিফারের ভাষায় একই ঘূর্ণনের ম্যাট্রিক্স গণনা",
+          "katex": "M_{\\text{Jen}} = \\frac{1}{3}\\begin{bmatrix} 1 & 1 \\\\ -1 & 2 \\end{bmatrix} \\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \\end{bmatrix} \\begin{bmatrix} 2 & -1 \\\\ 1 & 1 \\end{bmatrix} = \\begin{bmatrix} 1/3 & -2/3 \\\\ 4/3 & -1/3 \\end{bmatrix}"
+        },
+        {
+          "label": "অনুরূপ ম্যাট্রিক্সের অপরিবর্তনশীল ধর্মসমূহ (Invariants)",
+          "katex": "\\det(A^{-1} M A) = \\det(M), \\quad \\text{Tr}(A^{-1} M A) = \\text{Tr}(M)"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_similarity_three_steps",
+          "caption_bn": "A^-1 M A সমীকরণের তিন ধাপের জ্যামিতিক অভিযাত্রা: ইনপুট অনুবাদ -> মূল ক্রিয়া -> আউটপুট অনুবাদ",
+          "type": "svg",
+          "src": "figures/similarity_transformation_pipeline.svg"
+        }
+      ],
+      "interactive_widget": {
+        "type": "similarity_transformation_sandbox",
+        "initial_matrix_m": [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "initial_matrix_a": [
+          [
+            2,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "description_bn": "রূপান্তর ম্যাট্রিক্স M ও ভিত্তি ম্যাট্রিক্স A পরিবর্তন করে দেখুন কীভাবে A^-1 M A রূপান্তরটিকে অপরিবর্তিত রেখে কেবল দেখার চোখ বদলে দেয়।"
+      }
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_basis_matrix_construction",
+      "section_ref": "sec_02_jennifer_to_our",
+      "question_bn": "ধরা যাক একজন বন্ধু নিজস্ব ভিত্তি ভেক্টর $\\mathbf{u}_1 = \\begin{bmatrix} 3 \\\\ 1 \\end{bmatrix}$ এবং $\\mathbf{u}_2 = \\begin{bmatrix} 1 \\\\ 2 \\end{bmatrix}$ ব্যবহার করে। তার স্থানাঙ্ক ব্যবস্থায় কোনো ভেক্টরের মান $\\begin{bmatrix} 2 \\\\ -1 \\end{bmatrix}$ হলে, আমাদের স্ট্যান্ডার্ড স্থানাঙ্ক ব্যবস্থায় এর মান কত হবে?",
+      "question_en": "If a friend's basis vectors are u1 = [3, 1] and u2 = [1, 2], and they have a vector [2, -1] in their basis, what is it in our standard coordinates?",
+      "options": [
+        "$\\begin{bmatrix} 5 \\\\ 0 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 7 \\\\ 4 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 6 \\\\ -2 \\end{bmatrix}$",
+        "$\\begin{bmatrix} 2 \\\\ 5 \\end{bmatrix}$"
+      ],
+      "correct_index": 0,
+      "explanation_bn": "আমাদের ভাষায় ভিত্তি রূপান্তর ম্যাট্রিক্স হলো $A = \\begin{bmatrix} 3 & 1 \\\\ 1 & 2 \\end{bmatrix}$। বন্ধুর স্থানাঙ্ক দিয়ে গুণ করলে পাই: $2 \\begin{bmatrix} 3 \\\\ 1 \\end{bmatrix} + (-1)\\begin{bmatrix} 1 \\\\ 2 \\end{bmatrix} = \\begin{bmatrix} 6 - 1 \\\\ 2 - 2 \\end{bmatrix} = \\begin{bmatrix} 5 \\\\ 0 \\end{bmatrix}$।",
+      "explanation_en": "In our basis, v_our = 2*u1 + (-1)*u2 = 2*[3, 1] - [1, 2] = [5, 0]."
+    },
+    {
+      "id": "quiz_02_reverse_basis_inverse",
+      "section_ref": "sec_03_our_to_jennifer",
+      "question_bn": "আমাদের পরিচিত স্থানাঙ্ক থেকে অন্য কারো ভিন্ন ভিত্তি স্থানাঙ্কে অনুবাদ করতে কোন প্রক্রিয়াটি অনুসরণ করতে হয়?",
+      "question_en": "How do you translate standard coordinates into an alternate basis system?",
+      "options": [
+        "ভিত্তি ম্যাট্রিক্স $A$ দিয়ে ভেক্টরকে গুণ করতে হয়",
+        "ভিত্তি ম্যাট্রিক্সের বিপরীত $A^{-1}$ দিয়ে ভেক্টরকে গুণ করতে হয়",
+        "উভয় ভিত্তি ভেক্টরের ডট প্রোডাক্ট নিতে হয়",
+        "ভিত্তি ম্যাট্রিক্সের ডিটারমিন্যান্ট দিয়ে ভাগ করতে হয় কিন্তু কোনো ম্যাট্রিক্স গুণন লাগে না"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "যেহেতু ভিত্তি ম্যাট্রিক্স $A$ বন্ধুর স্থানাঙ্ক থেকে আমাদের স্থানাঙ্কে আনে ($A \\vec{v}_{\\text{alt}} = \\vec{v}_{\\text{our}}$), তাই এর ঠিক বিপরীত অনুবাদের জন্য উভয় পাশে $A^{-1}$ গুণ করে পাই $\\vec{v}_{\\text{alt}} = A^{-1} \\vec{v}_{\\text{our}}$।",
+      "explanation_en": "Since A maps alternate coordinates to standard coordinates, A^-1 maps standard coordinates into alternate coordinates."
+    },
+    {
+      "id": "quiz_03_similarity_expression_meaning",
+      "section_ref": "sec_04_similarity_transformations",
+      "question_bn": "রৈখিক বীজগণিতে $A^{-1} M A$ সমীকরণের তিনটি ম্যাট্রিক্সের ডান-থেকে-বামে সঠিক ক্রম এবং জ্যামিতিক তাৎপর্য কোনটি?",
+      "question_en": "What is the correct right-to-left interpretation of A^-1 M A?",
+      "options": [
+        "প্রথমে আমাদের রূপান্তর $M$, তারপর $A$ দিয়ে জেনিফারের ভাষায় নেওয়া, তারপর উল্টানো",
+        "প্রথমে $A$ দ্বারা জেনিফারের স্থানাঙ্ককে আমাদের ভাষায় রূপান্তর, তারপর আমাদের ভাষায় $M$ রূপান্তর প্রয়োগ, এবং শেষে $A^{-1}$ দ্বারা ফলাফলকে জেনিফারের ভাষায় ফেরত পাঠানো",
+        "তিনটি ম্যাট্রিক্সের ডিটারমিন্যান্ট বের করে পরস্পর গুণ করা",
+        "ভেক্টরটিকে কেবল স্কেল করা এবং কোনো ফ্রেম অব রেফারেন্স পরিবর্তন না করা"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "ডান থেকে বামে পড়লে: ১) $A$ জেনিফারের স্থানাঙ্ককে আমাদের ভাষায় অনুবাদ করে; ২) $M$ আমাদের ভাষায় কাঙ্ক্ষিত রূপান্তর সম্পাদন করে; ৩) $A^{-1}$ চূড়ান্ত ভেক্টরটিকে আবার জেনিফারের ভাষায় ফেরত পাঠায়। এটিই হলো দৃষ্টিভঙ্গি পরিবর্তন বা Change of Basis-এর মূল সূত্র।",
+      "explanation_en": "Reading right to left: 1) A translates Jennifer's coordinates to ours; 2) M applies the transformation in our language; 3) A^-1 translates back into Jennifer's coordinates."
+    },
+    {
+      "id": "quiz_04_similar_matrix_invariants",
+      "section_ref": "sec_04_similarity_transformations",
+      "question_bn": "যদি দুটি ম্যাট্রিক্স অনুরূপ (Similar) হয়, অর্থাৎ $B = P^{-1} A P$ হয়, তবে তাদের সম্পর্কে কোন তথ্যটি সর্বদা সত্য?",
+      "question_en": "If two matrices are similar (B = P^-1 A P), which property is always true?",
+      "options": [
+        "তাদের উপাদানগুলো হুবহু সমান হতে হবে",
+        "তাদের নির্ণায়ক $\\det(B) = \\det(A)$ এবং ট্রেস $\\text{Tr}(B) = \\text{Tr}(A)$ হুবহু সমান হবে",
+        "ম্যাট্রিক্স $P$ অবশ্যই একটি শূন্য ম্যাট্রিক্স হতে হবে",
+        "তাদের আইগেনভ্যালু সম্পূর্ণ ভিন্ন হতে হবে"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "যেহেতু অনুরূপ ম্যাট্রিক্সদ্বয় আসলে একই রূপান্তরের দুটি ভিন্ন রূপ, তাই তাদের অন্তর্নিহিত বৈশিষ্ট্যসমূহ—যেমন ক্ষেত্রফল স্কেলিং ফ্যাক্টর (ডিটারমিন্যান্ট), ট্রেস (কর্ণের উপাদানগুলোর যোগফল), এবং আইগেনভ্যালু সর্বদা অবিকৃত থাকে। গাণিতিকভাবে $\\det(P^{-1} A P) = \\det(P^{-1})\\det(A)\\det(P) = \\det(A)$।",
+      "explanation_en": "Similar matrices share identical geometric invariants: det(B) = det(A), Tr(B) = Tr(A), and identical eigenvalues."
+    }
+  ]
+}

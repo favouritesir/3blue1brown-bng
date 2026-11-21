@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অধ্যায় ০১ — ক্যালকুলাসের মূল সারমর্ম: ক্ষেত্রফল ও ঢালের রহস্য | ৩ব্লু১ব্রাউন বাংলা</title>
+
+<!-- ═══════════ STYLES (shared library only — no per-lesson overrides) ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded, synchronous — zero-CORS narration) ═══════════ -->
+<script src="../../assets/audio/calculus/lesson_01/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict canonical load order (Lesson 01 template) ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (LAST: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+
+<style>
+  /* Lab-only layout helpers (no design override of the component library). */
+  .calc-lab { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+  .calc-canvas { display: block; width: 100%; height: auto; min-height: 360px; background: #080b12; border-radius: 10px; }
+  [data-theme="light"] .calc-canvas { background: #f8fafc; }
+  .calc-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 16px; }
+  .calc-control label { display: flex; justify-content: space-between; font-size: .9rem; font-weight: 600; margin-bottom: 6px; }
+  .calc-control input[type=range] { width: 100%; }
+  .calc-val { color: var(--theme, #38bdf8); font-family: monospace; }
+  .calc-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 16px; }
+  .calc-stat { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+  .calc-stat span { display: block; font-size: .8rem; color: var(--text-muted); margin-bottom: 4px; }
+  .calc-stat strong { font-size: 1.05rem; color: var(--theme, #38bdf8); }
+  .calc-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .calc-actions button, .viz-tool-btn {
+    background: rgba(56,189,248,.14); color: var(--theme, #38bdf8); border: 1px solid rgba(56,189,248,.4);
+    border-radius: 8px; padding: 7px 12px; font-weight: 700; cursor: pointer; font-family: inherit;
+  }
+</style>
+</head>
+<body class="mode-read">
+
+<b1b-search-overlay></b1b-search-overlay>
+
+<b1b-navbar
+  course-title="ক্যালকুলাসের মূল সারমর্ম"
+  course-url="../../index.html#calculus"
+  home-url="../../index.html"
+  chapter-num="০১"
+  chapter-total="১২"
+  prev-url=""
+  prev-title="পূর্ববর্তী অধ্যায় নেই"
+  next-url="https://www.youtube.com/watch?v=9vKqVkMQHKk"
+  next-title="পরবর্তী অধ্যায়: ডেরিভেটিভের প্যারাডক্স"
+  active-mode="read">
+</b1b-navbar>
+
+<b1b-hero-player
+  course-title="ক্যালকুলাসের মূল সারমর্ম"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০১ · ক্যালকুলাসের মূল সারমর্ম"
+  title="অধ্যায় ০১: ক্যালকুলাসের মূল সারমর্ম — ক্ষেত্রফল ও ঢালের রহস্য"
+  desc="বৃত্তের ক্ষেত্রফল πr² কেন সত্য? অসংখ্য পাতলা বলয়ে বৃত্ত কাটা, সোজা করে ত্রিভুজে সাজানো এবং ক্ষেত্রফল ও ঢালের আবিষ্কারমূলক সংযোগের গল্প।"
+  video-src="../../media_vault/calculus/lesson_01/experiments/fill_v2/3b1b_calculus_01_full_dubbed_fill2.mp4"
+  yt-id="WUvTyaaNkzM"
+  date="২৮ এপ্রিল, ২০১৭"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="মূল পাঠ: Grant Sanderson (3Blue1Brown) · বাংলা রূপান্তর ও পাঠ্য বিন্যাস: STEM ম্যাথমেটিক্স উইং"
+  github-url="https://github.com/3b1b/videos/blob/master/_2017/eoc/chapter1.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<div class="lesson-body">
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">ক্যালকুলাসের মহাকৌশল ও হিলবার্টের উপদেশ</b1b-bookmark>
+      <b1b-bookmark time="110" time-bn="০১:৫০">বৃত্তকে বলয়ে কাটা ও ক্ষুদ্র ক্ষেত্রফল</b1b-bookmark>
+      <b1b-bookmark time="221" time-bn="০৩:৪১">আয়তক্ষেত্র-টাওয়ার থেকে ত্রিভুজ</b1b-bookmark>
+      <b1b-bookmark time="371" time-bn="০৬:১১">অযুগ্ম সংখ্যার যোগফল ও সীমা</b1b-bookmark>
+      <b1b-bookmark time="520" time-bn="০৮:৪০">ঢাল ও ক্ষেত্রফলের সংযোগ</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-intro">১. ক্যালকুলাসের সারমর্ম ও মহাকৌশল</a>
+      <a href="#sec-circle-rings">২. বৃত্তের ক্ষেত্রফল: বলয় কাটা, আনরোলিং ও রিমান সমষ্টি</a>
+      <a href="#sec-slope-rate">৩. পরিবর্তনের হার ও ঢাল: dA/dr-এর প্রথম সাক্ষাৎ</a>
+      <a href="#sec-connection">৪. ক্ষেত্রফল ও ঢালের সংযোগ: মৌলিক উপপাদ্য</a>
+      <a href="#sec-generalizing">৫. পদ্ধতির সাধারণীকরণ: ত্রিভুজ থেকে πR²</a>
+      <a href="#sec-integrals">৬. সমাকলন: A(x) = ∫₀ˣ t² dt</a>
+      <a href="#sec-derivatives">৭. অন্তরজ: dA/dx ≈ x²</a>
+      <a href="#sec-fundamental">৮. ক্যালকুলাসের মৌলিক উপপাদ্য</a>
+      <a href="#sec-dx-bonus">৯. বোনাস: dx আসলে কী?</a>
+      <a href="#sec-lab">১০. ইন্টারেক্টিভ ল্যাব</a>
+      <a href="#sec-quizzes">১১. ধারণা যাচাই: ৩টি কুইজ</a>
+      <a href="#sec-reference">১২. সূত্র ও পরিভাষা</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ NARRATED 1 — sec-intro | manifest cues: h2, chapter-quote, p, p, callout, p ═══ -->
+      <b1b-section id="sec-intro" title="ক্যালকুলাসের সারমর্ম, হিলবার্টের বিশেষ উদাহরণ ও মহাকৌশল">
+        <b1b-quote author="ডেভিড হিলবার্ট">The art of doing mathematics is finding that special case that contains all the germs of generality. — গণিত চর্চার শিল্প হলো এমন এক বিশেষ ক্ষেত্র খুঁজে বের করা, যার ভেতরে সার্বজনীনতার সমস্ত বীজ সুপ্ত থাকে।</b1b-quote>
+
+        <p>যে সত্যটি এতই চেনা, তার ব্যাপারে প্রশ্ন তোলার ইচ্ছেই আমাদের কখনো জন্মেনি: বৃত্তের ক্ষেত্রফল সমান $\pi R^2$। ছোটবেলা থেকে সূত্রটি মুখস্থ হলেও কেউ কোনোদিন জিজ্ঞেস করেনি—পাই তো পরিধি ও ব্যাসের অনুপাত, তাহলে পরিধির ধ্রুবকটি ক্ষেত্রফলের ভেতরে ব্যাসার্ধের বর্গের সাথে জড়িয়ে গেল কীভাবে? সাধারণত কলেজ বা বিশ্ববিদ্যালয়ে ক্যালকুলাস শেখানোর সময় শিক্ষার্থীদের একগাদা কঠিন সূত্র মুখস্থ করতে দেওয়া হয়—যেমন $\frac{d}{dx}(x^2)=2x$, চেইন রুল, প্রোডাক্ট রুল কিংবা সমাকলনের তালিকা; কিন্তু এই সূত্রগুলোর পেছনে মূল যে প্রাণবন্ত ভাবনা লুকিয়ে আছে, তা বেশিরভাগ সময় আলোচনায় আসে না।</p>
+
+        <p>ক্যালকুলাসের মূল সারমর্ম বুঝতে হলে আমাদের জানতে হবে গণিতবিদদের সবচেয়ে শক্তিশালী কৌশলটি। হিলবার্টের উপদেশ মেনে আমরা সাধারণ বৃত্তের বদলে একটি বিশেষ নির্দিষ্ট বৃত্ত দিয়েই শুরু করব—যার ভেতরে লুকিয়ে আছে সমগ্র ক্যালকুলাসের সর্বজনীন বীজ।</p>
+
+        <b1b-callout type="gold" icon="💡" title="কেন্দ্রীয় দর্শন — ভাঙো, অনুমান করো, জুড়ে দাও">
+          <p>যেকোনো জটিল ও দুর্বোধ্য সমস্যাকে অসংখ্য ক্ষুদ্রাতিক্ষুদ্র এবং সহজ অংশে ভাগ করা; প্রতিটির জন্য একটি ভালো আসন্নায়ন (Approximation) তৈরি করা; এবং তারপর সীমাস্থ অবস্থায় ($dr \to 0$) সেগুলোকে পুনরায় একত্রিত করে নিখুঁত সমাধানে পৌঁছানো—এই তিন ধাপই ক্যালকুলাসের হৃৎস্পন্দন।</p>
+        </b1b-callout>
+
+        <p>এই পুরো যাত্রায় দুটি প্রধান অস্ত্র বারবার ঘুরে ফিরে আসবে: <strong>সমাকলন (Integral)</strong>, যার মাধ্যমে অসংখ্য ক্ষুদ্র অংশের যোগফল থেকে মোট ক্ষেত্রফল বের করা হয়; এবং <strong>অন্তরীকরণ (Derivative)</strong>, যার মাধ্যমে কোনো পরিবর্তনের তাৎক্ষণিক হার পরিমাপ করা হয়।</p>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 2 — sec-circle-rings | cues: h2, p, formula-box, p, p, figure, p, callout, formula-box, p ═══ -->
+      <b1b-section id="sec-circle-rings" title="বৃত্তের ক্ষেত্রফল: বলয় কাটা, আনরোলিং ও রিমান সমষ্টি">
+        <p>ছোটবেলা থেকেই আমরা জানি যে $R$ ব্যাসার্ধবিশিষ্ট একটি বৃত্তের ক্ষেত্রফল হলো:</p>
+
+        <b1b-formula math="A_{\text{বৃত্ত}} = \pi R^2"></b1b-formula>
+
+        <p>কিন্তু কখনো কি ভেবে দেখেছেন, কেন এই সূত্রটি সত্য? পাই ($\pi$) তো মূলত একটি বৃত্তের পরিধি ও তার ব্যাসের অনুপাত ($\pi = \frac{C}{2R}$, অর্থাৎ $C = 2\pi R$)। তাহলে পরিধির ধ্রুবকটি ক্ষেত্রফলের ভেতরে ব্যাসার্ধের বর্গের সাথে কীভাবে এমন নিখুঁতভাবে জড়িয়ে গেল?</p>
+
+        <p>চলুন গ্রান্ট স্যান্ডারসনের মতো করে ভাবা যাক। ধরা যাক আমাদের কাছে একটি বৃত্ত আছে। আমরা যদি একে সোজা গ্রিড দিয়ে মাপতে যাই, তবে বৃত্তের বাঁকা সীমানা কখনোই সরল বর্গাকৃতির সাথে খাপ খাবে না। কিন্তু যদি আমরা বৃত্তটিকে কতগুলো সমকেন্দ্রিক পাতলা বলয়ে (Concentric thin rings) কেটে ফেলি? তখন প্রতিটি অংশের আসন্নায়ন করা সহজ হয়ে যায়।</p>
+
+        <b1b-figure src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgMzIwIiB3aWR0aD0iNDIwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjQyMCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48ZyBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjciPjxjaXJjbGUgY3g9IjE3MCIgY3k9IjE2MCIgcj0iMTQwIiBzdHJva2U9IiMzYjgyZjYiIG9wYWNpdHk9Ii40NSIvPjxjaXJjbGUgY3g9IjE3MCIgY3k9IjE2MCIgcj0iMTIwIiBzdHJva2U9IiMwNmI2ZDQiIG9wYWNpdHk9Ii41NSIvPjxjaXJjbGUgY3g9IjE3MCIgY3k9IjE2MCIgcj0iMTAwIiBzdHJva2U9IiMxMGI5ODEiIG9wYWNpdHk9Ii42NSIvPjxjaXJjbGUgY3g9IjE3MCIgY3k9IjE2MCIgcj0iODAiIHN0cm9rZT0iIzg0Y2MxNiIgb3BhY2l0eT0iLjc1Ii8+PGNpcmNsZSBjeD0iMTcwIiBjeT0iMTYwIiByPSI2MCIgc3Ryb2tlPSIjZWFiMzA4IiBvcGFjaXR5PSIuODUiLz48Y2lyY2xlIGN4PSIxNzAiIGN5PSIxNjAiIHI9IjQwIiBzdHJva2U9IiNmOTczMTYiIG9wYWNpdHk9Ii45NSIvPjwvZz48Y2lyY2xlIGN4PSIxNzAiIGN5PSIxNjAiIHI9IjE4IiBmaWxsPSIjZWY0NDQ0Ii8+PGxpbmUgeDE9IjE3MCIgeTE9IjE2MCIgeDI9IjMxMCIgeTI9IjE2MCIgc3Ryb2tlPSIjZmJiZjI0IiBzdHJva2Utd2lkdGg9IjMiLz48Y2lyY2xlIGN4PSIzMTAiIGN5PSIxNjAiIHI9IjUiIGZpbGw9IiNmYmJmMjQiLz48dGV4dCB4PSIyNDAiIHk9IjE0OCIgZmlsbD0iI2ZiYmYyNCIgZm9udC1zaXplPSIxNyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPlI8L3RleHQ+PGxpbmUgeDE9IjI3MCIgeTE9IjE2MCIgeDI9IjI5MCIgeTI9IjE2MCIgc3Ryb2tlPSIjZjQzZjVlIiBzdHJva2Utd2lkdGg9IjUiLz48dGV4dCB4PSIyODAiIHk9IjE4OCIgZmlsbD0iI2Y0M2Y1ZSIgZm9udC1zaXplPSIxNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmRyPC90ZXh0Pjx0ZXh0IHg9IjE3MCIgeT0iMjgiIGZpbGw9IiNlMmU4ZjAiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5Db25jZW50cmljIHJpbmdzPC90ZXh0Pjwvc3ZnPg==" alt="বৃত্তকে অসংখ্য সমকেন্দ্রিক পাতলা বলয়ে ভাগ করা, ব্যাসার্ধ R ও শেষ বলয়ের বেধ dr" caption="এই চিত্রে বৃত্তটিকে অসংখ্য সমকেন্দ্রিক পাতলা বলয়ে ভাগ করা হয়েছে; হলুদ রেখাটি ব্যাসার্ধ $R$ এবং গোলাপি রেখাটি সবচেয়ে বাইরের বলয়ের অতিক্ষুদ্র বেধ $dr$ নির্দেশ করছে। লক্ষ্য করুন কীভাবে প্রতিটি বলয়ের ব্যাসার্ধ ক্রমে বাড়ছে কিন্তু বেধ একই থাকছে। এই সুসমতাই পরে সমস্ত বলয়ের ক্ষেত্রফল যোগ করার কাজটিকে সহজ করে দেবে।"></b1b-figure>
+
+        <p>মনে করি মূল বৃত্তটির কেন্দ্র থেকে $r$ দূরত্বে অবস্থিত যেকোনো একটি নির্দিষ্ট বলয় নেওয়া হলো। এই বলয়টির বেধ অত্যন্ত পাতলা—যাকে ক্যালকুলাসের ভাষায় আমরা বলি $dr$, অর্থাৎ ব্যাসার্ধের একটি অতিক্ষুদ্র পরিবর্তন।</p>
+
+        <b1b-callout type="blue" icon="✂️" title="একটি বলয়কে সোজা করা (Unwrapping)">
+          <p>যদি আমরা এই পাতলা বলয়টিকে এক জায়গায় কাঁচি দিয়ে কেটে সোজা লম্বা ফিতার মতো বিছিয়ে দিই, তবে সেটি প্রায় একটি নিখুঁত আয়তক্ষেত্র তৈরি করবে! এই আয়তক্ষেত্রের দৈর্ঘ্য হবে মূল বলয়ের পরিধির সমান $2\pi r$, আর এর প্রস্থ বা উচ্চতা হবে বলয়টির পাতলা বেধ $dr$। অতএব এই একক বলয়ের অতিক্ষুদ্র ক্ষেত্রফল $dA$ হবে দৈর্ঘ্য ও প্রস্থের গুণফল—অর্থাৎ $dA \approx 2\pi r \cdot dr$।</p>
+        </b1b-callout>
+
+        <b1b-formula math="dA \approx 2\pi r \, dr"></b1b-formula>
+
+        <p>অবশ্যই, যেহেতু বলয়টির ভেতরের পরিধি $2\pi r$ এবং বাইরের পরিধি $2\pi (r + dr)$ সামান্য ভিন্ন, তাই এটি পুরোপুরি সোজা আয়তক্ষেত্র না হয়ে সামান্য ট্রাপিজয়েড হয়। কিন্তু $dr$-এর মান যত ক্ষুদ্র থেকে ক্ষুদ্রতর হবে, এই পার্থক্য ততই অদৃশ্য হয়ে যাবে এবং আয়তক্ষেত্রের আসন্নায়নটি পরম নির্ভুলতার দিকে ধাবিত হবে।</p>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 3 — sec-slope-rate | cues: h2, p, chapter-quote, p, p, formula-box, p, p ═══ -->
+      <b1b-section id="sec-slope-rate" title="পরিবর্তনের হার ও ঢাল: ডেরিভেটিভের প্রথম সাক্ষাৎ">
+        <p>ক্যালকুলাসের অপর পিঠ হলো পরিবর্তনের হার অনুসন্ধান করা। বৃত্তের ক্ষেত্রফলের উদাহরণটিতেই যদি আমরা প্রশ্ন করি:</p>
+
+        <b1b-quote>যদি বৃত্তের ব্যাসার্ধ $r$-কে খুব সামান্য পরিমাণ $dr$ বৃদ্ধি করা হয়, তবে ক্ষেত্রফল $A$ ঠিক কতটুকু বৃদ্ধি পাবে?</b1b-quote>
+
+        <p>বৃত্তের পরিধিতে যুক্ত হওয়া নতুন অংশের ক্ষেত্রফলই হলো সেই বৃদ্ধি $dA$। আমরা আগেই দেখেছি, এই বৃদ্ধি হলো একদম বাইরের বলয়টির (Annulus) ক্ষেত্রফল, যার মান $2\pi r \cdot dr$।</p>
+
+        <p>উভয়পক্ষকে $dr$ দিয়ে ভাগ করলে আমরা পাই—ক্ষেত্রফলের পরিবর্তনের হার হুবহু পরিধির সমান:</p>
+
+        <b1b-formula math="\frac{dA}{dr} = 2\pi r"></b1b-formula>
+
+        <p>এটি এক পরম জাদুকরী উপলব্ধি! বৃত্তের ক্ষেত্রফলের পরিবর্তনের হার ($\frac{dA}{dr}$) হুবহু তার পরিধির ($2\pi r$) সমান। কারণ ব্যাসার্ধ সামান্য একটু বাড়ালে বৃত্তের ক্ষেত্রফল কেবল তার পরিধি বরাবরই নতুন স্তর হিসেবে বিস্তৃত হতে পারে। পরিবর্তনের হার নিজেরাই এক পরিচিত জ্যামিতিক রাশিকে—পরিধিকে—ছুঁয়ে যায়।</p>
+
+        <p>সাধারণভাবে, যেকোনো ফাংশন $f(x)$-এর জন্য: ইনপুটের ক্ষুদ্র পরিবর্তন $dx$, আউটপুটের সংশ্লিষ্ট বৃদ্ধি $df$, এবং লেখচিত্রের স্পর্শকের ঢাল হলো $\frac{df}{dx}$। যেমন $f(x)=x^2$-এর ক্ষেত্রে $\frac{df}{dx}=2x$—মূলবিন্দুতে ঢাল প্রায় শূন্য, দূরে গেলে ক্রমেই খাড়া।</p>
+      </b1b-section>
+
+      <!-- ═══ NARRATED 4 — sec-connection | cues: h2, p, formula-box, p, callout ═══ -->
+      <b1b-section id="sec-connection" title="ক্ষেত্রফল ও ঢালের সংযোগ: ক্যালকুলাসের মৌলিক উপপাদ্য">
+        <p>এ পর্যন্ত ক্ষেত্রফল আর পরিবর্তনের হারকে আমরা ভেবেছি দুটি আলাদা গল্প; কিন্তু ক্যালকুলাসের প্রাণবন্ত রহস্য হলো, এরা পরস্পরের দর্পণ—একটির ভেতরে অন্যটির প্রতিবিম্ব ঘুরে আসে।</p>
+
+        <b1b-formula math="\frac{d}{dx}A(x) = f(x)"></b1b-formula>
+
+        <p>একটি নতুন ফাংশন সংজ্ঞায়িত করো: $A(x)$—লেখচিত্রের নিচে জমা হওয়া ক্ষেত্রফল। ডান দিকে অতি ক্ষুদ্র $dx$ পদক্ষেপে যোগ হয় অতি ক্ষুদ্র এক টুকরো ক্ষেত্রফল, মূলত উচ্চতা $f(x)$ গুণ $dx$; ফলে $A$-এর পরিবর্তনের হার ফিরিয়ে দেয় ঢাল $f(x)$ নিজেকেই। বৃত্তে এসে গল্পটি পূর্ণতা পায়: $\pi r^2$-এর ঢাল $2\pi r$—ঠিক পরিধি।</p>
+
+        <b1b-callout type="purple" icon="🔁" title="পরস্পর-বিপরীত দুই প্রক্রিয়া">
+          <p>ক্ষুদ্রাতিক্ষুদ্র বলয়ের যোগফল (সমাকলন) দেয় ক্ষেত্রফল, আর ক্ষেত্রফলের ঢাল (অন্তরীকরণ) ফিরিয়ে দেয় পরিধিকে। যেমন গুণ ও ভাগ বিপরীত দুই ক্রিয়া—ক্যালকুলাসের এই দুই স্তম্ভও তা-ই; বৃত্তের বিশেষ এই উদাহরণের ভেতরেই লুকায় ক্যালকুলাসের সর্বজনীন বীজ। অতএব ক্যালকুলাস মুখস্থ সূত্রের ঝোলা নয়; এটি সেই শিল্প—যেখানে সমষ্টি রূপ নেয় সীমায়, আর ক্ষেত্রফল ও ঢাল বলে যায় পরস্পরের গল্প।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — official content beyond the 4 teacher-audio sections ═══ -->
+      <b1b-section id="sec-generalizing" title="পদ্ধতির সাধারণীকরণ: আয়তক্ষেত্র-টাওয়ার থেকে ত্রিভুজ ও πR²" data-no-narration="true">
+        <p>এবার সবচেয়ে চমকপ্রদ কাজটি করা যাক। ভেতরের ক্ষুদ্রতম বলয় ($r \approx 0$) থেকে শুরু করে বাইরের বলয় ($r = R$) পর্যন্ত সবগুলোকে সোজা করে আকারের ক্রমে পাশাপাশি দাঁড় করানো হলো। প্রতিটি ফিতার প্রস্থ $dr$ এবং উচ্চতা $2\pi r$; তাই তারা ঠিক এমনভাবে জায়গা পায় যেন একটি সিঁড়ি।</p>
+
+        <b1b-media-tab active-tab="image" caption="এই চিত্রে সোজা করা বলয়গুলোকে $r$-অক্ষের ওপর দাঁড় করানো হয়েছে—প্রতিটির প্রস্থ $dr$ এবং উচ্চতা $2\pi r$। লক্ষ্য করুন তাদের মাথাগুলো $y = 2\pi r$ সরলরেখা বরাবর নিখুঁতভাবে রয়েছে, ফলে পুরো ক্ষেত্রটি একটি সমকোণী ত্রিভুজের আকার নিচ্ছে। ভিডিও ট্যাবে মূল অ্যানিমেশনে সিঁড়িটি কীভাবে মসৃণ ত্রিভুজে পরিণত হয় তা দেখা যাবে।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NjAgMzIwIiB3aWR0aD0iNDYwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjQ2MCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNDAiIHkxPSIyODAiIHgyPSI0MzAiIHkyPSIyODAiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMjgwIiB4Mj0iNDAiIHkyPSI0MCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48ZyBmaWxsPSIjMzhiZGY4IiBvcGFjaXR5PSIuOCI+PHJlY3QgeD0iNTIiIHk9IjI2NCIgd2lkdGg9IjI2IiBoZWlnaHQ9IjE2Ii8+PHJlY3QgeD0iODgiIHk9IjI0OCIgd2lkdGg9IjI2IiBoZWlnaHQ9IjMyIi8+PHJlY3QgeD0iMTI0IiB5PSIyMzIiIHdpZHRoPSIyNiIgaGVpZ2h0PSI0OCIvPjxyZWN0IHg9IjE2MCIgeT0iMjE2IiB3aWR0aD0iMjYiIGhlaWdodD0iNjQiLz48cmVjdCB4PSIxOTYiIHk9IjIwMCIgd2lkdGg9IjI2IiBoZWlnaHQ9IjgwIi8+PHJlY3QgeD0iMjMyIiB5PSIxODQiIHdpZHRoPSIyNiIgaGVpZ2h0PSI5NiIvPjxyZWN0IHg9IjI2OCIgeT0iMTY4IiB3aWR0aD0iMjYiIGhlaWdodD0iMTEyIi8+PHJlY3QgeD0iMzA0IiB5PSIxNTIiIHdpZHRoPSIyNiIgaGVpZ2h0PSIxMjgiLz48cmVjdCB4PSIzNDAiIHk9IjEzNiIgd2lkdGg9IjI2IiBoZWlnaHQ9IjE0NCIvPjwvZz48bGluZSB4MT0iNDAiIHkxPSIyODAiIHgyPSI0MDAiIHkyPSI0MCIgc3Ryb2tlPSIjZmJiZjI0IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1kYXNoYXJyYXk9IjYgNCIvPjx0ZXh0IHg9IjI1MCIgeT0iMTIwIiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjE2IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+Z3JhcGggb2YgMsOP4oKscjwvdGV4dD48dGV4dCB4PSIyMTAiIHk9IjMwNSIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnIgOiAwIMOi4oCg4oCZIDE8L3RleHQ+PHRleHQgeD0iMjAiIHk9IjUwIiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjE0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+MsOP4oKscjwvdGV4dD48L3N2Zz4=" alt="বলয়গুলো সোজা করে r-অক্ষের ওপর দাঁড় করালে 2πr রেখার নিচে আয়তক্ষেত্রের সিঁড়ি তৈরি হয়"/></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/WUvTyaaNkzM?start=390" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="বলয় উন্মোচনের মূল অ্যানিমেশন"></iframe></div>
+        </b1b-media-tab>
+
+        <p>যখন $dr$ কে ক্রমশ ছোট করা হয়, সিঁড়ির ধাপগুলো অদৃশ্য হয়ে যায় এবং আমরা পাই একটি বিশুদ্ধ ত্রিভুজ—ভূমি $R$ (সমস্ত $dr$-এর সমষ্টি) ও উচ্চতা $2\pi R$ (বৃহত্তম বলয়ের পরিধি)। তাই ক্ষেত্রফল $\frac{1}{2} \cdot R \cdot 2\pi R = \pi R^2$। কোনো মুখস্থ সূত্র ছিল না; জ্যামিতি নিজেই উত্তরটি ফেরত দিল।</p>
+
+        <b1b-media-tab active-tab="image" caption="চিত্রটি সেই চূড়ান্ত ত্রিভুজ দেখাচ্ছে, যার ভূমি $R$ ও উচ্চতা $2\pi R$ এবং অভ্যন্তরভাগ আমাদের মূল বৃত্তের ক্ষেত্রফলের সমান। $\frac{1}{2}bh$ সূত্রটি প্রয়োগ করার সাথে সাথে $\pi R^2$ ফিরে আসে—এটি আবিষ্কৃত সূত্র, মুখস্থ নয়। ভিডিও ট্যাবে এই রূপান্তরের গতিপথ দেখলে ধারণাটি আরও দৃঢ় হবে।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgMzAwIiB3aWR0aD0iNDIwIiBoZWlnaHQ9IjMwMCI+PHJlY3Qgd2lkdGg9IjQyMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMwYjEyMjAiLz48cG9seWdvbiBwb2ludHM9IjUwLDI1NSAzNjAsMjU1IDM2MCw0NSIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iLjIyIi8+PHBvbHlsaW5lIHBvaW50cz0iNTAsMjU1IDM2MCwyNTUgMzYwLDQ1IDUwLDI1NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzRkMzk5IiBzdHJva2Utd2lkdGg9IjMiLz48dGV4dCB4PSIyMDUiIHk9IjI4MCIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmJhc2UgPSBSPC90ZXh0Pjx0ZXh0IHg9IjM3NSIgeT0iMTU1IiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjE2IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+MsOP4oKsUjwvdGV4dD48dGV4dCB4PSIxNzUiIHk9IjE4MCIgZmlsbD0iI2E3ZjNkMCIgZm9udC1zaXplPSIxOCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPkFyZWEgPSDDgsK9w4LCt1LDgsK3MsOP4oKsUiA9IMOP4oKsUsOCwrI8L3RleHQ+PC9zdmc+" alt="ভূমি R ও উচ্চতা 2πR-বিশিষ্ট ত্রিভুজ, ক্ষেত্রফল πR²"/></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/WUvTyaaNkzM?start=420" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="ত্রিভুজ থেকে πR²"></iframe></div>
+        </b1b-media-tab>
+
+        <b1b-formula math="\text{Area} = \int_0^R 2\pi r \, dr = \left[\pi r^2\right]_0^R = \pi R^2"></b1b-formula>
+
+        <p>সিঁড়ির ধাপে আরও এক রমণীয় বিষয় লুকিয়ে আছে: $1 + 3 + 5 + \cdots + (2n-1) = n^2$। বর্গাকৃতির ডিজিটাল চিত্রে প্রতিটি নতুন সারি যোগ করে ঠিক একটি অযুগ্ম সংখ্যা যোগ হয়—ঠিক যেমন বৃত্তে প্রতিটি নতুন বলয় যোগ করে একটি ছোট টুকরো ক্ষেত্রফল যোগ হয়। লাইবনিজ (Leibniz) ল্যাটিন শব্দ <em>Summa</em> (যোগফল)-এর প্রথম অক্ষর দীর্ঘ $S$ ($\int$) চিহ্ন হিসেবে বেছে নিয়েছিলেন; এই সমষ্টিই সমাকলন।</p>
+
+        <b1b-formula math="1 + 3 + 5 + \cdots + (2n - 1) = n^2"></b1b-formula>
+      </b1b-section>
+
+      <b1b-section id="sec-integrals" title="সমাকলন: বেগ থেকে দূরত্ব ও A(x) = ∫₀ˣ t² dt" data-no-narration="true">
+        <p>অনেক সমস্যাকেই অসংখ্য ক্ষুদ্র রাশির যোগফল হিসেবে আসন্নায়ন করা যায়। একটি গাড়ি কত দূর গেছে তা জানতে হলে প্রতিটি সময় $t$-তে বেগকে ক্ষুদ্র সময়াবধি $dt$ দিয়ে গুণ করে ঐ ক্ষণের অতিক্রান্ত দূরত্ব পাওয়া যায়; সবগুলো যোগ করলেই মোট দূরত্ব।</p>
+
+        <b1b-media-tab active-tab="image" caption="এখানে বেগ-বনাম-সময় রেখচিত্রের নিচে সরু সরু আয়তক্ষেত্র দেখা যাচ্ছে—প্রতিটির উচ্চতা বেগ $v(t)$ এবং প্রস্থ $dt$। তাই প্রতিটির ক্ষেত্রফল $v(t)\,dt$ হলো ঐ ক্ষুদ্র সময়ে অতিক্রান্ত দূরত্ব। সমস্ত আয়তক্ষেত্রের ক্ষেত্রফলের সমষ্টি সীমাস্থে রেখার নিচের মোট ক্ষেত্রফলে পরিণত হয়; ভিডিও ট্যাবে এই ধাপগুলোর গতি দেখা যাবে।">
+          <div slot="image"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDAgMzAwIiB3aWR0aD0iNDQwIiBoZWlnaHQ9IjMwMCI+PHJlY3Qgd2lkdGg9IjQ0MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNDUiIHkxPSIyNjAiIHgyPSI0MjAiIHkyPSIyNjAiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQ1IiB5MT0iMjYwIiB4Mj0iNDUiIHkyPSIzMCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNDUgMjAwIEwxNTAgMTQwIEwyNTAgMTc1IEwzNTAgODAgTDQxMCA2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzhiZGY4IiBzdHJva2Utd2lkdGg9IjMiLz48ZyBmaWxsPSIjMTBiOTgxIiBvcGFjaXR5PSIuMzUiPjxyZWN0IHg9IjUwIiB5PSIxOTYiIHdpZHRoPSIxOCIgaGVpZ2h0PSI2NCIvPjxyZWN0IHg9Ijc4IiB5PSIxODgiIHdpZHRoPSIxOCIgaGVpZ2h0PSI3MiIvPjxyZWN0IHg9IjEwNiIgeT0iMTgwIiB3aWR0aD0iMTgiIGhlaWdodD0iODAiLz48cmVjdCB4PSIxMzQiIHk9IjE3MSIgd2lkdGg9IjE4IiBoZWlnaHQ9Ijg5Ii8+PHJlY3QgeD0iMTYyIiB5PSIxNjQiIHdpZHRoPSIxOCIgaGVpZ2h0PSI5NiIvPjxyZWN0IHg9IjE5MCIgeT0iMTU4IiB3aWR0aD0iMTgiIGhlaWdodD0iMTAyIi8+PHJlY3QgeD0iMjE4IiB5PSIxNTIiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMDgiLz48cmVjdCB4PSIyNDYiIHk9IjE0NiIgd2lkdGg9IjE4IiBoZWlnaHQ9IjExNCIvPjxyZWN0IHg9IjI3NCIgeT0iMTM2IiB3aWR0aD0iMTgiIGhlaWdodD0iMTI0Ii8+PHJlY3QgeD0iMzAyIiB5PSIxMjQiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMzYiLz48cmVjdCB4PSIzMzAiIHk9IjExMiIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE0OCIvPjwvZz48dGV4dCB4PSIxMjAiIHk9IjQ1IiBmaWxsPSIjZTJlOGYwIiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+dmVsb2NpdHkgw4PigJQgZHQgPSBkaXN0YW5jZTwvdGV4dD48dGV4dCB4PSIxODAiIHk9IjI4NSIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPnRpbWUgdDwvdGV4dD48L3N2Zz4=" alt="বেগ রেখচিত্রের নিচে v(t)·dt আয়তক্ষেত্রগুলো"/></div>
+          <div slot="video"><iframe src="https://www.youtube.com/embed/WUvTyaaNkzM?start=600" style="width:100%;aspect-ratio:16/9;border:0;" allowfullscreen title="বেগ থেকে দূরত্ব"></iframe></div>
+        </b1b-media-tab>
+
+        <p>যেমন বেগ সময়ের সাপেক্ষে অবস্থানের পরিবর্তন, তেমনি ত্বরণ হলো বেগের পরিবর্তনের হার। তাই ত্বরণের রেখচিত্রের নিচের ক্ষেত্রফল (নিচের কুইজ দেখুন) আমাদের বেগই ফেরত দেয়—একই ছোট আয়তক্ষেত্রের যুক্তি এখানেও চলে।</p>
+
+        <p>আমরা বৃত্তে ভাগ্যবান ছিলাম যে ক্ষেত্রফলটি একটি ত্রিভুজ হয়ে গিয়েছিল। কিন্তু ধরা যাক $f(x) = x^2$ প্যারাবোলার নিচে $x=0$ থেকে $x=3$ পর্যন্ত ক্ষেত্রফল—এটি সরাসরি হিসেব করা কঠিন। তাই বাঁ প্রান্ত $0$-এ আটকে রেখে ডান প্রান্ত $x$ কে পরিবর্তনশীল ধরি এবং একটি রহস্যময় ফাংশন $A(x)$ সংজ্ঞায়িত করি।</p>
+
+        <b1b-figure src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDAgMzIwIiB3aWR0aD0iNDQwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjQ0MCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNDUiIHkxPSIyODUiIHgyPSI0MjAiIHkyPSIyODUiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQ1IiB5MT0iMjg1IiB4Mj0iNDUiIHkyPSIyNSIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNDUgMjg1IFEgMTkwIDIwIDMzNSAyNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzhiZGY4IiBzdHJva2Utd2lkdGg9IjMiLz48cGF0aCBkPSJNNDUgMjg1IFEgMTkwIDIwIDI1MCA3MCBMMjUwIDI4NSBaIiBmaWxsPSIjMzhiZGY4IiBvcGFjaXR5PSIuMjUiLz48bGluZSB4MT0iMjUwIiB5MT0iNzAiIHgyPSIyNTAiIHkyPSIyODUiIHN0cm9rZT0iI2ZiYmYyNCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtZGFzaGFycmF5PSI1IDQiLz48dGV4dCB4PSIyNzAiIHk9Ijc1IiBmaWxsPSIjZmJiZjI0IiBmb250LXNpemU9IjE2IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+eDwvdGV4dD48dGV4dCB4PSI2MCIgeT0iNjAiIGZpbGw9IiNlMmU4ZjAiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIj5mKHQpPXTDgsKyPC90ZXh0Pjx0ZXh0IHg9IjEyMCIgeT0iMjAwIiBmaWxsPSIjYmFlNmZkIiBmb250LXNpemU9IjE2IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+QSh4KT3DosuGwqvDouKAmuKCrMOLwqMgdMOCwrIgZHQ8L3RleHQ+PC9zdmc+" alt="x² প্যারাবোলার নিচে 0 থেকে x পর্যন্ত ছায়াঘেরা ক্ষেত্রফল A(x)" caption="ছবিতে $f(t)=t^2$ বক্ররেখার নিচে $0$ থেকে $x$ পর্যন্ত ছায়াঘেরা অঞ্চলটিই $A(x)$। বাঁ প্রান্ত স্থির, ডান প্রান্ত সরণশীল—এই সরণশীল প্রান্তটি সমগ্র গল্পের চাবিকাঠি। পরবর্তীতে দেখা যাবে এই $A(x)$-এর ঢালই আমাদের মূল বক্ররেখার উচ্চতা $x^2$ ফেরত দেয়।"></b1b-figure>
+
+        <b1b-formula math="A(x) = \int_0^x t^2 \, dt"></b1b-formula>
+
+        <p>এই $A(x)$-কে আমরা $x^2$-এর $0$ থেকে $x$ পর্যন্ত সমাকলন (integral) বলি। পরবর্তীতে আমরা দেখব সমাকলন ও অন্তরীকরণ পরস্পরের বিপরীত—আর তা থেকেই এই রহস্যময় ফাংশনের রূপ বেরিয়ে আসবে।</p>
+      </b1b-section>
+
+      <b1b-section id="sec-derivatives" title="অন্তরজ: dA ≈ x²·dx থেকে dA/dx ≈ x²" data-no-narration="true">
+        <p>কঠিন প্রশ্নের সরাসরি উত্তর খোঁজার বদলে খেলার মতো করে দেখা যাক: $x$ কে সামান্য $dx$ পরিমাণ বাড়ালে $A$-র কী পরিবর্তন হয়? নতুন যে সরু স্লাইটি যোগ হয়, তাকে $dA$ বলি।</p>
+
+        <b1b-figure src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDAgMzIwIiB3aWR0aD0iNDQwIiBoZWlnaHQ9IjMyMCI+PHJlY3Qgd2lkdGg9IjQ0MCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiMwYjEyMjAiLz48bGluZSB4MT0iNDUiIHkxPSIyNzAiIHgyPSI0MjAiIHkyPSIyNzAiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQ1IiB5MT0iMjcwIiB4Mj0iNDUiIHkyPSIyNSIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNDUgMjcwIFEgMjAwIDUgMzYwIDEwIiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGJkZjgiIHN0cm9rZS13aWR0aD0iMyIvPjxyZWN0IHg9IjI1MCIgeT0iMTA1IiB3aWR0aD0iMTYiIGhlaWdodD0iMTY1IiBmaWxsPSIjZmJiZjI0IiBvcGFjaXR5PSIuODUiLz48dGV4dCB4PSIyNjgiIHk9IjEwMCIgZmlsbD0iI2ZiYmYyNCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmhlaWdodCB4w4LCsjwvdGV4dD48dGV4dCB4PSIyNTIiIHk9IjI5MiIgZmlsbD0iI2ZiYmYyNCIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmR4PC90ZXh0Pjx0ZXh0IHg9IjgwIiB5PSI1NSIgZmlsbD0iI2UyZThmMCIgZm9udC1zaXplPSIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPmRBIMOi4oCwy4YgeMOCwrLDgsK3ZHg8L3RleHQ+PHRleHQgeD0iODAiIHk9IjkwIiBmaWxsPSIjYTdmM2QwIiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+ZEEvZHggw6LigLDLhiB4w4LCsjwvdGV4dD48L3N2Zz4=" alt="x² প্যারাবোলায় x বিন্দুতে dx প্রস্থের সরু দA আয়তক্ষেত্র" caption="হলুদ সরু ফালিটি হলো $dA$—এর উচ্চতা প্রায় $x^2$ এবং প্রস্থ $dx$। $dx$ যত ছোট হবে, এই আয়তক্ষেত্রের সাথে প্রকৃত স্লাইটের ত্রুটি তত কমবে। এই আসন্নায়ন থেকেই জন্ম নেয় $\frac{dA}{dx} \approx x^2$ সম্পর্কটি, যা পরে নিখুঁত অন্তরজে রূপ নেয়।"></b1b-figure>
+
+        <b1b-formula math="dA \approx x^2 \, dx \qquad \Longrightarrow \qquad \frac{dA}{dx} \approx x^2"></b1b-formula>
+
+        <p>উদাহরণস্বরূপ $x=3$ ও $3.001$-এর মতো দুটি কাছাকাছি বিন্দু নিন: এখানে $dx = 0.001$। আমরা $A$-র আসল মান না জানলেও জানি $\frac{A(3.001)-A(3)}{0.001} \approx 3^2 = 9$। একই সম্পর্ক $x=2$-সহ প্রতিটি বিন্দুতে সত্য—অর্থাৎ $\frac{dA}{dx}$-এর মান বক্ররেখার উচ্চতার সমান।</p>
+
+        <b1b-formula math="\frac{A(3.001) - A(3)}{0.001} \approx 3^2"></b1b-formula>
+
+        <p>এই অনুপাত $\frac{dA}{dx}$ হলো $A$-র <strong>অন্তরজ (Derivative)</strong>। প্রযুক্তিগতভাবে অন্তরজ হলো সেই মান যার দিকে $dx \to 0$ হলে অনুপাতটি ধাবিত হয়। সহজ কথায় এটি পরিমাপ করে কোনো ফাংশন ইনপুটের ক্ষুদ্র পরিবর্তনে কতটা সংবেদনশীল। পরবর্তী অধ্যায়ে আমরা এর গভীরে যাব।</p>
+      </b1b-section>
+
+      <b1b-section id="sec-fundamental" title="মৌলিক উপপাদ্য: অন্তরজ সমাকলনের বিপরীত" data-no-narration="true">
+        <p>আমরা অন্তরজ ব্যবহার করি কারণ তারা সমাকলনের সমস্যা সমাধানে সাহায্য করে। যদি কোনো অজানা ফাংশনের অন্তরজ $x^2$ হয়, তবে পেছন থেকে কাজ চালিয়ে সেই ফাংশনটিকে নির্ণয় করা যায়—এই আদান-প্রদানই ক্যালকুলাসের মৌলিক উপপাদ্য (Fundamental Theorem of Calculus) নামে পরিচিত।</p>
+
+        <b1b-formula math="\frac{d}{dx}A(x) = f(x) \qquad \Longleftrightarrow \qquad A(x)=\int_0^x f(t)\,dt"></b1b-formula>
+
+        <p>বৃত্তের ক্ষেত্রে $\frac{d}{dr}(\pi r^2) = 2\pi r$—ক্ষেত্রফলের ঢাল থেকে পরিধি ফিরে এলো। এক গল্পের দুই অধ্যায় আমাদের কাছে সর্বজনীন সত্যের রূপ নিল: সমাকলন ক্ষুদ্র অংশ জুড়ে মোট গড়ে তোলে, আর অন্তরজ সেই মোটের পরিবর্তনের হার ফিরিয়ে দেয়।</p>
+
+        <b1b-callout type="green" icon="✅" title="মূল বার্তা">
+          <p>প্রতিটি ক্ষেত্রে যুক্তি একই: ছোট ছোট অংশের আসন্নায়ন নেওয়া, সীমায় তাদের একত্রিত করা, এবং এই দুই দৃষ্টিভঙ্গির মিলন ঘটানো। বৃত্তের বিশেষ উদাহরণেই ক্যালকুলাসের সমগ্র কাঠামোর বীজ সুপ্ত ছিল—হিলবার্টের কথাটি এখানে সার্থক।</p>
+        </b1b-callout>
+      </b1b-section>
+
+      <b1b-section id="sec-dx-bonus" title="বোনাস: dx আসলে কী?" data-no-narration="true">
+        <p>ক্যালকুলাসে $dA$, $dr$, $dx$-এর মতো চিহ্ন সর্বত্র দেখা যায়, কিন্তু এগুলোর অর্থ নিয়ে যথেষ্ট ambiguity আছে। আমরা $dr$-কে একটি বাস্তব ছোট সংখ্যা হিসেবে ভেবেছি—যেমন $dr = 0.01$ বা $0.001$। প্রচলিত রীতি হলো এরূপ পরিবর্তনকে $\Delta r$, $\Delta A$, $\Delta x$ লেখা এবং $dx$-এর মতো চিহ্ন শুধু "অসীম ক্ষুদ্র" পরিবর্তনের জন্য সংরক্ষণ করা।</p>
+
+        <p>কিন্তু "অসীম ক্ষুদ্র" বলতে আসলে কী বোঝায়? এটি কি কোনো সংখ্যা? হলে কোন সংখ্যা—শূন্য নয়, আবার শূন্যের চেয়ে বড়ও নয়। অনেক শিক্ষক বলেন $dx$-কে গুরুত্ব সহকারে না নিতে; $\frac{df}{dx}$ আসলে ভগ্নাংশ নয় এবং $\int f(x)\,dx$ আসলে যোগফল নয়—যদিও $\int$ চিহ্নটি ল্যাটিন <em>Summa</em> থেকেই এসেছে।</p>
+
+        <b1b-callout type="gold" icon="🔍" title="এই সিরিজের দর্শন">
+          <p>অসীম ক্ষুদ্রের অস্পষ্ট ধারণার বদলে আমরা $dx$-কে একটি বাস্তব ছোট সংখ্যা হিসেবে ভাবব—যেমন $dx=0.001$। তখন লেখা সমীকরণগুলো ভুল হবে, কিন্তু $dx \to 0$ হলে তা ক্রমশ কম ভুল হবে। বৃত্তের বলয়গুলোর কথা মনে করুন: $dr=0.001$ হলে কোনো বলয়ের আসল ক্ষেত্রফল ঠিক $2\pi r\,dr$ নয়, কিন্তু শতাংশ ত্রুটি $dr$ ছোট হওয়ার সাথে সাথে কমতে থাকে। এই দৃষ্টিভঙ্গিই কঠোরতা ও intuitions-কে একসাথে আনে।</p>
+        </b1b-callout>
+
+        <p>চারটি পাদটীকাও এখানে মনে রাখা যায়: (১) ওয়েব-নিবন্ধে ব্যাসার্ধ $1$, মূল ভিডিওতে $3$ ব্যবহৃত হয়েছে; (২) পিজা-স্লাইসে ভাগও একই ফলাফল দিতে পারে—একটি চ্যালেঞ্জ; (৩) সোজা করা টুকরোটি আসলে ট্রাপিজয়েড হতে পারে—কিন্তু তার ছোট তির্যক প্রান্ত সরল কিনা তা প্রমাণ করা কঠিন; (৪) প্রতিটি বলয়ের ত্রুটি $O((dr)^2)$ এবং বলয়ের সংখ্যা $\approx R/dr$, তাই মোট ত্রুটি $O(R\cdot dr) \to 0$।</p>
+      </b1b-section>
+
+      <b1b-section id="sec-lab" title="🔬 ইন্টারেক্টিভ ল্যাব: বলয় উন্মোচন ও ঢাল অন্বেষক" data-no-narration="true">
+        <p>নিচের দুটি ল্যাব স্লাইডার ঘুরিয়ে তত্ত্বকে নিজের হাতে যাচাই করার সুযোগ দেয়। প্রথম ল্যাবে বলয়ের সংখ্যা বাড়ালে আসন্ন ক্ষেত্রফল কীভাবে $\pi R^2$-এর কাছে পৌঁছায় দেখুন; দ্বিতীয় ল্যাবে $dx$ কমালে ছেদক ঢাল কীভাবে স্পর্শক ঢাল $2x$-এ মিলে যায় তা দেখুন।</p>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে ল্যাব দেখুন">
+          <calc-rings-lab></calc-rings-lab>
+        </b1b-fullscreen>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে ঢাল ল্যাব দেখুন">
+          <calc-slope-lab></calc-slope-lab>
+        </b1b-fullscreen>
+      </b1b-section>
+
+      <!-- ═══ NON-NARRATED — all three official 3B1B quizzes, exact options ═══ -->
+      <b1b-section id="sec-quizzes" title="ধারণা যাচাই: ৩টি ইন্টারেক্টিভ কুইজ" data-no-narration="true">
+        <b1b-quiz
+          question="❓ ১. ভেতরের ব্যাসার্ধ r এবং বেধ dr-বিশিষ্ট একটি বলয়ের ক্ষেত্রফলের সবচেয়ে কাছাকাছি মান কত?"
+          correct="2"
+          correct-msg="নিখুঁত! বলয়টিকে সোজা করলে এর দৈর্ঘ্য হয় ভেতরের পরিধি 2πr আর প্রস্থ হয় বেধ dr—তাই ক্ষেত্রফল ≈ 2πr·dr। $\pi r^2 dr$ তখনই আসবে যখন আয়তক্ষেত্রের দৈর্ঘ্য $\pi r^2$ ধরা হবে, যা পরিধি নয়; আবার $2\pi r^2 dr$-এ অপ্রয়োজনীয় আরেকটি r যোগ হয়ে গেছে। মনে রাখবেন—ক্ষেত্রফল = পরিধি $\times$ বেধ।"
+          wrong-msg="আবার ভাবুন: বলয়টিকে কাঁচি দিয়ে কেটে সোজা করলে কী হয়? এর দৈর্ঘ্য হবে বৃত্তের ভেতরের পরিধি $2\pi r$ (পাই-র সংজ্ঞা থেকেই), আর প্রস্থ হবে পাতলা বেধ $dr$। সুতরাং ক্ষেত্রফল $\approx 2\pi r\cdot dr$—বর্গের সাথে নয়, ব্যাসার্ধের সাথে রৈখিক।"
+          reveal-msg="সঠিক উত্তর: তৃতীয় বিকল্প $2\pi r\cdot dr$। এটি আসন্নায়ন মাত্র—বাইরের পরিধি কিছুটা বড় হওয়ায় আসল বলয় সামান্য ট্রাপিজয়েড, কিন্তু $dr\to0$ হলে ত্রুটি নগণ্য হয়ে যায়।">
+          <div slot="option">$\pi r^2 \cdot dr$</div>
+          <div slot="option">$2\pi r^2 \cdot dr$</div>
+          <div slot="option">$2\pi r \cdot dr$</div>
+          <div slot="option">$\pi r \cdot dr$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ২. $y = 2\pi r$ রেখচিত্রের নিচে দাঁড়িয়ে থাকা আয়তক্ষেত্রটির বাঁ কোণ r = 0.3-এ অবস্থিত হলে এর উচ্চতা কত?"
+          correct="3"
+          correct-msg="অসাধারণ! উচ্চতা $= 2\pi \times 0.3 = 0.6\pi = \frac{3}{5}\pi$। $6\pi$ হলো $r=3$-এর উচ্চতা—মূল ভিডিওতে ব্যাসার্ধ 3 ছিল, কিন্তু এই নিবন্ধে $r$ চলে $0$ থেকে $1$, তাই এখানে সঠিক উত্তর $\frac{3}{5}\pi$।"
+          wrong-msg="রেখচিত্রটি হলো $y=2\pi r$। $r=0.3$ বসালে পাই $2\pi(0.3)=0.6\pi=\frac{3}{5}\pi$। $6\pi$ পেতে হলে $r=3$ হতে হতো (মূল ভিডিওর ব্যাসার্ধ)—এটি একটি ফাঁদ; $\frac{3}{10}\pi$ শুধু $r$ কে $\pi$-এ গুণ করেছে, আর $2\pi$ হলো $r=1$-এর উচ্চতা।"
+          reveal-msg="সঠিক উত্তর: চতুর্থ বিকল্প $\frac{3}{5}\pi$। মনে রাখবেন প্রতিটি আয়তক্ষেত্রের উচ্চতা $2\pi r$—অর্থাৎ 0.3-এ 0.6π, 1-এ 2π।">
+          <div slot="option">$6\pi$</div>
+          <div slot="option">$\frac{3}{10}\pi$</div>
+          <div slot="option">$2\pi$</div>
+          <div slot="option">$\frac{3}{5}\pi$</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৩. যেমন বেগ সময়ের সাপেক্ষে অবস্থানের পরিবর্তন, তেমনি ত্বরণ হলো বেগের পরিবর্তনের হার। তবে কি কোনো গাড়ির বেগকে তার ত্বরণের রেখচিত্রের নিচের ক্ষেত্রফল হিসেবে মডেল করা যায়?"
+          correct="0"
+          correct-msg="হ্যাঁ—একদম সঠিক! প্রতিটি ক্ষুদ্র সময় $dt$-তে ত্বরণ $a(t)$ যোগ করে বেগের ছোট পরিবর্তন $dv = a(t)\,dt$ পাওয়া যায়। সবগুলো যোগ করলে বেগ পাওয়া যায় (শুরুর বেগ যোগ সহ)—ঠিক যেমন বেগের নিচের ক্ষেত্রফল দেয় দূরত্ব। একই আয়তক্ষেত্রের যুক্তি বারবার কাজ করে।"
+          wrong-msg="ভুল! ক্ষুদ্র $dt$-তে ত্বরণ $a(t)$ বেগে যোগ করে $dv=a(t)\,dt$ দেয়। আর $dt$ কে $0$-এর দিকে নিয়ে গেলে এই সমষ্টি হয়ে যায় $\int a(t)\,dt$—অর্থাৎ ত্বরণ রেখার নিচের ক্ষেত্রফলই বেগ। শুরুর বেগ $v(0)$ একটি ধ্রুবক হিসেবে যোগ হয়, কিন্তু আকারের যুক্তি অপরিবর্তিত।"
+          reveal-msg="সঠিক উত্তর: হ্যাঁ (Yes)। সমাকলন ও অন্তরীকরণ পরস্পরের বিপরীত—ত্বরণের সমাকলন দেয় বেগ, বেগের সমাকলন দেয় দূরত্ব।">
+          <div slot="option">হ্যাঁ (Yes)</div>
+          <div slot="option">না (No)</div>
+        </b1b-quiz>
+      </b1b-section>
+
+      <b1b-section id="sec-reference" title="মূল সূত্র ও পরিভাষা" data-no-narration="true">
+        <b1b-formula math="A=\pi r^2 \quad;\quad dA\approx 2\pi r\,dr \quad;\quad \int_0^R 2\pi r\,dr=\pi R^2"></b1b-formula>
+        <b1b-formula math="A(x)=\int_0^x t^2\,dt \quad;\quad \frac{dA}{dx}\approx x^2 \quad;\quad \frac{d}{dx}A(x)=f(x)"></b1b-formula>
+        <b1b-callout type="blue" icon="📚" title="পরিভাষা">
+          <p><strong>রিমান সমষ্টি (Riemann Sum):</strong> ক্ষেত্রফলকে অসংখ্য সরু ফালি বা বলয়ের যোগফল হিসেবে মাপা; ফালির সংখ্যা অসীমের দিকে গেলে এটি সমাকলনে পরিণত হয়। <strong>সমাকলন (Integral):</strong> ক্ষুদ্রাতিক্ষুদ্র অংশের সীমাস্থ যোগফল। <strong>অন্তরজ (Derivative):</strong> ইনপুটের ক্ষুদ্র পরিবর্তনে ফাংশনের পরিবর্তনের হার—লেখচিত্রে স্পর্শকের ঢাল। <strong>পরিধি (Circumference):</strong> বৃত্তের গণ্ডির দৈর্ঘ্য $2\pi r$। <strong>বলয় (Annulus):</strong> দুই সমকেন্দ্রিক বৃত্তের মাঝের অঞ্চল। <strong>মৌলিক উপপাদ্য:</strong> $\frac{dA}{dx}=f(x)$—সমাকলন ও অন্তরীকরণ পরস্পরের বিপরীত প্রক্রিয়া।</p>
+        </b1b-callout>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <b1b-watch-panel
+    video-src="../../media_vault/calculus/lesson_01/experiments/fill_v2/3b1b_calculus_01_full_dubbed_fill2.mp4"
+    yt-id="WUvTyaaNkzM"
+    title="অধ্যায় ০১: ক্যালকুলাসের মূল সারমর্ম — The Essence of Calculus"
+    subtitle="গ্রান্ট স্যান্ডারসনের মূল ৩ব্লু১ব্রাউন উপস্থাপনায় দেখুন কীভাবে জ্যামিতি ও ক্যালকুলাস একত্রিত হয়।"
+    playlist-title="📋 প্লেলিস্ট — ক্যালকুলাস সিরিজ">
+  </b1b-watch-panel>
+</div><!-- /lesson-body -->
+
+<b1b-chapter-nav
+  prev-url=""
+  prev-title="শুরু"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="https://www.youtube.com/watch?v=9vKqVkMQHKk"
+  next-title="অধ্যায় ২: ডেরিভেটিভের প্যারাডক্স"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- Page-local lab components (new components only; no library override/patch). -->
+<script>
+(function () {
+  'use strict';
+
+  class CalcRingsLab extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.rendered) return;
+      this.dataset.rendered = '1';
+      this.innerHTML = `
+        <div class="calc-lab">
+          <canvas class="calc-canvas" width="900" height="420"></canvas>
+          <div class="calc-controls">
+            <div class="calc-control"><label><span>বলয়ের সংখ্যা (N)</span><span class="calc-val" data-for="rings">১৬</span></label><input type="range" class="rings" min="4" max="60" step="1" value="16"/></div>
+            <div class="calc-control"><label><span>উন্মোচন প্রগ্রেস</span><span class="calc-val" data-for="unwrap">০%</span></label><input type="range" class="unwrap" min="0" max="1" step="0.005" value="0"/></div>
+          </div>
+          <div class="calc-actions">
+            <button type="button" class="preset" data-n="8" data-u="0">৮ বলয় (স্থূল)</button>
+            <button type="button" class="preset" data-n="24" data-u="0.5">২৪ বলয় (অর্ধ)</button>
+            <button type="button" class="preset" data-n="50" data-u="1">৫০ বলয় (মসৃণ)</button>
+            <button type="button" class="play">▶ অটো প্লে</button>
+          </div>
+          <div class="calc-stats">
+            <div class="calc-stat"><span>বেধ dr = R/N</span><strong class="stat-dr">—</strong></div>
+            <div class="calc-stat"><span>আসন্ন ক্ষেত্রফল</span><strong class="stat-sum">—</strong></div>
+            <div class="calc-stat"><span>নিখুঁত ক্ষেত্রফল</span><strong>πR²</strong></div>
+          </div>
+        </div>`;
+      this._canvas = this.querySelector('.calc-canvas');
+      this._ctx = this._canvas.getContext('2d');
+      this._rings = this.querySelector('.rings');
+      this._unwrap = this.querySelector('.unwrap');
+      this._playing = false;
+      this._raf = null;
+
+      const draw = () => this._draw();
+      this._rings.addEventListener('input', () => { this.querySelector('[data-for="rings"]').textContent = this._rings.value; draw(); });
+      this._unwrap.addEventListener('input', () => { this.querySelector('[data-for="unwrap"]').textContent = Math.round(this._unwrap.value * 100) + '%'; draw(); });
+      this.querySelectorAll('.preset').forEach(b => b.addEventListener('click', () => {
+        this._rings.value = b.dataset.n; this._unwrap.value = b.dataset.u;
+        this.querySelector('[data-for="rings"]').textContent = b.dataset.n;
+        this.querySelector('[data-for="unwrap"]').textContent = Math.round(b.dataset.u * 100) + '%';
+        draw();
+      }));
+      const playBtn = this.querySelector('.play');
+      playBtn.addEventListener('click', () => {
+        if (this._playing) { cancelAnimationFrame(this._raf); this._playing = false; playBtn.textContent = '▶ অটো প্লে'; return; }
+        this._playing = true; playBtn.textContent = '⏸ বিরতি';
+        let speed = 0.007;
+        const loop = () => {
+          let v = parseFloat(this._unwrap.value) + speed;
+          if (v >= 1) { v = 1; speed = -speed; } else if (v <= 0) { v = 0; speed = -speed; }
+          this._unwrap.value = v;
+          this.querySelector('[data-for="unwrap"]').textContent = Math.round(v * 100) + '%';
+          draw();
+          if (this._playing) this._raf = requestAnimationFrame(loop);
+        };
+        this._raf = requestAnimationFrame(loop);
+      });
+      window.addEventListener('resize', () => this._resize());
+      window.addEventListener('b1b-fullscreen-change', () => this._resize());
+      this._resize();
+    }
+
+    _resize() {
+      if (!this._canvas) return;
+      const w = this._canvas.parentElement.clientWidth || 900;
+      this._canvas.width = w;
+      this._canvas.height = Math.max(360, Math.min(520, w * 0.46));
+      this._draw();
+    }
+
+    _draw() {
+      const ctx = this._ctx; if (!ctx) return;
+      const W = this._canvas.width, H = this._canvas.height;
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#080b12' : '#f8fafc'; ctx.fillRect(0, 0, W, H);
+
+      const N = parseInt(this._rings.value, 10);
+      const unwrap = parseFloat(this._unwrap.value);
+      const R = Math.min(140, H * 0.34);
+      const dr = R / N;
+      this.querySelector('.stat-dr').textContent = 'R / ' + N + ' = ' + (1 / N).toFixed(4) + ' R';
+
+      let sum = 0;
+      for (let i = 0; i < N; i++) { const r = i * dr; sum += 2 * Math.PI * r * dr; }
+      this.querySelector('.stat-sum').textContent = (sum / (Math.PI * R * R)).toFixed(4) + ' πR²';
+
+      const cx = Math.max(150, W * 0.24), cy = H * 0.52;
+      const baseX = Math.max(cx + R + 50, W * 0.46), baseY = H * 0.84;
+      const barW = Math.max(2, (W - baseX - 30) / N);
+      const maxH = Math.min(H * 0.6, 2 * Math.PI * R * 0.26);
+
+      if (unwrap > 0.04) {
+        ctx.strokeStyle = '#fbbf24'; ctx.lineWidth = 2; ctx.setLineDash([5, 4]);
+        ctx.beginPath(); ctx.moveTo(baseX, baseY); ctx.lineTo(baseX + (W - baseX - 30), baseY - maxH); ctx.stroke(); ctx.setLineDash([]);
+        ctx.fillStyle = '#fbbf24'; ctx.font = '12px sans-serif';
+        ctx.fillText('2πR', baseX + (W - baseX - 30) - 34, baseY - maxH - 8);
+        ctx.fillText('R', baseX + (W - baseX - 30) / 2, baseY + 18);
+      }
+      for (let i = 0; i < N; i++) {
+        const r = (i + 0.5) * dr;
+        const hue = 205 + 110 * (i / N);
+        ctx.strokeStyle = 'hsl(' + hue + ',85%,58%)'; ctx.fillStyle = ctx.strokeStyle;
+        if (unwrap < 0.02) {
+          ctx.lineWidth = Math.max(dr, 1.2); ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke();
+        } else {
+          const h = (r / R) * maxH * unwrap;
+          ctx.fillRect(baseX + i * barW, baseY - h, Math.max(barW - 0.6, 1), h);
+          if (unwrap < 0.9) {
+            ctx.globalAlpha = 1 - unwrap; ctx.lineWidth = Math.max(dr, 1.2);
+            ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke(); ctx.globalAlpha = 1;
+          }
+        }
+      }
+      ctx.fillStyle = dark ? '#e2e8f0' : '#0f172a'; ctx.font = 'bold 13px sans-serif';
+      ctx.fillText('বৃত্ত (r : 0 → R)', cx - 60, cy + R + 26);
+      if (unwrap > 0.08) ctx.fillText('উন্মোচিত আয়তক্ষেত্র → ত্রিভুজ', baseX, 24);
+    }
+  }
+
+  class CalcSlopeLab extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.rendered) return;
+      this.dataset.rendered = '1';
+      this.innerHTML = `
+        <div class="calc-lab">
+          <canvas class="calc-canvas" width="900" height="420"></canvas>
+          <div class="calc-controls">
+            <div class="calc-control"><label><span>বিন্দু x</span><span class="calc-val" data-for="x">২.০</span></label><input type="range" class="x" min="0" max="5" step="0.1" value="2"/></div>
+            <div class="calc-control"><label><span>ব্যবধান dx</span><span class="calc-val" data-for="dx">১.০০</span></label><input type="range" class="dx" min="0.01" max="2" step="0.01" value="1"/></div>
+          </div>
+          <div class="calc-stats">
+            <div class="calc-stat"><span>ছেদক ঢাল = 2x + dx</span><strong class="stat-sec">—</strong></div>
+            <div class="calc-stat"><span>স্পর্শক ঢাল = 2x</span><strong class="stat-tan">—</strong></div>
+            <div class="calc-stat"><span>পার্থক্য = dx</span><strong class="stat-err">—</strong></div>
+          </div>
+        </div>`;
+      this._canvas = this.querySelector('.calc-canvas');
+      this._ctx = this._canvas.getContext('2d');
+      this._x = this.querySelector('.x');
+      this._dx = this.querySelector('.dx');
+      const draw = () => this._draw();
+      this._x.addEventListener('input', () => { this.querySelector('[data-for="x"]').textContent = parseFloat(this._x.value).toFixed(1); draw(); });
+      this._dx.addEventListener('input', () => { this.querySelector('[data-for="dx"]').textContent = parseFloat(this._dx.value).toFixed(2); draw(); });
+      window.addEventListener('resize', () => this._resize());
+      window.addEventListener('b1b-fullscreen-change', () => this._resize());
+      this._resize();
+    }
+
+    _resize() {
+      if (!this._canvas) return;
+      const w = this._canvas.parentElement.clientWidth || 900;
+      this._canvas.width = w;
+      this._canvas.height = Math.max(360, Math.min(520, w * 0.46));
+      this._draw();
+    }
+
+    _draw() {
+      const ctx = this._ctx; if (!ctx) return;
+      const W = this._canvas.width, H = this._canvas.height;
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = dark ? '#080b12' : '#f8fafc'; ctx.fillRect(0, 0, W, H);
+
+      const x = parseFloat(this._x.value), dx = parseFloat(this._dx.value);
+      this.querySelector('.stat-sec').textContent = (2 * x + dx).toFixed(3);
+      this.querySelector('.stat-tan').textContent = (2 * x).toFixed(3);
+      this.querySelector('.stat-err').textContent = dx.toFixed(3);
+
+      const ox = 60, oy = H - 50, sx = (W - 110) / 5.2, sy = (H - 100) / 27;
+      const fx = t => ox + t * sx, fy = v => oy - v * sy;
+      ctx.strokeStyle = dark ? '#64748b' : '#334155'; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(ox, 20); ctx.lineTo(ox, oy); ctx.lineTo(W - 30, oy); ctx.stroke();
+
+      ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 3; ctx.beginPath();
+      for (let t = 0; t <= 5.02; t += 0.04) { const px = fx(t), py = fy(t * t); t === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py); }
+      ctx.stroke();
+
+      const x1 = x, x2 = Math.min(5, x + dx), y1 = x1 * x1, y2 = x2 * x2;
+      ctx.fillStyle = 'rgba(56,189,248,.18)'; ctx.beginPath();
+      ctx.moveTo(fx(x1), oy); ctx.lineTo(fx(x1), fy(y1));
+      for (let t = x1; t <= x2; t += 0.02) ctx.lineTo(fx(t), fy(t * t));
+      ctx.lineTo(fx(x2), oy); ctx.closePath(); ctx.fill();
+
+      ctx.strokeStyle = '#fbbf24'; ctx.lineWidth = 2; ctx.beginPath();
+      ctx.moveTo(fx(x1), fy(y1)); ctx.lineTo(fx(x2), fy(y2)); ctx.stroke();
+      ctx.strokeStyle = '#34d399'; ctx.lineWidth = 2; ctx.setLineDash([6, 4]); ctx.beginPath();
+      ctx.moveTo(fx(Math.max(0, x - 0.7)), fy(y1 - 2 * x * 0.7)); ctx.lineTo(fx(Math.min(5, x + 0.7)), fy(y1 + 2 * x * 0.7)); ctx.stroke(); ctx.setLineDash([]);
+
+      ctx.fillStyle = dark ? '#e2e8f0' : '#0f172a'; ctx.font = '13px sans-serif';
+      ctx.fillText('f(x) = x²', fx(2.6), fy(2.6 * 2.6) - 10);
+      ctx.fillText('x = ' + x.toFixed(2), fx(x), oy + 18);
+      ctx.fillStyle = '#fbbf24'; ctx.fillText('ছেদক (secant)', fx(Math.min(4, x + dx)) - 90, fy(y2) - 12);
+      ctx.fillStyle = '#34d399'; ctx.fillText('স্পর্শক (tangent)', fx(Math.max(0, x - 0.7)), fy(y1 - 2 * x * 0.7) - 8);
+    }
+  }
+
+  if (!customElements.get('calc-rings-lab')) customElements.define('calc-rings-lab', CalcRingsLab);
+  if (!customElements.get('calc-slope-lab')) customElements.define('calc-slope-lab', CalcSlopeLab);
+})();
+</script>
+
+</body>
+</html>

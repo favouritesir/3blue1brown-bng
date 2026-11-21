@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>অধ্যায় ০২: প্রথম ক্রমের অন্তরক সমীকরণ ও দিক ক্ষেত্র — পরিবর্তনের জ্যামিতিক মানচিত্র | Essence of Differential Equations</title>
+
+<!-- ═══════════ STYLES (exact L01 order) ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- Lab-only styling (page-local, no library change) -->
+<style>
+  .slope-system-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:12px 0 14px;}
+  .slope-system-btn{display:flex;flex-direction:column;gap:4px;text-align:left;background:var(--bg-card,#171c28);color:var(--text,#e8ecf4);border:1px solid var(--border,#2b3344);border-radius:10px;padding:10px 12px;cursor:pointer;font-family:inherit;font-size:.88rem;line-height:1.5;}
+  .slope-system-btn.active{border-color:var(--theme,#38bdf8);box-shadow:0 0 0 1px var(--theme,#38bdf8) inset;background:rgba(56,189,248,.12);}
+  .slope-system-btn .badge{font-size:.74rem;color:var(--text-muted,#9aa6bd);}
+  .slope-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:8px 0;}
+  .slope-row label{font-size:.86rem;font-weight:600;}
+  .slope-row input[type=range]{width:170px;}
+  .slope-info{font-size:.84rem;color:var(--text-muted,#9aa6bd);margin-top:10px;line-height:1.7;}
+  .formula-caption{font-size:.84rem;color:var(--text-muted,#9aa6bd);margin:6px 0 12px;line-height:1.7;}
+</style>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/differential_equations/lesson_02/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict L01 load order ═══════════
+     1. KaTeX engine  2. Component definitions  3. Page controllers
+     4. Narration engine (last: parses final DOM on DOMContentLoaded) -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR (responsive stepper included) ═══════════ -->
+<b1b-navbar
+  course-title="ডিফারেনশিয়াল সমীকরণ"
+  course-url="../../index.html#differential-equations"
+  home-url="../../index.html"
+  chapter-num="০২"
+  chapter-total="০৬"
+  prev-url="lesson_01.html"
+  prev-title="পূর্ববর্তী অধ্যায়: অধ্যায় ০১ — ডিফারেনশিয়াল সমীকরণ কী?"
+  next-url="lesson_03.html"
+  next-title="পরবর্তী অধ্যায়: অধ্যায় ০৩ — দোলন ও হারমোনিক স্পন্দন"
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="ডিফারেনশিয়াল সমীকরণ"
+  course-url="../../index.html"
+  chapter-label="ডিফারেনশিয়াল সমীকরণ • দ্বিতীয় অধ্যায় — প্রথম ক্রমের অন্তরক সমীকরণ ও দিক ক্ষেত্র"
+  title="অধ্যায় ০২: প্রথম ক্রমের অন্তরক সমীকরণ ও দিক ক্ষেত্র — পরিবর্তনের জ্যামিতিক মানচিত্র"
+  desc="একটি প্রথম ক্রমের সমীকরণ $\frac{dy}{dt} = f(t,y)$ সরাসরি ভবিষ্যৎ বলে দেয় না; এটি কেবল আপনার বর্তমান অবস্থানের ঢাল নির্দিষ্ট করে। সমতল জুড়ে এই ক্ষুদ্র তীরগুলো আঁকলে কীভাবে নদীর স্রোতের মতো জীবন্ত দিক ক্ষেত্র তৈরি হয়? আর কেন সমাধান বক্ররেখা কখনো পরস্পরকে ছেদ করতে পারে না?"
+  video-src="../../media_vault/differential_equations/lesson_02/experiments/3b1b_de_02_full_dubbed.mp4"
+  yt-id="ly4S0oi3Yz8"
+  date="অফিশিয়াল 3Blue1Brown ডিফারেনশিয়াল সমীকরণ সিরিজ · DE2"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM ম্যাথমেটিক্স উইং"
+  github-url="https://www.3blue1brown.com/lessons/differential-equations"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner
+      title="শিক্ষক অডিও বিবরণ ও লাইভ কারাওকে সহকারী"
+      desc="দরদী শিক্ষকের কণ্ঠে প্রতিটি অনুচ্ছেদ, গাণিতিক সূত্র ও চিত্র বিবরণ শুনুন — সাথে রিয়েলটাইম হাইলাইটার ও কন্ট্রোল।"
+      cta="🎙️ শিক্ষকের কণ্ঠে শুনুন">
+    </b1b-narration-banner>
+
+    <b1b-bookmarks>
+      <b1b-bookmark time="0"   time-bn="০০:০০">প্রথম ক্রমের সমীকরণের সংজ্ঞা ও স্থানীয় রূপ</b1b-bookmark>
+      <b1b-bookmark time="116" time-bn="০১:৫৬">বাস্তব জীবনের মডেল: শীতলীকরণ ও জনসংখ্যা বৃদ্ধি</b1b-bookmark>
+      <b1b-bookmark time="236" time-bn="০৩:৫৬">দিক ক্ষেত্র বা স্লোপ ফিল্ডের জ্যামিতিক নির্মাণ</b1b-bookmark>
+      <b1b-bookmark time="363" time-bn="০৬:০৩">নদীর স্রোতের রূপক ও সমাধান বক্ররেখা পরিবার</b1b-bookmark>
+      <b1b-bookmark time="363" time-bn="০৬:০৩">স্বায়ত্তশাসিত ব্যবস্থা ও চলক পৃথকীকরণ</b1b-bookmark>
+      <b1b-bookmark time="363" time-bn="০৬:০৩">আদি মান সমস্যা ও পিকার্ড-লিন্ডেলফ অনন্যতা</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-first-order-intro">১. প্রথম ক্রমের অন্তরক সমীকরণ ও তার সাধারণ রূপ</a>
+      <a href="#sec-slope-field-intuition">২. দিক ক্ষেত্র বা স্লোপ ফিল্ডের জ্যামিতিক অন্তর্দৃষ্টি</a>
+      <a href="#sec-integral-curves">৩. সমাধান বক্ররেখা ও ইন্টিগ্রেশন কার্ভ পরিবার</a>
+      <a href="#sec-ivp-uniqueness">৪. আদি মান সমস্যা ও সমাধান বক্ররেখার অনন্যতা</a>
+      <a href="#sec-interactive-lab">৫. ইন্টারেক্টিভ দিক ক্ষেত্র ও সমাধান রেখা ল্যাব</a>
+      <a href="#sec-quizzes">৬. ধারণা যাচাই ও বহুনির্বাচনী কুইজ</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <!-- ═══ Section 1 — NARRATED (manifest: sec-first-order-intro · 8 cues) ═══ -->
+      <b1b-section id="sec-first-order-intro" title="১. প্রথম ক্রমের অন্তরক সমীকরণ ও তার সাধারণ রূপ (First-Order ODEs &amp; Canonical Forms)">
+
+        <b1b-quote author="লেওনার্ড অয়লার">গণিতবিদ লেওনার্ড অয়লারের দৃষ্টিভঙ্গি: ক্যালকুলাস হলো পরিবর্তনের গণিত, আর প্রথম ক্রমের অন্তরক সমীকরণ হলো প্রকৃতির পদক্ষেপের সবচেয়ে আদি ও মৌলিক নিয়ম।</b1b-quote>
+
+        <p>শিক্ষার্থী বন্ধুরা, ডিফারেনশিয়াল সমীকরণের প্রথম অধ্যায়ে আমরা জেনেছি সমীকরণের অজানা রাশি কীভাবে একটি গতিশীল ফাংশন $y(t)$ হতে পারে। আজ আমরা প্রবেশ করব প্রথম ক্রমের অন্তরক সমীকরণ বা ফার্স্ট অর্ডার ওডিই-এর মূল জগতে।</p>
+
+        <p>কোনো সমীকরণকে প্রথম ক্রমের বলা হয় তখনই, যখন তাতে পরিবর্তনশীল ফাংশনের সর্বোচ্চ কেবল প্রথম অন্তরজ বা ডেরিভেটিভ উপস্থিত থাকে। অর্থাৎ সমীকরণে $\frac{dy}{dt}$ থাকে, কিন্তু $\frac{d^2y}{dt^2}$ বা তার চেয়ে উচ্চতর কোনো অন্তরজ থাকে না।</p>
+
+        <b1b-formula math="\frac{dy}{dt} = f(t, y) \quad \text{অথবা} \quad \frac{dy}{dx} = f(x, y)"></b1b-formula>
+        <div class="formula-caption">প্রথম ক্রমের সাধারণ স্পষ্ট রূপ (First-Order Explicit Form) — সমতলের প্রতিটি বিন্দুতে ঢাল কত, তা একক একটি ফাংশন $f$ নির্ধারণ করে।</div>
+
+        <p>এই সাধারণ সূত্রের অন্তর্নিহিত দর্শনটি অত্যন্ত গভীর: আপনি যখন কোনো নির্দিষ্ট সময় $t$ এবং অবস্থায় $y$-এ অবস্থান করছেন, সমীকরণটি আপনাকে তাৎক্ষণিকভাবে বলে দেবে যে ঠিক ওই বিন্দুতে পরিবর্তনের হার বা ঢাল কত হবে।</p>
+
+        <b1b-callout type="blue" icon="🌡️" title="বাস্তব জগতের প্রথম ক্রমের ব্যবস্থা">
+          <p>এক কাপ গরম কফির শীতলীকরণ, ব্যাকটেরিয়ার অবাধ প্রজনন ($\frac{dy}{dt} = ry$), তেজস্ক্রিয় পরমাণুর ক্ষয় ($\frac{dN}{dt} = -\lambda N$), এবং বৈদ্যুতিক আর-সি (RC) সার্কিটের চার্জিং—সবকিছুই প্রথম ক্রমের সমীকরণের নিখুঁত বাস্তব উদাহরণ। নিউটনের শীতলীকরণ সূত্রটি লিখতে পারি $\frac{dT}{dt} = -k(T - T_{\text{ambient}})$ আকারে: পরিবর্তনের হার পরিপার্শ্বের সাথে তাপমাত্রার পার্থক্যের সমানুপাতিক, আর ঋণাত্মক চিহ্নটি বলে দেয় তাপমাত্রা কমতে থাকে।</p>
+        </b1b-callout>
+
+        <p>কিন্তু সমীকরণ লেখার পর শিক্ষার্থী ও বিজ্ঞানীরা সবচেয়ে বড় যে বাধার সম্মুখীন হন তা হলো: কীভাবে এর সমাধান বের করব? প্রচলিত বীজগণিতে আমরা সূত্রের পেছনে ছুটি, কিন্তু থ্রি ব্লু ওয়ান ব্রাউনের দর্শন হলো—সূত্রের আগে জ্যামিতিক দৃষ্টিতে পরিবর্তনের পুরো মাঠটি অবলোকন করা।</p>
+
+      </b1b-section>
+
+      <!-- ═══ Section 2 — NARRATED (manifest: sec-slope-field-intuition · 8 cues) ═══ -->
+      <b1b-section id="sec-slope-field-intuition" title="২. দিক ক্ষেত্র বা স্লোপ ফিল্ডের জ্যামিতিক অন্তর্দৃষ্টি (Geometric Intuition of Slope Fields)">
+
+        <b1b-quote author="গ্রান্ট স্যান্ডারসন (3Blue1Brown)">সমীকরণের জটিল বীজগণিতীয় সমাধান খোঁজার আগে, সমতল জুড়ে পরিবর্তনের ঢালগুলোকে জ্যামিতিক তীর হিসেবে আঁকুন—পুরো সমীকরণ নিজেই এক জীবন্ত ভেক্টর ফিল্ডে রূপ নেবে।</b1b-quote>
+
+        <p>কল্পনা করুন একটি দ্বি-মাত্রিক কার্তেসীয় তল; যার অনুভূমিক অক্ষে সময় $t$ বা $x$ এবং উলম্ব অক্ষে পরিবর্তনশীল রাশি $y$।</p>
+
+        <p>সমীকরণ $\frac{dy}{dt} = f(t, y)$ আমাদের বলে: সমতলের যেকোনো বিন্দু $(t, y)$-এ সমাধান রেখার স্পর্শকের ঢাল কত হবে। এখন আমরা যদি গ্রিডের প্রতিটি বিন্দুতে একটি করে অতি ক্ষুদ্র রেখাংশ আঁকি, যার ঢাল হবে $f(t, y)$—তবে কী ঘটবে?</p>
+
+        <b1b-figure alt="দিক ক্ষেত্র: সমতল জুড়ে অঙ্কিত ক্ষুদ্র স্পর্শক তীরের গ্রিড" caption="এই চিত্রে সমতলের প্রতিটি গ্রিড-বিন্দুতে একটিকরে ছোট তীর আঁকা হয়েছে, যার ঢাল ওই বিন্দুতে $f(t,y)$-এর মান। বাঁদিকে তীরগুলো সামান্য ঊর্ধ্বমুখী, ডানদিকে ক্রমশ খাড়া হয়ে উঠছে—অর্থাৎ ঢাল কেবল অবস্থানের ওপর নির্ভর করছে। এই তীরসমূহের সমুদ্রই হলো স্লোপ ফিল্ড বা দিক ক্ষেত্র; সমাধান বক্ররেখাকে এদের দিক ধরে এগোতেই হবে।">
+          <svg viewBox="0 0 560 320" role="img" aria-label="Slope field grid of tangent segments" style="background:#0b0c12;width:100%;height:auto;">
+            <line x1="280" y1="14" x2="280" y2="306" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+            <line x1="18" y1="160" x2="542" y2="160" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+            <g stroke="#38bdf8" stroke-width="1.6" fill="none" opacity="0.85">
+              <path d="M 46 142 l 12 -3 M 96 140 l 12 -6 M 146 136 l 12 -9 M 196 130 l 12 -12 M 306 184 l 12 12 M 356 178 l 12 9 M 406 176 l 12 6 M 456 174 l 12 3 M 506 173 l 12 1"/>
+              <path d="M 46 186 l 12 3 M 96 182 l 12 6 M 146 178 l 12 9 M 196 172 l 12 12 M 306 128 l 12 -12 M 356 134 l 12 -9 M 406 138 l 12 -6 M 456 140 l 12 -3 M 506 141 l 12 -1"/>
+              <path d="M 46 238 l 12 -8 M 146 226 l 12 -14 M 246 206 l 12 -18 M 356 196 l 12 14 M 456 212 l 12 8"/>
+              <path d="M 46 84 l 12 8 M 146 96 l 12 14 M 246 116 l 12 18 M 356 124 l 12 -14 M 456 108 l 12 -8"/>
+            </g>
+            <g stroke="#10b981" stroke-width="2.6" fill="none">
+              <path d="M 40 236 Q 160 190 280 160 Q 400 130 520 84"/>
+            </g>
+            <circle cx="280" cy="160" r="4" fill="#f0f6fc"/>
+            <text x="290" y="158" fill="#f0f6fc" font-size="14">t</text>
+            <text x="284" y="34" fill="#f0f6fc" font-size="14">y</text>
+            <text x="36" y="306" fill="#8b949e" font-size="13">চিত্র ১: স্লোপ ফিল্ডের গ্রিড ও একটি সমাধান বক্ররেখা (সবুজ)</text>
+          </svg>
+        </b1b-figure>
+
+        <p>পুরো সমতলটি তখন ভরে উঠবে লক্ষ লক্ষ ছোট ছোট স্পর্শক তীরের এক সুবিশাল সমুদ্রে! এই জ্যামিতিক ক্যানভাসটিকেই বলা হয় দিক ক্ষেত্র বা স্লোপ ফিল্ড (Slope Field)।</p>
+
+        <b1b-callout type="gold" icon="🧭" title="স্বায়ত্তশাসিত সমীকরণ বা অটোনোমাস সিস্টেম (Autonomous Systems)">
+          <p>যদি ঢাল $f$ কেবল $y$-এর ওপর নির্ভর করে, যেমন $\frac{dy}{dt} = y$, তবে যেকোনো অনুভূমিক সরলরেখা বরাবর সমস্ত তীরের ঢাল অবিকল একই থাকে—কারণ সেখানে $t$-এর কোনো প্রভাব নেই। আবার যদি ঢাল কেবল $t$-এর ওপর নির্ভর করে, যেমন $\frac{dy}{dt} = t$, তবে যেকোনো উলম্ব রেখা বরাবর সমস্ত তীরের ঢাল এক থাকে। স্থানীয় স্পর্শক ঢালকে লেখা যায় $m(t, y) = \left.\frac{dy}{dt}\right|_{(t,y)} = f(t, y)$; আর একক স্পর্শক ভেক্টর $\vec{v}(t,y) = \frac{1}{\sqrt{1+[f(t,y)]^2}}\begin{bmatrix} 1 \\ f(t,y) \end{bmatrix}$—অর্থাৎ সমীকরণটি আসলে একটি ভেক্টর ক্ষেত্র।</p>
+        </b1b-callout>
+
+        <p>স্লোপ ফিল্ড দেখার পর সমীকরণ আর কোনো বিমূর্ত সংকেত থাকে না; এটি পরিণত হয় একটি স্থির প্রবাহচিত্র বা দিক নির্দেশক কম্পাসের মহাসমুদ্রে।</p>
+
+        <!-- b1b-media-tab: image / video figure for the slope-field flow -->
+        <b1b-media-tab active-tab="image" caption="বাঁয়ে স্থির চিত্রে দেখা যাচ্ছে কীভাবে ছোট তীরগুলো একটি নির্দিষ্ট দিকে প্রবাহ তৈরি করে; প্রতিটি তীর ওই বিন্দুর স্পর্শকের ঢাল $f(t,y)$ নির্দেশ করছে। লক্ষ্য করুন তীর্গুলোর দিক ধীরে ধীরে ঘুরে যাচ্ছে—অর্থাৎ ঢাল অবস্থানের সাথে পরিবর্তিত হচ্ছে। ডানে 'Video' ট্যাবে বাংলা ডাবড 3B1B অ্যানিমেশনটি চালিয়ে একই প্রবাহচিত্র গতিশীলভাবে দেখা যাবে।">
+          <div slot="image">
+            <svg viewBox="0 0 560 250" role="img" aria-label="Slope field vector arrows close-up" style="background:#0b0c12;width:100%;height:auto;">
+              <rect width="560" height="250" fill="#0b0c12"/>
+              <g stroke="#38bdf8" stroke-width="2" fill="none" opacity="0.9">
+                <path d="M 60 190 l 22 -4 M 120 180 l 22 -8 M 180 168 l 22 -12 M 240 154 l 22 -16 M 300 138 l 22 -18 M 360 124 l 22 -14 M 420 112 l 22 -9 M 480 104 l 22 -4"/>
+                <path d="M 60 210 l 22 4 M 120 204 l 22 8 M 180 196 l 22 12 M 240 186 l 22 16 M 300 176 l 22 18 M 360 166 l 22 14 M 420 156 l 22 9 M 480 150 l 22 4"/>
+              </g>
+              <path d="M 40 214 Q 200 168 320 124 Q 440 86 540 96" fill="none" stroke="#10b981" stroke-width="3"/>
+              <circle cx="300" cy="167" r="6" fill="#f6ad55"/>
+              <text x="312" y="160" fill="#f6ad55" font-size="14">$(t_0,y_0)$</text>
+              <text x="34" y="32" fill="#8b949e" font-size="13">প্রতিটি তীর = ওই বিন্দুর স্থানীয় স্পর্শক $\vec{v}(t,y)$</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/differential_equations/lesson_02/experiments/3b1b_de_02_full_dubbed.mp4"></video></div>
+        </b1b-media-tab>
+
+      </b1b-section>
+
+      <!-- ═══ Section 3 — NARRATED (manifest: sec-integral-curves · 8 cues) ═══ -->
+      <b1b-section id="sec-integral-curves" title="৩. সমাধান বক্ররেখা ও ইন্টিগ্রেশন কার্ভ পরিবার (Integral Curves &amp; Families of Solutions)">
+
+        <b1b-quote author="৩ব্লু১ব্রাউন — ডিফারেনশিয়াল সমীকরণ সিরিজ">স্লোপ ফিল্ড হলো নদীর জলের স্থির স্রোতের মানচিত্র; আর সমীকরণের সমাধান হলো সেই জলে ভাসিয়ে দেওয়া একটি শুকনো পাতার প্রাকৃতিক গতিপথ।</b1b-quote>
+
+        <p>এখন ভাবুন, আপনি এই স্লোপ ফিল্ডের সমতলে যেকোনো একটি নির্দিষ্ট বিন্দুতে পেনসিলের ডগা রাখলেন। তারপর চারপাশের ছোট ছোট তীরগুলোর নির্দেশিত দিক অনুসরণ করে পেনসিলটিকে মসৃণভাবে এগিয়ে নিয়ে চললেন।</p>
+
+        <p>আপনি যে বক্ররেখাটি আঁকলেন, গণিতের ভাষায় তাকে বলা হয় সমাধান বক্ররেখা বা ইন্টিগ্রেশন কার্ভ (Integral Curve)। এই বক্ররেখাটির বিশেষত্ব হলো: এর প্রতিটি বিন্দুতে স্পর্শক আঁকলে তা অবিকল ওই বিন্দুর স্লোপ ফিল্ডের তীরের সাথে সমান্তরাল হবে!</p>
+
+        <b1b-formula math="\frac{dy}{dt} = y \implies \int \frac{dy}{y} = \int dt \implies \ln|y| = t + C_0 \implies y(t) = C e^t"></b1b-formula>
+        <div class="formula-caption">চলক পৃথকীকরণ এবং এক্সপোনেনশিয়াল সমাধান পরিবারের বীজগাণিতিক উদ্ভব।</div>
+
+        <b1b-figure alt="বিভিন্ন C-এর জন্য এক্সপোনেনশিয়াল সমাধান বক্ররেখার পরিবার" caption="এই ছবিতে একই স্লোপ ফিল্ডের ওপর দিয়ে বয়ে যাওয়া বেশ কয়েকটি সবুজ বক্ররেখা দেখা যাচ্ছে—প্রতিটি একটি নির্দিষ্ট $C$-এর জন্য $y(t)=Ce^t$। লক্ষ্য করুন বক্রগুলো পরস্পরের সমান্তরালে বয়ে চলে এবং কখনোই ছেদ করে না; কারণ প্রতিটি বিন্দুতে ক্ষেত্রের তীর কেবল একটিমাত্র দিক নির্দেশ করে। নিচের বক্রগুলো $C<0$, উপরেরগুলো $C>0$, আর মাঝখানের $y=0$ রেখাটি হলো সাম্যাবস্থা।">
+          <svg viewBox="0 0 560 320" role="img" aria-label="Family of exponential integral curves" style="background:#0b0c12;width:100%;height:auto;">
+            <rect width="560" height="320" fill="#0b0c12"/>
+            <line x1="280" y1="12" x2="280" y2="308" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+            <line x1="14" y1="160" x2="546" y2="160" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+            <g stroke="#38bdf8" stroke-width="1.2" fill="none" opacity="0.5">
+              <path d="M 60 176 l 14 -2 M 120 174 l 14 -5 M 180 168 l 14 -9 M 240 160 l 14 -13 M 320 150 l 14 13 M 380 158 l 14 9 M 440 166 l 14 5 M 500 172 l 14 2"/>
+              <path d="M 60 148 l 14 2 M 120 150 l 14 5 M 180 156 l 14 9 M 240 164 l 14 13 M 320 174 l 14 -13 M 380 166 l 14 -9 M 440 158 l 14 -5 M 500 152 l 14 -2"/>
+            </g>
+            <g stroke="#10b981" stroke-width="2.5" fill="none">
+              <path d="M 60 250 Q 190 248 280 240 Q 400 226 520 198"/>
+              <path d="M 60 212 Q 190 204 280 190 Q 400 166 520 120"/>
+              <path d="M 60 178 Q 190 172 280 160 Q 400 140 520 78"/>
+              <path d="M 60 108 Q 190 106 280 96 Q 400 74 520 28"/>
+              <path d="M 60 160 L 520 160" stroke-dasharray="6 6" opacity="0.7"/>
+            </g>
+            <text x="286" y="26" fill="#f0f6fc" font-size="14">y</text>
+            <text x="524" y="176" fill="#f0f6fc" font-size="14">t</text>
+            <text x="30" y="306" fill="#8b949e" font-size="13">চিত্র ২: $C$-এর বিভিন্ন মানের জন্য ইন্টিগ্রেশন কার্ভের পরিবার</text>
+          </svg>
+        </b1b-figure>
+
+        <b1b-callout type="gold" icon="🌊" title="🌊 খরস্রোতা নদী ও ভাসমান পাতার রূপক">
+          <p>স্লোপ ফিল্ড হলো নদীর জলের স্থির স্রোতের মানচিত্র; আর সমীকরণের সমাধান হলো সেই জলে ভাসিয়ে দেওয়া একটি শুকনো পাতার প্রাকৃতিক গতিপথ। ভিন্ন ভিন্ন আদি শর্ত থেকে শুরু করলে পাতাটি ভিন্ন পথ ধরবে, যা সমীকরণের সমাধানের পরিবার তৈরি করে। গাণিতিকভাবে এই পরিবার $y(t; C) = C e^t \quad (C \in \mathbb{R})$ দিয়ে লেখা হয়—সমাকলন ধ্রুবক $C$-এর প্রতিটি মানই একটিমাত্র স্বতন্ত্র বক্ররেখা নির্বাচন করে দেয়।</p>
+        </b1b-callout>
+
+        <p>আপনি যেখান থেকেই শুরু করুন না কেন, সমীকরণের নিয়মটি আপনাকে একটি স্বতন্ত্র মসৃণ ট্র্যাজেক্টরি ধরে এগিয়ে নিয়ে যাবে।</p>
+
+      </b1b-section>
+
+      <!-- ═══ Section 4 — NARRATED (manifest: sec-ivp-uniqueness · 8 cues) ═══ -->
+      <b1b-section id="sec-ivp-uniqueness" title="৪. আদি মান সমস্যা ও সমাধান বক্ররেখার অনন্যতা (Initial Value Problems &amp; Uniqueness)">
+
+        <b1b-quote author="পিকার্ড–লিন্ডেলফ উপপাদ্য">মসৃণ নিয়মের জগতে প্রতিটি আদি শর্ত একটি এবং কেবল একটিমাত্র সুনির্দিষ্ট ভবিষ্যতের জন্ম দেয়; সমাধান বক্ররেখা কখনো পরস্পরকে ছেদ করতে পারে না।</b1b-quote>
+
+        <p>বাস্তব জগতে বিজ্ঞানীদের একটি সুনির্দিষ্ট ভবিষ্যৎ জানতে হয়। যেমন, আজ সকালে কফির তাপমাত্রা ছিল ৮০ ডিগ্রি সেলসিয়াস; ১০ মিনিট পর এর তাপমাত্রা ঠিক কত হবে?</p>
+
+        <p>এই নির্দিষ্ট তথ্যটিকে বলা হয় আদি শর্ত বা ইনিশিয়াল কন্ডিশন: $y(t_0) = y_0$। যখন একটি ডিফারেনশিয়াল সমীকরণের সাথে একটি নির্দিষ্ট আদি শর্ত জুড়ে দেওয়া হয়, তখন তাকে বলা হয় আদি মান সমস্যা বা ইনিশিয়াল ভ্যালু প্রবলেম—সংক্ষেপে আইভিপি (IVP)।</p>
+
+        <b1b-formula math="\begin{cases} \dfrac{dy}{dt} = f(t, y) \\[6pt] y(t_0) = y_0 \end{cases} \implies y(t) = y_0 e^{k(t - t_0)} \quad (\text{অনন্য সমাধান})"></b1b-formula>
+        <div class="formula-caption">আদি মান সমস্যা (IVP) এবং তার একক অনন্য সমাধান — আদি বিন্দুটি পুরো পরিবার থেকে ঠিক একটি বক্ররেখা বেছে নেয়।</div>
+
+        <p>জ্যামিতিকভাবে চিন্তা করুন: সমতলে অগণিত বক্ররেখার ঝাঁক ভেসে বেড়াচ্ছে। আদি শর্ত নির্ধারণ করা মানে হলো সমতলে একটি সুনির্দিষ্ট বিন্দুতে একটি পিন বা পেরেক গেঁথে দেওয়া। এই পিনটি পুরো পরিবারের মধ্য থেকে কেবল একটিমাত্র বক্ররেখাকে নির্বাচিত করে দেয়!</p>
+
+        <b1b-callout type="purple" icon="📌" title="সমাধান বক্ররেখার অলঙ্ঘনীয় নীতি">
+          <p>স্লোপ ফিল্ডের ভেতর দুটি ভিন্ন সমাধান বক্ররেখা কখনো একে অপরকে ছেদ বা ক্রস করতে পারে না! কারণ সমতলের প্রতিটি বিন্দুতে সমীকরণটি একটি এবং কেবল একটি নির্দিষ্ট ঢাল নির্ধারণ করে। যদি দুটি রেখা একে অপরকে ছেদ করত, তবে সেই ছেদবিন্দুতে একই সাথে দুটি ভিন্ন ঢাল থাকতে হতো—যা গণিতীয়ভাবে অসম্ভব। পিকার্ড-লিন্ডেলফের লিপশিৎস শর্ত $\left|\frac{\partial f}{\partial y}\right| \le L < \infty$ এই অনন্যতার গাণিতিক গ্যারান্টি দেয়: যতক্ষণ $f$ মসৃণ, ততক্ষণ একক আদি শর্ত থেকে একটিমাত্র সমাধানই বের হবে।</p>
+        </b1b-callout>
+
+        <p>আর এই জ্যামিতিক স্লোপ ফিল্ডের তীর ধরে ধাপে ধাপে এগিয়ে যাওয়াই হলো কম্পিউটার সিমুলেশনের সবচেয়ে বিখ্যাত অ্যালগরিদম—অয়লারের পদ্ধতি। স্লোপ ফিল্ডই প্রথম ক্রমের সমীকরণকে কেবল ফর্মুলার বন্দিদশা থেকে মুক্ত করে প্রকৃতির জীবন্ত চলচিত্রে রূপ দান করে।</p>
+
+        <!-- b1b-media-tab: initial condition selecting one unique integral curve -->
+        <b1b-media-tab active-tab="image" caption="স্থির চিত্রে কমলা বিন্দুটি হলো আদি শর্ত $(t_0,y_0)$—একটি পিনের মতো গেঁথে দেওয়া হয়েছে। লক্ষ্য করুন এই একক বিন্দু দিয়ে বয়ে যাওয়া শুধু একটি সবুজ বক্ররেখা; কাছের অন্য বক্রগুলো তার পাশ দিয়ে বয়ে গেলেও কখনো তাকে ছেদ করে না। ডানের Video ট্যাবে বাংলা ডাবড অ্যানিমেশনে একই অনন্যতার ধারণা দেখা যাবে।">
+          <div slot="image">
+            <svg viewBox="0 0 560 250" role="img" aria-label="Initial condition selecting one unique solution curve" style="background:#0b0c12;width:100%;height:auto;">
+              <rect width="560" height="250" fill="#0b0c12"/>
+              <line x1="280" y1="10" x2="280" y2="240" stroke="rgba(255,255,255,0.25)"/>
+              <line x1="16" y1="125" x2="544" y2="125" stroke="rgba(255,255,255,0.25)"/>
+              <g stroke="rgba(116,192,227,0.55)" stroke-width="1.2" fill="none">
+                <path d="M 60 150 l 14 -3 M 120 145 l 14 -6 M 180 138 l 14 -10 M 240 128 l 14 -13 M 320 116 l 14 13 M 380 126 l 14 10 M 440 136 l 14 6 M 500 144 l 14 3"/>
+              </g>
+              <g stroke="#64748b" stroke-width="2" fill="none" opacity="0.75">
+                <path d="M 60 196 Q 200 190 280 176 Q 400 156 520 118"/>
+                <path d="M 60 60 Q 200 64 280 72 Q 400 90 520 126"/>
+              </g>
+              <path d="M 60 132 Q 200 128 280 125 Q 400 116 520 86" fill="none" stroke="#10b981" stroke-width="3.4"/>
+              <circle cx="280" cy="125" r="7" fill="#f6ad55"/>
+              <text x="292" y="118" fill="#f6ad55" font-size="14">$(t_0,y_0)$</text>
+              <text x="26" y="236" fill="#8b949e" font-size="13">চিত্র ৩: আদি বিন্দুতে পিন গেঁথে একটিমাত্র সমাধান নির্বাচন</text>
+            </svg>
+          </div>
+          <div slot="video"><video controls preload="none" src="../../media_vault/differential_equations/lesson_02/experiments/3b1b_de_02_full_dubbed.mp4"></video></div>
+        </b1b-media-tab>
+
+      </b1b-section>
+
+      <!-- ═══ Section 5 — NON-NARRATED interactive slope-field lab ═══ -->
+      <b1b-section id="sec-interactive-lab" title="৫. ইন্টারেক্টিভ দিক ক্ষেত্র ও সমাধান রেখা ল্যাব" data-no-narration="true">
+
+        <p>ইন্টারেক্টিভ ল্যাব: দিক ক্ষেত্র ও সমাধান রেখা সিমুলেটর। ক্যানভাসে ক্লিক করে যেকোনো বিন্দুকে আদি শর্ত $(t_0, y_0)$ হিসেবে নির্ধারণ করুন। কণা কীভাবে স্লোপ ফিল্ডের তীর ধরে ইন্টিগ্রেশন কার্ভ এঁকে এগিয়ে যায় তা সরাসরি পর্যবেক্ষণ করুন।</p>
+
+        <b1b-formula math="m(t,y) = f(t,y) \quad \Longrightarrow \quad y_{n+1} = y_n + f(t_n,y_n)\,\Delta t"></b1b-formula>
+        <div class="formula-caption">দিক ক্ষেত্রের স্থানীয় ঢাল $m=f(t,y)$ এবং অয়লারের পদক্ষেপ—প্রতিটি ছোট ধাপে তীরের দিক ধরে এগিয়ে সমাধান বক্ররেখা আঁকা হয়।</div>
+
+        <b1b-callout type="blue" icon="🕹️" title="ল্যাব ব্যবহারের নির্দেশিকা">
+          <p>১. নিচের চারটি বাটন থেকে যেকোনো ডিফারেনশিয়াল সমীকরণ বেছে নিন (ডিফল্ট: লজিস্টিক বৃদ্ধি)।<br/>২. ক্যানভাসের যেকোনো বিন্দুতে ক্লিক বা ড্র্যাগ করুন—ওই বিন্দুটি আদি শর্ত হয়ে যাবে এবং তীর ধরে একটি সমাধান রেখা এঁকে যাবে।<br/>৩. 'পদক্ষেপের আকার dt' ও 'তীরের ঘনত্ব' স্লাইডার ঘুরিয়ে দেখুন কীভাবে অয়লারের আসন্নায়ন ও ক্ষেত্রের রূপ পাল্টায়। 'বীজ ছড়াও' দিয়ে একসাথে অনেক বক্ররেখা দেখুন; 'পরিষ্কার' দিয়ে রেখা মুছুন।</p>
+        </b1b-callout>
+
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <div class="viz-wrapper" id="deL02VizWrapper">
+            <div class="viz-header">
+              <div class="viz-header-left"><span>🔬 দিক ক্ষেত্র ও ইন্টিগ্রেশন কার্ভ সিমুলেটর — ক্যানভাসে ক্লিক করুন!</span></div>
+            </div>
+            <div class="viz-canvas-container" style="position:relative;">
+              <canvas class="viz-canvas" id="deL02Canvas" style="cursor:crosshair;"></canvas>
+            </div>
+            <div class="viz-controls">
+              <div style="margin-bottom:6px;font-size:.9rem;color:var(--text-muted);"><strong>ডিফারেনশিয়াল সমীকরণ নির্বাচন করুন:</strong></div>
+              <div class="slope-system-grid">
+                <button type="button" class="slope-system-btn" data-sys="exp_growth"><span>১. dy/dt = y</span><span class="badge">এক্সপোনেনশিয়াল বৃদ্ধি</span></button>
+                <button type="button" class="slope-system-btn" data-sys="cooling"><span>২. dy/dt = −0.5(y − 2)</span><span class="badge">শীতলীকরণ</span></button>
+                <button type="button" class="slope-system-btn active" data-sys="logistic"><span>৩. dy/dt = y(1 − y)</span><span class="badge">লজিস্টিক জনসংখ্যা (ডিফল্ট)</span></button>
+                <button type="button" class="slope-system-btn" data-sys="sine_drift"><span>৪. dy/dt = sin(t) − y</span><span class="badge">পর্যায়বৃত্ত প্রবাহ</span></button>
+              </div>
+              <div class="slope-row">
+                <button type="button" class="viz-tool-btn" id="deL02Seed" style="background:var(--theme);color:#000;font-weight:bold;">🌀 বীজ ছড়াও</button>
+                <button type="button" class="viz-tool-btn" id="deL02Clear">🗑️ ট্রেইল পরিষ্কার</button>
+                <label>পদক্ষেপের আকার dt — <span id="deL02DtVal">০.০৫</span>
+                  <input type="range" id="deL02Dt" min="0.01" max="0.2" step="0.01" value="0.05"/>
+                </label>
+                <label>তীরের ঘনত্ব — <span id="deL02DensityVal">১৮</span>
+                  <input type="range" id="deL02Density" min="10" max="30" step="2" value="18"/>
+                </label>
+              </div>
+            </div>
+            <div class="slope-info" id="deL02Info">সিস্টেম: dy/dt = y(1 − y) | সক্রিয় সমাধান রেখা: ০ | dt = ০.০৫ | ঘনত্ব = ১৮</div>
+          </div>
+        </b1b-fullscreen>
+
+      </b1b-section>
+
+      <!-- ═══ Section 6 — NON-NARRATED quizzes + reference ═══ -->
+      <b1b-section id="sec-quizzes" title="৬. ধারণা যাচাই ও বহুনির্বাচনী কুইজ" data-no-narration="true">
+
+        <p>নিচের কুইজগুলো অফিশিয়াল ৩ব্লু১ব্রাউন লেসনের ধারণা যাচাই থেকে নেওয়া। প্রতিটি প্রশ্নের সাথে সমৃদ্ধ বাংলা ফিডব্যাক দেওয়া আছে — উত্তর বাছাই করে 'যাচাই করো' টিপুন।</p>
+
+        <b1b-callout type="gold" icon="🎯" title="অধ্যায়ের মূল বার্তা (Key Takeaway)">
+          <p>প্রথম ক্রমের ডিফারেনশিয়াল সমীকরণ জ্যামিতিকভাবে সমতলে একটি দিক ক্ষেত্র বা স্লোপ ফিল্ড তৈরি করে; সমাধান বক্ররেখা হলো সেই ক্ষেত্রে স্পর্শক হয়ে বয়ে চলা ইন্টিগ্রেশন কার্ভ। আদি শর্ত নির্দিষ্ট করলে একটি অনন্য সমাধান বক্ররেখা নির্বাচিত হয়।</p>
+        </b1b-callout>
+
+        <b1b-quiz
+          question="❓ ১. একটি ডিফারেনশিয়াল সমীকরণকে 'প্রথম ক্রমের' (First Order) বলার মূল ভিত্তি কী?"
+          correct="1"
+          correct-msg="চমৎকার! সমীকরণে সর্বোচ্চ কতবার অন্তরীকরণ করা হয়েছে তাই নির্ধারণ করে তার ক্রম বা Order। প্রথম ক্রমের সমীকরণে কেবল $\frac{dy}{dt}$ থাকে, কোনো দ্বিতীয় বা উচ্চতর ডেরিভেটিভ থাকে না।"
+          wrong-msg="ভুল! মনে রেখো—ক্রম (Order) ঠিক করা হয় অজানা ফাংশনের সর্বোচ্চ ডেরিভেটিভ দিয়ে, চলকের ঘাত বা পদের সংখ্যা দিয়ে নয়। 'রৈখিক' (Linear) হওয়া আর 'প্রথম ক্রম' হওয়া একই কথা নয়; আর প্রথম ক্রমের সমীকরণের সমাধান এক্সপোনেনশিয়াল, সাইন বা যেকোনো জটিল বক্ররেখা হতে পারে—সরলরেখা হওয়ার কোনো বাধ্যবাধকতা নেই।"
+          reveal-msg="ডিফারেনশিয়াল সমীকরণের ক্রম বা Order নির্ধারিত হয় তাতে উপস্থিত সর্বোচ্চ ডেরিভেটিভের মাধ্যমে। প্রথম ক্রমের সমীকরণে কেবল $\frac{dy}{dt}$ থাকে, কোনো দ্বিতীয় বা উচ্চতর ডেরিভেটিভ থাকে না।">
+          <div slot="option">সমীকরণে চলকগুলোর সর্বোচ্চ ঘাত এক হতে হবে</div>
+          <div slot="option">সমীকরণে উপস্থিত অজানা ফাংশনের সর্বোচ্চ ডেরিভেটিভ কেবল প্রথম অন্তরজ (dy/dt)</div>
+          <div slot="option">সমীকরণে কেবল একটিমাত্র পদ থাকবে</div>
+          <div slot="option">এর সমাধান সর্বদা সরলরেখা হবে</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ২. দিক ক্ষেত্র বা স্লোপ ফিল্ডে (Slope Field) কোনো বিন্দুতে ঢাল $\frac{dy}{dt} = 0$ হলে ওই স্থানে তীরের চেহারা কেমন হবে?"
+          correct="2"
+          correct-msg="নিখুঁত উত্তর! ঢাল শূন্য হওয়ার অর্থ রেখাটি অনুভূমিক, যা ব্যবস্থার সাম্যাবস্থা বা ইকুইলিব্রিয়াম নির্দেশ করে। ডেরিভেটিভ $\frac{dy}{dt}$ স্পর্শকের ঢাল নির্দেশ করে—ঢাল শূন্য মানে ওই মুহূর্তে মানের কোনো পরিবর্তন নেই।"
+          wrong-msg="ভুল! উল্লম্ব রেখার ঢাল অসীম, ৪৫ ডিগ্রি ঢালের মান ১—কোনোটিই শূন্য নয়। আর দিক ক্ষেত্রে প্রতিটি বিন্দুতে একটি স্পর্শক রেখাংশ আঁকা হয়, তাই 'কোনো দিক নেই' এমন কিছু হয় না। ঢাল শূন্য হলে স্পর্শক পুরোপুরি অনুভূমিক হয়।"
+          reveal-msg="ডেরিভেটিভ $\frac{dy}{dt}$ স্পর্শকের ঢাল নির্দেশ করে। ঢাল শূন্য হলে স্পর্শক রেখাটি পুরোপুরি অনুভূমিক হয়; অর্থাৎ ওই মুহূর্তে মানের কোনো পরিবর্তন হয় না।">
+          <div slot="option">খাড়া উল্লম্ব রেখা (Vertical segment)</div>
+          <div slot="option">৪৫ ডিগ্রি কোণে ঊর্ধ্বমুখী তীর</div>
+          <div slot="option">সম্পূর্ণ অনুভূমিক রেখাংশ (Horizontal segment, slope = 0)</div>
+          <div slot="option">একটি পূর্ণাঙ্গ বৃত্তাকার বিন্দু</div>
+        </b1b-quiz>
+
+        <b1b-quiz
+          question="❓ ৩. পিকার্ড-লিন্ডেলফ উপপাদ্য অনুসারে মসৃণ দিক ক্ষেত্রে দুটি ভিন্ন সমাধান বক্ররেখা কখনো পরস্পরকে ছেদ করতে পারে না কেন?"
+          correct="0"
+          correct-msg="অসাধারণ অন্তর্দৃষ্টি! প্রতিটি বিন্দুতে সমীকরণ একটি একক অনন্য ঢাল $f(t,y)$ নির্ধারণ করে। ছেদ করলে একই বিন্দুতে দুটি ভিন্ন স্পর্শক সৃষ্টি হতো, যা গাণিতিকভাবে অসম্ভব।"
+          wrong-msg="ভুল! নদীর স্রোতের বেগ বিভিন্ন স্থানে ভিন্ন হতে পারে; অধিকাংশ সমাধানই বক্ররেখা, সরলরেখা নয়; আর আদি শর্তের ওপর ভিত্তি করে সমাকলন ধ্রুবক $C$-এর যেকোনো বাস্তব মান হতে পারে—সে শূন্য হতে বাধ্য নয়। আসল কারণ হলো প্রতিটি বিন্দুতে সমীকরণ কেবল একটি ঢाल নির্ধারণ করে।"
+          reveal-msg="সমতলস্থ যেকোনো বিন্দু $(t,y)$-এ ডিফারেনশিয়াল সমীকরণ $\frac{dy}{dt} = f(t,y)$ একটি সুনির্দিষ্ট ঢাল প্রদান করে। দুটি ভিন্ন সমাধান বক্ররেখা ছেদ করলে সেই একক বিন্দুতে দুটি ভিন্ন ঢাল তৈরি হতো, যা ফাংশনের সংজ্ঞার বিরোধী।">
+          <div slot="option">কারণ ছেদবিন্দুতে সমীকরণটিকে একই সাথে দুটি ভিন্ন ঢাল নির্দিষ্ট করতে হতো, যা যুক্তিগতভাবে অসম্ভব</div>
+          <div slot="option">কারণ নদীর স্রোতের সব জল একই গতিতে প্রবাহিত হয়</div>
+          <div slot="option">কারণ সমীকরণের সব সমাধান সর্বদা সরলরেখা</div>
+          <div slot="option">কারণ সমাকলন ধ্রুবক $C$-এর মান সর্বদা শূন্য হতে বাধ্য</div>
+        </b1b-quiz>
+
+        <b1b-callout type="blue" icon="📐" title="মূল সূত্র সংগ্রহ (Key Formulas)">
+          <p>১. প্রথম ক্রমের সাধারণ রূপ: $\frac{dy}{dt} = f(t,y)$ বা $\frac{dy}{dx} = f(x,y)$।<br/>
+          ২. স্থানীয় ঢাল: $m(t,y) = \left.\frac{dy}{dt}\right|_{(t,y)} = f(t,y)$; একক স্পর্শক ভেক্টর $\vec{v} \propto \begin{bmatrix} 1 \\ f(t,y) \end{bmatrix}$।<br/>
+          ৩. নিউটনের শীতলীকরণ: $\frac{dT}{dt} = -k(T - T_{\text{ambient}})$।<br/>
+          ৪. চলক পৃথকীকরণ: $\frac{dy}{dt}=y \implies y(t)=Ce^t$।<br/>
+          ৫. আদি মান সমস্যা: $\begin{cases} y'=f(t,y) \\ y(t_0)=y_0 \end{cases} \implies y(t)=y_0e^{k(t-t_0)}$।<br/>
+          ৬. লিপশিৎস শর্ত: $\left|\frac{\partial f}{\partial y}\right| \le L < \infty \implies$ অনন্য, অ-ছেদকারী সমাধান।</p>
+        </b1b-callout>
+
+        <b1b-callout type="green" icon="📖" title="পরিভাষা (Glossary)">
+          <p><strong>প্রথম ক্রমের ওডিই:</strong> এমন সমীকরণ যাতে অজানা ফাংশনের সর্বোচ্চ প্রথম অন্তরজ $\frac{dy}{dt}$ উপস্থিত থাকে।<br/>
+          <strong>দিক ক্ষেত্র / স্লোপ ফিল্ড:</strong> সমতলের প্রতিটি বিন্দুতে অঙ্কিত ক্ষুদ্র স্পর্শক তীরের সমাহার—সমাধান না মেলালেও গতিপথের মানচিত্র।<br/>
+          <strong>ভেক্টর ক্ষেত্র:</strong> প্রতিটি বিন্দুতে একটি বল বা গতি ভেক্টর নির্ধারণকারী জ্যামিতিক কাঠামো; স্লোপ ফিল্ড Its-এক বিশেষ রূপ।<br/>
+          <strong>ইন্টিগ্রেশন কার্ভ:</strong> এমন বক্ররেখা যার প্রতিটি বিন্দুতে স্পর্শক ওই বিন্দুর ক্ষেত্র-তীরের সমান্তরাল।<br/>
+          <strong>আদি মান সমস্যা (IVP):</strong> ডিফারেনশিয়াল সমীকরণের সাথে $y(t_0)=y_0$ আদি শর্ত যোগ করে গঠিত সমস্যা।<br/>
+          <strong>অনন্যতা (Uniqueness):</strong> পিকার্ড-লিন্ডেলফ উপপাদ্য দ্বারা নিশ্চিত যে মসৃণ $f$-এর ক্ষেত্রে একক আদি শর্ত থেকে একটিমাত্র সমাধান বক্ররেখা পাওয়া যায়।</p>
+        </b1b-callout>
+
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/differential_equations/lesson_02/experiments/3b1b_de_02_full_dubbed.mp4"
+    yt-id="ly4S0oi3Yz8"
+    title="অধ্যায় ০২: প্রথম ক্রমের অন্তরক সমীকরণ ও দিক ক্ষেত্র — পরিবর্তনের জ্যামিতিক মানচিত্র"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — ডিফারেনশিয়াল সমীকরণ">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_01.html"
+  prev-title="অধ্যায় ০১: ডিফারেনশিয়াল সমীকরণ কী?"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url="lesson_03.html"
+  next-title="অধ্যায় ০৩: দোলন ও হারমোনিক স্পন্দন"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+<b1b-back-to-top></b1b-back-to-top>
+
+<!-- ═══════════ SLOPE-FIELD SIMULATOR (interactive lab) ═══════════ -->
+<script>
+(function () {
+  var canvas = document.getElementById('deL02Canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W = 600, H = 450, SCALE = 62;
+  var SYSTEMS = {
+    exp_growth: { f: function (t, y) { return y; }, label: 'dy/dt = y', regime: 'এক্সপোনেনশিয়াল বৃদ্ধি' },
+    cooling:    { f: function (t, y) { return -0.5 * (y - 2); }, label: 'dy/dt = −0.5(y − 2)', regime: 'শীতলীকরণ' },
+    logistic:   { f: function (t, y) { return y * (1 - y); }, label: 'dy/dt = y(1 − y)', regime: 'লজিস্টিক বৃদ্ধি' },
+    sine_drift: { f: function (t, y) { return Math.sin(t) - y; }, label: 'dy/dt = sin(t) − y', regime: 'পর্যায়বৃত্ত প্রবাহ' }
+  };
+  var current = 'logistic', dt = 0.05, density = 18;
+  var curves = [], MAX_CURVES = 120;
+
+  function CX() { return W / 2; }
+  function CY() { return H / 2; }
+  function toScreen(t, y) { return [CX() + t * SCALE, CY() - y * SCALE]; }
+  function toMath(sx, sy) { return [(sx - CX()) / SCALE, -(sy - CY()) / SCALE]; }
+
+  function resize() {
+    var c = canvas.parentElement;
+    W = c && c.clientWidth ? c.clientWidth : 600;
+    var host = document.getElementById('deL02VizWrapper');
+    var fs = host && host.querySelector('.b1b-fs-host.b1b-fs-active');
+    H = fs ? Math.max(window.innerHeight - 260, 420) : 450;
+    canvas.width = W; canvas.height = H;
+  }
+
+  function info() {
+    var el = document.getElementById('deL02Info');
+    if (!el) return;
+    el.textContent = 'সিস্টেম: ' + SYSTEMS[current].label + ' | সক্রিয় সমাধান রেখা: ' + curves.length +
+      ' | dt = ' + dt.toFixed(2) + ' | ঘনত্ব = ' + density + ' | প্রবাহ: ' + SYSTEMS[current].regime;
+  }
+
+  function addCurve(t, y) {
+    if (curves.length >= MAX_CURVES) curves.shift();
+    curves.push({ t: t, y: y, hist: [[t, y]], life: 0,
+      maxLife: 150 + Math.floor(Math.random() * 90),
+      color: 'hsl(' + ((Math.atan2(y, t) * 180 / Math.PI + 360) % 360) + ', 88%, 64%)' });
+    info();
+  }
+  function seed() {
+    for (var t = -3; t <= 3; t += 0.75) {
+      for (var y = -2.5; y <= 2.5; y += 0.75) addCurve(t, y);
+    }
+  }
+  function clear() { curves = []; info(); }
+
+  var down = false;
+  canvas.addEventListener('mousedown', function (e) {
+    down = true;
+    var r = canvas.getBoundingClientRect(), p = toMath(e.clientX - r.left, e.clientY - r.top);
+    addCurve(p[0], p[1]);
+  });
+  window.addEventListener('mouseup', function () { down = false; });
+  canvas.addEventListener('mousemove', function (e) {
+    if (!down) return;
+    var r = canvas.getBoundingClientRect(), p = toMath(e.clientX - r.left, e.clientY - r.top);
+    if (Math.random() < 0.35) addCurve(p[0], p[1]);
+  });
+  canvas.addEventListener('touchstart', function (e) {
+    if (!e.touches.length) return;
+    var r = canvas.getBoundingClientRect(), p = toMath(e.touches[0].clientX - r.left, e.touches[0].clientY - r.top);
+    addCurve(p[0], p[1]);
+  }, { passive: true });
+
+  document.querySelectorAll('#deL02VizWrapper .slope-system-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#deL02VizWrapper .slope-system-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      current = btn.getAttribute('data-sys');
+      clear();
+    });
+  });
+  var dtS = document.getElementById('deL02Dt'), dtV = document.getElementById('deL02DtVal');
+  if (dtS) dtS.addEventListener('input', function () { dt = parseFloat(dtS.value); if (dtV) dtV.textContent = dt.toFixed(2); info(); });
+  var dS = document.getElementById('deL02Density'), dV = document.getElementById('deL02DensityVal');
+  if (dS) dS.addEventListener('input', function () { density = parseInt(dS.value, 10); if (dV) dV.textContent = String(density); info(); });
+  var seedB = document.getElementById('deL02Seed'); if (seedB) seedB.addEventListener('click', seed);
+  var clrB = document.getElementById('deL02Clear'); if (clrB) clrB.addEventListener('click', clear);
+  window.addEventListener('resize', resize);
+  this.addEventListener('b1b-fullscreen-change', resize);
+
+  function rk4(c) {
+    var f = SYSTEMS[current].f, t = c.t, y = c.y, h = dt;
+    var k1 = f(t, y), k2 = f(t + h / 2, y + k1 * h / 2),
+        k3 = f(t + h / 2, y + k2 * h / 2), k4 = f(t + h, y + k3 * h);
+    c.y += (h / 6) * (k1 + 2 * k2 + 2 * k3 + k4);
+    c.t += h;
+    c.hist.push([c.t, c.y]);
+    if (c.hist.length > 220) c.hist.shift();
+    c.life++;
+  }
+
+  function arrow(x1, y1, x2, y2, color, w) {
+    var dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy);
+    if (len < 1) return;
+    var a = Math.atan2(dy, dx), hd = Math.min(len * 0.35, 5);
+    ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = w || 1.2; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x2, y2);
+    ctx.lineTo(x2 - hd * Math.cos(a - 0.45), y2 - hd * Math.sin(a - 0.45));
+    ctx.lineTo(x2 - hd * Math.cos(a + 0.45), y2 - hd * Math.sin(a + 0.45));
+    ctx.closePath(); ctx.fill();
+  }
+
+  function loop() {
+    var dark = document.documentElement.classList.contains('dark') || document.documentElement.getAttribute('data-theme') === 'dark';
+    ctx.fillStyle = dark ? '#0b0c12' : '#f8fafc'; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = dark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.08)'; ctx.lineWidth = 1;
+    for (var gx = CX() % SCALE; gx <= W; gx += SCALE) { ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, H); ctx.stroke(); }
+    for (var gy = CY() % SCALE; gy <= H; gy += SCALE) { ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(W, gy); ctx.stroke(); }
+    ctx.strokeStyle = 'rgba(255,255,255,0.35)'; ctx.lineWidth = 1.4;
+    ctx.beginPath(); ctx.moveTo(0, CY()); ctx.lineTo(W, CY()); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(CX(), 0); ctx.lineTo(CX(), H); ctx.stroke();
+
+    var f = SYSTEMS[current].f, step = Math.max(12, Math.floor(420 / density) * 2);
+    for (var sx = step / 2; sx < W; sx += step) {
+      for (var sy = step / 2; sy < H; sy += step) {
+        var m = toMath(sx, sy), slope = f(m[0], m[1]);
+        if (!isFinite(slope) || Math.abs(slope) > 40) slope = Math.sign(slope) * 40;
+        var len = Math.hypot(1, slope), ax = 7 / len, ay = 7 * slope / len;
+        var alpha = Math.min(0.28 + Math.abs(slope) * 0.08, 0.7);
+        arrow(sx - ax, sy + ay, sx + ax, sy - ay, 'rgba(56,189,248,' + alpha + ')', 1.2);
+      }
+    }
+
+    for (var i = curves.length - 1; i >= 0; i--) {
+      var c = curves[i];
+      if (c.life < c.maxLife && c.t < 3.2 && c.t > -3.2) rk4(c);
+      if (c.hist.length > 1) {
+        ctx.beginPath();
+        var p0 = toScreen(c.hist[0][0], c.hist[0][1]); ctx.moveTo(p0[0], p0[1]);
+        for (var j = 1; j < c.hist.length; j++) { var pj = toScreen(c.hist[j][0], c.hist[j][1]); ctx.lineTo(pj[0], pj[1]); }
+        ctx.strokeStyle = c.color; ctx.lineWidth = 2.3;
+        ctx.globalAlpha = Math.max(0.18, 1 - c.life / c.maxLife); ctx.stroke(); ctx.globalAlpha = 1;
+      }
+      var head = toScreen(c.t, c.y);
+      ctx.beginPath(); ctx.arc(head[0], head[1], 3.2, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill();
+    }
+    requestAnimationFrame(loop);
+  }
+
+  resize(); seed(); info(); requestAnimationFrame(loop);
+})();
+</script>
+
+</body>
+</html>

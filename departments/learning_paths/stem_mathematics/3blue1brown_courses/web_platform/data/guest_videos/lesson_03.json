@@ -1,0 +1,286 @@
+{
+  "lesson_id": "lesson_03",
+  "chapter_num": 3,
+  "course_id": "guest_videos",
+  "title_en": "Simulating and understanding phase change | Guest video by Vilas Winstein",
+  "title_bn": "পর্যায় পরিবর্তন: বোঝা ও সিমুলেশন",
+  "subtitle_bn": "বোল্টজম্যানের সূত্র, তাপমাত্রার সংজ্ঞা এবং একটি ডিজিটাল তরল মডেল দিয়ে তরল থেকে বাষ্পে রূপান্তর",
+  "video_id": "itRV2jEtV8Q",
+  "youtube_id": "itRV2jEtV8Q",
+  "author": "Vilas Winstein",
+  "official_url": "https://www.3blue1brown.com/lessons/phase-change",
+  "oembed": {
+    "url": "https://www.youtube.com/watch?v=itRV2jEtV8Q",
+    "author_name": "3Blue1Brown",
+    "author_url": "https://www.youtube.com/@3blue1brown",
+    "verified": true
+  },
+  "meta": {
+    "credits": "Vilas Winstein",
+    "author": "Vilas Winstein",
+    "author_bn": "ভিলাস উইনস্টেইন (Vilas Winstein)",
+    "host_channel": "3Blue1Brown",
+    "translator_curator": "Bengali STEM Pedagogy Unit",
+    "duration": "২৪:০৭",
+    "description_en": "Deriving the Boltzmann formula, defining temperature, and simulating a liquid-to-gas phase change.",
+    "date_published": "২৮ আগস্ট, ২০২৫",
+    "prerequisites": []
+  },
+  "epigraph": {
+    "quote": "Temperature is not a substance; it is a negotiation between energy and possibility.",
+    "quote_bn": "তাপমাত্রা কোনো পদার্থ নয়; এটি শক্তি ও সম্ভাবনার মধ্যে এক ধরনের আলাপ।",
+    "author": "Vilas Winstein (ভিলাস উইনস্টেইন)"
+  },
+  "sections": [
+    {
+      "id": "sec-01-boltzmann",
+      "title_bn": "এন্ট্রপি ও বোল্টজম্যানের সূত্র",
+      "title_en": "Entropy and the Boltzmann formula",
+      "summary_bn": "বোল্টজম্যান দেখিয়েছিলেন যে এন্ট্রপি আসলে কতগুলো ভিন্ন উপায়ে একই macroscopic অবস্থা গড়ে তোলা যায় তার পরিমাপ।",
+      "key_takeaways": [
+        "এন্ট্রপি S হলো Ω-এর লগারিদম, যেখানে Ω হলো একই ম্যাক্রোস্কোপিক অবস্থার অন্তর্গত মাইক্রোস্কোপিক বিন্যাসের সংখ্যা।",
+        "লগারিদম ব্যবহারের কারণ হলো স্বাধীন সিস্টেমের এন্ট্রপি যোগ হয়, অথচ বিন্যাস সংখ্যা গুণ হয়।",
+        "এই সূত্রটি তাপগতিবিদ্যা ও পরিসংখ্যানীয় বলবিদ্যার মধ্যে সেতু তৈরি করে।"
+      ],
+      "formulas": [
+        {
+          "label": "বোল্টজম্যানের এন্ট্রপি সূত্র",
+          "katex": "S = k_{\\mathrm B}\\ln\\Omega"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_micro_macro",
+          "caption_bn": "মাইক্রোস্টেট ও ম্যাক্রোস্টেট",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_03/fig_micro_macro.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "formula",
+        "figure",
+        "p",
+        "callout",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-02-temperature",
+      "title_bn": "তাপমাত্রা কী? শক্তি ও এন্ট্রপির টানাপোড়েন",
+      "title_en": "What is temperature? The tug-of-war between energy and entropy",
+      "summary_bn": "তাপমাত্রা হলো সেই হার যার সাথে শক্তি বাড়ালে এন্ট্রপি বাড়ে — একে সংজ্ঞায়িত করা হয় ১/T = ∂S/∂E দ্বারা।",
+      "key_takeaways": [
+        "তাপমাত্রার সংজ্ঞা: ১/T = ∂S/∂E, অর্থাৎ শক্তির সাপেক্ষে এন্ট্রপির পরিবর্তনের হার।",
+        "কম তাপমাত্রায় শক্তি কম দিয়েই এন্ট্রপি অনেক বাড়ে; বেশি তাপমাত্রায় বেশি শক্তি লাগে।",
+        "এই সংজ্ঞা negativ তাপমাত্রার মতো অদ্ভুত ধারণাকেও ব্যাখ্যা করতে পারে।"
+      ],
+      "formulas": [
+        {
+          "label": "তাপমাত্রার সংজ্ঞা",
+          "katex": "\\frac{1}{T}=\\left(\\frac{\\partial S}{\\partial E}\\right)_{N,V}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_temp_curve",
+          "caption_bn": "তাপমাত্রা ও এন্ট্রপির সম্পর্ক",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_03/fig_temp_curve.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "formula",
+        "p",
+        "figure",
+        "callout",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-03-model",
+      "title_bn": "একটি ডিজিটাল তরল মডেল তৈরি",
+      "title_en": "Building a digital fluid model",
+      "summary_bn": "কণাগুলোকে একটি গ্রিডে রেখে শক্তি ও তাপমাত্রা নিয়ন্ত্রণ করে আমরা একটি সরল কিন্তু শক্তিশালী তরল মডেল তৈরি করতে পারি।",
+      "key_takeaways": [
+        "প্রতিটি গ্রিড কোষে শক্তি থাকে; কণারা প্রতিবেশী কোষে শক্তি স্থানান্তর করে।",
+        "মোট শক্তি ধ্রুব রেখে এলোমেলো বিনিময় ঘটানো হয় — একে Monte Carlo পদ্ধতি বলে।",
+        "তাপমাত্রা বাড়ালে কণারা বেশি শক্তি পায় ও ছড়িয়ে পড়ে; কমালে একসাথে জমা হয়।"
+      ],
+      "formulas": [
+        {
+          "label": "শক্তির সংরক্ষণ",
+          "katex": "\\sum_i \\epsilon_i = \\mathrm{const}"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_grid_model",
+          "caption_bn": "গ্রিড-ভিত্তিক কণা মডেল",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_03/fig_grid_model.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "figure",
+        "p",
+        "callout",
+        "formula",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-04-transition",
+      "title_bn": "পর্যায় পরিবর্তন: তরল থেকে বাষ্প",
+      "title_en": "Phase change: liquid to gas",
+      "summary_bn": "তাপমাত্রা একটি নির্দিষ্ট সীমা অতিক্রম করলে কণারা আকস্মিকভাবে একসাথে থাকা ছেড়ে ছড়িয়ে পড়ে — এটি হলো পর্যায় পরিবর্তন।",
+      "key_takeaways": [
+        "কম তাপমাত্রায় আকর্ষণ বল কণাদের একসাথে রাখে — এটি তরল অবস্থা।",
+        "তাপমাত্রা বাড়লে গতিশক্তি আকর্ষণকে হার মানায় — কণারা মুক্ত হয়ে বাষ্পে রূপান্তরিত হয়।",
+        "এই রূপান্তর হঠাৎ করে ঘটে, যা দেখে মনে হয় যেন কোনো সীমারেখা অতিক্রম করা হয়েছে।"
+      ],
+      "formulas": [
+        {
+          "label": "মুক্ত শক্তি",
+          "katex": "F = E - TS"
+        }
+      ],
+      "figures": [
+        {
+          "id": "fig_phase_change",
+          "caption_bn": "পর্যায় পরিবর্তন — তরল থেকে বাষ্প",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_03/fig_phase_change.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "figure",
+        "p",
+        "formula",
+        "callout",
+        "p"
+      ]
+    },
+    {
+      "id": "sec-05-supercritical",
+      "title_bn": "সুপারক্রিটিক্যাল অবস্থা ও উপসংহার",
+      "title_en": "Supercritical states and conclusion",
+      "summary_bn": "চাপ ও তাপমাত্রা যথেষ্ট বাড়ালে তরল ও বাষ্পের পার্থক্য মিলিয়ে যায় — এটি হলো সুপারক্রিটিক্যাল অবস্থা।",
+      "key_takeaways": [
+        "একটি নির্দিষ্ট বিন্দুর (critical point) উপরে তরল ও বাষ্প আলাদা করা যায় না।",
+        "সুপারক্রিটিক্যাল তরল গ্যাসের মতো ছড়িয়ে পড়ে, আবার তরলের মতো দ্রবীভূত করতে পারে।",
+        "এই সিমুলেশন দেখায় কীভাবে সরল নিয়ম থেকে জটিল, বাস্তব আচরণ উঠে আসে।"
+      ],
+      "formulas": [],
+      "figures": [
+        {
+          "id": "fig_supercritical",
+          "caption_bn": "সুপারক্রিটিক্যাল অবস্থা",
+          "type": "svg",
+          "src": "assets/figures/guest_videos/lesson_03/fig_supercritical.svg"
+        }
+      ],
+      "narrated_block_types": [
+        "p",
+        "figure",
+        "p",
+        "quote",
+        "p"
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz_01_temp",
+      "section_ref": "sec-02-temperature",
+      "question_bn": "তাপমাত্রার পরিসংখ্যানীয় সংজ্ঞা কী?",
+      "question_en": "What is the statistical definition of temperature?",
+      "options": [
+        "T = ∂S/∂E",
+        "১/T = ∂S/∂E",
+        "T = S × E",
+        "T = E/S"
+      ],
+      "options_bn": [
+        "T = ∂S/∂E",
+        "১/T = ∂S/∂E",
+        "T = S × E",
+        "T = E/S"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "সঠিক সংজ্ঞা হলো ১/T = ∂S/∂E — শক্তির সাপেক্ষে এন্ট্রপির পরিবর্তনের হারের বিপরীত।",
+      "explanation_en": "সঠিক সংজ্ঞা হলো ১/T = ∂S/∂E — শক্তির সাপেক্ষে এন্ট্রপির পরিবর্তনের হারের বিপরীত।",
+      "hint": "মনে রাখবেন, তাপমাত্রা হলো একটি হারের বিপরীত।",
+      "hints": [
+        "মনে রাখবেন, তাপমাত্রা হলো একটি হারের বিপরীত।"
+      ]
+    },
+    {
+      "id": "quiz_02_phase",
+      "section_ref": "sec-04-transition",
+      "question_bn": "কম তাপমাত্রায় কণারা কেন একসাথে থাকে?",
+      "question_en": "Why do particles stay together at low temperature?",
+      "options": [
+        "এন্ট্রপি বেশি হওয়ায়",
+        "শক্তি কম থাকার কারণে মুক্ত শক্তি কম হয়",
+        "তাদের ওজন বেশি হওয়ায়",
+        "কোনো কারণ নেই"
+      ],
+      "options_bn": [
+        "এন্ট্রপি বেশি হওয়ায়",
+        "শক্তি কম থাকার কারণে মুক্ত শক্তি কম হয়",
+        "তাদের ওজন বেশি হওয়ায়",
+        "কোনো কারণ নেই"
+      ],
+      "correct_index": 1,
+      "explanation_bn": "কম তাপমাত্রায় F = E − TS-এ E-র প্রভাব বেশি — কণারা কম শক্তির অবস্থায় থাকতে চায়, তাই একসাথে জমা হয়।",
+      "explanation_en": "কম তাপমাত্রায় F = E − TS-এ E-র প্রভাব বেশি — কণারা কম শক্তির অবস্থায় থাকতে চায়, তাই একসাথে জমা হয়।",
+      "hint": "মুক্ত শক্তির সূত্রটি মনে রাখবেন।",
+      "hints": [
+        "মুক্ত শক্তির সূত্রটি মনে রাখবেন।"
+      ]
+    }
+  ],
+  "lab": {
+    "title": "ইন্টারেক্টিভ ল্যাব: কণা সিমুলেশন",
+    "desc_bn": "তাপমাত্রা স্লাইডারটি বদলে দেখুন কণারা কখন একসাথে থাকে আর কখন ছড়িয়ে পড়ে।",
+    "data_no_narration": true
+  },
+  "narration_manifest": "assets/audio/guest_videos/lesson_03/manifest.json",
+  "video_src": "../../media_vault/guest_videos/lesson_03/experiments/3b1b_guest_videos_03_full_dubbed.mp4",
+  "figure_assets": [
+    {
+      "id": "fig_micro_macro",
+      "caption_bn": "মাইক্রোস্টেট ও ম্যাক্রোস্টেট",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_03/fig_micro_macro.svg"
+    },
+    {
+      "id": "fig_temp_curve",
+      "caption_bn": "তাপমাত্রা ও এন্ট্রপির সম্পর্ক",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_03/fig_temp_curve.svg"
+    },
+    {
+      "id": "fig_grid_model",
+      "caption_bn": "গ্রিড-ভিত্তিক কণা মডেল",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_03/fig_grid_model.svg"
+    },
+    {
+      "id": "fig_phase_change",
+      "caption_bn": "পর্যায় পরিবর্তন — তরল থেকে বাষ্প",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_03/fig_phase_change.svg"
+    },
+    {
+      "id": "fig_supercritical",
+      "caption_bn": "সুপারক্রিটিক্যাল অবস্থা",
+      "type": "svg",
+      "src": "assets/figures/guest_videos/lesson_03/fig_supercritical.svg"
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<script>(function(){const t=localStorage.getItem('3b1b-theme')||'dark';document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ইউলারের সূত্র গ্রুপ তত্ত্বের মাধ্যমে | Euler's formula with introductory group theory</title>
+
+<!-- ═══════════ STYLES ═══════════ -->
+<link rel="stylesheet" href="../../assets/libs/katex/katex.min.css"/>
+<link rel="stylesheet" href="../../assets/css/main.css"/>
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg"/>
+<link rel="stylesheet" href="../../assets/css/lesson.css"/>
+<link rel="stylesheet" href="../../assets/css/narration.css"/>
+
+<!-- ═══════════ MANIFEST (preloaded for file:// / zero-CORS) ═══════════ -->
+<script src="../../assets/audio/group_theory/lesson_02/manifest.js?v=2"></script>
+
+<!-- ═══════════ SCRIPTS — strict load order ═══════════ -->
+<script defer src="../../assets/libs/katex/katex.min.js"></script>
+<script defer src="../../assets/libs/katex/auto-render.min.js"></script>
+<script defer src="../../assets/libs/katex-stub.js"></script>
+<script defer src="../../assets/js/lesson_components.js"></script>
+<script defer src="../../assets/js/lesson_components_extended.js"></script>
+<script defer src="../../assets/js/main.js"></script>
+<script defer src="../../assets/js/lesson.js"></script>
+<script defer src="../../assets/js/narration_engine.js"></script>
+</head>
+<body class="mode-read">
+
+<!-- ═══════════ SEARCH OVERLAY ═══════════ -->
+<b1b-search-overlay></b1b-search-overlay>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<b1b-navbar
+  course-title="গ্রুপ তত্ত্ব"
+  course-url="../../index.html#group-theory"
+  home-url="../../index.html"
+  chapter-num="০২"
+  chapter-total="০২"
+  prev-url="lesson_01.html"
+  next-url=""
+  next-title=""
+  active-mode="read">
+</b1b-navbar>
+
+<!-- ═══════════ HERO ═══════════ -->
+<b1b-hero-player
+  course-title="গ্রুপ তত্ত্ব"
+  course-url="../../index.html"
+  chapter-label="অধ্যায় ০২ · গ্রুপ তত্ত্ব"
+  title="ইউলারের সূত্র গ্রুপ তত্ত্বের মাধ্যমে | Euler's formula with introductory group theory"
+  desc="$e^{\pi i}=-1$ কেন সত্য—গ্রুপ তত্ত্বের চোখে সংখ্যা, ঘাত ও হোমোমরফিজম"
+  video-src="../../media_vault/group_theory/lesson_02/experiments/3b1b_group_theory_02_full_dubbed.mp4"
+  yt-id="mvmuCPvRoWQ"
+  date="৩ মার্চ, ২০১৭"
+  author="Grant Sanderson"
+  author-url="https://www.3blue1brown.com/about"
+  translation="বাংলা রূপান্তর: Grant Sanderson (3Blue1Brown) | বাংলা ডাবিং ও পাঠ: STEM টিম"
+  github-url="https://github.com/3b1b/videos/blob/master/_2017/efvgt.py"
+  voice-badge="বাংলা ভয়েস: Edge-TTS bn-BD-PradeepNeural · ০% ইংলিশ ব্লিড">
+</b1b-hero-player>
+
+<!-- ═══════════ LESSON BODY ═══════════ -->
+<div class="lesson-body">
+
+  <!-- ── READ MODE ── -->
+  <div class="read-mode">
+
+    <b1b-narration-banner></b1b-narration-banner>
+
+    <b1b-bookmarks>
+        <b1b-bookmark time="0" time-bn="০০:০০">সূত্রের পরিচিতি</b1b-bookmark>
+        <b1b-bookmark time="39" time-bn="০০:৩৯">বর্গ ও বৃত্তের গ্রুপ</b1b-bookmark>
+        <b1b-bookmark time="97" time-bn="০১:৩৭">প্রতিসাম্য সংযোজন</b1b-bookmark>
+        <b1b-bookmark time="158" time-bn="০২:৩৮">যোগ ও গুণ গ্রুপ</b1b-bookmark>
+        <b1b-bookmark time="216" time-bn="০৩:৩৬">ঘাত ও ইউলারের সূত্র</b1b-bookmark>
+    </b1b-bookmarks>
+
+    <b1b-toc-sidebar title="📋 বিষয়সূচি" variant="card">
+      <a href="#sec-intro">১. ইউলারের সূত্রের পরিচিতি</a>
+      <a href="#sec-square">২. বর্গক্ষেত্রের গ্রুপ</a>
+      <a href="#sec-circle">৩. বৃত্তের গ্রুপ</a>
+      <a href="#sec-composing">৪. প্রতিসাম্যের সংযোজন</a>
+      <a href="#sec-additive">৫. সংখ্যার যোগ গ্রুপ</a>
+      <a href="#sec-multiplicative">৬. গুণ গ্রুপ</a>
+      <a href="#sec-exponents">৭. ঘাত আসলে কী?</a>
+      <a href="#sec-conclusion">৮. জটিল ঘাত ও উপসংহার</a>
+    </b1b-toc-sidebar>
+
+    <b1b-article>
+
+      <b1b-section id="sec-intro" title="১. ইউলারের সূত্রের পরিচিতি">
+        <p>$e^{\pi i}=-1$—গণিতের সবচেয়ে পরিচিত সমীকরণগুলোর একটি। কিন্তু এটি সত্য কেন? এই পাঠে আমরা গ্রুপ তত্ত্বের কয়েকটি ধারণা ব্যবহার করে এর পেছনের অন্তর্দৃষ্টি খোঁজব। এটি কোনো আনুষ্ঠানিক প্রমাণ নয়, বরং সংখ্যা ও বীজগণিত সম্পর্কে চিন্তার একটি নতুন ধরন।</p>
+        <b1b-figure src="../../assets/figures/gt_02/topic_intro.svg" alt="ইউলারের সূত্র" caption="$e^{\pi i}=-1$—গ্রুপ তত্ত্বের দৃষ্টিতে"></b1b-figure>
+      </b1b-section>
+      <b1b-section id="sec-square" title="২. বর্গক্ষেত্রের গ্রুপ">
+        <p>গ্রুপ তত্ত্ব প্রতিসাম্যের প্রকৃতি নিয়ে পড়াশোনা করে। বর্গক্ষেত্রকে ৯০° ঘোরালে বা উল্লম্ব রেখা বরাবর উল্টালে সেটি আগের মতোই দেখায়।</p>
+        <b1b-figure src="../../assets/figures/gt_02/square_symmetries.svg" alt="বর্গের প্রতিসাম্য" caption="বর্গের ৮টি প্রতিসাম্য—কিছু না করা, ৩টি ঘূর্ণন ও ৪টি উল্টানো"></b1b-figure>
+        <p>এই ধরনের প্রতিটি কাজ একটি 'প্রতিসাম্য'। সবগুলো মিলে গড়ে তোলে 'প্রতিসাম্যের গ্রুপ'—এখানে ৮টি কাজ আছে: কিছু না করা, ৩টি ঘূর্ণন এবং ৪টি উল্টানো। এর নাম <strong>চতুর্থ-মাত্রার ডাইহেড্রাল গ্রুপ</strong> বা $D_4$।</p>
+        <b1b-callout type="blue" icon="🔲" title="মনে রাখুন">
+<p>প্রতিসাম্য শনাক্ত করতে বর্গে একটিমাত্র ছোট $\pi$ চিহ্ন রাখলে কোন কাজটি হয়েছে তা ট্র্যাক করা সহজ হয়।</p>
+        </b1b-callout>
+      </b1b-section>
+      <b1b-section id="sec-circle" title="৩. বৃত্তের গ্রুপ">
+        <p>বর্গ একটি সসীম গ্রুপ—মাত্র ৮টি কাজ। কিন্তু অনেক গ্রুপে অসংখ্য কাজ থাকে। যেকোনো কোণে ঘোরানোর কথা ভাবুন: $0$ থেকে $2\pi$ রেডিয়ানের অবিচ্ছিন্ন রেখায় প্রতিটি কাজ অবস্থান করে।</p>
+        <b1b-figure src="../../assets/figures/gt_02/rotation_group.svg" alt="বৃত্তের ঘূর্ণন" caption="বৃত্তের ঘূর্ণন গ্রুপ—অবিচ্ছিন্ন $0$ থেকে $2\pi$"></b1b-figure>
+        <p>এই গ্রুপের সুবিধা হলো প্রতিটি কাজকে বৃত্তের একটিমাত্র বিন্দুর সাথে যুক্ত করা যায়। যেকোনো বিন্দু বেছে নিন—প্রতিটি ঘূর্ণন সেই বিন্দুকে একটি নির্দিষ্ট জায়গায় নিয়ে যায়, আর সেই অবস্থান থেকে কাজটি সম্পূর্ণরূপে শনাক্ত করা যায়।</p>
+        <b1b-figure src="../../assets/figures/gt_02/arbitrary_point.svg" alt="নির্দিষ্ট বিন্দু" caption="একটি চিহ্নিত বিন্দু ঘূর্ণনকে শনাক্ত করতে সাহায্য করে"></b1b-figure>
+      </b1b-section>
+      <b1b-section id="sec-composing" title="৪. প্রতিসাম্যের সংযোজন">
+        <p>গ্রুপ তত্ত্বের আসল হৃদয় হলো—এই কাজগুলো একের পর এক প্রয়োগ করলে কী হয়। বর্গে ৯০° ঘোরে উল্লম্ব অক্ষ বরাবর উল্টালে ফলাফলকে কর্ণ বরাবর উল্টানোর মতোই দেখায়।</p>
+        <b1b-figure src="../../assets/figures/gt_02/rot_plus_flip.svg" alt="সংযোজন" caption="ঘোরানোর পর উল্টানো = কর্ণ বরাবর উল্টানো"></b1b-figure>
+        <p>বৃত্তে $270^\circ$ ঘোরে $120^\circ$ ঘোরালে মোট $30^\circ$ ঘোরানোর সমান। এক কথায়, যেকোনো গ্রুপেই দুটি কাজ নিয়ে তৃতীয় একটি কাজ পাওয়া যায়—একে যোগ বা গুণ, যেকোনোভাবে ভাবতে পারেন।</p>
+        <b1b-figure src="../../assets/figures/gt_02/circle_double_rotation.svg" alt="দ্বিতীয় ঘূর্ণন" caption="বৃত্তে দুই ঘূর্ণনের সংযোজন"></b1b-figure>
+        <b1b-quiz
+          question="❓ বর্গকে ১৮০° ঘোরে উল্লম্ব রেখা বরাবর উল্টালে কোন কাজের সমান হবে?"
+          correct="2"
+          correct-msg="চমৎকার! সঠিক উত্তর। $(x,y)\to(-x,-y)\to(x,-y)$—অর্থাৎ $x$-অক্ষ বরাবর প্রতিফলন, অথবা অনুভূমিক রেখা বরাবর উল্টানো।"
+          wrong-msg="আবার চেষ্টা করো! প্রথমে ১৮০° ঘোরালে $(x,y)\to(-x,-y)$; তারপর উল্লম্ব অক্ষে উল্টালে $(x,-y)$।"
+          reveal-msg="সঠিক উত্তর: বিকল্প 3। $(x,y)\to(-x,-y)\to(x,-y)$—অর্থাৎ $x$-অক্ষ বরাবর প্রতিফলন, অথবা অনুভূমিক রেখা বরাবর উল্টানো।">
+          <div slot="option">৯০° সঘনবর্তী ঘোরানো</div>
+          <div slot="option">৯০° বামাবর্তী ঘোরানো</div>
+          <div slot="option">অনুভূমিক রেখা বরাবর উল্টানো</div>
+          <div slot="option">কিছু না করা</div>
+        </b1b-quiz>
+      </b1b-section>
+      <b1b-section id="sec-additive" title="৫. সংখ্যার যোগ গ্রুপ">
+        <p>গ্রুপ বেশ সাধারণ ধারণা—সংখ্যাকেও গ্রুপ হিসেবে দেখা যায়, আর তা দুইভাবে: যোগের মাধ্যমে ও গুণের মাধ্যমে। প্রথমে সংখ্যারেখা বাঁয়ে-ডানে সরানোর কথা ভাবুন—এই সব সরণ নিয়ে একটি গ্রুপ গড়ে ওঠে।</p>
+        <b1b-figure src="../../assets/figures/gt_02/line_symmetries.svg" alt="রেখার সরণ" caption="সংখ্যারেখার সব সরণ নিয়ে গড়ে ওঠা গ্রুপ"></b1b-figure>
+        <p>সরণগুলোকেও বিন্দুর সাথে যুক্ত করা যায়: $0$-এ থাকা বিন্দু কোথায় যায় তা দেখলেই কাজটি শনাক্ত হয়। $3$ মানে ৩ একক ডানে সরণ, $-2$ মানে ২ একক বাঁয়ে, আর $0$ মানে কিছু না করা। একের পর এক সরণ মানে দূরত্বগুলোর যোগ—তাই এটি <strong>বাস্তব সংখ্যার যোগ গ্রুপ</strong>।</p>
+        <b1b-figure src="../../assets/figures/gt_02/additive_group_reals.svg" alt="যোগ গ্রুপ" caption="বাস্তব সংখ্যার যোগ গ্রুপ—সরণের যোগ"></b1b-figure>
+        <p>এই ধারণা জটিল তলে বাড়ালে $i, 2i, 3i$ ইত্যাদি উল্লম্ব সরণ, আর $3+2i$ কর্ণ বরাবর সরণ—যা আগে ৩ ডানে, পরে ২ উপরে সরণের সমান।</p>
+        <b1b-figure src="../../assets/figures/gt_02/adding_complex.svg" alt="জটিল যোগ" caption="জটিল তলে সরণের সংযোজন = জটিল সংখ্যা যোগ"></b1b-figure>
+        <b1b-quiz
+          question="❓ $(-6+2i)+(4-3i)=?$"
+          correct="0"
+          correct-msg="চমৎকার! সঠিক উত্তর। বাস্তব অংশ: $-6+4=-2$; কাল্পনিক অংশ: $2-3=-1$। ফল $-2-i$।"
+          wrong-msg="আবার চেষ্টা করো! বাস্তব ও কাল্পনিক অংশ আলাদাভাবে যোগ করুন।"
+          reveal-msg="সঠিক উত্তর: বিকল্প 1। বাস্তব অংশ: $-6+4=-2$; কাল্পনিক অংশ: $2-3=-1$। ফল $-2-i$।">
+          <div slot="option">$-2-1i$</div>
+          <div slot="option">$-18+26i$</div>
+          <div slot="option">$2+1i$</div>
+          <div slot="option">$i$</div>
+        </b1b-quiz>
+      </b1b-section>
+      <b1b-section id="sec-multiplicative" title="৬. গুণ গ্রুপ">
+        <p>সংখ্যার আরেকটি জীবন আছে—গুণ গ্রুপ হিসেবে। সংখ্যারেখাকে $0$ স্থির রেখে টানা বা চাপা দেওয়ার সব কাজ নিয়ে একটি গ্রুপ তৈরি হয়। $1$-এ থাকা বিন্দু কোথায় যায় তা দেখে কাজটি চেনা যায়: $3$-এ নিয়ে যাওয়া মানে ৩ গুণ প্রসার, $\frac12$-এ নিয়ে যাওয়া মানে আধা গুণ সংকোচন।</p>
+        <b1b-figure src="../../assets/figures/gt_02/stretch_3.svg" alt="প্রসারণ" caption="৩ গুণ প্রসার—$1$ থেকে $3$"></b1b-figure>
+        <p>৩ গুণের পর ২ গুণ করলে ফল ৬ গুণ—অর্থাৎ কাজ সংযোজন মানেই গুণ। শূন্য দিয়ে গুণ করা এই গ্রুপে নেই, কারণ এর কোনো বিপরীত নেই।</p>
+        <p>জটিল তলে $1$-কে সরানোর অর্থ প্রসারণ ছাড়াও ঘোরানো। $i$ দিয়ে গুণ মানে ৯০° ঘোরানো; দুইবার প্রয়োগ করলে ১৮০° ঘোরে $-1$ পাই—অর্থাৎ $i\cdot i=-1$।</p>
+        <b1b-figure src="../../assets/figures/gt_02/i_rotation.svg" alt="i দিয়ে গুণ" caption="$i$ দিয়ে গুণ = ৯০° ঘোরানো; দুইবার = ১৮০°"></b1b-figure>
+        <p>সাধারণভাবে প্রতিটি কাজ কিছুটা প্রসারণ/সংকোচন আর কিছুটা বিশুদ্ধ ঘোরানোর সমন্বয়। প্রসারণ ধনাত্মক বাস্তব রেখার বিন্দু দিয়ে আর ঘোরানো একক বৃত্তের বিন্দু দিয়ে চিহ্নিত হয়।</p>
+        <b1b-quiz
+          question="❓ $2+1i$ বিন্দুকে $-4-2i$ বিন্দুতে নিতে কোন গুণ-কাজ প্রয়োগ করব?"
+          correct="0"
+          correct-msg="চমৎকার! সঠিক উত্তর। $(2+i)\cdot(-2)=-4-2i$। অর্থাৎ ২ গুণ প্রসার আর ১৮০° ঘোরানো—একই কাজ।"
+          wrong-msg="আবার চেষ্টা করো! $-4-2i=-2(2+i)$ কি লক্ষ্য করেছেন?"
+          reveal-msg="সঠিক উত্তর: বিকল্প 1। $(2+i)\cdot(-2)=-4-2i$। অর্থাৎ ২ গুণ প্রসার আর ১৮০° ঘোরানো—একই কাজ।">
+          <div slot="option">$-2$ দিয়ে গুণ (২ গুণ প্রসার + ১৮০° ঘোরানো)</div>
+          <div slot="option">$2$ দিয়ে গুণ</div>
+          <div slot="option">$i$ দিয়ে গুণ (৯০° ঘোরানো)</div>
+          <div slot="option">$-i$ দিয়ে গুণ</div>
+        </b1b-quiz>
+      </b1b-section>
+      <b1b-section id="sec-exponents" title="৭. ঘাত আসলে কী?">
+        <p>$2^3$ মানে $2\cdot2\cdot2$—পুনরাবৃত্ত গুণ। তাই $2^{3+5}=2^3\cdot2^5$। কিন্তু $2^{1/2}$, $2^{-1}$ বা $2^i$ কী? পুনরাবৃত্ত গুণ দিয়ে এর অর্থ বোঝা যায় না। তাই আমরা সংজ্ঞা এমনভাবে বাড়াই যেন $2^{x+y}=2^x2^y$ বৈশিষ্ট্যটি টিকে থাকে।</p>
+        <p>গ্রুপ তত্ত্বের দৃষ্টিতে এই বৈশিষ্ট্য বলে—ইনপুটের যোগের সাথে আউটপুটের গুণ মিলে যায়। তাই ইনপুটকে যোগ-গ্রুপের 'সরণ কাজ' এবং আউটপুটকে গুণ-গ্রুপের 'প্রসার কাজ' হিসেবে ভাবা যায়।</p>
+        <b1b-figure src="../../assets/figures/gt_02/homomorphism.svg" alt="হোমোমরফিজম" caption="যোগ-গ্রুপ থেকে গুণ-গ্রুপে গঠন-সংরক্ষণকারী মানচিত্র"></b1b-figure>
+        <b1b-callout type="gold" icon="🧭" title="হোমোমরফিজম (Homomorphism)">
+<p>দুই গ্রুপের মধ্যকার এমন মানচিত্র যা তাদের গঠন বা অ্যারিথমেটিক সংরক্ষণ করে, তাকে হোমোমরফিজম বলে। সূত্রের পেছনের এই গঠন-সংরক্ষণই আসল কথা।</p>
+        </b1b-callout>
+        <b1b-formula math="\exp(x+y)=\exp(x)\cdot\exp(y)"></b1b-formula>
+      </b1b-section>
+      <b1b-section id="sec-conclusion" title="৮. জটিল ঘাত ও উপসংহার">
+        <p>এখন জটিল তলে যোগ-গ্রুপ থেকে গুণ-গ্রুপে মানচিত্র আঁকা যাক। বাস্তব অংশ প্রসারণ/সংকোচনে যায়, তাই উল্লম্ব (কাল্পনিক) অংশ বিশুদ্ধ ঘোরানোয় যাবে—এটা স্বাভাবিক অনুমান।</p>
+        <b1b-figure src="../../assets/figures/gt_02/imaginary_axis.svg" alt="কাল্পনিক অক্ষ" caption="উল্লম্ব সরণ → একক বৃত্তে ঘোরানো"></b1b-figure>
+        <p>$2^x$-এর ক্ষেত্রে $i$ (১ একক উল্লম্ব সরণ) ০.৬৯৩ রেডিয়ান ঘোরানোর সাথে মিলে; $5^x$-এ ১.৬০৯ রেডিয়ান। কিন্তু $e^x$-এর ক্ষেত্রে ১ একক উল্লম্ব সরণ ঠিক ১ রেডিয়ান ঘোরানোর সমান—এটিই $e$-কে বিশেষ করে তোলে।</p>
+        <b1b-figure src="../../assets/figures/gt_02/ex.svg" alt="e^x" caption="$e^x$: ১ একক উল্লম্ব সরণ = ১ রেডিয়ান"></b1b-figure>
+        <p>তাই ২ একক উল্লম্ব সরণ → ২ রেডিয়ান, ৩ → ৩ রেডিয়ান, আর $\pi$ একক উল্লম্ব সরণ অর্থাৎ ইনপুট $\pi i$ → $\pi$ রেডিয়ান, বৃত্তের অর্ধেক পথ—যেটি $-1$ এর গুণগত কাজ।</p>
+        <b1b-formula math="e^{\pi i}=-1"></b1b-formula>
+        <p>চিত্রটি মনে আঁকুন—সমতল প্রথমে বেলনের মতো রোল হয়, তারপর সেটিকে $0$-এর চারপাশে চাপ দেওয়া হয়। গ্রুপ তত্ত্বের চোখ দিয়ে দেখলে ঘাতফলন কেবল এক ধরনের কাজকে অন্য ধরনের কাজে রূপ দেয়—সরণকে প্রসারণ ও ঘোরানোয়।</p>
+      </b1b-section>
+
+      <b1b-section id="sec-visualizer" title="ইন্টারেক্টিভ চিত্র প্রদর্শনী" data-no-narration="true">
+        <p class="viz-intro">নিচের চিত্রটি পূর্ণস্ক্রিনে দেখে বিষয়টি আরও ভালোভাবে পর্যবেক্ষণ করুন।</p>
+        <b1b-fullscreen label="⛶ পূর্ণস্ক্রিনে দেখুন">
+          <figure class="interactive-figure"><img src="../../assets/figures/gt_02/ex_transformation.svg" alt="ইন্টারেক্টিভ চিত্র"/><figcaption>ইউলারের সূত্র গ্রুপ তত্ত্বের মাধ্যমে — পূর্ণস্ক্রিনে দেখুন</figcaption></figure>
+        </b1b-fullscreen>
+      </b1b-section>
+
+    </b1b-article>
+  </div><!-- /read-mode -->
+
+  <!-- ── WATCH MODE ── -->
+  <b1b-watch-panel
+    video-src="../../media_vault/group_theory/lesson_02/experiments/3b1b_group_theory_02_full_dubbed.mp4"
+    yt-id="mvmuCPvRoWQ"
+    title="ইউলারের সূত্র গ্রুপ তত্ত্বের মাধ্যমে | Euler's formula with introductory group theory — অধ্যায় ০২"
+    subtitle="সম্পূর্ণ প্রমিত বাংলায় ডাব করা, EBU R128 লাউডনেস নরমালাইজড অডিও এবং জিরো ইংলিশ ভোকাল ব্লিড মোড সহ।"
+    playlist-title="📋 প্লেলিস্ট — গ্রুপ তত্ত্ব">
+  </b1b-watch-panel>
+
+</div><!-- /lesson-body -->
+
+<!-- ═══════════ BOTTOM NAVIGATION / FOOTER ═══════════ -->
+<b1b-chapter-nav
+  prev-url="lesson_01.html"
+  prev-title="শুরু"
+  prev-dir="পূর্ববর্তী অধ্যায়"
+  next-url=""
+  next-title="ইউলারের সূত্র গ্রুপ তত্ত্বের মাধ্যমে"
+  next-dir="পরবর্তী অধ্যায়">
+</b1b-chapter-nav>
+
+<b1b-footer></b1b-footer>
+
+<b1b-back-to-top></b1b-back-to-top>
+
+</body>
+</html>

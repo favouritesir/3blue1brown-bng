@@ -1,0 +1,346 @@
+{
+  "experiment": "clean_timesync_v2 + rendered-speech-scale + auto-rerender fill policy (why_pi full-length)",
+  "lesson": "lesson_04",
+  "course": "why_pi",
+  "official_slug": "basel-problem",
+  "official_url": "https://www.3blue1brown.com/lessons/basel-problem",
+  "video_id": "d-o3eB9sfls",
+  "youtube_id": "d-o3eB9sfls",
+  "youtube_url": "https://www.youtube.com/watch?v=d-o3eB9sfls",
+  "id_resolution": "official 3blue1brown.com lesson page VideoObject embedUrl",
+  "oembed_author": "3Blue1Brown",
+  "oembed_title": "Why is pi here? And why is it squared? A geometric answer to the Basel problem",
+  "oembed_author_verified": true,
+  "script_source": "gold manifest cue texts: manifest.json (read-only)",
+  "cue_count": 17,
+  "expected_cue_count": 17,
+  "failed_tts_cues": [],
+  "strategy": "absolute sample offset (start*44100); atempo fit in [0.82,2.2]; pad only; no truncation",
+  "sfx": "NONE — clean speech only",
+  "voice": "bn-BD-PradeepNeural",
+  "max_tempo": 2.2,
+  "tempo_floor": 0.82,
+  "overrun_cues": 0,
+  "max_measured_drift_ms": 0.01,
+  "timeline_scale": 1.04694,
+  "timeline_scale_basis": "recomputed from measured rendered-speech durations",
+  "rendered_speech_total_sec": 970.872,
+  "authored_total_sec": 976.472,
+  "usable_timeline_sec": 1022.308,
+  "lead_in_sec": 2.5,
+  "tail_margin_sec": 3.0,
+  "inter_cue_gap_sec": 0.35,
+  "video_duration_sec": 1027.808,
+  "master_audio_duration_sec": 1027.808,
+  "last_cue_end_sec": 1024.808,
+  "tail_silence_sec": 3.0,
+  "speech_ends_before_video_end": true,
+  "median_fill": 0.9996,
+  "max_internal_gap_s": 0.0277,
+  "fill_policy_target": "median_fill >= 0.72 and max_internal_gap_s <= 1.5",
+  "fill_policy_met": true,
+  "auto_rerender_passes": [
+    {
+      "pass": 1,
+      "speech_before_sec": 219.384,
+      "speech_after_sec": 479.832,
+      "scale_after": 2.105976,
+      "need_tempo_after": 0.4748
+    },
+    {
+      "pass": 2,
+      "speech_before_sec": 479.832,
+      "speech_after_sec": 724.824,
+      "scale_after": 1.399609,
+      "need_tempo_after": 0.7145
+    },
+    {
+      "pass": 3,
+      "speech_before_sec": 724.824,
+      "speech_after_sec": 970.872,
+      "scale_after": 1.04694,
+      "need_tempo_after": 0.9552
+    }
+  ],
+  "output_video": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\why_pi\\lesson_04\\experiments\\3b1b_why_pi_04_full_dubbed.mp4",
+  "output_duration_sec": 1027.743,
+  "output_size_bytes": 54269813,
+  "independent_verification": {
+    "output_duration_sec": 1027.743,
+    "original_duration_sec": 1027.808,
+    "duration_delta_sec": -0.065,
+    "duration_match": true,
+    "first_cue_start_sec": 2.5,
+    "last_cue_end_sec": 1024.808,
+    "all_silence_runs": [
+      {
+        "start": 0.0,
+        "end": 2.739
+      },
+      {
+        "start": 1024.005,
+        "end": 1027.737
+      }
+    ],
+    "lead_in_or_tail_runs": [
+      {
+        "start": 0.0,
+        "end": 2.739,
+        "kind": "lead-in"
+      },
+      {
+        "start": 1024.005,
+        "end": 1027.737,
+        "kind": "tail"
+      }
+    ],
+    "internal_silence_runs": [],
+    "internal_runs_gt_2s_count": 0,
+    "internal_silence_gate_pass": true
+  },
+  "gates": {
+    "duration_match": true,
+    "no_internal_silence_gt_2s": true,
+    "median_fill_ge_0.72": true,
+    "max_internal_gap_le_1.5": true,
+    "all_pass": true
+  },
+  "success": true,
+  "cues": [
+    {
+      "id": 1,
+      "section": "sec-basel-series",
+      "expected_start_ms": 2500.0,
+      "actual_start_ms": 2500.0,
+      "drift_ms": 0.0,
+      "tempo": 0.9552,
+      "natural_sec": 50.904,
+      "target_sec": 53.293,
+      "fill_ratio": 0.9995,
+      "internal_gap_s": 0.0269,
+      "placed_samples": 2350221
+    },
+    {
+      "id": 2,
+      "section": "sec-basel-series",
+      "expected_start_ms": 56160.0,
+      "actual_start_ms": 56160.0,
+      "drift_ms": 0.0,
+      "tempo": 0.9552,
+      "natural_sec": 64.728,
+      "target_sec": 67.766,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0268,
+      "placed_samples": 2988481
+    },
+    {
+      "id": 3,
+      "section": "sec-basel-series",
+      "expected_start_ms": 124293.0,
+      "actual_start_ms": 124292.99,
+      "drift_ms": -0.01,
+      "tempo": 0.9552,
+      "natural_sec": 59.712,
+      "target_sec": 62.515,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0269,
+      "placed_samples": 2756912
+    },
+    {
+      "id": 4,
+      "section": "sec-basel-series",
+      "expected_start_ms": 187174.0,
+      "actual_start_ms": 187173.99,
+      "drift_ms": -0.01,
+      "tempo": 0.9552,
+      "natural_sec": 55.68,
+      "target_sec": 58.294,
+      "fill_ratio": 0.9995,
+      "internal_gap_s": 0.0272,
+      "placed_samples": 2570765
+    },
+    {
+      "id": 5,
+      "section": "sec-basel-series",
+      "expected_start_ms": 245834.0,
+      "actual_start_ms": 245833.99,
+      "drift_ms": -0.01,
+      "tempo": 0.9552,
+      "natural_sec": 58.392,
+      "target_sec": 61.133,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0273,
+      "placed_samples": 2695965
+    },
+    {
+      "id": 6,
+      "section": "sec-inverse-squares",
+      "expected_start_ms": 307333.0,
+      "actual_start_ms": 307332.99,
+      "drift_ms": -0.01,
+      "tempo": 0.9552,
+      "natural_sec": 51.384,
+      "target_sec": 53.796,
+      "fill_ratio": 0.9995,
+      "internal_gap_s": 0.027,
+      "placed_samples": 2372404
+    },
+    {
+      "id": 7,
+      "section": "sec-inverse-squares",
+      "expected_start_ms": 361496.0,
+      "actual_start_ms": 361496.01,
+      "drift_ms": 0.01,
+      "tempo": 0.9552,
+      "natural_sec": 60.384,
+      "target_sec": 63.218,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0267,
+      "placed_samples": 2787914
+    },
+    {
+      "id": 8,
+      "section": "sec-inverse-squares",
+      "expected_start_ms": 425081.0,
+      "actual_start_ms": 425081.0,
+      "drift_ms": 0.0,
+      "tempo": 0.9552,
+      "natural_sec": 59.4,
+      "target_sec": 62.188,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0265,
+      "placed_samples": 2742491
+    },
+    {
+      "id": 9,
+      "section": "sec-inverse-squares",
+      "expected_start_ms": 487635.0,
+      "actual_start_ms": 487635.01,
+      "drift_ms": 0.01,
+      "tempo": 0.9552,
+      "natural_sec": 57.48,
+      "target_sec": 60.178,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.027,
+      "placed_samples": 2653850
+    },
+    {
+      "id": 10,
+      "section": "sec-inverse-squares",
+      "expected_start_ms": 548180.0,
+      "actual_start_ms": 548180.0,
+      "drift_ms": 0.0,
+      "tempo": 0.9552,
+      "natural_sec": 61.56,
+      "target_sec": 64.45,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0276,
+      "placed_samples": 2842245
+    },
+    {
+      "id": 11,
+      "section": "sec-inverse-squares",
+      "expected_start_ms": 612996.0,
+      "actual_start_ms": 612996.01,
+      "drift_ms": 0.01,
+      "tempo": 0.9552,
+      "natural_sec": 53.232,
+      "target_sec": 55.731,
+      "fill_ratio": 0.9995,
+      "internal_gap_s": 0.0277,
+      "placed_samples": 2457737
+    },
+    {
+      "id": 12,
+      "section": "sec-inverse-squares",
+      "expected_start_ms": 669093.0,
+      "actual_start_ms": 669092.99,
+      "drift_ms": -0.01,
+      "tempo": 0.9552,
+      "natural_sec": 51.936,
+      "target_sec": 54.374,
+      "fill_ratio": 0.9995,
+      "internal_gap_s": 0.027,
+      "placed_samples": 2397893
+    },
+    {
+      "id": 13,
+      "section": "sec-result",
+      "expected_start_ms": 723834.0,
+      "actual_start_ms": 723833.99,
+      "drift_ms": -0.01,
+      "tempo": 0.9552,
+      "natural_sec": 51.264,
+      "target_sec": 53.67,
+      "fill_ratio": 0.9995,
+      "internal_gap_s": 0.0262,
+      "placed_samples": 2366847
+    },
+    {
+      "id": 14,
+      "section": "sec-result",
+      "expected_start_ms": 777870.0,
+      "actual_start_ms": 777870.0,
+      "drift_ms": 0.0,
+      "tempo": 0.9552,
+      "natural_sec": 61.608,
+      "target_sec": 64.5,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0275,
+      "placed_samples": 2844450
+    },
+    {
+      "id": 15,
+      "section": "sec-result",
+      "expected_start_ms": 842737.0,
+      "actual_start_ms": 842737.01,
+      "drift_ms": 0.01,
+      "tempo": 0.9552,
+      "natural_sec": 58.392,
+      "target_sec": 61.133,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0273,
+      "placed_samples": 2695965
+    },
+    {
+      "id": 16,
+      "section": "sec-result",
+      "expected_start_ms": 904236.0,
+      "actual_start_ms": 904236.01,
+      "drift_ms": 0.01,
+      "tempo": 0.9552,
+      "natural_sec": 56.64,
+      "target_sec": 59.299,
+      "fill_ratio": 0.9995,
+      "internal_gap_s": 0.0275,
+      "placed_samples": 2615086
+    },
+    {
+      "id": 17,
+      "section": "sec-result",
+      "expected_start_ms": 963901.0,
+      "actual_start_ms": 963901.0,
+      "drift_ms": 0.0,
+      "tempo": 0.9552,
+      "natural_sec": 58.176,
+      "target_sec": 60.907,
+      "fill_ratio": 0.9996,
+      "internal_gap_s": 0.0267,
+      "placed_samples": 2685999
+    }
+  ],
+  "output_streams": [
+    {
+      "index": 0,
+      "codec_name": "av1",
+      "codec_type": "video"
+    },
+    {
+      "index": 1,
+      "codec_name": "aac",
+      "codec_type": "audio"
+    }
+  ],
+  "volumedetect_intro_0_2s_db": -91.0,
+  "volumedetect_final_2s_db": -91.0
+}
