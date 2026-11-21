@@ -3,6 +3,18 @@
 
 ---
 
+## 🌐 লাইভ প্ল্যাটফর্ম (GitHub Pages · HTTPS)
+বাংলায় ৩ব্লু১ব্রাউন প্ল্যাটফর্মটি সরাসরি ব্রাউজারে দেখুন:
+
+👉 **[গণিত শেখার প্ল্যাটফর্ম — বাংলায় ৩ব্লু১ব্রাউন (ইনডেক্স)](https://favouritesir.me/3blue1brown-bng/departments/learning_paths/stem_mathematics/3blue1brown_courses/web_platform/index.html)**
+
+- মূল সাইট: https://favouritesir.me/3blue1brown-bng/
+- লাইভ ট্র্যাকার বোর্ড: https://favouritesir.me/3blue1brown-bng/departments/learning_paths/stem_mathematics/3blue1brown_courses/web_platform/board.html
+
+> দ্রষ্টব্য: বড় ভিডিও/অডিও ফাইল GitHub Pages-এ থাকে না (`.gitignore`) — পেজ, কুইজ ও কন্টেন্ট দেখা যায়; ভিডিও চালাতে লোকাল সার্ভার (`serve_range.py`) লাগবে।
+
+---
+
 ## 🎯 রূপকল্প ও লক্ষ্য (Mission & Scope)
 বাংলা রিসোর্স ফ্যাক্টরি হলো একটি পূর্ণাঙ্গ এআই-পরিচালিত স্বায়ত্তশাসিত ফ্যাক্টরি। এর মূল উদ্দেশ্য আন্তর্জাতিক মানের শিক্ষা ও গবেষণামূলক সামগ্রী (বই, গবেষণা পেপার, ভিডিও ও অডিও লেকচার, লার্নিং পাথ ও টেকনিক্যাল ডকস) উচ্চমানের সাবলীল বাংলা ভাষায় রূপান্তর ও উৎপাদন করা, যা কোনোভাবেই রোবটিক বা আক্ষরিক অনুবাদ হবে না।
 
