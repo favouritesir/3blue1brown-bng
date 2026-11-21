@@ -1,0 +1,360 @@
+{
+  "experiment": "clean_timesync_v2 + rendered-speech-scale + auto-rerender fill policy (why_pi full-length)",
+  "lesson": "lesson_07",
+  "course": "why_pi",
+  "official_slug": "wallis-product",
+  "official_url": "https://www.3blue1brown.com/lessons/wallis-product",
+  "video_id": "8GPy_UMV-08",
+  "youtube_id": "8GPy_UMV-08",
+  "youtube_url": "https://www.youtube.com/watch?v=8GPy_UMV-08",
+  "id_resolution": "official 3blue1brown.com lesson page VideoObject embedUrl",
+  "oembed_author": "3Blue1Brown",
+  "oembed_title": "The Wallis product for pi, proved geometrically",
+  "oembed_author_verified": true,
+  "script_source": "gold manifest cue texts: manifest.json (read-only)",
+  "cue_count": 17,
+  "expected_cue_count": 17,
+  "failed_tts_cues": [],
+  "strategy": "absolute sample offset (start*44100); atempo fit in [0.82,2.2]; pad only; no truncation",
+  "sfx": "NONE — clean speech only",
+  "voice": "bn-BD-PradeepNeural",
+  "max_tempo": 2.2,
+  "tempo_floor": 0.82,
+  "overrun_cues": 0,
+  "max_measured_drift_ms": 0.01,
+  "timeline_scale": 1.030097,
+  "timeline_scale_basis": "recomputed from measured rendered-speech durations",
+  "rendered_speech_total_sec": 1470.648,
+  "authored_total_sec": 1476.248,
+  "usable_timeline_sec": 1520.678,
+  "lead_in_sec": 2.5,
+  "tail_margin_sec": 3.0,
+  "inter_cue_gap_sec": 0.35,
+  "video_duration_sec": 1526.178,
+  "master_audio_duration_sec": 1526.178,
+  "last_cue_end_sec": 1523.178,
+  "tail_silence_sec": 3.0,
+  "speech_ends_before_video_end": true,
+  "median_fill": 0.9997,
+  "max_internal_gap_s": 0.0264,
+  "fill_policy_target": "median_fill >= 0.72 and max_internal_gap_s <= 1.5",
+  "fill_policy_met": true,
+  "auto_rerender_passes": [
+    {
+      "pass": 1,
+      "speech_before_sec": 229.392,
+      "speech_after_sec": 489.792,
+      "scale_after": 3.069646,
+      "need_tempo_after": 0.3258
+    },
+    {
+      "pass": 2,
+      "speech_before_sec": 489.792,
+      "speech_after_sec": 734.76,
+      "scale_after": 2.053971,
+      "need_tempo_after": 0.4869
+    },
+    {
+      "pass": 3,
+      "speech_before_sec": 734.76,
+      "speech_after_sec": 980.856,
+      "scale_after": 1.541557,
+      "need_tempo_after": 0.6487
+    },
+    {
+      "pass": 4,
+      "speech_before_sec": 980.856,
+      "speech_after_sec": 1229.088,
+      "scale_after": 1.231629,
+      "need_tempo_after": 0.8119
+    },
+    {
+      "pass": 5,
+      "speech_before_sec": 1229.088,
+      "speech_after_sec": 1470.648,
+      "scale_after": 1.030097,
+      "need_tempo_after": 0.9708
+    }
+  ],
+  "output_video": "D:\\0PEN CODE\\Dub Studio\\departments\\learning_paths\\stem_mathematics\\3blue1brown_courses\\web_platform\\media_vault\\why_pi\\lesson_07\\experiments\\3b1b_why_pi_07_full_dubbed.mp4",
+  "output_duration_sec": 1526.125,
+  "output_size_bytes": 79507703,
+  "independent_verification": {
+    "output_duration_sec": 1526.125,
+    "original_duration_sec": 1526.178,
+    "duration_delta_sec": -0.053,
+    "duration_match": true,
+    "first_cue_start_sec": 2.5,
+    "last_cue_end_sec": 1523.178,
+    "all_silence_runs": [
+      {
+        "start": 0.0,
+        "end": 2.703
+      },
+      {
+        "start": 1522.306,
+        "end": 1526.107
+      }
+    ],
+    "lead_in_or_tail_runs": [
+      {
+        "start": 0.0,
+        "end": 2.703,
+        "kind": "lead-in"
+      },
+      {
+        "start": 1522.306,
+        "end": 1526.107,
+        "kind": "tail"
+      }
+    ],
+    "internal_silence_runs": [],
+    "internal_runs_gt_2s_count": 0,
+    "internal_silence_gate_pass": true
+  },
+  "gates": {
+    "duration_match": true,
+    "no_internal_silence_gt_2s": true,
+    "median_fill_ge_0.72": true,
+    "max_internal_gap_le_1.5": true,
+    "all_pass": true
+  },
+  "success": true,
+  "cues": [
+    {
+      "id": 1,
+      "section": "sec-wallis-product",
+      "expected_start_ms": 2500.0,
+      "actual_start_ms": 2500.0,
+      "drift_ms": 0.0,
+      "tempo": 0.9708,
+      "natural_sec": 79.8,
+      "target_sec": 82.202,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0257,
+      "placed_samples": 3625108
+    },
+    {
+      "id": 2,
+      "section": "sec-wallis-product",
+      "expected_start_ms": 85062.0,
+      "actual_start_ms": 85062.0,
+      "drift_ms": 0.0,
+      "tempo": 0.9708,
+      "natural_sec": 93.288,
+      "target_sec": 96.096,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0263,
+      "placed_samples": 4237834
+    },
+    {
+      "id": 3,
+      "section": "sec-wallis-product",
+      "expected_start_ms": 181518.0,
+      "actual_start_ms": 181518.0,
+      "drift_ms": 0.0,
+      "tempo": 0.9708,
+      "natural_sec": 86.616,
+      "target_sec": 89.223,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0259,
+      "placed_samples": 3934734
+    },
+    {
+      "id": 4,
+      "section": "sec-wallis-product",
+      "expected_start_ms": 271102.0,
+      "actual_start_ms": 271102.0,
+      "drift_ms": 0.0,
+      "tempo": 0.9708,
+      "natural_sec": 83.208,
+      "target_sec": 85.712,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0253,
+      "placed_samples": 3779899
+    },
+    {
+      "id": 5,
+      "section": "sec-wallis-product",
+      "expected_start_ms": 357175.0,
+      "actual_start_ms": 357175.01,
+      "drift_ms": 0.01,
+      "tempo": 0.9708,
+      "natural_sec": 88.896,
+      "target_sec": 91.571,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0254,
+      "placed_samples": 4038281
+    },
+    {
+      "id": 6,
+      "section": "sec-sin-integrals",
+      "expected_start_ms": 449107.0,
+      "actual_start_ms": 449107.01,
+      "drift_ms": 0.01,
+      "tempo": 0.9708,
+      "natural_sec": 79.32,
+      "target_sec": 81.707,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0256,
+      "placed_samples": 3603279
+    },
+    {
+      "id": 7,
+      "section": "sec-sin-integrals",
+      "expected_start_ms": 531174.0,
+      "actual_start_ms": 531173.99,
+      "drift_ms": -0.01,
+      "tempo": 0.9708,
+      "natural_sec": 92.352,
+      "target_sec": 95.131,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0257,
+      "placed_samples": 4195277
+    },
+    {
+      "id": 8,
+      "section": "sec-sin-integrals",
+      "expected_start_ms": 626666.0,
+      "actual_start_ms": 626666.01,
+      "drift_ms": 0.01,
+      "tempo": 0.9708,
+      "natural_sec": 89.208,
+      "target_sec": 91.893,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.026,
+      "placed_samples": 4052481
+    },
+    {
+      "id": 9,
+      "section": "sec-sin-integrals",
+      "expected_start_ms": 718920.0,
+      "actual_start_ms": 718920.0,
+      "drift_ms": 0.0,
+      "tempo": 0.9708,
+      "natural_sec": 91.416,
+      "target_sec": 94.167,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0255,
+      "placed_samples": 4152765
+    },
+    {
+      "id": 10,
+      "section": "sec-sin-integrals",
+      "expected_start_ms": 813448.0,
+      "actual_start_ms": 813448.0,
+      "drift_ms": 0.0,
+      "tempo": 0.9708,
+      "natural_sec": 83.784,
+      "target_sec": 86.306,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0264,
+      "placed_samples": 3806095
+    },
+    {
+      "id": 11,
+      "section": "sec-sin-integrals",
+      "expected_start_ms": 900114.0,
+      "actual_start_ms": 900113.99,
+      "drift_ms": -0.01,
+      "tempo": 0.9708,
+      "natural_sec": 86.16,
+      "target_sec": 88.753,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0255,
+      "placed_samples": 3914007
+    },
+    {
+      "id": 12,
+      "section": "sec-geometric-proof",
+      "expected_start_ms": 989227.0,
+      "actual_start_ms": 989227.01,
+      "drift_ms": 0.01,
+      "tempo": 0.9708,
+      "natural_sec": 79.728,
+      "target_sec": 82.128,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0264,
+      "placed_samples": 3621845
+    },
+    {
+      "id": 13,
+      "section": "sec-geometric-proof",
+      "expected_start_ms": 1071715.0,
+      "actual_start_ms": 1071715.01,
+      "drift_ms": 0.01,
+      "tempo": 0.9708,
+      "natural_sec": 88.08,
+      "target_sec": 90.731,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0259,
+      "placed_samples": 4001237
+    },
+    {
+      "id": 14,
+      "section": "sec-geometric-proof",
+      "expected_start_ms": 1162807.0,
+      "actual_start_ms": 1162807.01,
+      "drift_ms": 0.01,
+      "tempo": 0.9708,
+      "natural_sec": 86.832,
+      "target_sec": 89.445,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0258,
+      "placed_samples": 3944524
+    },
+    {
+      "id": 15,
+      "section": "sec-geometric-proof",
+      "expected_start_ms": 1252613.0,
+      "actual_start_ms": 1252612.99,
+      "drift_ms": -0.01,
+      "tempo": 0.9708,
+      "natural_sec": 87.072,
+      "target_sec": 89.693,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0263,
+      "placed_samples": 3955461
+    },
+    {
+      "id": 16,
+      "section": "sec-geometric-proof",
+      "expected_start_ms": 1342666.0,
+      "actual_start_ms": 1342666.01,
+      "drift_ms": 0.01,
+      "tempo": 0.9708,
+      "natural_sec": 88.896,
+      "target_sec": 91.571,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0254,
+      "placed_samples": 4038281
+    },
+    {
+      "id": 17,
+      "section": "sec-geometric-proof",
+      "expected_start_ms": 1434598.0,
+      "actual_start_ms": 1434598.0,
+      "drift_ms": 0.0,
+      "tempo": 0.9708,
+      "natural_sec": 85.992,
+      "target_sec": 88.58,
+      "fill_ratio": 0.9997,
+      "internal_gap_s": 0.0259,
+      "placed_samples": 3906378
+    }
+  ],
+  "output_streams": [
+    {
+      "index": 0,
+      "codec_name": "av1",
+      "codec_type": "video"
+    },
+    {
+      "index": 1,
+      "codec_name": "aac",
+      "codec_type": "audio"
+    }
+  ],
+  "volumedetect_intro_0_2s_db": -91.0,
+  "volumedetect_final_2s_db": -91.0
+}
